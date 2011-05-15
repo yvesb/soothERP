@@ -31,6 +31,11 @@ $liste_journaux = charger_liste_journaux_treso ();
 // AFFICHAGE
 // *************************************************************************************************************
 
-include ($DIR.$_SESSION['theme']->getDir_theme()."page_compta_journal_veac_export_2.inc.php");
-
+// *************************************************************************************************************
+// Modification éffectuée par Yves Bourvon 
+// Correctif bug exports journaux des ventes 'page_compta_journal_veac_export_2.inc.php' modifié en 'page_compta_journal_veac_export.inc.php'
+// Possibilités d'export plus importantes avec cet appel de page php
+// Attention le fichier de remplacement fait appel à des fonctions 'expérimentales' selon LMB (signalé dans la page d'export)
+include ($DIR.$_SESSION['theme']->getDir_theme()."page_compta_journal_veac_export.inc.php");
+// Fin de modification
 ?>
