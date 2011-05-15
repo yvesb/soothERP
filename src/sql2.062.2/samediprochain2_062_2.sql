@@ -1,20 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 3.2.4
+-- version 2.11.9.2
 -- http://www.phpmyadmin.net
 --
 -- Serveur: localhost
--- Généré le : Dim 01 Mai 2011 à 14:33
--- Version du serveur: 5.1.41
--- Version de PHP: 5.3.1
+-- Généré le : Mer 04 Mai 2011 à 08:18
+-- Version du serveur: 5.0.67
+-- Version de PHP: 5.2.6
 
 SET FOREIGN_KEY_CHECKS=0;
+
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
 
 --
 -- Base de données: `samediprochain2_062_2`
@@ -29,15 +24,15 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 CREATE TABLE IF NOT EXISTS `adresses` (
   `ref_adresse` varchar(32) NOT NULL,
   `ref_contact` varchar(32) NOT NULL,
-  `id_type_adresse` smallint(5) DEFAULT NULL,
+  `id_type_adresse` smallint(5) default NULL,
   `lib_adresse` varchar(128) NOT NULL,
   `text_adresse` varchar(160) NOT NULL,
   `code_postal` varchar(9) NOT NULL,
   `ville` varchar(28) NOT NULL,
-  `id_pays` smallint(5) unsigned DEFAULT NULL,
+  `id_pays` smallint(5) unsigned default NULL,
   `note` mediumblob NOT NULL,
   `ordre` smallint(5) unsigned NOT NULL,
-  PRIMARY KEY (`ref_adresse`),
+  PRIMARY KEY  (`ref_adresse`),
   KEY `id_pays` (`id_pays`),
   KEY `ref_contact` (`ref_contact`),
   KEY `id_type_adresse` (`id_type_adresse`)
@@ -60,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `adresses_types` (
   `id_adresse_type` smallint(5) NOT NULL,
   `adresse_type` varchar(64) NOT NULL,
   `defaut` smallint(5) NOT NULL,
-  PRIMARY KEY (`id_adresse_type`)
+  PRIMARY KEY  (`id_adresse_type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des type d''adresses';
 
 --
@@ -82,8 +77,8 @@ CREATE TABLE IF NOT EXISTS `agendas` (
   `ref_agenda` varchar(32) NOT NULL,
   `lib_agenda` varchar(64) NOT NULL,
   `id_type_agenda` smallint(5) unsigned NOT NULL,
-  `id_agenda_couleurs` smallint(5) unsigned NOT NULL DEFAULT '1',
-  PRIMARY KEY (`ref_agenda`),
+  `id_agenda_couleurs` smallint(5) unsigned NOT NULL default '1',
+  PRIMARY KEY  (`ref_agenda`),
   KEY `id_type_agenda` (`id_type_agenda`),
   KEY `id_agenda_couleurs` (`id_agenda_couleurs`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des agendas';
@@ -100,11 +95,11 @@ CREATE TABLE IF NOT EXISTS `agendas` (
 --
 
 CREATE TABLE IF NOT EXISTS `agendas_couleurs` (
-  `id_agenda_couleurs` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `agenda_couleur_rule_1` varchar(7) DEFAULT '#ffffff',
-  `agenda_couleur_rule_2` varchar(7) DEFAULT '#ffffff',
-  `agenda_couleur_rule_3` varchar(7) DEFAULT '#000000',
-  PRIMARY KEY (`id_agenda_couleurs`)
+  `id_agenda_couleurs` smallint(5) unsigned NOT NULL auto_increment,
+  `agenda_couleur_rule_1` varchar(7) default '#ffffff',
+  `agenda_couleur_rule_2` varchar(7) default '#ffffff',
+  `agenda_couleur_rule_3` varchar(7) default '#000000',
+  PRIMARY KEY  (`id_agenda_couleurs`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Style d''un type d''agenda' AUTO_INCREMENT=6 ;
 
 --
@@ -130,11 +125,11 @@ CREATE TABLE IF NOT EXISTS `agendas_events` (
   `id_type_event` smallint(5) unsigned NOT NULL,
   `lib_agenda_event` varchar(128) NOT NULL,
   `note_agenda_event` mediumtext,
-  `date_agenda_event` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_agenda_event` timestamp NOT NULL default CURRENT_TIMESTAMP,
   `duree_agenda_event` mediumint(8) unsigned NOT NULL,
-  `affichage_journee` tinyint(1) NOT NULL DEFAULT '0',
-  `ref_agenda_event_parent` varchar(32) DEFAULT NULL,
-  PRIMARY KEY (`ref_agenda_event`),
+  `affichage_journee` tinyint(1) NOT NULL default '0',
+  `ref_agenda_event_parent` varchar(32) default NULL,
+  PRIMARY KEY  (`ref_agenda_event`),
   KEY `ref_agenda` (`ref_agenda`),
   KEY `ref_agenda_event_parent` (`ref_agenda_event_parent`),
   KEY `id_type_event` (`id_type_event`)
@@ -154,8 +149,8 @@ CREATE TABLE IF NOT EXISTS `agendas_events` (
 CREATE TABLE IF NOT EXISTS `agendas_events_location` (
   `ref_agenda_event` varchar(32) NOT NULL,
   `id_stock` smallint(5) unsigned NOT NULL,
-  `quantite` double DEFAULT NULL,
-  PRIMARY KEY (`ref_agenda_event`)
+  `quantite` double default NULL,
+  PRIMARY KEY  (`ref_agenda_event`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Quantité des événements location dans l''agenda';
 
 --
@@ -173,7 +168,7 @@ CREATE TABLE IF NOT EXISTS `agendas_events_types` (
   `id_type_event` smallint(5) unsigned NOT NULL,
   `id_type_agenda` smallint(5) unsigned NOT NULL,
   `lib_type_event` varchar(64) NOT NULL,
-  PRIMARY KEY (`id_type_event`),
+  PRIMARY KEY  (`id_type_event`),
   KEY `id_type_agenda` (`id_type_agenda`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste d''event';
 
@@ -193,9 +188,9 @@ INSERT INTO `agendas_events_types` (`id_type_event`, `id_type_agenda`, `lib_type
 --
 
 CREATE TABLE IF NOT EXISTS `agendas_listes` (
-  `id_liste` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_liste` smallint(5) unsigned NOT NULL auto_increment,
   `lib_liste` varchar(64) NOT NULL,
-  PRIMARY KEY (`id_liste`)
+  PRIMARY KEY  (`id_liste`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
@@ -251,9 +246,9 @@ CREATE TABLE IF NOT EXISTS `agendas_permissions` (
   `id_permission` smallint(5) unsigned NOT NULL,
   `lib_permission` varchar(64) NOT NULL,
   `desc_permission` tinytext NOT NULL,
-  `id_permission_parent` smallint(5) unsigned DEFAULT NULL,
-  `ordre` smallint(5) unsigned NOT NULL DEFAULT '50',
-  PRIMARY KEY (`id_permission`),
+  `id_permission_parent` smallint(5) unsigned default NULL,
+  `ordre` smallint(5) unsigned NOT NULL default '50',
+  PRIMARY KEY  (`id_permission`),
   KEY `id_permission_parent` (`id_permission_parent`),
   KEY `lib_permission` (`lib_permission`),
   KEY `ordre` (`ordre`)
@@ -287,7 +282,7 @@ INSERT INTO `agendas_permissions` (`id_permission`, `lib_permission`, `desc_perm
 CREATE TABLE IF NOT EXISTS `agendas_types` (
   `id_type_agenda` smallint(5) unsigned NOT NULL,
   `lib_type_agenda` varchar(64) NOT NULL,
-  PRIMARY KEY (`id_type_agenda`)
+  PRIMARY KEY  (`id_type_agenda`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des agendas';
 
 --
@@ -308,7 +303,7 @@ INSERT INTO `agendas_types` (`id_type_agenda`, `lib_type_agenda`) VALUES
 CREATE TABLE IF NOT EXISTS `agendas_types_contacts` (
   `ref_agenda` varchar(32) NOT NULL,
   `ref_contact` varchar(32) NOT NULL,
-  `type_event_defaut` smallint(5) unsigned NOT NULL DEFAULT '2',
+  `type_event_defaut` smallint(5) unsigned NOT NULL default '2',
   KEY `ref_agenda` (`ref_agenda`),
   KEY `ref_contact` (`ref_contact`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des agendas ratachés à un contact';
@@ -327,7 +322,7 @@ CREATE TABLE IF NOT EXISTS `agendas_types_contacts` (
 CREATE TABLE IF NOT EXISTS `agendas_types_location` (
   `ref_agenda` varchar(32) NOT NULL,
   `ref_article` varchar(32) NOT NULL,
-  `type_event_defaut` smallint(5) unsigned NOT NULL DEFAULT '1',
+  `type_event_defaut` smallint(5) unsigned NOT NULL default '1',
   KEY `ref_agenda` (`ref_agenda`),
   KEY `ref_article` (`ref_article`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des agendas ratachés à un article';
@@ -346,7 +341,7 @@ CREATE TABLE IF NOT EXISTS `agendas_types_location` (
 CREATE TABLE IF NOT EXISTS `agendas_types_ressources` (
   `ref_agenda` varchar(32) NOT NULL,
   `ref_ressource` varchar(32) NOT NULL,
-  `type_event_defaut` smallint(5) unsigned NOT NULL DEFAULT '3',
+  `type_event_defaut` smallint(5) unsigned NOT NULL default '3',
   KEY `ref_agenda` (`ref_agenda`),
   KEY `ref_ressource` (`ref_ressource`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des agendas ratachés à une ressource';
@@ -365,7 +360,7 @@ CREATE TABLE IF NOT EXISTS `agendas_types_ressources` (
 CREATE TABLE IF NOT EXISTS `agendas_users_agendas_affichage` (
   `ref_user` varchar(32) NOT NULL,
   `ref_agenda` varchar(32) NOT NULL,
-  `affiche` tinyint(1) NOT NULL DEFAULT '1',
+  `affiche` tinyint(1) NOT NULL default '1',
   KEY `ref_user` (`ref_user`),
   KEY `ref_agenda` (`ref_agenda`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des agendas sélectionné par un user';
@@ -384,9 +379,9 @@ CREATE TABLE IF NOT EXISTS `agendas_users_agendas_affichage` (
 CREATE TABLE IF NOT EXISTS `agendas_users_events_type_affiche_permissions` (
   `ref_user` varchar(32) NOT NULL,
   `id_type_event` smallint(5) unsigned NOT NULL,
-  `affiche` tinyint(1) unsigned DEFAULT '1',
+  `affiche` tinyint(1) unsigned default '1',
   `id_permission` smallint(5) unsigned NOT NULL,
-  PRIMARY KEY (`ref_user`,`id_type_event`),
+  PRIMARY KEY  (`ref_user`,`id_type_event`),
   KEY `ref_user` (`ref_user`),
   KEY `id_type_event` (`id_type_event`),
   KEY `id_permission` (`id_permission`)
@@ -411,7 +406,7 @@ CREATE TABLE IF NOT EXISTS `agendas_users_listes_agendas_permissions` (
   `ref_user` varchar(32) NOT NULL,
   `id_liste` smallint(5) unsigned NOT NULL,
   `id_permission` smallint(5) unsigned NOT NULL,
-  PRIMARY KEY (`ref_user`,`id_liste`),
+  PRIMARY KEY  (`ref_user`,`id_liste`),
   KEY `id_permission` (`id_permission`),
   KEY `id_liste` (`id_liste`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='permission qu''un user a sur un agenda';
@@ -429,16 +424,16 @@ CREATE TABLE IF NOT EXISTS `agendas_users_listes_agendas_permissions` (
 
 CREATE TABLE IF NOT EXISTS `annuaire` (
   `ref_contact` varchar(32) NOT NULL,
-  `id_civilite` smallint(5) unsigned DEFAULT NULL,
+  `id_civilite` smallint(5) unsigned default NULL,
   `nom` varchar(128) NOT NULL,
-  `id_categorie` smallint(5) unsigned DEFAULT NULL,
+  `id_categorie` smallint(5) unsigned default NULL,
   `siret` varchar(32) NOT NULL,
   `tva_intra` varchar(32) NOT NULL,
   `note` mediumblob NOT NULL,
   `date_creation` datetime NOT NULL,
-  `date_modification` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `date_archivage` datetime DEFAULT NULL,
-  PRIMARY KEY (`ref_contact`),
+  `date_modification` datetime NOT NULL default '0000-00-00 00:00:00',
+  `date_archivage` datetime default NULL,
+  PRIMARY KEY  (`ref_contact`),
   KEY `nom` (`nom`),
   KEY `id_civilite` (`id_civilite`),
   KEY `id_categorie` (`id_categorie`)
@@ -458,11 +453,11 @@ INSERT INTO `annuaire` (`ref_contact`, `id_civilite`, `nom`, `id_categorie`, `si
 --
 
 CREATE TABLE IF NOT EXISTS `annuaire_categories` (
-  `id_categorie` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_categorie` smallint(5) unsigned NOT NULL auto_increment,
   `lib_categorie` varchar(32) NOT NULL,
   `ordre` tinyint(3) unsigned NOT NULL,
-  `app_tarifs` enum('HT','TTC') NOT NULL DEFAULT 'HT',
-  PRIMARY KEY (`id_categorie`)
+  `app_tarifs` enum('HT','TTC') NOT NULL default 'HT',
+  PRIMARY KEY  (`id_categorie`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des catégories de contacts' AUTO_INCREMENT=6 ;
 
 --
@@ -471,7 +466,7 @@ CREATE TABLE IF NOT EXISTS `annuaire_categories` (
 
 INSERT INTO `annuaire_categories` (`id_categorie`, `lib_categorie`, `ordre`, `app_tarifs`) VALUES
 (1, 'Particulier', 1, 'TTC'),
-(2, 'Société', 2, 'TTC'),
+(2, 'Entreprise', 2, 'TTC'),
 (3, 'Administration', 3, 'TTC'),
 (4, 'Association', 4, 'TTC'),
 (5, 'Autre', 5, 'TTC');
@@ -485,7 +480,7 @@ INSERT INTO `annuaire_categories` (`id_categorie`, `lib_categorie`, `ordre`, `ap
 CREATE TABLE IF NOT EXISTS `annuaire_liaisons` (
   `ref_contact` varchar(32) NOT NULL,
   `ref_contact_lie` varchar(32) NOT NULL,
-  `id_liaison_type` smallint(5) unsigned DEFAULT NULL,
+  `id_liaison_type` smallint(5) unsigned default NULL,
   KEY `ref_contact` (`ref_contact`),
   KEY `ref_contact_lie` (`ref_contact_lie`),
   KEY `id_liaison_type` (`id_liaison_type`)
@@ -503,14 +498,14 @@ CREATE TABLE IF NOT EXISTS `annuaire_liaisons` (
 --
 
 CREATE TABLE IF NOT EXISTS `annuaire_liaisons_types` (
-  `id_liaison_type` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_liaison_type` smallint(5) unsigned NOT NULL auto_increment,
   `lib_liaison_type` varchar(64) NOT NULL,
   `lib_liaison_type_vers` varchar(64) NOT NULL,
   `lib_liaison_type_depuis` varchar(64) NOT NULL,
   `ordre` tinyint(3) unsigned NOT NULL,
   `actif` tinyint(3) unsigned NOT NULL,
-  `systeme` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id_liaison_type`),
+  `systeme` tinyint(3) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`id_liaison_type`),
   KEY `ordre` (`ordre`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Types de liaisons possibles entre articles' AUTO_INCREMENT=5 ;
 
@@ -552,7 +547,7 @@ CREATE TABLE IF NOT EXISTS `annuaire_modeles_pdf` (
 CREATE TABLE IF NOT EXISTS `annuaire_profils` (
   `ref_contact` varchar(32) NOT NULL,
   `id_profil` smallint(5) unsigned NOT NULL,
-  PRIMARY KEY (`ref_contact`,`id_profil`),
+  PRIMARY KEY  (`ref_contact`,`id_profil`),
   KEY `id_profil` (`id_profil`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Association des contacts de l''annuaire aux profils';
 
@@ -571,14 +566,14 @@ INSERT INTO `annuaire_profils` (`ref_contact`, `id_profil`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `annuaire_tmp` (
-  `id_contact_tmp` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_contact_tmp` smallint(5) unsigned NOT NULL auto_increment,
   `id_interface` smallint(5) unsigned NOT NULL,
   `infos` mediumtext NOT NULL,
   `date_demande` datetime NOT NULL,
   `code_validation` varchar(64) NOT NULL,
   `validation_email` tinyint(2) unsigned NOT NULL,
   `mode` enum('inscription','modification') NOT NULL,
-  PRIMARY KEY (`id_contact_tmp`),
+  PRIMARY KEY  (`id_contact_tmp`),
   KEY `id_interface` (`id_interface`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -595,8 +590,8 @@ CREATE TABLE IF NOT EXISTS `annuaire_tmp` (
 
 CREATE TABLE IF NOT EXISTS `annu_admin` (
   `ref_contact` varchar(32) NOT NULL,
-  `type_admin` enum('Interne','Externe') NOT NULL DEFAULT 'Interne',
-  PRIMARY KEY (`ref_contact`)
+  `type_admin` enum('Interne','Externe') NOT NULL default 'Interne',
+  PRIMARY KEY  (`ref_contact`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les contacts administrateur';
 
 --
@@ -614,23 +609,23 @@ INSERT INTO `annu_admin` (`ref_contact`, `type_admin`) VALUES
 
 CREATE TABLE IF NOT EXISTS `annu_client` (
   `ref_contact` varchar(32) NOT NULL,
-  `id_client_categ` smallint(5) unsigned DEFAULT NULL,
-  `type_client` enum('Piste','Prospect','Client','Ancien client','Compte bloqué') DEFAULT NULL,
-  `id_tarif` smallint(5) unsigned DEFAULT NULL,
-  `ref_commercial` varchar(32) DEFAULT NULL,
-  `ref_adr_livraison` varchar(32) DEFAULT NULL,
-  `ref_adr_facturation` varchar(32) DEFAULT NULL,
-  `app_tarifs` enum('HT','TTC') NOT NULL DEFAULT 'TTC',
-  `facturation_periodique` tinyint(3) unsigned DEFAULT NULL,
-  `encours` double unsigned DEFAULT NULL,
-  `delai_reglement` varchar(8) DEFAULT NULL,
+  `id_client_categ` smallint(5) unsigned default NULL,
+  `type_client` enum('Piste','Prospect','Client','Ancien client','Compte bloqué') default NULL,
+  `id_tarif` smallint(5) unsigned default NULL,
+  `ref_commercial` varchar(32) default NULL,
+  `ref_adr_livraison` varchar(32) default NULL,
+  `ref_adr_facturation` varchar(32) default NULL,
+  `app_tarifs` enum('HT','TTC') NOT NULL default 'TTC',
+  `facturation_periodique` tinyint(3) unsigned default NULL,
+  `encours` double unsigned default NULL,
+  `delai_reglement` varchar(8) default NULL,
   `defaut_numero_compte` varchar(10) NOT NULL,
-  `prepaiement_ratio` smallint(5) DEFAULT NULL,
-  `prepaiement_type` enum('Acompte','Arrhes') DEFAULT NULL,
-  `id_relance_modele` smallint(5) DEFAULT NULL,
-  `id_reglement_mode_favori` smallint(6) DEFAULT NULL,
-  `id_edition_mode_favori` smallint(6) DEFAULT NULL,
-  PRIMARY KEY (`ref_contact`),
+  `prepaiement_ratio` smallint(5) default NULL,
+  `prepaiement_type` enum('Acompte','Arrhes') default NULL,
+  `id_relance_modele` smallint(5) default NULL,
+  `id_reglement_mode_favori` smallint(6) default NULL,
+  `id_edition_mode_favori` smallint(6) default NULL,
+  PRIMARY KEY  (`ref_contact`),
   KEY `id_client_categ` (`id_client_categ`),
   KEY `ref_adr_livraison` (`ref_adr_livraison`),
   KEY `ref_adr_facturation` (`ref_adr_facturation`),
@@ -655,10 +650,10 @@ CREATE TABLE IF NOT EXISTS `annu_collab` (
   `numero_secu` char(16) NOT NULL,
   `date_naissance` date NOT NULL,
   `lieu_naissance` varchar(128) NOT NULL,
-  `id_pays_nationalite` smallint(5) unsigned DEFAULT NULL,
+  `id_pays_nationalite` smallint(5) unsigned default NULL,
   `situation_famille` varchar(128) NOT NULL,
-  `nbre_enfants` tinyint(3) unsigned DEFAULT NULL,
-  PRIMARY KEY (`ref_contact`)
+  `nbre_enfants` tinyint(3) unsigned default NULL,
+  PRIMARY KEY  (`ref_contact`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les contacts collaborateurs';
 
 --
@@ -696,9 +691,9 @@ INSERT INTO `annu_collab_fonctions` (`ref_contact`, `id_fonction`) VALUES
 
 CREATE TABLE IF NOT EXISTS `annu_commercial` (
   `ref_contact` varchar(32) NOT NULL,
-  `id_commercial_categ` smallint(5) unsigned DEFAULT NULL,
-  `id_commission_regle` smallint(5) unsigned DEFAULT NULL,
-  PRIMARY KEY (`ref_contact`),
+  `id_commercial_categ` smallint(5) unsigned default NULL,
+  `id_commission_regle` smallint(5) unsigned default NULL,
+  PRIMARY KEY  (`ref_contact`),
   KEY `id_commercial_categ` (`id_commercial_categ`),
   KEY `id_commission_regle` (`id_commission_regle`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -718,7 +713,7 @@ CREATE TABLE IF NOT EXISTS `annu_constructeur` (
   `ref_contact` varchar(32) NOT NULL,
   `identifiant_revendeur` varchar(32) NOT NULL,
   `conditions_garantie` mediumtext NOT NULL,
-  PRIMARY KEY (`ref_contact`)
+  PRIMARY KEY  (`ref_contact`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les contacts constructeurs';
 
 --
@@ -734,15 +729,15 @@ CREATE TABLE IF NOT EXISTS `annu_constructeur` (
 
 CREATE TABLE IF NOT EXISTS `annu_fournisseur` (
   `ref_fournisseur` varchar(32) NOT NULL,
-  `id_fournisseur_categ` smallint(5) unsigned DEFAULT NULL,
+  `id_fournisseur_categ` smallint(5) unsigned default NULL,
   `code_client` varchar(32) NOT NULL,
-  `ref_acheteur` varchar(32) DEFAULT NULL,
+  `ref_acheteur` varchar(32) default NULL,
   `conditions_commerciales` mediumtext NOT NULL,
-  `id_stock_livraison` smallint(5) unsigned DEFAULT NULL,
+  `id_stock_livraison` smallint(5) unsigned default NULL,
   `delai_livraison` varchar(32) NOT NULL,
-  `app_tarifs` enum('HT','TTC') NOT NULL DEFAULT 'HT',
+  `app_tarifs` enum('HT','TTC') NOT NULL default 'HT',
   `defaut_numero_compte` varchar(10) NOT NULL,
-  PRIMARY KEY (`ref_fournisseur`),
+  PRIMARY KEY  (`ref_fournisseur`),
   KEY `id_fournisseur_categ` (`id_fournisseur_categ`),
   KEY `ref_acheteur` (`ref_acheteur`),
   KEY `id_stock_livraison` (`id_stock_livraison`)
@@ -761,23 +756,23 @@ CREATE TABLE IF NOT EXISTS `annu_fournisseur` (
 
 CREATE TABLE IF NOT EXISTS `articles` (
   `ref_article` varchar(32) NOT NULL,
-  `ref_oem` varchar(64) DEFAULT NULL,
-  `ref_interne` varchar(32) DEFAULT NULL,
+  `ref_oem` varchar(64) default NULL,
+  `ref_interne` varchar(32) default NULL,
   `lib_article` varchar(250) NOT NULL,
   `lib_ticket` varchar(64) NOT NULL,
   `desc_courte` mediumblob NOT NULL,
   `desc_longue` mediumblob NOT NULL,
   `ref_art_categ` varchar(32) NOT NULL,
-  `modele` enum('materiel','service','service_abo','service_conso') NOT NULL DEFAULT 'materiel',
-  `id_modele_spe` smallint(5) unsigned DEFAULT NULL,
-  `ref_constructeur` varchar(32) DEFAULT NULL,
-  `prix_public_ht` double DEFAULT NULL,
-  `prix_achat_ht` double DEFAULT NULL,
-  `paa_ht` double DEFAULT NULL,
+  `modele` enum('materiel','service','service_abo','service_conso') NOT NULL default 'materiel',
+  `id_modele_spe` smallint(5) unsigned default NULL,
+  `ref_constructeur` varchar(32) default NULL,
+  `prix_public_ht` double default NULL,
+  `prix_achat_ht` double default NULL,
+  `paa_ht` double default NULL,
   `paa_last_maj` datetime NOT NULL,
-  `id_tva` smallint(5) unsigned DEFAULT NULL,
-  `promo` smallint(1) NOT NULL DEFAULT '0',
-  `id_valo` smallint(5) unsigned NOT NULL DEFAULT '1',
+  `id_tva` smallint(5) unsigned default NULL,
+  `promo` smallint(1) NOT NULL default '0',
+  `id_valo` smallint(5) unsigned NOT NULL default '1',
   `valo_indice` double unsigned NOT NULL,
   `lot` tinyint(3) unsigned NOT NULL,
   `composant` tinyint(1) NOT NULL,
@@ -788,11 +783,11 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `dispo` tinyint(1) NOT NULL,
   `date_creation` datetime NOT NULL,
   `date_modification` datetime NOT NULL,
-  `numero_compte_achat` varchar(10) DEFAULT NULL,
-  `numero_compte_vente` varchar(10) DEFAULT NULL,
-  `is_achetable` tinyint(1) NOT NULL DEFAULT '1',
-  `is_vendable` tinyint(1) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`ref_article`),
+  `numero_compte_achat` varchar(10) default NULL,
+  `numero_compte_vente` varchar(10) default NULL,
+  `is_achetable` tinyint(1) NOT NULL default '1',
+  `is_vendable` tinyint(1) NOT NULL default '1',
+  PRIMARY KEY  (`ref_article`),
   UNIQUE KEY `ref_interne` (`ref_interne`),
   KEY `lib_article` (`lib_article`),
   KEY `ref_art_categ` (`ref_art_categ`),
@@ -819,7 +814,7 @@ INSERT INTO `articles` (`ref_article`, `ref_oem`, `ref_interne`, `lib_article`, 
 --
 
 CREATE TABLE IF NOT EXISTS `articles_abonnes` (
-  `id_abo` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id_abo` int(10) unsigned NOT NULL auto_increment,
   `ref_contact` varchar(32) NOT NULL,
   `ref_article` varchar(32) NOT NULL,
   `date_souscription` datetime NOT NULL,
@@ -827,7 +822,7 @@ CREATE TABLE IF NOT EXISTS `articles_abonnes` (
   `date_preavis` datetime NOT NULL,
   `fin_engagement` datetime NOT NULL,
   `fin_abonnement` datetime NOT NULL,
-  PRIMARY KEY (`id_abo`),
+  PRIMARY KEY  (`id_abo`),
   KEY `ref_contact` (`ref_contact`),
   KEY `ref_article` (`ref_article`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -867,7 +862,7 @@ CREATE TABLE IF NOT EXISTS `articles_abonnes_livraisons` (
 CREATE TABLE IF NOT EXISTS `articles_caracs` (
   `ref_article` varchar(32) NOT NULL,
   `ref_carac` varchar(32) NOT NULL,
-  `valeur` varchar(256) DEFAULT NULL,
+  `valeur` varchar(256) default NULL,
   KEY `ref_article` (`ref_article`),
   KEY `ref_carac` (`ref_carac`),
   KEY `valeur` (`valeur`)
@@ -909,7 +904,7 @@ CREATE TABLE IF NOT EXISTS `articles_composants` (
   `qte` double unsigned NOT NULL,
   `niveau` tinyint(3) unsigned NOT NULL,
   `ordre` tinyint(3) unsigned NOT NULL,
-  PRIMARY KEY (`ref_lot_contenu`),
+  PRIMARY KEY  (`ref_lot_contenu`),
   KEY `ref_article` (`ref_article_lot`),
   KEY `ref_article_composant` (`ref_article_composant`),
   KEY `ordre` (`ordre`)
@@ -927,13 +922,13 @@ CREATE TABLE IF NOT EXISTS `articles_composants` (
 --
 
 CREATE TABLE IF NOT EXISTS `articles_comptes_credits` (
-  `id_compte_credit` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id_compte_credit` int(10) unsigned NOT NULL auto_increment,
   `ref_contact` varchar(32) NOT NULL,
   `ref_article` varchar(32) NOT NULL,
   `date_souscription` datetime NOT NULL,
   `date_echeance` datetime NOT NULL,
   `credits_restants` double NOT NULL,
-  PRIMARY KEY (`id_compte_credit`),
+  PRIMARY KEY  (`id_compte_credit`),
   KEY `ref_contact` (`ref_contact`),
   KEY `ref_article` (`ref_article`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -1010,8 +1005,8 @@ CREATE TABLE IF NOT EXISTS `articles_images` (
 CREATE TABLE IF NOT EXISTS `articles_liaisons` (
   `ref_article` varchar(32) NOT NULL,
   `ref_article_lie` varchar(32) NOT NULL,
-  `id_liaison_type` smallint(5) unsigned DEFAULT NULL,
-  `ratio` double DEFAULT '1',
+  `id_liaison_type` smallint(5) unsigned default NULL,
+  `ratio` double default '1',
   KEY `ref_article` (`ref_article`),
   KEY `ref_article_lie` (`ref_article_lie`),
   KEY `id_liaison_type` (`id_liaison_type`)
@@ -1033,7 +1028,7 @@ CREATE TABLE IF NOT EXISTS `articles_modele_materiel` (
   `poids` double NOT NULL,
   `colisage` varchar(32) NOT NULL,
   `duree_garantie` smallint(5) unsigned NOT NULL,
-  PRIMARY KEY (`ref_article`)
+  PRIMARY KEY  (`ref_article`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les articles matériels';
 
 --
@@ -1072,7 +1067,7 @@ CREATE TABLE IF NOT EXISTS `articles_modele_service_abo` (
   `engagement` double NOT NULL,
   `reconduction` smallint(5) NOT NULL,
   `preavis` bigint(20) NOT NULL,
-  PRIMARY KEY (`ref_article`)
+  PRIMARY KEY  (`ref_article`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -1089,8 +1084,8 @@ CREATE TABLE IF NOT EXISTS `articles_modele_service_abo` (
 CREATE TABLE IF NOT EXISTS `articles_modele_service_conso` (
   `ref_article` varchar(32) NOT NULL,
   `duree_validite` bigint(20) NOT NULL,
-  `nb_credits` double NOT NULL DEFAULT '1',
-  PRIMARY KEY (`ref_article`)
+  `nb_credits` double NOT NULL default '1',
+  PRIMARY KEY  (`ref_article`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -1105,10 +1100,10 @@ CREATE TABLE IF NOT EXISTS `articles_modele_service_conso` (
 --
 
 CREATE TABLE IF NOT EXISTS `articles_mots_cles` (
-  `id_mot_cle` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `id_mot_cle` mediumint(8) unsigned NOT NULL auto_increment,
   `ref_article` varchar(32) NOT NULL,
   `mot_cle` varchar(64) NOT NULL,
-  PRIMARY KEY (`id_mot_cle`)
+  PRIMARY KEY  (`id_mot_cle`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
@@ -1125,7 +1120,7 @@ CREATE TABLE IF NOT EXISTS `articles_mots_cles` (
 CREATE TABLE IF NOT EXISTS `articles_paa_archive` (
   `ref_article` varchar(32) NOT NULL,
   `date_maj` datetime NOT NULL,
-  `prix_achat_actuel_ht` double DEFAULT NULL,
+  `prix_achat_actuel_ht` double default NULL,
   KEY `ref_article` (`ref_article`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1144,7 +1139,7 @@ CREATE TABLE IF NOT EXISTS `articles_paf_archive` (
   `ref_article` varchar(32) NOT NULL,
   `ref_fournisseur` varchar(32) NOT NULL,
   `date_tarif` date NOT NULL,
-  `pa_ht` decimal(10,4) DEFAULT NULL,
+  `pa_ht` decimal(10,4) default NULL,
   KEY `ref_article` (`ref_article`),
   KEY `ref_fournisseur` (`ref_fournisseur`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -1163,7 +1158,7 @@ CREATE TABLE IF NOT EXISTS `articles_paf_archive` (
 CREATE TABLE IF NOT EXISTS `articles_pa_archive` (
   `ref_article` varchar(32) NOT NULL,
   `date_maj` datetime NOT NULL,
-  `prix_achat_ht` double DEFAULT NULL,
+  `prix_achat_ht` double default NULL,
   KEY `ref_article` (`ref_article`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1223,7 +1218,7 @@ CREATE TABLE IF NOT EXISTS `articles_stocks_alertes` (
   `ref_article` varchar(32) NOT NULL,
   `id_stock` smallint(5) unsigned NOT NULL,
   `seuil_alerte` double unsigned NOT NULL,
-  `emplacement` varchar(64) DEFAULT NULL,
+  `emplacement` varchar(64) default NULL,
   UNIQUE KEY `ref_article` (`ref_article`,`id_stock`),
   KEY `id_stock` (`id_stock`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Seuil d''alerte de stock minimum';
@@ -1282,7 +1277,7 @@ CREATE TABLE IF NOT EXISTS `articles_taxes` (
   `ref_article` varchar(32) NOT NULL,
   `id_taxe` smallint(5) unsigned NOT NULL,
   `montant_taxe` double unsigned NOT NULL,
-  PRIMARY KEY (`ref_article`,`id_taxe`),
+  PRIMARY KEY  (`ref_article`,`id_taxe`),
   KEY `id_taxe` (`id_taxe`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Taxes associées aux articles';
 
@@ -1298,12 +1293,12 @@ CREATE TABLE IF NOT EXISTS `articles_taxes` (
 --
 
 CREATE TABLE IF NOT EXISTS `articles_valorisations` (
-  `id_valo` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_valo` smallint(5) unsigned NOT NULL auto_increment,
   `groupe` enum('Quantité','Poids','Temps','Longueur','Surface','Volume') NOT NULL,
   `lib_valo` varchar(64) NOT NULL,
   `abrev_valo` varchar(6) NOT NULL,
   `popup` tinyint(4) NOT NULL,
-  PRIMARY KEY (`id_valo`)
+  PRIMARY KEY  (`id_valo`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
@@ -1350,16 +1345,16 @@ CREATE TABLE IF NOT EXISTS `articles_variantes` (
 CREATE TABLE IF NOT EXISTS `art_categs` (
   `ref_art_categ` varchar(32) NOT NULL,
   `lib_art_categ` varchar(64) NOT NULL,
-  `modele` enum('materiel','service','service_abo','service_conso') DEFAULT 'materiel',
-  `id_modele_spe` smallint(5) unsigned DEFAULT NULL,
+  `modele` enum('materiel','service','service_abo','service_conso') default 'materiel',
+  `id_modele_spe` smallint(5) unsigned default NULL,
   `desc_art_categ` mediumtext NOT NULL,
-  `defaut_id_tva` smallint(5) unsigned DEFAULT NULL,
-  `duree_dispo` bigint(20) NOT NULL DEFAULT '157680000',
+  `defaut_id_tva` smallint(5) unsigned default NULL,
+  `duree_dispo` bigint(20) NOT NULL default '157680000',
   `defaut_numero_compte_vente` varchar(10) NOT NULL,
   `defaut_numero_compte_achat` varchar(10) NOT NULL,
-  `ref_art_categ_parent` varchar(32) DEFAULT NULL,
-  `restriction` enum('aucune','achat','vente') NOT NULL DEFAULT 'aucune',
-  PRIMARY KEY (`ref_art_categ`),
+  `ref_art_categ_parent` varchar(32) default NULL,
+  `restriction` enum('aucune','achat','vente') NOT NULL default 'aucune',
+  PRIMARY KEY  (`ref_art_categ`),
   KEY `lib_art_categ` (`lib_art_categ`),
   KEY `ref_art_categ_parent` (`ref_art_categ_parent`),
   KEY `id_article_modele` (`modele`),
@@ -1391,9 +1386,9 @@ CREATE TABLE IF NOT EXISTS `art_categs_caracs` (
   `moteur_recherche` tinyint(3) unsigned NOT NULL,
   `variante` tinyint(3) unsigned NOT NULL,
   `affichage` tinyint(1) NOT NULL,
-  `ref_carac_groupe` varchar(32) DEFAULT NULL,
+  `ref_carac_groupe` varchar(32) default NULL,
   `ordre` smallint(5) unsigned NOT NULL,
-  PRIMARY KEY (`ref_carac`),
+  PRIMARY KEY  (`ref_carac`),
   KEY `ref_art_categ` (`ref_art_categ`),
   KEY `moteur_recherche` (`moteur_recherche`),
   KEY `affichage` (`affichage`),
@@ -1417,7 +1412,7 @@ CREATE TABLE IF NOT EXISTS `art_categs_caracs_groupes` (
   `ref_art_categ` varchar(32) NOT NULL,
   `lib_carac_groupe` varchar(128) NOT NULL,
   `ordre` tinyint(3) unsigned NOT NULL,
-  PRIMARY KEY (`ref_carac_groupe`),
+  PRIMARY KEY  (`ref_carac_groupe`),
   KEY `ref_art_categ` (`ref_art_categ`),
   KEY `ordre` (`ordre`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Groupes de caractéristiques des catégories d''articles';
@@ -1472,9 +1467,9 @@ CREATE TABLE IF NOT EXISTS `art_categs_modeles_pdf` (
 --
 
 CREATE TABLE IF NOT EXISTS `art_categs_specificites` (
-  `id_modele_spe` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_modele_spe` smallint(5) unsigned NOT NULL auto_increment,
   `lib_modele_spe` varchar(255) NOT NULL,
-  PRIMARY KEY (`id_modele_spe`)
+  PRIMARY KEY  (`id_modele_spe`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
@@ -1498,7 +1493,7 @@ INSERT INTO `art_categs_specificites` (`id_modele_spe`, `lib_modele_spe`) VALUES
 CREATE TABLE IF NOT EXISTS `art_categs_taxes` (
   `ref_art_categ` varchar(32) NOT NULL,
   `id_taxe` smallint(5) unsigned NOT NULL,
-  PRIMARY KEY (`ref_art_categ`,`id_taxe`),
+  PRIMARY KEY  (`ref_art_categ`,`id_taxe`),
   KEY `id_taxe` (`id_taxe`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des taxes applicables aux articles de cette catégorie';
 
@@ -1514,14 +1509,14 @@ CREATE TABLE IF NOT EXISTS `art_categs_taxes` (
 --
 
 CREATE TABLE IF NOT EXISTS `art_liaisons_types` (
-  `id_liaison_type` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_liaison_type` smallint(5) unsigned NOT NULL auto_increment,
   `lib_liaison_type` varchar(64) NOT NULL,
   `lib_liaison_type_vers` varchar(64) NOT NULL,
   `lib_liaison_type_depuis` varchar(64) NOT NULL,
   `ordre` tinyint(3) unsigned NOT NULL,
   `actif` tinyint(3) unsigned NOT NULL,
-  `systeme` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id_liaison_type`),
+  `systeme` tinyint(3) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`id_liaison_type`),
   KEY `ordre` (`ordre`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Types de liaisons possibles entre articles' AUTO_INCREMENT=8 ;
 
@@ -1545,9 +1540,9 @@ INSERT INTO `art_liaisons_types` (`id_liaison_type`, `lib_liaison_type`, `lib_li
 --
 
 CREATE TABLE IF NOT EXISTS `cartes_bancaires_types` (
-  `id_cb_type` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_cb_type` smallint(5) unsigned NOT NULL auto_increment,
   `lib_cb_type` varchar(32) NOT NULL,
-  PRIMARY KEY (`id_cb_type`)
+  PRIMARY KEY  (`id_cb_type`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Différents types de cartes bancaires' AUTO_INCREMENT=4 ;
 
 --
@@ -1566,9 +1561,9 @@ INSERT INTO `cartes_bancaires_types` (`id_cb_type`, `lib_cb_type`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `catalogues_clients` (
-  `id_catalogue_client` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_catalogue_client` smallint(5) unsigned NOT NULL auto_increment,
   `lib_catalogue_client` varchar(64) NOT NULL,
-  PRIMARY KEY (`id_catalogue_client`)
+  PRIMARY KEY  (`id_catalogue_client`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des catalogues clients' AUTO_INCREMENT=1 ;
 
 --
@@ -1583,12 +1578,12 @@ CREATE TABLE IF NOT EXISTS `catalogues_clients` (
 --
 
 CREATE TABLE IF NOT EXISTS `catalogues_clients_dirs` (
-  `id_catalogue_client_dir` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `id_catalogue_client_dir` mediumint(8) unsigned NOT NULL auto_increment,
   `id_catalogue_client` smallint(5) unsigned NOT NULL,
   `lib_catalogue_client_dir` varchar(64) NOT NULL,
   `ref_art_categ` varchar(32) NOT NULL,
-  `id_catalogue_dir_parent` mediumint(8) unsigned DEFAULT NULL,
-  PRIMARY KEY (`id_catalogue_client_dir`),
+  `id_catalogue_dir_parent` mediumint(8) unsigned default NULL,
+  PRIMARY KEY  (`id_catalogue_client_dir`),
   KEY `id_catalogue_client` (`id_catalogue_client`),
   KEY `id_catalogue_dir_parent` (`id_catalogue_dir_parent`),
   KEY `ref_art_categ` (`ref_art_categ`)
@@ -1606,11 +1601,11 @@ CREATE TABLE IF NOT EXISTS `catalogues_clients_dirs` (
 --
 
 CREATE TABLE IF NOT EXISTS `civilites` (
-  `id_civilite` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_civilite` smallint(5) unsigned NOT NULL auto_increment,
   `lib_civ_court` varchar(16) NOT NULL,
   `lib_civ_long` varchar(64) NOT NULL,
-  `categorie` enum('Particulier','Société','Administration','Education','Association','Autre') NOT NULL DEFAULT 'Particulier',
-  PRIMARY KEY (`id_civilite`),
+  `categorie` enum('Particulier','Société','Administration','Education','Association','Autre') NOT NULL default 'Particulier',
+  PRIMARY KEY  (`id_civilite`),
   KEY `lib_civ_court` (`lib_civ_court`),
   KEY `lib_civ_long` (`lib_civ_long`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des civilites possibles pour les contacts' AUTO_INCREMENT=21 ;
@@ -1691,21 +1686,21 @@ INSERT INTO `civilites_categories` (`id_categorie`, `id_civilite`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `clients_categories` (
-  `id_client_categ` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_client_categ` smallint(5) unsigned NOT NULL auto_increment,
   `lib_client_categ` varchar(64) NOT NULL,
-  `id_tarif` smallint(5) unsigned DEFAULT NULL,
-  `ref_commercial` varchar(32) DEFAULT NULL,
+  `id_tarif` smallint(5) unsigned default NULL,
+  `ref_commercial` varchar(32) default NULL,
   `facturation_periodique` tinyint(3) unsigned NOT NULL,
-  `defaut_encours` double NOT NULL DEFAULT '0',
+  `defaut_encours` double NOT NULL default '0',
   `delai_reglement` varchar(8) NOT NULL,
   `defaut_numero_compte` varchar(10) NOT NULL,
   `note` mediumtext NOT NULL,
-  `prepaiement_ratio` smallint(5) NOT NULL DEFAULT '0',
-  `prepaiement_type` enum('Acompte','Arrhes') NOT NULL DEFAULT 'Acompte',
-  `id_relance_modele` smallint(5) NOT NULL DEFAULT '1',
-  `id_reglement_mode_favori` smallint(6) DEFAULT NULL,
-  `id_edition_mode_favori` smallint(6) NOT NULL DEFAULT '2',
-  PRIMARY KEY (`id_client_categ`),
+  `prepaiement_ratio` smallint(5) NOT NULL default '0',
+  `prepaiement_type` enum('Acompte','Arrhes') NOT NULL default 'Acompte',
+  `id_relance_modele` smallint(5) NOT NULL default '1',
+  `id_reglement_mode_favori` smallint(6) default NULL,
+  `id_edition_mode_favori` smallint(6) NOT NULL default '2',
+  PRIMARY KEY  (`id_client_categ`),
   KEY `ref_commercial` (`ref_commercial`),
   KEY `id_tarif` (`id_tarif`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des catégories de clients' AUTO_INCREMENT=2 ;
@@ -1724,12 +1719,12 @@ INSERT INTO `clients_categories` (`id_client_categ`, `lib_client_categ`, `id_tar
 --
 
 CREATE TABLE IF NOT EXISTS `codes_promo` (
-  `id_code_promo` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_code_promo` smallint(5) unsigned NOT NULL auto_increment,
   `ref_article` varchar(32) NOT NULL,
   `code` varchar(32) NOT NULL,
   `pourcentage` double NOT NULL,
-  `actif` tinyint(1) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`id_code_promo`),
+  `actif` tinyint(1) NOT NULL default '1',
+  PRIMARY KEY  (`id_code_promo`),
   KEY `ref_article` (`ref_article`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -1745,10 +1740,10 @@ CREATE TABLE IF NOT EXISTS `codes_promo` (
 --
 
 CREATE TABLE IF NOT EXISTS `commerciaux_categories` (
-  `id_commercial_categ` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_commercial_categ` smallint(5) unsigned NOT NULL auto_increment,
   `lib_commercial_categ` varchar(255) NOT NULL,
-  `id_commission_regle` smallint(5) unsigned DEFAULT NULL,
-  PRIMARY KEY (`id_commercial_categ`),
+  `id_commission_regle` smallint(5) unsigned default NULL,
+  PRIMARY KEY  (`id_commercial_categ`),
   KEY `id_commission_regle` (`id_commission_regle`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
@@ -1804,13 +1799,13 @@ CREATE TABLE IF NOT EXISTS `commissions_art_categ` (
 --
 
 CREATE TABLE IF NOT EXISTS `commissions_bonus` (
-  `id_commission_bonus` int(11) NOT NULL AUTO_INCREMENT,
+  `id_commission_bonus` int(11) NOT NULL auto_increment,
   `ref_commercial` varchar(32) NOT NULL,
   `date_bonus` date NOT NULL,
   `lib_bonus` varchar(255) NOT NULL,
   `desc_bonus` varchar(255) NOT NULL,
   `montant` double NOT NULL,
-  PRIMARY KEY (`id_commission_bonus`),
+  PRIMARY KEY  (`id_commission_bonus`),
   KEY `ref_commercial_fk` (`ref_commercial`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -1826,11 +1821,11 @@ CREATE TABLE IF NOT EXISTS `commissions_bonus` (
 --
 
 CREATE TABLE IF NOT EXISTS `commissions_regles` (
-  `id_commission_regle` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_commission_regle` smallint(5) unsigned NOT NULL auto_increment,
   `lib_comm` varchar(255) NOT NULL,
   `formule_comm` varchar(32) NOT NULL,
-  `defaut` tinyint(3) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id_commission_regle`)
+  `defaut` tinyint(3) NOT NULL default '0',
+  PRIMARY KEY  (`id_commission_regle`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
@@ -1847,7 +1842,7 @@ INSERT INTO `commissions_regles` (`id_commission_regle`, `lib_comm`, `formule_co
 --
 
 CREATE TABLE IF NOT EXISTS `comm_events` (
-  `id_comm_event` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_comm_event` smallint(5) unsigned NOT NULL auto_increment,
   `date_event` datetime NOT NULL,
   `duree_event` time NOT NULL,
   `ref_user` varchar(32) NOT NULL,
@@ -1855,7 +1850,7 @@ CREATE TABLE IF NOT EXISTS `comm_events` (
   `id_comm_event_type` smallint(5) unsigned NOT NULL,
   `texte` mediumtext NOT NULL,
   `date_rappel` datetime NOT NULL,
-  PRIMARY KEY (`id_comm_event`),
+  PRIMARY KEY  (`id_comm_event`),
   KEY `ref_user` (`ref_user`),
   KEY `ref_contact` (`ref_contact`),
   KEY `id_comm_event_type` (`id_comm_event_type`)
@@ -1873,10 +1868,10 @@ CREATE TABLE IF NOT EXISTS `comm_events` (
 --
 
 CREATE TABLE IF NOT EXISTS `comm_events_types` (
-  `id_comm_event_type` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_comm_event_type` smallint(5) unsigned NOT NULL auto_increment,
   `lib_comm_event_type` varchar(64) NOT NULL,
-  `systeme` tinyint(3) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id_comm_event_type`)
+  `systeme` tinyint(3) NOT NULL default '0',
+  PRIMARY KEY  (`id_comm_event_type`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
@@ -1922,10 +1917,10 @@ CREATE TABLE IF NOT EXISTS `compta_docs` (
 --
 
 CREATE TABLE IF NOT EXISTS `compta_exercices` (
-  `id_exercice` smallint(5) NOT NULL AUTO_INCREMENT,
+  `id_exercice` smallint(5) NOT NULL auto_increment,
   `lib_exercice` varchar(32) NOT NULL,
   `date_fin` datetime NOT NULL,
-  `etat_exercice` tinyint(3) NOT NULL DEFAULT '1',
+  `etat_exercice` tinyint(3) NOT NULL default '1',
   KEY `id_exercice` (`id_exercice`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -1941,7 +1936,7 @@ CREATE TABLE IF NOT EXISTS `compta_exercices` (
 --
 
 CREATE TABLE IF NOT EXISTS `compta_exercices_reports` (
-  `id_exercice_ran` smallint(5) NOT NULL AUTO_INCREMENT,
+  `id_exercice_ran` smallint(5) NOT NULL auto_increment,
   `ref_contact` varchar(32) NOT NULL,
   `date_ran` datetime NOT NULL,
   `montant_ran` double NOT NULL,
@@ -1960,14 +1955,14 @@ CREATE TABLE IF NOT EXISTS `compta_exercices_reports` (
 --
 
 CREATE TABLE IF NOT EXISTS `compta_export_champs` (
-  `idcompta_export_champs` int(11) NOT NULL AUTO_INCREMENT,
-  `lib_champ` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `desc_champ` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `type_champ` smallint(3) NOT NULL DEFAULT '0',
-  `type_script` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `script` varchar(555) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `index` varchar(455) COLLATE utf8_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`idcompta_export_champs`)
+  `idcompta_export_champs` int(11) NOT NULL auto_increment,
+  `lib_champ` varchar(45) collate utf8_unicode_ci default NULL,
+  `desc_champ` varchar(45) collate utf8_unicode_ci default NULL,
+  `type_champ` smallint(3) NOT NULL default '0',
+  `type_script` varchar(45) collate utf8_unicode_ci default NULL,
+  `script` varchar(555) collate utf8_unicode_ci default NULL,
+  `index` varchar(455) collate utf8_unicode_ci default NULL,
+  PRIMARY KEY  (`idcompta_export_champs`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=21 ;
 
 --
@@ -2002,14 +1997,14 @@ INSERT INTO `compta_export_champs` (`idcompta_export_champs`, `lib_champ`, `desc
 --
 
 CREATE TABLE IF NOT EXISTS `compta_export_logiciels` (
-  `idcompta_export_logiciels` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `lib_logiciel` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `desc_logiciel` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `version_logiciel` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `url_logiciel` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `is_defaut` tinyint(1) NOT NULL DEFAULT '0',
-  `favoris` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`idcompta_export_logiciels`)
+  `idcompta_export_logiciels` int(10) unsigned NOT NULL auto_increment,
+  `lib_logiciel` varchar(45) collate utf8_unicode_ci default NULL,
+  `desc_logiciel` varchar(45) collate utf8_unicode_ci default NULL,
+  `version_logiciel` varchar(45) collate utf8_unicode_ci default NULL,
+  `url_logiciel` varchar(45) collate utf8_unicode_ci default NULL,
+  `is_defaut` tinyint(1) NOT NULL default '0',
+  `favoris` tinyint(1) NOT NULL default '0',
+  PRIMARY KEY  (`idcompta_export_logiciels`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 
 --
@@ -2027,15 +2022,15 @@ INSERT INTO `compta_export_logiciels` (`idcompta_export_logiciels`, `lib_logicie
 --
 
 CREATE TABLE IF NOT EXISTS `compta_export_modele` (
-  `idcompta_export_modele` int(11) NOT NULL AUTO_INCREMENT,
-  `lib_modele` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `idcompta_export_modele` int(11) NOT NULL auto_increment,
+  `lib_modele` varchar(45) collate utf8_unicode_ci default NULL,
   `idcompta_export_logiciels` int(10) unsigned NOT NULL,
-  `id_journal_type` smallint(3) NOT NULL DEFAULT '0',
-  `separateur` varchar(2) COLLATE utf8_unicode_ci NOT NULL DEFAULT ',',
-  `finaliseur` varchar(5) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `extention` varchar(3) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'txt',
-  `compatible` varchar(10) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
-  PRIMARY KEY (`idcompta_export_modele`,`idcompta_export_logiciels`),
+  `id_journal_type` smallint(3) NOT NULL default '0',
+  `separateur` varchar(2) collate utf8_unicode_ci NOT NULL default ',',
+  `finaliseur` varchar(5) collate utf8_unicode_ci default NULL,
+  `extention` varchar(3) collate utf8_unicode_ci NOT NULL default 'txt',
+  `compatible` varchar(10) collate utf8_unicode_ci NOT NULL default '0',
+  PRIMARY KEY  (`idcompta_export_modele`,`idcompta_export_logiciels`),
   KEY `fk_compta_export_modele_compta_export_logiciels1` (`idcompta_export_logiciels`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
@@ -2057,8 +2052,8 @@ INSERT INTO `compta_export_modele` (`idcompta_export_modele`, `lib_modele`, `idc
 CREATE TABLE IF NOT EXISTS `compta_export_modeles_champs` (
   `idcompta_export_champs` int(11) NOT NULL,
   `idcompta_export_modele` int(11) NOT NULL,
-  `ordre` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`idcompta_export_modele`,`ordre`),
+  `ordre` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`idcompta_export_modele`,`ordre`),
   KEY `fk_compta_export_champs_has_compta_export_modele_compta_expor1` (`idcompta_export_champs`),
   KEY `fk_compta_export_champs_has_compta_export_modele_compta_expor2` (`idcompta_export_modele`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -2110,10 +2105,10 @@ CREATE TABLE IF NOT EXISTS `compta_journaux` (
   `id_journal` smallint(5) unsigned NOT NULL,
   `lib_journal` varchar(64) NOT NULL,
   `desc_journal` varchar(128) NOT NULL,
-  `id_journal_parent` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `id_journal_parent` smallint(5) unsigned NOT NULL default '0',
   `id_journal_type` smallint(3) unsigned NOT NULL,
   `contrepartie` varchar(10) NOT NULL,
-  PRIMARY KEY (`id_journal`),
+  PRIMARY KEY  (`id_journal`),
   KEY `id_journal_parent` (`id_journal_parent`),
   KEY `id_journal_type` (`id_journal_type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -2143,14 +2138,14 @@ INSERT INTO `compta_journaux` (`id_journal`, `lib_journal`, `desc_journal`, `id_
 --
 
 CREATE TABLE IF NOT EXISTS `compta_journaux_opes` (
-  `id_operation` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id_operation` bigint(20) unsigned NOT NULL auto_increment,
   `id_journal` smallint(5) unsigned NOT NULL,
   `numero_compte` varchar(10) NOT NULL,
   `montant` double NOT NULL,
   `ref_operation` varchar(32) NOT NULL,
   `date_operation` datetime NOT NULL,
   `id_operation_type` smallint(3) unsigned NOT NULL,
-  PRIMARY KEY (`id_operation`),
+  PRIMARY KEY  (`id_operation`),
   KEY `id_journal` (`id_journal`),
   KEY `id_operation_type` (`id_operation_type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -2171,7 +2166,7 @@ CREATE TABLE IF NOT EXISTS `compta_journaux_opes_types` (
   `lib_operation_type` varchar(128) NOT NULL,
   `abrev_ope_type` varchar(32) NOT NULL,
   `table_liee` varchar(128) NOT NULL,
-  PRIMARY KEY (`id_operation_type`)
+  PRIMARY KEY  (`id_operation_type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -2200,7 +2195,7 @@ CREATE TABLE IF NOT EXISTS `compta_journaux_types` (
   `id_journal_type` smallint(3) unsigned NOT NULL,
   `lib_journal` varchar(128) NOT NULL,
   `code_journal` varchar(32) NOT NULL,
-  PRIMARY KEY (`id_journal_type`)
+  PRIMARY KEY  (`id_journal_type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -2221,10 +2216,10 @@ INSERT INTO `compta_journaux_types` (`id_journal_type`, `lib_journal`, `code_jou
 --
 
 CREATE TABLE IF NOT EXISTS `comptes_bancaires` (
-  `id_compte_bancaire` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_compte_bancaire` smallint(5) unsigned NOT NULL auto_increment,
   `ref_contact` varchar(32) NOT NULL,
   `lib_compte` varchar(128) NOT NULL,
-  `ref_banque` varchar(32) DEFAULT NULL,
+  `ref_banque` varchar(32) default NULL,
   `code_banque` char(5) NOT NULL,
   `code_guichet` char(5) NOT NULL,
   `numero_compte` varchar(32) NOT NULL,
@@ -2234,7 +2229,7 @@ CREATE TABLE IF NOT EXISTS `comptes_bancaires` (
   `actif` tinyint(4) NOT NULL,
   `ordre` tinyint(3) unsigned NOT NULL,
   `defaut_numero_compte` varchar(10) NOT NULL,
-  PRIMARY KEY (`id_compte_bancaire`),
+  PRIMARY KEY  (`id_compte_bancaire`),
   KEY `ref_banque` (`ref_banque`),
   KEY `ordre` (`ordre`),
   KEY `actif` (`actif`),
@@ -2254,13 +2249,13 @@ CREATE TABLE IF NOT EXISTS `comptes_bancaires` (
 --
 
 CREATE TABLE IF NOT EXISTS `comptes_bancaires_autorisations` (
-  `id_compte_bancaire_autorisation` int(11) NOT NULL AUTO_INCREMENT,
+  `id_compte_bancaire_autorisation` int(11) NOT NULL auto_increment,
   `id_compte_bancaire_src` int(11) NOT NULL,
   `id_compte_bancaire_dest` int(11) NOT NULL,
   `id_reglement_mode` int(11) NOT NULL,
-  `id_piece_jointe_autorisation` int(11) DEFAULT NULL,
-  `ordre` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id_compte_bancaire_autorisation`)
+  `id_piece_jointe_autorisation` int(11) default NULL,
+  `ordre` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`id_compte_bancaire_autorisation`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
@@ -2275,7 +2270,7 @@ CREATE TABLE IF NOT EXISTS `comptes_bancaires_autorisations` (
 --
 
 CREATE TABLE IF NOT EXISTS `comptes_bancaires_moves` (
-  `id_compte_bancaire_move` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id_compte_bancaire_move` bigint(20) unsigned NOT NULL auto_increment,
   `id_compte_bancaire` smallint(5) unsigned NOT NULL,
   `date_move` datetime NOT NULL,
   `lib_move` varchar(64) NOT NULL,
@@ -2284,8 +2279,8 @@ CREATE TABLE IF NOT EXISTS `comptes_bancaires_moves` (
   `fitid` varchar(32) NOT NULL,
   `trntype` varchar(64) NOT NULL,
   `trninfo` blob NOT NULL,
-  `id_operation` bigint(20) unsigned DEFAULT NULL,
-  PRIMARY KEY (`id_compte_bancaire_move`),
+  `id_operation` bigint(20) unsigned default NULL,
+  PRIMARY KEY  (`id_compte_bancaire_move`),
   KEY `id_compte_bancaire` (`id_compte_bancaire`),
   KEY `id_operation` (`id_operation`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -2304,7 +2299,7 @@ CREATE TABLE IF NOT EXISTS `comptes_bancaires_moves` (
 CREATE TABLE IF NOT EXISTS `comptes_bancaires_ope_rapp` (
   `id_operation` bigint(20) unsigned NOT NULL,
   `montant_rapproche` double NOT NULL,
-  `complet` tinyint(1) NOT NULL DEFAULT '0',
+  `complet` tinyint(1) NOT NULL default '0',
   KEY `id_operation` (`id_operation`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -2320,14 +2315,14 @@ CREATE TABLE IF NOT EXISTS `comptes_bancaires_ope_rapp` (
 --
 
 CREATE TABLE IF NOT EXISTS `comptes_bancaires_prelevements` (
-  `id_compte_bancaire_prelevement` int(11) NOT NULL AUTO_INCREMENT,
+  `id_compte_bancaire_prelevement` int(11) NOT NULL auto_increment,
   `id_compte_bancaire_destination` int(11) NOT NULL,
   `date_ordre` date NOT NULL,
-  `ref_user` int(11) DEFAULT NULL,
+  `ref_user` int(11) default NULL,
   `montant_prelevement_total` double NOT NULL,
-  `numero_ordre` varchar(32) DEFAULT NULL,
-  `commentaire` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id_compte_bancaire_prelevement`)
+  `numero_ordre` varchar(32) default NULL,
+  `commentaire` varchar(255) default NULL,
+  PRIMARY KEY  (`id_compte_bancaire_prelevement`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
@@ -2347,7 +2342,7 @@ CREATE TABLE IF NOT EXISTS `comptes_bancaires_prelevements_montants` (
   `ref_reglement` varchar(32) NOT NULL,
   `id_mode_reglement` int(11) NOT NULL,
   `montant_prelevement` double NOT NULL,
-  `infos_prelevement` varchar(255) DEFAULT NULL,
+  `infos_prelevement` varchar(255) default NULL,
   KEY `id_compte_bancaire_prelevement` (`id_compte_bancaire_prelevement`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -2363,12 +2358,12 @@ CREATE TABLE IF NOT EXISTS `comptes_bancaires_prelevements_montants` (
 --
 
 CREATE TABLE IF NOT EXISTS `comptes_bancaires_releves` (
-  `id_compte_bancaire_releve` smallint(5) NOT NULL AUTO_INCREMENT,
+  `id_compte_bancaire_releve` smallint(5) NOT NULL auto_increment,
   `id_compte_bancaire` smallint(5) unsigned NOT NULL,
   `date_releve` datetime NOT NULL,
   `solde_calcule` double NOT NULL,
   `solde_reel` double NOT NULL,
-  PRIMARY KEY (`id_compte_bancaire_releve`),
+  PRIMARY KEY  (`id_compte_bancaire_releve`),
   KEY `id_compte_bancaire` (`id_compte_bancaire`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -2384,14 +2379,14 @@ CREATE TABLE IF NOT EXISTS `comptes_bancaires_releves` (
 --
 
 CREATE TABLE IF NOT EXISTS `comptes_caisses` (
-  `id_compte_caisse` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_compte_caisse` smallint(5) unsigned NOT NULL auto_increment,
   `lib_caisse` varchar(64) NOT NULL,
   `id_magasin` smallint(5) unsigned NOT NULL,
-  `id_compte_tpe` smallint(5) unsigned DEFAULT NULL,
+  `id_compte_tpe` smallint(5) unsigned default NULL,
   `actif` tinyint(4) NOT NULL,
   `ordre` tinyint(3) unsigned NOT NULL,
   `defaut_numero_compte` varchar(10) NOT NULL,
-  PRIMARY KEY (`id_compte_caisse`),
+  PRIMARY KEY  (`id_compte_caisse`),
   KEY `id_magasin` (`id_magasin`),
   KEY `ordre` (`ordre`),
   KEY `id_compte_tpe` (`id_compte_tpe`)
@@ -2409,7 +2404,7 @@ CREATE TABLE IF NOT EXISTS `comptes_caisses` (
 --
 
 CREATE TABLE IF NOT EXISTS `comptes_caisses_ar_fonds` (
-  `id_compte_caisse_ar` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_compte_caisse_ar` smallint(5) unsigned NOT NULL auto_increment,
   `id_compte_caisse` smallint(5) unsigned NOT NULL,
   `date_ar` datetime NOT NULL,
   `ref_user` varchar(32) NOT NULL,
@@ -2430,11 +2425,11 @@ CREATE TABLE IF NOT EXISTS `comptes_caisses_ar_fonds` (
 --
 
 CREATE TABLE IF NOT EXISTS `comptes_caisses_contenu` (
-  `id_compte_caisse` smallint(5) unsigned DEFAULT NULL,
-  `id_reglement_mode` smallint(5) unsigned DEFAULT NULL,
+  `id_compte_caisse` smallint(5) unsigned default NULL,
+  `id_reglement_mode` smallint(5) unsigned default NULL,
   `montant_contenu` double NOT NULL,
   `infos_supp` mediumtext NOT NULL,
-  `controle` tinyint(1) NOT NULL DEFAULT '0',
+  `controle` tinyint(1) NOT NULL default '0',
   KEY `id_compte_caisse` (`id_compte_caisse`),
   KEY `id_reglement_mode` (`id_reglement_mode`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -2451,14 +2446,14 @@ CREATE TABLE IF NOT EXISTS `comptes_caisses_contenu` (
 --
 
 CREATE TABLE IF NOT EXISTS `comptes_caisses_controles` (
-  `id_compte_caisse_controle` mediumint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_compte_caisse_controle` mediumint(5) unsigned NOT NULL auto_increment,
   `id_compte_caisse` smallint(5) unsigned NOT NULL,
   `ref_user` varchar(32) NOT NULL,
   `date_controle` datetime NOT NULL,
   `montant_theorique` double NOT NULL,
   `montant_controle` double NOT NULL,
   `commentaire` mediumtext NOT NULL,
-  PRIMARY KEY (`id_compte_caisse_controle`),
+  PRIMARY KEY  (`id_compte_caisse_controle`),
   KEY `date_controle` (`date_controle`),
   KEY `id_compte_caisse` (`id_compte_caisse`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -2476,7 +2471,7 @@ CREATE TABLE IF NOT EXISTS `comptes_caisses_controles` (
 
 CREATE TABLE IF NOT EXISTS `comptes_caisses_controles_montants` (
   `id_compte_caisse_controle` mediumint(5) unsigned NOT NULL,
-  `id_reglement_mode` smallint(5) unsigned DEFAULT NULL,
+  `id_reglement_mode` smallint(5) unsigned default NULL,
   `controle` tinyint(1) NOT NULL,
   `montant_theorique` double NOT NULL,
   `montant_controle` double NOT NULL,
@@ -2498,7 +2493,7 @@ CREATE TABLE IF NOT EXISTS `comptes_caisses_controles_montants` (
 --
 
 CREATE TABLE IF NOT EXISTS `comptes_caisses_depots` (
-  `id_compte_caisse_depot` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_compte_caisse_depot` smallint(5) unsigned NOT NULL auto_increment,
   `id_compte_caisse_source` smallint(5) unsigned NOT NULL,
   `id_compte_bancaire_destination` smallint(5) unsigned NOT NULL,
   `date_depot` datetime NOT NULL,
@@ -2522,7 +2517,7 @@ CREATE TABLE IF NOT EXISTS `comptes_caisses_depots` (
 
 CREATE TABLE IF NOT EXISTS `comptes_caisses_depots_montants` (
   `id_compte_caisse_depot` smallint(5) unsigned NOT NULL,
-  `id_reglement_mode` smallint(5) unsigned DEFAULT NULL,
+  `id_reglement_mode` smallint(5) unsigned default NULL,
   `montant_depot` double NOT NULL,
   `infos_depot` mediumtext NOT NULL,
   KEY `id_compte_caisse_depot` (`id_compte_caisse_depot`)
@@ -2540,15 +2535,15 @@ CREATE TABLE IF NOT EXISTS `comptes_caisses_depots_montants` (
 --
 
 CREATE TABLE IF NOT EXISTS `comptes_caisses_moves` (
-  `id_compte_caisse_move` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `id_compte_caisse` smallint(5) unsigned DEFAULT NULL,
-  `id_move_type` smallint(5) unsigned DEFAULT NULL,
-  `id_reglement_mode` smallint(5) unsigned DEFAULT NULL,
+  `id_compte_caisse_move` smallint(5) unsigned NOT NULL auto_increment,
+  `id_compte_caisse` smallint(5) unsigned default NULL,
+  `id_move_type` smallint(5) unsigned default NULL,
+  `id_reglement_mode` smallint(5) unsigned default NULL,
   `date_move` datetime NOT NULL,
   `ref_user` varchar(32) NOT NULL,
   `montant_move` double NOT NULL,
   `Info_supp` mediumtext NOT NULL,
-  PRIMARY KEY (`id_compte_caisse_move`),
+  PRIMARY KEY  (`id_compte_caisse_move`),
   KEY `id_move_type` (`id_move_type`),
   KEY `id_reglement_mode` (`id_reglement_mode`),
   KEY `date_move` (`date_move`),
@@ -2568,7 +2563,7 @@ CREATE TABLE IF NOT EXISTS `comptes_caisses_moves` (
 --
 
 CREATE TABLE IF NOT EXISTS `comptes_caisses_retraits` (
-  `id_compte_caisse_retrait` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_compte_caisse_retrait` smallint(5) unsigned NOT NULL auto_increment,
   `id_compte_caisse_destination` smallint(5) unsigned NOT NULL,
   `id_compte_bancaire_source` smallint(5) unsigned NOT NULL,
   `date_retrait` datetime NOT NULL,
@@ -2591,7 +2586,7 @@ CREATE TABLE IF NOT EXISTS `comptes_caisses_retraits` (
 
 CREATE TABLE IF NOT EXISTS `comptes_caisses_retraits_montants` (
   `id_compte_caisse_retrait` smallint(5) unsigned NOT NULL,
-  `id_reglement_mode` smallint(5) unsigned DEFAULT NULL,
+  `id_reglement_mode` smallint(5) unsigned default NULL,
   `montant_retrait` double NOT NULL,
   `infos_retrait` mediumtext NOT NULL,
   KEY `id_compte_caisse_retrait` (`id_compte_caisse_retrait`)
@@ -2609,7 +2604,7 @@ CREATE TABLE IF NOT EXISTS `comptes_caisses_retraits_montants` (
 --
 
 CREATE TABLE IF NOT EXISTS `comptes_caisses_transferts` (
-  `id_compte_caisse_transfert` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_compte_caisse_transfert` smallint(5) unsigned NOT NULL auto_increment,
   `id_compte_caisse_source` smallint(5) unsigned NOT NULL,
   `id_compte_caisse_destination` smallint(5) unsigned NOT NULL,
   `date_transfert` datetime NOT NULL,
@@ -2633,7 +2628,7 @@ CREATE TABLE IF NOT EXISTS `comptes_caisses_transferts` (
 
 CREATE TABLE IF NOT EXISTS `comptes_caisses_transferts_montants` (
   `id_compte_caisse_transfert` smallint(5) unsigned NOT NULL,
-  `id_reglement_mode` smallint(5) unsigned DEFAULT NULL,
+  `id_reglement_mode` smallint(5) unsigned default NULL,
   `montant_theorique` double NOT NULL,
   `montant_transfert` double NOT NULL,
   `infos_transfert` mediumtext NOT NULL,
@@ -2652,9 +2647,9 @@ CREATE TABLE IF NOT EXISTS `comptes_caisses_transferts_montants` (
 --
 
 CREATE TABLE IF NOT EXISTS `comptes_cbs` (
-  `id_compte_cb` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_compte_cb` smallint(5) unsigned NOT NULL auto_increment,
   `id_compte_bancaire` smallint(5) unsigned NOT NULL,
-  `ref_porteur` varchar(32) DEFAULT NULL,
+  `ref_porteur` varchar(32) default NULL,
   `id_cb_type` smallint(5) unsigned NOT NULL,
   `numero_carte` varchar(16) NOT NULL,
   `date_expiration` date NOT NULL,
@@ -2662,7 +2657,7 @@ CREATE TABLE IF NOT EXISTS `comptes_cbs` (
   `differe` tinyint(3) unsigned NOT NULL,
   `actif` tinyint(3) unsigned NOT NULL,
   `ordre` tinyint(3) unsigned NOT NULL,
-  PRIMARY KEY (`id_compte_cb`),
+  PRIMARY KEY  (`id_compte_cb`),
   KEY `id_compte_bancaire` (`id_compte_bancaire`),
   KEY `ref_porteur` (`ref_porteur`),
   KEY `id_cb_type` (`id_cb_type`)
@@ -2680,9 +2675,9 @@ CREATE TABLE IF NOT EXISTS `comptes_cbs` (
 --
 
 CREATE TABLE IF NOT EXISTS `comptes_moves_types` (
-  `id_move_type` smallint(3) unsigned NOT NULL AUTO_INCREMENT,
+  `id_move_type` smallint(3) unsigned NOT NULL auto_increment,
   `lib_move_type` varchar(32) NOT NULL,
-  PRIMARY KEY (`id_move_type`)
+  PRIMARY KEY  (`id_move_type`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
@@ -2705,16 +2700,16 @@ INSERT INTO `comptes_moves_types` (`id_move_type`, `lib_move_type`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `comptes_tpes` (
-  `id_compte_tpe` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_compte_tpe` smallint(5) unsigned NOT NULL auto_increment,
   `id_compte_bancaire` smallint(5) unsigned NOT NULL,
   `id_magasin` smallint(5) unsigned NOT NULL,
   `lib_tpe` varchar(64) NOT NULL,
-  `com_ope` double NOT NULL DEFAULT '0',
-  `com_var` double NOT NULL DEFAULT '0',
+  `com_ope` double NOT NULL default '0',
+  `com_var` double NOT NULL default '0',
   `actif` tinyint(4) NOT NULL,
   `ordre` tinyint(3) unsigned NOT NULL,
   `defaut_numero_compte` varchar(10) NOT NULL,
-  PRIMARY KEY (`id_compte_tpe`),
+  PRIMARY KEY  (`id_compte_tpe`),
   KEY `id_compte_bancaire` (`id_compte_bancaire`),
   KEY `id_magasin` (`id_magasin`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des Terminaux de Paiement Electronique' AUTO_INCREMENT=1 ;
@@ -2731,16 +2726,16 @@ CREATE TABLE IF NOT EXISTS `comptes_tpes` (
 --
 
 CREATE TABLE IF NOT EXISTS `comptes_tpv` (
-  `id_compte_tpv` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_compte_tpv` smallint(5) unsigned NOT NULL auto_increment,
   `id_compte_bancaire` smallint(5) unsigned NOT NULL,
   `lib_tpv` varchar(64) NOT NULL,
   `module_name` varchar(64) NOT NULL,
-  `com_ope` double NOT NULL DEFAULT '0',
-  `com_var` double NOT NULL DEFAULT '0',
+  `com_ope` double NOT NULL default '0',
+  `com_var` double NOT NULL default '0',
   `actif` tinyint(4) NOT NULL,
   `ordre` tinyint(3) unsigned NOT NULL,
   `defaut_numero_compte` varchar(10) NOT NULL,
-  PRIMARY KEY (`id_compte_tpv`),
+  PRIMARY KEY  (`id_compte_tpv`),
   KEY `id_compte_bancaire` (`id_compte_bancaire`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des Terminaux de Paiement Virtuels' AUTO_INCREMENT=1 ;
 
@@ -2759,9 +2754,9 @@ CREATE TABLE IF NOT EXISTS `comptes_tp_contenu` (
   `id_compte_tp` smallint(5) unsigned NOT NULL,
   `tp_type` enum('TPE','TPV') NOT NULL,
   `montant_contenu` double NOT NULL,
-  `id_compte_caisse` smallint(5) unsigned DEFAULT NULL,
+  `id_compte_caisse` smallint(5) unsigned default NULL,
   `infos_supp` mediumtext NOT NULL,
-  `controle` tinyint(1) NOT NULL DEFAULT '0',
+  `controle` tinyint(1) NOT NULL default '0',
   KEY `id_compte_caisse` (`id_compte_caisse`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -2777,7 +2772,7 @@ CREATE TABLE IF NOT EXISTS `comptes_tp_contenu` (
 --
 
 CREATE TABLE IF NOT EXISTS `comptes_tp_telecollecte` (
-  `id_compte_tp_telecollecte` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_compte_tp_telecollecte` smallint(5) unsigned NOT NULL auto_increment,
   `id_compte_tp` smallint(5) unsigned NOT NULL,
   `tp_type` enum('TPE','TPV') NOT NULL,
   `ref_user` varchar(32) NOT NULL,
@@ -2786,7 +2781,7 @@ CREATE TABLE IF NOT EXISTS `comptes_tp_telecollecte` (
   `montant_commission` double NOT NULL,
   `montant_transfere` double NOT NULL,
   `commentaire` mediumtext NOT NULL,
-  PRIMARY KEY (`id_compte_tp_telecollecte`)
+  PRIMARY KEY  (`id_compte_tp_telecollecte`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
@@ -2822,16 +2817,16 @@ CREATE TABLE IF NOT EXISTS `comptes_tp_telecollecte_montant` (
 CREATE TABLE IF NOT EXISTS `coordonnees` (
   `ref_coord` varchar(32) NOT NULL,
   `ref_contact` varchar(32) NOT NULL,
-  `id_type_coordonnee` smallint(5) DEFAULT NULL,
+  `id_type_coordonnee` smallint(5) default NULL,
   `lib_coord` varchar(64) NOT NULL,
   `tel1` varchar(32) NOT NULL,
   `tel2` varchar(32) NOT NULL,
   `fax` varchar(32) NOT NULL,
-  `email` varchar(128) DEFAULT NULL,
+  `email` varchar(128) default NULL,
   `note` mediumblob NOT NULL,
   `ordre` smallint(5) unsigned NOT NULL,
-  `ref_coord_parent` varchar(32) DEFAULT NULL,
-  PRIMARY KEY (`ref_coord`),
+  `ref_coord_parent` varchar(32) default NULL,
+  PRIMARY KEY  (`ref_coord`),
   UNIQUE KEY `email` (`email`),
   KEY `ref_contact` (`ref_contact`),
   KEY `ref_coord_parent` (`ref_coord_parent`),
@@ -2856,7 +2851,7 @@ CREATE TABLE IF NOT EXISTS `coordonnees_types` (
   `id_coord_type` smallint(5) NOT NULL,
   `coord_type` varchar(64) NOT NULL,
   `defaut` smallint(5) NOT NULL,
-  PRIMARY KEY (`id_coord_type`)
+  PRIMARY KEY  (`id_coord_type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des type de coordonees';
 
 --
@@ -2875,14 +2870,14 @@ INSERT INTO `coordonnees_types` (`id_coord_type`, `coord_type`, `defaut`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `courriers` (
-  `id_courrier` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `id_type_courrier` smallint(5) unsigned DEFAULT NULL,
-  `id_pdf_modele` smallint(5) unsigned DEFAULT NULL,
-  `id_etat_courrier` smallint(5) unsigned DEFAULT NULL,
+  `id_courrier` smallint(5) unsigned NOT NULL auto_increment,
+  `id_type_courrier` smallint(5) unsigned default NULL,
+  `id_pdf_modele` smallint(5) unsigned default NULL,
+  `id_etat_courrier` smallint(5) unsigned default NULL,
   `date_courrier` datetime NOT NULL,
-  `objet` varchar(255) DEFAULT NULL,
+  `objet` varchar(255) default NULL,
   `contenu` longtext,
-  PRIMARY KEY (`id_courrier`),
+  PRIMARY KEY  (`id_courrier`),
   KEY `id_etat_courrier` (`id_etat_courrier`),
   KEY `id_type_courrier` (`id_type_courrier`),
   KEY `id_pdf_modele` (`id_pdf_modele`)
@@ -2918,12 +2913,12 @@ CREATE TABLE IF NOT EXISTS `courriers_destinataires` (
 --
 
 CREATE TABLE IF NOT EXISTS `courriers_editions` (
-  `id_courrier_envoi` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_courrier_envoi` smallint(5) unsigned NOT NULL auto_increment,
   `id_courrier` smallint(5) unsigned NOT NULL,
-  `id_edition_mode` smallint(5) unsigned DEFAULT NULL,
+  `id_edition_mode` smallint(5) unsigned default NULL,
   `date_edition` datetime NOT NULL,
   `ref_user` varchar(32) NOT NULL,
-  PRIMARY KEY (`id_courrier_envoi`),
+  PRIMARY KEY  (`id_courrier_envoi`),
   KEY `id_courrier` (`id_courrier`),
   KEY `id_edition_mode` (`id_edition_mode`),
   KEY `ref_user` (`ref_user`)
@@ -2941,10 +2936,10 @@ CREATE TABLE IF NOT EXISTS `courriers_editions` (
 --
 
 CREATE TABLE IF NOT EXISTS `courriers_etats` (
-  `id_etat_courrier` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_etat_courrier` smallint(5) unsigned NOT NULL auto_increment,
   `lib_etat_courrier` varchar(64) NOT NULL,
   `ordre` tinyint(3) unsigned NOT NULL,
-  PRIMARY KEY (`id_etat_courrier`),
+  PRIMARY KEY  (`id_etat_courrier`),
   KEY `ordre` (`ordre`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Etats des courriers' AUTO_INCREMENT=4 ;
 
@@ -2964,13 +2959,13 @@ INSERT INTO `courriers_etats` (`id_etat_courrier`, `lib_etat_courrier`, `ordre`)
 --
 
 CREATE TABLE IF NOT EXISTS `courriers_events` (
-  `id_courrier_event` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_courrier_event` smallint(5) unsigned NOT NULL auto_increment,
   `id_courrier` smallint(5) unsigned NOT NULL,
   `date_event` datetime NOT NULL,
-  `id_courrier_event_type` smallint(5) unsigned DEFAULT NULL,
+  `id_courrier_event_type` smallint(5) unsigned default NULL,
   `event` mediumtext NOT NULL,
   `ref_user` varchar(32) NOT NULL,
-  PRIMARY KEY (`id_courrier_event`),
+  PRIMARY KEY  (`id_courrier_event`),
   KEY `id_courrier` (`id_courrier`),
   KEY `id_courrier_event_type` (`id_courrier_event_type`),
   KEY `ref_user` (`ref_user`)
@@ -2988,9 +2983,9 @@ CREATE TABLE IF NOT EXISTS `courriers_events` (
 --
 
 CREATE TABLE IF NOT EXISTS `courriers_events_types` (
-  `id_courrier_event_type` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_courrier_event_type` smallint(5) unsigned NOT NULL auto_increment,
   `lib_courrier_event_type` varchar(64) NOT NULL,
-  PRIMARY KEY (`id_courrier_event_type`)
+  PRIMARY KEY  (`id_courrier_event_type`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Création, Modification, Changement d état' AUTO_INCREMENT=4 ;
 
 --
@@ -3009,7 +3004,7 @@ INSERT INTO `courriers_events_types` (`id_courrier_event_type`, `lib_courrier_ev
 --
 
 CREATE TABLE IF NOT EXISTS `courriers_modeles_pdf` (
-  `id_type_courrier` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_type_courrier` smallint(5) unsigned NOT NULL auto_increment,
   `id_pdf_modele` smallint(5) unsigned NOT NULL,
   `usage` enum('defaut','actif','inactif') NOT NULL,
   KEY `id_type_courrier` (`id_type_courrier`),
@@ -3032,11 +3027,11 @@ INSERT INTO `courriers_modeles_pdf` (`id_type_courrier`, `id_pdf_modele`, `usage
 --
 
 CREATE TABLE IF NOT EXISTS `courriers_types` (
-  `id_type_courrier` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_type_courrier` smallint(5) unsigned NOT NULL auto_increment,
   `lib_type_courrier` varchar(64) NOT NULL,
   `code_courrier` varchar(32) NOT NULL,
   `actif` tinyint(3) unsigned NOT NULL,
-  PRIMARY KEY (`id_type_courrier`)
+  PRIMARY KEY  (`id_type_courrier`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des types de courriers utilisés' AUTO_INCREMENT=2 ;
 
 --
@@ -3053,10 +3048,10 @@ INSERT INTO `courriers_types` (`id_type_courrier`, `lib_type_courrier`, `code_co
 --
 
 CREATE TABLE IF NOT EXISTS `csv_import_annu_cols` (
-  `id_colonne` tinyint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `lib_colonne` varchar(64) DEFAULT NULL,
-  `champ_equivalent` varchar(64) DEFAULT NULL,
-  PRIMARY KEY (`id_colonne`)
+  `id_colonne` tinyint(5) unsigned NOT NULL auto_increment,
+  `lib_colonne` varchar(64) default NULL,
+  `champ_equivalent` varchar(64) default NULL,
+  PRIMARY KEY  (`id_colonne`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
@@ -3071,9 +3066,9 @@ CREATE TABLE IF NOT EXISTS `csv_import_annu_cols` (
 --
 
 CREATE TABLE IF NOT EXISTS `csv_import_annu_etape` (
-  `id_profil` smallint(5) DEFAULT NULL,
-  `etape` smallint(5) DEFAULT NULL,
-  `limite` smallint(5) DEFAULT NULL
+  `id_profil` smallint(5) default NULL,
+  `etape` smallint(5) default NULL,
+  `limite` smallint(5) default NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -3088,11 +3083,11 @@ CREATE TABLE IF NOT EXISTS `csv_import_annu_etape` (
 --
 
 CREATE TABLE IF NOT EXISTS `csv_import_annu_lines` (
-  `id_ligne` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `id_ligne` mediumint(8) unsigned NOT NULL auto_increment,
   `id_colonne` tinyint(5) unsigned NOT NULL,
-  `valeur` varchar(255) DEFAULT NULL,
-  `valeur_equivalente` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id_ligne`),
+  `valeur` varchar(255) default NULL,
+  `valeur_equivalente` varchar(255) default NULL,
+  PRIMARY KEY  (`id_ligne`),
   KEY `id_colonne` (`id_colonne`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -3108,10 +3103,10 @@ CREATE TABLE IF NOT EXISTS `csv_import_annu_lines` (
 --
 
 CREATE TABLE IF NOT EXISTS `csv_import_catalogue_cols` (
-  `id_colonne` tinyint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `lib_colonne` varchar(64) DEFAULT NULL,
-  `champ_equivalent` varchar(64) DEFAULT NULL,
-  PRIMARY KEY (`id_colonne`)
+  `id_colonne` tinyint(5) unsigned NOT NULL auto_increment,
+  `lib_colonne` varchar(64) default NULL,
+  `champ_equivalent` varchar(64) default NULL,
+  PRIMARY KEY  (`id_colonne`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
@@ -3126,9 +3121,9 @@ CREATE TABLE IF NOT EXISTS `csv_import_catalogue_cols` (
 --
 
 CREATE TABLE IF NOT EXISTS `csv_import_catalogue_etape` (
-  `ref_art_categ` varchar(32) DEFAULT NULL,
-  `etape` smallint(5) DEFAULT NULL,
-  `limite` smallint(5) DEFAULT NULL
+  `ref_art_categ` varchar(32) default NULL,
+  `etape` smallint(5) default NULL,
+  `limite` smallint(5) default NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -3143,11 +3138,11 @@ CREATE TABLE IF NOT EXISTS `csv_import_catalogue_etape` (
 --
 
 CREATE TABLE IF NOT EXISTS `csv_import_catalogue_lines` (
-  `id_ligne` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `id_ligne` mediumint(8) unsigned NOT NULL auto_increment,
   `id_colonne` tinyint(5) unsigned NOT NULL,
-  `valeur` varchar(255) DEFAULT NULL,
-  `valeur_equivalente` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id_ligne`),
+  `valeur` varchar(255) default NULL,
+  `valeur_equivalente` varchar(255) default NULL,
+  PRIMARY KEY  (`id_ligne`),
   KEY `id_colonne` (`id_colonne`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -3163,12 +3158,12 @@ CREATE TABLE IF NOT EXISTS `csv_import_catalogue_lines` (
 --
 
 CREATE TABLE IF NOT EXISTS `csv_import_cdc` (
-  `id_import_cdc` smallint(5) NOT NULL AUTO_INCREMENT COMMENT 'Identifiant de l''import',
+  `id_import_cdc` smallint(5) NOT NULL auto_increment COMMENT 'Identifiant de l''import',
   `type_ref_article` enum('non defini','interne','oem','lmb') NOT NULL,
   `id_categ_client` smallint(5) NOT NULL,
   `date` date NOT NULL COMMENT 'Date de l''import',
-  `etape` smallint(5) DEFAULT NULL COMMENT 'Étape à laquelle se trouve l''import',
-  PRIMARY KEY (`id_import_cdc`)
+  `etape` smallint(5) default NULL COMMENT 'Étape à laquelle se trouve l''import',
+  PRIMARY KEY  (`id_import_cdc`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
@@ -3183,7 +3178,7 @@ CREATE TABLE IF NOT EXISTS `csv_import_cdc` (
 --
 
 CREATE TABLE IF NOT EXISTS `csv_import_cdc_infos_doc` (
-  `id_import_cdc_infos_doc` int(11) NOT NULL AUTO_INCREMENT,
+  `id_import_cdc_infos_doc` int(11) NOT NULL auto_increment,
   `id_import` smallint(5) NOT NULL,
   `ref_cdc_externe` varchar(32) NOT NULL,
   `ref_client` varchar(32) NOT NULL,
@@ -3198,7 +3193,7 @@ CREATE TABLE IF NOT EXISTS `csv_import_cdc_infos_doc` (
   `adr_liv_id_pays` smallint(5) NOT NULL,
   `note` mediumblob NOT NULL,
   `date` date NOT NULL,
-  PRIMARY KEY (`id_import_cdc_infos_doc`),
+  PRIMARY KEY  (`id_import_cdc_infos_doc`),
   KEY `id_import` (`id_import`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -3214,7 +3209,7 @@ CREATE TABLE IF NOT EXISTS `csv_import_cdc_infos_doc` (
 --
 
 CREATE TABLE IF NOT EXISTS `csv_import_cdc_infos_lines` (
-  `id_import_cdc_infos_lines` int(11) NOT NULL AUTO_INCREMENT,
+  `id_import_cdc_infos_lines` int(11) NOT NULL auto_increment,
   `id_import_cdc_infos_doc` int(11) NOT NULL,
   `ref_lmb` varchar(32) NOT NULL,
   `ref_interne` varchar(32) NOT NULL,
@@ -3225,7 +3220,7 @@ CREATE TABLE IF NOT EXISTS `csv_import_cdc_infos_lines` (
   `remise` double NOT NULL,
   `tva` double NOT NULL,
   `desc_courte` mediumblob NOT NULL,
-  PRIMARY KEY (`id_import_cdc_infos_lines`),
+  PRIMARY KEY  (`id_import_cdc_infos_lines`),
   KEY `id_import_cdc_infos_doc` (`id_import_cdc_infos_doc`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -3241,12 +3236,12 @@ CREATE TABLE IF NOT EXISTS `csv_import_cdc_infos_lines` (
 --
 
 CREATE TABLE IF NOT EXISTS `csv_import_tarifs_fournisseur` (
-  `id_import_tarifs_fournisseur` smallint(5) NOT NULL AUTO_INCREMENT COMMENT 'Identifiant de l''import',
+  `id_import_tarifs_fournisseur` smallint(5) NOT NULL auto_increment COMMENT 'Identifiant de l''import',
   `ref_fournisseur` varchar(32) NOT NULL COMMENT 'Référence du contact Fournisseur',
   `date_tarif` date NOT NULL COMMENT 'Date de l''import',
-  `etape` smallint(5) DEFAULT NULL COMMENT 'Étape à laquelle se trouve l''import',
+  `etape` smallint(5) default NULL COMMENT 'Étape à laquelle se trouve l''import',
   `id_colonne_ref_article_existant` varchar(32) NOT NULL COMMENT 'Identifiant de la colonne permettant de stocker la référence LMB de l''article existant (trouvé par correspondance)',
-  PRIMARY KEY (`id_import_tarifs_fournisseur`)
+  PRIMARY KEY  (`id_import_tarifs_fournisseur`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
@@ -3261,10 +3256,10 @@ CREATE TABLE IF NOT EXISTS `csv_import_tarifs_fournisseur` (
 --
 
 CREATE TABLE IF NOT EXISTS `csv_import_tarifs_fournisseur_cols` (
-  `id_colonne` tinyint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `lib_colonne` varchar(64) DEFAULT NULL,
-  `champ_equivalent` varchar(64) DEFAULT NULL,
-  PRIMARY KEY (`id_colonne`)
+  `id_colonne` tinyint(5) unsigned NOT NULL auto_increment,
+  `lib_colonne` varchar(64) default NULL,
+  `champ_equivalent` varchar(64) default NULL,
+  PRIMARY KEY  (`id_colonne`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
@@ -3279,11 +3274,11 @@ CREATE TABLE IF NOT EXISTS `csv_import_tarifs_fournisseur_cols` (
 --
 
 CREATE TABLE IF NOT EXISTS `csv_import_tarifs_fournisseur_donnees` (
-  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `id` mediumint(8) unsigned NOT NULL auto_increment,
   `id_ligne` tinyint(5) NOT NULL,
-  `id_colonne` tinyint(5) DEFAULT NULL,
-  `valeur` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
+  `id_colonne` tinyint(5) default NULL,
+  `valeur` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
   KEY `id_colonne` (`id_colonne`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -3299,12 +3294,12 @@ CREATE TABLE IF NOT EXISTS `csv_import_tarifs_fournisseur_donnees` (
 --
 
 CREATE TABLE IF NOT EXISTS `docs_infos_lines` (
-  `id_doc_info_line` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_doc_info_line` smallint(5) unsigned NOT NULL auto_increment,
   `id_type_doc` varchar(256) NOT NULL,
   `lib_line` varchar(250) NOT NULL,
   `desc_line` mediumtext NOT NULL,
   `desc_line_interne` mediumtext NOT NULL,
-  PRIMARY KEY (`id_doc_info_line`)
+  PRIMARY KEY  (`id_doc_info_line`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
@@ -3321,7 +3316,7 @@ CREATE TABLE IF NOT EXISTS `docs_infos_lines` (
 CREATE TABLE IF NOT EXISTS `docs_lines` (
   `ref_doc_line` varchar(32) NOT NULL,
   `ref_doc` varchar(32) NOT NULL,
-  `ref_article` varchar(32) DEFAULT NULL,
+  `ref_article` varchar(32) default NULL,
   `lib_article` varchar(250) NOT NULL,
   `desc_article` mediumtext NOT NULL,
   `qte` double NOT NULL,
@@ -3329,11 +3324,11 @@ CREATE TABLE IF NOT EXISTS `docs_lines` (
   `remise` double unsigned NOT NULL,
   `tva` double unsigned NOT NULL,
   `ordre` smallint(5) unsigned NOT NULL,
-  `ref_doc_line_parent` varchar(32) DEFAULT NULL,
+  `ref_doc_line_parent` varchar(32) default NULL,
   `visible` tinyint(3) unsigned NOT NULL,
-  `pa_ht` double DEFAULT NULL,
-  `pa_forced` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`ref_doc_line`),
+  `pa_ht` double default NULL,
+  `pa_forced` tinyint(1) NOT NULL default '0',
+  PRIMARY KEY  (`ref_doc_line`),
   KEY `ref_doc` (`ref_doc`),
   KEY `ref_article` (`ref_article`),
   KEY `ref_doc_line_parent` (`ref_doc_line_parent`)
@@ -3353,7 +3348,7 @@ CREATE TABLE IF NOT EXISTS `docs_lines` (
 CREATE TABLE IF NOT EXISTS `docs_lines_sn` (
   `ref_doc_line` varchar(32) NOT NULL,
   `numero_serie` varchar(32) NOT NULL,
-  `sn_qte` double NOT NULL DEFAULT '1',
+  `sn_qte` double NOT NULL default '1',
   KEY `ref_doc_line` (`ref_doc_line`),
   KEY `numero_serie` (`numero_serie`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Numéros de séries des éléments contenus dans les documents';
@@ -3371,21 +3366,21 @@ CREATE TABLE IF NOT EXISTS `docs_lines_sn` (
 
 CREATE TABLE IF NOT EXISTS `documents` (
   `ref_doc` varchar(32) NOT NULL,
-  `id_type_doc` smallint(5) unsigned DEFAULT NULL,
-  `id_etat_doc` smallint(5) unsigned DEFAULT NULL,
+  `id_type_doc` smallint(5) unsigned default NULL,
+  `id_etat_doc` smallint(5) unsigned default NULL,
   `code_affaire` varchar(64) NOT NULL,
-  `ref_contact` varchar(32) DEFAULT NULL,
+  `ref_contact` varchar(32) default NULL,
   `nom_contact` varchar(128) NOT NULL,
-  `ref_adr_contact` varchar(32) DEFAULT NULL,
+  `ref_adr_contact` varchar(32) default NULL,
   `adresse_contact` mediumtext NOT NULL,
   `code_postal_contact` varchar(9) NOT NULL,
   `ville_contact` varchar(28) NOT NULL,
-  `id_pays_contact` smallint(5) unsigned DEFAULT NULL,
+  `id_pays_contact` smallint(5) unsigned default NULL,
   `app_tarifs` enum('HT','TTC') NOT NULL,
   `description` mediumtext NOT NULL,
   `date_creation_doc` datetime NOT NULL,
   `code_file` varchar(32) NOT NULL,
-  PRIMARY KEY (`ref_doc`),
+  PRIMARY KEY  (`ref_doc`),
   KEY `id_type_doc` (`id_type_doc`),
   KEY `id_etat_doc` (`id_etat_doc`),
   KEY `ref_contact` (`ref_contact`),
@@ -3428,12 +3423,12 @@ CREATE TABLE IF NOT EXISTS `documents_editions` (
 --
 
 CREATE TABLE IF NOT EXISTS `documents_etats` (
-  `id_etat_doc` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_etat_doc` smallint(5) unsigned NOT NULL auto_increment,
   `id_type_doc` smallint(5) unsigned NOT NULL,
   `lib_etat_doc` varchar(32) NOT NULL,
   `ordre` tinyint(3) unsigned NOT NULL,
   `is_open` tinyint(3) unsigned NOT NULL,
-  PRIMARY KEY (`id_etat_doc`),
+  PRIMARY KEY  (`id_etat_doc`),
   KEY `ordre` (`ordre`),
   KEY `id_type_doc` (`id_type_doc`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des états possibles pour un document' AUTO_INCREMENT=67 ;
@@ -3520,10 +3515,10 @@ CREATE TABLE IF NOT EXISTS `documents_events` (
   `ref_doc_event` varchar(32) NOT NULL,
   `ref_doc` varchar(32) NOT NULL,
   `date_event` datetime NOT NULL,
-  `id_event_type` smallint(5) unsigned DEFAULT NULL,
+  `id_event_type` smallint(5) unsigned default NULL,
   `event` mediumtext NOT NULL,
   `ref_user` varchar(32) NOT NULL,
-  PRIMARY KEY (`ref_doc_event`),
+  PRIMARY KEY  (`ref_doc_event`),
   KEY `ref_doc` (`ref_doc`),
   KEY `date_event` (`date_event`),
   KEY `ref_user` (`ref_user`),
@@ -3542,9 +3537,9 @@ CREATE TABLE IF NOT EXISTS `documents_events` (
 --
 
 CREATE TABLE IF NOT EXISTS `documents_events_types` (
-  `id_event_type` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_event_type` smallint(5) unsigned NOT NULL auto_increment,
   `lib_event_type` varchar(64) NOT NULL,
-  PRIMARY KEY (`id_event_type`)
+  PRIMARY KEY  (`id_event_type`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Types d''évennements pour les documents' AUTO_INCREMENT=7 ;
 
 --
@@ -3566,10 +3561,10 @@ INSERT INTO `documents_events_types` (`id_event_type`, `lib_event_type`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `documents_filigranes` (
-  `id_filigrane` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_filigrane` smallint(5) unsigned NOT NULL auto_increment,
   `lib_filigrane` varchar(64) NOT NULL,
   `ordre` tinyint(3) NOT NULL,
-  PRIMARY KEY (`id_filigrane`)
+  PRIMARY KEY  (`id_filigrane`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
@@ -3590,7 +3585,7 @@ INSERT INTO `documents_filigranes` (`id_filigrane`, `lib_filigrane`, `ordre`) VA
 CREATE TABLE IF NOT EXISTS `documents_liaisons` (
   `ref_doc_source` varchar(32) NOT NULL,
   `ref_doc_destination` varchar(32) NOT NULL,
-  `active` tinyint(3) unsigned NOT NULL DEFAULT '1',
+  `active` tinyint(3) unsigned NOT NULL default '1',
   KEY `ref_doc_source` (`ref_doc_source`),
   KEY `ref_doc_destination` (`ref_doc_destination`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liaisons entre les documents';
@@ -3607,14 +3602,14 @@ CREATE TABLE IF NOT EXISTS `documents_liaisons` (
 --
 
 CREATE TABLE IF NOT EXISTS `documents_types` (
-  `id_type_doc` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
+  `id_type_doc` smallint(6) unsigned NOT NULL auto_increment,
   `lib_type_doc` varchar(64) NOT NULL,
   `lib_type_printed` varchar(64) NOT NULL,
   `code_doc` varchar(32) NOT NULL,
   `id_type_groupe` tinyint(3) unsigned NOT NULL,
   `actif` tinyint(3) unsigned NOT NULL,
   `id_pdf_modele` smallint(5) unsigned NOT NULL,
-  PRIMARY KEY (`id_type_doc`),
+  PRIMARY KEY  (`id_type_doc`),
   KEY `actif` (`actif`),
   KEY `id_pdf_modele` (`id_pdf_modele`),
   KEY `id_type_groupe` (`id_type_groupe`)
@@ -3649,10 +3644,10 @@ INSERT INTO `documents_types` (`id_type_doc`, `lib_type_doc`, `lib_type_printed`
 --
 
 CREATE TABLE IF NOT EXISTS `documents_types_groupes` (
-  `id_type_groupe` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
+  `id_type_groupe` tinyint(3) unsigned NOT NULL auto_increment,
   `lib_type_groupe` varchar(64) NOT NULL,
   `ordre` tinyint(4) NOT NULL,
-  PRIMARY KEY (`id_type_groupe`)
+  PRIMARY KEY  (`id_type_groupe`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
@@ -3674,9 +3669,9 @@ CREATE TABLE IF NOT EXISTS `doc_blc` (
   `ref_doc` varchar(32) NOT NULL,
   `ref_doc_externe` varchar(32) NOT NULL,
   `id_stock` smallint(5) unsigned NOT NULL,
-  `id_magasin` smallint(5) unsigned NOT NULL DEFAULT '1',
-  `id_livraison_mode` smallint(5) unsigned DEFAULT NULL,
-  PRIMARY KEY (`ref_doc`),
+  `id_magasin` smallint(5) unsigned NOT NULL default '1',
+  `id_livraison_mode` smallint(5) unsigned default NULL,
+  PRIMARY KEY  (`ref_doc`),
   KEY `id_stock` (`id_stock`),
   KEY `id_magasin` (`id_magasin`),
   KEY `id_livraison_mode` (`id_livraison_mode`)
@@ -3696,8 +3691,8 @@ CREATE TABLE IF NOT EXISTS `doc_blc` (
 CREATE TABLE IF NOT EXISTS `doc_blf` (
   `ref_doc` varchar(32) NOT NULL,
   `ref_doc_externe` varchar(32) NOT NULL,
-  `id_stock` smallint(5) unsigned DEFAULT NULL,
-  PRIMARY KEY (`ref_doc`),
+  `id_stock` smallint(5) unsigned default NULL,
+  PRIMARY KEY  (`ref_doc`),
   KEY `id_stock` (`id_stock`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des informations complémentaires concernant les docume';
 
@@ -3716,15 +3711,15 @@ CREATE TABLE IF NOT EXISTS `doc_cdc` (
   `ref_doc` varchar(32) NOT NULL,
   `ref_doc_externe` varchar(32) NOT NULL,
   `date_livraison` date NOT NULL,
-  `ref_adr_livraison` varchar(32) DEFAULT NULL,
+  `ref_adr_livraison` varchar(32) default NULL,
   `adresse_livraison` mediumtext NOT NULL,
   `code_postal_livraison` varchar(9) NOT NULL,
   `ville_livraison` varchar(28) NOT NULL,
-  `id_pays_livraison` smallint(5) unsigned DEFAULT NULL,
+  `id_pays_livraison` smallint(5) unsigned default NULL,
   `id_stock` smallint(5) unsigned NOT NULL,
-  `id_magasin` smallint(5) unsigned NOT NULL DEFAULT '1',
-  `id_livraison_mode` smallint(5) unsigned DEFAULT NULL,
-  PRIMARY KEY (`ref_doc`),
+  `id_magasin` smallint(5) unsigned NOT NULL default '1',
+  `id_livraison_mode` smallint(5) unsigned default NULL,
+  PRIMARY KEY  (`ref_doc`),
   KEY `ref_adr_livraison` (`ref_adr_livraison`),
   KEY `id_stock` (`id_stock`),
   KEY `id_magasin` (`id_magasin`),
@@ -3748,7 +3743,7 @@ CREATE TABLE IF NOT EXISTS `doc_cdf` (
   `ref_doc_externe` varchar(32) NOT NULL,
   `date_livraison` date NOT NULL,
   `id_stock` smallint(5) unsigned NOT NULL,
-  PRIMARY KEY (`ref_doc`),
+  PRIMARY KEY  (`ref_doc`),
   KEY `id_stock` (`id_stock`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des informations complémentaires concernant les docume';
 
@@ -3766,16 +3761,16 @@ CREATE TABLE IF NOT EXISTS `doc_cdf` (
 CREATE TABLE IF NOT EXISTS `doc_cot` (
   `ref_doc` varchar(32) NOT NULL,
   `ref_doc_externe` varchar(32) NOT NULL,
-  `id_magasin` smallint(5) unsigned NOT NULL DEFAULT '1',
+  `id_magasin` smallint(5) unsigned NOT NULL default '1',
   `date_echeance` date NOT NULL,
   `date_livraison` date NOT NULL,
-  `ref_adr_livraison` varchar(32) DEFAULT NULL,
+  `ref_adr_livraison` varchar(32) default NULL,
   `adresse_livraison` mediumtext NOT NULL,
   `code_postal_livraison` varchar(9) NOT NULL,
   `ville_livraison` varchar(28) NOT NULL,
-  `id_pays_livraison` smallint(5) unsigned DEFAULT NULL,
-  `id_livraison_mode` smallint(5) unsigned DEFAULT NULL,
-  PRIMARY KEY (`ref_doc`),
+  `id_pays_livraison` smallint(5) unsigned default NULL,
+  `id_livraison_mode` smallint(5) unsigned default NULL,
+  PRIMARY KEY  (`ref_doc`),
   KEY `ref_adr_livraison` (`ref_adr_livraison`),
   KEY `id_pays_livraison` (`id_pays_livraison`),
   KEY `id_livraison_mode` (`id_livraison_mode`)
@@ -3796,8 +3791,8 @@ CREATE TABLE IF NOT EXISTS `doc_def` (
   `ref_doc` varchar(32) NOT NULL,
   `ref_doc_externe` varchar(32) NOT NULL,
   `date_echeance` date NOT NULL,
-  `id_stock` smallint(5) unsigned NOT NULL DEFAULT '1',
-  PRIMARY KEY (`ref_doc`),
+  `id_stock` smallint(5) unsigned NOT NULL default '1',
+  PRIMARY KEY  (`ref_doc`),
   KEY `id_stock` (`id_stock`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des informations complémentaires concernant les docume';
 
@@ -3815,9 +3810,9 @@ CREATE TABLE IF NOT EXISTS `doc_def` (
 CREATE TABLE IF NOT EXISTS `doc_des` (
   `ref_doc` varchar(32) NOT NULL,
   `id_stock` smallint(5) unsigned NOT NULL,
-  `ref_article` varchar(32) DEFAULT NULL,
+  `ref_article` varchar(32) default NULL,
   `qte_des` double NOT NULL,
-  PRIMARY KEY (`ref_doc`),
+  PRIMARY KEY  (`ref_doc`),
   KEY `id_stock` (`id_stock`),
   KEY `ref_article` (`ref_article`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -3836,7 +3831,7 @@ CREATE TABLE IF NOT EXISTS `doc_des` (
 CREATE TABLE IF NOT EXISTS `doc_des_sn` (
   `ref_doc` varchar(32) NOT NULL,
   `numero_serie` varchar(32) NOT NULL,
-  `sn_qte` double NOT NULL DEFAULT '1',
+  `sn_qte` double NOT NULL default '1',
   KEY `ref_doc` (`ref_doc`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -3854,16 +3849,16 @@ CREATE TABLE IF NOT EXISTS `doc_des_sn` (
 CREATE TABLE IF NOT EXISTS `doc_dev` (
   `ref_doc` varchar(32) NOT NULL,
   `ref_doc_externe` varchar(32) NOT NULL,
-  `id_magasin` smallint(5) unsigned NOT NULL DEFAULT '1',
+  `id_magasin` smallint(5) unsigned NOT NULL default '1',
   `date_echeance` date NOT NULL,
   `date_livraison` date NOT NULL,
-  `ref_adr_livraison` varchar(32) DEFAULT NULL,
+  `ref_adr_livraison` varchar(32) default NULL,
   `adresse_livraison` mediumtext NOT NULL,
   `code_postal_livraison` varchar(9) NOT NULL,
   `ville_livraison` varchar(28) NOT NULL,
-  `id_pays_livraison` smallint(5) unsigned DEFAULT NULL,
-  `id_livraison_mode` smallint(5) unsigned DEFAULT NULL,
-  PRIMARY KEY (`ref_doc`),
+  `id_pays_livraison` smallint(5) unsigned default NULL,
+  `id_livraison_mode` smallint(5) unsigned default NULL,
+  PRIMARY KEY  (`ref_doc`),
   KEY `ref_adr_livraison` (`ref_adr_livraison`),
   KEY `id_pays_livraison` (`id_pays_livraison`),
   KEY `id_livraison_mode` (`id_livraison_mode`)
@@ -3881,15 +3876,15 @@ CREATE TABLE IF NOT EXISTS `doc_dev` (
 --
 
 CREATE TABLE IF NOT EXISTS `doc_echeanciers` (
-  `id_doc_echeance` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id_doc_echeance` int(10) unsigned NOT NULL auto_increment,
   `ref_doc` varchar(32) NOT NULL,
-  `montant` double DEFAULT NULL,
-  `pourcentage` double DEFAULT NULL,
-  `id_mode_reglement` smallint(5) DEFAULT NULL,
-  `date` date DEFAULT NULL,
-  `jour` varchar(8) DEFAULT '0',
-  `type_reglement` enum('Acompte','Arrhes','Echeance','Solde') DEFAULT NULL,
-  PRIMARY KEY (`id_doc_echeance`),
+  `montant` double default NULL,
+  `pourcentage` double default NULL,
+  `id_mode_reglement` smallint(5) default NULL,
+  `date` date default NULL,
+  `jour` varchar(8) default '0',
+  `type_reglement` enum('Acompte','Arrhes','Echeance','Solde') default NULL,
+  PRIMARY KEY  (`id_doc_echeance`),
   KEY `ref_doc` (`ref_doc`),
   KEY `id_mode_reglement` (`id_mode_reglement`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -3908,9 +3903,9 @@ CREATE TABLE IF NOT EXISTS `doc_echeanciers` (
 CREATE TABLE IF NOT EXISTS `doc_fab` (
   `ref_doc` varchar(32) NOT NULL,
   `id_stock` smallint(5) unsigned NOT NULL,
-  `ref_article` varchar(32) DEFAULT NULL,
+  `ref_article` varchar(32) default NULL,
   `qte_fab` double NOT NULL,
-  PRIMARY KEY (`ref_doc`),
+  PRIMARY KEY  (`ref_doc`),
   KEY `id_stock` (`id_stock`),
   KEY `ref_article` (`ref_article`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -3929,7 +3924,7 @@ CREATE TABLE IF NOT EXISTS `doc_fab` (
 CREATE TABLE IF NOT EXISTS `doc_fab_sn` (
   `ref_doc` varchar(32) NOT NULL,
   `numero_serie` varchar(32) NOT NULL,
-  `sn_qte` double NOT NULL DEFAULT '1',
+  `sn_qte` double NOT NULL default '1',
   KEY `ref_doc` (`ref_doc`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -3947,12 +3942,12 @@ CREATE TABLE IF NOT EXISTS `doc_fab_sn` (
 CREATE TABLE IF NOT EXISTS `doc_fac` (
   `ref_doc` varchar(32) NOT NULL,
   `ref_doc_externe` varchar(32) NOT NULL,
-  `id_magasin` smallint(5) unsigned NOT NULL DEFAULT '1',
+  `id_magasin` smallint(5) unsigned NOT NULL default '1',
   `date_echeance` date NOT NULL,
-  `id_niveau_relance` smallint(5) unsigned DEFAULT NULL,
-  `date_next_relance` date DEFAULT NULL,
-  `date_last_relance` date DEFAULT NULL,
-  PRIMARY KEY (`ref_doc`),
+  `id_niveau_relance` smallint(5) unsigned default NULL,
+  `date_next_relance` date default NULL,
+  `date_last_relance` date default NULL,
+  PRIMARY KEY  (`ref_doc`),
   KEY `id_niveau_relance` (`id_niveau_relance`),
   KEY `id_magasin` (`id_magasin`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les documents Devis Client';
@@ -3972,7 +3967,7 @@ CREATE TABLE IF NOT EXISTS `doc_faf` (
   `ref_doc` varchar(32) NOT NULL,
   `ref_doc_externe` varchar(32) NOT NULL,
   `date_echeance` date NOT NULL,
-  PRIMARY KEY (`ref_doc`)
+  PRIMARY KEY  (`ref_doc`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les documents Devis Client';
 
 --
@@ -3990,7 +3985,7 @@ CREATE TABLE IF NOT EXISTS `doc_inv` (
   `ref_doc` varchar(32) NOT NULL,
   `id_stock` smallint(5) unsigned NOT NULL,
   `art_categs` mediumblob NOT NULL COMMENT 'liste des art_categ de l''inventaire',
-  PRIMARY KEY (`ref_doc`),
+  PRIMARY KEY  (`ref_doc`),
   KEY `id_stock` (`id_stock`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -4007,8 +4002,8 @@ CREATE TABLE IF NOT EXISTS `doc_inv` (
 
 CREATE TABLE IF NOT EXISTS `doc_lines_blc` (
   `ref_doc_line` varchar(32) NOT NULL,
-  `ref_doc_line_cdc` varchar(32) DEFAULT NULL,
-  PRIMARY KEY (`ref_doc_line`),
+  `ref_doc_line_cdc` varchar(32) default NULL,
+  PRIMARY KEY  (`ref_doc_line`),
   KEY `ref_doc_line_cdc` (`ref_doc_line_cdc`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur le contenu des commandes cl';
 
@@ -4025,9 +4020,9 @@ CREATE TABLE IF NOT EXISTS `doc_lines_blc` (
 
 CREATE TABLE IF NOT EXISTS `doc_lines_blf` (
   `ref_doc_line` varchar(32) NOT NULL,
-  `ref_doc_line_cdf` varchar(32) DEFAULT NULL,
+  `ref_doc_line_cdf` varchar(32) default NULL,
   `ref_article_externe` varchar(32) NOT NULL,
-  PRIMARY KEY (`ref_doc_line`),
+  PRIMARY KEY  (`ref_doc_line`),
   KEY `ref_doc_line_cdf` (`ref_doc_line_cdf`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur le \r\n\r\ncontenu des commande';
 
@@ -4045,7 +4040,7 @@ CREATE TABLE IF NOT EXISTS `doc_lines_blf` (
 CREATE TABLE IF NOT EXISTS `doc_lines_cdc` (
   `ref_doc_line` varchar(32) NOT NULL,
   `qte_livree` double NOT NULL,
-  PRIMARY KEY (`ref_doc_line`)
+  PRIMARY KEY  (`ref_doc_line`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur le contenu des commandes cl';
 
 --
@@ -4063,7 +4058,7 @@ CREATE TABLE IF NOT EXISTS `doc_lines_cdf` (
   `ref_doc_line` varchar(32) NOT NULL,
   `qte_recue` double NOT NULL,
   `ref_article_externe` varchar(32) NOT NULL,
-  PRIMARY KEY (`ref_doc_line`)
+  PRIMARY KEY  (`ref_doc_line`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur le contenu des commandes cl';
 
 --
@@ -4080,7 +4075,7 @@ CREATE TABLE IF NOT EXISTS `doc_lines_cdf` (
 CREATE TABLE IF NOT EXISTS `doc_lines_def` (
   `ref_doc_line` varchar(32) NOT NULL,
   `ref_article_externe` varchar(32) NOT NULL,
-  PRIMARY KEY (`ref_doc_line`)
+  PRIMARY KEY  (`ref_doc_line`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur le \r\n\r\ncontenu des devis';
 
 --
@@ -4097,7 +4092,7 @@ CREATE TABLE IF NOT EXISTS `doc_lines_def` (
 CREATE TABLE IF NOT EXISTS `doc_lines_faf` (
   `ref_doc_line` varchar(32) NOT NULL,
   `ref_article_externe` varchar(32) NOT NULL,
-  PRIMARY KEY (`ref_doc_line`)
+  PRIMARY KEY  (`ref_doc_line`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur le \r\n\r\ncontenu des faf';
 
 --
@@ -4113,9 +4108,9 @@ CREATE TABLE IF NOT EXISTS `doc_lines_faf` (
 
 CREATE TABLE IF NOT EXISTS `doc_line_duree` (
   `ref_doc_line` varchar(32) NOT NULL,
-  `date_debut` date DEFAULT NULL,
-  `duree` varchar(32) DEFAULT NULL,
-  PRIMARY KEY (`ref_doc_line`)
+  `date_debut` date default NULL,
+  `duree` varchar(32) default NULL,
+  PRIMARY KEY  (`ref_doc_line`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Durées pour les articles de type bonnements';
 
 --
@@ -4199,14 +4194,14 @@ INSERT INTO `doc_modeles_pdf` (`id_pdf_modele`, `id_type_doc`, `usage`) VALUES
 
 CREATE TABLE IF NOT EXISTS `doc_pac` (
   `ref_doc` varchar(32) NOT NULL,
-  `id_magasin` smallint(5) unsigned NOT NULL DEFAULT '1',
-  `ref_adr_livraison` varchar(32) DEFAULT NULL,
+  `id_magasin` smallint(5) unsigned NOT NULL default '1',
+  `ref_adr_livraison` varchar(32) default NULL,
   `adresse_livraison` mediumtext NOT NULL,
   `code_postal_livraison` varchar(9) NOT NULL,
   `ville_livraison` varchar(28) NOT NULL,
-  `id_pays_livraison` smallint(5) unsigned DEFAULT NULL,
-  `id_livraison_mode` smallint(5) unsigned DEFAULT NULL,
-  PRIMARY KEY (`ref_doc`),
+  `id_pays_livraison` smallint(5) unsigned default NULL,
+  `id_livraison_mode` smallint(5) unsigned default NULL,
+  PRIMARY KEY  (`ref_doc`),
   KEY `ref_adr_livraison` (`ref_adr_livraison`),
   KEY `id_pays_livraison` (`id_pays_livraison`),
   KEY `id_livraison_mode` (`id_livraison_mode`)
@@ -4226,9 +4221,9 @@ CREATE TABLE IF NOT EXISTS `doc_pac` (
 CREATE TABLE IF NOT EXISTS `doc_tic` (
   `ref_doc` varchar(32) NOT NULL,
   `id_stock` smallint(5) unsigned NOT NULL,
-  `id_magasin` smallint(5) unsigned NOT NULL DEFAULT '1',
-  `id_caisse` smallint(5) unsigned DEFAULT NULL,
-  PRIMARY KEY (`ref_doc`),
+  `id_magasin` smallint(5) unsigned NOT NULL default '1',
+  `id_caisse` smallint(5) unsigned default NULL,
+  PRIMARY KEY  (`ref_doc`),
   KEY `id_stock` (`id_stock`),
   KEY `id_magasin` (`id_magasin`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des informations complémentaires concernant les docume';
@@ -4247,9 +4242,9 @@ CREATE TABLE IF NOT EXISTS `doc_tic` (
 CREATE TABLE IF NOT EXISTS `doc_trm` (
   `ref_doc` varchar(32) NOT NULL,
   `id_stock_source` smallint(5) unsigned NOT NULL,
-  `id_stock_cible` smallint(5) unsigned DEFAULT NULL,
-  `ref_transporteur` varchar(32) DEFAULT NULL,
-  `id_livraison_mode` smallint(5) unsigned DEFAULT NULL,
+  `id_stock_cible` smallint(5) unsigned default NULL,
+  `ref_transporteur` varchar(32) default NULL,
+  `id_livraison_mode` smallint(5) unsigned default NULL,
   KEY `ref_doc` (`ref_doc`),
   KEY `id_stock_source` (`id_stock_source`),
   KEY `id_stock_cible` (`id_stock_cible`),
@@ -4288,9 +4283,9 @@ CREATE TABLE IF NOT EXISTS `doc_ventes_commerciaux` (
 --
 
 CREATE TABLE IF NOT EXISTS `echeanciers_modeles` (
-  `id_echeancier_modele` smallint(5) NOT NULL AUTO_INCREMENT,
+  `id_echeancier_modele` smallint(5) NOT NULL auto_increment,
   `lib_echeancier_modele` varchar(128) NOT NULL,
-  PRIMARY KEY (`id_echeancier_modele`),
+  PRIMARY KEY  (`id_echeancier_modele`),
   KEY `id_echeancier_modele` (`id_echeancier_modele`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -4326,11 +4321,11 @@ CREATE TABLE IF NOT EXISTS `echeanciers_modeles_echeances` (
 --
 
 CREATE TABLE IF NOT EXISTS `editions_modes` (
-  `id_edition_mode` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_edition_mode` smallint(5) unsigned NOT NULL auto_increment,
   `lib_edition_mode` varchar(64) NOT NULL,
   `code_edition_mode` varchar(32) NOT NULL,
   `actif` tinyint(3) unsigned NOT NULL,
-  PRIMARY KEY (`id_edition_mode`)
+  PRIMARY KEY  (`id_edition_mode`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des modes d''édition possibles pour les documents' AUTO_INCREMENT=6 ;
 
 --
@@ -4351,13 +4346,13 @@ INSERT INTO `editions_modes` (`id_edition_mode`, `lib_edition_mode`, `code_editi
 --
 
 CREATE TABLE IF NOT EXISTS `exports_modeles` (
-  `id_export_modele` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_export_modele` smallint(5) unsigned NOT NULL auto_increment,
   `id_export_type` tinyint(3) unsigned NOT NULL,
   `lib_modele` varchar(64) NOT NULL,
   `desc_modele` mediumtext NOT NULL,
   `code_export_modele` varchar(32) NOT NULL,
   `extension` varchar(8) NOT NULL,
-  PRIMARY KEY (`id_export_modele`)
+  PRIMARY KEY  (`id_export_modele`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=101 ;
 
 --
@@ -4378,11 +4373,11 @@ INSERT INTO `exports_modeles` (`id_export_modele`, `id_export_type`, `lib_modele
 --
 
 CREATE TABLE IF NOT EXISTS `exports_modeles_usage` (
-  `id_export_usage` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_export_usage` smallint(5) unsigned NOT NULL auto_increment,
   `id_export_modele` smallint(5) unsigned NOT NULL,
-  `id_objet` tinyint(3) unsigned DEFAULT NULL,
+  `id_objet` tinyint(3) unsigned default NULL,
   `usage` enum('defaut','actif','inactif') NOT NULL,
-  PRIMARY KEY (`id_export_usage`),
+  PRIMARY KEY  (`id_export_usage`),
   KEY `exports_modeles_usage_ibfk_1` (`id_export_modele`),
   KEY `exports_modeles_usage_ibfk_2` (`id_objet`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
@@ -4407,7 +4402,7 @@ INSERT INTO `exports_modeles_usage` (`id_export_usage`, `id_export_modele`, `id_
 CREATE TABLE IF NOT EXISTS `exports_type` (
   `id_export_type` tinyint(3) unsigned NOT NULL,
   `lib_export_type` varchar(64) NOT NULL,
-  PRIMARY KEY (`id_export_type`)
+  PRIMARY KEY  (`id_export_type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -4430,15 +4425,15 @@ INSERT INTO `exports_type` (`id_export_type`, `lib_export_type`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `factures_niveaux_relances` (
-  `id_niveau_relance` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_niveau_relance` smallint(5) unsigned NOT NULL auto_increment,
   `niveau_relance` tinyint(3) unsigned NOT NULL,
-  `id_client_categ` smallint(5) unsigned DEFAULT NULL,
+  `id_client_categ` smallint(5) unsigned default NULL,
   `lib_niveau_relance` varchar(64) NOT NULL,
   `delai_before_next` tinyint(3) unsigned NOT NULL,
-  `id_edition_mode` smallint(5) unsigned DEFAULT NULL,
+  `id_edition_mode` smallint(5) unsigned default NULL,
   `id_courrier_joint` mediumint(8) unsigned NOT NULL,
-  `impression` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id_niveau_relance`),
+  `impression` tinyint(4) NOT NULL default '0',
+  PRIMARY KEY  (`id_niveau_relance`),
   KEY `id_edition_mode` (`id_edition_mode`),
   KEY `id_client_categ` (`id_client_categ`),
   KEY `niveau_relance` (`niveau_relance`)
@@ -4463,9 +4458,9 @@ INSERT INTO `factures_niveaux_relances` (`id_niveau_relance`, `niveau_relance`, 
 --
 
 CREATE TABLE IF NOT EXISTS `factures_relances_modeles` (
-  `id_relance_modele` smallint(5) NOT NULL AUTO_INCREMENT,
+  `id_relance_modele` smallint(5) NOT NULL auto_increment,
   `lib_relance_modele` varchar(64) NOT NULL,
-  PRIMARY KEY (`id_relance_modele`)
+  PRIMARY KEY  (`id_relance_modele`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des libellés des modèles de relance' AUTO_INCREMENT=2 ;
 
 --
@@ -4482,17 +4477,17 @@ INSERT INTO `factures_relances_modeles` (`id_relance_modele`, `lib_relance_model
 --
 
 CREATE TABLE IF NOT EXISTS `factures_relances_niveaux` (
-  `id_niveau_relance` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `id_relance_modele` smallint(5) DEFAULT NULL,
+  `id_niveau_relance` smallint(5) unsigned NOT NULL auto_increment,
+  `id_relance_modele` smallint(5) default NULL,
   `niveau_relance` tinyint(3) unsigned NOT NULL,
   `lib_niveau_relance` varchar(64) NOT NULL,
   `delai_before_next` tinyint(3) unsigned NOT NULL,
-  `id_edition_mode` smallint(5) unsigned DEFAULT NULL,
-  `impression` tinyint(4) NOT NULL DEFAULT '0',
-  `montant_mini` smallint(5) DEFAULT NULL,
-  `suite_avant_echeance` smallint(5) DEFAULT NULL,
-  `actif` smallint(5) DEFAULT NULL,
-  PRIMARY KEY (`id_niveau_relance`),
+  `id_edition_mode` smallint(5) unsigned default NULL,
+  `impression` tinyint(4) NOT NULL default '0',
+  `montant_mini` smallint(5) default NULL,
+  `suite_avant_echeance` smallint(5) default NULL,
+  `actif` smallint(5) default NULL,
+  PRIMARY KEY  (`id_niveau_relance`),
   KEY `id_edition_mode` (`id_edition_mode`),
   KEY `niveau_relance` (`niveau_relance`),
   KEY `id_relance_modele` (`id_relance_modele`)
@@ -4543,12 +4538,12 @@ INSERT INTO `factures_relances_niveaux` (`id_niveau_relance`, `id_relance_modele
 --
 
 CREATE TABLE IF NOT EXISTS `fonctions` (
-  `id_fonction` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `id_fonction` mediumint(8) unsigned NOT NULL auto_increment,
   `lib_fonction` varchar(64) NOT NULL,
   `desc_fonction` mediumtext NOT NULL,
-  `id_fonction_parent` mediumint(8) unsigned DEFAULT NULL,
+  `id_fonction_parent` mediumint(8) unsigned default NULL,
   `id_profil` smallint(5) unsigned NOT NULL,
-  PRIMARY KEY (`id_fonction`),
+  PRIMARY KEY  (`id_fonction`),
   KEY `id_fonction_parent` (`id_fonction_parent`),
   KEY `id_profil` (`id_profil`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
@@ -4666,12 +4661,12 @@ INSERT INTO `fonctions_permissions` (`id_fonction`, `id_permission`, `value`) VA
 --
 
 CREATE TABLE IF NOT EXISTS `fournisseurs_categories` (
-  `id_fournisseur_categ` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_fournisseur_categ` smallint(5) unsigned NOT NULL auto_increment,
   `lib_fournisseur_categ` varchar(64) NOT NULL,
-  `ref_acheteur` varchar(32) DEFAULT NULL,
+  `ref_acheteur` varchar(32) default NULL,
   `defaut_numero_compte` varchar(10) NOT NULL,
   `note` mediumtext NOT NULL,
-  PRIMARY KEY (`id_fournisseur_categ`),
+  PRIMARY KEY  (`id_fournisseur_categ`),
   KEY `ref_acheteur` (`ref_acheteur`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des catégories de fournisseurs' AUTO_INCREMENT=3 ;
 
@@ -4710,9 +4705,9 @@ CREATE TABLE IF NOT EXISTS `fournisseurs_import_tarifs` (
 --
 
 CREATE TABLE IF NOT EXISTS `images_articles` (
-  `id_image` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id_image` int(10) unsigned NOT NULL auto_increment,
   `lib_file` varchar(64) NOT NULL,
-  PRIMARY KEY (`id_image`)
+  PRIMARY KEY  (`id_image`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
@@ -4727,9 +4722,9 @@ CREATE TABLE IF NOT EXISTS `images_articles` (
 --
 
 CREATE TABLE IF NOT EXISTS `import_export_types` (
-  `id_impex_type` smallint(3) NOT NULL AUTO_INCREMENT,
+  `id_impex_type` smallint(3) NOT NULL auto_increment,
   `lib_impex_type` varchar(64) NOT NULL,
-  PRIMARY KEY (`id_impex_type`)
+  PRIMARY KEY  (`id_impex_type`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
@@ -4751,7 +4746,7 @@ CREATE TABLE IF NOT EXISTS `import_serveurs` (
   `ref_serveur_import` varchar(32) NOT NULL,
   `lib_serveur_import` varchar(64) NOT NULL,
   `url_serveur_import` varchar(255) NOT NULL,
-  PRIMARY KEY (`ref_serveur_import`)
+  PRIMARY KEY  (`ref_serveur_import`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -4785,14 +4780,14 @@ CREATE TABLE IF NOT EXISTS `import_types` (
 --
 
 CREATE TABLE IF NOT EXISTS `interfaces` (
-  `id_interface` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_interface` smallint(5) unsigned NOT NULL auto_increment,
   `lib_interface` varchar(64) NOT NULL,
   `desc_interne` mediumtext NOT NULL,
   `dossier` varchar(128) NOT NULL,
   `url` varchar(255) NOT NULL,
   `id_profil` smallint(5) unsigned NOT NULL,
   `defaut_id_theme` smallint(5) unsigned NOT NULL,
-  PRIMARY KEY (`id_interface`),
+  PRIMARY KEY  (`id_interface`),
   KEY `id_profil` (`id_profil`),
   KEY `defaut_id_theme` (`defaut_id_theme`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des interfaces disponibles' AUTO_INCREMENT=53 ;
@@ -4817,15 +4812,15 @@ INSERT INTO `interfaces` (`id_interface`, `lib_interface`, `desc_interne`, `doss
 --
 
 CREATE TABLE IF NOT EXISTS `interfaces_themes` (
-  `id_theme` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `id_interface` smallint(5) unsigned DEFAULT NULL,
+  `id_theme` smallint(5) unsigned NOT NULL auto_increment,
+  `id_interface` smallint(5) unsigned default NULL,
   `lib_theme` varchar(64) NOT NULL,
   `code_theme` varchar(32) NOT NULL,
-  `id_langage` tinyint(3) unsigned DEFAULT NULL,
+  `id_langage` tinyint(3) unsigned default NULL,
   `desc_publique` mediumblob NOT NULL,
   `desc_interne` mediumblob NOT NULL,
   `actif` tinyint(1) NOT NULL,
-  PRIMARY KEY (`id_theme`),
+  PRIMARY KEY  (`id_theme`),
   KEY `actif` (`actif`),
   KEY `id_langage` (`id_langage`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des thèmes d''affichage' AUTO_INCREMENT=53 ;
@@ -4850,10 +4845,10 @@ INSERT INTO `interfaces_themes` (`id_theme`, `id_interface`, `lib_theme`, `code_
 --
 
 CREATE TABLE IF NOT EXISTS `interface_panier` (
-  `id_panier` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id_panier` bigint(20) unsigned NOT NULL auto_increment,
   `id_interface` smallint(5) unsigned NOT NULL,
   `date` datetime NOT NULL,
-  PRIMARY KEY (`id_panier`),
+  PRIMARY KEY  (`id_panier`),
   KEY `id_interface` (`id_interface`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -4888,10 +4883,10 @@ CREATE TABLE IF NOT EXISTS `interface_panier_contenu` (
 --
 
 CREATE TABLE IF NOT EXISTS `langages` (
-  `id_langage` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
+  `id_langage` tinyint(3) unsigned NOT NULL auto_increment,
   `lib_langage` varchar(32) NOT NULL,
   `code_langage` varchar(5) NOT NULL,
-  PRIMARY KEY (`id_langage`),
+  PRIMARY KEY  (`id_langage`),
   UNIQUE KEY `code_langage` (`code_langage`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des langages' AUTO_INCREMENT=6 ;
 
@@ -4913,10 +4908,10 @@ INSERT INTO `langages` (`id_langage`, `lib_langage`, `code_langage`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `listes` (
-  `id_liste` int(11) NOT NULL AUTO_INCREMENT,
+  `id_liste` int(11) NOT NULL auto_increment,
   `lib_liste` varchar(64) NOT NULL,
   `type_liste` varchar(64) NOT NULL,
-  PRIMARY KEY (`id_liste`)
+  PRIMARY KEY  (`id_liste`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
@@ -4931,13 +4926,13 @@ CREATE TABLE IF NOT EXISTS `listes` (
 --
 
 CREATE TABLE IF NOT EXISTS `listes_contenus` (
-  `id_liste_contenu` int(11) NOT NULL AUTO_INCREMENT,
+  `id_liste_contenu` int(11) NOT NULL auto_increment,
   `id_liste` int(11) NOT NULL,
   `table_nom` varchar(64) NOT NULL,
   `champ_ref` varchar(64) NOT NULL,
   `champ_lib` varchar(64) NOT NULL,
   `view_name` varchar(64) NOT NULL,
-  PRIMARY KEY (`id_liste_contenu`),
+  PRIMARY KEY  (`id_liste_contenu`),
   KEY `id_liste` (`id_liste`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -4953,11 +4948,11 @@ CREATE TABLE IF NOT EXISTS `listes_contenus` (
 --
 
 CREATE TABLE IF NOT EXISTS `listes_contenus_exceptions` (
-  `id_liste_exception` int(11) NOT NULL AUTO_INCREMENT,
+  `id_liste_exception` int(11) NOT NULL auto_increment,
   `sens` tinyint(4) NOT NULL,
   `id_liste_contenu` int(11) NOT NULL,
   `ref` varchar(64) NOT NULL,
-  PRIMARY KEY (`id_liste_exception`),
+  PRIMARY KEY  (`id_liste_exception`),
   KEY `sens` (`sens`,`id_liste_contenu`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -4973,9 +4968,9 @@ CREATE TABLE IF NOT EXISTS `listes_contenus_exceptions` (
 --
 
 CREATE TABLE IF NOT EXISTS `livraisons_modes` (
-  `id_livraison_mode` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_livraison_mode` smallint(5) unsigned NOT NULL auto_increment,
   `ref_article` varchar(32) NOT NULL,
-  PRIMARY KEY (`id_livraison_mode`),
+  PRIMARY KEY  (`id_livraison_mode`),
   KEY `ref_article` (`ref_article`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -5010,11 +5005,11 @@ CREATE TABLE IF NOT EXISTS `livraisons_modes_tarifs` (
 --
 
 CREATE TABLE IF NOT EXISTS `livraisons_modes_zones` (
-  `id_livraison_zone` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_livraison_zone` smallint(5) unsigned NOT NULL auto_increment,
   `id_livraison_mode` smallint(5) unsigned NOT NULL,
   `id_pays` smallint(5) unsigned NOT NULL,
   `liste_cp` mediumtext NOT NULL,
-  PRIMARY KEY (`id_livraison_zone`),
+  PRIMARY KEY  (`id_livraison_zone`),
   KEY `id_livraison_mode` (`id_livraison_mode`),
   KEY `id_pays` (`id_pays`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -5088,15 +5083,15 @@ CREATE TABLE IF NOT EXISTS `lmb_version` (
 --
 
 CREATE TABLE IF NOT EXISTS `magasins` (
-  `id_magasin` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_magasin` smallint(5) unsigned NOT NULL auto_increment,
   `lib_magasin` varchar(64) NOT NULL,
   `abrev_magasin` varchar(32) NOT NULL,
-  `id_mag_enseigne` smallint(5) unsigned DEFAULT NULL,
+  `id_mag_enseigne` smallint(5) unsigned default NULL,
   `id_stock` smallint(5) unsigned NOT NULL,
   `id_tarif` smallint(5) unsigned NOT NULL,
-  `mode_vente` enum('VPC','VAC') NOT NULL DEFAULT 'VAC',
+  `mode_vente` enum('VPC','VAC') NOT NULL default 'VAC',
   `actif` tinyint(3) unsigned NOT NULL,
-  PRIMARY KEY (`id_magasin`),
+  PRIMARY KEY  (`id_magasin`),
   KEY `id_stock` (`id_stock`),
   KEY `id_tarif` (`id_tarif`),
   KEY `actif` (`actif`),
@@ -5117,9 +5112,9 @@ INSERT INTO `magasins` (`id_magasin`, `lib_magasin`, `abrev_magasin`, `id_mag_en
 --
 
 CREATE TABLE IF NOT EXISTS `magasins_enseignes` (
-  `id_mag_enseigne` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_mag_enseigne` smallint(5) unsigned NOT NULL auto_increment,
   `lib_enseigne` varchar(255) NOT NULL,
-  PRIMARY KEY (`id_mag_enseigne`)
+  PRIMARY KEY  (`id_mag_enseigne`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des enseignes de l''entreprise' AUTO_INCREMENT=2 ;
 
 --
@@ -5136,15 +5131,15 @@ INSERT INTO `magasins_enseignes` (`id_mag_enseigne`, `lib_enseigne`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `mail_templates` (
-  `id_mail_template` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `lib_mail_template` varchar(64) DEFAULT NULL,
+  `id_mail_template` smallint(5) unsigned NOT NULL auto_increment,
+  `lib_mail_template` varchar(64) default NULL,
   `header_img_template` varchar(255) NOT NULL,
   `header_mail_template` mediumtext NOT NULL,
   `footer_mail_template` mediumtext NOT NULL,
   `footer_img_template` varchar(255) NOT NULL,
   `mail_html_charset` varchar(32) NOT NULL,
   `mail_css_template` varchar(255) NOT NULL,
-  PRIMARY KEY (`id_mail_template`) USING BTREE
+  PRIMARY KEY  (`id_mail_template`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
@@ -5161,11 +5156,11 @@ INSERT INTO `mail_templates` (`id_mail_template`, `lib_mail_template`, `header_i
 --
 
 CREATE TABLE IF NOT EXISTS `mod_vehicules` (
-  `id_vehicule` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `lib_vehicule` varchar(128) DEFAULT NULL,
-  `marque` varchar(128) DEFAULT NULL,
-  `attribution` varchar(128) DEFAULT NULL,
-  PRIMARY KEY (`id_vehicule`)
+  `id_vehicule` smallint(5) unsigned NOT NULL auto_increment,
+  `lib_vehicule` varchar(128) default NULL,
+  `marque` varchar(128) default NULL,
+  `attribution` varchar(128) default NULL,
+  PRIMARY KEY  (`id_vehicule`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des véhicules' AUTO_INCREMENT=1 ;
 
 --
@@ -5180,12 +5175,12 @@ CREATE TABLE IF NOT EXISTS `mod_vehicules` (
 --
 
 CREATE TABLE IF NOT EXISTS `mod_vehicules_evenements` (
-  `id_evenement` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `lib_evenement` varchar(128) DEFAULT NULL,
+  `id_evenement` smallint(5) unsigned NOT NULL auto_increment,
+  `lib_evenement` varchar(128) default NULL,
   `id_vehicule` smallint(5) unsigned NOT NULL,
   `date_evenement` datetime NOT NULL,
   `cout` double NOT NULL,
-  PRIMARY KEY (`id_evenement`),
+  PRIMARY KEY  (`id_evenement`),
   KEY `mod_vehicules_evenements_ibfk_1` (`id_vehicule`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des évenements concernant un véhicule' AUTO_INCREMENT=1 ;
 
@@ -5201,12 +5196,12 @@ CREATE TABLE IF NOT EXISTS `mod_vehicules_evenements` (
 --
 
 CREATE TABLE IF NOT EXISTS `msg_modeles` (
-  `id_msg_modele` smallint(6) NOT NULL AUTO_INCREMENT,
+  `id_msg_modele` smallint(6) NOT NULL auto_increment,
   `id_msg_type` int(11) NOT NULL,
   `lib_msg_modele` varchar(64) NOT NULL,
   `desc_msg_modele` varchar(128) NOT NULL,
   `code_msg_modele` varchar(64) NOT NULL,
-  PRIMARY KEY (`id_msg_modele`),
+  PRIMARY KEY  (`id_msg_modele`),
   KEY `id_msg_type` (`id_msg_type`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
@@ -5226,10 +5221,10 @@ INSERT INTO `msg_modeles` (`id_msg_modele`, `id_msg_type`, `lib_msg_modele`, `de
 --
 
 CREATE TABLE IF NOT EXISTS `msg_modeles_usage` (
-  `id_msg_modele_usage` smallint(6) NOT NULL AUTO_INCREMENT,
+  `id_msg_modele_usage` smallint(6) NOT NULL auto_increment,
   `id_msg_modele` smallint(6) NOT NULL,
-  `usage` enum('Actif','Inactif','Principal') NOT NULL DEFAULT 'Actif',
-  PRIMARY KEY (`id_msg_modele_usage`),
+  `usage` enum('Actif','Inactif','Principal') NOT NULL default 'Actif',
+  PRIMARY KEY  (`id_msg_modele_usage`),
   KEY `id_msg_modele` (`id_msg_modele`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
@@ -5247,10 +5242,10 @@ INSERT INTO `msg_modeles_usage` (`id_msg_modele_usage`, `id_msg_modele`, `usage`
 --
 
 CREATE TABLE IF NOT EXISTS `msg_types` (
-  `id_msg_type` int(11) NOT NULL AUTO_INCREMENT,
+  `id_msg_type` int(11) NOT NULL auto_increment,
   `id_msg_type_groupe` smallint(6) NOT NULL,
-  `lib_msg_type` varchar(128) DEFAULT NULL,
-  PRIMARY KEY (`id_msg_type`),
+  `lib_msg_type` varchar(128) default NULL,
+  PRIMARY KEY  (`id_msg_type`),
   KEY `id_msg_type_groupe` (`id_msg_type_groupe`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
@@ -5270,9 +5265,9 @@ INSERT INTO `msg_types` (`id_msg_type`, `id_msg_type_groupe`, `lib_msg_type`) VA
 --
 
 CREATE TABLE IF NOT EXISTS `msg_types_groupe` (
-  `id_msg_type_groupe` smallint(6) NOT NULL AUTO_INCREMENT,
+  `id_msg_type_groupe` smallint(6) NOT NULL auto_increment,
   `lib_msg_type_groupe` varchar(64) NOT NULL,
-  PRIMARY KEY (`id_msg_type_groupe`)
+  PRIMARY KEY  (`id_msg_type_groupe`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
@@ -5290,22 +5285,22 @@ INSERT INTO `msg_types_groupe` (`id_msg_type_groupe`, `lib_msg_type_groupe`) VAL
 --
 
 CREATE TABLE IF NOT EXISTS `newsletters` (
-  `id_newsletter` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `nom_newsletter` varchar(64) DEFAULT NULL,
-  `periodicite` smallint(5) unsigned DEFAULT NULL COMMENT 'en jours',
+  `id_newsletter` smallint(5) unsigned NOT NULL auto_increment,
+  `nom_newsletter` varchar(64) default NULL,
+  `periodicite` smallint(5) unsigned default NULL COMMENT 'en jours',
   `description_interne` mediumtext COMMENT 'Texte de présentation de la newsletter, non consultable par les abonnés',
   `description_publique` mediumtext COMMENT 'Texte de présentation de la newsletter, public',
-  `id_mail_template` smallint(5) unsigned DEFAULT NULL,
-  `archives_publiques` tinyint(1) unsigned DEFAULT '0' COMMENT 'Définit si les inscrits peuvent consulter les archives',
-  `inscription_libre` tinyint(1) unsigned DEFAULT '0' COMMENT 'L''inscription peut-elle etre réalisée librement depuis le site ?',
-  `nom_expediteur` varchar(64) DEFAULT NULL COMMENT 'Nom de l''expéditeur',
-  `mail_expediteur` varchar(255) DEFAULT NULL COMMENT 'Email de l''expéditeur',
-  `mail_retour` varchar(255) DEFAULT NULL COMMENT 'Email de retour',
-  `mail_inscription_titre` varchar(255) DEFAULT NULL COMMENT 'Titre du mail d''inscription pour les inscriptions manuelles',
+  `id_mail_template` smallint(5) unsigned default NULL,
+  `archives_publiques` tinyint(1) unsigned default '0' COMMENT 'Définit si les inscrits peuvent consulter les archives',
+  `inscription_libre` tinyint(1) unsigned default '0' COMMENT 'L''inscription peut-elle etre réalisée librement depuis le site ?',
+  `nom_expediteur` varchar(64) default NULL COMMENT 'Nom de l''expéditeur',
+  `mail_expediteur` varchar(255) default NULL COMMENT 'Email de l''expéditeur',
+  `mail_retour` varchar(255) default NULL COMMENT 'Email de retour',
+  `mail_inscription_titre` varchar(255) default NULL COMMENT 'Titre du mail d''inscription pour les inscriptions manuelles',
   `mail_inscription_corps` mediumtext COMMENT 'Corps du mail d''inscription, devant inclure le lien de confirmation',
   `titre_brouillon` varchar(255) NOT NULL,
   `brouillon` longtext NOT NULL,
-  PRIMARY KEY (`id_newsletter`),
+  PRIMARY KEY  (`id_newsletter`),
   KEY `newsletters_ibfk_1` (`id_mail_template`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -5340,7 +5335,7 @@ CREATE TABLE IF NOT EXISTS `newsletters_destinataires` (
 --
 
 CREATE TABLE IF NOT EXISTS `newsletters_envois` (
-  `id_envoi` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `id_envoi` mediumint(8) unsigned NOT NULL auto_increment,
   `id_newsletter` smallint(5) unsigned NOT NULL,
   `entete` mediumtext NOT NULL,
   `contenu` mediumtext NOT NULL,
@@ -5348,7 +5343,7 @@ CREATE TABLE IF NOT EXISTS `newsletters_envois` (
   `titre` varchar(255) NOT NULL,
   `date_envoi` datetime NOT NULL,
   `fin_envoi` datetime NOT NULL COMMENT 'en secondes',
-  PRIMARY KEY (`id_envoi`),
+  PRIMARY KEY  (`id_envoi`),
   KEY `newsletters_envois_ibfk_1` (`id_newsletter`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -5421,13 +5416,13 @@ CREATE TABLE IF NOT EXISTS `newsletters_profils` (
 --
 
 CREATE TABLE IF NOT EXISTS `pays` (
-  `id_pays` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_pays` smallint(5) unsigned NOT NULL auto_increment,
   `pays` varchar(64) NOT NULL,
   `code_pays` varchar(2) NOT NULL,
   `defaut_id_langage` tinyint(3) unsigned NOT NULL,
-  `use_etat` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'Défini si les états/cantons/provinces sont gérés pour ce pays',
+  `use_etat` tinyint(4) NOT NULL default '0' COMMENT 'Défini si les états/cantons/provinces sont gérés pour ce pays',
   `affichage` tinyint(4) NOT NULL,
-  PRIMARY KEY (`id_pays`),
+  PRIMARY KEY  (`id_pays`),
   UNIQUE KEY `pays` (`pays`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des pays' AUTO_INCREMENT=241 ;
 
@@ -5683,10 +5678,10 @@ INSERT INTO `pays` (`id_pays`, `pays`, `code_pays`, `defaut_id_langage`, `use_et
 --
 
 CREATE TABLE IF NOT EXISTS `pays_etats` (
-  `id_etat` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `id_etat` mediumint(8) unsigned NOT NULL auto_increment,
   `id_pays` smallint(5) unsigned NOT NULL,
   `lib_etat` varchar(128) NOT NULL,
-  PRIMARY KEY (`id_etat`),
+  PRIMARY KEY  (`id_etat`),
   KEY `id_pays` (`id_pays`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -5702,12 +5697,12 @@ CREATE TABLE IF NOT EXISTS `pays_etats` (
 --
 
 CREATE TABLE IF NOT EXISTS `pdf_modeles` (
-  `id_pdf_modele` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_pdf_modele` smallint(5) unsigned NOT NULL auto_increment,
   `id_pdf_type` tinyint(3) unsigned NOT NULL,
   `lib_modele` varchar(64) NOT NULL,
   `desc_modele` mediumtext NOT NULL,
   `code_pdf_modele` varchar(32) NOT NULL,
-  PRIMARY KEY (`id_pdf_modele`),
+  PRIMARY KEY  (`id_pdf_modele`),
   KEY `id_pdf_type` (`id_pdf_type`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Modeles de documents PDF' AUTO_INCREMENT=30 ;
 
@@ -5750,11 +5745,11 @@ INSERT INTO `pdf_modeles` (`id_pdf_modele`, `id_pdf_type`, `lib_modele`, `desc_m
 --
 
 CREATE TABLE IF NOT EXISTS `pdf_modeles_usage` (
-  `id_pdf_usage` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_pdf_usage` smallint(5) unsigned NOT NULL auto_increment,
   `id_pdf_modele` smallint(5) unsigned NOT NULL,
-  `id_objet` tinyint(3) unsigned DEFAULT NULL,
+  `id_objet` tinyint(3) unsigned default NULL,
   `usage` enum('defaut','actif','inactif') NOT NULL,
-  PRIMARY KEY (`id_pdf_usage`),
+  PRIMARY KEY  (`id_pdf_usage`),
   KEY `pdf_modeles_usage_ibfk_1` (`id_pdf_modele`),
   KEY `pdf_modeles_usage_ibfk_2` (`id_objet`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
@@ -5774,9 +5769,9 @@ INSERT INTO `pdf_modeles_usage` (`id_pdf_usage`, `id_pdf_modele`, `id_objet`, `u
 --
 
 CREATE TABLE IF NOT EXISTS `pdf_types` (
-  `id_pdf_type` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
+  `id_pdf_type` tinyint(3) unsigned NOT NULL auto_increment,
   `lib_pdf_type` varchar(64) NOT NULL,
-  PRIMARY KEY (`id_pdf_type`)
+  PRIMARY KEY  (`id_pdf_type`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Types de PDF à générer' AUTO_INCREMENT=9 ;
 
 --
@@ -5800,14 +5795,14 @@ INSERT INTO `pdf_types` (`id_pdf_type`, `lib_pdf_type`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `permissions` (
-  `id_permission` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_permission` smallint(5) unsigned NOT NULL auto_increment,
   `id_profil` smallint(5) unsigned NOT NULL,
   `lib_permission` varchar(64) NOT NULL,
   `desc_permission` tinyblob NOT NULL,
-  `values` varchar(256) DEFAULT NULL,
-  `id_permission_parent` smallint(5) unsigned DEFAULT NULL,
-  `ordre` smallint(5) unsigned NOT NULL DEFAULT '50',
-  PRIMARY KEY (`id_permission`),
+  `values` varchar(256) default NULL,
+  `id_permission_parent` smallint(5) unsigned default NULL,
+  `ordre` smallint(5) unsigned NOT NULL default '50',
+  PRIMARY KEY  (`id_permission`),
   KEY `id_profil` (`id_profil`),
   KEY `id_permission_parent` (`id_permission_parent`),
   KEY `lib_permission` (`lib_permission`),
@@ -5876,8 +5871,8 @@ INSERT INTO `permissions` (`id_permission`, `id_profil`, `lib_permission`, `desc
 --
 
 CREATE TABLE IF NOT EXISTS `permissions_dependances` (
-  `id_permission` smallint(5) DEFAULT NULL,
-  `id_permission_necessaire` smallint(5) DEFAULT NULL
+  `id_permission` smallint(5) default NULL,
+  `id_permission_necessaire` smallint(5) default NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -5900,13 +5895,13 @@ INSERT INTO `permissions_dependances` (`id_permission`, `id_permission_necessair
 --
 
 CREATE TABLE IF NOT EXISTS `pieces` (
-  `id_piece` mediumint(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id_piece` mediumint(10) unsigned NOT NULL auto_increment,
   `lib_piece` varchar(128) NOT NULL,
-  `id_piece_type` mediumint(8) unsigned DEFAULT NULL,
+  `id_piece_type` mediumint(8) unsigned default NULL,
   `fichier` varchar(128) NOT NULL,
   `nom` varchar(64) NOT NULL,
   `note` mediumtext NOT NULL,
-  PRIMARY KEY (`id_piece`)
+  PRIMARY KEY  (`id_piece`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
@@ -5939,12 +5934,12 @@ CREATE TABLE IF NOT EXISTS `pieces_associations` (
 --
 
 CREATE TABLE IF NOT EXISTS `pieces_types` (
-  `id_piece_type` mediumint(8) NOT NULL AUTO_INCREMENT,
+  `id_piece_type` mediumint(8) NOT NULL auto_increment,
   `lib_piece_type` varchar(64) NOT NULL,
   `abrev_piece_type` varchar(64) NOT NULL,
-  `systeme` tinyint(1) NOT NULL DEFAULT '0',
-  `actif` tinyint(3) unsigned NOT NULL DEFAULT '1',
-  PRIMARY KEY (`id_piece_type`)
+  `systeme` tinyint(1) NOT NULL default '0',
+  `actif` tinyint(3) unsigned NOT NULL default '1',
+  PRIMARY KEY  (`id_piece_type`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
@@ -6987,16 +6982,16 @@ INSERT INTO `plan_comptable` (`numero_compte`, `lib_compte`, `favori`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `profils` (
-  `id_profil` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_profil` smallint(5) unsigned NOT NULL auto_increment,
   `lib_profil` varchar(64) NOT NULL,
   `code_profil` varchar(32) NOT NULL,
   `ordre` tinyint(3) unsigned NOT NULL,
   `desc_publique` mediumblob NOT NULL,
   `desc_interne` mediumblob NOT NULL,
   `actif` tinyint(1) NOT NULL,
-  `niveau_secu` tinyint(3) unsigned NOT NULL DEFAULT '2',
+  `niveau_secu` tinyint(3) unsigned NOT NULL default '2',
   `defaut_id_interface` smallint(5) unsigned NOT NULL,
-  PRIMARY KEY (`id_profil`),
+  PRIMARY KEY  (`id_profil`),
   UNIQUE KEY `code_profil` (`code_profil`),
   KEY `ordre` (`ordre`),
   KEY `actif` (`actif`)
@@ -7022,13 +7017,13 @@ INSERT INTO `profils` (`id_profil`, `lib_profil`, `code_profil`, `ordre`, `desc_
 --
 
 CREATE TABLE IF NOT EXISTS `recherches_persos` (
-  `id_recherche_perso` smallint(5) NOT NULL AUTO_INCREMENT,
+  `id_recherche_perso` smallint(5) NOT NULL auto_increment,
   `id_type_recherche` smallint(5) NOT NULL,
-  `lib_recherche_perso` varchar(250) DEFAULT NULL,
+  `lib_recherche_perso` varchar(250) default NULL,
   `desc_recherche` mediumtext,
   `note_tech` mediumtext,
   `requete` mediumtext NOT NULL,
-  PRIMARY KEY (`id_recherche_perso`),
+  PRIMARY KEY  (`id_recherche_perso`),
   KEY `id_type_recherche` (`id_type_recherche`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -7044,9 +7039,9 @@ CREATE TABLE IF NOT EXISTS `recherches_persos` (
 --
 
 CREATE TABLE IF NOT EXISTS `recherches_persos_types` (
-  `id_type_recherche_perso` smallint(5) NOT NULL AUTO_INCREMENT,
+  `id_type_recherche_perso` smallint(5) NOT NULL auto_increment,
   `lib_type_recherche_perso` varchar(250) NOT NULL,
-  PRIMARY KEY (`id_type_recherche_perso`)
+  PRIMARY KEY  (`id_type_recherche_perso`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
@@ -7067,14 +7062,14 @@ INSERT INTO `recherches_persos_types` (`id_type_recherche_perso`, `lib_type_rech
 --
 
 CREATE TABLE IF NOT EXISTS `references_tags` (
-  `id_reference` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `lib_reference` varchar(32) NOT NULL DEFAULT '',
-  `lib_table` varchar(64) NOT NULL DEFAULT '',
-  `champs` varchar(64) NOT NULL DEFAULT '',
-  `prefixe` varchar(12) NOT NULL DEFAULT '',
-  `ref_rules` varchar(32) NOT NULL DEFAULT '',
-  `last_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id_reference`)
+  `id_reference` smallint(5) unsigned NOT NULL auto_increment,
+  `lib_reference` varchar(32) NOT NULL default '',
+  `lib_table` varchar(64) NOT NULL default '',
+  `champs` varchar(64) NOT NULL default '',
+  `prefixe` varchar(12) NOT NULL default '',
+  `ref_rules` varchar(32) NOT NULL default '',
+  `last_id` bigint(20) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`id_reference`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Regles de génération des références uniques' AUTO_INCREMENT=38 ;
 
 --
@@ -7128,14 +7123,14 @@ INSERT INTO `references_tags` (`id_reference`, `lib_reference`, `lib_table`, `ch
 
 CREATE TABLE IF NOT EXISTS `reglements` (
   `ref_reglement` varchar(32) NOT NULL,
-  `ref_contact` varchar(32) DEFAULT NULL,
+  `ref_contact` varchar(32) default NULL,
   `date_saisie` datetime NOT NULL,
   `date_reglement` datetime NOT NULL,
   `date_echeance` date NOT NULL,
   `id_reglement_mode` smallint(5) unsigned NOT NULL,
   `montant_reglement` double NOT NULL,
-  `valide` tinyint(4) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`ref_reglement`),
+  `valide` tinyint(4) NOT NULL default '1',
+  PRIMARY KEY  (`ref_reglement`),
   KEY `ref_contact` (`ref_contact`),
   KEY `date_reglement` (`date_reglement`),
   KEY `id_reglement_mode` (`id_reglement_mode`)
@@ -7156,7 +7151,7 @@ CREATE TABLE IF NOT EXISTS `reglements_docs` (
   `ref_reglement` varchar(32) NOT NULL,
   `ref_doc` varchar(32) NOT NULL,
   `montant` double NOT NULL,
-  `liaison_valide` tinyint(4) NOT NULL DEFAULT '1',
+  `liaison_valide` tinyint(4) NOT NULL default '1',
   KEY `ref_reglement` (`ref_reglement`),
   KEY `ref_doc` (`ref_doc`),
   KEY `liaison_valide` (`liaison_valide`)
@@ -7174,15 +7169,15 @@ CREATE TABLE IF NOT EXISTS `reglements_docs` (
 --
 
 CREATE TABLE IF NOT EXISTS `reglements_modes` (
-  `id_reglement_mode` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_reglement_mode` smallint(5) unsigned NOT NULL auto_increment,
   `lib_reglement_mode` varchar(32) NOT NULL,
   `abrev_reglement_mode` varchar(5) NOT NULL,
-  `type_reglement` enum('entrant','sortant') NOT NULL DEFAULT 'entrant',
-  `emission` enum('','caisse','compte_bancaire','carte_bancaire','tpe') NOT NULL DEFAULT 'caisse',
-  `destination` enum('','caisse','compte_bancaire','carte_bancaire','tpe') NOT NULL DEFAULT 'caisse',
+  `type_reglement` enum('entrant','sortant') NOT NULL default 'entrant',
+  `emission` enum('','caisse','compte_bancaire','carte_bancaire','tpe') NOT NULL default 'caisse',
+  `destination` enum('','caisse','compte_bancaire','carte_bancaire','tpe') NOT NULL default 'caisse',
   `allow_date_echeance` tinyint(4) NOT NULL,
   `actif` tinyint(4) NOT NULL,
-  PRIMARY KEY (`id_reglement_mode`)
+  PRIMARY KEY  (`id_reglement_mode`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des modes de règlement disponibles' AUTO_INCREMENT=20 ;
 
 --
@@ -7255,8 +7250,8 @@ CREATE TABLE IF NOT EXISTS `regmt_avf` (
 CREATE TABLE IF NOT EXISTS `regmt_e_cb` (
   `ref_reglement` varchar(32) NOT NULL,
   `id_compte_tpe_dest` smallint(5) unsigned NOT NULL,
-  `id_compte_caisse_move` smallint(5) unsigned DEFAULT NULL,
-  PRIMARY KEY (`ref_reglement`),
+  `id_compte_caisse_move` smallint(5) unsigned default NULL,
+  PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_tpe_dest` (`id_compte_tpe_dest`),
   KEY `id_compte_caisse_move` (`id_compte_caisse_move`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les paiements entrant en ca';
@@ -7274,11 +7269,11 @@ CREATE TABLE IF NOT EXISTS `regmt_e_cb` (
 
 CREATE TABLE IF NOT EXISTS `regmt_e_chq` (
   `ref_reglement` varchar(32) NOT NULL,
-  `id_compte_caisse_move` smallint(5) unsigned DEFAULT NULL,
+  `id_compte_caisse_move` smallint(5) unsigned default NULL,
   `numero_cheque` varchar(32) NOT NULL,
   `info_banque` varchar(64) NOT NULL,
   `info_compte` varchar(64) NOT NULL,
-  PRIMARY KEY (`ref_reglement`),
+  PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_caisse_move` (`id_compte_caisse_move`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les paiements entrant en es';
 
@@ -7295,8 +7290,8 @@ CREATE TABLE IF NOT EXISTS `regmt_e_chq` (
 
 CREATE TABLE IF NOT EXISTS `regmt_e_esp` (
   `ref_reglement` varchar(32) NOT NULL,
-  `id_compte_caisse_move` smallint(5) unsigned DEFAULT NULL,
-  PRIMARY KEY (`ref_reglement`),
+  `id_compte_caisse_move` smallint(5) unsigned default NULL,
+  PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_caisse_move` (`id_compte_caisse_move`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les paiements entrant en es';
 
@@ -7312,11 +7307,11 @@ CREATE TABLE IF NOT EXISTS `regmt_e_esp` (
 --
 
 CREATE TABLE IF NOT EXISTS `regmt_e_lcr` (
-  `ref_reglement` varchar(32) NOT NULL DEFAULT '',
+  `ref_reglement` varchar(32) NOT NULL default '',
   `date_echeance` date NOT NULL,
-  `id_compte_bancaire_source` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `id_compte_bancaire_source` smallint(5) unsigned NOT NULL default '0',
   `id_compte_bancaire_dest` smallint(5) unsigned NOT NULL,
-  PRIMARY KEY (`ref_reglement`),
+  PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_bancaire_source` (`id_compte_bancaire_source`),
   KEY `id_compte_bancaire_dest` (`id_compte_bancaire_dest`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les paiements par virement';
@@ -7333,11 +7328,11 @@ CREATE TABLE IF NOT EXISTS `regmt_e_lcr` (
 --
 
 CREATE TABLE IF NOT EXISTS `regmt_e_prb` (
-  `ref_reglement` varchar(32) NOT NULL DEFAULT '',
+  `ref_reglement` varchar(32) NOT NULL default '',
   `date_echeance` date NOT NULL,
-  `id_compte_bancaire_source` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `id_compte_bancaire_source` smallint(5) unsigned NOT NULL default '0',
   `id_compte_bancaire_dest` smallint(5) unsigned NOT NULL,
-  PRIMARY KEY (`ref_reglement`),
+  PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_bancaire_source` (`id_compte_bancaire_source`),
   KEY `id_compte_bancaire_dest` (`id_compte_bancaire_dest`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les paiements par virement';
@@ -7356,7 +7351,7 @@ CREATE TABLE IF NOT EXISTS `regmt_e_prb` (
 CREATE TABLE IF NOT EXISTS `regmt_e_tpv` (
   `ref_reglement` varchar(32) NOT NULL,
   `id_compte_tpv_dest` smallint(5) unsigned NOT NULL,
-  PRIMARY KEY (`ref_reglement`),
+  PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_tpv_dest` (`id_compte_tpv_dest`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -7372,9 +7367,9 @@ CREATE TABLE IF NOT EXISTS `regmt_e_tpv` (
 --
 
 CREATE TABLE IF NOT EXISTS `regmt_e_vir` (
-  `ref_reglement` varchar(32) NOT NULL DEFAULT '',
-  `id_compte_bancaire_dest` smallint(5) unsigned DEFAULT NULL,
-  PRIMARY KEY (`ref_reglement`),
+  `ref_reglement` varchar(32) NOT NULL default '',
+  `id_compte_bancaire_dest` smallint(5) unsigned default NULL,
+  PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_bancaire_dest` (`id_compte_bancaire_dest`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les paiements par virement';
 
@@ -7392,7 +7387,7 @@ CREATE TABLE IF NOT EXISTS `regmt_e_vir` (
 CREATE TABLE IF NOT EXISTS `regmt_s_cb` (
   `ref_reglement` varchar(32) NOT NULL,
   `id_compte_cb` smallint(5) unsigned NOT NULL,
-  PRIMARY KEY (`ref_reglement`),
+  PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_cb` (`id_compte_cb`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les paiements par CB';
 
@@ -7411,7 +7406,7 @@ CREATE TABLE IF NOT EXISTS `regmt_s_chq` (
   `ref_reglement` varchar(32) NOT NULL,
   `id_compte_bancaire_source` smallint(5) unsigned NOT NULL,
   `numero_cheque` varchar(32) NOT NULL,
-  PRIMARY KEY (`ref_reglement`),
+  PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_caisse_dest` (`id_compte_bancaire_source`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les paiements entrant en es';
 
@@ -7428,8 +7423,8 @@ CREATE TABLE IF NOT EXISTS `regmt_s_chq` (
 
 CREATE TABLE IF NOT EXISTS `regmt_s_esp` (
   `ref_reglement` varchar(32) NOT NULL,
-  `id_compte_caisse_move` smallint(5) unsigned DEFAULT NULL,
-  PRIMARY KEY (`ref_reglement`),
+  `id_compte_caisse_move` smallint(5) unsigned default NULL,
+  PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_caisse_move` (`id_compte_caisse_move`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les paiements sortant en es';
 
@@ -7445,9 +7440,9 @@ CREATE TABLE IF NOT EXISTS `regmt_s_esp` (
 --
 
 CREATE TABLE IF NOT EXISTS `regmt_s_lcr` (
-  `ref_reglement` varchar(32) NOT NULL DEFAULT '',
-  `id_compte_bancaire_source` smallint(5) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`ref_reglement`),
+  `ref_reglement` varchar(32) NOT NULL default '',
+  `id_compte_bancaire_source` smallint(5) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_bancaire_source` (`id_compte_bancaire_source`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les paiements par virement';
 
@@ -7463,9 +7458,9 @@ CREATE TABLE IF NOT EXISTS `regmt_s_lcr` (
 --
 
 CREATE TABLE IF NOT EXISTS `regmt_s_prb` (
-  `ref_reglement` varchar(32) NOT NULL DEFAULT '',
-  `id_compte_bancaire_source` smallint(5) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`ref_reglement`),
+  `ref_reglement` varchar(32) NOT NULL default '',
+  `id_compte_bancaire_source` smallint(5) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_bancaire_source` (`id_compte_bancaire_source`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les paiements par virement';
 
@@ -7481,10 +7476,10 @@ CREATE TABLE IF NOT EXISTS `regmt_s_prb` (
 --
 
 CREATE TABLE IF NOT EXISTS `regmt_s_vir` (
-  `ref_reglement` varchar(32) NOT NULL DEFAULT '',
-  `id_compte_bancaire_source` smallint(5) unsigned DEFAULT '0',
-  `id_compte_bancaire_dest` smallint(5) unsigned DEFAULT NULL,
-  PRIMARY KEY (`ref_reglement`),
+  `ref_reglement` varchar(32) NOT NULL default '',
+  `id_compte_bancaire_source` smallint(5) unsigned default '0',
+  `id_compte_bancaire_dest` smallint(5) unsigned default NULL,
+  PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_bancaire_source` (`id_compte_bancaire_source`),
   KEY `id_compte_bancaire_dest` (`id_compte_bancaire_dest`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les paiements par virement';
@@ -7503,7 +7498,7 @@ CREATE TABLE IF NOT EXISTS `regmt_s_vir` (
 CREATE TABLE IF NOT EXISTS `ressources` (
   `ref_ressource` varchar(32) NOT NULL,
   `lib_ressource` varchar(64) NOT NULL,
-  PRIMARY KEY (`ref_ressource`)
+  PRIMARY KEY  (`ref_ressource`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des ressources';
 
 --
@@ -7522,14 +7517,14 @@ INSERT INTO `ressources` (`ref_ressource`, `lib_ressource`) VALUES
 CREATE TABLE IF NOT EXISTS `sites_web` (
   `ref_site` varchar(32) NOT NULL,
   `ref_contact` varchar(32) NOT NULL,
-  `id_type_site_web` smallint(5) DEFAULT NULL,
+  `id_type_site_web` smallint(5) default NULL,
   `lib_site_web` varchar(64) NOT NULL,
   `url` varchar(128) NOT NULL,
   `login` varchar(32) NOT NULL,
   `pass` varchar(32) NOT NULL,
   `note` mediumblob NOT NULL,
   `ordre` smallint(5) unsigned NOT NULL,
-  PRIMARY KEY (`ref_site`),
+  PRIMARY KEY  (`ref_site`),
   KEY `ref_contact` (`ref_contact`),
   KEY `id_type_site_web` (`id_type_site_web`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des sites internet d''un contact';
@@ -7551,7 +7546,7 @@ CREATE TABLE IF NOT EXISTS `sites_web_types` (
   `id_web_type` smallint(5) NOT NULL,
   `web_type` varchar(64) NOT NULL,
   `defaut` smallint(5) NOT NULL,
-  PRIMARY KEY (`id_web_type`)
+  PRIMARY KEY  (`id_web_type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des type de sites web';
 
 --
@@ -7574,7 +7569,7 @@ CREATE TABLE IF NOT EXISTS `site_web_referencement` (
   `titre` varchar(100) NOT NULL,
   `meta_desc` varchar(255) NOT NULL,
   `meta_motscles` text NOT NULL,
-  PRIMARY KEY (`nom_fichier`)
+  PRIMARY KEY  (`nom_fichier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -7611,12 +7606,12 @@ INSERT INTO `stats_modeles_pdf` (`id_pdf_modele`, `id_stat`, `usage`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `stocks` (
-  `id_stock` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_stock` smallint(5) unsigned NOT NULL auto_increment,
   `lib_stock` varchar(32) NOT NULL,
   `abrev_stock` varchar(32) NOT NULL,
-  `ref_adr_stock` varchar(32) DEFAULT NULL,
+  `ref_adr_stock` varchar(32) default NULL,
   `actif` tinyint(3) unsigned NOT NULL,
-  PRIMARY KEY (`id_stock`),
+  PRIMARY KEY  (`id_stock`),
   KEY `actif` (`actif`),
   KEY `ref_adr_stock` (`ref_adr_stock`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des lieux de stockage de l''entreprise' AUTO_INCREMENT=2 ;
@@ -7639,7 +7634,7 @@ CREATE TABLE IF NOT EXISTS `stocks_articles` (
   `id_stock` smallint(5) unsigned NOT NULL,
   `ref_article` varchar(32) NOT NULL,
   `qte` double NOT NULL,
-  PRIMARY KEY (`ref_stock_article`),
+  PRIMARY KEY  (`ref_stock_article`),
   KEY `id_stock` (`id_stock`),
   KEY `ref_article` (`ref_article`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des articles en stock';
@@ -7658,7 +7653,7 @@ CREATE TABLE IF NOT EXISTS `stocks_articles` (
 CREATE TABLE IF NOT EXISTS `stocks_articles_sn` (
   `ref_stock_article` varchar(32) NOT NULL,
   `numero_serie` varchar(32) NOT NULL,
-  `sn_qte` double NOT NULL DEFAULT '1',
+  `sn_qte` double NOT NULL default '1',
   KEY `numero_serie` (`numero_serie`),
   KEY `ref_stock_article` (`ref_stock_article`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des numéros de série des articles en stock';
@@ -7677,7 +7672,7 @@ CREATE TABLE IF NOT EXISTS `stocks_articles_sn` (
 CREATE TABLE IF NOT EXISTS `stocks_modeles_pdf` (
   `id_pdf_modele` smallint(6) NOT NULL,
   `usage` enum('defaut','actif','inactif') NOT NULL,
-  PRIMARY KEY (`id_pdf_modele`)
+  PRIMARY KEY  (`id_pdf_modele`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -7699,9 +7694,9 @@ CREATE TABLE IF NOT EXISTS `stocks_moves` (
   `id_stock` smallint(5) unsigned NOT NULL,
   `ref_article` varchar(32) NOT NULL,
   `qte` double NOT NULL,
-  `ref_doc` varchar(32) DEFAULT NULL,
+  `ref_doc` varchar(32) default NULL,
   `date` datetime NOT NULL,
-  PRIMARY KEY (`ref_stock_move`),
+  PRIMARY KEY  (`ref_stock_move`),
   KEY `id_stock` (`id_stock`),
   KEY `ref_article` (`ref_article`),
   KEY `ref_doc` (`ref_doc`)
@@ -7719,7 +7714,7 @@ CREATE TABLE IF NOT EXISTS `stocks_moves` (
 --
 
 CREATE TABLE IF NOT EXISTS `taches` (
-  `id_tache` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id_tache` bigint(20) unsigned NOT NULL auto_increment,
   `lib_tache` varchar(64) NOT NULL,
   `text_tache` mediumtext NOT NULL,
   `importance` tinyint(4) NOT NULL,
@@ -7729,7 +7724,7 @@ CREATE TABLE IF NOT EXISTS `taches` (
   `date_echeance` datetime NOT NULL,
   `ref_user_createur` varchar(32) NOT NULL,
   `note` mediumblob NOT NULL,
-  PRIMARY KEY (`id_tache`),
+  PRIMARY KEY  (`id_tache`),
   KEY `ref_user_createur` (`ref_user_createur`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des taches allouées aux collaborateurs' AUTO_INCREMENT=1 ;
 
@@ -7745,13 +7740,13 @@ CREATE TABLE IF NOT EXISTS `taches` (
 --
 
 CREATE TABLE IF NOT EXISTS `taches_admin` (
-  `id_tache_admin` mediumint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id_tache_admin` mediumint(20) unsigned NOT NULL auto_increment,
   `lib_tache_admin` varchar(64) NOT NULL,
   `description` mediumtext NOT NULL,
   `url_action` varchar(128) NOT NULL,
   `date_creation` datetime NOT NULL,
   `date_execution` datetime NOT NULL,
-  PRIMARY KEY (`id_tache_admin`)
+  PRIMARY KEY  (`id_tache_admin`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=44 ;
 
 --
@@ -7817,12 +7812,12 @@ CREATE TABLE IF NOT EXISTS `taches_collabs_fonctions` (
 --
 
 CREATE TABLE IF NOT EXISTS `tarifs_listes` (
-  `id_tarif` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_tarif` smallint(5) unsigned NOT NULL auto_increment,
   `lib_tarif` varchar(32) NOT NULL,
   `desc_tarif` mediumtext NOT NULL,
   `marge_moyenne` varchar(32) NOT NULL,
   `ordre` smallint(5) unsigned NOT NULL,
-  PRIMARY KEY (`id_tarif`)
+  PRIMARY KEY  (`id_tarif`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des grilles de tarifs appliquées au sein de l''entrepri' AUTO_INCREMENT=2 ;
 
 --
@@ -7839,13 +7834,13 @@ INSERT INTO `tarifs_listes` (`id_tarif`, `lib_tarif`, `desc_tarif`, `marge_moyen
 --
 
 CREATE TABLE IF NOT EXISTS `taxes` (
-  `id_taxe` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_taxe` smallint(5) unsigned NOT NULL auto_increment,
   `lib_taxe` varchar(64) NOT NULL,
-  `id_pays` smallint(5) unsigned DEFAULT NULL,
+  `id_pays` smallint(5) unsigned default NULL,
   `code_taxe` varchar(32) NOT NULL,
   `info_calcul` varchar(32) NOT NULL,
   `visible` tinyint(3) unsigned NOT NULL,
-  PRIMARY KEY (`id_taxe`),
+  PRIMARY KEY  (`id_taxe`),
   KEY `id_pays` (`id_pays`),
   KEY `lib_taxe` (`lib_taxe`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des taxes' AUTO_INCREMENT=6 ;
@@ -7868,12 +7863,12 @@ INSERT INTO `taxes` (`id_taxe`, `lib_taxe`, `id_pays`, `code_taxe`, `info_calcul
 --
 
 CREATE TABLE IF NOT EXISTS `tvas` (
-  `id_tva` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `id_tva` smallint(5) unsigned NOT NULL auto_increment,
   `tva` double unsigned NOT NULL,
-  `id_pays` smallint(5) unsigned DEFAULT NULL,
+  `id_pays` smallint(5) unsigned default NULL,
   `num_compte_achat` varchar(10) NOT NULL,
   `num_compte_vente` varchar(10) NOT NULL,
-  PRIMARY KEY (`id_tva`),
+  PRIMARY KEY  (`id_tva`),
   KEY `id_pays` (`id_pays`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des taux de TVA' AUTO_INCREMENT=69 ;
 
@@ -7960,15 +7955,15 @@ INSERT INTO `tvas` (`id_tva`, `tva`, `id_pays`, `num_compte_achat`, `num_compte_
 CREATE TABLE IF NOT EXISTS `users` (
   `ref_user` varchar(32) NOT NULL,
   `ref_contact` varchar(32) NOT NULL,
-  `ref_coord_user` varchar(32) DEFAULT NULL,
+  `ref_coord_user` varchar(32) default NULL,
   `master` tinyint(1) NOT NULL,
   `pseudo` varchar(64) NOT NULL,
   `code` char(32) NOT NULL,
   `actif` tinyint(1) NOT NULL,
   `ordre` smallint(5) unsigned NOT NULL,
-  `id_langage` tinyint(3) unsigned DEFAULT NULL,
-  `last_id_interface` smallint(5) unsigned DEFAULT NULL,
-  PRIMARY KEY (`ref_user`),
+  `id_langage` tinyint(3) unsigned default NULL,
+  `last_id_interface` smallint(5) unsigned default NULL,
+  PRIMARY KEY  (`ref_user`),
   KEY `ref_coord_user` (`ref_coord_user`),
   KEY `id_langage` (`id_langage`),
   KEY `ordre` (`ordre`),
@@ -7990,11 +7985,11 @@ INSERT INTO `users` (`ref_user`, `ref_contact`, `ref_coord_user`, `master`, `pse
 --
 
 CREATE TABLE IF NOT EXISTS `users_creations_invitations` (
-  `id_creation_invitation` mediumint(9) NOT NULL AUTO_INCREMENT,
-  `ref_coord` varchar(32) DEFAULT NULL,
+  `id_creation_invitation` mediumint(9) NOT NULL auto_increment,
+  `ref_coord` varchar(32) default NULL,
   `date_invitation` datetime NOT NULL,
   `code` varchar(255) NOT NULL,
-  PRIMARY KEY (`id_creation_invitation`),
+  PRIMARY KEY  (`id_creation_invitation`),
   KEY `ref_coord` (`ref_coord`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des invitations envoyées en vue de la création d''un co' AUTO_INCREMENT=1 ;
 
@@ -8010,11 +8005,11 @@ CREATE TABLE IF NOT EXISTS `users_creations_invitations` (
 --
 
 CREATE TABLE IF NOT EXISTS `users_logs` (
-  `id_log` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id_log` bigint(20) unsigned NOT NULL auto_increment,
   `ref_user` varchar(32) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `date` timestamp NOT NULL default '0000-00-00 00:00:00' on update CURRENT_TIMESTAMP,
   `ip` char(19) NOT NULL,
-  PRIMARY KEY (`id_log`),
+  PRIMARY KEY  (`id_log`),
   KEY `ref_user` (`ref_user`,`date`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Logs des utilisateurs' AUTO_INCREMENT=7 ;
 
@@ -8037,13 +8032,13 @@ INSERT INTO `users_logs` (`id_log`, `ref_user`, `date`, `ip`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `users_logs_errors` (
-  `id_error` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id_error` bigint(20) unsigned NOT NULL auto_increment,
   `ip` varchar(19) NOT NULL,
   `user_agent` varchar(128) NOT NULL,
   `date` datetime NOT NULL,
   `login` varchar(128) NOT NULL,
   `code` varchar(32) NOT NULL,
-  PRIMARY KEY (`id_error`),
+  PRIMARY KEY  (`id_error`),
   KEY `login` (`login`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Erreurs de connexion des utilisateurs' AUTO_INCREMENT=1 ;
 
@@ -8062,7 +8057,7 @@ CREATE TABLE IF NOT EXISTS `users_permissions` (
   `ref_user` varchar(32) NOT NULL,
   `id_permission` smallint(5) unsigned NOT NULL,
   `value` varchar(1024) NOT NULL,
-  PRIMARY KEY (`ref_user`,`id_permission`),
+  PRIMARY KEY  (`ref_user`,`id_permission`),
   KEY `id_perm` (`id_permission`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des permissions associées aux utilisateurs';
 
@@ -8129,7 +8124,7 @@ CREATE TABLE IF NOT EXISTS `users_themes` (
   `ref_user` varchar(32) NOT NULL,
   `id_interface` smallint(5) unsigned NOT NULL,
   `id_theme` smallint(5) unsigned NOT NULL,
-  PRIMARY KEY (`ref_user`,`id_interface`),
+  PRIMARY KEY  (`ref_user`,`id_interface`),
   KEY `id_theme` (`id_theme`),
   KEY `id_interface` (`id_interface`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -8150,13 +8145,13 @@ INSERT INTO `users_themes` (`ref_user`, `id_interface`, `id_theme`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `users_web_link` (
-  `id_web_link` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `id_web_link` mediumint(8) unsigned NOT NULL auto_increment,
   `ref_user` varchar(32) NOT NULL,
   `lib_web_link` varchar(64) NOT NULL,
   `url_web_link` mediumtext NOT NULL,
   `desc_web_link` mediumtext NOT NULL,
   `ordre` tinyint(3) unsigned NOT NULL,
-  PRIMARY KEY (`id_web_link`),
+  PRIMARY KEY  (`id_web_link`),
   KEY `ref_user` (`ref_user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des favoris internet des utilisateurs' AUTO_INCREMENT=1 ;
 
@@ -8172,12 +8167,12 @@ CREATE TABLE IF NOT EXISTS `users_web_link` (
 --
 
 CREATE TABLE IF NOT EXISTS `villes` (
-  `id_ville` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id_ville` int(10) unsigned NOT NULL auto_increment,
   `code_postal` varchar(10) NOT NULL,
   `ville` varchar(128) NOT NULL,
-  `id_etat` mediumint(8) unsigned DEFAULT NULL,
-  `id_pays` smallint(5) unsigned DEFAULT NULL,
-  PRIMARY KEY (`id_ville`),
+  `id_etat` mediumint(8) unsigned default NULL,
+  `id_pays` smallint(5) unsigned default NULL,
+  PRIMARY KEY  (`id_ville`),
   KEY `code_postal` (`code_postal`),
   KEY `id_pays` (`id_pays`),
   KEY `id_etat` (`id_etat`)
@@ -66883,4 +66878,5 @@ ALTER TABLE `villes`
   ADD CONSTRAINT `villes_ibfk_1` FOREIGN KEY (`id_pays`) REFERENCES `pays` (`id_pays`) ON DELETE SET NULL ON UPDATE CASCADE,
   ADD CONSTRAINT `villes_ibfk_2` FOREIGN KEY (`id_etat`) REFERENCES `pays_etats` (`id_etat`) ON DELETE SET NULL ON UPDATE CASCADE,
   ADD CONSTRAINT `villes_ibfk_3` FOREIGN KEY (`id_pays`) REFERENCES `pays` (`id_pays`) ON DELETE SET NULL ON UPDATE CASCADE;
+
 SET FOREIGN_KEY_CHECKS=1;

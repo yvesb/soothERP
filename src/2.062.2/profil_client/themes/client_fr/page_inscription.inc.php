@@ -79,7 +79,10 @@ check_page_variables ($page_variables);
 												<td>
 													<select id="id_categorie" name="id_categorie" class="classinput_xsize">
 														<option value="1" selected="selected">Particulier</option>
-														<option value="2">Soci&eacute;t&eacute;</option>
+														<!-- Modification éffectuée par Yves Bourvon -->
+														<!-- catégorie "Société" remplacée par "Entreprise" pour cohérence juridique, table annuaire_catégories de BDD modifiée également dans le même commit -->
+														<option value="2">Entreprise</option> 
+														<!-- Fin de modification -->
 														<option value="3">Administration</option>
 														<option value="4">Association</option>
 														<option value="5">Autre</option>
