@@ -440,10 +440,68 @@ if ($_INTERFACE['ID_INTERFACE'] != $_SESSION['user']->getId_interface()) {
 	else 									{ $id_magasin = $DEFAUT_ID_MAGASIN; }
 
 	if (isset($_SESSION['magasins'][$id_magasin])) {
-		$_SESSION['magasin'] = $_SESSION['magasins'][$id_magasin];
-	}
+	
+// *************************************************************************************************************
+// Modification éffectuée par Yves Bourvon 
+// Verification que l'ID MAGASIN existe et est paramètré dans la configuration, sinon message d'alerte et destruction de la session pour éviter un accès forcé en reloadant la page.
+
 	if (isset($ID_MAGASIN)) {
+		if (isset($_SESSION['magasins'][$ID_MAGASIN])){
 		$_SESSION['magasin'] = $_SESSION['magasins'][$ID_MAGASIN];
+		}
+		else {
+		?>
+		<div id="alert_onException" class="alert_pop_up__exception_tab">
+			<div id="alert_onException_content">
+				<table cellpadding=0 cellspacing=0 border=0 style="width:100%; text-align:center">
+					<tr>
+						<td>
+							<table width="100%" cellpadding=0 cellspacing=0 border=0 align="center">
+								<tr>
+									<td colspan="2" style="text-align:center; font-weight:bolder; line-height:20px; height:20px;  border-bottom:1px solid #000000;">
+										Erreur de configuration des magasins
+									</td>
+								</tr>
+								<tr>
+									<td style="text-align: right">&nbsp;</td>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td colspan="2" style="text-align: center;">
+										<p>Le magasin appelé pour la connexion client ne semble pas être correctement configuré.<br />
+											Le magasin attribué à la connexion client est le <strong>n°<?php echo $ID_MAGASIN; ?></strong>, or il ne semble pas être défini dans la configuration des magasins VPC.<br /><br />
+											Veuillez vérifier les configurations (vous pouvez définir un magasin VPC dans l'inteface admninistrateur > Points de vente,<br />
+											un même magasin ne peut être défini comme VAC et VPC sur la même ligne)
+										</p>
+									</td>
+								</tr>
+								<tr>
+									<td style="text-align: right">&nbsp;</td>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td colspan=2 align="center">
+									<input type="button" onclick="javascript: history.go(-1)" value="Retour à la page précédente" />
+									</td>
+								</tr>
+								<tr>
+									<td colspan=2 align="right"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<?php 
+		session_unset();
+		session_destroy();
+		exit;
+		}
+		
+		}
+// Fin de modification
+// *************************************************************************************************************
 	}
 	
 }
