@@ -1,0 +1,11 @@
+#Commentaire
+#CDC;ref_commande;ref_contact(optionel);nom_contact;text_adresse_fac;cp_fac;ville_fac;id_pays (77 pour la france);text_adresse_liv;cp_liv;ville_liv;id_liv;note;date(format: AAAA-MM-JJ [HH:MM:SS]);
+#ART;ref_commande;ref_lmb;ref_interne;ref_constrcteur;libellé;pu_ht;qte;remise;tva;description courte;
+#
+# Il faut au moins une référence articles de renseigné entre (ref_lmb, ref_interne, ref_constructeur)
+#
+CDC;cdc1;;DUPONT Jean;3 rue du moulin;30900;NIMES;77;;;;;mes notes diverses;2010-14-05;
+CDC;cdc2;;SANCHEZ Paul;5 rue du pont;34000;MONPTELLIER;77;15 rue des champs;34000;MONTPELLIER;77;commande urgente;2010-14-05;
+ART;cdc2;A-000000-00001;;;ecran plat;99.99;2;5;19.6;garantie 6 mois;
+ART;cdc2;A-000000-00002;;;souris optique;20.10;6;10;19.6;;
+ART;cdc1;A-000000-00001;;;clavier;10.10;12;5;5.5;clavier azerty;

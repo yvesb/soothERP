@@ -1,0 +1,86 @@
+/* minimoteur de recherche en pop up*/
+
+.mini_moteur {
+width:560px; 
+height:350px;
+padding:10px;
+position: absolute; 
+top:0px;
+left:0px;
+z-index:850;
+display:none;
+border:4px ridge #a3dbf4;
+background-color:#FFFFFF;
+}
+
+.mini_moteur_iframe {
+width:620px; 
+height:450px;
+position: absolute; 
+top:0px;
+left:0px;
+z-index:849;
+display:none;
+filter:alpha(opacity=0);
+}
+
+.corps_mini_moteur {
+width:100%;
+background-color:#dbe8f0;
+border:1px solid #a3dbf4;
+margin:0;
+}
+
+.caract_recherche {
+display:block;
+width:100%;
+}
+
+.caract_simple {
+padding-left:10px;
+padding-right:10px;
+}
+
+.caract_simple li {
+width:250px;
+padding:3px;
+margin:3px;
+display:inline;
+}
+
+.carac_plus_moins {
+color:#002673;
+font-size:0.9em;
+font-weight:bolder;
+text-decoration:none;
+}
+
+.search_lib_carac {
+width:110px;
+color:#002673;
+}
+
+/*minimoteur recherche document*/
+.mini_moteur_doc {
+width:660px; 
+height:350px;
+padding:10px;
+position: absolute; 
+top:0px;
+left:0px;
+z-index:850;
+display:none;
+border:4px ridge #a3dbf4;
+background-color:#FFFFFF;
+}
+
+.mini_moteur_doc_iframe {
+width:720px; 
+height:450px;
+position: absolute; 
+top:0px;
+left:0px;
+z-index:849;
+display:none;
+filter:alpha(opacity=0);
+}

@@ -1,0 +1,285 @@
+html {
+overflow:auto;
+}
+
+body {
+height:100%;
+overflow:auto;
+background-color: #c5c29f;
+font-family:10px Verdana, Arial, Helvetica, sans-serif;
+color:#707070;
+font-size: 10px;
+margin:0px;
+padding: 0px;
+}
+
+table {
+margin:0;
+padding:0;
+}
+
+td {
+vertical-align:top;
+}
+
+dl, dt, dd, ul, li {
+margin: 0px;
+padding: 0px;
+list-style-type: none;
+}
+
+div#header {
+height:135px;
+width:900px;
+margin:0px;
+padding: 0px;
+}
+
+div#menu {
+height:34px;
+width:900px;
+margin:0px;
+padding: 0px;
+}
+
+span#middlewrap {
+width: 900px;
+background-color: #FFFFFF;
+padding: 0px;
+}
+
+span#middle {
+margin:0px;
+height:100px;
+padding: 0px;
+}
+
+
+span#footer {
+height:90px;
+width:900px;
+margin:0px;
+}
+
+span#footer p {
+text-align:center;
+font:11px  Verdana, Arial, Helvetica, sans-serif;
+color: #000000;
+
+}
+span#footer a {
+text-decoration:none;
+font:11px  Verdana, Arial, Helvetica, sans-serif;
+color: #000000;
+
+}
+img {
+border:0px;
+vertical-align:middle
+}
+
+.emarge  {
+position:absolute;
+left: 50%;
+top: 0px;
+width: 900px;
+height: 100%;
+margin-top: 0px; /* moitié de la hauteur */
+margin-left: -450px; /* moitié de la largeur */
+}
+
+/* menu horizontaux principaux*/
+.menu {
+margin:0px;
+padding:0px;
+list-style-type:none;
+text-align:left;
+height: 34px;
+background-color:#98c010;
+}
+.menu li {
+display:inline;
+float:left;
+width:179px;
+}
+.menu_unselect {
+font:14px Verdana, Arial, Helvetica, sans-serif;
+text-decoration:none;
+font-weight:bolder;
+color:#000000;
+background-color:#98c010;
+display:block;
+padding:0;
+text-align:center;
+line-height:34px;
+width:179px;
+}
+.menu_select {
+font:14px Verdana, Arial, Helvetica, sans-serif;
+text-decoration:none;
+font-weight:bolder;
+color:#000000;
+background-color:#FFFFFF;
+padding:0px;
+display:block;
+text-align:center;
+line-height:34px;
+width:179px;
+}
+.menu_roll {
+font:14px Verdana, Arial, Helvetica, sans-serif;
+text-decoration:none;
+font-weight:bolder;
+color:#000000;
+background-color:#d6f276;
+padding:0px;
+display:block;
+text-align:center;
+line-height:34px;
+width:179px;
+}
+
+.tab_span {
+padding-left:10px;
+padding-right:10px;
+}
+
+.titre1 {
+font:12px Verdana, Arial, Helvetica, sans-serif;
+font-weight:bolder;
+color:#00336e;
+}
+.titre2 {
+font:14px Verdana, Arial, Helvetica, sans-serif;
+font-weight:bolder;
+color:#00336e;
+}
+
+.para {
+padding:15px 15px;
+font:11px Verdana, Arial, Helvetica, sans-serif;
+font-weight:bolder;
+color:#707070;
+}
+
+.dark_text {
+color:#000000;
+font:10px Verdana, Arial, Helvetica, sans-serif;
+font-weight:bolder;
+text-align:center;
+}
+
+img {
+border:0px;
+vertical-align:middle
+}
+
+.conteneur {
+	margin:					0px auto;
+	width:					960px;
+	position:				relative;
+}
+#logoSociete{
+	height: 83px;
+	padding-top: 20px;
+	padding-left: 10px;
+}
+
+#arrondiHaut{
+	height: 26px;
+	background:	url(../images/arrondi_haut.png) top no-repeat;
+}
+
+#arrondiBas{
+	height: 12px;
+	background:	url(../images/arrondi_bas.png) bottom no-repeat;
+}
+#contenu {
+	width:					896px;
+	background-color:		#ffffff;
+	padding:				0px 32px 0px 32px;
+	margin:					0px 0px 0px 0px;
+}
+.radius_main {
+	border:1px solid #aaaaaa ;
+	padding:15px;
+	background-color:#FFFFFF;
+	-moz-border-radius:15px;
+	border-radius:15px;
+	display:block;
+}
+
+#framealert{
+top:0px;
+left:0px; 
+width:0px; 
+height:0px; 
+z-index:999;  
+position: absolute; 
+filter:alpha(opacity=0);
+display:none;
+background-color: #777;
+}
+
+/* alerte */
+#alert_pop_up {
+filter:alpha(opacity=50); 
+-moz-opacity:.50; 
+opacity:.50;
+border:1px ridge #9dabb3;
+background-color:#FFFFFF;
+-moz-border-radius:10px;
+border-radius:10px;
+position: fixed; 
+top:0; 
+left:0;
+width: auto;
+width:100%; 
+min-height: 100%; 
+padding:0; 
+height: auto; 
+height: 100%; 
+display:none; 
+line-height:100%; 
+z-index: 1000;
+}
+
+.alert_pop_up_tab {
+border:1px ridge #9dabb3;
+background-color:#FFFFFF;
+-moz-border-radius:10px;
+border-radius:10px;
+position: fixed; 
+display: none; 
+padding:10px;
+width: 250px;  
+margin-top: -100px; 
+margin-left: -225px; 
+z-index: 1001;
+left: 50%; 
+top: 50%;
+}
+
+#bouton0 {
+}
+#bouton1 {
+}
+#titre_alert {
+	line-height:20px;
+	padding:0 10px;
+	font:0.9em Arial, Helvetica, sans-serif;
+	height:20px;
+	font-weight:bolder;
+	border-bottom:1px solid #000000;
+}
+#texte_alert {
+	padding:10px 10px;
+	vertical-align:middle;
+	text-align:center;
+	font:0.9em Arial, Helvetica, sans-serif;
+}
+#bouton_alert {
+	text-align:center;
+	padding:10px 10px;
+	height:20px;
+}

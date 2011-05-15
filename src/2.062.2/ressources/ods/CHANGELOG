@@ -1,0 +1,18 @@
+
+Version 0.0.2
+- DEL: ods->setPath2OdsFiles().
+- ADD: Date cell, time cell and datetime cell
+- ADD: Merge cell
+- ADD: Formula
+- ADD: fonts
+- ADD: examples
+
+Version 0.0.1.
+- First version
+- GPL V3
+- Create and insert Cell
+- Color, bold, ...
+- UTF-8
+- Multi table
+- Table split
+- ...

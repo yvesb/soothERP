@@ -1,0 +1,23 @@
+
+/* catalogue si affiché*/
+.catalogue {
+font:12px Arial, Helvetica, sans-serif;
+color:#000000;
+}
+.catalogue a {
+color:#707070;
+text-decoration:underline;
+
+}
+.catalogue a:hover {
+color:#333333;
+text-decoration:underline;
+
+}
+.titre {
+font: 1.6em  Arial, Helvetica, sans-serif ;
+font-weight:bolder;
+color: #002673;
+line-height: 45px;
+display:block;
+}

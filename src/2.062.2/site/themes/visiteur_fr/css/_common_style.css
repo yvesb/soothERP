@@ -1,0 +1,81 @@
+/* CSS Document */
+html,body {
+margin: 0;
+padding: 0;
+height:100%;
+overflow:hidden;
+background-color: #FFFFFF;
+}
+
+body, td, th, p {
+font: 0.9em Arial, Helvetica, sans-serif;
+}
+form {
+padding:0;
+margin:0;
+}
+
+table {
+margin:0;
+padding:0;
+}
+td {
+vertical-align:top;
+}
+
+#grand_contener {
+height: 100%;
+}
+
+dl, dt, dd, ul, li {
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+img {
+border:0px;
+vertical-align:middle
+}
+
+#global {
+margin-left: auto;
+margin-right: auto;
+width: 40%;
+}
+
+#choix_profil {
+margin-left: auto;
+margin-right: auto;
+width: 340px;
+}
+.aligncenter {
+text-align:center;
+}
+.alignright {
+text-align:right;
+}
+
+.voidlogin {
+text-align:right;
+padding-right:10px;
+}
+
+
+/*/*/a{}
+body,
+body td,
+body th,
+body p {
+  font-size: x-small;
+  voice-family: "\"}\"";
+  voice-family: inherit;
+  font-size: small;
+}
+html>body,
+html>body td,
+html>body th
+html>body p {
+  font-size: small;
+}  
+/* */

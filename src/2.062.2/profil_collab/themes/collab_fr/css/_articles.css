@@ -1,0 +1,636 @@
+/* CSS Document */
+.list_art_categs {
+text-decoration:none;
+color:#000000;
+background-color:;
+}
+.list_art_categs_hover {
+text-decoration:none;
+color:#000000;
+background-color:#0066CC;
+}
+.insertion{
+text-align:right;
+display:none;
+}
+.insertion_hover{
+text-align:right;
+cursor: default;
+}
+
+.list_art_categs a {
+text-decoration:none;
+color:#000000;
+}
+.list_art_categs_hover a {
+text-decoration:none;
+color:#FFFFFF;
+}
+
+
+/* CSS gestion stock */
+.list_stock_art_categs {
+text-decoration:none;
+color:#4f74ab;
+cursor:pointer;
+font-weight:bolder;
+background-color:;
+}
+.list_stock_art_categs_hover {
+text-decoration:none;
+font-weight:bolder;
+color:#4f74ab;
+background-color:#CCCCCC;
+}
+.list_stock_art_categs_un {
+text-decoration:none;
+color:#999999;
+font-weight:bolder;
+cursor:pointer;
+background-color:;
+}
+.list_stock_art_categs_un_hover {
+text-decoration:none;
+font-weight:bolder;
+color:#999999;
+background-color:#DDDDDD;
+}
+
+.list_stock_art_categs td {
+text-decoration:none;
+font-weight:bolder;
+cursor:pointer;
+color:#4f74ab;
+}
+.list_stock_art_categs_hover td {
+text-decoration:none;
+font-weight:bolder;
+cursor:pointer;
+color:#4f74ab;
+}
+.list_stock_art_categs_un td {
+text-decoration:none;
+font-weight:bolder;
+cursor:pointer;
+color:#999999;
+}
+.list_stock_art_categs_un_hover td {
+text-decoration:none;
+font-weight:bolder;
+cursor:pointer;
+color:#999999;
+}
+/*caracteristiques et grop de caract*/
+
+.caract_table {
+padding:10px;
+margin:10px;
+border:1px solid #b3ab9d;
+background-color:#d7cfc2;
+width:96%;
+}
+
+/*fond principal*/
+
+.articletview_corps {
+background-color:#dbe8f0;
+border:1px solid #FFFFFF;
+-moz-border-radius:5px;
+border-radius:5px;
+margin:0;
+width:100%;
+}
+
+/* tableau des tarifs*/
+
+.tarif_table {
+width:100%;
+border:1px solid #FFFFFF;
+background-color:#c2cfd7;
+}
+
+
+/* résumé des stocks*/
+
+.resume_stock_blanc {
+padding:5px;
+position: absolute; 
+top:50px;
+left:50px;
+z-index:852;
+display:none;
+border:1px ridge #FFFFFF;
+background-color:#c2cfd7;
+-moz-border-radius:10px;
+border-radius:10px;
+}
+.resume_stock {
+padding:5px;
+position: absolute; 
+top:50px;
+left:50px;
+z-index:852;
+display:none;
+border:1px ridge #9dabb3;
+background-color:#c2cfd7;
+-moz-border-radius:10px;
+border-radius:10px;
+}
+
+.resume_stock_iframe {
+position: absolute; 
+top:50px;
+left:50px;
+z-index:851;
+display:none;
+filter:alpha(opacity=0);
+}
+.resume_stock_border_top {
+padding-bottom:2px;
+padding-top:2px;
+border-top:1px solid #9dabb3;
+}
+.resume_stock_border_right {
+padding-bottom:2px;
+padding-top:2px;
+border-right:1px solid #9dabb3;
+}
+.resume_stock_border_left {
+padding-bottom:2px;
+padding-top:2px;
+border-left:1px solid #9dabb3;
+}
+.resume_stock_border_topright {
+padding-bottom:2px;
+padding-top:2px;
+border-top:1px solid #9dabb3;
+border-right:1px solid #9dabb3;
+}
+.resume_stock_border_topleft {
+padding-bottom:2px;
+padding-top:2px;
+border-top:1px solid #9dabb3;
+border-left:1px solid #9dabb3;
+}
+
+
+/* assitant des tarifs*/
+
+.assistant_tarif_table {
+width:560px; 
+height:350px;
+padding:10px;
+position: absolute; 
+top:50px;
+left:50px;
+z-index:850;
+display:none;
+border:1px ridge #9dabb3;
+background-color:#c2cfd7;
+-moz-border-radius:10px;
+border-radius:10px;
+}
+
+.assistant_tarif_iframe {
+width:588px; 
+height:378px;
+position: absolute; 
+top:50px;
+left:50px;
+z-index:849;
+display:none;
+filter:alpha(opacity=0);
+}
+
+.assist_titre {
+text-align: center;
+font:1em;
+color:#002673;
+font-weight:bolder;
+}
+
+.assist_labelled_bold {
+color:#002673;
+font-weight:bolder;
+}
+
+.assistant_input {
+margin:0;
+border:1px solid #809eb6;
+background-color:#FFFFFF;
+font: 0.9em Arial, Helvetica, sans-serif;
+}
+.alerte_assistant_input {
+margin:0;
+border:1px solid #809eb6;
+background-color:#FF0000;
+font: 0.9em Arial, Helvetica, sans-serif;
+}
+select.assistant_input {
+font: 1em Arial, Helvetica, sans-serif;
+}
+
+
+/* edition de l'art categ d'une article*/
+
+.edition_art_table {
+width:860px; 
+height:550px;
+padding:10px;
+position: absolute; 
+top:50px;
+left:50px;
+z-index:850;
+display:none;
+border:1px ridge #9dabb3;
+background-color:#c2cfd7;
+-moz-border-radius:10px;
+border-radius:10px;
+}
+
+.edition_art_iframe {
+width:888px; 
+height:578px;
+position: absolute; 
+top:50px;
+left:50px;
+z-index:849;
+display:none;
+filter:alpha(opacity=0);
+}
+
+.edition_art_titre {
+text-align: center;
+font:1em;
+color:#002673;
+font-weight:bolder;
+}
+
+.edition_art_labelled_bold {
+color:#002673;
+font-weight:bolder;
+}
+
+.edition_art_input {
+margin:0;
+border:1px solid #809eb6;
+background-color:#FFFFFF;
+font: 0.9em Arial, Helvetica, sans-serif;
+}
+.alerte_edition_art_input {
+margin:0;
+border:1px solid #809eb6;
+background-color:#FF0000;
+font: 0.9em Arial, Helvetica, sans-serif;
+}
+select.edition_art_input {
+font: 1em Arial, Helvetica, sans-serif;
+}
+
+/* inventaire d'un article*/
+
+.edition_inventory {
+width:560px; 
+height:290px;
+padding:10px;
+position: absolute; 
+top:50px;
+left:50px;
+z-index:850;
+display:none;
+border:1px ridge #9dabb3;
+background-color:#c2cfd7;
+-moz-border-radius:10px;
+border-radius:10px;
+}
+
+/*Fabrication ou desassemblage*/
+.pop_up_fab_des {
+width:400px;
+height:250px;
+padding:10px;
+position: absolute; 
+z-index:850;
+display:none;
+border:1px ridge #9dabb3;
+/*background-color:#c2cfd7;*/
+background-color:#c2cfd7;
+-moz-border-radius:10px;
+border-radius:10px;
+}
+
+/* Cheminement d'entete de page à la création de l'article*/
+
+.chemin_table {
+width:100%;
+}
+.chemin_numero_grisse {
+font:1.6em Geneva, Arial, Helvetica, sans-serif;
+text-align:center;
+background-color:#CCCCCC;
+color:#FFFFFF;
+font-weight:bolder;
+cursor:default;
+
+}
+
+.chemin_numero_gris {
+font:1.6em Geneva, Arial, Helvetica, sans-serif;
+text-align:center;
+background-color: #999999;
+color:#FFFFFF;
+font-weight:bolder;
+cursor: pointer;
+}
+
+.chemin_numero_choisi {
+font:1.6em Geneva, Arial, Helvetica, sans-serif;
+text-align:center;
+background-color: #FF6600;
+color:#FFFFFF;
+font-weight:bolder;
+cursor: pointer;
+}
+
+
+.chemin_texte_grisse {
+font:1em Verdana, Arial, Helvetica, sans-serif;
+text-align:center;
+color:#CCCCCC;
+font-weight:bolder;
+cursor:default;
+}
+
+.chemin_texte_gris {
+font:1em Verdana, Arial, Helvetica, sans-serif;
+text-align:center;
+color:#999999;
+font-weight:bolder;
+cursor: pointer;
+}
+
+.chemin_texte_choisi {
+font:1em Verdana, Arial, Helvetica, sans-serif;
+text-align:center;
+color:#FF6600;
+font-weight:bolder;
+cursor: pointer;
+}
+
+
+
+.chemin_fleche_grisse {
+background-image:url(../images/chemin_grisse.gif);
+background-position:left;
+background-repeat:repeat-x;
+}
+
+.chemin_fleche_gris {
+background-image:url(../images/chemin_gris.gif);
+background-position:left;
+background-repeat:repeat-x;
+}
+
+.chemin_fleche_choisi {
+background-image:url(../images/chemin_choisi.gif);
+background-position:left;
+background-repeat:repeat-x;
+}
+.chemin_fleche_choisi_arrow {
+background-image:url(../images/chemin_choisi_arrow.gif);
+background-position:right;
+background-repeat: no-repeat;
+}
+
+
+.code_barre_div {
+text-align:right;
+padding-right:35px;
+line-height:22px;
+height:22px;
+}
+
+/*CSS de liaison d'articles*/
+.liaison_type_title {
+text-align:left;
+color:#002673;
+font-weight:bolder;
+width:100%;
+display:block;
+border-bottom:1px solid #002673;
+}
+.liaison_add_art {
+text-align:right;
+}
+.liaison_add_art a {
+text-decoration:underline;
+color:#000000;
+}
+.liste_liaison {
+
+}
+.liste_liaison li {
+color:#002673;
+text-align: left;
+padding:4px;
+margin:3px;
+background-color:#c2cfd7;
+}
+.liste_liaison li img {
+float:right;
+cursor:pointer;
+}
+
+.liaison_texte_info {
+font-style:italic;
+}
+
+
+/*CSS de composant d'articles*/
+.composant_type_title {
+text-align:right;
+color:#002673;
+font-weight:bolder;
+width:100%;
+display:block;
+border-bottom:1px solid #002673;
+}
+.composant_titre_qte {
+color:#002673;
+font-weight:bolder;
+text-align:left;
+}
+.composant_li_qte {
+color:#000000;
+text-align:center;
+}
+.composant_li_qte input{
+color:#000000;
+width:35px;
+text-align:center;
+}
+.composant_titre_ref {
+color:#002673;
+font-weight:bolder;
+text-align:left;
+}
+.composant_li_ref{
+color:#000000;
+text-align:left;
+}
+
+.composant_titre_lib {
+color:#002673;
+font-weight:bolder;
+text-align:left;
+}
+.composant_li_lib {
+color:#000000;
+text-align:left;
+background-color:#c2cfd7;
+}
+.composant_li_lib a{
+color:#000000;
+text-align:left;
+cursor:pointer;
+}
+.composant_li_lib_handle {
+float:right;
+width:25px;
+padding-right:15px;
+color:#000000;
+text-align:left;
+}
+.composant_li_lib_handle img {
+cursor:move;
+}
+.composant_add_art {
+text-align:right;
+}
+.composant_add_art a {
+text-decoration:underline;
+color:#000000;
+}
+.liste_composant {
+width:100%;
+
+}
+.liste_composant li {
+display:block;
+margin-bottom:3px;
+color:#002673;
+width:100%;
+}
+
+.composant_texte_info {
+font-style:italic;
+}
+.cursor_pointer {
+cursor:pointer;
+}
+
+.aff_ca_article {
+text-align:right; border-bottom:1px solid #CCCCCC; line-height:24px; height:24px; color:#CCCCCC; font-weight:bolder;
+}
+.aff_an_article {
+text-align:right;font-weight:bolder; width:18%; border-bottom:1px solid #000000; line-height:24px; height:24px;
+}
+.aff_tit_article {
+width:40%; border-bottom:1px solid #CCCCCC; line-height:24px; height:24px;
+}
+.main_aff_ca {
+width:100%; border:1px solid #999999; background-color:#FFFFFF;
+}
+/* texte de resultat  de recherche d'article*/
+
+.lib_categorie {
+font:0.8em Arial, Helvetica, sans-serif;
+}
+.lib_constructor {
+font:0.8em Arial, Helvetica, sans-serif;
+}
+.reference  {
+font:0.8em Arial, Helvetica, sans-serif;
+}
+.reference a {
+font:0.8em Arial, Helvetica, sans-serif;
+}
+.r_art_lib {
+font-weight:bolder
+}
+
+
+.link_to_master {
+color:#002673;
+background-color:#FFFFFF;
+border:1px solid #FFFFFF;
+-moz-border-radius:8px;
+border-radius:8px;
+font-weight:bolder;
+text-align:center;
+cursor:pointer;
+}
+
+.link_to_doc_fromart {
+color:#f28f4e;
+background-color:#FFFFFF;
+border:1px solid #FFFFFF;
+-moz-border-radius:8px;
+border-radius:8px;
+width:350px;
+font:9px Arial, Helvetica, sans-serif;
+font-weight:bolder;
+text-align:center;
+cursor:pointer;
+}
+
+.link_to_abo_fromart {
+color:#f28f4e;
+background-color:#FFFFFF;
+border:1px solid #FFFFFF;
+-moz-border-radius:8px;
+border-radius:8px;
+width:350px;
+font:9px Arial, Helvetica, sans-serif;
+font-weight:bolder;
+text-align:center;
+cursor:pointer;
+}
+
+.link_to_conso_fromart {
+color:#f28f4e;
+background-color:#FFFFFF;
+border:1px solid #FFFFFF;
+-moz-border-radius:8px;
+border-radius:8px;
+width:350px;
+font:9px Arial, Helvetica, sans-serif;
+font-weight:bolder;
+text-align:center;
+cursor:pointer;
+}
+
+.art_new_info {
+color:#334b74;
+background-color:#e5eef5;
+border:1px solid #FFFFFF;
+-moz-border-radius:8px;
+border-radius:8px;
+}
+
+
+/*Variante style*/
+.variante_info {
+color:#e66f2d;
+}
+.link_to_master {
+color:#002673;
+background-color:#FFFFFF;
+border:1px solid #FFFFFF;
+-moz-border-radius:8px;
+border-radius:8px;
+font-size:11px;
+font-weight:bolder;
+text-align:center;
+cursor:pointer;
+}

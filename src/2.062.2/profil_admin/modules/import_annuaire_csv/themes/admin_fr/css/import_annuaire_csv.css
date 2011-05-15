@@ -1,0 +1,22 @@
+/*correspondances module import contact*/
+
+.choix_correspondances{ 
+position:absolute;  
+z-index:250;
+width:90%;
+height:250px;
+border:1px solid #000000;
+background-color:#CCCCCC;
+margin:0px; 
+padding:0px; 
+top: 19px;
+left: 0px;
+overflow:auto;
+} 
+
+
+.imp_link_simple {
+color:#000000;
+cursor:pointer;
+text-decoration:none;
+}

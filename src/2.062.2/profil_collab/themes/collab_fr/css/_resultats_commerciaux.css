@@ -1,0 +1,53 @@
+/* Style pour la page button résultats commerciaux */
+body {
+margin: 5px;
+}
+
+img {
+border:0px;
+}
+
+.choix_commercial{ 
+display: block; 
+position:relative;  
+z-index:250;
+width:300px;
+height:80px;
+border:1px solid #c2cfd7;
+background-color:#FFFFFF;
+margin:0px; 
+padding:0px; 
+left: 0px;
+overflow:auto;
+} 
+
+ul.complete_commercial { 
+list-style-type: none; 
+margin:0px; 
+padding:0px; 
+text-align: left; 
+} 
+li.complete_commercial { 
+cursor:pointer;
+list-style-type: none; 
+display:block; 
+margin:0; 
+padding:2px; 
+height:18px; 
+} 
+li.complete_commercial_hover{ 
+cursor:pointer;
+list-style-type: none; 
+display:block; 
+margin:0; 
+padding:2px; 
+height:18px; 
+background-color: #c2cfd7;
+}
+input.classinput_xsize {
+margin:0;
+border:1px solid #809eb6;
+background-color:#FFFFFF;
+font: 0.9em Arial, Helvetica, sans-serif;
+width:99%;
+}
