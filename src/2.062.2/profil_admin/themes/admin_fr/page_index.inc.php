@@ -119,10 +119,16 @@ if (isset($modules)) {
 <script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_systeme.js"></script>
 <script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_compta_export.js"></script>
 
-<?php foreach (glob($DIR_PLUS.$_SESSION['theme']->getDir_theme()."javascript/*.js") as $filejs){ ?>
-		<script src="<?php echo $filejs?>"></script>
-<?php } ?>
-		
+<!-- Modification éffectuée par Yves Bourvon -->
+<!-- On teste l'abscence de valeur FALSE car retour glob() imprévisible si array vide (Système serveur dépendant) -->
+<?php if(glob($DIR_PLUS.$_SESSION['theme']->getDir_theme()."javascript/*.js") != false) 
+{ 
+foreach (glob($DIR_PLUS.$_SESSION['theme']->getDir_theme()."javascript/*.js") as $filejs){ ?>
+<script src="<?php echo $filejs?>"></script>
+<?php } 
+} ?>
+<!--fin de modif-->	
+
 <script type="text/javascript"> 
 <!--/*--><![CDATA[//><!--
 
