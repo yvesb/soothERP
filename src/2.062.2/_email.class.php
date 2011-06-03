@@ -59,7 +59,10 @@ function envoi ($destinataires, $sujet, $message, $infos = array(), $pieces = ar
 
 	// Contenu du mail
 	$this->Subject  = $sujet;
-	$body           = eregi_replace("[\]",'', $message);
+	
+	// Modification éffectuée par Yves Bourvon le 03/06/2011
+	// Remplacement de 'eregi_replace'(obsolète sous php 5.3) par 'preg_replace'
+	$body           = preg_replace('/\\\\/','', $message);
 	$this->MsgHTML($body);
 
 	// Définition de l'expéditeur
