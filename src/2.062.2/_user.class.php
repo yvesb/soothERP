@@ -390,9 +390,11 @@ private function log_bad_login ($login, $code) {
 	
 	$ip = "";
 	$user_agent = "";
-
+	// Modification éffectuée par Yves Bourvon 
+	// La variable $code (mot de passe) était écrite en clair dans la base de données dans l'error logs. 
+	// Application d'un hachage md5, ce qui permet pour maintenance de comparer au hachage des mots de passe users, mais interdit la l'accès en clair.
 	$query = "INSERT INTO users_logs_errors (ip, user_agent, date, login, code) 
-						VALUES ('".$ip."', '".$user_agent."', NOW(), '".addslashes($login)."', '".addslashes($code)."') ";
+						VALUES ('".$ip."', '".$user_agent."', NOW(), '".addslashes($login)."', '".md5(addslashes($code))."') ";
 	$bdd->exec ($query);
 
 	if (0) {
