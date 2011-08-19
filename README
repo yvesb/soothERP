@@ -8,7 +8,127 @@ Selon les termes de la licence "The Lundi Matin Public License" (dérivée de la
 En particulier il est rappelé ici que, selon l'article 7 de la license "Lundi Matin Public License", les modifications apportées (qui ont pour but d'offrir des améliorations dans la présente version de code) sont délivrées "tel quel", sans garantie d'aucune sorte et que le(s) contributeur(s) se voient dégagés de toute responsabilité suite à des dommages directs ou indirects qui pouvaient résulter de l'utilisation du présent code.
 
 Yves Bourvon
-samediprochainNOSPAM@gmail.com.REMOVE.CAPITALS
+groovyprogNOSPAM@gmail.com (REMOVE CAPITALS)
+
+==============================================================================
+==============================================================================
+
+THIRD PARTY ATTRIBUTION
+
+This projects makes use of the following libraries / Ce projet utilise les 
+bibliothèques tierces suivantes:
+ 
+/***
+* ODS PHP
+*
+* Copyright (c) 2009 Laurent VUIBERT
+* License : GNU Lesser General Public License v3
+* http://ods-php.sourceforge.net/
+*
+***/ 
+
+*******************************************************************************
+
+/***
+* FPDF                                   
+*                                        
+* Version: 1.6
+* Date:    2008-08-03
+* Author:  Olivier PLATHEY    
+* License : http://www.fpdf.org/fr/FAQ.php#q1
+* http://www.fpdf.org/
+*
+***/
+
+*******************************************************************************
+
+/***
+ * PEAR, the PHP Extension and Application Repository
+ *
+ * PEAR class and PEAR_Error class
+ *
+ * PHP versions 4 and 5
+ *
+ * LICENSE: This source file is subject to version 3.0 of the PHP license
+ * that is available through the world-wide-web at the following URI:
+ * http://www.php.net/license/3_0.txt.  If you did not receive a copy of
+ * the PHP License and are unable to obtain it through the web, please
+ * send a note to license@php.net so we can mail you a copy immediately.
+ *
+ * @category   pear
+ * @package    PEAR
+ * @author     Sterling Hughes <sterling@php.net>
+ * @author     Stig Bakken <ssb@php.net>
+ * @author     Tomas V.V.Cox <cox@idecnet.com>
+ * @author     Greg Beaver <cellog@php.net>
+ * @copyright  1997-2005 The PHP Group
+ * @license    http://www.php.net/license/3_0.txt  PHP License 3.0
+ * @version    CVS: $Id: PEAR.php,v 1.1 2005/08/01 06:20:23 dancoulter Exp $
+ * @link       http://pear.php.net/package/PEAR
+ * @since      File available since Release 0.1
+ ***/
+ 
+*******************************************************************************
+ 
+/*** 
+* .---------------------------------------------------------------------------.
+*|  Software: PHPMailer - PHP email class                                    |
+*|   Version: 5.1                                                            |
+*|   Contact: via sourceforge.net support pages (also www.worxware.com)      |
+*|      Info: http://phpmailer.sourceforge.net                               |
+*|   Support: http://sourceforge.net/projects/phpmailer/                     |
+*| ------------------------------------------------------------------------- |
+*|     Admin: Andy Prevost (project admininistrator)                         |
+*|   Authors: Andy Prevost (codeworxtech) codeworxtech@users.sourceforge.net |
+*|          : Marcus Bointon (coolbru) coolbru@users.sourceforge.net         |
+*|   Founder: Brent R. Matzelle (original founder)                           |
+*| Copyright (c) 2004-2009, Andy Prevost. All Rights Reserved.               |
+*| Copyright (c) 2001-2003, Brent R. Matzelle                                |
+*| ------------------------------------------------------------------------- |
+*|   License: Distributed under the Lesser General Public License (LGPL)     |
+*|            http://www.gnu.org/copyleft/lesser.html                        |
+*| This program is distributed in the hope that it will be useful - WITHOUT  |
+*| ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     |
+*| FITNESS FOR A PARTICULAR PURPOSE.                                         |
+*| ------------------------------------------------------------------------- |
+*| We offer a number of paid services (www.worxware.com):                    |
+*| - Web Hosting on highly optimized fast and secure servers                 |
+*| - Technology Consulting                                                   |
+*| - Oursourcing (highly qualified programmers and graphic designers)        |
+*'---------------------------------------------------------------------------'
+***/
+
+*******************************************************************************
+
+/***
+* Open Flash Chart - PHP libraries. These help create data files for Open Flash Chart.
+* Copyright (C) 2007 
+* 
+* This library is free software; you can redistribute it and/or
+* modify it under the terms of the GNU Lesser General Public
+* License as published by the Free Software Foundation; either
+* version 2.1 of the License, or (at your option) any later version.
+* 
+* This library is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* Lesser General Public License for more details.
+* 
+* You should have received a copy of the GNU Lesser General Public
+* License along with this library; if not, write to the Free Software
+* Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+***/
+
+*******************************************************************************
+
+/***
+* Creates a (compressed) Tar archive
+*
+* @author   Vincent Blavet <vincent@phpconcept.net>
+* @version  $Revision: 1.43 $
+* @license  http://www.opensource.org/licenses/bsd-license.php New BSD License
+* @package  Archive_Tar
+***/
 
 
 ================================================ LICENSE Lundi Matin Public License ===========================================
