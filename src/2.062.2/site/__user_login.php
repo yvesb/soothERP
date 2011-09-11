@@ -9,7 +9,44 @@ require ($DIR."_session.inc.php");
 
 
 // Vérification de la page de provennance
-if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], "__user_login.php")) {  $page_from = $_REQUEST['page_from'];  }
+if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], "__user_login.php")) {
+
+// Vérification préalable de la validité de la variable $page_from pour éviter l'injection de donnée non voulues (faille Cross Site Scripting)
+// Modifications par Yves Bourvon le 11/09/2011
+
+// On commence par échapper les caractères spéciaux par précaution
+	$page_from = htmlspecialchars($_REQUEST['page_from']);
+
+// On vérifie que la donnée fournie correspond bien à un nom de page du dossier ou des sous-dossiers LMB (ce que l'on considère comme une "white list")
+	$dir_iterator = new RecursiveDirectoryIterator("../");
+	$iterator = new RecursiveIteratorIterator($dir_iterator, RecursiveIteratorIterator::SELF_FIRST);
+
+	$validEntry=false;
+	foreach ($iterator as $file)
+	{
+		// On ne vérifie que les fichiers avec l'extension .php
+		if (preg_match("/.php/", $file))
+			{
+			// La variable correspond à une entée ?
+			if (substr_count($page_from, basename($file)) > 0)
+				{
+				// Oui, on valide la variable
+				$validEntry=true;
+				break;
+				}
+			}
+	}
+
+	// Aucune entrée valide trouvéee ?
+	if (!$validEntry)
+	{
+		//Injection XSS, on refuse la variable entrée et on la force à ""
+		$page_from = "";
+	}
+
+// Fin de modifications par Yves Bourvon le 11/09/2011
+}
+
 else {                                 $page_from = "";  }
 
 //verification d'un rafraichissement de cache à faire
