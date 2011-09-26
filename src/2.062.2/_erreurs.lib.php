@@ -25,8 +25,6 @@ function error_handler ($errno, $errstr, $errfile, $errline) {
 // Déclaration de la fonction de récupération des erreurs systèmes
 set_error_handler("error_handler");
 
-
-
 // *************************************************************************************************************
 // ALERTE LE DEVELOPPEUR DES ERREURS RENCONTREES
 // *************************************************************************************************************
@@ -38,6 +36,8 @@ function alerte_dev ($erreur) {
 	global $bdd_user;
 	global $bdd_pass;
 	
+	// Chaine de remplacement pour les données sensibles
+	$sensibleDataSubstitute = "** texte masqué par sécurité **";
 	
 	$rapport = "
 	<b>Alerte de développement LMB</b><br />
@@ -88,8 +88,8 @@ function alerte_dev ($erreur) {
   $rapport .= "\n\n
 
   ============================================================================\n";
-  $rapport = str_replace ($bdd_user, "toto", $rapport);
-  $rapport = str_replace ($bdd_pass, "toto", $rapport);
+  $rapport = str_replace ($bdd_user, $sensibleDataSubstitute, $rapport);
+  $rapport = str_replace ($bdd_pass, $sensibleDataSubstitute, $rapport);
   
 	if ($ETAT_APPLICATION == "DEV") {
 		echo nl2br($rapport);
@@ -142,6 +142,9 @@ function elegant_dump(&$var, $var_name='', $indent='', $reference='') {
 	global $bdd_pass;
 	
 	static $elegant_dump_indent = '.&nbsp;&nbsp;&nbsp;&nbsp; ';
+	
+	// Chaine de remplacement pour les données sensibles
+	$sensibleDataSubstitute = "** texte masqué par sécurité **";
    
    $reference=$reference.$var_name;
 
@@ -182,8 +185,8 @@ function elegant_dump(&$var, $var_name='', $indent='', $reference='') {
        } else
        // string?
        if (is_string($avar)){
-       	  $avar = str_replace ($bdd_user, "toto", $avar);
-  				$avar = str_replace ($bdd_pass, "toto", $avar);
+       	  $avar = str_replace ($bdd_user, $sensibleDataSubstitute, $avar);
+  				$avar = str_replace ($bdd_pass, $sensibleDataSubstitute, $avar);
        	echo "<br />  $indent<b>$var_name</b> (<i>$type</i>) = \"".htmlentities($avar)."\"\n";
        }
        // any other?
