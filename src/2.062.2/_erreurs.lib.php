@@ -115,13 +115,18 @@ function alerte_dev ($erreur) {
 			echo "</div><br/>";
 		} else {
 			// Envoyer un email au développeur
-			@mail ($EMAIL_DEV, "ERREUR LMB", $rapport);
+			if($EMAIL_DEV!=null) {
+				@mail ($EMAIL_DEV, "ERREUR LMB", $rapport);
+				$mailStatus = "Une alerte a été envoyée à votre administrateur.<br />";
+			}
+			else {
+				$mailStatus = "Configurez l'adresse email de l'administrateur dans le fichier de configuration serveur afin qu'il reçoive automatiquement les erreurs par email.<br />";
+			}
 	
 			echo "<br><br>
 	LundiMatin Business, le <a href='http://www.lundimatin.fr'>logiciel de gestion commerciale</a> des entreprises <br />
-	Une erreur critique a été détectée. <span id='view_rapport' style='cursor: pointer;' onClick='javascript:document.getElementById(\"erreur_report\").style.display=\"\";' >Cliquez ici pour plus d’information.</span><br />
+	Une erreur critique a été détectée. <span id='view_rapport' style='cursor: pointer;' onClick='javascript:document.getElementById(\"erreur_report\").style.display=\"\";' >Cliquez ici pour plus d'information.</span><br />".$mailStatus."
 
-			Une alerte a été envoyée à l'équipe de développement.<br />			
 			<div id='erreur_report' style='display: none;'>".nl2br($rapport)."</div>";
 		}
 	}
