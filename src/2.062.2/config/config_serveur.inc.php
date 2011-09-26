@@ -23,6 +23,6 @@ $CODE_SECU = "toto";		//code de sécurité transmis aux serveurs d'importation de 
 // *************************************************************************************************************
 $ETAT_APPLICATION = "PROD";		// DEV ou PROD
 $AFFICHE_DEBUG = 0;
-$EMAIL_DEV = "dev_team@lundimatin.fr";
+$EMAIL_DEV = null; // Configurez ici l'adresse email de l'administrateur
 
 ?>

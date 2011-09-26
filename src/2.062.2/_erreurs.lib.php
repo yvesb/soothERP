@@ -25,8 +25,6 @@ function error_handler ($errno, $errstr, $errfile, $errline) {
 // Déclaration de la fonction de récupération des erreurs systèmes
 set_error_handler("error_handler");
 
-
-
 // *************************************************************************************************************
 // ALERTE LE DEVELOPPEUR DES ERREURS RENCONTREES
 // *************************************************************************************************************
@@ -38,6 +36,8 @@ function alerte_dev ($erreur) {
 	global $bdd_user;
 	global $bdd_pass;
 	
+	// Chaine de remplacement pour les données sensibles
+	$sensibleDataSubstitute = "** texte masqué par sécurité **";
 	
 	$rapport = "
 	<b>Alerte de développement LMB</b><br />
@@ -88,8 +88,8 @@ function alerte_dev ($erreur) {
   $rapport .= "\n\n
 
   ============================================================================\n";
-  $rapport = str_replace ($bdd_user, "toto", $rapport);
-  $rapport = str_replace ($bdd_pass, "toto", $rapport);
+  $rapport = str_replace ($bdd_user, $sensibleDataSubstitute, $rapport);
+  $rapport = str_replace ($bdd_pass, $sensibleDataSubstitute, $rapport);
   
 	if ($ETAT_APPLICATION == "DEV") {
 		echo nl2br($rapport);
@@ -115,13 +115,18 @@ function alerte_dev ($erreur) {
 			echo "</div><br/>";
 		} else {
 			// Envoyer un email au développeur
-			@mail ($EMAIL_DEV, "ERREUR LMB", $rapport);
+			if($EMAIL_DEV!=null) {
+				@mail ($EMAIL_DEV, "ERREUR LMB", $rapport);
+				$mailStatus = "Une alerte a été envoyée à votre administrateur.<br />";
+			}
+			else {
+				$mailStatus = "Configurez l'adresse email de l'administrateur dans le fichier de configuration serveur afin qu'il reçoive automatiquement les erreurs par email.<br />";
+			}
 	
 			echo "<br><br>
 	LundiMatin Business, le <a href='http://www.lundimatin.fr'>logiciel de gestion commerciale</a> des entreprises <br />
-	Une erreur critique a été détectée. <span id='view_rapport' style='cursor: pointer;' onClick='javascript:document.getElementById(\"erreur_report\").style.display=\"\";' >Cliquez ici pour plus d’information.</span><br />
+	Une erreur critique a été détectée. <span id='view_rapport' style='cursor: pointer;' onClick='javascript:document.getElementById(\"erreur_report\").style.display=\"\";' >Cliquez ici pour plus d'information.</span><br />".$mailStatus."
 
-			Une alerte a été envoyée à l'équipe de développement.<br />			
 			<div id='erreur_report' style='display: none;'>".nl2br($rapport)."</div>";
 		}
 	}
@@ -137,6 +142,9 @@ function elegant_dump(&$var, $var_name='', $indent='', $reference='') {
 	global $bdd_pass;
 	
 	static $elegant_dump_indent = '.&nbsp;&nbsp;&nbsp;&nbsp; ';
+	
+	// Chaine de remplacement pour les données sensibles
+	$sensibleDataSubstitute = "** texte masqué par sécurité **";
    
    $reference=$reference.$var_name;
 
@@ -177,8 +185,8 @@ function elegant_dump(&$var, $var_name='', $indent='', $reference='') {
        } else
        // string?
        if (is_string($avar)){
-       	  $avar = str_replace ($bdd_user, "toto", $avar);
-  				$avar = str_replace ($bdd_pass, "toto", $avar);
+       	  $avar = str_replace ($bdd_user, $sensibleDataSubstitute, $avar);
+  				$avar = str_replace ($bdd_pass, $sensibleDataSubstitute, $avar);
        	echo "<br />  $indent<b>$var_name</b> (<i>$type</i>) = \"".htmlentities($avar)."\"\n";
        }
        // any other?
