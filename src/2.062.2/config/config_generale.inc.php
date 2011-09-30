@@ -132,6 +132,11 @@ $FAX2MAIL_PASS = "";
 $CDC_ALERTES_STOCK_DISPO = 0;
 $CATALOGUE_ARTICLE_CMDE_SHOWED = 50;
 
+// La variable suivante $_SERVER['REF_DOC'] est ajoutée pour pouvoir modifier le format du nom des documents.
+// Elle est initialisée ici par la valeur de la variable $_SERVER['REF_SERVEUR'] pour compatibilité avec LMB officiel.
+// L'initialisation peut utilement être remplacée, par exemple, par $_SERVER['REF_DOC']=date("Y") pour un nom de document plus conventionnel, du type FAC-2011-xxxxx
+
+$_SERVER['REF_DOC']=$_SERVER['REF_SERVEUR'];
 
 // *************************************************************************************************************
 // CONFIGURATION GESTION DES CAISSES

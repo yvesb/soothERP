@@ -622,7 +622,7 @@ protected function create_pdf_bvr () {
 	//Numero de références
 	
 	//Mise ne forme no facture
-	$NoCom=str_replace("FAC-".$_SERVER['REF_SERVEUR']."-" ,"", $this->ref_doc);
+	$NoCom=str_replace("FAC-".$_SERVER['REF_DOC']."-" ,"", $this->ref_doc);
 	$NRNoFact =str_pad($NoCom, 15, "0", STR_PAD_LEFT);
 	$NoClient=substr( $this->ref_contact, 9);
 	$NRNoClient=str_pad($NoClient, 5, "0", STR_PAD_RIGHT);

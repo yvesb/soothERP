@@ -88,7 +88,7 @@ private function calculer_ref ($id = 0) {
     $second_part = "0".$second_part;
   }
   
-  $ref = $this->prefixe."-".$_SERVER['REF_SERVEUR']."-".$first_part.$second_part;
+  $ref = $this->prefixe."-".$_SERVER['REF_DOC']."-".$first_part.$second_part;
   
   return $ref;
 }
