@@ -3391,10 +3391,14 @@ protected function calcul_montant_to_pay () {
         else
         {$query_where = "ISNULL(dl.ref_doc_line_parent)";}
 
-	// Montant total du document. La somme est effectuée sur les arrondis présentés pour ne pas entraîner d'erreur d'arrondi
-	$query = "SELECT SUM(ROUND(ROUND(qte * pu_ht * (1-remise/100),".$CALCUL_TARIFS_NB_DECIMALS.")*(1+tva/100),".$TARIFS_NB_DECIMALES.")) as montant_ttc
-						FROM docs_lines dl
-						WHERE dl.ref_doc = '".$this->ref_doc."' && ".$query_where." && visible = 1 ";
+	// Montant total du document. La somme est effectuée sur les arrondis présentés pour ne pas entraîner d'erreur d'arrondi et sur le montant total HT (par type de TVA)
+	$query = "SELECT SUM(ROUND(subquerybytva.montant_ht*(1+(subquerybytva.tva/100)),".$TARIFS_NB_DECIMALES.")) as montant_ttc from ( 
+SELECT SUM( ROUND( qte * ROUND( pu_ht, ".$CALCUL_TARIFS_NB_DECIMALS." ) * ( 1 - remise /100 ) , ".$CALCUL_TARIFS_NB_DECIMALS." ) ) as montant_ht, tva
+FROM docs_lines dl
+WHERE dl.ref_doc = '".$this->ref_doc."' && ".$query_where." && visible =1
+GROUP BY tva
+) subquerybytva";
+
 	$resultat = $bdd->query ($query);
 	$tmp = $resultat->fetchObject ();
 	$this->montant_ttc = abs($tmp->montant_ttc);
