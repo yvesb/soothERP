@@ -245,7 +245,7 @@ document.write ('</tr>');
 document.write ('</table>');
 document.write ('<div style="text-align:right"><a href="" style="color:#000000; display:none" >J\'ai oublié mon mot de passe</a></div></td></tr></table>');
 document.write ('</form>');
-document.write ('</div></td></tr>');
+document.write ('</div><br /><a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $DIR;?>/fichiers/images/powered_by_lundimatin.png" width="150"/></a></td></tr>');
 document.write ('		<tr>');
 document.write ('			<td colspan="2">');
 document.write ('<div style="text-align:right; vertical-align: bottom" class="grey_text" >');

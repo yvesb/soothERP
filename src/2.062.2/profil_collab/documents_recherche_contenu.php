@@ -219,10 +219,10 @@ if (isset($_REQUEST['recherche'])) {
 			break;
 		case "montant":
 			$query_having .= " 
-	HAVING  ( ( SELECT SUM(qte * pu_ht * (1-remise/100) * (1+tva/100)) montant
+	HAVING  ( ( SELECT SUM(ROUND(qte * pu_ht * (1-remise/100) * (1+tva/100),".$TARIFS_NB_DECIMALES.")) montant
 												FROM docs_lines dl
 												WHERE d.ref_doc = dl.ref_doc && ISNULL(dl.ref_doc_line_parent) && visible = 1 ) <= '".($search['montant']+"0.01")."' &&
-						 ( SELECT SUM(qte * pu_ht * (1-remise/100) * (1+tva/100)) montant
+						 ( SELECT SUM(ROUND(qte * pu_ht * (1-remise/100) * (1+tva/100),".$TARIFS_NB_DECIMALES.")) montant
 										FROM docs_lines dl
 										WHERE d.ref_doc = dl.ref_doc && ISNULL(dl.ref_doc_line_parent) && visible = 1 ) >= '".($search['montant']-"0.01")."' 				
 					)";
@@ -247,7 +247,7 @@ if (isset($_REQUEST['recherche'])) {
 	$query = "SELECT d.ref_doc, d.id_type_doc, dt.lib_type_doc, dt.id_type_groupe, d.id_etat_doc, d.code_affaire, de.lib_etat_doc, 
 									 d.ref_contact, d.nom_contact, dl.ref_article, dl.lib_article, dl.pu_ht, dl.tva, 
 
-										( SELECT SUM(qte * pu_ht * (1-remise/100) * (1+tva/100))
+										( SELECT SUM(ROUND(qte * pu_ht * (1-remise/100) * (1+tva/100),".$TARIFS_NB_DECIMALES."))
 									 		FROM docs_lines dl
 									 		WHERE d.ref_doc = dl.ref_doc && ISNULL(dl.ref_doc_line_parent) && visible = 1 ) as montant_ttc,
 									 d.date_creation_doc as date_doc
