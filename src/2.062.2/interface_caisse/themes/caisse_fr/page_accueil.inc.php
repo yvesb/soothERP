@@ -317,8 +317,9 @@ check_page_variables ($page_variables);
 		    <!-- PANNEAU en HAUT A DROITE -->
 		    <td width="340px">
 		    	<!-- LOGO -->
-  	    	<div style="margin-top:10px; height:97px; background-repeat:no-repeat; background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/logo.gif');">
-  	    		<!-- TAILLE du logo 314px x 87px -->
+  	    	<div style="margin-top:10px; height:97px; background-repeat:no-repeat;');">
+  	    		<!-- TAILLE du logo 314px x 87px --><br />
+			<a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="../fichiers/images/powered_by_lundimatin.png" width="120"/></a>
   	    	</div>
   		    
   	    	<div style="-moz-user-select:none; width:100%;" >

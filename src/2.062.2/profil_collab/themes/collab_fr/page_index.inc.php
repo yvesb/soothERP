@@ -729,7 +729,8 @@ $i++;
 </tr>
 </table>
 
-
+<div style="visibility:block; float:right; position:absolute; bottom:0px; right:0px; z-index:500"><br /><a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $DIR;?>/fichiers/images/powered_by_lundimatin.png" width="120"/></a>
+</div>
 <div  style="visibility:block; float:right; position:absolute; top:0px; right:25px; z-index:500">
 	<table border="0" cellpadding="0" cellspacing="0" id="option_info"><tr><td>
 	<a id="link_option_info"  class="item" href="#"> Options </a>

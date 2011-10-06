@@ -47,7 +47,9 @@ $Udate_now = time();
 		<td colspan="3">
 			<table width="100%" border="0" cellpadding="0" cellspacing="0">
 				<tr height="27px">
-					<td width="350px" rowspan="2">&nbsp;</td>
+					<td width="350px" rowspan="2">
+					<a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="../fichiers/images/powered_by_lundimatin.png" width="120"/></a>
+					</td>
 					<td align="center">
 						<table cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;">
 							<tr>

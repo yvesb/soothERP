@@ -54,6 +54,8 @@ border:0px;
 <div style="margin:5px">
 <strong>Envoi du document par email</strong>
 <br />
+<div style="visibility:block; float:right; position:absolute; top:0px; right:0px; z-index:500"><br /><a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="../fichiers/images/powered_by_lundimatin.png" width="120"/></a>
+</div>
 <div style="color:#FF0000; font-weight:bolder"><?php if (isset($msg)) {echo $msg;}?></div>
 <form id="form1" name="form1" method="post" action="documents_editing_email_submit.php" >
 	<table width="100%" border="0" cellspacing="0" cellpadding="0">

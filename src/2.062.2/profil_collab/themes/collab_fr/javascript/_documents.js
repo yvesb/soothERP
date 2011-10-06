@@ -1886,6 +1886,7 @@ function document_calcul_tarif (bool) {
 				qte_a = parseFloat ($("qte_"+t_liste[i]).value);
 				remise_a = 1 - (parseFloat ($("remise_"+t_liste[i]).value)/100);
 				tva_a = 1 + (parseFloat ($("tva_"+t_liste[i]).value)/100);
+				tva_s = ((parseFloat ($("tva_"+t_liste[i]).value)/100)*prix_u*qte_a*remise_a).toFixed(tarifs_nb_decimales);
 
 				if (app_tarif == "HT") {
 
@@ -1902,20 +1903,19 @@ function document_calcul_tarif (bool) {
 				}
 				if (($("visible_"+t_liste[i]).style.display != "none")) {
 					if (!distinct_tva[$("tva_"+t_liste[i]).value]) {
-						distinct_tva[$("tva_"+t_liste[i]).value] = ((((prix_u * qte_a) * remise_a) * tva_a) - ((prix_u * qte_a) * remise_a));
+						distinct_tva[$("tva_"+t_liste[i]).value] = parseFloat (tva_s) ;
 						tva_count++;
 					} else {
-						distinct_tva[$("tva_"+t_liste[i]).value] = parseFloat (distinct_tva[$("tva_"+t_liste[i]).value]) + ((((prix_u * qte_a) * remise_a) * tva_a) - ((prix_u * qte_a) * remise_a));
-
+						distinct_tva[$("tva_"+t_liste[i]).value] = parseFloat (distinct_tva[$("tva_"+t_liste[i]).value]) + parseFloat(tva_s);
 					}
 
 
 					// totaux
-					pt_ht = pt_ht + ((prix_u * qte_a) * remise_a);
+					pt_ht = pt_ht + parseFloat(((prix_u * qte_a) * remise_a).toFixed(tarifs_nb_decimales));
 
-					pt_ttc = pt_ttc + (((prix_u * qte_a) * remise_a) * tva_a) ;
+					pt_ttc = pt_ttc + parseFloat((((prix_u * qte_a) * remise_a) * tva_a).toFixed(tarifs_nb_decimales)) ;
 
-					toto_tva = toto_tva + ((((prix_u * qte_a) * remise_a) * tva_a) - ((prix_u * qte_a) * remise_a));
+					toto_tva = toto_tva + parseFloat(((((prix_u * qte_a) * remise_a) * tva_a) - ((prix_u * qte_a) * remise_a)).toFixed(tarifs_nb_decimales));
 
 					//ajout au panier
 					//panier_content.push(t_liste[i]);

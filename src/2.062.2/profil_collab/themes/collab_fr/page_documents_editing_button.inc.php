@@ -117,6 +117,7 @@ if (isset($filigrane_pdf) && count($filigrane_pdf) >0) {
 	<?php 	if (isset($_REQUEST["code_pdf_modele"])) {echo '<input type="hidden" name="code_pdf_modele" value="'.$_REQUEST["code_pdf_modele"].'" />';}?>
 	</form>
 	</td>
+	<td style="padding-left:30px"><a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $DIR;?>fichiers/images/powered_by_lundimatin.png" height="30"/></a></td>
 	<?php
 }
 ?> 

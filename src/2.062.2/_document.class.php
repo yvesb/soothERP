@@ -1039,6 +1039,7 @@ protected function maj_etat_liaisons ($active = 1) {
 public function charger_contenu () {
 	global $bdd;
 	global $CALCUL_TARIFS_NB_DECIMALS;
+	global $TARIFS_NB_DECIMALES;
 	global $GESTION_SN;
 	global $DOC_AFF_QTE_SN;
 
@@ -1086,9 +1087,10 @@ public function charger_contenu () {
 		}
 
 		$this->contenu[$i]->pu_ht = round($this->contenu[$i]->pu_ht, $CALCUL_TARIFS_NB_DECIMALS);
-		$tva = round($this->contenu[$i]->pu_ht * ($this->contenu[$i]->tva/100)* $this->contenu[$i]->qte * (1-$this->contenu[$i]->remise/100), $CALCUL_TARIFS_NB_DECIMALS) ;
+		$montant_ht = round ($this->contenu[$i]->pu_ht * $this->contenu[$i]->qte * (1-$this->contenu[$i]->remise/100), $CALCUL_TARIFS_NB_DECIMALS);
+		$tva = round($montant_ht * ($this->contenu[$i]->tva/100), $TARIFS_NB_DECIMALES) ;
 
-		$this->montant_ht 	+= round ($this->contenu[$i]->pu_ht * $this->contenu[$i]->qte * (1-$this->contenu[$i]->remise/100), $CALCUL_TARIFS_NB_DECIMALS);
+		$this->montant_ht 	+= $montant_ht;
 		$this->montant_tva 	+= $tva;
 
 		if (!isset($this->tvas[$this->contenu[$i]->tva])) { $this->tvas[$this->contenu[$i]->tva] = 0; }
@@ -3381,6 +3383,7 @@ protected function charger_reglements () {
 protected function calcul_montant_to_pay () {
 	global $bdd;
 	global $CALCUL_TARIFS_NB_DECIMALS;
+	global $TARIFS_NB_DECIMALES;
 	global $TAXE_IN_PU;
 
         if(isset($TAXE_IN_PU) && $TAXE_IN_PU ==0)
@@ -3388,10 +3391,14 @@ protected function calcul_montant_to_pay () {
         else
         {$query_where = "ISNULL(dl.ref_doc_line_parent)";}
 
-	// Montant total du document
-	$query = "SELECT SUM(ROUND(qte * pu_ht * (1-remise/100) * (1+tva/100),".$CALCUL_TARIFS_NB_DECIMALS.")) as montant_ttc
-						FROM docs_lines dl
-						WHERE dl.ref_doc = '".$this->ref_doc."' && ".$query_where." && visible = 1 ";
+	// Montant total du document. La somme est effectuée sur les arrondis présentés pour ne pas entraîner d'erreur d'arrondi et sur le montant total HT (par type de TVA)
+	$query = "SELECT SUM(ROUND(subquerybytva.montant_ht*(1+(subquerybytva.tva/100)),".$TARIFS_NB_DECIMALES.")) as montant_ttc from ( 
+SELECT SUM( ROUND( qte * ROUND( pu_ht, ".$CALCUL_TARIFS_NB_DECIMALS." ) * ( 1 - remise /100 ) , ".$CALCUL_TARIFS_NB_DECIMALS." ) ) as montant_ht, tva
+FROM docs_lines dl
+WHERE dl.ref_doc = '".$this->ref_doc."' && ".$query_where." && visible =1
+GROUP BY tva
+) subquerybytva";
+
 	$resultat = $bdd->query ($query);
 	$tmp = $resultat->fetchObject ();
 	$this->montant_ttc = abs($tmp->montant_ttc);
