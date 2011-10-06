@@ -75,5 +75,7 @@ check_page_variables ($page_variables);
 			}
 			?>
 </div>
-</form></div></div>
+</form>
+<br /><a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $DIR;?>/fichiers/images/powered_by_lundimatin.png" width="150"/></a>
+</div></div>
 </body>
