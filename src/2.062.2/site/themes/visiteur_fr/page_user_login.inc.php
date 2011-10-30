@@ -107,7 +107,6 @@ foreach ($_ALERTES as $alerte => $value) {
 if (!$("sub_content") && !window.parent.$("sub_content")) {
 
 document.write ('<div class="header" style="background-image:url(<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/head_bg.gif); background-repeat:repeat-x; height:61px">');
-document.write ('<span style="height:60px; float:right; vertical-align: middle; line-height:60px;  color: #FFFFFF; padding-right:25px;">version <?php echo affiche_version ($_SERVER['VERSION']);?>');
 document.write ('</span>');
 document.write ('<span style="height:60px; float:right; vertical-align: middle; line-height:60px; padding-right:25px;"><div id="waiting" style="display:none; text-align:center">');
 document.write ('	<div id="boxcontent">');
