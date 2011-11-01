@@ -81,12 +81,12 @@ div.dest_entitie img {
 </style>
 </head>
 
-<body style="overflow:auto; width:780px; height:550px;">
+<body style="overflow:auto; width:780px; height:550px">
+<div style="margin:5px">
+<h2>Envoi du document par email</h2>
 
-    <div style="margin:5px;">
-        
-        <h2>Envoi du document par email</h2>
-
+<div style="visibility:block; float:left; position:relative; top:-67px; right:-645px; z-index:500"><br /><a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="../fichiers/images/powered_by_lundimatin.png" width="110"/></a>
+</div>
         <div style="color:#FF0000; font-weight:bolder"><?php if (isset($msg)) {echo $msg;}?></div>
 
         <form id="form1" name="form1" method="post" action="documents_editing_email_submit.php" >

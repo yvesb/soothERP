@@ -319,8 +319,9 @@ check_page_variables ($page_variables);
 		    <!-- PANNEAU en HAUT A DROITE -->
 		    <td width="340px">
 		    	<!-- LOGO -->
-  	    	<div style="margin-top:10px; height:97px; background-repeat:no-repeat; background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/logo.gif');">
-  	    		<!-- TAILLE du logo 314px x 87px -->
+  	    	<div style="margin-top:10px; height:97px; background-repeat:no-repeat;');">
+  	    		<!-- TAILLE du logo 314px x 87px --><br />
+			<a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="../fichiers/images/powered_by_lundimatin.png" width="120"/></a>
   	    	</div>
   		    
   	    	<div style="-moz-user-select:none; width:100%;" >
@@ -349,7 +350,7 @@ check_page_variables ($page_variables);
 		  		    				</td>
 		  		    				<td></td>
 		  		    				<td class="panneau_fonctionnalites_bouton_active" id="bt_fonction_courante_4">
-		  		    				</td>
+                                                        </td>
 		  		    			</tr>
 		  		    			<tr height="6px">
 		  		    				<td></td>
@@ -364,7 +365,7 @@ check_page_variables ($page_variables);
 		  		    				<!--<td class="panneau_fonctionnalites_bouton_active" id="retrait_caisse">
 		  		    					Retrait caisse
 		  		    				</td>-->
-									<td class="panneau_fonctionnalites_bouton_active" id="">
+								<td class="panneau_fonctionnalites_bouton_active" id="">
 		  		    				</td>
 		  		    			</tr>
 		  		    			<tr height="6px">
@@ -380,7 +381,7 @@ check_page_variables ($page_variables);
 		  		    				<!--<td class="panneau_fonctionnalites_bouton_active" id="ajout_caisse">
 		  		    					Entrée caisse
 		  		    				</td>-->
-									<td class="panneau_fonctionnalites_bouton_active" id="reglement_rapide">
+								<td class="panneau_fonctionnalites_bouton_active" id="reglement_rapide">
 		  		    					Encaissement rapide
 		  		    				</td>
 		  		    			</tr>

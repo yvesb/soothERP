@@ -107,7 +107,6 @@ foreach ($_ALERTES as $alerte => $value) {
 if (!$("sub_content") && !window.parent.$("sub_content")) {
 
 document.write ('<div class="header" style="background-image:url(<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/head_bg.gif); background-repeat:repeat-x; height:61px">');
-document.write ('<span style="height:60px; float:right; vertical-align: middle; line-height:60px;  color: #FFFFFF; padding-right:25px;">version <?php echo affiche_version ($_SERVER['VERSION']);?>');
 document.write ('</span>');
 document.write ('<span style="height:60px; float:right; vertical-align: middle; line-height:60px; padding-right:25px;"><div id="waiting" style="display:none; text-align:center">');
 document.write ('	<div id="boxcontent">');
@@ -245,11 +244,16 @@ document.write ('</tr>');
 document.write ('</table>');
 document.write ('<div style="text-align:right"><a href="" style="color:#000000; display:none" >J\'ai oublié mon mot de passe</a></div></td></tr></table>');
 document.write ('</form>');
+document.write ('</div><br /><a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $DIR;?>/fichiers/images/powered_by_lundimatin.png" width="150"/></a></td></tr>');
+document.write ('		<tr>');
+document.write ('			<td colspan="2">');
+document.write ('<div style="text-align:center; vertical-align: bottom; padding-left:15px" class="grey_text" >');
+document.write ('<a href="http://www.lundimatin.fr" target="_blank" class="grey_text">Lundi Matin Business</a> est un logiciel libre de gestion d\'entreprise, distribué sous licence LMPL');
 document.write ('</div></td></tr>');
 document.write ('		<tr>');
 document.write ('			<td colspan="2">');
-document.write ('<div style="text-align:right; vertical-align: bottom" class="grey_text" >');
-document.write ('<a href="http://www.lundimatin.fr" target="_blank" class="grey_text">Lundi Matin Business</a> est un logiciel libre de gestion d\'entreprise, distribué sous licence LMPL');
+document.write ('<div style="text-align:center; vertical-align: bottom; padding-left:15px" class="grey_text" >');
+document.write ('La présente version modifiée de Lundi Matin Business est une distribution <a href="http://www.groovyprog.com/sootherp/" target="_blank" class="grey_text">SoothERP</a>');
 document.write ('</div></td></tr>');
 document.write ('</table></div></div>');
 
