@@ -80,7 +80,7 @@ update_menu_arbo();
 		<td>
 		<input id="gestion_ref_interne" name="gestion_ref_interne" value="1" type="checkbox" <?php if ($GESTION_REF_INTERNE) { ?>checked="checked"<?php } ?> />
 		</td>
-		<td class="infos_config">les articles peuvent se voir attribuer une r&eacute;f&eacute;rence d'article autre que celle cr&eacute;&eacute;e par Lundi Matin Business </td>
+		<td class="infos_config">les articles peuvent se voir attribuer une r&eacute;f&eacute;rence d'article autre que celle cr&eacute;&eacute;e par le logiciel </td>
 	</tr>
 	<tr>
 		<td colspan="3"> </td>

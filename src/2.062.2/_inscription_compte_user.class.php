@@ -334,7 +334,7 @@ class Inscription_compte_user extends InscriptionModification {
 		<br />
 		<br />
 		-------------------------------------------------------------------------------------------------------------------------<br />
-		Cet email est envoyé automatiquement par LUNDI MATIN BUSINESS, application de gestion d'entreprise Open Source";
+		";
 	}
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -367,7 +367,7 @@ class Inscription_compte_user extends InscriptionModification {
 		<br />
 		<br />
 		-------------------------------------------------------------------------------------------------------------------------<br />
-		Cet email est envoyé automatiquement par LUNDI MATIN BUSINESS, application de gestion d'entreprise Open Source";
+		";
 	
 	}
 	
@@ -409,7 +409,7 @@ class Inscription_compte_user extends InscriptionModification {
 		<br />
 		<br />
 		-------------------------------------------------------------------------------------------------------------------------<br />
-		Cet email est envoyé automatiquement par LUNDI MATIN BUSINESS, application de gestion d'entreprise Open Source";
+		";
 	}
 		
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -488,7 +488,7 @@ class Inscription_compte_user extends InscriptionModification {
 		<br />
 		<br />
 		-------------------------------------------------------------------------------------------------------------------------<br />
-		Cet email est envoyé automatiquement par LUNDI MATIN BUSINESS, application de gestion d'entreprise Open Source";
+		";
 	}
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -557,7 +557,7 @@ class Inscription_compte_user extends InscriptionModification {
 		<br />
 		<br />
 		-------------------------------------------------------------------------------------------------------------------------<br />
-		Cet email est envoyé automatiquement par LUNDI MATIN BUSINESS, application de gestion d'entreprise Open Source";
+		";
 	}
 	
 	
@@ -771,7 +771,7 @@ class Inscription_compte_user extends InscriptionModification {
 		<br />
 		<br />
 		-------------------------------------------------------------------------------------------------------------------------<br />
-		Cet email est envoyé automatiquement par LUNDI MATIN BUSINESS, application de gestion d'entreprise Open Source";
+		";
 	}
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

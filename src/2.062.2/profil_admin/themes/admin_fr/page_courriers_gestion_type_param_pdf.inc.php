@@ -74,10 +74,9 @@ check_page_variables ($page_variables);
 <br />
 <br />
 
-Le paramétrage d'un modèle d'impression est une opération parfois complexe qui nécessite une connaissance approfondie du fonctionnement de LundiMatin Business.<br />
+Le paramétrage d'un modèle d'impression est une opération parfois complexe qui nécessite une connaissance approfondie du fonctionnement du logiciel.<br />
 <br />
 
-N'hésitez pas à faire appel aux services experts de la société Lundi Matin : <a href="http://www.lundimatin.fr/site2/services_integration_support_maintenance.php" target="_blank" style="color:#000000">découvrir nos offres</a>
 <script type="text/javascript">
  
 </script>

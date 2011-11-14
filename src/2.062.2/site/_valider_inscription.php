@@ -84,7 +84,7 @@ if (!isset($_REQUEST['coord']) || !isset($_REQUEST['code'])) {
 						$sujet = "[" . $nom_entreprise . "] Votre compte utilisateur LMB";
 						$message = "<br /><br />Bonjour, <br />
 										Votre inscription sur le site de " . $lib_civ . " " . $nom_entreprise . " a bien été effectuée. <br />
-										Vous pouvez maintenant vous connecter au logiciel Lundi Matin Business à l'adresse suivante : <br />
+										Vous pouvez maintenant vous connecter au logiciel à l'adresse suivante : <br />
 										<a href=\"" . url_site() . "\">" . url_site() . "</a><br /><br />
 										Pour mémoire, voici vos identifiants : <br />
 										Identifiant : " . $pseudo . "<br />

@@ -265,7 +265,7 @@ array_menu_accueil[2] 	=	new Array('taches_liste', 'menu_accueil_3');
 		<td>&nbsp;</td>
 		<td style="">
 		<div class="titre_accueil_news">
-		Les News de Lundi Matin Business
+		Les News
 		</div>
 		
 		<div id="new_content" style="height:180px;OVERFLOW-Y: auto; OVERFLOW-X: auto; " class="flux_accueil">

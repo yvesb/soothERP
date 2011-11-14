@@ -142,7 +142,7 @@ function mdp_oublie($identifiant){
 			".$nom_entreprise."
 			<br /><br />
 			-------------------------------------------------------------------------------------------------------------------------<br />
-			Cet email est g&eacute;n&eacute;r&eacute; automatiquement par Lundi Matin Business, application de gestion d'entreprise Open Source";
+			";
 	
 	$message = $CONTENU_MDP_OUBLIE.$CONTENU_MDP_OUBLIE_2;
 	
@@ -177,7 +177,7 @@ public function inscription_contact($liste_reponse, $email) {
 	".$nom_entreprise."
 	 
 	-------------------------------------------------------------------------------------------------------------------------
-	Cet email est envoyé automatiquement par LUNDI MATIN BUSINESS, application de gestion d'entreprise Open Source";
+	";
 	
 	$message = $CONTENU_INSCRIPTION_VALIDATION.$CONTENU_INSCRIPTION_VALIDATION_2;
 	
@@ -221,7 +221,7 @@ public function inscription_avec_valid($liste_reponse, $email) {
 	<br />
 	<br />
 	-------------------------------------------------------------------------------------------------------------------------<br />
-	Cet email est envoyé automatiquement par LUNDI MATIN BUSINESS, application de gestion d'entreprise Open Source";
+	";
 	
 	$message = $CONTENU_INSCRIPTION_AVEC_VALID;
 	
@@ -239,7 +239,7 @@ public function inscription_avec_valid($liste_reponse, $email) {
 	<br />
 	<br />
 	-------------------------------------------------------------------------------------------------------------------------<br />
-	Cet email est envoyé automatiquement par LUNDI MATIN BUSINESS, application de gestion d'entreprise Open Source";
+	";
 	
 	$message_2 = $CONTENU_INSCRIPTION_AVEC_VALID_2;
 	
@@ -365,7 +365,7 @@ function inscription_valide_panier ($liste_reponse, $email) {
 		".$nom_entreprise."
 		 <br />
 		-------------------------------------------------------------------------------------------------------------------------<br />
-		Cet email est généré automatiquement par LUNDI MATIN BUSINESS, application de gestion d'entreprise Open Source";
+		";
 		$message = $CONTENU_INSCRIPTION_VALIDATION_FINAL.$CONTENU_INSCRIPTION_VALIDATION_FINAL_2;
 		$this->envoi_email_templated ($email, $SUJET_INSCRIPTION_VALIDATION_FINAL , $message );
 		return true;
@@ -419,7 +419,7 @@ function inscription_valide ($id_contact_tmp, $code ) {
 			".$nom_entreprise."
 			 <br />
 			-------------------------------------------------------------------------------------------------------------------------<br />
-			Cet email est généré automatiquement par LUNDI MATIN BUSINESS, application de gestion d'entreprise Open Source";
+			";
 			$message = $CONTENU_INSCRIPTION_VALIDATION_FINAL.$CONTENU_INSCRIPTION_VALIDATION_FINAL_2;
 			$this->envoi_email_templated ($coord[0]->getEmail() , $SUJET_INSCRIPTION_VALIDATION_FINAL , $message );
 			return true;
@@ -551,7 +551,7 @@ function inscription_contact_valide ($id_contact_tmp) {
 			".$nom_entreprise."
 			 
 			-------------------------------------------------------------------------------------------------------------------------
-			Cet email est envoyé automatiquement par LUNDI MATIN BUSINESS, application de gestion d'entreprise Open Source";
+			";
 			
 			$message = $CONTENU_INSCRIPTION_VALIDATION_FINAL.$CONTENU_INSCRIPTION_VALIDATION_FINAL_2;
 			
@@ -676,7 +676,7 @@ function valider_inscription_contact ($id_contact_tmp) {
 			".$nom_entreprise."<br />
 			<br />
 			-------------------------------------------------------------------------------------------------------------------------<br />
-			Cet email est envoy&eacute; automatiquement par LUNDI MATIN BUSINESS, application de gestion d'entreprise Open Source";
+			";
 			
 			$message = $CONTENU_VALIDATION_INSCRIPTION;
 			
@@ -733,7 +733,7 @@ public function modification_contact ($liste_reponse, $ref_contact, $email) {
 		".$nom_entreprise."
 		 
 		-------------------------------------------------------------------------------------------------------------------------
-		Cet email est envoyé automatiquement par LUNDI MATIN BUSINESS, application de gestion d'entreprise Open Source";
+		";
 		$message = $CONTENU_MODIFICATION_VALIDATION.$CONTENU_MODIFICATION_VALIDATION_2;
 		
 		$this->envoi_email_templated ($email , $SUJET_MODIFICATION_VALIDATION , $message );
@@ -892,7 +892,7 @@ function modification_contact_valide ($id_contact_tmp) {
 		".$nom_entreprise."
 		 
 		-------------------------------------------------------------------------------------------------------------------------
-		Cet email est envoyé automatiquement par LUNDI MATIN BUSINESS, application de gestion d’entreprise Open Source";
+		";
 		$message = $CONTENU_MODIFICATION_VALIDATION_FINAL.$CONTENU_MODIFICATION_VALIDATION_FINAL_2;
 		$this->envoi_email_templated ($email , $SUJET_MODIFICATION_VALIDATION_FINAL , $message );
 	}

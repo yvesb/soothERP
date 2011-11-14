@@ -34,7 +34,7 @@ check_page_variables ($page_variables);
 <strong>Chargement en cours</strong>
 </div>
 </div></span>
-<div class="title_install">Lundi Matin Business <span class="compl_title">Le logiciel qui réveille votre activité !</span></div>
+<div class="title_install">SoothERP <span class="compl_title">logiciel de gestion d'entreprise, fork de la version community de Lundi Matin Business®</span></div>
 </div><br /><div style="text-align:center; margin:80px 0px;">
 <div class="radius_main" style="width:710px;	margin:0px auto;">
 <form action = "" method="post" name="choix_profil">

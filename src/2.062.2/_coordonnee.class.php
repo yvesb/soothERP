@@ -352,7 +352,7 @@ function envoi_mail_invitation(){
 	$sujet = "[" . $nom_entreprise . "] Création d'un compte utilisateur LMB";
 	$message = "<br /><br />Bonjour, <br />" . 
 					$lib_civ . " " . $nom_entreprise . 
-					" vous propose de créer un compte utilisateur sur son application de gestion Lundi Matin Business. <br />";
+					" vous propose de créer un compte utilisateur sur son application de gestion. <br />";
 	$contact = new contact($this->ref_contact);
 	$profils = $contact->getProfils();
 	if(count($profils)){

@@ -65,7 +65,6 @@ $pied .= '</div>';
 $pied .= '<div  class="down_page">
 Vous recevez ce courriel parce que vous êtes inscrit à la newsletter de <a href="http://'.$_SERVER['HTTP_HOST'].str_replace("profil_collab/communication_newsletters_gestion_envoi_valide0.php", "", $_SERVER['PHP_SELF']).'" style="color:#999999;"><?php echo $nom_entreprise;?></a>. <br />
 Conformément à notre engagement, vous pouvez vous désinscrire en suivant le lien suivant: <a href="**liendesinscription**"  style="color:#999999;">désinscription</a><br />
-Cet envoi est généré par l\'application LUNDI MATIN BUSINESS, logiciel open source de gestion d\'entreprise disponible sur <a href="http://www.lundimatin.fr" style="color:#999999;">www.lundimatin.fr</a>
 <img src="**liendelecture**" width="0px" height="0px" style="display:none"/>
 ';
 

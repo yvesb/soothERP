@@ -106,9 +106,9 @@ function alerte_dev ($erreur) {
 	La présente version modifiée de Lundi Matin Business est une distribution <a href='http://www.groovyprog.com/sootherp/' target='_blank'>SoothERP</a><br /><br />
 	Une erreur critique a été détectée. <span id='view_rapport' style='cursor: pointer;' onClick='javascript:document.getElementById(\"erreur_report\").style.display=\"\";' >Cliquez ici pour plus d'information.</span><br />
 
-			Veuillez informer l'équipe de Lundi Matin en nous envoyant <a href=\"mailto:dev_team@lundimatin.fr?subject=Erreur d'application LMB&body=".str_replace("\n", "", nl2br(addslashes($rapport)))."\" >un email</a><br/> <span id='view_rapport' style='cursor: pointer;' 
+			
 			<br /><br />
-			Vous pouvez également utilement faire avancer le projet SoothERP en notifiant l'erreur par <a href=\"mailto:sootherp.reporting@groovyprog.com?subject=Erreur d'application LMB&body=".str_replace("\n", "", nl2br(addslashes($rapport)))."\" >email</a> ou bien en complétant un rapport de bug sur le <a href='https://www.groovyprog.com/bug_mantis/' target='_blank'>bug tracker SoothERP</a></b><br/> <span id='view_rapport' style='cursor: pointer;' 
+			Vous pouvez utilement faire avancer le projet SoothERP en notifiant l'erreur par <a href=\"mailto:sootherp.reporting@groovyprog.com?subject=Erreur d'application LMB&body=".str_replace("\n", "", nl2br(addslashes($rapport)))."\" >email</a> ou bien en complétant un rapport de bug sur le <a href='https://www.groovyprog.com/bug_mantis/' target='_blank'>bug tracker SoothERP</a></b><br/> <span id='view_rapport' style='cursor: pointer;' 
 			<div id='erreur_report' style='display: none;'>".nl2br($rapport);
 			
 			

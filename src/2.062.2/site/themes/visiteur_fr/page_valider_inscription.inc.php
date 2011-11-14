@@ -55,7 +55,7 @@
 					// Inscription OK : Rappel des identifiants
 				?>
 					<b>Votre inscription a bien été effectuée.</b><br />
-					Vous pouvez maintenant vous connecter au logiciel Lundi Matin Business à l'adresse suivante : <br />
+					Vous pouvez maintenant vous connecter au logiciel à l'adresse suivante : <br />
 					<a href="<?php echo url_site(); ?>"><?php echo url_site(); ?></a><br /><br />
 					<span style="text-align:left;">
 					Pour mémoire, voici vos identifiants: <br />
@@ -255,6 +255,9 @@
 						distribu&eacute; sous licence 
 						LMPL
 				</div>
+				
+				La présente version modifiée de Lundi Matin Business est une distribution <a href="http://www.groovyprog.com/sootherp/" target="_blank" class="grey_text" rel="noreferrer">SoothERP</a>
+				
 				</td>
 				</tr>
 			</table>

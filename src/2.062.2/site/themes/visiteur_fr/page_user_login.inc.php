@@ -113,7 +113,7 @@ document.write ('	<div id="boxcontent">');
 document.write ('					<strong>Chargement en cours</strong>');
 document.write ('	</div>');
 document.write ('</div></span>');
-document.write ('<div class="title_install">Lundi Matin Business <span class="compl_title">Le logiciel qui réveille votre activité !</span></div>');
+document.write ('<div class="title_install">SoothERP <span class="compl_title">logiciel de gestion d\'entreprise, fork de la version community de Lundi Matin Business®</span></div>');
 document.write ('	</div><br /><div style="text-align:center; margin:80px 0px;">');
 document.write ('	<div class="radius_main" style="width:710px;	margin:0px auto;">');
 document.write ('		<table class="conteneir">');
@@ -248,12 +248,17 @@ document.write ('</div><br /><a href="http://www.lundimatin.fr" target="_blank" 
 document.write ('		<tr>');
 document.write ('			<td colspan="2">');
 document.write ('<div style="text-align:center; vertical-align: bottom; padding-left:15px" class="grey_text" >');
-document.write ('<a href="http://www.lundimatin.fr" target="_blank" class="grey_text">Lundi Matin Business</a> est un logiciel libre de gestion d\'entreprise, distribué sous licence LMPL');
+document.write ('<a href="http://www.lundimatin.fr" target="_blank" class="grey_text" rel="noreferrer">Lundi Matin Business</a> est un logiciel libre de gestion d\'entreprise, distribué sous licence LMPL');
 document.write ('</div></td></tr>');
 document.write ('		<tr>');
 document.write ('			<td colspan="2">');
 document.write ('<div style="text-align:center; vertical-align: bottom; padding-left:15px" class="grey_text" >');
-document.write ('La présente version modifiée de Lundi Matin Business est une distribution <a href="http://www.groovyprog.com/sootherp/" target="_blank" class="grey_text">SoothERP</a>');
+document.write ('La présente version modifiée de Lundi Matin Business est une distribution <a href="http://www.groovyprog.com/sootherp/" target="_blank" class="grey_text" rel="noreferrer">SoothERP</a>');
+document.write ('</div></td></tr>');
+document.write ('		<tr>');
+document.write ('			<td colspan="2">');
+document.write ('<div style="text-align:center; vertical-align: bottom; padding-left:15px" class="grey_text" >');
+document.write ('<small>SoothERP ne possède aucun lien commercial ou quel qu\'il soit avec la société Lundi Matin S.A.S.</small>');
 document.write ('</div></td></tr>');
 document.write ('</table></div></div>');
 

@@ -38,7 +38,7 @@ array_menu_accueil[2] 	=	new Array('histo_liste', 'menu_accueil_2');
 	<a href="#" id="close_acc_wecome" style="float:right">
 	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
 	</a>
-<span class="titre_second">Bienvenue dans l'interface d'administration de Lundi Matin Business.</span><br />
+<span class="titre_second">Bienvenue dans l'interface d'administration de SoothERP, un fork du logiciel Lundi Matin Business®.</span><br />
 <br />
 
 Pour votre confort, nous avons pré-paramétré votre solution, mais il est important de consulter ces paramétrages afin de les adapter à votre activité.<br />
@@ -47,11 +47,6 @@ Vous trouverez la liste des tâches d'administration sur la page d'accueil.<br />
 <br />
 <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/acc_welcome.jpg" border="0"><br />
 <br />
-En cas de besoin, n'hésitez pas à faire appel aux services experts de notre société. <br />
-<br />
-<a href="http://www.lundimatin.fr/site2/services_integration_support_maintenance.php" target="_blank" class="common_link">Cliquez ici</a> pour connaitre les services proposés.<br />
-<br />
-
 
 </div>
 <?php } ?>
