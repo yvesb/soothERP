@@ -4,7 +4,7 @@
 // *************************************************************************************************************
 
 // Variables nécessaires à l'affichage
-$page_variables = array ("_ALERTES", "courriers", "form['id_profil']", "form['page_to_show']", "form['courriers_par_page']", "nb_courriers", "profils", "form['orderby']", "form['orderorder']");
+$page_variables = array ("_ALERTES", "courriers", "coordonnees", "form['id_profil']", "form['page_to_show']", "form['courriers_par_page']", "nb_courriers", "profils", "form['orderby']", "form['orderorder']");
 check_page_variables ($page_variables);
 
 
@@ -210,16 +210,34 @@ foreach ($_ALERTES as $alerte => $value) {
 	Event.observe(window, "resize", function(evt){centrage_element("courrier_options");});
 </script>
 <br/>
-		<p>
-		<b><font color="#AA0000">Cette fonctionnalité est dépréciée car elle sera remplacée par la messagerie intégrée à Lundi Matin Business qui est en cours de finalisation (Beta).</font></b>
-		</p>
-
-<br/>
 <div style=" text-align:left; padding:0 20px">
 	<?php 
 		//@TODO COURRIER : changer l'image du bouton test en [Rédaction d'un nouveau message]
 	?> 
 	<a  href="#" id="nouveau_message"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-redac_nouv_msg.gif" /></a>
+	<?php // integration gmail 
+if(count($coordonnees)>0) {
+		$href = "https://mail.google.com/mail/?shva=1#search/";
+		$query = '';
+		$i=0;
+		foreach($coordonnees as $c) {
+			$i++;
+			$query .= $c->getEmail();
+			if($i!=count($coordonnees)) {
+				$query .= ' OR ';
+			}
+		}
+		$href .= $query;
+	?>
+	<a  href="<?=$href;?>" target="_blank" id="gmail_messages" style="float:right">Voir les emails sur Gmail</a>
+<?php
+}
+else {
+?>
+	<span  href="#" id="gmail_messages" style="float:right">Ajoutez une adresse email aux coordonnées pour voir les mails sur Gmail</span>
+<?php
+}
+?>
 </div>
 <br/>
 <div style=" text-align:left; padding:0 20px">
