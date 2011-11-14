@@ -116,7 +116,7 @@ protected function create_pdf_corps_line ($line) {
 		case "taxe":
 			$this->pdf->SetFont('Arial', 'I', 9);
 			$line->lib_article	= "  dont taxe ".strtoupper($line->lib_article)." : ";
-			$line->lib_article .= "".$line->pu;
+			$line->lib_article .= "".$line->pt;
 			$line->ref_article = $line->qte = $line->pu = $line->remise = $line->pt = $line->tva = "";
 			break;
 		case "information":
