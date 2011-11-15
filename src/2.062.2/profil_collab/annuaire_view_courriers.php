@@ -20,7 +20,8 @@ if(!isset($_REQUEST["ref_contact"])){
 	exit;
 }
 $ref_contact = $_REQUEST["ref_contact"];
-
+$contact = new contact ($_REQUEST['ref_contact']);
+$coordonnees = $contact->getCoordonnees ();
 // *************************************************
 // Profils à afficher
 $profils = array();
