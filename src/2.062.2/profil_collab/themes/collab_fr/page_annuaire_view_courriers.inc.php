@@ -220,16 +220,22 @@ if(count($coordonnees)>0) {
 		$href = "https://mail.google.com/mail/?shva=1#search/";
 		$query = '';
 		$i=0;
+		$coordonneesF = array();
 		foreach($coordonnees as $c) {
+			if($c->getEmail()!='') {
+				$coordonneesF[]=$c;
+			}
+		}
+		foreach($coordonneesF as $c) {
 			$i++;
 			$query .= $c->getEmail();
-			if($i!=count($coordonnees)) {
+			if($i!=count($coordonneesF)) {
 				$query .= ' OR ';
 			}
 		}
 		$href .= $query;
 	?>
-	<a  href="<?=$href;?>" target="_blank" id="gmail_messages" style="float:right">Voir les emails sur Gmail</a>
+	<a  href="<?php echo $href;?>" target="_blank" id="gmail_messages" style="float:right">Voir les emails sur Gmail</a>
 <?php
 }
 else {
