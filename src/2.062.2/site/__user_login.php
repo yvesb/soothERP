@@ -25,7 +25,7 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], "__u
 	foreach ($iterator as $file)
 	{
 		// On ne vérifie que les fichiers avec l'extension .php
-		if (preg_match("/.php/", $file))
+		if (preg_match("/\.php/", $file))
 			{
 			// La variable correspond à une entée ?
 			if (substr_count($page_from, basename($file)) > 0)
@@ -67,6 +67,12 @@ if (isset ($_REQUEST['login'])) {
 	if ($page_from) {$hash .= "&page_from=".$page_from;}
 	
   if ($login_result) {
+// *************************************************************************************************************
+// BACKUP DE LA BASE DE DONNEES
+// *************************************************************************************************************
+if ($SESSION_START_BACKUP) 
+	include($DIR."taches_auto/session_backup.php");
+
   	header ("Location: ".urldecode($_INFOS['redirection']).$hash);
   	exit();
   }

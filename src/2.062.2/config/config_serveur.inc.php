@@ -25,4 +25,9 @@ $ETAT_APPLICATION = "PROD";		// DEV ou PROD
 $AFFICHE_DEBUG = 0;
 $EMAIL_DEV = null; // Configurez ici l'adresse email de l'administrateur
 
+// *************************************************************************************************************
+// BACKUP
+// *************************************************************************************************************
+$SESSION_START_BACKUP = false;		// réalise un backup MySQL au démarrage de la session si true
+
 ?>

@@ -15,8 +15,14 @@ ini_set('max_input_time', '2000');
 ini_set('max_execution_time', '2000');
 
 $liste_backup = array();
-if (is_array(glob($DIR."backup/*.tgz"))) {
-$liste_backup = array_reverse(glob($DIR."backup/*.tgz"));
+if (is_array(glob($DIR."backup/".$bdd_base."/cron_job/*.sql"))) {
+$liste_backup = array_reverse(glob($DIR."backup/".$bdd_base."/cron_job/*.sql"));
+}
+if (is_array(glob($DIR."backup/".$bdd_base."/session_start/*.sql"))) {
+$liste_backup = array_merge($liste_backup,array_reverse(glob($DIR."backup/".$bdd_base."/session_start/*.sql")));
+}
+if (is_array(glob($DIR."backup/".$bdd_base."/user/*.sql"))) {
+$liste_backup = array_merge($liste_backup,array_reverse(glob($DIR."backup/".$bdd_base."/user/*.sql")));
 }
 // *************************************************************************************************************
 // AFFICHAGE

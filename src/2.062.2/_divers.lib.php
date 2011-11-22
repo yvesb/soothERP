@@ -1579,31 +1579,35 @@ function tarFiles($path, $files){
 }
 
 function createBackup(){
-  global $bdd_hote;
-  global $bdd_user;  
-  global $bdd_pass; 
-  global $bdd_base;
-  global $DIR;
-  
-  $datetime = date('YmdHis');
-  $rc = $rc1 = false;
-  
-  $rc = dumpDB($datetime, $bdd_hote, $bdd_base, $bdd_user, $bdd_pass);
- 
-  if ($rc) {
-		$files = listFiles($DIR);
-  	array_push($files, $datetime."_DBBackup.sql.gz");
-  	tarFiles($DIR."backup/".$datetime.".tgz", $files);
-		if (file_exists($datetime."_DBBackup.sql.gz")) {
-  	@unlink($datetime."_DBBackup.sql.gz");
-		}
-    return "Backup effectuée avec succès.";
-  } else {
-		if (file_exists($DIR."backup/".$datetime.".tgz")) {
-		@unlink($DIR."backup/".$datetime.".tgz");
-		}
-    return "Erreur lors de la sauvegarde.";
+
+global $num_backup_files_kept;
+
+global $bdd_hote;
+global $bdd_user;
+global $bdd_pass;
+global $bdd_base;
+
+
+require_once (__DIR__.'/ressources/phpbackup4mysql/phpBackup4MySQL.class.php');
+require_once (__DIR__.'/ressources/phpbackup4mysql/config/config.inc.php');
+
+
+
+$pb4ms = new phpBackup4MySQL();
+
+$dbh = $pb4ms->dbconnect($bdd_base,$bdd_user,$bdd_pass,$bdd_hote);
+
+$sql_dump = $pb4ms->backupSQL($dbh);
+
+
+if(!$pb4ms->saveFile($sql_dump, "manual", "user")){
+
+	return "Echec de la sauvegarde";
+	} else {
+
+	return "Sauvegarde effectuée";
 	}
+
 }
 
 function restoreDB($file_dump){
@@ -1621,17 +1625,25 @@ function restoreDB($file_dump){
 }
 
 function restoreBackup($path, $file_backup){
-  $RESSOURCE_DIR = "../ressources/";
-  require_once($RESSOURCE_DIR."Tar.php");
-  $tar = new Archive_Tar($file_backup, true);
-  $tar->extract($path);
-  $dump = glob($path."*_DBBackup.sql.gz");
-  $rc = restoreDB($dump[0]);
-  unlink($dump[0]);
-  if ($rc)
-	return true;
-  else
-    return false;
+
+  global $bdd_hote;
+  global $bdd_user;
+  global $bdd_pass;
+  global $bdd_base;
+
+
+require '../ressources/phpbackup4mysql/phpBackup4MySQL.class.php';
+require_once ("../ressources/phpbackup4mysql/config/config.inc.php");
+
+//Create a new phpbackup4mysql instance
+$pb4ms = new phpBackup4mysql();
+
+//Make a new db connexion and restore db
+$dbh = $pb4ms->dbconnect($bdd_base,$bdd_user,$bdd_pass,$bdd_hote);
+$sql_dump = $pb4ms->restoreSQL($file_backup,$dbh);
+
+return true;
+
 }
 
 /**

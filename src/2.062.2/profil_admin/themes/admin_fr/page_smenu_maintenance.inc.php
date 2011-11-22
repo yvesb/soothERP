@@ -55,7 +55,7 @@ update_menu_arbo();
 				
 				<span class="titre_smenu_page" id="smenu_maintenance_delestage"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Délestage des documents</span><br />
 				<br />
-				<span class="titre_smenu_page_unvalid" id="smenu_maintenance_save_bdd"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Sauvegarde de la base de données</span><br />
+				<span class="titre_smenu_page" id="smenu_maintenance_save_bdd"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Sauvegarde de la base de données</span><br />
 				<br />	
 				<span class="titre_smenu_page" id="smenu_maintenance_config_files"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Edition des fichiers de configurations</span><br />
 				<br />	
@@ -75,6 +75,10 @@ Event.observe('smenu_maintenance_delestage', "click", function(evt){
 );
 Event.observe("smenu_maintenance_config_files", "click",  function(evt){
 	page.verify('configuration_config_files','configuration_config_files.php' ,"true" ,"sub_content");
+	Event.stop(evt);}
+);
+Event.observe('smenu_maintenance_save_bdd', "click", function(evt){
+	page.verify('serveur_backup','serveur_backup.php','true','sub_content');  
 	Event.stop(evt);}
 );
 //on masque le chargement
