@@ -34,7 +34,7 @@
 
 /**
  *
- * Class phpBackup4MySQL file
+ * Class phpBackup4MySQL file V0.3
  *
  * This file contains the phpBackup4MySQL class with all its methods
  *
@@ -49,8 +49,8 @@ class phpBackup4MySQL
 	protected $dbsql;
 	protected $sql_dump;
 	protected $sql_dump_constraints;
-	
-	
+
+
 
 
 
@@ -480,9 +480,9 @@ class phpBackup4MySQL
 
 	public function saveFile ($sql_dump, $prefix = null, $subdir = null , $dbconnect = null)
 	{
-		
+
 		global $num_backup_files_kept;
-		
+
 		if($dbconnect == null)
 			$dbName = DBNAME;
 
@@ -494,8 +494,8 @@ class phpBackup4MySQL
 		{
 			$dbName = DBNAME;
 		}
-		
-		
+
+
 
 		//Create variable to handle backup file path which will be the concatenation of root backup
 		//directory and database name directory so that each database backup has its own directory and $subdir
@@ -503,8 +503,8 @@ class phpBackup4MySQL
 		$path=BACKUP_DIRECTORY.DBNAME.'/';
 		else
 		$path=BACKUP_DIRECTORY.DBNAME.'/'.$subdir.'/';
-		
-		
+
+
 		//Check if the backups storing directory exists
 		if(!is_dir ($path))
 			{
@@ -516,14 +516,11 @@ class phpBackup4MySQL
 				}
 			}
 
-		// Flag for empty directory
-		$emptyFlag=true;
-
 		//Initialize array $suffixes to store indexes of backup files listed in the backup directory
 		$suffixes = array();
 		$files = array();
 		//Fetch the content of backup directory
-		
+
 		if(is_array(glob($path."*.sql")) && count(glob($path."*.sql")) > 0)
 		{
 		foreach (glob($path."*.sql") as $val)
@@ -531,7 +528,7 @@ class phpBackup4MySQL
 			//If the $val is not null
 		    if (!is_null($val))
 				{
-				
+
 				//Extract indexes (suffixes) from backup names
 				$listSuffix=preg_replace("/.*-/","",$val);
 				$listSuffix=str_replace(".sql","",$listSuffix);
@@ -543,11 +540,9 @@ class phpBackup4MySQL
 				//incremented from that value on
 				$suffix= max($suffixes)+1;
 
-				//directory has been browsed, this is not an empty directory, change Flag status
-				$emptyFlag=false;
 				}
 			}
-		}	
+		}
 			//Case directory is empty
 			else
 				{
@@ -560,14 +555,14 @@ class phpBackup4MySQL
 		//Create File, which name is "backup_" + date + suffix
 		if ($prefix == null)
 		$prefix="";
-		
-			
-		
+
+
+
 		$file = fopen($path."/backup_".$prefix."_".$dbName."_".date('dmy')."-".$suffix.".sql", "w+" );
-		
-			
-		
-		
+
+
+
+
 		//Encode the file to utf8
 		if(fwrite ( $file , utf8_encode($sql_dump) ))
 
@@ -578,7 +573,7 @@ class phpBackup4MySQL
 			//New backup is done we can now proceed to older backup deletion:
 			//If the number of stored backups in limited and the number of stored backup exceeds
 			//the limit set by config
-			
+
 			if ($num_backup_files_kept !=0  && count(glob($path."*.sql")) > $num_backup_files_kept  )
 				{
 
@@ -647,7 +642,7 @@ class phpBackup4MySQL
 
 
 				}
-			
+
 
 
 			//File backup has been correctly written

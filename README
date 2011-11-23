@@ -1,8 +1,8 @@
 NOTICE:
 
-Cette version de code est une version NON OFFICIELLE, basée sur le code original de la version Community 2.062.2 du logiciel LUNDI MATIN BUSINESS® régi par la licence "The Lundi Matin Public License" reproduite ci-dessous (source http://www.lundimatin.fr/297-page-licence.html).
+Cette version de code est une version NON OFFICIELLE, basée sur le code original de la version Community 2.062.2 (et suivantes) du logiciel LUNDI MATIN BUSINESS® régi par la licence "The Lundi Matin Public License" reproduite ci-dessous (source http://www.lundimatin.fr/297-page-licence.html).
 
-Ce dépôt vise à apporter des correctifs à la version Community 2.062.2 du logiciel Lundi Matin Business®, afin d'en faire profiter au maximum utilisateurs comme contributeurs (qu'ils soient contributeurs de la présente version non officielle ou de la version officielle).
+Ce dépôt vise à apporter des correctifs à la version Community 2.062.2 (et suivantes) du logiciel Lundi Matin Business®, afin d'en faire profiter au maximum utilisateurs comme contributeurs (qu'ils soient contributeurs de la présente version non officielle ou de la version officielle).
 
 Selon les termes de la licence "The Lundi Matin Public License" (dérivée de la MPL 1.1), et en vertue du principe de réciprocité, les modifications apportée dans cette présente version de code sont également gouvernées par la même license "Lundi Matin Public License v1.1".
 En particulier il est rappelé ici que, selon l'article 7 de la license "Lundi Matin Public License", les modifications apportées (qui ont pour but d'offrir des améliorations dans la présente version de code) sont délivrées "tel quel", sans garantie d'aucune sorte et que le(s) contributeur(s) se voient dégagés de toute responsabilité suite à des dommages directs ou indirects qui pouvaient résulter de l'utilisation du présent code.
@@ -180,6 +180,18 @@ bibliothèques tierces suivantes:
 * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 *
 * For details, see the script.aculo.us web site: http://script.aculo.us/
+***/
+
+*******************************************************************************
+
+/***
+* PhpBackup4MySQL
+*
+* @author   	Yves Bourvon <groovyprog AT gmail DOT com>
+* @copyright	2011, Yves BOURVON.
+* @license  	http://www.opensource.org/licenses/BSD-3-Clause New BSD License
+* @link  		http://http://www.groovyprog.com/en/phpbackup4mysql/
+*
 ***/
 
 ================================================ LICENSE Lundi Matin Public License ===========================================

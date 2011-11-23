@@ -13,6 +13,16 @@ Requirements: Php Ver 5.3, PDO
 *******************************************************************************
 *******************************************************************************
 
+V0.3
+
+- Added check regarding glob() function that can have unpredicted behaviour,
+depending on host config. (kind of Php bug)
+- Added sub directories and prefixes option for save function
+- Changed $num_backup_files_kept (from constant to variable and use of global)
+since this was usefull for some use to have this parameter changeable.
+
+
+
 V0.2
 
 Added restore feature
