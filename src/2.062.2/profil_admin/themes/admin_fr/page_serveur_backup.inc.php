@@ -71,7 +71,7 @@ Les backups sont classés dans le dossier "backup", dans un sous-dossier du nom d
         <td id="dl_<?php echo basename($backup); ?>" class="titre_config" style="cursor: pointer">Télécharger
         <script type="text/javascript">
           Event.observe('dl_<?php echo basename($backup); ?>', 'click', function (evt) {
-              window.location.href="<?php echo $backup; ?>";
+              window.location.href="<?php echo "download_backup.php?file=".$backup; ?>";
           },false);
         </script>
         </td>
