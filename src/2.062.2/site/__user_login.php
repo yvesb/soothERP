@@ -25,7 +25,7 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], "__u
 	foreach ($iterator as $file)
 	{
 		// On ne vérifie que les fichiers avec l'extension .php
-		if (preg_match("/.php/", $file))
+		if (preg_match("/\.php/", $file))
 			{
 			// La variable correspond à une entée ?
 			if (substr_count($page_from, basename($file)) > 0)
@@ -54,7 +54,7 @@ if (isset($_REQUEST["uncache"]) ) {		$uncache = "uncache=".$_REQUEST['uncache'];
 else {                                $uncache = "";  }
 
 // Identification de l'utilisateur
-if (isset ($_REQUEST['login'])) { 
+if (isset ($_REQUEST['login']) && isset ($_REQUEST['code'])) {
 
 	$id_profil = NULL;
 	if (isset ($_REQUEST['id_profil_force'])) {$id_profil = $_REQUEST['id_profil_force'];}
