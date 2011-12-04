@@ -139,7 +139,7 @@ document.write ('			<td class="content"><div style="display:block; width:455px">
 			
 			
 document.write ('<br /><br />');
-document.write ('<form action="" method="post" name="form_login" id="form_login">');
+document.write ('<form action="" method="post" name="form_login" id="form_login" autocomplete="off">');
 document.write ('<input type=hidden name="page_from" value="<?php echo $page_from;?>">');
 <?php 
 if (isset($_REQUEST["uncache"])) {
@@ -183,7 +183,7 @@ document.write ('	<div id="choix_user"  class="choix_users_liste" style="display
 	}
 	?>
 document.write ('</div></div>');
-document.write ('	<input type=text name="login"  id="login" class="focusinput_xsize" value="<?php if (isset($predefined_user[0])) { echo $predefined_user[0]; }?>">');
+document.write ('	<input type=text name="login"  id="login" class="focusinput_xsize">');
 			<?php
   	} else { 
 			?>
