@@ -42,7 +42,7 @@ update_menu_arbo();
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="280px" height="20px" id="imgsizeform"/>				</span>			</td>
 			<td colspan="2" style="width:80%"><span style="width:40%; height:50px"><br />
 				<br />
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/titre_maintenance.jpg" style="padding-left:25px" /><br />
+				<span class="titre_smenu_page" style="font-size: 25px;font-style: bold;position:relative; left:10px;">ERREUR, FICHIER INTROUVABLE</span>
 			<br />
 				<br />
 			</span>			</td>
@@ -50,14 +50,8 @@ update_menu_arbo();
 		<tr>
 			<td style="text-align:left;" valign="top">
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="20px" /><br />
-
-				<span class="titre_smenu_page_unvalid" id="smenu_maintenance_disk"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Espace disque</span><br /><br />
-				
-				<span class="titre_smenu_page" id="smenu_maintenance_delestage"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Délestage des documents</span><br />
 				<br />
-				<span class="titre_smenu_page" id="smenu_maintenance_save_bdd"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Sauvegarde de la base de données</span><br />
-				<br />	
-				<span class="titre_smenu_page" id="smenu_maintenance_config_files"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Edition des fichiers de configurations</span><br />
+				<span class="titre_smenu_page" id="smenu_maintenance_save_bdd"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Retour à la sauvegarde de la base de données</span><br />
 				<br />	
 			</td>
 			<td style="text-align:left;" valign="top">
@@ -69,14 +63,6 @@ update_menu_arbo();
 
 </div>
 <SCRIPT type="text/javascript">
-Event.observe('smenu_maintenance_delestage', "click", function(evt){
-	page.verify('gestion_document_purge','documents_gestion_purge.php','true','sub_content');  
-	Event.stop(evt);}
-);
-Event.observe("smenu_maintenance_config_files", "click",  function(evt){
-	page.verify('configuration_config_files','configuration_config_files.php' ,"true" ,"sub_content");
-	Event.stop(evt);}
-);
 Event.observe('smenu_maintenance_save_bdd', "click", function(evt){
 	page.verify('serveur_backup','serveur_backup.php','true','sub_content');  
 	Event.stop(evt);}

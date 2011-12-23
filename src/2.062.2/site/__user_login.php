@@ -67,6 +67,12 @@ if (isset ($_REQUEST['login']) && isset ($_REQUEST['code'])) {
 	if ($page_from) {$hash .= "&page_from=".$page_from;}
 	
   if ($login_result) {
+// *************************************************************************************************************
+// BACKUP DE LA BASE DE DONNEES
+// *************************************************************************************************************
+if ($SESSION_START_BACKUP) 
+	include($DIR."taches_auto/session_backup.php");
+
   	header ("Location: ".urldecode($_INFOS['redirection']).$hash);
   	exit();
   }

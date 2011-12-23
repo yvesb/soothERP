@@ -8,6 +8,6 @@
 $bdd_hote = "localhost"; 
 $bdd_user = "root";  
 $bdd_pass = ""; 
-$bdd_base = "SoothERP2_062_2";
+$bdd_base = "sootherp2_062_2";
 
 ?>
