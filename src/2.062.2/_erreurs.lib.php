@@ -40,7 +40,7 @@ function alerte_dev ($erreur) {
 	$sensibleDataSubstitute = "** texte masqué par sécurité **";
 	
 	$rapport = "
-	<b>Alerte de développement LMB</b><br />
+	<b>Alerte de développement</b><br />
 	--------------<br />";
 	
 		
@@ -95,30 +95,39 @@ function alerte_dev ($erreur) {
 		echo nl2br($rapport);
 		echo "<b>ENVIRONNEMENT COMPLET </b>:\n\n";
 
+
+
 		$tab = debug_backtrace();
 		html_entity_decode(elegant_dump( $tab ));
 	}
-	else {
-		if (isset($_SERVER['SERVER_NAME']) && (substr_count($_SERVER['SERVER_NAME'], 'localhost') || substr_count($_SERVER['SERVER_NAME'], '127.0.0.'))) {
-		
+	else {  // Le serveur n'est pas en DEV, aucune raison d'afficher quelque info que ce soit vers le navigateur, on logue dans un fichier.
+
+			// Message vers  le client
 			echo "<br><br><b>
-	Lundi Matin Business, le <a href='http://www.lundimatin.fr'>logiciel de gestion commerciale</a> des entreprises <br /><br />
-	La présente version modifiée de Lundi Matin Business est une distribution <a href='http://www.groovyprog.com/sootherp/' target='_blank'>SoothERP</a><br /><br />
-	Une erreur critique a été détectée. <span id='view_rapport' style='cursor: pointer;' onClick='javascript:document.getElementById(\"erreur_report\").style.display=\"\";' >Cliquez ici pour plus d'information.</span><br />
+			Lundi Matin Business, le <a href='http://www.lundimatin.fr'>logiciel de gestion commerciale</a> des entreprises <br /><br />
+			La présente version modifiée de Lundi Matin Business est une distribution <a href='http://www.groovyprog.com/sootherp/' target='_blank'>SoothERP</a><br /><br />
+			Une erreur critique a été détectée.
 
 			
 			<br /><br />
-			Vous pouvez utilement faire avancer le projet SoothERP en notifiant l'erreur par <a href=\"mailto:sootherp.reporting@groovyprog.com?subject=Erreur d'application LMB&body=".str_replace("\n", "", nl2br(addslashes($rapport)))."\" >email</a> ou bien en complétant un rapport de bug sur le <a href='https://www.groovyprog.com/bug_mantis/' target='_blank'>bug tracker SoothERP</a></b><br/> <span id='view_rapport' style='cursor: pointer;' 
-			<div id='erreur_report' style='display: none;'>".nl2br($rapport);
+			Vous pouvez utilement faire avancer le projet SoothERP en complétant un rapport de bug sur le <a href='https://www.groovyprog.com/bug_mantis/' target='_blank'>bug tracker SoothERP</a></b><br/> <span id='view_rapport' style='cursor: pointer;'";
 			
-			
-			
-			echo "<b>ENVIRONNEMENT COMPLET </b>:\n\n";
-	
-			$tab = debug_backtrace();
-			html_entity_decode(elegant_dump( $tab ));
-			echo "</div><br/>";
-		} else {
+			// Création d'un log, entre balises php pour en éviter la possibilité d'affichage par un navigateur
+			$errorlog = "<?php \n/*";
+			$errorlog .= "\n\n###################################################################################################\n\n";
+			$errorlog .= "RAPPORT DE PLANTAGE \n\n";
+			$errorlog .= "ENVIRONNEMENT COMPLET :\n\n";
+			$errorlog .= date (" d/m/Y @ h:i:s")."\n\n";
+			$errorlog .= print_r(debug_backtrace() , true);
+			$errorlog .= "\n\nFIN DU RAPPORT DE PLANTAGE \n\n";
+			$errorlog .= "###################################################################################################\n\n";
+			$errorlog .= "*/\n?>\n";
+
+			$fp = fopen(__DIR__.'/log/error.log.php', 'a');
+			fwrite($fp, $errorlog);
+			fclose($fp);
+
+
 			// Envoyer un email au développeur
 			if($EMAIL_DEV!=null) {
 				@mail ($EMAIL_DEV, "ERREUR LMB", $rapport);
@@ -127,13 +136,8 @@ function alerte_dev ($erreur) {
 			else {
 				$mailStatus = "Configurez l'adresse email de l'administrateur dans le fichier de configuration serveur afin qu'il reçoive automatiquement les erreurs par email.<br />";
 			}
-	
-			echo "<br><br>
-	LundiMatin Business, le <a href='http://www.lundimatin.fr'>logiciel de gestion commerciale</a> des entreprises <br />
-	Une erreur critique a été détectée. <span id='view_rapport' style='cursor: pointer;' onClick='javascript:document.getElementById(\"erreur_report\").style.display=\"\";' >Cliquez ici pour plus d'information.</span><br />".$mailStatus."
 
-			<div id='erreur_report' style='display: none;'>".nl2br($rapport)."</div>";
-		}
+
 	}
 
 	exit();
