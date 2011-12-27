@@ -44,56 +44,57 @@ function alerte_dev ($erreur) {
 	--------------<br />";
 	
 		
-		$rapport .= "
-		Serveur : ".$_SERVER['REF_SERVEUR']." / ".$_SERVER['SERVER_NAME']." / ".affiche_version ($_SERVER['VERSION'])."<br /> ";
-		
-		$rapport .= "--------------\n 
-		Script en erreur : ".$_SERVER["PHP_SELF"]."\n"; 
-		if (isset($_SERVER["HTTP_REFERER"])) {
-			$rapport .= "Referer = ".$_SERVER["HTTP_REFERER"]."\n ";
-		}
-		if (isset($_SERVER["HTTP_USER_AGENT"])) {
-		$rapport .= "
-			Navigateur : ".$_SERVER["HTTP_USER_AGENT"]."
-		--------------\n";
-		}
+	$rapport .= "
+	Serveur : ".$_SERVER['REF_SERVEUR']." / ".$_SERVER['SERVER_NAME']." / ".affiche_version ($_SERVER['VERSION'])."<br /> ";
 	
 	$rapport .= "
-	===========================================================================\n
-	<b>RAPPORT D'ERREUR SUR SERVEUR ".$_SERVER['REF_SERVEUR']."</b>\n\n
+	--------------<br />
+	Script en erreur : ".$_SERVER["PHP_SELF"]."<br />";
+	if (isset($_SERVER["HTTP_REFERER"])) {
+		$rapport .= "Referer = ".$_SERVER["HTTP_REFERER"]."<br /> ";
+	}
+	if (isset($_SERVER["HTTP_USER_AGENT"])) {
+	$rapport .= "
+	Navigateur : ".$_SERVER["HTTP_USER_AGENT"]."
+	--------------<br />";
+	}
 
-	===========================================================================\n
+	$rapport .= "
+	===========================================================================<br />
+	<b>RAPPORT D'ERREUR SUR SERVEUR ".$_SERVER['REF_SERVEUR']."</b><br /><br />
+
+	===========================================================================<br />
 	".$erreur."
 
-	===========================================================================\n
-	<b>INFORMATIONS COMPLEMENTAIRES</b> :\n\n
+	===========================================================================<br />
+	<b>INFORMATIONS COMPLEMENTAIRES</b> :<br /><br />
 
-	Page = ".$_SERVER["PHP_SELF"]."\n
-	Page complète = ".$_SERVER["REQUEST_URI"]."\n
-  Heure: ".date('d-m-Y H:m:i', time())."\n
+	Page = ".$_SERVER["PHP_SELF"]."<br />
+	Page complète = ".$_SERVER["REQUEST_URI"]."<br />
+	Heure: ".date('d-m-Y H:m:i', time())."<br />
 
-  IP = ".$_SERVER['REMOTE_ADDR']."(".$_SERVER["REMOTE_PORT"].")\n\n
+	IP = ".$_SERVER['REMOTE_ADDR']."(".$_SERVER["REMOTE_PORT"].")<br /><br />
 
-  Methode = ".$_SERVER["REQUEST_METHOD"]."\n
-  Variables transmises = ".$_SERVER["QUERY_STRING"]."\n "; 
-  if (isset($_SERVER["HTTP_REFERER"])) {
-  	$rapport .= "Referer = ".$_SERVER["HTTP_REFERER"]."\n ";
-  }
-  $rapport .= "\n
+	Methode = ".$_SERVER["REQUEST_METHOD"]."<br />
+	Variables transmises = ".$_SERVER["QUERY_STRING"]."<br /> ";
+	if (isset($_SERVER["HTTP_REFERER"])) {
+		$rapport .= "Referer = ".$_SERVER["HTTP_REFERER"]."<br /> ";
+	}
+	$rapport .= "<br />
 
-  Navigateur = "; 
-  if (isset($_SERVER["HTTP_USER_AGENT"])) {
-  	$rapport .= $_SERVER["HTTP_USER_AGENT"];
-  }
-  $rapport .= "\n\n
+	Navigateur = ";
+	if (isset($_SERVER["HTTP_USER_AGENT"])) {
+		$rapport .= $_SERVER["HTTP_USER_AGENT"];
+	}
+	$rapport .= "<br /><br />
 
-  ============================================================================\n";
-  $rapport = str_replace ($bdd_user, $sensibleDataSubstitute, $rapport);
-  $rapport = str_replace ($bdd_pass, $sensibleDataSubstitute, $rapport);
-  
+	============================================================================<br />";
+	$rapport = str_replace ($bdd_user, $sensibleDataSubstitute, $rapport);
+	$rapport = str_replace ($bdd_pass, $sensibleDataSubstitute, $rapport);
+
 	if ($ETAT_APPLICATION == "DEV") {
 		echo nl2br($rapport);
-		echo "<b>ENVIRONNEMENT COMPLET </b>:\n\n";
+		echo "<b>ENVIRONNEMENT COMPLET </b>:<br /><br />";
 
 
 
@@ -101,32 +102,6 @@ function alerte_dev ($erreur) {
 		html_entity_decode(elegant_dump( $tab ));
 	}
 	else {  // Le serveur n'est pas en DEV, aucune raison d'afficher quelque info que ce soit vers le navigateur, on logue dans un fichier.
-
-			// Message vers  le client
-			echo "<br><br><b>
-			Lundi Matin Business, le <a href='http://www.lundimatin.fr'>logiciel de gestion commerciale</a> des entreprises <br /><br />
-			La présente version modifiée de Lundi Matin Business est une distribution <a href='http://www.groovyprog.com/sootherp/' target='_blank'>SoothERP</a><br /><br />
-			Une erreur critique a été détectée.
-
-			
-			<br /><br />
-			Vous pouvez utilement faire avancer le projet SoothERP en complétant un rapport de bug sur le <a href='https://www.groovyprog.com/bug_mantis/' target='_blank'>bug tracker SoothERP</a></b><br/> <span id='view_rapport' style='cursor: pointer;'";
-			
-			// Création d'un log, entre balises php pour en éviter la possibilité d'affichage par un navigateur
-			$errorlog = "<?php \n/*";
-			$errorlog .= "\n\n###################################################################################################\n\n";
-			$errorlog .= "RAPPORT DE PLANTAGE \n\n";
-			$errorlog .= "ENVIRONNEMENT COMPLET :\n\n";
-			$errorlog .= date (" d/m/Y @ h:i:s")."\n\n";
-			$errorlog .= print_r(debug_backtrace() , true);
-			$errorlog .= "\n\nFIN DU RAPPORT DE PLANTAGE \n\n";
-			$errorlog .= "###################################################################################################\n\n";
-			$errorlog .= "*/\n?>\n";
-
-			$fp = fopen(__DIR__.'/log/error.log.php', 'a');
-			fwrite($fp, $errorlog);
-			fclose($fp);
-
 
 			// Envoyer un email au développeur
 			if($EMAIL_DEV!=null) {
@@ -137,6 +112,30 @@ function alerte_dev ($erreur) {
 				$mailStatus = "Configurez l'adresse email de l'administrateur dans le fichier de configuration serveur afin qu'il reçoive automatiquement les erreurs par email.<br />";
 			}
 
+			// Message vers  le client
+			echo "<br /><br /><b>
+			SoothERP, fork du logiciel Lundi Matin Business<br />
+			Une erreur critique a été détectée.
+			<br /><br />"
+			.$mailStatus.
+			"<br /><br />
+			Vous pouvez utilement faire avancer le projet SoothERP en complétant un rapport de bug sur le <a href='https://www.groovyprog.com/bug_mantis/' target='_blank'>bug tracker SoothERP</a></b><br/> <span id='view_rapport' style='cursor: pointer;'";
+			
+			// Création d'un log, entre balises php pour en éviter la possibilité d'affichage par un navigateur
+			$errorlog = "<?php \n/*";
+			$errorlog .= "\n\n###################################################################################################\n\n";
+			$errorlog .= "RAPPORT DE PLANTAGE \n\n";
+			$errorlog .= "\n\n".strip_tags($rapport)."\n\n";
+			$errorlog .= "ENVIRONNEMENT COMPLET :\n\n";
+			$errorlog .= date (" d/m/Y @ h:i:s")."\n\n";
+			$errorlog .= print_r(debug_backtrace() , true);
+			$errorlog .= "\n\nFIN DU RAPPORT DE PLANTAGE \n\n";
+			$errorlog .= "###################################################################################################\n\n";
+			$errorlog .= "*/\n?>\n";
+
+			$fp = fopen(__DIR__.'/log/error.log.php', 'a');
+			fwrite($fp, $errorlog);
+			fclose($fp);
 
 	}
 
