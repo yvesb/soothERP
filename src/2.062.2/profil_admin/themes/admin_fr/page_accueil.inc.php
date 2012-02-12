@@ -167,7 +167,7 @@ Vous trouverez la liste des tâches d'administration sur la page d'accueil.<br />
 					<div>
 					<?php 
 					//nouvelle maj dispo
-					if (isset($_SESSION['NEW_MAJ_DISPO']) && $_SESSION['NEW_MAJ_DISPO'] != "0") {					
+					if (0==1 /* Ne jamais proposer de mise à jour, incompatible avec SoothERP. isset($_SESSION['NEW_MAJ_DISPO']) && $_SESSION['NEW_MAJ_DISPO'] != "0" */) {					
 						?><span style="float:left; padding-right:20px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>/images/ico_unvalide.png" alt="Nouvelle version de LundiMatin Business disponible !" title="Nouvelle version de LundiMatin Business disponible !"/></span>
 						Version actuelle : <?php echo affiche_version ($_SERVER['VERSION']);?> / Dernière version : <?php echo affiche_version ($_SESSION['NEW_MAJ_DISPO']);?>
 						<br /><br />
@@ -234,7 +234,7 @@ Vous trouverez la liste des tâches d'administration sur la page d'accueil.<br />
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_maintenance_small.jpg" id="osmenu_maintenance" style="cursor:pointer" />
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_transfert_donnees_small.jpg" id="osmenu_transfert_donnees" style="cursor:pointer" />
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_gestion_modules_small.jpg" id="osmenu_gestion_modules" style="cursor:pointer" />
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_maj_small.jpg" id="osmenu_maj" style="cursor:pointer" /><br />
+				<!-- Mise à jour incompatible SoothERP, ligne  commentée <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_maj_small.jpg" id="osmenu_maj" style="cursor:pointer" /><br />-->
 				<br />
 			</div>
 		</td>
@@ -262,7 +262,8 @@ Event.observe("osmenu_secusys", "click",  function(evt){Event.stop(evt); page.ve
 Event.observe("osmenu_maintenance", "click",  function(evt){Event.stop(evt); page.verify('smenu_maintenance','smenu_maintenance.php' ,"true" ,"sub_content");}, false);
 Event.observe("osmenu_transfert_donnees", "click",  function(evt){Event.stop(evt); page.verify('smenu_transfert_donnees','smenu_transfert_donnees.php' ,"true" ,"sub_content");}, false);
 Event.observe("osmenu_gestion_modules", "click",  function(evt){Event.stop(evt); page.verify('smenu_gestion_modules','smenu_gestion_modules.php' ,"true" ,"sub_content");}, false);
-Event.observe("osmenu_maj", "click",  function(evt){Event.stop(evt); page.verify('import_maj_serveur','import_maj_serveur.php' ,"true" ,"sub_content");}, false);
+// Mise à jour incompatible SoothERP, ligne suivante commentée
+//Event.observe("osmenu_maj", "click",  function(evt){Event.stop(evt); page.verify('import_maj_serveur','import_maj_serveur.php' ,"true" ,"sub_content");}, false);
 
 
 Event.observe("menu_accueil_0", "click",  function(evt){Event.stop(evt); view_menu_accueil('systeme_liste', 'menu_accueil_0', array_menu_accueil ,"accueil_onglet_hide" ,"accueil_onglet");}, false);

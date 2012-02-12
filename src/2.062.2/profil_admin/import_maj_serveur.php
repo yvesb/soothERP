@@ -3,7 +3,8 @@
 // LISTE DES SERVEURS D'IMPORT
 // *************************************************************************************************************
 
-
+// Incompatible SoothERP
+/*
 require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
@@ -49,5 +50,5 @@ if (isset($version_file[0]) && $version_file[0] != "0") {
 // *************************************************************************************************************
 
 include ($DIR.$_SESSION['theme']->getDir_theme()."page_import_maj_serveur.inc.php");
-
+*/
 ?>
