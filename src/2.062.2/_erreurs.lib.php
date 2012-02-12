@@ -133,7 +133,7 @@ function alerte_dev ($erreur) {
 			$errorlog .= "###################################################################################################\n\n";
 			$errorlog .= "*/\n?>\n";
 
-			$fp = fopen(__DIR__.'/log/error.log.php', 'a');
+			$fp = fopen(__DIR__.'/log/error.log.php', 'w');
 			fwrite($fp, $errorlog);
 			fclose($fp);
 
