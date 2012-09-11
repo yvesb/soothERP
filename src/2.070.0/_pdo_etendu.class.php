@@ -120,7 +120,7 @@ function ref_or_null ($var, $prefixe = 0) {
 	if (!($var) || $var == 'NULL') {
 		if ($prefixe) { $retour .= " IS "; }
 		$retour .= "NULL";
-	} else if (!preg_match ("#([a-z\.]{1,3})-([0-9a-z]{5,6})-([0-9a-z]{5})#i", $var, $regs)) {
+	} else if (!preg_match ("#([a-z\.]{1,3})-([0-9a-z]{1,6})-([0-9a-z]{5})#i", $var, $regs)) {
 		$retour .= "NULL";
 	} else {
 		if ($prefixe) { $retour .= " = "; }
