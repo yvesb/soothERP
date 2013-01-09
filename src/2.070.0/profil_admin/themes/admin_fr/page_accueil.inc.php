@@ -222,7 +222,6 @@ Vous trouverez la liste des tâches d'administration sur la page d'accueil.<br />
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/titre_tbdb_gestion.gif"/><br />
 				<br />
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_utilisateurs_small.jpg"  id="osmenu_utilisateurs" style="cursor:pointer"/>
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_compte_lm_small.jpg"/>
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_site_internet_small.jpg" id="osmenu_site_internet" style="cursor:pointer"/>
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_communication_small.jpg" id="osmenu_communication" style="cursor:pointer" />
 				<br /><br />

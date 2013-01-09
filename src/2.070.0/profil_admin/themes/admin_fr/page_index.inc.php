@@ -27,7 +27,6 @@ $menu1=array (
 							array('separateur','','true','',''),
 							array('separateur','','true','sub_content','Gestion'),
 							array('smenu_utilisateurs', 'smenu_utilisateurs.php','true','sub_content','Utilisateurs'),
-							array('smenu_compte_lm', '','true','sub_content','Compte LundiMatin'),
 							array('smenu_site_internet', 'smenu_site_internet.php','true','sub_content','Interfaces'),
 							array('smenu_communication', 'smenu_communication.php','true','sub_content','Communication'),
 							array('separateur','','true','',''),
@@ -36,7 +35,7 @@ $menu1=array (
 							array('smenu_maintenance','smenu_maintenance.php','true','sub_content','Maintenance'),
 							array('smenu_transfert_donnees','smenu_transfert_donnees.php','true','sub_content','Transfert de données'),
 							array('smenu_gestion_modules','smenu_gestion_modules.php','true','sub_content','Gestion des modules'),
-							array('import_maj_serveur','import_maj_serveur.php','true','sub_content','Mise à jour')
+//							array('import_maj_serveur','import_maj_serveur.php','true','sub_content','Mise à jour')
 							)
 							
 					)
@@ -267,7 +266,7 @@ $i++;
 function initEventHandlers() {
 
 <?php 
-if (!strpos($_SERVER['HTTP_USER_AGENT'], 'Firefox') && !strpos($_SERVER['HTTP_USER_AGENT'], 'Iceweasel') && !strpos($_SERVER['HTTP_USER_AGENT'], 'Epiphany')   ) {
+if (!strpos($_SERVER['HTTP_USER_AGENT'], 'Firefox') && !strpos($_SERVER['HTTP_USER_AGENT'], 'Iceweasel') && !strpos($_SERVER['HTTP_USER_AGENT'], 'Epiphany') && !strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome')   ) {
  ?>alerte.confirm_supprimer("alert_nav","");
  <?php	
 } 
@@ -361,14 +360,16 @@ Event.observe(window, "load", initEventHandlers, false);
 <?php 
 
 //nouvelle maj dispo
-if (isset($_SESSION['NEW_MAJ_DISPO']) && $_SESSION['NEW_MAJ_DISPO'] != "0") {					
-	?><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>/images/maj_dispo.gif" alt="Nouvelle version de LundiMatin Business disponible !" title="Nouvelle version de LundiMatin Business disponible !" id="id_new_maj_dispo" style="cursor:pointer" />
+// if (isset($_SESSION['NEW_MAJ_DISPO']) && $_SESSION['NEW_MAJ_DISPO'] != "0") { ?>
+<!--
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>/images/maj_dispo.gif" alt="Nouvelle version de LundiMatin Business disponible !" title="Nouvelle version de LundiMatin Business disponible !" id="id_new_maj_dispo" style="cursor:pointer" />
 	<script type="text/javascript">
 		Event.observe("id_new_maj_dispo", "click", function() {	page.verify('import_maj_serveur','import_maj_serveur.php','true','sub_content');}, false);
 
 	</script>
+-->
 	<?php
-}
+#}
 
 
 $i = 0;

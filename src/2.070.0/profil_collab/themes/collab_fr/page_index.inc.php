@@ -516,7 +516,7 @@ function initEventHandlers() {
 	
 
 <?php 
-if (!strpos($_SERVER['HTTP_USER_AGENT'], 'Firefox') && !strpos($_SERVER['HTTP_USER_AGENT'], 'Iceweasel') && !strpos($_SERVER['HTTP_USER_AGENT'], 'Epiphany')   ) {
+if (!strpos($_SERVER['HTTP_USER_AGENT'], 'Firefox') && !strpos($_SERVER['HTTP_USER_AGENT'], 'Iceweasel') && !strpos($_SERVER['HTTP_USER_AGENT'], 'Epiphany')&& !strpos($_SERVER['HTTP_USER_AGENT'], 'Camino') && !strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome') && !strpos($_SERVER['HTTP_USER_AGENT'], 'Safari')  ) {
  ?>alerte.confirm_supprimer("alert_nav","");
  <?php	
 } 
@@ -625,10 +625,12 @@ var PRICES_DECIMAL_SEPARATOR = "<?php echo $PRICES_DECIMAL_SEPARATOR;?>";
 <?php 
 
 //nouvelle maj dispo
-if (isset($_SESSION['NEW_MAJ_DISPO']) && $_SESSION['NEW_MAJ_DISPO'] != "0") {					
-	?><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>/images/maj_dispo.gif" alt="Nouvelle version de LundiMatin Business disponible !" title="Nouvelle version de LundiMatin Business disponible !" />
+//if (isset($_SESSION['NEW_MAJ_DISPO']) && $_SESSION['NEW_MAJ_DISPO'] != "0") { ?>
+<!--
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>/images/maj_dispo.gif" alt="Nouvelle version de LundiMatin Business disponible !" title="Nouvelle version de LundiMatin Business disponible !" />
+-->
 	<?php
-}
+//}
 
 
 $i = 0;
