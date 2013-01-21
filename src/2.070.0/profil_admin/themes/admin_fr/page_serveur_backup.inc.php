@@ -114,6 +114,8 @@ H_loading();
 				$idx = 0;
 				while($fichier = readdir($dir)){
 					if(is_dir(__DIR__.'/../../../ressources/phpbackup4mysql/config/'.$fichier) || $fichier == '.' || $fichier =='..'){ continue; }
+					// Masque le fichier index destiné à protéger le répertoire du listing
+					if ( basename($fichier) == "index.html"){ continue; }
 					++$idx;
 					
 					$config_file = file(__DIR__.'/../../../ressources/phpbackup4mysql/config/'.$fichier);

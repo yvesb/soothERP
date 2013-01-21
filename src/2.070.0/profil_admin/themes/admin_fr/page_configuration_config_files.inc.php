@@ -35,6 +35,9 @@ check_page_variables ($page_variables);
 				$idx = 0;
 				while($fichier = readdir($dir)){
 					if(is_dir($DIR.'config/'.$fichier) || $fichier == '.' || $fichier =='..'){ continue; }
+					// Masque le fichier index destiné à protéger le répertoire du listing,
+					// ainsi que le fichier de config de la bdd dont les infos sensibles doivent plutôt être manipulée par l'admin système via connexion au serveur.
+					if ( basename($fichier) == "index.html" OR basename($fichier) == "config_bdd.inc.php"){ continue; }
 					++$idx;
 					
 					$config_file = file($DIR.'config/'.$fichier);
