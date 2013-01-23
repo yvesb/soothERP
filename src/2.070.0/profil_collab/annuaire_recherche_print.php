@@ -37,9 +37,12 @@ $nb_fiches = 0;
 	// Ajout du document au PDF
 	$pdf->add_list_contact ();
 
+	global $REF_CONTACT_ENTREPRISE;
+	$contact_entreprise = new contact($REF_CONTACT_ENTREPRISE);
+	$nom_entreprise = str_replace (CHR(13), " " ,str_replace (CHR(10), " " , $contact_entreprise->getNom()));
 
-	$pdf->SetAuthor	("LUNDI MATIN BUSINESS");
-	$pdf->SetCreator	("LUNDI MATIN BUSINESS");	
+	$this->SetAuthor	($nom_entreprise);
+	$pdf->SetCreator	("SoothERP (un fork de Lundi Matin Business®)");
 	$pdf->SetDisplayMode ("real", "single");
 	$pdf->Output();
 

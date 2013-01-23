@@ -6,7 +6,6 @@ define('FPDF_FONTPATH', $RESSOURCE_DIR."FPDF_fonts/");
 require_once ($RESSOURCE_DIR."fpdf.php");
 
 // La classe FPDF doit etre définie en "abstract" afin de l'adapter à PHP5
-// Le Producer est défini à "LUNDI MATIN BUSINESS" ligne 1352
 // Doc sur http://www.fpdf.org/
 
 
@@ -24,8 +23,12 @@ function __construct ($orientation= 'P', $unit = 'mm', $format = 'A4') {
 
 	parent::FPDF($orientation, $unit, $format);
 
-	$this->SetAuthor	("LUNDI MATIN BUSINESS");
-	$this->SetCreator	("LUNDI MATIN BUSINESS");	
+	global $REF_CONTACT_ENTREPRISE;
+	$contact_entreprise = new contact($REF_CONTACT_ENTREPRISE);
+	$nom_entreprise = str_replace (CHR(13), " " ,str_replace (CHR(10), " " , $contact_entreprise->getNom()));
+
+	$this->SetAuthor	($nom_entreprise);
+	$this->SetCreator	("SoothERP (un fork de Lundi Matin Business®)");
 	$this->SetDisplayMode ("real", "single");
 	$this->SetAutoPageBreak(0, 1);
 
