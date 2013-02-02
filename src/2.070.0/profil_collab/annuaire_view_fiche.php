@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 require ($DIR.$_SESSION['theme']->getDir_theme()."_theme.config.php" );
 
-ini_set("memory_limit", "20M");
+ini_set("memory_limit", "40M");
 
 // *************************************************************************************************************
 // TRAITEMENTS
