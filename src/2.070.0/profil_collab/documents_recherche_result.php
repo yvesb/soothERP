@@ -66,12 +66,11 @@ if (isset($_REQUEST['ref_doc'])) {
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
 	// Préparation de la requete
-	$query_join 	= "";
-	$query_join_count = "";
-	$query_where 	= "1 ";
-	$query_limit	= (($search['page_to_show']-1)*$search['fiches_par_page']).", ".$search['fiches_par_page'];
-	
-	
+	$query_join 		= "";
+	$query_join_count 	= "";
+	$query_where 		= "1 ";
+	$query_limit		= (($search['page_to_show']-1)*$search['fiches_par_page']).", ".$search['fiches_par_page'];
+		
 	// ref_contact
 	if ($search['ref_contact']) {
 		$query_where 	.= "&& d.ref_contact = '".$search['ref_contact']."'";
@@ -80,14 +79,14 @@ if (isset($_REQUEST['recherche'])) {
 	// recherche 'Tous'
 	if ( $_SESSION['id_type_groupe'] != 0 )
 	{
-		$query_where 	.= "&& dt.id_type_groupe = ".$_SESSION['id_type_groupe'];
+		$query_where 		.= "&& dt.id_type_groupe = ".$_SESSION['id_type_groupe'];
 		$query_join_count 	.= " LEFT JOIN documents_types dt ON d.id_type_doc = dt.id_type_doc "; 
-		$query_join 	.= " LEFT JOIN documents_types_groupes dtg ON dt.id_type_groupe = dtg.id_type_groupe";
+		$query_join 		.= " LEFT JOIN documents_types_groupes dtg ON dt.id_type_groupe = dtg.id_type_groupe";
 	}
 	
 	// Type de document
 	if ($search['id_type_doc']) {
-		 $query_where 	.= "&& d.id_type_doc = '".$search['id_type_doc']."'";
+		$query_where 		.= "&& d.id_type_doc = '".$search['id_type_doc']."'";
 	}
 	
 	// Etat du document
@@ -104,7 +103,7 @@ if (isset($_REQUEST['recherche'])) {
         else
         {$query_where2 = "ISNULL(dl.ref_doc_line_parent)";}
 	// Recherche
-	$query = "SELECT d.ref_doc, d.id_type_doc, dt.lib_type_doc, dt.id_type_groupe, d.id_etat_doc, de.lib_etat_doc, ref_contact, nom_contact, 
+	$query = "SELECT d.ref_doc, d.id_type_doc, dt.lib_type_doc, dt.id_type_groupe, d.id_etat_doc, de.lib_etat_doc, ref_contact, nom_contact,
 
 										( SELECT SUM(qte * pu_ht * (1-remise/100) * (1+tva/100))
 									 		FROM docs_lines dl
@@ -124,10 +123,22 @@ if (isset($_REQUEST['recherche'])) {
 						LIMIT ".$query_limit;
 	$resultat = $bdd->query($query);
 
-	while ($fiche = $resultat->fetchObject()) { $fiches[] = $fiche; }
+	// Liste des documents ne contenant pas de référence externe
+	$list = array('DES','DES_SN','ECHEANCIERS','FAB','FAB_SN','INV','MOD','PAC','TIC','TRM');
+
+	while ($fiche = $resultat->fetchObject()) { 
+		// Recherche référence externe
+		if(!in_array(substr($fiche->ref_doc, 0, 3), $list)) {
+	 		$query_ref_doc_externe 	= "SELECT ref_doc, ref_doc_externe FROM doc_".strtolower(substr($fiche->ref_doc, 0, 3))." WHERE ref_doc = '".$fiche->ref_doc."'";
+		 	$result = $bdd->query($query_ref_doc_externe);
+		 	$ref_doc_externe = $result->fetchObject();
+		 	$fiche->ref_doc_externe = $ref_doc_externe->ref_doc_externe;
+		}
+		$fiches[] = $fiche;
+	}
 	//echo nl2br ($query);
 	unset ($fiche, $resultat, $query);
-	
+	//var_dump($fiches);
 	// Comptage des résultats
 	$query = "SELECT COUNT(d.ref_doc) nb_fiches
 						FROM documents d 
@@ -141,8 +152,6 @@ if (isset($_REQUEST['recherche'])) {
 	//echo "<br><hr>".nl2br ($query);
 	unset ($result, $resultat, $query);
 }
-
-
 
 // *************************************************************************************************************
 // AFFICHAGE
