@@ -4,7 +4,7 @@
 // Edition des fichiers de configuration
 // *************************************************************************************************************
 
-
+/* Désactivé pour des raisons de sécurité
 
 // Variables nécessaires à l'affichage
 $page_variables = array ();
@@ -104,3 +104,5 @@ for($i=1; $i<=$idx; ++$i){
 H_loading();
 </SCRIPT>
 </div>
+
+*/

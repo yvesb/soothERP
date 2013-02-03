@@ -56,8 +56,9 @@ update_menu_arbo();
 				<span class="titre_smenu_page" id="smenu_maintenance_delestage"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Délestage des documents</span><br />
 				<br />
 				<span class="titre_smenu_page" id="smenu_maintenance_save_bdd"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Sauvegarde de la base de données</span><br />
-				<br />	
-				<span class="titre_smenu_page" id="smenu_maintenance_config_files"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Edition des fichiers de configurations</span><br />
+				<br />
+				<!-- Accès édition des fichiers de configuration désactivée - commentée - ci-dessous, pour des raisons de sécurité. Simplement commenté en cas de réimplantation ultérieure sous une autre forme -->		
+				<!--<span class="titre_smenu_page" id="smenu_maintenance_config_files"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Edition des fichiers de configurations</span><br />-->
 				<br />	
 			</td>
 			<td style="text-align:left;" valign="top">
@@ -73,10 +74,12 @@ Event.observe('smenu_maintenance_delestage', "click", function(evt){
 	page.verify('gestion_document_purge','documents_gestion_purge.php','true','sub_content');  
 	Event.stop(evt);}
 );
+/* désactivé pour raison de sécurité
 Event.observe("smenu_maintenance_config_files", "click",  function(evt){
 	page.verify('configuration_config_files','configuration_config_files.php' ,"true" ,"sub_content");
 	Event.stop(evt);}
 );
+*/
 Event.observe('smenu_maintenance_save_bdd', "click", function(evt){
 	page.verify('serveur_backup','serveur_backup.php','true','sub_content');  
 	Event.stop(evt);}

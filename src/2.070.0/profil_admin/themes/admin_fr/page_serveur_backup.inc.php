@@ -34,11 +34,11 @@ update_menu_arbo();
 </p>
 </span>
 <p style="margin:10px;">
-Un backup automatique peut être lancé, en appelant le fichier "/taches_auto/cron_backup.php" depuis une tâche cron (avec les mêmes paramètres que ceux du fichier config. ci-dessous, sauf le nombre de backup(s) qui peut être spécifique et est à définir dans ce même fichier).
+Un backup automatique peut être lancé, en appelant le fichier "/taches_auto/cron_backup.php" depuis une tâche cron (avec les mêmes paramètres que ceux du fichier config. du gestionnaire de backup, sauf le nombre de backup(s) qui peut être spécifique et est à définir dans ce même fichier).
 </p>
 <p style="margin:10px;">
 Un backup de session peut être lancé à l'ouverture d'une session SoothERP (configurable dans le fichier "config_serveur.inc.php"), pour récupération éventuelle de l'état précédent en cas de fausse manip.</ br>
-Cette option augmente le temps d'ouverure du session.
+Cette option augmente le temps d'ouverture de la session.
 </p>
 <p style="margin:10px;">
 Les backups sont classés dans le dossier "backup", dans un sous-dossier du nom de la base (possibilité de plusieurs bases), avec pour chaque base jusqu'à trois sous-dossiers selon le type de backup ("cron_job" pour les backups automatiques, "user" pour les backups manuels et "session_start" pour les backup de session).
@@ -81,7 +81,7 @@ Les backups sont classés dans le dossier "backup", dans un sous-dossier du nom d
 </table>
 
 <div style="margin: 10px;display:none">
-Uploader une backup : 
+Uploader un backup :
 <form action="serveur_backup_up.php" method="post" enctype="multipart/form-data" id="serveur_backup_up" name="serveur_backup_up" target="formFrame">
   <input type="hidden" name="MAX_FILE_SIZE", value="25395200000"/> 
   <input id="up_backup" type="file" name="up_backup" class="classinput_nsize" />
@@ -103,7 +103,7 @@ H_loading();
 
 
 <div class="emarge">
-
+<!--
 <p class="titre">Edition du fichier de configuration du gestionnaire de backup (phpBackup4MySQL)</p>
 <div style="height:50px">
 	<div class="contactview_corps">
@@ -148,7 +148,7 @@ H_loading();
 		
 	</div>
 </div>
-
+-->
 <script type="text/javascript">
 
 idx_open = 1;

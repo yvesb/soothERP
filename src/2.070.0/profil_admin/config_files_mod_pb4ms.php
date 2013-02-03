@@ -3,7 +3,7 @@
 // EDITION DES FICHIERS DE CONFIGURATION
 // *************************************************************************************************************
 // Variables nécessaires à l'affichage
-
+/* Désactivé pour des raisons de sécurité
 require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
@@ -22,7 +22,7 @@ rename($DIR."ressources/phpbackup4mysql/config/tmp_".$file_name, $DIR."ressource
 // *************************************************************************************************************
 // AFFICHAGE
 // *************************************************************************************************************
-
+*/
 /*include ($DIR."profil_admin/smenu_configuration_config_files.php");*/
 
 ?>
