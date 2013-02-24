@@ -1,0 +1,180 @@
+THIRD PARTY ATTRIBUTION
+
+This projects makes use of the following libraries / Ce projet utilise les
+bibliothèques tierces suivantes:
+
+/***
+* ODS PHP
+*
+* Copyright (c) 2009 Laurent VUIBERT
+* License : GNU Lesser General Public License v3
+* http://ods-php.sourceforge.net/
+*
+***/
+
+*******************************************************************************
+
+/***
+* FPDF
+*
+* Version: 1.6
+* Date:    2008-08-03
+* Author:  Olivier PLATHEY
+* License : http://www.fpdf.org/fr/FAQ.php#q1
+* http://www.fpdf.org/
+*
+***/
+
+*******************************************************************************
+
+/***
+ * PEAR, the PHP Extension and Application Repository
+ *
+ * PEAR class and PEAR_Error class
+ *
+ * PHP versions 4 and 5
+ *
+ * LICENSE: This source file is subject to version 3.0 of the PHP license
+ * that is available through the world-wide-web at the following URI:
+ * http://www.php.net/license/3_0.txt.  If you did not receive a copy of
+ * the PHP License and are unable to obtain it through the web, please
+ * send a note to license@php.net so we can mail you a copy immediately.
+ *
+ * @category   pear
+ * @package    PEAR
+ * @author     Sterling Hughes <sterling@php.net>
+ * @author     Stig Bakken <ssb@php.net>
+ * @author     Tomas V.V.Cox <cox@idecnet.com>
+ * @author     Greg Beaver <cellog@php.net>
+ * @copyright  1997-2005 The PHP Group
+ * @license    http://www.php.net/license/3_0.txt  PHP License 3.0
+ * @version    CVS: $Id: PEAR.php,v 1.1 2005/08/01 06:20:23 dancoulter Exp $
+ * @link       http://pear.php.net/package/PEAR
+ * @since      File available since Release 0.1
+ ***/
+
+*******************************************************************************
+
+/***
+* .---------------------------------------------------------------------------.
+*|  Software: PHPMailer - PHP email class                                    |
+*|   Version: 5.1                                                            |
+*|   Contact: via sourceforge.net support pages (also www.worxware.com)      |
+*|      Info: http://phpmailer.sourceforge.net                               |
+*|   Support: http://sourceforge.net/projects/phpmailer/                     |
+*| ------------------------------------------------------------------------- |
+*|     Admin: Andy Prevost (project admininistrator)                         |
+*|   Authors: Andy Prevost (codeworxtech) codeworxtech@users.sourceforge.net |
+*|          : Marcus Bointon (coolbru) coolbru@users.sourceforge.net         |
+*|   Founder: Brent R. Matzelle (original founder)                           |
+*| Copyright (c) 2004-2009, Andy Prevost. All Rights Reserved.               |
+*| Copyright (c) 2001-2003, Brent R. Matzelle                                |
+*| ------------------------------------------------------------------------- |
+*|   License: Distributed under the Lesser General Public License (LGPL)     |
+*|            http://www.gnu.org/copyleft/lesser.html                        |
+*| This program is distributed in the hope that it will be useful - WITHOUT  |
+*| ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or     |
+*| FITNESS FOR A PARTICULAR PURPOSE.                                         |
+*| ------------------------------------------------------------------------- |
+*| We offer a number of paid services (www.worxware.com):                    |
+*| - Web Hosting on highly optimized fast and secure servers                 |
+*| - Technology Consulting                                                   |
+*| - Oursourcing (highly qualified programmers and graphic designers)        |
+*'---------------------------------------------------------------------------'
+***/
+
+*******************************************************************************
+
+/***
+* Open Flash Chart - PHP libraries. These help create data files for Open Flash Chart.
+* Copyright (C) 2007
+*
+* This library is free software; you can redistribute it and/or
+* modify it under the terms of the GNU Lesser General Public
+* License as published by the Free Software Foundation; either
+* version 2.1 of the License, or (at your option) any later version.
+*
+* This library is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* Lesser General Public License for more details.
+*
+* You should have received a copy of the GNU Lesser General Public
+* License along with this library; if not, write to the Free Software
+* Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+***/
+
+*******************************************************************************
+
+/***
+* Creates a (compressed) Tar archive
+*
+* @author   Vincent Blavet <vincent@phpconcept.net>
+* @version  $Revision: 1.43 $
+* @license  http://www.opensource.org/licenses/bsd-license.php New BSD License
+* @package  Archive_Tar
+***/
+
+*******************************************************************************
+
+/***
+*  Prototype JavaScript framework, version 1.6.1
+*  (c) 2005-2009 Sam Stephenson
+*
+*  Prototype is freely distributable under the terms of an MIT-style license.
+*  For details, see the Prototype web site: http://www.prototypejs.org/
+*
+***/
+
+*******************************************************************************
+
+/***
+* SWFObject v1.4.1: Flash Player detection and embed - http://blog.deconcept.com/swfobject/
+*
+* SWFObject is (c) 2006 Geoff Stearns and is released under the MIT License:
+* http://www.opensource.org/licenses/mit-license.php
+*
+* **SWFObject is the SWF embed script formerly known as FlashObject. The name was changed for
+*   legal reasons.
+***/
+
+*******************************************************************************
+
+/***
+* script.aculo.us scriptaculous.js v1.8.3, Thu Oct 08 11:23:33 +0200 2009
+*
+* Copyright (c) 2005-2009 Thomas Fuchs (http://script.aculo.us, http://mir.aculo.us)
+*
+* Permission is hereby granted, free of charge, to any person obtaining
+* a copy of this software and associated documentation files (the
+* "Software"), to deal in the Software without restriction, including
+* without limitation the rights to use, copy, modify, merge, publish,
+* distribute, sublicense, and/or sell copies of the Software, and to
+* permit persons to whom the Software is furnished to do so, subject to
+* the following conditions:
+*
+* The above copyright notice and this permission notice shall be
+* included in all copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+* EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+* NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+* LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+* OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+* WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*
+* For details, see the script.aculo.us web site: http://script.aculo.us/
+***/
+
+*******************************************************************************
+
+/***
+* PhpBackup4MySQL
+*
+* @author   	Yves Bourvon <groovyprog AT gmail DOT com>
+* @copyright	2011, Yves BOURVON.
+* @license  	http://www.opensource.org/licenses/BSD-3-Clause New BSD License
+* @link  		http://http://www.groovyprog.com/en/phpbackup4mysql/
+*
+***/
