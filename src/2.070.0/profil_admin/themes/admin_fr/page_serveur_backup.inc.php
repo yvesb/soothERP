@@ -30,18 +30,18 @@ update_menu_arbo();
 <p class="titre">Gestion des sauvegardes</p>
 <div class="contactview_corps"><br />
 
-<span style="color:#FF0000;"> <p style="margin:10px;">Attention: système de sauvegarde en version béta (test).<br />
+<span style="color:#FF0000;"> <p style="margin:10px;">Système de sauvegarde testé avec succès mais toujours en version d'évaluation, merci de faire part de vos retours.<br />
 </p>
 </span>
 <p style="margin:10px;">
 Un backup automatique peut être lancé, en appelant le fichier "/taches_auto/cron_backup.php" depuis une tâche cron (avec les mêmes paramètres que ceux du fichier config. du gestionnaire de backup, sauf le nombre de backup(s) qui peut être spécifique et est à définir dans ce même fichier).
 </p>
 <p style="margin:10px;">
-Un backup de session peut être lancé à l'ouverture d'une session SoothERP (configurable dans le fichier "config_serveur.inc.php"), pour récupération éventuelle de l'état précédent en cas de fausse manip.</ br>
+Un backup de session peut être lancé à l'ouverture d'une session Sooth ERP (configurable dans le fichier "config_serveur.inc.php"), pour récupération éventuelle de l'état précédent en cas de fausse manip.</ br>
 Cette option augmente le temps d'ouverture de la session.
 </p>
 <p style="margin:10px;">
-Les backups sont classés dans le dossier "backup", dans un sous-dossier du nom de la base (possibilité de plusieurs bases), avec pour chaque base jusqu'à trois sous-dossiers selon le type de backup ("cron_job" pour les backups automatiques, "user" pour les backups manuels et "session_start" pour les backup de session).
+Les backups sont classés dans le dossier "backup", dans un sous-dossier du nom de la base (possibilité de plusieurs bases), avec pour chaque base jusqu'à trois sous-dossiers selon le type de backup ("cron_job" pour les backups automatiques, "user" pour les backups manuels et "session_start" pour les backups de session).
 </p>
 <br /> </span>
 

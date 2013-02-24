@@ -108,8 +108,11 @@ if (!$("sub_content") && !window.parent.$("sub_content")) {
 
 document.write ('<div class="header" style="background-image:url(<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/head_bg.gif); background-repeat:repeat-x; height:61px">');
 document.write ('</span>');
-document.write ('<span style="height:60px; float:right; vertical-align: middle; line-height:60px; padding-right:25px;"><div id="waiting" style="display:none; text-align:center">');
-document.write ('	<div id="boxcontent">');
+document.write ('<span style="height:60px; width:450px; float:right; vertical-align: middle; line-height:60px; padding-right:25px;"><div id="waiting" style="display:none; text-align:right">');
+document.write ('	<div id="backupwait" style="display:inline">');
+document.write ('<?php echo $SESSION_START_BACKUP?"Sauvegarde de la base de donnée en cours... &nbsp;&nbsp;":"";?>');
+document.write ('	</div>');
+document.write ('	<div id="boxcontent" style="display:inline">');
 document.write ('					<strong>Chargement en cours</strong>');
 document.write ('	</div>');
 document.write ('</div></span>');
