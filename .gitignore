@@ -1,0 +1,9 @@
+# Ignore les logs d'erreurs générés par l'application
+error.log.php
+
+# Ignore les fichirs backups sql créés par l'apllication
+# c-à-d ignore tous les fichiers sql
+*.sql
+
+# Sauf le fichier sql d'install d'origine
+!/src/sql*/*.sql
