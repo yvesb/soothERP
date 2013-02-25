@@ -12,7 +12,7 @@ SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 --
--- Base de données: `samediprochain2_062_2`
+-- Base de données: `Sooth ERP 2_063_0`
 --
 
 -- --------------------------------------------------------
