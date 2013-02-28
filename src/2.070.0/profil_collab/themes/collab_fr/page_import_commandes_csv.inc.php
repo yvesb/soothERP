@@ -30,7 +30,7 @@
 		<span style="width:380px; text-align: right; float:left">&nbsp;</span> 
 		<br />
 		<span style="font-weight:bolder">L'utilisation de ce module demande des connaissances techniques (utilisation Excel)</span><br />
-		En cas de besoin n'hésitez pas à contact les équipes de <a href="http://www.lundimatin.fr/site2/contact_ssll.php" target="_blank">LundiMatin</a>
+		En cas de doute, n'hésitez pas à posez vos questions sur <a href="http://community.sootherp.fr" target="_blank">l'espace d'échange dédié à la communnauté</a>
 		<br />
 		Le fichier doit être au format CSV. (texte séparé par ;)
 		<br />
