@@ -252,12 +252,12 @@ update_menu_arbo();
 
 <span style="color:#FF0000">Attention ce module est disponible à titre expérimental.</span><br />
 Veuillez contrôler l'intégrité des données après l'export.<br />
-N'hésitez pas à nous faire part de vos expériences sur notre forum <span id="open_forum_lmb" style="cursor:pointer; text-decoration:underline">http://forum.lundimatin.fr/</span>
+N'hésitez pas à partager vos retours d'expériences et vos questions sur l'espace dédié à la communauté <span id="open_forum_lmb" style="cursor:pointer; text-decoration:underline">http://community.sootherp.fr/</span>
 
 
 			<SCRIPT type="text/javascript">
 			Event.observe("open_forum_lmb", "click", function(evt){
-				window.open ("http://forum.lundimatin.fr/", "_blank");
+				window.open ("http://community.sootherp.fr/", "_blank");
 			}, false);
 			Event.observe("export_journal_ebp", "click", function(evt){
 				window.open ("compta_journal_veac_export_ebp.php?recherche=1&page_to_show_s="+$("page_to_show_s").value+"&ref_contact="+$("ref_contact").value+"&date_fin="+$("date_fin").value+"&date_debut="+$("date_debut").value+"&date_exercice="+$("date_exercice").value, "_blank");

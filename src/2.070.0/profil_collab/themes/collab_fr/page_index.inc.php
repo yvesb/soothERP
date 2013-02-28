@@ -862,7 +862,7 @@ $i++;
 		}
 	?>
 		Event.observe('option_info_licence', 'click',  function(evt){Event.stop(evt);  window.open ("<?php echo $DIR;?>__licence.rtf", "_blank");}, false);
-		Event.observe('option_info_assistance', 'click',  function(evt){Event.stop(evt);  window.open ("http://forum.lundimatin.fr/", "_blank");}, false);
+		Event.observe('option_info_assistance', 'click',  function(evt){Event.stop(evt);  window.open ("http://community.sootherp.fr/", "_blank");}, false);
 		Event.observe('option_info_deconnexion', 'click',  function(evt){Event.stop(evt);  window.open ("<?php echo $DIR;?>site/__session_stop.php", "_top");}, false);
 
 </script>

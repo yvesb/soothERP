@@ -158,7 +158,7 @@ check_page_variables ($page_variables);
 								
 								Event.observe('option_info_assistance', 'click',  function(evt){
 									Event.stop(evt);
-									window.open ("http://forum.lundimatin.fr/", "_blank");
+									window.open ("http://community.sootherp.fr/", "_blank");
 								}, false);
 							</script>	
 						</div>
