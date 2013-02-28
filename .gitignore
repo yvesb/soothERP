@@ -1,7 +1,7 @@
 # Ignore les logs d'erreurs générés par l'application
 error.log.php
 
-# Ignore les fichirs backups sql créés par l'apllication
+# Ignore les fichiers backups sql créés par l'application
 # c-à-d ignore tous les fichiers sql
 *.sql
 
