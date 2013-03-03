@@ -805,8 +805,11 @@ public function __setChamp_equivalent($champ_equivalent) {
 //effacement table
 public function erase() {
 	global $bdd;
-	// Insertion dans la base
+	$query = "ALTER TABLE `csv_import_catalogue_lines` DROP FOREIGN KEY `csv_import_catalogue_lines_ibfk_1`";
+	$bdd->exec ($query);
 	$query = "TRUNCATE TABLE `csv_import_catalogue_cols`";
+	$bdd->exec ($query);
+	$query = "ALTER TABLE `csv_import_catalogue_lines` ADD CONSTRAINT `csv_import_catalogue_lines_ibfk_1` FOREIGN KEY (`id_colonne`) REFERENCES `csv_import_catalogue_cols` (`id_colonne`) ON DELETE CASCADE ON UPDATE CASCADE";
 	$bdd->exec ($query);
 	$bdd->commit();
 	return true;
