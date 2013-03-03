@@ -113,8 +113,8 @@ update_menu_arbo();
 							<td style="width:25%; text-align:center"><span>Num&eacute;ro de carte:</span><br />
 							<input name="numero_carte" id="numero_carte" type="text" value=""  class="classinput_nsize"/>
 							</td>
-							<td style="width:25%; text-align:center"><span>Date d'expiration:</span><br />
-							<input name="date_expiration" id="date_expiration" type="text" value=""  class="classinput_nsize" maxlength="5"/>
+							<td style="width:25%; text-align:center"><span>Expiration (mm-aa):</span><br />
+							<input name="date_expiration" id="date_expiration" type="text" value="mm-aa"  class="classinput_nsize" maxlength="5"/>
 							</td>
 							<td style="width:25%; text-align:center"><span style="display:none">Contr&ocirc;le</span><br />
 							<input name="controle" id="controle" type="text" value="" style="display:none" class="classinput_nsize"/>
@@ -232,7 +232,7 @@ if ($comptes_cbs) {
 							<td style="width:25%; text-align:center"><span>Num&eacute;ro de carte:</span><br />
 							<input name="numero_carte_<?php echo $compte_cb->id_compte_cb;?>" id="numero_carte_<?php echo $compte_cb->id_compte_cb;?>" type="text" value="<?php echo htmlentities($compte_cb->numero_carte);?>"  class="classinput_nsize"/>
 							</td>
-							<td style="width:25%; text-align:center"><span>Date d'expiration:</span><br />
+							<td style="width:25%; text-align:center"><span>Expiration (mm-aa):</span><br />
 							<input name="date_expiration_<?php echo $compte_cb->id_compte_cb;?>" id="date_expiration_<?php echo $compte_cb->id_compte_cb;?>" type="text" value="<?php echo (date("m", strtotime($compte_cb->date_expiration)));?>-<?php echo (date("y", strtotime($compte_cb->date_expiration)));?>"  class="classinput_nsize" maxlength="5"/>
 							</td>
 							<td style="width:25%; text-align:center"><span style="display:none">Contr&ocirc;le</span><br />
@@ -331,7 +331,7 @@ if ($comptes_cbs) {
 
 <SCRIPT type="text/javascript">
 new Form.EventObserver('compta_compte_cbs_add', function(){formChanged();});
-new Event.observe("date_expiration", "blur", datemask, false);
+new Event.observe("date_expiration", "blur", expdatemask, false);
 
 
 	<?php
@@ -339,7 +339,7 @@ new Event.observe("date_expiration", "blur", datemask, false);
 		?>
 		new Form.EventObserver('compta_compte_cbs_mod_<?php echo $compte_cb->id_compte_cb;?>', function(){formChanged();});
 		
-		new Event.observe("date_expiration_<?php echo $compte_cb->id_compte_cb;?>", "blur", datemask, false);
+		new Event.observe("date_expiration_<?php echo $compte_cb->id_compte_cb;?>", "blur", expdatemask, false);
 		
 		Event.observe($("actif_<?php echo $compte_cb->id_compte_cb;?>"), "click", function(evt){
 			if ($("actif_<?php echo $compte_cb->id_compte_cb;?>").checked) {

@@ -339,6 +339,59 @@ $(id_field.id).value=jo+mm+aaaa;
 }
 
 
+//masque de date expiration au format mm-aa
+
+function expdatemask(evt) {
+var array_num=new Array;
+var id_field = Event.element(evt);
+var field_value = id_field.value;
+var u_field_num = Array.from(field_value);
+var mm="";
+var aa="";
+var error=0;
+
+	for( i=0; i < u_field_num.length; i++ ) {
+		if (!isNaN(u_field_num[i]) && u_field_num[i]!=" " && u_field_num[i]!="/"){
+		array_num.push(u_field_num[i]);
+		}
+	}
+
+
+	for ( i=0; i < array_num.length; i++ ) {
+
+		if (i==0) {
+			if (array_num[0]>1) {
+			error=1;
+			}
+				mm+=array_num[i];
+		}
+		if (i==1) {
+			if (array_num[1]>2 && array_num[0]==1) {
+			error=1;
+			}
+
+			mm+=array_num[i];
+
+		}
+
+			if (i==2 || i==3) {
+
+
+			aa+=array_num[i];
+		}
+
+		if (error==0) {
+			$(id_field.id).value=mm+"-"+aa;
+			} else {
+			$(id_field.id).value="Valeur incorrecte";
+			}
+
+	}
+
+}
+
+
+
 
 
 
