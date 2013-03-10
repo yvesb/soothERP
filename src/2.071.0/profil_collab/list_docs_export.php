@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
 
 <form method="post" action="ods_gen.php">
     <input type="hidden" name="code_ods_modele" value="export_selected_docs" />
-    <input type="hidden" name="liste_doc" id="liste_doc" value="<?php echo $_GET['docs']; ?>" />
+    <input type="hidden" name="liste_doc" id="liste_doc" value="<?php echo $_REQUEST['docs']; ?>" />
     
     <?php $liste_modeles_ods_valides=charge_modele_export_docs(); ?>
 	<form method="post" action="ods_gen.php" id="change_code_ods_modele" target="_top" >

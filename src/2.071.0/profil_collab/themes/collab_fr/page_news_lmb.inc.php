@@ -21,8 +21,9 @@ check_page_variables ($page_variables);
 ?>
 <div >
 	<?php
-	if (@remote_file_exists ("http://www.lundimatin.fr/site/user_LMB_rss.xml")) {
-		Universal_Reader("http://www.lundimatin.fr/site/user_LMB_rss.xml");
+	if (@remote_file_exists ("http://www.sootherp.fr/feed/") && $AFFICHAGE_NEWS) {
+		Universal_Reader("http://www.sootherp.fr/feed/");
+		echo "<b>News Sooth ERP</b></br>";
 		echo Universal_Display(15, false, true, false);
 	}
 	?>

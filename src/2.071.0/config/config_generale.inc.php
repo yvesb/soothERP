@@ -198,4 +198,9 @@ $DELAI_DEVIS_CLIENT_RETARD = "10";
 $NB_VILLES_AFFICHEES = 50;
 $COMPTA_GEST_PRELEVEMENTS = false;
 
+// *************************************************************************************************************
+// CONFIGURATION DE l'AFFICHAGE DES NEWS SOOTH ERP
+// *************************************************************************************************************
+$AFFICHAGE_NEWS = false;
+
 ?>

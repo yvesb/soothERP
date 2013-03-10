@@ -564,7 +564,7 @@ function action_recherche(action_selection, second_id , length_list) {
                     $("texte_alert").innerHTML = "Chargement en cours..";
                     $("titre_alert").innerHTML = "Choisir le modèle d'exportation.<br/>";
                     $("bouton_alert").style.display = "none";
-                    var query = new Ajax.Updater('texte_alert', 'list_docs_export.php', {method: 'get',parameters: 'docs='+liste_doc_simple, });
+                    var query = new Ajax.Updater('texte_alert', 'list_docs_export.php', {method: 'post',parameters: 'docs='+liste_doc_simple });
                     break;
                 }
                 case "DEV_enAttente_to_refuse":{
