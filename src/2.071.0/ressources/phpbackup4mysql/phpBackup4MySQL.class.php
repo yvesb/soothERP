@@ -34,7 +34,7 @@
 
 /**
  *
- * Class phpBackup4MySQL file V0.3
+ * Class phpBackup4MySQL file V0.4
  *
  * This file contains the phpBackup4MySQL class with all its methods
  *
@@ -553,13 +553,15 @@ class phpBackup4MySQL
 				}
 
 		//Create File, which name is "backup_" + date + suffix
+		//Additional prefix for possible user tweak
 		if ($prefix == null)
 		$prefix="";
+		else
+		$prefix.="_";
 
 
-
-		$file = fopen($path."/backup_".$prefix."_".$dbName."_".date('dmy')."-".$suffix.".sql", "w+" );
-
+		$fileName = $path."/backup_".$dbName."_".date('dmy')."-".$suffix.".sql";
+		$file = fopen($fileName, "w+" );
 
 
 
@@ -567,8 +569,22 @@ class phpBackup4MySQL
 		if(fwrite ( $file , utf8_encode($sql_dump) ))
 
 			{
+			//S3 credentials and bucket defined ?
+			if ( AMAZON_WEB_SERVICES_KEY != "" && AMAZON_WEB_SERVICES_SECRET_KEY != "" && AMAZON_S3_BUCKET != "" )
+
+				{
+					//Upload a copy of the backup to AWS S3
+					if (!$this->uploadToS3( $fileName ))
+						{
+						return false;
+						exit;
+						}
+				}
+
 			//Close the file
 			fclose ( $file );
+
+
 
 			//New backup is done we can now proceed to older backup deletion:
 			//If the number of stored backups in limited and the number of stored backup exceeds
@@ -769,6 +785,70 @@ class phpBackup4MySQL
 	}
 
 
+	/**
+	*
+	* Upload the MySQL database 'dump' to Amazon S3 bucket
+	*
+	* @param string $filename
+	*
+	* @return boolean
+	*
+	*/
 
+
+
+	public function uploadToS3( $filename )
+	{
+		//load the aws sdk class
+		require_once __DIR__.'/lib/aws_sdk/sdk.class.php';
+
+		//Adapted from aws sdk config file
+		CFCredentials::set(array(
+
+			// Credentials for PM4B.
+			'pb4m' => array(
+
+				// Set Amazon Web Services Key.
+				'key' => AMAZON_WEB_SERVICES_KEY,
+
+				// Set Amazon Web Services Secret Key.
+				'secret' => AMAZON_WEB_SERVICES_SECRET_KEY,
+
+				// This option allows you to configure a preferred storage type to use for caching by
+				// default. This can be changed later using the set_cache_config() method.
+				//
+				// Valid values are: `apc`, `xcache`, or a file system path such as `./cache` or
+				// `/tmp/cache/`.
+				'default_cache_config' => '',
+
+				// Determines which Cerificate Authority file to use.
+				//
+				// A value of boolean `false` will use the Certificate Authority file available on the
+				// system. A value of boolean `true` will use the Certificate Authority provided by the
+				// SDK. Passing a file system path to a Certificate Authority file (chmodded to `0755`)
+				// will use that.
+				//
+				// Leave this set to `false` if you're not sure.
+				//
+				// Modified to true to have it working properly as opposed to aws sdk mention above
+				'certificate_authority' => true
+			),
+
+		// Specify a default credential set to use if there are more than one.
+		'@default' => 'pb4m'
+		));
+
+		//Instantiate Amazon S3
+		$s3 = new AmazonS3();
+
+		//Upload backup
+		$response = $s3->create_object(AMAZON_S3_BUCKET, basename($filename), array(
+			'fileUpload' => realpath($filename)
+		));
+
+		//Return Boolean
+		return $response->isOK();
+
+	}
 }
 ?>

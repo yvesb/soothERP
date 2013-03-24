@@ -18,7 +18,6 @@ define ('PASS', $bdd_pass);
 define ('HOST', $bdd_hote);
 define ('DBNAME', $bdd_base);
 
-
 /**
  * Set the directory in which backups will be stored
  * Defaults to ./Backup/
@@ -52,7 +51,7 @@ define ( "DROP_TABLE", TRUE);
 define ( "NO_AUTO_VALUE", TRUE);
 
 /**
- * num_backup_files_kept
+ * $num_backup_files_kept
  * This defines how many backup will be kept in the backup directory. If the number of backups exceeds this value, the backup file with the
  * lowest index will be erased (that is, the oldest one erase unless you've renmamed them) and the new backup file added in replacement.
  * To set no limit in the number of backup kept, set value to 0.
@@ -61,10 +60,9 @@ define ( "NO_AUTO_VALUE", TRUE);
  * Separated values added for SoothERP usage regarding cron backups and session start backups
  * ##############################################################################################################
  */
-$num_backup_files_kept = 5; // Numbur of manual bakup held in "history"
+$num_backup_files_kept = 5; // Number of manual bakup held in "history"
 $num_backup_files_kept_cron = 7; // Typically one backup a day over a week for cron job
 $num_backup_files_kept_session = 2; // Two sessions strats backups seems a good safe starting point
-
 
 /**
  * STRICT_NUM_BACKUP_FILES
@@ -74,6 +72,29 @@ $num_backup_files_kept_session = 2; // Two sessions strats backups seems a good 
  */
 define ( "STRICT_NUM_BACKUP_FILES", TRUE);
 
+/**
+* Below are S3 settings for uploading backup to S3
+* If below parameters are set and are valid S3 credentials, MySQL backup will be uploaded to corresponding bucket
+*
+* AMAZON_WEB_SERVICES_KEY
+* Amazon Web Services Key. Found in the AWS Security Credentials.
+*/
+
+define ( "AMAZON_WEB_SERVICES_KEY", "");
+
+/**
+* AMAZON_WEB_SERVICES_SECRET_KEY
+* Amazon Web Services Secret Key. Found in the AWS Security Credentials.
+*/
+
+define ( "AMAZON_WEB_SERVICES_SECRET_KEY", "");
+
+/**
+* AMAZON_S3_BUCKET
+* Amazon s3 bucket name
+*/
+
+define ( "AMAZON_S3_BUCKET", "");
 
 
 ?>
