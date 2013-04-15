@@ -208,7 +208,7 @@ $montant_total_page = 0;
 			<a href="#"  id="order_ref_doc">R&eacute;f&eacute;rence
 			</a>
 		</td>
-		<td style="width:18%; text-align:left">
+		<td style="width:13%; text-align:left">
 			<a href="#"  id="order_type_doc">Type de Document
 			</a>
 		</td>
@@ -216,22 +216,25 @@ $montant_total_page = 0;
 			<a href="#"  id="order_etat_doc">&Eacute;tat
 			</a>
 		</td>
-		<td style=" text-align:left">
+		<td style="width:15% text-align:left">
 			<a href="#"  id="order_contact_doc">Contact
 			</a>
 		</td>
-		<td style="width:9%; text-align:center">
+		<td style="text-align:left">
+			Référence Externe
+		</td>
+		<td style="width:10%; text-align:center">
 			<a href="#"  id="order_montant_doc">
 			Montant TTC
 			</a>
 		</td>
-		<td style="width:10%; text-align:center">
+		<td style="width:9%; text-align:center">
 			<a href="#"  id="order_date_doc">
 			Date
 			</a>
 		</td>
-		<td style="width:5%"></td>
-		<td style="width:95px"></td>
+		<td style="width:4%"></td>
+		<td style="width:70px"></td>
 	</tr>
 <?php 
 $colorise=0;
@@ -277,6 +280,16 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 	Event.observe("link_contact_doc_<?php echo htmlentities($fiche->ref_doc)?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','documents_edition.php?ref_doc=<?php echo htmlentities($fiche->ref_doc)?>','true','sub_content');}, false);
 	</script>
 	</td>
+<!-- Ajout Référence Externe -->
+	<td style="text-align:left">
+		<a  href="#" id="link_ref_externe_doc_<?php echo htmlentities($fiche->ref_doc)?>" style="display:block; width:100%">
+		<?php	if (isset($fiche->ref_doc_externe)) { echo htmlentities($fiche->ref_doc_externe)."&nbsp;";}?>
+		</a>
+	<script type="text/javascript">
+	Event.observe("link_ref_externe_doc_<?php echo htmlentities($fiche->ref_doc)?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','documents_edition.php?ref_doc=<?php echo htmlentities($fiche->ref_doc)?>','true','sub_content');}, false);
+	</script>
+	</td>
+<!-- // Référence Externe -->
 	<td style="text-align:right; padding-right:5px">
 		<a  href="#" id="link_montant_doc_<?php echo htmlentities($fiche->ref_doc)?>" style="display:block; width:100%">
 		<?php	if ($fiche->montant_ttc) { echo number_format($fiche->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[1]; $montant_total_page +=$fiche->montant_ttc; }?>&nbsp;

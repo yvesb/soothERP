@@ -124,7 +124,19 @@ if (isset($_REQUEST['recherche'])) {
 						LIMIT ".$query_limit;
 	$resultat = $bdd->query($query);
 
-	while ($fiche = $resultat->fetchObject()) { $fiches[] = $fiche; }
+	// Liste des documents ne contenant pas de référence externe
+	$list = array('DES','DES_SN','ECHEANCIERS','FAB','FAB_SN','INV','MOD','PAC','TIC','TRM');
+
+	while ($fiche = $resultat->fetchObject()) {
+		// Recherche référence externe
+		if(!in_array(substr($fiche->ref_doc, 0, 3), $list)) {
+			$query_ref_doc_externe 	= "SELECT ref_doc, ref_doc_externe FROM doc_".strtolower(substr($fiche->ref_doc, 0, 3))." WHERE ref_doc = '".$fiche->ref_doc."'";
+			$result = $bdd->query($query_ref_doc_externe);
+			$ref_doc_externe = $result->fetchObject();
+			$fiche->ref_doc_externe = $ref_doc_externe->ref_doc_externe;
+		}
+		$fiches[] = $fiche;
+	}
 	//echo nl2br ($query);
 	unset ($fiche, $resultat, $query);
 	
