@@ -3777,9 +3777,8 @@ public function create_pdf ($print = 0) {
 // Affiche le PDF du document
 public function view_pdf ($print = 0) {
 	$pdf = $this->create_pdf ($print);
-
 	// Sortie
-	$pdf->Output();
+	$pdf->Output($this->ref_doc.".pdf", "I");
 }
 
 
