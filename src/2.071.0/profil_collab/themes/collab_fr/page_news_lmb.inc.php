@@ -23,8 +23,10 @@ check_page_variables ($page_variables);
 	<?php
 	if (@remote_file_exists ("http://www.sootherp.fr/feed/") && $AFFICHAGE_NEWS) {
 		Universal_Reader("http://www.sootherp.fr/feed/");
-		echo "<b>News Sooth ERP</b><br />";
-		echo Universal_Display(15, false, true, false);
+		echo '<div class="titre_accueil_news">
+		News Sooth ERP
+		</div>';
+		echo utf8_decode(Universal_Display(15, false, true, false));
 	}
 	?>
 </div>
