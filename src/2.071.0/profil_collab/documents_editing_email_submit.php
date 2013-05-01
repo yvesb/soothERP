@@ -42,10 +42,6 @@ if (isset($_REQUEST["ref_doc"])) {
         // Envoi de l'email
 	$mail = new email();
 	$mail->prepare_envoi(0, 1);
-	if ($mail->mail_attachement ("pb@lundimatin.fr" , "Test" , "Gnarf" , $filename , $typemime , $nom , $reply , $from, $nom_aff)) {
-		//$this->document_edition_add (2);
-		//return true;
-	}
 
     }else{
 

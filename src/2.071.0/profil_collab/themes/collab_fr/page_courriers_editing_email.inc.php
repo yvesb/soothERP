@@ -134,8 +134,7 @@
 								<?php echo 
 								"\nLe document ci-joint vous est envoy&eacute; par \"".$contact_entreprise->getNom()."\"".
 								"\nLa lecture du fichier joint n&eacute;cessite la pr&eacute;sence sur votre ordinateur du logiciel Adobe Acrobat Reader.\n".
-								"Si vous ne poss&eacute;dez pas ce logiciel cliquez sur : www.adobe.fr/products/acrobat/readstep.html pour le t&eacute;l&eacute;charger.\n".
-								"Cet email est g&eacute;n&eacute;r&eacute; par le logiciel LundiMatin Business disponible sur <a href='http://www.lundimatin.fr/'>www.lundimatin.fr</a>"
+								"Si vous ne poss&eacute;dez pas ce logiciel cliquez sur : <a href=\"http://get.adobe.com/fr/reader/\">http://get.adobe.com/fr/reader/</a> pour le t&eacute;l&eacute;charger.\n"
 								;?>
 						</textarea>
 					</td>

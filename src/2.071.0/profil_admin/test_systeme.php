@@ -164,7 +164,18 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 	$retour_texte .= "<br><br><hr>
 	TEST DU FONCTIONNEMENT DES MAILS<br><br>";
 	
-		if (@!mail('test@lundimatin.fr', 'test', "test systeme")) {
+	// Initialisation de la variable $EMAIL_DEV pour test de mail
+	$CONFIG_DIR = $DIR."config/";
+	require_once ($CONFIG_DIR."config_serveur.inc.php");
+	global $EMAIL_DEV;
+
+		// Test de la variable si nulle (i.e. non définie dans le fichier de config)
+		if (is_null($EMAIL_DEV)) {
+			$retour_texte .= "Le mail de test n'est pas paramètré, veuillez contacter un administrateur pour configurer la variable \$EMAIL_DEV";
+			$retour_texte .= "La fonction Mail() n'a pu être testée.";
+			$GLOBALS['_INFOS']['test_systeme_non_bloquant'][] = "La fonction Mail() n'a pu être testée. (Non bloquant)";			}
+		// Si non nulle, test de l'envoi de mail à l'adresse définie
+		else if (@!mail($EMAIL_DEV, 'test', "test systeme")) {
 			$retour_texte .= "La fonction Mail() ne fonctionne pas. (Non bloquant mais nécessite un paramétrage)";
 			$GLOBALS['_INFOS']['test_systeme_non_bloquant'][] = "La fonction Mail() ne fonctionne pas. (Non bloquant)";
 		} else {

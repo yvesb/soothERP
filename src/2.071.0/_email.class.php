@@ -204,7 +204,7 @@ function envoi_email_templated ($to, $sujet, $message) {
 
 /**
 * Verifie que l'adresse email à bien une syntaxe valide
-* @param string $email exemple contact@lundimatin.fr
+* @param string $email exemple contact@domain.ltd
 * @return boolean retourne true si la syntaxe est correct, false sinon.
 */
 public static function verifier_syntaxe_email($email){
