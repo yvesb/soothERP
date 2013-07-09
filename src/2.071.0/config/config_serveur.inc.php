@@ -14,6 +14,7 @@ $_SERVER['ACTIF'] = 1;
 // INFORMATIONS SUR LE SERVEUR DE MISE A JOUR
 // *************************************************************************************************************
 $_SERVER['VERSION'] = '2.0710';
+$_SERVER['SOOTHERP_VERSION'] = 'RC1.1';
 $MAJ_SERVEUR['url'] = "http://ftp2.lundimatin.fr/__maj_serveur/";
 $ACTIVE_MAJ = false;
 $CODE_SECU = "toto";		//code de sécurité transmis aux serveurs d'importation de données
