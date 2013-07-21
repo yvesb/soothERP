@@ -19,7 +19,7 @@ check_page_variables ($page_variables);
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Logiciel de gestion LundiMatin Business pour <?php echo $nom_entreprise;?></title>
+<title>Logiciel de gestion Sooth ERP, page d'identification de <?php echo $nom_entreprise;?></title>
 <script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>javascript/prototype.js"/></script>
 <script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>javascript/swfobject.js"></script>
 <style type="text/css">
