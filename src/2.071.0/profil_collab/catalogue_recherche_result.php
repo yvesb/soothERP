@@ -138,7 +138,7 @@ if (isset($_REQUEST['recherche'])) {
 	}
 	// promotion
 	if ($search['in_promotion']) {
-	//	$query_where 	.= " ";
+	$query_where .= " && a.promo = 1 ";
 	}
 	
 
