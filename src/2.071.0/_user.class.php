@@ -387,22 +387,109 @@ final private function log_user_theme () {
 private function log_bad_login ($login, $code) {
 	global $bdd;
 	global $DEFAUT_INTERFACE;
-	
-	$ip = "";
-	$user_agent = "";
-	// Modification éffectuée par Yves Bourvon 
-	// La variable $code (mot de passe) était écrite en clair dans la base de données dans l'error logs. 
-	// Application d'un hachage md5, ce qui permet pour maintenance de comparer au hachage des mots de passe users, mais interdit la l'accès en clair.
-	$query = "INSERT INTO users_logs_errors (ip, user_agent, date, login, code) 
+	global $MAX_FALSE_LOGIN;
+	global $FALSE_LOGIN_TIME_WINDOW;
+
+	$ip = $_SERVER['REMOTE_ADDR'];
+	$user_agent = $_SERVER['HTTP_USER_AGENT'];
+
+	// Retrieve bad login data for that user (or false if no bad log)
+	$bad_log = $this->last_bad_log_connexion ($login);
+
+	// If there are bad logs, we need to increment num of bad logs and set ip to ban if limit reached
+	if ($bad_log && (time()-strtotime($bad_log['date_last_log']) < $FALSE_LOGIN_TIME_WINDOW)) {
+
+	$bad_log_date = $bad_log['date_last_log'];
+
+	// Retrieve ip with corresponding login and date of bad log
+	$query = "SELECT ip
+						FROM  users_logs_errors
+						WHERE login='$login' AND date='$bad_log_date' ";
+	$result = $bdd->query ($query);
+	$ip_log = $result->fetchObject();
+	$ip_last_log = $ip_log->ip;
+
+	// Explode Ip into actual Ip and number or bad logs
+	$ip_elements = explode("#",$ip_last_log);
+
+
+	if ( $ip_elements[1] < $MAX_FALSE_LOGIN - 1 ) {
+	// If num of bad logs is under limit
+	// New ip construction
+	$ip= (string) $ip_elements[0];
+	$ip .= "#";
+	$ip .= $ip_elements[1]+1;
+
+	// Insert new data
+	$query = "INSERT INTO users_logs_errors (ip, user_agent, date, login, code)
 						VALUES ('".$ip."', '".$user_agent."', NOW(), '".addslashes($login)."', '".md5(addslashes($code))."') ";
 	$bdd->exec ($query);
 
-	if (0) {
-		$redirection = $_ENV['CHEMIN_ABSOLU'].$DEFAUT_INTERFACE;
-		$GLOBALS['_INFOS']['redirection'] = $redirection;
+	} else {
+	// If num of bad logs exceeds limit, set banned flag
+	$ip= (string) $ip_elements[0];
+	$ip .= "#B";
+
+	// Insert new data
+	$query = "INSERT INTO users_logs_errors (ip, user_agent, date, login, code)
+						VALUES ('".$ip."', '".$user_agent."', NOW(), '".addslashes($login)."', '".md5(addslashes($code))."') ";
+	$bdd->exec ($query);
+
+	// we've reached the limit, redirect to root index
+	$redirection = $_ENV['CHEMIN_ABSOLU']."index.php";
+	$GLOBALS['_INFOS']['redirection'] = $redirection;
+
 	}
+
+} else {
+	// No corresponding bad log => this is the first bad log
+	$query = "INSERT INTO users_logs_errors (ip, user_agent, date, login, code)
+						VALUES ('".$ip."#1"."', '".$user_agent."', NOW(), '".addslashes($login)."', '".md5(addslashes($code))."') ";
+	$bdd->exec ($query);
+	}
+
 	return true;
 }
+
+/**
+ * Function that gets the last wrong connection attempt for current user
+ *
+ * @return array|boolean Array with date of the last bad login for that user and Ip field or false if no entry
+ *
+ */
+
+public function last_bad_log_connexion ($ref_user) {
+	global $bdd;
+
+		// Check for entry in users_error_logs for the given user
+		// Retrieve latest date and time for corresponding error if any
+		$query = "SELECT MAX(date) AS date_last_log
+						FROM  users_logs_errors
+						WHERE login='$ref_user' ";
+		$result = $bdd->query ($query);
+		$last_log = $result->fetchObject();
+		$date_last_log = $last_log->date_last_log;
+
+		// No result ? return false
+		if (is_null($date_last_log)) {
+		return false;
+		}
+
+		// Check for the corresponding ip
+		$query = "SELECT ip
+						FROM  users_logs_errors
+						WHERE date='$date_last_log' ";
+		$result = $bdd->query ($query);
+		$last_log = $result->fetchObject();
+		$ip_last_log = $last_log->ip;
+
+		$bad_log = array ( 'date_last_log' => $date_last_log, 'ip_last_log' => $ip_last_log);
+
+		return $bad_log;
+
+}
+
+
 
 //verification de la derière heure de connexion pour rafraichissement des infos en cache
 public function last_log_connexion () {

@@ -1744,4 +1744,57 @@ function charger_factures_relances_modeles () {
 
 	return $factures_relances_modeles;
 }
+
+/**
+ * Function that checks the status for banned ip
+ * and reset banned ip after elapsed time window
+ *
+ * @return bolean
+ *
+ */
+
+ function is_banned ($ip) {
+	global $bdd;
+
+	// Config variable that sets the banned duration time
+	global $FALSE_LOGIN_TIME_WINDOW;
+
+		// Check for entry in users_error_logs for the given ip
+		// Retrieve latest date and time for corresponding error if any
+		$query = "SELECT MAX(date) AS date_last_log
+						FROM  users_logs_errors
+						WHERE ip LIKE'$ip%' ";
+		$result = $bdd->query ($query);
+		$last_log = $result->fetchObject();
+		$date_last_log = $last_log->date_last_log;
+
+		// No result ? return false (i.e. ip not banned)
+		if (is_null($date_last_log)) {
+		return false;
+		}
+
+		// Check for the ip with its banned status flag
+		$query = "SELECT ip
+						FROM  users_logs_errors
+						WHERE date='$date_last_log' ";
+		$result = $bdd->query ($query);
+		$last_log = $result->fetchObject();
+		$ip_last_log = $last_log->ip;
+
+		// Check if the ip has banned flag and if still in the banned window time
+		if (strpos($ip_last_log, "#B") > 0 && (time()-strtotime($date_last_log) < $FALSE_LOGIN_TIME_WINDOW)) {
+		// The ip is banned
+		return true;
+		} else {
+		if (strpos($ip_last_log, "#B")) {
+		// Ip has banned status but isn't anymore in banned window time: reset banned status to 0 bad login.
+		$ip = str_replace("#B", "#0", $ip_last_log);
+		$query = "UPDATE users_logs_errors SET ip='$ip' WHERE (ip LIKE'$ip%' && date='$date_last_log') ";
+		$bdd->exec ($query);
+		return false;
+		}
+		return false;
+		}
+}
+
 ?>

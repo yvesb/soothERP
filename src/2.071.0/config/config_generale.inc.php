@@ -29,6 +29,8 @@ $DEFAUT_ID_STOCK_EXPE = 0;		// Stock pour les livraisons en VPC (sinon, livraiso
 // *************************************************************************************************************
 $SESSION_LT = 86400;										// Durée de vie de la session Système (24H)
 $USER_SESSION_LT = 1800;									// Durée de vie de la session Utilisateur (00mn)
+$MAX_FALSE_LOGIN = 3;	// Nombre d'échecs de connexion autorisés avant de bannir l'ip associée au login fautif
+$FALSE_LOGIN_TIME_WINDOW = 86400;  // Durée pendant laquelle l'ip est bannie (en sec.)
 
 // Identification
 $MODE_IDENTIFICATION 	= "TEXTE";		// Défini si les utilisateurs s'identifient par un champs SELECT ou un champs TEXTE

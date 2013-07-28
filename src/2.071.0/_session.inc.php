@@ -361,6 +361,14 @@ if (!isset($_SESSION['user'])) {
 // *************************************************************************************************************
 // VERIFICATIONS DE SECURITE
 // *************************************************************************************************************
+
+// If ip is banned => display message and exit
+if (is_banned($_SERVER['REMOTE_ADDR'])) {
+	echo 'Accès utilisateur désactivé suite à de trop nombreux échecs de connexion. Si vous êtes un utilisateur légitime, veuillez contacter votre administrateur';
+	exit();
+}
+
+
 if (isset($THIS_DIR) && is_file($THIS_DIR."_interface.config.php")) { 
 	require_once ($THIS_DIR."_interface.config.php");
 }

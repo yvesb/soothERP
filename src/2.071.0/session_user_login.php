@@ -62,7 +62,7 @@ if (isset($_SESSION['USER_INFOS']['ref_user'])) {
 			echo  htmlentities($_SESSION['USER_INFOS']['pseudo']);
 		}
 		?>
-		<input type="hidden" name='login' size=25 value="<?php echo $predefined_user?>"/>
+		<input type="hidden" name='login' size=25 value="<?php echo $_SESSION['USER_INFOS']['pseudo']?>"/>
 		</td>
 	</tr>
 	<tr>
