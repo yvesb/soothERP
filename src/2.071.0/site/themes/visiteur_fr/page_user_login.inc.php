@@ -256,7 +256,7 @@ document.write ('</div></td></tr>');
 document.write ('		<tr>');
 document.write ('			<td colspan="2">');
 document.write ('<div style="text-align:center; vertical-align: bottom; padding-left:15px" class="grey_text" >');
-document.write ('La présente version modifiée de Lundi Matin Business est une distribution <a href="http://www.groovyprog.com/sootherp/" target="_blank" class="grey_text" rel="noreferrer">SoothERP</a>');
+document.write ('La présente version modifiée de Lundi Matin Business est une distribution <a href="http://www.sootherp.fr" target="_blank" class="grey_text" rel="noreferrer">SoothERP</a>');
 document.write ('</div></td></tr>');
 document.write ('		<tr>');
 document.write ('			<td colspan="2">');

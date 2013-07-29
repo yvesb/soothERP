@@ -256,7 +256,7 @@
 						LMPL
 				</div>
 				
-				La présente version modifiée de Lundi Matin Business est une distribution <a href="http://www.groovyprog.com/sootherp/" target="_blank" class="grey_text" rel="noreferrer">SoothERP</a>
+				La présente version modifiée de Lundi Matin Business est une distribution <a href="http://www.sootherp.fr" target="_blank" class="grey_text" rel="noreferrer">SoothERP</a>
 				
 				</td>
 				</tr>
