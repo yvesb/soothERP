@@ -22,7 +22,7 @@ function error_handler ($errno, $errstr, $errfile, $errline) {
 	return true;
 }
 
-// Déclaration de la fonction de récupération des erreurs systèmes
+// Dï¿½claration de la fonction de rï¿½cupï¿½ration des erreurs systï¿½mes
 set_error_handler("error_handler");
 
 
@@ -39,26 +39,26 @@ function alerte_dev ($erreur, $libelle_supp = "", $errno = "", $errstr = "", $er
 	global $bdd_pass;
 	global $FORCE_EMAIL_DEBUG;
 	
-	// Chaine de remplacement pour les données sensibles
-	$sensibleDataSubstitute = "** texte masqué par sécurité **";
+	// Chaine de remplacement pour les donnï¿½es sensibles
+	$sensibleDataSubstitute = "** texte masquï¿½ par sï¿½curitï¿½ **";
 	
 	$rapport = "
-	<b>Alerte de développement</b><br />
+	<b>Alerte de dï¿½veloppement</b><br />
 	--------------<br />";
 	
 		
 	$rapport .= "
-	Serveur : ".$_SERVER['REF_SERVEUR']." / ".$_SERVER['SERVER_NAME']." / ".affiche_version ($_SERVER['VERSION'])."<br /> ";
+	Serveurï¿½: ".$_SERVER['REF_SERVEUR']." / ".$_SERVER['SERVER_NAME']." / ".affiche_version ($_SERVER['VERSION'])."<br /> ";
 	
 	$rapport .= "
 	--------------<br />
-	Script en erreur : ".$_SERVER["PHP_SELF"]."<br />";
+	Script en erreurï¿½: ".$_SERVER["PHP_SELF"]."<br />";
 	if (isset($_SERVER["HTTP_REFERER"])) {
 		$rapport .= "Referer = ".$_SERVER["HTTP_REFERER"]."<br /> ";
 	}
 	if (isset($_SERVER["HTTP_USER_AGENT"])) {
 	$rapport .= "
-	Navigateur : ".$_SERVER["HTTP_USER_AGENT"]."
+	Navigateurï¿½: ".$_SERVER["HTTP_USER_AGENT"]."
 	--------------<br />";
 	}
 
@@ -73,7 +73,7 @@ function alerte_dev ($erreur, $libelle_supp = "", $errno = "", $errstr = "", $er
 	<b>INFORMATIONS COMPLEMENTAIRES</b> :<br /><br />
 
 	Page = ".$_SERVER["PHP_SELF"]."<br />
-	Page complète = ".$_SERVER["REQUEST_URI"]."<br />
+	Page complï¿½te = ".$_SERVER["REQUEST_URI"]."<br />
 	Heure: ".date('d-m-Y H:m:i', time())."<br />
 
 	IP = ".$_SERVER['REMOTE_ADDR']."(".$_SERVER["REMOTE_PORT"].")<br /><br />
@@ -105,27 +105,28 @@ function alerte_dev ($erreur, $libelle_supp = "", $errno = "", $errstr = "", $er
 		html_entity_decode(elegant_dump( $tab ));
 	}
 	else {  // Le serveur n'est pas en DEV, aucune raison d'afficher quelque info que ce soit vers le navigateur, on logue dans un fichier.
-
-
-			// Envoyer un email au développeur
+			// Envoyer un email au dï¿½veloppeur
 			if($EMAIL_DEV!=null) {
-				@mail ($EMAIL_DEV, "ERREUR LMB - ".affiche_version ($_SERVER['VERSION'])." - ".$_SERVER['SERVER_NAME'].(empty($libelle_supp) ? "" : "/".$libelle_supp), $rapportXML);
-				$mailStatus = "Une alerte a été envoyée à votre administrateur.<br />";
+				$headers = "From: \"SoothERP Bug\"<".$EMAIL_DEV.">\n";
+				$headers .= "Reply-To: support@sootherp.fr\n";
+				$headers .= "Content-Type: text/html; charset=\"iso-8859-1\"";
+				@mail ($EMAIL_DEV, "ERREUR LMB - ".affiche_version ($_SERVER['VERSION'])." - ".$_SERVER['SERVER_NAME'].$_SERVER["PHP_SELF"], $rapport, $headers);
+				$mailStatus = "Une alerte a Ã©tÃ© envoyÃ©e Ã  votre administrateur.<br />";
 			}
 			else {
-				$mailStatus = "Configurez l'adresse email de l'administrateur dans le fichier de configuration serveur afin qu'il reçoive automatiquement les erreurs par email.<br />";
+				$mailStatus = "Configurez l'adresse email de l'administrateur dans le fichier de configuration serveur afin qu'il reï¿½oive automatiquement les erreurs par email.<br />";
 			}
 
 			// Message vers  le client
 			echo "<br /><br /><b>
 			SoothERP, fork du logiciel Lundi Matin Business<br />
-			Une erreur critique a été détectée.
+			Une erreur critique a ï¿½tï¿½ dï¿½tectï¿½e.
 			<br /><br />"
 			.$mailStatus.
 			"<br /><br />
-			Vous pouvez utilement faire avancer le projet SoothERP en complétant un rapport de bug sur le <a href='https://bugs.sootherp.fr' target='_blank'>bug tracker SoothERP</a></b><br/> <span id='view_rapport' style='cursor: pointer;'";
+			Vous pouvez utilement faire avancer le projet SoothERP en complï¿½tant un rapport de bug sur le <a href='https://bugs.sootherp.fr' target='_blank'>bug tracker SoothERP</a></b><br/> <span id='view_rapport' style='cursor: pointer;'";
 			
-			// Création d'un log, entre balises php pour en éviter la possibilité d'affichage par un navigateur
+			// Crï¿½ation d'un log, entre balises php pour en ï¿½viter la possibilitï¿½ d'affichage par un navigateur
 			$errorlog = "<?php \n/*";
 			$errorlog .= "\n\n###################################################################################################\n\n";
 			$errorlog .= "RAPPORT DE PLANTAGE \n\n";
@@ -147,7 +148,7 @@ function alerte_dev ($erreur, $libelle_supp = "", $errno = "", $errstr = "", $er
 }
 
 
-// Fonction affichant de manière lisible le dump d'une variable.
+// Fonction affichant de maniï¿½re lisible le dump d'une variable.
 // Source INTERNET
 function elegant_dump(&$var, $var_name='', $indent='', $reference='') {
 	global $bdd_user;
@@ -155,8 +156,8 @@ function elegant_dump(&$var, $var_name='', $indent='', $reference='') {
 	
 	static $elegant_dump_indent = '.&nbsp;&nbsp;&nbsp;&nbsp; ';
 	
-	// Chaine de remplacement pour les données sensibles
-	$sensibleDataSubstitute = "** texte masqué par sécurité **";
+	// Chaine de remplacement pour les donnï¿½es sensibles
+	$sensibleDataSubstitute = "** texte masquï¿½ par sï¿½curitï¿½ **";
    
    $reference=$reference.$var_name;
 
@@ -218,14 +219,14 @@ function error_checking_page_variables ($tab) {
 	global $THEME_DIR;
 
 	$erreur = "
-	<b>ERREUR THEME </b>: Les variables d'affichage ne sont pas toutes définies.\n\n
+	<b>ERREUR THEME </b>: Les variables d'affichage ne sont pas toutes dï¿½finies.\n\n
 	
-	Nom du thème : <b>".$_SESSION['theme']->getLib_theme()." [".$_SESSION['theme']->getId_theme()."]</b>\n
-	Répertoire : <b>".$_SESSION['theme']->getDir_theme()."</b>\n\n
+	Nom du thï¿½me : <b>".$_SESSION['theme']->getLib_theme()." [".$_SESSION['theme']->getId_theme()."]</b>\n
+	Rï¿½pertoire : <b>".$_SESSION['theme']->getDir_theme()."</b>\n\n
 
 	<table border=1 cellpadding=3 cellspacing=0 width='60%'>";
 	foreach ($tab as $variable) {
-		// Recherche du nom de la variable si il s'agit d'un élément de tableau
+		// Recherche du nom de la variable si il s'agit d'un ï¿½lï¿½ment de tableau
 		$var_name = $variable;
 		$var_component = "";
 		
@@ -253,7 +254,7 @@ function error_checking_page_variables ($tab) {
 									<td>&nbsp;".${$var_name}[$var_component]."</td>";
 		}
 		else {
-			$erreur .= "<td>Non définie</td><td>&nbsp;</td>";
+			$erreur .= "<td>Non dï¿½finie</td><td>&nbsp;</td>";
 		}
 		$erreur .= "</tr>";
 	}
