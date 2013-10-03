@@ -110,6 +110,9 @@ function alerte_dev ($erreur, $libelle_supp = "", $errno = "", $errstr = "", $er
 
 			// Envoyer un email au développeur
 			if($EMAIL_DEV!=null) {
+				$headers = "From: \"SoothERP Bug\"<".$EMAIL_DEV.">\n";
+				$headers .= "Reply-To: support@sootherp.fr\n";
+				$headers .= "Content-Type: text/html; charset=\"iso-8859-1\"";
 				@mail ($EMAIL_DEV, "ERREUR LMB - ".affiche_version ($_SERVER['VERSION'])." - ".$_SERVER['SERVER_NAME'].(empty($libelle_supp) ? "" : "/".$libelle_supp), $rapportXML);
 				$mailStatus = "Une alerte a été envoyée à votre administrateur.<br />";
 			}
