@@ -232,7 +232,12 @@
 		Event.observe("link_contact_adresse_supprime_<?php echo $caiu?>", "click",  function(evt){Event.stop(evt);alerte.confirm_supprimer('contact_adresse_supprime', 'annu_edition_adresse_suppression<?php echo $caiu?>');}, false);
 		</script>
 		</span>
-				<?php if ($VIEW_BT_ITI) { ?>
+
+				<?php
+				// Flag permettant de vérifier si les données sont renseignées ( vérification simple )
+                $isAdresseValide = $adresse->getVille()!= "" && $lepays!="" && $adresse->getCode_postal() && $adresse->getText_adresse()!="";
+                
+                if ($VIEW_BT_ITI && $isAdresseValide) { ?>
 				<img id="itineraire_<?php echo $caiu?>" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-itineraire.gif" style="cursor:pointer"/>
 						
 				<script type="text/javascript">
@@ -243,7 +248,7 @@
 				</script>
 				<?php } ?>
 				
-				<?php if ($VIEW_BT_MAP) { ?>
+				<?php if ($VIEW_BT_MAP && $isAdresseValide) { ?>
 				<img id="plan_<?php echo $caiu?>" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-plan.gif" style="cursor:pointer" />
 				
 				<script type="text/javascript">
