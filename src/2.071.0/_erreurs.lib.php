@@ -39,6 +39,10 @@ function alerte_dev ($erreur, $libelle_supp = "", $errno = "", $errstr = "", $er
 	global $bdd_pass;
 	global $FORCE_EMAIL_DEBUG;
 	
+	// Ajoute les headers pour contenu html
+	$headers  = 'MIME-Version: 1.0' . "\r\n";
+	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
 	// Chaine de remplacement pour les données sensibles
 	$sensibleDataSubstitute = "** texte masqué par sécurité **";
 	
@@ -58,7 +62,7 @@ function alerte_dev ($erreur, $libelle_supp = "", $errno = "", $errstr = "", $er
 	}
 	if (isset($_SERVER["HTTP_USER_AGENT"])) {
 	$rapport .= "
-	Navigateur : ".$_SERVER["HTTP_USER_AGENT"]."
+	Navigateur : ".$_SERVER["HTTP_USER_AGENT"]."<br />
 	--------------<br />";
 	}
 
@@ -67,7 +71,7 @@ function alerte_dev ($erreur, $libelle_supp = "", $errno = "", $errstr = "", $er
 	<b>RAPPORT D'ERREUR SUR SERVEUR ".$_SERVER['REF_SERVEUR']."</b><br /><br />
 
 	===========================================================================<br />
-	".$erreur."
+	".$erreur."<br />
 
 	===========================================================================<br />
 	<b>INFORMATIONS COMPLEMENTAIRES</b> :<br /><br />
@@ -109,7 +113,7 @@ function alerte_dev ($erreur, $libelle_supp = "", $errno = "", $errstr = "", $er
 
 			// Envoyer un email au développeur
 			if($EMAIL_DEV!=null) {
-				@mail ($EMAIL_DEV, "ERREUR LMB - ".affiche_version ($_SERVER['VERSION'])." - ".$_SERVER['SERVER_NAME'].(empty($libelle_supp) ? "" : "/".$libelle_supp), $rapportXML);
+				@mail ($EMAIL_DEV, "ERREUR LMB - ".affiche_version ($_SERVER['VERSION'])." - ".$_SERVER['SERVER_NAME'].(empty($libelle_supp) ? "" : "/".$libelle_supp), $rapport, $headers);
 				$mailStatus = "Une alerte a été envoyée à votre administrateur.<br />";
 			}
 			else {

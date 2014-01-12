@@ -24,7 +24,12 @@ function exception_handler ($exception) {
         $erreur = "Erreur lors de la requête serveur MySQL ";
         if($ETAT_APPLICATION == 'DEV') {
             $erreur .= "<br />";
+			if (is_null($bdd)) {
+            $erreur .= "Pas de connexion possible à la BDD";
+			}
+			else {
             $erreur .= "Dernières requêtes : '".$bdd->affiche_stats()."'";
+			}
         }
     }
     else {
