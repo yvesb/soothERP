@@ -216,7 +216,7 @@ $matches = array();
       <td>
         <select id="select_mail_template" name="select_mail_template" class="classinput_xsize" >
         <?php foreach ($liste_mail_templates as $mail_template) { ?>
-          <option value="<?php echo $mail_template->id_mail_template; ?>" <?php if ($ID_MAIL_TEMPLATE == intval($catalogue->id_catalogue_client)) echo "selected";  ?>><?php echo $mail_template->lib_mail_template; ?></option>
+          <option value="<?php echo $mail_template->id_mail_template; ?>" <?php if (!empty($catalogue) && $ID_MAIL_TEMPLATE == intval($catalogue->id_catalogue_client)) echo "selected";  ?>><?php echo $mail_template->lib_mail_template; ?></option>
         <?php } ?>
         </select>
       </td>
@@ -227,7 +227,7 @@ $matches = array();
         Sujet du mail de validation d'inscription : 
       </td>
       <td>
-        <input id="sujet_inscription_validation" name="sujet_inscription_validation" type="text" class="classinput_xsize" value="<?php preg_match("/.*?SUJET_INSCRIPTION_VALIDATION = \"(.*?)\";.*?/", $string_config_file, $matches); if(count($matches)>0) echo stripslashes($matches[1]); ?>"/>
+        <input id="sujet_inscription_validation" name="sujet_inscription_validation" type="text" class="classinput_xsize" value="<?php preg_match("/.*?INSCRIPTION_VALIDATION_SUJET = \"(.*?)\";.*?/", $string_config_file, $matches); if(count($matches)>0) echo stripslashes($matches[1]); ?>"/>
       </td>
       <td class="infos_config">&nbsp;</td>
     </tr>
@@ -236,7 +236,7 @@ $matches = array();
         Contenu du mail de validation d'inscription : 
       </td>
       <td>
-       <textarea id="contenu_inscription_validation" name="contenu_inscription_validation" class="classinput_xsize"><?php preg_match("/.*?CONTENU_INSCRIPTION_VALIDATION = \"(.*?)\";/sm", $string_config_file, $matches); if(count($matches)>0) echo stripslashes($matches[1]); ?></textarea>
+       <textarea id="contenu_inscription_validation" name="contenu_inscription_validation" class="classinput_xsize"><?php preg_match("/.*?INSCRIPTION_VALIDATION_CONTENU = \"(.*?)\";/sm", $string_config_file, $matches); if(count($matches)>0) echo stripslashes($matches[1]); ?></textarea>
       </td>
       <td class="infos_config">&nbsp;</td>
     </tr>
@@ -245,7 +245,7 @@ $matches = array();
         Sujet du mail de validation finale d'inscription : 
       </td>
       <td>
-        <input id="sujet_inscription_validation_final" name="sujet_inscription_validation_final" type="text" class="classinput_xsize"  value="<?php preg_match("/.*?SUJET_INSCRIPTION_VALIDATION_FINAL = \"(.*?)\";.*?/", $string_config_file, $matches); if(count($matches)>0) echo stripslashes($matches[1]); ?>"/>
+        <input id="sujet_inscription_validation_final" name="sujet_inscription_validation_final" type="text" class="classinput_xsize"  value="<?php preg_match("/.*?INSCRIPTION_VALIDATION_SUJET_FINAL = \"(.*?)\";.*?/", $string_config_file, $matches); if(count($matches)>0) echo stripslashes($matches[1]); ?>"/>
       </td>
       <td class="infos_config">&nbsp;</td>
     </tr>
@@ -254,7 +254,7 @@ $matches = array();
         Contenu du mail de validation finale d'inscription : 
       </td>
       <td>
-        <textarea id="contenu_inscription_validation_final" name="contenu_inscription_validation_final" class="classinput_xsize" ><?php preg_match("/.*?CONTENU_INSCRIPTION_VALIDATION_FINAL = \"(.*?)\";.*?/sm", $string_config_file, $matches); if(count($matches)>0) echo stripslashes($matches[1]); ?></textarea>
+        <textarea id="contenu_inscription_validation_final" name="contenu_inscription_validation_final" class="classinput_xsize" ><?php preg_match("/.*?INSCRIPTION_VALIDATION_CONTENU_FINAL = \"(.*?)\";.*?/sm", $string_config_file, $matches); if(count($matches)>0) echo stripslashes($matches[1]); ?></textarea>
       </td>
       <td class="infos_config">&nbsp;</td>
     </tr>

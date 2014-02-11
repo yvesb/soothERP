@@ -81,7 +81,7 @@ $INSCRIPTION_VALIDATION_SUJET = "Inscription à notre site non";
 $INSCRIPTION_VALIDATION_CONTENU = "Bonjour et bienvenue, 
 Vous venez de vous inscrire sur notre site et n ous vous en remercions. pas
 
-Afin de confirmer votre identité, veuillez cliquer sur le lien ci-dessous :";
+Afin de confirmer votre identité, veuillez cliquer sur le lien ci-dessous :";
 
 
 
@@ -97,7 +97,7 @@ $SUJET_MODIFICATION_VALIDATION = "Modification de vos informations personnelles 
 $CONTENU_MODIFICATION_VALIDATION = "Bonjour,
 Vos informations personnelles ont été modifiées.
 
-Afin de confirmer ces modifications, veuillez cliquer sur le lien ci-dessous :";
+Afin de confirmer ces modifications, veuillez cliquer sur le lien ci-dessous :";
 
 
 
@@ -125,10 +125,10 @@ $REGLEMENTES_MODES_VALIDES = "2;3;4;5";
 // **********************************************
 
 //pages diverses
-$QUISOMMESNOUS 				= "Contenu de la variable \$QUISOMMESNOUS";
-$MENTIONSLEGALES 			= "Contenu de la variable \$MENTIONSLEGALES";
-$CONDITIONSDEVENTES 	= "Contenu de la variable \$CONDITIONSDEVENTES";
-$BAS_PAGE 						= "Contenu de la variable \$BAS_PAGE";
+$QUISOMMESNOUS = "Contenu de la variable \$QUISOMMESNOUS";
+$MENTIONSLEGALES = "Contenu de la variable \$MENTIONSLEGALES";
+$CONDITIONSDEVENTES = "Contenu de la variable \$CONDITIONSDEVENTES";
+$BAS_PAGE = "Contenu de la variable \$BAS_PAGE";
 
 $COMPLEMENT_CHAMPS = array ();
 

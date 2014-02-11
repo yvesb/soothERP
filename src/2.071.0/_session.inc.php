@@ -377,22 +377,24 @@ else {
 }
 
 // La page que consulte l'utilisateur est elle accessible à tous ?
-function page_accessible_a_tous(){
-	global $_INTERFACE;
-	global $THIS_DIR;
+if( !function_exists('page_accessible_a_tous')){
+    function page_accessible_a_tous(){
+    	global $_INTERFACE;
+    	global $THIS_DIR;
 	
-	if (!$_SESSION['user']->getLogin()) {
-		if ($_INTERFACE['ID_PROFIL'] == 4 && isset($THIS_DIR)) {
-			$page_from = str_replace($THIS_DIR, "", substr($_SERVER['REQUEST_URI'], 1));
-			header ("Location: ".$_ENV['CHEMIN_ABSOLU']."site/".$THIS_DIR."_user_login.php");
-		} else {
-			// L'utilisateur n'est pas loggué et devrait l'etre => Direction page de login
-			$page_from = substr($_SERVER['REQUEST_URI'], 1);
-			if ($page_from == "site/__user_login.php") { $page_from = "";}
-			header ("Location: ".$_ENV['CHEMIN_ABSOLU']."site/__user_login.php");
-		}
-		exit();
-	}
+    	if (!$_SESSION['user']->getLogin()) {
+    		if ($_INTERFACE['ID_PROFIL'] == 4 && isset($THIS_DIR)) {
+    			$page_from = str_replace($THIS_DIR, "", substr($_SERVER['REQUEST_URI'], 1));
+    			header ("Location: ".$_ENV['CHEMIN_ABSOLU']."site/".$THIS_DIR."_user_login.php");
+    		} else {
+    			// L'utilisateur n'est pas loggué et devrait l'etre => Direction page de login
+    			$page_from = substr($_SERVER['REQUEST_URI'], 1);
+    			if ($page_from == "site/__user_login.php") { $page_from = "";}
+    			header ("Location: ".$_ENV['CHEMIN_ABSOLU']."site/__user_login.php");
+    		}
+    		exit();
+    	}
+    }
 }
 if(isset($_INTERFACE['MUST_BE_LOGIN'])){
 	if(isset($_PAGE['MUST_BE_LOGIN'])){
