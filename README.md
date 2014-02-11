@@ -22,6 +22,7 @@ C'est un ERP fonctionnant sous Php/MySQL et incluant notamment:
 N'hésitez pas à apporter vos contributions en forkant le projet.
 
 * Merci de travailler et proposer vos pull requests à partir de la **BRANCHE "DEVELOP"**
+* Merci de créer une branche "feature" (à partir de la BRANCHE "DEVELOP" donc), en particulier pour soumette plusieurs commits, ça évitera bien des soucis de cohérence des dépots si seuls certains commits sont retenus.
 * Merci de ne pas regrouper plusieurs correctifs par commit (sauf expressément liés), et de veiller à créer un commit par correctif apporté.
 * Les contributeurs sont ajoutés au fichier "AUTHORS"
 
