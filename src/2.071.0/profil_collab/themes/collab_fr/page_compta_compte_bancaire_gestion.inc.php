@@ -4,7 +4,7 @@
 // Gestion des comptes bancaires
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -55,7 +55,7 @@ check_page_variables ($page_variables);
 					<td style="text-align:left; font-weight:bolder;">N&deg; compte
 					</td>
 					<td style="text-align:left; font-weight:bolder;">
-					Dernière opération
+					DerniÃ¨re opÃ©ration
 					</td>
 					<td style="text-align:right; font-weight:bolder;">
 					Solde&nbsp;&nbsp;

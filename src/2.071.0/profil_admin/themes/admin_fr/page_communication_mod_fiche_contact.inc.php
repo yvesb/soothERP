@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -39,7 +39,7 @@ update_menu_arbo();
 				<form action="communication_mod_fiche_contact_add.php" enctype="multipart/form-data" method="POST"  id="communication_mod_fiche_contact_add" name="communication_mod_fiche_contact_add" target="formFrame" >
 				 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
-				<td style="width:35%" class="lib_config">Profil de contact : </td>
+				<td style="width:35%" class="lib_config">Profil de contactÂ : </td>
 				<td style="width:30%">
 					<select name="id_profil" id="choix_profil" class="classinput_xsize">
 						<option value=""></option>
@@ -57,30 +57,30 @@ update_menu_arbo();
 		</table>
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" style="display:none" id="step1_a">
 			<tr>
-				<td style="width:35%" class="lib_config">Création de ce modèle </td>
+				<td style="width:35%" class="lib_config">CrÃ©ation de ce modÃ¨le </td>
 				<td style="width:30%">
-					à partir d'un modèle existant
+					Ã  partir d'un modÃ¨le existant
 				</td>
 				<td style="text-align:left"><input type="radio" name="choix_source" id="exist_model" value="1" /></td>
 			</tr>
 			<tr>
 				<td> </td>
 				<td>
-					à partir des fichiers programme
+					Ã  partir des fichiers programme
 				</td>
 				<td style="text-align:left"><input type="radio" name="choix_source" id="new_model" value="2" /></td>
 			</tr>
 		</table>
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" style="display:none" id="step2_a">
 			<tr>
-				<td style="width:35%" class="lib_config">Nouveau nom de ce modèle: </td>
+				<td style="width:35%" class="lib_config">Nouveau nom de ce modÃ¨le: </td>
 				<td style="width:30%">
 					<input type="text" name="lib_modele" id="lib_modele" value="" class="classinput_xsize" />
 				</td>
 				<td class="infos_config">&nbsp;</td>
 			</tr>
 			<tr>
-				<td class="lib_config">Description de ce modèle: </td>
+				<td class="lib_config">Description de ce modÃ¨le: </td>
 				<td>
 					<textarea name="desc_modele" id="desc_modele" class="classinput_xsize" ></textarea>
 				</td>
@@ -89,7 +89,7 @@ update_menu_arbo();
 		</table>
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" style="display:none" id="step2_b">
 			<tr>
-				<td style="width:35%" class="lib_config">Modèle source:  </td>
+				<td style="width:35%" class="lib_config">ModÃ¨le source:  </td>
 				<td style="width:30%">
 					<select name="id_pdf_modele" id="choix_id_pdf_contact" class="classinput_xsize">
 					<?php 
@@ -138,7 +138,7 @@ update_menu_arbo();
   foreach ($liste_profils_contacts as $profil) {
 	?>
   <hr />
-	Modèles disponibles pour le profil  <?php echo $profil->lib_profil; ?> : <br />
+	ModÃ¨les disponibles pour le profil  <?php echo $profil->lib_profil; ?> : <br />
         <?php
       //  $pdf_inactif = 0;
       $liste_on_by_profil = getListeOnByProfil($profil->id_profil, $defaut);
@@ -175,7 +175,7 @@ update_menu_arbo();
                
                                 <td style="width:15%">
                                 <?php if ($modele_pdf->id_pdf_modele != $defaut) {?>
-                                        <span id="unactive_pdf_<?php echo $modele_pdf->id_pdf_modele.'_'.$profil->id_profil;;?>" style="cursor:pointer; text-decoration:underline">Désactiver</span>
+                                        <span id="unactive_pdf_<?php echo $modele_pdf->id_pdf_modele.'_'.$profil->id_profil;;?>" style="cursor:pointer; text-decoration:underline">DÃ©sactiver</span>
 
                                         <form action="communication_mod_fiche_contact_des.php" method="post" id="communication_mod_fiche_contact_des_<?php echo $modele_pdf->id_pdf_modele.'_'.$profil->id_profil;?>" name="communication_mod_fiche_contact_des_<?php echo $modele_pdf->id_pdf_modele.'_'.$profil->id_profil;?>" target="formFrame" >
                                                 <input name="id_profil" type="hidden" value="<?php echo $profil->id_profil; ?>" />
@@ -202,7 +202,7 @@ update_menu_arbo();
         //if ($pdf_inactif) {
         if (count($liste_on_by_profil) < count($liste_pdf_modeles)) {
         ?>
-        <span style="cursor:pointer; text-decoration:underline;" id="show_pdf_inactif_<?php echo $profil->id_profil; ?>">Utiliser un nouveau modèle d'impression.</span><br />
+        <span style="cursor:pointer; text-decoration:underline;" id="show_pdf_inactif_<?php echo $profil->id_profil; ?>">Utiliser un nouveau modÃ¨le d'impression.</span><br />
                 <script type="text/javascript">
 
          Event.observe('show_pdf_inactif_<?php echo $profil->id_profil; ?>', "click" , function(evt){
@@ -226,7 +226,7 @@ update_menu_arbo();
                                 </td>
                                 <td style="width:15%"><span style="text-decoration:underline; cursor:pointer" id="show_desc_<?php echo $modele_pdf->id_pdf_modele.'_'.$profil->id_profil;?>">Plus d'informations</span></td>
                                 <!-- <td style="width:15%; color:#999999"><a href="configuration_pdf_preview.php?id_profil=<?php echo $profil->id_profil ?>" target="_blank" style="color:#000000">Visualiser</a></td> -->
-                                <!-- <td style="width:15%; color:#999999">Paramétrer</td> -->
+                                <!-- <td style="width:15%; color:#999999">ParamÃ©trer</td> -->
                                 <td style="width:15%">
 
                                         <span id="active_pdf_<?php echo $modele_pdf->id_pdf_modele.'_'.$profil->id_profil;?>" style="cursor:pointer; text-decoration:underline">Activer</span>

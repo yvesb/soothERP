@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
 
 ?>
 <p>&nbsp;</p>
-<p>comptes bancaire (ajout d'opération) </p>
+<p>comptes bancaire (ajout d'opÃ©ration) </p>
 <p>&nbsp; </p>
 <?php 
 foreach ($_ALERTES as $alerte => $value) {
@@ -73,17 +73,17 @@ if (erreur) {
 			window.parent.document.getElementById("date_move_<?php echo $bad_date;?>").className="alerteform_nsize";
 		<?php }
 		}?>
-		texte_erreur += "La date saisie correspond à un exercice comptable déjà clôturé.<br/> L'ajout d'opération est impossible dans un exercice clôturé.<br />";
+		texte_erreur += "La date saisie correspond Ã  un exercice comptable dÃ©jÃ  clÃ´turÃ©.<br/> L'ajout d'opÃ©ration est impossible dans un exercice clÃ´turÃ©.<br />";
 	} 
 	
 	if (bad_operation_montant_move) {
 		texte_erreur += "Le montant n'est pas valide.<br />";
 	}
 	if (exist_fitid) {
-		texte_erreur += "Le Fitid est déjà utilisé.<br />";
+		texte_erreur += "Le Fitid est dÃ©jÃ  utilisÃ©.<br />";
 	}
 	if (bad_date_move) {
-		texte_erreur += "Vérifier la date de l'opération.<br />";
+		texte_erreur += "VÃ©rifier la date de l'opÃ©ration.<br />";
 	}
 
 	window.parent.alerte.alerte_erreur ('Erreur de saisie', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');

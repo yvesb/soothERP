@@ -59,7 +59,7 @@ public function ods_resultats_commerciaux4 () {
 	include_once ($ODS_MODELES_DIR."config/".$this->code_ods_modele.".config.php");
 
 	// ***************************************************
-	// Valeurs par défaut
+	// Valeurs par dÃ©faut
 	//foreach ($COMMISSIONS as $var => $valeur) {
 	//	$this->{$var} = $valeur;
 	//}
@@ -106,13 +106,13 @@ public function ods_resultats_commerciaux4 () {
 	$text_fom_comm = $result[1]."% du Chifre d'affaire plus ".$result[2]."% de la Marge acquit " ;
 	switch ($commercial->doc_fom_comm) {
 		case "CDC": 
-		$text_fom_comm .= "à la commande";
+		$text_fom_comm .= "Ã  la commande";
 		break;
 		case "FAC": 
-		$text_fom_comm .= "à la facturation";
+		$text_fom_comm .= "Ã  la facturation";
 		break;
 		case "RGM": 
-		$text_fom_comm .= "à la facturation acquitée";
+		$text_fom_comm .= "Ã  la facturation acquitÃ©e";
 		break;
 	}
 		$row=$this->create_row();
@@ -126,10 +126,10 @@ public function ods_resultats_commerciaux4 () {
 		$this->create_cell(" ",$row);
 		
 		$row=$this->create_row();
-		$this->create_cellspan("Chiffre d'affaire généré:",$row, '2');
+		$this->create_cellspan("Chiffre d'affaire gÃ©nÃ©rÃ©:",$row, '2');
 		$this->create_celleuro($commercial->ca,$row);
 		$row=$this->create_row();
-		$this->create_cellspan("Marge générée :",$row, '2');
+		$this->create_cellspan("Marge gÃ©nÃ©rÃ©e :",$row, '2');
 		$this->create_celleuro($commercial->mg,$row);
 		$row=$this->create_row();
 		$this->create_cellspan("TOTAL COMMISSIONS :",$row, '2');
@@ -175,7 +175,7 @@ public function ods_resultats_commerciaux4 () {
 	$this->ods->addTable($this->table);
 	}
 	// Download the file
-	$this->ods->downloadOdsFile("Résultat commerciaux par article.ods");
+	$this->ods->downloadOdsFile("RÃ©sultat commerciaux par article.ods");
 }
 
 public function create_titre() {
@@ -186,7 +186,7 @@ public function create_titre() {
 	
 	// Titre
 	$row = new odsTableRow();
-	$cell = new odsTableCellString(utf8_encode("Résultat commerciaux par article"), $titre);
+	$cell = new odsTableCellString(utf8_encode("RÃ©sultat commerciaux par article"), $titre);
 	$cell->setNumberColumnsSpanned(5);
 	$row->addCell( $cell );
 	$this->table->addRow($row);
@@ -207,7 +207,7 @@ public function create_entete() {
 	$this->create_cellgrey('Document',$row);
 	$this->create_cellgrey('Client',$row);
 	$this->create_cellgrey('Article',$row);
-	$this->create_cellgrey('Quantité',$row);
+	$this->create_cellgrey('QuantitÃ©',$row);
 	$this->create_cellgrey('PU HT',$row);
 	$this->create_cellgrey('CA HT',$row);
 	$this->create_cellgrey('Taux %',$row);
@@ -255,13 +255,13 @@ global $bdd;
 // Informations
 $compta_e = new compta_exercices ();
 $liste_exercices	= $compta_e->charger_compta_exercices();
-//on récupère la dte du dernier exercice cloturé
+//on rÃ©cupÃ¨re la dte du dernier exercice cloturÃ©
 foreach ($liste_exercices as $exercice) {
 	if (!$exercice->etat_exercice) {$last_date_before_cloture = $exercice->date_fin; break;}
 }
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -297,7 +297,7 @@ if(isset($_REQUEST['com']))
 $affichage=$_REQUEST['com'];
 else $bool_affichage=true;
 
-// on retire les commerciaux non sélectionné en checkbox
+// on retire les commerciaux non sÃ©lectionnÃ© en checkbox
 $i=0;
 if(!$bool_affichage)
 foreach($liste_commerciaux as $commercial){
@@ -321,7 +321,7 @@ foreach ($liste_commerciaux as $commercial) {
 		$query_where .=  " d.date_creation_doc <= '".date_Fr_to_Us($search['date_fin'])." 23:59:59' "; 
 	}
 	// *************************************************
-	// Résultat de la recherche
+	// RÃ©sultat de la recherche
 	$commercial->ca = 0;
 	$commercial->mg = 0;
 	$commercial->comm = 0;
@@ -329,7 +329,7 @@ foreach ($liste_commerciaux as $commercial) {
 	$commercial->docs = array();
 	switch ($doc_fom_comm) {
 		case "CDC": 
-				// Préparation de la requete
+				// PrÃ©paration de la requete
 				// Recherche des documents
 				$queryd = "SELECT dvc.ref_doc , dvc.part, d.date_creation_doc, d.ref_contact, a.nom
 									FROM doc_ventes_commerciaux  dvc
@@ -373,7 +373,7 @@ foreach ($liste_commerciaux as $commercial) {
 				}
 		break;
 		case "FAC": 
-				// Préparation de la requete
+				// PrÃ©paration de la requete
 				// Recherche des documents
 				$queryd = "SELECT dvc.ref_doc , dvc.part, d.date_creation_doc, d.ref_contact, a.nom
 									FROM doc_ventes_commerciaux  dvc
@@ -418,7 +418,7 @@ foreach ($liste_commerciaux as $commercial) {
 
 		break;
 		case "RGM": 
-				// Préparation de la requete
+				// PrÃ©paration de la requete
 				// Recherche des documents
 				$queryd = "SELECT dvc.ref_doc , dvc.part, d.date_creation_doc, d.ref_contact, a.nom
 									FROM doc_ventes_commerciaux  dvc

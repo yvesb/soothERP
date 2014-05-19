@@ -11,7 +11,7 @@ require ($DIR."_session.inc.php");
 
 if (isset($_REQUEST['id_profil'])) {	
 	// *************************************************
-	// Controle des données fournies par le formulaire
+	// Controle des donnÃ©es fournies par le formulaire
 
 	$infos_profils = array();
 	$id_profil	=	$_REQUEST['id_profil'];
@@ -32,7 +32,7 @@ if (isset($_REQUEST['id_profil'])) {
 	if(isset($profils[$COLLAB_ID_PROFIL]) ) {
 		//fonctions de collaborateurs
 		$liste_fonctions_collab = charger_fonctions ($COLLAB_ID_PROFIL);
-		//on parcoure les fonctions pour retrouver les categories de collaborateurs cochées
+		//on parcoure les fonctions pour retrouver les categories de collaborateurs cochÃ©es
 		foreach ($liste_fonctions_collab as $liste_fonction_collab) {
 			if (isset($_REQUEST['id_fonction_'.$liste_fonction_collab->id_fonction])) {
 			$profils[$COLLAB_ID_PROFIL]->add_fonction ($liste_fonction_collab->id_fonction);

@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("contact", "adresse_facturation", "adresse_livraison", "civilites", "listepays", "user", "coordonnee", "editable");
 check_page_variables ($page_variables);
 
@@ -71,7 +71,7 @@ check_page_variables ($page_variables);
 														</tr>
 														<tr>
 															<td class="text_variable" >
-																Civilité: 
+																CivilitÃ©: 
 															</td>
 															<td class="text_variable_user">
 																<?php echo nl2br($contact->getLib_civ_court());?>
@@ -212,12 +212,12 @@ check_page_variables ($page_variables);
 														</tr>
 														<tr>
 															<td colspan="2" class="main_info_user" >
-																Coordonnées:
+																CoordonnÃ©es:
 															</td>
 														</tr>
 														<tr>
 															<td class="text_variable">
-																Tél:
+																TÃ©l:
 															</td>
 															<td  class="text_variable_user">
 																<?php echo $coordonnee->getTel1();?>
@@ -225,7 +225,7 @@ check_page_variables ($page_variables);
 														</tr>
 														<tr>
 															<td class="text_variable">
-																Tél 2:
+																TÃ©l 2:
 															</td>
 															<td  class="text_variable_user">
 																<?php echo $coordonnee->getTel2();?>
@@ -277,7 +277,7 @@ check_page_variables ($page_variables);
 															</tr>
 															<tr>
 																<td  class="text_variable" >
-																	Civilité: 
+																	CivilitÃ©: 
 																</td>
 																<td class="text_variable_user">
 																	<select name="id_civilite" id="id_civilite" class="classinput_xsize">
@@ -471,13 +471,13 @@ check_page_variables ($page_variables);
 															</tr>
 															<tr>
 																<td colspan="2" class="main_info_user" >
-																	Coordonnées:
+																	CoordonnÃ©es:
 																	<input name="ref_coordonnee" id="ref_coordonnee" type="hidden" class="classinput_xsize" value="<?php echo $coordonnee->getRef_coord(); ?>" />
 																</td>
 															</tr>
 															<tr>
 																<td class="text_variable">
-																	Tél:
+																	TÃ©l:
 																</td>
 																<td class="text_variable_user">
 																	<input id="coordonnee_tel1" name="coordonnee_tel1" value="<?php echo  ($coordonnee->getTel1());?>" class="classinput_xsize"/>
@@ -485,7 +485,7 @@ check_page_variables ($page_variables);
 															</tr>
 															<tr>
 																<td class="text_variable">
-																	Tél 2:
+																	TÃ©l 2:
 																</td>
 																<td class="text_variable_user">
 																<input id="coordonnee_tel2" name="coordonnee_tel2" value="<?php echo  ($coordonnee->getTel2());?>" class="classinput_xsize"/>
@@ -653,7 +653,7 @@ check_page_variables ($page_variables);
 								<table width="100%" border="0" cellspacing="0" cellpadding="0">
 									<tr>
 										<td class="doc_intit_colors" >Date</td>
-										<td class="doc_intit_colors">Référence</td>
+										<td class="doc_intit_colors">RÃ©fÃ©rence</td>
 										<td class="doc_intit_colors" style="text-align:right; padding-right:15px">Montant</td>
 										<td class="doc_intit_colors">&nbsp;</td>
 										<td class="doc_intit_colors">&nbsp;</td>
@@ -744,7 +744,7 @@ check_page_variables ($page_variables);
 							<table width="100%" border="0" cellspacing="0" cellpadding="0">
 								<tr>
 									<td class="doc_intit_colors" >Date</td>
-									<td class="doc_intit_colors">Référence</td>
+									<td class="doc_intit_colors">RÃ©fÃ©rence</td>
 									<td class="doc_intit_colors" style="text-align:right; padding-right:15px">Montant</td>
 									<td class="doc_intit_colors">&nbsp;</td>
 									<td class="doc_intit_colors">&nbsp;</td>
@@ -833,7 +833,7 @@ check_page_variables ($page_variables);
 							<table width="100%" border="0" cellspacing="0" cellpadding="0">
 								<tr>
 									<td class="doc_intit_colors" >Date</td>
-									<td class="doc_intit_colors">Référence</td>
+									<td class="doc_intit_colors">RÃ©fÃ©rence</td>
 									<td class="doc_intit_colors" style="text-align:right; padding-right:15px">Montant</td>
 									<td class="doc_intit_colors">&nbsp;</td>
 									<td class="doc_intit_colors">&nbsp;</td>

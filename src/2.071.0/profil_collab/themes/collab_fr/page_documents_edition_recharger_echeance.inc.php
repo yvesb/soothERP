@@ -5,7 +5,7 @@
 // RETOUR MODIFICATION ECHEANCE
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -16,7 +16,7 @@ $echeances = $document->getEcheancier();
 //******************************************************************
 ?>
 <script type="text/javascript">
-                                <?php //écheancier
+                                <?php //Ã©cheancier
                                                 $montant_terme = 0;
                                                 if (!isset($echeances) || !$echeances) {?>
 window.parent.$("table_echeanciers").innerHTML = '<tr>'+

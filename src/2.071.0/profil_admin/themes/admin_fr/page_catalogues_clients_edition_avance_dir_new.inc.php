@@ -1,4 +1,4 @@
-<span class="sous_titre2">Création d'une cat&eacute;gorie </span>
+<span class="sous_titre2">CrÃ©ation d'une cat&eacute;gorie </span>
 
 
 

@@ -11,13 +11,13 @@ require ($DIR."_session.inc.php");
 
 $compta_e = new compta_exercices ();
 $liste_exercices	= $compta_e->charger_compta_exercices();
-//on récupère la dte du dernier exercice cloturé
+//on rÃ©cupÃ¨re la dte du dernier exercice cloturÃ©
 foreach ($liste_exercices as $exercice) {
 	if (!$exercice->etat_exercice) {$last_date_before_cloture = $exercice->date_fin; break;}
 }
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -60,10 +60,10 @@ if (isset($_REQUEST['date_exercice']) && ($form['date_fin'] == "" && $form['date
 
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_join 	= "";
 	$query_where 	= "";
 	$query_group	= "";
@@ -106,7 +106,7 @@ $nb_doc_aff = 0;
 		$nb_doc_aff ++;
 	}
 	unset ($queryd, $resultatd, $doc);
-	//total des résultats
+	//total des rÃ©sultats
  $queryd = "SELECT d.ref_doc 
 						FROM documents d
 						WHERE ".$query_where." && ( ( id_type_doc ='4' && (id_etat_doc = '18' || id_etat_doc = '19')) || ( id_type_doc ='8' && (id_etat_doc = '34' || id_etat_doc = '35')))
@@ -121,7 +121,7 @@ $nb_doc_aff = 0;
 // AFFICHAGE
 // *************************************************************************************************************
 
-	//affichage des résultats dans lmb
+	//affichage des rÃ©sultats dans lmb
 	include ($DIR.$_SESSION['theme']->getDir_theme()."page_compta_journal_veac_verify.inc.php");
 
 ?>

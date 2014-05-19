@@ -11,7 +11,7 @@ require ($DIR."_session.inc.php");
 
 if (isset($_REQUEST['ajout_magasin'])) {	
 	// *************************************************
-	// Controle des données fournies par le formulaire
+	// Controle des donnÃ©es fournies par le formulaire
 
 	
 	$lib_magasin					= $_REQUEST['lib_magasin'];
@@ -28,7 +28,7 @@ if (isset($_REQUEST['ajout_magasin'])) {
 
 	
 	// *************************************************
-	// Création de la catégorie
+	// CrÃ©ation de la catÃ©gorie
 	$magasin_liste = new magasin ();
 	$magasin_liste->create ($lib_magasin, $abrev_magasin, $id_mag_enseigne, $id_stock, $id_tarif, $mode_vente, $actif);
 }

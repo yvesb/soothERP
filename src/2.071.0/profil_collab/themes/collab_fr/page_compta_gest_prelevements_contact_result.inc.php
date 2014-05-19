@@ -1,6 +1,6 @@
 <table width="100%" border="0" cellspacing="4" cellpadding="2">
    <br />
-   <span style="font-style:italic;font-weight:bold;">Autorisations de prélevements :</span>
+   <span style="font-style:italic;font-weight:bold;">Autorisations de prÃ©levements :</span>
     <tr>
         <td colspan="5" style=" border-bottom:1px solid #999999">&nbsp;</td>
     </tr>
@@ -16,10 +16,10 @@
     <?php if(empty($results)){
         ?> <tr>
             <td>
-                Aucune autorisation de prélevement.
+                Aucune autorisation de prÃ©levement.
             </td>
            <td>
-               <input type="button" name="add_autor_prelev" id="add_autor_prelev" value="Ajouter une autorisation de prélevement"/>
+               <input type="button" name="add_autor_prelev" id="add_autor_prelev" value="Ajouter une autorisation de prÃ©levement"/>
                <script type="text/javascript"> Event.observe('add_autor_prelev', "click", function(evt){
         $("pop_up_prelev").style.display = "block";
         page.traitecontent('pop_up_prelev_content_up','compta_gest_prelevements_add.php?ref_contact=<?php echo $_REQUEST['ref_contact']; ?>','true','pop_up_prelev_content_up');

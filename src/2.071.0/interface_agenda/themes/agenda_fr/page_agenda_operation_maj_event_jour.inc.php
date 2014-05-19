@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("event", "canBeShown", "jour_semaine", "sheure_deb", "sheure_fin", "sdate_deb", "sdate_fin");
 check_page_variables ($page_variables);
 
@@ -30,21 +30,21 @@ var_dump(false);
 
 	// *************************************************************************************************************
 	if(<?php if($canBeShown){echo "true";}else{echo "false";}; ?> && Udate_deb_jour < UdateEvent && UdateEvent < (Udate_deb_jour+86400000)){
-	//l'événement est dans la semaine affiché, il faut donc l'afficher
+	//l'Ã©vÃ©nement est dans la semaine affichÃ©, il faut donc l'afficher
 
 		<?php $titre = $sheure_deb;
-		if($sdate_deb == $sdate_fin){//même jour
+		if($sdate_deb == $sdate_fin){//mÃªme jour
 			$titre.= " - ".$sheure_fin;
 		} ?>
 		
 		if(evenements[id_graphic_event] == undefined){
-		//l'événement N'est PAS connu de l'interface graphique 
+		//l'Ã©vÃ©nement N'est PAS connu de l'interface graphique 
 			
 			id_graphic_event = genIdGraphicEvent();
 			$("id_graphic_event").value = id_graphic_event;
 			var event_x =  largeurColonneJour() * <?php echo $jour_semaine; ?>;
 			var event_y =  Math.floor(<?php echo strftime("(%H*2+%M/60)", $event->getUdate_event()); ?> * HAUTEUR_DEMIE_HEURE);
-			var duree = Math.floor(<?php echo $event->getDuree_event(); ?> * HAUTEUR_DEMIE_HEURE / 30);//durée en px
+			var duree = Math.floor(<?php echo $event->getDuree_event(); ?> * HAUTEUR_DEMIE_HEURE / 30);//durÃ©e en px
 			var eventNode = CreateDivEvenement("eventId_"+id_graphic_event, event_y, event_x, evenementMaxWidth(), duree, "");
 			
 			$("ZEROsemaine").appendChild(eventNode);
@@ -62,11 +62,11 @@ var_dump(false);
 
 			ecarterEvenements(<?php echo $jour_semaine; ?>);
 		}else{
-		//l'événement EST connu de l'interface graphique 
+		//l'Ã©vÃ©nement EST connu de l'interface graphique 
 			var event = evenements[id_graphic_event];
 			var oldCellJour = event.cellJour;
 			var futurY 			= Math.floor(<?php echo strftime("(%H+%M/60)", $event->getUdate_event()); ?> * 2 * HAUTEUR_DEMIE_HEURE); //en px
-			var futurDuree  = Math.floor(<?php echo $event->getDuree_event(); ?> * HAUTEUR_DEMIE_HEURE / 30); //durée en px
+			var futurDuree  = Math.floor(<?php echo $event->getDuree_event(); ?> * HAUTEUR_DEMIE_HEURE / 30); //durÃ©e en px
 			
 			event.setPosition(0, futurY, futurDuree);
 			event.setColors("<?php echo $event->getCouleur_1(); ?>", "<?php echo $event->getCouleur_2(); ?>", "<?php echo $event->getCouleur_3(); ?>");
@@ -79,7 +79,7 @@ var_dump(false);
 		}
 	}else{// *************************************************************************************************************
 		if(evenements[id_graphic_event] != undefined){
-		//l'événement N'est PAS connu de l'interface graphique
+		//l'Ã©vÃ©nement N'est PAS connu de l'interface graphique
 			evenements[id_graphic_event].deleteThis();
 		}
 	}

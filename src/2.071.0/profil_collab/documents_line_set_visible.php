@@ -11,7 +11,7 @@ require ($DIR."_session.inc.php");
 
 if (isset($_REQUEST['ref_doc'])) {
 
-// ouverture des infos du document et mise à jour
+// ouverture des infos du document et mise Ã  jour
 	$document = open_doc ($_REQUEST['ref_doc']);
 	$document-> set_line_visible ($_REQUEST['ref_doc_line']);
 }

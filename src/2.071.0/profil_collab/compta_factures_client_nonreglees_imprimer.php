@@ -12,10 +12,10 @@ require ($CONFIG_DIR."profil_".$_SESSION['profils'][$CLIENT_ID_PROFIL]->getCode_
 ini_set("memory_limit","40M");
 if (!$_SESSION['user']->check_permission ("11")) {
 	//on indique l'interdiction et on stop le script
-	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accés ne vous permettent pas de visualiser ce type de page</span>";
+	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accÃ©s ne vous permettent pas de visualiser ce type de page</span>";
 	exit();
 }
-//infos de recherche (pour généraliser l'affichage à l'ensemble des résultats
+//infos de recherche (pour gÃ©nÃ©raliser l'affichage Ã  l'ensemble des rÃ©sultats
 
 $form['page_to_show'] = $search['page_to_show'] = 1;
 
@@ -41,7 +41,7 @@ contact::load_profil_class($CLIENT_ID_PROFIL);
 $form['fiches_par_page'] = $search['fiches_par_page'] = $nb_fiches;
 
 $niveau_relance_var = "";
-//deux cas de figure soit on imprime les résultat (comme sur la page) soit les documents factures
+//deux cas de figure soit on imprime les rÃ©sultat (comme sur la page) soit les documents factures
 $GLOBALS['PDF_OPTIONS']['HideToolbar'] = 0;
 $GLOBALS['PDF_OPTIONS']['AutoPrint'] = 0;
 
@@ -55,7 +55,7 @@ if (isset($_REQUEST["print_fact"])) {
 		$pdf->add_doc ("", $document);
 	}
 } else {
-	//on affiche les resultats comme sur le listing des factures non réglées
+	//on affiche les resultats comme sur le listing des factures non rÃ©glÃ©es
 	include_once ($PDF_MODELES_DIR."factures_apayer.class.php");
 	$class = "pdf_factures_apayer";
 	$pdf = new $class;

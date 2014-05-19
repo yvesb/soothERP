@@ -19,7 +19,7 @@ gestion_panier();
 if (count($_SESSION["panier_interface_".$_INTERFACE['ID_INTERFACE']]["contenu"]) == 0) 
 {		header ("Location: catalogue_panier_view.php");}
 
-//Récupération du panier
+//RÃ©cupÃ©ration du panier
 unset($GLOBALS['_OPTIONS']['CREATE_DOC']);
 $GLOBALS['_OPTIONS']['CREATE_DOC']['ref_contact'] = $_SESSION['user']->getRef_contact();
 $panier = open_client_panier ();
@@ -31,7 +31,7 @@ if (count($panier_contenu) == 0) // Si le panier est vide, on redirige vers cata
 
 
 if(!isset($_REQUEST['id_livraison_mode'])){
-	echo "le mode de livraison n'est pas spécifié";
+	echo "le mode de livraison n'est pas spÃ©cifiÃ©";
 	exit;
 }
 $id_livraison_mode = $_REQUEST['id_livraison_mode'];

@@ -19,7 +19,7 @@ require ($DIR."_session.inc.php");
 // Controle
 
 $contact = new contact ($_REQUEST['ref_contact']);
-// Préparations des variables d'affichage
+// PrÃ©parations des variables d'affichage
 $adresses = array();
 
 if ($contact->getRef_contact()) {

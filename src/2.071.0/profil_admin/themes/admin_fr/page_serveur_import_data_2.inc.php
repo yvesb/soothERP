@@ -4,7 +4,7 @@
 <div id="list_articles">
 <?php
 if (is_numeric($contenu_fichier)) {
-	echo  $nombre_articles; ?> articles à importer depuis le serveur  <?php echo $import_serveur->getLib_serveur_import();?><br />
+	echo  $nombre_articles; ?> articles Ã  importer depuis le serveur  <?php echo $import_serveur->getLib_serveur_import();?><br />
 	<?php 
 } else {
 	echo $contenu_fichier;
@@ -16,12 +16,12 @@ if ($nombre_articles != "0") {
 	?>
 	<div style="text-align:center"><span id="lauch_maj_article" style="cursor:pointer; font-weight:bolder">LANCER LA MISE A JOUR</span></div>
 	
-	Mise à jour des articles:
+	Mise Ã  jour des articles:
 	<span id="progression_article"></span>
 	
 	<br />
 	
-	Mise à jour des liaisons et composants:
+	Mise Ã  jour des liaisons et composants:
 	<span id="progression_compo"></span>
 	
 	<div id="maj_encours">

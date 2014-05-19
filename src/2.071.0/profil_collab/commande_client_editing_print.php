@@ -16,7 +16,7 @@ $_REQUEST['recherche'] = 1;
 // Moteur de recherche pour les commandes en cours
 
 // *************************************************
-// DonnÈes pour le formulaire && la requete
+// Donn√©es pour le formulaire && la requete
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if ($_REQUEST['page_to_show']) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -109,10 +109,10 @@ if ($_REQUEST['cmdeaprep']) {
 
 
 // *************************************************
-// RÈsultat de la recherche
+// R√©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
-	// PrÈparation de la requete
+	// Pr√©paration de la requete
 	$query_join 	= "";
 	$query_where 	= "1 ";
 
@@ -123,7 +123,7 @@ if (isset($_REQUEST['recherche'])) {
 		$query_where 	.= " && (d.id_etat_doc = 9 OR d.id_etat_doc = 6)";
 	}
 	
-	// bouton radio : uniquement les commandes rÈcentes
+	// bouton radio : uniquement les commandes r√©centes
 	if ($search['cmderec']) {
 		$query_where .= " && TO_DAYS(NOW()) - TO_DAYS(d.date_creation_doc) <= '".$DELAI_COMMANDE_CLIENT_RECENTE."' ";
 	}
@@ -133,13 +133,13 @@ if (isset($_REQUEST['recherche'])) {
 		$query_where .= " && (TO_DAYS(NOW()) - TO_DAYS(d.date_creation_doc) >= '".$DELAI_COMMANDE_CLIENT_RETARD."' )";
 	}
 	
-	// bouton radio : commandes ‡ valider
+	// bouton radio : commandes √† valider
 	if ($search['cmdeavalid']) {
 	
 	$query_where .= " && d.id_etat_doc = 8";
 	}
 	
-	// bouton radio : commandes ‡ livrer
+	// bouton radio : commandes √† livrer
 	if ($search['cmdeaprep']) {
 	
 		$requete = "SELECT ref_doc
@@ -186,13 +186,13 @@ if (isset($_REQUEST['recherche'])) {
 	unset ($sa, $resultat, $requete);
 	
 	//$tabalivrer est une liste des commandes en cours ou en saisie
-	//l'algo suivant analyse tous les articles de ces commandes:  si un article matÈriel ne se trouve pas en stock, la cmde
-	// auquel appartient l'article est enlevÈe du tableau $tabalivrer.
-	//le cpteur permet de repÈrer les articles qui Èchapperaient ‡ une comparaison des qtitÈs en stock
-		// cad : - si l'article est un service --> $cpteur++ --> la cmde n'est pas enlevÈe du tabalivrer
-	    //       - si l'article est un matÈriel, mais qu'il ne se trouve pas dans la liste de stocks, cela veut dire
-		//        que sa qtitÈ en stock est 0 --> $cpteur ne rencontre pas de $cpteur++, donc reste ‡ 0,
-		//		  en fin de boucle, la cmde est enlevÈe du tabalivrer
+	//l'algo suivant analyse tous les articles de ces commandes:  si un article mat√©riel ne se trouve pas en stock, la cmde
+	// auquel appartient l'article est enlev√©e du tableau $tabalivrer.
+	//le cpteur permet de rep√©rer les articles qui √©chapperaient √† une comparaison des qtit√©s en stock
+		// cad : - si l'article est un service --> $cpteur++ --> la cmde n'est pas enlev√©e du tabalivrer
+	    //       - si l'article est un mat√©riel, mais qu'il ne se trouve pas dans la liste de stocks, cela veut dire
+		//        que sa qtit√© en stock est 0 --> $cpteur ne rencontre pas de $cpteur++, donc reste √† 0,
+		//		  en fin de boucle, la cmde est enlev√©e du tabalivrer
 	
 	$cpteur=0; 
 	
@@ -215,28 +215,28 @@ if (isset($_REQUEST['recherche'])) {
 	}
 	
 	
-	// liste dÈroulante : par fabriquant
+	// liste d√©roulante : par fabriquant
 	if ($search['ref_constructeur']) {
 		$query_where 	.=  " && d.ref_doc IN ( SELECT ref_doc FROM docs_lines WHERE ref_article 
 											IN ( SELECT ref_article 
 												FROM articles 
 												WHERE ref_constructeur = '".$search['ref_constructeur']."'))";
 	}
-	// liste dÈroulante : par client
+	// liste d√©roulante : par client
 	if ($search['ref_client']) {
 		$query_where 	.= " && d.ref_contact = '".$search['ref_client']."'";
 	}
-	// liste dÈroulante : par magasin
+	// liste d√©roulante : par magasin
 	if ($search['id_name_mag']) {
 		$query_where 	.= " && dc.id_magasin = '".$search['id_name_mag']."'";
 	
 	}
-	// liste dÈroulante : par stock de dÈpart
+	// liste d√©roulante : par stock de d√©part
 	if ($search['id_name_stock']) {
 		$query_where 	.= " && dc.id_stock = '".$search['id_name_stock']."'";
 	
 	}
-	// liste dÈroulante : par catÈgorie d'article
+	// liste d√©roulante : par cat√©gorie d'article
 
 	if ($search['id_name_categ_art']) {
 		$liste_categories = "";
@@ -255,14 +255,14 @@ if (isset($_REQUEST['recherche'])) {
 		
 	}
 	
-	// liste dÈroulante : par fournisseur
+	// liste d√©roulante : par fournisseur
 	if ($search['ref_fournisseur']) {
 		$query_where 	.= " && d.ref_doc IN ( SELECT ref_doc FROM docs_lines WHERE ref_article 
 											IN ( SELECT ref_article 
 												FROM articles_ref_fournisseur 
 												WHERE ref_fournisseur = '".$search['ref_fournisseur']."'))";
 	}
-	// champ cachÈ, ne retient que les commandes
+	// champ cach√©, ne retient que les commandes
 	if ($search['id_type_doc']) { 
 	
             if (empty ($search['cmdeaprep'])){
@@ -271,7 +271,7 @@ if (isset($_REQUEST['recherche'])) {
 
         }
 	
-	// Recherche : sÈlection des commandes
+	// Recherche : s√©lection des commandes
 	if(empty($search['cmdeaprep'])){
             $query = "SELECT d.ref_doc, d.id_type_doc, dt.lib_type_doc, d.id_etat_doc, de.lib_etat_doc, ref_contact, nom_contact, dc.id_stock,dc.date_livraison,
 
@@ -326,7 +326,7 @@ if (isset($_REQUEST['recherche'])) {
 	//echo nl2br ($query);
 	unset ($fiche, $resultat, $query);
 	
-	// Comptage des rÈsultats
+	// Comptage des r√©sultats
 	$query = "SELECT d.ref_doc
 						FROM documents d 
 						
@@ -340,7 +340,7 @@ if (isset($_REQUEST['recherche'])) {
 	//echo "<br><hr>".nl2br ($query);
 	unset ($result, $resultat, $query);
 
-	// sÈlection des articles
+	// s√©lection des articles
 	foreach ($fiches as $fiche) {
 	$query = "SELECT dl.ref_doc_line, dl.ref_doc, dl.ref_article, dl.lib_article, dl.desc_article, dl.qte, dl.pu_ht, dlc.qte_livree,dl.remise,
 						a.modele, ( (dl.pu_ht-(dl.pu_ht*dl.remise/100)) * (1+tva/100)) as pu_ttc,
@@ -389,7 +389,7 @@ if (empty ($detail_art)){?>
                     include_once ($PDF_MODELES_DIR.$code_pdf_modele.".class.php");
                     $class = "pdf_".$code_pdf_modele;
                     $pdf = new $class;
-                            // CrÈation
+                            // Cr√©ation
                     $pdf->create_pdf($infos, $fiches,$detail_art);
 
                     // Sortie
@@ -404,7 +404,7 @@ if (empty ($detail_art)){?>
                     $class = "pdf_".$code_pdf_modele;
                     $pdf = new $class;
 
-                            // CrÈation
+                            // Cr√©ation
 
                         $pdf->create_pdf($infos, $fiches,$detail_art);
                         $pdf->Output();
@@ -415,7 +415,7 @@ if (empty ($detail_art)){?>
      }else{
      ?>
      <script type="text/javascript">
-     alert('Aucun rÈsultats');
+     alert('Aucun r√©sultats');
      </script>
      <?php
 

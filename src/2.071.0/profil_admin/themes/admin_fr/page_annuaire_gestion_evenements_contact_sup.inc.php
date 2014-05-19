@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
 
 ?>
 <p>&nbsp;</p>
-<p>suppression d'un type d'événement </p>
+<p>suppression d'un type d'Ã©vÃ©nement </p>
 <p>&nbsp; </p>
 <?php 
 foreach ($_ALERTES as $alerte => $value) {
@@ -49,7 +49,7 @@ if (erreur) {
 	
 
 	if (exist_id_comm_event) {
-		texte_erreur += "Ce type d'événement est déjà utilisé pour différents contacts.<br/>Ce type d'événement ne peut donc pas être supprimé.";
+		texte_erreur += "Ce type d'Ã©vÃ©nement est dÃ©jÃ  utilisÃ© pour diffÃ©rents contacts.<br/>Ce type d'Ã©vÃ©nement ne peut donc pas Ãªtre supprimÃ©.";
 	} 
 
 	window.parent.alerte.alerte_erreur ('Suppression impossible', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');

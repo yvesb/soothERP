@@ -17,7 +17,7 @@ require ($DIR."_session.inc.php");
 
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 $form['orderby'] = $search['orderby'] = "date_event";
 if (isset($_REQUEST['orderby'])) {
 	$form['orderby'] = $_REQUEST['orderby'];
@@ -38,10 +38,10 @@ if (isset($_REQUEST['id_comm_event_type']) && $_REQUEST['id_comm_event_type']) {
 
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_join 	= "";
 	$query_where 	= "";
 
@@ -94,10 +94,10 @@ header('Content-Type: application/download');
 header('Content-Type: application/php; name="recherche_evenements.csv"');
 header('Content-Disposition: attachment; filename=recherche_evenements.csv;'); 
 
-echo "Référence contact;Civilite;Nom 1;Nom 2;Adresse 1;Adresse 2;Adresse 3;Code postal;Ville;Pays;Informations Adresse;telephone 1;telephone 2;fax;email;url;description;Date;Heure;Durée;Utilisateur;Type\n";
+echo "RÃ©fÃ©rence contact;Civilite;Nom 1;Nom 2;Adresse 1;Adresse 2;Adresse 3;Code postal;Ville;Pays;Informations Adresse;telephone 1;telephone 2;fax;email;url;description;Date;Heure;DurÃ©e;Utilisateur;Type\n";
 
 foreach ($fiches as $fiche) {
-	//Référence contact;
+	//RÃ©fÃ©rence contact;
 	$ligne =$fiche->ref_contact;
 	
 	$ligne.=";".$fiche->lib_civ_court;

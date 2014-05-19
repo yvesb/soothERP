@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -53,7 +53,7 @@ update_menu_arbo();
 						</tr>
 						<tr>
 							<td>
-							Libellé affiché
+							LibellÃ© affichÃ©
 							<input name="id_type_doc" id="id_type_doc" type="hidden" value="<?php echo $document_type->id_type_doc; ?>" />
 							<input name="id_type_groupe" id="id_type_groupe" type="hidden" value="<?php echo $document_type->id_type_groupe; ?>" />
 							</td>
@@ -66,7 +66,7 @@ update_menu_arbo();
 						</tr>
 						<tr>
 							
-							<td >Période minimale d'archivage: 
+							<td >PÃ©riode minimale d'archivage: 
 							</td>
 							<td>
 								<input type="text" id="duree_avant_purge_annule_<?php echo $document_type->id_type_doc; ?>" name="duree_avant_purge_annule_<?php echo $document_type->id_type_doc; ?>" class="classinput_nsize" value="<?php echo (${"DUREE_AVANT_PURGE_ANNULE_".$document_type->code_doc}); ?>"  size="5"/> jours
@@ -93,7 +93,7 @@ update_menu_arbo();
 					</table>
 				</form><br />
 
-				Modèles disponibles pour l'impression de <?php echo ($document_type->lib_type_doc); ?>:
+				ModÃ¨les disponibles pour l'impression de <?php echo ($document_type->lib_type_doc); ?>:
 				<?php
 				$pdf_inactif = 0;
 				foreach ($document_type->doc_modeles_pdf as $modele_pdf) {
@@ -124,7 +124,7 @@ update_menu_arbo();
 							</td>
 							<td style="width:15%"><span style="text-decoration:underline; cursor:pointer" id="show_desc_<?php echo $document_type->code_doc; ?>_<?php echo $modele_pdf->id_pdf_modele;?>">Plus d'informations</span></td>
 							<td style="width:15%">
-							<span id="param_pdf_<?php echo $document_type->code_doc; ?>_<?php echo $modele_pdf->id_pdf_modele;?>" style="cursor:pointer; text-decoration:underline">Paramétrer</span>
+							<span id="param_pdf_<?php echo $document_type->code_doc; ?>_<?php echo $modele_pdf->id_pdf_modele;?>" style="cursor:pointer; text-decoration:underline">ParamÃ©trer</span>
 								<script type="text/javascript">
 							 Event.observe('param_pdf_<?php echo $document_type->code_doc; ?>_<?php echo $modele_pdf->id_pdf_modele;?>', "click" , function(evt){
 									ouvre_mini_moteur_doc_type();
@@ -134,7 +134,7 @@ update_menu_arbo();
 							</td>
 							<td style="width:15%">
 							<?php if ($modele_pdf->usage != "defaut") {?>
-								<span id="unactive_pdf_<?php echo $document_type->code_doc; ?>_<?php echo $modele_pdf->id_pdf_modele;?>" style="cursor:pointer; text-decoration:underline">Désactiver</span>
+								<span id="unactive_pdf_<?php echo $document_type->code_doc; ?>_<?php echo $modele_pdf->id_pdf_modele;?>" style="cursor:pointer; text-decoration:underline">DÃ©sactiver</span>
 								
 								<form action="documents_gestion_type_des_pdf.php" method="post" id="documents_gestion_type_des_pdf_<?php echo $document_type->code_doc; ?>_<?php echo $modele_pdf->id_pdf_modele;?>" name="documents_gestion_type_des_pdf_<?php echo $document_type->code_doc; ?>_<?php echo $modele_pdf->id_pdf_modele;?>" target="formFrame" >
 									<input name="id_type_doc" type="hidden" value="<?php echo $document_type->id_type_doc; ?>" />
@@ -160,7 +160,7 @@ update_menu_arbo();
 				}
 				if ($pdf_inactif) {
 				?>
-				<span style="cursor:pointer; text-decoration:underline; display:" id="show_pdf_inactif_<?php echo $document_type->code_doc; ?>">Utiliser un nouveau modèle d'impression.</span><br />
+				<span style="cursor:pointer; text-decoration:underline; display:" id="show_pdf_inactif_<?php echo $document_type->code_doc; ?>">Utiliser un nouveau modÃ¨le d'impression.</span><br />
 				<div id="more_pdf_<?php echo $document_type->code_doc; ?>" style="display:none">
 				<?php
 				foreach ($document_type->doc_modeles_pdf as $modele_pdf) {
@@ -174,7 +174,7 @@ update_menu_arbo();
 							</td>
 							<td style="width:16%"><span style="text-decoration:underline; cursor:pointer" id="show_desc_<?php echo $document_type->code_doc; ?>_<?php echo $modele_pdf->id_pdf_modele;?>">Plus d'informations</span></td>
 							
-							<td style="width:11%; color:#999999">Paramétrer</td>
+							<td style="width:11%; color:#999999">ParamÃ©trer</td>
 							<td style="width:11%">
 							
 								<span id="active_pdf_<?php echo $document_type->code_doc; ?>_<?php echo $modele_pdf->id_pdf_modele;?>" style="cursor:pointer; text-decoration:underline">Activer</span>

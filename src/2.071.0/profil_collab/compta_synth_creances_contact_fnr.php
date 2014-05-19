@@ -12,13 +12,13 @@ require ($DIR."_session.inc.php");
 
 if (!$_SESSION['user']->check_permission ("11")) {
 	//on indique l'interdiction et on stop le script
-	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accés ne vous permettent pas de visualiser ce type de page</span>";
+	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accÃ©s ne vous permettent pas de visualiser ce type de page</span>";
 	exit();
 }
 // chargement de la class du profil
 $contact = new contact($_REQUEST["ref_contact"]);
 $profils 	= $contact->getProfils();
-//chargement des factures non réglées
+//chargement des factures non rÃ©glÃ©es
 $factures = array();
 $factures = get_client_factures_to_pay ($contact->getRef_contact());
 

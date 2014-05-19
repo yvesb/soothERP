@@ -5,7 +5,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -50,7 +50,7 @@ if (erreur) {
 	
 	if (bad_delai_before_next) {
 		window.parent.document.getElementById("delai_before_next").className="alerteform_lsize";
-		texte_erreur += "Le délai avant la prochaine relance dois être une valeur numérique.<br/>";
+		texte_erreur += "Le dÃ©lai avant la prochaine relance dois Ãªtre une valeur numÃ©rique.<br/>";
 	} else {
 		window.parent.document.getElementById("delai_before_next").className="classinput_lsize";
 	}

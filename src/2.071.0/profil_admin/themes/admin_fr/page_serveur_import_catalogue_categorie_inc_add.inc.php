@@ -83,7 +83,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td class="size_strict"><span class="labelled" style="width:150px">Durée de vie des articles:</span>
+			<td class="size_strict"><span class="labelled" style="width:150px">DurÃ©e de vie des articles:</span>
 			</td>
 			<td>
 			

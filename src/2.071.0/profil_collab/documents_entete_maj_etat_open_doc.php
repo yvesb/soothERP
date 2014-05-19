@@ -11,7 +11,7 @@ require ($DIR."_session.inc.php");
 
 
 if (isset($_REQUEST['ref_doc'])) {
-// ouverture des infos du document et mise à jour
+// ouverture des infos du document et mise Ã  jour
 	$ref_doc= $_REQUEST['ref_doc'];
 	$document = open_doc ($ref_doc);
 	if (isset($_REQUEST["global_option"])) {$GLOBALS['_OPTIONS']['GENERE_DOC'] = $_REQUEST["global_option"];}
@@ -29,7 +29,7 @@ if (isset($GLOBALS['_INFOS']['ref_doc_copie'])) {
 	$ref_contact = $document->getRef_contact ();
 	
 			
-	//si un montant est négatif
+	//si un montant est nÃ©gatif
 	$montant_negatif = false;
 	$montant_positif = 1;
 	if (isset($_REQUEST["montant_neg"])) { $montant_negatif = true; $montant_positif = -1;}
@@ -94,7 +94,7 @@ $ANNUAIRE_CATEGORIES	=	get_categories();
 $doc_liaisons_possibles = $document->getLiaisons_possibles ();
 $doc_liaisons = $document->getLiaisons ();
 
-//liste des factures à payer
+//liste des factures Ã  payer
 
 $document->get_infos_facturation($montant_positif);
 $liste_factures = $document->factures_to_pay;

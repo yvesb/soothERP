@@ -8,7 +8,7 @@ require ($DIR."_session.inc.php");
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 

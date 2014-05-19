@@ -4,7 +4,7 @@
 // VISUALISATION D'UN ARTICLE
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("Myarticle", "Mydoc", "qte_article", "liaisons_type_liste");
 check_page_variables ($page_variables);
 
@@ -93,7 +93,7 @@ check_page_variables ($page_variables);
 														var indice_valo = parseFloat(<?php echo $Pack_liaison_ligne["Valo_indice"]; ?>);
 														
 														if(indice_valo > 0 && $("appli_indice_valo").checked){
-															//amélioration : appliquer l'indice de valorisation
+															//amÃ©lioration : appliquer l'indice de valorisation
 														}
 														
 														var new_qte =  <?php echo $qte_article?> * ratio;
@@ -150,7 +150,7 @@ check_page_variables ($page_variables);
 													var indice_valo = parseFloat(<?php echo $Myarticle->getValo_indice(); ?>);
 													
 													if(indice_valo > 0 && $("appli_indice_valo").checked){
-														//amélioration : appliquer l'indice de valorisation
+														//amÃ©lioration : appliquer l'indice de valorisation
 													}
 													
 													var new_qte =  <?php echo $qte_article?> * ratio;
@@ -233,7 +233,7 @@ check_page_variables ($page_variables);
 													var indice_valo = parseFloat(<?php echo $Myarticle->getValo_indice(); ?>);
 													
 													if(indice_valo > 0 && $("appli_indice_valo").checked){
-														//amélioration : appliquer l'indice de valorisation
+														//amÃ©lioration : appliquer l'indice de valorisation
 													}
 													
 													var new_qte =  <?php echo $qte_article?> / ratio;

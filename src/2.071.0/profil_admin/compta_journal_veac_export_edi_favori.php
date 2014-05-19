@@ -11,13 +11,13 @@ require ($DIR."_session.inc.php");
 
 $compta_e = new compta_exercices ();
 $liste_exercices	= $compta_e->charger_compta_exercices();
-//on récupère la dte du dernier exercice cloturé
+//on rÃ©cupÃ¨re la dte du dernier exercice cloturÃ©
 foreach ($liste_exercices as $exercice) {
 	if (!$exercice->etat_exercice) {$last_date_before_cloture = $exercice->date_fin; break;}
 }
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -59,10 +59,10 @@ if (isset($_REQUEST['date_exercice']) && ($form['date_fin'] == "" && $form['date
 }
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	
 	// Recherche des FAC
 	$query_join 	= "";
@@ -240,7 +240,7 @@ if (isset($_REQUEST['recherche'])) {
 	while ($contact_client = $resultat_cli->fetchObject()) {
 		
 		$defaut_numero_compte = $contact_client->defaut_numero_compte;
-		//remplissage du numéro de compte achat par soit celui de la categorie client
+		//remplissage du numÃ©ro de compte achat par soit celui de la categorie client
 		if (!$defaut_numero_compte) {
 		$defaut_numero_compte = $contact_client->categ_defaut_numero_compte;
 		}
@@ -262,7 +262,7 @@ if (isset($_REQUEST['recherche'])) {
 	while ($contact_fournisseur = $resultat_fou->fetchObject()) {
 		
 		$defaut_numero_compte = $contact_fournisseur->defaut_numero_compte;
-		//remplissage du numéro de compte achat par soit celui de la categorie client
+		//remplissage du numÃ©ro de compte achat par soit celui de la categorie client
 		if (!$defaut_numero_compte) {
 		$defaut_numero_compte = $contact_fournisseur->categ_defaut_numero_compte;
 		}

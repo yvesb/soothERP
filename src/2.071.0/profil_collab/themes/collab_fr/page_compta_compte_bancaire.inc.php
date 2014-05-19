@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -27,7 +27,7 @@ check_page_variables ($page_variables);
     <p class="titre">Edition des comptes bancaires</p>
     <div style="height:50px">
         <div style="text-align:right">
-            <span id="retour_gestion" style="cursor:pointer; text-decoration:underline">Retour à la gestion des comptes</span>
+            <span id="retour_gestion" style="cursor:pointer; text-decoration:underline">Retour Ã  la gestion des comptes</span>
             <script type="text/javascript">
                 Event.observe('retour_gestion', 'click',  function(evt){
                     Event.stop(evt);

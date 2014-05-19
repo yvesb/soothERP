@@ -5,39 +5,39 @@
 
 
 final class art_categ {
-	private $ref_art_categ;			// Référence de la catégorie d'article
+	private $ref_art_categ;			// RÃ©fÃ©rence de la catÃ©gorie d'article
 	private $lib_art_categ;
 	private $desc_art_categ;
-	private $defaut_id_tva;			// Taux de TVA par défaut
-	private $ref_art_categ_parent;	// Référence de la catagorie d'article parent, permettant de créer une hierarchie
-	private $duree_dispo;				//durée de vie des articles de la catégorie à la création
+	private $defaut_id_tva;			// Taux de TVA par dÃ©faut
+	private $ref_art_categ_parent;	// RÃ©fÃ©rence de la catagorie d'article parent, permettant de crÃ©er une hierarchie
+	private $duree_dispo;				//durÃ©e de vie des articles de la catÃ©gorie Ã  la crÃ©ation
 
-	private $restrict_to_achats;		// la catégorie peut-elle contenir des articles disponibles à l'achat
-	private $restrict_to_ventes;		// la catégorie peut-elle contenir des articles disponbiles à la vente
+	private $restrict_to_achats;		// la catÃ©gorie peut-elle contenir des articles disponibles Ã  l'achat
+	private $restrict_to_ventes;		// la catÃ©gorie peut-elle contenir des articles disponbiles Ã  la vente
 	
-	private $modele;						// Modèle d'article associé aux articles de cette catégorie
-	private $id_modele_spe;				// Modèle spécifiques d'article associé aux articles de cette catégorie
+	private $modele;						// ModÃ¨le d'article associÃ© aux articles de cette catÃ©gorie
+	private $id_modele_spe;				// ModÃ¨le spÃ©cifiques d'article associÃ© aux articles de cette catÃ©gorie
 	private $lib_modele_spe;
 
-	private $caracs;						// Caractéristiques (complètes) des articles de cette catégorie
-	private $caracs_loaded;			// Défini si les caractéristiques sont chargées
-	// CARACS										// Pas de classe spécifique
+	private $caracs;						// CaractÃ©ristiques (complÃ¨tes) des articles de cette catÃ©gorie
+	private $caracs_loaded;			// DÃ©fini si les caractÃ©ristiques sont chargÃ©es
+	// CARACS										// Pas de classe spÃ©cifique
 		// ref_carac
-		// ref_art_categ						// Référence de la catégorie associée
-		// lib_carac								// Libellé
-		// unite										// Unité de mesure
-		// defaut_valeur						// Valeur par défaut
-		// moteur_recherche					// Cette carac sert-elle à la recherche des articles ? 0 = Non, 1 = Oui
-		// affichage								// Cette carac est-elle affichée sur la fiche des articles ? 1 = Basic, 2 = Avancée
-		// ref_carac_groupe					// Groupe de caractéristique
+		// ref_art_categ						// RÃ©fÃ©rence de la catÃ©gorie associÃ©e
+		// lib_carac								// LibellÃ©
+		// unite										// UnitÃ© de mesure
+		// defaut_valeur						// Valeur par dÃ©faut
+		// moteur_recherche					// Cette carac sert-elle Ã  la recherche des articles ? 0 = Non, 1 = Oui
+		// affichage								// Cette carac est-elle affichÃ©e sur la fiche des articles ? 1 = Basic, 2 = AvancÃ©e
+		// ref_carac_groupe					// Groupe de caractÃ©ristique
 		// ordre										// Ordre d'affichage
 
-	private $caracs_groupes;						// Groupes de caractéristiques des articles de cette catégorie
-	private $caracs_groupes_loaded;			// Défini si les groupes de caractéristiques sont chargées
-	// CARACS_GROUPES						// Pas de classe spécifique
+	private $caracs_groupes;						// Groupes de caractÃ©ristiques des articles de cette catÃ©gorie
+	private $caracs_groupes_loaded;			// DÃ©fini si les groupes de caractÃ©ristiques sont chargÃ©es
+	// CARACS_GROUPES						// Pas de classe spÃ©cifique
 		// ref_carac_groupe
-		// ref_art_categ					// Référence de la catégorie associée
-		// lib_carac_groupe				// Libellé
+		// ref_art_categ					// RÃ©fÃ©rence de la catÃ©gorie associÃ©e
+		// lib_carac_groupe				// LibellÃ©
 		// ordre									// Ordre d'affichage
 
 	private $formules_tarifs;			// Formules de tarif
@@ -46,20 +46,20 @@ final class art_categ {
 		// id_tarif
 		// formule_tarif
 
-	private $taxes;							// Taxes applicables aux articles de cette catégorie
-	private $taxes_loaded;			// Défini si les taxes applicables sont chargées
+	private $taxes;							// Taxes applicables aux articles de cette catÃ©gorie
+	private $taxes_loaded;			// DÃ©fini si les taxes applicables sont chargÃ©es
 	
-	private $defaut_numero_compte_vente;	// numéro de compte comptable vente HT par defaut 
-	private $defaut_numero_compte_achat;	// numéro de compte comptable achat HT par defaut 
+	private $defaut_numero_compte_vente;	// numÃ©ro de compte comptable vente HT par defaut 
+	private $defaut_numero_compte_achat;	// numÃ©ro de compte comptable achat HT par defaut 
 
 
 function __construct($ref_art_categ = "") {
 	global $bdd;
 
-	// Controle si la ref_art_categ est précisée
+	// Controle si la ref_art_categ est prÃ©cisÃ©e
 	if (!$ref_art_categ) { return false; }
 
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT ref_art_categ, lib_art_categ, modele, ac.id_modele_spe, desc_art_categ, defaut_id_tva, restriction, duree_dispo, 
 										defaut_numero_compte_vente, defaut_numero_compte_achat, ref_art_categ_parent,
 										acs.lib_modele_spe
@@ -68,10 +68,10 @@ function __construct($ref_art_categ = "") {
 						WHERE ref_art_categ = '".$ref_art_categ."' ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si la ref_art_categ est trouvée
+	// Controle si la ref_art_categ est trouvÃ©e
 	if (!$art_categ = $resultat->fetchObject()) { return false; }
 
-	// Attribution des informations à l'objet
+	// Attribution des informations Ã  l'objet
 	$this->ref_art_categ 		= $ref_art_categ;
 	$this->lib_art_categ		= $art_categ->lib_art_categ;
 	$this->modele						= $art_categ->modele;
@@ -99,10 +99,10 @@ final public function create ($lib_art_categ, $desc_art_categ, $ref_art_categ_pa
 	global $DEFAUT_ID_TVA;
 	global $bdd;
 
-	$ART_CATEG_ID_REFERENCE_TAG = 4;		// Référence Tag utilisé dans la base de donnée
+	$ART_CATEG_ID_REFERENCE_TAG = 4;		// RÃ©fÃ©rence Tag utilisÃ© dans la base de donnÃ©e
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	if (!$lib_art_categ) {$GLOBALS['_ALERTES']['lib_vide'] = 1;}
 	$this->lib_art_categ		= $lib_art_categ;
 	$this->desc_art_categ		= $desc_art_categ;
@@ -115,16 +115,16 @@ final public function create ($lib_art_categ, $desc_art_categ, $ref_art_categ_pa
 	$this->setRestriction($restriction);
 	
 	
-	//Verification de la ref_art_categ si passée en parametre
+	//Verification de la ref_art_categ si passÃ©e en parametre
 	if (!$ref_art_categ) { 
 	
-		// Création de la référence
+		// CrÃ©ation de la rÃ©fÃ©rence
 		$reference = new reference ($ART_CATEG_ID_REFERENCE_TAG);
 		$this->ref_art_categ = $reference->generer_ref();
 		
 	} else {
 	
-		// Sélection des informations générales
+		// SÃ©lection des informations gÃ©nÃ©rales
 		$query = "SELECT ref_art_categ
 							FROM art_categs 
 							WHERE ref_art_categ = '".$ref_art_categ."' ";
@@ -138,7 +138,7 @@ final public function create ($lib_art_categ, $desc_art_categ, $ref_art_categ_pa
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -154,8 +154,8 @@ final public function create ($lib_art_categ, $desc_art_categ, $ref_art_categ_pa
 
 	
 	// *************************************************
-	// Résultat positif de la création
-	$GLOBALS['_INFOS']['Création_art_categ'] = $this->ref_art_categ;
+	// RÃ©sultat positif de la crÃ©ation
+	$GLOBALS['_INFOS']['CrÃ©ation_art_categ'] = $this->ref_art_categ;
 
 	//**********************************************
 	// Envoi EDI
@@ -175,7 +175,7 @@ final public function modification ($lib_art_categ, $desc_art_categ, $ref_art_ca
 	global $bdd;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	if ($lib_art_categ != $this->lib_art_categ || $this->ref_art_categ_parent != $ref_art_categ_parent) {
 		$GLOBALS['_INFOS']['reload_liste_categ'] = 1;
 	}
@@ -187,7 +187,7 @@ final public function modification ($lib_art_categ, $desc_art_categ, $ref_art_ca
 	$this->duree_dispo			= $duree_dispo;
 
 	if ($this->modele != $modele) {
-		// Vérification qu'il n'y ai pas deja des articles créé, sinon c'est trop tard.
+		// VÃ©rification qu'il n'y ai pas deja des articles crÃ©Ã©, sinon c'est trop tard.
 		$query = "SELECT COUNT(ref_article) nb_articles FROM articles WHERE ref_art_categ = '".$this->ref_art_categ."' ";
 		$resultat = $bdd->query ($query);
 		$tmp = $resultat->fetchObject();
@@ -197,7 +197,7 @@ final public function modification ($lib_art_categ, $desc_art_categ, $ref_art_ca
 
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -217,19 +217,19 @@ final public function modification ($lib_art_categ, $desc_art_categ, $ref_art_ca
 }
 
 
-//mise à jour du numéro de compte vente par défaut
+//mise Ã  jour du numÃ©ro de compte vente par dÃ©faut
 public function maj_defaut_numero_compte_vente ($defaut_numero_compte_vente) {
 	global $bdd;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	if ($defaut_numero_compte_vente == $this->defaut_numero_compte_vente ) {
 		return false;
 	}
 	$this->defaut_numero_compte_vente		= $defaut_numero_compte_vente;
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -243,12 +243,12 @@ public function maj_defaut_numero_compte_vente ($defaut_numero_compte_vente) {
 	
 	return true;
 }
-//mise à jour de l'art_categ en id_modele_spe
+//mise Ã  jour de l'art_categ en id_modele_spe
 public function maj_art_categ_modele_spe ($id_modele_spe) {
 	global $bdd;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	if ($id_modele_spe == $this->id_modele_spe ) {
 		return false;
 	}
@@ -269,19 +269,19 @@ public function maj_art_categ_modele_spe ($id_modele_spe) {
 }
 
 
-//mise à jour du numéro de compte achat par défaut
+//mise Ã  jour du numÃ©ro de compte achat par dÃ©faut
 public function maj_defaut_numero_compte_achat ($defaut_numero_compte_achat) {
 	global $bdd;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	if ($defaut_numero_compte_achat == $this->defaut_numero_compte_achat ) {
 		return false;
 	}
 	$this->defaut_numero_compte_achat		= $defaut_numero_compte_achat;
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -298,7 +298,7 @@ public function maj_defaut_numero_compte_achat ($defaut_numero_compte_achat) {
 
 /**
  * @param enum('aucune','achat','vente') $restriction
- * @return boolean true si la modification s'est bien passé, false sinon
+ * @return boolean true si la modification s'est bien passÃ©, false sinon
  */
 public function maj_restriction($restriction){
 	global $bdd; 
@@ -315,7 +315,7 @@ public function maj_restriction($restriction){
 	$return = $bdd->exec($query) && $return;
 	
 	//**************************************************
-	// Mise à jour des articles de la catégorie
+	// Mise Ã  jour des articles de la catÃ©gorie
 	$list =& $this->getList_articles();
 	
 	if( $this->restrict_to_achats ){  
@@ -341,7 +341,7 @@ final public function suppression ($new_ref_art_categ_parent = "") {
 	global $bdd;
 
 	// *************************************************
-	// Controle de l'existance d'un article de cette catégorie
+	// Controle de l'existance d'un article de cette catÃ©gorie
 	//$query = "SELECT ref_article FROM articles
 	//					WHERE ref_art_categ = '".$this->ref_art_categ."' LIMIT 0,1";
 	//$resultat = $bdd->query ($query);
@@ -349,7 +349,7 @@ final public function suppression ($new_ref_art_categ_parent = "") {
 	//	$GLOBALS['_ALERTES']['articles_existants'] = 1;
 	//}
 	if (!$new_ref_art_categ_parent) { return false;}
-	// Controle de l'existance d'une catégorie d'article enfant
+	// Controle de l'existance d'une catÃ©gorie d'article enfant
 	$query = "SELECT ref_art_categ FROM art_categs
 						WHERE ref_art_categ_parent = '".$this->ref_art_categ."' LIMIT 0,1";
 	$resultat = $bdd->query ($query);
@@ -363,13 +363,13 @@ final public function suppression ($new_ref_art_categ_parent = "") {
 		}
 	}
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 
 	// *************************************************
-	// Suppression de la catégorie
+	// Suppression de la catÃ©gorie
 	
 	$bdd->beginTransaction();
 
@@ -378,12 +378,12 @@ final public function suppression ($new_ref_art_categ_parent = "") {
 						WHERE ref_art_categ = '".$this->ref_art_categ."' ";
 	$bdd->exec ($query);
 	
-	// Changement des catégories enfants
+	// Changement des catÃ©gories enfants
 	$query = "UPDATE art_categs SET ref_art_categ_parent = ".ref_or_null($new_ref_art_categ_parent)."
 						WHERE ref_art_categ_parent = '".$this->ref_art_categ."' ";
 	$bdd->exec ($query);
 	
-	// Suppression de la catégorie
+	// Suppression de la catÃ©gorie
 	$query = "DELETE FROM art_categs 
 						WHERE ref_art_categ = '".$this->ref_art_categ."' ";
 	$bdd->exec ($query);
@@ -398,7 +398,7 @@ final public function suppression ($new_ref_art_categ_parent = "") {
 // *************************************************************************************************************
 // FONCTIONS LIEES A LA GESTION DES CARACTERISTIQUES
 // *************************************************************************************************************
-// Charge les caractéristiques
+// Charge les caractÃ©ristiques
 final public function charger_caracs () {
 	global $bdd;
 
@@ -411,7 +411,7 @@ final public function charger_caracs () {
 							LEFT JOIN art_categs_caracs_groupes accg ON acc.ref_carac_groupe = accg.ref_carac_groupe
 						WHERE acc.ref_art_categ = '".$this->ref_art_categ."' 
 						ORDER BY accg.ordre ASC, acc.ordre ASC";
-						//accg.ordre ASC, enlevé car rend impossible le changement d'ordre au niveau de l'utilisateur
+						//accg.ordre ASC, enlevÃ© car rend impossible le changement d'ordre au niveau de l'utilisateur
 	$resultat = $bdd->query ($query);
 	while ($carac = $resultat->fetchObject()) { $this->caracs[] = $carac; }
 
@@ -420,14 +420,14 @@ final public function charger_caracs () {
 }
 
 
-// Ajout d'une caractéristique
+// Ajout d'une caractÃ©ristique
 final public function create_carac ($lib_carac, $unite, $allowed_values, $default_value, $moteur_recherche, $variante, $affichage, $ref_carac_groupe, $ordre = "", $ref_carac = "") {
 	global $bdd;
 
 	$CARAC_ID_REFERENCE_TAG = 8;
 
 	// *************************************************
-	// Vérifications des données
+	// VÃ©rifications des donnÃ©es
 	if (!$lib_carac) {
 		$GLOBALS['_ALERTES']['lib_carac_vide'] = 1;
 	}
@@ -441,7 +441,7 @@ final public function create_carac ($lib_carac, $unite, $allowed_values, $defaul
 		$GLOBALS['_ALERTES']['bad_variante'] = 1;
 	}
 	
-	//si la ref_carac existe déjà on n'enregistre pas
+	//si la ref_carac existe dÃ©jÃ  on n'enregistre pas
 	if ($ref_carac) {
 		$query = "SELECT ref_carac
 							FROM art_categs_caracs
@@ -453,13 +453,13 @@ final public function create_carac ($lib_carac, $unite, $allowed_values, $defaul
 		}
 	}
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 	
 	// *************************************************
-	// Ordre d'affichage de la caractéristique
+	// Ordre d'affichage de la caractÃ©ristique
 	if (!$ordre) {
 		$query = "SELECT MAX(ordre) ordre FROM art_categs_caracs WHERE ref_art_categ = '".$this->ref_art_categ."' ";
 		$resultat = $bdd->query($query);
@@ -470,13 +470,13 @@ final public function create_carac ($lib_carac, $unite, $allowed_values, $defaul
 
 	
 	// *************************************************
-	// Création de la référence
+	// CrÃ©ation de la rÃ©fÃ©rence
 	if (!$ref_carac) {
 		$reference = new reference ($CARAC_ID_REFERENCE_TAG);
 		$ref_carac = $reference->generer_ref();
 	}
 
-	// Création
+	// CrÃ©ation
 	$query = "INSERT INTO art_categs_caracs 
 							( ref_carac, ref_art_categ, lib_carac, unite, allowed_values, default_value, 
 								moteur_recherche, variante, affichage, ref_carac_groupe, ordre )
@@ -487,13 +487,13 @@ final public function create_carac ($lib_carac, $unite, $allowed_values, $defaul
 	
 	
 	//gestion des articles variantes
-	//si on cré une carac variante = 1
+	//si on crÃ© une carac variante = 1
 //	if ($variante) {
 //		//alors si cette carac contient une ou plusieurs valeur par defaut
 //		$tmp_default_value = explode(";",$default_value);
 //		if (count($tmp_default_value)) {
 //			$premiere_valeur = $tmp_default_value[0];
-//			//on vas attribuer à tout les articles maitre ou esclave de l'art_categ la carac avec la premiere valeur
+//			//on vas attribuer Ã  tout les articles maitre ou esclave de l'art_categ la carac avec la premiere valeur
 //			
 //			$query2 =  "SELECT a.ref_article, a.ref_art_categ, a.variante
 //									FROM articles a
@@ -515,12 +515,12 @@ final public function create_carac ($lib_carac, $unite, $allowed_values, $defaul
 }
 
 
-// Modifie une caractéristique
+// Modifie une caractÃ©ristique
 final public function maj_carac ($ref_carac, $lib_carac, $unite, $allowed_values, $default_value, $moteur_recherche, $variante, $affichage, $ref_carac_groupe) {
 	global $bdd;
 
 	// *************************************************
-	// Vérifications des données
+	// VÃ©rifications des donnÃ©es
 	if (!$lib_carac) {
 		$GLOBALS['_ALERTES']['lib_carac_vide'] = 1;
 	}
@@ -533,15 +533,15 @@ final public function maj_carac ($ref_carac, $lib_carac, $unite, $allowed_values
 	if (!is_numeric($variante) || $variante<0 || $variante>1) {
 		$GLOBALS['_ALERTES']['bad_variante'] = 1;
 	}
-	// Si la caractéristique est une variante, il faut agir sur les articles qui en sont issus.
+	// Si la caractÃ©ristique est une variante, il faut agir sur les articles qui en sont issus.
 	$query = "SELECT variante FROM art_categs_caracs
 						WHERE ref_carac = '".$ref_carac."' ";
 	$resultat = $bdd->query ($query);
-	// Controle si la ref_carac est trouvée
+	// Controle si la ref_carac est trouvÃ©e
 	if (!$carac = $resultat->fetchObject()) { return false; }	
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -549,12 +549,12 @@ final public function maj_carac ($ref_carac, $lib_carac, $unite, $allowed_values
 		
 		//si on maj une carac variante = 0
 		if (!$variante && $carac->variante) {
-			//si notre carac variante est la dernière dans la categorie
+			//si notre carac variante est la derniÃ¨re dans la categorie
 			$query2 = "SELECT COUNT(ref_carac) as nb_carac FROM art_categs_caracs
 								WHERE ref_art_categ = '".$this->ref_art_categ."' && variante = 1 ";
 			$resultat2 = $bdd->query ($query2);
 			$test_carac = $resultat2->fetchObject();
-			//c'est la dernière des carac variantes, on vas alors supprimer les articles maitres
+			//c'est la derniÃ¨re des carac variantes, on vas alors supprimer les articles maitres
 			if ($test_carac->nb_carac == 1) {
 			
 				$query3 =  "SELECT a.ref_article, a.ref_art_categ, a.variante
@@ -566,7 +566,7 @@ final public function maj_carac ($ref_carac, $lib_carac, $unite, $allowed_values
 					$var_article->suppression_master ();
 				}
 			}
-			//il reste des carac variantes, on vas alors séparer les articles variantes avec différents maitres
+			//il reste des carac variantes, on vas alors sÃ©parer les articles variantes avec diffÃ©rents maitres
 			if ($test_carac->nb_carac > 1) {
 				$query3 =  "SELECT a.ref_article, a.ref_art_categ, a.variante
 										FROM articles a
@@ -582,7 +582,7 @@ final public function maj_carac ($ref_carac, $lib_carac, $unite, $allowed_values
 	
 	}
 
-	// Mise à jour
+	// Mise Ã  jour
 	$query = "UPDATE art_categs_caracs
 						SET lib_carac = '".addslashes($lib_carac)."', unite = '".addslashes($unite)."', 
 								allowed_values = '".addslashes($allowed_values)."', default_value = '".addslashes($default_value)."', 
@@ -598,7 +598,7 @@ final public function maj_carac ($ref_carac, $lib_carac, $unite, $allowed_values
 //		$tmp_default_value = explode(";",$default_value);
 //		if (count($tmp_default_value)) {
 //			$premiere_valeur = $tmp_default_value[0];
-//			//on vas attribuer à tout les articles maitre ou esclave de l'art_categ la carac avec la premiere valeur
+//			//on vas attribuer Ã  tout les articles maitre ou esclave de l'art_categ la carac avec la premiere valeur
 //			
 //			$query2 =  "SELECT a.ref_article, a.ref_art_categ, a.variante
 //									FROM articles a
@@ -625,7 +625,7 @@ final public function modifier_carac_ordre ($ref_carac, $new_ordre) {
 		$GLOBALS['_ALERTES']['bad_ordre'] = 1;
 	}
 	
-	// Sélection de l'ordre actuel
+	// SÃ©lection de l'ordre actuel
 	$query = "SELECT ordre FROM art_categs_caracs WHERE ref_carac = '".$ref_carac."' ";
 	$resultat = $bdd->query ($query);
 	if (!($carac = $resultat->fetchObject())) { 
@@ -633,7 +633,7 @@ final public function modifier_carac_ordre ($ref_carac, $new_ordre) {
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -654,14 +654,14 @@ final public function modifier_carac_ordre ($ref_carac, $new_ordre) {
 
 	$bdd->beginTransaction();
 
-	// Mise à jour des autres caractéristiques
+	// Mise Ã  jour des autres caractÃ©ristiques
 	$query = "UPDATE art_categs_caracs
 						SET ordre = ordre ".$variation." 1
 						WHERE ref_art_categ = '".$this->ref_art_categ."' && 
 									ordre ".$symbole1." '".$ordre_actu."' && ordre ".$symbole2." '".$new_ordre."' ";
 	$bdd->exec ($query);
 	
-	// Mise à jour de cette caractéristiques
+	// Mise Ã  jour de cette caractÃ©ristiques
 	$query = "UPDATE art_categs_caracs
 						SET ordre = '".$new_ordre."'
 						WHERE ref_carac = '".$ref_carac."'  ";
@@ -673,25 +673,25 @@ final public function modifier_carac_ordre ($ref_carac, $new_ordre) {
 }
 
 
-// Suppression une caractéristique
+// Suppression une caractÃ©ristique
 final public function delete_carac ($ref_carac) {
 	global $bdd;
 
 	// *************************************************
-	// Vérification de la possibilité de supprimer la caractéristique
-	// Si la caractéristique est une variante, il faut agir sur les articles qui en sont issus.
+	// VÃ©rification de la possibilitÃ© de supprimer la caractÃ©ristique
+	// Si la caractÃ©ristique est une variante, il faut agir sur les articles qui en sont issus.
 	$query = "SELECT variante FROM art_categs_caracs
 						WHERE ref_carac = '".$ref_carac."' ";
 	$resultat = $bdd->query ($query);
-	// Controle si la ref_carac est trouvée
+	// Controle si la ref_carac est trouvÃ©e
 	if (!$carac = $resultat->fetchObject()) { return false; }	
 	if ($carac->variante) {
-		//si notre carac variante est la dernière dans la categorie
+		//si notre carac variante est la derniÃ¨re dans la categorie
 		$query2 = "SELECT COUNT(ref_carac) as nb_carac FROM art_categs_caracs
 							WHERE ref_art_categ = '".$this->ref_art_categ."' && variante = 1 ";
 		$resultat2 = $bdd->query ($query2);
 		$test_carac = $resultat2->fetchObject();
-		//il reste des carac variantes, on vas alors séparer les articles variantes avec différents maitres
+		//il reste des carac variantes, on vas alors sÃ©parer les articles variantes avec diffÃ©rents maitres
 		if ($test_carac->nb_carac >1) {
 			$query2 =  "SELECT a.ref_article, a.ref_art_categ, a.variante
 									FROM articles a
@@ -703,7 +703,7 @@ final public function delete_carac ($ref_carac) {
 				$var_article->gestion_master ($ref_carac);
 			}
 		}
-		//c'est la dernière des carac variantes, on vas alors supprimer les articles maitres
+		//c'est la derniÃ¨re des carac variantes, on vas alors supprimer les articles maitres
 		if ($test_carac->nb_carac == 1) {
 			$query2 =  "SELECT a.ref_article, a.ref_art_categ, a.variante
 									FROM articles a
@@ -718,7 +718,7 @@ final public function delete_carac ($ref_carac) {
 	}
 
 	// *************************************************
-	// Si il y a eu un problème
+	// Si il y a eu un problÃ¨me
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -735,7 +735,7 @@ final public function delete_carac ($ref_carac) {
 // *************************************************************************************************************
 // FONCTIONS LIEES A LA GESTION DES GROUPES DE CARACTERISTIQUES
 // *************************************************************************************************************
-// Charge les caractéristiques
+// Charge les caractÃ©ristiques
 final public function charger_caracs_groupes () {
 	global $bdd;
 	
@@ -752,19 +752,19 @@ final public function charger_caracs_groupes () {
 }
 
 
-// Modifie une caractéristique
+// Modifie une caractÃ©ristique
 final public function create_carac_groupe ($lib_carac_groupe, $ordre = "", $ref_carac_groupe = "") {
 	global $bdd;
 
 	$CARAC_GROUPE_ID_REFERENCE_TAG = 9;
 
 	// *************************************************
-	// Vérifications des données
+	// VÃ©rifications des donnÃ©es
 	if (!$lib_carac_groupe) {
 		$GLOBALS['_ALERTES']['lib_carac_groupe_vide'] = 1;
 	}
 
-	//si la ref_carac_groupe existe déjà on n'enregistre pas
+	//si la ref_carac_groupe existe dÃ©jÃ  on n'enregistre pas
 	
 	if ($ref_carac_groupe) {
 		$query = "SELECT ref_carac_groupe
@@ -777,13 +777,13 @@ final public function create_carac_groupe ($lib_carac_groupe, $ordre = "", $ref_
 		}
 	}
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 
 	// *************************************************
-	// Ordre d'affichage de la caractéristique
+	// Ordre d'affichage de la caractÃ©ristique
 	if (!$ordre) {
 		$query = "SELECT MAX(ordre) ordre FROM art_categs_caracs_groupes WHERE ref_art_categ = '".$this->ref_art_categ."' ";
 		$resultat = $bdd->query($query);
@@ -793,13 +793,13 @@ final public function create_carac_groupe ($lib_carac_groupe, $ordre = "", $ref_
 	}
 
 	// *************************************************
-	// Création de la référence
+	// CrÃ©ation de la rÃ©fÃ©rence
 	if (!$ref_carac_groupe) {
 		$reference = new reference ($CARAC_GROUPE_ID_REFERENCE_TAG);
 		$ref_carac_groupe = $reference->generer_ref();
 	}
 
-	// Création
+	// CrÃ©ation
 	$query = "INSERT INTO art_categs_caracs_groupes
 							(ref_carac_groupe, ref_art_categ, lib_carac_groupe, ordre)
 						VALUES ('".$ref_carac_groupe."', '".$this->ref_art_categ."', '".addslashes($lib_carac_groupe)."', '".$ordre."') ";
@@ -814,18 +814,18 @@ final public function maj_carac_groupe ($ref_carac_groupe, $lib_carac_groupe) {
 	global $bdd;
 
 	// *************************************************
-	// Vérifications des données
+	// VÃ©rifications des donnÃ©es
 	if (!$lib_carac_groupe) {
 		$GLOBALS['_ALERTES']['lib_carac_groupe_vide'] = 1;
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 
-	// Mise à jour
+	// Mise Ã  jour
 	$query = "UPDATE art_categs_caracs_groupes
 						SET lib_carac_groupe = '".addslashes($lib_carac_groupe)."'
 						WHERE ref_carac_groupe = '".$ref_carac_groupe."' ";
@@ -843,7 +843,7 @@ final public function modifier_carac_groupe_ordre ($ref_carac_groupe, $new_ordre
 		$GLOBALS['_ALERTES']['bad_ordre'] = 1;
 	}
 	
-	// Sélection de l'ordre actuel
+	// SÃ©lection de l'ordre actuel
 	$query = "SELECT ordre FROM art_categs_caracs_groupes WHERE ref_carac_groupe = '".$ref_carac_groupe."' ";
 	$resultat = $bdd->query ($query);
 	if (!($carac_groupe = $resultat->fetchObject())) { 
@@ -851,7 +851,7 @@ final public function modifier_carac_groupe_ordre ($ref_carac_groupe, $new_ordre
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -871,14 +871,14 @@ final public function modifier_carac_groupe_ordre ($ref_carac_groupe, $new_ordre
 
 	$bdd->beginTransaction();
 	
-	// Mise à jour des autres groupes
+	// Mise Ã  jour des autres groupes
 	$query = "UPDATE art_categs_caracs_groupes
 						SET ordre = ordre ".$variation." 1
 						WHERE ref_art_categ = '".$this->ref_art_categ."' && 
 									ordre ".$symbole1." '".$ordre_actu."' && ordre ".$symbole2." '".$new_ordre."' ";
 	$bdd->exec ($query);
 	
-	// Mise à jour de ce groupe
+	// Mise Ã  jour de ce groupe
 	$query = "UPDATE art_categs_caracs_groupes
 						SET ordre = '".$new_ordre."'
 						WHERE ref_carac_groupe = '".$ref_carac_groupe."'  ";
@@ -890,15 +890,15 @@ final public function modifier_carac_groupe_ordre ($ref_carac_groupe, $new_ordre
 }
 
 
-// Suppression une caractéristique
+// Suppression une caractÃ©ristique
 final public function delete_carac_groupe ($ref_carac_groupe) {
 	global $bdd;
 
 	// *************************************************
-	// Vérification de la possibilité de supprimer le groupe
+	// VÃ©rification de la possibilitÃ© de supprimer le groupe
 	
 	// *************************************************
-	// Si il y a eu un problème
+	// Si il y a eu un problÃ¨me
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -935,7 +935,7 @@ public function add_formule_tarif ($id_tarif, $formule_tarif) {
 	global $bdd;
 
 	// *************************************************
-	// Controles des données
+	// Controles des donnÃ©es
 	if (!formule_tarif::check_formule($formule_tarif)) { 
 		$GLOBALS['_ALERTES']['bad_formule_tarif'] = 1;
 	}
@@ -945,24 +945,24 @@ public function add_formule_tarif ($id_tarif, $formule_tarif) {
 	}
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 
 	// *************************************************
-	// Maj de la base de données
+	// Maj de la base de donnÃ©es
 	$query = "REPLACE INTO art_categs_formules_tarifs (ref_art_categ, id_tarif, formule_tarif)
 						VALUES ('".$this->ref_art_categ."', '".$id_tarif."', '".$formule_tarif."' ) ";
 	$bdd->exec ($query);
 
-	// Déclaration pour mise à jour globale du catalogue
+	// DÃ©claration pour mise Ã  jour globale du catalogue
 	declare_articles_maj ($id_tarif, "MAJ_TARIF_CATEG", $this->ref_art_categ);
 	return true;
 }
 
 
-// Mise à jour d'une formule de tarif
+// Mise Ã  jour d'une formule de tarif
 public function maj_formule_tarif ($id_tarif, $formule_tarif) {
 	return $this->add_formule_tarif ($id_tarif, $formule_tarif);
 }
@@ -976,7 +976,7 @@ public function delete_formule_tarif ($id_tarif) {
 						WHERE ref_art_categ = '".$this->ref_art_categ."' && id_tarif = '".$id_tarif."' ";
 	$bdd->exec ($query);
 
-	// Déclaration pour mise à jour globale du catalogue
+	// DÃ©claration pour mise Ã  jour globale du catalogue
 	declare_articles_maj ($id_tarif, "MAJ_TARIF_CATEG", $this->ref_art_categ);
 	return true;
 }
@@ -990,7 +990,7 @@ public function delete_formule_tarif ($id_tarif) {
 // FONCTIONS LIEES A LA GESTION DES TAXES
 // *************************************************************************************************************
 
-// Charge les taxes associées à cette catégorie d'article
+// Charge les taxes associÃ©es Ã  cette catÃ©gorie d'article
 function charger_taxes () {
 	global $bdd;
 
@@ -1071,9 +1071,9 @@ static function getRef_carac_groupe_from_ordre ($ref_art_categ, $ordre) {
 // *************************************************************************************************************
 
 /**
- * Cette fonction ne met pas à jour la BDD, pour mettre à jour la bdd utiliser maj_restriction
+ * Cette fonction ne met pas Ã  jour la BDD, pour mettre Ã  jour la bdd utiliser maj_restriction
  * @param enum('aucune','achat','vente') $restriction
- * @return boolean true si la modification s'est bien passé, false sinon
+ * @return boolean true si la modification s'est bien passÃ©, false sinon
  */
 private function setRestriction($restriction){
 		
@@ -1164,7 +1164,7 @@ function getDefaut_numero_compte_achat () {
 }
 
 /**
- * @return array(article) retourne un tableau d'article contenant tous les articles de la catégorie
+ * @return array(article) retourne un tableau d'article contenant tous les articles de la catÃ©gorie
  */
 public function &getList_articles(){
 	global $bdd;

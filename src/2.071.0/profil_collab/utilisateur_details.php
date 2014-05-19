@@ -25,13 +25,13 @@ $profils 	= $contact->getProfils();
 }
 //permission (7) Gestion des collaborateurs permission (8) Gestion des administrateurs
 if ((!$_SESSION['user']->check_permission ("7") && isset($profils[$COLLAB_ID_PROFIL])) || (!$_SESSION['user']->check_permission ("8") && isset($profils[$ADMIN_ID_PROFIL]))) { 
-	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accés ne vous permettent pas de visualiser ces informations</span>"; 
+	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accÃ©s ne vous permettent pas de visualiser ces informations</span>"; 
 } else {
 
 	$users = $utilisateur->liste_ref_user_actif();
 	
 	// *************************************************
-	// Profils à afficher
+	// Profils Ã  afficher
 	
 	$profils_avancees = array();
 	foreach ($_SESSION['profils'] as $profil) {

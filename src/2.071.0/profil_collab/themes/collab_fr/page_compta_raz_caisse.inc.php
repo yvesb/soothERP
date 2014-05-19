@@ -4,7 +4,7 @@
 // AFFICHAGE DU CHOIX DES CAISSES
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -30,7 +30,7 @@ foreach ($totaux_theoriques as $s_total) {
 <script type="text/javascript">
 Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); page.verify('compta_gestion2_caisse','compta_gestion2_caisse.php?id_caisse=<?php echo $_REQUEST["id_caisse"];?>','true','sub_content');}, false);
 </script>
-<div class="titre" style="width:60%; padding-left:140px"><?php echo htmlentities($compte_caisse->getLib_caisse()); ?> -  Remise à zéro
+<div class="titre" style="width:60%; padding-left:140px"><?php echo htmlentities($compte_caisse->getLib_caisse()); ?> -  Remise Ã  zÃ©ro
 </div>
 <div class="emarge" style="text-align:right" >
 <div  id="corps_gestion_caisses">
@@ -50,14 +50,14 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 			<div>
 				<div style="padding: 15px 25px; display:block" id="first_before_raz">
 					<div class="line_caisse_bottom"></div>
-					<div class="bold_caisse" style="font-size:16px">Remise à zéro de la caisse</div> 
+					<div class="bold_caisse" style="font-size:16px">Remise Ã  zÃ©ro de la caisse</div> 
 					<div class="line_caisse_top"></div>
 					<br />
 					<br />
-					<span style="color:#FF0000"> Attention, si vous réinitialisez cette caisse, toutes les valeurs seront remises à zéro sans préciser la destination des fonds.</span><br />
+					<span style="color:#FF0000">Â Attention, si vous rÃ©initialisez cette caisse, toutes les valeurs seront remises Ã  zÃ©ro sans prÃ©ciser la destination des fonds.</span><br />
 <br />
- <!--Attention, réinitialiser la caisse remet à zéro l'ensemble des valeurs sans préciser la destination des fonds.-->
-Vous devriez plutôt utiliser le transfert de fonds (pour transférer tout ou partie des fonds vers une autre caisse) ou la remise en banque (pour effectuer une remise en banque de tout ou partie des fonds). 
+Â <!--Attention, rÃ©initialiser la caisse remet Ã  zÃ©ro l'ensemble des valeurs sans prÃ©ciser la destination des fonds.-->
+Vous devriez plutÃ´t utiliser le transfert de fonds (pour transfÃ©rer tout ou partie des fonds vers une autre caisse) ou la remise en banque (pour effectuer une remise en banque de tout ou partie des fonds).Â 
 					<br />
 <br /><br />
 
@@ -70,7 +70,7 @@ Vous devriez plutôt utiliser le transfert de fonds (pour transférer tout ou part
 						
 						<br /><br /><br /><br />
 
-						<span id="ignorer_continuer" style="cursor:pointer; font-weight:bolder; text-decoration:underline" >Ignorer cet avertissement et réinitialiser la caisse</span>
+						<span id="ignorer_continuer" style="cursor:pointer; font-weight:bolder; text-decoration:underline" >Ignorer cet avertissement et rÃ©initialiser la caisse</span>
 						<br /><br />
 						</div>
 					</div>
@@ -107,7 +107,7 @@ Vous devriez plutôt utiliser le transfert de fonds (pour transférer tout ou part
 					<td>
 					<div>
 					<div class="line_caisse_bottom"></div>
-					<div class="bold_caisse" style="font-size:16px">Remise à zéro de la caisse</div> 
+					<div class="bold_caisse" style="font-size:16px">Remise Ã  zÃ©ro de la caisse</div> 
 					<div class="line_caisse_top"></div>
 					<br />
 					<br />
@@ -117,14 +117,14 @@ Vous devriez plutôt utiliser le transfert de fonds (pour transférer tout ou part
 								<td>&nbsp;</td>
 							</tr>
 							<tr>
-								<td><div class="bold_caisse">Solde Théorique &gt;&gt;</div></td>
+								<td><div class="bold_caisse">Solde ThÃ©orique &gt;&gt;</div></td>
 								<td align="right"><div class="bold_caisse" ><?php echo number_format($solde, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[1];?></div></td>
 								<td style="width:30%">&nbsp;</td>
 							</tr>
 						</table><br />
 
 						<?php if ($last_date_controle) {?>
-						<div style="float:left; color:#999999">Dernier contrôle: <?php echo date_Us_to_Fr($last_date_controle);?></div>
+						<div style="float:left; color:#999999">Dernier contrÃ´le: <?php echo date_Us_to_Fr($last_date_controle);?></div>
 						<?php } ?>
 								<br />
 								<br />
@@ -136,7 +136,7 @@ Vous devriez plutôt utiliser le transfert de fonds (pour transférer tout ou part
 						</table><br />
 						<br />
 						<br />
-						<div style=" text-align:center; font-weight:bolder"><span id="valid_raz" style="cursor:pointer; text-decoration:underline">Valider l'opération</span></div>
+						<div style=" text-align:center; font-weight:bolder"><span id="valid_raz" style="cursor:pointer; text-decoration:underline">Valider l'opÃ©ration</span></div>
 						
 					<form action="compta_raz_caisse_valid.php" target="formFrame" method="post" name="compta_raz_caisse_valid" id="compta_raz_caisse_valid">
 					<input id="id_compte_caisse" name="id_compte_caisse"  value="<?php echo $compte_caisse->getId_compte_caisse(); ?>"  type="hidden">

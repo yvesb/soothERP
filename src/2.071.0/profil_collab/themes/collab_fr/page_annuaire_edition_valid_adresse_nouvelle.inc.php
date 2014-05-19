@@ -5,7 +5,7 @@
 //  AJOUT DE L'ADRESSE D'UN CONTACT
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -60,9 +60,9 @@ if (isset($ref_adresse_previous)) {
 	<?php
 }
 
-if (isset($_INFOS['Création_adresse'])) {
+if (isset($_INFOS['CrÃ©ation_adresse'])) {
 	?>
-	window.parent.switchtagmobil('adresslist2','li','adressecontent', 'annuaire_edition_valid_view_adresse_nouvelle', '<?php echo $_INFOS['Création_adresse']?>')
+	window.parent.switchtagmobil('adresslist2','li','adressecontent', 'annuaire_edition_valid_view_adresse_nouvelle', '<?php echo $_INFOS['CrÃ©ation_adresse']?>')
 	<?php
 }
 ?>

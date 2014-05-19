@@ -72,7 +72,7 @@ public function create_doc () {
 	if (isset($GLOBALS['_OPTIONS']['CREATE_DOC']['id_stock'])) {
 		$this->id_stock = $GLOBALS['_OPTIONS']['CREATE_DOC']['id_stock'];
 	}
-	elseif (is_object($this->contact)) { // Stock de livraison par défaut pour ce fournisseur
+	elseif (is_object($this->contact)) { // Stock de livraison par dÃ©faut pour ce fournisseur
 		$infos_fournisseur = $this->contact->getProfil($FOURNISSEUR_ID_PROFIL);
 		if ($infos_fournisseur->getId_stock_livraison()) {
 			$this->id_stock = $infos_fournisseur->getId_stock_livraison();
@@ -88,7 +88,7 @@ public function create_doc () {
 }
 
 
-// Charge les informations supplémentaire du contact
+// Charge les informations supplÃ©mentaire du contact
 protected function load_infos_contact () {
 	$this->load_infos_contact_fournisseur();
 	parent::load_infos_contact();
@@ -107,7 +107,7 @@ protected function define_aff_tarif () {
 // *************************************************************************************************************
 
 
-//fonction de mise à jour de l'app_tarif du contact en cas de changement d'app_tarif du document
+//fonction de mise Ã  jour de l'app_tarif du contact en cas de changement d'app_tarif du document
 public function maj_app_tarifs ($new_app_tarifs) {
 	global $bdd;
 	global $FOURNISSEUR_ID_PROFIL;
@@ -118,12 +118,12 @@ public function maj_app_tarifs ($new_app_tarifs) {
 	}
 	$this->app_tarifs = $new_app_tarifs;
 	
-	// Maj de la base de données
+	// Maj de la base de donnÃ©es
 	$query = "UPDATE documents SET app_tarifs = '".$this->app_tarifs."'
 						WHERE ref_doc = '".$this->ref_doc."' ";
 	$bdd->exec ($query);
 	
-	//on met à jour l'app_tarif du contact en fonction du profil / doc dans le même temps
+	//on met Ã  jour l'app_tarif du contact en fonction du profil / doc dans le mÃªme temps
 	if (!is_object($this->contact)) { $this->contact = new contact ($this->ref_contact); }
 	if ($this->contact->charger_profiled_infos($FOURNISSEUR_ID_PROFIL)) {
 		$profil_tmp = $this->contact->getProfil($FOURNISSEUR_ID_PROFIL);
@@ -131,7 +131,7 @@ public function maj_app_tarifs ($new_app_tarifs) {
 	}
 }
 
-// Met à jour la ref_doc_externe
+// Met Ã  jour la ref_doc_externe
 public function maj_ref_doc_externe ($ref_doc_externe) {
 	global $bdd;	
 
@@ -154,17 +154,17 @@ public function maj_ref_doc_externe ($ref_doc_externe) {
 public function maj_line_ref_article_externe ($ref_doc_line , $ref_article_externe, $old_ref_article_externe = "", $ref_article) {
 	global $bdd;
 	
-	//si le document n'est pas annulé ou en cours de saisie, on met à jour les ref_externes de l'article
+	//si le document n'est pas annulÃ© ou en cours de saisie, on met Ã  jour les ref_externes de l'article
 	switch ($this->id_etat_doc) {
 	case 22: case 23:
-			//si un contact est défini et que na nouvelle ref_article_externe n'est pas vide
+			//si un contact est dÃ©fini et que na nouvelle ref_article_externe n'est pas vide
 			if ($this->ref_contact) {
 				//chargement de la ligne
 				$line = $this->charger_line ($ref_doc_line);
 				// on charge l'article
 				$article = new article ($ref_article);
 				$article->maj_ref_article_externe ($this->ref_contact, $ref_article_externe, $old_ref_article_externe, $line->pu_ht, $this->date_creation);
-				// en cas d'erreur, on ne met pas à jour la ref_externe dans la ligne de document
+				// en cas d'erreur, on ne met pas Ã  jour la ref_externe dans la ligne de document
 				if (count($GLOBALS['_ALERTES'])) {
 					return false;
 				}
@@ -172,14 +172,14 @@ public function maj_line_ref_article_externe ($ref_doc_line , $ref_article_exter
 		break;
 	}
 	
-	// pas de mise à jour si  les ref_articles_externes sont identiques
+	// pas de mise Ã  jour si  les ref_articles_externes sont identiques
 	if ($ref_article_externe == $old_ref_article_externe) {return false;}
-	//mise à jour de la ligne article si pas de problème concernant la mise à jour
+	//mise Ã  jour de la ligne article si pas de problÃ¨me concernant la mise Ã  jour
 	$query = "UPDATE doc_lines_def SET ref_article_externe = '".$ref_article_externe."' 
 						WHERE ref_doc_line = '".$ref_doc_line."' ";
 	$resultat = $bdd->query ($query);
 	if (!$resultat->rowCount()) {
-		// La ligne n'existe pas il faut la créer
+		// La ligne n'existe pas il faut la crÃ©er
 		$query = "INSERT INTO doc_lines_def (ref_doc_line, ref_article_externe)
 							VALUES ('".$ref_doc_line."', '".$ref_article_externe."') ";
 		$bdd->exec ($query);
@@ -193,7 +193,7 @@ public function maj_line_ref_article_externe ($ref_doc_line , $ref_article_exter
 
 
 
-// Met à jour la date d'échéance du devis
+// Met Ã  jour la date d'Ã©chÃ©ance du devis
 public function maj_date_echeance ($new_date_echeance) {
 	global $bdd;
 	
@@ -233,7 +233,7 @@ public function add_line_article_info_supp ($ref_doc_line, $ref_article) {
 						WHERE ref_doc_line = '".$ref_doc_line."' ";
 	$resultat = $bdd->query ($query);
 	if (!$resultat->rowCount()) {
-		// La ligne n'existe pas il faut la créer
+		// La ligne n'existe pas il faut la crÃ©er
 		$query = "INSERT INTO doc_lines_def (ref_doc_line, ref_article_externe)
 							VALUES ('".$ref_doc_line."', '".$ref_article_externe."') ";
 		$bdd->exec ($query);
@@ -242,7 +242,7 @@ public function add_line_article_info_supp ($ref_doc_line, $ref_article) {
 	return true;
 }
 
-//affichage dans les résultat du prix achat fournisseur ou de la valeur d'achat actuelle
+//affichage dans les rÃ©sultat du prix achat fournisseur ou de la valeur d'achat actuelle
 protected function select_article_pa ($article) {
 
 	$ref_externes = $article->charger_ref_article_externe_fournisseur($this->ref_contact);
@@ -256,16 +256,16 @@ protected function select_article_pa ($article) {
 // FONCTIONS LIEES A LA MODIFICATION DE L'ETAT D'UN DOCUMENT
 // *************************************************************************************************************
 
-// Action après de changer l'état du document
+// Action aprÃ¨s de changer l'Ã©tat du document
 protected function action_after_maj_etat ($old_etat_doc) {
 	
-	// Si passage a un état Devis Accepté, création du bon de commande lié
+	// Si passage a un Ã©tat Devis AcceptÃ©, crÃ©ation du bon de commande liÃ©
 	if ($this->id_etat_doc == 23) {
 		$this->generer_commande_fournisseur();
 	}
 	
 	if ($this->id_etat_doc == 22 || $this->id_etat_doc == 23 ) {
-		//mise à jour des ref_articles externes 
+		//mise Ã  jour des ref_articles externes 
 		if ($this->ref_contact) {
 			if (!$this->contenu_loaded) { $this->charger_contenu(); }
 			
@@ -297,7 +297,7 @@ function check_profils () {
 // FONCTIONS SPECIFIQUES AU TYPE DE DOC 
 // *************************************************************************************************************
 
-// Génère une commande fournisseur à partir de ce devis.
+// GÃ©nÃ¨re une commande fournisseur Ã  partir de ce devis.
 public function generer_commande_fournisseur ($lines = false) {
 
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['id_stock'] = $this->id_stock;
@@ -309,7 +309,7 @@ public function generer_commande_fournisseur ($lines = false) {
 }
 
 
-// Génère une devis fournisseur à partir de ce devis.
+// GÃ©nÃ¨re une devis fournisseur Ã  partir de ce devis.
 public function generer_devis_fournisseur ($lines = false) {
 
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['id_stock'] = $this->id_stock;
@@ -368,7 +368,7 @@ public function action_after_copie_line_from_line ($line) {
 protected function edit_doc ($id_edition_mode, $infos) {
 	global $bdd;
 
-	// Si édition d'un devis en saisie, le devis est pret!
+	// Si Ã©dition d'un devis en saisie, le devis est pret!
 	if ($this->id_etat_doc == 20) {
 		$this->maj_etat_doc(22);
 	}
@@ -384,7 +384,7 @@ public function auto_search_articles ($id_type_recherche) {
 	global $search;
 	
 	switch ($id_type_recherche) {
-	case 1: // Recherche des articles à recommander
+	case 1: // Recherche des articles Ã  recommander
 
 	$query_more['query_select']	= "	, zasa.seuil_alerte, zsa.qte ";
 	$query_more['query_join']		= "

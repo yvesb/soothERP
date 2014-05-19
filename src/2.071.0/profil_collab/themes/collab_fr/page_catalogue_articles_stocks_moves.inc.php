@@ -4,7 +4,7 @@
 // AFFICHAGE DES MOUVEMENTS DE STOCK
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -31,7 +31,7 @@ function barre_navigation($nbtotal,
 													
 {
 	// --------------------------------------------------------------------
-	global $cfg_nb_pages; // Nb de n° de pages affichées dans la barre
+	global $cfg_nb_pages; // Nb de nÂ° de pages affichÃ©es dans la barre
 global $DIR;
 	$barre= "";	$lien_on 	= "&nbsp;<a href='#' id='link_pagi_{cible}'>{lien}</a>&nbsp;
 								<script type='text/javascript'>
@@ -41,7 +41,7 @@ global $DIR;
 	// --------------------------------------------------------------------
     
 
-	// début << .
+	// dÃ©but << .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -61,7 +61,7 @@ global $DIR;
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
 
 
-	// précédent < .
+	// prÃ©cÃ©dent < .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -167,7 +167,7 @@ function image_html($img)
 
 //
 //
-//création de la barre de nav
+//crÃ©ation de la barre de nav
 //
 //
 
@@ -207,7 +207,7 @@ function image_html($img)
 		</td>
 		<td style="text-align:left; font-weight:bolder; width:120px;">
 		<div style="width:120px; text-align:left">
-		Référence
+		RÃ©fÃ©rence
 		</div>
 		</td>
 		<td style="text-align:left;font-weight:bolder;">
@@ -226,7 +226,7 @@ function image_html($img)
 			</div>
 		</td>
 		<td style="font-size:10px;font-weight:bolder; padding-right:10px; text-align:right; width:35px">
-			<div style="width:35px;">Entrée
+			<div style="width:35px;">EntrÃ©e
 			</div>
 		</td>
 		<td style="font-size:10px; font-weight:bolder;padding-right:10px; text-align:right; width:35px">

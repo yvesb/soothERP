@@ -9,8 +9,8 @@
 	<tr>
 		<td style="width:2%">&nbsp;</td>
 		<td style="width:25%;" class="bolder" >Fournisseur</td>
-		<td style="width:15%" class="bolder">Réf fournisseur</td>
-		<td style="width:23%" class="bolder">Libellé</td>
+		<td style="width:15%" class="bolder">RÃ©f fournisseur</td>
+		<td style="width:23%" class="bolder">LibellÃ©</td>
 		<td style="width:10%; text-align:right" class="bolder">Prix&nbsp;d'achat&nbsp;HT</td>
 		<td style="width:15%; text-align:center" class="bolder">Date </td>
 		<td style="width:8%" class="bolder"></td>
@@ -34,7 +34,7 @@
 			</td>
 			<td><?php echo $ref_ext->lib_article_externe;?>
 			</td>
-			<td style="text-align:right"><span  <?php //permission (6) Accès Consulter les prix d’achat
+			<td style="text-align:right"><span  <?php //permission (6) AccÃ¨s Consulter les prix dâ€™achat
 if (!$_SESSION['user']->check_permission ("6")) {?>style="display:none;"<?php } ?> ><?php echo number_format($ref_ext->pa_unitaire,$TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[1];?></span>
 			</td>
 			<td style="text-align:center"><?php echo date_Us_to_Fr($ref_ext->date_pa);?>

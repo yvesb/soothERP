@@ -4,7 +4,7 @@
 // ONGLET 
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -36,19 +36,19 @@ Event.observe("link_close_pop_up_histo_doc", "click",  function(evt){Event.stop(
     <tbody>
     <?php if (!isset($maj_doc)) {?>
       <tr>
-        <td class="document_head_list" colspan="2" style="text-align:center;">Création d'un modèle de contenu</td>
+        <td class="document_head_list" colspan="2" style="text-align:center;">CrÃ©ation d'un modÃ¨le de contenu</td>
       </tr>  
     <?php } ?>
       <tr>
-        <td>Libelé du modèle : </td>
+        <td>LibelÃ© du modÃ¨le : </td>
         <td><input id="lib_mod" name="lib_mod" type="text" class="classinput_xsize" value="<?php if (isset($maj_doc)) echo $document->getLibModele(); ?>" /></td>
       </tr>
       <tr>
-        <td>Description du modèle : </td>
+        <td>Description du modÃ¨le : </td>
         <td><input id="desc_mod" name="desc_mod" type="text" class="classinput_xsize" value="<?php if (isset($maj_doc)) echo $document->getDescModele(); ?>" /></td>
       </tr>
       <tr>
-        <td colspan="2">Choix des types de documents pour ce modèle : </td>
+        <td colspan="2">Choix des types de documents pour ce modÃ¨le : </td>
       </tr>
       <?php if (!isset($docs_types)) { $docs_types = $_SESSION['types_docs'];  } ?>
       <?php if (isset($maj_doc)) $types_checks = $document->getTypesDocs(); ?>

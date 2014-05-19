@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("grille_tarrifaire");
 check_page_variables ($page_variables);
 	
@@ -20,7 +20,7 @@ var_dump($grille_tarrifaire->lib_tarif);
 ?>
 
 <script type="text/javascript">
-//Mise à jour du panel client
+//Mise Ã  jour du panel client
 
 	$("client_ligne1").innerHTML = "<?php echo addslashes(preg_replace('(\r\n|\n|\r)','',$ligne1));?>";
 	$("client_ligne2").innerHTML = "<?php echo addslashes(preg_replace('(\r\n|\n|\r)','',$ligne2));?>";

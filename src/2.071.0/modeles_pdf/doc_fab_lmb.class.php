@@ -11,7 +11,7 @@ class pdf_content_doc_fab_lmb extends pdf_content_doc_standard {
 
 
 
-// Créé dans l'adresse du PDF
+// CrÃ©Ã© dans l'adresse du PDF
 protected function create_pdf_adresse () {
 	$decalage_gauche 	= 97;
 	$decalage_haut		= 40;
@@ -20,11 +20,11 @@ protected function create_pdf_adresse () {
 	$marge = 4;
 
 	// ***************************************************
-	// Code à Barre
+	// Code Ã  Barre
 	$this->pdf->Code39 ($decalage_gauche + $marge + 1, $decalage_haut +1, $this->ref_doc, 0.9, 7);
 
 	// ***************************************************
-	// article à fabriquer et numéros de série
+	// article Ã  fabriquer et numÃ©ros de sÃ©rie
 	$this->pdf->SetLeftMargin($decalage_gauche + $marge);
 	$this->pdf->RoundedRect ($decalage_gauche, $decalage_haut, $hauteur, $largeur, 4, 'D', '1234');
 
@@ -42,13 +42,13 @@ protected function create_pdf_adresse () {
 		$qte_fab = $this->document->getQte_fab();
 		$this->pdf->SetXY($decalage_gauche + $marge, $decalage_haut + $marge + 12);
 		$this->pdf->SetFont('Arial', '', 9);
-		$this->pdf->Write (4, "Quantité: ".$qte_fab );
+		$this->pdf->Write (4, "QuantitÃ©: ".$qte_fab );
 			
 		$array_sn = $this->document->getFab_sn ();
 		if (count($array_sn)) {
 			$this->pdf->SetXY($decalage_gauche + $marge, $decalage_haut + $marge + 16);
 			$this->pdf->SetFont('Arial', '', 9);
-			$this->pdf->Write (4, "Numéros de série: " );
+			$this->pdf->Write (4, "NumÃ©ros de sÃ©rie: " );
 		}
 		
 		$fab_sn = implode(", ",$array_sn);

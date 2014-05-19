@@ -4,7 +4,7 @@
 // PAGE POUR CHOISIR LE TYPE ET LE MODELE PDF D'UN COURRIER 
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -56,7 +56,7 @@ $case_selected = "";
 						<td></td>
 						<td id="modele_<?php echo $index_modele;?>" width="110px" style="text-align:center;<?php echo $style_case_selected; ?>" >
 							<?php
-							//@TODO COURRIER : modele pdf : une fois que les modeles seront définis et terminés, mettre une miniature du modele pdf ici en image
+							//@TODO COURRIER : modele pdf : une fois que les modeles seront dÃ©finis et terminÃ©s, mettre une miniature du modele pdf ici en image
 							?>
 							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/courrier_pdf.jpg" height="132" width="94" style="margin-top:8px;"/><br/>
 							<div style="margin-bottom:5px; font-size:8pt; color:#671584;">
@@ -92,7 +92,7 @@ $case_selected = "";
 		</tr>
 		<?php
 		}
-		$nb_restant = $nb_modeles %4; //Si >0 alors, je fais une dernière ligne incomplete
+		$nb_restant = $nb_modeles %4; //Si >0 alors, je fais une derniÃ¨re ligne incomplete
 		if ($nb_restant >0){ ?>
 		<tr>
 			<?php // des cellules avec un modele
@@ -113,7 +113,7 @@ $case_selected = "";
 						<td></td>
 						<td id="modele_<?php echo $index_modele;?>" width="110px" style="text-align:center;<?php echo $style_case_selected; ?>" >
 							<?php
-							//@TODO COURRIER : modele pdf : une fois que les modeles seront définis et terminés, mettre une miniature du modele pdf ici en image
+							//@TODO COURRIER : modele pdf : une fois que les modeles seront dÃ©finis et terminÃ©s, mettre une miniature du modele pdf ici en image
 							?>
 							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/courrier_pdf.jpg" height="132" width="94" style="margin-top:8px;"/><br/>
 							<div style="margin-bottom: 5px;font-size:8pt; color:#671584;">
@@ -168,11 +168,11 @@ $case_selected = "";
 		</tr>
 	</table>
 	
-	<!-- Pour définir le type de mail et le modele PDF -->
+	<!-- Pour dÃ©finir le type de mail et le modele PDF -->
 	<input type="hidden" id="id_type_courrier" name="id_type_courrier" value="<?php echo $id_type_courrier_selected; ?>" />
 	<input type="hidden" id="id_pdf_modele" name="id_pdf_modele" value="<?php echo $id_pdf_modele_selected; ?>" />
 	
-	<!-- input pour mémoriser la case cochée -->
+	<!-- input pour mÃ©moriser la case cochÃ©e -->
 	<input type="hidden" id="case_selected" name="case_selected" value="<?php echo $case_selected; ?>" />
 	
 	<!-- Page source et Page cible -->

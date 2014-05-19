@@ -1,10 +1,10 @@
 <?php
 
 // *************************************************************************************************************
-// GESTION des catégories de commercial
+// GESTION des catÃ©gories de commercial
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 

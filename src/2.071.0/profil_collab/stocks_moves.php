@@ -76,7 +76,7 @@ if (isset($_REQUEST["id_stock"])) {
 		if (!$query_where) { $query_where .= "WHERE "; }
 		$query_where .=  " sm.date <= '".date_Fr_to_Us($search['date_fin'])." 23:59:59' "; 
 	}
-	// Catégorie
+	// CatÃ©gorie
 	if ($search['ref_art_categ']) { 
 		$query_where 	.= " && a.ref_art_categ = '".$search['ref_art_categ']."'";
 	}
@@ -86,7 +86,7 @@ if (isset($_REQUEST["id_stock"])) {
 	}
 	
  
-	// Sélection des mouvements stocks
+	// SÃ©lection des mouvements stocks
 	$stocks_moves = array();
 	$query = "SELECT sm.ref_stock_move, sm.id_stock, s.lib_stock, s.abrev_stock, sm.qte, sm.date, sm.ref_doc, sm.ref_article, d.id_etat_doc, d.id_type_doc, de.lib_etat_doc, a.lib_article,
 										an.ref_contact, an.nom
@@ -107,7 +107,7 @@ if (isset($_REQUEST["id_stock"])) {
 	while ($var = $resultat->fetchObject()) { $stocks_moves[] = $var; }
 	unset ($var, $resultat, $query);
 	
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 	$query = "SELECT COUNT(sm.ref_stock_move) nb_fiches
 						FROM stocks_moves sm 
 							LEFT JOIN articles a ON a.ref_article = sm.ref_article

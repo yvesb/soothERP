@@ -25,7 +25,7 @@
 			$params_p.= "&mode_edition=".$edition_mode->id_edition_mode;
 			if (isset($code_pdf_modele))
 				$params_p.= "&code_pdf_modele=".$code_pdf_modele;
-			if (isset($filigrane)) //@TODO COURRIER : Gestion des filigranes : passage en paramètre de la variable filigrane
+			if (isset($filigrane)) //@TODO COURRIER : Gestion des filigranes : passage en paramÃ¨tre de la variable filigrane
 				$params_p.="&filigrane=".$filigrane;
 
 			switch ($edition_mode->id_edition_mode) {

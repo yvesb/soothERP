@@ -12,11 +12,11 @@ require ($DIR."_session.inc.php");
 
 if (!$_SESSION['user']->check_permission ("13")) {
 	//on indique l'interdiction et on stop le script
-	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accés ne vous permettent pas de visualiser ce type de page</span>";
+	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accÃ©s ne vous permettent pas de visualiser ce type de page</span>";
 	exit();
 }
 // *************************************************
-// Données pour le formulaire et la recherche
+// DonnÃ©es pour le formulaire et la recherche
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -65,10 +65,10 @@ if (isset($_REQUEST['id_profil'])) {
 		}
 	}
 }
-//chargement de la liste des fournisseurs et des informations de plan comptable associées
+//chargement de la liste des fournisseurs et des informations de plan comptable associÃ©es
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_select 	= "";
 	$query_join 	= "";
 	$query_join_count 	= "";
@@ -123,7 +123,7 @@ if (isset($_REQUEST['recherche'])) {
 	//echo nl2br ($query);
 	unset ($fiche, $resultat, $query);
 
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 	$query = "SELECT af.ref_fournisseur
 						FROM annu_fournisseur af 
 							LEFT JOIN annuaire a ON a.ref_contact = af.ref_fournisseur

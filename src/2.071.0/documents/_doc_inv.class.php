@@ -56,7 +56,7 @@ public function open_doc ($select = "", $left_join = "") {
 	$this->art_categs 							=	$tmp_art_categ;
 	$this->art_categs_constructeurs =	$tmp_constructeur;
 
-	// Blocage des quantités
+	// Blocage des quantitÃ©s
 	if ($this->id_etat_doc == 46) {
 		$this->quantite_locked = true;
 	}
@@ -195,7 +195,7 @@ public function supprime_art_categ ($art_categ) {
 // FONCTIONS DE GESTION DU CONTENU
 // *************************************************************************************************************
 
-//inderdit les quantités négatives
+//inderdit les quantitÃ©s nÃ©gatives
 public function maj_line_qte ($ref_doc_line, $new_qte) {
 	global $bdd;
 
@@ -221,7 +221,7 @@ protected function pre_remplir($art_categ) {
 	global $bdd;
 	
 	$where = "";
-	//insertion des lignes infos pour les différentes catégories
+	//insertion des lignes infos pour les diffÃ©rentes catÃ©gories
 	$infos = array();
 	$infos['type_of_line']	=	"information";
 	$infos['titre']	=	$this->liste_art_categ[$art_categ]->lib_art_categ;
@@ -238,13 +238,13 @@ protected function pre_remplir($art_categ) {
 	$infos['texte']	=	"";
 	$this->add_line ($infos);
 	
-	//on charge le contenu actuel du doc pour comparer et n'enregistrer que les articles non encore insérés 
+	//on charge le contenu actuel du doc pour comparer et n'enregistrer que les articles non encore insÃ©rÃ©s 
 	$exist_articles = array();
 	if (!$this->contenu_materiel_loaded) { $this->charger_contenu_materiel (); }
 	foreach ($this->contenu_materiel as $doc_line) {
 		$exist_articles[$doc_line->ref_article] = $doc_line->ref_article;
 	}
-	//insertion des articles correspondant à la catégorie
+	//insertion des articles correspondant Ã  la catÃ©gorie
 	/*
 	$query = "SELECT sa.ref_stock_article, a.ref_article, SUM(sa.qte) qte
 					FROM articles a
@@ -264,7 +264,7 @@ protected function pre_remplir($art_categ) {
 		if (!in_array($article->ref_article, $exist_articles)) {
 			$infos = array();
 			$infos['type_of_line']	=	"article";
-			//numero de série
+			//numero de sÃ©rie
 			$infos['sn']						= array();
 			$limit= "";
 			if ($article->qte > 0) {$limit= "LIMIT 0, ".$article->qte;}
@@ -284,14 +284,14 @@ protected function pre_remplir($art_categ) {
 	}
 }
 
-// Chargement des informations supplémentaires concernant les numéros de série 
+// Chargement des informations supplÃ©mentaires concernant les numÃ©ros de sÃ©rie 
 protected function doc_line_sn_infos_supp () {
 	$query['select']		= ", IF (ISNULL(sas.numero_serie), 0, 1) as sn_exist";
 	$query['left_join'] = " LEFT JOIN stocks_articles_sn sas ON sas.numero_serie = dls.numero_serie";
 	return $query;
 }
 
-// Chargement des informations supplémentaires concernant les lignes
+// Chargement des informations supplÃ©mentaires concernant les lignes
 protected function doc_line_infos_supp () {
 	$query['select']		= ", sa.ref_stock_article, sa.qte as qte_en_stock";
 	$query['left_join'] = " LEFT JOIN stocks_articles sa ON a.ref_article = sa.ref_article && sa.id_stock = '".$this->id_stock."'";
@@ -301,15 +301,15 @@ protected function doc_line_infos_supp () {
 // FONCTIONS LIEES A LA MODIFICATION DE L'ETAT D'UN DOCUMENT
 // *************************************************************************************************************
 
-// Action avant de changer l'état du document
+// Action avant de changer l'Ã©tat du document
 protected function action_before_maj_etat ($new_etat_doc) {
 	global $bdd;
 	
 	switch ($this->id_etat_doc) {
 		case 44: case 45: 
-			// Livraison du INV donc mise à zéro du stock
+			// Livraison du INV donc mise Ã  zÃ©ro du stock
 			if ($new_etat_doc == 46) {
-				//supression des articles non liés à une catégorie
+				//supression des articles non liÃ©s Ã  une catÃ©gorie
 				if (!$this->contenu_materiel_loaded) { $this->charger_contenu_materiel (); }
 			
 				foreach ($this->contenu_materiel as $doc_line) {
@@ -359,10 +359,10 @@ protected function action_before_maj_etat ($new_etat_doc) {
 						$query = "DELETE FROM stocks_articles_sn 
 											WHERE ref_stock_article = '".$article->ref_stock_article."' ";
 						$bdd->exec ($query);
-						// Inscription dans le mouvement de stock pour remise à zéro du stock
+						// Inscription dans le mouvement de stock pour remise Ã  zÃ©ro du stock
 						$_SESSION['stocks'][$this->id_stock]->genere_move_stock ($this->ref_doc, $article->ref_article, -$article->qte );
 						
-						//pour tout les articles ne fesant pas partie de l'inventaire on vas créer un mouvement de stock vers zéro pour indiquer son traitement dans l'inventaire	
+						//pour tout les articles ne fesant pas partie de l'inventaire on vas crÃ©er un mouvement de stock vers zÃ©ro pour indiquer son traitement dans l'inventaire	
 						$set_article_to_zero = true;
 						foreach ($this->contenu_materiel as $doc_line) {
 							if ($article->ref_article == $doc_line->ref_article) { $set_article_to_zero = false; break;}
@@ -383,7 +383,7 @@ protected function action_before_maj_etat ($new_etat_doc) {
 }
 
 
-// Action après de changer l'état du document
+// Action aprÃ¨s de changer l'Ã©tat du document
 protected function action_after_maj_etat ($old_etat_doc) {
 	global $bdd;
 
@@ -422,7 +422,7 @@ function check_profils () {
 // FONCTIONS SPECIFIQUES AU TYPE DE DOC 
 // *************************************************************************************************************
 
-//fonctions de mise à jour lignes si non bloquée 
+//fonctions de mise Ã  jour lignes si non bloquÃ©e 
 protected function add_line_article ($infos) {
 	if (!$this->quantite_locked) {
 		parent::add_line_article ($infos);

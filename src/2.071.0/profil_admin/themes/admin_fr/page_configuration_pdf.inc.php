@@ -4,7 +4,7 @@
 // CNOFIG DES DONNEES pdf
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -21,11 +21,11 @@ check_page_variables ($page_variables);
 ?>
 <script type="text/javascript">
 tableau_smenu[0] = Array("smenu_entreprise", "smenu_entreprise.php" ,"true" ,"sub_content", "Entreprise");
-tableau_smenu[1] = Array('configuration_pdf','configuration_pdf.php',"true" ,"sub_content", "Documents commerciaux - Paramètres généraux");
+tableau_smenu[1] = Array('configuration_pdf','configuration_pdf.php',"true" ,"sub_content", "Documents commerciaux - ParamÃ¨tres gÃ©nÃ©raux");
 update_menu_arbo();
 </script>
 <div class="emarge">
-<p class="titre">Documents commerciaux - Paramètres généraux</p>
+<p class="titre">Documents commerciaux - ParamÃ¨tres gÃ©nÃ©raux</p>
 
 
 <div class="contactview_corps">
@@ -48,38 +48,38 @@ update_menu_arbo();
 			<a href="<?php echo $IMAGES_DIR.$DOCUMENTS_IMG_LOGO;?>" target="_blank" style="font-weight:normal; color:#000000">voir l'ent&ecirc;te actuelle</a> </td>
 		<td>
 		<input type="file" accept="image/*" size="35" name="image"    class="classinput_nsize" />		</td>
-		<td class="infos_config">Cette image sera utilisée sur les documents imprimés au format pdf (factures, devis, etc...), nous vous recommandons d'utiliser une image sur fond blanc de taille 1000 pixels par 1000 pixels maximum format  jpg.		</td>
+		<td class="infos_config">Cette image sera utilisÃ©e sur les documents imprimÃ©s au format pdf (factures, devis, etc...), nous vous recommandons d'utiliser une image sur fond blanc de taille 1000 pixels par 1000 pixels maximum format  jpg.		</td>
 	</tr>
 	<tr>
 		<td colspan="3"> </td>
 	</tr>
 	<tr>
-		<td class="titre_config" colspan="3">Informations affichées en bas de page des documents au format pdf :		</td>
+		<td class="titre_config" colspan="3">Informations affichÃ©es en bas de page des documents au format pdf :		</td>
 	</tr>
 	<tr>
 		<td colspan="3"> </td>
 	</tr>
 	<tr>
-		<td class="lib_config">Bas de page, première ligne gauche:		</td>
+		<td class="lib_config">Bas de page, premiÃ¨re ligne gauche:		</td>
 		<td>
-		<input id="pied_de_page_gauche_0" name="pied_de_page_gauche_0" value="<?php echo  str_replace("€", "&euro;", htmlentities($PIED_DE_PAGE_GAUCHE_0)); ?>" type="text" class="classinput_xsize" maxlength="70" />		</td>
+		<input id="pied_de_page_gauche_0" name="pied_de_page_gauche_0" value="<?php echo  str_replace("â‚¬", "&euro;", htmlentities($PIED_DE_PAGE_GAUCHE_0)); ?>" type="text" class="classinput_xsize" maxlength="70" />		</td>
 		<td class="infos_config">Indiquez le nom de l'entreprise, son capital et son adresse.		</td>
 	</tr>
 	<tr>
 		<td colspan="3"> </td>
 	</tr>
 	<tr>
-		<td class="lib_config">Bas de page, deuxième ligne gauche:		</td>
+		<td class="lib_config">Bas de page, deuxiÃ¨me ligne gauche:		</td>
 		<td>
-		<input id="pied_de_page_gauche_1" name="pied_de_page_gauche_1" value="<?php echo str_replace("€", "&euro;", htmlentities($PIED_DE_PAGE_GAUCHE_1)); ?>" type="text" class="classinput_xsize" maxlength="70" />		</td>
-		<td class="infos_config">Indiquez le numéro de Siret, de TVA intracommunautaire et le code APE de l'entreprise.		</td>
+		<input id="pied_de_page_gauche_1" name="pied_de_page_gauche_1" value="<?php echo str_replace("â‚¬", "&euro;", htmlentities($PIED_DE_PAGE_GAUCHE_1)); ?>" type="text" class="classinput_xsize" maxlength="70" />		</td>
+		<td class="infos_config">Indiquez le numÃ©ro de Siret, de TVA intracommunautaire et le code APE de l'entreprise.		</td>
 	</tr>
 		<td colspan="3"> </td>
 	</tr>
 	<tr>
-		<td class="lib_config">Bas de page, première ligne droite:		</td>
+		<td class="lib_config">Bas de page, premiÃ¨re ligne droite:		</td>
 		<td>
-		<input id="pied_de_page_droit_0" name="pied_de_page_droit_0" value="<?php echo str_replace("€", "&euro;", htmlentities($PIED_DE_PAGE_DROIT_0)); ?>" type="text" class="classinput_xsize" maxlength="70" />		</td>
+		<input id="pied_de_page_droit_0" name="pied_de_page_droit_0" value="<?php echo str_replace("â‚¬", "&euro;", htmlentities($PIED_DE_PAGE_DROIT_0)); ?>" type="text" class="classinput_xsize" maxlength="70" />		</td>
 		<td class="infos_config">Indiquez l'adresse Internet ou autres informations.		</td>
 	</tr>
 	<tr>
@@ -87,15 +87,15 @@ update_menu_arbo();
 		<td colspan="3"> </td>
 	</tr>
 	<tr>
-		<td class="lib_config">Bas de page, deuxième ligne droite:		</td>
+		<td class="lib_config">Bas de page, deuxiÃ¨me ligne droite:		</td>
 		<td>
-		<input id="pied_de_page_droit_1" name="pied_de_page_droit_1" value="<?php echo str_replace("€", "&euro;", htmlentities($PIED_DE_PAGE_DROIT_1)); ?>" type="text" class="classinput_xsize" maxlength="70" />		</td>
+		<input id="pied_de_page_droit_1" name="pied_de_page_droit_1" value="<?php echo str_replace("â‚¬", "&euro;", htmlentities($PIED_DE_PAGE_DROIT_1)); ?>" type="text" class="classinput_xsize" maxlength="70" />		</td>
 		<td class="infos_config">Indiquez l'adresse Email ou autres informations.		</td>
 	</tr>
 	<tr>
 		<td colspan="3"> </td>
 	</tr>	<tr>
-		<td class="titre_config" colspan="3">Paramètres utilisés dans les documents:		</td>
+		<td class="titre_config" colspan="3">ParamÃ¨tres utilisÃ©s dans les documents:		</td>
 	</tr>
 	<tr>
 		<td colspan="3"> </td>
@@ -120,61 +120,61 @@ update_menu_arbo();
 		<td ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 	</tr>	
 	<tr>
-		<td class="titre_config" colspan="3">Définition de délais :	</td>
+		<td class="titre_config" colspan="3">DÃ©finition de dÃ©lais :	</td>
 	</tr>	
 	<tr>
 		<td colspan="2"> </td>
 	</tr>
 		<tr>
-		<td class="lib_config">Délai pour devis client récent:		</td>
+		<td class="lib_config">DÃ©lai pour devis client rÃ©cent:		</td>
 		<td>
 		<input id="delai_devis_client_recent" name="delai_devis_client_recent" value="<?php echo $DELAI_DEVIS_CLIENT_RECENT;?>" type="text" size="4" class="classinput_nsize" maxlength="60" />	jours	</td>
-		<td class="infos_config">Délai pendant lequel un devis client est "récent"</td>
+		<td class="infos_config">DÃ©lai pendant lequel un devis client est "rÃ©cent"</td>
 	</tr>
 	<tr>
 		<td colspan="3"> </td>
 	</tr>
 	</tr>
 		<tr>
-		<td class="lib_config">Délai pour devis client périmé:		</td>
+		<td class="lib_config">DÃ©lai pour devis client pÃ©rimÃ©:		</td>
 		<td>
 		<input id="delai_devis_client_perime" name="delai_devis_client_perime" value="<?php echo $DELAI_DEVIS_CLIENT_RETARD;?>" type="text" size="4" class="classinput_nsize" maxlength="60" />	jours	</td>
-		<td class="infos_config">Délai pendant lequel un devis client est "périmé"</td>
+		<td class="infos_config">DÃ©lai pendant lequel un devis client est "pÃ©rimÃ©"</td>
 	</tr>
 	<tr>
 		<td colspan="3"> </td>
 	</tr>
 	<tr>
-		<td class="lib_config">Délai pour commande client récente:		</td>
+		<td class="lib_config">DÃ©lai pour commande client rÃ©cente:		</td>
 		<td>
 		<input id="delai_commande_client_recente" name="delai_commande_client_recente" value="<?php echo $DELAI_COMMANDE_CLIENT_RECENTE;?>" type="text" size="4" class="classinput_nsize" maxlength="60" />	jours	</td>
-		<td class="infos_config">Délai pendant lequel une commande client est "récente"</td>
+		<td class="infos_config">DÃ©lai pendant lequel une commande client est "rÃ©cente"</td>
 	</tr>
 	<tr>
 		<td colspan="3"> </td>
 	</tr>
 	<tr>
-		<td class="lib_config">Délai pour commande client en retard:		</td>
+		<td class="lib_config">DÃ©lai pour commande client en retard:		</td>
 		<td>
 		<input id="delai_commande_client_retard" name="delai_commande_client_retard" value="<?php echo $DELAI_COMMANDE_CLIENT_RETARD;?>" type="text" size="4" class="classinput_nsize" maxlength="60" />	jours	</td>
-		<td class="infos_config">Délai après lequel une commande client est "en retard"</td>
+		<td class="infos_config">DÃ©lai aprÃ¨s lequel une commande client est "en retard"</td>
 	</tr>
 		<td colspan="3"> </td>
 	</tr>
 	<tr>
-		<td class="lib_config">Délai pour commande fournisseur récente:		</td>
+		<td class="lib_config">DÃ©lai pour commande fournisseur rÃ©cente:		</td>
 		<td>
 		<input id="delai_commande_fournisseur_recente" name="delai_commande_fournisseur_recente" value="<?php echo $DELAI_COMMANDE_FOURNISSEUR_RECENTE;?>" type="text" size="4" class="classinput_nsize" maxlength="60" />	jours	</td>
-		<td class="infos_config">Délai pendant lequel une commande fournisseur est "récente"</td>
+		<td class="infos_config">DÃ©lai pendant lequel une commande fournisseur est "rÃ©cente"</td>
 	</tr>
 	<tr>
 		<td colspan="3"> </td>
 	</tr>
 	<tr>
-		<td class="lib_config">Délai pour commande fournisseur en retard:		</td>
+		<td class="lib_config">DÃ©lai pour commande fournisseur en retard:		</td>
 		<td>
 		<input id="delai_commande_fournisseur_retard" name="delai_commande_fournisseur_retard" value="<?php echo $DELAI_COMMANDE_FOURNISSEUR_RETARD;?>" type="text" size="4" class="classinput_nsize" maxlength="60" />	jours	</td>
-		<td class="infos_config">Délai après lequel une commande fournisseur est "en retard"</td>
+		<td class="infos_config">DÃ©lai aprÃ¨s lequel une commande fournisseur est "en retard"</td>
 	</tr>
 		<td colspan="3"> </td>
 	</tr>
@@ -193,7 +193,7 @@ update_menu_arbo();
 		<td style="width:39%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 	</tr>	
 	<tr>
-		<td class="titre_config" colspan="3">Filigranes d'arrière plan des documents:	</td>
+		<td class="titre_config" colspan="3">Filigranes d'arriÃ¨re plan des documents:	</td>
 	</tr>
 <?php
 $ordre=1;
@@ -310,7 +310,7 @@ foreach ($liste_filigranes as $fili) {
 		<td style="width:39%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 	</tr>	
 	<tr>
-		<td class="titre_config" colspan="3">Ajout d'un nouveau modèle d'impression PDF:	</td>
+		<td class="titre_config" colspan="3">Ajout d'un nouveau modÃ¨le d'impression PDF:	</td>
 	</tr>
 	<tr>
 		<td colspan="3"> </td>
@@ -321,7 +321,7 @@ foreach ($liste_filigranes as $fili) {
 <form action="configuration_pdf_add.php" enctype="multipart/form-data" method="POST"  id="configuration_pdf_add" name="configuration_pdf_add" target="formFrame" >
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
-				<td style="width:35%" class="lib_config">Type de document concerné : </td>
+				<td style="width:35%" class="lib_config">Type de document concernÃ©Â : </td>
 				<td style="width:26%">
 					<select name="id_type_doc" id="choix_type_doc" class="classinput_xsize">
 						<option value=""></option>
@@ -339,39 +339,39 @@ foreach ($liste_filigranes as $fili) {
 		</table>
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" style="display:none" id="step1_a">
 			<tr>
-				<td style="width:35%" class="lib_config">Création de ce modèle </td>
+				<td style="width:35%" class="lib_config">CrÃ©ation de ce modÃ¨le </td>
 				<td style="width:26%">
-					à partir d'un modèle existant
+					Ã  partir d'un modÃ¨le existant
 				</td>
 				<td style="text-align:left"><input type="radio" name="choix_source" id="exist_model" value="1" /></td>
 			</tr>
 			<tr>
 				<td> </td>
 				<td>
-					à partir des fichiers programme
+					Ã  partir des fichiers programme
 				</td>
 				<td style="text-align:left"><input type="radio" name="choix_source" id="new_model" value="2" /></td>
 			</tr>
 		</table>
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" style="display:none" id="step2_a">
 			<tr>
-				<td style="width:35%" class="lib_config">Nouveau nom de ce modèle: </td>
+				<td style="width:35%" class="lib_config">Nouveau nom de ce modÃ¨le: </td>
 				<td style="width:26%">
 					<input type="text" name="lib_modele" id="lib_modele" value="" class="classinput_xsize" />
 				</td>
-				<td class="infos_config">&nbsp;Ex : Facture Client XXX;</td>
+				<td class="infos_config">&nbsp;ExÂ : Facture Client XXX;</td>
 			</tr>
 			<tr>
-				<td class="lib_config">Description de ce modèle: </td>
+				<td class="lib_config">Description de ce modÃ¨le: </td>
 				<td>
 					<textarea name="desc_modele" id="desc_modele" class="classinput_xsize" ></textarea>
 				</td>
-				<td class="infos_config">&nbsp;Ex : Facture avec RIB</td>
+				<td class="infos_config">&nbsp;ExÂ : Facture avec RIB</td>
 			</tr>
 		</table>
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" style="display:none" id="step2_b">
 			<tr>
-				<td style="width:35%" class="lib_config">Modèle source:  </td>
+				<td style="width:35%" class="lib_config">ModÃ¨le source:  </td>
 				<td style="width:26%">
 					<select name="id_pdf_modele" id="choix_id_pdf_modele" class="classinput_xsize">
 					<?php 

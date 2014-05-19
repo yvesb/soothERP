@@ -15,19 +15,19 @@ require ($DIR."_session.inc.php");
 
 
 if (!isset($_REQUEST['ref_article'])){
-	echo "la référence de l'article n'est pas spécifiée.";
+	echo "la rÃ©fÃ©rence de l'article n'est pas spÃ©cifiÃ©e.";
 	exit;
 }
 $article = new article($_REQUEST['ref_article']);
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 // *************************************************
 
 $nb_fiches = 0;
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 // *************************************************
 
 $fiches = array();
@@ -75,8 +75,8 @@ header('Content-Type: application/download');
 header('Content-Type: application/csv; name="listedesabonnes'.urlencode(str_replace (CHR(13), "" ,str_replace (CHR(10), "" ,preg_replace ("#((\r\n)+)#", "", (($article->getLib_article())))))).'.csv"');
 header('Content-Disposition: attachment; filename=listedesabonnes'.urlencode(str_replace (CHR(13), "" ,str_replace (CHR(10), "" ,preg_replace ("#((\r\n)+)#", "", (($article->getLib_article())))))).'.csv;'); 
 
-$ligne= "Référence article;Libellé article;Quantité à livrer;Date livraison;Référence BLC;";
-$ligne.="Nom du client 1;Nom du client 2;Catégorie de client;Adresse 1;Adresse 2;Adresse 3;Code Postal;Ville;Pays;Informations Adresse;tel 1;tel 2\n";
+$ligne= "RÃ©fÃ©rence article;LibellÃ© article;QuantitÃ© Ã  livrer;Date livraison;RÃ©fÃ©rence BLC;";
+$ligne.="Nom du client 1;Nom du client 2;CatÃ©gorie de client;Adresse 1;Adresse 2;Adresse 3;Code Postal;Ville;Pays;Informations Adresse;tel 1;tel 2\n";
 
 foreach ($fiches as $fiche) {
 	

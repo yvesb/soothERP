@@ -8,11 +8,11 @@ final class magasin {
 	private $id_magasin;
 
 	private $lib_magasin;			// Nom du magasin
-	private $abrev_magasin;		// Abréviation du Nom du magasin
-	private $id_mag_enseigne;			// Enseigne utilisée
-	private $id_stock;				// Stock utilisé
-	private $id_tarif;				// Liste de prix par défaut
-	private $mode_vente;			// Mode de vente par défaut: VPC ou VAC
+	private $abrev_magasin;		// AbrÃ©viation du Nom du magasin
+	private $id_mag_enseigne;			// Enseigne utilisÃ©e
+	private $id_stock;				// Stock utilisÃ©
+	private $id_tarif;				// Liste de prix par dÃ©faut
+	private $mode_vente;			// Mode de vente par dÃ©faut: VPC ou VAC
 	private $actif;						// Magasin actif ?
 
 	private $lib_enseigne;
@@ -23,16 +23,16 @@ final class magasin {
 function __construct ($id_magasin = 0, $infos_magasin = NULL) {
 	global $bdd;
 
-	// Controle si objet créé depuis une requete
+	// Controle si objet crÃ©Ã© depuis une requete
 	if (isset($infos_magasin)) {
 		$this->charger_from_object($infos_magasin);
 		return true;
 	}
 
-	// Controle si le id_magasin est précisé
+	// Controle si le id_magasin est prÃ©cisÃ©
 	if (!$id_magasin) { return false; }
 
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT m.id_magasin, m.lib_magasin, m.abrev_magasin, m.id_stock, m.id_tarif, m.mode_vente, m.actif,  
 									 t.lib_tarif, s.lib_stock, s.ref_adr_stock, 
 									 me.id_mag_enseigne, me.lib_enseigne
@@ -44,10 +44,10 @@ function __construct ($id_magasin = 0, $infos_magasin = NULL) {
 						ORDER BY m.lib_magasin";
 	$resultat = $bdd->query ($query);
 
-	// Controle si le id_magasin est trouvé
+	// Controle si le id_magasin est trouvÃ©
 	if (!$magasin = $resultat->fetchObject()) { return false; }
 
-	// Attribution des informations à l'objet
+	// Attribution des informations Ã  l'objet
 	$this->id_magasin 	= $id_magasin;
 	$this->lib_magasin	= $magasin->lib_magasin;
 	$this->abrev_magasin	= $magasin->abrev_magasin;
@@ -94,7 +94,7 @@ public function create ($lib_magasin, $abrev_magasin, $id_mag_enseigne, $id_stoc
 	global $DEFAUT_MODE_VENTE;
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->lib_magasin 	= $lib_magasin;
 	if (!$this->lib_magasin) { 
 		$GLOBALS['_ALERTES']['lib_magasin_vide'] = 1; 
@@ -114,7 +114,7 @@ public function create ($lib_magasin, $abrev_magasin, $id_mag_enseigne, $id_stoc
 	}
 	$this->actif = $actif;
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -127,12 +127,12 @@ public function create ($lib_magasin, $abrev_magasin, $id_mag_enseigne, $id_stoc
 	$bdd->exec($query);
 	$this->id_magasin = $bdd->lastInsertId();
 	
-	//on demande à ce que la session soit mise à jour lors de l'ouverture des prochaines pages
+	//on demande Ã  ce que la session soit mise Ã  jour lors de l'ouverture des prochaines pages
 	serveur_maj_file();
 
 	// *************************************************
-	// Résultat positif de la création
-	$GLOBALS['_INFOS']['Création_magasin'] = $this->id_magasin;
+	// RÃ©sultat positif de la crÃ©ation
+	$GLOBALS['_INFOS']['CrÃ©ation_magasin'] = $this->id_magasin;
 
 	return true;
 }
@@ -147,7 +147,7 @@ final public function modification ($lib_magasin, $abrev_magasin, $id_mag_enseig
 	global $DEFAUT_MODE_VENTE;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->lib_magasin 	= $lib_magasin;
 	if (!$this->lib_magasin) { 
 		$GLOBALS['_ALERTES']['lib_magasin_vide'] = 1; 
@@ -160,7 +160,7 @@ final public function modification ($lib_magasin, $abrev_magasin, $id_mag_enseig
 	
 	$this->id_mag_enseigne = $id_mag_enseigne;
 
-	// Vérification que le stock est bien actif (si Changement ou si Activation)
+	// VÃ©rification que le stock est bien actif (si Changement ou si Activation)
 	if ( ($id_stock != $this->id_stock) || (!$this->actif && $actif) ) {
 		$query = "SELECT actif FROM stocks WHERE id_stock = '".$id_stock."' ";
 		$resultat	=	$bdd->query ($query);
@@ -171,7 +171,7 @@ final public function modification ($lib_magasin, $abrev_magasin, $id_mag_enseig
 		}
 		$this->id_stock = $id_stock;
 	}
-	// Vérification que le tarif existe (si Changement ou si Activation)
+	// VÃ©rification que le tarif existe (si Changement ou si Activation)
 	if ( ($id_tarif != $this->id_tarif) || (!$this->actif && $actif) ) {
 		$query = "SELECT id_tarif FROM tarifs_listes WHERE id_tarif = '".$id_tarif."' ";
 		$resultat = $bdd->query ($query);
@@ -210,7 +210,7 @@ final public function modification ($lib_magasin, $abrev_magasin, $id_mag_enseig
 
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -224,10 +224,10 @@ final public function modification ($lib_magasin, $abrev_magasin, $id_mag_enseig
 						WHERE id_magasin = '".$this->id_magasin."' ";
 	$bdd->exec ($query);
 
-	//on demande à ce que la session soit mise à jour lors de l'ouverture des prochaines pages
+	//on demande Ã  ce que la session soit mise Ã  jour lors de l'ouverture des prochaines pages
 	serveur_maj_file();
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
@@ -240,7 +240,7 @@ static function create_enseigne ($lib_enseigne) {
 		$GLOBALS['_ALERTES']['lib_enseigne_vide'] = 1; 
 	}
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -260,7 +260,7 @@ static function modifier_enseigne ($id_mag_enseigne, $lib_enseigne) {
 		$GLOBALS['_ALERTES']['lib_enseigne_vide'] = 1; 
 	}
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -276,7 +276,7 @@ static function supprimer_enseigne ($id_mag_enseigne) {
 	global $bdd;
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}

@@ -23,7 +23,7 @@ INSERT INTO `fonctions` (`id_fonction`, `lib_fonction`, `desc_fonction`, `id_fon
 (1, 'Direction', '', NULL, 3),
 (2, 'Comptable', '', NULL, 3),
 (3, 'Commercial', '', NULL, 3),
-(4, 'Secrétariat', '', NULL, 3),
+(4, 'SecrÃ©tariat', '', NULL, 3),
 (5, 'Marketing', '', NULL, 3),
 (6, 'Logistique', '', NULL, 3),
 (7, 'Technique', '', NULL, 3);

@@ -94,7 +94,7 @@ div.dest_entitie img {
             <div style="float:right;">
           <label>Externe</label>
           <select name="new_dest_ex" id="new_dest_ex" style="width:220px">
-              <option value="">Sélectionnez..</option>
+              <option value="">SÃ©lectionnez..</option>
 		<?php foreach ($liste_email as $email): ?>
                     <?php if(!empty($email->email)): ?>
 			<option value="<?php echo $email->email;?>"><?php echo $email->email;?></option>
@@ -104,7 +104,7 @@ div.dest_entitie img {
           <br />
           <label>Interne</label>
           <select name="new_dest_in" id="new_dest_in" style="width:220px">
-              <option value="">Sélectionnez..</option>
+              <option value="">SÃ©lectionnez..</option>
 		<?php foreach ($emails_collaborateurs as $email): ?>
 			<option value="<?php echo $email; ?>"><?php echo $email; ?></option>
 		<?php endforeach; ?>
@@ -309,7 +309,7 @@ div.dest_entitie img {
     
 <SCRIPT type="text/javascript">
 	//---------------------------------------------------------------
-	//debut d'intialisation de l'éditeur
+	//debut d'intialisation de l'Ã©diteur
 	//---------------------------------------------------------------
 	editeur.HTML_editor("contenu_courrier_tmp", "contenu_courrier_html", "editeur");
 	Event.observe('editeur_bold', "click", function(evt){Event.stop(evt); editeur.HTML_exeCmd("bold", null);});
@@ -351,7 +351,7 @@ div.dest_entitie img {
 	});
 	Event.observe($("contenu_courrier_html"), "blur", function(evt){editeur.HTML_save();});
 	//---------------------------------------------------------------
-	//fin d'intialisation de l'éditeur
+	//fin d'intialisation de l'Ã©diteur
 	//---------------------------------------------------------------
 
 	//on masque le chargement

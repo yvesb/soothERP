@@ -26,15 +26,15 @@ function __construct ($id_theme) {
 	$result = $bdd->query ($query);
 	$theme = $result->fetchObject();
 	
-	// Thème non trouvé
+	// ThÃ¨me non trouvÃ©
 	if (!isset($theme->id_theme)) {
-		$erreur = "Tentative de chargement d'un thème inexistant (ID_THEME = ".$id_theme.")";
+		$erreur = "Tentative de chargement d'un thÃ¨me inexistant (ID_THEME = ".$id_theme.")";
 		alerte_dev ($erreur);
 	}
 	
-	// Thème non actif
+	// ThÃ¨me non actif
 	if (!$theme->actif) {
-		$erreur = "Tentative de chargement d'un thème non actif (ID_THEME = ".$id_theme.")";
+		$erreur = "Tentative de chargement d'un thÃ¨me non actif (ID_THEME = ".$id_theme.")";
 		alerte_dev ($erreur);
 	}
 	
@@ -51,29 +51,29 @@ function __construct ($id_theme) {
 
 
 // *************************************************************************************************************
-// Fonctions d'accès aux données
+// Fonctions d'accÃ¨s aux donnÃ©es
 // *************************************************************************************************************
 
-// Retourne le répertoire du theme
+// Retourne le rÃ©pertoire du theme
 final public function getDir_theme() {
 	
-	// Répertoire de ce thème
+	// RÃ©pertoire de ce thÃ¨me
 	$dir_theme = $_SESSION['interfaces'][$this->id_interface]->getDossier()."themes/".$this->code_theme."/";
 
 	return $dir_theme;
 }
 
-// retourne d'identifiant du thème
+// retourne d'identifiant du thÃ¨me
 final public function getId_theme() {
 	return $this->id_theme;
 }
 
-// retourne le libellé du thème
+// retourne le libellÃ© du thÃ¨me
 final public function getLib_theme() {
 	return $this->lib_theme;
 }
 
-// retourne le libellé du thème
+// retourne le libellÃ© du thÃ¨me
 final public function getCode_theme() {
 	return $this->code_theme;
 }

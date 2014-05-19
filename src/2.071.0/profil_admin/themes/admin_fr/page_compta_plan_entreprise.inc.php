@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -21,7 +21,7 @@ check_page_variables ($page_variables);
 
 ?>
 <script type="text/javascript">
-tableau_smenu[0] = Array("smenu_comptabilite", "smenu_comptabilite.php" ,"true" ,"sub_content", "Comptabilité");
+tableau_smenu[0] = Array("smenu_comptabilite", "smenu_comptabilite.php" ,"true" ,"sub_content", "ComptabilitÃ©");
 tableau_smenu[1] = Array('compta_plan_entreprise','compta_plan_entreprise.php','true','sub_content', "Plan comptable de l'entreprise");
 update_menu_arbo();
 </script>

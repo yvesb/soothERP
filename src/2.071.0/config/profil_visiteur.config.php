@@ -14,7 +14,7 @@
 // *************************************************************************************************************
 // INFORMATIONS CONCERNANT LES CONTACTS AYANT CE PROFIL
 // *************************************************************************************************************
-// Informations par défaut concernant un Visiteur
+// Informations par dÃ©faut concernant un Visiteur
 // TOUT UTILISATEUR EST AU MOINS VISITEUR !!
 
 

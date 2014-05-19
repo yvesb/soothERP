@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// Suppression d'un évènement pour un véhicule
+// Suppression d'un Ã©vÃ¨nement pour un vÃ©hicule
 // *************************************************************************************************************
 
 require ("_dir.inc.php");
@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 
 
-//mise à jour des données transmises
+//mise Ã  jour des donnÃ©es transmises
 if(isset($_REQUEST['id_evenement'])){
 	$id_evenement = $_REQUEST['id_evenement'];
 	global $bdd;

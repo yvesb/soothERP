@@ -19,7 +19,7 @@ if (isset($_REQUEST["filigrane"]))
 
 
 	
-//chargement des modes d'édition
+//chargement des modes d'Ã©dition
 $editions_modes	= liste_mode_edition();
 
 $courrier = new CourrierEtendu($id_courrier);

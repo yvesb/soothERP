@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -34,24 +34,24 @@ check_page_variables ($page_variables);
 	if ($commercial->ref_contact != $_REQUEST["ref_contact"]) {unset($commercial); continue;}
 		?>
 		<tr> 
-			<td style="font-weight:bolder; text-align:left" colspan="2">Détail des résultats commerciaux - 
+			<td style="font-weight:bolder; text-align:left" colspan="2">DÃ©tail des rÃ©sultats commerciaux - 
 				<a href="index.php#annuaire_view_fiche.php?ref_contact=<?php echo $commercial->ref_contact;?>" target="_blank" class="common_link" ><?php echo htmlentities($commercial->nom); ?></a>
 				
 			</td>
 			<td style="font-weight:bolder; text-align:right; color:#999999; ">
 			</td>
 			<td style="font-weight:bolder; text-align:left; padding-left:20px; color:#999999;" colspan="2">
-			<span style="float:right"><?php echo number_format($commercial->ca, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[1];?></span>	Chiffre d'affaire généré:	
+			<span style="float:right"><?php echo number_format($commercial->ca, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[1];?></span>	Chiffre d'affaire gÃ©nÃ©rÃ©:	
 			</td>
 		</tr>
 		<tr> 
-			<td style="font-weight:bolder; text-align:left" colspan="2">Période analysée du <?php echo ($form['date_debut']);?> au <?php echo ($form['date_fin']);?>
+			<td style="font-weight:bolder; text-align:left" colspan="2">PÃ©riode analysÃ©e du <?php echo ($form['date_debut']);?> au <?php echo ($form['date_fin']);?>
 			</td>
 			<td style="font-weight:bolder; text-align:left; padding-left:20px; color:#999999;">
 			</td>
 			<td style="font-weight:bolder; text-align:left; padding-left:20px; color:#999999; " colspan="2">
 				<span style="float:right"><?php echo number_format($commercial->mg, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[1];?></span>
-			 Marge générée:
+			 Marge gÃ©nÃ©rÃ©e:
 			</td>
 			</tr>
 		<tr> 
@@ -77,7 +77,7 @@ check_page_variables ($page_variables);
 					?>Commissionnement sur les Factures Clients<?php
 				break;
 				case "RGM": 
-					?>Commissionnement sur les  Factures Clients Acquitées<?php
+					?>Commissionnement sur les  Factures Clients AcquitÃ©es<?php
 				break;
 			}
 			?>
@@ -108,7 +108,7 @@ check_page_variables ($page_variables);
 								<td style="text-align:center">
 								<table>
 									<tr>
-										<td style="text-align:center"><span class="green_underlined" id="tb_<?php echo $commercial->ref_contact; ?>_<?php echo $docu->ref_doc; ?>" >Détails</span></td>
+										<td style="text-align:center"><span class="green_underlined" id="tb_<?php echo $commercial->ref_contact; ?>_<?php echo $docu->ref_doc; ?>" >DÃ©tails</span></td>
 										<td style="width:5%; text-align:center; color:#97bf0d">-</td>
 										<td style=" text-align:center"><span class="green_underlined" id="rc_<?php echo $commercial->ref_contact; ?>_<?php echo $docu->ref_doc; ?>">
 			<a href="documents_editing.php?ref_doc=<?php echo $docu->ref_doc?>" target="_blank" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif"/></a> </span>

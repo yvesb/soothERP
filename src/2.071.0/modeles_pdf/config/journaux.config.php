@@ -16,11 +16,11 @@ $JOURNAUX['HAUTEUR_AFTER_LINE_CATEGORIE']		= 0;
 $JOURNAUX['HAUTEUR_AFTER_LINE_TOTAUX_CATEGORIE']		= 0;
 
 $JOURNAUX['ENTETE_COL_DAT'] = "Date";
-$JOURNAUX['ENTETE_COL_REF'] = "N° pièce / Réf Doc";
+$JOURNAUX['ENTETE_COL_REF'] = "NÂ° piÃ¨ce / RÃ©f Doc";
 $JOURNAUX['ENTETE_COL_TTC'] = "";
 $JOURNAUX['ENTETE_COL_COM'] = "Tiers";
-$JOURNAUX['ENTETE_COL_LIB'] = "Libellé";
-$JOURNAUX['ENTETE_COL_CMT'] = "N° de compte";
+$JOURNAUX['ENTETE_COL_LIB'] = "LibellÃ©";
+$JOURNAUX['ENTETE_COL_CMT'] = "NÂ° de compte";
 $JOURNAUX['ENTETE_COL_P']  = "";
 
 $JOURNAUX['LARGEUR_COL_DAT'] = 19;
@@ -61,15 +61,15 @@ $JOURNAUX['PIEDS_DROIT'][1]	= $PIED_DE_PAGE_DROIT_1;
 
 
 
-//variable//type de champ(parametre)//libéllé//commentaire
+//variable//type de champ(parametre)//libÃ©llÃ©//commentaire
 // PARAMETRES MODIFIABLES
 // FIN PARAMETRES MODIFIABLES
 // CONFIGURATION PAR DEFAUT
-// Portion de code recopiée dans la partie « paramètres modifiables » en cas de remise à 0 des paramètres.
+// Portion de code recopiÃ©e dans la partie Â«Â paramÃ¨tres modifiablesÂ Â» en cas de remise Ã  0 des paramÃ¨tres.
 /*
 */
 // FIN CONFIGURATION PAR DEFAUT
-// INFORMATIONS SUR L’AUTEUR
+// INFORMATIONS SUR Lâ€™AUTEUR
 /* 
 */
 ?>

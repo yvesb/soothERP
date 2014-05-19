@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// ACCUEIL COMPTA automatique des catégories d'articles (HT) ACHAT
+// ACCUEIL COMPTA automatique des catÃ©gories d'articles (HT) ACHAT
 // *************************************************************************************************************
 
 
@@ -11,11 +11,11 @@ require ($DIR."_session.inc.php");
 
 if (!$_SESSION['user']->check_permission ("13")) {
 	//on indique l'interdiction et on stop le script
-	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accés ne vous permettent pas de visualiser ce type de page</span>";
+	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accÃ©s ne vous permettent pas de visualiser ce type de page</span>";
 	exit();
 }
 
-//chargement de la liste des art_categ et des informations de plan comptable associées
+//chargement de la liste des art_categ et des informations de plan comptable associÃ©es
 $fiches = array();
 $fiches_tmp = array();
 $query = "SELECT ref_art_categ, lib_art_categ, modele, desc_art_categ, defaut_id_tva, duree_dispo, 

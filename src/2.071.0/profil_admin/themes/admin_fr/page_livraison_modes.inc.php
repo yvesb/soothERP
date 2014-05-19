@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -67,7 +67,7 @@ update_menu_arbo();
 					<td>
 					<input name="lib_livraison_mode" id="lib_livraison_mode" type="text" value=""  class="classinput_xsize"  />
 					</td>
-					<td style="text-align:right">Abréviation: 
+					<td style="text-align:right">AbrÃ©viation: 
 					</td>
 					<td>
 					<input name="abrev_livraison_mode" id="abrev_livraison_mode" type="text" value=""  class="classinput_xsize"  />
@@ -125,7 +125,7 @@ if ($livraison_modes) {
 					<tr>
 						<td style="text-align:left">Libell&eacute;: 
 						</td>
-						<td style="text-align:left">Abréviation:
+						<td style="text-align:left">AbrÃ©viation:
 						</td>
 						<td style="text-align:left">Transporteur:  
 						</td>
@@ -190,7 +190,7 @@ if ($livraison_modes) {
 							</script>
 							</td>
 							<td style="text-align:center">
-							<div id="more_mode_liv_<?php echo $livraison_mode->id_livraison_mode;?>" style="cursor:pointer; display:inherit"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" /> de détails </div>
+							<div id="more_mode_liv_<?php echo $livraison_mode->id_livraison_mode;?>" style="cursor:pointer; display:inherit"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" /> de dÃ©tails </div>
 							
 	<script type="text/javascript">
 	Event.observe('more_mode_liv_<?php echo $livraison_mode->id_livraison_mode;?>', 'click',  function(){
@@ -240,7 +240,7 @@ if ($livraison_modes) {
 						<td style="width:49%; border-left:1px solid #999999">
 								<div ><br />
 
-									<div style="text-align:center"><span class="titre_liv_mode">Coût de livraison</span></div><br />
+									<div style="text-align:center"><span class="titre_liv_mode">CoÃ»t de livraison</span></div><br />
 									
 									<div id="mode_liv_cost_<?php echo $livraison_mode->id_livraison_mode;?>">
 										

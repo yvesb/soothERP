@@ -14,11 +14,11 @@ $ANNUAIRE_CATEGORIES	=	get_categories();
 
 if (isset($_REQUEST['modif_contact'])) {	
 	// *************************************************
-	// Controle des données fournies par le formulaire
+	// Controle des donnÃ©es fournies par le formulaire
 
 	if (isset($_REQUEST['nom'])) {
 		$infos_generales['id_civilite'] 	= urldecode($_REQUEST['civilite']);
-		$infos_generales['nom'] 					= str_replace("%u20AC", "€", $_REQUEST['nom']);
+		$infos_generales['nom'] 					= str_replace("%u20AC", "â‚¬", $_REQUEST['nom']);
 		$infos_generales['siret'] 				= $_REQUEST['siret'];
 		$infos_generales['id_categorie'] 	= $_REQUEST['id_categorie'];
 	}
@@ -36,7 +36,7 @@ if (isset($_REQUEST['modif_contact'])) {
 	//}
 	
 	// *************************************************
-	// Création du contact
+	// CrÃ©ation du contact
 	$contact = new contact ($_REQUEST['ref_contact']);
 	$contact->modification ($infos_generales, $infos_profils);
 }

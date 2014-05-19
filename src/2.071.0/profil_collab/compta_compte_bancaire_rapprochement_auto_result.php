@@ -11,7 +11,7 @@ require ($DIR."_session.inc.php");
 
 if (!$_SESSION['user']->check_permission ("13")) {
 	//on indique l'interdiction et on stop le script
-	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accés ne vous permettent pas de visualiser ce type de page</span>";
+	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accÃ©s ne vous permettent pas de visualiser ce type de page</span>";
 	exit();
 }
 
@@ -29,7 +29,7 @@ if (isset($_REQUEST["date_fin"])) {
 }
 $query_where0 = " && cbm.date_move < '".$date_fin_moves."' ";
 	
-//on recherche la date de debut de la liste part rapport au dernier relevé 
+//on recherche la date de debut de la liste part rapport au dernier relevÃ© 
 $liste_releves = $compte_bancaire->getReleves_compte ();
 foreach ($liste_releves as $releve) {
 	if ($releve->date_releve >= $date_fin_moves) { continue; }
@@ -45,10 +45,10 @@ $nb_move = 0;
 $nb_move_page = 0;
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 
-// Recherche des mouvements de compte non rapprochés
+// Recherche des mouvements de compte non rapprochÃ©s
 $query = "SELECT cbm.id_compte_bancaire_move, cbm.id_compte_bancaire, cbm.date_move,
 								 cbm.lib_move, cbm.montant_move, cbm.commentaire_move, cbm.id_operation
 					FROM comptes_bancaires_moves cbm
@@ -61,7 +61,7 @@ while ($fiche = $resultat->fetchObject()) {
 	$nb_move ++;
 	$nb_move_page ++;
 	
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_join 	= "";
 	$query_where 	= " cjo.id_journal = '".$journal->getId_journal()."' && (cbor.complet = 0 ||  ISNULL(cbor.complet))";
 	$query_group	= "";

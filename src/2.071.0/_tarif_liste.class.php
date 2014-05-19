@@ -9,7 +9,7 @@ final class tarif_liste {
 
 	private $lib_tarif;				// Nom de la liste de prix
 	private $desc_tarif;			// Description de la liste de prix
-	private $marge_moyenne;		// Marge minimum acceptable lors de la vente à un client soumit à cette grille de tarif.
+	private $marge_moyenne;		// Marge minimum acceptable lors de la vente Ã  un client soumit Ã  cette grille de tarif.
 
 	private $ordre;					// Ordre d'affichage
 
@@ -17,19 +17,19 @@ final class tarif_liste {
 function __construct($id_tarif = 0) {
 	global $bdd;
 
-	// Controle si le id_tarif est précisé
+	// Controle si le id_tarif est prÃ©cisÃ©
 	if (!$id_tarif) { return false; }
 
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT lib_tarif, desc_tarif, marge_moyenne, ordre
 						FROM tarifs_listes tl
 						WHERE id_tarif = '".$id_tarif."' ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si le id_tarif est trouvé
+	// Controle si le id_tarif est trouvÃ©
 	if (!$tarif_liste = $resultat->fetchObject()) { return false; }
 
-	// Attribution des informations à l'objet
+	// Attribution des informations Ã  l'objet
 	$this->id_tarif 			= $id_tarif;
 	$this->lib_tarif			= $tarif_liste->lib_tarif;
 	$this->desc_tarif			= $tarif_liste->desc_tarif;
@@ -49,7 +49,7 @@ final public function create ($lib_tarif, $desc_tarif, $marge_moyenne) {
 	global $bdd;
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->lib_tarif 	= $lib_tarif;
 	if (!$this->lib_tarif) {
 		$GLOBALS['_ALERTES']['lib_tarif_vide'] = 1; 
@@ -61,7 +61,7 @@ final public function create ($lib_tarif, $desc_tarif, $marge_moyenne) {
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -81,17 +81,17 @@ final public function create ($lib_tarif, $desc_tarif, $marge_moyenne) {
 	$bdd->exec($query);
 	$this->id_tarif = $bdd->lastInsertId();
 
-	// Déclaration pour mise à jour globale du catalogue
+	// DÃ©claration pour mise Ã  jour globale du catalogue
 	declare_articles_maj ($this->id_tarif, "ADD_TARIF_LISTE");
 
 	// Rechargement des grilles de tarif
 	get_tarifs_listes (1);
 
-	//on demande à ce que la session soit mise à jour lors de l'ouverture des prochaines pages
+	//on demande Ã  ce que la session soit mise Ã  jour lors de l'ouverture des prochaines pages
 	serveur_maj_file();
 	// *************************************************
-	// Résultat positif de la création
-	$GLOBALS['_INFOS']['Création_tarif_liste'] = $this->id_tarif;
+	// RÃ©sultat positif de la crÃ©ation
+	$GLOBALS['_INFOS']['CrÃ©ation_tarif_liste'] = $this->id_tarif;
 
 	return true;
 }
@@ -108,7 +108,7 @@ final public function modification ($lib_tarif, $desc_tarif, $marge_moyenne) {
 	$old_marge_moyenne = $this->marge_moyenne;
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->lib_tarif 	= $lib_tarif;
 	if (!$this->lib_tarif) {
 		$GLOBALS['_ALERTES']['lib_tarif_vide'] = 1; 
@@ -120,7 +120,7 @@ final public function modification ($lib_tarif, $desc_tarif, $marge_moyenne) {
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -134,16 +134,16 @@ final public function modification ($lib_tarif, $desc_tarif, $marge_moyenne) {
 	$bdd->exec ($query);
 
 	if ($old_marge_moyenne != $this->marge_moyenne) {
-		// Déclaration pour mise à jour globale du catalogue
+		// DÃ©claration pour mise Ã  jour globale du catalogue
 		declare_articles_maj ($this->id_tarif, "MAJ_TARIF_LISTE");
 	}
 	// Rechargement des grilles de tarif
 	get_tarifs_listes (1);
 
-	//on demande à ce que la session soit mise à jour lors de l'ouverture des prochaines pages
+	//on demande Ã  ce que la session soit mise Ã  jour lors de l'ouverture des prochaines pages
 	serveur_maj_file();
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
@@ -156,7 +156,7 @@ final public function modifier_ordre ($new_ordre) {
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -175,13 +175,13 @@ final public function modifier_ordre ($new_ordre) {
 
 	$bdd->beginTransaction();
 	
-	// Mise à jour des autres listes de prix
+	// Mise Ã  jour des autres listes de prix
 	$query = "UPDATE tarifs_listes
 						SET ordre = ordre ".$variation." 1
 						WHERE ordre ".$symbole1." '".$this->ordre."' && ordre ".$symbole2." '".$new_ordre."' ";
 	$bdd->exec ($query);
 	
-	// Mise à jour de cette liste de prix
+	// Mise Ã  jour de cette liste de prix
 	$query = "UPDATE tarifs_listes
 						SET ordre = '".$new_ordre."' 
 						WHERE id_tarif = '".$this->id_tarif."'";
@@ -193,7 +193,7 @@ final public function modifier_ordre ($new_ordre) {
 	get_tarifs_listes (1);
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
@@ -208,7 +208,7 @@ final public function suppression ($id_tarif_remplacement) {
 		$GLOBALS['_ALERTES']['bad_id_tarif_remplacement'] = 1;
 		return false;
 	}
-	// Controle si le nouveau tarif existe réellement
+	// Controle si le nouveau tarif existe rÃ©ellement
 	$query = "SELECT id_tarif FROM tarifs_listes WHERE id_tarif = '".$id_tarif_remplacement."' ";
 	$resultat = $bdd->query ($query);
 	if (!$tarif = $resultat->fetchObject()) {
@@ -220,17 +220,17 @@ final public function suppression ($id_tarif_remplacement) {
 	// Suppression de la liste de prix
 	$bdd->beginTransaction();
 
-	// Mise à jour des Catégories de Client
+	// Mise Ã  jour des CatÃ©gories de Client
 	$query = "UPDATE clients_categories SET id_tarif = '".$id_tarif_remplacement."'
 						WHERE id_tarif = '".$this->id_tarif."' ";
 	$bdd->exec ($query);
 
-	// Mise à jour des Clients
+	// Mise Ã  jour des Clients
 	$query = "UPDATE annu_client SET id_tarif = '".$id_tarif_remplacement."'
 						WHERE id_tarif = '".$this->id_tarif."' ";
 	$bdd->exec ($query);
 
-	// Mise à jour des Magasin
+	// Mise Ã  jour des Magasin
 	$query = "UPDATE magasins SET id_tarif = '".$id_tarif_remplacement."'
 						WHERE id_tarif = '".$this->id_tarif."' ";
 	$bdd->exec ($query);
@@ -251,7 +251,7 @@ final public function suppression ($id_tarif_remplacement) {
 	// Rechargement des grilles de tarif
 	get_tarifs_listes (1);
 
-	//on demande à ce que la session soit mise à jour lors de l'ouverture des prochaines pages
+	//on demande Ã  ce que la session soit mise Ã  jour lors de l'ouverture des prochaines pages
 	serveur_maj_file();
 	
 	unset ($this);

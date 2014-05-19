@@ -15,7 +15,7 @@ $listes_champs = array();
 $lib_champ = "";
 switch ($_REQUEST["lmb_col"]) {
 	case "id_categorie":
-		$lib_champ = "la catégorie du contact";
+		$lib_champ = "la catÃ©gorie du contact";
 		$liste_categories = get_categories();
 		foreach ($liste_categories as $categ) {
 			$listes_champs[] = array("id"=>$categ->id_categorie, "lib"=>$categ->lib_categorie);
@@ -23,7 +23,7 @@ switch ($_REQUEST["lmb_col"]) {
 		$arrayLigne = $dao_csv_import_annu_ligne->readAllColonne($_REQUEST["csv_col"]);
 	break;
 	case "id_civilite":
-		$lib_champ = "la civilité du contact";
+		$lib_champ = "la civilitÃ© du contact";
 		$liste_civilites = get_civilites();
 		foreach ($liste_civilites as $civilite) {
 			$listes_champs[] = array("id"=>$civilite->id_civilite, "lib"=>$civilite->lib_civ_court);
@@ -47,7 +47,7 @@ switch ($_REQUEST["lmb_col"]) {
 			contact::load_profil_class($CLIENT_ID_PROFIL);
 			$liste_categories_client = contact_client::charger_clients_categories ();
 		}
-		$lib_champ = "la catégorie de client";
+		$lib_champ = "la catÃ©gorie de client";
 		foreach ($liste_categories_client as $categorie_client) {
 			$listes_champs[] = array("id"=>$categorie_client->id_client_categ, "lib"=>$categorie_client->lib_client_categ);
 		}
@@ -56,12 +56,12 @@ switch ($_REQUEST["lmb_col"]) {
 	
 	case "type":
 	
-		$lib_champ = "la catégorie de client";
+		$lib_champ = "la catÃ©gorie de client";
 		$listes_champs[] = array("id"=>"piste", "lib"=>"Piste");
 		$listes_champs[] = array("id"=>"prospect", "lib"=>"Prospect");
 		$listes_champs[] = array("id"=>"client", "lib"=>"Client");
 		$listes_champs[] = array("id"=>"ancien client", "lib"=>"Ancien client");
-		$listes_champs[] = array("id"=>"Compte bloqué", "lib"=>"Compte bloqué");
+		$listes_champs[] = array("id"=>"Compte bloquÃ©", "lib"=>"Compte bloquÃ©");
 		$arrayLigne = $dao_csv_import_annu_ligne->readAllColonne($_REQUEST["csv_col"]);
 	break;
 	
@@ -92,7 +92,7 @@ switch ($_REQUEST["lmb_col"]) {
 			contact::load_profil_class($FOURNISSEUR_ID_PROFIL);
 			$liste_categories_fournisseur = contact_fournisseur::charger_fournisseurs_categories ();
 		}
-		$lib_champ = "la catégorie de fournisseur";
+		$lib_champ = "la catÃ©gorie de fournisseur";
 		foreach ($liste_categories_fournisseur as $categorie_fournisseur) {
 			$listes_champs[] = array("id"=>$categorie_fournisseur->id_fournisseur_categ, "lib"=>$categorie_fournisseur->lib_fournisseur_categ);
 		}

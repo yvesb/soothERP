@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// Remise bancaire depuis la caisse (ou dépot bancaire depuis la caisse)
+// Remise bancaire depuis la caisse (ou dÃ©pot bancaire depuis la caisse)
 // *************************************************************************************************************
 
 
@@ -45,7 +45,7 @@ $totaux_theoriques = $compte_caisse->controle_total_caisse_move ();
 		$info["CHQ"]["liste_cheques"] = array();
 		$info["CHQ"]["liste_cheques_add"] = array();
 		//infos de controle des cheques 
-		//Montant/ref_reglement/Numéro de chèque/Banque/Porteur/
+		//Montant/ref_reglement/NumÃ©ro de chÃ¨que/Banque/Porteur/
 		foreach ($_REQUEST as $variable => $valeur) {
 		
 			if ((substr ($variable, 0, 14) == "CHK_EXIST_CHQ_")  ) {
@@ -67,7 +67,7 @@ $totaux_theoriques = $compte_caisse->controle_total_caisse_move ();
 		$info["LC"]["liste_cheques"] = array();
 		$info["LC"]["liste_cheques_add"] = array();
 		//infos de controle des cheques 
-		//Montant/ref_reglement/Numéro de chèque/Banque/Porteur/
+		//Montant/ref_reglement/NumÃ©ro de chÃ¨que/Banque/Porteur/
 		foreach ($_REQUEST as $variable => $valeur) {
 		
 			if ((substr ($variable, 0, 14) == "CHK_EXIST_CHQ_")  ) {

@@ -11,17 +11,17 @@ require_once ($DIR."_article_liaisons_types.class.php");
 
 
 	// *************************************************
-	// Controle des données fournies par le formulaire
+	// Controle des donnÃ©es fournies par le formulaire
 
 	
 	$new_ordre				= $_REQUEST['ordre'];
 	$new_ordre_other			= $_REQUEST['ordre_other'];
 	
 
-	//on récupére fonction de l'ordre la premier ref
+	//on rÃ©cupÃ©re fonction de l'ordre la premier ref
 	$id_liaison_type	= art_liaison_type::getId_liaison_type_from_ordre ($_REQUEST['ordre_other']);
 
-	//on récupére fonction de l'ordre la deuxième ref
+	//on rÃ©cupÃ©re fonction de l'ordre la deuxiÃ¨me ref
 	$id_liaison_type_other	= art_liaison_type::getId_liaison_type_from_ordre ($_REQUEST['ordre']);
 
 	

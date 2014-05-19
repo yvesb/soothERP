@@ -30,19 +30,19 @@ class Contact_liaison_type {
 	public function __construct ($id_liaison_type = 0) {
 		global $bdd;
 		
-		// Controle si le id_liaison_type est précisé
+		// Controle si le id_liaison_type est prÃ©cisÃ©
 		if (!$id_liaison_type) {	return false;}
 		
-		// Sélection des informations générales
+		// SÃ©lection des informations gÃ©nÃ©rales
 		$query = "SELECT lib_liaison_type, lib_liaison_type_vers, lib_liaison_type_depuis, ordre, actif
 							FROM annuaire_liaisons_types
 							WHERE id_liaison_type = '".$id_liaison_type."' ";
 		$resultat = $bdd->query ($query);
 	
-		// Controle si le id_liaison_type est trouvé
+		// Controle si le id_liaison_type est trouvÃ©
 		if (!$liaison_type = $resultat->fetchObject()) {	return false;}
 	
-		// Attribution des informations à l'objet
+		// Attribution des informations Ã  l'objet
 		$this->id_liaison_type 		= $id_liaison_type;
 		$this->lib_liaison_type		= $liaison_type->lib_liaison_type;
 		$this->lib_liaison_vers		= $liaison_type->lib_liaison_type_vers;
@@ -131,13 +131,13 @@ class Contact_liaison_type {
 		}
 	
 		$bdd->beginTransaction();{
-			// Mise à jour des autres LIAISON TYPE
+			// Mise Ã  jour des autres LIAISON TYPE
 			$query = "UPDATE 	annuaire_liaisons_types
 								SET 		ordre = ordre ".$variation." 1
 								WHERE 	ordre ".$symbole1." '".$this->ordre."' && ordre ".$symbole2." '".$new_ordre."' ";
 			$bdd->exec ($query);
 			
-			// Mise à jour de cette LIAISON TYPE
+			// Mise Ã  jour de cette LIAISON TYPE
 			$query = "UPDATE 	annuaire_liaisons_types
 								SET 		ordre = '".$new_ordre."' 
 								WHERE 	id_liaison_type = '".$this->id_liaison_type."'";

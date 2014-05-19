@@ -15,13 +15,13 @@ require_once ($RESSOURCE_DIR."/php-ofc-library/open-flash-chart.php");
 
 
 if (!isset($_REQUEST['ref_article'])) {
-	echo "La référence de l'article n'est pas précisée";
+	echo "La rÃ©fÃ©rence de l'article n'est pas prÃ©cisÃ©e";
 	exit;
 }
 
 $article = new article ($_REQUEST['ref_article']);
 if (!$article->getRef_article()) {
-	echo "La référence de l'article est inconnue";		exit;
+	echo "La rÃ©fÃ©rence de l'article est inconnue";		exit;
 
 }
 $tarifs_liste = get_tarifs_listes_formules ($article->getRef_art_categ ());
@@ -29,7 +29,7 @@ $tarifs_liste = get_tarifs_listes_formules ($article->getRef_art_categ ());
 
 
 
-$mois_liste = array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre");
+$mois_liste = array("Janvier", "FÃ©vrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "DÃ©cembre");
 
 // mauve $bar2->colour('#8a5b9d' );
 

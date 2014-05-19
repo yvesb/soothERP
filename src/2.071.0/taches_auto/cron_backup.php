@@ -19,7 +19,7 @@ if(!$pb4ms->saveFile($sql_dump, "auto", "cron_job")){
 	// False, pour gestion erreur future
 	return false;
 	} else {
-	// True pour éventuelle utilisation
+	// True pour Ã©ventuelle utilisation
 	return true;
 	}
 

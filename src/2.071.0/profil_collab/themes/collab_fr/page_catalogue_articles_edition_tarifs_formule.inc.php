@@ -5,7 +5,7 @@
 // CALCUL DE FORMULE RAFRAICHISSEMENT DE L'AFFICHAGE
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 

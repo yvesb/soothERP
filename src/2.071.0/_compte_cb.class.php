@@ -72,7 +72,7 @@ public function create_compte_cb ($infos) {
 	global $bdd;
 	
 	// *************************************************
-	// Réception des données
+	// RÃ©ception des donnÃ©es
 	$this->ref_porteur = $infos['ref_porteur'];
 
 	$this->id_compte_bancaire = $infos['id_compte_bancaire'];
@@ -136,7 +136,7 @@ public function maj_compte_cb ($infos) {
 	global $bdd;
 
 	// *************************************************
-	// Réception des données
+	// RÃ©ception des donnÃ©es
 	$this->ref_porteur = $infos['ref_porteur'];
 
 	$this->id_compte_bancaire = $infos['id_compte_bancaire'];
@@ -190,7 +190,7 @@ function active_compte () {
 	if ($this->actif) { return false; }
 
 	// *************************************************
-	// MAJ de la base de donnée
+	// MAJ de la base de donnÃ©e
 	$query = "UPDATE comptes_cbs 
 						SET actif = 1
 						WHERE id_compte_cb = '".$this->id_compte_cb."' "; 
@@ -200,18 +200,18 @@ function active_compte () {
 	return true;
 }
 
-// Désactive un compte
+// DÃ©sactive un compte
 function desactive_compte () {
 	global $bdd;
 
 	if (!$this->actif) { return false; }
 
 	// *************************************************
-	// Controle de la possibilité de désactiver ce compte 
+	// Controle de la possibilitÃ© de dÃ©sactiver ce compte 
 
 
 	// *************************************************
-	// MAJ de la base de donnée
+	// MAJ de la base de donnÃ©e
 	$query = "UPDATE comptes_cbs 
 						SET actif = 0
 						WHERE id_compte_cb = '".$this->id_compte_cb."' "; 
@@ -231,7 +231,7 @@ public function modifier_ordre ($new_ordre) {
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -249,13 +249,13 @@ public function modifier_ordre ($new_ordre) {
 
 	$bdd->beginTransaction();
 
-	// Mise à jour des autres comptes bancaires
+	// Mise Ã  jour des autres comptes bancaires
 	$query = "UPDATE comptes_cbs
 						SET ordre = ordre ".$variation." 1
 						WHERE ordre ".$symbole1." '".$this->ordre."' && ordre ".$symbole2." '".$new_ordre."' ";
 	$bdd->exec ($query);
 
-	// Mise à jour de ce compte bancaire
+	// Mise Ã  jour de ce compte bancaire
 	$query = "UPDATE comptes_cbs
 						SET ordre = '".$new_ordre."'
 						WHERE id_compte_cb = '".$this->id_compte_cb."'  ";
@@ -266,7 +266,7 @@ public function modifier_ordre ($new_ordre) {
 	$this->ordre = $new_ordre;
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
@@ -276,7 +276,7 @@ public function suppression () {
 	global $bdd;
 
 	// *************************************************
-	// Controle de la possibilité de supprimer le compte bancaire
+	// Controle de la possibilitÃ© de supprimer le compte bancaire
 
 
 	// Suppression dans la BDD
@@ -318,7 +318,7 @@ static function charger_comptes_cbs ($actif = "") {
 }
 
 
-// Charge les différents types de cartes bleu
+// Charge les diffÃ©rents types de cartes bleu
 static function get_carte_bancaire_types () {
 	global $bdd;
 	$comptes = array();

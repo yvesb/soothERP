@@ -4,7 +4,7 @@
 // MODIFICATION D'UNE FONCTION
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -50,7 +50,7 @@ if (erreur) {
 	
 	if (lib_fonction_vide) {
 		window.parent.document.getElementById("lib_fonction_<?php echo $_REQUEST["id_fonction"];?>").className="alerteform_xsize";
-		texte_erreur += "Vous devez indiquer un libellé à la fonction.<br/>";
+		texte_erreur += "Vous devez indiquer un libellÃ© Ã  la fonction.<br/>";
 	} else {
 		window.parent.document.getElementById("lib_fonction_<?php echo $_REQUEST["id_fonction"];?>").className="classinput_xsize";
 	}

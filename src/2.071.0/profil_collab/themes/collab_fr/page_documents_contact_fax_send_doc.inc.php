@@ -5,7 +5,7 @@
 // ENVOI D'UN DOCUMENT PAR EMAIL envois rapide vers 1 destinataire
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -23,7 +23,7 @@ check_page_variables ($page_variables);
 
 ?>
 <p>&nbsp;</p>
-<p>envois du document par fax à un destinataire</p>
+<p>envois du document par fax Ã  un destinataire</p>
 <p>&nbsp; </p>
 <?php 
 foreach ($_ALERTES as $alerte => $value) {
@@ -45,7 +45,7 @@ if (erreur) {
 }
 else
 {
-	texte_erreur = "Le document a bien été envoyé";
+	texte_erreur = "Le document a bien Ã©tÃ© envoyÃ©";
 	alerte.alerte_erreur ('Confirmation de l\'envoi', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 }
 </script>

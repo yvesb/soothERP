@@ -65,7 +65,7 @@ public function create_mail_template ($infos) {
 	global $bdd;
 
   // *************************************************
-	// Réception des données
+	// RÃ©ception des donnÃ©es
 	$this->lib_mail_template 		= $infos['lib_mail_template'];
 	$this->header_img_template 	= $infos['header_img_template'];
 	$this->header_mail_template = $infos['header_mail_template'];
@@ -96,7 +96,7 @@ public function maj_mail_template ($infos) {
 	global $bdd;
 
   // *************************************************
-	// Réception des données
+	// RÃ©ception des donnÃ©es
 	$this->lib_mail_template 		= $infos['lib_mail_template'];
 	$this->header_img_template 	= $infos['header_img_template'];
 	$this->header_mail_template = $infos['header_mail_template'];

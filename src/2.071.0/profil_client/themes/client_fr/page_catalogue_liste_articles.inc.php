@@ -15,7 +15,7 @@ function barre_navigation($nbtotal,
 													
 {
 	// --------------------------------------------------------------------
-	global $cfg_nb_pages; // Nb de n° de pages affichées dans la barre
+	global $cfg_nb_pages; // Nb de nÂ° de pages affichÃ©es dans la barre
 global $DIR;
 global $app_tarifs_s;
 	$barre= "";	$lien_on 	= "&nbsp;<a href='catalogue_liste_articles.php?page_to_show={cibleb}{fonctionlauch}' id='link_pagi_{cible}'>{lien}</a>&nbsp;";
@@ -23,7 +23,7 @@ global $app_tarifs_s;
 	// --------------------------------------------------------------------
     
 
-	// début << .
+	// dÃ©but << .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -43,7 +43,7 @@ global $app_tarifs_s;
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
 
 
-	// précédent < .
+	// prÃ©cÃ©dent < .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -146,7 +146,7 @@ function image_html($img)
 
 //
 //
-//création de la barre de nav
+//crÃ©ation de la barre de nav
 //
 //
 
@@ -187,14 +187,14 @@ function image_html($img)
 				<td></td>
 				<td>
 				<span class="libelle_recherche_a">
-					Libéllé:
+					LibÃ©llÃ©:
 					</span>
 				</td>
 				<td> <input type="text" name="lib_article" value="<?php if (isset($_REQUEST['lib_article'])) {echo $_REQUEST['lib_article']; }?>" class="classinput_xsize"/>
 				</td>
 				<td>
 					<span class="libelle_recherche_a">
-					Catégorie:
+					CatÃ©gorie:
 					</span>
 				</td>
 				<td>
@@ -366,7 +366,7 @@ next($list_catalogue_dir);
 							Prix unitaire 
 							<?php if ($app_tarifs_s == "HT") {echo "HT";} else { echo "TTC";}?>
 						</td>
-						<td style="width:10%; text-align:right; padding-right:10px;">Qté</td>
+						<td style="width:10%; text-align:right; padding-right:10px;">QtÃ©</td>
 						<td style="width:12%; text-align:center" class="colorise0_fin" >&nbsp;
 						</td>
 					</tr>

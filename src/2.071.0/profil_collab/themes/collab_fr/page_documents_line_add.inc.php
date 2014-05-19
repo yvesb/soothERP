@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -23,10 +23,10 @@ check_page_variables ($page_variables);
 <script type="text/javascript">
 $("wait_calcul_content").style.display= "block";
 
-//on lance l'insertions dans le flux xhtml des lignes créés
-//variable d'attente du nombre de ligne à inserer depuis un document
+//on lance l'insertions dans le flux xhtml des lignes crÃ©Ã©s
+//variable d'attente du nombre de ligne Ã  inserer depuis un document
 wait_for_x_line_doc = 0;
-//nombre de lignes chargées
+//nombre de lignes chargÃ©es
 loaded_line_doc = 0;
 <?php 
 if (isset($_INFOS['new_lines']) && !$document->getQuantite_locked ()) {
@@ -34,7 +34,7 @@ if (isset($_INFOS['new_lines']) && !$document->getQuantite_locked ()) {
 	$doc_line = $_INFOS['new_lines'];
 	for ($j = 0; $j<=count($doc_line)-1; $j++) {
 		?>
-		// si c'est un article qui a été ajouté, on insére la ref_doc_line dans la ligne correspondant
+		// si c'est un article qui a Ã©tÃ© ajoutÃ©, on insÃ©re la ref_doc_line dans la ligne correspondant
 		<?php
 		if ( $doc_line[$j]->type_of_line == "article" && !isset($add_line_link_from_doc) && !isset($insert_line_from_art_categ)) {
 			?>
@@ -64,7 +64,7 @@ if (isset($_INFOS['new_lines']) && !$document->getQuantite_locked ()) {
 													//	print_r ($doc_line);
 												foreach ($doc_line[$j] as $variable => $valeur) {
 													if (!is_array ($valeur)) {
-														echo $variable.': "'.addslashes(str_replace (CHR(13), "" ,str_replace (CHR(10), "" ,preg_replace ("#((\r\n)+)#", "", nl2br(htmlentities(str_replace ("€" ,"¤" , $valeur))))))).'",';
+														echo $variable.': "'.addslashes(str_replace (CHR(13), "" ,str_replace (CHR(10), "" ,preg_replace ("#((\r\n)+)#", "", nl2br(htmlentities(str_replace ("â‚¬" ,"Â¤" , $valeur))))))).'",';
 													} else {
 														echo $variable.':"';
 														foreach ($valeur as $sn_liste) {
@@ -149,7 +149,7 @@ if (isset($_INFOS['new_lines']) && !$document->getQuantite_locked ()) {
 ?>
 
 <?php 
-// rechargement du block liaisons si l'ajout des lignes a été effectué depuis un document::link_from_doc ()
+// rechargement du block liaisons si l'ajout des lignes a Ã©tÃ© effectuÃ© depuis un document::link_from_doc ()
  if (isset($add_line_link_from_doc)) {
 	?>// on recharge les liaisons
 	var AppelAjax = new Ajax.Updater(
@@ -169,7 +169,7 @@ if (isset($_INFOS['new_lines']) && !$document->getQuantite_locked ()) {
 }
 ?>
 <?php 
-// rechargement du block entete si l'ajout des lignes a été effectué depuis un ajout de art_categ d'un inventaire
+// rechargement du block entete si l'ajout des lignes a Ã©tÃ© effectuÃ© depuis un ajout de art_categ d'un inventaire
  if (isset($insert_line_from_art_categ)) {
 	?>// on recharge l'entete
 	var AppelAjax = new Ajax.Updater(

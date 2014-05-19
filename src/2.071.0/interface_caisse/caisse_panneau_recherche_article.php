@@ -14,19 +14,19 @@ require ("_session.inc.php");
 
 /*
 if(!isset($_REQUEST["art_page_to_show_s"])){
-	echo "art_page_to_show_s n'est pas spécifié";
+	echo "art_page_to_show_s n'est pas spÃ©cifiÃ©";
 	exit; 
 }
 $art_page_to_show_s = $_REQUEST["art_page_to_show_s"];
 
 if(!isset($_REQUEST["categ_sous_page_to_show_s"])){
-	echo "categ_sous_page_to_show_s n'est pas spécifié";
+	echo "categ_sous_page_to_show_s n'est pas spÃ©cifiÃ©";
 	exit; 
 }
 $categ_sous_page_to_show_s = $_REQUEST["categ_sous_page_to_show_s"];
 
 if(!isset($_REQUEST["categ_racine_page_to_show_s"])){
-	echo "categ_racine_page_to_show_s n'est pas spécifié";
+	echo "categ_racine_page_to_show_s n'est pas spÃ©cifiÃ©";
 	exit; 
 }
 $categ_racine_page_to_show_s = $_REQUEST["categ_racine_page_to_show_s"];

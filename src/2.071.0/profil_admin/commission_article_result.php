@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// commissionnements des catégories d'articles
+// commissionnements des catÃ©gories d'articles
 // *************************************************************************************************************
 
 
@@ -16,7 +16,7 @@ if ($COMMERCIAL_ID_PROFIL != 0) {
 }
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -74,7 +74,7 @@ if ($_REQUEST['in_promotion']) {
 
 
 // *************************************************
-// Stock et Tarif affichés
+// Stock et Tarif affichÃ©s
 $form['id_stock'] = $_SESSION['magasin']->getId_stock();
 if (isset($_REQUEST['id_stock'])) {
 	$form['id_stock'] = $_REQUEST['id_stock'];
@@ -89,9 +89,9 @@ if (isset($_REQUEST['id_tarif'])) {
 
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
-// Préparation de la requete
+// PrÃ©paration de la requete
 	$query_select = "";
 	$query_join 	= "";
 	$count_query_join 	= "";
@@ -117,7 +117,7 @@ $fiches = array();
 		$query_where 	.= " ) )";
 	}
 	
-	// Catégorie
+	// CatÃ©gorie
 	if ($search['ref_art_categ']) { 
 		$liste_categories = "";
 		$liste_categs = array();
@@ -137,7 +137,7 @@ $fiches = array();
 			$query_where 	.= " && ISNULL(a.ref_constructeur)";
 		}
 	}
-	// Nouveauté
+	// NouveautÃ©
 	if ($search['is_nouveau']) {
 		$query_where 	.= " && a.date_creation > '".date("Y:m:d h:i:s", time()-$DELAI_ARTICLE_IS_NEW)."'";
 	}
@@ -209,7 +209,7 @@ while ($fiche = $resultat->fetchObject()) {
 }
 	unset ($fiche, $resultat, $query);
 
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 	$query = "SELECT DISTINCT a.ref_article
 						FROM articles a 
 							".$count_query_join."

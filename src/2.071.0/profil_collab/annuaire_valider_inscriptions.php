@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
-// Préparations des variables d'affichage
+// PrÃ©parations des variables d'affichage
 $ANNUAIRE_CATEGORIES	=	get_categories();
 
 $civilites = get_civilites($ANNUAIRE_CATEGORIES[0]->id_categorie);
@@ -41,7 +41,7 @@ switch($onglet){
 		$inscriptions = Modification_compte_user::getModifications_non_confirmees();
 		break;}
 	default:	{
-		echo "l'onglet n'est pas spécifié";
+		echo "l'onglet n'est pas spÃ©cifiÃ©";
 		exit; break;}
 }
 

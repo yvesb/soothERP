@@ -16,7 +16,7 @@ $import_serveur = new import_serveur ($_REQUEST["ref_serveur"]);
 $import_infos = $import_serveur->charger_import_infos (2);
 
 $presentes_art_categ =	get_articles_categories();
-//si import_infos est vide c'est le premier import effectuÈ, on gÈnÈre alors la liste des art_categ importÈe depuis les art_categ dans la base
+//si import_infos est vide c'est le premier import effectu√©, on g√©n√©re alors la liste des art_categ import√©e depuis les art_categ dans la base
 if ($import_infos == "") {
 	foreach ($presentes_art_categ as $art_categ_imported) {
 		if (substr ($art_categ_imported->ref_art_categ, 4, 6) != $_SERVER['REF_SERVEUR']) {
@@ -24,7 +24,7 @@ if ($import_infos == "") {
 		}
 	}
 } else {
-//ou on ajoute ‡ la liste les art_categ qui n'auraient pas encore ÈtÈ mises ‡ jours
+//ou on ajoute √† la liste les art_categ qui n'auraient pas encore √©t√© mises √† jours
 	foreach ($presentes_art_categ as $art_categ_imported) {
 		if (!substr_count ($import_infos, $art_categ_imported->ref_art_categ) ) {
 			if (substr ($art_categ_imported->ref_art_categ, 4, 6) != $_SERVER['REF_SERVEUR']) {
@@ -34,7 +34,7 @@ if ($import_infos == "") {
 	}
 }
 
-//on crÈ un fichier qui regroupe les art_categ dÈj‡ importÈes pour que le serveur de donnÈes rÈcupÈre ces infos
+//on cr√© un fichier qui regroupe les art_categ d√©j√† import√©es pour que le serveur de donn√©es r√©cup√©re ces infos
 	$new_file = fopen ($DIR."echange_lmb/tmp_art_categ_list.csv", "w");
 	fwrite($new_file, $import_infos);
 	fclose($new_file);

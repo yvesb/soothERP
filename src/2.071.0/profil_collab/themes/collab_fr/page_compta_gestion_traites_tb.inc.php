@@ -4,7 +4,7 @@
 // Tableau de BORD compte bancaire
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -48,7 +48,7 @@ check_page_variables ($page_variables);
 								<td>&nbsp;</td>
 							</tr>
 							<tr>
-                                                            <td><div class="bold_caisse" style="font-size:16px">Traites acceptées &agrave; effectuer (<span id="detail_prelevements_links"> <span id = "detail_prelevements_show_link" class="green_underlined" style="font-size:12px"> Voir le d&eacute;tail </span><span id = "detail_prelevements_hide_link" class="green_underlined" style="font-size:12px;display:none;">Masquer le d&eacute;tail</span></span> )</div></td>
+                                                            <td><div class="bold_caisse" style="font-size:16px">Traites acceptÃ©es &agrave; effectuer (<span id="detail_prelevements_links"> <span id = "detail_prelevements_show_link" class="green_underlined" style="font-size:12px"> Voir le d&eacute;tail </span><span id = "detail_prelevements_hide_link" class="green_underlined" style="font-size:12px;display:none;">Masquer le d&eacute;tail</span></span> )</div></td>
                                                             <td><div class="bold_caisse" style="font-size:16px"><?php echo number_format($prelev_a_effectuer, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[1];?></div></td>
                                                             <td style="width:20%"><div class="bold_caisse" style="font-size:16px">&nbsp;</div></td>
                                                             <script type="text/javascript">
@@ -112,7 +112,7 @@ check_page_variables ($page_variables);
                                                                     </span>
 								</span>
 								<?php if ($last_operation) {?>
-								<div style="float:left; color:#999999">Dernier opération enregistrée: <?php echo date_Us_to_Fr($last_operation);?></div>
+								<div style="float:left; color:#999999">Dernier opÃ©ration enregistrÃ©e: <?php echo date_Us_to_Fr($last_operation);?></div>
 								<?php } ?>
 								</td>
 								<td>&nbsp;</td>
@@ -123,14 +123,14 @@ check_page_variables ($page_variables);
                                                 <?php
                                                 if (count($infos_echeances_sans_aut) > 0){
                                                 ?>
-                                                <font color="#cc0000">Attention ! Il vous manque des autorisations de traite acceptée</font>
+                                                <font color="#cc0000">Attention ! Il vous manque des autorisations de traite acceptÃ©e</font>
                                                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 							<tr>
 								<td colspan="2" class="line_caisse_bottom">&nbsp;</td>
 								<td>&nbsp;</td>
 							</tr>
 							<tr>
-                                                            <td><div class="bold_caisse" style="font-size:14px">Traites acceptées sans autorisation (<span id="detail_prelevements_sans_aut_links"> <span id = "detail_prelevements_sans_aut_show_link" class="green_underlined" style="font-size:12px"> Voir le d&eacute;tail </span><span id = "detail_prelevements_sans_aut_hide_link" class="green_underlined" style="font-size:12px;display:none;">Masquer le d&eacute;tail</span></span> )</div></td>
+                                                            <td><div class="bold_caisse" style="font-size:14px">Traites acceptÃ©es sans autorisation (<span id="detail_prelevements_sans_aut_links"> <span id = "detail_prelevements_sans_aut_show_link" class="green_underlined" style="font-size:12px"> Voir le d&eacute;tail </span><span id = "detail_prelevements_sans_aut_hide_link" class="green_underlined" style="font-size:12px;display:none;">Masquer le d&eacute;tail</span></span> )</div></td>
                                                             <td><div class="bold_caisse" style="font-size:14px"><?php echo number_format($prelev_sans_auth_montant, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[1];?></div></td>
                                                             <td style="width:20%"><div class="bold_caisse" style="font-size:16px">&nbsp;</div></td>
                                                             <script type="text/javascript">
@@ -180,7 +180,7 @@ check_page_variables ($page_variables);
 			<br />
 					<div style="padding: 15px 25px;">
 					<div class="line_caisse_bottom"></div>
-					<div class="bold_caisse" style="font-size:16px">Opérations de gestion</div> 
+					<div class="bold_caisse" style="font-size:16px">OpÃ©rations de gestion</div> 
 					<div class="line_caisse_top"></div>
 					<br />
 					<br />

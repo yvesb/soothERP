@@ -11,12 +11,12 @@ require ($DIR."_session.inc.php");
 
 if (isset($_REQUEST['coordonnee_ref'.$_REQUEST['ref_idform']])) {	
 	// *************************************************
-	// création d'une coordonnée
+	// crÃ©ation d'une coordonnÃ©e
 	$ref_coordonnee  = $_REQUEST['coordonnee_ref'.$_REQUEST['ref_idform']];
 	
 	$coordonnee = new coordonnee ($ref_coordonnee);
 	
-	// on récupére tout les réf_coord qui sont aprés la réf_coord supprimée pour rafraichir l'affichage des ordres
+	// on rÃ©cupÃ©re tout les rÃ©f_coord qui sont aprÃ©s la rÃ©f_coord supprimÃ©e pour rafraichir l'affichage des ordres
 	$coords = $coordonnee->liste_ref_coord_in_ordre ();
 	
 	$coordonnee->suppression();

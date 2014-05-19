@@ -13,7 +13,7 @@ array_menu_m_categ_art[5] 	=	new Array('taxes_art_categ', 'menu_art_categ_2');
 
 <div>
 	<ul id="menu_art_categ" class="menu">
-		<li><a href="#" id="menu_art_categ_5" class="menu_select">Général</a></li>
+		<li><a href="#" id="menu_art_categ_5" class="menu_select">GÃ©nÃ©ral</a></li>
 		<li><a href="#" id="menu_art_categ_3" class="menu_unselect">Caract&eacute;ristiques</a></li>
 		<li><a href="#" id="menu_art_categ_6" class="menu_unselect">Tarifs</a></li>
 		<!--<li><a href="#" id="menu_art_categ_4" class="menu_unselect">Caract&eacute;ristiques</a></li>-->
@@ -139,7 +139,7 @@ Event.observe("menu_art_categ_2", "click",  function(evt){Event.stop(evt); view_
 			</td>
 		</tr>
 		<tr>
-			<td class="size_strict"><span class="labelled" style="width:150px">Durée de vie des articles:</span>
+			<td class="size_strict"><span class="labelled" style="width:150px">DurÃ©e de vie des articles:</span>
 			</td>
 			<td>
 			
@@ -181,10 +181,10 @@ Event.observe("menu_art_categ_2", "click",  function(evt){Event.stop(evt); view_
 						Aucune Restriction
 					</option>
 					<option value="achat" <?php if($art_categ->isRestrict_to_achats() ){ echo "selected='selected'";}?> >
-						Restreindre à l'achat
+						Restreindre Ã  l'achat
 					</option>
 					<option value="vente"  <?php if($art_categ->isRestrict_to_ventes() ){ echo "selected='selected'";}?> >
-						Restreindre à la vente
+						Restreindre Ã  la vente
 					</option>
 				</select>
 
@@ -202,11 +202,11 @@ Event.observe("menu_art_categ_2", "click",  function(evt){Event.stop(evt); view_
 	<form method="post" action="catalogue_categorie_sup.php" id="catalogue_supprim_categs" name="catalogue_supprim_categs" target="formFrame" onsubmit="alerte.confirm_supprimer('catalogue_supprim_categs', 'catalogue_supprim_categs'); return false;">
 	<table>
 			<td colspan="2">
-				<p style="text-align:left">Vous avez demandé <strong> la suppression de la catégorie d'articles "<?php echo ($art_categ->getLib_art_categ()); ?>"</strong>
+				<p style="text-align:left">Vous avez demandÃ© <strong> la suppression de la catÃ©gorie d'articles "<?php echo ($art_categ->getLib_art_categ()); ?>"</strong>
 				<br />
-				Vous devez stipuler la catégorie d'articles de remplacement pour : <br />
-				- Les sous-catégories de "<?php echo ($art_categ->getLib_art_categ()); ?>"<br />
-				- Les articles (y compris les articles archivés) de cette catégorie
+				Vous devez stipuler la catÃ©gorie d'articles de remplacement pour : <br />
+				- Les sous-catÃ©gories de "<?php echo ($art_categ->getLib_art_categ()); ?>"<br />
+				- Les articles (y compris les articles archivÃ©s) de cette catÃ©gorie
 				</p>
 			</td>
 		</tr>
@@ -218,7 +218,7 @@ Event.observe("menu_art_categ_2", "click",  function(evt){Event.stop(evt); view_
 		</tr>	
 		<tr>
 		<tr>
-			<td ><span class="labelled_extend">Catégorie de remplacement: </span>
+			<td ><span class="labelled_extend">CatÃ©gorie de remplacement: </span>
 			</td>
 			<td>
 			<input name="ref_art_categ" id="ref_art_categ" type="hidden" value="<?php echo htmlentities($art_categ->getRef_art_categ()); ?>" />

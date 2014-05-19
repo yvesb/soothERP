@@ -24,7 +24,7 @@ function __construct ($ref_contact, $action = "open") {
 						WHERE ref_contact = '".$this->ref_contact."' ";	
 	$resultat = $bdd->query ($query);
 
-	// Controle si la ref_contact est trouvée
+	// Controle si la ref_contact est trouvÃ©e
 	if (!$contact_admin = $resultat->fetchObject()) { return false; }
 	
 	$this->type_admin = $contact_admin->type_admin;
@@ -42,7 +42,7 @@ function create_infos ($infos) {
 	global $DIR, $CONFIG_DIR;
 	global $bdd;
 
-	// Controle si ces informations sont déjà existantes
+	// Controle si ces informations sont dÃ©jÃ  existantes
 	if ($this->profil_loaded) {
 		return false;
 	}
@@ -65,7 +65,7 @@ function create_infos ($infos) {
 	}
 
 	// *************************************************
-	// Insertion des données
+	// Insertion des donnÃ©es
 	$query = "INSERT INTO annu_admin (ref_contact, type_admin) 
 						VALUES ('".$this->ref_contact."', '".$this->type_admin."')"; 
 	$bdd->exec($query);
@@ -84,7 +84,7 @@ function maj_infos ($infos) {
 	global $bdd;
 
 	if (!$this->profil_loaded) {
-		$GLOBALS['_ALERTES']['profil_non_chargé'] = 1;
+		$GLOBALS['_ALERTES']['profil_non_chargÃ©'] = 1;
 	}
 	
 	// *************************************************
@@ -103,7 +103,7 @@ function maj_infos ($infos) {
 	}
 
 	// *************************************************
-	// Mise à jour des données
+	// Mise Ã  jour des donnÃ©es
 	$query = "UPDATE annu_admin SET type_admin = '".$this->type_admin."'
 						WHERE ref_contact = '".$this->ref_contact."' "; 
 	$bdd->exec($query);
@@ -120,7 +120,7 @@ function delete_infos () {
 	global $bdd;
 	
 	
-	// Vérifie si la suppression de ces informations est possible.
+	// VÃ©rifie si la suppression de ces informations est possible.
 	
 	// Supprime les informations
 	$query = "DELETE FROM annu_admin WHERE ref_contact = '".$this->ref_contact."' ";

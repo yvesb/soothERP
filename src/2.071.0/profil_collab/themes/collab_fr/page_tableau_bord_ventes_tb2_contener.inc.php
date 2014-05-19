@@ -3,7 +3,7 @@
 // AFFICHAGE DU TABLEAU DE BORD DES VENTES
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -20,9 +20,9 @@ check_page_variables ($page_variables);
 
 <div class="emarge" >
 <div style=" float:right; color:#97bf0d">
-<span class="green_link_stat_actif" id="tb2_det_J">Jour</span> | <span class="green_link_stat" id="tb2_det_S">Semaine</span> | <span class="green_link_stat" id="tb2_det_M">Mois</span> | <span class="green_link_stat" id="tb2_det_A">Année</span>
+<span class="green_link_stat_actif" id="tb2_det_J">Jour</span> | <span class="green_link_stat" id="tb2_det_S">Semaine</span> | <span class="green_link_stat" id="tb2_det_M">Mois</span> | <span class="green_link_stat" id="tb2_det_A">AnnÃ©e</span>
 </div> 
-<div ><span class="titre_ter_stat" >Période analysée </span> 
+<div ><span class="titre_ter_stat" >PÃ©riode analysÃ©e </span> 
 	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_date_prev.gif" style="vertical-align:middle; cursor:pointer" id="goto_prev" />
 	 <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_date_next.gif" style="vertical-align:middle; cursor:pointer" id="goto_next"  />	<span id="periode_select" style="font-weight:bolder"></span>
 </div>
@@ -85,7 +85,7 @@ Event.observe("tb2_det_A", "click",  function(evt){
 	$("type_progress").value = "A";
 	$("date_debut").value = "<?php echo date("d-m-Y", mktime(0,0,0, 1, 1, date("Y")) );?>";
 	$("date_fin").value = "<?php echo date("d-m-Y", mktime(0,0,0, 12, 31, date("Y")) );?>";
-	$("periode_select").innerHTML = "Année";
+	$("periode_select").innerHTML = "AnnÃ©e";
 	$("tb2_det_J").className="green_link_stat";
 	$("tb2_det_S").className="green_link_stat";
 	$("tb2_det_M").className="green_link_stat";
@@ -97,7 +97,7 @@ Event.observe("tb2_det_A", "click",  function(evt){
 <br />
 <input type="hidden" id="type_progress" name="type_progress" value="J" class="classinput_nsize" />
 
-Période personnalisée 
+PÃ©riode personnalisÃ©e 
 
 <input type="text" id="date_debut" name="date_debut" value="<?php echo date("d-m-Y");?>" class="classinput_nsize" />
  au&nbsp;<input type="text" id="date_fin" name="date_fin" value="<?php echo date("d-m-Y");?>" class="classinput_nsize" />

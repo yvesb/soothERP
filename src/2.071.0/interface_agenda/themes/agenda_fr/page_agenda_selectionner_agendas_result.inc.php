@@ -4,7 +4,7 @@
 // *************************************************************************************************************
    
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("page_source", "page_cible", "id_liste_agenda", "agendasAvecDroits");
 check_page_variables ($page_variables);
 
@@ -57,7 +57,7 @@ check_page_variables ($page_variables);
 	</tr>
 	<?php
 	}
-	$nb_restant = $nb_agendas %4; //Si >0 alors, je fais une dernière ligne incomplete
+	$nb_restant = $nb_agendas %4; //Si >0 alors, je fais une derniÃ¨re ligne incomplete
 	if ($nb_restant >0){ ?>
 	<tr height="30px">
 		<?php // des cellules avec un modele

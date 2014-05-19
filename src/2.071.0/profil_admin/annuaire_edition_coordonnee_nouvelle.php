@@ -11,7 +11,7 @@ require ($DIR."_session.inc.php");
 
 if (isset($_REQUEST['ref_contact'.$_REQUEST['ref_idform']])) {	
 
-	// on récupére la dernier ref coord si existe pour la réactualiser (afin de rafraichir l'affiche des ordres
+	// on rÃ©cupÃ©re la dernier ref coord si existe pour la rÃ©actualiser (afin de rafraichir l'affiche des ordres
 	$ordre_previous	=	getMax_ordre("coordonnees", $_REQUEST['ref_contact'.$_REQUEST['ref_idform']]);
 	if ($ordre_previous>0) {
 		$ref_coord_previous	= coordonnee::getRef_coord_from_ordre ($_REQUEST['ref_contact'.$_REQUEST['ref_idform']], $ordre_previous);
@@ -19,7 +19,7 @@ if (isset($_REQUEST['ref_contact'.$_REQUEST['ref_idform']])) {
 
 
 	// *************************************************
-	// création d'une coordonnée
+	// crÃ©ation d'une coordonnÃ©e
 	$ref_contact =  $_REQUEST['ref_contact'.$_REQUEST['ref_idform']];
 	$lib_coord 	= $_REQUEST['coordonnee_lib'.$_REQUEST['ref_idform']];
 	$tel1 = $_REQUEST['coordonnee_tel1'.$_REQUEST['ref_idform']];

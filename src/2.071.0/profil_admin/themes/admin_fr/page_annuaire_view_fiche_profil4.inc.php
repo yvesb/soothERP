@@ -1,6 +1,6 @@
 <?php
-	// bac 18/05/2010 2.054.0 on recupère les informations du contact et de la catégorie de client 
-	// si infos du contact client vides alors on affiche celles de la catégorie client
+	// bac 18/05/2010 2.054.0 on recupÃ¨re les informations du contact et de la catÃ©gorie de client 
+	// si infos du contact client vides alors on affiche celles de la catÃ©gorie client
 	//require_once $DIR.'profil_client/_contact_client.class.php';
 	$ce_client = array();
 	$ce_client['id_client_categ']			= $profils[$id_profil]->getId_client_categ ();
@@ -13,7 +13,7 @@
 	$ce_client['id_reglement_mode_favori']	= $profils[$id_profil]->getId_reglement_mode_favori ();
 	$ce_client['id_cycle_relance']			= $profils[$id_profil]->getId_cycle_relance ();
 	$ce_client['id_edition_mode_favori']	= $profils[$id_profil]->getId_edition_mode_favori_client ();
-	if ($ce_client['id_edition_mode_favori']=="") $ce_client['id_edition_mode_favori']=0;	// si null on force à 0
+	if ($ce_client['id_edition_mode_favori']=="") $ce_client['id_edition_mode_favori']=0;	// si null on force Ã  0
 	$ce_client['app_tarifs']				= $profils[$id_profil]->getApp_tarifs ();
 	$ce_client['ref_commercial']			= $profils[$id_profil]->getRef_commercial ();
 	$ce_client['nom_commercial']			= $profils[$id_profil]->getNom_commercial ();
@@ -85,7 +85,7 @@
 				<option value="prospect" <?php if ($profils[$id_profil]->getType_client() == "Prospect") {echo 'selected="selected"';$type_client =  $profils[$id_profil]->getType_client();} ?>>Prospect</option>
 				<option value="client" <?php if ($profils[$id_profil]->getType_client() == "Client") {echo 'selected="selected"';$type_client =  $profils[$id_profil]->getType_client();} ?>>Client</option>
 				<option value="ancien client" <?php if ($profils[$id_profil]->getType_client() == "Ancien client") {echo 'selected="selected"';$type_client =  $profils[$id_profil]->getType_client();} ?>>Ancien client</option>
-				<option value="Compte bloqué" <?php if ($profils[$id_profil]->getType_client() == "Compte bloqué") {echo 'selected="selected"';$type_client =  $profils[$id_profil]->getType_client();} ?>>Compte bloqué</option>
+				<option value="Compte bloquÃ©" <?php if ($profils[$id_profil]->getType_client() == "Compte bloquÃ©") {echo 'selected="selected"';$type_client =  $profils[$id_profil]->getType_client();} ?>>Compte bloquÃ©</option>
 			</select>
 			</td>
 		</tr>
@@ -157,11 +157,11 @@
 		
 		
 		<script type="text/javascript" language="javascript">
-			//  la fonction toggle_cadenas_et_valeurs est définie dans _annuaire.js		
+			//  la fonction toggle_cadenas_et_valeurs est dÃ©finie dans _annuaire.js		
 			Event.observe('valeurs_default_flag', 'click',function(evt){$("champs_par_defaut").toggle();}, false);
 			Event.observe('libelle_valeurs_default_flag', 'click',function(evt){$("valeurs_default_flag").click();}, false);
 
-			// si on change la catégorie client, les cadenas sont mis à ouvert et on recopie les valeurs de la categorie dans les valeurs de retour
+			// si on change la catÃ©gorie client, les cadenas sont mis Ã  ouvert et on recopie les valeurs de la categorie dans les valeurs de retour
 			Event.observe('id_client_categ', 'change',function(evt)
 			{
 				toggle_cadenas_et_valeurs('flg_facturation_periodique', 	'facturation_periodique',	'img_facturation_periodique_cadenas-ouvert',	'img_facturation_periodique_cadenas-ferme',		'listereadonly', 'ferme', 'def_facturation_periodique', 	'retour_value_facturation_periodique');
@@ -178,21 +178,21 @@
 				annu_client_categ_modifie_preselect ($("id_client_categ").value);
 			}, false);
 						
-			// facturation périodique
+			// facturation pÃ©riodique
 			Event.observe('img_facturation_periodique_cadenas-ferme',	'click', function(evt){toggle_cadenas_et_valeurs('flg_facturation_periodique', 'facturation_periodique', 'img_facturation_periodique_cadenas-ouvert', 'img_facturation_periodique_cadenas-ferme', 'listereadonly', 'ouvert',	'def_facturation_periodique', 'retour_value_facturation_periodique');}, false);
 			Event.observe('img_facturation_periodique_cadenas-ouvert',	'click', function(evt){toggle_cadenas_et_valeurs('flg_facturation_periodique', 'facturation_periodique', 'img_facturation_periodique_cadenas-ouvert', 'img_facturation_periodique_cadenas-ferme', 'listereadonly', 'ferme', 	'def_facturation_periodique', 'retour_value_facturation_periodique');$('retour_value_facturation_periodique').value 		= $('def_facturation_periodique').value;}, false);
 			Event.observe('facturation_periodique', 					'click', function(evt){toggle_cadenas_et_valeurs('flg_facturation_periodique', 'facturation_periodique', 'img_facturation_periodique_cadenas-ouvert', 'img_facturation_periodique_cadenas-ferme', 'listereadonly', 'ouvert', 	'def_facturation_periodique', 'retour_value_facturation_periodique');}, false);
-			// mode édition favori
+			// mode Ã©dition favori
 			Event.observe('img_id_edition_mode_favori_cadenas-ferme',	'click', function(evt){toggle_cadenas_et_valeurs('flg_id_edition_mode_favori', 'id_edition_mode_favori', 'img_id_edition_mode_favori_cadenas-ouvert', 'img_id_edition_mode_favori_cadenas-ferme', 'listereadonly', 'ouvert',	'def_id_edition_mode_favori', 'retour_value_id_edition_mode_favori');}, false);
 			Event.observe('img_id_edition_mode_favori_cadenas-ouvert',	'click', function(evt){toggle_cadenas_et_valeurs('flg_id_edition_mode_favori', 'id_edition_mode_favori', 'img_id_edition_mode_favori_cadenas-ouvert', 'img_id_edition_mode_favori_cadenas-ferme', 'listereadonly', 'ferme', 	'def_id_edition_mode_favori', 'retour_value_id_edition_mode_favori');$('retour_value_id_edition_mode_favori').value 		= $('def_id_edition_mode_favori').value;}, false);
 			Event.observe('id_edition_mode_favori', 					'click', function(evt){toggle_cadenas_et_valeurs('flg_id_edition_mode_favori', 'id_edition_mode_favori', 'img_id_edition_mode_favori_cadenas-ouvert', 'img_id_edition_mode_favori_cadenas-ferme', 'listereadonly', 'ouvert', 	'def_id_edition_mode_favori', 'retour_value_id_edition_mode_favori');}, false);
-			// délai de règlement
+			// dÃ©lai de rÃ¨glement
 			Event.observe('img_delai_reglement_cadenas-ferme',			'click', function(evt){toggle_cadenas_et_valeurs('flg_delai_reglement', 'delai_reglement', 'img_delai_reglement_cadenas-ouvert', 'img_delai_reglement_cadenas-ferme', 'listereadonly', 'ouvert',	'def_delai_reglement', 'retour_value_delai_reglement');toggle_cadenas_et_valeurs('flg_delai_reglement', 'delai_reglement_fdm', 'img_delai_reglement_cadenas-ouvert', 'img_delai_reglement_cadenas-ferme', 'listereadonly', 'ouvert', 'def_delai_reglement_fdm', 'retour_value_delai_reglement_fdm');}, false);
 			Event.observe('img_delai_reglement_cadenas-ouvert',			'click', function(evt){toggle_cadenas_et_valeurs('flg_delai_reglement', 'delai_reglement', 'img_delai_reglement_cadenas-ouvert', 'img_delai_reglement_cadenas-ferme', 'listereadonly', 'ferme', 	'def_delai_reglement', 'retour_value_delai_reglement');toggle_cadenas_et_valeurs('flg_delai_reglement', 'delai_reglement_fdm', 'img_delai_reglement_cadenas-ouvert', 'img_delai_reglement_cadenas-ferme', 'listereadonly', 'ferme', 'def_delai_reglement_fdm', 'retour_value_delai_reglement_fdm');$('retour_value_delai_reglement').value 			= $('def_delai_reglement').value;$('retour_value_delai_reglement_fdm').checked			= $('def_delai_reglement_fdm').checked;}, false);
 			Event.observe('delai_reglement', 							'click', function(evt){toggle_cadenas_et_valeurs('flg_delai_reglement', 'delai_reglement', 'img_delai_reglement_cadenas-ouvert', 'img_delai_reglement_cadenas-ferme', 'listereadonly', 'ouvert', 	'def_delai_reglement', 'retour_value_delai_reglement');toggle_cadenas_et_valeurs('flg_delai_reglement', 'delai_reglement_fdm', 'img_delai_reglement_cadenas-ouvert', 'img_delai_reglement_cadenas-ferme', 'listereadonly', 'ouvert', 'def_delai_reglement_fdm', 'retour_value_delai_reglement_fdm');}, false);
 			Event.observe('delai_reglement', 							'change',function(evt){toggle_cadenas_et_valeurs('flg_delai_reglement', 'delai_reglement', 'img_delai_reglement_cadenas-ouvert', 'img_delai_reglement_cadenas-ferme', 'listereadonly', 'ouvert', 	'def_delai_reglement', 'retour_value_delai_reglement');if ($('delai_reglement').value=="") $('retour_value_delai_reglement').value='0'; }, false);
 			Event.observe('delai_reglement_fdm', 						'click', function(evt){toggle_cadenas_et_valeurs('flg_delai_reglement', 'delai_reglement', 'img_delai_reglement_cadenas-ouvert', 'img_delai_reglement_cadenas-ferme', 'listereadonly', 'ouvert', 	'def_delai_reglement', 'retour_value_delai_reglement');toggle_cadenas_et_valeurs('flg_delai_reglement', 'delai_reglement_fdm', 'img_delai_reglement_cadenas-ouvert', 'img_delai_reglement_cadenas-ferme', 'listereadonly', 'ouvert', 'def_delai_reglement_fdm', 'retour_value_delai_reglement_fdm');}, false);
-			// règlement favori
+			// rÃ¨glement favori
 			Event.observe('img_id_reglement_mode_favori_cadenas-ferme',	'click', function(evt){toggle_cadenas_et_valeurs('flg_id_reglement_mode_favori', 'id_reglement_mode_favori', 'img_id_reglement_mode_favori_cadenas-ouvert', 'img_id_reglement_mode_favori_cadenas-ferme', 'listereadonly', 'ouvert',	'def_id_reglement_mode_favori', 'retour_value_id_reglement_mode_favori');}, false);
 			Event.observe('img_id_reglement_mode_favori_cadenas-ouvert','click', function(evt){toggle_cadenas_et_valeurs('flg_id_reglement_mode_favori', 'id_reglement_mode_favori', 'img_id_reglement_mode_favori_cadenas-ouvert', 'img_id_reglement_mode_favori_cadenas-ferme', 'listereadonly', 'ferme', 	'def_id_reglement_mode_favori', 'retour_value_id_reglement_mode_favori');$('retour_value_id_reglement_mode_favori').value 	= $('def_id_reglement_mode_favori').value;}, false);
 			Event.observe('id_reglement_mode_favori', 					'click', function(evt){toggle_cadenas_et_valeurs('flg_id_reglement_mode_favori', 'id_reglement_mode_favori', 'img_id_reglement_mode_favori_cadenas-ouvert', 'img_id_reglement_mode_favori_cadenas-ferme', 'listereadonly', 'ouvert', 	'def_id_reglement_mode_favori', 'retour_value_id_reglement_mode_favori');}, false);
@@ -241,7 +241,7 @@
 		<hr class="bleu_liner" />
 		<p class="labelled_ralonger" style="width: 100%; margin-left: 25px;">
 			<input type="checkbox" id="valeurs_default_flag" />
-			<a id="libelle_valeurs_default_flag">Editer les informations avancées</a>
+			<a id="libelle_valeurs_default_flag">Editer les informations avancÃ©es</a>
 		</p>
 		<div class="reduce_in_edit_mode" id="champs_par_defaut" style="display: none">
 			
@@ -291,7 +291,7 @@
 							</option>
 							<?php
 							}	?>
-						</select> <!-- la valeur par défaut $FACTURES_PAR_MOIS[0] -->
+						</select> <!-- la valeur par dÃ©faut $FACTURES_PAR_MOIS[0] -->
 						<input type="text" id="def_facturation_periodique" class="classinput_xsize"
 							value="<?php echo $categorie_client->facturation_periodique;?>" style="display:none;">
 						<input id="retour_value_facturation_periodique"
@@ -326,7 +326,7 @@
 								class="classinput_xsize"
 							<?php }?>
 							>
-							<option value="0" <?php if (($ce_client['id_edition_mode_favori'] == "") || ($ce_client['id_edition_mode_favori'] == 0)) {echo ' selected="selected"';}?>>Non Défini</option>
+							<option value="0" <?php if (($ce_client['id_edition_mode_favori'] == "") || ($ce_client['id_edition_mode_favori'] == 0)) {echo ' selected="selected"';}?>>Non DÃ©fini</option>
 							<?php
 								$modes_edition = getEdition_modes_actifs();
 								foreach ($modes_edition as $mode_edition)
@@ -503,7 +503,7 @@
 								class="classinput_xsize"
 							<?php }?>								
 							>
-							<option value="0" <?php if ( $ce_client['id_reglement_mode_favori']=="" ) echo 'selected="selected"';?>>Non Défini</option>
+							<option value="0" <?php if ( $ce_client['id_reglement_mode_favori']=="" ) echo 'selected="selected"';?>>Non DÃ©fini</option>
 							<?php
 								$modes_reglement = getReglements_modes();
 								foreach ($modes_reglement as $mode_reglement)
@@ -636,7 +636,7 @@
 				
 				
 				<tr>
-					<td class="size_strict"><span class="labelled_ralonger">Pré-paiement:</span>
+					<td class="size_strict"><span class="labelled_ralonger">PrÃ©-paiement:</span>
 					</td>
 					<td>
 						<img id="img_prepaiement_type_cadenas-ferme"
@@ -911,7 +911,7 @@
 			<td>
 				<a href="#" id="show4_id_edition_mode_favori" class="modif_input1">
 				 <?php 
-				 	$modes_edition_txt = "Non défini";
+				 	$modes_edition_txt = "Non dÃ©fini";
 					$modes_edition = getEdition_modes_actifs();
 					foreach ($modes_edition as $mode_edition)
 					{
@@ -941,7 +941,7 @@
 				<a href="#" id="show4_id_reglement_mode_favori" class="modif_input1">
 				<?php
 					$modes_reglement = getReglements_modes();
-					$reglement_mode_txt = "Non défini";
+					$reglement_mode_txt = "Non dÃ©fini";
 					foreach ($modes_reglement as $mode_reglement)
 					{
 						if ( $mode_reglement->id_reglement_mode == $ce_client['id_reglement_mode_favori'])
@@ -984,7 +984,7 @@
 
 		<tr>
 			<td class="size_strict">
-				<span class="labelled_ralonger">Pré-paiement:</span>
+				<span class="labelled_ralonger">PrÃ©-paiement:</span>
 			</td>
 			<td>
 				<a href="#" id="show4_prepaiement_type" class="modif_input1">
@@ -1009,7 +1009,7 @@
 			<td>
 				<a href="#" id="show4_id_tarif" class="modif_input1">
 					<?php
-						$tarif_lib_txt = "Non Défini";
+						$tarif_lib_txt = "Non DÃ©fini";
 						foreach ($tarifs_liste as $tarif_liste)
 						{
 							if ($ce_client['id_tarif'] == $tarif_liste->id_tarif)
@@ -1074,9 +1074,9 @@
 	
 	new Form.EventObserver('annu_edition_profil<?php echo $id_profil?>', function(element, value){formChanged();});
 	
-	//masque numérique pour l'encours
+	//masque numÃ©rique pour l'encours
 	Event.observe("encours", "blur", function(evt){ nummask(evt, "0", "X");}, false);	
-	//masque numérique pour le délai de règlement
+	//masque numÃ©rique pour le dÃ©lai de rÃ¨glement
 	Event.observe("delai_reglement", "blur", function(evt){ nummask(evt, "0", "X");}, false);	
 	//fonction de choix de adresses
 	

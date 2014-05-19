@@ -21,7 +21,7 @@ if(!$pb4ms->saveFile($sql_dump, "session", "session_start")){
 	// False, pour gestion erreur future
 	return false;
 	} else {
-	// True pour éventuelle utilisation
+	// True pour Ã©ventuelle utilisation
 	return true;
 	}
 

@@ -4,7 +4,7 @@
 // EDITION DE CONSOMMATION
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -63,7 +63,7 @@ check_page_variables ($page_variables);
 				</tr>
 				<tr>
 					<td >
-					<span class="labelled">Echéance:</span>
+					<span class="labelled">EchÃ©ance:</span>
 					</td>
 					<td >
 						<input type="text" name="conso_date_echeance" id="conso_date_echeance" value="<?php echo date_Us_to_Fr($consommation->date_echeance); ?>"/>
@@ -71,7 +71,7 @@ check_page_variables ($page_variables);
 				</tr>
 				<tr>
 					<td >
-					<span class="labelled">Crédits restants:</span>
+					<span class="labelled">CrÃ©dits restants:</span>
 					</td>
 					<td >
 						<input type="text" name="conso_credits_restants" id="conso_credits_restants" value="<?php echo ($consommation->credits_restants); ?>"/>

@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// Ajout d'un Rôle d'utilisateur
+// Ajout d'un RÃ´le d'utilisateur
 // *************************************************************************************************************
 
 
@@ -17,7 +17,7 @@ foreach ($_REQUEST as $key => $value) {
 	$permissions[] = $value;
 }
 
-//création de la fonction
+//crÃ©ation de la fonction
 $fonction->create_fonction ($_REQUEST["lib_fonction"],	$_REQUEST["desc_fonction"],	$_REQUEST["id_fonction_parent"],	$_REQUEST["id_profil"]);
 
 //$fonction->set_fonction_perms ($permissions);

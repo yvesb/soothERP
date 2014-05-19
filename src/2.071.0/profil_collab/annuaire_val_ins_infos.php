@@ -9,13 +9,13 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 if (!isset($_REQUEST['id_contact_tmp'])){
-	echo "l'identifiant du contact n'est pas spécifié";
+	echo "l'identifiant du contact n'est pas spÃ©cifiÃ©";
 	exit;
 }
 $id_contact_tmp = $_REQUEST['id_contact_tmp'];
 
 if(isset($_REQUEST['action'])){
-	echo "l'action n'est pas spécifiée";
+	echo "l'action n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $action = $_REQUEST['action'];
@@ -27,7 +27,7 @@ $query ="	SELECT	a.id_contact_tmp, a.id_interface, i.dossier, i.id_profil
   				&&			a.mode = 'inscription'";
 $resultat = $bdd->query($query);
 if(!$res = $resultat->fetchObject()){
-	echo "l'objet est mal enregistré dans la base de données";
+	echo "l'objet est mal enregistrÃ© dans la base de donnÃ©es";
 	exit;
 }
 

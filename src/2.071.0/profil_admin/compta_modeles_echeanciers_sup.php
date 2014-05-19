@@ -12,7 +12,7 @@ require ($DIR."_session.inc.php");
 //ouverture de la class compte_cb
 	$modele_ech = new modele_echeancier($_REQUEST["id_mod_ech"]);
 	
-	//création du compte
+	//crÃ©ation du compte
 	$modele_ech->suppression ();
 
 // *************************************************************************************************************

@@ -4,7 +4,7 @@
 // ACCUEIL DU PROFIL COLLAB
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("afficher_magasin");
 check_page_variables ($page_variables);
 
@@ -46,7 +46,7 @@ check_page_variables ($page_variables);
 				 		<div class="panneau_options_conteneur" id="panneau_options_conteneur" align="right">
 				  		<div id="panneau_options_conteneur0" style="height:36px;">
 					  		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_log_out.gif"	style="margin-bottom:-20px; z-index:300; cursor:pointer;" id="log_out" 	alt="Deconnexion" title="Deconnexion" />
-						  	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_lock.gif" 		style="margin-bottom:-20px; z-index:300; cursor:pointer;" id="lock" 		alt="Vérouiller" 	title="Vérouiller" />
+						  	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_lock.gif" 		style="margin-bottom:-20px; z-index:300; cursor:pointer;" id="lock" 		alt="VÃ©rouiller" 	title="VÃ©rouiller" />
 						  	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_right.gif"		style="margin-bottom:-20px; margin-right:2px; z-index:300; cursor:pointer;" id="options" 	alt="Options" 		title="Options" />
 				  		</div>
 				  		<div id="panneau_options_conteneur1">
@@ -63,7 +63,7 @@ check_page_variables ($page_variables);
 											
 											<table border="0" cellpadding="0" cellspacing="0" width="100%" >
 												<?php 
-												// Liste des profils autorisés
+												// Liste des profils autorisÃ©s
 												$profils_allowed = $_SESSION['user']->getProfils_allowed();
 												foreach ($profils_allowed as $id_profil => $profil) { ?>
 												<tr>
@@ -179,7 +179,7 @@ check_page_variables ($page_variables);
 								<table width="100%" height="109px" border="0" cellpadding="0" cellspacing="0">
 									<tr>
 										<td width="63px" 			 class="client_lignes_titre"  >Client : </td>
-										<td id="client_ligne1" class="client_lignes_contenu">Client non identifié</td>
+										<td id="client_ligne1" class="client_lignes_contenu">Client non identifiÃ©</td>
 									</tr>
 									<tr>
 										<td>&nbsp;</td>
@@ -267,10 +267,10 @@ check_page_variables ($page_variables);
 		    				<tr>
 		    					<td width="  4px" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/fond_entete_rouge_left.png');background-repeat: no-repeat;"></td>
 		    					<td style="text-align:center; border-right: 1px solid;">
-		    						Libellé
+		    						LibellÃ©
 		    					</td>
 		    					<td width=" 40px" style="text-align:center; border-right: 1px solid;">
-		    						Qté
+		    						QtÃ©
 		    					</td>
 		    					<td width="100px" style="text-align:center; border-right: 1px solid;">
 		    						P.U TTC
@@ -379,7 +379,7 @@ check_page_variables ($page_variables);
 		  		    				</td>
 		  		    				<td></td>
 		  		    				<!--<td class="panneau_fonctionnalites_bouton_active" id="ajout_caisse">
-		  		    					Entrée caisse
+		  		    					EntrÃ©e caisse
 		  		    				</td>-->
 								<td class="panneau_fonctionnalites_bouton_active" id="reglement_rapide">
 		  		    					Encaissement rapide
@@ -467,7 +467,7 @@ check_page_variables ($page_variables);
 <!-- GESTION DU PANNEAU DU BAS -->
 <div id="panneau_bas" style="margin-top:2px;"></div>
 
-<!-- Les input cachés -->
+<!-- Les input cachÃ©s -->
 <div style="display: none;">
 	<table width="100%" border="1" cellpadding="0" cellspacing="0">
 		<tr>

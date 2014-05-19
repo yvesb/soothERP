@@ -3,7 +3,7 @@
 // IMPORT FICHIER tarifs_fournisseur CSV
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -37,16 +37,16 @@ foreach ($_ALERTES as $alerte => $value) {
 			// S'il y a trop de colonnes
 			if (isset($GLOBALS['_ALERTES']['import_fichier_trop_de_colonnes'])) {?>
 				erreur = true;
-				texte += "Nombre de colonnes trop important dans votre fichier.<br />Veuillez vérifier le format d'export de votre fichier";
+				texte += "Nombre de colonnes trop important dans votre fichier.<br />Veuillez vÃ©rifier le format d'export de votre fichier";
 			<?php 
 			// Si le nombre de colonnes est ok
 			}else{
 				?>
-				texte += "L'import du fichier <b><?php echo $_FILES['fichier_csv']['name'];?></b> est terminé .<br />";
+				texte += "L'import du fichier <b><?php echo $_FILES['fichier_csv']['name'];?></b> est terminÃ© .<br />";
 				<?php 
-				// Le nombre de lignes traitées
+				// Le nombre de lignes traitÃ©es
 				if (isset($GLOBALS['_INFOS']['nb_lignes'])) {?>
-					texte += "<b><?php echo $GLOBALS['_INFOS']['nb_lignes'];?></b> ligne<?php if($GLOBALS['_INFOS']['nb_lignes'] > 0) echo 's';?> ont été traitées.<br />";
+					texte += "<b><?php echo $GLOBALS['_INFOS']['nb_lignes'];?></b> ligne<?php if($GLOBALS['_INFOS']['nb_lignes'] > 0) echo 's';?> ont Ã©tÃ© traitÃ©es.<br />";
 				<?php
 				}
 				// Si certaines lignes de l'import contiennent des erreurs

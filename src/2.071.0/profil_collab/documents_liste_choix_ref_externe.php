@@ -16,7 +16,7 @@ require ($DIR."_session.inc.php");
 // Controle
 
 if (isset($_REQUEST['ref_article'])) {
-	// Préparations des variables d'affichage
+	// PrÃ©parations des variables d'affichage
 	$document = open_doc($_REQUEST["ref_doc"]);
 	$article = new article ($_REQUEST['ref_article']);
 	$liste_choix_ref_externe = $article->charger_ref_article_externe_fournisseur($document->getRef_contact());

@@ -9,10 +9,10 @@ require ("_dir.inc.php");
 require ($DIR."_session.inc.php");
 
 
-// Vérification de la page de provennance
+// VÃ©rification de la page de provennance
 if (isset ($_REQUEST['page_from'])) {		$page_from = &$_REQUEST['page_from'];  }
 else {																	$page_from = "";  }
-// Vérification de l'id_profil
+// VÃ©rification de l'id_profil
 if (isset ($_SESSION['USER_INFOS']['id_profil'])) {		$id_profil = &$_SESSION['USER_INFOS']['id_profil'];  }
 else {																	$id_profil = "";  }
 
@@ -20,7 +20,7 @@ else {																	$id_profil = "";  }
 // TRAITEMENTS 
 // *************************************************************************************************************
 
-// REF_USER ou LOGIN si prédéfini
+// REF_USER ou LOGIN si prÃ©dÃ©fini
 $predefined_user = "";
 if (isset($_SESSION['USER_INFOS']['ref_user'])) {
 	$predefined_user = $_SESSION['USER_INFOS']['ref_user'];

@@ -11,7 +11,7 @@ require ("_session.inc.php");
 
 if (isset($_REQUEST['ref_article'])) {
 
-	// ouverture des infos du document et mise à jour
+	// ouverture des infos du document et mise Ã  jour
 
 	interface_maj_line_panier ($_REQUEST['ref_article'], $_REQUEST['qte_article']); 
 	

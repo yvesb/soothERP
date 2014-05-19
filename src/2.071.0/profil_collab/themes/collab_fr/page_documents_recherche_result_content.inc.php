@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES", "fiches",  "form['page_to_show']", "form['fiches_par_page']", "nb_fiches", "form['orderby']", "form['orderorder']");
 check_page_variables ($page_variables);
 
@@ -27,7 +27,7 @@ function barre_navigation($nbtotal,
 													
 {
 	// --------------------------------------------------------------------
-	global $cfg_nb_pages; // Nb de n° de pages affichées dans la barre
+	global $cfg_nb_pages; // Nb de nÂ° de pages affichÃ©es dans la barre
 global $DIR;
 	$barre= "";	$lien_on 	= "&nbsp;<a href='#' id='link_pagi_{cible}'>{lien}</a>&nbsp;
 								<script type='text/javascript'>
@@ -37,7 +37,7 @@ global $DIR;
 	// --------------------------------------------------------------------
     
 
-	// début << .
+	// dÃ©but << .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -57,7 +57,7 @@ global $DIR;
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
 
 
-	// précédent < .
+	// prÃ©cÃ©dent < .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -163,7 +163,7 @@ function image_html($img)
 
 //
 //
-//création de la barre de nav
+//crÃ©ation de la barre de nav
 //
 //
 
@@ -181,7 +181,7 @@ function image_html($img)
 
 
 
-// Affichage des résultats
+// Affichage des rÃ©sultats
 $montant_total_page = 0;
 ?><br />
 <div   class="mt_size_optimise">
@@ -273,7 +273,7 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 	</td>
 	<td style="text-align:left">
 		<a  href="#" id="link_contact_doc_<?php echo ($fiche->ref_doc)?>" style="display:block; width:100%" alt="<?php	if ($fiche->nom_contact) { echo ($fiche->nom_contact); }?>" title="<?php	if ($fiche->nom_contact) { echo ($fiche->nom_contact); }?>">
-		<?php	if ($fiche->nom_contact) { echo (substr(str_replace("€", "&euro;", $fiche->nom_contact), 0, 38)); }?>&nbsp;
+		<?php	if ($fiche->nom_contact) { echo (substr(str_replace("â‚¬", "&euro;", $fiche->nom_contact), 0, 38)); }?>&nbsp;
 		</a>
 	<script type="text/javascript">
 	Event.observe("link_contact_doc_<?php echo ($fiche->ref_doc)?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','documents_edition.php?ref_doc=<?php echo ($fiche->ref_doc)?>','true','sub_content');}, false);
@@ -369,24 +369,24 @@ $indentation++;
 						if(						$form["id_etat_doc"] == 3){?>
 						<option value="DEV_enAttente_to_refuse">Refuser</option>
 						<?php }elseif($form["id_etat_doc"] == 1){?>
-						<option value="DEV_aRealiser_to_attenteReponseClient">En attente réponse client</option>
+						<option value="DEV_aRealiser_to_attenteReponseClient">En attente rÃ©ponse client</option>
 						<?php }
 					break;}
 					case 2:{//CDC
 						if(						$form["id_etat_doc"] == 9){?>
-						<option value="CDC_enCours_generate_BLC_enSaisie">Générer les BLC</option>
+						<option value="CDC_enCours_generate_BLC_enSaisie">GÃ©nÃ©rer les BLC</option>
 						<?php }
 					break;}
 					case 3:{//BLC
 						if(						$form["id_etat_doc"] == 13){?>
 						<option value="BLC_pretAuDepart_to_livrer">Livrer</option>
 						<?php }elseif($form["id_etat_doc"] == 11){?>
-						<option value="BLC_enSaisie_to_pretAuDepart">Prêt au départ</option>
+						<option value="BLC_enSaisie_to_pretAuDepart">PrÃªt au dÃ©part</option>
 						<?php }
 					break;}
 					case 4:{//FAC
 						if(						$form["id_etat_doc"] == 16){?>
-						<option value="FAC_enSaisie_to_aRegler">A régler</option>
+						<option value="FAC_enSaisie_to_aRegler">A rÃ©gler</option>
 						<?php }
 					break;}
 				}?>

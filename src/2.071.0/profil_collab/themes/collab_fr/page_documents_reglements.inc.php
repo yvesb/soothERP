@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -139,7 +139,7 @@ check_page_variables ($page_variables);
                                  ?>
 				 <table id="table_echeanciers" name="table_echeanciers" style="width:98%; margin-top: 10px; " class="doc_reglement_toto" cellpadding="0" cellspacing="0">
                                  
-					<?php //écheancier
+					<?php //Ã©cheancier
 						$montant_terme = 0;
 						$nb_echeances_aff = 0;
 						if (!isset($echeances) || !$echeances) {
@@ -203,23 +203,23 @@ check_page_variables ($page_variables);
 							<?php
                                                         /**************************/
 
-                                                            //Récupération du contact
+                                                            //RÃ©cupÃ©ration du contact
                                                             if(!empty($document)){
 
                                                                 $contact_document = $document->getRef_contact();
                                                                 $contact = new contact($contact_document);
-                                                                //Récupération du mode préféré de paiement
+                                                                //RÃ©cupÃ©ration du mode prÃ©fÃ©rÃ© de paiement
                                                                 if(!empty($contact))
                                                                 {
                                                                     $profils = $contact->getProfils ();
                                                                     if(!empty($profils[4]))
                                                                     {
                                                                         $id_reglement_mode_favori = $profils[4]->getId_reglement_mode_favori (false);
-                                                                        //Si pas de mode de reglement favori trouvé on va dans la categ
+                                                                        //Si pas de mode de reglement favori trouvÃ© on va dans la categ
                                                                         if(empty($id_reglement_mode_favori))
                                                                         {
                                                                             $id_client_categ = $contact->getId_Categorie();
-                                                                            //Charger la liste des catégories de client
+                                                                            //Charger la liste des catÃ©gories de client
                                                                             $liste_categories_client = contact_client::charger_clients_categories ();
                                                                             if(!empty($id_client_categ) && !empty($id_client_categ))
                                                                             {

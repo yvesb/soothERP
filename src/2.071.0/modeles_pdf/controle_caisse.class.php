@@ -40,7 +40,7 @@ public function create_pdf ($compte_caisse, $id_compte_caisse_controle) {
 	
 	$this->compte_caisse	= $compte_caisse;
 	$this->controle = $this->compte_caisse->charger_controle_caisse ($id_compte_caisse_controle);
-	$this->lib_type_printed 	= "ContrÙle de caisse";
+	$this->lib_type_printed 	= "Contr√¥le de caisse";
 	
 	
 	include_once ($PDF_MODELES_DIR."config/".$this->code_pdf_modele.".config.php");
@@ -55,12 +55,12 @@ public function create_pdf ($compte_caisse, $id_compte_caisse_controle) {
 
 
 	// ***************************************************
-	// Valeurs par dÈfaut
+	// Valeurs par d√©faut
 	foreach ($CTRL_CAIS as $var => $valeur) {
 		$this->{$var} = $valeur;
 	}
 
-	// CrÈation de la premiËre page
+	// Cr√©ation de la premi√®re page
 	$this->create_pdf_page ();
 
 
@@ -68,12 +68,12 @@ public function create_pdf ($compte_caisse, $id_compte_caisse_controle) {
 }
 
 
-// CrÈÈ une nouvelle page du document PDF
+// Cr√©√© une nouvelle page du document PDF
 protected function create_pdf_page () {
 	// Comptage du nombre de page
 	$this->page_actuelle++;
 	$this->SetAutoPageBreak(true,2*$this->MARGE_GAUCHE);;
-	// CrÈation d'une nouvelle page
+	// Cr√©ation d'une nouvelle page
 	$this->AddPage();
 	$this->Header() ;
 	$this->create_pdf_corps ();
@@ -81,7 +81,7 @@ protected function create_pdf_page () {
 }
 
 
-// CrÈÈ l'entete du document PDF
+// Cr√©√© l'entete du document PDF
 public function Header() {
 	global $MONNAIE;
 	global $TARIFS_NB_DECIMALES;
@@ -176,7 +176,7 @@ public function Header() {
 }
 
 
-// CrÈÈ le corps du PDF
+// Cr√©√© le corps du PDF
 protected function create_pdf_corps () {
 	global $MONNAIE;
 	global $TARIFS_NB_DECIMALES;
@@ -185,9 +185,9 @@ protected function create_pdf_corps () {
 
 	$this->SetFont('Arial', '', 8);
 
-	//dÈfinition du contenu
+	//d√©finition du contenu
 	
-	//liste des espËces
+	//liste des esp√®ces
 	$esp_liste = explode("\n",$this->controle->ESP->infos_controle);
 	
 	$this->text_contenu_controle = $this->ENTETE_ESP." : ";
@@ -198,14 +198,14 @@ protected function create_pdf_corps () {
 			
 		}
 	} else {
-		$this->text_contenu_controle .= " non contrÙlÈ";
+		$this->text_contenu_controle .= " non contr√¥l√©";
 	}
 	
 	
 	$this->SetXY($this->MARGE_GAUCHE, $this->y);
 	$this->MultiCell ($this->LARGEUR_TOTALE_CORPS, 4, $this->text_contenu_controle, 0, 'L');
 	
-	//liste des chËques
+	//liste des ch√®ques
 	$this->text_contenu_controle = "\n";
 	
 	$chq_liste = explode("\n",$this->controle->CHQ->infos_controle);
@@ -215,7 +215,7 @@ protected function create_pdf_corps () {
 	$this->text_contenu_controle .= $this->ENTETE_CHQ." : ";
 	if ($this->controle->CHQ->controle) {
 		$this->text_contenu_controle .= " (".count($chq_liste);
-		$this->text_contenu_controle .= " opÈrations )";
+		$this->text_contenu_controle .= " op√©rations )";
 		foreach ($chq_liste as $chq_cont) {
 			$tmp = explode(";", $chq_cont);
 			if (isset($tmp[0]) && $tmp[0] && isset($tmp[1]) && (empty($tmp[1]) || $tmp[1] == "" || $tmp[1] ==" ") ) {$this->text_contenu_controle .= " ".number_format($tmp[0], $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[0]." * ; "; continue;}
@@ -223,7 +223,7 @@ protected function create_pdf_corps () {
 			
 		}
 	} else {
-		$this->text_contenu_controle .= " non contrÙlÈ";
+		$this->text_contenu_controle .= " non contr√¥l√©";
 	}
 	
 	
@@ -243,7 +243,7 @@ protected function create_pdf_corps () {
 	$this->text_contenu_controle .= $this->ENTETE_CB." : ";
 	if ($this->controle->CB->controle) {
 		$this->text_contenu_controle .= " (".count($cb_liste);
-		$this->text_contenu_controle .= " opÈrations )";
+		$this->text_contenu_controle .= " op√©rations )";
 		foreach ($cb_liste as $cb_cont) {
 			$tmp = explode(";", $cb_cont);
 			if (isset($tmp[0]) && $tmp[0] && isset($tmp[1]) && (empty($tmp[1]) || $tmp[1] == "" || $tmp[1] ==" ")) {$this->text_contenu_controle .= " ".number_format($tmp[0], $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[0]." * ; "; continue;}
@@ -251,7 +251,7 @@ protected function create_pdf_corps () {
 			
 		}
 	} else {
-		$this->text_contenu_controle .= " non contrÙlÈ";
+		$this->text_contenu_controle .= " non contr√¥l√©";
 	}
 	
 

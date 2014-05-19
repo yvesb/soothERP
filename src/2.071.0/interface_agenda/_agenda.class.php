@@ -107,17 +107,17 @@ abstract class Agenda{
 		return null;
 	}
 	
-	//retourne la couleur n°1 sous forme d'une chaine de charactère de la forme #e3a869
+	//retourne la couleur nÂ°1 sous forme d'une chaine de charactÃ¨re de la forme #e3a869
 	public function getCouleur_1(){
 		return $this->couleur_1;
 	}
 	
-	//retourne la couleur n°2 sous forme d'une chaine de charactère de la forme #e3a869
+	//retourne la couleur nÂ°2 sous forme d'une chaine de charactÃ¨re de la forme #e3a869
 	public function getCouleur_2(){
 		return $this->couleur_2;
 	}
 	
-	//retourne la couleur n°3 sous forme d'une chaine de charactère de la forme #e3a869
+	//retourne la couleur nÂ°3 sous forme d'une chaine de charactÃ¨re de la forme #e3a869
 	public function getCouleur_3(){
 		return $this->couleur_3;
 	}
@@ -226,8 +226,8 @@ abstract class Agenda{
 // *************************************************************************************************************
 class AgendaReservationRessource extends Agenda{
 
-	// POUR l'instant 1 AGENDA gère 1 RESSOURCE
-	// A l'AVENIR 1 AGENDA gèrera plusiseurs ressources
+	// POUR l'instant 1 AGENDA gÃ¨re 1 RESSOURCE
+	// A l'AVENIR 1 AGENDA gÃ¨rera plusiseurs ressources
 	private $ressources; //array
 	//structure :
 	//	$ressource[N]["ref_agenda"]
@@ -305,7 +305,7 @@ class AgendaReservationRessource extends Agenda{
 	// *************************************************************************************************************
 	// Getters & Setters
 	// *************************************************************************************************************
-	//Cerataines fonctions sont redondante avec les fonctions "static" -> normales, c'est plus simple à utiliser
+	//Cerataines fonctions sont redondante avec les fonctions "static" -> normales, c'est plus simple Ã  utiliser
 	
 	public function getRessources()
 	{		return $this->ressources;}
@@ -479,7 +479,7 @@ class AgendaContact extends Agenda{
 	// *************************************************************************************************************
 	// Getters & Setters
 	// *************************************************************************************************************
-	//Cerataines fonctions sont redondante avec les fonctions "static" -> normales, c'est plus simple à utiliser
+	//Cerataines fonctions sont redondante avec les fonctions "static" -> normales, c'est plus simple Ã  utiliser
 	
 	public function getContact()
 	{		return $this->contact;}
@@ -643,7 +643,7 @@ class AgendaLoacationMateriel extends Agenda{
 	// *************************************************************************************************************
 	// Getters & Setters
 	// *************************************************************************************************************
-	//Cerataines fonctions sont redondante avec les fonctions "static" -> normales, c'est plus simple à utiliser
+	//Cerataines fonctions sont redondante avec les fonctions "static" -> normales, c'est plus simple Ã  utiliser
 	public function getArticle()
 	{	if($this->article == null)
 				$this->article = new article($this->ref_article);

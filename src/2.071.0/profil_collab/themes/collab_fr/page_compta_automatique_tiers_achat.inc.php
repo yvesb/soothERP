@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -25,7 +25,7 @@ check_page_variables ($page_variables);
 <?php include $DIR.$_SESSION['theme']->getDir_theme()."page_compta_plan_recherche_mini.inc.php" ?>
 <div class="emarge">
 <div style=" float:right; text-align:right">
-<span id="retour_compta_auto" style="cursor:pointer; text-decoration:underline">Retour à la comptabilité automatique</span>
+<span id="retour_compta_auto" style="cursor:pointer; text-decoration:underline">Retour Ã  la comptabilitÃ© automatique</span>
 <script type="text/javascript">
 Event.observe('retour_compta_auto', 'click',  function(evt){
 Event.stop(evt); 
@@ -33,7 +33,7 @@ page.verify('compta_automatique','compta_automatique.php','true','sub_content');
 }, false);
 </script>
 </div>
-<p class="titre">Numéros de compte associés aux catégories de fournisseurs </p>
+<p class="titre">NumÃ©ros de compte associÃ©s aux catÃ©gories de fournisseurs </p>
 <div style="height:50px">
 <table class="minimizetable">
 <tr>
@@ -52,11 +52,11 @@ page.verify('compta_automatique','compta_automatique.php','true','sub_content');
 				</td>
 				</tr>
 				<tr class="smallheight">
-				<td style=" font-weight:bolder;  text-align:center">Catégories de fournisseurs</td>
-				<td style=" font-weight:bolder;  text-align:center">Numéro de compte achat</td>
+				<td style=" font-weight:bolder;  text-align:center">CatÃ©gories de fournisseurs</td>
+				<td style=" font-weight:bolder;  text-align:center">NumÃ©ro de compte achat</td>
 				<td>&nbsp;</td>
 				<td style=" font-weight:bolder; text-align:left">
-				<span>Libellé:</span>
+				<span>LibellÃ©:</span>
 				</td>
 				</tr>
 				<tr>

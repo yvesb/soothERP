@@ -24,7 +24,7 @@ final class compte_caisse {
 	private $code_pdf_modele_depot = "depot_caisse"; // code pour la class d'impression d'un depot
 	private $code_pdf_modele_retrait = "retrait_caisse"; // code pour la class d'impression d'un retrait (banque vers caisse)
 	
-	private $defaut_numero_compte;	// numéro de compte comptable par defaut 
+	private $defaut_numero_compte;	// numÃ©ro de compte comptable par defaut 
 
 
 public function __construct ($id_compte_caisse = "") {
@@ -63,7 +63,7 @@ public function create_compte_caisse ($infos) {
 	global $bdd;
 
 	// *************************************************
-	// Réception des données
+	// RÃ©ception des donnÃ©es
 	$this->lib_caisse 		= $infos['lib_caisse'];
 	$this->id_magasin			= $infos['id_magasin'];
 	$this->id_compte_tpe 	= $infos['id_compte_tpe'];
@@ -103,7 +103,7 @@ public function create_compte_caisse ($infos) {
 
 
 private function create_lib_caisse () {
-	$this->lib_caisse = "Caisse ".$_SESSION['magasins'][$this->id_magasin]->getLib_magasin()." n°".$this->ordre;
+	$this->lib_caisse = "Caisse ".$_SESSION['magasins'][$this->id_magasin]->getLib_magasin()." nÂ°".$this->ordre;
 }
 
 
@@ -115,7 +115,7 @@ public function maj_compte_caisse ($infos) {
 	global $bdd;
 
 	// *************************************************
-	// Réception des données
+	// RÃ©ception des donnÃ©es
 	$this->lib_caisse 		= $infos['lib_caisse'];
 	if ($this->id_magasin != $infos['id_magasin'] && isset($_SESSION['magasins'][$infos['id_magasin']]) ) { 
 		$this->id_magasin = $infos['id_magasin'];
@@ -141,19 +141,19 @@ public function maj_compte_caisse ($infos) {
 	return true;
 }
 
-//mise à jour du numéro de compte par défaut
+//mise Ã  jour du numÃ©ro de compte par dÃ©faut
 public function maj_defaut_numero_compte ($defaut_numero_compte) {
 	global $bdd;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	if ($defaut_numero_compte == $this->defaut_numero_compte ) {
 		return false;
 	}
 	$this->defaut_numero_compte		= $defaut_numero_compte;
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -175,7 +175,7 @@ function active_compte () {
 	if ($this->actif) { return false; }
 
 	// *************************************************
-	// MAJ de la base de donnée
+	// MAJ de la base de donnÃ©e
 	$query = "UPDATE comptes_caisses 
 						SET actif = 1
 						WHERE id_compte_caisse = '".$this->id_compte_caisse."' "; 
@@ -185,14 +185,14 @@ function active_compte () {
 	return true;
 }
 
-// Désactive un compte
+// DÃ©sactive un compte
 function desactive_compte () {
 	global $bdd;
 
 	if (!$this->actif) { return false; }
 
 	// *************************************************
-	// Controle de la possibilité de désactiver ce compte 
+	// Controle de la possibilitÃ© de dÃ©sactiver ce compte 
 // Controle si Inactivation de la  caisse elle ne dois pas contenir de fonds
 	if ($this->actif) {
 		$query = "SELECT SUM(montant_contenu) montant FROM comptes_caisses_contenu WHERE id_compte_caisse = '".$this->id_compte_caisse."' ";
@@ -205,7 +205,7 @@ function desactive_compte () {
 	}
 
 	// *************************************************
-	// MAJ de la base de donnée
+	// MAJ de la base de donnÃ©e
 	$query = "UPDATE comptes_caisses 
 						SET actif = 0
 						WHERE id_compte_caisse = '".$this->id_compte_caisse."' "; 
@@ -225,7 +225,7 @@ public function modifier_ordre ($new_ordre) {
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -243,14 +243,14 @@ public function modifier_ordre ($new_ordre) {
 
 	$bdd->beginTransaction();
 
-	// Mise à jour des autres comptes caisses
+	// Mise Ã  jour des autres comptes caisses
 	$query = "UPDATE comptes_caisses
 						SET ordre = ordre ".$variation." 1
 						WHERE id_magasin = '".$this->id_magasin."' && 
 									ordre ".$symbole1." '".$this->ordre."' && ordre ".$symbole2." '".$new_ordre."' ";
 	$bdd->exec ($query);
 
-	// Mise à jour de ce compte caisse
+	// Mise Ã  jour de ce compte caisse
 	$query = "UPDATE comptes_caisses
 						SET ordre = '".$new_ordre."'
 						WHERE id_compte_caisse = '".$this->id_compte_caisse."'  ";
@@ -261,7 +261,7 @@ public function modifier_ordre ($new_ordre) {
 	$this->ordre = $new_ordre;
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
@@ -271,7 +271,7 @@ public function suppression () {
 	global $bdd;
 
 	// *************************************************
-	// Controle de la possibilité de supprimer la caisse
+	// Controle de la possibilitÃ© de supprimer la caisse
 
 // Controle si supprimer de la  caisse elle ne dois pas contenir de fonds
 	if ($this->actif) {
@@ -296,7 +296,7 @@ public function suppression () {
 // FONCTIONS DE GESTION DES CAISSES
 //*********************************************************************************************
 
-// fonction de création d'un controle de caisse
+// fonction de crÃ©ation d'un controle de caisse
 public function create_controle_caisse ($info) {
 	global $bdd;
 	global $ESP_E_ID_REGMT_MODE;
@@ -312,13 +312,13 @@ public function create_controle_caisse ($info) {
 	$bdd->exec ($query);
 	
 	$id_compte_caisse_controle = $bdd->lastInsertId();
-	//insertion du controle des espèces
+	//insertion du controle des espÃ¨ces
 	$query = "INSERT INTO comptes_caisses_controles_montants 
 							(id_compte_caisse_controle, id_reglement_mode, controle, montant_theorique, montant_controle, infos_theorique, infos_controle)
 						VALUES ('".$id_compte_caisse_controle."', '".$ESP_E_ID_REGMT_MODE."', '".$info["ESP"]["controle"]."', '".$info["ESP"]["montant_theorique"]."', '".$info["ESP"]["montant_controle"]."', '".$info["ESP"]["infos_theorique"]."', '".$info["ESP"]["infos_controle"]."')";
 	$bdd->exec ($query);
 	
-	//insertion du controle des chèques
+	//insertion du controle des chÃ¨ques
 	$query = "INSERT INTO comptes_caisses_controles_montants 
 							(id_compte_caisse_controle, id_reglement_mode, controle, montant_theorique, montant_controle, infos_theorique, infos_controle)
 						VALUES ('".$id_compte_caisse_controle."', '".$CHQ_E_ID_REGMT_MODE."', '".$info["CHQ"]["controle"]."', '".$info["CHQ"]["montant_theorique"]."', '".$info["CHQ"]["montant_controle"]."', '".$info["CHQ"]["infos_theorique"]."', '".$info["CHQ"]["infos_controle"]."')";
@@ -330,7 +330,7 @@ public function create_controle_caisse ($info) {
 						VALUES ('".$id_compte_caisse_controle."', '".$CB_E_ID_REGMT_MODE."', '".$info["CB"]["controle"]."', '".$info["CB"]["montant_theorique"]."', '".$info["CB"]["montant_controle"]."', '".$info["CB"]["infos_theorique"]."', '".$info["CB"]["infos_controle"]."')";
 	$bdd->exec ($query);
 	
-	//si le controle à été effectué, mettre à jour les infos du contenu de caisse
+	//si le controle Ã  Ã©tÃ© effectuÃ©, mettre Ã  jour les infos du contenu de caisse
 	$infos_contenu = array();
 	if ($info["ESP"]["controle"]) {
 		$this->del_compte_caisse_contenu ($this->id_compte_caisse, $ESP_E_ID_REGMT_MODE);
@@ -423,7 +423,7 @@ public function imprimer_controle_caisse ($print = 0, $id_compte_caisse_controle
 	global $PDF_MODELES_DIR;
 	
 	// Affichage du pdf
-	// Préférences et options
+	// PrÃ©fÃ©rences et options
 	$GLOBALS['PDF_OPTIONS']['HideToolbar'] = 0;
 	$GLOBALS['PDF_OPTIONS']['AutoPrint'] = $print;
 	
@@ -431,7 +431,7 @@ public function imprimer_controle_caisse ($print = 0, $id_compte_caisse_controle
 	$class = "pdf_".$this->code_pdf_modele_controle;
 	$pdf = new $class;
 	
-	// Création
+	// CrÃ©ation
 	$pdf->create_pdf($this, $id_compte_caisse_controle);
 	
 	// Sortie
@@ -440,7 +440,7 @@ public function imprimer_controle_caisse ($print = 0, $id_compte_caisse_controle
 }
 
 
-// fonction de création d'un transfert de caisse
+// fonction de crÃ©ation d'un transfert de caisse
 public function create_transfert_caisse ($info) {
 	global $bdd;
 	global $ESP_E_ID_REGMT_MODE;
@@ -464,7 +464,7 @@ public function create_transfert_caisse ($info) {
 	$id_compte_caisse_transfert = $bdd->lastInsertId();
 	
 	
-	//insertion du transfert des espèces
+	//insertion du transfert des espÃ¨ces
 	$query = "INSERT INTO comptes_caisses_transferts_montants 
 							(id_compte_caisse_transfert, id_reglement_mode, montant_theorique, montant_transfert, infos_transfert)
 						VALUES ('".$id_compte_caisse_transfert."', '".$ESP_E_ID_REGMT_MODE."', '".$info["ESP"]["montant_theorique"]."', '".$info["ESP"]["montant_transfert"]."', '".$info["ESP"]["infos_transfert"]."')";
@@ -474,23 +474,23 @@ public function create_transfert_caisse ($info) {
 	if ($info["CHQ"]["infos_transfert"]) {$chq_infos_transfert .= $info["CHQ"]["infos_transfert"];}
 	if ($info["CHQ"]["infos_transfert_add"]) {$chq_infos_transfert .= $info["CHQ"]["infos_transfert_add"];}
 	
-	//insertion du transfert des chèques
+	//insertion du transfert des chÃ¨ques
 	$query = "INSERT INTO comptes_caisses_transferts_montants 
 							(id_compte_caisse_transfert, id_reglement_mode, montant_theorique, montant_transfert, infos_transfert)
 						VALUES ('".$id_compte_caisse_transfert."', '".$CHQ_E_ID_REGMT_MODE."', '".$info["CHQ"]["montant_theorique"]."', '".$info["CHQ"]["montant_transfert"]."', '".addslashes($chq_infos_transfert)."')";
 	$bdd->exec ($query);
 		
 		
-	// mettre à jour les infos du contenu de caisse
+	// mettre Ã  jour les infos du contenu de caisse
 	$infos_contenu = array();
 	
-	//mise à jour du contenu des caisses
+	//mise Ã  jour du contenu des caisses
 	$this->maj_esp_compte_caisse_contenu ($this->id_compte_caisse, $ESP_E_ID_REGMT_MODE, -$info["ESP"]["montant_transfert"]) ;
 	$this->maj_esp_compte_caisse_contenu ($info["id_compte_caisse_destination"], $ESP_E_ID_REGMT_MODE, $info["ESP"]["montant_transfert"]) ;
 	
 	
 	
-	//mise à jour du contenu de caisses
+	//mise Ã  jour du contenu de caisses
 	$split_array_CHQ = explode("\n", $info["CHQ"]["infos_transfert"]);
 	foreach ($split_array_CHQ as $line_chq) {
 		$tmp_chq = explode(";", $line_chq);
@@ -518,20 +518,20 @@ public function create_transfert_caisse ($info) {
 	$this->add_compte_caisse_contenu ($infos_contenu);
 	
 	
-	//création des mouvements de caisse
+	//crÃ©ation des mouvements de caisse
 	$this->create_compte_caisse_move ($this->id_compte_caisse, 2, "", -$info["montant_transfert"], $id_compte_caisse_transfert);
 	$this->create_compte_caisse_move ($info["id_compte_caisse_destination"], 2, "", $info["montant_transfert"], $id_compte_caisse_transfert);
 	
 	
-	//verification du besoin de créer une opération dans les journaux des caisses
+	//verification du besoin de crÃ©er une opÃ©ration dans les journaux des caisses
 	$caisse_cible = new compte_caisse ($info["id_compte_caisse_destination"]);
 	if ($this->defaut_numero_compte != $caisse_cible->getDefaut_numero_compte ()) {
-		//les deux caisses ont des comptes comptables différents alors on traite le transfert dans les journaux de caisse
-		//vérificaation des journaux correspondant au comptes
+		//les deux caisses ont des comptes comptables diffÃ©rents alors on traite le transfert dans les journaux de caisse
+		//vÃ©rificaation des journaux correspondant au comptes
 		$journal_caisse_depart = compta_journaux::check_exist_journaux ($DEFAUT_ID_JOURNAL_CAISSES, $this->defaut_numero_compte);
 		$journal_caisse_arrivee = compta_journaux::check_exist_journaux ($DEFAUT_ID_JOURNAL_CAISSES, $caisse_cible->getDefaut_numero_compte ());
 		
-		//création des opérations de journaux
+		//crÃ©ation des opÃ©rations de journaux
 		$journal_caisse_depart->create_operation ($DEFAUT_COMPTE_VIREMENTS_INTERNES, -$info["montant_transfert"], $id_compte_caisse_transfert, date("Y-m-d H:i:s"), 9); 
 		
 		$journal_caisse_arrivee->create_operation ($DEFAUT_COMPTE_VIREMENTS_INTERNES, $info["montant_transfert"], $id_compte_caisse_transfert, date("Y-m-d H:i:s"), 10); 
@@ -593,7 +593,7 @@ public function imprimer_transfert_caisse ($print = 0, $id_compte_caisse_transfe
 	global $PDF_MODELES_DIR;
 	
 	// Affichage du pdf
-	// Préférences et options
+	// PrÃ©fÃ©rences et options
 	$GLOBALS['PDF_OPTIONS']['HideToolbar'] = 0;
 	$GLOBALS['PDF_OPTIONS']['AutoPrint'] = $print;
 	
@@ -601,7 +601,7 @@ public function imprimer_transfert_caisse ($print = 0, $id_compte_caisse_transfe
 	$class = "pdf_".$this->code_pdf_modele_transfert;
 	$pdf = new $class;
 	
-	// Création
+	// CrÃ©ation
 	$pdf->create_pdf($this, $id_compte_caisse_transfert);
 	
 	// Sortie
@@ -609,7 +609,7 @@ public function imprimer_transfert_caisse ($print = 0, $id_compte_caisse_transfe
 
 }
 
-// fonction de création d'un dépot de caisse vers la banque
+// fonction de crÃ©ation d'un dÃ©pot de caisse vers la banque
 public function create_depot_caisse ($info) {
 	global $bdd;
 	global $ESP_E_ID_REGMT_MODE;
@@ -634,18 +634,18 @@ public function create_depot_caisse ($info) {
 	
 
 	if (isset($info["ESP"])) {
-		//insertion du depot des espèces
+		//insertion du depot des espÃ¨ces
 		$query = "INSERT INTO comptes_caisses_depots_montants 
 								(id_compte_caisse_depot, id_reglement_mode, montant_depot, infos_depot)
 							VALUES ('".$id_compte_caisse_depot."', '".$ESP_E_ID_REGMT_MODE."', '".$info["ESP"]["montant_depot"]."', '".$info["ESP"]["infos_depot"]."')";
 		$bdd->exec ($query);
 		
-		//mise à jour du contenu des caisses
+		//mise Ã  jour du contenu des caisses
 		$this->maj_esp_compte_caisse_contenu ($this->id_compte_caisse, $ESP_E_ID_REGMT_MODE, -$info["ESP"]["montant_depot"]) ;
 	}
 
 	if (isset($info["CHQ"])) {
-		//insertion des depots des chèques
+		//insertion des depots des chÃ¨ques
 		foreach ($info["CHQ"]["liste_cheques"] as $line_chq) {
 			$query = "INSERT INTO comptes_caisses_depots_montants 
 									(id_compte_caisse_depot, id_reglement_mode, montant_depot, infos_depot)
@@ -656,7 +656,7 @@ public function create_depot_caisse ($info) {
 			$tmp_inf["id_compte_caisse_source"] = $this->id_compte_caisse;
 			$tmp_inf["id_reglement_mode"] = $CHQ_E_ID_REGMT_MODE;
 			$tmp_inf["montant_contenu"] = $line_chq["montant_depot"];
-			//découpe ligne info depot pour récupérer une ref
+			//dÃ©coupe ligne info depot pour rÃ©cupÃ©rer une ref
 			$tmp_inf["infos_supp"] = "";
 			$tmp_chq = explode(";", $line_chq["infos_depot"]);
 			if (isset($tmp_chq[0])) {
@@ -673,7 +673,7 @@ public function create_depot_caisse ($info) {
 		}
 	}
 		if (isset($info["LC"])) {
-		//insertion des depots des chèques
+		//insertion des depots des chÃ¨ques
 		foreach ($info["LC"]["liste_cheques"] as $line_chq) {
 			$query = "INSERT INTO comptes_caisses_depots_montants 
 									(id_compte_caisse_depot, id_reglement_mode, montant_depot, infos_depot)
@@ -684,7 +684,7 @@ public function create_depot_caisse ($info) {
 			$tmp_inf["id_compte_caisse_source"] = $this->id_compte_caisse;
 			$tmp_inf["id_reglement_mode"] = $LC_E_ID_REGMT_MODE;
 			$tmp_inf["montant_contenu"] = $line_chq["montant_depot"];
-			//découpe ligne info depot pour récupérer une ref
+			//dÃ©coupe ligne info depot pour rÃ©cupÃ©rer une ref
 			$tmp_inf["infos_supp"] = "";
 			$tmp_chq = explode(";", $line_chq["infos_depot"]);
 			if (isset($tmp_chq[0])) {
@@ -693,17 +693,17 @@ public function create_depot_caisse ($info) {
 			$this->del_line_compte_caisse_contenu ($tmp_inf);
 		}
 	}
-	//création du mouvements de caisse
+	//crÃ©ation du mouvements de caisse
 	$this->create_compte_caisse_move ($this->id_compte_caisse, 4, "", -$info["montant_depot"], $id_compte_caisse_depot);
 
 
-	//création des opérations dans le journal de caisse et de banque correspondant
+	//crÃ©ation des opÃ©rations dans le journal de caisse et de banque correspondant
 	$compte_bancaire_cible = new compte_bancaire ($info["id_compte_bancaire_destination"]);
-		//vérification des journaux correspondant au comptes
+		//vÃ©rification des journaux correspondant au comptes
 		$journal_caisse_depart = compta_journaux::check_exist_journaux ($DEFAUT_ID_JOURNAL_CAISSES, $this->defaut_numero_compte);
 		$journal_banque_arrivee = compta_journaux::check_exist_journaux ($DEFAUT_ID_JOURNAL_BANQUES, $compte_bancaire_cible->getDefaut_numero_compte ());
 		
-		//création des opérations de journaux
+		//crÃ©ation des opÃ©rations de journaux
 		$journal_caisse_depart->create_operation ($DEFAUT_COMPTE_VIREMENTS_INTERNES, -$info["montant_depot"], $id_compte_caisse_depot, date("Y-m-d H:i:s"), 1); 
 		
 		$journal_banque_arrivee->create_operation ($DEFAUT_COMPTE_VIREMENTS_INTERNES, $info["montant_depot"], $id_compte_caisse_depot, date("Y-m-d H:i:s"), 2); 
@@ -768,7 +768,7 @@ public function imprimer_depot_caisse ($print = 0, $id_compte_caisse_depot) {
 	global $PDF_MODELES_DIR;
 	
 	// Affichage du pdf
-	// Préférences et options
+	// PrÃ©fÃ©rences et options
 	$GLOBALS['PDF_OPTIONS']['HideToolbar'] = 0;
 	$GLOBALS['PDF_OPTIONS']['AutoPrint'] = $print;
 	
@@ -776,7 +776,7 @@ public function imprimer_depot_caisse ($print = 0, $id_compte_caisse_depot) {
 	$class = "pdf_".$this->code_pdf_modele_depot;
 	$pdf = new $class;
 	
-	// Création
+	// CrÃ©ation
 	$pdf->create_pdf($this, $id_compte_caisse_depot);
 	
 	// Sortie
@@ -784,7 +784,7 @@ public function imprimer_depot_caisse ($print = 0, $id_compte_caisse_depot) {
 
 }
 
-// fonction de création d'un retrait de la banque vers la caisse 
+// fonction de crÃ©ation d'un retrait de la banque vers la caisse 
 public function create_retrait_caisse ($info) {
 	global $bdd;
 	global $ESP_E_ID_REGMT_MODE;
@@ -809,26 +809,26 @@ public function create_retrait_caisse ($info) {
 	
 	
 	
-	//insertion du depot des espèces
+	//insertion du depot des espÃ¨ces
 	$query = "INSERT INTO comptes_caisses_retraits_montants 
 							(id_compte_caisse_retrait, id_reglement_mode, montant_retrait, infos_retrait)
 						VALUES ('".$id_compte_caisse_retrait."', '".$ESP_E_ID_REGMT_MODE."', '".$info["ESP"]["montant_retrait"]."', '".$info["ESP"]["infos_retrait"]."')";
 	$bdd->exec ($query);
 	
 	
-	//mise à jour du contenu des caisses
+	//mise Ã  jour du contenu des caisses
 	$this->maj_esp_compte_caisse_contenu ($this->id_compte_caisse, $ESP_E_ID_REGMT_MODE, $info["ESP"]["montant_retrait"]) ;
-	//création du mouvements de caisse
+	//crÃ©ation du mouvements de caisse
 	$this->create_compte_caisse_move ($this->id_compte_caisse, 3, "", $info["montant_retrait"], $id_compte_caisse_retrait);
 
-	//création des opérations dans le journal de caisse et de banque correspondant
+	//crÃ©ation des opÃ©rations dans le journal de caisse et de banque correspondant
 	$compte_bancaire_source = new compte_bancaire ($info["id_compte_bancaire_source"]);
-		//vérification des journaux correspondant au comptes
+		//vÃ©rification des journaux correspondant au comptes
 		$journal_banque_depart = compta_journaux::check_exist_journaux ($DEFAUT_ID_JOURNAL_BANQUES, $compte_bancaire_source->getDefaut_numero_compte ());
 		
 		$journal_caisse_arrivee = compta_journaux::check_exist_journaux ($DEFAUT_ID_JOURNAL_CAISSES, $this->defaut_numero_compte);
 		
-		//création des opérations de journaux
+		//crÃ©ation des opÃ©rations de journaux
 		$journal_banque_depart->create_operation ($DEFAUT_COMPTE_VIREMENTS_INTERNES, -$info["montant_retrait"], $id_compte_caisse_retrait, date("Y-m-d H:i:s"), 3); 
 		
 		$journal_caisse_arrivee->create_operation ($DEFAUT_COMPTE_VIREMENTS_INTERNES, $info["montant_retrait"], $id_compte_caisse_retrait, date("Y-m-d H:i:s"), 4); 
@@ -883,7 +883,7 @@ public function imprimer_retrait_caisse ($print = 0, $id_compte_caisse_retrait) 
 	global $PDF_MODELES_DIR;
 	
 	// Affichage du pdf
-	// Préférences et options
+	// PrÃ©fÃ©rences et options
 	$GLOBALS['PDF_OPTIONS']['HideToolbar'] = 0;
 	$GLOBALS['PDF_OPTIONS']['AutoPrint'] = $print;
 	
@@ -891,7 +891,7 @@ public function imprimer_retrait_caisse ($print = 0, $id_compte_caisse_retrait) 
 	$class = "pdf_".$this->code_pdf_modele_retrait;
 	$pdf = new $class;
 	
-	// Création
+	// CrÃ©ation
 	$pdf->create_pdf($this, $id_compte_caisse_retrait);
 	
 	// Sortie
@@ -899,7 +899,7 @@ public function imprimer_retrait_caisse ($print = 0, $id_compte_caisse_retrait) 
 
 }
 
-// fonction de création d'un mouvement de fonds (entrant ou sortant sans source ou cible définie)
+// fonction de crÃ©ation d'un mouvement de fonds (entrant ou sortant sans source ou cible dÃ©finie)
 public function create_ar_fonds_caisse ($info) {
 	global $bdd;
 	global $ESP_E_ID_REGMT_MODE;
@@ -915,9 +915,9 @@ public function create_ar_fonds_caisse ($info) {
 	$id_compte_caisse_ar = $bdd->lastInsertId();
 	
 	
-	//mise à jour du contenu des caisses
+	//mise Ã  jour du contenu des caisses
 	$this->maj_esp_compte_caisse_contenu ($this->id_compte_caisse, $ESP_E_ID_REGMT_MODE, $info["montant_ar"]) ;
-	//création du mouvements de caisse
+	//crÃ©ation du mouvements de caisse
 	$this->create_compte_caisse_move ($this->id_compte_caisse, 7, "", $info["montant_ar"], $id_compte_caisse_ar);
 
 	return $id_compte_caisse_ar;
@@ -969,7 +969,7 @@ public function charger_last_controle() {
 
 
 
-// fonction de récupération des totals des mouvements depuis le dernier controle de caisse
+// fonction de rÃ©cupÃ©ration des totals des mouvements depuis le dernier controle de caisse
 public function controle_total_caisse_move () {
 	global $bdd;
 	global $ESP_E_ID_REGMT_MODE;
@@ -977,7 +977,7 @@ public function controle_total_caisse_move () {
 	global $CB_E_ID_REGMT_MODE;
 	
 	
-	//récupération des totaux des différents modes de règlement
+	//rÃ©cupÃ©ration des totaux des diffÃ©rents modes de rÃ¨glement
 	$total_theorique = array();
 	$total_theorique[$ESP_E_ID_REGMT_MODE] = 0;
 	$total_theorique[$CHQ_E_ID_REGMT_MODE] = 0;
@@ -997,7 +997,7 @@ public function controle_total_caisse_move () {
 }
 
 
-// fonction de récupération du nombre d'opérations par mode de reglement
+// fonction de rÃ©cupÃ©ration du nombre d'opÃ©rations par mode de reglement
 public function count_caisse_contenu ($id_reglement_mode) {
 	global $bdd;
 	
@@ -1008,7 +1008,7 @@ public function count_caisse_contenu ($id_reglement_mode) {
 	
 	
 	
-	//récupération des totaux des différents modes de règlement
+	//rÃ©cupÃ©ration des totaux des diffÃ©rents modes de rÃ¨glement
 	$count_theorique = array();
 	
 	if ($id_reglement_mode != $CB_E_ID_REGMT_MODE) {
@@ -1031,7 +1031,7 @@ public function count_caisse_contenu ($id_reglement_mode) {
 // FONCTIONS EXTERNES 
 // *************************************************************************************************************
 
-// fonction de création d'un compte_caisse_move
+// fonction de crÃ©ation d'un compte_caisse_move
 static function create_compte_caisse_move ($id_compte_caisse, $id_move_type, $id_reglement_mode = "", $montant_move = "", $info_supp = "") { 
 	global $bdd;
 
@@ -1052,7 +1052,7 @@ static function create_compte_caisse_move ($id_compte_caisse, $id_move_type, $id
 }
 
 
-//mise à jour du contenu de la caisse pour les especes
+//mise Ã  jour du contenu de la caisse pour les especes
 static function maj_esp_compte_caisse_contenu ($id_compte_caisse, $id_reglement_mode, $montant_contenu, $infos_supp = "", $controle = 0) {
 	global $bdd;
 	
@@ -1062,14 +1062,14 @@ static function maj_esp_compte_caisse_contenu ($id_compte_caisse, $id_reglement_
 						";
 	$resultat = $bdd->query($query);
 	if ($tmp = $resultat->fetchObject()) {
-		//ligne espèces pour cette caisse existe, on met à jour
+		//ligne espÃ¨ces pour cette caisse existe, on met Ã  jour
 		$query2 = "UPDATE comptes_caisses_contenu
 							SET montant_contenu = '".($tmp->montant_contenu + $montant_contenu)."' 
 							WHERE id_compte_caisse = '".$id_compte_caisse."' && id_reglement_mode = '".$id_reglement_mode."' ";
 
 		$bdd->exec ($query2);
 	} else {
-		//sinon on la crée
+		//sinon on la crÃ©e
 		compte_caisse::add_compte_caisse_contenu (array(array("id_compte_caisse"=>$id_compte_caisse, "id_reglement_mode"=>$id_reglement_mode, "montant_contenu"=>$montant_contenu, "infos_supp"=>$infos_supp, "controle"=>0)));
 	}
 	
@@ -1268,7 +1268,7 @@ function load_caisse_move ($id_compte_caisse_move) {
 	global $CB_E_ID_REGMT_MODE;
 	
 	
-	//récupération des totaux des différents modes de règlement
+	//rÃ©cupÃ©ration des totaux des diffÃ©rents modes de rÃ¨glement
 	$infos_compte_caisse_move = "";
 	
 	$query = "SELECT id_compte_caisse FROM comptes_caisses_moves WHERE id_compte_caisse_move='".$id_compte_caisse_move."' 

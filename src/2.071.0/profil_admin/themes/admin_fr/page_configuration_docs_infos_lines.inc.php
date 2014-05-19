@@ -4,7 +4,7 @@
 // CONFIG DES DONNEES des documents
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -21,11 +21,11 @@ check_page_variables ($page_variables);
 ?>
 <script type="text/javascript">
 tableau_smenu[0] = Array("smenu_entreprise", "smenu_entreprise.php" ,"true" ,"sub_content", "Entreprise");
-tableau_smenu[1] = Array('configuration_docs_infos_lines','configuration_docs_infos_lines.php',"true" ,"sub_content", "Lignes d'informations prédéfinies");
+tableau_smenu[1] = Array('configuration_docs_infos_lines','configuration_docs_infos_lines.php',"true" ,"sub_content", "Lignes d'informations prÃ©dÃ©finies");
 update_menu_arbo();
 </script>
 <div class="emarge">
-<p class="titre">Modèles de lignes d'information à insérer dans vos documents commerciaux</p>
+<p class="titre">ModÃ¨les de lignes d'information Ã  insÃ©rer dans vos documents commerciaux</p>
 
 <div class="contactview_corps" style="padding:5px">
 
@@ -39,10 +39,10 @@ update_menu_arbo();
 		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr>
-		<td style="font-weight:bolder">Libellé de la ligne </td>
+		<td style="font-weight:bolder">LibellÃ© de la ligne </td>
 		<td style="font-weight:bolder">Description de la ligne </td>
 		<td style="font-weight:bolder">Description interne</td>
-		<td style="font-weight:bolder">Documents concernés</td>
+		<td style="font-weight:bolder">Documents concernÃ©s</td>
 	</tr>
 	<tr>
 		<td>

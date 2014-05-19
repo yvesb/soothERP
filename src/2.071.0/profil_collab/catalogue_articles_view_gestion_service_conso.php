@@ -13,13 +13,13 @@ require ($DIR."_session.inc.php");
 // Controle
 
 	if (!isset($_REQUEST['ref_article'])) {
-		echo "La référence de l'article n'est pas précisée";
+		echo "La rÃ©fÃ©rence de l'article n'est pas prÃ©cisÃ©e";
 		exit;
 	}
 
 	$article = new article ($_REQUEST['ref_article']);
 	if (!$article->getRef_article()) {
-		echo "La référence de l'article est inconnue";		exit;
+		echo "La rÃ©fÃ©rence de l'article est inconnue";		exit;
 
 	}
 
@@ -36,7 +36,7 @@ $tarifs_liste	= array();
 $tarifs_liste = get_tarifs_listes_formules ($article->getRef_art_categ ());
 	
 
-// Charge les différents types de liaisons existants
+// Charge les diffÃ©rents types de liaisons existants
 $liaisons_liste	= array();
 $liaisons_liste = get_liaisons_types (); 
 	
@@ -47,10 +47,10 @@ $constructeurs_liste = array();
 $constructeurs_liste = get_constructeurs ();
 	
 	
-//appel de des infos de la categ pour liste des caracteristiques de la catégorie	
+//appel de des infos de la categ pour liste des caracteristiques de la catÃ©gorie	
 $art_categs = new art_categ ($article->getRef_art_categ ());
 	
-// on récupére la liste des caractéristiques
+// on rÃ©cupÃ©re la liste des caractÃ©ristiques
 	$caracs = array();
 	$caracs = $article->getCaracs ();
 	$caracs_groupes = $article->getCaracs_groupes ();
@@ -65,7 +65,7 @@ $art_categs = new art_categ ($article->getRef_art_categ ());
 //liste des tvas du pays par defaut
 $tvas = get_tvas ($DEFAUT_ID_PAYS);
 
-//chargement des caractéristiques
+//chargement des caractÃ©ristiques
 $art_caracs	=	$article->getCaracs();
 
 // chargement des tarifs des l'article
@@ -82,9 +82,9 @@ $art_docs = $article->getLast_docs ();
 	
 $tva_article = $article->getTva();
 
-//modification des données en cas d'affichage variante
+//modification des donnÃ©es en cas d'affichage variante
 if ($article->getVariante() == 1) {
-	//on charge un Esclave variante, alors on récupére les caractéristique possibles à partir du maitre
+	//on charge un Esclave variante, alors on rÃ©cupÃ©re les caractÃ©ristique possibles Ã  partir du maitre
 	$ref_article_master = $article->getVariante_master();
 	$article_master = new article ($ref_article_master);
 	$caracs = $article_master->getCaracs ();

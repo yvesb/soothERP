@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ("_session.inc.php");
 
 if (!isset($_REQUEST['ref_doc']) || $_REQUEST['ref_doc'] == "") {
-	echo "La référence du document n'est pas spécifiée";
+	echo "La rÃ©fÃ©rence du document n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $document = open_doc($_REQUEST['ref_doc']);

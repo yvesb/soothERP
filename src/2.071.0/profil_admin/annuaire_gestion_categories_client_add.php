@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 // chargement de la class du profil
 contact::load_profil_class($CLIENT_ID_PROFIL);
-// Préparations des variables 
+// PrÃ©parations des variables 
 	//_vardump($_REQUEST);
 	$infos	=	array();
 	$infos['id_tarif']					=	$_REQUEST["id_tarif"];
@@ -29,7 +29,7 @@ contact::load_profil_class($CLIENT_ID_PROFIL);
 	$infos['reglement_mode_favori']		= 	$_REQUEST["reglement_mode_favori"];
 	$infos['edition_mode_favori']		= 	$_REQUEST["edition_mode_favori"];
 	$infos['cycle_relance']				= 	$_REQUEST["cycle_relance"];
-	//création de la catégorie
+	//crÃ©ation de la catÃ©gorie
 	//_vardump($infos);
 	contact_client::create_client_categorie ($infos);
 

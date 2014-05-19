@@ -4,7 +4,7 @@
 // journal des ventes
 // ***********************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES", "fiches");
 check_page_variables ($page_variables);
 
@@ -28,7 +28,7 @@ function barre_navigation($nbtotal,
 													
 {
 	// --------------------------------------------------------------------
-	global $cfg_nb_pages; // Nb de n° de pages affichées dans la barre
+	global $cfg_nb_pages; // Nb de nÂ° de pages affichÃ©es dans la barre
 global $DIR;
 	$barre= "";	$lien_on 	= "&nbsp;<a href='#' id='link_pagi_{cible}'>{lien}</a>&nbsp;
 								<script type='text/javascript'>
@@ -38,7 +38,7 @@ global $DIR;
 	// --------------------------------------------------------------------
     
 
-	// début << .
+	// dÃ©but << .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -58,7 +58,7 @@ global $DIR;
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
 
 
-	// précédent < .
+	// prÃ©cÃ©dent < .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -164,7 +164,7 @@ function image_html($img)
 
 //
 //
-//création de la barre de nav
+//crÃ©ation de la barre de nav
 //
 //
 
@@ -195,7 +195,7 @@ foreach ($_ALERTES as $alerte => $value) {
 	echo $alerte." => ".$value."<br>";
 }
 
-// Affichage des résultats
+// Affichage des rÃ©sultats
 ?><br />
 
 <div id="affresult">
@@ -215,12 +215,12 @@ foreach ($_ALERTES as $alerte => $value) {
 <table width="97%"  border="0" cellspacing="0" cellpadding="0" id="tableresult">
 	<tr class="colorise0">
 		<td style="width:9%; text-align:center">Date</td>
-		<td style="width:15%; text-align:center">N° pièce / Réf Doc</td>
+		<td style="width:15%; text-align:center">NÂ° piÃ¨ce / RÃ©f Doc</td>
 		<td style="width:17%; text-align:left">Tiers</td>
 		<td style="width:3%; text-align:center"></td>
 		<td style="width:10%; text-align:right; padding-right:10px">Montant</td>
-		<td style="width:10%; text-align:center">N° de Compte</td>
-		<td style="width:27%; text-align:left">Libellé</td>
+		<td style="width:10%; text-align:center">NÂ° de Compte</td>
+		<td style="width:27%; text-align:left">LibellÃ©</td>
 		<td style="width:8%"></td>
 	</tr>
 <?php 
@@ -324,7 +324,7 @@ foreach ($fiches as $fiche) {
 <br />
 <br />
 <div style="font-weight:bolder; border-bottom:1px solid #000000">
-Synthèse de la période en cours
+SynthÃ¨se de la pÃ©riode en cours
 </div><br />
 
 <table width="100%"  border="0" cellspacing="0" cellpadding="0" id="tableresult">
@@ -333,7 +333,7 @@ Synthèse de la période en cours
 		<td style="width:17%; text-align:left"></td>
 		<td style="width:10%; text-align:right"></td>
 		<td style="width:18%; text-align:left"></td>
-		<td style="width:10%; text-align:left">N° de Compte</td>
+		<td style="width:10%; text-align:left">NÂ° de Compte</td>
 		<td style="width:10%; text-align:right">Montant </td>
 		<td style="width:5%"></td>
 	</tr>
@@ -344,7 +344,7 @@ $colorise++;
 $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 ?>
 	<tr class="<?php  echo  $class_colorise?>">
-		<td style="width:25%; text-align:left; font-weight:bolder">Synthèse du compte</td>
+		<td style="width:25%; text-align:left; font-weight:bolder">SynthÃ¨se du compte</td>
 		<td style="width:10%; text-align:right"></td>
 		<td style="width:35%; text-align:left" colspan="2">
 		<?php	if (isset($synt->numero_compte)) { echo $synt->lib_compte; }?></td>

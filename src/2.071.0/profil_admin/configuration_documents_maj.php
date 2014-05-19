@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// CONFIGURATION DES DONNÉES DES DOCUMENTS
+// CONFIGURATION DES DONNÃ‰ES DES DOCUMENTS
 // *************************************************************************************************************
 
 
@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 
 
-//mise à jour des données transmises
+//mise Ã  jour des donnÃ©es transmises
 if (isset($_REQUEST["document_recherche_showed_fiches"]) && is_numeric($_REQUEST["document_recherche_showed_fiches"])) {
 	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$DOCUMENT_RECHERCHE_SHOWED_FICHES =", "\$DOCUMENT_RECHERCHE_SHOWED_FICHES = ".$_REQUEST["document_recherche_showed_fiches"]."; ", $CONFIG_DIR);
 }

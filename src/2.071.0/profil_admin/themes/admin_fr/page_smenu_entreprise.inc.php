@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -51,9 +51,9 @@ update_menu_arbo();
 			<td style="text-align:left;">
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="20px" /><br />
 
-				<span class="titre_smenu_page" id="entreprise_rg"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Renseignements généraux</span><br /><br />
+				<span class="titre_smenu_page" id="entreprise_rg"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Renseignements gÃ©nÃ©raux</span><br /><br />
 
-				<span class="titre_smenu_page" id="entreprise_activite"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Renseignements sur l'activité</span><br /><br />				
+				<span class="titre_smenu_page" id="entreprise_activite"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Renseignements sur l'activitÃ©</span><br /><br />				
 				
 				<span class="titre_smenu_page_unvalid"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Visuels de l'entreprise</span><br /><br />
 
@@ -75,7 +75,7 @@ update_menu_arbo();
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="20px"/><br />
 
 
-				<span class="titre_smenu_page" id="entreprise_doc_pdf"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Documents commerciaux - Paramètres généraux </span><br /><br />
+				<span class="titre_smenu_page" id="entreprise_doc_pdf"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Documents commerciaux - ParamÃ¨tres gÃ©nÃ©rauxÂ </span><br /><br />
 
 			<?php 
 			foreach ($docs_types_groupes  as $groupe) {
@@ -85,7 +85,7 @@ update_menu_arbo();
 			}
 			?>
 			<br /><br />
-			<span class="titre_smenu_page" id="entreprise_docs_infos_lines"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Lignes d'informations prédéfinies</span><br /><br />
+			<span class="titre_smenu_page" id="entreprise_docs_infos_lines"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Lignes d'informations prÃ©dÃ©finies</span><br /><br />
 			
 			
 			<br /><br />

@@ -4,7 +4,7 @@
 // ajout ar de fonds pour caisse 
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -68,7 +68,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 				<td style="width:2%">&nbsp;</td>
 			</tr>
 			<tr>
-				<td colspan="3" class="chemin_texte_choisi" style="width:14%" id="chemin_etape_0_3">Espèces</td>
+				<td colspan="3" class="chemin_texte_choisi" style="width:14%" id="chemin_etape_0_3">EspÃ¨ces</td>
 				<td colspan="3" class="chemin_texte_gris" style="width:14%" id="chemin_etape_1_3">Validation</td>
 				<td style="width:2%"></td>
 				</tr>
@@ -143,7 +143,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 				<tr>
 					<td align="right" colspan="4" style="font-weight:bolder; ">
 					<div style="height:25px; line-height:25px; " class="controle_color_toto">
-					Montant&nbsp;opérations: 
+					Montant&nbsp;opÃ©rations: 
 					</div>
 					</td>
 					<td align="right" class="controle_color_toto"><input type="text" id="TT_ESP" name="TT_ESP" value="0.00" style="text-align:right"> <?php echo "&nbsp;". $MONNAIE[1];?></td>
@@ -154,7 +154,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 				<tr>
 					<td align="right" colspan="4" style="font-weight:bolder; ">
 					<div style="height:25px; line-height:25px; " class="controle_color_toto">
-					Fond de caisse théorique: 
+					Fond de caisse thÃ©orique: 
 					</div>
 					</td>
 					<td align="right" class="controle_color_toto"><input type="text" id="RT_ESP" name="RT_ESP" value="<?php
@@ -246,7 +246,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 				</tr>
 				<tr>
 					<td height="35" valign="middle" class="line_compta_bottom_rigth">
-					<div style="width:135px; height:35px; line-height:35px;">Solde de l'opération</div>		</td>
+					<div style="width:135px; height:35px; line-height:35px;">Solde de l'opÃ©ration</div>		</td>
 					<td height="35" align="right" valign="middle" class="line_compta_bottom">
 					<div style="width:75px; height:35px; line-height:35px;">
 					<span id="toto_esp_saisie"></span><?php echo "&nbsp;". $MONNAIE[1];?>		</div>		</td>

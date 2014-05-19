@@ -4,7 +4,7 @@
 // STTATS D'UN ARTICLE 
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -44,7 +44,7 @@ check_page_variables ($page_variables);
 							?></td>
 						</tr>
 						<tr>
-							<td class="aff_tit_article">Chiffre d'affaires généré</td>
+							<td class="aff_tit_article">Chiffre d'affaires gÃ©nÃ©rÃ©</td>
 							<td class="aff_ca_article">
 							<?php if (isset($article_CA["ventes_tri"][0])) {?>
 							<?php echo price_format($article_CA["ventes_tri"][0])."&nbsp;".$MONNAIE[1];?>
@@ -88,7 +88,7 @@ check_page_variables ($page_variables);
 			<table border="0" cellspacing="0" cellpadding="0" class="main_aff_ca">
 				<tr>
 					<td style="padding:10px">
-					<span style=" font-weight:bolder; color:#999999">Chiffre d'affaires généré sur les 30 derniers jours</span><br />
+					<span style=" font-weight:bolder; color:#999999">Chiffre d'affaires gÃ©nÃ©rÃ© sur les 30 derniers jours</span><br />
 						<table border="0" cellpadding="0" cellspacing="0">
 							<tr>
 								<td>
@@ -183,7 +183,7 @@ check_page_variables ($page_variables);
 							<td style=" font-weight:bolder; height:24px; line-height:24px" >Sur 30 jours</td>
 							<td style="color:#999999; text-align:right; font-weight:bolder; width:30%; height:24px; line-height:24px">
 							<?php if (isset($article_CA["rotation_stock_30"])) {?>
-							<?php echo price_format($article_CA["rotation_stock_30"])."&nbsp;";?>unités*
+							<?php echo price_format($article_CA["rotation_stock_30"])."&nbsp;";?>unitÃ©s*
 							<?php } ?>
 							</td>
 							<td>
@@ -195,7 +195,7 @@ check_page_variables ($page_variables);
 							<td style=" font-weight:bolder; height:24px; line-height:24px" >Sur 1 an</td>
 							<td style="color:#999999; text-align:right; font-weight:bolder; height:24px; line-height:24px;" >
 							<?php if (isset($article_CA["rotation_stock_12"])) {?>
-							<?php echo price_format($article_CA["rotation_stock_12"])."&nbsp;";?>unités*
+							<?php echo price_format($article_CA["rotation_stock_12"])."&nbsp;";?>unitÃ©s*
 							<?php } ?>
 							</td>
 							<td >
@@ -204,7 +204,7 @@ check_page_variables ($page_variables);
 							</td>
 						</tr>
 						<tr>
-							<td colspan="4" >La durée de vie prévisionnelle du stock est de <span style="color:#97bf0d; font-weight:bolder"> <?php if ($article_CA["rotation_stock_30"] != 0){echo  round($article_CA["stock_total"]  / $article_CA["rotation_stock_30"]*30, 0);} else { echo "0";} ?> jours</span></td>
+							<td colspan="4" >La durÃ©e de vie prÃ©visionnelle du stock est de <span style="color:#97bf0d; font-weight:bolder"> <?php if ($article_CA["rotation_stock_30"] != 0){echo  round($article_CA["stock_total"]  / $article_CA["rotation_stock_30"]*30, 0);} else { echo "0";} ?> jours</span></td>
 						</tr>
 					</table>
 					</td>
@@ -225,12 +225,12 @@ check_page_variables ($page_variables);
 					<table border="0" cellspacing="0" cellpadding="0" style="width:100%;">
 						<tr style="">
 							<td class="aff_an_article">&nbsp;</td>
-							<td class="aff_an_article">Année N</td>
-							<td class="aff_an_article">Année N-1</td>
-							<td class="aff_an_article">Année N-2</td>
+							<td class="aff_an_article">AnnÃ©e N</td>
+							<td class="aff_an_article">AnnÃ©e N-1</td>
+							<td class="aff_an_article">AnnÃ©e N-2</td>
 						</tr>
 						<tr>
-							<td class="aff_tit_article">Chiffre d'affaires généré</td>
+							<td class="aff_tit_article">Chiffre d'affaires gÃ©nÃ©rÃ©</td>
 							<td class="aff_ca_article">
 							<?php if (isset($article_CA["ventes"][0])) {?>
 							<?php echo price_format($article_CA["ventes"][0])."&nbsp;".$MONNAIE[1];?>
@@ -273,7 +273,7 @@ check_page_variables ($page_variables);
 		<br />
 			<table border="0" cellspacing="0" cellpadding="0" class="main_aff_ca">
 				<tr>
-					<td style="padding:10px"><span style=" font-weight:bolder; color:#999999">Chiffre d'affaires généré sur les 12 derniers mois</span><br />
+					<td style="padding:10px"><span style=" font-weight:bolder; color:#999999">Chiffre d'affaires gÃ©nÃ©rÃ© sur les 12 derniers mois</span><br />
 								<table border="0" cellpadding="0" cellspacing="0">
 									<tr>
 										<td>

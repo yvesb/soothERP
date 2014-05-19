@@ -92,11 +92,11 @@ abstract class GestionnaireEvenementsStd{
 	
 	//public array getEventsTypesAvecDroits(string/int/null, int/null)
 	public function getEventsTypesAvecDroits($agenda = null, $permissions = null){
-		if(is_null($agenda))				//aucun agenda n'est demandé
+		if(is_null($agenda))				//aucun agenda n'est demandÃ©
 		{			return $this->getEventsTypesOfAllTypeAgendaAvecDroits($permissions);}
-		elseif(is_string($agenda))	//une ref agenda est passée en parametre
+		elseif(is_string($agenda))	//une ref agenda est passÃ©e en parametre
 		{			return $this->getEventsTypesOfAgendaAvecDroits($agenda, $permissions);}
-		elseif(is_numeric($agenda))	//un type d'agenda est passé en parametre
+		elseif(is_numeric($agenda))	//un type d'agenda est passÃ© en parametre
 		{			return $this->getEventsTypesOfTypeAgendaAvecDroits($agenda, $permissions);}
 		else{	return array();}
 	}
@@ -210,8 +210,8 @@ abstract class GestionnaireEvenementsStd{
 	 // 
 	// *************************************************************************************************************
 	
-	//retourne la liste des événements compris entre $Udate_deb et $Udate_fin et qui se déroulent
-	//à partir d'une HEURE et pour une DUREE données.
+	//retourne la liste des Ã©vÃ©nements compris entre $Udate_deb et $Udate_fin et qui se dÃ©roulent
+	//Ã  partir d'une HEURE et pour une DUREE donnÃ©es.
 	
 	//public array &getEventsGrilleAvecDroit(Timestamp = 0, 	Timestamp = 0)
 	public function &getEventsGrilleAvecDroit($Udate_deb = 0, $Udate_fin = 0){
@@ -229,7 +229,7 @@ abstract class GestionnaireEvenementsStd{
 				$last_events_types_permission = $this->gestionnaireAgendas->getAgendasPermissions($last_ref_agenda)->GetEvents_types_permission();
 			}
 			if(isset($last_events_types_permission[intval($r->id_type_event)]) && $last_events_types_permission[intval($r->id_type_event)] == 0)
-			{		continue;}// Pour cet agenda, on a aucun doit sur ce type d'événement, donc, on ignore cet événement
+			{		continue;}// Pour cet agenda, on a aucun doit sur ce type d'Ã©vÃ©nement, donc, on ignore cet Ã©vÃ©nement
 			$events[$r->ref_agenda_event] = new Event($r->ref_agenda_event);
 		}
 		unset($last_ref_agenda, $last_events_types_permission);

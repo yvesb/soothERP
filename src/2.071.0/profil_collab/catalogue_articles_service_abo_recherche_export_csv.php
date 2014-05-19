@@ -9,13 +9,13 @@ require ($DIR."_session.inc.php");
 
 
 if (!isset($_REQUEST['ref_article'])) {
-	echo "La référence de l'article n'est pas précisée";
+	echo "La rÃ©fÃ©rence de l'article n'est pas prÃ©cisÃ©e";
 	exit;
 }
 
 $article = new article ($_REQUEST['ref_article']);
 if (!$article->getRef_article()) {
-	echo "La référence de l'article est inconnue";
+	echo "La rÃ©fÃ©rence de l'article est inconnue";
 	exit;
 }
 
@@ -26,7 +26,7 @@ if (!$article->getRef_article()) {
 
 $ANNUAIRE_CATEGORIES	=	get_categories();
 // *************************************************
-// Profils à afficher
+// Profils Ã  afficher
 $profils = array();
 foreach ($_SESSION['profils'] as $profil) {
 	if ($profil->getActif() == 0) { continue; }
@@ -36,7 +36,7 @@ unset ($profil);
 
 
 // *************************************************
-// Données pour le formulaire et la recherche
+// DonnÃ©es pour le formulaire et la recherche
 $form['ref_client'] = "";
 if (isset($_REQUEST['ref_client'])){
 	if ($_REQUEST['ref_client']!="") {
@@ -117,10 +117,10 @@ $form['ref_article'] = ($_REQUEST['ref_article']);
 $search['ref_article'] = ($_REQUEST['ref_article']);
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 
-// Préparation de la requete
+// PrÃ©paration de la requete
 $query_join 	= "";
 $query_where 	= "";
 
@@ -130,7 +130,7 @@ if (isset($search['ref_article'])) {
 	$query_where	.= " aa.ref_article = '".($search['ref_article'])."'";
 }
 	
-//catégorie de clients
+//catÃ©gorie de clients
 if ($search['id_client_categ']) {
 	if ($query_where) { $query_where .= " && "; }
 	$query_join 	.= " LEFT JOIN annu_client ac ON a.ref_contact = ac.ref_contact  ";
@@ -164,15 +164,15 @@ if ($search['adresse_pays']) {
 // etat abonnement :
 // 0 : TOUS
 // 1 : Abonnements en cours
-// 2 : Abonnements échus, à renouveller
-// 3 : Abonnements terminés
+// 2 : Abonnements Ã©chus, Ã  renouveller
+// 3 : Abonnements terminÃ©s
 if ($search['etat_abo']) {
 	if ($query_where) { $query_where .= " && "; }
 	// 1 : Abonnements en cours
 	if ($search['etat_abo'] == 1) { $query_where	.= " aa.date_echeance > NOW() ";}
-	// 2 : Abonnements échus, à renouveller
+	// 2 : Abonnements Ã©chus, Ã  renouveller
 	if ($search['etat_abo'] == 2) { $query_where	.= " (aa.fin_abonnement > NOW() || aa.fin_abonnement = '0000-00-00 00:00:00') && aa.date_echeance < NOW()  ";}
-	// 3 : Abonnements terminés
+	// 3 : Abonnements terminÃ©s
 	if ($search['etat_abo'] == 3) { $query_where	.= " aa.fin_abonnement < NOW() && aa.fin_abonnement != '0000-00-00 00:00:00'";}
 }
 
@@ -244,34 +244,34 @@ header('Content-Type: application/download');
 header('Content-Type: application/csv; name="listedesabonnes'.urlencode(str_replace (CHR(13), "" ,str_replace (CHR(10), "" ,preg_replace ("#((\r\n)+)#", "", (($article->getLib_article())))))).'.csv"');
 header('Content-Disposition: attachment; filename=listedesabonnes'.urlencode(str_replace (CHR(13), "" ,str_replace (CHR(10), "" ,preg_replace ("#((\r\n)+)#", "", (($article->getLib_article())))))).'.csv;'); 
 
-$ligne = "Référence article;Libellé article;Etat;Date de souscription;Date d'écheance;Date de préavis;Date de fin d'engagement;Date de fin d'abonnement;";
-$ligne.= "Référence contact;Nom du client 1;Nom du client 2;Catégorie de client;Adresse 1;Adresse 2;Adresse 3;Code Postal;Ville;Pays;Informations Adresse;tel 1;tel 2;fax;email\n";
+$ligne = "RÃ©fÃ©rence article;LibellÃ© article;Etat;Date de souscription;Date d'Ã©cheance;Date de prÃ©avis;Date de fin d'engagement;Date de fin d'abonnement;";
+$ligne.= "RÃ©fÃ©rence contact;Nom du client 1;Nom du client 2;CatÃ©gorie de client;Adresse 1;Adresse 2;Adresse 3;Code Postal;Ville;Pays;Informations Adresse;tel 1;tel 2;fax;email\n";
 echo $ligne;
 
 while ($fiche = $resultat->fetchObject()) {
 	$ligne = "";	//il est plus rapide d'utiliser une variable "ligne" que de faire des "echo" directements
 	
-	//Référence article;
+	//RÃ©fÃ©rence article;
 	$ligne.=$fiche->ref_article;
 	
-	//Libellé article;
+	//LibellÃ© article;
 	$ligne.=";".preg_replace('/\\r\\n|\\n|\\r|;/i', ',', $fiche->lib_article);
 	
 	//Etat;
 	$etat = "";
 	if ($fiche->date_echeance > date("Y-m-d H:i:s", time())) { $etat.=";en cours ";}
-	if ($fiche->fin_abonnement > date("Y-m-d H:i:s", time()) && $fiche->date_echeance < date("Y-m-d H:i:s", time())) { $etat.=";à renouveller ";}
-	if ($fiche->fin_abonnement < date("Y-m-d H:i:s", time()) && $fiche->fin_abonnement != '0000-00-00 00:00:00') { $etat.=";expiré ";}
+	if ($fiche->fin_abonnement > date("Y-m-d H:i:s", time()) && $fiche->date_echeance < date("Y-m-d H:i:s", time())) { $etat.=";Ã  renouveller ";}
+	if ($fiche->fin_abonnement < date("Y-m-d H:i:s", time()) && $fiche->fin_abonnement != '0000-00-00 00:00:00') { $etat.=";expirÃ© ";}
 	if ($fiche->date_preavis != '0000-00-00 00:00:00')
-	{ $etat.=";préavis déposé ";}
+	{ $etat.=";prÃ©avis dÃ©posÃ© ";}
 	$ligne.= $etat;
 	//Date de souscription;
 	$ligne.=";".date_Us_to_Fr($fiche->date_souscription);
 	
-	//Date d'écheance;
+	//Date d'Ã©cheance;
 	$ligne.=";".date_Us_to_Fr($fiche->date_echeance);
 	
-	//Date de préavis;
+	//Date de prÃ©avis;
 	if ($fiche->date_preavis == '0000-00-00 00:00:00' || $fiche->date_preavis == '0000-00-00')
 	{		$ligne.=";";}
 	else{$ligne.=";".date_Us_to_Fr($fiche->date_preavis);}
@@ -286,7 +286,7 @@ while ($fiche = $resultat->fetchObject()) {
 	{		$ligne.=";";}
 	else{$ligne.=";".date_Us_to_Fr($fiche->fin_abonnement);}
 	
-	//Référence contact;
+	//RÃ©fÃ©rence contact;
 	$ligne.=";".$fiche->ref_contact;
 
 	$pos = stripos($fiche->nom, "\n");
@@ -301,7 +301,7 @@ while ($fiche = $resultat->fetchObject()) {
 	//Nom du client 2;
 	$ligne.=";".preg_replace('/\\r\\n|\\n|\\r|;/i', ' ', substr($fiche->nom, $pos+2));
 	
-	//Catégorie de client
+	//CatÃ©gorie de client
 	$ligne.= ";".preg_replace('/\\r\\n|\\n|\\r|;/i', ' ', $fiche->lib_client_categ);
 	
 	$ad = explode("\n", $fiche->text_adresse);

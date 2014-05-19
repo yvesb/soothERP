@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -21,7 +21,7 @@ check_page_variables ($page_variables);
 
 ?>
 <script type="text/javascript">
-tableau_smenu[0] = Array("smenu_transfert_donnees", "smenu_transfert_donnees.php" ,"true" ,"sub_content", "Transfert de données");
+tableau_smenu[0] = Array("smenu_transfert_donnees", "smenu_transfert_donnees.php" ,"true" ,"sub_content", "Transfert de donnÃ©es");
 tableau_smenu[1] = Array('serveur_import_liste','serveur_import_liste.php','true','sub_content', "Gestion des serveurs d'import");
 update_menu_arbo();
 </script>
@@ -38,8 +38,8 @@ update_menu_arbo();
 				<table>
 					<tr class="smallheight">
 						<td style="width:4%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:190px">Référence du serveur: </td>
-						<td style="width:190px">Libellé du serveur: </td>
+						<td style="width:190px">RÃ©fÃ©rence du serveur: </td>
+						<td style="width:190px">LibellÃ© du serveur: </td>
 						<td colspan="2">URL du serveur: (http://www.site.com/)</td>
 					</tr>	
 					<tr>
@@ -174,7 +174,7 @@ if (count($liste_serveurs_import)) {
 				<td style="text-align:left"> 
 				<?php if (isset($serveur_import->import_types[$import_type->id_impex_type])) {?> 
 				<a href="#" id="choix_serveur_<?php echo $serveur_import->ref_serveur_import;?>_<?php echo $import_type->id_impex_type ;?>">
-					Mettre à jour / importer les données
+					Mettre Ã  jour / importer les donnÃ©es
 				</a>
 					
 				<SCRIPT type="text/javascript">

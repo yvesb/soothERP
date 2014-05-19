@@ -3,7 +3,7 @@
 // AFFICHAGE DU TABLEAU DE BORD DES VENTES
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ $couleurs = array("#97bf0d","#ab8cbc","#f29400","#8baed8","#ffed00");
 <div class="emarge" id="corps_tb22">
 <div >
 <div style="border-bottom:2px solid #999999" class="titre_ter_stat">
-Base de données Clientèle
+Base de donnÃ©es ClientÃ¨le
 </div>
 <table style="width:100%; " cellpadding="0" cellspacing="0">
 	<tr>
@@ -76,7 +76,7 @@ Base de données Clientèle
 
 
 <br />
-			<span style="cursor:pointer; font-weight:bolder; display:" id="tb4_2_more_1"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_case_plus.gif" style="vertical-align: text-bottom"  />	Détail par catégories de clients</span>
+			<span style="cursor:pointer; font-weight:bolder; display:" id="tb4_2_more_1"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_case_plus.gif" style="vertical-align: text-bottom"  />	DÃ©tail par catÃ©gories de clients</span>
 			
 <SCRIPT type="text/javascript">
 
@@ -88,7 +88,7 @@ $("tb4_2_more_1").hide();
 </SCRIPT>
 <div style="display:none" id="tb4_2_more_1_content" >
 <div style="border-bottom:2px solid #999999" class="titre_ter_stat">
-Détail par catégories de clients
+DÃ©tail par catÃ©gories de clients
 </div>
 <table style="width:100%; " cellpadding="0" cellspacing="0">
 	<tr>

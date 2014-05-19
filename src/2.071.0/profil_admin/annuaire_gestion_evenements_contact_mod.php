@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// GESTION DES EVENEMENTS (modification d'un type d'événement)
+// GESTION DES EVENEMENTS (modification d'un type d'Ã©vÃ©nement)
 // *************************************************************************************************************
 
 
@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 if (isset($_REQUEST["id_comm_event_type"])) {
-	//modification d'un type d'évenement
+	//modification d'un type d'Ã©venement
 	contact::mod_types_evenements ($_REQUEST["id_comm_event_type"], $_REQUEST["lib_comm_event_type_".$_REQUEST["id_comm_event_type"]]);
 }
 // *************************************************************************************************************

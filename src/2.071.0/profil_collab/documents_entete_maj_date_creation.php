@@ -14,7 +14,7 @@ $stocks_liste = $_SESSION['stocks'];
 
 if (isset($_REQUEST['ref_doc'])) {
 
-	// ouverture des infos du document et mise à jour
+	// ouverture des infos du document et mise Ã  jour
 	$document = open_doc ($_REQUEST['ref_doc']);
 
 	$date = date_Fr_to_Us ($_REQUEST['info_content']);

@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// IMPORT FICHIER catalogue CSV ETAPE 3 (après correspondance des colonnes et des valeurs du fichier)
+// IMPORT FICHIER catalogue CSV ETAPE 3 (aprÃ¨s correspondance des colonnes et des valeurs du fichier)
 // *************************************************************************************************************
 
 require ("_dir.inc.php");

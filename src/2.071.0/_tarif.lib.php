@@ -3,7 +3,7 @@
 // FONCTION DE CALCUL DES TARIFS ET ARRONDIS
 // *************************************************************************************************************
 
-// Sélectionne la liste des grilles tarifaires
+// SÃ©lectionne la liste des grilles tarifaires
 function get_tarifs_listes ($force = 0) {
 	global $bdd;
 
@@ -32,7 +32,7 @@ function get_full_tarifs_listes () {
 	return $tarifs_listes;
 }
 
-// Retourne les grilles tarifaires avec les formules correspondant à l'art_categ
+// Retourne les grilles tarifaires avec les formules correspondant Ã  l'art_categ
 function get_tarifs_listes_formules ($art_categ = "") {
 	global $bdd;
 	
@@ -49,7 +49,7 @@ function get_tarifs_listes_formules ($art_categ = "") {
 	return $tarifs_listes;
 }
 
-// Affiche un tarif au format désiré
+// Affiche un tarif au format dÃ©sirÃ©
 function price_format ($prix) {
 	global $TARIFS_NB_DECIMALES;
 	global $PRICES_DECIMAL_SEPARATOR;
@@ -78,11 +78,11 @@ function ttc2ht ($pu_ttc, $tva) {
 
 
 
-// Cette fonction défini la liste des article devant etre mis à jour suite à une modification de liste de tarif ou de formule de tarif d'une catégorie d'article
+// Cette fonction dÃ©fini la liste des article devant etre mis Ã  jour suite Ã  une modification de liste de tarif ou de formule de tarif d'une catÃ©gorie d'article
 function declare_articles_maj ($id_tarif, $action, $ref_art_categ = "") {
 	global $bdd;
 
-	// Sélection des articles à mettre à jour
+	// SÃ©lection des articles Ã  mettre Ã  jour
 	$articles = array();
 	switch ($action) {
 		case "MAJ_TARIF_LISTE":
@@ -112,7 +112,7 @@ function declare_articles_maj ($id_tarif, $action, $ref_art_categ = "") {
 	while ($tmp = $resultat->fetchObject()) { $articles[] = $tmp; }
 	if (!count($articles)) { return false; }
 
-	// Création de la requete pour insertion dans la liste des articles à mettre à jour
+	// CrÃ©ation de la requete pour insertion dans la liste des articles Ã  mettre Ã  jour
 	$bdd->beginTransaction();
 	while (count($articles)) {
 		$stop_query = count($articles) - 25;

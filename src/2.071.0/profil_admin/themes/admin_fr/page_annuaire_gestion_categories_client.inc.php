@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -22,13 +22,13 @@ check_page_variables ($page_variables);
 ?>
 <script type="text/javascript">
 tableau_smenu[0] = Array("smenu_annuaire", "smenu_annuaire.php" ,"true" ,"sub_content", "Annuaire");
-tableau_smenu[1] = Array('annuaire_gestion_categ_client','annuaire_gestion_categories_client.php',"true" ,"sub_content", "Gestion des catégories de Clients");
+tableau_smenu[1] = Array('annuaire_gestion_categ_client','annuaire_gestion_categories_client.php',"true" ,"sub_content", "Gestion des catÃ©gories de Clients");
 update_menu_arbo();
 </script>
 <?php include $DIR.$_SESSION['theme']->getDir_theme()."page_annuaire_recherche_mini.inc.php" ?>
 <div class="emarge">
 
-<p class="titre">Gestion des catégories de Clients</p>
+<p class="titre">Gestion des catÃ©gories de Clients</p>
 <div style="height:50px">
 <table class="minimizetable">
 <tr>
@@ -104,7 +104,7 @@ update_menu_arbo();
 							</select>
 							<br />
 							<br />
-							Encours<br/>par défaut:<br />
+							Encours<br/>par dÃ©faut:<br />
 							<input name="defaut_encours" 
 							id="defaut_encours"
 							type="text" value="0"  class="classinput_nsize" size="4"/><?php echo $MONNAIE[1];?>
@@ -121,7 +121,7 @@ update_menu_arbo();
 							</select>
 							<br />
 							<br />
-							Prépaiement commande :<br/>
+							PrÃ©paiement commande :<br/>
 							<select name="prepaiement_type" id="prepaiement_type"><option value="Acompte" >Acompte</option><option value="Arrhes">Arrhes</option></select>
 							<br/>
 							Pourcentage:
@@ -138,9 +138,9 @@ update_menu_arbo();
 								<br/>
 								 <input id="delai_reglement_fdm" name="delai_reglement_fdm" type="checkbox" />Fin de mois
 								 <br/><br/>
-								 Mode de règlement favori<br/>
+								 Mode de rÃ¨glement favori<br/>
 								 <select id="reglement_mode_favori" name="reglement_mode_favori">
-								 <option value="0" >Non Défini</option>
+								 <option value="0" >Non DÃ©fini</option>
 								 <?php 
 								 foreach ($reglements_modes as $reglement_mode){
 								 	?>
@@ -150,7 +150,7 @@ update_menu_arbo();
 								 ?>
 								 </select>
 								 <br/><br/>
-								 Cycle de relance par défaut<br/>
+								 Cycle de relance par dÃ©faut<br/>
 								 <select id="cycle_relance" name="cycle_relance">
                                                                  <?php 
 								 foreach ($cycles_relances as $cycle_relance){
@@ -172,9 +172,9 @@ update_menu_arbo();
 									<td>
 									<input name="nom_commercial" id="nom_commercial" type="text" value=""  class="classinput_xsize" readonly=""/>
 									<br/><br/><br/>
-									 Mode d'édition favori<br/>
+									 Mode d'Ã©dition favori<br/>
 									 <select id="edition_mode_favori" name="edition_mode_favori">
-									 <option value="0" >Non Défini</option>
+									 <option value="0" >Non DÃ©fini</option>
 									 <?php 
 									 foreach ($editions_modes as $edition_mode){
 									 	?>
@@ -304,7 +304,7 @@ update_menu_arbo();
 					</tr>	
 					<tr>
 						<td style="text-align:center">
-						<input name="defaut_client_categ_<?php echo $liste_categorie->id_client_categ; ?>"  type="checkbox" id="defaut_client_categ_<?php echo $liste_categorie->id_client_categ; ?>" value="1" <?php if ( $DEFAUT_ID_CLIENT_CATEG == $liste_categorie->id_client_categ) { echo 'checked="checked"';} ?> alt="Catégorie par défaut" title="Catégorie par défaut" />
+						<input name="defaut_client_categ_<?php echo $liste_categorie->id_client_categ; ?>"  type="checkbox" id="defaut_client_categ_<?php echo $liste_categorie->id_client_categ; ?>" value="1" <?php if ( $DEFAUT_ID_CLIENT_CATEG == $liste_categorie->id_client_categ) { echo 'checked="checked"';} ?> alt="CatÃ©gorie par dÃ©faut" title="CatÃ©gorie par dÃ©faut" />
 							
 						</td>
 						<td>
@@ -325,7 +325,7 @@ update_menu_arbo();
 							</select>
 							<br />
 							<br />
-							Encours<br/>par défaut:<br />
+							Encours<br/>par dÃ©faut:<br />
 							<input name="defaut_encours_<?php echo $liste_categorie->id_client_categ; ?>" 
 							id="defaut_encours_<?php echo $liste_categorie->id_client_categ; ?>"
 							type="text" value="<?php echo $liste_categorie->defaut_encours; ?>"  class="classinput_nsize" size="4"/><?php echo $MONNAIE[1];?>
@@ -342,7 +342,7 @@ update_menu_arbo();
 							</select>
 							<br />
 							<br />
-							Prépaiement commande :<br/>
+							PrÃ©paiement commande :<br/>
 							<select name="prepaiement_type_<?php echo $liste_categorie->id_client_categ; ?>" id="prepaiement_type_<?php echo $liste_categorie->id_client_categ; ?>"><option value="Acompte" <?php if ($liste_categorie->prepaiement_type == 'Acompte'){ echo "selected='selected'";}?>>Acompte</option><option value="Arrhes" <?php if ($liste_categorie->prepaiement_type == 'Arrhes'){ echo "selected='selected'";}?>>Arrhes</option></select>
 							<br/>
 							Pourcentage:
@@ -359,9 +359,9 @@ update_menu_arbo();
 								 <br/>
 								 <input id="delai_reglement_fdm_<?php echo $liste_categorie->id_client_categ; ?>" name="delai_reglement_fdm_<?php echo $liste_categorie->id_client_categ; ?>" type="checkbox" <?php echo strpos($liste_categorie->delai_reglement,'FDM') === false ? "" : "CHECKED"; ?>>Fin de mois</input>
 								 <br/><br/>
-								 Mode de règlement favori<br/>
+								 Mode de rÃ¨glement favori<br/>
 								 <select id="reglement_mode_favori_<?php echo $liste_categorie->id_client_categ; ?>" name="reglement_mode_favori_<?php echo $liste_categorie->id_client_categ; ?>">
-								 <option value="0" <?php echo ($liste_categorie->id_reglement_mode_favori == "" || $liste_categorie->id_reglement_mode_favori == 0) ? "selected='selected'" : ""  ?>>Non Défini</option>
+								 <option value="0" <?php echo ($liste_categorie->id_reglement_mode_favori == "" || $liste_categorie->id_reglement_mode_favori == 0) ? "selected='selected'" : ""  ?>>Non DÃ©fini</option>
 								 <?php 
 								 foreach ($reglements_modes as $reglement_mode){
 								 	?>
@@ -371,7 +371,7 @@ update_menu_arbo();
 								 ?>
 								 </select>
 								 <br/><br/>
-								 Cycle de relance par défaut<br/>
+								 Cycle de relance par dÃ©faut<br/>
 								 <select id="cycle_relance_<?php echo $liste_categorie->id_client_categ; ?>" name="cycle_relance_<?php echo $liste_categorie->id_client_categ; ?>">
                                                                  <?php 
 								 foreach ($cycles_relances as $cycle_relance){
@@ -393,9 +393,9 @@ update_menu_arbo();
 									<td>
 									<input name="nom_commercial_<?php echo $liste_categorie->id_client_categ; ?>" id="nom_commercial_<?php echo $liste_categorie->id_client_categ; ?>" type="text" value="<?php echo ($liste_categorie->nom_commercial); ?>"  class="classinput_xsize" readonly=""/>
 								<br/><br/><br/>
-								 Mode d'édition favori<br/>
+								 Mode d'Ã©dition favori<br/>
 								 <select id="edition_mode_favori_<?php echo $liste_categorie->id_client_categ; ?>" name="edition_mode_favori_<?php echo $liste_categorie->id_client_categ; ?>">
-								 <option value="0" <?php echo $liste_categorie->id_edition_mode_favori == "" ? "selected='selected'" : ""  ?>>Non Défini</option>
+								 <option value="0" <?php echo $liste_categorie->id_edition_mode_favori == "" ? "selected='selected'" : ""  ?>>Non DÃ©fini</option>
 								 <?php 
 								 foreach ($editions_modes as $edition_mode){
 								 	?>

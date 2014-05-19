@@ -51,20 +51,20 @@ abstract class InscriptionModification{
 	//
 	//	id_contact_tmp		smallint(5) UNSIGNED 	NOTNULL	auto_increment	:	
 	//	id_interface			smallint(5) UNSIGNED	NOTNULL									:	
-	//	infos							mediumtext						NOTNULL									:	liste de couple clé/valeur séparé par un ;
+	//	infos							mediumtext						NOTNULL									:	liste de couple clÃ©/valeur sÃ©parÃ© par un ;
 	//	date_demande			datetime							NOTNULL									:	
 	//	code_validation		varchar(64)						NOTNULL									:	code pour que l'utilisateur confirme son inscription 
 	//	validation_email	tinyint(2)						NOTNULL									:	1 => validation par un collab : ce contact n'a pas de besoin la confirmation par mail :
 	//																																				 - soit c'est une inscription sans confirmation
-	//																																				 - soit c'est une inscription avec confirmation, mais l'utilisateur a déjà confirmé son inscription
+	//																																				 - soit c'est une inscription avec confirmation, mais l'utilisateur a dÃ©jÃ  confirmÃ© son inscription
 	//																																		2 => validation par un collab : cet utilisateur doit confirmer son inscription pour pouvoir passer 
-	//																																				 à l'étape suivante : validation_email <- 1
+	//																																				 Ã  l'Ã©tape suivante : validation_email <- 1
 	//																																		3 => validation automatique : cet utilisateur doit confirmer son inscription pour pouvoir passer 
-	//																																				 à l'étape suivante (création du contact et supression de la ligne)
+	//																																				 Ã  l'Ã©tape suivante (crÃ©ation du contact et supression de la ligne)
 	//	mode							enum('inscription', 'modification')	NOTNULL		:	
 	//
 	//
-	// listes des clé contenu dans le champ infos :
+	// listes des clÃ© contenu dans le champ infos :
 	//	id_categorie
 	//	civilite
 	//	nom
@@ -87,9 +87,9 @@ abstract class InscriptionModification{
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//vérifie qu'il y a les données minimum dans le tableau
+	//vÃ©rifie qu'il y a les donnÃ©es minimum dans le tableau
 	//@param $infos_contact array : tableau associatif contenant les informations du contact
-	//@return boolean : vrai si les données nécessaire à l'inscription sont présente, faux sinon.
+	//@return boolean : vrai si les donnÃ©es nÃ©cessaire Ã  l'inscription sont prÃ©sente, faux sinon.
 	protected static function verifie_infos_contact_pour_inscription_ou_modification_contact($infos_contact){
 		if(is_null($infos_contact) || !is_array($infos_contact))
 		{		return false;}
@@ -106,8 +106,8 @@ abstract class InscriptionModification{
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//retourne l'eamil du collaborateur à qui les demandes de validation doivent être envoyé
-	//@return mixed : l'email sous forme de string s'il a été trouvé, faux sinon.
+	//retourne l'eamil du collaborateur Ã  qui les demandes de validation doivent Ãªtre envoyÃ©
+	//@return mixed : l'email sous forme de string s'il a Ã©tÃ© trouvÃ©, faux sinon.
 	protected function getEmail_du_collaborateur(){
 		global $REF_CONTACT_ENTREPRISE;
 		$contact_entreprise = new contact($REF_CONTACT_ENTREPRISE);
@@ -123,9 +123,9 @@ abstract class InscriptionModification{
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
 	//supprimer l'inscription
-	//@param int $id_contact_tmp : Id du contact temporaire à effacer dans la liste des contact en attente de validation 
+	//@param int $id_contact_tmp : Id du contact temporaire Ã  effacer dans la liste des contact en attente de validation 
 	//(pour une inscription ou une modification
-	//@return bool : retourne vrai si le contact temporaire à été effécé, faux sinon
+	//@return bool : retourne vrai si le contact temporaire Ã  Ã©tÃ© effÃ©cÃ©, faux sinon
 	protected function supprimer_inscription($id_contact_tmp) {
 		global $bdd;
 		$query = "DELETE FROM annuaire_tmp  
@@ -158,7 +158,7 @@ abstract class InscriptionModification{
 	}
 	
 	// *************************************************************************************************************
-	// Fonctions d'accès aux données
+	// Fonctions d'accÃ¨s aux donnÃ©es
 	// *************************************************************************************************************
 	
 	// Retourne l'identifiant du profil
@@ -199,49 +199,49 @@ abstract class InscriptionModification{
 	// *************************************************************************************************************
 	
 	public static function extractEmail($infos){
-		//expression régulière qui extrait l'email de la forme "toto@toto.com" du champ info
+		//expression rÃ©guliÃ¨re qui extrait l'email de la forme "toto@toto.com" du champ info
 		$pattern = '.*admin_emaila=(([a-zA-Z0-9]+(([\.\-\_]?[a-zA-Z0-9]+)+)?)\@(([a-zA-Z0-9]+[\.\-\_])+[a-zA-Z]{2,4}));.*';
 		$email_contact = preg_replace('/'.$pattern.'/', '$1', $infos);
 		if($email_contact == $infos)
-		{			return false;}	//	l'email n'a pas été trouvé
+		{			return false;}	//	l'email n'a pas Ã©tÃ© trouvÃ©
 		else{	return $email_contact;}
 	}
 	
 	public static function extractNom($infos){
-		//expression régulière qui extrait le du champ info
+		//expression rÃ©guliÃ¨re qui extrait le du champ info
 		//le champ nom 
 		$pattern = '(.*;nom|$nom)=([^=;]*)(^|;[a-zA-Z_]+=.*)';
 		$email_contact = preg_replace('/'.$pattern.'/', '$2', $infos);
 		if($email_contact == $infos)
-		{			return false;}	//	l'email n'a pas été trouvé
+		{			return false;}	//	l'email n'a pas Ã©tÃ© trouvÃ©
 		else{	return $email_contact;}
 	}
 	
 	public static function extractCivilite($infos){
-		//expression régulière qui extrait le du champ info
+		//expression rÃ©guliÃ¨re qui extrait le du champ info
 		//le champ nom 
 		$pattern = '(.*;civilite|$civilite)=([^=;]*)(^|;[a-zA-Z_]+=.*)';
 		$email_contact = preg_replace('/'.$pattern.'/', '$2', $infos);
 		if($email_contact == $infos)
-		{			return false;}	//	l'email n'a pas été trouvé
+		{			return false;}	//	l'email n'a pas Ã©tÃ© trouvÃ©
 		else{	return $email_contact;}
 	}
 	
 	public static function extractRef_contact($infos){
-		//expression régulière qui extrait le du champ info
+		//expression rÃ©guliÃ¨re qui extrait le du champ info
 		//le champ nom 
 		$pattern = '(.*;)?ref_contact=([^=;]*);?.*';
 		$email_contact = preg_replace('/'.$pattern.'/', '$2', $infos);
 		if($email_contact == $infos)
-		{			return false;}	//	l'email n'a pas été trouvé
+		{			return false;}	//	l'email n'a pas Ã©tÃ© trouvÃ©
 		else{	return $email_contact;}
 	}
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//retourne l'eamil du collaborateur à qui les demandes de validation doivent être envoyé
+	//retourne l'eamil du collaborateur Ã  qui les demandes de validation doivent Ãªtre envoyÃ©
 	//@param $id_contact_tmp int : indentifiant du contact temporaire
-	//@return mixed : l'email sous forme de string s'il a été trouvé, faux sinon.
+	//@return mixed : l'email sous forme de string s'il a Ã©tÃ© trouvÃ©, faux sinon.
 	protected function modification_contact_email_du_contact($id_contact_tmp){
 		global $bdd;
 		
@@ -258,9 +258,9 @@ abstract class InscriptionModification{
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
 	//supprimer l'modification
-	//@param int $id_contact_tmp : Id du contact temporaire à effacer dans la liste des contact en attente de validation 
+	//@param int $id_contact_tmp : Id du contact temporaire Ã  effacer dans la liste des contact en attente de validation 
 	//(pour une modification ou une modification
-	//@return bool : retourne vrai si le contact temporaire à été effécé, faux sinon
+	//@return bool : retourne vrai si le contact temporaire Ã  Ã©tÃ© effÃ©cÃ©, faux sinon
 	protected function supprimer_modification($id_contact_tmp) {
 		global $bdd;
 		$query = "DELETE FROM annuaire_tmp  

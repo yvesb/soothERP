@@ -129,16 +129,16 @@ abstract /*static*/ class Lib_interface_agendaStd {
 
 	public static function grilleMoisFenetreAllEvent_getY($semaine, $nbSemaineMax, $nbLignes){
 		if($semaine == $nbSemaineMax){
-			//Nous sommes à la dernière ligne 
-			//=> positionner la fenetre des événements vers le haut
+			//Nous sommes Ã  la derniÃ¨re ligne 
+			//=> positionner la fenetre des Ã©vÃ©nements vers le haut
 			return "bottom: ".(60)."px;";
 		}
 		elseif($semaine == ($nbSemaineMax - 1)){
-			//Nous sommes à l'avant dernière ligne 
-			//=> positionner la fenetre des événements vers le haut
+			//Nous sommes Ã  l'avant derniÃ¨re ligne 
+			//=> positionner la fenetre des Ã©vÃ©nements vers le haut
 			return "bottom: ".(30)."px;";
 		}else{
-			//=> positionner la fenetre des événements vers le bas
+			//=> positionner la fenetre des Ã©vÃ©nements vers le bas
 			return "top:35px;";
 		}
 	}

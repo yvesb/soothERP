@@ -4,7 +4,7 @@
 // AFFICHAGE DES FACTURES FOURNISSEURS NON REGLEES
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("factures");
 check_page_variables ($page_variables);
 
@@ -51,7 +51,7 @@ foreach ($liste_categories_fournisseur as $categorie_fournisseur) {
 }
 ?>
 	<li id="doc_menu_<?php echo $i;?>">
-		<a href="#" id="menu_<?php echo $i;?>" class="menu_unselect">Factures non attribuées (<?php echo $nb_faf_non_attrib;?>)</a>
+		<a href="#" id="menu_<?php echo $i;?>" class="menu_unselect">Factures non attribuÃ©es (<?php echo $nb_faf_non_attrib;?>)</a>
 	</li>
 </ul>
 

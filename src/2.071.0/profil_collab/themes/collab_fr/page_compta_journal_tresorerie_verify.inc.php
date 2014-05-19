@@ -3,7 +3,7 @@
 //journal des tresorerie
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -47,7 +47,7 @@ if ($search['page_to_show'] < $nb_fiches) {
 H_loading();
 </SCRIPT>
 <br />
-Vérification terminée.
+VÃ©rification terminÃ©e.
 	<?php 
 }
 ?>

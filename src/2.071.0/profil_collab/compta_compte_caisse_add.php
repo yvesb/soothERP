@@ -17,7 +17,7 @@ $infos['lib_caisse'] 		= $_REQUEST["lib_caisse"];
 $infos['id_magasin'] 		= $_REQUEST["id_magasin"];
 	
 	
-	//création du compte
+	//crÃ©ation du compte
 	$compte_caisse->create_compte_caisse ($infos);
 
 // *************************************************************************************************************

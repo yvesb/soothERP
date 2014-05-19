@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -51,10 +51,10 @@ if (isset($_REQUEST['date_fin'])) {
 
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_select = "";
 	$query_join 	= "";
 	$query_where 	= "";
@@ -136,7 +136,7 @@ if (isset($_REQUEST['recherche'])) {
 	}
 	unset ($fiche, $resultat, $query);
  //print_r($fiches);
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 	$query = "SELECT COUNT(ccm.id_compte_caisse_move) nb_fiches
 						FROM comptes_caisses_moves ccm
 							LEFT JOIN reglements_modes rm ON rm.id_reglement_mode = ccm.id_reglement_mode
@@ -163,7 +163,7 @@ if (isset($_REQUEST["print"])) {
 	
 	//$infos
 	$infos = array();
-	$infos["lib_type_printed"] = "Historique des opérations Caisse";
+	$infos["lib_type_printed"] = "Historique des opÃ©rations Caisse";
 	$infos["dates"] = "du  ".$search['date_debut']." au ".$search['date_fin'];
 	$infos["caisse"] = $caisse->getLib_caisse ().' '.$search['id_compte_caisse'];
 	
@@ -171,7 +171,7 @@ if (isset($_REQUEST["print"])) {
 	$class = "pdf_".$code_pdf_modele;
 	$pdf = new $class;
 	
-	// Création
+	// CrÃ©ation
 	$pdf->create_pdf($infos, $fiches);
 	
 	// Sortie

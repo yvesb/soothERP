@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -39,10 +39,10 @@ if (isset($_REQUEST['date_fin'])) {
 
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_select = "";
 	$query_join 	= "";
 	$query_where 	= " ";
@@ -93,7 +93,7 @@ if (isset($_REQUEST["id_compte_tp"]) && isset($_REQUEST["tp_type"]) && $_REQUEST
 	}
 	unset ($fiche, $resultat, $query);
  //print_r($fiches);
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 	$query = "SELECT DISTINCT(rec.ref_reglement) 
 						FROM regmt_e_cb rec
 							LEFT JOIN reglements r ON r.ref_reglement = rec.ref_reglement
@@ -140,7 +140,7 @@ if (isset($_REQUEST["id_compte_tp"]) && isset($_REQUEST["tp_type"]) && $_REQUEST
 	}
 	unset ($fiche, $resultat, $query);
  //print_r($fiches);
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 	$query = "SELECT DISTINCT(rec.ref_reglement) 
 						FROM regmt_e_cb rec
 							LEFT JOIN reglements r ON r.ref_reglement = rec.ref_reglement

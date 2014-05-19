@@ -19,13 +19,13 @@ ini_set("memory_limit", "40M");
 // Controle
 
 	if (!isset($_REQUEST['ref_contact'])) {
-		echo "La référence du contact n'est pas précisée";
+		echo "La rÃ©fÃ©rence du contact n'est pas prÃ©cisÃ©e";
 		exit;
 	}
 
 	$contact = new contact ($_REQUEST['ref_contact']);
 	if (!$contact->getRef_contact()) {
-		echo "La référence du contact est inconnue";		exit;
+		echo "La rÃ©fÃ©rence du contact est inconnue";		exit;
 
 	}
 
@@ -34,13 +34,13 @@ if ($ADMIN_ID_PROFIL != 0) {
 
 }
 
-//chargement des catégories de fournisseurs
+//chargement des catÃ©gories de fournisseurs
 if ($FOURNISSEUR_ID_PROFIL != 0) {
 	include ($CONFIG_DIR."profil_".$_SESSION['profils'][$FOURNISSEUR_ID_PROFIL]->getCode_profil().".config.php"); 
 	contact::load_profil_class($FOURNISSEUR_ID_PROFIL);
 	$liste_categories_fournisseur = contact_fournisseur::charger_fournisseurs_categories ();
 }
-//chargement des catégories de commerciaux
+//chargement des catÃ©gories de commerciaux
 if ($COMMERCIAL_ID_PROFIL != 0) {
 	include ($CONFIG_DIR."profil_".$_SESSION['profils'][$COMMERCIAL_ID_PROFIL]->getCode_profil().".config.php"); 
 	contact::load_profil_class($COMMERCIAL_ID_PROFIL);
@@ -48,7 +48,7 @@ if ($COMMERCIAL_ID_PROFIL != 0) {
 	$liste_commissions_regles = contact_commercial::charger_commissions_regles ();
 }
 
-//chargement des catégories de clients
+//chargement des catÃ©gories de clients
 if ($CLIENT_ID_PROFIL != 0) {
 	include ($CONFIG_DIR."profil_".$_SESSION['profils'][$CLIENT_ID_PROFIL]->getCode_profil().".config.php");
 	contact::load_profil_class($CLIENT_ID_PROFIL);
@@ -61,7 +61,7 @@ if ($CONSTRUCTEUR_ID_PROFIL != 0) {
 	contact::load_profil_class($CONSTRUCTEUR_ID_PROFIL);
 }
 
-// Préparations des variables d'affichage
+// PrÃ©parations des variables d'affichage
 $profils 	= $contact->getProfils();
 $adresses = $contact->getAdresses();
 $civilites = get_civilites ($contact->getId_Categorie());
@@ -161,7 +161,7 @@ if(isset($profils[$CLIENT_ID_PROFIL]) ) {
 	$client_CA = $profils[$CLIENT_ID_PROFIL]->charger_client_CA() ;
 	//liste des abonnements du clients
 	$client_abo = $profils[$CLIENT_ID_PROFIL]->charger_client_abo();
-	//liste des consommmation (Services pré-payés) du clients
+	//liste des consommmation (Services prÃ©-payÃ©s) du clients
 	$client_conso = $profils[$CLIENT_ID_PROFIL]->charger_client_conso();
 }
 if(isset($profils[$FOURNISSEUR_ID_PROFIL]) ) {
@@ -182,7 +182,7 @@ if(isset($profils[$FOURNISSEUR_ID_PROFIL]) ) {
 if (isset($profils[$CONSTRUCTEUR_ID_PROFIL])) {
 	//liste des CA des articles vendui du constructeur
 	$constructeur_vente_CA = $profils[$CONSTRUCTEUR_ID_PROFIL]->charger_constructeur_vente_CA() ;
-	//liste des CA des articles achatés au constructeur
+	//liste des CA des articles achatÃ©s au constructeur
 	$constructeur_achat_CA = $profils[$CONSTRUCTEUR_ID_PROFIL]->charger_constructeur_achat_CA() ;
 	//nombre d'articles de ce constructeur
 	$constructeur_nb_articles = $profils[$CONSTRUCTEUR_ID_PROFIL]->count_constructeur_articles() ;
@@ -190,7 +190,7 @@ if (isset($profils[$CONSTRUCTEUR_ID_PROFIL])) {
 	$constructeur_nb_art_categ = $profils[$CONSTRUCTEUR_ID_PROFIL]->count_constructeur_art_categ() ;
 	//liste des fournisseurs de ce constructeur
 	$constructeur_fournisseurs_liste = $profils[$CONSTRUCTEUR_ID_PROFIL]->charger_constructeur_fournisseurs_liste() ;
-	//liste des xx articles ajoutés au catalogue de ce construteur
+	//liste des xx articles ajoutÃ©s au catalogue de ce construteur
 	$last_constructeur_articles = $profils[$CONSTRUCTEUR_ID_PROFIL]->charger_last_constructeur_articles() ;
 	 
 }

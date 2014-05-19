@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("id_graphic_event", "event");
 check_page_variables ($page_variables);
 
@@ -13,9 +13,9 @@ check_page_variables ($page_variables);
 // *************************************************************************************************************
 ?>
 
-<!-- L'événement vient d'être créer côté serveur, nous devons mettre à jour l'interface graphique -->
+<!-- L'Ã©vÃ©nement vient d'Ãªtre crÃ©er cÃ´tÃ© serveur, nous devons mettre Ã  jour l'interface graphique -->
 <script type="text/javascript">
-//l'événement à été créé à la souris
+//l'Ã©vÃ©nement Ã  Ã©tÃ© crÃ©Ã© Ã  la souris
 function maj_event_graphic_semaine(){
 	<?php if($id_graphic_event != ""){ ?>
 		if(Udate_deb_semaine < <?php echo $event->getUdate_event()."000 && ".$event->getUdate_event(); ?>000 < Udate_fin_semaine){
@@ -28,7 +28,7 @@ function maj_event_graphic_semaine(){
 				var futurX = <?php echo $j-1; ?> * largeurColonneSemaine(); // en px
 			<?php } ?>
 			var futurY 			= Math.floor(<?php echo strftime("(%H+%M/60)", $event->getUdate_event()); ?> * 2 * HAUTEUR_DEMIE_HEURE); //en px
-			var futurDuree  = Math.floor(<?php echo $event->getDuree_event(); ?> * HAUTEUR_DEMIE_HEURE / 30); //durée en px
+			var futurDuree  = Math.floor(<?php echo $event->getDuree_event(); ?> * HAUTEUR_DEMIE_HEURE / 30); //durÃ©e en px
 			
 			evenements[<?php echo $id_graphic_event; ?>].setPosition(futurX, futurY, futurDuree);
 			evenements[<?php echo $id_graphic_event; ?>].setRef_Event("<?php echo $event->getRef_event(); ?>");
@@ -46,10 +46,10 @@ function maj_event_graphic_semaine(){
 	<?php } ?>
 }
 
-//l'événement à été grace au panneau d'édition
+//l'Ã©vÃ©nement Ã  Ã©tÃ© grace au panneau d'Ã©dition
 function new_event_graphic_semaine(){
 	if(Udate_deb_semaine < <?php echo $event->getUdate_event()."000 && ".$event->getUdate_event(); ?>000 < Udate_fin_semaine){
-	//l'événement est dans la fenetre affichée, on affiche donc l'évélement
+	//l'Ã©vÃ©nement est dans la fenetre affichÃ©e, on affiche donc l'Ã©vÃ©lement
 		var id = genIdGraphicEvent();
 		$("id_graphic_event").value = id;
 		
@@ -60,7 +60,7 @@ function new_event_graphic_semaine(){
 			var event_x = <?php echo $j-1; ?> * largeurColonneSemaine();
 		<?php } ?>
 		var event_y = Math.floor(<?php echo strftime("(%H+%M/60)", $event->getUdate_event()); ?> * 2 * HAUTEUR_DEMIE_HEURE);
-		var duree = Math.floor(<?php echo $event->getDuree_event(); ?> * HAUTEUR_DEMIE_HEURE / 30);//durée en px
+		var duree = Math.floor(<?php echo $event->getDuree_event(); ?> * HAUTEUR_DEMIE_HEURE / 30);//durÃ©e en px
 
 		var eventNode = CreateDivEvenement("eventId_"+id, event_y, event_x, evenementMaxWidth(), duree, "");
 		$("ZEROsemaine").appendChild(eventNode);

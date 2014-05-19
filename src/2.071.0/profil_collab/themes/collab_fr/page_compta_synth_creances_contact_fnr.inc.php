@@ -4,7 +4,7 @@
 // AFFICHAGE DES FACTURES CLIENTS NON REGLEES
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -62,7 +62,7 @@ infos_niveau_relance[<?php echo $niveau_relance->id_niveau_relance;?>] = "<?php 
 				Date de relance
 				</td>
 				<td style="font-weight:bolder; width:100px; text-align:right">
-				Montant<br />restant dû
+				Montant<br />restant dÃ»
 				</td>
 				<td style="font-weight:bolder; width:70px; text-align:right;">
 				<div style="padding-right:1px">
@@ -289,7 +289,7 @@ Event.observe("coche_action_<?php echo $groupe_by_relance?>", "change", function
 				<td style="font-weight:bolder; text-align:center; width:90px;">&nbsp;
 				</td>
 				<td style="font-weight:bolder; text-align:right; width:240px;">&nbsp;
-				Montant Total dû: 
+				Montant Total dÃ»: 
 				</td>
 				<td style="font-weight:bolder; width:100px; text-align:right">
 				<?php echo(number_format($factures_total, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[1]);?>

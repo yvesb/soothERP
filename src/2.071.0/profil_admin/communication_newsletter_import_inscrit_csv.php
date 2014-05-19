@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 if (preg_match("`\.csv$`i", $_FILES['liste_csv']['name']) == 0)
     {?>
 <script type="text/javascript">
-    window.parent.alerte.alerte_erreur('Erreur saisie', "Le fichier que vous avez indiqué n'est pas au format csv.",'<input type="submit" id="bouton1" name="bouton1" onClick="window.parent.location.reload()" value="Ok" />');
+    window.parent.alerte.alerte_erreur('Erreur saisie', "Le fichier que vous avez indiquÃ© n'est pas au format csv.",'<input type="submit" id="bouton1" name="bouton1" onClick="window.parent.location.reload()" value="Ok" />');
 	window.parent.location.reload();
 </script><?php
     }
@@ -46,7 +46,7 @@ else
 }	
     ?>
 <script type="text/javascript">
-    window.parent.alerte.alerte_erreur('Import réussi', "L'import a bien été effectué.",'<input type="submit" id="bouton2" name="bouton2" onClick="window.parent.location.reload()" value="Ok" />');
+    window.parent.alerte.alerte_erreur('Import rÃ©ussi', "L'import a bien Ã©tÃ© effectuÃ©.",'<input type="submit" id="bouton2" name="bouton2" onClick="window.parent.location.reload()" value="Ok" />');
 </script> <?php
 }
 ?>

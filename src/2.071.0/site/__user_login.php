@@ -8,26 +8,26 @@ require ("__dir.inc.php");
 require ($DIR."_session.inc.php");
 
 
-// Vérification de la page de provennance
+// VÃ©rification de la page de provennance
 if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], "__user_login.php")) {
 
-// Vérification préalable de la validité de la variable $page_from pour éviter l'injection de donnée non voulues (faille Cross Site Scripting)
+// VÃ©rification prÃ©alable de la validitÃ© de la variable $page_from pour Ã©viter l'injection de donnÃ©e non voulues (faille Cross Site Scripting)
 // Modifications par Yves Bourvon le 11/09/2011
 
-// On commence par échapper les caractères spéciaux par précaution
+// On commence par Ã©chapper les caractÃ¨res spÃ©ciaux par prÃ©caution
 	$page_from = htmlspecialchars($_REQUEST['page_from']);
 
-// On vérifie que la donnée fournie correspond bien à un nom de page du dossier ou des sous-dossiers LMB (ce que l'on considère comme une "white list")
+// On vÃ©rifie que la donnÃ©e fournie correspond bien Ã  un nom de page du dossier ou des sous-dossiers LMB (ce que l'on considÃ¨re comme une "white list")
 	$dir_iterator = new RecursiveDirectoryIterator("../");
 	$iterator = new RecursiveIteratorIterator($dir_iterator, RecursiveIteratorIterator::SELF_FIRST);
 
 	$validEntry=false;
 	foreach ($iterator as $file)
 	{
-		// On ne vérifie que les fichiers avec l'extension .php
+		// On ne vÃ©rifie que les fichiers avec l'extension .php
 		if (preg_match("/\.php/", $file))
 			{
-			// La variable correspond à une entée ?
+			// La variable correspond Ã  une entÃ©e ?
 			if (substr_count($page_from, basename($file)) > 0)
 				{
 				// Oui, on valide la variable
@@ -37,10 +37,10 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], "__u
 			}
 	}
 
-	// Aucune entrée valide trouvéee ?
+	// Aucune entrÃ©e valide trouvÃ©ee ?
 	if (!$validEntry)
 	{
-		//Injection XSS, on refuse la variable entrée et on la force à ""
+		//Injection XSS, on refuse la variable entrÃ©e et on la force Ã  ""
 		$page_from = "";
 	}
 
@@ -49,7 +49,7 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], "__u
 
 else {                                 $page_from = "";  }
 
-//verification d'un rafraichissement de cache à faire
+//verification d'un rafraichissement de cache Ã  faire
 if (isset($_REQUEST["uncache"]) ) {		$uncache = "uncache=".$_REQUEST['uncache'];  }
 else {                                $uncache = "";  }
 
@@ -96,7 +96,7 @@ if ($MODE_IDENTIFICATION == "SELECT") {
 else { $users = ""; }
 
 
-// REF_USER ou LOGIN si prédéfini
+// REF_USER ou LOGIN si prÃ©dÃ©fini
 if (isset($_COOKIE['predefined_user'])) {
 		$pred_user = array();
 		$pred_user = explode(";", $_COOKIE['predefined_user']); 

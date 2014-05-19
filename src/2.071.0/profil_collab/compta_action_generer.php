@@ -12,7 +12,7 @@ require ($DIR."_session.inc.php");
 foreach ($_REQUEST as $variable => $valeur) {
 
 	if (substr ($variable, 0, 7) != "ref_doc") {continue;}
-	// ouverture des infos du document et mise à jour
+	// ouverture des infos du document et mise Ã  jour
 	$document = open_doc ($valeur);
 	if (isset($_REQUEST["fonction_generer"])) {
 		switch ($_REQUEST["fonction_generer"]) {

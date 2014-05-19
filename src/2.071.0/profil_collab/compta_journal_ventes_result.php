@@ -11,18 +11,18 @@ require ($DIR."_session.inc.php");
 
 if (!$_SESSION['user']->check_permission ("13")) {
 	//on indique l'interdiction et on stop le script
-	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accés ne vous permettent pas de visualiser ce type de page</span>";
+	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accÃ©s ne vous permettent pas de visualiser ce type de page</span>";
 	exit();
 }
 $compta_e = new compta_exercices ();
 $liste_exercices	= $compta_e->charger_compta_exercices();
-//on récupère la dte du dernier exercice cloturé
+//on rÃ©cupÃ¨re la dte du dernier exercice cloturÃ©
 foreach ($liste_exercices as $exercice) {
 	if (!$exercice->etat_exercice) {$last_date_before_cloture = $exercice->date_fin; break;}
 }
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -70,10 +70,10 @@ if (isset($_REQUEST['numero_compte']) && $_REQUEST['numero_compte'] != "") {
 	$search['numero_compte'] = $_REQUEST['numero_compte'];
 }
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_join 	= "";
 	$query_where 	= " cj.id_journal_parent = '1' ";
 	$query_group	= "";
@@ -208,14 +208,14 @@ ini_set("memory_limit","40M");
 	$class = "pdf_".$code_pdf_modele;
 	$pdf = new $class;
 	
-	// Création
+	// CrÃ©ation
 	$pdf->create_pdf($infos, $fiches, $synthese);
 	
 	// Sortie
 	$pdf->Output();
 
 } else {
-	//affichage des résultats dans lmb
+	//affichage des rÃ©sultats dans lmb
 	include ($DIR.$_SESSION['theme']->getDir_theme()."page_compta_journal_ventes_result.inc.php");
 }
 ?>

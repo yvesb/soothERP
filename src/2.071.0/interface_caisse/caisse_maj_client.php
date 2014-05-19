@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ("_session.inc.php");
 
 if (!isset($_REQUEST['ref_contact']) || $_REQUEST['ref_contact'] == "") {
-	echo "La référence du contact n'est pas spécifiée";
+	echo "La rÃ©fÃ©rence du contact n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $client = new contact($_REQUEST['ref_contact']);
@@ -55,7 +55,7 @@ $query = "SELECT ac.ref_contact, ac.id_tarif, ac.app_tarifs, tl.lib_tarif, tl.de
 $resultat = $bdd->query($query);
 
 if(!$grille_tarrifaire = $resultat->fetchObject()){
-	echo "Ce lient n'a pas de grille tarifaire spécidiée";
+	echo "Ce lient n'a pas de grille tarifaire spÃ©cidiÃ©e";
 	exit;
 }
 

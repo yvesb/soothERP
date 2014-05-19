@@ -53,7 +53,7 @@ if (isset($_REQUEST["ref_user"]) && isset($_REQUEST["id_permission"]) && isset($
 						if(isset($utilisateur_permissions[$depends_id])){
 							echo "Maj!:".$depends_id."<br>";
 							$perms_maj = explode(',',$_REQUEST["param_permissions"]);
-							echo "Droits concernés :<pre>".print_r($perms_maj)."</pre><BR>";
+							echo "Droits concernÃ©s :<pre>".print_r($perms_maj)."</pre><BR>";
 							$perms_dependante = explode(',',$utilisateur_permissions[$depends_id]->value);
 							echo "Droits actuels :<pre>".print_r($perms_dependante)."</pre><BR>";
 							foreach ($perms_dependante as $key=>$perm_dependante){

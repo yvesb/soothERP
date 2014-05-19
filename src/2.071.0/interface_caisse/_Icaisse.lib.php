@@ -33,12 +33,12 @@ abstract /*final*/ class Icaisse {
 
 	// alogo : retourne 
 	//	- vrai si on doit afficher le bouton "Choix du point de vente"
-	//		->Au moins 2 magasins sont trouvÈs avec les conditions suivantes
+	//		->Au moins 2 magasins sont trouv√©s avec les conditions suivantes
 	//			o actif 
 	//			o vente au comptoire
-	//			o possËde une caisse : Cette caisse sera sauvegardÈe dans $_SESSION['Icaisse']['id_compte_caisse']
+	//			o poss√®de une caisse : Cette caisse sera sauvegard√©e dans $_SESSION['Icaisse']['id_compte_caisse']
 	//	- faut  sinon
-	//met la variable "$afficher_magasin" ‡ "true" dÈs qu'on trouve un 2Ëme magasin actifs avec la Vente au comptoir
+	//met la variable "$afficher_magasin" √† "true" d√©s qu'on trouve un 2√®me magasin actifs avec la Vente au comptoir
 	public static function afficherBoutonChoixPointDeVente(){
 		$mag_found = 0;
 		reset($_SESSION['magasins']);
@@ -59,10 +59,10 @@ abstract /*final*/ class Icaisse {
 		return false;
 	}
 	
-	//	alogo : dÈfinie comme magasin courrant ($_SESSION['magasins']) le 1er magasin qui rÈuni les conditions suivantes :
+	//	alogo : d√©finie comme magasin courrant ($_SESSION['magasins']) le 1er magasin qui r√©uni les conditions suivantes :
 	//	- actif 
 	//	- vente au comptoire
-	//	- possËde une caisse : Cette caisse sera sauvegardÈe dans $_SESSION['Icaisse']['id_compte_caisse']
+	//	- poss√®de une caisse : Cette caisse sera sauvegard√©e dans $_SESSION['Icaisse']['id_compte_caisse']
 	// retour : MAGASIN_CHANGED ou MAGASIN_CAN_NOT_CHANGED
 	public static function searchMagasinVACWithCaisseActive(){
 		reset($_SESSION['magasins']);

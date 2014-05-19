@@ -14,18 +14,18 @@ require ($DIR."_session.inc.php");
 // *************************************************************************************************************
 
 	if (!isset($_REQUEST['ref_article'])) {
-		echo "La référence de l'article n'est pas précisée";
+		echo "La rÃ©fÃ©rence de l'article n'est pas prÃ©cisÃ©e";
 		exit;
 	}
 
 	$article = new article ($_REQUEST['ref_article']);
 	if (!$article->getRef_article()) {
-		echo "La référence de l'article est inconnue";		exit;
+		echo "La rÃ©fÃ©rence de l'article est inconnue";		exit;
 
 	}
 
 // *************************************************
-// Profils à afficher
+// Profils Ã  afficher
 	if ($CLIENT_ID_PROFIL != 0) {
 		include ($CONFIG_DIR."profil_".$_SESSION['profils'][$CLIENT_ID_PROFIL]->getCode_profil().".config.php");
 		contact::load_profil_class($CLIENT_ID_PROFIL);
@@ -33,7 +33,7 @@ require ($DIR."_session.inc.php");
 	}
 //liste des articles 
 $liste_consommations =	charger_liste_articles_consommation();
-//profil affichés pour la recherche simple
+//profil affichÃ©s pour la recherche simple
 $profils = array();
 foreach ($_SESSION['profils'] as $profil) {
 	if ($profil->getActif() != 1) { continue; }

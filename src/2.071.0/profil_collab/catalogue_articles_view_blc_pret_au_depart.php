@@ -15,19 +15,19 @@ require ($DIR."_session.inc.php");
 
 
 if (!isset($_REQUEST['ref_article'])){
-	echo "la référence de l'article n'est pas spécifiée.";
+	echo "la rÃ©fÃ©rence de l'article n'est pas spÃ©cifiÃ©e.";
 	exit;
 }
 $article = new article($_REQUEST['ref_article']);
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 // *************************************************
 
 $nb_fiches = 0;
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 // *************************************************
 
 $fiches = array();

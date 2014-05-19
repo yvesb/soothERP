@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -62,7 +62,7 @@ check_page_variables ($page_variables);
 			</select>
 					<input value="" type="hidden" id="tva_value_"  name="tva_value_"/>
 			<?php
-				//liste des valeurs de tva pour calcul tarif à la volée
+				//liste des valeurs de tva pour calcul tarif Ã  la volÃ©e
 				foreach ($tvas  as $tva){
 					?>
 					<input value="<?php echo htmlentities($tva['tva']);?>" type="hidden" id="tva_value_<?php echo $tva['id_tva'];?>"  name="tva_value_<?php echo $tva['id_tva'];?>"/>
@@ -78,9 +78,9 @@ check_page_variables ($page_variables);
 	</tr>
 		<tr>
 		<td>&nbsp;</td>
-		<td class="labelled_text"><span  <?php //permission (6) Accès Consulter les prix d’achat
+		<td class="labelled_text"><span  <?php //permission (6) AccÃ¨s Consulter les prix dâ€™achat
 if (!$_SESSION['user']->check_permission ("6")) {?>style="display:none;"<?php } ?> >Prix d'achat actuel:</span> </td>
-		<td><span <?php //permission (6) Accès Consulter les prix d’achat
+		<td><span <?php //permission (6) AccÃ¨s Consulter les prix dâ€™achat
 if (!$_SESSION['user']->check_permission ("6")) {?>style="display:none;"<?php } ?>><input type="text" name="paa_ht" id="paa_ht" value="<?php echo htmlentities($article->getPaa_ht ());?>"  class="classinput_hsize" />&nbsp;<input  name="taxation_paa" id="taxation_paa_ht" type="radio" value="HT" checked="checked" >HT&nbsp;<input  name="taxation_paa" id="taxation_paa_ttc" type="radio" value="TTC" >TTC			</span>
 		</td>
 		<td>&nbsp;</td>
@@ -161,7 +161,7 @@ if (!$_SESSION['user']->check_permission ("6")) {?>style="display:none;"<?php } 
 							<div id="aff_tarif_<?php echo $nb_liste_tarif?>_0" style="font-weight:bolder;color:#023668;">0 <?php echo $MONNAIE[1]?>
 							</div>
 
-							<div id="aff_formule_tarif_<?php echo $nb_liste_tarif?>_0" style="color:#7391a9;  <?php //permission (6) Accès Consulter les prix d’achat
+							<div id="aff_formule_tarif_<?php echo $nb_liste_tarif?>_0" style="color:#7391a9;  <?php //permission (6) AccÃ¨s Consulter les prix dâ€™achat
 if (!$_SESSION['user']->check_permission ("6")) {?> display:none;<?php } ?>">
 							<?php
 							if ($tarif_liste->formule_tarif=="") {
@@ -291,7 +291,7 @@ foreach ($liste_formules_tarifs_ByQte as $formule_qte=>$formule_tarif) {
 			});
 			</script>
 	
-								<a href="#" id="aff_formule_tarif_<?php echo $nb_liste_tarif?>_<?php echo $nb_ligne_prix?>" style="color:#7391a9;<?php //permission (6) Accès Consulter les prix d’achat
+								<a href="#" id="aff_formule_tarif_<?php echo $nb_liste_tarif?>_<?php echo $nb_ligne_prix?>" style="color:#7391a9;<?php //permission (6) AccÃ¨s Consulter les prix dâ€™achat
 if (!$_SESSION['user']->check_permission ("6")) {?> display:none;<?php } ?>">
 								<?php
 									if (isset ($formule_tarif[$tarif_liste->id_tarif])) {
@@ -322,7 +322,7 @@ if (!$_SESSION['user']->check_permission ("6")) {?> display:none;<?php } ?>">
 		
 Event.observe('tarif_del_<?php echo $nb_liste_tarif?>_<?php echo $nb_ligne_prix?>', "click", function(evt){
 	Event.stop(evt); 
-	$("aff_formule_tarif_<?php echo $nb_liste_tarif?>_<?php echo $nb_ligne_prix?>").innerHTML="Définir un nouveau tarif";
+	$("aff_formule_tarif_<?php echo $nb_liste_tarif?>_<?php echo $nb_ligne_prix?>").innerHTML="DÃ©finir un nouveau tarif";
 	$("formule_tarif_<?php echo $nb_liste_tarif?>_<?php echo $nb_ligne_prix?>").value="<?php
 							if ($tarif_liste->formule_tarif=="")
 								{echo $tarif_liste->marge_moyenne;
@@ -427,7 +427,7 @@ $nb_ligne_prix++;
 		
 		if (count($taxes_art_categ) > count ($taxes)) {
 		?>
-		<span id="aff_more_categ_taxes" style=" cursor:pointer; display:"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" /> <span style="text-decoration:underline">Taxes de catégorie</span></span>
+		<span id="aff_more_categ_taxes" style=" cursor:pointer; display:"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" /> <span style="text-decoration:underline">Taxes de catÃ©gorie</span></span>
 		<div id="more_categ_taxes" style="display:none">
 		<?php
 		foreach ($taxes_art_categ  as $taxep_art){

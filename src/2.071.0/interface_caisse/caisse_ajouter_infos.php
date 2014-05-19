@@ -19,7 +19,7 @@ if(isset( $_REQUEST['ref_ticket'] ) && $_REQUEST['ref_ticket'] != ""){
 	$document = open_doc($_REQUEST['ref_ticket']);
 }else{	//Nouveau Ticket de caisse
 
-	// Par précotion, on efface toutes les variables de création de documents
+	// Par prÃ©cotion, on efface toutes les variables de crÃ©ation de documents
 	unset($GLOBALS['_OPTIONS']['CREATE_DOC']);
 
 	$document = create_doc($TICKET_CAISSE_ID_TYPE_DOC);

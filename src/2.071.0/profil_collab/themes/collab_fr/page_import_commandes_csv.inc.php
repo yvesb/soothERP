@@ -30,16 +30,16 @@
 		<span style="width:380px; text-align: right; float:left">&nbsp;</span> 
 		<br />
 		<span style="font-weight:bolder">L'utilisation de ce module demande des connaissances techniques (utilisation Excel)</span><br />
-		En cas de doute, n'hésitez pas à posez vos questions sur <a href="http://community.sootherp.fr" target="_blank">l'espace d'échange dédié à la communnauté</a>
+		En cas de doute, n'hÃ©sitez pas Ã  posez vos questions sur <a href="http://community.sootherp.fr" target="_blank">l'espace d'Ã©change dÃ©diÃ© Ã  la communnautÃ©</a>
 		<br />
-		Le fichier doit être au format CSV. (texte séparé par ;)
+		Le fichier doit Ãªtre au format CSV. (texte sÃ©parÃ© par ;)
 		<br />
-		Les informations de la première ligne doivent correspondre aux différentes informations des articles (Référence OEM, Référence interne, etc) sans symbole particulier.<br />
-		Idéalement il est recommandé de supprimer les colonnes inutiles.
+		Les informations de la premiÃ¨re ligne doivent correspondre aux diffÃ©rentes informations des articles (RÃ©fÃ©rence OEM, RÃ©fÃ©rence interne, etc) sans symbole particulier.<br />
+		IdÃ©alement il est recommandÃ© de supprimer les colonnes inutiles.
 		<br />
 		<br />
 		<br />
-		Télecharger <span class="common_link" id="download_exemple">ici</span> un exemple de fichier CSV
+		TÃ©lecharger <span class="common_link" id="download_exemple">ici</span> un exemple de fichier CSV
 		<br />
 		<br />
 		<script type="text/javascript">

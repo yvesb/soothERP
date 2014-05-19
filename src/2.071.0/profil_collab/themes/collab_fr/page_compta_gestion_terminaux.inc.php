@@ -4,7 +4,7 @@
 // AFFICHAGE DU CHOIX DES TERMINAUX DE PAIEMENT ELECTRONIQUE et VIRTUELS
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -38,10 +38,10 @@ check_page_variables ($page_variables);
 			<div style="width:90%; height:50px; padding:25px">
 			<table width="100%" border="0" cellspacing="4" cellpadding="2">
 				<tr>
-					<td style="width:25%; font-weight:bolder; text-align:left">Libellé</td>
-					<td style="width:20%; font-weight:bolder; text-align:right; padding-right:25px">Montant collecté</td>
-					<td style="width:20%; font-weight:bolder; text-align:center">Derniere télécollecte </td>
-					<td style="font-weight:bolder; text-align:center" colspan="3">Accès Direct</td>
+					<td style="width:25%; font-weight:bolder; text-align:left">LibellÃ©</td>
+					<td style="width:20%; font-weight:bolder; text-align:right; padding-right:25px">Montant collectÃ©</td>
+					<td style="width:20%; font-weight:bolder; text-align:center">Derniere tÃ©lÃ©collecte </td>
+					<td style="font-weight:bolder; text-align:center" colspan="3">AccÃ¨s Direct</td>
 				</tr>
 			<?php 
 			$id_mag = "";
@@ -71,7 +71,7 @@ check_page_variables ($page_variables);
 					<td style="font-weight:bolder; text-align:center; color:#999999;"><?php echo date_Us_to_Fr($last_date_telecollecte);?></td>
 					<td style="width:15%; text-align:center"><span class="green_underlined" id="tb_<?php echo $tpe->id_compte_tpe; ?>" >Tableau de Bord</span></td>
 					<td style="width:5%; text-align:center; color:#97bf0d">-</td>
-					<td style="width:15%; text-align:center"><span class="green_underlined" id="rc_<?php echo $tpe->id_compte_tpe; ?>">Télécollecte</span>
+					<td style="width:15%; text-align:center"><span class="green_underlined" id="rc_<?php echo $tpe->id_compte_tpe; ?>">TÃ©lÃ©collecte</span>
 					</td>
 				</tr>
 				<?php
@@ -98,7 +98,7 @@ check_page_variables ($page_variables);
 					<td style="font-weight:bolder; text-align:center; color:#999999;"><?php echo date_Us_to_Fr($last_date_telecollecte);?></td>
 					<td style="width:15%; text-align:center"><span class="green_underlined" id="tbv_<?php echo $tpv->id_compte_tpv; ?>" >Tableau de Bord</span></td>
 					<td style="width:5%; text-align:center; color:#97bf0d">-</td>
-					<td style="width:15%; text-align:center"><span class="green_underlined" id="rcv_<?php echo $tpv->id_compte_tpv; ?>">Télécollecte</span>
+					<td style="width:15%; text-align:center"><span class="green_underlined" id="rcv_<?php echo $tpv->id_compte_tpv; ?>">TÃ©lÃ©collecte</span>
 					</td>
 				</tr>
 				<?php

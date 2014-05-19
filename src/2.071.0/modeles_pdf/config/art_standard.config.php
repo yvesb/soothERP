@@ -31,7 +31,7 @@ $ART_STANDARD['PIEDS_DROIT'][1]	= $PIED_DE_PAGE_DROIT_1;
 
 // PARAMETRES MODIFIABLES
 
-// couleur du libellé article
+// couleur du libellÃ© article
 $ART_STANDARD['R_LIB_ARTICLE'] = 51;
 $ART_STANDARD['G_LIB_ARTICLE'] = 51;
 $ART_STANDARD['B_LIB_ARTICLE'] = 204;
@@ -63,9 +63,9 @@ $DOC_STANDARD['HAUTEUR_AFTER_LINE_INFORMATION']	= 0;
 $DOC_STANDARD['HAUTEUR_AFTER_LINE_SOUSTOTAL']		= 0;
 $DOC_STANDARD['HAUTEUR_AFTER_LINE_DESCRIPTION']	= 0;
 
-$DOC_STANDARD['ENTETE_COL_REF'] = "Référence";
-$DOC_STANDARD['ENTETE_COL_DES'] = "Désignation";
-$DOC_STANDARD['ENTETE_COL_QTE'] = "Qté";
+$DOC_STANDARD['ENTETE_COL_REF'] = "RÃ©fÃ©rence";
+$DOC_STANDARD['ENTETE_COL_DES'] = "DÃ©signation";
+$DOC_STANDARD['ENTETE_COL_QTE'] = "QtÃ©";
 $DOC_STANDARD['ENTETE_COL_PU']  = "PU ".$this->app_tarifs;
 $DOC_STANDARD['ENTETE_COL_REM'] = "Rem.";
 $DOC_STANDARD['ENTETE_COL_PT']  = "Montant";
@@ -103,21 +103,21 @@ $DOC_STANDARD['PIEDS_GAUCHE'][1]	= $PIED_DE_PAGE_GAUCHE_1;
 $DOC_STANDARD['PIEDS_DROIT'][0]	=  $PIED_DE_PAGE_DROIT_0;
 $DOC_STANDARD['PIEDS_DROIT'][1]	= $PIED_DE_PAGE_DROIT_1;
 
-//variable//type de champ(parametre)//libéllé//commentaire
+//variable//type de champ(parametre)//libÃ©llÃ©//commentaire
 // PARAMETRES MODIFIABLES
-$DOC_STANDARD['TEXTE_CORPS_PIEDS'][0]="Le client reconnait avoir procédé à la vérification d'usage des marchandises livrées.";//TXTE()// Texte entre corps et pied de page//ligne n°1
-$DOC_STANDARD['TEXTE_CORPS_PIEDS'][1]="A défaut de mention sur le bon de livraison, aucune réclamation ne sera admise après réception de la marchandise, sauf en cas de vice caché.";//TXTE()// Texte entre corps et pied de page//ligne n°2
-$DOC_STANDARD['TEXTE_CORPS_PIEDS'][2]="Réserve de propriété applicable selon la loi n°80.335 du 12 mai 1980.";//TXTE()// Texte entre corps et pied de page//ligne n°3
+$DOC_STANDARD['TEXTE_CORPS_PIEDS'][0]="Le client reconnait avoir procÃ©dÃ© Ã  la vÃ©rification d'usage des marchandises livrÃ©es.";//TXTE()// Texte entre corps et pied de page//ligne nÂ°1
+$DOC_STANDARD['TEXTE_CORPS_PIEDS'][1]="A dÃ©faut de mention sur le bon de livraison, aucune rÃ©clamation ne sera admise aprÃ¨s rÃ©ception de la marchandise, sauf en cas de vice cachÃ©.";//TXTE()// Texte entre corps et pied de page//ligne nÂ°2
+$DOC_STANDARD['TEXTE_CORPS_PIEDS'][2]="RÃ©serve de propriÃ©tÃ© applicable selon la loi nÂ°80.335 du 12 mai 1980.";//TXTE()// Texte entre corps et pied de page//ligne nÂ°3
 // FIN PARAMETRES MODIFIABLES
 // CONFIGURATION PAR DEFAUT
-// Portion de code recopiée dans la partie « paramètres modifiables » en cas de remise à 0 des paramètres.
+// Portion de code recopiÃ©e dans la partie Â«Â paramÃ¨tres modifiablesÂ Â» en cas de remise Ã  0 des paramÃ¨tres.
 /*
-$DOC_STANDARD['TEXTE_CORPS_PIEDS'][0]="Le client reconnait avoir procédé à la vérification d'usage des marchandises livrées.";//TXTE()// Texte entre corps et pied de page//ligne n°1
-$DOC_STANDARD['TEXTE_CORPS_PIEDS'][1]="A défaut de mention sur le bon de livraison, aucune réclamation ne sera admise après réception de la marchandise, sauf en cas de vis caché.";//TXTE()// Texte entre corps et pied de page//ligne n°2
-$DOC_STANDARD['TEXTE_CORPS_PIEDS'][2]="Réserve de propriété applicable selon la loi n°80.335 du 12 mai 1980.";//TXTE()// Texte entre corps et pied de page//ligne n°3
+$DOC_STANDARD['TEXTE_CORPS_PIEDS'][0]="Le client reconnait avoir procÃ©dÃ© Ã  la vÃ©rification d'usage des marchandises livrÃ©es.";//TXTE()// Texte entre corps et pied de page//ligne nÂ°1
+$DOC_STANDARD['TEXTE_CORPS_PIEDS'][1]="A dÃ©faut de mention sur le bon de livraison, aucune rÃ©clamation ne sera admise aprÃ¨s rÃ©ception de la marchandise, sauf en cas de vis cachÃ©.";//TXTE()// Texte entre corps et pied de page//ligne nÂ°2
+$DOC_STANDARD['TEXTE_CORPS_PIEDS'][2]="RÃ©serve de propriÃ©tÃ© applicable selon la loi nÂ°80.335 du 12 mai 1980.";//TXTE()// Texte entre corps et pied de page//ligne nÂ°3
 */
 // FIN CONFIGURATION PAR DEFAUT
-// INFORMATIONS SUR L’AUTEUR
+// INFORMATIONS SUR Lâ€™AUTEUR
 /* 
 */
 ?>

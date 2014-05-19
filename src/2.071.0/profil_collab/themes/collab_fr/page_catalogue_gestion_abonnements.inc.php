@@ -4,7 +4,7 @@
 // AFFICHAGE gestion des abonnements
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -38,9 +38,9 @@ check_page_variables ($page_variables);
 			<div style="width:90%; height:50px; padding:25px">
 			<table width="100%" border="0" cellspacing="4" cellpadding="2">
 				<tr>
-					<td style=" font-weight:bolder; text-align: left; padding-left:10px">Libellé de l'article</td>
+					<td style=" font-weight:bolder; text-align: left; padding-left:10px">LibellÃ© de l'article</td>
 					<td style="width:17%; font-weight:bolder; text-align:center">Abonnements en cours</td>
-					<td style="width:17%; font-weight:bolder; text-align:center">Abonnements à renouveler</td>
+					<td style="width:17%; font-weight:bolder; text-align:center">Abonnements Ã  renouveler</td>
 					<td style="width:16%;font-weight:bolder; text-align:center" colspan="3">Options</td>
 				</tr>
 			<?php 

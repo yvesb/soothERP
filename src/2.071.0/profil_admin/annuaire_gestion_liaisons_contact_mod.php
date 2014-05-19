@@ -11,7 +11,7 @@ require_once ($DIR."_contact_liaisons_types.class.php");
 
 
 if(!$_REQUEST['id_liaison_type']){
-	echo "la variable id_liaison_type n'est pas spécifiée";
+	echo "la variable id_liaison_type n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $id_liaison_type = $_REQUEST['id_liaison_type'];

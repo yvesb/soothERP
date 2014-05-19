@@ -14,9 +14,9 @@ $ANNUAIRE_CATEGORIES	=	get_categories();
 
 if (isset($_REQUEST['create_contact'])) {	
 	// *************************************************
-	// Controle des donnÈes fournies par le formulaire
+	// Controle des donn√©es fournies par le formulaire
 	if (!isset($_REQUEST['nom']) || !isset($_REQUEST['id_categorie']) || !isset($_REQUEST['note'])) {
-		$erreur = "Une variable nÈcessaire ‡ la crÈation du contact n'est pas prÈcisÈe.";
+		$erreur = "Une variable n√©cessaire √† la cr√©ation du contact n'est pas pr√©cis√©e.";
 		alerte_dev($erreur);
 	}
 
@@ -80,7 +80,7 @@ if (isset($_REQUEST['create_contact'])) {
 	}
 	
 	// *************************************************
-	// CrÈation du contact
+	// Cr√©ation du contact
 	$contact = new contact ();
 	$contact->create ($infos_generales, $infos_profils);
 	
@@ -89,7 +89,7 @@ if (isset($_REQUEST['create_contact'])) {
 	if(isset($profils[$COLLAB_ID_PROFIL]) ) {
 		//fonctions de collaborateurs
 		$liste_fonctions_collab = charger_fonctions ($COLLAB_ID_PROFIL);
-		//on parcoure les fonction pour retrouver les categories de collaborateurs cochÈes
+		//on parcoure les fonction pour retrouver les categories de collaborateurs coch√©es
 		foreach ($liste_fonctions_collab as $liste_fonction_collab) {
 			if (isset($_REQUEST['id_fonction_'.$liste_fonction_collab->id_fonction])) {
 			$profils[$COLLAB_ID_PROFIL]->add_fonction ($liste_fonction_collab->id_fonction);
@@ -100,16 +100,16 @@ if (isset($_REQUEST['create_contact'])) {
 	
 }
 
-// mise ‡ jour de la ref_contact d'un document si la requete return_to_page existe et contient ref_doc=
+// mise √† jour de la ref_contact d'un document si la requete return_to_page existe et contient ref_doc=
 
 
-if (isset ($_INFOS['CrÈation_contact']) && isset($_REQUEST["return_to_page"]) && $_REQUEST["return_to_page"] != "") {
+if (isset ($_INFOS['Cr√©ation_contact']) && isset($_REQUEST["return_to_page"]) && $_REQUEST["return_to_page"] != "") {
 	$ref_doc = str_replace("ref_doc=", "" , $_REQUEST["return_to_page"]);
 	// ouverture du document
 	$document = open_doc ($ref_doc);
 	
 	//maj ref_contact
-	$document->maj_contact ($_INFOS['CrÈation_contact']);
+	$document->maj_contact ($_INFOS['Cr√©ation_contact']);
 }
 
 

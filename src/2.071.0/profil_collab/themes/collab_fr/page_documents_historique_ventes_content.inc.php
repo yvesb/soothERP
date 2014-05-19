@@ -4,7 +4,7 @@
 // AFFICHAGE DE HISTORIQUE DES VENTES
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -31,7 +31,7 @@ function barre_navigation($nbtotal,
 													
 {
 	// --------------------------------------------------------------------
-	global $cfg_nb_pages; // Nb de n° de pages affichées dans la barre
+	global $cfg_nb_pages; // Nb de nÂ° de pages affichÃ©es dans la barre
 global $DIR;
 	$barre= "";	$lien_on 	= "&nbsp;<a href='#' id='link_pagi_{cible}'>{lien}</a>&nbsp;
 								<script type='text/javascript'>
@@ -41,7 +41,7 @@ global $DIR;
 	// --------------------------------------------------------------------
     
 
-	// début << .
+	// dÃ©but << .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -61,7 +61,7 @@ global $DIR;
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
 
 
-	// précédent < .
+	// prÃ©cÃ©dent < .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -167,7 +167,7 @@ function image_html($img)
 
 //
 //
-//création de la barre de nav
+//crÃ©ation de la barre de nav
 //
 //
 
@@ -253,13 +253,13 @@ foreach ($histo_ventes as $histo_vente) {
 				<td >
 		<div style="position:relative" >
 				<span id="view_line_artdesc_<?php echo $histo_vente->getRef_doc().$i;?>" >
-				<?php echo str_replace("€","&euro;",str_replace("<br />","\n",$contenu->lib_article)); ?>
+				<?php echo str_replace("â‚¬","&euro;",str_replace("<br />","\n",$contenu->lib_article)); ?>
 				</span>
 				<?php
 				if ($contenu->desc_article) {
 					?>
 					<div style="position:absolute; top:1.1em; right:0px; width:450px; display:none; z-index:250 " class="roundedtable_over" id="view_more_<?php echo $histo_vente->getRef_doc().$i;?>">
-					<?php echo str_replace("€","&euro;",str_replace("<br />","\n",$contenu->desc_article)); ?>
+					<?php echo str_replace("â‚¬","&euro;",str_replace("<br />","\n",$contenu->desc_article)); ?>
 					</div>
 					<script type="text/javascript">		
 					Event.observe("view_line_artdesc_<?php echo $histo_vente->getRef_doc().$i;?>", "mouseover", function(evt){	
@@ -298,7 +298,7 @@ foreach ($histo_ventes as $histo_vente) {
 			</td>
 			<td style="font-style:italic" >
 			Statut: <?php echo $histo_vente->getLib_etat_doc();?>
-			- <?php if (price_format($histo_vente->getMontant_to_pay()) > 0) { echo price_format($histo_vente->getMontant_to_pay ())." ".$MONNAIE[1]; ?> à régler <?php } ?>
+			- <?php if (price_format($histo_vente->getMontant_to_pay()) > 0) { echo price_format($histo_vente->getMontant_to_pay ())." ".$MONNAIE[1]; ?> Ã  rÃ©gler <?php } ?>
 			</td>
 			<td style="font-weight:bolder; width:40px">
 			</td>

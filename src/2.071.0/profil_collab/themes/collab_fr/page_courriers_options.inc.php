@@ -4,7 +4,7 @@
 // 
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -48,8 +48,8 @@ check_page_variables ($page_variables);
 	<ul id="menu_options" class="menu">
 	<li><a href="#" id="menu_1" class="menu_select">Type de courrier</a></li>
 	<?php 
-	//@TODO COURRIER : option d'un courrier : bouton [Options avancées] si besoin
-	//<li><a href="#" id="menu_2" class="menu_unselect">Options avancées</a></li>
+	//@TODO COURRIER : option d'un courrier : bouton [Options avancÃ©es] si besoin
+	//<li><a href="#" id="menu_2" class="menu_unselect">Options avancÃ©es</a></li>
 	?>
 	</ul>
 </div>
@@ -94,14 +94,14 @@ check_page_variables ($page_variables);
 			<table width="100%">
 				<tr>
 					<td style="width:3%"></td>
-					<td style="width:94%;" class="label_titre_popup" >Choix du Modèle de mise en page</td>
+					<td style="width:94%;" class="label_titre_popup" >Choix du ModÃ¨le de mise en page</td>
 					<td style="width:3%"></td>
 				</tr>
 			</table>
 		</div>
 		<br/>
 		<!-- C'est dans cette div que nous affichons la page pour choisir un model de pdf en fonction du type qu'on a choisi plus haut -->
-		<!-- par défaut on affiche le 1er type que l'on trouve -->
+		<!-- par dÃ©faut on affiche le 1er type que l'on trouve -->
 		<div id="choix_modele_pdf"></div>
 		<script type="text/javascript">
 			//page.traitecontent.changed = false;
@@ -117,11 +117,11 @@ check_page_variables ($page_variables);
 	</div>
 	
 	<?php 
-	//@TODO COURRIER : option d'un courrier : onglet [Options avancées] si besoin
+	//@TODO COURRIER : option d'un courrier : onglet [Options avancÃ©es] si besoin
 	/*
-	<!-- Onglet : Options avancées -->
+	<!-- Onglet : Options avancÃ©es -->
 	<div id="options_avancees"  style="display:none;" class="menu_link_affichage">
-		<span>Changer le courrier d'état</span><br/>
+		<span>Changer le courrier d'Ã©tat</span><br/>
 		<span>Supprimer le courrier</span>
 	</div>
 	*/?>
@@ -131,7 +131,7 @@ check_page_variables ($page_variables);
 Event.observe("menu_1", "click",  function(evt){Event.stop(evt); view_menu_1('type_de_courrier', 'menu_1', array_menu_r_contact );}, false);
 
 <?php
-	//@TODO COURRIER : option d'un courrier : script du bouton [Options avancées] si besoin
+	//@TODO COURRIER : option d'un courrier : script du bouton [Options avancÃ©es] si besoin
 	//Event.observe("menu_2", "click",  function(evt){Event.stop(evt); view_menu_1('options_avancees', 'menu_2', array_menu_r_contact );}, false);
 ?>
 

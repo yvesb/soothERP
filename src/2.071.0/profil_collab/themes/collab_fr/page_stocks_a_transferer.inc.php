@@ -4,7 +4,7 @@
 // AFFICHAGE DES STOCKS A RENOUVELER
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -27,7 +27,7 @@ check_page_variables ($page_variables);
 </script>
 <div id="main_doc_div" style="" class="emarge">
 
-<p class="titre">Stocks à Transférer</p>
+<p class="titre">Stocks Ã  TransfÃ©rer</p>
 
 <form>
 <div id="recherche" class="corps_moteur">

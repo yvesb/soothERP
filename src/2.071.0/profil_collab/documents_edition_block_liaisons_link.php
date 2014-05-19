@@ -22,7 +22,7 @@ if (isset($_REQUEST["ref_doc_cible"])) {
 		$add_line_link_from_doc = true;
 	}
 	
-	//récup d'infos diverses
+	//rÃ©cup d'infos diverses
 	$id_type_doc = $document->getID_TYPE_DOC ();
 	$ref_contact = $document->getRef_contact ();
 	

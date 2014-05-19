@@ -1,9 +1,9 @@
 <?php
 // *************************************************************************************************************
-// commissionnements des catégories d'articles
+// commissionnements des catÃ©gories d'articles
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -31,7 +31,7 @@ page.verify('livraison_modes','livraison_modes.php' ,"true" ,"sub_content");
 }, false);
 </script>
 </div>
-<p class="titre">Coûts de livraison associés aux articles</p>
+<p class="titre">CoÃ»ts de livraison associÃ©s aux articles</p>
 <div style="height:50px">
 <table class="minimizetable">
 <tr>

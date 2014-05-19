@@ -13,21 +13,21 @@ require ($DIR."_session.inc.php");
 // Controle
 
 	if(!isset($_REQUEST["tab_ref_article"])) {
-		echo "Les références des articles ne sont pas précisées";
+		echo "Les rÃ©fÃ©rences des articles ne sont pas prÃ©cisÃ©es";
 		exit;
 	}
 	echo $_REQUEST["tab_ref_article"]."<br/>";
 	$tab_ref_article = explode(";", $_REQUEST["tab_ref_article"]);
 	
 	if(!isset($_REQUEST["tab_id_abo"])) {
-		echo "Les id des articles ne sont pas précisés";
+		echo "Les id des articles ne sont pas prÃ©cisÃ©s";
 		exit;
 	}
 	echo $_REQUEST["tab_id_abo"]."<br/>";
 	$tab_id_abo = explode(";", $_REQUEST["tab_id_abo"]);
 	
 	if(!isset($_REQUEST["tab_ref_contact"])) {
-		echo "Les reférences contacts ne sont pas précisées";
+		echo "Les refÃ©rences contacts ne sont pas prÃ©cisÃ©es";
 		exit;
 	}
 	echo $_REQUEST["tab_ref_contact"]."<br/>";
@@ -45,7 +45,7 @@ require ($DIR."_session.inc.php");
 	for ($i = 0; $i<$nb_id; $i++){
 		$article = new article($tab_ref_article[$i]);
 		if (!$article->getRef_article()) {
-			echo "La référence de l'article est inconnue";
+			echo "La rÃ©fÃ©rence de l'article est inconnue";
 			exit;
 		}
 		
@@ -74,7 +74,7 @@ require ($DIR."_session.inc.php");
 		$infos['qte'] =	$article->calcul_prorata_abonnement ($tab_ref_article[$i], 1);
 	
 	
-		// gestion facturation immédiate ?
+		// gestion facturation immÃ©diate ?
 		$GLOBALS['_OPTIONS']['CREATE_DOC']['not_generer_facture'] = 1;
 		$GLOBALS['_OPTIONS']['CREATE_DOC']['maj_etat_copie_doc'] = 18;
 		if (($document->getRef_contact () && $document->getClient_facturation () == "immediate" ) || (!$document->getRef_contact () && $FACTURE_IMMEDIATE )) { unset($GLOBALS['_OPTIONS']['CREATE_DOC']['not_generer_facture']); }

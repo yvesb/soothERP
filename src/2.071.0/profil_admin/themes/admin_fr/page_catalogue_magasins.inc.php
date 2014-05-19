@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("magasins_liste", "BDD_MODE_VENTE", "DEFAUT_MODE_VENTE", "stocks_liste", "tarifs_liste");
 check_page_variables ($page_variables);
 
@@ -90,7 +90,7 @@ update_menu_arbo();
 						<input name="lib_magasin" id="lib_magasin" type="text" value=""  class="classinput_lsize"/>
 						<input name="ajout_magasin" id="ajout_magasin" type="hidden" value="1"/>
 						<div style="width:84%; text-align:right">
-						Abrév: 
+						AbrÃ©v: 
 						<input name="abrev_magasin" id="abrev_magasin" type="text" value=""  class="classinput_nsize" size="4"/>
 						</div>
 						</td>
@@ -230,14 +230,14 @@ update_menu_arbo();
 						<?php if(count($magasins_liste ) == 1) {?>
 						<input name="defaut_magasin_<?php echo $magasin_liste->id_magasin; ?>"  type="hidden" id="defaut_magasin_<?php echo $magasin_liste->id_magasin; ?>" value="1"  />
 						<?php } else { ?>
-						<input name="defaut_magasin_<?php echo $magasin_liste->id_magasin; ?>"  type="checkbox" id="defaut_magasin_<?php echo $magasin_liste->id_magasin; ?>" value="1" <?php if ( $DEFAUT_ID_MAGASIN == $magasin_liste->id_magasin) { echo 'checked="checked"';} ?>  alt="Magasin par défaut" title="Magasin par défaut" />
+						<input name="defaut_magasin_<?php echo $magasin_liste->id_magasin; ?>"  type="checkbox" id="defaut_magasin_<?php echo $magasin_liste->id_magasin; ?>" value="1" <?php if ( $DEFAUT_ID_MAGASIN == $magasin_liste->id_magasin) { echo 'checked="checked"';} ?>  alt="Magasin par dÃ©faut" title="Magasin par dÃ©faut" />
 						<?php }?>
 						</td>
 						<td>
 						<input id="lib_magasin_<?php echo $magasin_liste->id_magasin; ?>" name="lib_magasin_<?php echo $magasin_liste->id_magasin; ?>" type="text" value="<?php echo htmlentities($magasin_liste->lib_magasin); ?>"  class="classinput_lsize"/>
 			<input name="id_magasin" id="id_magasin" type="hidden" value="<?php echo $magasin_liste->id_magasin; ?>" />
 						<div style="width:84%; text-align:right">
-						Abrév: 
+						AbrÃ©v: 
 						<input name="abrev_magasin_<?php echo $magasin_liste->id_magasin; ?>" id="abrev_magasin_<?php echo $magasin_liste->id_magasin; ?>" type="text" value="<?php echo htmlentities($magasin_liste->abrev_magasin); ?>"  class="classinput_nsize" size="4"/>
 						</div>
 							

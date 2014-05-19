@@ -1,13 +1,13 @@
 <?php
 // *************************************************************************************************************
-// Modification des types de pièces jointes
+// Modification des types de piÃ¨ces jointes
 // *************************************************************************************************************
 
 require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
-//mise à jour des données transmises
+//mise Ã  jour des donnÃ©es transmises
 if(isset($_REQUEST['id_type_piece'])){
 	$lib_type = $_REQUEST['lib_type_'.$_REQUEST['id_type_piece']];
 	$abrev_type = $_REQUEST['abrev_type_'.$_REQUEST['id_type_piece']];

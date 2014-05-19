@@ -4,7 +4,7 @@
 // historique des controle de la caisse
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -26,7 +26,7 @@ check_page_variables ($page_variables);
 <script type="text/javascript">
 Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); page.verify('compta_gestion2_caisse','compta_gestion2_caisse.php?id_caisse=<?php echo $_REQUEST["id_caisse"];?>','true','sub_content');}, false);
 </script>
-<div class="titre" style="padding-left:140px; width:70%" id="titre_crea_art">Opérations de gestion pour <?php echo ($compte_caisse->getLib_caisse()); ?>
+<div class="titre" style="padding-left:140px; width:70%" id="titre_crea_art">OpÃ©rations de gestion pour <?php echo ($compte_caisse->getLib_caisse()); ?>
 </div>
 
 <div class="emarge">
@@ -50,7 +50,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 						<td></td>
 					</tr>
 					<tr>
-						<td>Type d'opération</td>
+						<td>Type d'opÃ©ration</td>
 						<td>&nbsp; </td>
 						<td colspan="4">
 						<select name="id_move_type" size="5" multiple="multiple" id="id_move_type" >
@@ -58,9 +58,9 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 							<option value="2"  >Transfert entre caisse</option>
 							<option value="3"  >Retrait bancaire</option>
 							<option value="4"  >Remise en banque</option>
-							<option value="5"  >Réinitialisation de la caisse</option>
+							<option value="5"  >RÃ©initialisation de la caisse</option>
 							<option value="6"  >Erreur de caisse</option>
-							<option value="7"  >Opération Diverse</option>
+							<option value="7"  >OpÃ©ration Diverse</option>
 						</select>		</td>
 						<td rowspan="2" style="text-align:right"><br />		</td>
 						<td rowspan="3" style="text-align:right"><span id="moves_of_day" style="cursor:pointer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_compta_moves_of_day.gif" style="cursor:pointer;"/></span>
@@ -77,7 +77,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 						<td></td>
 					</tr>
 					<tr>
-						<td>Période&nbsp;</td>
+						<td>PÃ©riode&nbsp;</td>
 						<td>du&nbsp; </td>
 						<td><input type="text" id="date_debut" name="date_debut" value="" class="classinput_nsize" /></td>
 						<td>&nbsp;</td>

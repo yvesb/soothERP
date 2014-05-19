@@ -64,7 +64,7 @@ if (file_exists($fichier)) {
 	}
 	$compte_bancaire->check_calcul_releve (date ("Y-m-d", mktime(0, 0, 0, date ("m", strtotime($date_maj_releve)) , date ("d", strtotime($date_maj_releve)), date ("Y", strtotime($date_maj_releve)) )));
 } else { 
-	$erreur =  "Fichier introuvable !<br>Importation stoppée.";
+	$erreur =  "Fichier introuvable !<br>Importation stoppÃ©e.";
 }
 
 // *************************************************************************************************************

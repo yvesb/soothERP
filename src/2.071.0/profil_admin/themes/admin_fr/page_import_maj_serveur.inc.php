@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -19,7 +19,7 @@ check_page_variables ($page_variables);
 
 ?>
 <script type="text/javascript">
-tableau_smenu[0] = Array("import_maj_serveur", "import_maj_serveur.php" ,"true" ,"sub_content", "Mises à jour");
+tableau_smenu[0] = Array("import_maj_serveur", "import_maj_serveur.php" ,"true" ,"sub_content", "Mises Ã  jour");
 tableau_smenu[1] = Array("", "" ,"" ,"", "");
 update_menu_arbo();
 </script>
@@ -51,7 +51,7 @@ update_menu_arbo();
 		<p>
 		<?php
 		if ($last_version == "0" || $last_version == "" ) { 
-			echo "Aucune mise à jour nécessaire";
+			echo "Aucune mise Ã  jour nÃ©cessaire";
 			
 		} else {
 			?>
@@ -115,18 +115,18 @@ update_menu_arbo();
 			<div id="total_box" style="display:none">
 			<div class="white_rounded_top">
 					<div class="head_download" style="display:none" id="head_auto">
-						<span class="bold_text">Mise à jour de Lundi Matin Business</span><br />
+						<span class="bold_text">Mise Ã  jour de Lundi Matin Business</span><br />
 						Ceci peut prendre plusieurs minutes. Vous pouvez utiliser votre ordinateur<br />
 						pour d&rsquo;autres t&acirc;ches durant l&rsquo;installation			<br />
 
 					</div>
 					<div class="head_download" style="display:none; height:100px" id="head_manu">
-						<span class="bold_text">Mise à jour Manuelle de Lundi Matin Business</span><br />
-						Télécharger le fichier à l'adresse suivante:<br />
+						<span class="bold_text">Mise Ã  jour Manuelle de Lundi Matin Business</span><br />
+						TÃ©lÃ©charger le fichier Ã  l'adresse suivante:<br />
 <a href="<?php echo $MAJ_SERVEUR['url']."check_maj_zip_version.php?ma_version=".$_SERVER['VERSION'];?>" target="_blank"><?php echo $MAJ_SERVEUR['url']."check_maj_zip_version.php?ma_version=".$_SERVER['VERSION'];?></a><br />
-						Décompresser le fichier<br />
+						DÃ©compresser le fichier<br />
 						Copier le dossier "maj_lmb_<?php echo $new_version;?>/" dans le dossier "echange_lmb/" sur votre serveur<br />
-						Une fois l'ensemble des fichiers uploadés sur votre serveur, <span id="maj_manu_suite" style="cursor:pointer; text-decoration:underline">cliquez ici</span>.<br />
+						Une fois l'ensemble des fichiers uploadÃ©s sur votre serveur, <span id="maj_manu_suite" style="cursor:pointer; text-decoration:underline">cliquez ici</span>.<br />
 
 					</div>
 			</div>
@@ -159,9 +159,9 @@ update_menu_arbo();
 							?>
 						</div>
 						<br />
-						<input type="submit" id="lauch_maj" name="go_etape_5a" style="display:none" class="bt" value="Mettre à niveau le Logiciel" />
-						<input type="submit" id="lauch_maj_manu" name="go_etape_5a_manu" style="display:none" class="bt" value="Mettre à niveau le Logiciel" />
-						<div id="maj_etat" style="display:none">Mise à jour vers version <?php echo $new_version;?> en cours</div><br />
+						<input type="submit" id="lauch_maj" name="go_etape_5a" style="display:none" class="bt" value="Mettre Ã  niveau le Logiciel" />
+						<input type="submit" id="lauch_maj_manu" name="go_etape_5a_manu" style="display:none" class="bt" value="Mettre Ã  niveau le Logiciel" />
+						<div id="maj_etat" style="display:none">Mise Ã  jour vers version <?php echo $new_version;?> en cours</div><br />
 						<br />
 						<div style="text-align:left" class="bold_text" id="info_progress">&nbsp;</div>
 						

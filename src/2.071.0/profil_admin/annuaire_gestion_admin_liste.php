@@ -14,10 +14,10 @@ require ($DIR."_session.inc.php");
 // *************************************************************************************************************
 
 	// *************************************************
-// Profils à afficher
+// Profils Ã  afficher
 
 
-//profil affichés pour la recherche simple
+//profil affichÃ©s pour la recherche simple
 $profils = array();
 foreach ($_SESSION['profils'] as $profil) {
 	if ($profil->getActif() != 1) { continue; }
@@ -25,7 +25,7 @@ foreach ($_SESSION['profils'] as $profil) {
 }
 unset ($profil);
 
-//profil affichés pour la recherche avancee
+//profil affichÃ©s pour la recherche avancee
 $profils_avancees = array();
 foreach ($_SESSION['profils'] as $profil) {
 	if ($profil->getActif() != 1) { continue; }

@@ -11,7 +11,7 @@ require ($DIR."_session.inc.php");
 
 if (isset($_REQUEST['id_tarif'])) {	
 	// *************************************************
-	// Controle des données fournies par le formulaire
+	// Controle des donnÃ©es fournies par le formulaire
 
 	
 	$lib_tarif						= $_REQUEST['lib_tarif_'.$_REQUEST['id_tarif']];
@@ -20,7 +20,7 @@ if (isset($_REQUEST['id_tarif'])) {
 
 	
 	// *************************************************
-	// Création de la catégorie
+	// CrÃ©ation de la catÃ©gorie
 	$tarif_liste = new tarif_liste ($_REQUEST['id_tarif']);
 	$tarif_liste->modification ($lib_tarif, $desc_tarif, $marge_moyenne);
 }

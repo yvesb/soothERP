@@ -16,7 +16,7 @@ require ($DIR."_session.inc.php");
 
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 
 $nb_fiches = 0;
 
@@ -27,9 +27,9 @@ if (isset($_REQUEST['cp'])) {
 }
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_join 	= "";
 	$query_where 	= "date_archivage IS NULL";
 

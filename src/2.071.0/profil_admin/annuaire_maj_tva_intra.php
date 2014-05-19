@@ -11,7 +11,7 @@ require ($DIR."_session.inc.php");
 if (isset($_REQUEST['ref_contact'])) {	
 	
 	// *************************************************
-	// Création du contact
+	// CrÃ©ation du contact
 	$contact = new contact ($_REQUEST['ref_contact']);
 	$contact->maj_tva_intra ($_REQUEST['tva_intra']);
 }

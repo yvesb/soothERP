@@ -6,9 +6,9 @@
 class pdf_content_doc_standard {
 	var $code_pdf_modele = "doc_standard";
 
-	var $pdf;								// PDF destiné à contenir le document
-	var $document;					// Document à imprimer
-	var $contenu;						// Contenu du document à imprimer
+	var $pdf;								// PDF destinÃ© Ã  contenir le document
+	var $document;					// Document Ã  imprimer
+	var $contenu;						// Contenu du document Ã  imprimer
 
 	var $tvas;
 	var $montant_ht;
@@ -100,12 +100,12 @@ public function pdf_content_doc_standard (&$pdf, $document) {
 	// Initialisation des variables
 	$this->nb_pages					= 1;
 	$this->contenu_actuel 	= 0;					// Ligne du document en cours de traitement
-	$this->contenu_end_page = array();		// Lignes de contenu terminant les différentes pages
+	$this->contenu_end_page = array();		// Lignes de contenu terminant les diffÃ©rentes pages
 	$this->page_actuelle		= 0;
 	$this->content_printed	= 0;
 
 	// ***************************************************
-	// Valeurs par défaut
+	// Valeurs par dÃ©faut
 	foreach ($DOC_STANDARD as $var => $valeur) {
 		$this->{$var} = $valeur;
 	}
@@ -135,7 +135,7 @@ public function pdf_content_doc_standard (&$pdf, $document) {
 
 
 
-	//transformation des lignes de contenu (découpage des textes trop long, assimilation des descriptions comme simples lignes
+	//transformation des lignes de contenu (dÃ©coupage des textes trop long, assimilation des descriptions comme simples lignes
 	$new_contenu_decoupe = array();
 	$this->pdf->SetFont('Arial', 'B', 9);
 	for ($i=0; $i<count($this->contenu); $i++) {
@@ -276,7 +276,7 @@ public function pdf_content_doc_standard (&$pdf, $document) {
 	$this->contenu = $new_contenu_decoupe;
 
 	// ***************************************************
-	// Comptage du nombre de page nécessaires
+	// Comptage du nombre de page nÃ©cessaires
 	$hauteur_totale = 0;
 	$old_index = 0;
 	if(!empty($this->AFF_CG) && $this->AFF_CG){
@@ -290,7 +290,7 @@ public function pdf_content_doc_standard (&$pdf, $document) {
 		$hauteur_ligne = $this->{"HAUTEUR_LINE_".strtoupper($this->contenu[$i]->type_of_line)};
 
 
-		// Vérification de la nécessité de changer de page
+		// VÃ©rification de la nÃ©cessitÃ© de changer de page
 		$hauteur_totale += $hauteur_ligne;
 		if ($hauteur_totale + 6 >= $this->CORPS_HAUTEUR_MAX) {
 			$this->contenu_end_page[] = $old_index;
@@ -304,7 +304,7 @@ public function pdf_content_doc_standard (&$pdf, $document) {
 	
 
 	// ***************************************************
-	// Création de la première page
+	// CrÃ©ation de la premiÃ¨re page
 	$this->create_pdf_page ();
 
 
@@ -312,12 +312,12 @@ public function pdf_content_doc_standard (&$pdf, $document) {
 }
 
 
-// Créé une nouvelle page du document PDF
+// CrÃ©Ã© une nouvelle page du document PDF
 protected function create_pdf_page () {
 	// Comptage du nombre de page
 	$this->page_actuelle++;
 
-	// Création d'une nouvelle page
+	// CrÃ©ation d'une nouvelle page
 	$this->pdf->AddPage();
 	
 	// ***************************************************
@@ -350,7 +350,7 @@ protected function create_pdf_page () {
 }
 
 
-// Créé l'entete du document PDF
+// CrÃ©Ã© l'entete du document PDF
 protected function create_pdf_entete () {
 	global $IMAGES_DIR;
 
@@ -370,18 +370,18 @@ protected function create_pdf_entete () {
 	}
 
 	// ***************************************************
-	// Référence du document
+	// RÃ©fÃ©rence du document
 	$hauteur += 12;
 	$this->pdf->SetXY(101, $hauteur);
 	$this->pdf->SetFont('Arial', '', 8);
-	$ref_doc_lib = "Notre Référence";
+	$ref_doc_lib = "Notre RÃ©fÃ©rence";
 	$this->pdf->Cell (22, 3, $ref_doc_lib, 0, 0, 'L');
 	$this->pdf->Cell (3, 3, ":", 0, 0, 'L');
 	$this->pdf->Cell (40, 3, $this->ref_doc, 0, 0, 'L');
 	if(!empty($this->ref_doc_externe)){
 		$hauteur += 4;
 		$this->pdf->SetXY(101, $hauteur);
-		$ref_doc_externe_lib = "Votre Référence";
+		$ref_doc_externe_lib = "Votre RÃ©fÃ©rence";
 		$this->pdf->Cell (22, 3, $ref_doc_externe_lib, 0, 0, 'L');
 		$this->pdf->Cell (3, 3, ":", 0, 0, 'L');
 		$this->pdf->Cell (40, 3, $this->ref_doc_externe, 0, 0, 'L');
@@ -407,7 +407,7 @@ protected function create_pdf_entete () {
 }
 
 
-// Créé l'adresse du PDF
+// CrÃ©Ã© l'adresse du PDF
 protected function create_pdf_adresse () {
 	$decalage_gauche 	= 97;
 	$decalage_haut		= 40;
@@ -416,7 +416,7 @@ protected function create_pdf_adresse () {
 	$marge = 4;
 
 	// ***************************************************
-	// Code à Barre
+	// Code Ã  Barre
 	if(!isset($this->AFF_CODE_BARRE) || $this->AFF_CODE_BARRE==true){
 		$this->pdf->Code39 ($decalage_gauche + $marge + 1, $decalage_haut +1, $this->ref_doc, 0.9, 7);
 	}
@@ -439,14 +439,14 @@ protected function create_pdf_adresse () {
 }
 
 
-// Créé le corps du PDF
+// CrÃ©Ã© le corps du PDF
 protected function create_pdf_corps () {
 	global $AFF_REMISES;
 
 	$this->decalage_corps_actuel	= 0;
 
 	// ***************************************************
-	// Numéro de page
+	// NumÃ©ro de page
 	$this->pdf->SetXY(-45, $this->CORPS_HAUTEUR_DEPART - 6);
 	$this->pdf->SetFont('Arial', 'I', 8);
 	$page_lib = "Page ".$this->page_actuelle." / ".$this->nb_pages;
@@ -489,11 +489,11 @@ protected function create_pdf_corps () {
 			break; 
 		}
 
-		// Controle de la nécessité de changer de page
+		// Controle de la nÃ©cessitÃ© de changer de page
 		if (in_array($i, $this->contenu_end_page)) { break;	}
 	}
 
-	// Faire décendre le tableau jusqu'en bas du corps
+	// Faire dÃ©cendre le tableau jusqu'en bas du corps
 	while ($this->decalage_corps_actuel <= $this->CORPS_HAUTEUR_MAX-1) {
 		$line = new stdClass();
 		$this->create_pdf_corps_line($line);
@@ -510,7 +510,7 @@ protected function create_pdf_corps_line ($line) {
 	global $TARIFS_NB_DECIMALES;
 
 	// ***************************************************
-	// Valeurs par défaut
+	// Valeurs par dÃ©faut
 	if (!isset($line->type_of_line)) 	{ $line->type_of_line = "vide"; 	}
 	if (!isset($line->ref_article)) 	{ $line->ref_article = ""; 			}
 	if (!isset($line->ref_oem))			{ $line->ref_oem = ""; 				}
@@ -527,9 +527,9 @@ protected function create_pdf_corps_line ($line) {
 	// Cadre
 	$cadre = "LR"; // Gauche et droite
 
-	// Positionnement au début de la ligne
+	// Positionnement au dÃ©but de la ligne
 	$this->pdf->SetXY($this->MARGE_GAUCHE, $this->CORPS_HAUTEUR_DEPART + $this->decalage_corps_actuel);
-	// Style d'écriture par défaut
+	// Style d'Ã©criture par dÃ©faut
 	$this->pdf->SetFont('Arial', '', 9);
 	
 	// Calcul du Prix unitaire et du Prix total
@@ -539,7 +539,7 @@ protected function create_pdf_corps_line ($line) {
 	}
 	$line->pt = round($line->pu * $line->qte * (1-$line->remise/100), $TARIFS_NB_DECIMALES);
 
-	// Spécifités à l'affichage
+	// SpÃ©cifitÃ©s Ã  l'affichage
 	switch ($line->type_of_line) {
 		case "article":
 			if ($line->remise) { $line->remise = $line->remise." %"; }
@@ -651,7 +651,7 @@ protected function create_pdf_pieds () {
 	$this->pdf->SetXY($this->MARGE_GAUCHE, $this->PIEDS_HAUTEUR_DEPART);
 	$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS, $this->PIEDS_HAUTEUR_MAX, "", '1', 1, 'L');
 
-	// Information société
+	// Information sociÃ©tÃ©
 	$this->pdf->SetXY($this->MARGE_GAUCHE, $this->PIEDS_HAUTEUR_DEPART + $this->PIEDS_HAUTEUR_MAX + 1);
 	foreach ($this->PIEDS_GAUCHE as $texte) {
 		$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS, 4.5, $texte, '0', 2, 'L');
@@ -716,14 +716,14 @@ protected function create_pdf_pieds () {
 	// Bloc central
 	$this->pdf->SetXY($this->MARGE_GAUCHE + $largeur_bloc_tva, $this->PIEDS_HAUTEUR_DEPART);
 	$this->pdf->SetFont('Arial', 'B', 10);
-	$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_bloc_tva, 8, "Conditions de règlement", '1', 0, 'C');
+	$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_bloc_tva, 8, "Conditions de rÃ¨glement", '1', 0, 'C');
 }
 
 	protected function create_pdf_page_cg () {
 		// Comptage du nombre de page
 		$this->page_actuelle++;
 	
-		// Création d'une nouvelle page
+		// CrÃ©ation d'une nouvelle page
 		$this->pdf->AddPage();
 		
 	
@@ -736,7 +736,7 @@ protected function create_pdf_pieds () {
 		$this->pdf->SetXY($this->MARGE_GAUCHE, $this->MARGE_HAUT);
 		$this->pdf->SetFont('Arial', 'I', 9);
 		$this->pdf->Write(3, "\n");
-		$this->pdf->MultiCell(0, 3, str_replace("¤","€",str_replace("&#8211;","-",str_replace("&#8230;","...",str_replace("&#8217;", "'", $this->CG_VERSO)))));
+		$this->pdf->MultiCell(0, 3, str_replace("Â¤","â‚¬",str_replace("&#8211;","-",str_replace("&#8230;","...",str_replace("&#8217;", "'", $this->CG_VERSO)))));
 		
 		
 	}

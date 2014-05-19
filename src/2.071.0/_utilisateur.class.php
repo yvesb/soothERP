@@ -2,42 +2,42 @@
 // *************************************************************************************************************
 // CLASSE REGISSANT LES INFORMATIONS SUR UN COMPTE UTILISATEUR DE CONTACT 
 // *************************************************************************************************************
-// La classe USER gère l'utilisateur en cours pour une session.
-// La classe UTILISATEUR gère l'utilisateur d'un contact en dehors de toute session.
+// La classe USER gÃ¨re l'utilisateur en cours pour une session.
+// La classe UTILISATEUR gÃ¨re l'utilisateur d'un contact en dehors de toute session.
 
 final class utilisateur {
-	private $ref_user;						// Référence de l'utilisateur
+	private $ref_user;						// RÃ©fÃ©rence de l'utilisateur
 	
-	private $ref_coord_user;			// Coordonnées de l'utilisateur
-	private $ref_contact;					// Référence du contact propriétaire de l'utilisateur
+	private $ref_coord_user;			// CoordonnÃ©es de l'utilisateur
+	private $ref_contact;					// RÃ©fÃ©rence du contact propriÃ©taire de l'utilisateur
 	private $master;							// 1 si il s'agit du compte maitre de ce contact
 
-	private $pseudo;							// Pseudo affiché
+	private $pseudo;							// Pseudo affichÃ©
 	private $code;								// Code
 	
 	private $actif;								// 1 si le compte utilisateur est actif
 	private $ordre;								// Ordre d'affichage de ce compte utilisateur dans la liste du contact
 	
 	private $permissions;					// Tableau des permissions de l'utilisateur
-	private $allowed_profils;			// Tableau des profils utilisés
+	private $allowed_profils;			// Tableau des profils utilisÃ©s
 
 
 function __construct($ref_user = "") {
 	global $bdd;
 
-	// Controle si la ref_user est précisée
+	// Controle si la ref_user est prÃ©cisÃ©e
 	if (!$ref_user) { return false; }
 
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT u.ref_contact, ref_coord_user, master, pseudo, actif, ordre, id_langage
 						FROM users u
 						WHERE ref_user = '".$ref_user."' ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si la ref_user est trouvée
+	// Controle si la ref_user est trouvÃ©e
 	if (!$utilisateur = $resultat->fetchObject()) { return false; }
 
-	// Attribution des informations à l'objet
+	// Attribution des informations Ã  l'objet
 	$this->ref_user 			= $ref_user;
 	$this->ref_coord_user	= $utilisateur->ref_coord_user;
 	$this->ref_contact 		= $utilisateur->ref_contact;
@@ -59,10 +59,10 @@ function __construct($ref_user = "") {
 final public function create ($ref_contact, $ref_coord_user, $pseudo, $actif, $code, $id_langage) {
 	global $bdd;
 
-	$UTILISATEUR_ID_REFERENCE_TAG = 3;		// Référence Tag utilisé dans la base de donnée
+	$UTILISATEUR_ID_REFERENCE_TAG = 3;		// RÃ©fÃ©rence Tag utilisÃ© dans la base de donnÃ©e
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	if (!$ref_coord_user) {
 		$GLOBALS['_ALERTES']['no_ref_coord_user'] = 1;
 	}
@@ -72,7 +72,7 @@ final public function create ($ref_contact, $ref_coord_user, $pseudo, $actif, $c
 		$resultat = $bdd->query($query);
 		if ($tmp= $resultat->fetchObject()) {
 			if ($tmp->actif == -1) {
-				//suppression de la ref_coord_user de l'utilisateur archivé
+				//suppression de la ref_coord_user de l'utilisateur archivÃ©
 				$query = "UPDATE users 
 									SET ref_coord_user = NULL 
 									WHERE ref_user = '".$tmp->ref_user."' ";
@@ -85,7 +85,7 @@ final public function create ($ref_contact, $ref_coord_user, $pseudo, $actif, $c
 	if (!$pseudo) {
 		$GLOBALS['_ALERTES']['no_pseudo'] = 1;
 	}
-	//vérifie que le pseudo est unique
+	//vÃ©rifie que le pseudo est unique
 	if ($pseudo) {
 		$query = "SELECT pseudo, u.ref_user, u.ref_contact, c.email, a.nom, u.actif
 							FROM users u
@@ -94,9 +94,9 @@ final public function create ($ref_contact, $ref_coord_user, $pseudo, $actif, $c
 							WHERE u.pseudo = '".addslashes($pseudo)."' ";
 		$resultat = $bdd->query ($query);
 		if ($tmp = $resultat->fetchObject()) { 
-			//vérification de l'utilisation du pseudo à un user non supprimé
+			//vÃ©rification de l'utilisation du pseudo Ã  un user non supprimÃ©
 			if ($tmp->actif == -1) {
-				//modification du pseudo de l'utilisateur archivé
+				//modification du pseudo de l'utilisateur archivÃ©
 				$query = "UPDATE users 
 									SET pseudo = '".$tmp->pseudo."/".$tmp->ref_user."'
 									WHERE ref_user = '".$tmp->ref_user."' ";
@@ -111,13 +111,13 @@ final public function create ($ref_contact, $ref_coord_user, $pseudo, $actif, $c
 	}
 
 	// *************************************************
-	// Controle du niveau de sécurité du mot de passe, avant acceptation
+	// Controle du niveau de sÃ©curitÃ© du mot de passe, avant acceptation
 	$securite_ok = $this->check_code_security($code);
 	if ($securite_ok) { 
 		$this->code = $code;
 	}
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -129,7 +129,7 @@ final public function create ($ref_contact, $ref_coord_user, $pseudo, $actif, $c
 	
 
 	// *************************************************
-	// Création de la référence
+	// CrÃ©ation de la rÃ©fÃ©rence
 	$reference = new reference ($UTILISATEUR_ID_REFERENCE_TAG);
 	$this->ref_user = $reference->generer_ref();
 	
@@ -153,7 +153,7 @@ final public function create ($ref_contact, $ref_coord_user, $pseudo, $actif, $c
 
 
 	// *************************************************
-	// Profils associés au compte du contact
+	// Profils associÃ©s au compte du contact
 	$this->allowed_profils = array();
 	$query = "SELECT ap.id_profil, p.id_permission
 						FROM permissions p
@@ -174,7 +174,7 @@ final public function create ($ref_contact, $ref_coord_user, $pseudo, $actif, $c
 										'".$this->id_langage."')";
 	$bdd->exec($query);
 	
-	// Création des droits associés
+	// CrÃ©ation des droits associÃ©s
 	$query_insert = "";
 	foreach ($this->allowed_profils as $profil) {
 		if ($query_insert) { $query_insert .= ","; }
@@ -190,8 +190,8 @@ final public function create ($ref_contact, $ref_coord_user, $pseudo, $actif, $c
 
 
 	// *************************************************
-	// Résultat positif de la création
-	$GLOBALS['_INFOS']['Création_utilisateur'] = $this->ref_user;
+	// RÃ©sultat positif de la crÃ©ation
+	$GLOBALS['_INFOS']['CrÃ©ation_utilisateur'] = $this->ref_user;
 
 	return true;
 }
@@ -206,7 +206,7 @@ final public function modification ($ref_coord_user, $pseudo, $actif, $id_langag
 	global $bdd;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	if (!$ref_coord_user) {
 		$GLOBALS['_ALERTES']['no_ref_coord_user'] = 1;
 	}
@@ -216,7 +216,7 @@ final public function modification ($ref_coord_user, $pseudo, $actif, $id_langag
 		$resultat = $bdd->query($query);
 		if ($tmp= $resultat->fetchObject()) {
 			if ($tmp->actif == -1) {
-				//suppression de la ref_coord_user de l'utilisateur archivé
+				//suppression de la ref_coord_user de l'utilisateur archivÃ©
 				$query = "UPDATE users 
 									SET ref_coord_user = NULL 
 									WHERE ref_user = '".$tmp->ref_user."' ";
@@ -230,7 +230,7 @@ final public function modification ($ref_coord_user, $pseudo, $actif, $id_langag
 	if (!$pseudo) {
 		$GLOBALS['_ALERTES']['no_pseudo'] = 1;
 	}
-	//vérifie que le pseudo est unique
+	//vÃ©rifie que le pseudo est unique
 	if ($this->pseudo != $pseudo) {
 		$query = "SELECT pseudo, u.ref_user, u.ref_contact, c.email, a.nom, u.actif
 							FROM users u
@@ -239,9 +239,9 @@ final public function modification ($ref_coord_user, $pseudo, $actif, $id_langag
 							WHERE u.pseudo = '".addslashes($pseudo)."' ";
 		$resultat = $bdd->query ($query);
 		if ($tmp = $resultat->fetchObject()) { 
-			//vérification de l'utilisation du pseudo à un user non supprimé
+			//vÃ©rification de l'utilisation du pseudo Ã  un user non supprimÃ©
 			if ($tmp->actif == -1) {
-				//modification du pseudo de l'utilisateur archivé
+				//modification du pseudo de l'utilisateur archivÃ©
 				$query = "UPDATE users 
 									SET pseudo = '".$tmp->pseudo."/".$tmp->ref_user."'
 									WHERE ref_user = '".$tmp->ref_user."' ";
@@ -259,7 +259,7 @@ final public function modification ($ref_coord_user, $pseudo, $actif, $id_langag
 	}
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -269,7 +269,7 @@ final public function modification ($ref_coord_user, $pseudo, $actif, $id_langag
 	$this->id_langage	= $id_langage;
 
 	// *************************************************
-	// Mise à jour de la base
+	// Mise Ã  jour de la base
 	$query = "UPDATE users 
 						SET ref_coord_user = '".$this->ref_coord_user."', pseudo = '".addslashes($this->pseudo)."', 
 								actif = '".$this->actif."', id_langage = '".$this->id_langage."'
@@ -277,7 +277,7 @@ final public function modification ($ref_coord_user, $pseudo, $actif, $id_langag
 	$bdd->exec ($query);
 		
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	$GLOBALS['_ALERTES']['Modification_utilisateur'] = 1;
 
 	return true;
@@ -294,20 +294,20 @@ final public function changer_code ($new_code) {
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 
 	// *************************************************
-	// Mise à jour de la base
+	// Mise Ã  jour de la base
 	$query = "UPDATE users 
 						SET code = md5('".$this->code."')
 						WHERE ref_user = '".$this->ref_user."' ";
 	$bdd->exec ($query);
 		
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	$GLOBALS['_INFOS']['Modification_code'] = 1;
 
 	return true;
@@ -319,7 +319,7 @@ final public function set_master () {
 	global $bdd;
 
 	// *************************************************
-	// Mise à jour de la base
+	// Mise Ã  jour de la base
 	$bdd->beginTransaction();
 
 	$query = "UPDATE users 
@@ -335,7 +335,7 @@ final public function set_master () {
 	$bdd->commit();
 		
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	$GLOBALS['_INFOS']['set_master'] = 1;
 
 	return true;
@@ -351,7 +351,7 @@ final public function modifier_ordre ($new_ordre) {
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -369,14 +369,14 @@ final public function modifier_ordre ($new_ordre) {
 
 	$bdd->beginTransaction();
 	
-	// Mise à jour des autres users
+	// Mise Ã  jour des autres users
 	$query = "UPDATE users
 						SET ordre = ordre ".$variation." 1
 						WHERE ref_contact = '".$this->ref_contact."' && 
 									ordre ".$symbole1." '".$this->ordre."' && ordre ".$symbole2." '".$new_ordre."' ";
 	$bdd->exec ($query);
 	
-	// Mise à jour de cette adresse
+	// Mise Ã  jour de cette adresse
 	$query = "UPDATE users
 						SET ordre = '".$new_ordre."'
 						WHERE ref_user = '".$this->ref_user."'  ";
@@ -387,7 +387,7 @@ final public function modifier_ordre ($new_ordre) {
 	$this->ordre = $new_ordre;
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
@@ -396,7 +396,7 @@ final public function modifier_ordre ($new_ordre) {
 // *************************************************************************************************************
 // FONCTIONS LIEES A LA SUPPRESSION D'UN UTILISATEUR
 // *************************************************************************************************************
-// Un compte utilisateur n'est pas supprimé, il est juste archivé 
+// Un compte utilisateur n'est pas supprimÃ©, il est juste archivÃ© 
 final public function suppression () {
 	global $bdd;
 
@@ -437,7 +437,7 @@ final public function suppression () {
 // *************************************************************************************************************
 // FONCTIONS DIVERSES
 // *************************************************************************************************************
-// Vérifie si le niveau de sécurité du mot de passe est suffisant
+// VÃ©rifie si le niveau de sÃ©curitÃ© du mot de passe est suffisant
 function check_code_security ($code) {
 
 	if (empty($code)) {
@@ -453,14 +453,14 @@ function check_code_security ($code) {
 // *************************************************************************************************************
 
 //************************************************************************************************************
-//FONCTION D'INSERTION DES PREMISSIONS UTILISATEURS D'UN CONTACT AFIN D'AUTORISER L'UTILISATION DE L'INTERFACES DU PROFIL AJOUTÉ SI IL EXISTE DANS LES PROFIL_ALLOWED
+//FONCTION D'INSERTION DES PREMISSIONS UTILISATEURS D'UN CONTACT AFIN D'AUTORISER L'UTILISATION DE L'INTERFACES DU PROFIL AJOUTÃ‰ SI IL EXISTE DANS LES PROFIL_ALLOWED
 //************************************************************************************************************
 static function set_users_permission ($ref_contact = "", $id_profil = "") {
 	global $bdd;
 
 	if (!$ref_contact && !$id_profil) { return false; }
 	// *************************************************
-	// Profils associés au compte du contact
+	// Profils associÃ©s au compte du contact
 	$allowed_profils = array();
 	$query = "SELECT ap.id_profil, p.id_permission
 						FROM permissions p
@@ -470,7 +470,7 @@ static function set_users_permission ($ref_contact = "", $id_profil = "") {
 	while ($tmp = $resultat->fetchObject()) {	$allowed_profils[] = $tmp; }
 
 	// *************************************************
-	// utilisateurs associés au compte du contact
+	// utilisateurs associÃ©s au compte du contact
 	$users = array();
 	$query = "SELECT u.ref_user
 						FROM users u
@@ -479,7 +479,7 @@ static function set_users_permission ($ref_contact = "", $id_profil = "") {
 	while ($tmp = $resultat->fetchObject()) {	$users[] = $tmp; }
 
 	
-	// mise à jour des droits associés
+	// mise Ã  jour des droits associÃ©s
 	foreach ($users as $user) {
 		$query_insert = "";
 		foreach ($allowed_profils as $profil) {
@@ -496,19 +496,19 @@ static function set_users_permission ($ref_contact = "", $id_profil = "") {
 	$bdd->commit();
 	
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 //************************************************************************************************************
 //FONCTION DE SUPPRESSION DES PERMISSIONS UTILISATEURS D'UN CONTACT 
 //************************************************************************************************************
-//AFIN DE NE PLUS AUTORISER L'UTILISATION DE L'INTERFACES DU PROFIL SUPPRIMÉ 
+//AFIN DE NE PLUS AUTORISER L'UTILISATION DE L'INTERFACES DU PROFIL SUPPRIMÃ‰ 
 static function unset_users_permission ($ref_contact = "", $id_profil = "") {
 	global $bdd;
 	
 	if (!$ref_contact && !$id_profil) { return false; }
 	// *************************************************
-	// Récupèration de l'id_permission pour le profil supprimé 
+	// RÃ©cupÃ¨ration de l'id_permission pour le profil supprimÃ© 
 	$allowed_profils = array();
 	$query = "SELECT p.id_permission
 						FROM permissions p
@@ -517,7 +517,7 @@ static function unset_users_permission ($ref_contact = "", $id_profil = "") {
 	while ($tmp = $resultat->fetchObject()) {	$allowed_profils[] = $tmp; }
 
 	// *************************************************
-	// utilisateurs associés au compte du contact
+	// utilisateurs associÃ©s au compte du contact
 	$users = array();
 	$query = "SELECT u.ref_user
 						FROM users u
@@ -526,7 +526,7 @@ static function unset_users_permission ($ref_contact = "", $id_profil = "") {
 	while ($tmp = $resultat->fetchObject()) {	$users[] = $tmp; }
 
 	
-	// mise à jour des droits associés
+	// mise Ã  jour des droits associÃ©s
 	foreach ($users as $user) {
 		$query_where = "";
 		foreach ($allowed_profils as $profil) {
@@ -543,7 +543,7 @@ static function unset_users_permission ($ref_contact = "", $id_profil = "") {
 	$bdd->commit();
 	
 	// *************************************************
-	// Résultat positif de la suppression
+	// RÃ©sultat positif de la suppression
 	return true;
 }
 
@@ -585,7 +585,7 @@ static function getRef_user_from_ordre ($ref_contact, $ordre) {
 	return $user;
 }
 
-//retourne une liste des ref_user en fonction d'une plage d'ordre (mise à jour de l'affichage des utilisateurs)
+//retourne une liste des ref_user en fonction d'une plage d'ordre (mise Ã  jour de l'affichage des utilisateurs)
 public function liste_ref_user_in_ordre () {
 	global $bdd;
 	

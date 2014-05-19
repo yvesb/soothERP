@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -115,7 +115,7 @@ check_page_variables ($page_variables);
 							<span id="attribution_<?php echo $vehicule->id_vehicule; ?>" name="attribution_<?php echo $vehicule->id_vehicule; ?>"><?php echo $vehicule->attribution; ?></span>
 						</td>
 						<td width="220px">
-							<span style="width:90%" id="date_event" name="date_event" ><?php if($liste_evenements){echo convert_date_Us_to_Fr($date_dernier_evenement,'/')." - ".$lib_dernier_evenement;} else echo "Aucun évènement enregistré"?></span>
+							<span style="width:90%" id="date_event" name="date_event" ><?php if($liste_evenements){echo convert_date_Us_to_Fr($date_dernier_evenement,'/')." - ".$lib_dernier_evenement;} else echo "Aucun Ã©vÃ¨nement enregistrÃ©"?></span>
 						</td>
 						<td width="140px">
 						<span style="text-decoration:underline; cursor:pointer" id="smenu_gestion_vehicules_histo_<?php echo $vehicule->id_vehicule; ?>" name="smenu_gestion_vehicules_histo_<?php echo $vehicule->id_vehicule; ?>">Consulter l'historique</span>

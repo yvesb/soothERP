@@ -15,7 +15,7 @@ ini_set('post_max_size', '250M');
 ini_set('max_input_time', '2000');
 ini_set('max_execution_time', '2000');
 
-$rc = "Upload effectué avec succes.";
+$rc = "Upload effectuÃ© avec succes.";
 if (!is_uploaded_file($_FILES['up_backup']['tmp_name']))
   $rc = "Fichier introuvable.";
 else {

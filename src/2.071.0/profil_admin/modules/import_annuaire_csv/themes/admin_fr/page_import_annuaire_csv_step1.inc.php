@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -37,7 +37,7 @@ update_menu_arbo();
 
 <p class="titre">Renseigner les correspondances</p>
 <div>
-Sélectionnez les correspondances entre les informations de LMB et les différentes colonnes de votre fichier csv.
+SÃ©lectionnez les correspondances entre les informations de LMB et les diffÃ©rentes colonnes de votre fichier csv.
 <br />&nbsp;
 <form action="modules/import_annuaire_csv/import_annuaire_csv_step1_done.php" enctype="multipart/form-data" method="POST" id="import_annuaire_csv_done" name="import_annuaire_csv_done" target="formFrame" class="classinput_nsize" />
 

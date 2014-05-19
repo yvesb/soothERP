@@ -4,7 +4,7 @@
 // ACCUEIL DU PROFIL COLLAB
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("Udate_mini_calendrier", "Udate_fdm", "Udate_ldm", "Udate_first_monday", "Udate_now");
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
   <thead>
 	  <tr valign="middle" align="center">
 	  	<td>
-	  		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/gray_left.gif" style="cursor:pointer" alt="mois précédent" title="mois précédent" id="mini_calendrier_mois_precedent" />
+	  		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/gray_left.gif" style="cursor:pointer" alt="mois prÃ©cÃ©dent" title="mois prÃ©cÃ©dent" id="mini_calendrier_mois_precedent" />
 	  		<script type="text/javascript">
 	  			Event.observe("mini_calendrier_mois_precedent", "click", function(ev) {
 						Event.stop(ev);
@@ -89,7 +89,7 @@ check_page_variables ($page_variables);
 				}elseif($j == 6){//DIMANCHE
 					echo strftime('<td class="mini_calendrier_weekend_chiffre" onclick="refresh_grille_agenda('.($Udate_tmp).'000);" >%d</td>', $Udate_tmp);
 					echo "</tr><tr>";
-					$j = -1; // à cause du $j++ à la fin du while
+					$j = -1; // Ã  cause du $j++ Ã  la fin du while
 				}else{
 					echo strftime('<td class="mini_calendrier_Jsemaine_chiffre" onclick="refresh_grille_agenda('.($Udate_tmp).'000);" >%d</td>', $Udate_tmp);
 				}

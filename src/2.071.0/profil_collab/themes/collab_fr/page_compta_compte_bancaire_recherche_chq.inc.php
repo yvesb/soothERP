@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -24,7 +24,7 @@ check_page_variables ($page_variables);
 </script>
 <div class="emarge"><br />
 
-<span class="titre" style="float:left; padding-left:140px; width:50%">Recherche un chèque déposé en banque</span>
+<span class="titre" style="float:left; padding-left:140px; width:50%">Recherche un chÃ¨que dÃ©posÃ© en banque</span>
 
 <span style=" float:right; text-align:right; width:15%"><br />
 
@@ -105,7 +105,7 @@ page.verify('compte_bancaire_gestion2','compta_compte_bancaire_gestion2.php?id_c
 		</tr>
 		<tr>
 			<td>
-			<span class="labelled">Numéro de chèque:</span>
+			<span class="labelled">NumÃ©ro de chÃ¨que:</span>
 			</td>
 			<td>
 			<input type="text" name="num_cheque" id="num_cheque" value="" class="classinput_xsize"/>
@@ -133,7 +133,7 @@ page.verify('compte_bancaire_gestion2','compta_compte_bancaire_gestion2.php?id_c
 		</tr>
 		<tr>
 			<td>
-			<span class="labelled">Période du</span>
+			<span class="labelled">PÃ©riode du</span>
 			</td><td>
 			<input type="text" name="date_debut" id="date_debut" value="" class="classinput_xsize"/>  
 			</td>

@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 if (!$_SESSION['user']->check_permission ("11")) {
 	//on indique l'interdiction et on stop le script
-	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accés ne vous permettent pas de visualiser ce type de page</span>";
+	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accÃ©s ne vous permettent pas de visualiser ce type de page</span>";
 	exit();
 }
 
@@ -26,7 +26,7 @@ function tri($array, $critere)
   return $array;
 }
 
-//fonction de génération des lettrages (double numérotation alphabétique)
+//fonction de gÃ©nÃ©ration des lettrages (double numÃ©rotation alphabÃ©tique)
 function cre_lettrage ($old_lettrage){
 	$a="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
  	$part_a = substr($old_lettrage ,0,1);
@@ -79,9 +79,9 @@ $stocks_moves = array();
 		if ($query_where2) { $query_where2 .= " &&  "; }
 		$query_where2 .=  " date_reglement < '".($search['date_fin'])."' "; 
 	}
-	// Sélection
+	// SÃ©lection
 	
-	// Sélection des règlements du contact
+	// SÃ©lection des rÃ¨glements du contact
 	$grand_livre_reglements = array();
 	$query = "SELECT r.ref_reglement, r.id_reglement_mode, r.ref_contact, rm.lib_reglement_mode,
 									 r.date_saisie, r.date_reglement as date, r.montant_reglement as montant_ttc, rm.type_reglement, 
@@ -118,7 +118,7 @@ $stocks_moves = array();
 	?>
 	<html>
 	<body style="font:12px Arial, Helvetica, sans-serif">
-	Règlements Fournisseurs en espèce du <?php echo date_Us_to_Fr($search['date_debut']);?> au  <?php echo date_Us_to_Fr($search['date_fin']);?><br />
+	RÃ¨glements Fournisseurs en espÃ¨ce du <?php echo date_Us_to_Fr($search['date_debut']);?> au  <?php echo date_Us_to_Fr($search['date_fin']);?><br />
 
 	<table style="width:100%; font:12px Arial, Helvetica, sans-serif" cellpadding="0" cellspacing="0">
 	<tr>
@@ -133,7 +133,7 @@ $stocks_moves = array();
 		Montant
 		</td>
 		<td style="font-weight:bolder; text-align:right">
-		N° de Facture
+		NÂ° de Facture
 		</td>
 	</tr>
 		

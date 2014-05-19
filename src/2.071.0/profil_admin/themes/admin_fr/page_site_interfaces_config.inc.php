@@ -4,7 +4,7 @@
 // CONFIG DES DONNEES d'affichage
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -37,7 +37,7 @@ update_menu_arbo();
 		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr>
-		<td class="titre_config" colspan="3">Selectionner l'interface à configurer:		</td>
+		<td class="titre_config" colspan="3">Selectionner l'interface Ã  configurer:		</td>
 	</tr>
 	<tr>
 		<td colspan="3"> </td>

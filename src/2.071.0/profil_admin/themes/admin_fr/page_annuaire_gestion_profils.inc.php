@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -82,7 +82,7 @@ update_menu_arbo();
 							<option value="2" <?php if ($profil_liste->niveau_secu==2) {echo 'selected="selected"';}?>>Moyen</option>
 							<option value="3" <?php if ($profil_liste->niveau_secu==3) {echo 'selected="selected"';}?>>Avanc&eacute;</option>
 							<option value="4" <?php if ($profil_liste->niveau_secu==4) {echo 'selected="selected"';}?>>Haut</option>
-							<option value="5" <?php if ($profil_liste->niveau_secu==5) {echo 'selected="selected"';}?>>Extrême</option>
+							<option value="5" <?php if ($profil_liste->niveau_secu==5) {echo 'selected="selected"';}?>>ExtrÃªme</option>
 						</select>
 					</td>
 					<td>

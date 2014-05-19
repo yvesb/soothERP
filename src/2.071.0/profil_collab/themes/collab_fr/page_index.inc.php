@@ -4,7 +4,7 @@
 // PAGE INDEX DU PROFIL COLLAB
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -76,8 +76,8 @@ $menu1 =	array (
 															array('gestion_tache','planning_taches.php','true','sub_content','Gestion des t&acirc;ches'),
 															array('mes_taches','planning_taches_user.php','true','sub_content','Mes t&acirc;ches'),
 															array('separateur','','true','',''),
-															array('planning_evenements_recherche','planning_evenements_recherche.php','true','sub_content','Evénements'),
-															array('planning_evenements_rappels_recherche','planning_evenements_rappels_recherche.php','true','sub_content','Rappel d\'événements'),
+															array('planning_evenements_recherche','planning_evenements_recherche.php','true','sub_content','EvÃ©nements'),
+															array('planning_evenements_rappels_recherche','planning_evenements_rappels_recherche.php','true','sub_content','Rappel d\'Ã©vÃ©nements'),
 															array('separateur','','true','',''),
 															array('mes_liens','planning_liens.php','true','sub_content','Liens'),
 															array('separateur','','true','',''),
@@ -94,8 +94,8 @@ $menu1 =	array (
 array_push($menu1[6][5], array('compta_choix_caisse','compta_gestion_caisse.php','true','sub_content','Gestion des Caisses'));
 array_push($menu1[6][5], array('compta_gestion_terminaux','compta_gestion_terminaux.php','true','sub_content','Gestion des Terminaux de Paiement '));
 if($COMPTA_GEST_PRELEVEMENTS){
-    array_push($menu1[6][5], array('compta_gestion_traites_prelev','compta_gestion_traites_prelev.php','true','sub_content','Gestion des Traites et prélèvements '));
-	//array_push($menu1[6][5], array('compta_gestion_traites','compta_gestion_traites.php','true','sub_content','Gestion des Traites acceptées'));
+    array_push($menu1[6][5], array('compta_gestion_traites_prelev','compta_gestion_traites_prelev.php','true','sub_content','Gestion des Traites et prÃ©lÃ¨vements '));
+	//array_push($menu1[6][5], array('compta_gestion_traites','compta_gestion_traites.php','true','sub_content','Gestion des Traites acceptÃ©es'));
 	}
 array_push($menu1[6][5], array('compte_bancaire_gestion','compta_compte_bancaire_gestion.php','true','sub_content','Gestion des Comptes Bancaires'));
 array_push($menu1[6][5], array('separateur','','true','',''));
@@ -103,14 +103,14 @@ array_push($menu1[6][5], array('compta_situation_client','compta_situation_clien
 array_push($menu1[6][5], array('compta_situation_fournisseur','compta_situation_fournisseur.php','true','sub_content','Situation Fournisseurs'));
 array_push($menu1[6][5], array('compta_gestion_commerciaux','compta_gestion_commerciaux.php','true','sub_content','Situation Commerciaux'));
 array_push($menu1[6][5], array('separateur','','true','',''));
-array_push($menu1[6][5], array('compta_automatique','compta_automatique.php','true','sub_content','Comptabilité automatique'));
+array_push($menu1[6][5], array('compta_automatique','compta_automatique.php','true','sub_content','ComptabilitÃ© automatique'));
 array_push($menu1[6][5], array('compta_journal_achats','compta_journal_achats.php','true','sub_content','Journal des achats'));
 array_push($menu1[6][5], array('compta_journal_ventes','compta_journal_ventes.php','true','sub_content','Journal des ventes'));
-array_push($menu1[6][5], array('compta_journal_tresorerie','compta_journal_tresorerie.php','true','sub_content','Journaux de trésorerie'));
+array_push($menu1[6][5], array('compta_journal_tresorerie','compta_journal_tresorerie.php','true','sub_content','Journaux de trÃ©sorerie'));
 array_push($menu1[6][5], array('compta_compte_bancaire_rapprochement_gestion','compta_compte_bancaire_rapprochement_gestion.php','true','sub_content','Rapprochements Bancaires'));
 //array_push($menu1[6][5], array('separateur','','true','',''));
 array_push($menu1[6][5], array('separateur','','true','',''));
-array_push($menu1[6][5], array('pa_non_defini','compta_pa_non_defini.php','true','sub_content','Prix d\'achat non définis'));
+array_push($menu1[6][5], array('pa_non_defini','compta_pa_non_defini.php','true','sub_content','Prix d\'achat non dÃ©finis'));
 
 //insertion des documents actifs dans le menu
 if (isset($_SESSION['types_docs'][$DEVIS_CLIENT_ID_TYPE_DOC]) && $_SESSION['user']->check_permission ("26",$DEVIS_CLIENT_ID_TYPE_DOC)) {
@@ -132,7 +132,7 @@ if (isset($_SESSION['types_docs'][$COMMANDE_FOURNISSEUR_ID_TYPE_DOC]) && $_SESSI
 	array_push($menu1[4][5], array('document_nouveau_cdf','documents_nouveau.php?id_type_doc='.$COMMANDE_FOURNISSEUR_ID_TYPE_DOC,'true','sub_content','Nouvelle Commande'));
 }
 if (isset($_SESSION['types_docs'][$LIVRAISON_FOURNISSEUR_ID_TYPE_DOC]) && $_SESSION['user']->check_permission ("29",$LIVRAISON_FOURNISSEUR_ID_TYPE_DOC)) {
-	array_push($menu1[4][5], array('document_nouveau_blf','documents_nouveau.php?id_type_doc='.$LIVRAISON_FOURNISSEUR_ID_TYPE_DOC,'true','sub_content','Nouvelle Réception'));
+	array_push($menu1[4][5], array('document_nouveau_blf','documents_nouveau.php?id_type_doc='.$LIVRAISON_FOURNISSEUR_ID_TYPE_DOC,'true','sub_content','Nouvelle RÃ©ception'));
 }
 if (isset($_SESSION['types_docs'][$FACTURE_FOURNISSEUR_ID_TYPE_DOC]) && $_SESSION['user']->check_permission ("29",$FACTURE_FOURNISSEUR_ID_TYPE_DOC)) {
 	array_push($menu1[4][5], array('document_nouveau_faf','documents_nouveau.php?id_type_doc='.$FACTURE_FOURNISSEUR_ID_TYPE_DOC,'true','sub_content','Nouvelle Facture'));
@@ -203,34 +203,34 @@ if (!$_SESSION['user']->check_permission ("14")) {
 	//on vide le menu gestion newsletters
 	unset($menu1[7][5][0], $menu1[7][5][1]);
 }
-//permission (5) Accès comptabilité
+//permission (5) AccÃ¨s comptabilitÃ©
 if (!$_SESSION['user']->check_permission ("5")) {
-	//on vide le menu comptabilité
+	//on vide le menu comptabilitÃ©
 	unset($menu1[6]);
 }
-//permission (9) Accès Gestion des caisses et TPES
+//permission (9) AccÃ¨s Gestion des caisses et TPES
 if (!$_SESSION['user']->check_permission ("9")) {
-	//on vide le menu comptabilité
+	//on vide le menu comptabilitÃ©
 	unset($menu1[6][5][0]);
 }
-//permission (10) Accès Gestion des comptes bancaires
+//permission (10) AccÃ¨s Gestion des comptes bancaires
 if (!$_SESSION['user']->check_permission ("10")) {
-	//on vide le menu comptabilité
+	//on vide le menu comptabilitÃ©
 	unset($menu1[6][5][2]);
 }
-//permission (11) Accès Gestion des Suivi de Situation Clients
+//permission (11) AccÃ¨s Gestion des Suivi de Situation Clients
 if (!$_SESSION['user']->check_permission ("11")) {
-	//on vide le menu comptabilité
+	//on vide le menu comptabilitÃ©
 	unset($menu1[6][5][4]);
 }
-//permission (12) Accès Gestion des Suivi de Situation Fournisseurs
+//permission (12) AccÃ¨s Gestion des Suivi de Situation Fournisseurs
 if (!$_SESSION['user']->check_permission ("12")) {
-	//on vide le menu comptabilité
+	//on vide le menu comptabilitÃ©
 	unset($menu1[6][5][5]);
 }
-//permission (34) Accès Gestion des Suivi de Situation commerciaux
+//permission (34) AccÃ¨s Gestion des Suivi de Situation commerciaux
 if (!$_SESSION['user']->check_permission ("34")) {
-	//on vide le menu comptabilité
+	//on vide le menu comptabilitÃ©
 	unset($menu1[6][5][6]);
 }
 
@@ -247,37 +247,37 @@ if (!$_SESSION['user']->check_permission ("19")) {
 	unset($menu1[1][5][4]);
 }
 
-// Paramétrage comptabilité automatique et accès aux journaux 
-//permission (13) Accès journaux compta
+// ParamÃ©trage comptabilitÃ© automatique et accÃ¨s aux journaux 
+//permission (13) AccÃ¨s journaux compta
 if (!$_SESSION['user']->check_permission ("13")) {
-	//on vide le menu comptabilité
+	//on vide le menu comptabilitÃ©
 	unset($menu1[6][5][8], $menu1[6][5][9],$menu1[6][5][10],$menu1[6][5][11],$menu1[6][5][12]);
 }
 
-//permission (6) Accès Consulter les prix d'achat
+//permission (6) AccÃ¨s Consulter les prix d'achat
 if (!$_SESSION['user']->check_permission ("6")) {
-	//on interdit l'accès aux FAF
+	//on interdit l'accÃ¨s aux FAF
 	unset($menu1[4][5][8]);
 }
 
 //permission (24) Voir le menu Ventes
 if (!$_SESSION['user']->check_permission ("24")) {
-	//on vide le menu comptabilité
+	//on vide le menu comptabilitÃ©
 	unset($menu1[3]);
 }
 //permission (24) Voir le menu Achats
 if (!$_SESSION['user']->check_permission ("27")) {
-	//on vide le menu comptabilité
+	//on vide le menu comptabilitÃ©
 	unset($menu1[4]);
 }
 //permission (24) Voir le menu Stocks
 if (!$_SESSION['user']->check_permission ("30")) {
-	//on vide le menu comptabilité
+	//on vide le menu comptabilitÃ©
 	unset($menu1[5]);
 }
 //permission (38) Creer des fiches Articles
 if (!$_SESSION['user']->check_permission ("38")) {
-	//on vide le menu comptabilité
+	//on vide le menu comptabilitÃ©
 	unset($menu1[2][5][2]);
 }
 
@@ -354,7 +354,7 @@ if (isset($modules)) {
 <!--/*--><![CDATA[//><!--
 
 
-//vérif d'état du log de session
+//vÃ©rif d'Ã©tat du log de session
 
 function verif_session() {
 	$("code_relogin").value="";
@@ -458,11 +458,11 @@ var limite_car = 38;
 var limite_line_a = 2;
 var limite_line_b = 3;
 var limite_line_c = 5;
-//variable indiquant la recherche rapide d'article pour un document pour retour si un seul résultat trouve
+//variable indiquant la recherche rapide d'article pour un document pour retour si un seul rÃ©sultat trouve
 var from_rapide_search = "";
-//blocage de modification à certains champs d'un document
+//blocage de modification Ã  certains champs d'un document
 var quantite_locked = false;
-//passage par un règlement rapide (pour retourner à l'onglet principale du document aprés un règlement rapide
+//passage par un rÃ¨glement rapide (pour retourner Ã  l'onglet principale du document aprÃ©s un rÃ¨glement rapide
 var reglement_rapide = false;
 //directories
 var dirtheme = "<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>";
@@ -478,19 +478,19 @@ historique_request[5] = new Array();
 historique_request[6] = new Array();
 historique_request[7] = new Array();
 historique_request[8] = new Array();
-//total d'un document négatif ?
+//total d'un document nÃ©gatif ?
 var montant_total_neg = false;
-//variable d'attente du nombre de ligne à inserer depuis un document
+//variable d'attente du nombre de ligne Ã  inserer depuis un document
 var wait_for_x_line_doc = 0;
-//nombre de lignes chargées
+//nombre de lignes chargÃ©es
 var loaded_line_doc = 0;
-//nombre maximale de ligne de sn affichées
+//nombre maximale de ligne de sn affichÃ©es
 var doc_aff_qte_sn = <?php echo $DOC_AFF_QTE_SN;?>;
 //gestion des stocks
 var gestion_stock = <?php echo $GESTION_STOCK;?>;
-//page de retour aprés création d'un contact (si vide ouverture de la visualisation du contact)
+//page de retour aprÃ©s crÃ©ation d'un contact (si vide ouverture de la visualisation du contact)
 return_to_page = "";
-//dernière_ref_doc_line insérée dans un doc par recher rapide
+//derniÃ¨re_ref_doc_line insÃ©rÃ©e dans un doc par recher rapide
 var last_ssearch_ref_doc_line = "";
 
 var uncache = false;
@@ -563,7 +563,7 @@ foreach ($menu1 as $smenu) {
 $i++;
 }
 ?>
-	//Construction et placement des éléments du menu principal
+	//Construction et placement des Ã©lÃ©ments du menu principal
 	//require _general.js
 	construct_menu ();
 	
@@ -581,11 +581,11 @@ $i++;
 		$("alert_onException").style.display = "none";
 	}, false);
 	
-	//mise à hauteur des éléments principaux
+	//mise Ã  hauteur des Ã©lÃ©ments principaux
 	//require _general.js
 	setsize_to_element ();
 	set_tomax_height('sub_content' , -20);
-	// mise à la bonne largeur du sub_content
+	// mise Ã  la bonne largeur du sub_content
 	set_size_to_sub_content ();
 	
 	//waiting..fermeture au clic
@@ -593,10 +593,10 @@ $i++;
 	Event.observe($("wait_calcul_content"), "click", function() {
 		$("wait_calcul_content").style.display= "none";
 	}, false);
-	//observateur de resize pour mise à hauteur des éléments principaux
+	//observateur de resize pour mise Ã  hauteur des Ã©lÃ©ments principaux
 	Event.observe(window, "resize", function() {setsize_to_element(); set_tomax_height('sub_content' , -20); set_size_to_sub_content ();}, false);
 	
-	//lancement de la page par défaut
+	//lancement de la page par dÃ©faut
 	//require _general.js
 	
 	page.verify('<?php echo $default_page[0]?>','<?php echo $default_page[1]?>','<?php echo $default_page[2]?>','<?php echo $default_page[3]?>');
@@ -604,7 +604,7 @@ $i++;
 }
 
 var tempo_session=<?php echo $USER_SESSION_LT / $TEST_SESSION_TIMER;?>000;
-// verif de validité session
+// verif de validitÃ© session
 setTimeout ("verif_session()", tempo_session);
 
 Event.observe(window, "load", initEventHandlers, false);
@@ -716,7 +716,7 @@ $i++;
 </div>
 <div id="right_content"  style="display:none">
 <div id="user"><?php echo $_SESSION['user']->getRef_user() ?></div>
-<div id="deco"><a href="<?php echo $DIR?>site/__session_stop.php">Déconnexion</a></div>
+<div id="deco"><a href="<?php echo $DIR?>site/__session_stop.php">DÃ©connexion</a></div>
 <div></div>
 </div>
 
@@ -833,7 +833,7 @@ $i++;
 			</table>
 			<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
 				<tr><td>
-				<a class="subitem"  id="option_info_deconnexion"  href="#">Déconnexion</a>
+				<a class="subitem"  id="option_info_deconnexion"  href="#">DÃ©connexion</a>
 				</td></tr>
 			</table>
 		</td>

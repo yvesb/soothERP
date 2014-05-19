@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -21,8 +21,8 @@ check_page_variables ($page_variables);
 ?>
 <script type="text/javascript" language="javascript">
 tableau_smenu[0] = Array("smenu_gestion_modules", "smenu_gestion_modules.php" ,"true" ,"sub_content", "Gestion des Modules");
-tableau_smenu[1] = Array("smenu_gestion_vehicules", "smenu_gestion_vehicules.php" ,"true" ,"sub_content", "Gestion des véhicules");
-tableau_smenu[2] = Array("smenu_gestion_vehicules_histo", "smenu_gestion_vehicules_histo.php" ,"true" ,"sub_content", "Historique des véhicules");
+tableau_smenu[1] = Array("smenu_gestion_vehicules", "smenu_gestion_vehicules.php" ,"true" ,"sub_content", "Gestion des vÃ©hicules");
+tableau_smenu[2] = Array("smenu_gestion_vehicules_histo", "smenu_gestion_vehicules_histo.php" ,"true" ,"sub_content", "Historique des vÃ©hicules");
 update_menu_arbo();
 </script>
 

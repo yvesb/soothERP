@@ -16,7 +16,7 @@ $duree_mois_abo = $_REQUEST['duree_mois_abo'];
 $duree_jours_abo = $_REQUEST['duree_jours_abo'];
 $indentation = $_REQUEST['indentation'];
 
-//Récupération des informations
+//RÃ©cupÃ©ration des informations
 $duree_abo = new duree_abo($ref_doc_line);
 $ref_doc_line_abo = $duree_abo->getRef_doc_line();
 

@@ -8,7 +8,7 @@ class pdf_content_doc_fac_standard extends pdf_content_doc_standard{
 	var $code_pdf_modele = "doc_fac_standard";
 
 	
-	// Créé l'entete du document PDF
+	// CrÃ©Ã© l'entete du document PDF
 protected function create_pdf_entete () {
 	global $IMAGES_DIR;
 
@@ -21,25 +21,25 @@ protected function create_pdf_entete () {
 	// TITRE
 	$this->pdf->SetXY(100, $hauteur);
 	$this->pdf->SetFont('Times', 'B', 25);
-        //Affichage si total négatif
+        //Affichage si total nÃ©gatif
         if ($this->document->getMontant_ttc() < -0.001)
             $this->pdf->Cell (95, 10, $this->LIB_NEG, 0, 0, 'L');
         else
             $this->pdf->Cell (95, 10, $this->lib_type_printed, 0, 0, 'L');
 
 	// ***************************************************
-	// Référence du document
+	// RÃ©fÃ©rence du document
 	$hauteur += 12;
 	$this->pdf->SetXY(101, $hauteur);
 	$this->pdf->SetFont('Arial', '', 8);
-	$ref_doc_lib = "Notre Référence";
+	$ref_doc_lib = "Notre RÃ©fÃ©rence";
 	$this->pdf->Cell (22, 3, $ref_doc_lib, 0, 0, 'L');
 	$this->pdf->Cell (3, 3, ":", 0, 0, 'L');
 	$this->pdf->Cell (40, 3, $this->ref_doc, 0, 0, 'L');
 	if(!empty($this->ref_doc_externe)){
 		$hauteur += 4;
 		$this->pdf->SetXY(101, $hauteur);
-		$ref_doc_externe_lib = "Votre Référence";
+		$ref_doc_externe_lib = "Votre RÃ©fÃ©rence";
 		$this->pdf->Cell (22, 3, $ref_doc_externe_lib, 0, 0, 'L');
 		$this->pdf->Cell (3, 3, ":", 0, 0, 'L');
 		$this->pdf->Cell (40, 3, $this->ref_doc_externe, 0, 0, 'L');
@@ -70,7 +70,7 @@ protected function create_pdf_entete () {
 	return true;
 }
 
-// Créé l'adresse du PDF
+// CrÃ©Ã© l'adresse du PDF
 protected function create_pdf_adresse () {
 	global $bdd;
 	$decalage_gauche 	= 97;
@@ -80,7 +80,7 @@ protected function create_pdf_adresse () {
 	$marge = 4;
 
 	// ***************************************************
-	// Code à Barre
+	// Code Ã  Barre
 	if(!isset($this->AFF_CODE_BARRE) || $this->AFF_CODE_BARRE==true){
 		$this->pdf->Code39 ($decalage_gauche + $marge + 1, $decalage_haut +1, $this->ref_doc, 0.9, 7);
 	}
@@ -106,13 +106,13 @@ protected function create_pdf_adresse () {
 		$this->pdf->SetXY($decalage_gauche + $marge, $decalage_haut + $marge + 35);
 		$this->pdf->SetFont('Arial', '', 9);
 	
-		//On recupère la reference client correspondant a la reference document et on controle si la ref_document est précisée
+		//On recupÃ¨re la reference client correspondant a la reference document et on controle si la ref_document est prÃ©cisÃ©e
 		if (!$this->ref_doc) { return false; }
 		$query = "SELECT ref_contact FROM documents WHERE ref_doc = '".$this->ref_doc."' ";
 		$resultat = $bdd->query ($query);
 		if ((!is_object($resultat))||(!$docu = $resultat->fetchObject())) { return false; }
 	
-		// On récupère la TVA intra du client 
+		// On rÃ©cupÃ¨re la TVA intra du client 
 		$query = "SELECT tva_intra FROM annuaire WHERE ref_contact ='".$docu->ref_contact."' ";//ok
 		$res="";
 		$resultat = $bdd->query ($query);
@@ -134,7 +134,7 @@ protected function create_pdf_pieds () {
 	// Cadre de pieds de page
 	$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS, $this->PIEDS_HAUTEUR_MAX, "", '1', 1, 'L');
 
-	// Information société
+	// Information sociÃ©tÃ©
 	$this->pdf->SetXY($this->MARGE_GAUCHE, $this->PIEDS_HAUTEUR_DEPART + $this->PIEDS_HAUTEUR_MAX + 1);
 	foreach ($this->PIEDS_GAUCHE as $texte) {
 		$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS, 4.5, $texte, '0', 2, 'L');
@@ -199,7 +199,7 @@ protected function create_pdf_pieds () {
 	// Bloc central
 	$this->pdf->SetXY($this->MARGE_GAUCHE + $largeur_bloc_tva, $this->PIEDS_HAUTEUR_DEPART);
 	$this->pdf->SetFont('Arial', 'B', 10);
-	$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_bloc_tva, 6,"Conditions de règlement" , '1', 0, 'C');
+	$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_bloc_tva, 6,"Conditions de rÃ¨glement" , '1', 0, 'C');
 	
 	// Bloc partie acquitement
 	$this->pdf->SetXY($this->MARGE_GAUCHE + $largeur_bloc_tva, $this->PIEDS_HAUTEUR_DEPART+6);
@@ -214,11 +214,11 @@ protected function create_pdf_pieds () {
 		foreach($reglements as $reglement) {
 			if ( $last_reglement < $reglement->date_reglement ){$last_reglement = $reglement->date_reglement;}
 		}
-		$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_bloc_tva, 5, "Facture acquittée le ".date_Us_to_Fr($last_reglement), '1', 0, 'L');
+		$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_bloc_tva, 5, "Facture acquittÃ©e le ".date_Us_to_Fr($last_reglement), '1', 0, 'L');
                 //$acquittee=1;
 
         } else {
-		$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_bloc_tva, 5, "Facture à régler", '1', 0, 'L');
+		$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_bloc_tva, 5, "Facture Ã  rÃ©gler", '1', 0, 'L');
 	}
 
 	//Affichage des regleme,nts//nombre d'echeance max et de reglement max
@@ -243,7 +243,7 @@ protected function create_pdf_pieds () {
 				$this->pdf->Cell (25, 3, $reglement->type_reglement, '0', 0, 'L');
 				$this->pdf->Cell (30, 3,$reglement->pourcentage."%", '0', 0, 'C');
 				
-				//Affichage du mode de reglement selectionné si il existe
+				//Affichage du mode de reglement selectionnÃ© si il existe
 				if($reglement->mode_reglement!="")
 				{
 					$this->pdf->Cell (17, 3,$reglement->montant, '0', 0, 'R');
@@ -257,7 +257,7 @@ protected function create_pdf_pieds () {
 			{
 				$this->pdf->Cell (60, 3, $reglement->type_reglement, '0', 0, 'L');
 				
-				//Affichage du mode de reglement selectionné si il existe
+				//Affichage du mode de reglement selectionnÃ© si il existe
 				if($reglement->mode_reglement!="")
 				{
 					$this->pdf->Cell (12, 3,$reglement->montant, '0', 0, 'R');
@@ -280,7 +280,7 @@ protected function create_pdf_pieds () {
                             }
 				$this->pdf->Cell (30, 3,$reglement->pourcentage."%", '0', 0, 'C');
 				
-				//Affichage du mode de reglement selectionné si il existe
+				//Affichage du mode de reglement selectionnÃ© si il existe
 				if($reglement->mode_reglement!="")
 				{
 					$this->pdf->Cell (17, 3,$reglement->montant, '0', 0, 'R');
@@ -296,9 +296,9 @@ protected function create_pdf_pieds () {
                              if(strpos ($reglement->jour,"facturation"))
                                 $this->pdf->Cell (60, 3, $reglement->type_reglement.$reglement->jour, '0', 0, 'L');
                              else
-                                $this->pdf->Cell (60, 3, $reglement->type_reglement." à ".$reglement->jour." jours", '0', 0, 'L');
+                                $this->pdf->Cell (60, 3, $reglement->type_reglement." Ã  ".$reglement->jour." jours", '0', 0, 'L');
 				
-				//Affichage du mode de reglement selectionné si il existe
+				//Affichage du mode de reglement selectionnÃ© si il existe
 				if($reglement->mode_reglement!="")
 				{
 					$this->pdf->Cell (12, 3,$reglement->montant, '0', 0, 'R');
@@ -322,7 +322,7 @@ protected function create_pdf_pieds () {
                         {
 			if($i!=0)
 				$this->pdf->Cell (79, 1, "", 'T', 1, 'L');
-				$this->pdf->Cell (57, 3, "Règlement le ".$reglement->date_reglement, '0', 0, 'L');
+				$this->pdf->Cell (57, 3, "RÃ¨glement le ".$reglement->date_reglement, '0', 0, 'L');
 				$this->pdf->Cell (15, 3,$reglement->montant, '0', 0, 'R');
 				$this->pdf->Cell (6, 3,$reglement->mode_reglement, '0', 1, 'R');
 						
@@ -331,14 +331,14 @@ protected function create_pdf_pieds () {
 			}
 			else
 			{
-				$this->pdf->Cell (57, 3, "Règlement le ".$reglement->date_reglement, '0', 0, 'L');
+				$this->pdf->Cell (57, 3, "RÃ¨glement le ".$reglement->date_reglement, '0', 0, 'L');
 				$this->pdf->Cell (15, 3,$reglement->montant, '0', 0, 'R');
 				$this->pdf->Cell (6, 3,$reglement->mode_reglement, '0', 1, 'R');
 			}
 		}
 		else if($reglement->type_reglement=="ReglementResume")
 		{
-			$this->pdf->Cell (57, 3, $reglement->nb_reglement_restant." autres règlements", '0', 0, 'L');
+			$this->pdf->Cell (57, 3, $reglement->nb_reglement_restant." autres rÃ¨glements", '0', 0, 'L');
 			$this->pdf->Cell (15, 3,$reglement->montant, '0', 1, 'R');
 		}
 		else

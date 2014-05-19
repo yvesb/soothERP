@@ -19,7 +19,7 @@ $_REQUEST['recherche'] = 1;
 // Moteur de recherche pour les commandes en cours
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -93,10 +93,10 @@ if ($_REQUEST['cmderetard']) {
 
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_join 	= "";
 	$query_where 	= "1 ";
 	$query_limit	= (($search['page_to_show']-1)*$search['fiches_par_page']).", ".$search['fiches_par_page'];
@@ -107,7 +107,7 @@ if (isset($_REQUEST['recherche'])) {
 		$query_where 	.= " && (d.id_etat_doc = 27 OR d.id_etat_doc = 25)";
 	}
 	
-	// bouton radio : uniquement les commandes récentes
+	// bouton radio : uniquement les commandes rÃ©centes
 	if ($search['cmderec']) {
 		$query_where .= " && TO_DAYS(NOW()) - TO_DAYS(d.date_creation_doc) <= '".$DELAI_COMMANDE_FOURNISSEUR_RECENTE."' ";
 	}
@@ -119,7 +119,7 @@ if (isset($_REQUEST['recherche'])) {
 	
 	
 	
-	// liste déroulante : par fabriquant
+	// liste dÃ©roulante : par fabriquant
 	if ($search['ref_constructeur']) {
 		$query_where 	.=  " && d.ref_doc IN ( SELECT ref_doc FROM docs_lines WHERE ref_article 
 											IN ( SELECT ref_article 
@@ -127,12 +127,12 @@ if (isset($_REQUEST['recherche'])) {
 												WHERE ref_constructeur = '".$search['ref_constructeur']."'))";
 	}
 	
-	// liste déroulante : par stock de départ
+	// liste dÃ©roulante : par stock de dÃ©part
 	if ($search['id_name_stock']) {
 		$query_where 	.= " && dd.id_stock = '".$search['id_name_stock']."'";
 		$query_join 	.= "LEFT JOIN doc_cdf dd ON dd.ref_doc = d.ref_doc";
 	}
-	// liste déroulante : par catégorie d'article
+	// liste dÃ©roulante : par catÃ©gorie d'article
 
 	if ($search['id_name_categ_art']) {
 		$liste_categories = "";
@@ -149,16 +149,16 @@ if (isset($_REQUEST['recherche'])) {
 												WHERE ref_art_categ 
 													IN ( ".$liste_categories." ))) ";
 													}
-	// liste déroulante : par fournisseur
+	// liste dÃ©roulante : par fournisseur
 	if ($search['ref_fournisseur']) {
 		$query_where 	.= " && d.ref_contact = '".$search['ref_fournisseur']."'";
 	}
-	// champ caché, ne retient que les commandes
+	// champ cachÃ©, ne retient que les commandes
 	if ($search['id_type_doc']) { 
 		$query_where 	.= "&& ((d.id_etat_doc = 25 OR d.id_etat_doc = 27) && (d.id_type_doc = '".$search['id_type_doc']."') )";
 	}
 	
-	// Recherche : sélection des commandes
+	// Recherche : sÃ©lection des commandes
 	$query = "SELECT d.ref_doc, d.id_type_doc, dt.lib_type_doc, d.id_etat_doc, de.lib_etat_doc, d.ref_contact, d.nom_contact, dc.id_stock,
 
 										( SELECT SUM(qte * pu_ht * (1-remise/100) * (1+tva/100))
@@ -188,7 +188,7 @@ if (isset($_REQUEST['recherche'])) {
 	//echo nl2br ($query);
 	unset ($fiche, $resultat, $query);
 	
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 	$query = "SELECT d.ref_doc 
 						FROM documents d 
 							".$query_join."
@@ -199,7 +199,7 @@ if (isset($_REQUEST['recherche'])) {
 	//echo "<br><hr>".nl2br ($query);
 	unset ($result, $resultat, $query);
 
-	// sélection des articles
+	// sÃ©lection des articles
 	foreach ($fiches as $fiche) {
 	$query = "SELECT dl.ref_doc_line, dl.ref_doc, dl.ref_article, dl.lib_article, dl.desc_article, dl.qte, dl.pu_ht,
 					    a.modele, (dl.pu_ht * (1+tva/100)) as pu_ttc,

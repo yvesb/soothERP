@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -28,7 +28,7 @@ $("edition_operation").hide();
 }, false);
 </script>
 
-<p  style="font-weight:bolder">Edition du relevé</p>
+<p  style="font-weight:bolder">Edition du relevÃ©</p>
 <div class="emarge">
 	<table class="minimizetable">
 		<tr>
@@ -39,22 +39,22 @@ $("edition_operation").hide();
 					<tr>
 						<td>&nbsp;</td>
 						<td>
-						Date de relevé:
+						Date de relevÃ©:
 						</td>
 						<td style=" text-align:right">
-						Solde réél:
+						Solde rÃ©Ã©l:
 						</td>
 						<td style=" text-align:right">
-						Solde précédent:
+						Solde prÃ©cÃ©dent:
 						</td>
 						<td style=" text-align:right">
-						Crédit:
+						CrÃ©dit:
 						</td>
 						<td style=" text-align:right">
-						Débit:
+						DÃ©bit:
 						</td>
 						<td style=" text-align:right">
-						Solde calculé:
+						Solde calculÃ©:
 						</td>
 						<td style=" text-align:right">&nbsp;</td>
 					</tr>

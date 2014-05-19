@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -25,7 +25,7 @@ check_page_variables ($page_variables);
 <input name="id_pdf_modele" type="hidden" value="<?php echo $modele_pdf->id_pdf_modele; ?>" />
 <table  style="width:100%" border="0">
   <tr>
-    <td colspan="3" style="font-weight:bolder">Modèle <?php echo $modele_pdf->lib_modele;?></td>
+    <td colspan="3" style="font-weight:bolder">ModÃ¨le <?php echo $modele_pdf->lib_modele;?></td>
   </tr>
   <tr>
     <td colspan="3"><?php echo $modele_pdf->desc_modele;?><br />
@@ -74,10 +74,10 @@ check_page_variables ($page_variables);
 <br />
 <br />
 
-Le paramétrage d'un modèle d'impression est une opération parfois complexe qui nécessite une connaissance approfondie du fonctionnement du logiciel.<br />
+Le paramÃ©trage d'un modÃ¨le d'impression est une opÃ©ration parfois complexe qui nÃ©cessite une connaissance approfondie du fonctionnement du logiciel.<br />
 <br />
 
 <script type="text/javascript">
  
 </script>
-         
+ Â Â Â Â Â Â Â  

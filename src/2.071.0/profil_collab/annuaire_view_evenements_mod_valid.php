@@ -10,13 +10,13 @@ require ($DIR."_session.inc.php");
 
 
 if (!isset($_REQUEST['ref_contact_event'])) {
-	echo "La référence du contact n'est pas précisée";
+	echo "La rÃ©fÃ©rence du contact n'est pas prÃ©cisÃ©e";
 	exit;
 }
 
 $contact = new contact ($_REQUEST['ref_contact_event']);
 if (!$contact->getRef_contact()) {
-	echo "La référence du contact est inconnue";		exit;
+	echo "La rÃ©fÃ©rence du contact est inconnue";		exit;
 
 }
 $heure_event = "00:00:00";

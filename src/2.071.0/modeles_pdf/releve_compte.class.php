@@ -56,12 +56,12 @@ public function create_pdf ($infos, $fiches) {
 
 
 	// ***************************************************
-	// Valeurs par défaut
+	// Valeurs par dÃ©faut
 	foreach ($RELEVE_COMPTE as $var => $valeur) {
 		$this->{$var} = $valeur;
 	}
 
-	// Création de la première page
+	// CrÃ©ation de la premiÃ¨re page
 	$this->create_pdf_page ();
 
 
@@ -69,12 +69,12 @@ public function create_pdf ($infos, $fiches) {
 }
 
 
-// Créé une nouvelle page du document PDF
+// CrÃ©Ã© une nouvelle page du document PDF
 protected function create_pdf_page () {
 	// Comptage du nombre de page
 	$this->page_actuelle++;
 	$this->SetAutoPageBreak(true,2*$this->MARGE_GAUCHE);;
-	// Création d'une nouvelle page
+	// CrÃ©ation d'une nouvelle page
 	$this->AddPage();
 	$this->Header() ;
 	$this->create_pdf_corps ();
@@ -82,7 +82,7 @@ protected function create_pdf_page () {
 }
 
 
-// Créé l'entete du document PDF
+// CrÃ©Ã© l'entete du document PDF
 public function Header() {
 	global $MONNAIE;
 	global $TARIFS_NB_DECIMALES;
@@ -111,14 +111,14 @@ public function Header() {
 }
 
 
-// Créé le corps du PDF
+// CrÃ©Ã© le corps du PDF
 protected function create_pdf_corps () {
 	global $MONNAIE;
 	global $TARIFS_NB_DECIMALES;
 
 	$this->SetFont('Arial', '', 8);
 
-	//définition du contenu
+	//dÃ©finition du contenu
 	
 	// ***************************************************
 	// Contenu du tableau

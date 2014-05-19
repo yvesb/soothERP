@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -17,7 +17,7 @@ $doc_liaisons_source = array();
 $doc_liaisons_dest = array();
 $diff_array = array();
 
-//suppression des doublons dans les résultats de liaison
+//suppression des doublons dans les rÃ©sultats de liaison
 if ($doc_liaisons_possibles) {
 	for ($i = 0; $i <= count($doc_liaisons_possibles); $i++) {
 		if (!isset($doc_liaisons_possibles[$i])) {continue;}
@@ -148,7 +148,7 @@ lets_open = "<?php if (!isset($_REQUEST["lets_open"])) {?>&lets_open=1<?php } ?>
 		?>
 	
 		<?php 
-		//documents étant la cible de ce document
+		//documents Ã©tant la cible de ce document
 		$increment_liaisons = 0;
 		if ($doc_liaisons_dest) {
 			?>

@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -16,7 +16,7 @@ check_page_variables ($page_variables);
 ?>
 
 <br><br><br>
-Ceci est la page d'accueil du site Internet de la société.
+Ceci est la page d'accueil du site Internet de la sociÃ©tÃ©.
 <br><br><br><br><br>
 
 <?php
@@ -24,7 +24,7 @@ if ($_SESSION['user']->getLogin()) {
 	echo "<a href='user_choix_profil.php'>Choix de votre profil</a>";
 }
 else {
-	echo "Vous n'etes pas identifié: 
+	echo "Vous n'etes pas identifiÃ©: 
 	<a href = 'user_login.php' target='_self'>IDENTIFICATION</a>";
 }
 ?>

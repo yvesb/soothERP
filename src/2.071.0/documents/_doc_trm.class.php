@@ -93,7 +93,7 @@ public function create_doc () {
 	if (!parent::create_doc()) { return false; }
 
 	// *************************************************
-	// Insertion des informations spécifiques
+	// Insertion des informations spÃ©cifiques
 	$query = "INSERT INTO doc_trm (ref_doc, id_stock_source, id_stock_cible, ref_transporteur)
 						VALUES ('".$this->ref_doc."', '".$this->id_stock_source."', ".num_or_null($this->id_stock_cible).", NULL) ";
 	$bdd->exec ($query);
@@ -102,7 +102,7 @@ public function create_doc () {
 }
 
 
-// Charge les informations supplémentaire du contact
+// Charge les informations supplÃ©mentaire du contact
 protected function load_infos_contact () {
 	return true;
 }
@@ -143,7 +143,7 @@ public function maj_id_stock_cible ($id_stock_cible = "NULL") {
 }
 
 
-// Met à jour la date de livraison demandée
+// Met Ã  jour la date de livraison demandÃ©e
 public function maj_id_livraison_mode ($id_livraison_mode) {
 	global $bdd;
 	
@@ -157,14 +157,14 @@ public function maj_id_livraison_mode ($id_livraison_mode) {
 	}
 	
 	$livraison_mode = new livraison_modes($id_livraison_mode);
-	//mise à jour du nouveau mode de livraison
+	//mise Ã  jour du nouveau mode de livraison
 	$this->id_livraison_mode = $id_livraison_mode;
 
 	$query = "UPDATE doc_trm SET id_livraison_mode = ".num_or_null($this->id_livraison_mode)."
 						WHERE ref_doc = '".$this->ref_doc."' ";
 	$bdd->exec ($query);
 	
-	//calcul et insertion pour ce document des frais de port (calcul effectué depuis la class livraison mode)
+	//calcul et insertion pour ce document des frais de port (calcul effectuÃ© depuis la class livraison mode)
 	$livraison_mode->calcul_frais_livraison_doc ($this);
 	
 	return true;
@@ -180,7 +180,7 @@ protected function doc_line_infos_supp () {
 	return $query;
 }
 
-// Chargement des informations supplémentaires concernant les numéros de série 
+// Chargement des informations supplÃ©mentaires concernant les numÃ©ros de sÃ©rie 
 protected function doc_line_sn_infos_supp () {
 	$query['select']		= ", IF (ISNULL(sas.numero_serie), 0, 1) as sn_exist";
 	$query['left_join'] = " LEFT JOIN stocks_articles_sn sas ON sas.numero_serie = dls.numero_serie";
@@ -196,9 +196,9 @@ protected function doc_line_sn_infos_supp () {
 // FONCTIONS LIEES A LA MODIFICATION DE L'ETAT D'UN DOCUMENT
 // *************************************************************************************************************
 
-// Action avant de changer l'état du document
+// Action avant de changer l'Ã©tat du document
 protected function action_before_maj_etat ($new_etat_doc) {
-	// Aucun changement possible tant que le stock de destination n'est pas terminé
+	// Aucun changement possible tant que le stock de destination n'est pas terminÃ©
 	if (!$this->id_stock_cible) {
 		$GLOBALS['_ALERTES']['id_stock_cible_not_defined'] = 1;
 	}
@@ -246,7 +246,7 @@ protected function action_after_maj_etat ($old_etat_doc) {
 // FONCTIONS DIVERSES 
 // *************************************************************************************************************
 
-//fonctions de mise à jour lignes si non bloquée 
+//fonctions de mise Ã  jour lignes si non bloquÃ©e 
 protected function add_line_article ($infos) {
 	if (!$this->quantite_locked) {
 		parent::add_line_article ($infos);

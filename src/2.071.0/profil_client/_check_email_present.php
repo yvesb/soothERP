@@ -10,19 +10,19 @@ require("_session.inc.php");
 
 
 if(isset($_REQUEST["email"])){
-	if($_SESSION['user']->getLogin()){	// Le user est loggé
+	if($_SESSION['user']->getLogin()){	// Le user est loggÃ©
 		if($_SESSION['user']->getEmail() != $_REQUEST["email"])	// Si le mail est != alors on teste
 		{			check_email_present($_REQUEST["email"]);}
 		else{/*NE RIEN FAIRE*/}
-	}else{	// Le user n'est pas loggé -> on teste
+	}else{	// Le user n'est pas loggÃ© -> on teste
 		check_email_present($_REQUEST["email"]);
 	}
-}else{	echo "l'adresse email n'est pas spécifiée";}
+}else{	echo "l'adresse email n'est pas spÃ©cifiÃ©e";}
 
 // *************************************************************************************************************
 // AFFICHAGE
 // *************************************************************************************************************
 if (isset($GLOBALS['_ALERTES']['email_used'])) {
-	echo "email dejà présent";
+	echo "email dejÃ  prÃ©sent";
 }
 ?>

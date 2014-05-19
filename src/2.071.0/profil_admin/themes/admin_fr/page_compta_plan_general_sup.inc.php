@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
 
 ?>
 <p>&nbsp;</p>
-<p>compte plan général (suppression) </p>
+<p>compte plan gÃ©nÃ©ral (suppression) </p>
 <p>&nbsp; </p>
 <?php 
 foreach ($_ALERTES as $alerte => $value) {
@@ -47,7 +47,7 @@ foreach ($_ALERTES as $alerte => $value) {
 ?>
 if (erreur) {
 	if (exist_sous_numero_compte) {
-		texte_erreur += "Ce numéro de compte ne peut être supprimé.<br/> Supprimer avant les sous-classes associées";
+		texte_erreur += "Ce numÃ©ro de compte ne peut Ãªtre supprimÃ©.<br/> Supprimer avant les sous-classes associÃ©es";
 	}
 	window.parent.alerte.alerte_erreur ('Suppression impossible', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 

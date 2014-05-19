@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -34,8 +34,8 @@ update_menu_arbo();
 <?php
 if ($import_annuaire->getEtape() == "2") {
 	?>
-	Un précédent import non terminé a été détecté.<br />
-	Souhaitez vous reprendre l'import des données concernées?  <span id="reprendre_import" style="cursor:pointer; font-weight:bolder"> Reprendre l'import</span>
+	Un prÃ©cÃ©dent import non terminÃ© a Ã©tÃ© dÃ©tectÃ©.<br />
+	Souhaitez vous reprendre l'import des donnÃ©es concernÃ©es?  <span id="reprendre_import" style="cursor:pointer; font-weight:bolder"> Reprendre l'import</span>
 	<script type="text/javascript">
 	Event.observe('reprendre_import', "click", function(evt){
 		page.verify('<?php echo $import_annuaire_csv['menu_admin'][1][0];?>','modules/<?php echo $import_annuaire_csv['folder_name']?>import_annuaire_csv_step2.php','true','sub_content');  
@@ -56,7 +56,7 @@ if ($import_annuaire->getEtape() == "2") {
 		<input type="file" size="35" name="fichier_csv" class="classinput_nsize" />	
 		</td>
 		<td>
-		<span style="width:280px; text-align: left; float:left">Indiquez le type de contact à importer:</span> 
+		<span style="width:280px; text-align: left; float:left">Indiquez le type de contact Ã  importer:</span> 
 		<select name="profil_import" id="profil_import" class="classinput_nsize">
 		<option value="">Contacts simples</option>
 		<option value="<?php echo $CLIENT_ID_PROFIL; ?>">Contacts Clients</option>
@@ -77,17 +77,17 @@ if ($import_annuaire->getEtape() == "2") {
 		<br />
 		<span style="font-weight:bolder">L'utilisation de ce module demande des connaissances techniques (utilisation Excel)</span><br />
 		
-		En cas de besoin n'hésitez pas à contact les équipes de <a href="http://www.lundimatin.fr/site2/contact_ssll.php" target="_blank">LundiMatin</a>
+		En cas de besoin n'hÃ©sitez pas Ã  contact les Ã©quipes de <a href="http://www.lundimatin.fr/site2/contact_ssll.php" target="_blank">LundiMatin</a>
 		<br />
 
-	Le fichier dois être au format CSV. (texte séparé par ;)<br />
-	Les informations de la première ligne doivent correspondre aux différentes informations des contacts (nom, adresse ect.) sans symbole particulier.<br />
-	Idéalement il est recommandé de supprimer les colonnes inutiles.<br />
+	Le fichier dois Ãªtre au format CSV. (texte sÃ©parÃ© par ;)<br />
+	Les informations de la premiÃ¨re ligne doivent correspondre aux diffÃ©rentes informations des contacts (nom, adresse ect.) sans symbole particulier.<br />
+	IdÃ©alement il est recommandÃ© de supprimer les colonnes inutiles.<br />
 
 
 		<br />
 		<br />
-		Télecharger <span class="common_link" id="download_exemple">ici</span> un exemple de fichier CSV<br /><br />
+		TÃ©lecharger <span class="common_link" id="download_exemple">ici</span> un exemple de fichier CSV<br /><br />
 
 		<script type="text/javascript">
 		Event.observe('download_exemple', "click", function(evt){

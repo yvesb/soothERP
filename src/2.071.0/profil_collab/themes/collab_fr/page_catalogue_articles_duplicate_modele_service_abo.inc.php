@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -24,7 +24,7 @@ check_page_variables ($page_variables);
 <span class="labelled_text" style="font-weight:bolder">Abonnement :</span>
 <table style="width:100%">
 	<tr>
-		<td style="width:40%" class="labelled_text">Durée de l'abonnement: </td>
+		<td style="width:40%" class="labelled_text">DurÃ©e de l'abonnement: </td>
 		<td style="width:36%">
 			<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
 			<tr>
@@ -54,7 +54,7 @@ check_page_variables ($page_variables);
 		<td></td>
 	</tr>
 	<tr>
-		<td class="labelled_text">Délai du préavis avant résiliation: </td>
+		<td class="labelled_text">DÃ©lai du prÃ©avis avant rÃ©siliation: </td>
 		<td>
 			<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
 			<tr>

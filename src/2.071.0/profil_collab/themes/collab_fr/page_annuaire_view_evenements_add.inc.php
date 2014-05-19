@@ -4,7 +4,7 @@
 // AJOUT D'UN RELEVE
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ $("edition_event").hide();
 }, false);
 </script>
 
-<p  style="font-weight:bolder">Ajouter un événement pour <?php echo $contact->getNom();?></p>
+<p  style="font-weight:bolder">Ajouter un Ã©vÃ©nement pour <?php echo $contact->getNom();?></p>
 <div class="emarge">
 	<table class="minimizetable" style="width:100%">
 		<tr>
@@ -70,7 +70,7 @@ $("edition_event").hide();
 				</tr>
 				<tr>
 					<td>
-					Durée:
+					DurÃ©e:
 					</td>
 					<td>
 					<input type="text" id="duree_event" name="duree_event" value="" class="classinput_nsize" />

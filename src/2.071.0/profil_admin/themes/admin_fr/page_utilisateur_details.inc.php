@@ -4,7 +4,7 @@
 // RECHERCHE DES CONNEXIONS DES UTILISATEURS
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -24,7 +24,7 @@ foreach ($_ALERTES as $alerte => $value) {
 
 <script type="text/javascript" language="javascript">
 tableau_smenu[0] = Array("smenu_utilisateurs", "smenu_utilisateurs.php" ,"true" ,"sub_content", "Utilisateurs");
-tableau_smenu[1] = Array('utilisateur_details','utilisateur_details.php?ref_user=<?php echo $utilisateur->getRef_user ()?>',"true" ,"sub_content", "Détails de l'utilisateur");
+tableau_smenu[1] = Array('utilisateur_details','utilisateur_details.php?ref_user=<?php echo $utilisateur->getRef_user ()?>',"true" ,"sub_content", "DÃ©tails de l'utilisateur");
 update_menu_arbo();
 array_menu_d_user_contact	=	new Array();
 array_menu_d_user_contact[0] 	=	new Array('recherche', 'menu_1');
@@ -32,11 +32,11 @@ array_menu_d_user_contact[1] 	=	new Array('infogene', 'menu_2');
 array_menu_d_user_contact[3] 	=	new Array('droits', 'menu_4');
 </script>
 <div class="emarge">
-<p class="titre">Détails de l'utilisateur <?php echo $utilisateur->getPseudo()?> / <?php echo $contact->getNom()?></p>
+<p class="titre">DÃ©tails de l'utilisateur <?php echo $utilisateur->getPseudo()?> / <?php echo $contact->getNom()?></p>
 
 <div>
 	<ul id="menu_utilisateur" class="menu">
-	<li><a href="#" id="menu_2" class="menu_select">Informations générales</a></li>
+	<li><a href="#" id="menu_2" class="menu_select">Informations gÃ©nÃ©rales</a></li>
 	<li><a href="#" id="menu_1" class="menu_unselect">Recherche des connexions</a></li>
 	<li><a href="#" id="menu_4" class="menu_unselect">Droits Utilisateur</a></li>
 	</ul>
@@ -183,7 +183,7 @@ array_menu_d_user_contact[3] 	=	new Array('droits', 'menu_4');
 				</tr>
 				<tr>
 					<td></td>
-					<td><span class="labelled">Période&nbsp;du&nbsp; </span></td>
+					<td><span class="labelled">PÃ©riode&nbsp;du&nbsp; </span></td>
 					<td><input type="text" id="date_debut" name="date_debut" value="" class="classinput_nsize" size="10" /> au&nbsp;<input type="text" id="date_fin" name="date_fin" value="" class="classinput_nsize" size="10" /></td>
 					<td></td>
 					<td></td>

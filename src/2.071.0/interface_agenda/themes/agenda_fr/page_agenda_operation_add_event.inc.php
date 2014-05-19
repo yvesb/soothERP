@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -13,20 +13,20 @@ check_page_variables ($page_variables);
 // *************************************************************************************************************
 ?>
 
-<!-- L'événement vient d'être créer côté serveur, nous devons mettre à jour l'interface graphique -->
+<!-- L'Ã©vÃ©nement vient d'Ãªtre crÃ©er cÃ´tÃ© serveur, nous devons mettre Ã  jour l'interface graphique -->
 <script type="text/javascript">
 //debugger;
 //***************************************************************************
 // FONCTIONS APPELEES SUIVANT LES CAS : VOIR SWITCH CASE plus bas
 //***************************************************************************
-//l'événement à été créé à la souris
+//l'Ã©vÃ©nement Ã  Ã©tÃ© crÃ©Ã© Ã  la souris
 function maj_event_graphic_jour(){
 	<?php if($id_graphic_event != ""){ ?>
-		alert("maj_event_graphic_jour() n'est pas encore implémentée");
+		alert("maj_event_graphic_jour() n'est pas encore implÃ©mentÃ©e");
 	<?php } ?>
 }
 
-//l'événement à été créé à la souris
+//l'Ã©vÃ©nement Ã  Ã©tÃ© crÃ©Ã© Ã  la souris
 function maj_event_graphic_semaine(){
 	<?php if($id_graphic_event != ""){ ?>
 		if(Udate_deb_semaine < <?php echo $event->getUdate_event()." && ".$event->getUdate_event(); ?> < Udate_fin_semaine){
@@ -45,22 +45,22 @@ function maj_event_graphic_semaine(){
 	<?php } ?>
 }
 
-//l'événement à été créé à la souris
+//l'Ã©vÃ©nement Ã  Ã©tÃ© crÃ©Ã© Ã  la souris
 function maj_event_graphic_mois(){
 <?php if($id_graphic_event != ""){ ?>
-	alert("maj_event_graphic_mois() n'est pas encore implémentée");
+	alert("maj_event_graphic_mois() n'est pas encore implÃ©mentÃ©e");
 <?php } ?>
 }
 
-//l'événement à été grace au panneau d'édition
+//l'Ã©vÃ©nement Ã  Ã©tÃ© grace au panneau d'Ã©dition
 function new_event_graphic_jour(){
-	alert("new_event_graphic_jour() n'est pas encore implémentée");
+	alert("new_event_graphic_jour() n'est pas encore implÃ©mentÃ©e");
 }
 
-//l'événement à été grace au panneau d'édition
+//l'Ã©vÃ©nement Ã  Ã©tÃ© grace au panneau d'Ã©dition
 function new_event_graphic_semaine(){
 	if(Udate_deb_semaine < <?php echo $event->getUdate_event()." && ".$event->getUdate_event(); ?> < Udate_fin_semaine){
-	//l'événement est dans la fenetre affichée, on affiche donc l'évélement
+	//l'Ã©vÃ©nement est dans la fenetre affichÃ©e, on affiche donc l'Ã©vÃ©lement
 		var id = genIdGraphicEvent();
 		$("id_graphic_event").value = id;
 		
@@ -71,7 +71,7 @@ function new_event_graphic_semaine(){
 			var event_x = <?php echo $j-1; ?> * largeurColoneSemaine();
 		<?php } ?>
 		var event_y = Math.floor(<?php echo strftime("(%H+%M/60)", $event->getUdate_event()); ?> * 2 * HAUTEUR_DEMIE_HEURE);
-		var duree = Math.floor(<?php echo $event->getDuree_event(); ?> * HAUTEUR_DEMIE_HEURE / 30);//durée en px
+		var duree = Math.floor(<?php echo $event->getDuree_event(); ?> * HAUTEUR_DEMIE_HEURE / 30);//durÃ©e en px
 
 		var eventNode = CreateDivEvenement("eventId_"+id, event_y, event_x, evenementMaxWidth(), duree, "");
 		$("ZERO").appendChild(eventNode);
@@ -88,9 +88,9 @@ function new_event_graphic_semaine(){
 	}
 }
 
-//l'événement à été grace au panneau d'édition, il faut créer un 
+//l'Ã©vÃ©nement Ã  Ã©tÃ© grace au panneau d'Ã©dition, il faut crÃ©er un 
 function new_event_graphic_mois(){
-	alert("new_event_graphic_mois() n'est pas encore implémentée");
+	alert("new_event_graphic_mois() n'est pas encore implÃ©mentÃ©e");
 }
 //***************************************************************************
 

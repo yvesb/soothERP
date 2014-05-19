@@ -28,7 +28,7 @@ $modeles = modele_echeancier::charger_modeles_echeances();
 if (isset($_REQUEST["ref_contact"])) {
 	$contact = new contact ($_REQUEST['ref_contact']);
 	if (!$contact->getRef_contact()) {
-		echo "La référence du contact est inconnue";		exit;
+		echo "La rÃ©fÃ©rence du contact est inconnue";		exit;
 
 	}
 }

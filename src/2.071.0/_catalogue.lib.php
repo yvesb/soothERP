@@ -3,7 +3,7 @@
 // FONCTIONS LIEES AU CATALOGUE
 // *************************************************************************************************************
 
-// Renvoie un tableau des catégories d'articles disponibles
+// Renvoie un tableau des catÃ©gories d'articles disponibles
 function get_articles_categories ($ref_cle_ignored = "", $liste_ignored = array()) {
 	global $bdd;
 	
@@ -43,7 +43,7 @@ function get_art_categs_racine () {
 	return $categs_racine;
 }
 
-// Renvoie un tableau des catégories d'articles disponibles
+// Renvoie un tableau des catÃ©gories d'articles disponibles
 function get_child_categories ($categs, $ref_art_categ = "") {
 	global $bdd;
 	
@@ -123,7 +123,7 @@ function get_child_obj_categories ($ref_art_categ_parent = "", $profondeur = -1)
 }
 
 
-// Renvoie un tableau des catégories d'articles disponibles
+// Renvoie un tableau des catÃ©gories d'articles disponibles
 function get_articles_categories_materiel ($ref_cle_ignored = "") {
 	global $bdd;
 	
@@ -197,7 +197,7 @@ function get_article_taxes ($ref_article, $id_pays = 0) {
 }
 
 
-// Renvoie les différents types de liaisons actives
+// Renvoie les diffÃ©rents types de liaisons actives
 function get_liaisons_types () {
 	global $bdd;
 
@@ -213,7 +213,7 @@ function get_liaisons_types () {
 }
 
 
-// Renvoie les différents types de liaisons existants
+// Renvoie les diffÃ©rents types de liaisons existants
 function get_liaisons_types_exist () {
 	global $bdd;
 
@@ -290,7 +290,7 @@ function del_tva ($id_tva) {
 	$bdd->exec($query);
 }
 
-// Renvoi un tableau des différentes valorisations
+// Renvoi un tableau des diffÃ©rentes valorisations
 function get_valorisations () {
 	global $bdd;
 	

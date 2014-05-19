@@ -4,7 +4,7 @@
 // CONFIG DES OPTIONS
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -21,7 +21,7 @@ check_page_variables ($page_variables);
 ?>
 <script type="text/javascript">
 tableau_smenu[0] = Array("smenu_entreprise", "smenu_entreprise.php" ,"true" ,"sub_content", "Entreprise");
-tableau_smenu[1] = Array('configuration_entreprise_ged','configuration_entreprise_ged.php',"true" ,"sub_content", "Gestion des pièces jointes");
+tableau_smenu[1] = Array('configuration_entreprise_ged','configuration_entreprise_ged.php',"true" ,"sub_content", "Gestion des piÃ¨ces jointes");
 update_menu_arbo();
 </script>
 <div class="emarge">

@@ -4,7 +4,7 @@
 // CONFIG DES DONNEES du catalogue
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("liaisons_liste");
 check_page_variables ($page_variables);
 

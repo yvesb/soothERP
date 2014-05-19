@@ -9,29 +9,29 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 if(!isset($_REQUEST["ref_agenda"])){
-	echo "la référence de l'agenda n'est pas spécifié";
+	echo "la rÃ©fÃ©rence de l'agenda n'est pas spÃ©cifiÃ©";
 	exit;
 }
 
 if(!isset($_REQUEST["lib_agenda"])){
-	echo "le libélé de l'agenda n'est pas spécifié";
+	echo "le libÃ©lÃ© de l'agenda n'est pas spÃ©cifiÃ©";
 	exit;
 }
 
 if (!isset($_REQUEST['couleur_1'])){
-	echo "la couleur n°1 de l'agenda n'est pas spécifiée";
+	echo "la couleur nÂ°1 de l'agenda n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $couleur_1 = $_REQUEST['couleur_1'];
 
 if (!isset($_REQUEST['couleur_2'])){
-	echo "la couleur n°2 de l'agenda n'est pas spécifiée";
+	echo "la couleur nÂ°2 de l'agenda n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $couleur_2 = $_REQUEST['couleur_2'];
 
 if (!isset($_REQUEST['couleur_3'])){
-	echo "la couleur n°3 de l'agenda n'est pas spécifiée";
+	echo "la couleur nÂ°3 de l'agenda n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $couleur_3 = $_REQUEST['couleur_3'];
@@ -53,7 +53,7 @@ $agenda->setCouleur_3($couleur_3);
 switch ($agenda->getId_type_agenda()) {
 	case AgendaReservationRessource::_getId_type_agenda() : {
 		if(!isset($_REQUEST["ref_ressource"])){
-			echo "la référence de la ressource n'est pas spécifiée";
+			echo "la rÃ©fÃ©rence de la ressource n'est pas spÃ©cifiÃ©e";
 			exit;
 		}
 		$t = array();
@@ -63,7 +63,7 @@ switch ($agenda->getId_type_agenda()) {
 	//***************************************************
 	case AgendaContact::_getId_type_agenda() : {
 		if(!isset($_REQUEST["ref_contact"])){
-			echo "la référence du contact n'est pas spécifiée";
+			echo "la rÃ©fÃ©rence du contact n'est pas spÃ©cifiÃ©e";
 			exit;
 		}
 		$agenda->setRef_contact($_REQUEST["ref_contact"]);
@@ -71,14 +71,14 @@ switch ($agenda->getId_type_agenda()) {
 	//***************************************************
 	case AgendaLoacationMateriel::_getId_type_agenda() : {
 	if(!isset($_REQUEST["ref_article"])){
-			echo "la référence de l'article n'est pas spécifiée";
+			echo "la rÃ©fÃ©rence de l'article n'est pas spÃ©cifiÃ©e";
 			exit;
 		}
 		$agenda->setRef_article($_REQUEST["ref_article"]);
 	break;}
 	//***************************************************
 	default:{
-		echo "Ce type d'agenda n'est pas traité";
+		echo "Ce type d'agenda n'est pas traitÃ©";
 		exit;
 	break;}
 }

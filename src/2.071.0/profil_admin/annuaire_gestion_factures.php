@@ -12,10 +12,10 @@ require ($CONFIG_DIR."profil_".$_SESSION['profils'][$CLIENT_ID_PROFIL]->getCode_
 
 // chargement de la class du profil
 contact::load_profil_class($CLIENT_ID_PROFIL);
-// Préparations des variables d'affichage
+// PrÃ©parations des variables d'affichage
 $liste_categories = contact_client::charger_clients_categories ();
 $liste_relance_modele = charger_factures_relances_modeles ();
-//chargement des niveau de relances si la categ client est définie
+//chargement des niveau de relances si la categ client est dÃ©finie
 $niveaux_relances	= array();
 if (isset($_REQUEST["id_relance_modele"])) {
 	$niveaux_relances = getNiveaux_relance ($_REQUEST["id_relance_modele"]) ;
@@ -26,7 +26,7 @@ if (isset($_REQUEST["id_relance_modele"])) {
 }
 	
 	
-//chargement des modes d'édition
+//chargement des modes d'Ã©dition
 $editions_modes	= liste_mode_edition();
 
 // *************************************************************************************************************

@@ -10,7 +10,7 @@
 
     <table width="100%" border="0" cellspacing="4" cellpadding="2">
         <tr>
-            <td colspan="2" style="width:15%; font-style: italic; font-weight: bold;">Créer une autorisation de traite</td>
+            <td colspan="2" style="width:15%; font-style: italic; font-weight: bold;">CrÃ©er une autorisation de traite</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
@@ -51,7 +51,7 @@
                         <td><img src="../profil_collab/themes/collab_fr/images/blank.gif" id="imgsizeform" width="100%" height="1"></td>
                     </tr>
                     <tr>
-                        <td style="text-align: right;" class="labelled">Libellé:
+                        <td style="text-align: right;" class="labelled">LibellÃ©:
                         </td>
                         <td>
                             <input name="lib_compte" id="lib_compte" value="" class="classinput_xsize" type="text">
@@ -76,7 +76,7 @@
                                     <td style="width: 25%; text-align: center;"><span style="font-size: 9px;">Code guichet</span><br>
                                         <input name="code_guichet" id="code_guichet" value="" class="classinput_nsize" size="5" maxlength="5" type="text">
                                     </td>
-                                    <td style="width: 25%; text-align: center;"><span style="font-size: 9px;">Numéro de compte</span><br>
+                                    <td style="width: 25%; text-align: center;"><span style="font-size: 9px;">NumÃ©ro de compte</span><br>
                                         <input name="numero_compte" id="numero_compte" value="" class="classinput_nsize" size="11" maxlength="11" type="text">
                                     </td>
                                     <td style="width: 25%; text-align: center;"><span style="font-size: 9px;">Clef rib</span><br>
@@ -116,7 +116,7 @@
         </tr>
         <tr>
             <td>
-                <span class="labelled">Pièce jointe :</span>
+                <span class="labelled">PiÃ¨ce jointe :</span>
             </td>
             <td>
                 <select name="id_pj_traitena" id="id_pj_traitena" class="classinput_xsize">

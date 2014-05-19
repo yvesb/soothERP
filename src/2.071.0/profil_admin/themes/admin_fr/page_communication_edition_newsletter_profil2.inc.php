@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
 <script type="text/javascript" language="javascript">
 </script>
 <div class=""> 
-	<p class="titre_config">Critères Administrateurs</p>
+	<p class="titre_config">CritÃ¨res Administrateurs</p>
 	<div class="reduce_in_edit_mode">
 		<table class="minimizetable">
 			<tr>

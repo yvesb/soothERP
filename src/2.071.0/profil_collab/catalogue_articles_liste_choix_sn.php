@@ -21,7 +21,7 @@ if (isset($_REQUEST['ref_article'])) {
 	if(isset($_REQUEST['id_stock']) && $_REQUEST['id_stock'] != "") {
 		$id_stock = $_REQUEST['id_stock'];
 	}
-	// Préparations des variables d'affichage
+	// PrÃ©parations des variables d'affichage
 	$choix_sns = stock::getArticles_sn ($id_stock, $_REQUEST['ref_article']);
 	
 	// *************************************************************************************************************

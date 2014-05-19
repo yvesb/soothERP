@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -75,7 +75,7 @@ check_page_variables ($page_variables);
 			<br />
 		<div ><br />
 
-		Avant de valider votre commande , veuillez vérifier la justesse des informations de facturation et de livraison saisies et les modifier le cas échéant en vous rendant dans "<a href="_user_infos.php">Mon compte</a>".<br />&nbsp;
+		Avant de valider votre commande , veuillez vÃ©rifier la justesse des informations de facturation et de livraison saisies et les modifier le cas Ã©chÃ©ant en vous rendant dans "<a href="_user_infos.php">Mon compte</a>".<br />&nbsp;
 
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 	<tr style="">
@@ -122,7 +122,7 @@ check_page_variables ($page_variables);
 			</tr>
 			<tr>
 				<td  class="text_variable" >
-					Civilité: 
+					CivilitÃ©: 
 				</td>
 				<td   class="text_variable_user">
 				<?php echo nl2br($contact->getLib_civ_court());?>
@@ -277,12 +277,12 @@ check_page_variables ($page_variables);
 			<?php if (isset($liste_coordonnees[0])) {?>
 						<tr>
 							<td colspan="2" class="main_info_user" >
-										Coordonnées:
+										CoordonnÃ©es:
 							</td>
 						</tr>
 						<tr>
 							<td class="text_variable">
-							Tél:<br />
+							TÃ©l:<br />
 							</td>
 							<td  class="text_variable_user">
 							<?php echo  ($liste_coordonnees[0]->getTel1());?><br />
@@ -290,7 +290,7 @@ check_page_variables ($page_variables);
 						</tr>
 						<tr>
 							<td class="text_variable">
-							Tél 2:<br />
+							TÃ©l 2:<br />
 							</td>
 							<td  class="text_variable_user">
 							<?php echo  ($liste_coordonnees[0]->getTel2());?><br />

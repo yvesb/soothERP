@@ -3,7 +3,7 @@
 
 <div ><br />
 
-<?php if ($_REQUEST["fin"] > $nombre_articles) {echo $nombre_articles;} else {echo $ndebut;}?> articles importés sur <?php echo $_REQUEST["nombre_articles"]; ?><br />
+<?php if ($_REQUEST["fin"] > $nombre_articles) {echo $nombre_articles;} else {echo $ndebut;}?> articles importÃ©s sur <?php echo $_REQUEST["nombre_articles"]; ?><br />
 <hr />
 </div>
 
@@ -13,12 +13,12 @@
 
 if ($_REQUEST["load_info"] == "articles") {
 	?>
-	$("progression_article").innerHTML = "<?php if ($_REQUEST["fin"] > $nombre_articles) {echo $nombre_articles;} else {echo $ndebut;}?> articles importés sur <?php echo $_REQUEST["nombre_articles"]; ?>";
+	$("progression_article").innerHTML = "<?php if ($_REQUEST["fin"] > $nombre_articles) {echo $nombre_articles;} else {echo $ndebut;}?> articles importÃ©s sur <?php echo $_REQUEST["nombre_articles"]; ?>";
 	<?php
 }
 if ($_REQUEST["load_info"] == "compo") {
 	?>
-	$("progression_compo").innerHTML = "<?php if ($_REQUEST["fin"] > $nombre_articles) {echo $nombre_articles;} else {echo $ndebut;}?> informations d'articles importés sur <?php echo $_REQUEST["nombre_articles"]; ?>";
+	$("progression_compo").innerHTML = "<?php if ($_REQUEST["fin"] > $nombre_articles) {echo $nombre_articles;} else {echo $ndebut;}?> informations d'articles importÃ©s sur <?php echo $_REQUEST["nombre_articles"]; ?>";
 	<?php
 }
 

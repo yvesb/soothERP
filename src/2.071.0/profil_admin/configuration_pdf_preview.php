@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 
 ini_set("memory_limit","40M");
-//on cré un mini class afin de charger les données des différents types de doc pdf 
+//on crÃ© un mini class afin de charger les donnÃ©es des diffÃ©rents types de doc pdf 
 final class tmp_doc {
 	protected $app_tarifs;
 	protected $ID_TYPE_DOC;
@@ -42,13 +42,13 @@ public function __construct($ID_TYPE_DOC) {
 		
 	}
 	
-// Créé et affiche le PDF d'un document
+// CrÃ©Ã© et affiche le PDF d'un document
 public function create_pdf ($print = 0) {	
-	// Préférences et options
+	// PrÃ©fÃ©rences et options
 	$GLOBALS['PDF_OPTIONS']['HideToolbar'] = 0;
 	$GLOBALS['PDF_OPTIONS']['AutoPrint'] = $print;
 
-	// Création du fichier
+	// CrÃ©ation du fichier
 	$pdf = new PDF_etendu ();
 
 	// Ajout du document au PDF

@@ -5,7 +5,7 @@
 // SUPPRESSION D'UNE CATEGORIE D'UN CATALOGUE CLIENT
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -53,7 +53,7 @@ foreach ($_ALERTES as $alerte => $value) {
 ?>
 if (erreur) {
 	if (bad_new_id_catalogue_dir_parent) {
-		texte_erreur += "La catégorie de remplacement ne conviend pas.<br />";
+		texte_erreur += "La catÃ©gorie de remplacement ne conviend pas.<br />";
 	}
 
 window.parent.alerte.alerte_erreur ('Erreur de saisie', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');

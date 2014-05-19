@@ -5,7 +5,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nÈcessaires ‡ l'affichage
+// Variables n√©cessaires √† l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -125,7 +125,7 @@ switch ($_REQUEST['step']) {
 		//qte de composant fausse
 		//if (bad_qte) {
 		//window.parent.goto_etape(4);
-		//texte_erreur += "il y a une erreur dans la quantitÈ d'un des composants.<br/>";
+		//texte_erreur += "il y a une erreur dans la quantit√© d'un des composants.<br/>";
 		//}
 		<?php
 	break;
@@ -134,13 +134,13 @@ switch ($_REQUEST['step']) {
 	if (bad_duree) {
 		window.parent.document.getElementById("duree_abo_mois").className="alerteform_nsize";
 		window.parent.document.getElementById("duree_abo_mois").focus();
-		texte_erreur += "La durÈe d'abonnement est d\'une valeur incorrecte.<br/>";
+		texte_erreur += "La dur√©e d'abonnement est d\'une valeur incorrecte.<br/>";
 	}
 	//modele engagement service abo faux
 	if (bad_engagement) {
 		window.parent.document.getElementById("engagement").className="alerteform_nsize";
 		window.parent.document.getElementById("engagement").focus();
-		texte_erreur += "La durÈe d'engagement est d\'une valeur incorrecte.<br/>";
+		texte_erreur += "La dur√©e d'engagement est d\'une valeur incorrecte.<br/>";
 	}
 	//modele reconduction service abo faux
 	if (bad_reconduction) {
@@ -152,7 +152,7 @@ switch ($_REQUEST['step']) {
 	if (bad_preavis) {
 		window.parent.document.getElementById("preavis_abo_mois").className="alerteform_nsize";
 		window.parent.document.getElementById("preavis_abo_mois").focus();
-		texte_erreur += "La durÈe de prÈavis est d\'une valeur incorrecte.<br/>";
+		texte_erreur += "La dur√©e de pr√©avis est d\'une valeur incorrecte.<br/>";
 	}
 	
 		<?php
@@ -164,7 +164,7 @@ switch ($_REQUEST['step']) {
 			window.parent.document.getElementById("ref_interne").className="alerteform_xsize";
 			window.parent.goto_etape(0);
 			window.parent.document.getElementById("ref_interne").focus();
-			texte_erreur += "La rÈfÈrence interne existe dÈj‡.<br/>";
+			texte_erreur += "La r√©f√©rence interne existe d√©j√†.<br/>";
 			}else {
 			window.parent.document.getElementById("ref_interne").className="classinput_xsize";
 			}
@@ -179,7 +179,7 @@ switch ($_REQUEST['step']) {
 		window.parent.document.getElementById("lib_article").className="alerteform_xsize";
 		window.parent.goto_etape(0);
 		window.parent.document.getElementById("lib_article").focus();
-		texte_erreur += "Le libellÈ de l\'article est vide.<br/>";
+		texte_erreur += "Le libell√© de l\'article est vide.<br/>";
 		}else {
 		window.parent.document.getElementById("lib_article").className="classinput_xsize";
 		}

@@ -7,7 +7,7 @@ function charge_recherche_type ($type) {
 	global $bdd;
         if (!$type) { return false; }
 	$liste_recherche_perso= array();
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT id_recherche_perso, lib_recherche_perso, desc_recherche, requete
 						FROM recherches_persos
 						WHERE id_type_recherche=".$type."

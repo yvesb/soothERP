@@ -13,7 +13,7 @@ global $bdd;
 if (empty($_REQUEST['ref_article']))
 {
     ?> <script type="text/javascript">
-            window.parent.alerte.alerte_erreur ('Erreur', "La référence n'est pas spécifiée",'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+            window.parent.alerte.alerte_erreur ('Erreur', "La rÃ©fÃ©rence n'est pas spÃ©cifiÃ©e",'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
     </script>
 <?php
 }
@@ -30,7 +30,7 @@ else
         else
             {
                 ?> <script type="text/javascript">
-            window.parent.alerte.alerte_erreur ('Suppression effectué', "L'article a été supprimé avec succès.",'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+            window.parent.alerte.alerte_erreur ('Suppression effectuÃ©', "L'article a Ã©tÃ© supprimÃ© avec succÃ¨s.",'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
             window.parent.location.reload();
                 </script>
 <?php

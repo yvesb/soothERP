@@ -14,9 +14,9 @@ $ANNUAIRE_CATEGORIES	=	get_categories();
 
 if (isset($_REQUEST['modif_contact'])) {	
 	// *************************************************
-	// Controle des données fournies par le formulaire
+	// Controle des donnÃ©es fournies par le formulaire
 	if (!isset($_REQUEST['nom']) || !isset($_REQUEST['id_categorie']) || !isset($_REQUEST['note'])) {
-		$erreur = "Une variable nécessaire à la modification du contact n'est pas précisée.";
+		$erreur = "Une variable nÃ©cessaire Ã  la modification du contact n'est pas prÃ©cisÃ©e.";
 		alerte_dev($erreur);
 	}
 
@@ -37,7 +37,7 @@ if (isset($_REQUEST['modif_contact'])) {
 	//}
 	
 	// *************************************************
-	// Création du contact
+	// CrÃ©ation du contact
 	$contact = new contact ($_REQUEST['ref_contact']);
 	$contact->modification ($infos_generales, $infos_profils);
 }

@@ -4,7 +4,7 @@
 // RAZ DU STOCK
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
 <table style="width:100%">
 <tr>
 	<td>
-		<div class="titre" style="width:60%; padding-left:140px"><?php echo $stock->getLib_stock()?> -  Remise à zéro</div>
+		<div class="titre" style="width:60%; padding-left:140px"><?php echo $stock->getLib_stock()?> -  Remise Ã  zÃ©ro</div>
 	</td>
 	<td style="width:20%; vertical-align: bottom;">
 		<?php 
@@ -57,13 +57,13 @@ Event.observe("retour_tdb", "click",  function(evt){Event.stop(evt); page.verify
 			<div>
 				<div style="padding: 15px 25px; display:block" id="first_before_raz">
 					<div class="line_caisse_bottom"></div>
-					<div class="bold_caisse" style="font-size:16px">Remise à zéro du stock</div> 
+					<div class="bold_caisse" style="font-size:16px">Remise Ã  zÃ©ro du stock</div> 
 					<div class="line_caisse_top"></div>
 					<br />
 					<br />
-					<span style="color:#FF0000"> Attention, si vous réinitialisez ce stock, les quantités et la valorisation monétaire de chaque article de ce stock seront remises à zéro.</span><br />
+					<span style="color:#FF0000">Â Attention, si vous rÃ©initialisez ce stock, les quantitÃ©s et la valorisation monÃ©taire de chaque article de ce stock seront remises Ã  zÃ©ro.</span><br />
 <br />
-<!--Attention, réinitialiser le stock remet à zéro l'ensemble de quantités des articles pour ce stock et la valorisation du stock.-->
+<!--Attention, rÃ©initialiser le stock remet Ã  zÃ©ro l'ensemble de quantitÃ©s des articles pour ce stock et la valorisation du stock.-->
 			<br />
 
 
@@ -71,7 +71,7 @@ Event.observe("retour_tdb", "click",  function(evt){Event.stop(evt); page.verify
 						<div style="width:450px; padding-left:20%; padding-right:20%">
 						<br /><br />
 
-						<span id="ignorer_continuer" style="cursor:pointer; font-weight:bolder; text-decoration:underline" >Ignorer cet avertissement et réinitialiser le stock</span>
+						<span id="ignorer_continuer" style="cursor:pointer; font-weight:bolder; text-decoration:underline" >Ignorer cet avertissement et rÃ©initialiser le stock</span>
 						<br /><br />
 						</div>
 					</div>
@@ -99,7 +99,7 @@ Event.observe("retour_tdb", "click",  function(evt){Event.stop(evt); page.verify
 					<td>
 					<div>
 					<div class="line_caisse_bottom"></div>
-					<div class="bold_caisse" style="font-size:16px">Remise à zéro du stock</div> 
+					<div class="bold_caisse" style="font-size:16px">Remise Ã  zÃ©ro du stock</div> 
 					<div class="line_caisse_top"></div>
 					<br />
 					<br />
@@ -126,7 +126,7 @@ Event.observe("retour_tdb", "click",  function(evt){Event.stop(evt); page.verify
 						</table><br />
 						<br />
 						<br />
-						<div style=" text-align:center; font-weight:bolder"><span id="valid_raz" style="cursor:pointer; text-decoration:underline">Valider l'opération</span></div>
+						<div style=" text-align:center; font-weight:bolder"><span id="valid_raz" style="cursor:pointer; text-decoration:underline">Valider l'opÃ©ration</span></div>
 						
 					<form action="stocks_raz_valid.php" target="formFrame" method="post" name="stock_raz_valid" id="stock_raz_valid">
 					<input id="id_stock" name="id_stock"  value="<?php echo $stock->getId_stock(); ?>"  type="hidden">

@@ -4,7 +4,7 @@
 // AFFICHAGE DU CHOIX DES CAISSES
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -14,9 +14,9 @@ check_page_variables ($page_variables);
 
 ?>
 <div class="emarge"><br />
-    <p class="titre">Gestion des autorisations prélevements et de traites du contact</p>
+    <p class="titre">Gestion des autorisations prÃ©levements et de traites du contact</p>
     <!-- Popups -->
-    <!-- Créer x balises div cachés pour x popups, puis apeller la page de contenu via AJAX ? -->
+    <!-- CrÃ©er x balises div cachÃ©s pour x popups, puis apeller la page de contenu via AJAX ? -->
     <?php include $DIR.$_SESSION['theme']->getDir_theme()."page_annuaire_recherche_mini.inc.php" //mini_moteur contact?>
     <?php echo Helper::createPopup("pop_up_prelev",array("style_popup"=>"width: 600px; min-height: 250px;")); ?>
     <?php echo Helper::createPopup("pop_up_piecej_add",array("style_popup"=>"width: 50%; height: 350px;")); ?>

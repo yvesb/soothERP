@@ -50,21 +50,21 @@ Event.observe("link_close_pop_up_assistant_comm_commission", "click",  function(
 		<tr>
 			<td class="assist_labelled_bold" style="width:220px;">Acquisition: </td>
 			<td class="labelled_text"  colspan="2"><input type="radio" name="assistant_comm_rep_step2" id="assistant_comm_rep_step2_CDC" value="CDC" checked="checked">				 
-				<span id="assistant_comm_tex_step2_CDC" style="cursor:pointer" >à la commande</span>					</td>
+				<span id="assistant_comm_tex_step2_CDC" style="cursor:pointer" >Ã  la commande</span>					</td>
 			<td></td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
 			<td class="labelled_text" colspan="2">
 			<input type="radio" name="assistant_comm_rep_step2" id="assistant_comm_rep_step2_FAC" value="FAC">
-				<span id="assistant_comm_tex_step2_FAC" style="cursor:pointer">à la facturation</span>			</td>
+				<span id="assistant_comm_tex_step2_FAC" style="cursor:pointer">Ã  la facturation</span>			</td>
 			<td></td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
 			<td class="labelled_text" colspan="2">
 			<input type="radio" name="assistant_comm_rep_step2" id="assistant_comm_rep_step2_RGM" value="RGM">
-				<span id="assistant_comm_tex_step2_RGM" style="cursor:pointer">au règlement</span>			</td>
+				<span id="assistant_comm_tex_step2_RGM" style="cursor:pointer">au rÃ¨glement</span>			</td>
 			<td></td>
 		</tr>
 	</table>

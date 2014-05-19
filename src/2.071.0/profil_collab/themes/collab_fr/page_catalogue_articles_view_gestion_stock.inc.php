@@ -4,7 +4,7 @@
 // RESUME DES STOCK D'UN ARTICLE (affichage dans les moteurs de recherche article)
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -62,26 +62,26 @@ if (count($_SESSION['stocks']) > 1) {
 						<?php
 					}
 					?>
-					<!--		libellé reservé			-->
+					<!--		libellÃ© reservÃ©			-->
 					<td style="text-align:center" class="resume_stock_border_right">R&eacute;serv&eacute;</td>
 					<?php
 					if ($article->getLot() == 1) {
 						?>
 
-					<!-- libellé fabricable -->
+					<!-- libellÃ© fabricable -->
 						<td style="text-align:center" class="resume_stock_border_right">Fabricable</td>
 						<?php
 					} else {
 						if ($article->getLot() != 2) {
 						?>
-					<!--			libellé reaprro			-->
+					<!--			libellÃ© reaprro			-->
 						<td style="text-align:center" class="resume_stock_border_right">R&eacute;appro.</td>
 						<?php
 						}
 					}
 					?>
 <!--					<td style="text-align:center" class="resume_stock_border_right"></td>-->
-					<!--		libellé emplacement			-->
+					<!--		libellÃ© emplacement			-->
 					<td style="text-align:center" class="resume_stock_border_right">Emplacement</td>
 				
 					<?php
@@ -161,19 +161,19 @@ if (count($_SESSION['stocks']) > 1) {
 									?>
 									
 									<div style="text-align:left">
-									Détails des numéros de série en stock pour <?php echo $article->getLib_article();?><br />
-									<?php echo htmlentities($stock_liste->getLib_stock()); ?>: Quantité en stock: <?php if (isset($art_stocks[$stock_liste->getId_stock ()]->qte)) {
+									DÃ©tails des numÃ©ros de sÃ©rie en stock pour <?php echo $article->getLib_article();?><br />
+									<?php echo htmlentities($stock_liste->getLib_stock()); ?>: QuantitÃ© en stock: <?php if (isset($art_stocks[$stock_liste->getId_stock ()]->qte)) {
 										echo qte_format($art_stocks[$stock_liste->getId_stock ()]->qte) ;
 										
 									} else {
 										echo "0";
-									}?> dont <?php echo count($liste_sn );?> possédant un numéro de série.<br />
+									}?> dont <?php echo count($liste_sn );?> possÃ©dant un numÃ©ro de sÃ©rie.<br />
 									</div>
 
 									<table width="100%" style="text-align:left">
 									<tr>
 									<td style="font-weight:bolder">
-									Numéro de série
+									NumÃ©ro de sÃ©rie
 									</td>
 									<td>
 									
@@ -220,9 +220,9 @@ if (count($_SESSION['stocks']) > 1) {
 								
 									?>
 									<div style="text-align:left">
-									Détails des numéros de lots en stock pour <?php echo $article->getLib_article();?><br />
+									DÃ©tails des numÃ©ros de lots en stock pour <?php echo $article->getLib_article();?><br />
 									<?php echo htmlentities($stock_liste->getLib_stock()); ?>: <br>
-									Quantité en stock: <?php if (isset($art_stocks[$stock_liste->getId_stock ()]->qte)) {
+									QuantitÃ© en stock: <?php if (isset($art_stocks[$stock_liste->getId_stock ()]->qte)) {
 								echo qte_format($art_stocks[$stock_liste->getId_stock ()]->qte) ;
 								
 							} else {
@@ -235,15 +235,15 @@ if (count($_SESSION['stocks']) > 1) {
 								}
 								echo qte_format($combien);
 								
-									?> possédant un numéro de lot
+									?> possÃ©dant un numÃ©ro de lot
 									</div>
 									<table width="100%" style="text-align:left">
 									<tr>
 									<td style="font-weight:bolder">
-									Numéro de lot
+									NumÃ©ro de lot
 									</td>
 									<td style="font-weight:bolder">
-									Quantité
+									QuantitÃ©
 									</td>
 									</tr>
 									<?php 
@@ -433,7 +433,7 @@ if (count($_SESSION['stocks']) > 1) {
 					<?php 
 				}
 				?><tr style="">
-				<!--	Libellé total			-->
+				<!--	LibellÃ© total			-->
 					<td style="text-align:left;" class="resume_stock_border_topright">TOTAL:</td>
 				<!--	Bas de En stock			-->
 						<td style="text-align:center" class="resume_stock_border_topright"><?php echo qte_format($tot_const);?></td>

@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
@@ -49,14 +49,14 @@ $nb_fiches = 0;
 
 
 // *************************************************
-// Stock de départ
+// Stock de dÃ©part
 $form['stock_depart'] = "";
 if (isset($_REQUEST['stock_depart'])) {
 	$form['stock_depart'] = $_REQUEST['stock_depart'];
 	$search['stock_depart'] = $_REQUEST['stock_depart'];
 }
 // *************************************************
-// Stock d'arrivéée
+// Stock d'arrivÃ©Ã©e
 $form['stock_arrivee'] = "";
 if (isset($_REQUEST['stock_arrivee'])) {
 	$form['stock_arrivee'] = $_REQUEST['stock_arrivee'];
@@ -66,13 +66,13 @@ if (isset($_REQUEST['stock_arrivee'])) {
 
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
 
-//soit on recherche pour un stock spécifié
+//soit on recherche pour un stock spÃ©cifiÃ©
 	
-		// Préparation de la requete
+		// PrÃ©paration de la requete
 		$query_select = "";
 		$query_join 	= "";
 		$query_where 	= " dispo = 1  && a.lot !='2' && a.modele = 'materiel' ";
@@ -85,7 +85,7 @@ if (isset($_REQUEST['recherche'])) {
 	
 	
 		
-	// Catégorie
+	// CatÃ©gorie
 	if ($search['ref_art_categ']) { 
 		$query_where 	.= " && a.ref_art_categ = '".$search['ref_art_categ']."'";
 	}

@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -125,7 +125,7 @@ if(!isset($profils_mini)){
     <script type="text/javascript">
         Event.observe("close_mini_recherche_annu", "click",  function(evt){Event.stop(evt);close_mini_moteur_contacts();}, false);
 
-        //creation d'un nouveau contact (transfère la ref_doc si on est dans un document
+        //creation d'un nouveau contact (transfÃ¨re la ref_doc si on est dans un document
         Event.observe("create_new_contact", "click",  function(evt){
             Event.stop(evt);
 <?php

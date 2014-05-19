@@ -3,7 +3,7 @@
 // AFFICHAGE DU TABLEAU DE BORD DES VENTES
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -37,9 +37,9 @@ check_page_variables ($page_variables);
 			<ul>
 			<li><a href="#" class="menu_tb_select" id="select_menu_tbv1" style="padding-left:50px;border-right:1px  solid #000000">Tableau de Bord des Ventes</a></li>
 			<li><a href="#" class="menu_tb_unselect" id="select_menu_tbv2" style="border-right:1px  solid #000000">Analyse du Chiffre d'affaires</a></li>
-			<li><a href="#" class="menu_tb_unselect" id="select_menu_tbv3" style="border-right:1px  solid #000000">Données Clients</a></li>
+			<li><a href="#" class="menu_tb_unselect" id="select_menu_tbv3" style="border-right:1px  solid #000000">DonnÃ©es Clients</a></li>
 			<li><a href="#" class="menu_tb_unselect" id="select_menu_tbv4" style="">Historique des Ventes</a></li>
-			<!--<li><a href="#" class="menu_tb_unselect" id="select_menu_tbv5">Prévisions</a></li>-->
+			<!--<li><a href="#" class="menu_tb_unselect" id="select_menu_tbv5">PrÃ©visions</a></li>-->
 			</ul>
 			</div>
 			<script type="text/javascript">

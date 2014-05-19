@@ -4,7 +4,7 @@
 // AJOUT D'UNE LIGNE DE FORMULES
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -78,7 +78,7 @@ check_page_variables ($page_variables);
 			});
 			</script>
 
-							<a href="#" id="aff_formule_tarif_<?php echo $nb_liste_tarif?>_<?php echo $nb_ligne_prix?>" style="color:#7391a9;  <?php //permission (6) Accès Consulter les prix d’achat
+							<a href="#" id="aff_formule_tarif_<?php echo $nb_liste_tarif?>_<?php echo $nb_ligne_prix?>" style="color:#7391a9;  <?php //permission (6) AccÃ¨s Consulter les prix dâ€™achat
 if (!$_SESSION['user']->check_permission ("6")) {?>display:none;<?php } ?>">D&eacute;finir un nouveau tarif
 							</a>
 							</div>
@@ -103,7 +103,7 @@ Event.observe('aff_formule_tarif_<?php echo $nb_liste_tarif?>_<?php echo $nb_lig
 
 Event.observe('tarif_del_<?php echo $nb_liste_tarif?>_<?php echo $nb_ligne_prix?>', "click", function(evt){
 	Event.stop(evt); 
-	$("aff_formule_tarif_<?php echo $nb_liste_tarif?>_<?php echo $nb_ligne_prix?>").innerHTML="Définir un nouveau tarif";
+	$("aff_formule_tarif_<?php echo $nb_liste_tarif?>_<?php echo $nb_ligne_prix?>").innerHTML="DÃ©finir un nouveau tarif";
 	$("formule_tarif_<?php echo $nb_liste_tarif?>_<?php echo $nb_ligne_prix?>").value="<?php
 							if ($tarif_liste->formule_tarif=="")
 								{echo $tarif_liste->marge_moyenne;

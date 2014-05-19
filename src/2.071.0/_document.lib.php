@@ -37,7 +37,7 @@ function open_doc ($ref_doc) {
 }
 
 
-// Fonction permettant de créer un document
+// Fonction permettant de crÃ©er un document
 function create_doc ($id_type_doc) {
 	global $DIR;
 	// Creation de l'objet correspondant
@@ -52,7 +52,7 @@ function create_doc ($id_type_doc) {
 }
 
 
-// Définition du type de ligne d'un document
+// DÃ©finition du type de ligne d'un document
 function define_type_of_line ($ref_article) {
 	if ($ref_article == "INFO" || $ref_article == "INFORMATION") { 
 		return "information";
@@ -69,7 +69,7 @@ function define_type_of_line ($ref_article) {
 }
 
 // **********************************************************
-// gestion des différents modèles de ligne d'information
+// gestion des diffÃ©rents modÃ¨les de ligne d'information
 // **********************************************************
 function charge_docs_infos_lines ($id_type_doc = "") {
 	global $bdd;
@@ -91,7 +91,7 @@ function charge_docs_infos_lines ($id_type_doc = "") {
 	}
 	return $modeles_lignes;
 }
-//chargement des infos d'un modèle ligne
+//chargement des infos d'un modÃ¨le ligne
 function charge_doc_info_line ($id_doc_info_line) {
 	global $bdd;
 	
@@ -104,7 +104,7 @@ function charge_doc_info_line ($id_doc_info_line) {
 	
 	return $ligne;
 }
-//ajout des infos d'un modèle ligne
+//ajout des infos d'un modÃ¨le ligne
 function add_doc_info_line ($id_type_doc, $lib_line, $desc_line, $desc_line_interne) {
 	global $bdd;
 	
@@ -129,7 +129,7 @@ function add_doc_info_line ($id_type_doc, $lib_line, $desc_line, $desc_line_inte
 	
 	return true;
 }
-//maj des infos d'un modèle ligne
+//maj des infos d'un modÃ¨le ligne
 function maj_doc_info_line ($id_doc_info_line, $id_type_doc, $lib_line, $desc_line, $desc_line_interne) {
 	global $bdd;
 	
@@ -153,7 +153,7 @@ function maj_doc_info_line ($id_doc_info_line, $id_type_doc, $lib_line, $desc_li
 	
 	return true;
 }
-//del des infos d'un modèle ligne
+//del des infos d'un modÃ¨le ligne
 function del_doc_info_line ($id_doc_info_line) {
 	global $bdd;
 	
@@ -283,7 +283,7 @@ function get_commandes_fournisseurs ($id_stock = "") {
 
 
 
-// Fonction retournant la liste des Bons de Livraisons Non Facturés
+// Fonction retournant la liste des Bons de Livraisons Non FacturÃ©s
 function get_livraisons_to_facture ($id_stock = NULL, $order = "") {
 	global $bdd;
 
@@ -324,7 +324,7 @@ function get_livraisons_to_facture ($id_stock = NULL, $order = "") {
 
 	return $bls;
 }
-// Fonction retournant la liste des Bons de Livraisons Fournisseurs Non Facturés
+// Fonction retournant la liste des Bons de Livraisons Fournisseurs Non FacturÃ©s
 function get_livraisons_fournisseur_to_facture ($id_stock = NULL, $order = "") {
 	global $bdd;
 
@@ -355,7 +355,7 @@ function get_livraisons_fournisseur_to_facture ($id_stock = NULL, $order = "") {
 }
 
 
-// Fonction retournant la liste des Bons de Livraisons Non Facturés d'un contact spécifique
+// Fonction retournant la liste des Bons de Livraisons Non FacturÃ©s d'un contact spÃ©cifique
 function get_client_livraisons_to_facture ($ref_contact , $order = "") {
 	global $bdd;
 
@@ -385,7 +385,7 @@ function get_client_livraisons_to_facture ($ref_contact , $order = "") {
 	return $bls;
 }
 
-// Fonction retournant le nombre des Factures non réglées
+// Fonction retournant le nombre des Factures non rÃ©glÃ©es
 function count_factures_to_pay ($id_client_categ = "" ) {
 	global $bdd;
 	global $DEFAUT_ID_CLIENT_CATEG;
@@ -414,7 +414,7 @@ function count_factures_to_pay ($id_client_categ = "" ) {
 
 	return $nb_factures;
 }
-// Fonction retournant le nombre des Factures non réglées par niveau de relance
+// Fonction retournant le nombre des Factures non rÃ©glÃ©es par niveau de relance
 function count_niveau_factures_to_pay ($id_client_categ = "" , $id_niveau_relance = "") {
 	global $bdd;
 	global $DEFAUT_ID_CLIENT_CATEG;
@@ -451,7 +451,7 @@ function count_niveau_factures_to_pay ($id_client_categ = "" , $id_niveau_relanc
 	return $nb_factures;
 }
 
-// Fonction retournant la liste des Factures client non réglées
+// Fonction retournant la liste des Factures client non rÃ©glÃ©es
 function get_factures_to_pay_total ($id_client_categ = "" , $id_niveau_relance = "" ) {
 	global $bdd;
 	global $DEFAUT_ID_CLIENT_CATEG;
@@ -490,7 +490,7 @@ function get_factures_to_pay_total ($id_client_categ = "" , $id_niveau_relance =
 	return $factures_total;
 }
 
-// Fonction retournant la liste des Factures clients non réglées
+// Fonction retournant la liste des Factures clients non rÃ©glÃ©es
 function get_factures_to_pay ($id_client_categ = "" , $id_niveau_relance = "" ) {
 	global $bdd;
 	global $DEFAUT_ID_CLIENT_CATEG;
@@ -541,9 +541,9 @@ function get_factures_to_pay ($id_client_categ = "" , $id_niveau_relance = "" ) 
 
 
 //*********************************************************
-//facture fournisseur non réglées
+//facture fournisseur non rÃ©glÃ©es
 
-// Fonction retournant le nombre des Factures fournisseur non réglées 
+// Fonction retournant le nombre des Factures fournisseur non rÃ©glÃ©es 
 function count_niveau_factures_fournisseur_to_pay ($id_fournisseur_categ = "" ) {
 	global $bdd;
 	global $DEFAUT_ID_FOURNISSEUR_CATEG;
@@ -570,7 +570,7 @@ function count_niveau_factures_fournisseur_to_pay ($id_fournisseur_categ = "" ) 
 
 	return $nb_factures;
 }
-// Fonction retournant la liste des Factures client non réglées
+// Fonction retournant la liste des Factures client non rÃ©glÃ©es
 function get_factures_fournisseur_to_pay_total ($id_fournisseur_categ = "" ) {
 	global $bdd;
 	global $DEFAUT_ID_FOURNISSEUR_CATEG;
@@ -602,7 +602,7 @@ function get_factures_fournisseur_to_pay_total ($id_fournisseur_categ = "" ) {
 	return $factures_total;
 }
 
-// Fonction retournant la liste des Factures fournisseur non réglées
+// Fonction retournant la liste des Factures fournisseur non rÃ©glÃ©es
 function get_factures_fournisseur_to_pay ($id_fournisseur_categ = ""  ) {
 	global $bdd;
 	global $DEFAUT_ID_FOURNISSEUR_CATEG;
@@ -645,7 +645,7 @@ function get_factures_fournisseur_to_pay ($id_fournisseur_categ = ""  ) {
 }
 
 //*********************************************************
-// Fonction retournant la liste des factures non réglées pour un contact défini
+// Fonction retournant la liste des factures non rÃ©glÃ©es pour un contact dÃ©fini
 function get_client_factures_to_pay ($ref_contact = "" ) {
 	global $bdd;
 	
@@ -714,7 +714,7 @@ function get_historique_ventes ($id_stock = "", $page_to_show = "1", $fiches_par
 
 	while ($doc = $resultat->fetchObject()) {		$histo_ventes[] = open_doc ($doc->ref_doc);	}
 	
-	//renvois du nombre total de résultat pour la pagination
+	//renvois du nombre total de rÃ©sultat pour la pagination
 	
 	$GLOBALS['_INFOS']['HISTO_VENTES']['nb_fiches'] = 0;
 	$query = "SELECT d.ref_doc
@@ -806,7 +806,7 @@ function get_historique_achats ($id_stock = "", $page_to_show = "1", $fiches_par
 	while ($line = $resultat2->fetchObject()) { $doc->lines[] = $line;	}
 		$histo_ventes[] = $doc;
 	}
-	//renvois du nombre total de résultat pour la pagination
+	//renvois du nombre total de rÃ©sultat pour la pagination
 	
 	$GLOBALS['_INFOS']['HISTO_ACHATS']['nb_fiches'] = 0;
 	$query = "SELECT d.ref_doc
@@ -857,7 +857,7 @@ function get_etat($doc_type) {
 	$result[] = implode(",", get_etat_is_open(1, $doc_type))."=Documents en cours";
 	$result[] = implode(",", get_etat_is_open(0, $doc_type))."=Documents en archive";
 	
-	// on boucle sur tous les éléments
+	// on boucle sur tous les Ã©lÃ©ments
 	if (count($etats_liste)>0) {
 		foreach ($etats_liste as $etat_liste) {
 			$result[] = $etat_liste->id_etat_doc."=".($etat_liste->lib_etat_doc);
@@ -866,7 +866,7 @@ function get_etat($doc_type) {
   print implode(";", $result);
 }
 
-//fonction renvoyant les id_etat_doc en fonction du is_open et de l'id_type_doc si indiqué
+//fonction renvoyant les id_etat_doc en fonction du is_open et de l'id_type_doc si indiquÃ©
 function get_etat_is_open($is_open = 0, $doc_type = "") {
 	global $bdd;
 	
@@ -991,7 +991,7 @@ function charger_modeles_pdf_valides($id_type_doc) {
 
 }
 
-//modele pdf par défaut
+//modele pdf par dÃ©faut
 function defaut_doc_modele_pdf ($id_type_doc, $id_pdf_modele) {
 	global $bdd;
 	
@@ -1007,7 +1007,7 @@ function defaut_doc_modele_pdf ($id_type_doc, $id_pdf_modele) {
 						";
 	$bdd->exec ($query);
 	
-	// 2.044 : Maxime : On met à jour l'id_pdf_modele dans la table documents_types
+	// 2.044 : Maxime : On met Ã  jour l'id_pdf_modele dans la table documents_types
 	$query = "UPDATE documents_types
 					SET id_pdf_modele = '" . $id_pdf_modele . "' 
 					WHERE id_type_doc = '" . $id_type_doc . "';";
@@ -1024,7 +1024,7 @@ function active_doc_modele_pdf ($id_type_doc, $id_pdf_modele) {
 	$bdd->exec ($query);
 	return true;
 }
-//désactivation d'un modele pdf
+//dÃ©sactivation d'un modele pdf
 function desactive_doc_modele_pdf ($id_type_doc, $id_pdf_modele) {
 	global $bdd;
 	$query = "UPDATE doc_modeles_pdf
@@ -1042,7 +1042,7 @@ function supprime_doc_modele_pdf ($id_pdf_modele) {
 						";
 	$bdd->exec ($query);
 	
-	// On supprime également dans la table doc_modeles_pdf
+	// On supprime Ã©galement dans la table doc_modeles_pdf
 	$query = "DELETE FROM doc_modeles_pdf
 						WHERE id_pdf_modele = '".$id_pdf_modele."' 
 						";
@@ -1133,13 +1133,13 @@ function ordre_filigranes ($id_filigrane, $old_ordre, $new_ordre) {
 	
 	$bdd->beginTransaction();
 	
-	// Mise à jour des autres coordonnees
+	// Mise Ã  jour des autres coordonnees
 	$query = "UPDATE documents_filigranes
 						SET ordre = ordre ".$variation." 1
 						WHERE ordre ".$symbole1." '".$old_ordre."' && ordre ".$symbole2." '".$new_ordre."' ";
 	$bdd->exec ($query);
 	
-	// Mise à jour de cette coordonnee
+	// Mise Ã  jour de cette coordonnee
 	$query = "UPDATE documents_filigranes
 						SET ordre = '".$new_ordre."'
 						WHERE id_filigrane = '".$id_filigrane."'  ";
@@ -1150,7 +1150,7 @@ function ordre_filigranes ($id_filigrane, $old_ordre, $new_ordre) {
 }
 
 
-//purge des documents annulés
+//purge des documents annulÃ©s
 function purge_all_docs_annules ($id_type_doc = "") {
 	global $bdd;
 	global $DIR;

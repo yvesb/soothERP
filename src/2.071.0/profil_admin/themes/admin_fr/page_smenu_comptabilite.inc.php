@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
 
 ?>
 <script type="text/javascript" language="javascript">
-tableau_smenu[0] = Array("smenu_comptabilite", "smenu_comptabilite.php" ,"true" ,"sub_content", "Comptabilité");
+tableau_smenu[0] = Array("smenu_comptabilite", "smenu_comptabilite.php" ,"true" ,"sub_content", "ComptabilitÃ©");
 tableau_smenu[1] = Array("", "" ,"" ,"", "");
 update_menu_arbo();
 </script>
@@ -55,7 +55,7 @@ update_menu_arbo();
 
 				<span class="titre_smenu_page" id="comptabilite_smenu_caisses"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Caisses</span><br /><br />
 
-				<span class="titre_smenu_page" id="comptabilite_smenu_tpe"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Terminaux de paiement électronique</span><br /><br />
+				<span class="titre_smenu_page" id="comptabilite_smenu_tpe"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Terminaux de paiement Ã©lectronique</span><br /><br />
 
 				<span class="titre_smenu_page" id="comptabilite_smenu_tpv"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Terminaux de paiement virtuels</span><br /><br />
 
@@ -63,31 +63,31 @@ update_menu_arbo();
 				
 				<br /><br />
 				
-				<span class="titre_smenu_page" id="comptabilite_smenu_gest_tva"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Paramétrage TVA</span><br /><br />
+				<span class="titre_smenu_page" id="comptabilite_smenu_gest_tva"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />ParamÃ©trage TVA</span><br /><br />
 				
-				<span class="titre_smenu_page" id="comptabilite_smenu_mod_ech"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Modèles d'échéanciers</span><br /><br />
+				<span class="titre_smenu_page" id="comptabilite_smenu_mod_ech"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />ModÃ¨les d'Ã©chÃ©anciers</span><br /><br />
 
 			</td>
 			<td style="text-align:left;">
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="20px"/><br />
 
-				<span class="titre_smenu_page" id="comptabilite_smenu_exercices"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Définir les exercices comptables</span><br /><br />
+				<span class="titre_smenu_page" id="comptabilite_smenu_exercices"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />DÃ©finir les exercices comptables</span><br /><br />
 
 				<br /><br />
 
-				<span class="titre_smenu_page_unvalid" id="comptabilite_smenu_reg_fav_enc" title="fonctionnalité prochainement disponible"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Modes de règlements favoris (encaissements)</span><br /><br />
+				<span class="titre_smenu_page_unvalid" id="comptabilite_smenu_reg_fav_enc" title="fonctionnalitÃ© prochainement disponible"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Modes de rÃ¨glements favoris (encaissements)</span><br /><br />
 
-				<span class="titre_smenu_page_unvalid" id="comptabilite_smenu_reg_fav_dec" title="fonctionnalité prochainement disponible"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Modes de règlements favoris (décaissements)</span><br /><br />
+				<span class="titre_smenu_page_unvalid" id="comptabilite_smenu_reg_fav_dec" title="fonctionnalitÃ© prochainement disponible"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Modes de rÃ¨glements favoris (dÃ©caissements)</span><br /><br />
 
-				<span class="titre_smenu_page" id="comptabilite_smenu_niveaurelance"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Règles de relance des factures</span><br /><br />
+				<span class="titre_smenu_page" id="comptabilite_smenu_niveaurelance"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />RÃ¨gles de relance des factures</span><br /><br />
 				
 				<br /><br />
 				
-				<span class="titre_smenu_page" id="comptabilite_smenu_pla_compt_gene"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Gérer le plan comptable général</span><br /><br />
+				<span class="titre_smenu_page" id="comptabilite_smenu_pla_compt_gene"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />GÃ©rer le plan comptable gÃ©nÃ©ral</span><br /><br />
 
-				<span class="titre_smenu_page" id="comptabilite_smenu_pla_compt_entr"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Gérer le plan comptable de l'entreprise</span><br /><br />
+				<span class="titre_smenu_page" id="comptabilite_smenu_pla_compt_entr"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />GÃ©rer le plan comptable de l'entreprise</span><br /><br />
 				
-				<span class="titre_smenu_page" id="comptabilite_smenu_compt_defaut"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Gérer les numéros de compte par défaut</span><br /><br />
+				<span class="titre_smenu_page" id="comptabilite_smenu_compt_defaut"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />GÃ©rer les numÃ©ros de compte par dÃ©faut</span><br /><br />
 				
 				<span class="titre_smenu_page" id="comptabilite_smenu_export_veac"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Export des journaux des ventes et des achats</span><br /><br />
 

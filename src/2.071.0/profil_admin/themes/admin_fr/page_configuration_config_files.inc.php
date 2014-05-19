@@ -4,9 +4,9 @@
 // Edition des fichiers de configuration
 // *************************************************************************************************************
 
-/* Désactivé pour des raisons de sécurité
+/* DÃ©sactivÃ© pour des raisons de sÃ©curitÃ©
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -35,8 +35,8 @@ check_page_variables ($page_variables);
 				$idx = 0;
 				while($fichier = readdir($dir)){
 					if(is_dir($DIR.'config/'.$fichier) || $fichier == '.' || $fichier =='..'){ continue; }
-					// Masque le fichier index destiné à protéger le répertoire du listing,
-					// ainsi que le fichier de config de la bdd dont les infos sensibles doivent plutôt être manipulée par l'admin système via connexion au serveur.
+					// Masque le fichier index destinÃ© Ã  protÃ©ger le rÃ©pertoire du listing,
+					// ainsi que le fichier de config de la bdd dont les infos sensibles doivent plutÃ´t Ãªtre manipulÃ©e par l'admin systÃ¨me via connexion au serveur.
 					if ( basename($fichier) == "index.html" OR basename($fichier) == "config_bdd.inc.php"){ continue; }
 					++$idx;
 					
@@ -85,11 +85,11 @@ for($i=1; $i<=$idx; ++$i){
 	Event.observe("titre_<?php echo $i; ?>", "click",  function(evt){
 		Event.stop(evt);
 
-		//masquage de l'ancien fichier selectionné
+		//masquage de l'ancien fichier selectionnÃ©
 		$("line_txt_file_"+idx_open).hide();
 		$("line_input_file_"+idx_open).hide();
 
-		//affichage du fichier selectionné
+		//affichage du fichier selectionnÃ©
 		idx_open = <?php echo $i; ?>;
 		$("line_txt_file_<?php echo $i; ?>").show();
 		$("line_input_file_<?php echo $i; ?>").show();

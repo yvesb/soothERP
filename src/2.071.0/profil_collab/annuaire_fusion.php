@@ -11,7 +11,7 @@ require ($DIR."_session.inc.php");
 if (isset($_REQUEST['old_ref_contact'])) {	
 	
 	// *************************************************
-	// Création du contact
+	// CrÃ©ation du contact
 	$contact = new contact ($_REQUEST['old_ref_contact']);
 	$contact->fusion ($_REQUEST['new_ref_contact']);
 }

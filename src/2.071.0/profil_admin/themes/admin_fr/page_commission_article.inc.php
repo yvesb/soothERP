@@ -1,9 +1,9 @@
 <?php
 // *************************************************************************************************************
-// commissionnements des catégories d'articles
+// commissionnements des catÃ©gories d'articles
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -32,7 +32,7 @@ page.verify('configuration_commission','configuration_commission.php','true','su
 }, false);
 </script>
 </div>
-<p class="titre">Commissionnement associés aux articles</p>
+<p class="titre">Commissionnement associÃ©s aux articles</p>
 <div style="height:50px">
 <table class="minimizetable">
 <tr>

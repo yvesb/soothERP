@@ -42,7 +42,7 @@ public function create_compte_plan_comptable ($infos) {
 	global $bdd;
 	
 	// *************************************************
-	// Réception des données
+	// RÃ©ception des donnÃ©es
 	if (!$infos['numero_compte']) {$GLOBALS['_ALERTES']['numero_compte_vide'] = 1; }
 	
 
@@ -82,7 +82,7 @@ public function maj_compte_plan_comptable ($infos) {
 	global $bdd;
 
 	// *************************************************
-	// Réception des données
+	// RÃ©ception des donnÃ©es
 	$old_numero_compte = $this->numero_compte;
 	if (!$infos['numero_compte']) {$GLOBALS['_ALERTES']['numero_compte_vide'] = 1; }
 
@@ -120,7 +120,7 @@ function supprime_compte () {
 	global $bdd;
 
 	// *************************************************
-	// Controle de la possibilité de supprimer ce compte 
+	// Controle de la possibilitÃ© de supprimer ce compte 
 
 	$query = "SELECT numero_compte 
 						FROM plan_comptable 
@@ -137,7 +137,7 @@ function supprime_compte () {
 		return false;
 	}
 	// *************************************************
-	// MAJ de la base de donnée
+	// MAJ de la base de donnÃ©e
 	$query = "DELETE FROM plan_comptable 
 						WHERE numero_compte = '".$this->numero_compte."' "; 
 	$bdd->exec ($query);
@@ -154,7 +154,7 @@ function active_compte () {
 	if ($this->favori) { return false; }
 
 	// *************************************************
-	// MAJ de la base de donnée
+	// MAJ de la base de donnÃ©e
 	$query = "UPDATE plan_comptable 
 						SET favori = 1
 						WHERE numero_compte = '".$this->numero_compte."' "; 
@@ -164,18 +164,18 @@ function active_compte () {
 	return true;
 }
 
-// Désactive un compte
+// DÃ©sactive un compte
 function desactive_compte () {
 	global $bdd;
 
 	if (!$this->favori) { return false; }
 
 	// *************************************************
-	// Controle de la possibilité de désactiver ce compte 
+	// Controle de la possibilitÃ© de dÃ©sactiver ce compte 
 
 
 	// *************************************************
-	// MAJ de la base de donnée
+	// MAJ de la base de donnÃ©e
 	$query = "UPDATE plan_comptable 
 						SET favori = 0
 						WHERE numero_compte = '".$this->numero_compte."' "; 

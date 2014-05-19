@@ -26,19 +26,19 @@ final class coordonnee {
 function __construct($ref_coord = "") {
 	global $bdd;
 
-	// Controle si la ref_coord est précisée
+	// Controle si la ref_coord est prÃ©cisÃ©e
 	if (!$ref_coord) { return false; }
 
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT ref_contact, lib_coord, tel1, tel2, fax, email, note, ordre, ref_coord_parent, id_type_coordonnee
 						FROM coordonnees 
 						WHERE ref_coord = '".$ref_coord."' ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si la ref_coord est trouvée
+	// Controle si la ref_coord est trouvÃ©e
 	if (!$coordonnee = $resultat->fetchObject()) { return false; }
 
-	// Attribution des informations à l'objet
+	// Attribution des informations Ã  l'objet
 	$this->ref_coord 		= $ref_coord;
 	$this->ref_contact 	= $coordonnee->ref_contact;
 	$this->lib_coord		= $coordonnee->lib_coord;
@@ -64,10 +64,10 @@ final public function create ($ref_contact, $lib_coord, $tel1, $tel2, $fax, $ema
 	global $bdd;
 	global $DELAI_USER_CREATION_INVITATION;
 
-	$COORDONNEE_ID_REFERENCE_TAG = 6;		// Référence Tag utilisé dans la base de donnée
+	$COORDONNEE_ID_REFERENCE_TAG = 6;		// RÃ©fÃ©rence Tag utilisÃ© dans la base de donnÃ©e
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->ref_contact 	= $ref_contact;
 	$this->lib_coord 	= $lib_coord;
 	$this->tel1 		= $tel1;
@@ -77,7 +77,7 @@ final public function create ($ref_contact, $lib_coord, $tel1, $tel2, $fax, $ema
 	$this->ref_coord_parent	= $ref_coord_parent;
 	$this->type			= $type;
 	
-	// Vérifie si l'adresse email est unique
+	// VÃ©rifie si l'adresse email est unique
 	$this->email 		= trim($email);
 	if ($this->email) {
 		$query = "SELECT ref_coord, c.ref_contact, c.email, a.nom, a.date_archivage, a.note
@@ -86,15 +86,15 @@ final public function create ($ref_contact, $lib_coord, $tel1, $tel2, $fax, $ema
 							WHERE c.email = '".addslashes($email)."' ";
 		$resultat = $bdd->query ($query);
 		if ($coordonnee = $resultat->fetchObject()) { 
-			//vérification de l'appartenance de la coord à un contact valide
+			//vÃ©rification de l'appartenance de la coord Ã  un contact valide
 			if ($coordonnee->date_archivage) {
-				//suppression de l'email de la coordonnée et mise en note de l'email
+				//suppression de l'email de la coordonnÃ©e et mise en note de l'email
 				$query = "UPDATE coordonnees 
 									SET email = NULL
 									WHERE ref_coord = '".$coordonnee->ref_coord."' ";
 				$bdd->exec ($query);
 				$query = "UPDATE annuaire 
-									SET note = '".addslashes($coordonnee->note)."L\'adresse email ".$coordonnee->email." de ce contact a été supprimée automatiquement', date_modification = NOW()
+									SET note = '".addslashes($coordonnee->note)."L\'adresse email ".$coordonnee->email." de ce contact a Ã©tÃ© supprimÃ©e automatiquement', date_modification = NOW()
 									WHERE ref_contact = '".$coordonnee->ref_contact."' ";
 				$bdd->exec ($query);
 
@@ -107,17 +107,17 @@ final public function create ($ref_contact, $lib_coord, $tel1, $tel2, $fax, $ema
 	}
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (isset($GLOBALS['_ALERTES']['email_used']) && $this->email) {
 		return false;
 	}
-	// Si aucune valeur, inutile de créer la coordonnée
+	// Si aucune valeur, inutile de crÃ©er la coordonnÃ©e
 	if (!$this->lib_coord && !$this->tel1 && !$this->tel2 && !$this->fax && !$this->email && !$this->note) {
 		return false;
 	}
 
 	// *************************************************
-	// Création de la référence
+	// CrÃ©ation de la rÃ©fÃ©rence
 	if (!$ref_coord) {
 		$reference = new reference ($COORDONNEE_ID_REFERENCE_TAG);
 		$this->ref_coord = $reference->generer_ref();
@@ -143,8 +143,8 @@ final public function create ($ref_contact, $lib_coord, $tel1, $tel2, $fax, $ema
 
 	
 	// *************************************************
-	// Résultat positif de la création
-	$GLOBALS['_INFOS']['Création_coordonnée'] = $this->ref_coord;
+	// RÃ©sultat positif de la crÃ©ation
+	$GLOBALS['_INFOS']['CrÃ©ation_coordonnÃ©e'] = $this->ref_coord;
 	return true;
 }
 
@@ -158,13 +158,13 @@ public function modification ($lib_coord, $tel1, $tel2, $fax, $email, $note, $ty
 	global $bdd;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->lib_coord = $lib_coord;
 	$this->tel1 	= $tel1;
 	$this->tel2 	= $tel2;
 	$this->fax	 	= $fax;
 	$this->type		= $type;
-	// Vérifie si l'adresse email est unique
+	// VÃ©rifie si l'adresse email est unique
 	$email = trim($email);
 	if ($email && $this->email != $email) {
 		$query = "SELECT ref_coord, c.ref_contact, c.email, a.nom, a.date_archivage, a.note
@@ -173,15 +173,15 @@ public function modification ($lib_coord, $tel1, $tel2, $fax, $email, $note, $ty
 							WHERE c.email = '".addslashes($email)."' ";
 		$resultat = $bdd->query ($query);
 		if ($coordonnee = $resultat->fetchObject()) { 
-			//vérification de l'appartenance de la coord à un contact valide
+			//vÃ©rification de l'appartenance de la coord Ã  un contact valide
 			if ($coordonnee->date_archivage) {
-				//suppression de l'email de la coordonnée et mise en note de l'email
+				//suppression de l'email de la coordonnÃ©e et mise en note de l'email
 				$query = "UPDATE coordonnees 
 									SET email = NULL
 									WHERE ref_coord = '".$coordonnee->ref_coord."' ";
 				$bdd->exec ($query);
 				$query = "UPDATE annuaire 
-									SET note = '".addslashes($coordonnee->note)."L\'adresse email ".$coordonnee->email." de ce contact a été supprimée automatiquement', date_modification = NOW()
+									SET note = '".addslashes($coordonnee->note)."L\'adresse email ".$coordonnee->email." de ce contact a Ã©tÃ© supprimÃ©e automatiquement', date_modification = NOW()
 									WHERE ref_contact = '".$coordonnee->ref_contact."' ";
 				$bdd->exec ($query);
 
@@ -197,7 +197,7 @@ public function modification ($lib_coord, $tel1, $tel2, $fax, $email, $note, $ty
 	$this->ref_coord_parent	= $ref_coord_parent;
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -224,7 +224,7 @@ public function modifier_ordre ($new_ordre) {
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -242,14 +242,14 @@ public function modifier_ordre ($new_ordre) {
 
 	$bdd->beginTransaction();
 	
-	// Mise à jour des autres coordonnees
+	// Mise Ã  jour des autres coordonnees
 	$query = "UPDATE coordonnees
 						SET ordre = ordre ".$variation." 1
 						WHERE ref_contact = '".$this->ref_contact."' && 
 									ordre ".$symbole1." '".$this->ordre."' && ordre ".$symbole2." '".$new_ordre."' ";
 	$bdd->exec ($query);
 	
-	// Mise à jour de cette coordonnee
+	// Mise Ã  jour de cette coordonnee
 	$query = "UPDATE coordonnees
 						SET ordre = '".$new_ordre."'
 						WHERE ref_coord = '".$this->ref_coord."'  ";
@@ -260,7 +260,7 @@ public function modifier_ordre ($new_ordre) {
 	$this->ordre = $new_ordre;
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
@@ -269,9 +269,9 @@ public function suppression () {
 	global $bdd;
 
 	// *************************************************
-	// Controle à effectuer le cas échéant
+	// Controle Ã  effectuer le cas Ã©chÃ©ant
 	
-	// Sélection des informations sur l'utilisateur
+	// SÃ©lection des informations sur l'utilisateur
 	$query = "SELECT ref_user, ref_coord_user
 						FROM users u
 						WHERE  ref_coord_user = '".$this->ref_coord."' 
@@ -286,7 +286,7 @@ public function suppression () {
 	$query = "UPDATE users SET actif = '0' WHERE ref_coord_user = '".$this->ref_coord."' ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si la ref_user est trouvée
+	// Controle si la ref_user est trouvÃ©e
 	//if ($utilisateur = $resultat->fetchObject()) { 
 	//	$GLOBALS['_ALERTES']['user_exist'] = 1;
 	//	return false; 
@@ -311,10 +311,10 @@ public function suppression () {
 
 /*
  * @version 2.045
- * Fonction qui permet d'envoyer un mail invitant le contact à s'inscrire en tant qu'utilisateur de l'application
+ * Fonction qui permet d'envoyer un mail invitant le contact Ã  s'inscrire en tant qu'utilisateur de l'application
  */
 function envoi_mail_invitation(){
-	// Envoi d'un email proposant la création d'un compte utilisateur
+	// Envoi d'un email proposant la crÃ©ation d'un compte utilisateur
 	global $CONFIG_DIR;
 	global $DEFAUT_PROFILS;
 	global $ID_MAIL_TEMPLATE_INVITATION_INSCRIPTION;
@@ -322,7 +322,7 @@ function envoi_mail_invitation(){
 	global $REF_CONTACT_ENTREPRISE;
 	global $bdd;
 	
-	// Création du code de validation
+	// CrÃ©ation du code de validation
 	$code = md5(date('Y-m-d H:M') . $this->ref_coord . $this->lib_coord);
 
 	// Insertion dans la base
@@ -341,7 +341,7 @@ function envoi_mail_invitation(){
 	restore_error_handler();
 	error_reporting(0);
 	
-	// On récupère l'identifiant du template de mail pour l'invitation à la création d'un compte
+	// On rÃ©cupÃ¨re l'identifiant du template de mail pour l'invitation Ã  la crÃ©ation d'un compte
 	$ID_MAIL_TEMPLATE = $ID_MAIL_TEMPLATE_INVITATION_INSCRIPTION;
 	// Chargement du nom de l'entreprise
 	$contact_entreprise = new contact($REF_CONTACT_ENTREPRISE);
@@ -349,14 +349,14 @@ function envoi_mail_invitation(){
 	$lib_civ = $contact_entreprise->getLib_civ_court();
 	// Envoi de l'email
 	$destinataire = $this->email;
-	$sujet = "[" . $nom_entreprise . "] Création d'un compte utilisateur LMB";
+	$sujet = "[" . $nom_entreprise . "] CrÃ©ation d'un compte utilisateur LMB";
 	$message = "<br /><br />Bonjour, <br />" . 
 					$lib_civ . " " . $nom_entreprise . 
-					" vous propose de créer un compte utilisateur sur son application de gestion. <br />";
+					" vous propose de crÃ©er un compte utilisateur sur son application de gestion. <br />";
 	$contact = new contact($this->ref_contact);
 	$profils = $contact->getProfils();
 	if(count($profils)){
-		$message .= "Cet accès vous permettra d'interagir avec " . $nom_entreprise . " en tant que ";
+		$message .= "Cet accÃ¨s vous permettra d'interagir avec " . $nom_entreprise . " en tant que ";
 		$i = 0;
 		foreach($profils as $id_profil => $profil){
 			$message .= getLibProfil($id_profil);
@@ -370,10 +370,10 @@ function envoi_mail_invitation(){
 	$message .=	"Pour ce faire, vous devez cliquez sur le lien suivant (ou le coller dans votre navigateur) : <br />" . 
 				$lien_inscription . 
 				"<br /><br />" . 
-				"L'équipe " . $nom_entreprise;
+				"L'Ã©quipe " . $nom_entreprise;
 	
 	if(!$mail->envoi_email_templated($destinataire, $sujet, $message)){
-		echo "Une erreur est survenue lors de l'envoi à ".$this->email."<br />";
+		echo "Une erreur est survenue lors de l'envoi Ã  ".$this->email."<br />";
 	}
 	set_error_handler("error_handler");
 } 
@@ -397,7 +397,7 @@ static function getRef_coord_from_ordre ($ref_contact, $ordre) {
 	return $coordonnee;
 }
 
-//retourne une liste des ref_coord en fonction d'un plage d'ordre (mise à jour de l'affichage des coordonnees)
+//retourne une liste des ref_coord en fonction d'un plage d'ordre (mise Ã  jour de l'affichage des coordonnees)
 public function liste_ref_coord_in_ordre () {
 	global $bdd;
 	

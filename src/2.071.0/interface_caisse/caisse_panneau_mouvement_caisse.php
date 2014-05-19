@@ -8,7 +8,7 @@ require ("_profil.inc.php");
 require ("_session.inc.php");
 
 if(!isset($_REQUEST["sens_mouvement"])){
-	echo "le sens du mouvement de la caisse n'est pas spécifié";
+	echo "le sens du mouvement de la caisse n'est pas spÃ©cifiÃ©";
 	exit; 
 }
 

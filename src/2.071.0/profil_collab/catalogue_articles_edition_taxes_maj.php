@@ -12,9 +12,9 @@ require ($DIR."_session.inc.php");
 
 if (isset($_REQUEST['ref_article'])) {	
 	// *************************************************
-	// Controle des données fournies par le formulaire
+	// Controle des donnÃ©es fournies par le formulaire
 	if (!isset($_REQUEST['id_taxe']) || !isset($_REQUEST['montant_taxe'])) {
-		$erreur = "Une variable nécessaire à la maj de la taxe de l'article n'est pas précisée.";
+		$erreur = "Une variable nÃ©cessaire Ã  la maj de la taxe de l'article n'est pas prÃ©cisÃ©e.";
 		alerte_dev($erreur);
 	}
 	

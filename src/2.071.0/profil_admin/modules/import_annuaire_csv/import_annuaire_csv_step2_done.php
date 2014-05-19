@@ -40,7 +40,7 @@ while ($tmp = $resultat->fetchObject()) {
 	}
 	unset ($query2, $resultat2, $tmp2);
 }
-//traitement de la liste des infos sélectionnées
+//traitement de la liste des infos sÃ©lectionnÃ©es
 $liste_rec = array();
 $nb_fiches = 50;
 

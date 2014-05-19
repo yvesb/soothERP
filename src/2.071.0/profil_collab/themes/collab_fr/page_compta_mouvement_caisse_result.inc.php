@@ -4,7 +4,7 @@
 // Mouvement des caisses
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES", "fiches");
 check_page_variables ($page_variables);
 
@@ -28,7 +28,7 @@ function barre_navigation($nbtotal,
 													
 {
 	// --------------------------------------------------------------------
-	global $cfg_nb_pages; // Nb de n° de pages affichées dans la barre
+	global $cfg_nb_pages; // Nb de nÂ° de pages affichÃ©es dans la barre
 global $DIR;
 	$barre= "";	$lien_on 	= "&nbsp;<a href='#' id='link_pagi_{cible}'>{lien}</a>&nbsp;
 								<script type='text/javascript'>
@@ -38,7 +38,7 @@ global $DIR;
 	// --------------------------------------------------------------------
     
 
-	// début << .
+	// dÃ©but << .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -58,7 +58,7 @@ global $DIR;
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
 
 
-	// précédent < .
+	// prÃ©cÃ©dent < .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -164,7 +164,7 @@ function image_html($img)
 
 //
 //
-//création de la barre de nav
+//crÃ©ation de la barre de nav
 //
 //
 
@@ -185,7 +185,7 @@ foreach ($_ALERTES as $alerte => $value) {
 	echo $alerte." => ".$value."<br>";
 }
 
-// Affichage des résultats
+// Affichage des rÃ©sultats
 ?><br />
 
 <table width="100%"  border="0" cellspacing="0" cellpadding="0" id="tableresult">
@@ -198,8 +198,8 @@ foreach ($_ALERTES as $alerte => $value) {
 			Type
 		</td>
 		<td style="width:15%; text-align:left">Utilisateur</td>
-		<td style="width:15%; text-align:right">Débit</td>
-		<td style="width:15%; text-align:right">Crédit</td>
+		<td style="width:15%; text-align:right">DÃ©bit</td>
+		<td style="width:15%; text-align:right">CrÃ©dit</td>
 		<td style="width:2%">&nbsp;</td>
 	</tr>
 <?php 

@@ -20,7 +20,7 @@ $import_serveur = new import_serveur ($_REQUEST["ref_serveur"]);
 $import_infos = $import_serveur->charger_import_infos (2);
 
 $presentes_art_categ =	get_articles_categories();
-//si import_infos est vide c'est le premier import effectuÈ, on gÈnÈre alors la liste des art_categ importÈe depuis les art_categ dans la base
+//si import_infos est vide c'est le premier import effectu√©, on g√©n√©re alors la liste des art_categ import√©e depuis les art_categ dans la base
 if ($import_infos == "") {
 	foreach ($presentes_art_categ as $art_categ_imported) {
 		if (substr ($art_categ_imported->ref_art_categ, 4, 6) != $_SERVER['REF_SERVEUR']) {
@@ -28,7 +28,7 @@ if ($import_infos == "") {
 		}
 	}
 } else {
-//ou on ajoute ‡ la liste les art_categ qui n'auraient pas encore ÈtÈ mises ‡ jours
+//ou on ajoute √† la liste les art_categ qui n'auraient pas encore √©t√© mises √† jours
 	foreach ($presentes_art_categ as $art_categ_imported) {
 		if (!substr_count ($import_infos, $art_categ_imported->ref_art_categ) ) {
 			if (substr ($art_categ_imported->ref_art_categ, 4, 6) != $_SERVER['REF_SERVEUR']) {
@@ -37,7 +37,7 @@ if ($import_infos == "") {
 		}
 	}
 }
-//dÈcoupage des import_infos en tableau pour traiter plus facilement le contenu
+//d√©coupage des import_infos en tableau pour traiter plus facilement le contenu
 $import_art_categ_liste = array();
 $tmp_import_art_categ_liste = explode ("\n", $import_infos);
 foreach ($tmp_import_art_categ_liste as $tmp) {
@@ -109,28 +109,28 @@ readfile($fichier);
     // Fonction de traitement des balises fermantes
     function fonctionBaliseFermante($parseur, $nomBalise)
     {
-        // On oublie la derniËre balise rencontrÈe
+        // On oublie la derni√®re balise rencontr√©e
         global $derniereBaliseRencontree;
 
         $derniereBaliseRencontree = "";
     }
 
     //Fonction de traitement du texte
-    // qui est appelÈe par le "parseur"
+    // qui est appel√©e par le "parseur"
     function fonctionTexte($parseur, $texte)
     {
     }
 
-    // CrÈation du parseur XML
+    // Cr√©ation du parseur XML
     $parseurXML = xml_parser_create("ISO-8859-1");
 
-    // Nom des fonctions ‡ appeler
-    // lorsque des balises ouvrantes ou fermantes sont rencontrÈes
+    // Nom des fonctions √† appeler
+    // lorsque des balises ouvrantes ou fermantes sont rencontr√©es
     xml_set_element_handler($parseurXML, "fonctionBaliseOuvrante"
                                        , "fonctionBaliseFermante");
 
-    // Nom de la fonction ‡ appeler
-    // lorsque du texte est rencontrÈ
+    // Nom de la fonction √† appeler
+    // lorsque du texte est rencontr√©
     xml_set_character_data_handler($parseurXML, "fonctionTexte");
 
     // Ouverture du fichier
@@ -140,7 +140,7 @@ readfile($fichier);
     // Lecture ligne par ligne
     while ( $ligneXML = fgets($fp, 1024)) {
         // Analyse de la ligne
-        // REM: feof($fp) retourne TRUE s'il s'agit de la derniËre
+        // REM: feof($fp) retourne TRUE s'il s'agit de la derni√®re
         //      ligne du fichier.
         xml_parse($parseurXML, $ligneXML, feof($fp)) or
             die("Erreur XML");
@@ -160,7 +160,7 @@ if ($_REQUEST["load_info"] == "articles") {
 		echo "<br /><span style='font-weight:bolder'>".htmlspecialchars_decode($article_import["LIB_ARTICLE"])."</span><br />";
 		
 		if (!$article->getRef_article()) {
-			//on crÈ l'article
+			//on cr√© l'article
 			$stocks_alertes = array();
 			$code_barre = array();
 			foreach ($import_article_code_barre as $article_code_barre) {
@@ -251,7 +251,7 @@ if ($_REQUEST["load_info"] == "articles") {
 				
 				
 				// *************************************************
-				// CrÈation de l'article
+				// Cr√©ation de l'article
 				$article->create ($infos_generales, $infos_modele, $caracs, $formules_tarifs, $composants, $liaisons, $article_import["REF_ARTICLE"]);
 				
 				
@@ -271,7 +271,7 @@ if ($_REQUEST["load_info"] == "articles") {
 				
 		} else {
 			//************************************************************************************************************
-			//on met ‡  jour l'article
+			//on met √†  jour l'article
 			
 			
 			
@@ -358,7 +358,7 @@ if ($_REQUEST["load_info"] == "articles") {
 				}
 				
 				
-				//on vide pour mettre ‡ jour les caracs
+				//on vide pour mettre √† jour les caracs
 				$article->del_all_carac();
 				
 				foreach ($import_article_carac as $article_carac) {
@@ -400,7 +400,7 @@ if ($_REQUEST["load_info"] == "compo") {
 	@ob_end_flush(); 
 	
 	
-	//on refait le tour des articles importÈs pour insÈrer les liaisons et composants
+	//on refait le tour des articles import√©s pour ins√©rer les liaisons et composants
 	foreach ($import_article as $article_import) {
 		if (count($GLOBALS['_ALERTES'])) { $GLOBALS['_ALERTES'] = array();}
 		if (count($GLOBALS['_INFOS'])) {$GLOBALS['_INFOS'] = array();}
@@ -412,14 +412,14 @@ if ($_REQUEST["load_info"] == "compo") {
 
 			echo "<br /><span style='font-weight:bolder'>".htmlspecialchars_decode($article_import["LIB_ARTICLE"])."</span><br />";
 			
-			//on vide les composants et liaisons pour pouvoir les mettre ‡ jour une fois les articles importÈs (afin d'avoir les ref_articles toutes importÈes
+			//on vide les composants et liaisons pour pouvoir les mettre √† jour une fois les articles import√©s (afin d'avoir les ref_articles toutes import√©es
 			$article->del_all_composants();
 			$article->del_all_liaisons();
 			
 			foreach ($import_article_liaison as $article_liaison) {
 				if ($article_import["REF_ARTICLE"] != $article_liaison["REF_ARTICLE"]) { continue; }
 				$article->add_liaison ($article_liaison['REF_ARTICLE_LIE'], $article_liaison['ID_LIAISON_TYPE']);
-				echo "mise ‡ jour des liaisons <br />";
+				echo "mise √† jour des liaisons <br />";
 				foreach ($GLOBALS['_ALERTES'] as $alerte => $value) {
 					echo $alerte." => ".$value."<br />";
 				}
@@ -429,7 +429,7 @@ if ($_REQUEST["load_info"] == "compo") {
 			foreach ($import_article_composant as $article_composant) {
 				if ($article_import["REF_ARTICLE"] != $article_composant["REF_ARTICLE"]) { continue; }
 				$article->add_composant ($article_composant['REF_ARTICLE_COMPOSANT'], $article_composant['QTE'], $article_composant['NIVEAU'], $article_composant['ORDRE']);
-				echo "mise ‡ jour des composants <br />";
+				echo "mise √† jour des composants <br />";
 				foreach ($GLOBALS['_ALERTES'] as $alerte => $value) {
 					echo $alerte." => ".$value."<br />";
 				}
@@ -440,20 +440,20 @@ if ($_REQUEST["load_info"] == "compo") {
 					echo $info."<br />";
 				}
 			@ob_end_flush(); 
-		//on met ‡ jour la date de maj de l'art_categ
+		//on met √† jour la date de maj de l'art_categ
 		if (isset($import_art_categ_liste[$article->getRef_art_categ()])) {
 			$import_art_categ_liste[$article->getRef_art_categ()] = date("Y-m-d H:i:s", time());
 		}
 		}
 	}
 	
-//on reconstitue la liste des art_categ mises ‡ jour
-$import_infos_modifiÈes = "";
+//on reconstitue la liste des art_categ mises √† jour
+$import_infos_modifi√©es = "";
 foreach ($import_art_categ_liste as $ref => $value) {
-	$import_infos_modifiÈes .= $ref.";".$value."\n";
+	$import_infos_modifi√©es .= $ref.";".$value."\n";
 }
 
-$import_serveur->maj_import_infos (2, $import_infos_modifiÈes);
+$import_serveur->maj_import_infos (2, $import_infos_modifi√©es);
 }
 
 //htmlspecialchars_decode

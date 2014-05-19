@@ -15,7 +15,7 @@ $listes_champs = array();
 $lib_champ = "";
 switch ($_REQUEST["lmb_col"]) {
 	case "ref_art_categ":
-		$lib_champ = "la catégorie d'article";
+		$lib_champ = "la catÃ©gorie d'article";
 		$select_art_categ =	get_articles_categories();
 		foreach ($select_art_categ  as $s_art_categ){
 			$listes_champs[] = array("id"=>$s_art_categ->ref_art_categ, "lib"=>$s_art_categ->lib_art_categ);

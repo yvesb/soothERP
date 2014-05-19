@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -53,7 +53,7 @@ update_menu_arbo();
 
 				<span class="titre_smenu_page" id="site_interfaces_config"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Configuration des interfaces</span><br /><br />
 				
-				<span class="titre_smenu_page_unvalid" id="site_internet_choix_theme"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Choix du thème</span><br /><br />
+				<span class="titre_smenu_page_unvalid" id="site_internet_choix_theme"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Choix du thÃ¨me</span><br /><br />
 
 				<span class="titre_smenu_page_unvalid" id="site_internet_gestion_menus"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des menus</span><br /><br />
 				
@@ -62,7 +62,7 @@ update_menu_arbo();
 			</td>
 			<td style="text-align:left;" valign="top">
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="20px"/><br />
-				<span class="titre_smenu_page" id="smenu_site_internet_referencement"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Référencement de votre site</span><br /><br />
+				<span class="titre_smenu_page" id="smenu_site_internet_referencement"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />RÃ©fÃ©rencement de votre site</span><br /><br />
 
 			
 			

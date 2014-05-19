@@ -37,7 +37,7 @@ function __construct ($ref_contact, $action = "open") {
 						WHERE ref_contact = '".$this->ref_contact."' ";	
 	$resultat = $bdd->query ($query);
 
-	// Controle si la ref_contact est trouvée
+	// Controle si la ref_contact est trouvÃ©e
 	if (!$contact_collab = $resultat->fetchObject()) { return false; }
 	
 	$this->numero_secu 		= $contact_collab->numero_secu;
@@ -60,7 +60,7 @@ function create_infos ($infos) {
 	global $DIR, $CONFIG_DIR;
 	global $bdd;
 
-	// Controle si ces informations sont déjà existantes
+	// Controle si ces informations sont dÃ©jÃ  existantes
 	if ($this->profil_loaded) {
 		return false;
 	}
@@ -89,7 +89,7 @@ function create_infos ($infos) {
 	}
 
 	// *************************************************
-	// Insertion des données
+	// Insertion des donnÃ©es
 	$query = "INSERT INTO annu_collab 
 							(ref_contact, numero_secu, date_naissance, lieu_naissance, id_pays_nationalite, situation_famille, nbre_enfants) 
 						VALUES ('".$this->ref_contact."', '".$this->numero_secu."', 
@@ -128,7 +128,7 @@ function maj_infos ($infos) {
 	global $bdd;
 
 	if (!$this->profil_loaded) {
-		$GLOBALS['_ALERTES']['profil_non_chargé'] = 1;
+		$GLOBALS['_ALERTES']['profil_non_chargÃ©'] = 1;
 	}
 
 	// *************************************************
@@ -149,7 +149,7 @@ function maj_infos ($infos) {
 		return false;
 	}
 	// *************************************************
-	// Mise à jour des données
+	// Mise Ã  jour des donnÃ©es
 	$query = "UPDATE annu_collab 
 						SET numero_secu = '".$this->numero_secu."', date_naissance = '".$this->date_naissance."', 
 								lieu_naissance = '".addslashes($this->lieu_naissance)."', 
@@ -177,7 +177,7 @@ function delete_infos () {
 	global $bdd;
 	
 	
-	// Vérifie si la suppression de ces informations est possible.
+	// VÃ©rifie si la suppression de ces informations est possible.
 	
 	// Supprime les informations
 	$query = "DELETE FROM annu_collab WHERE ref_contact = '".$this->ref_contact."' ";
@@ -199,7 +199,7 @@ function delete_infos () {
 function transfert_infos ($new_contact, $is_already_profiled) {
 	global $bdd;
 
-	// Vérifie si le transfert de ces informations est possible.
+	// VÃ©rifie si le transfert de ces informations est possible.
 	if (!$is_already_profiled) {
 		// TRANSFERT les informations
 		$query = "UPDATE annu_collab SET ref_contact = '".$new_contact->getRef_contact()."' 

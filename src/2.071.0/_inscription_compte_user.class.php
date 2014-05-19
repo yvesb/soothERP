@@ -10,7 +10,7 @@ class Inscription_compte_user extends InscriptionModification {
 		parent::__construct($id_interface);
 
 		if($inscriptionAllowed == -1){
-			// La valeur pour $this->inscription_allowed n'a pas ÈtÈ dÈfinie
+			// La valeur pour $this->inscription_allowed n'a pas √©t√© d√©finie
 			// il faut ouvrir le fichier config pour pouvoir charger cette valeur.
 			
 			// Lecture du fichier config de l'interface $id_interface
@@ -49,7 +49,7 @@ class Inscription_compte_user extends InscriptionModification {
 	private static function search_INSCRIPTION_ALLOWED_value($texte){
 		$pattern = '\$INSCRIPTION_ALLOWED([^\/]{0,2})*=([^\/]{0,2})*(\d);.*';
 		$value_searched = preg_replace('/'.$pattern.'/', '$3', $texte);
-		if($value_searched != $texte)//	la valeur a ÈtÈ trouvÈe
+		if($value_searched != $texte)//	la valeur a √©t√© trouv√©e
 		{		return intval($value_searched);}
 		else{ return -1;}
 	}
@@ -64,20 +64,20 @@ class Inscription_compte_user extends InscriptionModification {
 	//
 	//	id_contact_tmp		smallint(5) UNSIGNED 	NOTNULL	auto_increment	:	
 	//	id_interface			smallint(5) UNSIGNED	NOTNULL									:	
-	//	infos							mediumtext						NOTNULL									:	liste de couple clÈ/valeur sÈparÈ par un ;
+	//	infos							mediumtext						NOTNULL									:	liste de couple cl√©/valeur s√©par√© par un ;
 	//	date_demande			datetime							NOTNULL									:	
 	//	code_validation		varchar(64)						NOTNULL									:	code pour que l'utilisateur confirme son inscription 
 	//	validation_email	tinyint(2)						NOTNULL									:	1 => validation par un collab : ce contact n'a pas de besoin la confirmation par mail :
 	//																																				 - soit c'est une inscription sans confirmation
-	//																																				 - soit c'est une inscription avec confirmation, mais l'utilisateur a dÈj‡ confirmÈ son inscription
+	//																																				 - soit c'est une inscription avec confirmation, mais l'utilisateur a d√©j√† confirm√© son inscription
 	//																																		2 => validation par un collab : cet utilisateur doit confirmer son inscription pour pouvoir passer 
-	//																																				 ‡ l'Ètape suivante : validation_email <- 1
+	//																																				 √† l'√©tape suivante : validation_email <- 1
 	//																																		3 => validation automatique : cet utilisateur doit confirmer son inscription pour pouvoir passer 
-	//																																				 ‡ l'Ètape suivante (crÈation du contact et supression de la ligne)
+	//																																				 √† l'√©tape suivante (cr√©ation du contact et supression de la ligne)
 	//	mode							enum('inscription', 'modification')	NOTNULL		:	
 	//
 	//
-	// listes des clÈ contenu dans le champ infos :
+	// listes des cl√© contenu dans le champ infos :
 	//	id_categorie
 	//	civilite
 	//	nom
@@ -107,7 +107,7 @@ class Inscription_compte_user extends InscriptionModification {
 	//	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	//	$this->inscription_allowed == 1 : inscription d'un contact avec une validation par un collaborateur mais sans un mail de confirmation
 	//	inscription_contact
-	//		etape 1 l'inscription est enregistrÈe
+	//		etape 1 l'inscription est enregistr√©e
 	//		inscription_contact_avec_validation_sans_mail_confirmation
 	//			inscription_contact_avec_validation_get_sujet_pour_contact
 	//			inscription_contact_avec_validation_get_message_pour_contact
@@ -131,12 +131,12 @@ class Inscription_compte_user extends InscriptionModification {
 	//	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	//	$this->inscription_allowed == 3 : inscription d'un contact avec une validation par un collaborateur mais avec un mail confirmation
 	//	inscription_contact
-	//		etape 1 l'inscription est enregistrÈe
+	//		etape 1 l'inscription est enregistr√©e
 	//		inscription_contact_avec_validation_avec_mail_confirmation
 	//			inscription_contact_avec_validation_avec_mail_confirmation_get_sujet_pour_contact
 	//			inscription_contact_avec_validation_avec_mail_confirmation_get_message_pour_contact
 	//		
-	//		etape 2 l'utilisateur reÁoit le mail et confirme sont inscription
+	//		etape 2 l'utilisateur re√ßoit le mail et confirme sont inscription
 	//		contact_confirme_son_inscription
 	//			contact_confirme_son_inscription_puis_validation_par_collab
 	//				inscription_contact_avec_validation_get_sujet_pour_contact
@@ -162,7 +162,7 @@ class Inscription_compte_user extends InscriptionModification {
 	//	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	//	$this->inscription_allowed == 2 : inscription d'un contact automatique sans mail de confirmation
 	//	inscription_contact
-	//		etape 1 l'inscription est enregistrÈe
+	//		etape 1 l'inscription est enregistr√©e
 	//		inscription_contact_automatique_sans_mail_confirmation
 	//			validation_inscription_contact
 	//			inscription_automatique_sans_mail_confirmation_get_suejt_pour_contact
@@ -172,13 +172,13 @@ class Inscription_compte_user extends InscriptionModification {
 	//	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	//	$this->inscription_allowed == 4 : inscription d'un contact automatique avec mail de confirmation
 	//	inscription_contact
-	//		etape 1 l'inscription est enregistrÈe
+	//		etape 1 l'inscription est enregistr√©e
 	//		inscription_contact_automatique_avec_mail_confirmation
 	//			inscription_contact_automatique_avec_mail_confirmation_get_sujet_pour_contact
 	//			inscription_contact_automatique_avec_mail_confirmation_get_message_pour_contact
 	//		envoi_email_templated => CONTACT
 	//
-	//		etae 2 l'utilisateur reÁoit le mail et confirme sont inscription
+	//		etae 2 l'utilisateur re√ßoit le mail et confirme sont inscription
 	//		contact_confirme_son_inscription
 	//			contact_confirme_son_inscription_puis_validation_automatique
 	//				validation_inscription_contact
@@ -197,10 +197,10 @@ class Inscription_compte_user extends InscriptionModification {
 	//lance la procedure d'inscription pour un contact
 	//@param $infos_contact array : tableau associatif contenant les informations du contact
 	//@param $email string : email du contact.
-	//@return boolean	: vrai si l'inscrition du contact s'est bien passÈ, faux sinon.
+	//@return boolean	: vrai si l'inscrition du contact s'est bien pass√©, faux sinon.
 	//attention, l'insrciption peut se faire en plusieurs temps suivant la valeur de $this->inscription_allowed
 	public function inscription_contact($infos_contact, $email){	
-		//vÈrification des paramËtres d'entrÈ
+		//v√©rification des param√®tres d'entr√©
 		if(is_null($infos_contact) || !is_array($infos_contact) || !$this->verifie_infos_contact_pour_inscription_ou_modification_contact($infos_contact))
 		{		return false;}
 		
@@ -227,7 +227,7 @@ class Inscription_compte_user extends InscriptionModification {
 	//procedure d'inscription pour un contact AVEC VALIDATION et SANS MAIL DE CONFIRMATION
 	//@param $infos_contact array : tableau associatif contenant les informations du contact
 	//@param $email string : email du contact.
-	//@return boolean : vrai si l'inscrition du contact s'est bien passÈ, faux sinon. 
+	//@return boolean : vrai si l'inscrition du contact s'est bien pass√©, faux sinon. 
 	protected function inscription_contact_avec_validation_sans_mail_confirmation($infos_contact, $email){
 		global $bdd;
 		
@@ -249,7 +249,7 @@ class Inscription_compte_user extends InscriptionModification {
 							(id_interface, infos, date_demande, code_validation, validation_email, mode) VALUES 
 	 						(".$this->getId_interface().", '".addslashes(implode(";", $infos_contact))."', NOW(), '".$code_validation."', 1, 'inscription')";
 		if($bdd->exec($query) == 0)
-		{		return false;}	//Aucune ligne n'È ÈtÈ modifiÈe
+		{		return false;}	//Aucune ligne n'√© √©t√© modifi√©e
 		
 		$id_contact_tmp = $bdd->lastInsertId();
 		
@@ -272,7 +272,7 @@ class Inscription_compte_user extends InscriptionModification {
 	//procedure d'inscription pour un contact AVEC VALIDATION et AVEC MAIL DE CONFIRMATION
 	//@param $infos_contact array : tableau associatif contenant les informations du contact
 	//@param $email string : email du contact.
-	//@return boolean : vrai si l'inscrition du contact s'est bien passÈ, faux sinon. 
+	//@return boolean : vrai si l'inscrition du contact s'est bien pass√©, faux sinon. 
 	protected function inscription_contact_avec_validation_avec_mail_confirmation($infos_contact, $email){
 		if(is_null($infos_contact) || !is_array($infos_contact))
 		{		return false;}
@@ -293,7 +293,7 @@ class Inscription_compte_user extends InscriptionModification {
 							(id_interface, infos, date_demande, code_validation, validation_email, mode) VALUES 
 	 						(".$this->getId_interface().", '".addslashes(implode(";", $infos_contact))."', NOW(), '".$code_validation."', 2, 'inscription')";
 		if($bdd->exec($query) == 0)
-		{		return false;}	//Aucune ligne n'È ÈtÈ modifiÈe
+		{		return false;}	//Aucune ligne n'√© √©t√© modifi√©e
 		
 		$id_contact_tmp = $bdd->lastInsertId();
 		
@@ -306,9 +306,9 @@ class Inscription_compte_user extends InscriptionModification {
 		
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//sujet du mail envoyÈ ‡ l'UTILISATEUR quand il s'inscrit sur le site (inscription avec validation)
-	//@return string : retourne le sujet de l'email envoyÈ par la fonction Inscription->inscription_contact_avec_validation_sans_mail_confirmation()
-	//Pour personnaliser ce message, il faut crÈer un sous classe et redÈfinir la fonction.
+	//sujet du mail envoy√© √† l'UTILISATEUR quand il s'inscrit sur le site (inscription avec validation)
+	//@return string : retourne le sujet de l'email envoy√© par la fonction Inscription->inscription_contact_avec_validation_sans_mail_confirmation()
+	//Pour personnaliser ce message, il faut cr√©er un sous classe et red√©finir la fonction.
 	//Cette nouvelle classe sera propre au E-commerce, donc, elle sera dans son dossier !
 	protected function inscription_contact_avec_validation_get_sujet_pour_contact(){
 		return "Inscription sur ".$_SERVER['HTTP_HOST'];
@@ -316,13 +316,13 @@ class Inscription_compte_user extends InscriptionModification {
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//message du mail envoyÈ ‡ l'UTILISATEUR quand il s'inscrit sur le site (inscription avec validation)
-	//@return string : retourne le sujet de l'email envoyÈ par la fonction Inscription->inscription_contact_avec_validation_sans_mail_confirmation()
-	//Pour personnaliser ce message, il faut crÈer un sous classe et redÈfinir la fonction.
+	//message du mail envoy√© √† l'UTILISATEUR quand il s'inscrit sur le site (inscription avec validation)
+	//@return string : retourne le sujet de l'email envoy√© par la fonction Inscription->inscription_contact_avec_validation_sans_mail_confirmation()
+	//Pour personnaliser ce message, il faut cr√©er un sous classe et red√©finir la fonction.
 	//Cette nouvelle classe sera propre au E-commerce, donc, elle sera dans son dossier !
 	protected function inscription_contact_avec_validation_get_message_pour_contact(){
 		global $INFO_LOCALE;
-		return "Date d'envois ".lmb_strftime('le %A %d %B %Y ‡ %H:%M:%S', $INFO_LOCALE)."<br />
+		return "Date d'envois ".lmb_strftime('le %A %d %B %Y √† %H:%M:%S', $INFO_LOCALE)."<br />
 		<br />
 		Bonjour et bienvenue,<br />
 		Vous venez de vous inscrire sur notre site et nous vous en remercions.<br />
@@ -339,9 +339,9 @@ class Inscription_compte_user extends InscriptionModification {
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//sujet du mail envoyÈ A UN COLLABORATEUR quand un utilisateur s'inscrit sur le site (inscription avec validation)
-	//@return string : retourne le sujet de l'email envoyÈ par la fonction Inscription->inscription_contact_avec_validation_sans_mail_confirmation()
-	//Pour personnaliser ce message, il faut crÈer un sous classe et redÈfinir la fonction.
+	//sujet du mail envoy√© A UN COLLABORATEUR quand un utilisateur s'inscrit sur le site (inscription avec validation)
+	//@return string : retourne le sujet de l'email envoy√© par la fonction Inscription->inscription_contact_avec_validation_sans_mail_confirmation()
+	//Pour personnaliser ce message, il faut cr√©er un sous classe et red√©finir la fonction.
 	//Cette nouvelle classe sera propre au E-commerce, donc, elle sera dans son dossier !
 	protected function inscription_contact_avec_validation_get_sujet_pour_collaborateur(){
 		return "Inscription sur ".$_SERVER['HTTP_HOST'];
@@ -349,17 +349,17 @@ class Inscription_compte_user extends InscriptionModification {
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//corps du mail envoyÈ A UN COLLABORATEUR quand un utilisateur s'inscrit sur le site (inscription avec validation)
-	//@return string : retourne le corps de l'email envoyÈ par la fonction Inscription->inscription_contact_avec_validation_sans_mail_confirmation()
-	//Pour personnaliser ce message, il faut crÈer un sous classe et redÈfinir la fonction.
+	//corps du mail envoy√© A UN COLLABORATEUR quand un utilisateur s'inscrit sur le site (inscription avec validation)
+	//@return string : retourne le corps de l'email envoy√© par la fonction Inscription->inscription_contact_avec_validation_sans_mail_confirmation()
+	//Pour personnaliser ce message, il faut cr√©er un sous classe et red√©finir la fonction.
 	//Cette nouvelle classe sera propre au E-commerce, donc, elle sera dans son dossier !
 	protected function inscription_contact_avec_validation_get_message_pour_collaborateur(){
 		global $INFO_LOCALE;
-		return "Date d'envois ".lmb_strftime('le %A %d %B %Y ‡ %H:%M:%S', $INFO_LOCALE)."<br />
+		return "Date d'envois ".lmb_strftime('le %A %d %B %Y √† %H:%M:%S', $INFO_LOCALE)."<br />
 		<br />
 		Bonjour,<br />
-		Un nouvel inscrit s'est enregistrÈ sur '".$this->getLib_interface()."' du site '".$_SERVER['HTTP_HOST']."'<br />
-		Vous devez valider son inscription ‡ partir de votre interface collaborateur.
+		Un nouvel inscrit s'est enregistr√© sur '".$this->getLib_interface()."' du site '".$_SERVER['HTTP_HOST']."'<br />
+		Vous devez valider son inscription √† partir de votre interface collaborateur.
 		<br />
 		<br />
 		<br />
@@ -373,10 +373,10 @@ class Inscription_compte_user extends InscriptionModification {
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//sujet du mail envoyÈ ‡ l'UTILISATEUR quand il s'inscrit sur le site (inscription avec validation)
-	//ce message invite l'utilisateur ‡ confirmer son inscription (avant toute autre validation)
-	//@return string : retourne le sujet de l'email envoyÈ par la fonction Inscription->inscription_contact_avec_validation_avec_mail_confirmation()
-	//Pour personnaliser ce message, il faut crÈer un sous classe et redÈfinir la fonction.
+	//sujet du mail envoy√© √† l'UTILISATEUR quand il s'inscrit sur le site (inscription avec validation)
+	//ce message invite l'utilisateur √† confirmer son inscription (avant toute autre validation)
+	//@return string : retourne le sujet de l'email envoy√© par la fonction Inscription->inscription_contact_avec_validation_avec_mail_confirmation()
+	//Pour personnaliser ce message, il faut cr√©er un sous classe et red√©finir la fonction.
 	//Cette nouvelle classe sera propre au E-commerce, donc, elle sera dans son dossier !
 	protected function inscription_contact_avec_validation_avec_mail_confirmation_get_sujet_pour_contact(){
 		return "Inscription sur ".$_SERVER['HTTP_HOST'];
@@ -384,25 +384,25 @@ class Inscription_compte_user extends InscriptionModification {
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//message du mail envoyÈ ‡ l'UTILISATEUR quand il s'inscrit sur le site (inscription avec validation)
-	//ce message invite l'utilisateur ‡ confirmer son inscription (avant toute autre validation)
-	//@return string : retourne le message de l'email envoyÈ par la fonction Inscription->inscription_contact_avec_validation_avec_mail_confirmation()
-	//Pour personnaliser ce message, il faut crÈer un sous classe et redÈfinir la fonction.
+	//message du mail envoy√© √† l'UTILISATEUR quand il s'inscrit sur le site (inscription avec validation)
+	//ce message invite l'utilisateur √† confirmer son inscription (avant toute autre validation)
+	//@return string : retourne le message de l'email envoy√© par la fonction Inscription->inscription_contact_avec_validation_avec_mail_confirmation()
+	//Pour personnaliser ce message, il faut cr√©er un sous classe et red√©finir la fonction.
 	//Cette nouvelle classe sera propre au E-commerce, donc, elle sera dans son dossier !
 	protected function inscription_contact_avec_validation_avec_mail_confirmation_get_message_pour_contact($id_contact_tmp, $code_validation){
 		global $INFO_LOCALE;
 		
 		$my_pathinfo = pathinfo(str_replace(str_replace("/",  "\\", $_SERVER['DOCUMENT_ROOT']), "", __FILE__));
 		
-		return "Date d'envois ".lmb_strftime('le %A %d %B %Y ‡ %H:%M:%S', $INFO_LOCALE)."<br />
+		return "Date d'envois ".lmb_strftime('le %A %d %B %Y √† %H:%M:%S', $INFO_LOCALE)."<br />
 		<br />
 		Bonjour,<br />
 		<br />
-		votre demande a bien ÈtÈ prise en compte.<br />
+		votre demande a bien √©t√© prise en compte.<br />
 		Cette validation se fait en deux temps.<br />
-		PremiËrement, vous devez confirmer votre inscription en cliquant sur ce lien :<br />
+		Premi√®rement, vous devez confirmer votre inscription en cliquant sur ce lien :<br />
 		http://".$_SERVER['HTTP_HOST']."/".$my_pathinfo["dirname"]."/".$this->getDossier()."_inscription_valide.php?id_contact_tmp=".$id_contact_tmp."&code_validation=".$code_validation."<br />
-		DeuxiËmement, notre Èquipe validera celle-ci.<br />
+		Deuxi√®mement, notre √©quipe validera celle-ci.<br />
 		<br />
 		<br />
 		".$this->getNom_entreprise()."
@@ -414,9 +414,9 @@ class Inscription_compte_user extends InscriptionModification {
 		
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//retourne l'eamil du collaborateur ‡ qui les demandes de validation doivent Ítre envoyÈ
+	//retourne l'eamil du collaborateur √† qui les demandes de validation doivent √™tre envoy√©
 	//@param $id_contact_tmp int : indentifiant du contact temporaire
-	//@return mixed : l'email sous forme de string s'il a ÈtÈ trouvÈ, faux sinon.
+	//@return mixed : l'email sous forme de string s'il a √©t√© trouv√©, faux sinon.
 	protected function inscription_contact_email_du_contact($id_contact_tmp){
 		global $bdd;
 		
@@ -437,7 +437,7 @@ class Inscription_compte_user extends InscriptionModification {
 	//procedure d'inscription pour un contact AUTOMATIQUE et SANS MAIL de confirmation
 	//@param $infos_contact array : tableau associatif contenant les informations du contact
 	//@param $email string : email du contact.
-	//@return boolean : vrai si l'inscrition du contact s'est bien passÈ, faux sinon.
+	//@return boolean : vrai si l'inscrition du contact s'est bien pass√©, faux sinon.
 	protected function inscription_contact_automatique_sans_mail_confirmation($infos_contact, $email){
 		global $bdd;
 		if(is_null($infos_contact) || !is_array($infos_contact))
@@ -462,9 +462,9 @@ class Inscription_compte_user extends InscriptionModification {
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//sujet du mail envoyÈ ‡ l'UTILISATEUR pour lui indiquer que son inscription est terminÈe
-	//@return string : retourne le sujet de l'email envoyÈ par la fonction Inscription->inscription_contact_automatique_sans_mail_confirmation()
-	//Pour personnaliser ce message, il faut crÈer un sous classe et redÈfinir la fonction.
+	//sujet du mail envoy√© √† l'UTILISATEUR pour lui indiquer que son inscription est termin√©e
+	//@return string : retourne le sujet de l'email envoy√© par la fonction Inscription->inscription_contact_automatique_sans_mail_confirmation()
+	//Pour personnaliser ce message, il faut cr√©er un sous classe et red√©finir la fonction.
 	//Cette nouvelle classe sera propre au E-commerce, donc, elle sera dans son dossier !
 	protected function inscription_contact_automatique_sans_mail_confirmation_get_suejt_pour_contact(){
 		return "Inscription sur ".$_SERVER['HTTP_HOST'];
@@ -472,13 +472,13 @@ class Inscription_compte_user extends InscriptionModification {
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//message du mail envoyÈ ‡ l'UTILISATEUR pour lui indiquer que son inscription est terminÈe
-	//@return string : retourne le message de l'email envoyÈ par la fonction Inscription->inscription_contact_automatique_sans_mail_confirmation()
-	//Pour personnaliser ce message, il faut crÈer un sous classe et redÈfinir la fonction.
+	//message du mail envoy√© √† l'UTILISATEUR pour lui indiquer que son inscription est termin√©e
+	//@return string : retourne le message de l'email envoy√© par la fonction Inscription->inscription_contact_automatique_sans_mail_confirmation()
+	//Pour personnaliser ce message, il faut cr√©er un sous classe et red√©finir la fonction.
 	//Cette nouvelle classe sera propre au E-commerce, donc, elle sera dans son dossier !
 	protected function inscription_contact_automatique_sans_mail_confirmation_get_message_pour_contact(){
 		global $INFO_LOCALE;
-		return "Date d'envois ".lmb_strftime('le %A %d %B %Y ‡ %H:%M:%S', $INFO_LOCALE)."<br />
+		return "Date d'envois ".lmb_strftime('le %A %d %B %Y √† %H:%M:%S', $INFO_LOCALE)."<br />
 		<br />
 		Bonjour et bienvenue,<br />
 		Vous venez de vous inscrire sur notre site et nous vous en remercions.<br />
@@ -496,7 +496,7 @@ class Inscription_compte_user extends InscriptionModification {
 	//procedure d'inscription pour un contact AUTOMATIQUE et SANS MAIL de confirmation
 	//@param $infos_contact array : tableau associatif contenant les informations du contact
 	//@param $email string : email du contact.
-	//@return boolean : vrai si l'inscrition du contact s'est bien passÈ, faux sinon.
+	//@return boolean : vrai si l'inscrition du contact s'est bien pass√©, faux sinon.
 	protected function inscription_contact_automatique_avec_mail_confirmation($infos_contact, $email){
 		if(is_null($infos_contact) || !is_array($infos_contact))
 		{		return false;}
@@ -514,7 +514,7 @@ class Inscription_compte_user extends InscriptionModification {
 							(id_interface, infos, date_demande, code_validation, validation_email, mode) VALUES 
 	 						(".$this->getId_interface().", '".addslashes(implode(";", $infos_contact))."', NOW(), '".$code_validation."', 3, 'inscription')";
 		if($bdd->exec($query) == 0)
-		{		return false;}	//Aucune ligne n'È ÈtÈ modifiÈe
+		{		return false;}	//Aucune ligne n'√© √©t√© modifi√©e
 		
 		$id_contact_tmp = $bdd->lastInsertId();
 		
@@ -527,9 +527,9 @@ class Inscription_compte_user extends InscriptionModification {
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//sujet du mail envoyÈ ‡ l'UTILISATEUR pour qu'il confirme son inscription automatique
-	//@return string : retourne le sujet de l'email envoyÈ par la fonction Inscription->inscription_contact_automatique_avec_mail_confirmation()
-	//Pour personnaliser ce message, il faut crÈer un sous classe et redÈfinir la fonction.
+	//sujet du mail envoy√© √† l'UTILISATEUR pour qu'il confirme son inscription automatique
+	//@return string : retourne le sujet de l'email envoy√© par la fonction Inscription->inscription_contact_automatique_avec_mail_confirmation()
+	//Pour personnaliser ce message, il faut cr√©er un sous classe et red√©finir la fonction.
 	//Cette nouvelle classe sera propre au E-commerce, donc, elle sera dans son dossier !
 	protected function inscription_contact_automatique_avec_mail_confirmation_get_sujet_pour_contact(){
 		return "Confirmation de votre email pour votre inscription sur ".$_SERVER['HTTP_HOST'];
@@ -537,16 +537,16 @@ class Inscription_compte_user extends InscriptionModification {
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//message du mail envoyÈ ‡ l'UTILISATEUR pour qu'il confirme son inscription automatique
-	//@return string : retourne le message de l'email envoyÈ par la fonction Inscription->inscription_contact_automatique_avec_mail_confirmation()
-	//Pour personnaliser ce message, il faut crÈer un sous classe et redÈfinir la fonction.
+	//message du mail envoy√© √† l'UTILISATEUR pour qu'il confirme son inscription automatique
+	//@return string : retourne le message de l'email envoy√© par la fonction Inscription->inscription_contact_automatique_avec_mail_confirmation()
+	//Pour personnaliser ce message, il faut cr√©er un sous classe et red√©finir la fonction.
 	//Cette nouvelle classe sera propre au E-commerce, donc, elle sera dans son dossier !
 	protected function inscription_contact_automatique_avec_mail_confirmation_get_message_pour_contact($id_contact_tmp, $code_validation){
 		global $INFO_LOCALE;
 		
 		$my_pathinfo = pathinfo(str_replace(str_replace("/",  "\\", $_SERVER['DOCUMENT_ROOT']), "", __FILE__));
 		
-		return "Date d'envois ".lmb_strftime('le %A %d %B %Y ‡ %H:%M:%S', $INFO_LOCALE)."<br />
+		return "Date d'envois ".lmb_strftime('le %A %d %B %Y √† %H:%M:%S', $INFO_LOCALE)."<br />
 		<br />
 		Bonjour et bienvenue,<br />
 		Pour finaliser votre inscription sur notre site, vous confirmer votre email en cliquant ou en copiant/collant le lien ci-dessous.<br />
@@ -584,13 +584,13 @@ class Inscription_compte_user extends InscriptionModification {
 	
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//procedure pour qu'un contact confirme son inscription aprËs avoir reÁu un mail l'invitant ‡ le faire
-	//envoyÈ par Inscription->inscription_contact_avec_validation_avec_mail_confirmation()
+	//procedure pour qu'un contact confirme son inscription apr√®s avoir re√ßu un mail l'invitant √† le faire
+	//envoy√© par Inscription->inscription_contact_avec_validation_avec_mail_confirmation()
 	//		ou par Inscription->inscription_contact_automatique_avec_mail_confirmation()
-	//AprËs cette Ètape un collaborateur devra valider cette inscription
+	//Apr√®s cette √©tape un collaborateur devra valider cette inscription
 	//@param $id_contact_tmp int : 
 	//@param $code string : 
-	//@return boolean : vrai si la confirmation de l'inscription du contact s'est bien passÈ, faux sinon.
+	//@return boolean : vrai si la confirmation de l'inscription du contact s'est bien pass√©, faux sinon.
 	protected function contact_confirme_son_inscription_puis_validation_automatique($id_contact_tmp, $code){
 		if($this->getInscription_allowed() != 4)
 		{		return false;}
@@ -629,14 +629,14 @@ class Inscription_compte_user extends InscriptionModification {
 	// CONFIRMATION DE LA PART DE L'UTILISATEUR DE SON INSCRIPTION (ne pas confondre avec la validation par un collab) 
 	// *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *
 	
-	//procedure pour qu'un contact confirme son inscription aprËs avoir reÁu un mail l'invitant ‡ le faire
-	//envoyÈ par Inscription->inscription_contact_avec_validation_avec_mail_confirmation()
+	//procedure pour qu'un contact confirme son inscription apr√®s avoir re√ßu un mail l'invitant √† le faire
+	//envoy√© par Inscription->inscription_contact_avec_validation_avec_mail_confirmation()
 	//		ou par Inscription->inscription_contact_automatique_avec_mail_confirmation()
 	//@param $id_contact_tmp int : 
 	//@param $code string : 
-	//@return boolean : vrai si la confirmation de l'inscription du contact s'est bien passÈ, faux sinon. 
+	//@return boolean : vrai si la confirmation de l'inscription du contact s'est bien pass√©, faux sinon. 
 	public function contact_confirme_son_inscription($id_contact_tmp, $code){
-		//vÈrification des paramËtres d'entrÈ
+		//v√©rification des param√®tres d'entr√©
 		if(is_null($id_contact_tmp) || !is_numeric($id_contact_tmp))
 		{		return false;}
 		
@@ -649,10 +649,10 @@ class Inscription_compte_user extends InscriptionModification {
 		switch ($this->getInscription_allowed()){
 			case 0 : {	return false;}	//inscription interdite
 			
-			case 1 : {	return false;}	//la confirmation n'est pas nÈncessaire
+			case 1 : {	return false;}	//la confirmation n'est pas n√©ncessaire
 			case 3 : {	return $this->contact_confirme_son_inscription_puis_validation_par_collab($id_contact_tmp, $code); break;}
 			
-			case 2 : {	return false;}	//la confirmation n'est pas nÈncessaire
+			case 2 : {	return false;}	//la confirmation n'est pas n√©ncessaire
 			case 4 : {	return $this->contact_confirme_son_inscription_puis_validation_automatique($id_contact_tmp, $code); break;}
 			
 			default: {	return false;}	//valeur non permises
@@ -661,13 +661,13 @@ class Inscription_compte_user extends InscriptionModification {
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//procedure pour qu'un contact confirme son inscription aprËs avoir reÁu un mail l'invitant ‡ le faire
-	//envoyÈ par Inscription->inscription_contact_avec_validation_avec_mail_confirmation()
+	//procedure pour qu'un contact confirme son inscription apr√®s avoir re√ßu un mail l'invitant √† le faire
+	//envoy√© par Inscription->inscription_contact_avec_validation_avec_mail_confirmation()
 	//		ou par Inscription->inscription_contact_automatique_avec_mail_confirmation()
-	//AprËs cette Ètape un collaborateur devra valider cette inscription
+	//Apr√®s cette √©tape un collaborateur devra valider cette inscription
 	//@param $id_contact_tmp int : 
 	//@param $code string : 
-	//@return boolean : vrai si la confirmation de l'inscription du contact s'est bien passÈ, faux sinon.
+	//@return boolean : vrai si la confirmation de l'inscription du contact s'est bien pass√©, faux sinon.
 	protected function contact_confirme_son_inscription_puis_validation_par_collab($id_contact_tmp, $code){
 		if($this->getInscription_allowed() != 3)
 		{		return false;}
@@ -691,7 +691,7 @@ class Inscription_compte_user extends InscriptionModification {
 		$query = "UPDATE annuaire_tmp  SET validation_email = 1
 							WHERE id_contact_tmp = '".$id_contact_tmp."' ";
 		if($bdd->exec($query) == 0)
-		{		return false;}	//Aucune ligne n'È ÈtÈ modifiÈe
+		{		return false;}	//Aucune ligne n'√© √©t√© modifi√©e
 				
 		$sujet_pour_contact		= $this->inscription_contact_avec_validation_get_sujet_pour_contact();
 		$message_pour_contact	= $this->inscription_contact_avec_validation_get_message_pour_contact();
@@ -724,7 +724,7 @@ class Inscription_compte_user extends InscriptionModification {
 	public function &validation_inscription_contact_par_collaborateur($id_contact_tmp){
 		$null = null;
 		
-		// vÈrification si on peut crÈer un user ‡ partir d'une inscription
+		// v√©rification si on peut cr√©er un user √† partir d'une inscription
 		switch ($this->getInscription_allowed()){
 			case 1 : case 2 : case 3: case 4 : {break;}	//les inscriptions sont permises
 			default : {return $null;}
@@ -761,10 +761,10 @@ class Inscription_compte_user extends InscriptionModification {
 	
 	protected function validation_inscription_contact_par_collaborateur_get_message_pour_contact(){
 		global $INFO_LOCALE;
-		return "Date d'envois ".lmb_strftime('le %A %d %B %Y ‡ %H:%M:%S', $INFO_LOCALE)."<br />
+		return "Date d'envois ".lmb_strftime('le %A %d %B %Y √† %H:%M:%S', $INFO_LOCALE)."<br />
 		<br />
 		Bonjour,<br />
-		Votre inscription vient d'Ítre validÈe, Vous pouvez maintenant vous connecter sur ".$_SERVER['HTTP_HOST']." ‡ l'aide de votre login et mot de passe 
+		Votre inscription vient d'√™tre valid√©e, Vous pouvez maintenant vous connecter sur ".$_SERVER['HTTP_HOST']." √† l'aide de votre login et mot de passe 
 		<br />
 		<br />
 		".$this->getNom_entreprise()."
@@ -781,7 +781,7 @@ class Inscription_compte_user extends InscriptionModification {
 		$null = null;
 		
 		// *************************************************
-		// vÈrification si on peut crÈer un user ‡ partir d'une inscription
+		// v√©rification si on peut cr√©er un user √† partir d'une inscription
 		
 		switch($this->getInscription_allowed()){
 			case 1	: case 2	: case 3	: case 4	: {break;}	//les inscriptions sont permises
@@ -789,7 +789,7 @@ class Inscription_compte_user extends InscriptionModification {
 		}
 		
 		// *************************************************
-		//	VÈrification et initialisation des variables
+		//	V√©rification et initialisation des variables
 		
 		$this->verifie_infos_contact_pour_inscription_ou_modification_contact($infos_from_inscription);
 		
@@ -803,7 +803,7 @@ class Inscription_compte_user extends InscriptionModification {
 		$infos_new_contact['sites']					= array();
 		
 		// *************************************************
-		//	RÈcupÈration des valeurs de l'inscription 
+		//	R√©cup√©ration des valeurs de l'inscription 
 		
 		
 		
@@ -904,9 +904,9 @@ class Inscription_compte_user extends InscriptionModification {
 	//$_SESSION['user']->login ($infos_from_inscription['admin_pseudo'], $infos_from_inscription['admin_passworda'], "", $infos_from_inscription['profils_inscription']);
 	
 	
-	//crÈer un nouveau contact gr‚ce aux informations rÈcoltÈes lors de l'inscriptions.
-	//Ce nouveau contact sera retournÈ (pointer)
-	//@param array $infos_from_inscription : informations rÈcupÈrÈes lors de l'inscription
+	//cr√©er un nouveau contact gr√¢ce aux informations r√©colt√©es lors de l'inscriptions.
+	//Ce nouveau contact sera retourn√© (pointer)
+	//@param array $infos_from_inscription : informations r√©cup√©r√©es lors de l'inscription
 	//@return &contact 
 	protected function &inscription_creation_contact($infos_from_inscription){
 		// *************************************************
@@ -917,7 +917,7 @@ class Inscription_compte_user extends InscriptionModification {
 		//include_once ("./profil_create_".$_SESSION['profils'][$id_profil]->getCode_profil().".inc.php");
 		
 		// *************************************************
-		// CrÈation du contact
+		// Cr√©ation du contact
 		$contact = new contact();
 		$contact->create($infos_from_inscription, $infos_profils);
 		
@@ -932,9 +932,9 @@ class Inscription_compte_user extends InscriptionModification {
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//crÈer un nouveau user ‡ partir d'un contact. Ce nouveau user sera retournÈ (pointer)
-	//@param contact &$contact : informations rÈcupÈrÈes lors de l'inscription
-	//@return &user :  si la crÈation s'est bien passÈe, on retourne un user, null sinon
+	//cr√©er un nouveau user √† partir d'un contact. Ce nouveau user sera retourn√© (pointer)
+	//@param contact &$contact : informations r√©cup√©r√©es lors de l'inscription
+	//@return &user :  si la cr√©ation s'est bien pass√©e, on retourne un user, null sinon
 	protected function &inscription_creation_user(&$contact, $admin_pseudo, $admin_passworda){
 		$utilisateur = null;
 		$coord = $contact->getCoordonnees();
@@ -955,7 +955,7 @@ class Inscription_compte_user extends InscriptionModification {
 		//
 		//	id_contact_tmp		smallint(5) UNSIGNED 	NOTNULL	auto_increment	:	
 		//	id_interface			smallint(5) UNSIGNED	NOTNULL									:	
-		//	infos							mediumtext						NOTNULL									:	liste de couple clÈ/valeur sÈparÈ par un ;
+		//	infos							mediumtext						NOTNULL									:	liste de couple cl√©/valeur s√©par√© par un ;
 		//	date_demande			datetime							NOTNULL									:	
 		//	code_validation		varchar(64)						NOTNULL									:	code pour que l'utilisateur confirme son inscription 
 		//	validation_email	tinyint(3)						NOTNULL									:	
@@ -987,7 +987,7 @@ class Inscription_compte_user extends InscriptionModification {
 	}
 	
 	// *************************************************************************************************************
-	// Fonctions d'accËs aux donnÈes
+	// Fonctions d'acc√®s aux donn√©es
 	// *************************************************************************************************************
 	
 	// Retourne inscription_allowed

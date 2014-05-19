@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -23,12 +23,12 @@ check_page_variables ($page_variables);
 ?>
 <table  style="width:450px" border="0" cellpadding="0" cellspacing="0">
   <tr>
-    <td>Lors de la validation d'un devis client :</td>
+    <td>Lors de la validation d'un devis clientÂ :</td>
     <td style="text-align:center">&nbsp;automatique</td>
     <td style="text-align:center">&nbsp;optionnel</td>
   </tr>
   <tr>
-    <td>Générer une commande client </td>
+    <td>GÃ©nÃ©rer une commande clientÂ </td>
     <td style="text-align:center">
 	<input type="checkbox" name="DEV_genere_CDC" id="DEV_genere_CDC" value="CDC" <?php if ($DEVIS_CLIENT_AUTO_GENERE == "CDC") { ?> checked="checked"<?php }?> />
 	</td>
@@ -37,7 +37,7 @@ check_page_variables ($page_variables);
 	</td>
   </tr>
   <tr>
-    <td>Générer une livraison</td>
+    <td>GÃ©nÃ©rer une livraison</td>
     <td style="text-align:center">
 	<input type="checkbox" name="DEV_genere_BLC" id="DEV_genere_BLC" value="BLC" <?php if ($DEVIS_CLIENT_AUTO_GENERE == "BLC") { ?> checked="checked"<?php }?>/>
 	</td>
@@ -46,7 +46,7 @@ check_page_variables ($page_variables);
 	</td>
   </tr>
   <tr>
-    <td>Générer une facture</td>
+    <td>GÃ©nÃ©rer une facture</td>
     <td style="text-align:center">
 	<input type="checkbox" name="DEV_genere_FAC" id="DEV_genere_FAC" value="FAC" <?php if ($DEVIS_CLIENT_AUTO_GENERE == "FAC") { ?> checked="checked"<?php }?>/>
 	</td>
@@ -99,4 +99,4 @@ check_page_variables ($page_variables);
  } , false);
 
 </script>
-         
+ Â Â Â Â Â Â Â  

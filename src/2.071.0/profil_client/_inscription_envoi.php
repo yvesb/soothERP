@@ -16,7 +16,7 @@ require ("_session.inc.php");
 //	/!\ ATTENTION ! 
 //##################
 //	NE PAS UTILISER CE GENRE DE BOUCLE !!!
-//	Ca rend l'interface graphique EXTREMENT dépendante du code métier! (et inversement)
+//	Ca rend l'interface graphique EXTREMENT dÃ©pendante du code mÃ©tier! (et inversement)
 //	foreach ($_REQUEST as $key=>$value) {
 //		if($key != "user_societe" || $key != "user_nom" || $key != "user_prenom"){
 //			$liste_reponse[$key] = $key."=".$value;
@@ -24,8 +24,8 @@ require ("_session.inc.php");
 //		}
 //	}
 //	
-//	La solution est de "mapper" les données,
-//	c'est à dire avoir une correspondance entre les variables (inputs) de l'interface et les variables du code métier.
+//	La solution est de "mapper" les donnÃ©es,
+//	c'est Ã  dire avoir une correspondance entre les variables (inputs) de l'interface et les variables du code mÃ©tier.
 //	Ca permet de rendre le code plus souple, plus modulable et plus robuste au changement (code metier ou interface)
 
 
@@ -33,7 +33,7 @@ $infos_contact_code_metier = array();
 
 //les champs avec un * sont indispendables 
 //
-//A droite, le tableau associatif nécessaire au code métier
+//A droite, le tableau associatif nÃ©cessaire au code mÃ©tier
 //		$infos_contact_code_metier[KEY_METIER]	=  KEY_METIER."="
 //A agauche, les noms des inputs de l'interface graphique
 //		$_REQUEST[KEY_INTERFACE];
@@ -44,7 +44,7 @@ if(isset($_REQUEST["id_civilite"]))
 {		$infos_contact_code_metier["civilite"]			=  "civilite"."=". $_REQUEST["id_civilite"];}
 
 if(!isset($_REQUEST["nom"]))	// *
-{		echo "le nom n'est pas spécifié";	exit;}
+{		echo "le nom n'est pas spÃ©cifiÃ©";	exit;}
 		$infos_contact_code_metier["nom"]						=  "nom"."=". $_REQUEST["nom"];
 $nom = $_REQUEST["nom"];
 
@@ -57,19 +57,19 @@ if(isset($_REQUEST["tva_intra"]))
 //---------------------------------------------------------------
 
 if(!isset($_REQUEST["pseudo"]))	// *
-{		echo "le pseudo n'est pas spécifié";	exit;}
+{		echo "le pseudo n'est pas spÃ©cifiÃ©";	exit;}
 		$infos_contact_code_metier["admin_pseudo"] =  "admin_pseudo"."=". $_REQUEST["pseudo"];
 
 //---------------------------------------------------------------
 
 if(!isset($_REQUEST["emaila"]))	// *
-{		echo "le pseudo n'est pas spécifié";	exit;}
+{		echo "le pseudo n'est pas spÃ©cifiÃ©";	exit;}
 		$infos_contact_code_metier["admin_emaila"] =  "admin_emaila"."=". $_REQUEST["emaila"];
 $email = $_REQUEST["emaila"];
 //---------------------------------------------------------------
 
 if(!isset($_REQUEST["passworda"]))	// *
-{		echo "le pseudo n'est pas spécifié";	exit;}
+{		echo "le pseudo n'est pas spÃ©cifiÃ©";	exit;}
 		$infos_contact_code_metier["admin_passworda"] =  "admin_passworda"."=". $_REQUEST["passworda"];
 
 //---------------------------------------------------------------
@@ -95,19 +95,19 @@ if(isset($_REQUEST["livraison_id_pays"]))
 //{		$infos_contact_code_metier["ref_adr_facturation"] =  "ref_adr_facturation"."=". $_REQUEST[""];}
 
 if(!isset($_REQUEST["facturation_adresse"]))	// *
-{		echo "l'adresse de facturation n'est pas spécifié";	exit;}
+{		echo "l'adresse de facturation n'est pas spÃ©cifiÃ©";	exit;}
 		$infos_contact_code_metier["adresse_adresse"]		=  "adresse_adresse"."=". $_REQUEST["facturation_adresse"];
 
 if(!isset($_REQUEST["facturation_code_postal"]))	// *
-{		echo "le code postal de l'adresse de facturation n'est pas spécifié";	exit;}
+{		echo "le code postal de l'adresse de facturation n'est pas spÃ©cifiÃ©";	exit;}
 		$infos_contact_code_metier["adresse_code"]			=  "adresse_code"."=". $_REQUEST["facturation_code_postal"];
 
 if(!isset($_REQUEST["facturation_ville"]))	// *
-{		echo "la ville de l'adresse de facturation n'est pas spécifiée";	exit;}
+{		echo "la ville de l'adresse de facturation n'est pas spÃ©cifiÃ©e";	exit;}
 		$infos_contact_code_metier["adresse_ville"]			=  "adresse_ville"."=". $_REQUEST["facturation_ville"];
 
 if(!isset($_REQUEST["facturation_id_pays"]))	// *
-{		echo "le pays  de l'adresse de facturation n'est pas spécifié";	exit;}
+{		echo "le pays  de l'adresse de facturation n'est pas spÃ©cifiÃ©";	exit;}
 		$infos_contact_code_metier["id_pays_contact"]			=  "id_pays_contact"."=". $_REQUEST["facturation_id_pays"];
 
 //---------------------------------------------------------------
@@ -123,7 +123,7 @@ if(isset($_REQUEST["coordonnee_fax"]))
 
 //---------------------------------------------------------------
 
-//inscription à la newsletter
+//inscription Ã  la newsletter
 if(isset($_REQUEST['newsletter'])){
 	if($_REQUEST["lib_coordonnees"]!="")
 	{			$nom_news = $_REQUEST["lib_coordonnees"];}

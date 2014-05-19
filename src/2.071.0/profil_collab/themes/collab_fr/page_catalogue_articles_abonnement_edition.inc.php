@@ -4,7 +4,7 @@
 // EDITION D'UN ABONNEMENT
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -46,7 +46,7 @@ check_page_variables ($page_variables);
 			<table width="100%" border="0" class="roundedtable">
 				<tr>
 					<td >
-					<span class="labelled">Abonné:</span>
+					<span class="labelled">AbonnÃ©:</span>
 					</td>
 					<td >
 					<?php echo ($abonnement->nom); ?>					
@@ -63,7 +63,7 @@ check_page_variables ($page_variables);
 				</tr>
 				<tr>
 					<td >
-					<span class="labelled">Echéance:</span>
+					<span class="labelled">EchÃ©ance:</span>
 					</td>
 					<td >
 						<input type="text" name="abo_date_echeance" id="abo_date_echeance" value="<?php echo date_Us_to_Fr($abonnement->date_echeance); ?><?php if ($ARTICLE_ABO_TIME) { echo " ".getTime_from_date($abonnement->date_echeance);} ?>"/>
@@ -79,7 +79,7 @@ check_page_variables ($page_variables);
 				</tr>
 				<tr>
 					<td >
-					<span class="labelled">Préavis déposé le:</span>
+					<span class="labelled">PrÃ©avis dÃ©posÃ© le:</span>
 					</td>
 					<td >
 						<input type="text" name="abo_date_preavis" id="abo_date_preavis" value="<?php if ($abonnement->date_preavis != "0000-00-00 00:00:00") {echo date_Us_to_Fr($abonnement->date_preavis); ?><?php if ($ARTICLE_ABO_TIME) { echo " ".getTime_from_date($abonnement->date_preavis);} }?>"/>
@@ -158,8 +158,8 @@ check_page_variables ($page_variables);
 				datetimemask(evt);
 				if ($("abo_date_preavis").value != "") {
 					$("preavis_date_preavis").value = $("abo_date_preavis").value;
-					$("titre_alert").innerHTML = 'Mise à jour de l\'abonnement';
-					$("texte_alert").innerHTML = 'Mettre à jour la date de fin de l\'abonnement en fonction de la date de préavis';
+					$("titre_alert").innerHTML = 'Mise Ã  jour de l\'abonnement';
+					$("texte_alert").innerHTML = 'Mettre Ã  jour la date de fin de l\'abonnement en fonction de la date de prÃ©avis';
 					$("bouton_alert").innerHTML = '<input type="submit" id="bouton0" name="bouton0" value="Oui" /><input type="submit" id="bouton1" name="bouton1" value="Non" />';
 					
 					$("alert_pop_up_tab").style.display = "block";
@@ -188,8 +188,8 @@ check_page_variables ($page_variables);
 			Event.observe("abo_date_preavis", "blur", function (evt) {datemask(evt);
 				if ($("abo_date_preavis").value != "") {
 					$("preavis_date_preavis").value = $("abo_date_preavis").value;
-					$("titre_alert").innerHTML = 'Mise à jour de l\'abonnement';
-					$("texte_alert").innerHTML = 'Mettre à jour la date de fin de l\'abonnement en fonction de la date de préavis';
+					$("titre_alert").innerHTML = 'Mise Ã  jour de l\'abonnement';
+					$("texte_alert").innerHTML = 'Mettre Ã  jour la date de fin de l\'abonnement en fonction de la date de prÃ©avis';
 					$("bouton_alert").innerHTML = '<input type="submit" id="bouton0" name="bouton0" value="Oui" /><input type="submit" id="bouton1" name="bouton1" value="Non" />';
 					
 					$("alert_pop_up_tab").style.display = "block";
@@ -215,7 +215,7 @@ check_page_variables ($page_variables);
 		<?php } ?>
 		</SCRIPT>
 
-		<span style=" font-weight:bolder">Liste des livraisons liées à cet abonnement</span>
+		<span style=" font-weight:bolder">Liste des livraisons liÃ©es Ã  cet abonnement</span>
 		<div style=" background-color:#FFFFFF; border:1px solid #d6d6d6;">
 		
 		<?php

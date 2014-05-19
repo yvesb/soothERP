@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("Udate_used", "Udate_fdm", "Udate_ldm", "Udate_now", "joursMois", "numSemaine", "gride_is_locked");
 check_page_variables ($page_variables);
 

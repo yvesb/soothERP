@@ -5,7 +5,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nÈcessaires ‡ l'affichage
+// Variables n√©cessaires √† l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -104,7 +104,7 @@ switch ($_REQUEST['step']) {
 		//qte de composant fausse
 		if (bad_qte) {
 		window.parent.goto_etape(4);
-		texte_erreur += "il y a une erreur dans la quantitÈ d'un des composants.<br/>";
+		texte_erreur += "il y a une erreur dans la quantit√© d'un des composants.<br/>";
 		}
 		<?php
 	break;
@@ -112,7 +112,7 @@ switch ($_REQUEST['step']) {
 		//qte de tarif fausse
 		if (bad_indice_qte) {
 		window.parent.goto_etape(3);
-		texte_erreur += "il y a une erreur dans la quantitÈ d'un des tarifs.<br/>";
+		texte_erreur += "il y a une erreur dans la quantit√© d'un des tarifs.<br/>";
 		}
 		<?php
 	break;
@@ -122,7 +122,7 @@ switch ($_REQUEST['step']) {
 			//limite basse des stock fauses
 			if (bad_seuil_alerte) {
 			window.parent.goto_etape(2);
-			texte_erreur += "il y a une erreur dans les quantitÈs des seuils d'alerte de stock bas.<br/>";
+			texte_erreur += "il y a une erreur dans les quantit√©s des seuils d'alerte de stock bas.<br/>";
 			}
 			
 			//modele garantie fause
@@ -130,7 +130,7 @@ switch ($_REQUEST['step']) {
 			window.parent.document.getElementById("dure_garantie").className="alerteform_xsize";
 			window.parent.goto_etape(2);
 			window.parent.document.getElementById("dure_garantie").focus();
-			texte_erreur += "La durÈe de garantie dois Ítre une valeur numÈrique.<br/>";
+			texte_erreur += "La dur√©e de garantie dois √™tre une valeur num√©rique.<br/>";
 			}else {
 			window.parent.document.getElementById("dure_garantie").className="classinput_xsize";
 			}
@@ -156,7 +156,7 @@ switch ($_REQUEST['step']) {
 		window.parent.document.getElementById("ref_interne").className="alerteform_xsize";
 		window.parent.goto_etape(0);
 		window.parent.document.getElementById("ref_interne").focus();
-		texte_erreur += "La rÈfÈrence interne existe dÈj‡.<br/>";
+		texte_erreur += "La r√©f√©rence interne existe d√©j√†.<br/>";
 		}else {
 		window.parent.document.getElementById("ref_interne").className="classinput_xsize";
 		}
@@ -166,7 +166,7 @@ switch ($_REQUEST['step']) {
 		window.parent.document.getElementById("lib_article").className="alerteform_xsize";
 		window.parent.goto_etape(0);
 		window.parent.document.getElementById("lib_article").focus();
-		texte_erreur += "Le libellÈ de l\'article est vide.<br/>";
+		texte_erreur += "Le libell√© de l\'article est vide.<br/>";
 		}else {
 		window.parent.document.getElementById("lib_article").className="classinput_xsize";
 		}

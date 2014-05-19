@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
 
 ?>
 <p>&nbsp;</p>
-<p>compte plan général (ajout de la liste des favoris) </p>
+<p>compte plan gÃ©nÃ©ral (ajout de la liste des favoris) </p>
 <p>&nbsp; </p>
 <?php 
 foreach ($_ALERTES as $alerte => $value) {

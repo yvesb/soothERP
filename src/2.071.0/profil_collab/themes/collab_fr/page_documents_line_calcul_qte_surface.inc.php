@@ -1,6 +1,6 @@
 <?php
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -16,16 +16,16 @@ check_page_variables ($page_variables);
 		</tr>
 		<tr>
 			<td></td>
-			<td style="text-align:center;">forme géométrique : </td>
+			<td style="text-align:center;">forme gÃ©omÃ©trique : </td>
 			<td></td>
 			<td>
 				<select  id="forme_geo"  name="forme_geo" class="classinput_xsize">
-					<option value="carre"			>Carré</option>
+					<option value="carre"			>CarrÃ©</option>
 					<option selected="selected" value="rectangle"	>Rectangle</option>
 					<option value="cercle"		>Cercle</option>
 					<option value="triangle"	>Triangle</option>
 				</select>
-				<!-- Div sélectionné par défaut -->
+				<!-- Div sÃ©lectionnÃ© par dÃ©faut -->
 				<input type="hidden" id="selectedDiv" value="calcul_rectangle"/>
 
 				<script type="text/javascript">
@@ -88,7 +88,7 @@ check_page_variables ($page_variables);
 				<td>
 					<table width="100%" border="0">
 						<tr>
-						<td style="width:25% ;text-align:right;">côté : </td>
+						<td style="width:25% ;text-align:right;">cÃ´tÃ© : </td>
 						<td style="width:75% ;text-align:left;"><input style="text-align:right;" id="calcul_carre_cote" value="0" />&nbsp;m</td>
 						</tr>
 					</table>
@@ -203,7 +203,7 @@ check_page_variables ($page_variables);
 				<td></td>
 				<td></td>
 				<td></td>
-				<td style="text-align:right;">Résultat :</td>
+				<td style="text-align:right;">RÃ©sultat :</td>
 				<td style="text-align:left;">
 					<input id="resultat_calcul" name="resultat_calcul" style="text-align:right;" value="0"/>&nbsp;m&sup2;
 				</td>

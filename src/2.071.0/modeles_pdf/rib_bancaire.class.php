@@ -45,7 +45,7 @@ public function create_pdf ($compte_banque) {
 	$this->adresse_entreprise = $this->contact_entreprise->getAdresses();
 	$this->adresse_banque = $this->contact_banque->getAdresses();
 	
-	$this->lib_type_printed 	= "Relevé d'Identité Bancaire";
+	$this->lib_type_printed 	= "RelevÃ© d'IdentitÃ© Bancaire";
 	
 	
 	include_once ($PDF_MODELES_DIR."config/".$this->code_pdf_modele.".config.php");
@@ -60,14 +60,14 @@ public function create_pdf ($compte_banque) {
 
 
 	// ***************************************************
-	// Valeurs par défaut
+	// Valeurs par dÃ©faut
 	foreach ($RIB_BNQ as $var => $valeur) {
 		$this->{$var} = $valeur;
 	}
 
 
 	// ***************************************************
-	// Création de la première page
+	// CrÃ©ation de la premiÃ¨re page
 	$this->create_pdf_page ();
 
 
@@ -75,12 +75,12 @@ public function create_pdf ($compte_banque) {
 }
 
 
-// Créé une nouvelle page du document PDF
+// CrÃ©Ã© une nouvelle page du document PDF
 protected function create_pdf_page () {
 	// Comptage du nombre de page
 	$this->page_actuelle++;
 
-	// Création d'une nouvelle page
+	// CrÃ©ation d'une nouvelle page
 	$this->AddPage();
 	$this->create_pdf_entete ();
 
@@ -90,7 +90,7 @@ protected function create_pdf_page () {
 }
 
 
-// Créé l'entete du document PDF
+// CrÃ©Ã© l'entete du document PDF
 protected function create_pdf_entete () {
 	global $IMAGES_DIR;
 
@@ -105,7 +105,7 @@ protected function create_pdf_entete () {
 	$this->Cell ($this->LARGEUR_TOTALE_CORPS, 10, $this->lib_type_printed, 0, 0, 'C');
 
 	// ***************************************************
-	// coordonnées entreprise
+	// coordonnÃ©es entreprise
 	$this->SetXY($this->MARGE_GAUCHE+1, 27);
 	$this->SetFont('Arial', '', 10);
 	$this->MultiCell (85, 4, $this->contact_entreprise->getNom(), 0, 'L');
@@ -123,7 +123,7 @@ protected function create_pdf_entete () {
 	$this->Cell ($this->LARGEUR_TOTALE_CORPS, 10, "", 1, 0, 'L');
 	
 	// ***************************************************
-	// coordonnées bancaires
+	// coordonnÃ©es bancaires
 	$this->SetXY($this->MARGE_GAUCHE+1, 50);
 	$this->Cell (60, 4, "DOMICILIATION BANCAIRE :", 0, 0, 'L');
 	$this->SetXY($this->MARGE_GAUCHE+1, 55);

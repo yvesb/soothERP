@@ -4,7 +4,7 @@
 // ACCUEIL DU PROFIL COLLAB
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -165,7 +165,7 @@ evenement.prototype = {
 	initialize: function(node, left, top) {
 		this.node = node;
 
-		//coordonnées de la souris lorsque qu'on édite ou on bouge un objet evenement
+		//coordonnÃ©es de la souris lorsque qu'on Ã©dite ou on bouge un objet evenement
 		//this.mouseX = mouseX;
 		//this.mouseY = mouseY;
 		
@@ -270,13 +270,13 @@ evenement.prototype = {
 	},
 	
 	save : function(){
-	//SI l'event à bougé -> Saubegarde + return TRUE
+	//SI l'event Ã  bougÃ© -> Saubegarde + return TRUE
 	//sinon return FALSE
 	
 	matriceDemieHeure;
 	
 	if(this.x != this.originalX || this.y != this.originalY || this.width != this.originalWidth || this.height != this.originalHeight){
-			//L'event a été modifié -> sauvegarde
+			//L'event a Ã©tÃ© modifiÃ© -> sauvegarde
 			//alert("SAUVEGARDE DE L OBEJET");
 			return true;
 		}else{

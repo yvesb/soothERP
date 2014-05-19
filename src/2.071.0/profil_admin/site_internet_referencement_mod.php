@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 
 if (isset($_REQUEST["nom_fichier"])) {
-	//mas des informations de référencement
+	//mas des informations de rÃ©fÃ©rencement
 	maj_reference ($_REQUEST["nom_fichier"], $_REQUEST["titre"], $_REQUEST["meta_desc"], $_REQUEST["meta_motscles"]);
 }
 

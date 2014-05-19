@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// RÈsultats de recherche des rapprochements bancaires
+// R√©sultats de recherche des rapprochements bancaires
 // *************************************************************************************************************
 
 
@@ -14,7 +14,7 @@ $compte_bancaire	= new compte_bancaire($_REQUEST["id_compte_bancaire"]);
 
 
 // *************************************************
-// DonnÈes pour le formulaire && la requete
+// Donn√©es pour le formulaire && la requete
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -46,10 +46,10 @@ $search['date_debut'] = $ENTREPRISE_DATE_CREATION;
 $nb_fiches = 0;
 
 // *************************************************
-// RÈsultat de la recherche
+// R√©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
-	// PrÈparation de la requete
+	// Pr√©paration de la requete
 	$query_join 	= "";
 	$query_where 	= " id_compte_bancaire = '".$_REQUEST["id_compte_bancaire"]."' && date_move < '".$search['date_fin']."' ";
 	
@@ -62,7 +62,7 @@ if (isset($_REQUEST['recherche'])) {
 	if ($search['montants'] == "cre") {
 		$query_where 	.= " && cbm.montant_move >= 0 ";
 	}
-	//on recherche la date de debut de la liste part rapport au dernier relevÈ 
+	//on recherche la date de debut de la liste part rapport au dernier relev√© 
 	$liste_releves = $compte_bancaire->getReleves_compte ();
 	foreach ($liste_releves as $releve) {
 		if ($releve->date_releve >= $search['date_fin']) {$next_montant_reel = $releve->solde_reel;	$id_compte_bancaire_releve = $releve->id_compte_bancaire_releve; continue; }
@@ -136,7 +136,7 @@ if (isset($_REQUEST['recherche'])) {
 					$fiche->libelle = "Retrait bancaire vers ".$inf_tmp->lib_caisse;
 				}
 			break;
-			// rËglement tier banque depuis tier
+			// r√®glement tier banque depuis tier
 			case 5:
  				$query_tmp = "SELECT r.ref_contact, r.date_reglement, r.date_echeance, r.date_saisie, r.id_reglement_mode, r.montant_reglement, r.valide,
 														 rm.lib_reglement_mode, rm.abrev_reglement_mode, rm.type_reglement,
@@ -158,7 +158,7 @@ if (isset($_REQUEST['recherche'])) {
 					$fiche->libelle = $inf_tmp->lib_reglement_mode." par ".$inf_tmp->nom;
 				}
 			break;
-			// rËglement tier banque vers tier
+			// r√®glement tier banque vers tier
 			case 6:
  				$query_tmp = "SELECT r.ref_contact, r.date_reglement, r.date_echeance, r.date_saisie, r.id_reglement_mode, r.montant_reglement, r.valide,
 														 rm.lib_reglement_mode, rm.abrev_reglement_mode, rm.type_reglement,
@@ -174,7 +174,7 @@ if (isset($_REQUEST['recherche'])) {
 					$infos_complement = get_infos_reglement_type ($inf_tmp->id_reglement_mode, $fiche->ref_operation);
 					if (isset($infos_complement->id_compte_cb)) {
 						$compte_cb = new compte_cb ($infos_complement->id_compte_cb);
-						//crÈation de l'opÈration dans le journal de banque correspondant
+						//cr√©ation de l'op√©ration dans le journal de banque correspondant
 						$compte_bancaire_cible = new compte_bancaire ($compte_cb->getId_compte_bancaire ());
 						$nom_banque = $compte_bancaire_cible->getLib_compte();
 					} else if ($compte_bancaire_cible = new compte_bancaire ($infos_complement->id_compte_bancaire_source)) {
@@ -208,7 +208,7 @@ if (isset($_REQUEST['recherche'])) {
 						$nom_tp = $compte_tpv->getlib_tpv();
 					}
 					$fiche->compte_tier = "";
-					$fiche->libelle = "TÈlÈcollecte depuis ".$nom_tp;
+					$fiche->libelle = "T√©l√©collecte depuis ".$nom_tp;
 				}
 			break;
 		}
@@ -219,7 +219,7 @@ if (isset($_REQUEST['recherche'])) {
 	unset ($fiche, $resultat, $query);
 	
 	
-	// Comptage des rÈsultats
+	// Comptage des r√©sultats
 	$query = "SELECT COUNT(cbm.id_compte_bancaire_move) nb_fiches
 						FROM comptes_bancaires_moves cbm
 							".$query_join."

@@ -2,15 +2,15 @@
 // *************************************************************************************************************
 // FONCTIONS PERMETTANT LA GENERATION D'UN COURRIER PDF - MODELE LMB
 // *************************************************************************************************************
-// Ce script est appelé depuis _pdf.class.php->add_courrier_lmb()
-// $this 			réfère donc à un objet de la classe PDF
-// $courrier	réfère au courrier que l'on intègre au PDF
+// Ce script est appelÃ© depuis _pdf.class.php->add_courrier_lmb()
+// $this 			rÃ©fÃ¨re donc Ã  un objet de la classe PDF
+// $courrier	rÃ©fÃ¨re au courrier que l'on intÃ¨gre au PDF
 
 function add_courrier_lmb ($pdf, $courrier){
 	global $PDF_MODELES_DIR;
 
 	if (!isset($courrier)) { 
-		$erreur = "Aucun document transmit pour la création du PDF";
+		$erreur = "Aucun document transmit pour la crÃ©ation du PDF";
 		alerte_dev ($erreur);
 	}
 	include_once ($PDF_MODELES_DIR."config/".$courrier->code_pdf_modele.".config.php");

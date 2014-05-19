@@ -13,7 +13,7 @@ require ($DIR."_session.inc.php");
 
 $destinataire = new contact ($_REQUEST['ref_destinataire']);
 if (!$destinataire->getRef_contact()) {
-	echo "La référence du destinataire est inconnuel";
+	echo "La rÃ©fÃ©rence du destinataire est inconnuel";
 	exit;
 }
 

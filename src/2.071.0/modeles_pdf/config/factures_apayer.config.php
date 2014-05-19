@@ -10,12 +10,12 @@ $EXTRAIT_COMPTE['HAUTEUR_LINE_TOTAUX_GENERAUX']		= 5;
 $EXTRAIT_COMPTE['HAUTEUR_LINE_VIDE']				= 5;
 
 
-$EXTRAIT_COMPTE['ENTETE_COL_REF'] = "Référence";
+$EXTRAIT_COMPTE['ENTETE_COL_REF'] = "RÃ©fÃ©rence";
 $EXTRAIT_COMPTE['ENTETE_COL_CLIENT'] = "Client";
-$EXTRAIT_COMPTE['ENTETE_COL_CREATION'] = "Création";
-$EXTRAIT_COMPTE['ENTETE_COL_ECHEANCE']  = "Echéance";
+$EXTRAIT_COMPTE['ENTETE_COL_CREATION'] = "CrÃ©ation";
+$EXTRAIT_COMPTE['ENTETE_COL_ECHEANCE']  = "EchÃ©ance";
 $EXTRAIT_COMPTE['ENTETE_COL_RELANCE']  = "Relance";
-$EXTRAIT_COMPTE['ENTETE_COL_MONTANT'] 	= "Restant dû";
+$EXTRAIT_COMPTE['ENTETE_COL_MONTANT'] 	= "Restant dÃ»";
 $EXTRAIT_COMPTE['ENTETE_COL_MAGASIN'] 	= "Mag";
 
 $EXTRAIT_COMPTE['LARGEUR_COL_REF'] = 35;
@@ -56,15 +56,15 @@ $EXTRAIT_COMPTE['PIEDS_DROIT'][1]	= $PIED_DE_PAGE_DROIT_1;
 
 
 
-//variable//type de champ(parametre)//libéllé//commentaire
+//variable//type de champ(parametre)//libÃ©llÃ©//commentaire
 // PARAMETRES MODIFIABLES
 // FIN PARAMETRES MODIFIABLES
 // CONFIGURATION PAR DEFAUT
-// Portion de code recopiée dans la partie « paramètres modifiables » en cas de remise à 0 des paramètres.
+// Portion de code recopiÃ©e dans la partie Â«Â paramÃ¨tres modifiablesÂ Â» en cas de remise Ã  0 des paramÃ¨tres.
 /*
 */
 // FIN CONFIGURATION PAR DEFAUT
-// INFORMATIONS SUR L’AUTEUR
+// INFORMATIONS SUR Lâ€™AUTEUR
 /* 
 */
 ?>

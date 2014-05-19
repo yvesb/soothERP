@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -47,6 +47,6 @@ if (erreur) {
 else
 {
 window.parent.page.verify('communication_mod_fiche_art','communication_mod_fiche_art.php','true','sub_content');
-window.parent.alerte.alerte_erreur ('Modèle supprimé', 'Le modèle \"<?php echo $model_infos->lib_modele;?>\" a été effacé... <br/><b>Class:</b><br /> <?php echo $class_file_url;?><br /><b>Config:</b><br /> <?php echo $config_file_url;?>' ,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+window.parent.alerte.alerte_erreur ('ModÃ¨le supprimÃ©', 'Le modÃ¨le \"<?php echo $model_infos->lib_modele;?>\" a Ã©tÃ© effacÃ©... <br/><b>Class:</b><br /> <?php echo $class_file_url;?><br /><b>Config:</b><br /> <?php echo $config_file_url;?>' ,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 }
 </script>

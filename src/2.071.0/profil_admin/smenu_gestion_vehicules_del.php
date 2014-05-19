@@ -1,13 +1,13 @@
 <?php
 // *************************************************************************************************************
-// Suppression d'un véhicule
+// Suppression d'un vÃ©hicule
 // *************************************************************************************************************
 
 require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
-//mise à jour des données transmises
+//mise Ã  jour des donnÃ©es transmises
 if(isset($_REQUEST['id_vehicule'])){
 	del_vehicule($_REQUEST['id_vehicule']);
 }

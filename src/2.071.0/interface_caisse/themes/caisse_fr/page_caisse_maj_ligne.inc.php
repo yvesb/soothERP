@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("ref_ligne", "cell_QTE", "cell_PUTTC", "cell_REMISE", "cell_PRIXTTC");
 check_page_variables ($page_variables);
 

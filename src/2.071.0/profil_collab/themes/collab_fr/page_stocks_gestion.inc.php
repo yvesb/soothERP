@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -57,7 +57,7 @@ check_page_variables ($page_variables);
 					Dernier inventaire
 					</td>
 					<td style="text-align:center; font-weight:bolder;" colspan="3">
-					Accès direct
+					AccÃ¨s direct
 					</td>
 				</tr>
 				<tr><td colspan="6" style=" border-bottom:1px solid #999999">&nbsp;</td></tr>

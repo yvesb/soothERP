@@ -5,7 +5,7 @@
 // ARCHIVAGE DU CONTACT
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -49,7 +49,7 @@ foreach ($_ALERTES as $alerte => $value) {
 if (erreur) {
 
 	if (contact_entreprise) {
-		texte_erreur += "Le contact principal de l'application ne peut être archivé.";
+		texte_erreur += "Le contact principal de l'application ne peut Ãªtre archivÃ©.";
 	}
 	window.parent.alerte.alerte_erreur ('Archivage impossible', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 }

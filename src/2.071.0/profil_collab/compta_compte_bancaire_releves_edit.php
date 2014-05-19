@@ -18,7 +18,7 @@ $infos_releve = $compte_bancaire->charger_compte_bancaire_releve ($_REQUEST["id_
 	$query_join 	= "";
 	$query_where 	= " id_compte_bancaire = '".$_REQUEST["id_compte_bancaire"]."' && date_move < '".$search['date_fin']."' ";
 	
-	//on recherche la date de debut de la liste part rapport au dernier relevé 
+	//on recherche la date de debut de la liste part rapport au dernier relevÃ© 
 	$liste_releves = $compte_bancaire->getReleves_compte ();
 	foreach ($liste_releves as $releve) {
 		if ($releve->date_releve >= $search['date_fin']) {$next_montant_reel = $releve->solde_reel; continue; }
@@ -27,7 +27,7 @@ $infos_releve = $compte_bancaire->charger_compte_bancaire_releve ($_REQUEST["id_
 		break;
 	}
 	$totaux = array();
-	//total en crédit en débit et en solde sur la période
+	//total en crÃ©dit en dÃ©bit et en solde sur la pÃ©riode
 	$query = "SELECT SUM(montant_move) as credit
 							FROM comptes_bancaires_moves 
 						WHERE ".$query_where." && montant_move > 0
@@ -43,7 +43,7 @@ $infos_releve = $compte_bancaire->charger_compte_bancaire_releve ($_REQUEST["id_
 	if ($tmp = $resultat->fetchObject()) { $totaux["debit"] = $tmp->debit; }
 	unset ($tmp, $resultat, $query);
 	
-	//on recherche le solde du relevé précédent
+	//on recherche le solde du relevÃ© prÃ©cÃ©dent
 	$ancien_solde_reel = 0;
 	if (isset($search['date_debut'])) {
 		$ancien_solde_reel = $compte_bancaire->solde_reel_releve ($search['date_debut']);

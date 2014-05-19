@@ -19,7 +19,7 @@ if (isset($_REQUEST["ref_doc"])) {
             $liste_email = get_contact_emails ($document->getRef_contact());
     }
 
-    //Récupération des emails de tous lkes collaborateurs
+    //RÃ©cupÃ©ration des emails de tous lkes collaborateurs
     $collaborateurs = contact_collab::get_list_collaborateurs();
     $emails_collaborateurs = array();
     if(!empty($collaborateurs)) {

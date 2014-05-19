@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -21,14 +21,14 @@ check_page_variables ($page_variables);
 
 ?>
 <script type="text/javascript">
-tableau_smenu[0] = Array("smenu_comptabilite", "smenu_comptabilite.php" ,"true" ,"sub_content", "Comptabilité");
-tableau_smenu[1] = Array('compta_plan_general','compta_plan_general.php','true','sub_content', "Plan comptable général");
+tableau_smenu[0] = Array("smenu_comptabilite", "smenu_comptabilite.php" ,"true" ,"sub_content", "ComptabilitÃ©");
+tableau_smenu[1] = Array('compta_plan_general','compta_plan_general.php','true','sub_content', "Plan comptable gÃ©nÃ©ral");
 update_menu_arbo();
 </script>
 <div class="emarge">
 <?php include $DIR.$_SESSION['theme']->getDir_theme()."page_compta_plan_recherche_mini.inc.php" ?>
 
-<p class="titre">Plan comptable général</p>
+<p class="titre">Plan comptable gÃ©nÃ©ral</p>
 <div style="height:50px">
 
 <span id="ouvre_compta_plan_mini_moteur" style="cursor:pointer; text-decoration:underline">Ajouter un compte</span><br /><br />
@@ -43,7 +43,7 @@ Event.observe("ouvre_compta_plan_mini_moteur", "click",  function(evt){Event.sto
 <?php 
 if ($comptes_plan_general) {
 	?>
-	<p>Comptes du plan comptable général</p>
+	<p>Comptes du plan comptable gÃ©nÃ©ral</p>
 	<div class="caract_table">
 	<table>
 		<tr class="smallheight">

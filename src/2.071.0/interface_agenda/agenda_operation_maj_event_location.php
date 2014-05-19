@@ -11,13 +11,13 @@ require ($DIR."_session.inc.php");
 // RECUPERATION DES DONNEES MINIMALES POUR LA VERIFICATION DES DROITS
 // ************************************************************************************
 if(!isset($_REQUEST["ref_agenda"])){
-	echo "la référence de l'agenda n'est pas spécifiée";
+	echo "la rÃ©fÃ©rence de l'agenda n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $ref_agenda = $_REQUEST["ref_agenda"];
 
 if(!isset($_REQUEST["id_type_event"])){
-	echo "l'identifiant du type d'événement n'est pas spécifié";
+	echo "l'identifiant du type d'Ã©vÃ©nement n'est pas spÃ©cifiÃ©";
 	exit;
 }
 $id_type_event = intval($_REQUEST["id_type_event"]);
@@ -28,7 +28,7 @@ $id_type_event = intval($_REQUEST["id_type_event"]);
 // VERIFICATIONS DES DROITS
 // ************************************************************************************
 if(!$_SESSION["agenda"]["GestionnaireAgendas"]->addEvent($ref_agenda, $id_type_event)){
-	echo "Vous n'avez pas les droits d'ajouter ou de modifier cet événement";
+	echo "Vous n'avez pas les droits d'ajouter ou de modifier cet Ã©vÃ©nement";
 	exit;
 }
 // ************************************************************************************
@@ -40,43 +40,43 @@ if(!$_SESSION["agenda"]["GestionnaireAgendas"]->addEvent($ref_agenda, $id_type_e
 
 
 if(!isset($_REQUEST["scale_used"])){
-	echo "l'échelle n'est pas spécifiée";
+	echo "l'Ã©chelle n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $scale_used = $_REQUEST["scale_used"];
 
 if(!isset($_REQUEST["id_graphic_event"])){
-	echo "l'identifiant de l'événement graphique n'est pas spécifié";
+	echo "l'identifiant de l'Ã©vÃ©nement graphique n'est pas spÃ©cifiÃ©";
 	exit;
 }
 $id_graphic_event = $_REQUEST["id_graphic_event"];
 
 if(!isset($_REQUEST["event_lib"])){
-	echo "le libélé de l'évènement n'est pas spécifié";
+	echo "le libÃ©lÃ© de l'Ã©vÃ¨nement n'est pas spÃ©cifiÃ©";
 	exit;
 }
 $event_lib = utf8_decode($_REQUEST["event_lib"]);
 
 if(!isset($_REQUEST["sdate_deb"])){
-	echo "la date de commencement de l'évènement n'est pas spécifiée";
+	echo "la date de commencement de l'Ã©vÃ¨nement n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $sdate_deb = $_REQUEST["sdate_deb"];
 
 if(!isset($_REQUEST["sdate_fin"])){
-	echo "la date de fin de l'évènement n'est pas spécifiée";
+	echo "la date de fin de l'Ã©vÃ¨nement n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $sdate_fin = $_REQUEST["sdate_fin"];
 
 if(!isset($_REQUEST["sheure_deb"])){
-	echo "l'heure de commencement de l'évènement n'est pas spécifiée";
+	echo "l'heure de commencement de l'Ã©vÃ¨nement n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $sheure_deb = $_REQUEST["sheure_deb"];
 
 if(!isset($_REQUEST["sheure_fin"])){
-	echo "l'heure de fin de l'évènement n'est pas spécifiée";
+	echo "l'heure de fin de l'Ã©vÃ¨nement n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $sheure_fin = $_REQUEST["sheure_fin"];
@@ -88,10 +88,10 @@ $Udate_deb = strtotime($date_deb);
 $Udate_fin = strtotime($date_fin);
 
 if($Udate_deb > $Udate_fin){
-	echo "l'heure de fin de l'évènement est avant l'heure de commencement";
+	echo "l'heure de fin de l'Ã©vÃ¨nement est avant l'heure de commencement";
 	exit;
 }
-$duree = round( ($Udate_fin - $Udate_deb) / 60 ); //durée en minutes
+$duree = round( ($Udate_fin - $Udate_deb) / 60 ); //durÃ©e en minutes
 
 
 if(isset($_REQUEST["note"]))
@@ -99,13 +99,13 @@ if(isset($_REQUEST["note"]))
 else{	$note = "";}
 
 if(!isset($_REQUEST["id_stock"])){
-	echo "le stock à débiter n'est pas spécifié";
+	echo "le stock Ã  dÃ©biter n'est pas spÃ©cifiÃ©";
 	exit;
 }
 $id_stock = $_REQUEST["id_stock"];
 
 if(!isset($_REQUEST["qte"])){
-	echo "le quantité à débiter n'est pas spécifiée";
+	echo "le quantitÃ© Ã  dÃ©biter n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $qte = $_REQUEST["qte"];
@@ -116,7 +116,7 @@ $qte = $_REQUEST["qte"];
 // CREATION DE L'obj Event
 // ************************************************************************************
 if(!isset($_REQUEST["ref_event"])){
-	echo "la référence de l'événement n'est pas spécifiée";
+	echo "la rÃ©fÃ©rence de l'Ã©vÃ©nement n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $ref_event = $_REQUEST["ref_event"];
@@ -144,28 +144,28 @@ if ($result = $results->fetchObject()){
 	
 }
 if(!$event->setLib_event($event_lib, $_SESSION["agenda"]["GestionnaireEvenements"]))
-{echo "Vous n'avez pas le droit de modifier le libélé de l'événement";}
+{echo "Vous n'avez pas le droit de modifier le libÃ©lÃ© de l'Ã©vÃ©nement";}
 
 // ************************************************************************************
-// MISES A JOUR DE l'événement
+// MISES A JOUR DE l'Ã©vÃ©nement
 // ************************************************************************************
 //if(!$event->setLib_event($event_lib, $_SESSION["agenda"]["GestionnaireEvenements"]))
-//{echo "Vous n'avez pas le droit de modifier le libélé de l'événement";}
+//{echo "Vous n'avez pas le droit de modifier le libÃ©lÃ© de l'Ã©vÃ©nement";}
 
 if(!$event->setRef_Agenda($ref_agenda, $_SESSION["agenda"]["GestionnaireEvenements"]))
-{echo "Vous n'avez pas le droit de changer l'événement d'agenda";}
+{echo "Vous n'avez pas le droit de changer l'Ã©vÃ©nement d'agenda";}
 
 if(!$event->setId_type_event($id_type_event, $_SESSION["agenda"]["GestionnaireEvenements"]))
-{echo "Vous n'avez pas le droit de changer l'événement de type";}
+{echo "Vous n'avez pas le droit de changer l'Ã©vÃ©nement de type";}
 
 if(!$event->setUdate_event($Udate_deb, $_SESSION["agenda"]["GestionnaireEvenements"])/* || !$event->setDuree_event($duree, $_SESSION["agenda"]["GestionnaireEvenements"])*/)
-{echo "Vous n'avez pas le droit de mlettre à jour l'heure de l'événement";}
+{echo "Vous n'avez pas le droit de mlettre Ã  jour l'heure de l'Ã©vÃ©nement";}
 
 if(!$event->setDuree_event($duree, $_SESSION["agenda"]["GestionnaireEvenements"]))
-{echo "L'heure de l'événement n'a pas été mise à jour";}
+{echo "L'heure de l'Ã©vÃ©nement n'a pas Ã©tÃ© mise Ã  jour";}
 
 if(!$event->setNote_event($note, $_SESSION["agenda"]["GestionnaireEvenements"]))
-{echo "Vous n'avez pas le droit de modifier les notes de l'événement";}
+{echo "Vous n'avez pas le droit de modifier les notes de l'Ã©vÃ©nement";}
 
 $jour_semaine = strftime("%w", $Udate_deb);
 

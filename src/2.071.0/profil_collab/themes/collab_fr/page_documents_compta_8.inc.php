@@ -4,7 +4,7 @@
 // ONGLET DE COMPTABILITE FAC
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -42,7 +42,7 @@ check_page_variables ($page_variables);
 					
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
-					<td style="width:40%; font-weight:bolder">Réf Doc</td>
+					<td style="width:40%; font-weight:bolder">RÃ©f Doc</td>
 					<td style=" width:60%;font-weight:bolder; color:#999999">
 					<span style="cursor:pointer" id="link_edit_doc"><?php echo $document->getRef_doc();?></span>
 					
@@ -69,7 +69,7 @@ check_page_variables ($page_variables);
 					<td style="width:50%;">
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
-					<td style="width:40%; font-weight:bolder">Récapitulatif</td>
+					<td style="width:40%; font-weight:bolder">RÃ©capitulatif</td>
 					<td style=" width:60%;font-weight:bolder; color:#999999"></td>
 				</tr>
 				<tr>
@@ -129,8 +129,8 @@ check_page_variables ($page_variables);
 			<tr>
 				<td style="width:25%">&nbsp;</td>
 				<td style="font-weight:bolder; width:26%; text-align:center; padding-right:15px">Montant</td>
-				<td style="font-weight:bolder; width:18%; text-align:center">N° Compte</td>
-				<td style="font-weight:bolder; width:22%">Libellé</td>
+				<td style="font-weight:bolder; width:18%; text-align:center">NÂ° Compte</td>
+				<td style="font-weight:bolder; width:22%">LibellÃ©</td>
 				<td style="width:4%">&nbsp;</td>
 			</tr>
 			</table>

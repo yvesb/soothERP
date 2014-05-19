@@ -4,7 +4,7 @@
 //journal des achats
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -30,10 +30,10 @@ function nb_mois($date1, $date2) {
 	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
 	</a>
 	
-	<span style="font-weight:bolder">Vérification automatique du journal.</span><br />
+	<span style="font-weight:bolder">VÃ©rification automatique du journal.</span><br />
 <br />
 	<br />
-	(cette opération peut durer plusieurs minutes)<br />
+	(cette opÃ©ration peut durer plusieurs minutes)<br />
 	<div id="aff_compta_verify" style="overflow:auto; height:430px">
 			
 			<SCRIPT type="text/javascript">
@@ -61,7 +61,7 @@ function nb_mois($date1, $date2) {
 			<div class="progress_barre"><div class="files_progress" id="progverify"></div></div>
 			<div id="verify_journal" style="display:none"></div><br />
 
-			<span id="verify_journal_start" style="display:block;  text-decoration:underline; cursor:pointer">Lancer la vérification automatique du journal pour la période sélectionnée</span>
+			<span id="verify_journal_start" style="display:block;  text-decoration:underline; cursor:pointer">Lancer la vÃ©rification automatique du journal pour la pÃ©riode sÃ©lectionnÃ©e</span>
 			</div>
 		</div>
 	
@@ -91,7 +91,7 @@ function nb_mois($date1, $date2) {
 			<select id="date_exercice" name="date_exercice" class="classinput_nsize">
 			<?php
 			for($i = 0; $i< count($liste_exercices); $i++) {
-				//décompte du nombre de mois en deux exercices
+				//dÃ©compte du nombre de mois en deux exercices
 				$date1 = date("Y-m-d",strtotime($liste_exercices[$i]->date_fin));
 				if (isset($liste_exercices[$i+1])) {
 					
@@ -149,7 +149,7 @@ function nb_mois($date1, $date2) {
 			<td>&nbsp; </td>
 			<td style="text-align:right">
 			
-			<span id="open_verifi_journal" style="cursor:pointer; text-decoration:underline">Vérifier le journal</span>
+			<span id="open_verifi_journal" style="cursor:pointer; text-decoration:underline">VÃ©rifier le journal</span>
 			<SCRIPT type="text/javascript">
 			Event.observe("open_verifi_journal", "click", function(evt){
 				ouvre_compta_verify();
@@ -180,7 +180,7 @@ function nb_mois($date1, $date2) {
 		</tr>
 		<tr>
 			<td></td>
-			<td>Numéro&nbsp;de&nbsp;compte:&nbsp;&nbsp;
+			<td>NumÃ©ro&nbsp;de&nbsp;compte:&nbsp;&nbsp;
 			</td>
 			<td colspan="4"><input type="text" id="numero_compte" name="numero_compte" value="" class="classinput_nsize" />
 			</td>

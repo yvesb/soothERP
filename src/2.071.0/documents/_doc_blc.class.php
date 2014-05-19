@@ -62,7 +62,7 @@ public function open_doc ($select = "", $left_join = "") {
 	$this->client_encours = $doc->encours;
 
 	
-	// Blocage des quantités
+	// Blocage des quantitÃ©s
 	if ($this->id_etat_doc == 14 || $this->id_etat_doc == 15) {
 		$this->quantite_locked = true;
 	}
@@ -112,7 +112,7 @@ public function create_doc () {
 }
 
 
-// Charge les informations supplémentaire du contact
+// Charge les informations supplÃ©mentaire du contact
 protected function load_infos_contact () {
 	global $CLIENT_ID_PROFIL;
 	global $COMMERCIAL_ID_PROFIL;
@@ -153,7 +153,7 @@ protected function load_infos_contact () {
 }
 
 
-//attibution par défaut du commercial
+//attibution par dÃ©faut du commercial
 protected function load_defauts_infos_contact () {
 	global $COMMERCIAL_ID_PROFIL;
 	
@@ -175,7 +175,7 @@ protected function load_defauts_infos_contact () {
 }
 
 
-// Renvoie l'adresse a utiliser dans le document pour un contact donné
+// Renvoie l'adresse a utiliser dans le document pour un contact donnÃ©
 function define_adresse_contact () {
 	global $bdd;
 
@@ -206,7 +206,7 @@ function define_adresse_contact () {
 		$this->adresse_contact = $_SESSION['magasin']->getLib_magasin ();
 	}
 	elseif (!$adresse_contact_ok) {
-		// Sélection des adresses prédéfinies
+		// SÃ©lection des adresses prÃ©dÃ©finies
 		$query = "SELECT ref_adr_livraison, a1.text_adresse ta1, a1.code_postal cp1, a1.ville v1, a1.id_pays ip1, p1.pays p1
 							FROM annu_client ac
 								LEFT JOIN adresses a1 ON ac.ref_adr_livraison = a1.ref_adresse
@@ -233,7 +233,7 @@ function define_adresse_contact () {
 // FONCTIONS LIEES A LA MODIFICATION D'UN DOCUMENT
 // *************************************************************************************************************
 
-// Met à jour l' id_magasin pour ce bon de livraison
+// Met Ã  jour l' id_magasin pour ce bon de livraison
 public function maj_id_magasin ($new_id_magasin) {
 	global $bdd;	
 
@@ -260,7 +260,7 @@ public function maj_id_magasin ($new_id_magasin) {
 	return true;
 }
 
-// Met à jour la ref_doc_externe
+// Met Ã  jour la ref_doc_externe
 public function maj_ref_doc_externe ($ref_doc_externe) {
 	global $bdd;	
 
@@ -276,7 +276,7 @@ public function maj_ref_doc_externe ($ref_doc_externe) {
 	return true;
 }
 
-// Met à jour la date de livraison demandée
+// Met Ã  jour la date de livraison demandÃ©e
 public function maj_id_livraison_mode ($id_livraison_mode) {
 	global $bdd;
 	
@@ -290,29 +290,29 @@ public function maj_id_livraison_mode ($id_livraison_mode) {
 	}
 	
 	$livraison_mode = new livraison_modes($id_livraison_mode);
-	//mise à jour du nouveau mode de livraison
+	//mise Ã  jour du nouveau mode de livraison
 	$this->id_livraison_mode = $id_livraison_mode;
 
 	$query = "UPDATE doc_blc SET id_livraison_mode = ".num_or_null($this->id_livraison_mode)."
 						WHERE ref_doc = '".$this->ref_doc."' ";
 	$bdd->exec ($query);
 	
-	//calcul et insertion pour ce document des frais de port (calcul effectué depuis la class livraison mode)
+	//calcul et insertion pour ce document des frais de port (calcul effectuÃ© depuis la class livraison mode)
 	$livraison_mode->calcul_frais_livraison_doc ($this);
 	
 	return true;
 }
 
-// Liste des documents pouvant être fusionner
+// Liste des documents pouvant Ãªtre fusionner
 public function check_allow_fusion ($second_document) {
-	//verifcation que l'état des document permet la fusion
+	//verifcation que l'Ã©tat des document permet la fusion
 	if (($this->id_etat_doc != "11" && $this->id_etat_doc != "13") && ($second_document->getId_etat_doc () != "11" && $second_document->getId_etat_doc () != "13")) {
 		return false;
 	}
 	return true;
 }
 
-// Liste des documents pouvant être fusionner
+// Liste des documents pouvant Ãªtre fusionner
 public function liste_doc_fusion () {
 	global $bdd;
 	
@@ -349,7 +349,7 @@ protected function doc_line_infos_supp () {
 	return $query;
 }
 
-// Chargement des informations supplémentaires concernant les numéros de série 
+// Chargement des informations supplÃ©mentaires concernant les numÃ©ros de sÃ©rie 
 protected function doc_line_sn_infos_supp () {
 	$query['select']		= ", IF (ISNULL(sas.numero_serie), 0, 1) as sn_exist";
 	$query['left_join'] = " LEFT JOIN stocks_articles_sn sas ON sas.numero_serie = dls.numero_serie";
@@ -362,7 +362,7 @@ protected function doc_line_sn_infos_supp () {
 // FONCTIONS LIEES A LA MODIFICATION DE L'ETAT D'UN DOCUMENT
 // *************************************************************************************************************
 
-// Vérification de la possibilité de changer l'état du document
+// VÃ©rification de la possibilitÃ© de changer l'Ã©tat du document
 protected function check_maj_etat ($new_etat_doc) {
 	if ($new_etat_doc == 14 ) {
 		$new_etat_doc = 15;
@@ -371,7 +371,7 @@ protected function check_maj_etat ($new_etat_doc) {
 }
 
 
-// Action avant de changer l'état du document
+// Action avant de changer l'Ã©tat du document
 protected function action_before_maj_etat ($new_etat_doc) {
 	switch ($this->id_etat_doc) {
 		case 11: case 12: case 13:
@@ -394,17 +394,17 @@ protected function action_before_maj_etat ($new_etat_doc) {
 }
 
 
-// Action après de changer l'état du document
+// Action aprÃ¨s de changer l'Ã©tat du document
 protected function action_after_maj_etat ($old_etat_doc) {
 	global $bdd;
 
 	switch ($old_etat_doc) {
 		case 11: case 12: case 13: 
 			if ($this->id_etat_doc == 14 || $this->id_etat_doc == 15) {
-				// Préciser dans le BL associé que la qté est livrée (ou en cours de livraison)
+				// PrÃ©ciser dans le BL associÃ© que la qtÃ© est livrÃ©e (ou en cours de livraison)
 				$this->maj_cdc_qte_livree (1);
 				
-				//edi: mise à jour de l'etat de la commande
+				//edi: mise Ã  jour de l'etat de la commande
 				if (!$this->liaisons_loaded) { $this->charger_liaisons(); }
 				foreach($this->liaisons['source'] as $ref){
 					if(preg_match('/^CDC-.+$/',$ref->ref_doc_source) == 1){
@@ -415,7 +415,7 @@ protected function action_after_maj_etat ($old_etat_doc) {
 					}
 				}
 			}else if($this->id_etat_doc == 13){
-				//edi: mise à jour de l'etat de la commande
+				//edi: mise Ã  jour de l'etat de la commande
 				if (!$this->liaisons_loaded) { $this->charger_liaisons(); }
 				foreach($this->liaisons['source'] as $ref){
 					if(preg_match('/^CDC-.+$/',$ref->ref_doc_source) == 1){
@@ -427,7 +427,7 @@ protected function action_after_maj_etat ($old_etat_doc) {
 		break;
 		case 14: case 15:
 			if ($this->id_etat_doc == 11 || $this->id_etat_doc == 12 || $this->id_etat_doc == 13) {
-				// Préciser dans le BL associé que la qté n'est pas livrée (ou en cours de livraison)
+				// PrÃ©ciser dans le BL associÃ© que la qtÃ© n'est pas livrÃ©e (ou en cours de livraison)
 				$this->maj_cdc_qte_livree (-1);
 			}
 		break;
@@ -435,7 +435,7 @@ protected function action_after_maj_etat ($old_etat_doc) {
 
 	if (!$this->liaisons_loaded) { $this->charger_liaisons () ; }
 	foreach ($this->liaisons['dest'] as $dest) {
-		//si le BLC est déjà lié avec une facture (et la liaison valide), alors on ne facture pas
+		//si le BLC est dÃ©jÃ  liÃ© avec une facture (et la liaison valide), alors on ne facture pas
 		if ($dest->active ) { $GLOBALS['_OPTIONS']['CREATE_DOC']['not_generer_facture'] = 1;}
 	}
 	if ((($this->id_etat_doc == 14 && $old_etat_doc !=15) || ($this->id_etat_doc == 15 && $old_etat_doc !=14))  && !isset($GLOBALS['_OPTIONS']['CREATE_DOC']['not_generer_facture'])) { 
@@ -463,7 +463,7 @@ function check_profils () {
 }
 
 
-//fonctions de mise à jour lignes si non bloquée 
+//fonctions de mise Ã  jour lignes si non bloquÃ©e 
 protected function add_line_article ($infos) {
 	if (!$this->quantite_locked) {
 		parent::add_line_article ($infos);
@@ -520,9 +520,9 @@ public function set_line_invisible ($ref_doc_line) {
 // FONCTIONS SPECIFIQUES AU TYPE DE DOC 
 // *************************************************************************************************************
 
-// Vérifie si il faut payer avant de pouvoir livrer le client
+// VÃ©rifie si il faut payer avant de pouvoir livrer le client
 public function must_pay_before_livraison () {
-	// Information sur la nécessité d'enregistrer un règlement
+	// Information sur la nÃ©cessitÃ© d'enregistrer un rÃ¨glement
 	if ($this->id_etat_doc != 11 && $this->id_etat_doc != 13) { return false; }
 
 	$this->calcul_montant_to_pay ();
@@ -533,11 +533,11 @@ public function must_pay_before_livraison () {
 }
 
 
-// Génère une facture client à partir de ce bl.
+// GÃ©nÃ¨re une facture client Ã  partir de ce bl.
 public function generer_fa_client () {
 	global $bdd;
 
-	// Sélection d'une adresse de facturation prédéterminée dans la commande si celle-ci a été définie dans la commande
+	// SÃ©lection d'une adresse de facturation prÃ©dÃ©terminÃ©e dans la commande si celle-ci a Ã©tÃ© dÃ©finie dans la commande
 	$query = "SELECT d.ref_adr_contact, d.adresse_contact, d.code_postal_contact, d.ville_contact, d.id_pays_contact
 						FROM documents d
 							LEFT JOIN documents_liaisons dl ON d.ref_doc = dl.ref_doc_source
@@ -576,9 +576,9 @@ public function generer_fa_client () {
 
 
 
-// Génère un retour des produits sélectionnés
+// GÃ©nÃ¨re un retour des produits sÃ©lectionnÃ©s
 public function generer_retour_client ($lines = false) {
-	// Possible uniquement si le BL est livré
+	// Possible uniquement si le BL est livrÃ©
 	if ($this->id_etat_doc != 15) { return false; }
 	
 	if (is_array($lines)) {
@@ -594,7 +594,7 @@ public function generer_retour_client ($lines = false) {
 // *************************************************************************************************************
 // FONCTIONS DE RECOPIE D'UN DOCUMENT
 // *************************************************************************************************************
-// Lors de la copie vers un Bon de Livraison, la Quantité à livrer est inversée si il s'agit d'un retour
+// Lors de la copie vers un Bon de Livraison, la QuantitÃ© Ã  livrer est inversÃ©e si il s'agit d'un retour
 function action_before_copie_line_to_doc ($new_doc, $line) {
 	if ($new_doc->getID_TYPE_DOC() != 3 || isset($GLOBALS['_OPTIONS']['FUSION']))  { return true; }
 
@@ -606,7 +606,7 @@ function action_before_copie_line_to_doc ($new_doc, $line) {
 // Liaison entre les lignes des documents de la BLC et du BLC
 function action_after_copie_line_to_doc ($new_doc, $line) {
 	global $bdd;
-	//en cas de fusion on met à jour les doc_lines_blc pour correspondance avec les CDC
+	//en cas de fusion on met Ã  jour les doc_lines_blc pour correspondance avec les CDC
   if (isset($GLOBALS['_OPTIONS']['FUSION'])) {
 		$query = "UPDATE doc_lines_blc SET ref_doc_line = '".$line->ref_doc_line."'
 							WHERE  ref_doc_line = '".$line->old_ref_doc_line."' ";
@@ -619,10 +619,10 @@ function action_after_copie_line_to_doc ($new_doc, $line) {
 }
 
 protected function create_info_copie_line_texte ($doc_source) { 
-	return "Votre référence: ".$this->ref_doc_externe; 
+	return "Votre rÃ©fÃ©rence: ".$this->ref_doc_externe; 
 }
 
-//insertion d'une ligne d'information au debut du BLC s'il est généré depuis une CDC ayant une référence externe
+//insertion d'une ligne d'information au debut du BLC s'il est gÃ©nÃ©rÃ© depuis une CDC ayant une rÃ©fÃ©rence externe
 protected function create_info_copie_line_cdc ($doc_source) {
 	if ($doc_source->getID_TYPE_DOC() == 2 && $doc_source->getRef_doc_externe () != "") {
 	$infos['type_of_line'] = "information";
@@ -676,19 +676,19 @@ protected function action_before_break_liaison ($ref_doc) {
 	global $bdd;
 
 	// *************************************************
-	// Actions spéciales uniquement en cas de rupture d'une liaison avec un CDC
+	// Actions spÃ©ciales uniquement en cas de rupture d'une liaison avec un CDC
 	$query = "SELECT id_type_doc FROM documents WHERE ref_doc = '".$ref_doc."'";
 	$resultat = $bdd->query ($query);
 	if (!$doc = $resultat->fetchObject() || $doc->id_type_doc != 2) { return false; }
 
 	// *************************************************
-	// Diminution des quantités livrées le cas échéant
+	// Diminution des quantitÃ©s livrÃ©es le cas Ã©chÃ©ant
 	if ($this->id_etat_doc == 14 || $this->id_etat_doc == 15) {
 		$this->maj_cdc_qte_livree(-1);
 	}
 
 	// *************************************************
-	// Suppression de la liaison des articles ligne à ligne
+	// Suppression de la liaison des articles ligne Ã  ligne
 	$query = "UPDATE doc_lines_blc dl_blc, docs_lines dl1, docs_lines dl2
 						SET dl_blc.ref_doc_line_cdc = NULL 
 						WHERE dl1.ref_doc = '".$ref_doc."' && dl2.ref_doc = '".$this->ref_doc."' &&
@@ -705,7 +705,7 @@ protected function action_before_break_liaison ($ref_doc) {
 // FONCTIONS DE GESTION DES REGLEMENTS
 // *************************************************************************************************************
 protected function need_infos_facturation () {
-	// Si la livraison a eu lieu, ou si elle est annulée, les informations de facturation seront gérées dans la facture.
+	// Si la livraison a eu lieu, ou si elle est annulÃ©e, les informations de facturation seront gÃ©rÃ©es dans la facture.
 	if ($this->id_etat_doc == $this->ID_ETAT_ANNULE || $this->id_etat_doc == 14 || $this->id_etat_doc == 15) { return false; }
 	return true;
 }
@@ -732,7 +732,7 @@ function maj_cdc_qte_livree ($add = 1) {
 							WHERE ref_doc_line = '".$this->contenu[$i]->ref_doc_line_cdc."' ";
 		$resultat = $bdd->query ($query);
 		if (!$resultat->rowCount()) {
-			// La ligne n'existe pas il faut la créer
+			// La ligne n'existe pas il faut la crÃ©er
 			$query = "INSERT INTO doc_lines_cdc (ref_doc_line, qte_livree)
 								VALUES ('".$this->contenu[$i]->ref_doc_line_cdc."', '".$this->contenu[$i]->qte."') ";
 			$bdd->exec ($query);
@@ -741,7 +741,7 @@ function maj_cdc_qte_livree ($add = 1) {
 		$liste_of_lines .= ",'".$this->contenu[$i]->ref_doc_line_cdc."'";
 	}
 
-	// Vérification de l'état des commandes livrées
+	// VÃ©rification de l'Ã©tat des commandes livrÃ©es
 	$query = "SELECT DISTINCT(ref_doc) ref_doc
 						FROM docs_lines 
 						WHERE ref_doc_line IN (".$liste_of_lines.") ";
@@ -752,7 +752,7 @@ function maj_cdc_qte_livree ($add = 1) {
 		$cdc->check_if_traitee ();
 	}
 	
-	//edi: mise à jour des stock
+	//edi: mise Ã  jour des stock
 	if (!$this->contenu_materiel_loaded) { $this->charger_contenu_materiel (); }
 	foreach ($this->contenu_materiel as $doc_line) {
 		edi_event(116,$doc_line->ref_article);
@@ -786,7 +786,7 @@ function getA_facturer () {
 		return $this->a_facturer;
 	}
 
-	// Sinon le BLC est a facturer sauf si l'on trouve une facture (non annulée) liée
+	// Sinon le BLC est a facturer sauf si l'on trouve une facture (non annulÃ©e) liÃ©e
 	$this->a_facturer = true;
 	if (!$this->liaisons_loaded) { $this->charger_liaisons(); }
 

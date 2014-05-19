@@ -16,19 +16,19 @@ final class art_liaison_type {
 function __construct ($id_liaison_type = 0) {
 	global $bdd;
 
-	// Controle si le id_liaison_type est précisé
+	// Controle si le id_liaison_type est prÃ©cisÃ©
 	if (!$id_liaison_type) { return false; }
 
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT alt.id_liaison_type, alt.lib_liaison_type, alt.lib_liaison_type_vers, alt.lib_liaison_type_depuis, alt.ordre, alt.actif, alt.systeme
 						FROM art_liaisons_types alt
 						WHERE id_liaison_type = '".$id_liaison_type."' ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si le id_liaison_type est trouvé
+	// Controle si le id_liaison_type est trouvÃ©
 	if (!$liaison_type = $resultat->fetchObject()) { return false; }
 
-	// Attribution des informations à l'objet
+	// Attribution des informations Ã  l'objet
 	$this->id_liaison_type 				= $liaison_type->id_liaison_type;
 	$this->lib_liaison_type				= $liaison_type->lib_liaison_type;
 	$this->lib_liaison_type_vers	= $liaison_type->lib_liaison_type_vers;
@@ -48,7 +48,7 @@ final public function create ($lib_liaison_type, $ordre, $actif) {
 	global $bdd;
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->lib_liaison_type 	= $lib_liaison_type;
 	if (!$this->lib_liaison_type) { 
 		$GLOBALS['_ALERTES']['lib_liaison_type_vide'] = 1; 
@@ -57,7 +57,7 @@ final public function create ($lib_liaison_type, $ordre, $actif) {
 	$this->actif = $actif;
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -71,8 +71,8 @@ final public function create ($lib_liaison_type, $ordre, $actif) {
 	$this->id_liaison_type = $bdd->lastInsertId();
 	
 	// *************************************************
-	// Résultat positif de la création
-	$GLOBALS['_INFOS']['Création_liaisons_types'] = $this->id_liaison_type;
+	// RÃ©sultat positif de la crÃ©ation
+	$GLOBALS['_INFOS']['CrÃ©ation_liaisons_types'] = $this->id_liaison_type;
 
 	return true;
 }
@@ -87,7 +87,7 @@ final public function modification ($lib_liaison_type, $ordre, $actif) {
 	global $bdd;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->lib_liaison_type 	= $lib_liaison_type;
 	if (!$this->lib_liaison_type) { 
 		$GLOBALS['_ALERTES']['lib_liaison_type_vide'] = 1; 
@@ -96,7 +96,7 @@ final public function modification ($lib_liaison_type, $ordre, $actif) {
 	$this->actif = $actif;
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -110,7 +110,7 @@ final public function modification ($lib_liaison_type, $ordre, $actif) {
 	$bdd->exec ($query);
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
@@ -120,11 +120,11 @@ final public function modifier_actif ($actif) {
 	global $bdd;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->actif = $actif;
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -137,7 +137,7 @@ final public function modifier_actif ($actif) {
 	$bdd->exec ($query);
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
@@ -155,7 +155,7 @@ final public function modifier_ordre ($new_ordre) {
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -174,13 +174,13 @@ final public function modifier_ordre ($new_ordre) {
 
 	$bdd->beginTransaction();
 	
-	// Mise à jour des autres LIAISON TYPE
+	// Mise Ã  jour des autres LIAISON TYPE
 	$query = "UPDATE art_liaisons_types
 						SET ordre = ordre ".$variation." 1
 						WHERE ordre ".$symbole1." '".$this->ordre."' && ordre ".$symbole2." '".$new_ordre."' ";
 	$bdd->exec ($query);
 	
-	// Mise à jour de cette LIAISON TYPE
+	// Mise Ã  jour de cette LIAISON TYPE
 	$query = "UPDATE art_liaisons_types
 						SET ordre = '".$new_ordre."' 
 						WHERE id_liaison_type = '".$this->id_liaison_type."'";
@@ -189,7 +189,7 @@ final public function modifier_ordre ($new_ordre) {
 	$bdd->commit();	
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 

@@ -19,7 +19,7 @@ if (isset($_REQUEST["ref_doc"])) {
 		$id_type_groupe = $document->getId_type_groupe();
 		if ( !($id_type_groupe == 1 && $_SESSION['user']->check_permission ("26",$id_type_doc)) && !($id_type_groupe == 2 && $_SESSION['user']->check_permission ("29",$id_type_doc)) && !($id_type_groupe == 3 && $_SESSION['user']->check_permission ("32",$id_type_doc)) && !($id_type_groupe == 0 && $_SESSION['user']->check_permission ("44")) ) {
 			if ( !($id_type_groupe == 1 && $_SESSION['user']->check_permission ("25",$id_type_doc)) && !($id_type_groupe == 2 && $_SESSION['user']->check_permission ("28",$id_type_doc)) && !($id_type_groupe == 3 && $_SESSION['user']->check_permission ("31",$id_type_doc)) ) {
-			 	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accés ne vous permettent pas de visualiser ce type de document</span>";
+			 	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accÃ©s ne vous permettent pas de visualiser ce type de document</span>";
 			 	exit;
 			}else{
 				?>
@@ -30,15 +30,15 @@ if (isset($_REQUEST["ref_doc"])) {
 			}
 		}else{
 				
-			//permission (6) Accès Consulter les prix d'achat
+			//permission (6) AccÃ¨s Consulter les prix d'achat
 			if (!$_SESSION['user']->check_permission ("6") && $id_type_doc == $FACTURE_FOURNISSEUR_ID_TYPE_DOC) {
 					//on indique l'interdiction et on stop le script
-					echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accés ne vous permettent pas de visualiser ce type de document</span>";
+					echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accÃ©s ne vous permettent pas de visualiser ce type de document</span>";
 					exit();
 			}
 				$ref_contact = $document->getRef_contact ();
 				
-				//si un montant est négatif
+				//si un montant est nÃ©gatif
 				$montant_negatif = false;
 				$montant_positif = 1;
 				if (isset($_REQUEST["montant_neg"])) { $montant_negatif = true; $montant_positif = -1;}

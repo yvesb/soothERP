@@ -4,7 +4,7 @@
 // AFFICHAGE DES DIFF2RENTES POSSIBILITES DE VARIANTES
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -144,6 +144,6 @@ foreach ($resultat_var as $variante) {
 		</tr>
 	</table>
 <script type="text/javascript">
-//fonction de validation de l'étape 2
+//fonction de validation de l'Ã©tape 2
 Event.observe($("bt_etape_1b"), "click", function(evt){Event.stop(evt); goto_etape (2);});
 </script>

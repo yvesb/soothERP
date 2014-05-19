@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -33,7 +33,7 @@ if (is_array($liste_fax)){
 	}
 } else {
 	?>
-	Aucun fax défini.
+	Aucun fax dÃ©fini.
 	<?php
 }
 ?>

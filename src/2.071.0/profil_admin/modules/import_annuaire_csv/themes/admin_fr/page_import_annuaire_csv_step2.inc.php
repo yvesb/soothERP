@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -27,7 +27,7 @@ update_menu_arbo();
 <div class="emarge">
 
 
-<p class="titre">Listes des contacts à importer</p>
+<p class="titre">Listes des contacts Ã  importer</p>
 <div>
 
 <form action="modules/import_annuaire_csv/import_annuaire_csv_step2_done.php" enctype="multipart/form-data" method="POST" id="import_annuaire_csv_done" name="import_annuaire_csv_done" target="formFrame" class="classinput_nsize" />
@@ -73,7 +73,7 @@ update_menu_arbo();
 			<input type="submit" value="Lancer l'import">
 		</td>
 		<td>
-		<?php echo count($array_retour); ?> fiche(s) à importer<br />
+		<?php echo count($array_retour); ?> fiche(s) Ã  importer<br />
 		<strong><?php echo count($array_retour)-$total_avert-$count_nom_vide; ?> fiche(s) valide(s)</strong><br />
 		<?php if ($total_avert) { ?>
 			<strong><?php echo $total_avert; ?> Avertissement(s)</strong><br />

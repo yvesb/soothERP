@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -24,7 +24,7 @@ check_page_variables ($page_variables);
 
 				 <table id="table_echeanciers" name="table_echeanciers" style="width:98%; " class="doc_reglement_toto" cellpadding="0" cellspacing="0">
 
-					<?php //écheancier
+					<?php //Ã©cheancier
 						$montant_terme = 0;
 						$nb_echeances_aff = 0;
 						if (!isset($echeances) || !$echeances) {

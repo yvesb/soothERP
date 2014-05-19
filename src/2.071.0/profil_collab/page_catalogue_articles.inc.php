@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -24,7 +24,7 @@ check_page_variables ($page_variables);
 </script>
 <div class="emarge">
 
-<p class="titre">Création d'Article </p>
+<p class="titre">CrÃ©ation d'Article </p>
 	<table class="minimizetable"><tr><td style="width:300px">
 <div id="list_art_categs">
 <select>

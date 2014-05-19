@@ -12,19 +12,19 @@ require ($DIR."_session.inc.php");
 if (isset($_REQUEST['ref_article'])) {	
 	switch ($_REQUEST['step']) {
 	
-	//données de l'onglet options avancées
+	//donnÃ©es de l'onglet options avancÃ©es
 	case "0":
 		// *************************************************
-		// Controle des données fournies par le formulaire
+		// Controle des donnÃ©es fournies par le formulaire
 		if (!isset($_REQUEST['lib_article'])) {
-			$erreur = "Une variable nécessaire à la Modification de l'article n'est pas précisée.";
+			$erreur = "Une variable nÃ©cessaire Ã  la Modification de l'article n'est pas prÃ©cisÃ©e.";
 			alerte_dev($erreur);
 		}
 		$lib_ticket = '';
 		if (isset($_REQUEST['lib_ticket'])) { $lib_ticket = $_REQUEST['lib_ticket']; }
 		
-		$infos_generales['lib_article'] 			= trim(str_replace("&curren;", "€", $_REQUEST['lib_article']));
-		$infos_generales['lib_ticket']				= str_replace("&curren;", "€", $lib_ticket);
+		$infos_generales['lib_article'] 			= trim(str_replace("&curren;", "â‚¬", $_REQUEST['lib_article']));
+		$infos_generales['lib_ticket']				= str_replace("&curren;", "â‚¬", $lib_ticket);
 		$variante = '';
 		if (isset($_REQUEST['variante'])) { $variante = $_REQUEST['variante']; }
 		$lot = 0;
@@ -48,7 +48,7 @@ if (isset($_REQUEST['ref_article'])) {
 
 
 	
-	//données des caractéristiques
+	//donnÃ©es des caractÃ©ristiques
 	case "1":
 		echo "STEP = 1 <br />";
 		$caracs	=	array();
@@ -144,7 +144,7 @@ if (isset($_REQUEST['ref_article'])) {
 			}
 		}
 		
-		// Cet article de par ses carac peut générer des variantes
+		// Cet article de par ses carac peut gÃ©nÃ©rer des variantes
 		if (isset($_REQUEST['indentations_variantes'])) {
 			$variantes	=	array();
 			for ($i = 0; $i < $_REQUEST['indentations_variantes']; $i++) {
@@ -168,7 +168,7 @@ if (isset($_REQUEST['ref_article'])) {
 	break;
 
 	
-	//données de  l'onglet informations principales
+	//donnÃ©es de  l'onglet informations principales
 	case "2":
 		
 		$ref_constructeur = '';
@@ -237,7 +237,7 @@ if (isset($_REQUEST['ref_article'])) {
 		$article-> modification_view_2 ($infos_generales, $infos_modele);
 	break;
 			
-	// mise à jour des composants
+	// mise Ã  jour des composants
 	case "4":
 		$composants_serie = explode(",", $_REQUEST['liste_composant']);
 		$composant_niveau=1;
@@ -281,7 +281,7 @@ if (isset($_REQUEST['ref_article'])) {
 			
 			
 			
-//les liaisons sont mise à jour à la volée
+//les liaisons sont mise Ã  jour Ã  la volÃ©e
 	
 	
 	}

@@ -16,7 +16,7 @@ require ($CONFIG_DIR."profil_".$_SESSION['profils'][$CLIENT_ID_PROFIL]->getCode_
 gestion_panier();
 $liste_contenu = $_SESSION["panier_interface_".$_INTERFACE['ID_INTERFACE']]["contenu"];
 
-//inscription à la newsletter
+//inscription Ã  la newsletter
 if(isset($_REQUEST['user_newsletter'])){
 	if($_REQUEST["lib_coordonnees"]!=""){$nom_news = $_REQUEST["lib_coordonnees"];}
 	else{$nom_news = $_REQUEST["nom"];}

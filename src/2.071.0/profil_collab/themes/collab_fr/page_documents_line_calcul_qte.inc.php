@@ -1,6 +1,6 @@
 <?php
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -69,7 +69,7 @@ check_page_variables ($page_variables);
 		<td></td>
 		<td></td>
 		<td></td>
-		<td style="text-align:right;">Résultat :</td>
+		<td style="text-align:right;">RÃ©sultat :</td>
 		<td style="text-align:left;">
 			<input id="resultat_calcul" name="resultat_calcul" style="text-align:right;" />&nbsp;<?php /*echo $unite;*/?>
 		</td>
@@ -152,7 +152,7 @@ check_page_variables ($page_variables);
 		}
 	}
 
-	//On calcul le résultat à l'ouverture de la pop-up
+	//On calcul le rÃ©sultat Ã  l'ouverture de la pop-up
 	calculResultat();
 	
 	Event.observe("choix_collisage", "change", function(evt){
@@ -185,9 +185,9 @@ check_page_variables ($page_variables);
 	Event.observe("calcul_qte_valider", "click", function(evt){
 		Event.stop(evt);
 		if (!isNaN(parseFloat($("resultat_calcul").value))){
-			// Quantité normale
+			// QuantitÃ© normale
 			var qte = (parseFloat($("resultat_calcul").value));
-			// Quantité raccourcis ex : 2.00 devient 2
+			// QuantitÃ© raccourcis ex : 2.00 devient 2
 			var qteLite = (parseFloat($("resultat_calcul").value)).toFixed(0);
 			if(qte == parseFloat(qteLite)){
 				window.parent.document.getElementById("<?php echo $cible;?>").value = qteLite;

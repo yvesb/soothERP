@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// GESTION DES Résultats commerciaux (Désactivation d'un modele pdf)
+// GESTION DES RÃ©sultats commerciaux (DÃ©sactivation d'un modele pdf)
 // *************************************************************************************************************
 
 require ("_dir.inc.php");

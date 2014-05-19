@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 if(!$COMPTA_GEST_PRELEVEMENTS){
-    echo "Cette fonctionalité est désactivée par votre administrateur.";
+    echo "Cette fonctionalitÃ© est dÃ©sactivÃ©e par votre administrateur.";
     exit();
 }
 
@@ -32,11 +32,11 @@ $traitena_prog = 0;
 $comptes_bancaires	= compte_bancaire::charger_comptes_bancaires("" , 1);
 
 // *************************************************************************************************************
-// REQUETES A SYNTHETISER ET PLACER DANS UNE METHODE !! (Fonctionne en l'état mais pas optimisé)
+// REQUETES A SYNTHETISER ET PLACER DANS UNE METHODE !! (Fonctionne en l'Ã©tat mais pas optimisÃ©)
 // *************************************************************************************************************
 
 
-//Sélection des prélèvements AVEC autorisation
+//SÃ©lection des prÃ©lÃ¨vements AVEC autorisation
 $query = "SELECT cb2.id_compte_bancaire,cb2.lib_compte, cb2.iban, sum( montant ) AS a_payer
                 FROM `doc_echeanciers` de
                 JOIN documents d ON de.ref_doc = d.ref_doc
@@ -179,7 +179,7 @@ while ($info_echeance_prog_sans_aut = $resultat->fetchObject()) {
     }
 
 
-//Sélection des traites echues avec autorisation
+//SÃ©lection des traites echues avec autorisation
 $query = "SELECT cb2.id_compte_bancaire,cb2.lib_compte, cb2.iban, sum( montant ) AS a_payer
                 FROM `doc_echeanciers` de
                 JOIN documents d ON de.ref_doc = d.ref_doc
@@ -214,7 +214,7 @@ $query = "SELECT cb2.id_compte_bancaire,cb2.lib_compte, cb2.iban, sum( montant )
 $resultat = $bdd->query ($query);
 while ($info_traitena = $resultat->fetchObject()) { $infos_traitena[] = $info_traitena; }
 
-//Sélection des traites SANS autorisation Echues
+//SÃ©lection des traites SANS autorisation Echues
 $query = "SELECT DISTINCT d.ref_doc,a1.ref_contact ,de.id_doc_echeance, de.date, de.type_reglement ,  montant
                 FROM `doc_echeanciers` de
                 INNER JOIN documents d ON de.ref_doc = d.ref_doc

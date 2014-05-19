@@ -15,7 +15,7 @@ if(isset($_REQUEST["ref_user"]))
 else{	$ref_user = $_SESSION['user']->getRef_user();}
 
 if(!isset($_REQUEST["id_type_event"])){
-	echo "l'identifiant du type d'évenement n'est pas spécifiée";
+	echo "l'identifiant du type d'Ã©venement n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $id_type_event = $_REQUEST["id_type_event"];

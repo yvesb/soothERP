@@ -1,10 +1,10 @@
 <?php
 
 // *************************************************************************************************************
-// ajout de modèle d'article pdf
+// ajout de modÃ¨le d'article pdf
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -20,7 +20,7 @@ check_page_variables ($page_variables);
 
 ?>
 <p>&nbsp;</p>
-<p>modèle de documents pdf (ajouter un nouveau) </p>
+<p>modÃ¨le de documents pdf (ajouter un nouveau) </p>
 <p>&nbsp; </p>
 <?php 
 foreach ($_ALERTES as $alerte => $value) {
@@ -72,36 +72,36 @@ if (erreur) {
   
   if (choisir_id_type_article) {
     window.parent.document.getElementById("choix_type_contact").className="alerteform_xsize";
-    texte_erreur += "Vous devez sélectionner un type de document.<br/>";
+    texte_erreur += "Vous devez sÃ©lectionner un type de document.<br/>";
   } else {
     window.parent.document.getElementById("choix_type_contact").className="classinput_xsize";
   }
   if (choisir_source) {
-    texte_erreur += "Vous devez indiquez la source utilisée.<br/>";
+    texte_erreur += "Vous devez indiquez la source utilisÃ©e.<br/>";
   }
   if (indiquer_lib_modele) {
     window.parent.document.getElementById("lib_modele").className="alerteform_xsize";
-    texte_erreur += "Vous devez indiquer un libellé au nouveau modèle.<br/>";
+    texte_erreur += "Vous devez indiquer un libellÃ© au nouveau modÃ¨le.<br/>";
   } else {
     window.parent.document.getElementById("lib_modele").className="classinput_xsize";
   }
   if (choisir_id_pdf_modele) {
     window.parent.document.getElementById("choix_id_pdf_contact").className="alerteform_xsize";
-    texte_erreur += "Vous devez sélectionner un modèle de document source.<br/>";
+    texte_erreur += "Vous devez sÃ©lectionner un modÃ¨le de document source.<br/>";
   } else {
     window.parent.document.getElementById("choix_id_pdf_contact").className="classinput_xsize";
   }
   if (indiquer_fichiers_source) {
     window.parent.document.getElementById("file_1").className="alerteform_nsize";
     window.parent.document.getElementById("file_2").className="alerteform_nsize";
-    texte_erreur += "Vous devez indiquer les emplacements du fichier configuration et du fichier de classe du nouveau modèle.<br/>";
+    texte_erreur += "Vous devez indiquer les emplacements du fichier configuration et du fichier de classe du nouveau modÃ¨le.<br/>";
   } else {
     window.parent.document.getElementById("file_1").className="classinput_nsize";
     window.parent.document.getElementById("file_2").className="classinput_nsize";
   }
 
   if (exist_pdf_modele) {
-    texte_erreur += "Ce modèle PDF est déjà installé dans LMB.<br/>";
+    texte_erreur += "Ce modÃ¨le PDF est dÃ©jÃ  installÃ© dans LMB.<br/>";
   }
   window.parent.alerte.alerte_erreur ('Erreur de saisie', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 
@@ -112,7 +112,7 @@ else
 
 window.parent.changed = false;
 window.parent.page.traitecontent('Communication_mod_fiche_contact','communication_mod_fiche_contact.php','true','sub_content');
-window.parent.alerte.alerte_erreur ('Nouveau modèle ajouté', 'Ce nouveau modèle d\'impression est désormais disponible, cliquez sur « Utiliser un nouveau modèle d\'impression. » et activez le.','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+window.parent.alerte.alerte_erreur ('Nouveau modÃ¨le ajoutÃ©', 'Ce nouveau modÃ¨le d\'impression est dÃ©sormais disponible, cliquez sur Â«Â Utiliser un nouveau modÃ¨le d\'impression.Â Â» et activez le.','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 
 }
 

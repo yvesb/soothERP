@@ -5,7 +5,7 @@
 // IMPORT D'UNE CATEGORIE
 // *************************************************************************************************************
 
-// Variables nÈcessaires ‡ l'affichage
+// Variables n√©cessaires √† l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -52,20 +52,20 @@ if (erreur) {
 
 
 	if (ref_art_categ_exist) {
-		texte_erreur += "Cette catÈgorie a dÈj‡ ÈtÈ importÈe.<br/>";
+		texte_erreur += "Cette cat√©gorie a d√©j√† √©t√© import√©e.<br/>";
 	} 
 	window.parent.alerte.alerte_erreur ('Erreur', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 }
 else
 {
 <?php 
-if (isset ($_INFOS['CrÈation_art_categ']) ) {?>
+if (isset ($_INFOS['Cr√©ation_art_categ']) ) {?>
 window.parent.changed = false;
 window.parent.stop_observe('tr_<?php echo $ref_art_categ?>', 'mouseover');
 window.parent.stop_observe('tr_<?php echo $ref_art_categ?>', 'mouseout');
 window.parent.stop_observe('ins_<?php echo $ref_art_categ?>', 'click');
 window.parent.document.getElementById('tr_<?php echo $ref_art_categ?>').bgColor="#FFEDFE";
-window.parent.document.getElementById("content_art_categs").innerHTML = "CatÈgorie importÈe avec succÈs";
+window.parent.document.getElementById("content_art_categs").innerHTML = "Cat√©gorie import√©e avec succ√©s";
 <?php }?>
 }
 </script>

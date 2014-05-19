@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -23,7 +23,7 @@ check_page_variables ($page_variables);
 ?>
 <script type="text/javascript" language="javascript">
 tableau_smenu[0] = Array("smenu_gestion_modules", "smenu_gestion_modules.php" ,"true" ,"sub_content", "Gestion des Modules");
-tableau_smenu[1] = Array("smenu_gestion_vehicules", "smenu_gestion_vehicules.php" ,"true" ,"sub_content", "Gestion des véhicules");
+tableau_smenu[1] = Array("smenu_gestion_vehicules", "smenu_gestion_vehicules.php" ,"true" ,"sub_content", "Gestion des vÃ©hicules");
 update_menu_arbo();
 </script>
 
@@ -153,7 +153,7 @@ update_menu_arbo();
 							<input style="width:70%" id="attribution_<?php echo $vehicule->id_vehicule; ?>" name="attribution_<?php echo $vehicule->id_vehicule; ?>" value="<?php echo $vehicule->attribution; ?>" type="text" class="classinput_hsize" maxlength="70"  />
 						</td>
 						<td width="180px">
-							<span style="width:90%" id="date_event" name="date_event" ><?php if($liste_evenements){echo convert_date_Us_to_Fr($date_dernier_evenement,'/')." - ".$lib_dernier_evenement;} else echo "Aucun évènement enregistré"?></span>
+							<span style="width:90%" id="date_event" name="date_event" ><?php if($liste_evenements){echo convert_date_Us_to_Fr($date_dernier_evenement,'/')." - ".$lib_dernier_evenement;} else echo "Aucun Ã©vÃ¨nement enregistrÃ©"?></span>
 						</td>
 						<td width="140px">
 						<span style="text-decoration:underline; cursor:pointer" id="smenu_gestion_vehicules_histo_<?php echo $vehicule->id_vehicule; ?>" name="smenu_gestion_vehicules_histo_<?php echo $vehicule->id_vehicule; ?>">Consulter l'historique</span>
@@ -177,7 +177,7 @@ update_menu_arbo();
 				Event.observe('supp_img_<?php echo $vehicule->id_vehicule; ?>', "click", function(evt){
 					Event.stop(evt);
 					$("titre_alert").innerHTML = "Confirmation";
-					$("texte_alert").innerHTML = "Confirmer la suppression de ce véhicule";
+					$("texte_alert").innerHTML = "Confirmer la suppression de ce vÃ©hicule";
 					$("bouton_alert").innerHTML = '<input type="submit" name="bouton1" id="bouton1" value="Supprimer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />';
 				
 					$("alert_pop_up_tab").style.display = "block";

@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// AAFFICHAGE DES Résultats commerciaux (partie boutons)
+// AAFFICHAGE DES RÃ©sultats commerciaux (partie boutons)
 // *************************************************************************************************************
 
 
@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 
-//chargement des modes d'édition
+//chargement des modes d'Ã©dition
 $editions_modes	= liste_mode_edition();
 
 $liste_modeles_pdf_valides = charge_modele_pdf_res_com ();

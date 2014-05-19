@@ -55,28 +55,28 @@ $fichier = $import_serveur->getUrl_serveur_import().$ECHANGE_LMB_DIR."export_ann
     // Fonction de traitement des balises fermantes
     function fonctionBaliseFermante($parseur, $nomBalise)
     {
-        // On oublie la dernière balise rencontrée
+        // On oublie la derniÃ¨re balise rencontrÃ©e
         global $derniereBaliseRencontree;
 
         $derniereBaliseRencontree = "";
     }
 
     //Fonction de traitement du texte
-    // qui est appelée par le "parseur"
+    // qui est appelÃ©e par le "parseur"
     function fonctionTexte($parseur, $texte)
     {
     }
 
-    // Création du parseur XML
+    // CrÃ©ation du parseur XML
     $parseurXML = xml_parser_create("ISO-8859-1");
 
-    // Nom des fonctions à appeler
-    // lorsque des balises ouvrantes ou fermantes sont rencontrées
+    // Nom des fonctions Ã  appeler
+    // lorsque des balises ouvrantes ou fermantes sont rencontrÃ©es
     xml_set_element_handler($parseurXML, "fonctionBaliseOuvrante"
                                        , "fonctionBaliseFermante");
 
-    // Nom de la fonction à appeler
-    // lorsque du texte est rencontré
+    // Nom de la fonction Ã  appeler
+    // lorsque du texte est rencontrÃ©
     xml_set_character_data_handler($parseurXML, "fonctionTexte");
 
     // Ouverture du fichier
@@ -86,7 +86,7 @@ $fichier = $import_serveur->getUrl_serveur_import().$ECHANGE_LMB_DIR."export_ann
     // Lecture ligne par ligne
     while ( $ligneXML = fgets($fp, 1024)) {
         // Analyse de la ligne
-        // REM: feof($fp) retourne TRUE s'il s'agit de la dernière
+        // REM: feof($fp) retourne TRUE s'il s'agit de la derniÃ¨re
         //      ligne du fichier.
         xml_parse($parseurXML, $ligneXML, feof($fp)) or
             die(xml_error_string (xml_get_error_code ($parseurXML))." ".xml_get_current_column_number ($parseurXML)." ".xml_get_current_line_number ($parseurXML)." ".substr($ligneXML, 0, xml_get_current_column_number ($parseurXML))." Erreur XML");
@@ -200,7 +200,7 @@ foreach ($import_annuaire_contact as $annuaire_contact) {
 		}
 		
 		// *************************************************
-		// Création du contact
+		// CrÃ©ation du contact
 		$contact->create ($infos_generales, $infos_profils);
 		
 		$count_import++;
@@ -211,7 +211,7 @@ foreach ($import_annuaire_contact as $annuaire_contact) {
 			//groupes de collaborateurs
 			$liste_fonctions_collab = charger_fonctions ($COLLAB_ID_PROFIL);
 			$collab_fonctions = explode(";", $annuaire_profil['COLLAB_FONCTIONS']);
-			//on parcours les groupes pour retrouver les categories de collaborateurs cochées
+			//on parcours les groupes pour retrouver les categories de collaborateurs cochÃ©es
 			foreach ($liste_fonctions_collab as $liste_fonction_collab) {
 				foreach ($collab_fonctions as $collab_fonction) {
 					if ($collab_fonction == $liste_fonction_collab->id_fonction) {

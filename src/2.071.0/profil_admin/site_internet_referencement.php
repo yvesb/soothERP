@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 
-//informations de référencement
+//informations de rÃ©fÃ©rencement
 $pages_referencees = get_reference();
 
 

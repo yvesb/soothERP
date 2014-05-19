@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 if(!isset($_REQUEST['ref_destinataire'])){
-	echo "La référence du destinataire est inconnue";
+	echo "La rÃ©fÃ©rence du destinataire est inconnue";
 	exit;
 }
 $ref_destinataire = $_REQUEST['ref_destinataire'];
@@ -46,8 +46,8 @@ if(!isset($_REQUEST['id_pdf_modele'])){
 $id_pdf_modele = $_REQUEST['id_pdf_modele'];
 
 // Si on a un id_courrier 
-//	=> le courrier existe déjà et on change le type du courrier ET le modele de pdf
-//sinon, on choisi le type ET le modele de pdf du courrier à créer 
+//	=> le courrier existe dÃ©jÃ  et on change le type du courrier ET le modele de pdf
+//sinon, on choisi le type ET le modele de pdf du courrier Ã  crÃ©er 
 if(isset($_REQUEST['id_courrier']) && is_numeric($_REQUEST['id_courrier'])){
 	$courrier = new CourrierEtendu($_REQUEST['id_courrier']);
 	$courrier->setId_type_courrier($id_type_courrier);

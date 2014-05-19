@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -16,7 +16,7 @@ check_page_variables ($page_variables);
 	<table style="width:100%" border="0" cellpadding="0" cellspacing="0">
 		<tr class="panneau_bas_barre_titre">
 			<td class="panneau_bas_barre_titre_left"	></td>
-			<td class="panneau_bas_barre_titre_coprs"	>Sélectionner un Client</td>
+			<td class="panneau_bas_barre_titre_coprs"	>SÃ©lectionner un Client</td>
 			<td class="panneau_bas_barre_titre_right"	></td>
 		</tr>
 	</table>

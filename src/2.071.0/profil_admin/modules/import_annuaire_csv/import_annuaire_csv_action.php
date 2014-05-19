@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 if (file_exists("retour_import.csv"))
     unlink("retour_import.csv");
 $form['page_to_show'] = $search['page_to_show'] = 1;
@@ -71,7 +71,7 @@ while ($tmp = $resultat->fetchObject()) {
 }
 
 
-//traitement de la liste des infos sélectionnées
+//traitement de la liste des infos sÃ©lectionnÃ©es
 $liste_rec = array();
 foreach ($_REQUEST as $key=>$value) {
 	if (substr_count($key, "id_rec")) {$liste_rec[] = $value;}

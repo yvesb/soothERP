@@ -28,7 +28,7 @@ $document = open_doc ($_REQUEST['ref_doc']);
 	}	
 
 	$id_type_doc = $document->getID_TYPE_DOC ();
-	//si un montant est négatif
+	//si un montant est nÃ©gatif
 	$montant_negatif = false;
 	$montant_positif = 1;
 	if (isset($_REQUEST["montant_neg"])) { $montant_negatif = true; $montant_positif = -1;}

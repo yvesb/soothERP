@@ -8,7 +8,7 @@
 
     <table width="100%" border="0" cellspacing="4" cellpadding="2">
         <tr>
-            <td colspan="2" style="width:15%; font-style: italic; font-weight: bold;">Créer un bonus / malus</td>
+            <td colspan="2" style="width:15%; font-style: italic; font-weight: bold;">CrÃ©er un bonus / malus</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
@@ -27,7 +27,7 @@
         </tr>
         <tr>
             <td>
-                <span class="labelled">Libellé:</span>
+                <span class="labelled">LibellÃ©:</span>
             </td>
             <td>
                 <input type="text" name="lib_bonus" id="lib_bonus" class="classinput_xsize" />
@@ -50,7 +50,7 @@
             <td>
                 <input type="text" name="montant" id="montant" class="classinput_xsize" />
             </td>
-            <td>¤</td>
+            <td>Â¤</td>
         </tr>
         <tr>
             <td>

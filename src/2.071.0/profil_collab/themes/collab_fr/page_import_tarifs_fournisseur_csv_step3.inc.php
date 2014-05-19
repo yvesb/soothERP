@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -17,17 +17,17 @@ check_page_variables ($page_variables);
 
 ?>
 <div class="emarge">
-<p class="titre">Import terminé</p>
+<p class="titre">Import terminÃ©</p>
 <div>
 <table class="contactview_corps" style=" width:100%">
 	<tr>
 		<td >
-		 	L'ensemble des informations présentes dans votre fichier CSV ont été importées. 
+		 	L'ensemble des informations prÃ©sentes dans votre fichier CSV ont Ã©tÃ© importÃ©es. 
 		</td>
 	</tr>
 </table>
-<p><a href="#" id="retour_fiche_fournisseur">Retour à la fiche du fournisseur : <?php echo $fournisseur->getNom();?></a></p>
-<p><a href="#" id="nouvel_import">Effectuer un nouvel import pour ce même fournisseur</a></p>
+<p><a href="#" id="retour_fiche_fournisseur">Retour Ã  la fiche du fournisseur : <?php echo $fournisseur->getNom();?></a></p>
+<p><a href="#" id="nouvel_import">Effectuer un nouvel import pour ce mÃªme fournisseur</a></p>
 
 </div>
 <div id="resultat_imports">

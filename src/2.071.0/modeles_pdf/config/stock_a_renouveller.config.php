@@ -16,11 +16,11 @@ $STOCK_RNV['HAUTEUR_AFTER_LINE_CATEGORIE']	= 0;
 $STOCK_RNV['HAUTEUR_AFTER_LINE_TOTAUX_CATEGORIE'] = 0;
 
 $STOCK_RNV['LABEL_ARTICLES'] = "article(s)";
-$STOCK_RNV['LABEL_PIECES'] = "pièce(s)";
+$STOCK_RNV['LABEL_PIECES'] = "piÃ¨ce(s)";
 $STOCK_RNV['LABEL_TOTAL_GENERAL'] = "TOTAL GENERAL: ";
 $STOCK_RNV['ENTETE_COL_LIB'] = "Info. supp.";
-$STOCK_RNV['ENTETE_COL_DEB'] = "Débit";
-$STOCK_RNV['ENTETE_COL_CRE'] = "Crédit";
+$STOCK_RNV['ENTETE_COL_DEB'] = "DÃ©bit";
+$STOCK_RNV['ENTETE_COL_CRE'] = "CrÃ©dit";
 
 $STOCK_RNV['LARGEUR_COL_REF'] = 30;
 $STOCK_RNV['LARGEUR_COL_LIB'] = 85;
@@ -58,15 +58,15 @@ $STOCK_RNV['PIEDS_DROIT'][1]	= $PIED_DE_PAGE_DROIT_1;
 
 
 
-//variable//type de champ(parametre)//libéllé//commentaire
+//variable//type de champ(parametre)//libÃ©llÃ©//commentaire
 // PARAMETRES MODIFIABLES
 // FIN PARAMETRES MODIFIABLES
 // CONFIGURATION PAR DEFAUT
-// Portion de code recopiée dans la partie « paramètres modifiables » en cas de remise à 0 des paramètres.
+// Portion de code recopiÃ©e dans la partie Â«Â paramÃ¨tres modifiablesÂ Â» en cas de remise Ã  0 des paramÃ¨tres.
 /*
 */
 // FIN CONFIGURATION PAR DEFAUT
-// INFORMATIONS SUR L’AUTEUR
+// INFORMATIONS SUR Lâ€™AUTEUR
 /* 
 */
 ?>

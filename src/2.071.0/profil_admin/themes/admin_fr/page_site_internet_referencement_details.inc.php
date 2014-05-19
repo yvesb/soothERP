@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -36,7 +36,7 @@ Event.observe("link_close_pop_up_referencement", "click",  function(evt){Event.s
 		<?php
 	} else {
 		?>
-		Page selectionnée<br />
+		Page selectionnÃ©e<br />
 		<br />
 		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_recherche.gif" class="ico_bt" style="padding-left:35px"/> <?php echo $pages_referencees[0]->nom_fichier;?>
 		<?php
@@ -57,15 +57,15 @@ Event.observe("link_close_pop_up_referencement", "click",  function(evt){Event.s
 		<span class="bolder">Titre</span><br />
 		<input name="nom_fichier" id="nom_fichier" type="hidden" value="<?php echo ($page->nom_fichier);?>"/>
 		<input name="titre" id="titre" type="text" value="<?php echo ($page->titre);?>"  class="classinput_xsize" maxlength="100"  />
-		<div style="color:#999999"><span id="count_car_titre"></span> caractères sur 100</div>
+		<div style="color:#999999"><span id="count_car_titre"></span> caractÃ¨res sur 100</div>
 		<br />
 		<span class="bolder">Description de la page</span><br />
 		<textarea name="meta_desc" id="meta_desc"  wrap="hard" rows="2" class="classinput_xsize" ><?php echo ($page->meta_desc);?></textarea>
-		<div style="color:#999999"><span id="count_car_desc"></span> caractères sur 255</div>
+		<div style="color:#999999"><span id="count_car_desc"></span> caractÃ¨res sur 255</div>
 		<br />
 		<span class="bolder">Mots clefs</span><br />
 		<textarea name="meta_motscles" id="meta_motscles" wrap="hard" rows="7" class="classinput_xsize" ><?php echo ($page->meta_motscles);?></textarea>
-		<div style="color:#999999"><span id="count_car_keyword"></span> caractères sur 1000</div>
+		<div style="color:#999999"><span id="count_car_keyword"></span> caractÃ¨res sur 1000</div>
 
 <br />
 

@@ -22,7 +22,7 @@ $infos['controle'] 			= $_REQUEST["controle"];
 $infos['differe'] 					= $_REQUEST["differe"];
 	
 	
-	//création du compte
+	//crÃ©ation du compte
 	$compte_cb->create_compte_cb ($infos);
 
 // *************************************************************************************************************

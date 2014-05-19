@@ -1,10 +1,10 @@
 <?php
 
 // *************************************************************************************************************
-// Résultats de recherche des rapprochements bancaires
+// RÃ©sultats de recherche des rapprochements bancaires
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES", "fiches", "form['page_to_show']", "form['fiches_par_page']", "nb_fiches");
 check_page_variables ($page_variables);
 
@@ -26,7 +26,7 @@ function barre_navigation($nbtotal,
 													
 {
 	// --------------------------------------------------------------------
-	global $cfg_nb_pages; // Nb de n° de pages affichées dans la barre
+	global $cfg_nb_pages; // Nb de nÂ° de pages affichÃ©es dans la barre
 global $DIR;
 	$barre= "";
 
@@ -38,7 +38,7 @@ global $DIR;
 	// --------------------------------------------------------------------
     
 
-	// début << .
+	// dÃ©but << .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -58,7 +58,7 @@ global $DIR;
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
 
 
-	// précédent < .
+	// prÃ©cÃ©dent < .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -165,7 +165,7 @@ function image_html($img)
 
 //
 //
-//création de la barre de nav
+//crÃ©ation de la barre de nav
 //
 //
 
@@ -194,7 +194,7 @@ foreach ($_ALERTES as $alerte => $value) {
 
 <div  class="mt_size_optimise">
 <span style=" font-weight:bolder">
-Relevé du <?php echo date_Us_to_Fr(date("Y-m-d H:i:s", mktime(0, 0, 0, date ("m", strtotime($search['date_debut'])) , date ("d", strtotime($search['date_debut']))+1, date ("Y", strtotime($search['date_debut'])) ) ));?> au <?php echo date_Us_to_Fr($search['date_fin']);?>
+RelevÃ© du <?php echo date_Us_to_Fr(date("Y-m-d H:i:s", mktime(0, 0, 0, date ("m", strtotime($search['date_debut'])) , date ("d", strtotime($search['date_debut']))+1, date ("Y", strtotime($search['date_debut'])) ) ));?> au <?php echo date_Us_to_Fr($search['date_fin']);?>
 </span>
 
 	<div id="affresult">
@@ -216,11 +216,11 @@ Relevé du <?php echo date_Us_to_Fr(date("Y-m-d H:i:s", mktime(0, 0, 0, date ("m"
 				Date
 			</td>
 			<td style="">
-				Libellé
+				LibellÃ©
 			</td>
-			<td style="width:10%; text-align:right">Débit
+			<td style="width:10%; text-align:right">DÃ©bit
 			</td>
-			<td style="width:10%; text-align:right">Crédit
+			<td style="width:10%; text-align:right">CrÃ©dit
 			</td>
 			<td style="width:40%; text-align:left; padding-left:12px;">Rapprochement
 			</td>

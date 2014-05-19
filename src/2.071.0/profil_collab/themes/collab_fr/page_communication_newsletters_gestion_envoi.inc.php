@@ -4,7 +4,7 @@
 // AFFICHAGE DU CHOIX DES CAISSES
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -159,7 +159,7 @@ check_page_variables ($page_variables);
 
 
 <SCRIPT type="text/javascript">
-//initialisation de l'éditeur de texte
+//initialisation de l'Ã©diteur de texte
 Event.observe('editeur_bold', "click", function(evt){Event.stop(evt); editeur.HTML_exeCmd("bold", null);});
 Event.observe('editeur_italic', "click", function(evt){Event.stop(evt); editeur.HTML_exeCmd("italic", null);});
 Event.observe('editeur_souligner', "click", function(evt){Event.stop(evt); editeur.HTML_exeCmd("underline", null);});
@@ -197,7 +197,7 @@ Event.observe($("description_html").contentWindow.document, "keyup", function(ev
 Event.observe($("description_html").contentWindow.document, "blur", function(evt){editeur.HTML_save();});
 Event.observe($("description_html"), "blur", function(evt){editeur.HTML_save();});
 //---------------------------------------------------------------
-//fin d'intialisation de l'éditeur
+//fin d'intialisation de l'Ã©diteur
 //---------------------------------------------------------------	
 
 function setheight_choix_newsletter(){

@@ -3,7 +3,7 @@
 // RAPPROCHEMENT D'UNE OPERATION BANCAIRE
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -27,7 +27,7 @@ $("edition_rapprochement").hide();
 }, false);
 </script>
 
-<p  style="font-weight:bolder">Opération à Rapprocher</p>
+<p  style="font-weight:bolder">OpÃ©ration Ã  Rapprocher</p>
 <div style="padding:3px">
 	<table class="minimizetable">
 		<tr>
@@ -39,7 +39,7 @@ $("edition_rapprochement").hide();
 						Date:<br />
 						<?php echo date_Us_to_Fr ($infos_operation->date_move);?>
 						</td>
-						<td>Libellé: <br />
+						<td>LibellÃ©: <br />
 						<?php echo $infos_operation->lib_move;?>
 						</td>
 						<td style="text-align:right; width:25%">
@@ -65,7 +65,7 @@ $("edition_rapprochement").hide();
 						</td>
 						<td style="width:20%" colspan="2">
 						<?php echo $compte_bancaire->getLib_compte();?> 
-						n° <?php echo $compte_bancaire->getNumero_compte();?>
+						nÂ° <?php echo $compte_bancaire->getNumero_compte();?>
 						</td>
 						<td style="width:20%">
 						</td>
@@ -117,12 +117,12 @@ $("edition_rapprochement").hide();
 							<?php if ($infos_operation->montant_move >= 0) { ?>
 							<option value="2,7,5">Tout</option>
 							<option value="2">Remises en banque</option>
-							<option value="7">Télécollectes</option>
-							<option value="5">Règlements entrants</option>
+							<option value="7">TÃ©lÃ©collectes</option>
+							<option value="5">RÃ¨glements entrants</option>
 							<?php } else { ?>
 							<option value="3,6">Tout</option>
 							<option value="3">Retraits bancaires</option>
-							<option value="6">Règlements sortants</option>
+							<option value="6">RÃ¨glements sortants</option>
 							<?php } ?>
 						</select>
 						</td>

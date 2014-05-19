@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 require_once ($DIR."_article.class.php");
 
-//chargement des modes d'édition
+//chargement des modes d'Ã©dition
 $editions_modes	= liste_mode_edition();
 
 if (isset($_REQUEST["ref_article"])) {

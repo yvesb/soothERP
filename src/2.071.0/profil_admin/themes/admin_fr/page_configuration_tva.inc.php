@@ -4,7 +4,7 @@
 // CONFIG DES DONNEES tarifs
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -19,7 +19,7 @@ check_page_variables ($page_variables);
 
 ?>
 <script type="text/javascript">
-tableau_smenu[0] = Array("smenu_comptabilite", "smenu_comptabilite.php" ,"true" ,"sub_content", "Comptabilité");
+tableau_smenu[0] = Array("smenu_comptabilite", "smenu_comptabilite.php" ,"true" ,"sub_content", "ComptabilitÃ©");
 tableau_smenu[1] = Array('configuration_tva','configuration_tva.php','true','sub_content', "Configuration TVA");
 update_menu_arbo();
 </script>
@@ -37,7 +37,7 @@ update_menu_arbo();
 	</tr>
 	
 	<tr>
-		<td class="lib_config">L'entreprise est-elle soumise à la TVA ?</td>
+		<td class="lib_config">L'entreprise est-elle soumise Ã  la TVA ?</td>
 		<td>
 		<form action="configuration_tva_maj.php" enctype="multipart/form-data" method="POST"  id="form_assujetti_tva" name="form_assujetti_tva" target="formFrame" >
 		<input id="assujetti_tva" name="assujetti_tva" value="<?php echo  $ASSUJETTI_TVA; ?>" <?php if ($ASSUJETTI_TVA) {?>checked="checked"<?php } ?> type="checkbox" />
@@ -49,7 +49,7 @@ update_menu_arbo();
 		<td colspan="3" style="border-bottom:1px solid #999999"> </td>
 	</tr>
 	<tr>
-		<td class="lib_config">Définir les taux de TVA pour :  </td>
+		<td class="lib_config">DÃ©finir les taux de TVA pour :  </td>
 		<td>
 				<select id="id_pays"  name="id_pays" class="classinput_nsize">
 					<?php
@@ -238,7 +238,7 @@ new Event.observe("assujetti_tva", "click", function(evt){
 
 
 		$("titre_alert").innerHTML = 'Confirmer la modification';
-		$("texte_alert").innerHTML = 'Attention, cette modification entraine de profonds changements dans la gestion de la TVA au sein de votre entreprise. <br />Les données existantes ne seront pas modifiées, ce qui peut engendrer une incohérence dans les données comptable de l\'exercice en cours.<br />Confirmer la modification.';
+		$("texte_alert").innerHTML = 'Attention, cette modification entraine de profonds changements dans la gestion de la TVA au sein de votre entreprise. <br />Les donnÃ©es existantes ne seront pas modifiÃ©es, ce qui peut engendrer une incohÃ©rence dans les donnÃ©es comptable de l\'exercice en cours.<br />Confirmer la modification.';
 		$("bouton_alert").innerHTML = '<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />';
 	
 		show_pop_alerte ();

@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -79,7 +79,7 @@ foreach ($livraison_costs as $cost) {
 		</tr>
 		<tr>
 			<td>
-				Coût = 
+				CoÃ»t = 
 				<input name="fixe_<?php echo $i;?>_<?php echo $livraison_mode->getId_livraison_mode();?>" id="fixe_<?php echo $i;?>_<?php echo $livraison_mode->getId_livraison_mode();?>"  type="text" value="<?php echo $fixe ;?>" <?php if ($nd) { echo 'READONLY';}?>  size="5" style="text-align:right" />
 				<span style=" <?php if ( $selected_base == "PRIX") {?>display:none;<?php }?>">
 			 +  
@@ -132,7 +132,7 @@ foreach ($livraison_costs as $cost) {
 			</td>
 		</tr>
 		<tr>
-			<td>Coût = 
+			<td>CoÃ»t = 
 			<input name="fixe_0_<?php echo $livraison_mode->getId_livraison_mode();?>" id="fixe_0_<?php echo $livraison_mode->getId_livraison_mode();?>"  type="text" value="0" class="classinput_nsize" size="5" style="text-align:right" />
 				<span style=" <?php if ( $selected_base == "PRIX") {?>display:none;<?php }?>">
 			 +  <input name="variab_0_<?php echo $livraison_mode->getId_livraison_mode();?>" id="variab_0_<?php echo $livraison_mode->getId_livraison_mode();?>"  type="text" value="0" class="classinput_nsize" size="5" style="text-align:right"/>
@@ -184,7 +184,7 @@ Event.observe('variab_0_<?php echo $livraison_mode->getId_livraison_mode();?>', 
 </script>
 <table>
 	<tr>
-		<td colspan="2" style="font-weight:bolder">Exceptions au coût de livraison / Catégories d'articles</td>
+		<td colspan="2" style="font-weight:bolder">Exceptions au coÃ»t de livraison / CatÃ©gories d'articles</td>
 		<td>
 		<span style="cursor:pointer; text-decoration:underline" id="cost_consult_art_categ">Consulter</span>
 		<script type="text/javascript">
@@ -196,7 +196,7 @@ Event.observe('variab_0_<?php echo $livraison_mode->getId_livraison_mode();?>', 
 		</td>
 	</tr>
 	<tr>
-		<td colspan="2" style="font-weight:bolder">Exceptions au coût de livraison / Articles</td>
+		<td colspan="2" style="font-weight:bolder">Exceptions au coÃ»t de livraison / Articles</td>
 		<td>
 		<span style="cursor:pointer; text-decoration:underline" id="cost_consult_article">Consulter</span>
 		<script type="text/javascript">

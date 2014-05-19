@@ -9,19 +9,19 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 if (!isset($_REQUEST['id_contact_tmp'])){
-	echo "l'identifiant du contact n'est pas spécifié";
+	echo "l'identifiant du contact n'est pas spÃ©cifiÃ©";
 	exit;
 }
 $id_contact_tmp = $_REQUEST['id_contact_tmp'];
 
 if(!isset($_REQUEST['action'])){
-	echo "l'action n'est pas spécifiée";
+	echo "l'action n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $action = $_REQUEST['action'];
 
 if(!isset($_REQUEST['onglet'])){
-	echo "l'onglet n'est pas spécifiée";
+	echo "l'onglet n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $onglet = $_REQUEST['onglet'];
@@ -40,7 +40,7 @@ $query ="	SELECT	a.id_contact_tmp, a.id_interface, i.dossier, i.id_profil
     			".$query_where;
 $resultat_bd = $bdd->query($query);
 if(!$res = $resultat_bd->fetchObject()){
-	echo "l'objet est mal enregistré dans la base de données";
+	echo "l'objet est mal enregistrÃ© dans la base de donnÃ©es";
 	exit;
 }
 unset($resultat_bd);
@@ -78,7 +78,7 @@ switch($action."_".$onglet) {
 		$inscription &= getObjInscription($res->dossier);
 		$resultat = !is_null($inscription->validation_inscription_contact_par_collaborateur($id_contact_tmp)); ?>
 		<script type="text/javascript">
-		alerte.alerte_erreur('Validation des inscriptions', '<?php echo ($resultat) ? "Validation effectuée avec succès." : "Erreur lors de la validation"; ?>','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+		alerte.alerte_erreur('Validation des inscriptions', '<?php echo ($resultat) ? "Validation effectuÃ©e avec succÃ¨s." : "Erreur lors de la validation"; ?>','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 		<?php if($resultat)
 		{ ?>remove_tag('id_ins_<?php echo $id_contact_tmp; ?>');<?php } ?>
 		</script>
@@ -89,7 +89,7 @@ switch($action."_".$onglet) {
 		$inscription &= getObjInscription($res->dossier);
 		$resultat = !is_null($inscription->refus_inscription_contact_par_collaborateur($id_contact_tmp)); ?>
 		<script type="text/javascript">
-		alerte.alerte_erreur('Validation des inscriptions', '<?php echo ($resultat) ? "Suppression effectuée avec succès." : "Erreur lors de la suppression"; ?>','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+		alerte.alerte_erreur('Validation des inscriptions', '<?php echo ($resultat) ? "Suppression effectuÃ©e avec succÃ¨s." : "Erreur lors de la suppression"; ?>','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 		<?php if($resultat)
 		{ ?>remove_tag('id_ins_<?php echo $id_contact_tmp; ?>');<?php } ?>
 		</script>
@@ -101,7 +101,7 @@ switch($action."_".$onglet) {
 		$inscription &= getObjInscription($res->dossier);
 		$resultat = !is_null($inscription->validation_inscription_contact_par_collaborateur($id_contact_tmp)); ?>
 		<script type="text/javascript">
-		alerte.alerte_erreur('Validation des inscriptions', '<?php echo ($resultat) ? "Validation effectuée avec succès." : "Erreur lors de la validation"; ?>','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+		alerte.alerte_erreur('Validation des inscriptions', '<?php echo ($resultat) ? "Validation effectuÃ©e avec succÃ¨s." : "Erreur lors de la validation"; ?>','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 		<?php if($resultat)
 		{ ?>remove_tag('id_ins_<?php echo $id_contact_tmp; ?>');<?php } ?>
 		</script>
@@ -112,7 +112,7 @@ switch($action."_".$onglet) {
 		$inscription &= getObjInscription($res->dossier);
 		$resultat = !is_null($inscription->refus_inscription_contact_par_collaborateur($id_contact_tmp)); ?>
 		<script type="text/javascript">
-		alerte.alerte_erreur('Validation des inscriptions', '<?php echo ($resultat) ? "Suppression effectuée avec succès." : "Erreur lors de la suppression"; ?>','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+		alerte.alerte_erreur('Validation des inscriptions', '<?php echo ($resultat) ? "Suppression effectuÃ©e avec succÃ¨s." : "Erreur lors de la suppression"; ?>','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 		<?php if($resultat)
 		{ ?>remove_tag('id_ins_<?php echo $id_contact_tmp; ?>');<?php } ?>
 		</script>
@@ -124,7 +124,7 @@ switch($action."_".$onglet) {
 		$modification &= getObjModification($res->dossier);
 		$resultat = $modification->validation_modification_contact_par_collaborateur($id_contact_tmp); ?>
 		<script type="text/javascript">
-		alerte.alerte_erreur('Validation des inscriptions', '<?php echo ($resultat) ? "Validation effectuée avec succès." : "Erreur lors de la validation"; ?>','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+		alerte.alerte_erreur('Validation des inscriptions', '<?php echo ($resultat) ? "Validation effectuÃ©e avec succÃ¨s." : "Erreur lors de la validation"; ?>','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 		<?php if($resultat)
 		{ ?>remove_tag('id_ins_<?php echo $id_contact_tmp; ?>');<?php } ?>
 		</script>
@@ -135,7 +135,7 @@ switch($action."_".$onglet) {
 		$modification &= getObjModification($res->dossier);
 		$resultat = $modification->refus_modification_contact_par_collaborateur($id_contact_tmp); ?>
 		<script type="text/javascript">
-		alerte.alerte_erreur('Validation des inscriptions', '<?php echo ($resultat) ? "Suppression effectuée avec succès." : "Erreur lors de la suppression"; ?>','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+		alerte.alerte_erreur('Validation des inscriptions', '<?php echo ($resultat) ? "Suppression effectuÃ©e avec succÃ¨s." : "Erreur lors de la suppression"; ?>','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 		<?php if($resultat)
 		{ ?>remove_tag('id_ins_<?php echo $id_contact_tmp; ?>');<?php } ?>
 		</script>
@@ -147,7 +147,7 @@ switch($action."_".$onglet) {
 		$modification &= getObjModification($res->dossier);
 		$resultat = $modification->validation_modification_contact_par_collaborateur($id_contact_tmp); ?>
 		<script type="text/javascript">
-		alerte.alerte_erreur('Validation des inscriptions', '<?php echo ($resultat) ? "Validation effectuée avec succès." : "Erreur lors de la validation"; ?>','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+		alerte.alerte_erreur('Validation des inscriptions', '<?php echo ($resultat) ? "Validation effectuÃ©e avec succÃ¨s." : "Erreur lors de la validation"; ?>','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 		<?php if($resultat)
 		{ ?>remove_tag('id_ins_<?php echo $id_contact_tmp; ?>');<?php } ?>
 		</script>
@@ -158,7 +158,7 @@ switch($action."_".$onglet) {
 		$modification &= getObjModification($res->dossier);
 		$resultat = $modification->refus_modification_contact_par_collaborateur($id_contact_tmp); ?>
 		<script type="text/javascript">
-		alerte.alerte_erreur('Validation des inscriptions', '<?php echo ($resultat) ? "Suppression effectuée avec succès." : "Erreur lors de la suppression"; ?>','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+		alerte.alerte_erreur('Validation des inscriptions', '<?php echo ($resultat) ? "Suppression effectuÃ©e avec succÃ¨s." : "Erreur lors de la suppression"; ?>','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 		<?php if($resultat)
 		{ ?>remove_tag('id_ins_<?php echo $id_contact_tmp; ?>');<?php } ?>
 		</script>

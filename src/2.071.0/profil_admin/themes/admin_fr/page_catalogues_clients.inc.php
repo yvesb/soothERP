@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -35,7 +35,7 @@ array_menu_catalogue_client[2] 	=	new Array('content_catalogues_clients', 'catal
 <div id="contactview_menu" class="menu">
 <ul id="menu_ul">
 
-<li><a href="#" id="catalogues_clients_a"  class="menu_select">Création des catalogues</a>
+<li><a href="#" id="catalogues_clients_a"  class="menu_select">CrÃ©ation des catalogues</a>
 </li>
 <li><a href="#" id="catalogues_clients_b" class="menu_unselect">Gestion du contenu</a>
 </li>

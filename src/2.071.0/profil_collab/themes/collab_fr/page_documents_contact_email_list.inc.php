@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -33,11 +33,11 @@ if (is_array($liste_email)){
 	}
 } else {
 	?>
-	Aucun email défini.
+	Aucun email dÃ©fini.
 	<?php
 }
 ?>
-		<li class="complete_ville" id="email_perso">Envoyer un email personnalisé</li>
+		<li class="complete_ville" id="email_perso">Envoyer un email personnalisÃ©</li>
 </ul>
 <script type="text/javascript">
 <?php

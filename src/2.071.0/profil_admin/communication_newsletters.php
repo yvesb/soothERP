@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 
-//variable nécessaires aux newsletter
+//variable nÃ©cessaires aux newsletter
 $newsletters = charger_newsletters();
 
 

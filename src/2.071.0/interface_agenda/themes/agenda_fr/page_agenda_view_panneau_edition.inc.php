@@ -4,7 +4,7 @@
 // *************************************************************************************************************
    
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("id_graphic_event", "ref_event", "lib_event", "Udate_event_deb", "Udate_event_fin", "note_event", "bt_maj_visible");
 check_page_variables ($page_variables);
 

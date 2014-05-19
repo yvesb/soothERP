@@ -4,7 +4,7 @@
 // EDITION DE CONSOMMATION
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -24,7 +24,7 @@ check_page_variables ($page_variables);
 <script type="text/javascript">
 </script>
 <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="close_consommation_edit" style="cursor:pointer; float:right" alt="Fermer" title="Fermer" />
-<span style="font-weight:bolder">Utilisation de crédits</span><br />
+<span style="font-weight:bolder">Utilisation de crÃ©dits</span><br />
 <br />
 <span class="bolder"><?php echo htmlentities($article->getLib_article ()); ?></span>
 
@@ -55,7 +55,7 @@ check_page_variables ($page_variables);
 				</tr>
 				<tr>
 					<td >
-					<span class="labelled">Echéance:</span>
+					<span class="labelled">EchÃ©ance:</span>
 					</td>
 					<td >
 					<?php echo date_Us_to_Fr($consommation->date_echeance); ?>
@@ -63,14 +63,14 @@ check_page_variables ($page_variables);
 				</tr>
 				<tr>
 					<td >
-					<span class="labelled">Crédits restants:</span>
+					<span class="labelled">CrÃ©dits restants:</span>
 					</td>
 					<td ><?php echo ($consommation->credits_restants); ?>
 					</td>
 				</tr>
 				<tr>
 					<td >
-					<span class="labelled">Crédits à débiter:</span>
+					<span class="labelled">CrÃ©dits Ã  dÃ©biter:</span>
 					</td>
 					<td >
 						<input type="text" name="conso_credits_used" id="conso_credits_used" value="1" size="5"/>
@@ -138,7 +138,7 @@ Event.observe("catalogue_articles_consommation_use_valid", "submit", function(ev
 		Event.stop(evt);
 
 		$("titre_alert").innerHTML = 'Confirmer';
-		$("texte_alert").innerHTML = 'Confirmer la consommation de '+$("conso_credits_used").value+' crédits';
+		$("texte_alert").innerHTML = 'Confirmer la consommation de '+$("conso_credits_used").value+' crÃ©dits';
 		$("bouton_alert").innerHTML = '<input type="submit" id="bouton0" name="bouton0" value="Confirmer" /><input type="submit" id="bouton1" name="bouton1" value="Annuler" />';
 		
 		$("alert_pop_up_tab").style.display = "block";

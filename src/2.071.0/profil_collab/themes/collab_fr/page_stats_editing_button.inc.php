@@ -153,17 +153,17 @@ if (isset($liste_modeles_pdf_valides) && count($liste_modeles_pdf_valides) >1) {
 function getLib_mois($i){
 	switch ($i){
 		case 1 : return "janvier"; break;
-		case 2 : return "février"; break;
+		case 2 : return "fÃ©vrier"; break;
 		case 3 : return "mars"; break;
 		case 4 : return "avril"; break;
 		case 5 : return "mai"; break;
 		case 6 : return "juin"; break;
 		case 7 : return "juillet"; break;
-		case 8 : return "août"; break;
+		case 8 : return "aoÃ»t"; break;
 		case 9 : return "septembre"; break;
 		case 10 : return "octobre"; break;
 		case 11 : return "novembre"; break;
-		case 12 : return "décembre"; break;
+		case 12 : return "dÃ©cembre"; break;
 		default : return false; 
 	}
 }

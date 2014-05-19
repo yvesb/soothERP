@@ -2,7 +2,7 @@
 
 class document_echeance{
 
-	public static $nom_table = "doc_echeanciers";	// Le nom de la table dans la base de données
+	public static $nom_table = "doc_echeanciers";	// Le nom de la table dans la base de donnÃ©es
 	public static $types_reglements = array (1 => 'Acompte', 2 => 'Arrhes', 3 => 'Echeance', 4 => 'Solde');
 
 	private $id_doc_echeance;

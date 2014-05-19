@@ -129,11 +129,11 @@ $Montant_ht = $Montant_ttc = 0;
 							{		echo $adresse_entreprise[0]->getVille(); } ?>
 							<br />
 							<br />
-							<?php // Controle du numéro de téléphone de l'entreprise
+							<?php // Controle du numÃ©ro de tÃ©lÃ©phone de l'entreprise
 							if($coordonnees_entreprise[0]->getTel1())
-							{		echo " Tél : ", $coordonnees_entreprise[0]->getTel1();} ?>
+							{		echo " TÃ©l : ", $coordonnees_entreprise[0]->getTel1();} ?>
 							<br />
-							<?php // Controle du numéro de fax de l'entreprise
+							<?php // Controle du numÃ©ro de fax de l'entreprise
 							if($coordonnees_entreprise[0]->getFax())
 							{		echo " Fax : ", $coordonnees_entreprise[0]->getFax();} ?>
 						</div>

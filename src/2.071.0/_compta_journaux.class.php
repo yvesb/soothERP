@@ -21,7 +21,7 @@ public function __construct ($id_journal = "", $id_journal_parent = "", $contrep
 						FROM compta_journaux
 						WHERE ";
 	
-	//Retrouver l'id_journal à partir du parent et de la contreparte
+	//Retrouver l'id_journal Ã  partir du parent et de la contreparte
 	if ($id_journal_parent && $contrepartie) { 
 	 	$query .= " id_journal_parent = ".$id_journal_parent." && contrepartie = '".$contrepartie."' ";
 	}
@@ -54,7 +54,7 @@ public function create_journal ($infos) {
 	global $bdd;
 	
 	// *************************************************
-	// Réception des données
+	// RÃ©ception des donnÃ©es
 
 	$query = "SELECT MAX(id_journal)  as id_journal 
 						FROM compta_journaux ";
@@ -84,7 +84,7 @@ public function create_journal ($infos) {
 	return true;
 }
 
-// création d'une opération de compte 
+// crÃ©ation d'une opÃ©ration de compte 
 public function create_operation ($numero_compte, $montant, $ref_operation, $date_operation, $id_operation_type) { 
 	global $bdd;
 	
@@ -143,7 +143,7 @@ static function check_exist_journaux ($id_journal_parent = "", $contrepartie = "
 	return $journal_test;
 }
 
-//fonction de suppression d'une opération (en cas de suppression d'un reglement )
+//fonction de suppression d'une opÃ©ration (en cas de suppression d'un reglement )
 static function suppression_operation ($ref_operation, $id_operation_type) { 
 	global $bdd;
 	

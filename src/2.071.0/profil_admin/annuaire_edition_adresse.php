@@ -26,7 +26,7 @@ if (isset($_REQUEST['adresse_ref'.$_REQUEST['ref_idform']])) {
             $type = 0;
         }
 	// *************************************************
-	// Création de l'adresse
+	// CrÃ©ation de l'adresse
 	$adresse = new adresse ($ref_adresse);
 	$adresse->modification($lib_adresse, $text_adresse,  $code_postal, $ville, $id_pays, $note, $type);
 	

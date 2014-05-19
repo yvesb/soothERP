@@ -4,7 +4,7 @@
 // ONGLET DES MARGES DU DOCUMENT
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -83,7 +83,7 @@ $o = 0;
 		<br />
 		
 		<div class="roundedtable">
-		<span class="bolder">Catégorie d'articles</span><br />
+		<span class="bolder">CatÃ©gorie d'articles</span><br />
 
 		<?php 
 		foreach ($liste_categories as $categorie) {

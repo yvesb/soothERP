@@ -20,7 +20,7 @@ protected function create_pdf_pieds () {
 	// Cadre de pieds de page
 	$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS, $this->PIEDS_HAUTEUR_MAX, "", '1', 1, 'L');
 
-	// Information société
+	// Information sociÃ©tÃ©
 	$this->pdf->SetXY($this->MARGE_GAUCHE, $this->PIEDS_HAUTEUR_DEPART + $this->PIEDS_HAUTEUR_MAX + 1);
 	foreach ($this->PIEDS_GAUCHE as $texte) {
 		$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS, 4.5, $texte, '0', 2, 'L');
@@ -120,7 +120,7 @@ protected function create_pdf_pieds () {
 	// Bloc central
 	$this->pdf->SetXY($this->MARGE_GAUCHE + $largeur_bloc_tva, $this->PIEDS_HAUTEUR_DEPART+16);
 	$this->pdf->SetFont('Arial', '', 7);
-	$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_bloc_tva, 6,"Mention manuscrite « Bon pour accord » + Tampon & Signature" , '0', 0, 'L');
+	$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_bloc_tva, 6,"Mention manuscrite Â« Bon pour accord Â» + Tampon & Signature" , '0', 0, 'L');
 	$this->pdf->SetXY($this->MARGE_GAUCHE + $largeur_bloc_tva, $this->PIEDS_HAUTEUR_DEPART+16);
 	$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_bloc_tva, 16," " , '1', 0, 'L');
 	

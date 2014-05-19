@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// AFFICHAGE DES INFORMATIONS DE RÉFÉRENCEMENT PAR PAGE
+// AFFICHAGE DES INFORMATIONS DE RÃ‰FÃ‰RENCEMENT PAR PAGE
 // *************************************************************************************************************
 
 if (!isset($DIR)) {
@@ -13,7 +13,7 @@ if (!isset($DIR)) {
 $current_page = preg_replace("/(\/+)/i", "/", $_SERVER['SCRIPT_NAME']);
 
 
-//on génére les informations par defaut
+//on gÃ©nÃ©re les informations par defaut
 
 $defaut_title = "";
 $defaut_keyword = "";
@@ -28,17 +28,17 @@ if (count($tmp)) {
 		$defaut_description = $tmp[0]->meta_desc;
 	
 } else {
-//si la page n'as pas été référencée on gère les paramétres par defaut
+//si la page n'as pas Ã©tÃ© rÃ©fÃ©rencÃ©e on gÃ¨re les paramÃ©tres par defaut
 if ((isset($tmp[0]) && $tmp[0]->titre != "") || !count($tmp)) {
-	//on récupère les informations par defaut
+	//on rÃ©cupÃ¨re les informations par defaut
 	$tmp_defaut = get_reference("defaut_referencement");
 	if (count($tmp_defaut)) {
 		$defaut_title 			= $tmp_defaut[0]->titre;
 		$defaut_keyword 		= $tmp_defaut[0]->meta_motscles;
 		$defaut_description = $tmp_defaut[0]->meta_desc;
 	} else {
-		// si les infos par defaut ne sont pas encore crées 
-		// on récupère les informations du contact principal du site
+		// si les infos par defaut ne sont pas encore crÃ©es 
+		// on rÃ©cupÃ¨re les informations du contact principal du site
 		$contact_entreprise = new contact($REF_CONTACT_ENTREPRISE);
 		$nom = str_replace ("\r", " ", str_replace("\n", " ",$contact_entreprise->getNom()));
 		$defaut_title = $nom." ";
@@ -55,12 +55,12 @@ if ((isset($tmp[0]) && $tmp[0]->titre != "") || !count($tmp)) {
 		
 		$defaut_keyword = $nom." ".$adresse." ".$code." ".$ville;
 		$defaut_description = "Site internet de ".$nom.", ".$adresse." ".$code." ".$ville;
-		//et on génére les infos par defaut
+		//et on gÃ©nÃ©re les infos par defaut
 		add_reference ("defaut_referencement", $defaut_title, $defaut_description, $defaut_keyword);
 	}
 }
 }
-//si la page n'était pas référencée on l'entregistre vide
+//si la page n'Ã©tait pas rÃ©fÃ©rencÃ©e on l'entregistre vide
 if (!count($tmp)) {
 	add_reference ($current_page, "", "", "");
 }

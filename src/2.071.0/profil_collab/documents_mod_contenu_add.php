@@ -1,6 +1,6 @@
 <?php
   // **********************************************************
-  //   Création d'un modèle de contenu à partir d'un document
+  //   CrÃ©ation d'un modÃ¨le de contenu Ã  partir d'un document
   // **********************************************************
 
   require ("_dir.inc.php");

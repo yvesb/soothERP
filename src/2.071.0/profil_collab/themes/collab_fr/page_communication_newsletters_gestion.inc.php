@@ -4,7 +4,7 @@
 // AFFICHAGE DU CHOIX DES CAISSES
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -36,9 +36,9 @@ check_page_variables ($page_variables);
 
 			<table width="100%" border="0" cellspacing="4" cellpadding="2">
 				<tr>
-					<td style="width:25%; font-weight:bolder; text-align:left">Libellé de la Newsletter</td>
+					<td style="width:25%; font-weight:bolder; text-align:left">LibellÃ© de la Newsletter</td>
 					<td style="width:20%; font-weight:bolder; text-align:right; padding-right:25px">Dernier envoi</td>
-					<td style="width:20%; font-weight:bolder; text-align:center">Nombre d'abonnés</td>
+					<td style="width:20%; font-weight:bolder; text-align:center">Nombre d'abonnÃ©s</td>
 					<td style="font-weight:bolder; text-align:center" colspan="3">Options</td>
 				</tr>
 				<tr>

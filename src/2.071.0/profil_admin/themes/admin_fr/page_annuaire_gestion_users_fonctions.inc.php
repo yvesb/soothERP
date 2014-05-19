@@ -3,7 +3,7 @@
 // GESTION DES FONCTIONS DES UTILISATEURS
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -164,12 +164,12 @@ if (key($liste_fonctions)!="") {
 ?>
 		<div>
 		<br>
-		<a href="#" id="init_fonctions"  class="common_link">Réinitialisation des Fonctions</a>
+		<a href="#" id="init_fonctions"  class="common_link">RÃ©initialisation des Fonctions</a>
 		<script type="text/javascript">
 		Event.observe('init_fonctions', 'click',  function(evt){
 			Event.stop(evt);
-			$("titre_alert").innerHTML = "Réinitialisation des Fonctions";
-			$("texte_alert").innerHTML = "Confirmer la Réinitialisation des Fonctions<br />Toutes les modifications apportées a celles-ci seront perdues";
+			$("titre_alert").innerHTML = "RÃ©initialisation des Fonctions";
+			$("texte_alert").innerHTML = "Confirmer la RÃ©initialisation des Fonctions<br />Toutes les modifications apportÃ©es a celles-ci seront perdues";
 			$("bouton_alert").innerHTML = '<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />';
 		
 			$("alert_pop_up_tab").style.display = "block";
@@ -389,7 +389,7 @@ H_loading();
 					<tr>
 						<td colspan="4">
 						<hr>
-						Liste des droits d'accès<br />
+						Liste des droits d'accÃ¨s<br />
 <br />
 						<?php 
 
@@ -424,7 +424,7 @@ H_loading();
 						$permissions_dependantes = charger_permissions_dependantes_inactives_fonctions ($perms->id_permission, $liste_fonction->id_fonction,true);
 						if (count($permissions_dependantes) > 0){
 						?>
-						$("titre_alert").innerHTML = "Avertissement dépendances :";
+						$("titre_alert").innerHTML = "Avertissement dÃ©pendances :";
 						$("texte_alert").innerHTML = "Vous allez aussi activer les permissions suivantes: <br /><br />";
 						<?php
 						foreach($permissions_dependantes as $permission_dependante){?>
@@ -450,8 +450,8 @@ H_loading();
 						$permissions_dependantes = charger_permissions_dependantes_actives_fonctions ($perms->id_permission, $liste_fonction->id_fonction,true);
 						if (count($permissions_dependantes) > 0){
 						?>
-						$("titre_alert").innerHTML = "Avertissement dépendances :";
-						$("texte_alert").innerHTML = "Vous allez aussi désactiver les permissions suivantes : <br /><br />";
+						$("titre_alert").innerHTML = "Avertissement dÃ©pendances :";
+						$("texte_alert").innerHTML = "Vous allez aussi dÃ©sactiver les permissions suivantes : <br /><br />";
 						<?php
 						foreach($permissions_dependantes as $permission_dependante){?>
 							$("texte_alert").innerHTML += "<?php echo "<I>".$permission_dependante."</I>";?> <br />";
@@ -535,8 +535,8 @@ H_loading();
 							$permissions_dependantes = charger_permissions_dependantes_actives_fonctions ($perms->id_permission,$liste_fonction->id_fonction,true);
 							if (count($permissions_dependantes) > 0){
 							?>
-							$("titre_alert").innerHTML = "Avertissement dépendances :";
-							$("texte_alert").innerHTML = "Vous allez aussi désactiver les permissions suivantes : <br /><br />";
+							$("titre_alert").innerHTML = "Avertissement dÃ©pendances :";
+							$("texte_alert").innerHTML = "Vous allez aussi dÃ©sactiver les permissions suivantes : <br /><br />";
 							<?php
 							foreach($permissions_dependantes as $permission_dependante){?>
 								$("texte_alert").innerHTML += "<?php echo "<I>".$permission_dependante."</I>";?> <br />";
@@ -568,7 +568,7 @@ H_loading();
 					$alert_perms = array_unique(array_merge($permissions_dependantes_cac,$permissions_parentes,$permissions_dependantes));
 						if (count($alert_perms) > 0){
 							?>
-							$("titre_alert").innerHTML = "Avertissement dépendances :";
+							$("titre_alert").innerHTML = "Avertissement dÃ©pendances :";
 							$("texte_alert").innerHTML = "Vous allez aussi modifier les permissions suivantes : <br /><br />";
 							<?php
 								foreach($alert_perms as $alert_perm){?>
@@ -608,8 +608,8 @@ H_loading();
 						$mes_membres = $myfonction->get_liste_membres();
 						if (is_array($mes_membres) && count($mes_membres)>0 ){
 							?>
-							<td ><B>Utilisateurs concernés:</B></td>
-							<td colspan="3"><A id="maj_droits_all_membres_<?php echo $liste_fonction->id_fonction ?>" HREF="#" class="common_link">Réinitialiser tous les droits</A>
+							<td ><B>Utilisateurs concernÃ©s:</B></td>
+							<td colspan="3"><A id="maj_droits_all_membres_<?php echo $liste_fonction->id_fonction ?>" HREF="#" class="common_link">RÃ©initialiser tous les droits</A>
 							<script type="text/javascript">
 							Event.observe($("maj_droits_all_membres_<?php echo $liste_fonction->id_fonction ?>"), "click", function(evt){
 								Event.stop(evt);
@@ -622,7 +622,7 @@ H_loading();
 									?>
 									<tr><td colspan="3"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="15px" HEIGHT="15px"/>
 									<a href="#utilisateur_details.php?ref_user=<?php echo $membre["datas"]->ref_user; ?>"><?php echo $membre["string"]; ?></a></td><td>
-									<A id="maj_droits_membre_<?php echo $liste_fonction->id_fonction ?>_<?php echo $membre["datas"]->ref_user ?>" HREF="#" class="common_link">Réinitialiser les droits</A>
+									<A id="maj_droits_membre_<?php echo $liste_fonction->id_fonction ?>_<?php echo $membre["datas"]->ref_user ?>" HREF="#" class="common_link">RÃ©initialiser les droits</A>
 									<script type="text/javascript">
 									Event.observe($("maj_droits_membre_<?php echo $liste_fonction->id_fonction ?>_<?php echo $membre["datas"]->ref_user ?>"), "click", function(evt){
 										Event.stop(evt);

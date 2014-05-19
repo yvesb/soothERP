@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("document", "lignes", "ligne1", "ligne2", "ligne3", "lib_grille_tarrifaire");
 check_page_variables ($page_variables);
 

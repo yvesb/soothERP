@@ -9,7 +9,7 @@ final class commission_liste {
 
 	private $lib_comm;				// Nom de la liste de prix
 	private $desc_comm;			// Description de la liste de prix
-	private $formule_comm;		// Marge minimum acceptable lors de la vente à un client soumit à cette grille de comm.
+	private $formule_comm;		// Marge minimum acceptable lors de la vente Ã  un client soumit Ã  cette grille de comm.
 
 	private $defaut;					// defaut d'affichage
 
@@ -17,19 +17,19 @@ final class commission_liste {
 function __construct($id_commission_regle = 0) {
 	global $bdd;
 
-	// Controle si le id_commission_regle est précisé
+	// Controle si le id_commission_regle est prÃ©cisÃ©
 	if (!$id_commission_regle) { return false; }
 
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT lib_comm,  formule_comm, defaut
 						FROM commissions_regles cr
 						WHERE id_commission_regle = '".$id_commission_regle."' ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si le id_commission_regle est trouvé
+	// Controle si le id_commission_regle est trouvÃ©
 	if (!$comm_liste = $resultat->fetchObject()) { return false; }
 
-	// Attribution des informations à l'objet
+	// Attribution des informations Ã  l'objet
 	$this->id_commission_regle 	= $id_commission_regle;
 	$this->lib_comm							= $comm_liste->lib_comm;
 	$this->formule_comm					= $comm_liste->formule_comm;
@@ -48,7 +48,7 @@ final public function create ($lib_comm, $formule_comm) {
 	global $bdd;
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->lib_comm 	= $lib_comm;
 	if (!$this->lib_comm) {
 		$GLOBALS['_ALERTES']['lib_comm_vide'] = 1; 
@@ -60,7 +60,7 @@ final public function create ($lib_comm, $formule_comm) {
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -76,8 +76,8 @@ final public function create ($lib_comm, $formule_comm) {
 
 
 	// *************************************************
-	// Résultat positif de la création
-	$GLOBALS['_INFOS']['Création_comm_liste'] = $this->id_commission_regle;
+	// RÃ©sultat positif de la crÃ©ation
+	$GLOBALS['_INFOS']['CrÃ©ation_comm_liste'] = $this->id_commission_regle;
 
 	return true;
 }
@@ -94,7 +94,7 @@ final public function modification ($lib_comm, $formule_comm) {
 	$old_formule_comm = $this->formule_comm;
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->lib_comm 	= $lib_comm;
 	if (!$this->lib_comm) {
 		$GLOBALS['_ALERTES']['lib_comm_vide'] = 1; 
@@ -106,7 +106,7 @@ final public function modification ($lib_comm, $formule_comm) {
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -119,7 +119,7 @@ final public function modification ($lib_comm, $formule_comm) {
 	$bdd->exec ($query);
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
@@ -133,7 +133,7 @@ final public function suppression ($id_commission_regle_remplacement) {
 		$GLOBALS['_ALERTES']['bad_id_commission_regle_remplacement'] = 1;
 		return false;
 	}
-	// Controle si le nouveau comm existe réellement
+	// Controle si le nouveau comm existe rÃ©ellement
 	$query = "SELECT id_commission_regle, defaut FROM commissions_regles WHERE id_commission_regle = '".$id_commission_regle_remplacement."' ";
 	$resultat = $bdd->query ($query);
 	if (!$comm = $resultat->fetchObject()) {
@@ -145,14 +145,14 @@ final public function suppression ($id_commission_regle_remplacement) {
 	// Suppression de la comm
 	$bdd->beginTransaction();
 	
-	//la grille par defaut est transmise vers la nouvelle régle
+	//la grille par defaut est transmise vers la nouvelle rÃ©gle
 	if ($this->defaut) {
 	$query = "UPDATE commissions_regles SET defaut = '".$this->defaut."'
 						WHERE id_commission_regle = '".$id_commission_regle_remplacement."' ";
 	$bdd->exec ($query);
 	}
 	
-	// Mise à jour des commerciaux et des groupes
+	// Mise Ã  jour des commerciaux et des groupes
 	$query = "UPDATE annu_commercial SET id_commission_regle = '".$id_commission_regle_remplacement."'
 						WHERE id_commission_regle = '".$this->id_commission_regle."' ";
 	$bdd->exec ($query);
@@ -183,7 +183,7 @@ static function add_form_comm_art_categ ($id_commission_regle, $ref_art_categ, $
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -207,7 +207,7 @@ static function mod_form_comm_art_categ ($id_commission_regle, $ref_art_categ, $
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -226,7 +226,7 @@ static function del_form_comm_art_categ ($id_commission_regle, $ref_art_categ) {
 	global $bdd;
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -247,7 +247,7 @@ static function add_form_comm_article ($id_commission_regle, $ref_article, $form
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -271,7 +271,7 @@ static function mod_form_comm_article ($id_commission_regle, $ref_article, $form
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -290,7 +290,7 @@ static function del_form_comm_article ($id_commission_regle, $ref_article) {
 	global $bdd;
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -331,8 +331,8 @@ function charger_liste_commerciaux () {
 									 cr.lib_comm, cr.formule_comm,
 									 cc.lib_commercial_categ,
 									 a.nom
-					FROM  annu_commercial ac
-					LEFT JOIN commissions_regles cr ON cr.id_commission_regle = ac.id_commission_regle
+					FROM Â annu_commercial ac
+					LEFT JOIN commissions_reglesÂ cr ON cr.id_commission_regle = ac.id_commission_regle
 					LEFT JOIN commerciaux_categories cc ON cc.id_commercial_categ = ac.id_commercial_categ
 					LEFT JOIN annuaire a ON a.ref_contact = ac.ref_contact
 					

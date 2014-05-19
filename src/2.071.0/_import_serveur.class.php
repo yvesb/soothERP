@@ -6,7 +6,7 @@
 
 final class import_serveur {
 	private $ref_serveur_import;			// Serveur d'import
-	private $lib_serveur_import;			// Libellé du serveur d'import
+	private $lib_serveur_import;			// LibellÃ© du serveur d'import
 	private $url_serveur_import;			// URL du serveur d'import
 	
 	private $import_serveurs;	//liste des serveurs d'import
@@ -18,19 +18,19 @@ final class import_serveur {
 function __construct($ref_serveur_import = "") {
 	global $bdd;
 
-	// Controle si la ref_art_categ est précisée
+	// Controle si la ref_art_categ est prÃ©cisÃ©e
 	if (!$ref_serveur_import) { return false; }
 
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT ref_serveur_import, lib_serveur_import, url_serveur_import
 						FROM import_serveurs 
 						WHERE ref_serveur_import = '".$ref_serveur_import."' ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si la ref_serveur est trouvée
+	// Controle si la ref_serveur est trouvÃ©e
 	if (!$import_serveur = $resultat->fetchObject()) { return false; }
 
-	// Attribution des informations à l'objet
+	// Attribution des informations Ã  l'objet
 	$this->ref_serveur_import 	= $ref_serveur_import;
 	$this->lib_serveur_import		= $import_serveur->lib_serveur_import;
 	$this->url_serveur_import		= $import_serveur->url_serveur_import;
@@ -49,13 +49,13 @@ final public function create ($ref_serveur_import, $lib_serveur_import, $url_ser
 	global $bdd;
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->ref_serveur_import	= $ref_serveur_import;
 	$this->lib_serveur_import	= $lib_serveur_import;
 	$this->url_serveur_import	= $url_serveur_import;
 
 	// *************************************************
-	// Controle de l'existance d'un serveur d'import ayant la même ref_serveur
+	// Controle de l'existance d'un serveur d'import ayant la mÃªme ref_serveur
 	$query = "SELECT ref_serveur_import FROM import_serveurs
 						WHERE ref_serveur_import = '".$this->ref_serveur_import."' || url_serveur_import ='".$this->url_serveur_import."'  LIMIT 0,1";
 	$resultat = $bdd->query ($query);
@@ -64,7 +64,7 @@ final public function create ($ref_serveur_import, $lib_serveur_import, $url_ser
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -78,8 +78,8 @@ final public function create ($ref_serveur_import, $lib_serveur_import, $url_ser
 
 	
 	// *************************************************
-	// Résultat positif de la création
-	$GLOBALS['_INFOS']['Création_import_serveur'] = $this->ref_serveur_import;
+	// RÃ©sultat positif de la crÃ©ation
+	$GLOBALS['_INFOS']['CrÃ©ation_import_serveur'] = $this->ref_serveur_import;
 
 	return true;
 }
@@ -93,13 +93,13 @@ final public function modification ($ref_serveur_import, $lib_serveur_import, $u
 	global $bdd;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	
 	$this->lib_serveur_import		= $lib_serveur_import;
 	$this->url_serveur_import		= $url_serveur_import;
 
 	// *************************************************
-	// Controle de l'existance d'un serveur d'import ayant la même ref_serveur
+	// Controle de l'existance d'un serveur d'import ayant la mÃªme ref_serveur
 	if ($ref_serveur_import != $this->ref_serveur_import) {
 		$query = "SELECT ref_serveur_import FROM import_serveurs
 							WHERE ref_serveur_import = '".$ref_serveur_import."' LIMIT 0,1";
@@ -111,7 +111,7 @@ final public function modification ($ref_serveur_import, $lib_serveur_import, $u
 
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -139,7 +139,7 @@ final public function suppression () {
 	global $bdd;
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -176,7 +176,7 @@ final public function add_impex ($id_impex_type) {
 		$GLOBALS['_ALERTES']['impex_existants'] = 1;
 	}
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -246,7 +246,7 @@ function charger_import_infos ($id_impex_type) {
 
 }
 
-//mise à jour des import_infos
+//mise Ã  jour des import_infos
 function maj_import_infos ($id_impex_type, $import_infos) {
 	global $bdd;
 	
@@ -298,7 +298,7 @@ function getImpex_types () {
 }
 }
 
-//fonction modifiée pour l'import
+//fonction modifiÃ©e pour l'import
 function import_order_by_parent (&$tab1, $tab2, $cle1, $cle2, $ref_cle_parent = "", $ref_cle_ignored = "") {
 	static $tab1 = array();
 	static $indentation = 0;
@@ -306,13 +306,13 @@ function import_order_by_parent (&$tab1, $tab2, $cle1, $cle2, $ref_cle_parent = 
 	
 	for ($i=0; $i<count($tab2); $i++) {
 		
-		// Si la clé indiquant le parent n'est pas égale à ref_cle_parent, on passe a l'enregistrement suivant
+		// Si la clÃ© indiquant le parent n'est pas Ã©gale Ã  ref_cle_parent, on passe a l'enregistrement suivant
 		if ($tab2[$i][$cle2] != $ref_cle_parent ) { continue; }
 		
-		// Si l'enregistrement a déjà été inséré dans le tableau, on passe au suivant
+		// Si l'enregistrement a dÃ©jÃ  Ã©tÃ© insÃ©rÃ© dans le tableau, on passe au suivant
 		if (isset($tab1[$tab2[$i][$cle1]])) { continue; }
 		
-		// Si l'enregistrement ne doit pas etre enregistré: on saute
+		// Si l'enregistrement ne doit pas etre enregistrÃ©: on saute
 		if ($tab2[$i][$cle1] == $ref_cle_ignored) { continue; }
 
 		// Ajout de l'enregistrement en cours au tableau 1

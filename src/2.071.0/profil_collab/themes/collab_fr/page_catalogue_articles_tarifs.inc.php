@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -62,7 +62,7 @@ check_page_variables ($page_variables);
 			</select>
 					<input value="" type="hidden" id="tva_value_"  name="tva_value_"/>
 			<?php
-				//liste des valeurs de tva pour calcul tarif à la volée
+				//liste des valeurs de tva pour calcul tarif Ã  la volÃ©e
 				foreach ($tvas  as $tva){
 					?>
 					<input value="<?php echo htmlentities($tva['tva']);?>" type="hidden" id="tva_value_<?php echo $tva['id_tva'];?>"  name="tva_value_<?php echo $tva['id_tva'];?>"/>
@@ -78,9 +78,9 @@ check_page_variables ($page_variables);
 	</tr>
 		<tr>
 		<td>&nbsp;</td>
-		<td class="labelled_text"><span  <?php //permission (6) Accès Consulter les prix d’achat
+		<td class="labelled_text"><span  <?php //permission (6) AccÃ¨s Consulter les prix dâ€™achat
 if (!$_SESSION['user']->check_permission ("6")) {?>style="display:none;"<?php } ?> >Prix d'achat actuel:</span> </td>
-		<td><span <?php //permission (6) Accès Consulter les prix d’achat
+		<td><span <?php //permission (6) AccÃ¨s Consulter les prix dâ€™achat
 if (!$_SESSION['user']->check_permission ("6")) {?>style="display:none;"<?php } ?>><input type="text" name="paa_ht" id="paa_ht" value=""  class="classinput_hsize" />&nbsp;<input  name="taxation_paa" id="taxation_paa_ht" type="radio" value="HT" checked="checked" >HT&nbsp;<input  name="taxation_paa" id="taxation_paa_ttc" type="radio" value="TTC" >TTC			</span>
 		</td>
 		<td>&nbsp;</td>

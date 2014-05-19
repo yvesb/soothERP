@@ -11,7 +11,7 @@ $ref_fournisseur = $import_tarifs_fournisseur->getRef_fournisseur();
 $colonne = new import_tarifs_fournisseur_csv_colonne();
 $array_verif_doublon = array();
 $index = 1;
-// On récupère la liste des champs obligatoires (définis dans la config)
+// On rÃ©cupÃ¨re la liste des champs obligatoires (dÃ©finis dans la config)
 $champs_obligatoires = array();
 foreach($import_tarifs_fournisseur_csv['liste_entete'] as $entete){
 	foreach($entete['champs'] as $champ){
@@ -21,7 +21,7 @@ foreach($import_tarifs_fournisseur_csv['liste_entete'] as $entete){
 	}
 }
 
-// On parcourt les données transmises
+// On parcourt les donnÃ©es transmises
 foreach ($_POST as $k => $v){
 	if (substr_count($k, "_equiv_")) {continue;}
 	if (substr_count($k, "_pend_")) {continue;}
@@ -39,12 +39,12 @@ foreach ($_POST as $k => $v){
 	}
 }
 
-// On parcourt les champs obligatoires qui n'ont pas été saisis
+// On parcourt les champs obligatoires qui n'ont pas Ã©tÃ© saisis
 foreach($champs_obligatoires as $k => $v){
 	$GLOBALS['_ALERTES']['obligatoire'][] = $v;
 }
 
-// On vérifie les doublons
+// On vÃ©rifie les doublons
 if (isset($array_verif_doublon)) {
 	foreach ($array_verif_doublon as $ck=>$alt) {
 		if (count($alt)<2) {continue;}
@@ -52,7 +52,7 @@ if (isset($array_verif_doublon)) {
 	}
 }
 
-// Si aucun problème, on effectue les traitements
+// Si aucun problÃ¨me, on effectue les traitements
 if (!count($_ALERTES)) {
 	foreach ($_POST as $k => $v){
 		if (substr_count($k, "_equiv_")) {continue;}
@@ -70,27 +70,27 @@ if (!count($_ALERTES)) {
 	$import_tarifs_fournisseur->maj_etape(2);
 }
 
-// On créé une colonne pour la référence article interne de l'article auquel il faudra lier les données importées
+// On crÃ©Ã© une colonne pour la rÃ©fÃ©rence article interne de l'article auquel il faudra lier les donnÃ©es importÃ©es
 $colonne = new import_tarifs_fournisseur_csv_colonne();
 $colonne->setLibelle("ref_article_existant");
 $colonne->setChamp_equivalent("ref_article_existant");
 // Ecriture en base
 $colonne->write();
 
-echo "Colonne ref_article_existant créée : id = " . $colonne->getId_colonne() . "<br />";
+echo "Colonne ref_article_existant crÃ©Ã©e : id = " . $colonne->getId_colonne() . "<br />";
 
 // On enregistre l'identifiant de la colonne "ref_article_existant" dans la table 'csv_import_tarifs_fournisseur'
 $import_tarifs_fournisseur->setId_colonne_ref_article_existant($colonne->getId_colonne());
 
-// On cherche les correspondances avec les articles déjà présents en base
-// On supprime les enregistrements correspondant à la colonne "ref_article_existant" éventuellement présents
+// On cherche les correspondances avec les articles dÃ©jÃ  prÃ©sents en base
+// On supprime les enregistrements correspondant Ã  la colonne "ref_article_existant" Ã©ventuellement prÃ©sents
 $donnee = new import_tarifs_fournisseur_csv_donnee();
 $donnee->deleteDataForColumn($import_tarifs_fournisseur->getId_colonne_ref_article_existant());
 
-// On récupère les données insérées en base
+// On rÃ©cupÃ¨re les donnÃ©es insÃ©rÃ©es en base
 $array_retour = $import_tarifs_fournisseur->recupererDonneesAImporter();
 
-// On cherche les correspondances avec les articles déjà présents en base
+// On cherche les correspondances avec les articles dÃ©jÃ  prÃ©sents en base
 foreach($array_retour as $k => $ret) {
 	$corres_trouvee = false;
 	$ref_article_existant = "";
@@ -131,7 +131,7 @@ foreach($array_retour as $k => $ret) {
 		}
 	}
 	
-	// On enregistre la donnée (article trouvé correspondant)
+	// On enregistre la donnÃ©e (article trouvÃ© correspondant)
 	$donnee = new import_tarifs_fournisseur_csv_donnee();
 	$donnee->setId_ligne($k);
 	$donnee->setId_colonne($import_tarifs_fournisseur->getId_colonne_ref_article_existant());
@@ -141,7 +141,7 @@ foreach($array_retour as $k => $ret) {
 	unset($enr, $resultat, $query);
 }
 
-// On supprime les colonnes (et les données associées) qui n'ont pas été choisies
+// On supprime les colonnes (et les donnÃ©es associÃ©es) qui n'ont pas Ã©tÃ© choisies
 $import_tarifs_fournisseur->supprimerDonneesNonImportees();
 
 // *************************************************************************************************************

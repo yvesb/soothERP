@@ -14,7 +14,7 @@ if (isset($_REQUEST['adresse_ref'.$_REQUEST['ref_idform']])) {
 	// Suppression de l'adresse
 	$adresse = new adresse ($_REQUEST['adresse_ref'.$_REQUEST['ref_idform']]);
 	
-	// on récupére tout les réf_adresse qui sont aprés la réf_adresse supprimée pour rafraichir l'affichage des ordres
+	// on rÃ©cupÃ©re tout les rÃ©f_adresse qui sont aprÃ©s la rÃ©f_adresse supprimÃ©e pour rafraichir l'affichage des ordres
 	$adress = $adresse->liste_ref_adresse_in_ordre ();
 	
 	$adresse->suppression();

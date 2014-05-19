@@ -5,7 +5,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -51,7 +51,7 @@ if (erreur) {
 	
 	if (bad_delai_reglement) {
 		window.parent.document.getElementById("delai_reglement_<?php echo $_REQUEST["id_client_categ"];?>").className="alerteform_lsize";
-		texte_erreur += "Le délai de règlement dois être une valeur comprise entre 0 et 255.<br/>";
+		texte_erreur += "Le dÃ©lai de rÃ¨glement dois Ãªtre une valeur comprise entre 0 et 255.<br/>";
 	} else {
 		window.parent.document.getElementById("delai_reglement_<?php echo $_REQUEST["id_client_categ"];?>").className="classinput_lsize";
 	}

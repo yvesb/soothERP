@@ -89,7 +89,7 @@
 				</tr>
 				<tr>
 					<td>
-						Sélectionner un destinataire :
+						SÃ©lectionner un destinataire :
 					</td>
 					<td>
 						<select name="new_dest" id="new_dest" style="width:263px">

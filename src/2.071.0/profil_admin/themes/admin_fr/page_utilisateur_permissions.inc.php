@@ -3,7 +3,7 @@
 // FONCTIONS DES UTILISATEURS
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -86,7 +86,7 @@ if (isset($liste_permissions_collab)) {
 		}
 	?>
 	<BR>
-	<A id="maj_droits_membre_<?php echo $user_fonctions[0]->id_fonction ?>_<?php echo $utilisateur->getRef_user() ?>" HREF="#" class="common_link">Réinitialiser les droits</A>
+	<A id="maj_droits_membre_<?php echo $user_fonctions[0]->id_fonction ?>_<?php echo $utilisateur->getRef_user() ?>" HREF="#" class="common_link">RÃ©initialiser les droits</A>
 	<script type="text/javascript">
 	Event.observe($("maj_droits_membre_<?php echo $user_fonctions[0]->id_fonction ?>_<?php echo $utilisateur->getRef_user() ?>"), "click", function(evt){
 		Event.stop(evt);
@@ -131,7 +131,7 @@ if (isset($liste_permissions_collab)) {
 						$permissions_dependantes = charger_permissions_dependantes_inactives ($perm_collab->id_permission, $utilisateur->getRef_user(),true);
 						if (count($permissions_dependantes) > 0){
 						?>
-						$("titre_alert").innerHTML = "Avertissement dépendances :";
+						$("titre_alert").innerHTML = "Avertissement dÃ©pendances :";
 						$("texte_alert").innerHTML = "Vous allez aussi activer les permissions suivantes: <br /><br />";
 						<?php
 						foreach($permissions_dependantes as $permission_dependante){?>
@@ -157,8 +157,8 @@ if (isset($liste_permissions_collab)) {
 						$permissions_dependantes = charger_permissions_dependantes_actives ($perm_collab->id_permission, $utilisateur->getRef_user(),true);
 						if (count($permissions_dependantes) > 0){
 						?>
-						$("titre_alert").innerHTML = "Avertissement dépendances :";
-						$("texte_alert").innerHTML = "Vous allez aussi désactiver les permissions suivantes : <br /><br />";
+						$("titre_alert").innerHTML = "Avertissement dÃ©pendances :";
+						$("texte_alert").innerHTML = "Vous allez aussi dÃ©sactiver les permissions suivantes : <br /><br />";
 						<?php
 						foreach($permissions_dependantes as $permission_dependante){?>
 							$("texte_alert").innerHTML += "<?php echo "<I>".$permission_dependante."</I>";?> <br />";
@@ -242,8 +242,8 @@ if (isset($liste_permissions_collab)) {
 							$permissions_dependantes = charger_permissions_dependantes_actives ($perm_collab->id_permission,$utilisateur->getRef_user(),true);
 							if (count($permissions_dependantes) > 0){
 							?>
-							$("titre_alert").innerHTML = "Avertissement dépendances :";
-							$("texte_alert").innerHTML = "Vous allez aussi désactiver les permissions suivantes : <br /><br />";
+							$("titre_alert").innerHTML = "Avertissement dÃ©pendances :";
+							$("texte_alert").innerHTML = "Vous allez aussi dÃ©sactiver les permissions suivantes : <br /><br />";
 							<?php
 							foreach($permissions_dependantes as $permission_dependante){?>
 								$("texte_alert").innerHTML += "<?php echo "<I>".$permission_dependante."</I>";?> <br />";
@@ -275,7 +275,7 @@ if (isset($liste_permissions_collab)) {
 					$alert_perms = array_unique(array_merge($permissions_dependantes_cac,$permissions_parentes,$permissions_dependantes));
 						if (count($alert_perms) > 0){
 							?>
-							$("titre_alert").innerHTML = "Avertissement dépendances :";
+							$("titre_alert").innerHTML = "Avertissement dÃ©pendances :";
 							$("texte_alert").innerHTML = "Vous allez aussi modifier les permissions suivantes : <br /><br />";
 							<?php
 								foreach($alert_perms as $alert_perm){?>
@@ -426,7 +426,7 @@ if (isset($liste_permissions_collab)) {
 			} else {
 			
 			<?php if (count($users) > 1) { ?>
-				$("titre_alert").innerHTML = 'Sélectionnez le nouvel utilisateur principal:';
+				$("titre_alert").innerHTML = 'SÃ©lectionnez le nouvel utilisateur principal:';
 				$("texte_alert").innerHTML = '<?php 
 				foreach ($users as $user) {
 					if ($user->ref_user == $utilisateur->getRef_user()) {continue;}

@@ -3,7 +3,7 @@
 // AFFICHAGE DU TABLEAU DE BORD DES VENTES
 // *************************************************************************************************************
 
-// Variables nÈcessaires ‡ l"affichage
+// Variables n√©cessaires √† l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -23,19 +23,19 @@ check_page_variables ($page_variables);
 <?php 
 switch($type_data) {
 	case "magasins":
-		?>DÈtail par Magasins
+		?>D√©tail par Magasins
 		<?php 
 	break; 
 	case "categ_client":
-		?>DÈtail par CatÈgorie de Client
+		?>D√©tail par Cat√©gorie de Client
 		<?php 
 	break; 
 	case "categ_comm":
-		?>DÈtail par CatÈgorie de Commerciaux
+		?>D√©tail par Cat√©gorie de Commerciaux
 		<?php 
 	break; 
 	case "art_categ":
-		?>DÈtail par CatÈgorie d'articles
+		?>D√©tail par Cat√©gorie d'articles
 		<?php 
 	break; 
 }?>
@@ -121,7 +121,7 @@ switch($type_data) {
 											 echo number_format($CA, $TARIFS_NB_DECIMALES, ".", ""	)."&nbsp;".$MONNAIE[1];
 											 ?>
 											 </div>
-											<?php echo htmlentities($art_categ->lib_art_categ); if (!$art_categ->lib_art_categ) { echo "Pas de libellÈ";}?> 
+											<?php echo htmlentities($art_categ->lib_art_categ); if (!$art_categ->lib_art_categ) { echo "Pas de libell√©";}?> 
 											</span>
 											</td>
 										</tr>
@@ -174,7 +174,7 @@ foreach ($list_art_categ  as $art_categ){
 
 					<div  class="list_stat_link">
 					<span style="float:right"><?php echo price_format($CA_global)." ".$MONNAIE[1];?></span>
-					Non attribuÈ<br />
+					Non attribu√©<br />
 					</div>
 			<?php 
 		}

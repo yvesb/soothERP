@@ -1,7 +1,7 @@
 
 <p class="titre">Import du catalogue <?php echo $import_serveur->getLib_serveur_import();?></p>
 
-<div style="text-align:center"><span style="cursor:pointer" id="maj_art_categ">Mettre à jour les catégories déjà importées</span></div>
+<div style="text-align:center"><span style="cursor:pointer" id="maj_art_categ">Mettre Ã  jour les catÃ©gories dÃ©jÃ  importÃ©es</span></div>
 <script type="text/javascript">
 	Event.observe('maj_art_categ', 'click',  function(evt){
 		Event.stop(evt); 
@@ -18,7 +18,7 @@
 	while ($art_categ = current($list_art_categ) ){
 next($list_art_categ);
 	$current_list_art_categ = current($list_art_categ);
-	//comparaison avec les categ deja présentes
+	//comparaison avec les categ deja prÃ©sentes
 	$exist_categ = true;
 	foreach ($presentes_art_categ as $p_art_categ) {
 		if ($art_categ["REF_ART_CATEG"] == $p_art_categ->ref_art_categ) {
@@ -103,7 +103,7 @@ if (key($list_art_categ)!="") {
 <?php
 $indentation_array = 0;
 foreach ($list_art_categ  as $art_categ){
-	//comparaison avec les categ deja présentes
+	//comparaison avec les categ deja prÃ©sentes
 	$exist_categ = true;
 	foreach ($presentes_art_categ as $p_art_categ) {
 		if ($art_categ["REF_ART_CATEG"] == $p_art_categ->ref_art_categ) {
@@ -170,7 +170,7 @@ H_loading();
 </div>
 </td></tr>
 <tr><td>
-<span style="background-color:#FFEDFE; height:25px; width:25px; border:1px solid #333333 ">&nbsp;&nbsp;&nbsp;</span> catégories déjà importées
+<span style="background-color:#FFEDFE; height:25px; width:25px; border:1px solid #333333 ">&nbsp;&nbsp;&nbsp;</span> catÃ©gories dÃ©jÃ  importÃ©es
 </td><td>
 	<br />
 

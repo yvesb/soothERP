@@ -13,13 +13,13 @@ require("_session.inc.php");
 // exemple : http://lmb8/LMB9/profil_client/_modification_valide.php?id_contact_tmp=ID&code_validation=CODE&modification_allowed=INT
 
 if(!isset($_REQUEST["id_contact_tmp"])){
-	echo "l'id_contact_tmp n'est pas spécifié";
+	echo "l'id_contact_tmp n'est pas spÃ©cifiÃ©";
 	exit;
 }
 $id_contact_tmp = $_REQUEST["id_contact_tmp"];
 
 if(!isset($_REQUEST["code_validation"])){
-	echo "le code de validation n'est pas spécifié";
+	echo "le code de validation n'est pas spÃ©cifiÃ©";
 	exit;
 }
 $code_validation = $_REQUEST["code_validation"];

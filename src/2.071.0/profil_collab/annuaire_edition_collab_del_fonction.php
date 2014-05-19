@@ -10,13 +10,13 @@ require ($DIR."_session.inc.php");
 
 
 	if (!isset($_REQUEST['ref_contact'])) {
-		echo "La référence du contact n'est pas précisée";
+		echo "La rÃ©fÃ©rence du contact n'est pas prÃ©cisÃ©e";
 		exit;
 	}
 
 	$contact = new contact ($_REQUEST['ref_contact']);
 	if (!$contact->getRef_contact()) {
-		echo "La référence du contact est inconnue";		exit;
+		echo "La rÃ©fÃ©rence du contact est inconnue";		exit;
 
 	}
 	$profils 	= $contact->getProfils();

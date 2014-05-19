@@ -4,7 +4,7 @@ include('page_catalogue_recherche_mini.inc.php');
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES", "form['page_to_show']", "form['fiches_par_page']", "nb_fiches", "form['orderby']", "form['orderorder']");
 check_page_variables ($page_variables);
 
@@ -28,7 +28,7 @@ function barre_navigation(	$nbtotal,
 							$idformtochange,
 							$fonctiontolauch){
 	// --------------------------------------------------------------------
-	global $cfg_nb_pages; // Nb de n° de pages affichées dans la barre
+	global $cfg_nb_pages; // Nb de nÂ° de pages affichÃ©es dans la barre
 	global $DIR;
 	$barre= "";	
 	$lien_on = "&nbsp;<a href='#' id='link_pagi_{cible}'>{lien}</a>&nbsp;
@@ -38,7 +38,7 @@ function barre_navigation(	$nbtotal,
 	$lien_off = "&nbsp;{lien}&nbsp;";
 	// --------------------------------------------------------------------
     
-	// début << .
+	// dÃ©but << .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage) {
 		$cible = 1;
@@ -55,7 +55,7 @@ function barre_navigation(	$nbtotal,
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
 
 
-	// précédent < .
+	// prÃ©cÃ©dent < .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage) {
 		$cible = ($nbenr-1);
@@ -147,7 +147,7 @@ function image_html($img){
 
 //
 //
-// Création de la barre de nav
+// CrÃ©ation de la barre de nav
 //
 //
 $cfg_nb_pages = 10;
@@ -167,7 +167,7 @@ foreach ($_ALERTES as $alerte => $value) {
 <div id="affresult">
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 	<tr>
-		<td style="text-align:left; font-weight:bolder">Liste des tarifs fournisseur à importer</td>
+		<td style="text-align:left; font-weight:bolder">Liste des tarifs fournisseur Ã  importer</td>
 		<td id="nvbar"><?php echo $barre_nav;?></td>
 		<td style="text-align:right;">R&eacute;ponse <?php echo $debut+1?> &agrave; <?php echo $debut+$nb_affiche?> sur <?php echo $nb_fiches?></td>
 	</tr>
@@ -207,7 +207,7 @@ foreach ($_ALERTES as $alerte => $value) {
 		}
 		?>
 		<td>
-			Article trouvé
+			Article trouvÃ©
 		</td>
 	</tr>
 	<?php
@@ -226,13 +226,13 @@ foreach ($_ALERTES as $alerte => $value) {
 			<td style="text-align:center;">
 				<?php if (isset($fiche["averti"])) {?>
 					<img src="../<?php echo $_SESSION['theme']->getDir_theme()?>/images/ding.gif" 
-							title="Cette ligne pourrait ne pas être totalement importée"/>
+							title="Cette ligne pourrait ne pas Ãªtre totalement importÃ©e"/>
 				<?php }elseif (isset($fiche["alerte"])) {?>
-					<img src="../<?php echo $_SESSION['theme']->getDir_theme()?>/images/alerte.gif" title="Cette ligne ne sera pas importée."/>
+					<img src="../<?php echo $_SESSION['theme']->getDir_theme()?>/images/alerte.gif" title="Cette ligne ne sera pas importÃ©e."/>
 				<?php } elseif (isset($fiche["ref_article_existant"]) && $fiche["ref_article_existant"] != "") { ?>
-					<img src="../<?php echo $_SESSION['theme']->getDir_theme()?>/images/point_vert.gif" title="La correspondance a été trouvée ! Cette ligne sera importée."/>
+					<img src="../<?php echo $_SESSION['theme']->getDir_theme()?>/images/point_vert.gif" title="La correspondance a Ã©tÃ© trouvÃ©e ! Cette ligne sera importÃ©e."/>
 				<?php } else {?>
-					<img src="../<?php echo $_SESSION['theme']->getDir_theme()?>/images/point_rouge.gif" title="Aucune correspondance trouvée. Cet article sera créé."/>
+					<img src="../<?php echo $_SESSION['theme']->getDir_theme()?>/images/point_rouge.gif" title="Aucune correspondance trouvÃ©e. Cet article sera crÃ©Ã©."/>
 				<?php } ?>
 			</td>
 			<td style="text-align:center;" >
@@ -257,7 +257,7 @@ foreach ($_ALERTES as $alerte => $value) {
 			<?php }
 			} ?>
 				<td style="<?php if(isset($fiche["alerte"]) || isset($fiche["averti"])){?>color:#FF0000;<?php } ?>">
-				<?php // On affiche la réf ok ?>
+				<?php // On affiche la rÃ©f ok ?>
 					<a id="ref_article_existant_<?php echo $nb_lignes; ?>"><?php echo $fiche["ref_article_existant"]; ?></a><br />
 				<?php // On affiche le lien vers le mini moteur de recherche d'article ?>
 					<a href="#" id="show_mini_moteur_articles<?php echo $nb_lignes; ?>">Choisir un article</a>

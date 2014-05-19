@@ -4,7 +4,7 @@
 // AFFICHAGE gestion des consommations
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -37,9 +37,9 @@ check_page_variables ($page_variables);
 			<div style="width:90%; height:50px; padding:25px">
 			<table width="100%" border="0" cellspacing="4" cellpadding="2">
 				<tr>
-					<td style=" font-weight:bolder; text-align: left; padding-left:10px">Libellé de l'article</td>
+					<td style=" font-weight:bolder; text-align: left; padding-left:10px">LibellÃ© de l'article</td>
 					<td style="width:20%; font-weight:bolder; text-align:center">Clients en compte</td>
-					<td style="width:20%; font-weight:bolder; text-align:center">Crédits à consommer</td>
+					<td style="width:20%; font-weight:bolder; text-align:center">CrÃ©dits Ã  consommer</td>
 					<td style="width:15%;font-weight:bolder; text-align:center" colspan="3">Options</td>
 				</tr>
 			<?php 

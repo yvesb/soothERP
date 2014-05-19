@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -40,7 +40,7 @@ if(count($check_erreurs)>0){
 // *************************************************************************************************************
 
 ?>
-<div id="titre_add_compte_comptable" style="font-weight:bolder; border-bottom:1px solid #000000;">Ajout d'un numéro de compte </div>
+<div id="titre_add_compte_comptable" style="font-weight:bolder; border-bottom:1px solid #000000;">Ajout d'un numÃ©ro de compte </div>
 <div id="form_add_compte_comptable" >
 	<form id="ajouter_compte_comptable" name="ajouter_compte_comptable" action="compte_plan_comptable_add.php" target="formFrame">
 	<table style="width:99%">
@@ -52,11 +52,11 @@ if(count($check_erreurs)>0){
 		</tr>
 		<tr>
 			<td>
-				Numéro de compte:
+				NumÃ©ro de compte:
 			</td>
 			<td>&nbsp;</td>
 			<td>
-				Libélle du compte:
+				LibÃ©lle du compte:
 			</td>
 			<td>&nbsp;</td>
 		</tr>
@@ -72,7 +72,7 @@ if(count($check_erreurs)>0){
 				</script>
 			</td>
 			<td>
-				<img alt="Numéro de compte valide" name="img_numero_compte_etat" id="img_numero_compte_etat" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme().$num_compte_img?>" align="left" />
+				<img alt="NumÃ©ro de compte valide" name="img_numero_compte_etat" id="img_numero_compte_etat" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme().$num_compte_img?>" align="left" />
 			</td>
 			<td>
 				<input type="text" id="lib_compte" name="lib_compte" value="<?php echo $form['lib_compte'];?>" />
@@ -85,7 +85,7 @@ if(count($check_erreurs)>0){
 				</script>
 			</td>
 			<td>
-				<img alt="Numéro de compte " name="img_lib_compte_etat" id="img_lib_compte_etat" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme().$lib_compte_img?>" align="left" />
+				<img alt="NumÃ©ro de compte " name="img_lib_compte_etat" id="img_lib_compte_etat" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme().$lib_compte_img?>" align="left" />
 			</td>
 		</tr>
 		<tr>

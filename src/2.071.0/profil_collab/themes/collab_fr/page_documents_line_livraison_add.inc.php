@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -26,15 +26,15 @@ check_page_variables ($page_variables);
 if ( isset($GLOBALS['_INFOS']['calcul_livraison_mode_ND'])) {
 	?>	
 	texte_erreur = "Un ou plusieurs articles, non disponibles pour ce mode de livraison, ne permettent pas de calculer les frais de transports.";
-	alerte.alerte_erreur ('Frais de transport non déterminés', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+	alerte.alerte_erreur ('Frais de transport non dÃ©terminÃ©s', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 	<?php
 }
 ?>
 <?php
 if ( isset($GLOBALS['_INFOS']['calcul_livraison_mode_nozone'] )) {
 	?>	
-	texte_erreur = "Aucune zone de livraison n'est indiquée pour ce document.";
-	alerte.alerte_erreur ('Zone de livraison non déterminée', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+	texte_erreur = "Aucune zone de livraison n'est indiquÃ©e pour ce document.";
+	alerte.alerte_erreur ('Zone de livraison non dÃ©terminÃ©e', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 	<?php
 }
 ?>
@@ -43,7 +43,7 @@ if ( isset($GLOBALS['_INFOS']['calcul_livraison_mode_nozone'] )) {
 if ( isset($GLOBALS['_INFOS']['calcul_livraison_mode_impzone'] )) {
 	?>	
 	texte_erreur = "Cette zone de livraison n'est pas disponible pour ce mode de transport.";
-	alerte.alerte_erreur ('Zone de livraison non désservie', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+	alerte.alerte_erreur ('Zone de livraison non dÃ©sservie', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 	<?php
 }
 ?>

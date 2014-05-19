@@ -18,11 +18,11 @@ function combine_all($tab_values, $result = array()){
 	if (count($tab0)) {
 		// Boucle sur toutes les valeurs de ce tableau
 		foreach ($tab0 as $value) {
-				// On concaténe la nouvelle valeur avec les précédentes
+				// On concatÃ©ne la nouvelle valeur avec les prÃ©cÃ©dentes
 				if (count($result)) {$res2 = $result;}
 				if ($value) {	$res2[$ref_carac] = $value;} else {break;}
 				if (count($tab_values) == 0) {
-					// C'était le dernier tableau, on affiche le résultat
+					// C'Ã©tait le dernier tableau, on affiche le rÃ©sultat
 					$resultat_var[] = $res2;
 				} else {
 					// On continue avec le tableau suivant
@@ -34,31 +34,31 @@ function combine_all($tab_values, $result = array()){
 
 	// Controle
 	if (!isset($_REQUEST['ref_art_categ'])) {
-		echo "La référence de la catégorie n'est pas précisée";
+		echo "La rÃ©fÃ©rence de la catÃ©gorie n'est pas prÃ©cisÃ©e";
 		exit;
 	}
 
 	$art_categ = new art_categ ($_REQUEST['ref_art_categ']);
 	
-	// on récupére la liste des caractéristiques
+	// on rÃ©cupÃ©re la liste des caractÃ©ristiques
 	$caracs= $art_categ->getCarac();
 	
 	
 	if (!$art_categ->getRef_art_categ()) {
-		echo "La référence de la catégorie est inconnue";		exit;
+		echo "La rÃ©fÃ©rence de la catÃ©gorie est inconnue";		exit;
 
 	}
 
 //
 
 if (!isset($_REQUEST['ref_article'])) {
-	echo "La référence de l'article n'est pas précisée";
+	echo "La rÃ©fÃ©rence de l'article n'est pas prÃ©cisÃ©e";
 	exit;
 }
 
 $article = new article ($_REQUEST['ref_article']);
 if (!$article->getRef_article()) {
-	echo "La référence de l'article est inconnue";
+	echo "La rÃ©fÃ©rence de l'article est inconnue";
 	exit;
 }
 $article->find_my_master();
@@ -77,9 +77,9 @@ foreach ($_REQUEST as $variable => $valeur) {
 $resultat_var = array();
 combine_all($tab_stock);
 
-//modification des données en cas d'affichage variante
+//modification des donnÃ©es en cas d'affichage variante
 if ($article->getVariante() == 1) {
-	//on charge un Esclave variante, alors on récupére les esclaves possibles à partir du maitre
+	//on charge un Esclave variante, alors on rÃ©cupÃ©re les esclaves possibles Ã  partir du maitre
 	$ref_article_master = $article->getVariante_master();
 	$article_master = new article ($ref_article_master);
 	$liste_slaves = $article_master->getVariante_slaves ();

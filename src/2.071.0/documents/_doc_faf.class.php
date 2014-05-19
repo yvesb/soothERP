@@ -41,7 +41,7 @@ public function open_doc ($select = "", $left_join = "") {
 	$this->ref_doc_externe = $doc->ref_doc_externe;
 	$this->date_echeance = $doc->date_echeance;
 
-	// Blocage des quantités
+	// Blocage des quantitÃ©s
 	if ($this->id_etat_doc == 34 || $this->id_etat_doc == 35) {
 		//$this->quantite_locked = true;
 	}
@@ -63,7 +63,7 @@ public function create_doc () {
 	if (!parent::create_doc()) { return false; }
 
 	// *************************************************
-	// Informations complémentaires
+	// Informations complÃ©mentaires
 	$this->date_echeance 			= date ("Y-m-d", time());
 	
 	$query = "INSERT INTO doc_faf (ref_doc, date_echeance)
@@ -74,7 +74,7 @@ public function create_doc () {
 }
 
 
-// Charge les informations supplémentaire du contact
+// Charge les informations supplÃ©mentaire du contact
 protected function load_infos_contact () {
 	$this->load_infos_contact_fournisseur();
 	parent::load_infos_contact();
@@ -93,7 +93,7 @@ protected function define_aff_tarif () {
 // *************************************************************************************************************
 
 
-//fonction de mise à jour de l'app_tarif du contact en cas de changement d'app_tarif du document
+//fonction de mise Ã  jour de l'app_tarif du contact en cas de changement d'app_tarif du document
 public function maj_app_tarifs ($new_app_tarifs) {
 	global $bdd;
 	global $FOURNISSEUR_ID_PROFIL;
@@ -104,12 +104,12 @@ public function maj_app_tarifs ($new_app_tarifs) {
 	}
 	$this->app_tarifs = $new_app_tarifs;
 	
-	// Maj de la base de données
+	// Maj de la base de donnÃ©es
 	$query = "UPDATE documents SET app_tarifs = '".$this->app_tarifs."'
 						WHERE ref_doc = '".$this->ref_doc."' ";
 	$bdd->exec ($query);
 	
-	//on met à jour l'app_tarif du contact en fonction du profil / doc dans le même temps
+	//on met Ã  jour l'app_tarif du contact en fonction du profil / doc dans le mÃªme temps
 	if (!is_object($this->contact)) { $this->contact = new contact ($this->ref_contact); }
 	if ($this->contact->charger_profiled_infos($FOURNISSEUR_ID_PROFIL)) {
 		$profil_tmp = $this->contact->getProfil($FOURNISSEUR_ID_PROFIL);
@@ -117,9 +117,9 @@ public function maj_app_tarifs ($new_app_tarifs) {
 	}
 }
 
-// Liste des documents pouvant être fusionner
+// Liste des documents pouvant Ãªtre fusionner
 public function check_allow_fusion ($second_document) {
-	//verifcation que l'état des document permet la fusion
+	//verifcation que l'Ã©tat des document permet la fusion
 	if (($this->id_etat_doc != "32" && $this->id_etat_doc != "34") && ($second_document->getId_etat_doc () != "32" && $second_document->getId_etat_doc () != "34")) {
 		return false;
 	}
@@ -128,7 +128,7 @@ public function check_allow_fusion ($second_document) {
 
 
 
-// Liste des documents pouvant être fusionner
+// Liste des documents pouvant Ãªtre fusionner
 public function liste_doc_fusion () {
 	global $bdd;
 	
@@ -153,7 +153,7 @@ public function liste_doc_fusion () {
 }
 
 
-// Met à jour la ref_doc_externe
+// Met Ã  jour la ref_doc_externe
 public function maj_ref_doc_externe ($ref_doc_externe) {
 	global $bdd;	
 
@@ -175,10 +175,10 @@ public function maj_ref_doc_externe ($ref_doc_externe) {
 public function maj_line_ref_article_externe ($ref_doc_line , $ref_article_externe, $old_ref_article_externe = "", $ref_article) {
 	global $bdd;
 	
-	//si le document n'est pas annulé ou en cours de saisie, on met à jour les ref_externes de l'article
+	//si le document n'est pas annulÃ© ou en cours de saisie, on met Ã  jour les ref_externes de l'article
 	switch ($this->id_etat_doc) {
 	case 34: case 35:
-			//si un contact est défini et que na nouvelle ref_article_externe n'est pas vide
+			//si un contact est dÃ©fini et que na nouvelle ref_article_externe n'est pas vide
 			if ($this->ref_contact) {
 				//chargement de la ligne
 				$line = $this->charger_line ($ref_doc_line);
@@ -186,7 +186,7 @@ public function maj_line_ref_article_externe ($ref_doc_line , $ref_article_exter
 				$article = new article ($ref_article);
 				$article->maj_ref_article_externe ($this->ref_contact, $ref_article_externe, $old_ref_article_externe, $line->pu_ht, $this->date_creation);
 				
-				// en cas d'erreur, on ne met pas à jour la ref_externe dans la ligne de document
+				// en cas d'erreur, on ne met pas Ã  jour la ref_externe dans la ligne de document
 				if (count($GLOBALS['_ALERTES'])) {
 					return false;
 				}
@@ -194,14 +194,14 @@ public function maj_line_ref_article_externe ($ref_doc_line , $ref_article_exter
 		break;
 	}
 	
-	// pas de mise à jour si  les ref_articles_externes sont identiques
+	// pas de mise Ã  jour si  les ref_articles_externes sont identiques
 	if ($ref_article_externe == $old_ref_article_externe) {return false;}
-	//mise à jour de la ligne article si pas de problème concernant la mise à jour
+	//mise Ã  jour de la ligne article si pas de problÃ¨me concernant la mise Ã  jour
 	$query = "UPDATE doc_lines_faf SET ref_article_externe = '".$ref_article_externe."' 
 						WHERE ref_doc_line = '".$ref_doc_line."' ";
 	$resultat = $bdd->query ($query);
 	if (!$resultat->rowCount()) {
-		// La ligne n'existe pas il faut la créer
+		// La ligne n'existe pas il faut la crÃ©er
 		$query = "INSERT INTO doc_lines_faf (ref_doc_line, ref_article_externe)
 							VALUES ('".$ref_doc_line."', '".$ref_article_externe."') ";
 		$bdd->exec ($query);
@@ -215,7 +215,7 @@ public function maj_line_ref_article_externe ($ref_doc_line , $ref_article_exter
 
 
 
-// Met à jour la date d'échéance de la facture
+// Met Ã  jour la date d'Ã©chÃ©ance de la facture
 public function maj_date_echeance ($new_date_echeance) {
 	global $bdd;
 
@@ -263,7 +263,7 @@ protected function doc_line_infos_supp () {
 }
 
 
-//affichage dans les résultat du prix achat fournisseur ou de la valeur d'achat actuelle
+//affichage dans les rÃ©sultat du prix achat fournisseur ou de la valeur d'achat actuelle
 protected function select_article_pa ($article) {
 
 	$ref_externes = $article->charger_ref_article_externe_fournisseur($this->ref_contact);
@@ -288,7 +288,7 @@ public function add_line_article_info_supp ($ref_doc_line, $ref_article) {
 						WHERE ref_doc_line = '".$ref_doc_line."' ";
 	$resultat = $bdd->query ($query);
 	if (!$resultat->rowCount()) {
-		// La ligne n'existe pas il faut la créer
+		// La ligne n'existe pas il faut la crÃ©er
 		$query = "INSERT INTO doc_lines_faf (ref_doc_line, ref_article_externe)
 							VALUES ('".$ref_doc_line."', '".$ref_article_externe."') ";
 		$bdd->exec ($query);
@@ -318,7 +318,7 @@ public function action_after_copie_line_from_line ($line) {
 // *************************************************************************************************************
 
 
-// Action après de changer l'état du document
+// Action aprÃ¨s de changer l'Ã©tat du document
 protected function action_after_maj_etat ($old_etat_doc) {
 	global $bdd;
 
@@ -340,7 +340,7 @@ protected function action_after_maj_etat ($old_etat_doc) {
 		break;
 	}
 	if ($this->id_etat_doc == 34 || $this->id_etat_doc == 35 ) {
-		//mise à jour des ref_articles externes 
+		//mise Ã  jour des ref_articles externes 
 		if ($this->ref_contact) {
 			if (!$this->contenu_loaded) { $this->charger_contenu(); }
 			
@@ -410,12 +410,12 @@ function ajout_ventilation_facture_old($infos_lines = array()) {
 	
 	global $TARIFS_NB_DECIMALES; 
 	
-	//si aucunes données transmise on cré un ligne d'aprés les infos de chaque art_categ présent , TVA et TTC compte tier FOURNISSEUR)
+	//si aucunes donnÃ©es transmise on crÃ© un ligne d'aprÃ©s les infos de chaque art_categ prÃ©sent , TVA et TTC compte tier FOURNISSEUR)
 	if (!count($infos_lines)) {
 		$calcul_TTC = 0;
 	
 		//comptes HT ACHAT
-		// chargement des art_categ présents dans le doc		
+		// chargement des art_categ prÃ©sents dans le doc		
 		$query = "SELECT DISTINCT ac.ref_art_categ, 
 										ac.defaut_numero_compte_achat,
 										( 
@@ -444,9 +444,9 @@ function ajout_ventilation_facture_old($infos_lines = array()) {
 		}
 		unset($query, $resultat);
 		
-		//comptes TVA collectée
+		//comptes TVA collectÃ©e
 		$liste_tvas =  get_tvas($DEFAUT_ID_PAYS);
-		// chargement des tva présents dans le doc		
+		// chargement des tva prÃ©sents dans le doc		
 		$doc_tvas = $this->getTVAs ();
 	
 		foreach ($doc_tvas as $ttva=>$val_tva) {
@@ -492,7 +492,7 @@ function ajout_ventilation_facture_old($infos_lines = array()) {
 	}
 	
 	foreach ($infos_lines as $line) {
-		//sinon les infos sont envoyées depuis un ou plusieurs ligne (pop_up_compta), on cré donc un enregistrement
+		//sinon les infos sont envoyÃ©es depuis un ou plusieurs ligne (pop_up_compta), on crÃ© donc un enregistrement
 		$query = "INSERT INTO compta_docs  (numero_compte, montant, ref_doc, id_journal)
 							VALUES ('".$line["numero_compte"]."', '".$line["montant"]."', '".$this->ref_doc."' , '".$line["id_journal"]."' ) 
 							";
@@ -522,13 +522,13 @@ function check_ventilation_facture () {
 	global $DEFAUT_COMPTE_TVA_ACHAT;
 	global $DEFAUT_COMPTE_TIERS_ACHAT;
 	
-	//on bloque si la facture n'est pas à régler ou acquitée
+	//on bloque si la facture n'est pas Ã  rÃ©gler ou acquitÃ©e
 	if ($this->id_etat_doc == 33 || $this->id_etat_doc == 32 ) { return false; }
 	
 	$ventilation_facture = $this->charger_ventilation_facture ();
 	if (count($ventilation_facture)) {
 		
-			// si plusieurs lignes de définies
+			// si plusieurs lignes de dÃ©finies
 			// on verifie que le montant du document correspond au montant ht des lignes comptables par journal
 			$tmp_montant_ht = 0;
 			$tmp_montant_tva = 0;
@@ -560,7 +560,7 @@ function check_ventilation_facture () {
 // *************************************************************************************************************
 // chargement ventilation facture fournisseur
 /**
- * Ajoute les lignes de ventilations associé au document 
+ * Ajoute les lignes de ventilations associÃ© au document 
  * V2.0450.04012010 - fixed, en test
  * //@TODO TESTME.
  * @return bool
@@ -579,7 +579,7 @@ public function ajout_ventilation_facture($infos_lines = array()) {
 	global $CALCUL_TARIFS_NB_DECIMALS;
 	
 	
-	//si aucunes données transmise on cré un ligne d'aprés les infos de chaque art_categ présent , TVA et TTC compte tier client)
+	//si aucunes donnÃ©es transmise on crÃ© un ligne d'aprÃ©s les infos de chaque art_categ prÃ©sent , TVA et TTC compte tier client)
 	if (!count($infos_lines)) {
 		// requete sql : on recup. tt les lignes du documents + ref_article + montant_ht de la transaction	
 		$query = "SELECT a.ref_article,
@@ -595,7 +595,7 @@ public function ajout_ventilation_facture($infos_lines = array()) {
 					LEFT JOIN  docs_lines dl ON dl.ref_article = a.ref_article
 					WHERE dl.ref_doc = '".$this->ref_doc."' && ISNULL(dl.ref_doc_line_parent);  ";
 		$resultat = $bdd->query ($query);
-		// sur tout le tableau de résultat
+		// sur tout le tableau de rÃ©sultat
 		$ventilations_ht = array();
 		$ventilations_tva = array();
 		while ($ventil = $resultat->fetchObject()) {
@@ -609,10 +609,10 @@ public function ajout_ventilation_facture($infos_lines = array()) {
 				// on appelle la fonction de determination de compte comptable by ref_article
 				$ventil_ht->compte = doc_faf::get_compte_comptable_by_ref_article($ventil->ref_article,'achat');
 			} else {
-				// sinon on garde le compte assigné
+				// sinon on garde le compte assignÃ©
 				$ventil_ht->compte = $ventil->compte;
 			}
-			// defini le montant ht, formaté a $CALCUL_TARIFS_NB_DECIMALS chiffres apres la virgule (.)
+			// defini le montant ht, formatÃ© a $CALCUL_TARIFS_NB_DECIMALS chiffres apres la virgule (.)
 			$ventil_ht->montant_ht = round ($ventil->pu_ht * $ventil->qte * (1-$ventil->remise/100), $CALCUL_TARIFS_NB_DECIMALS);
 			
 			/* --- traitements TVA --- */
@@ -620,7 +620,7 @@ public function ajout_ventilation_facture($infos_lines = array()) {
 			$ventil_tva->taux = $ventil->tva;
 			// on appelle la fonction de determination de compte comptable by taux
 			$ventil_tva->compte = doc_faf::get_compte_comptable_by_taux_tva($ventil_tva->taux,'achat');
-			// defini le montant tva, formaté a $CALCUL_TARIFS_NB_DECIMALS chiffres apres la virgule (.)
+			// defini le montant tva, formatÃ© a $CALCUL_TARIFS_NB_DECIMALS chiffres apres la virgule (.)
 			$ventil_tva->tva = round($ventil->pu_ht * ($ventil->tva/100)* $ventil->qte * (1-$ventil->remise/100), $CALCUL_TARIFS_NB_DECIMALS) ;
 			
 			// feed du tableau de ventilation
@@ -722,7 +722,7 @@ public function ajout_ventilation_facture($infos_lines = array()) {
 			return true;
 		} else {
                     foreach ($infos_lines as $line) {
-                            //sinon les infos sont envoyées depuis un ou plusieurs ligne (pop_up_compta), on cré donc un enregistrement
+                            //sinon les infos sont envoyÃ©es depuis un ou plusieurs ligne (pop_up_compta), on crÃ© donc un enregistrement
                             $query = "INSERT INTO compta_docs  (numero_compte, montant, ref_doc, id_journal)
                                                                     VALUES ('".$line["numero_compte"]."', '".$line["montant"]."', '".$this->ref_doc."' , '".$line["id_journal"]."' )
                                                                     ";
@@ -753,7 +753,7 @@ static function get_compte_comptable_by_ref_article( $ref_article, $mode ){
 	$search = $res->fetchObject();
 	$compte = $search->compte;
 	$ref_categ = $search->ref_art_categ;
-	// si l'article n'a pas de compte associé, alors on cherche celui de sa catégorie
+	// si l'article n'a pas de compte associÃ©, alors on cherche celui de sa catÃ©gorie
 	// alors on boucle TANT QUE pas de compte && existe un parent
 	while( $compte == "" && $ref_categ != "" && count($search)>0){
 		$query = " SELECT defaut_numero_compte_".$mode." as compte, ref_art_categ_parent FROM art_categs WHERE ref_art_categ = '".$ref_categ."'";
@@ -763,7 +763,7 @@ static function get_compte_comptable_by_ref_article( $ref_article, $mode ){
 		$ref_categ = $search->ref_art_categ_parent;
 	}
 	// si la boucle ne renvois pas de compte comptable
-	// on utilise le compte global selon le mode selectioné
+	// on utilise le compte global selon le mode selectionÃ©
 	if( $compte == "" ){
 		return $defaut_compte;
 	} else {
@@ -794,7 +794,7 @@ static function get_compte_comptable_by_taux_tva( $taux, $mode ){
 			}
 		}
 	// si pas de compte comptable
-	// on utilise le compte global selon le mode selectioné
+	// on utilise le compte global selon le mode selectionÃ©
 	if( $compte == "" ){
 		return $defaut_compte;
 	} else {
@@ -812,7 +812,7 @@ static function get_compte_comptable_by_taux_tva( $taux, $mode ){
 //@FIXME
 /* --------------------- */
 
-//fonctions de mise à jour lignes si non bloquée et des doc_faf_compta en cas de changement du contenu du document
+//fonctions de mise Ã  jour lignes si non bloquÃ©e et des doc_faf_compta en cas de changement du contenu du document
 
 protected function add_line_article ($infos) {
 	if (!$this->quantite_locked) {
@@ -885,7 +885,7 @@ public function set_line_invisible ($ref_doc_line) {
 // *************************************************************************************************************
 // FONCTIONS DE LIAISON ENTRE DOCUMENTS 
 // *************************************************************************************************************
-// Chargement des documents à lier potentiellement
+// Chargement des documents Ã  lier potentiellement
 public function charger_liaisons_possibles () {
 	global $bdd;
 
@@ -919,7 +919,7 @@ public function charger_liaisons_possibles () {
 // *************************************************************************************************************
 
 protected function need_infos_facturation () {
-	// Si la facture est annulée ou acquittée, les informations de facturation ne sont pas nécessaires.
+	// Si la facture est annulÃ©e ou acquittÃ©e, les informations de facturation ne sont pas nÃ©cessaires.
 	if ($this->id_etat_doc == $this->ID_ETAT_ANNULE || $this->id_etat_doc == 35) { return false; }
 	return true;
 }
@@ -927,7 +927,7 @@ protected function need_infos_facturation () {
 protected function reglement_inexistant () {
 	if ($this->id_etat_doc == $this->ID_ETAT_ANNULE) { return false; }
 
-	// Une facture devient "à régler" si aucun règlement n'est enregistré, sauf si en saisie
+	// Une facture devient "Ã  rÃ©gler" si aucun rÃ¨glement n'est enregistrÃ©, sauf si en saisie
 	if ($this->id_etat_doc == 32) { return false; }
 	$this->maj_etat_doc(34);
 
@@ -937,7 +937,7 @@ protected function reglement_inexistant () {
 }
 
 protected function reglement_partiel () {
-	// Une facture en saisie devient "A régler" lorsqu'un règlement est enregistré.
+	// Une facture en saisie devient "A rÃ©gler" lorsqu'un rÃ¨glement est enregistrÃ©.
         if ($this->id_etat_doc == 32 || $this->id_etat_doc == 35) {
 		$this->maj_etat_doc(34);
 	}
@@ -945,7 +945,7 @@ protected function reglement_partiel () {
 }
 
 protected function reglement_total () {
-	// Une facture devient acquittée en cas de règlement total
+	// Une facture devient acquittÃ©e en cas de rÃ¨glement total
 	if ($this->id_etat_doc == 32 || $this->id_etat_doc == 34) {
 		$this->maj_etat_doc(35);
 	}
@@ -960,7 +960,7 @@ public function create_avf () {
 	// Chargement du montant disponible pour cet avoir
 	$this->calcul_montant_to_pay ();
 
-	// Création de la "Compensation" et de l'"Avoir Client"
+	// CrÃ©ation de la "Compensation" et de l'"Avoir Client"
 	$infos_comp['ref_contact'] 			= $this->ref_contact;
 	$infos_comp['id_reglement_mode'] = $COMP_E_ID_REGMT_MODE;
 	$infos_comp['date_reglement']	= date ("Y-m-d", time());
@@ -970,10 +970,10 @@ public function create_avf () {
 	$comp = new reglement();
 	$comp->create_reglement($infos_comp);
 
-	// Association de la compensation à cette facture
+	// Association de la compensation Ã  cette facture
 	$tmp = $this->rapprocher_reglement ($comp);
 	
-	// Retour de l'information sur l'avoir généré
+	// Retour de l'information sur l'avoir gÃ©nÃ©rÃ©
 	$ref_avf = $comp->getRef_avf();
 	return $ref_avf;
 }

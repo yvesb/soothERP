@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -377,7 +377,7 @@ check_page_variables ($page_variables);
 		</tr>
       <tr>
         <td>&nbsp;</td>
-        <td class="labelled_text">Mots clés : <br /><span style="color:gray;">(séparez les mots par des points-virgules)</span></td>
+        <td class="labelled_text">Mots clÃ©s : <br /><span style="color:gray;">(sÃ©parez les mots par des points-virgules)</span></td>
         <td colspan="4">
           <textarea name="tags" rows="4" class="classinput_xsize" style="width:100%" id="tags"></textarea>      
         </td>
@@ -453,7 +453,7 @@ check_page_variables ($page_variables);
 			<td>&nbsp;</td>
 			<td class="labelled_text">Date de fin de disponibilit&eacute;: </td>
 			<td>
-			<input type="text" name="date_fin_dispo" id="date_fin_dispo" value="<?php  echo date("d-m-Y", mktime (date("m"),date("i"),date("s")+$DEFAUT_ARTICLE_LT, date("m"), date("d"), date("Y")))  ;?>"  class="classinput_nsize" style="width:33%"/> <span id="infinite_choix" style="display:none; width:33%">Durée infinie &nbsp;</span>
+			<input type="text" name="date_fin_dispo" id="date_fin_dispo" value="<?php  echo date("d-m-Y", mktime (date("m"),date("i"),date("s")+$DEFAUT_ARTICLE_LT, date("m"), date("d"), date("Y")))  ;?>"  class="classinput_nsize" style="width:33%"/> <span id="infinite_choix" style="display:none; width:33%">DurÃ©e infinie &nbsp;</span>
 			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/infinite.gif" style="cursor:pointer" id="infinite"/>
 			<script type="text/javascript">
 			Event.observe('infinite', 'click',  function(evt){
@@ -498,7 +498,7 @@ check_page_variables ($page_variables);
 				<td>
 		<select name="lot" id="lot" class="classinput_nsize">
 			<option value="0" <?php if ($DEFAUT_LOT == 0) { ?> selected="selected"<?php } ?>>Article simple</option>
-			<option value="1" <?php if ($DEFAUT_LOT == 1) { ?> selected="selected"<?php } ?>>Article à fabriquer</option>
+			<option value="1" <?php if ($DEFAUT_LOT == 1) { ?> selected="selected"<?php } ?>>Article Ã  fabriquer</option>
 			<option value="2" <?php if ($DEFAUT_LOT == 2) { ?> selected="selected"<?php } ?>>Composition Interne</option>
 			<option value="3" <?php if ($DEFAUT_LOT == 3) { ?> selected="selected"<?php } ?>>Composition Fabriquant</option>
 		</select>
@@ -517,13 +517,13 @@ check_page_variables ($page_variables);
 			<?php 
 			if ($GESTION_SN) {
 				?>
-				<td class="labelled_text">Identifiant de traçabilité:</td>
+				<td class="labelled_text">Identifiant de traÃ§abilitÃ©:</td>
 				<td>
 				
 		<select name="gestion_sn" id="gestion_sn" class="classinput_hsize">
 					<option value="0" <?php if ($DEFAUT_GESTION_SN == 0) {echo 'selected="selected"';} ?>>Aucun</option>
-					<option value="1" <?php if ($DEFAUT_GESTION_SN == 1) {echo 'selected="selected"';} ?>>Numéro de s&eacute;rie</option>
-					<option value="2" <?php if ($DEFAUT_GESTION_SN == 2) {echo 'selected="selected"';} ?>>Numéro de lot</option>
+					<option value="1" <?php if ($DEFAUT_GESTION_SN == 1) {echo 'selected="selected"';} ?>>NumÃ©ro de s&eacute;rie</option>
+					<option value="2" <?php if ($DEFAUT_GESTION_SN == 2) {echo 'selected="selected"';} ?>>NumÃ©ro de lot</option>
 			</select>
 				</td>
 				<?php 
@@ -863,7 +863,7 @@ check_page_variables ($page_variables);
 </div>
 
 <SCRIPT type="text/javascript">
-//initialisation de l'éditeur de texte
+//initialisation de l'Ã©diteur de texte
 editeur.HTML_editor("desc_longue", "desc_longue_html", "editeur");
 Event.observe('editeur_bold', "click", function(evt){Event.stop(evt); editeur.HTML_exeCmd("bold", null);});
 Event.observe('editeur_italic', "click", function(evt){Event.stop(evt); editeur.HTML_exeCmd("italic", null);});
@@ -899,7 +899,7 @@ Event.observe($("desc_longue_html").contentWindow.document, "keyup", function(ev
 Event.observe($("desc_longue_html").contentWindow.document, "blur", function(evt){editeur.HTML_save();});
 Event.observe($("desc_longue_html"), "blur", function(evt){editeur.HTML_save();});
 //---------------------------------------------------------------
-//fin d'intialisation de l'éditeur
+//fin d'intialisation de l'Ã©diteur
 //---------------------------------------------------------------	
 
 //centrage de l'assistant tarif
@@ -923,7 +923,7 @@ centrage_element("pop_up_mini_moteur_cata");
 });
 
 //------------------------------------------------------------------------
-// gestionnaire de progression des étapes de saisie
+// gestionnaire de progression des Ã©tapes de saisie
 //------------------------------------------------------------------------
 chemin= new Array();
 chemin[0]=Array("0_1", "0_1", "0_2", "0_3", "description_info", "allowed", true);
@@ -953,7 +953,7 @@ Event.observe($("chemin_etape_5_2"), "click", function(evt){Event.stop(evt); got
 Event.observe($("chemin_etape_5_3"), "click", function(evt){Event.stop(evt); goto_etape (5)});
 Event.observe($("chemin_etape_6_2"), "click", function(evt){Event.stop(evt); goto_etape (6)});
 Event.observe($("chemin_etape_6_3"), "click", function(evt){Event.stop(evt); goto_etape (6)});
-//fin gestionnaire d'étapes
+//fin gestionnaire d'Ã©tapes
 
 submit_in_way = false;
 //fonction de validation du formulaire
@@ -969,7 +969,7 @@ function valide_create_article() {
 	}
 }
 
-//fonction de validation de l'étape 1
+//fonction de validation de l'Ã©tape 1
 function valide_etape_1() {
 	if (($("ref_art_categ").value!="") && ($("lib_article").value!="")) {
 		for (key in chemin) {
@@ -992,7 +992,7 @@ function valide_etape_1() {
 	}
 }
 
-//observateur du bon remplissage des étapes
+//observateur du bon remplissage des Ã©tapes
 Event.observe($("lib_article"), "blur", function(){valide_etape_1()});
 
 
@@ -1007,12 +1007,12 @@ Event.observe($("lib_article"), "blur", function(){valide_etape_1()});
 
 
 
-// observateur des boutons continuer des étapes
+// observateur des boutons continuer des Ã©tapes
 Event.observe($("bt_etape_0"), "click", function(evt){Event.stop(evt); goto_etape (1);});
 Event.observe($("bt_etape_b_0"), "click", function(evt){Event.stop(evt); goto_etape (1);});
 
 //------------------------------------------------------------------------------------
-// select de la catégorie
+// select de la catÃ©gorie
 //
 //------------------------------------------------------------------------------------
 				function changeref_art_categ() { 
@@ -1058,7 +1058,7 @@ Event.observe($("bt_etape_b_0"), "click", function(evt){Event.stop(evt); goto_et
 					Event.observe('lib_art_categ_link_select', 'click',  function(evt){Event.stop(evt); Element.toggle('liste_de_categorie_selectable'); Element.toggle('iframe_liste_de_categorie_selectable');}, false);
 					
 //
-//fin de la gestion du select de catégorie
+//fin de la gestion du select de catÃ©gorie
 //
 
 //verif des valeurs par masque
@@ -1066,7 +1066,7 @@ new Event.observe("date_fin_dispo", "blur", datemask, false);
 new Event.observe("date_debut_dispo", "blur", datemask, false);
 new Event.observe("valo_indice", "blur", function(evt){nummask(evt,"1", "X.X");}, false);
 
-// observateur de rezise pour mise à hauteur
+// observateur de rezise pour mise Ã  hauteur
 Event.observe(window, "resize", setheight_article_create, false);
 setheight_article_create();
 

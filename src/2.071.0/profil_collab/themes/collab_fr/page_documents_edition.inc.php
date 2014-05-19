@@ -4,7 +4,7 @@
 // AFFICHAGE D'UN DOCUMENT
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -26,7 +26,7 @@ check_page_variables ($page_variables);
 <?php
 if (isset($_REQUEST['id_type_doc']) || isset($_REQUEST["fonction_generer"])) {
     ?>
-            //on réinjecte dans l'historique la version édition si c'est un nouveau document qui a été créé
+            //on rÃ©injecte dans l'historique la version Ã©dition si c'est un nouveau document qui a Ã©tÃ© crÃ©Ã©
             historique.unshift("documents_edition.php?ref_doc=<?php echo htmlentities($document->getRef_doc())?>");
             default_show_url = "documents_edition.php?ref_doc=<?php echo htmlentities($document->getRef_doc())?>";
             document.location.hash = "documents_edition.php?ref_doc=<?php echo htmlentities($document->getRef_doc())?>";
@@ -84,7 +84,7 @@ if (isset($_REQUEST['id_type_doc']) || isset($_REQUEST["fonction_generer"])) {
                 <script type="text/javascript">
                     Event.observe("link_close_pop_up_lines_liste_tva_doc", "click",  function(evt){Event.stop(evt); $("pop_up_lines_liste_tva_doc").style.display = "none";}, false);
                 </script>
-                <div style="font-weight:bolder">Modifier le taux de T.V.A. des lignes sélectionnées </div>
+                <div style="font-weight:bolder">Modifier le taux de T.V.A. des lignes sÃ©lectionnÃ©es </div>
                 <br />
 
                 Nouveau Taux: <input type="text" id="newtva_taux_lines" name="newtva_taux_lines" class="classinput_hsize" value="0"/>
@@ -124,7 +124,7 @@ if (isset($_REQUEST['id_type_doc']) || isset($_REQUEST["fonction_generer"])) {
                     </span>
                     <span id="tool_uitem_menu" style="position:absolute; top:18px; left:5px; width:160px; text-align:right; display:none; z-index:100" >
                         <span id="doc_menu_7" style="display:none; text-align: left">
-                            <a href="#" id="menu_7" class="menu_unselect">Comptabilité</a>
+                            <a href="#" id="menu_7" class="menu_unselect">ComptabilitÃ©</a>
                         </span>
                             <?php if ($id_type_doc <5) {?>
                         <span id="doc_menu_8" style="text-align: left">
@@ -137,7 +137,7 @@ if (isset($_REQUEST['id_type_doc']) || isset($_REQUEST["fonction_generer"])) {
                         </span>
     <?php } ?>
                         <span id="doc_menu_9" style="text-align: left">
-                            <a href="#" id="menu_9" class="menu_unselect">Pièces jointes</a>
+                            <a href="#" id="menu_9" class="menu_unselect">PiÃ¨ces jointes</a>
                         </span>
 
                     </span>
@@ -403,7 +403,7 @@ if ($SEND_FAX2MAIL) {
                                     else
                                        $taxe=0;
                                     $nb_lignes_liees = $document->getNb_lignes_liees($contenu->ref_doc_line);
-                                    //Ajout condition pour séparer taxe de l'article (=total de 2 articles)
+                                    //Ajout condition pour sÃ©parer taxe de l'article (=total de 2 articles)
                                     if ($contenu->ref_doc_line_parent == "" || (isset($TAXE_IN_PU) && $TAXE_IN_PU==0 &&  $taxe==1)) {
                                         if ($indentation_contenu != 0) {
             echo "</li>";
@@ -555,7 +555,7 @@ if ($document->getID_TYPE_DOC () == $FACTURE_CLIENT_ID_TYPE_DOC) {
                                             if ($document->getID_TYPE_DOC () == $LIVRAISON_FOURNISSEUR_ID_TYPE_DOC) {
                                                 ?>
                                             <option value="generer_retour_fournisseur">Cr&eacute;er un retour</option>
-                                            <option value="generer_fa_fournisseur" <?php //permission (6) Accès Consulter les prix d’achat
+                                            <option value="generer_fa_fournisseur" <?php //permission (6) AccÃ¨s Consulter les prix dâ€™achat
     if (!$_SESSION['user']->check_permission ("6")) {?>disabled="disabled"<?php } ?>>G&eacute;n&eacute;rer une facture</option>
                                             <OPTGROUP disabled="disabled" label="_____________________________" ></OPTGROUP>
 
@@ -1173,7 +1173,7 @@ if ($document->getACCEPT_REGMT() != 0) {
     });
 
 
-    //initialisation de l'éditeur de texte
+    //initialisation de l'Ã©diteur de texte
     Event.observe('editeur_bold', "click", function(evt){Event.stop(evt); editeur.HTML_exeCmd("bold", null);});
     Event.observe('editeur_italic', "click", function(evt){Event.stop(evt); editeur.HTML_exeCmd("italic", null);});
     Event.observe('editeur_souligner', "click", function(evt){Event.stop(evt); editeur.HTML_exeCmd("underline", null);});
@@ -1208,7 +1208,7 @@ if ($document->getACCEPT_REGMT() != 0) {
     Event.observe($("description_html").contentWindow.document, "blur", function(evt){editeur.HTML_save();});
     Event.observe($("description_html"), "blur", function(evt){editeur.HTML_save();});
     //---------------------------------------------------------------
-    //fin d'intialisation de l'éditeur
+    //fin d'intialisation de l'Ã©diteur
     //---------------------------------------------------------------
 
 
@@ -1345,7 +1345,7 @@ if ($document->getACCEPT_REGMT() != 0) {
                         Event.stop(evt);
                     });
 
-                    //remise à zero du formulaire
+                    //remise Ã  zero du formulaire
                     Event.observe('annuler_recherche_s', "click", function(evt){Event.stop(evt); reset_moteur_s ('form_recherche_s', 'ref_art_categ_s'); $("recherche_auto").value= ""	});
 
                     //lance la recherche
@@ -1370,7 +1370,7 @@ if ($document->getACCEPT_REGMT() != 0) {
                                             Event.stop(event);
                                             break;
                                         }
-                                        // si c'est pas le cas on continu la procédure
+                                        // si c'est pas le cas on continu la procÃ©dure
                                     }
 
                                     page.document_recherche_article();
@@ -1447,7 +1447,7 @@ if ($document->getACCEPT_REGMT() != 0) {
                         centrage_element("pop_up_mini_article_sn");
                     });
 
-                    //lancement de la fonction proto pour les actions sur la sélection
+                    //lancement de la fonction proto pour les actions sur la sÃ©lection
                     var action_select= new action_line_coche("action_select");
 
                     //lignes coche decoche inv_coche
@@ -1455,7 +1455,7 @@ if ($document->getACCEPT_REGMT() != 0) {
                     Event.observe("all_decoche", "click", function(evt){Event.stop(evt); all_line_coche ("decoche");});
                     Event.observe("all_inv_coche", "click", function(evt){Event.stop(evt); all_line_coche ("inv_coche");});
 
-                    //action sur les lignes selectionnées
+                    //action sur les lignes selectionnÃ©es
                     Event.observe("coche_action", "change", function(evt){action_select.action($("coche_action").value);});
 
                     start_date = new Date;
@@ -1495,7 +1495,7 @@ if ($document->getACCEPT_REGMT() != 0) {
         document_calcul_tarif ();
     }, false);
 
-    //calcul des tarifs affichés
+    //calcul des tarifs affichÃ©s
     document_calcul_tarif (true);
 
     //focus sur recherche rapide

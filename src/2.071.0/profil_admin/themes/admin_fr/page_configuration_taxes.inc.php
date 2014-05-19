@@ -4,7 +4,7 @@ require_once ($DIR."_adresse.class.php");
 // CONFIG DES DONNEES taxes
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -21,17 +21,17 @@ check_page_variables ($page_variables);
 ?>
 <script type="text/javascript">
 tableau_smenu[0] = Array("smenu_catalogue", "smenu_catalogue.php" ,"true" ,"sub_content", "Catalogue");
-tableau_smenu[1] = Array('configuration_taxes','configuration_taxes.php' ,"true" ,"sub_content", "Paramètres de taxes");
+tableau_smenu[1] = Array('configuration_taxes','configuration_taxes.php' ,"true" ,"sub_content", "ParamÃ¨tres de taxes");
 update_menu_arbo();
 </script>
-<div class="emarge"><p class="titre">Paramètres de taxes</p>
+<div class="emarge"><p class="titre">ParamÃ¨tres de taxes</p>
 
 <div class="contactview_corps" style="text-align:center;"><br />
 
 <table style="width:87%;">
 	<tbody>
 		<tr>
-			<td style="width:25%">Libellé taxe</td>
+			<td style="width:25%">LibellÃ© taxe</td>
 			<td style="width:25%">Pays</td>
 			<td style="width:25%">Code Taxe</td>
 			<td style="width:25%">Info Calcul</td>

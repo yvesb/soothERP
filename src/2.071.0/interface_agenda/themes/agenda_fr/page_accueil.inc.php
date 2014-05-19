@@ -4,7 +4,7 @@
 // ACCUEIL DU PROFIL COLLAB
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -206,7 +206,7 @@ $Udate_now = time();
 								alert("recherche : "+$("rechercher_agenda").value);
 								$("rechercher_agenda").value = "";*/
 								$("titre_alert").innerHTML = "Avertissement :";
-								$("texte_alert").innerHTML = "Fonctionalité non disponible <br />";
+								$("texte_alert").innerHTML = "FonctionalitÃ© non disponible <br />";
 
 								$("bouton_alert").innerHTML = "<input type=\"submit\" id=\"bouton0\" name=\"bouton0\" value=\"OK\" />";
 								show_pop_alerte();			
@@ -219,7 +219,7 @@ $Udate_now = time();
 							}, false);
 						</script>
 						<div style="margin-top:8px; margin-right:12px; vertical-align:middle; color:#565565; font-weight:bolder; font-size: 9pt" align="right">
-						Utilisateur connecté : <?php echo $_SESSION['user']->getContactName (); ?>
+						Utilisateur connectÃ© : <?php echo $_SESSION['user']->getContactName (); ?>
 						</div>
 					</td>
 				</tr>
@@ -270,7 +270,7 @@ $Udate_now = time();
 						<td width="20px" align="left" id="show_pop_up_selection_agendas">
 							+
 							<script type="text/javascript">
-								etatPanneauAgendas = true; //affiché
+								etatPanneauAgendas = true; //affichÃ©
 								Event.observe("show_pop_up_selection_agendas", "click",  function(evt){
 									Event.stop(evt);
 									page.traitecontent('pop_up_selection_agendas','agenda_selectionner_agendas.php', 'true','pop_up_selection_agendas');
@@ -284,7 +284,7 @@ $Udate_now = time();
 					</tr>
 				</table>
 				<script type="text/javascript">
-					etatPanneauAgendas = true; //affiché
+					etatPanneauAgendas = true; //affichÃ©
 					Event.observe("panneau_agendas_entete_agenda", "click", function(ev) {
 						Event.stop(ev);
 						if(etatPanneauAgendas){
@@ -359,8 +359,8 @@ $Udate_now = time();
 						<tr>
 							<td width="7px"></td>
 							<td id="panneau_agendas_entete_events" class="panneau_agendas_titre">
-								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/gray_down.gif" style="" alt="Evénements" title="Evénements" id="develop_evenements" />
-								&nbsp;Evénements
+								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/gray_down.gif" style="" alt="EvÃ©nements" title="EvÃ©nements" id="develop_evenements" />
+								&nbsp;EvÃ©nements
 							</td>
 							<td width="20px" align="left" id="show_pop_up_selection_types_events">
 								+
@@ -375,7 +375,7 @@ $Udate_now = time();
 						</tr>
 					</table>
 					<script type="text/javascript">
-						etatPanneauAgendasEvenements = true; //affiché
+						etatPanneauAgendasEvenements = true; //affichÃ©
 						Event.observe("panneau_agendas_entete_events", "click", function(ev) {
 							Event.stop(ev);
 							if(etatPanneauAgendasEvenements){
@@ -460,7 +460,7 @@ $Udate_now = time();
 			<?php $selectOptionsAgenda =  Lib_interface_agenda::buildSelectOptionsAgenda($agendasAvecDroits,$droitsUserAgendas);?>
 				<!-- ---------------------------------------- -->
 				<div id="panneau_event_edit_part_evenement" style="display:none;">
-					<div	class="panneau_edition_event_titre" style="display:none;">Evénement</div>
+					<div	class="panneau_edition_event_titre" style="display:none;">EvÃ©nement</div>
 					<div class="" style="height:10px"></div>
 					<!--div 	class="panneau_edition_event_separateur" style="height:10px"></div>
 					<textarea id="evt_edition_lib" name="evt_edition_lib" cols="15" rows="1" style="width: 97%;" ></textarea -->
@@ -495,7 +495,7 @@ $Udate_now = time();
 				<!-- ---------------------------------------- -->
 				<div style="display:none;">
 					<div id="panneau_event_edit_part_type_event" style="display:none;">	
-						<div 	class="panneau_edition_event_titre2">Type d'événement</div>
+						<div 	class="panneau_edition_event_titre2">Type d'Ã©vÃ©nement</div>
 						<input type="hidden" id="evt_edition_type_event_old" value="" />
 						<select id="evt_edition_type_event_selected" name="evt_edition_type_event_selected" class="edition_event" style="width:100%"></select>
 						<div class="" style="height:20px"></div>
@@ -521,7 +521,7 @@ $Udate_now = time();
 				</script>
 				<!-- ---------------------------------------- -->
 				<div id="panneau_event_edit_part_type_event_new_event">	
-					<div class="panneau_edition_event_titre2">Type d'événement</div>
+					<div class="panneau_edition_event_titre2">Type d'Ã©vÃ©nement</div>
 					<select id="evt_edition_type_event_selected_new_event" name="evt_edition_type_event_selected_new_event" class="edition_event" style="width:100%">
 						<?php reset($agendasAvecDroits);
 						for ($i = 0; $i< count($agendasAvecDroits); $i++){
@@ -543,7 +543,7 @@ $Udate_now = time();
 			<div id="panneau_event_edit_part_dates_titre" class="panneau_edition_event_titre2">Planification</div>
 			<div id="panneau_event_edit_part_dates">	
 				<div class="panneau_edition_event_ligne" style="display:none;">
-					<input type="checkbox" id="evt_edition_toute_la_journee" name="evt_edition_toute_la_journee" />&nbsp;Toute la journée
+					<input type="checkbox" id="evt_edition_toute_la_journee" name="evt_edition_toute_la_journee" />&nbsp;Toute la journÃ©e
 				</div>
 				<table cellpadding="4px" cellspacing="0">
 					<tr>
@@ -557,7 +557,7 @@ $Udate_now = time();
 						<td align="left">
 							<input type="text" id="evt_edition_heure_deb" name="evt_edition_heure_deb" class="edition_event" style="width:32px; padding-left:2px; padding-right:2px;" maxlength="5"  value="" /><?php strftime("%H:%M", time()); ?>
 						</td>
-						<td style="text-align:center; vertical-align:middle;">à</td>
+						<td style="text-align:center; vertical-align:middle;">Ã </td>
 						<td align="right">
 							<input type="text" id="evt_edition_heure_fin" name="evt_edition_heure_fin" class="edition_event" style="width:32px; padding-left:2px; padding-right:2px;" maxlength="5"  value="" /><?php strftime("%H:%M", time()+$event_duree_moyenne); ?>
 						</td>
@@ -622,7 +622,7 @@ $Udate_now = time();
 			
 			<!-- <input type="button" id="NouveauEvent" 		name="NouveauEvent" 	value=" + " 					style="display:none;" /> -->
 			<?php 
-			// les boutons AnnulerEvent ValiderEvent SupprimerEvent MajEvent et NouveauEvent sont masqués/démasqués dans
+			// les boutons AnnulerEvent ValiderEvent SupprimerEvent MajEvent et NouveauEvent sont masquÃ©s/dÃ©masquÃ©s dans
 			// _agenda.js > panneau_eition_reset_formulaire();
 			// page_agenda_view_panneau_edition.inc.php
 			

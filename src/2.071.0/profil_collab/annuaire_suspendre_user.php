@@ -11,7 +11,7 @@ require ($DIR."_session.inc.php");
 if (isset($_REQUEST['users_ref_contact'])) {	
 	
 	// *************************************************
-	// Création du contact
+	// CrÃ©ation du contact
 	$contact = new contact ($_REQUEST['users_ref_contact']);
 	$contact->blocages_utilisateurs ();
 	$users = array();

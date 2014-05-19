@@ -27,7 +27,7 @@ if (isset ($liste_profils_contact [$COLLAB_ID_PROFIL])) {
 
 }
 // *************************************************
-// Profils à afficher
+// Profils Ã  afficher
 
 $profils_avancees = array();
 foreach ($_SESSION['profils'] as $profil) {

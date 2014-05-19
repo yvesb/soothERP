@@ -4,7 +4,7 @@
 // PAGE INDEX DU PROFIL COLLAB
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -65,8 +65,8 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], "pro
 		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_prototype_addon.js"></script>
 
 		
-		<!-- Modification éffectuée par Yves Bourvon -->
-		<!-- On teste l'abscence de valeur FALSE car retour glob() imprévisible si array vide (Système serveur dépendant) -->
+		<!-- Modification Ã©ffectuÃ©e par Yves Bourvon -->
+		<!-- On teste l'abscence de valeur FALSE car retour glob() imprÃ©visible si array vide (SystÃ¨me serveur dÃ©pendant) -->
 		<?php if(glob($DIR_PLUS.$_SESSION['theme']->getDir_theme()."javascript/*.js") != false)
 		{ 
 		foreach (glob($DIR_PLUS.$_SESSION['theme']->getDir_theme()."javascript/*.js") as $filejs){ ?>
@@ -78,7 +78,7 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], "pro
 		<script type="text/javascript"> 
 		<!--/*--><![CDATA[//><!--
 		
-		//vérif d'état du log de session
+		//vÃ©rif d'Ã©tat du log de session
 		
 		function verif_session() {
 			$("code_relogin").value="";
@@ -156,11 +156,11 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], "pro
 		var limite_line_a = 2;
 		var limite_line_b = 3;
 		var limite_line_c = 5;
-		//variable indiquant la recherche rapide d'article pour un document pour retour si un seul résultat trouve
+		//variable indiquant la recherche rapide d'article pour un document pour retour si un seul rÃ©sultat trouve
 		var from_rapide_search = "";
-		//blocage de modification à certains champs d'un document
+		//blocage de modification Ã  certains champs d'un document
 		var quantite_locked = false;
-		//passage par un règlement rapide (pour retourner à l'onglet principale du document aprés un règlement rapide
+		//passage par un rÃ¨glement rapide (pour retourner Ã  l'onglet principale du document aprÃ©s un rÃ¨glement rapide
 		var reglement_rapide = false;
 		//directories
 		var dirtheme = "<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>";
@@ -176,19 +176,19 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], "pro
 		historique_request[6] = new Array();
 		historique_request[7] = new Array();
 		historique_request[8] = new Array();
-		//total d'un document négatif ?
+		//total d'un document nÃ©gatif ?
 		var montant_total_neg = false;
-		//variable d'attente du nombre de ligne à inserer depuis un document
+		//variable d'attente du nombre de ligne Ã  inserer depuis un document
 		var wait_for_x_line_doc = 0;
-		//nombre de lignes chargées
+		//nombre de lignes chargÃ©es
 		var loaded_line_doc = 0;
-		//nombre maximale de ligne de sn affichées
+		//nombre maximale de ligne de sn affichÃ©es
 		var doc_aff_qte_sn = <?php echo $DOC_AFF_QTE_SN;?>;
 		//gestion des stocks
 		var gestion_stock = <?php echo $GESTION_STOCK;?>;
-		//page de retour aprés création d'un contact (si vide ouverture de la visualisation du contact)
+		//page de retour aprÃ©s crÃ©ation d'un contact (si vide ouverture de la visualisation du contact)
 		return_to_page = "";
-		//dernière_ref_doc_line insérée dans un doc par recher rapide
+		//derniÃ¨re_ref_doc_line insÃ©rÃ©e dans un doc par recher rapide
 		var last_ssearch_ref_doc_line = "";
 		
 		var uncache = false;
@@ -208,32 +208,32 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], "pro
 			<?php } ?>
 			hashListener.init();
 			//observateurs du menu principal
-			//Construction et placement des éléments du menu principal
+			//Construction et placement des Ã©lÃ©ments du menu principal
 			construct_menu();
 			
-			//mise à hauteur des éléments principaux
+			//mise Ã  hauteur des Ã©lÃ©ments principaux
 			setsize_to_element();
 			set_tomax_height('sub_content' , -20);
-			// mise à la bonne largeur du sub_content
+			// mise Ã  la bonne largeur du sub_content
 			set_size_to_sub_content ();
 			
 
 			Event.observe($("wait_calcul_content"), "click", function() {
 				$("wait_calcul_content").style.display= "none";
 			}, false);
-			//observateur de resize pour mise à hauteur des éléments principaux
+			//observateur de resize pour mise Ã  hauteur des Ã©lÃ©ments principaux
 			Event.observe(window, "resize", function() {
 				setsize_to_element();
 			 	set_tomax_height('sub_content' , -20);
 				set_size_to_sub_content();
 			}, false);
 			
-			//lancement de la page par défaut	
+			//lancement de la page par dÃ©faut	
 			page.verify('<?php echo $default_page[0]?>','<?php echo $default_page[1]?>','<?php echo $default_page[2]?>','<?php echo $default_page[3]?>');
 		}
 		
 		var tempo_session=<?php echo $USER_SESSION_LT / $TEST_SESSION_TIMER;?>000;
-		// verif de validité session
+		// verif de validitÃ© session
 		setTimeout ("verif_session()", tempo_session);
 		
 		Event.observe(window, "load", initEventHandlers, false);

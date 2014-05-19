@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -50,8 +50,8 @@ update_menu_arbo();
 			<td style="text-align:left;" valign="top">
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="20px" /><br />
 
-				<span class="titre_smenu_page" id="affichage_smenu_profil_collab"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Affichage des résultats de recherche</span><br /><br />
-				<span class="titre_smenu_page" id="recherche_perso"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Recherches personnalisées</span><br /><br />
+				<span class="titre_smenu_page" id="affichage_smenu_profil_collab"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Affichage des rÃ©sultats de recherche</span><br /><br />
+				<span class="titre_smenu_page" id="recherche_perso"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Recherches personnalisÃ©es</span><br /><br />
 				
 			</td>
 			<td style="text-align:left;">

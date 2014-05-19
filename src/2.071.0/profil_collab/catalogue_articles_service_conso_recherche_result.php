@@ -12,13 +12,13 @@ require ($DIR."_session.inc.php");
 
 
 if (!isset($_REQUEST['ref_article'])) {
-	echo "La référence de l'article n'est pas précisée";
+	echo "La rÃ©fÃ©rence de l'article n'est pas prÃ©cisÃ©e";
 	exit;
 }
 
 $article = new article ($_REQUEST['ref_article']);
 if (!$article->getRef_article()) {
-	echo "La référence de l'article est inconnue";		exit;
+	echo "La rÃ©fÃ©rence de l'article est inconnue";		exit;
 
 }
 
@@ -29,7 +29,7 @@ if (!$article->getRef_article()) {
 
 $ANNUAIRE_CATEGORIES	=	get_categories();
 // *************************************************
-// Profils à afficher
+// Profils Ã  afficher
 $profils = array();
 foreach ($_SESSION['profils'] as $profil) {
 	if ($profil->getActif() == 0) { continue; }
@@ -39,7 +39,7 @@ unset ($profil);
 
 
 // *************************************************
-// Données pour le formulaire et la recherche
+// DonnÃ©es pour le formulaire et la recherche
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show_s'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show_s'];
@@ -115,10 +115,10 @@ if (isset($_REQUEST['ref_article'])) {
 }
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche']) ) {
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_select 	= "";
 	$query_join 	= "";
 	$query_join_count 	= "";
@@ -179,7 +179,7 @@ if (isset($_REQUEST['recherche']) ) {
 		if ($query_where) { $query_where .= " && "; }
 		//abo en cours
 		if ($search['type_recherche'] == 1) { $query_where	.= " aa.credits_restants > 0  && aa.date_echeance > NOW() ";}
-		//abo à renouveller
+		//abo Ã  renouveller
 		if ($search['type_recherche'] == 2) { $query_where	.= " aa.credits_restants > 0 &&  aa.date_echeance < NOW() ";}
 		//abo vide
 		if ($search['type_recherche'] == 3) { $query_where	.= " aa.credits_restants <= 0 ";}
@@ -212,7 +212,7 @@ if (isset($_REQUEST['recherche']) ) {
 	//echo nl2br ($query);
 	unset ($fiche, $resultat, $query);
 
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 	$query = "SELECT aa.id_compte_credit
 						FROM articles_comptes_credits aa 
 						LEFT JOIN annuaire a ON a.ref_contact = aa.ref_contact 

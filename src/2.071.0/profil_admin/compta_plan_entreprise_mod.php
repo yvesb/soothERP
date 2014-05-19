@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// modification D'UN compte de plan comptable général
+// modification D'UN compte de plan comptable gÃ©nÃ©ral
 // *************************************************************************************************************
 
 
@@ -23,7 +23,7 @@ if (isset($_REQUEST["old_numero_compte_".$_REQUEST["increment"]])) {
 	$infos['favori'] 		= $favori;
 	
 	
-	//création du compte
+	//crÃ©ation du compte
 	$compte_plan_general->maj_compte_plan_comptable ($infos);
 // *************************************************************************************************************
 // AFFICHAGE

@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -45,7 +45,7 @@ check_page_variables ($page_variables);
 							<table border="0" cellspacing="0" cellpadding="0" width="100%">
 								<tr height="48px">
 									<td id="mdp_cheque" class="panneau_encaissement_moyents_de_paiement" style="background-position:left;">
-										Chèque
+										ChÃ¨que
 										<script type="text/javascript">
 											Event.observe("mdp_cheque", "click", function(evt){
 												Event.stop(evt);
@@ -73,7 +73,7 @@ check_page_variables ($page_variables);
 								</tr>
 								<tr height="48px">
 									<td id="mdp_especes" class="panneau_encaissement_moyents_de_paiement" style="background-position:left;">
-										Espèces
+										EspÃ¨ces
 										<script type="text/javascript">
 											Event.observe("mdp_especes", "click", function(evt){
 												Event.stop(evt);
@@ -98,7 +98,7 @@ check_page_variables ($page_variables);
 											<script type="text/javascript">
 												Event.observe("mdp_avoir", "click", function(evt){
 													Event.stop(evt);
-													alert("Les avoirs ne sont pas encore gérés");
+													alert("Les avoirs ne sont pas encore gÃ©rÃ©s");
 													//caisse_ajouter_moyen_de_paiement($("ref_ticket").value, "mdp_avoir");
 												}, false);
 											</script>
@@ -132,7 +132,7 @@ check_page_variables ($page_variables);
 							<tr style="color: white; text-align: left; background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/fond_entete_rouge.gif');background-repeat: no-repeat repeat-x;height:23px">
 								<td width="5px"></td>
 								<td style="vertical-align:middle; font-weight:bold;">
-									Règlements effectués
+									RÃ¨glements effectuÃ©s
 								</td>
 								<td style="vertical-align:middle; font-weight:bold; text-align:right;">
 									<img id="reset_reglement" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-supprimer-gris.png"/>
@@ -277,7 +277,7 @@ check_page_variables ($page_variables);
 							}else{
 								if(table.rows.length>1)
 								{			alert("RESTE A PAYER : "+(-1)*reglement_a_rendre+"&nbsp;&euro;");}//			\u20ac	=		euro
-								else{	alert("Vous devez d'abord sélectionner un Moyen de Paiement");}
+								else{	alert("Vous devez d'abord sÃ©lectionner un Moyen de Paiement");}
 							}
 						}, false);
 					</script>

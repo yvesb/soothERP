@@ -1,13 +1,13 @@
 <?php
 // *************************************************************************************************************
-// Modification des évènements des véhicules
+// Modification des Ã©vÃ¨nements des vÃ©hicules
 // *************************************************************************************************************
 
 require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
-//mise à jour des données transmises
+//mise Ã  jour des donnÃ©es transmises
 
 if (!$_REQUEST['date_evenement_'.$_REQUEST['id_evenement']] || !$_REQUEST['lib_evenement_'.$_REQUEST['id_evenement']] || !$_REQUEST['cout_'.$_REQUEST['id_evenement']]) {	
 								?>

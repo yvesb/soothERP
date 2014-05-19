@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// GESTION Traite non acceptée
+// GESTION Traite non acceptÃ©e
 // *************************************************************************************************************
 
 
@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 if(!$COMPTA_GEST_PRELEVEMENTS){
-    echo "Cette fonctionalité est désactivée par votre administrateur.";
+    echo "Cette fonctionalitÃ© est dÃ©sactivÃ©e par votre administrateur.";
     exit();
 }
 
@@ -24,7 +24,7 @@ $prelev_a_effectuer = 0;
 $echeances_prog = 0;
 
 
-// Selection des echeances Traite acceptée echues AVEC autorisations
+// Selection des echeances Traite acceptÃ©e echues AVEC autorisations
 $query = "SELECT cb2.id_compte_bancaire,cb2.lib_compte,d.ref_doc,a1.ref_contact ,de.id_doc_echeance, de.date, de.type_reglement ,cb2.iban,  montant
                 FROM `doc_echeanciers` de
                 JOIN documents d ON de.ref_doc = d.ref_doc
@@ -60,7 +60,7 @@ while ($info_prelev = $resultat->fetchObject()) {
     }
 
 
-// Selection des echeances Traite acceptée NON echues AVEC autorisations
+// Selection des echeances Traite acceptÃ©e NON echues AVEC autorisations
 $query = "SELECT cb2.id_compte_bancaire,cb2.lib_compte,d.ref_doc,a1.ref_contact ,de.id_doc_echeance, de.date, de.type_reglement ,cb2.iban,  montant
                 FROM `doc_echeanciers` de
                 JOIN documents d ON de.ref_doc = d.ref_doc
@@ -96,7 +96,7 @@ while ($info_echeance_prog = $resultat->fetchObject()) {
     $echeances_prog += $info_echeance_prog->montant;
     }
     
-// Selection des echeances Traite acceptée SANS autorisations
+// Selection des echeances Traite acceptÃ©e SANS autorisations
 $query = "SELECT d.ref_doc,a1.ref_contact ,de.id_doc_echeance, de.date, de.type_reglement ,  montant
                 FROM `doc_echeanciers` de 
                 JOIN documents d ON de.ref_doc = d.ref_doc

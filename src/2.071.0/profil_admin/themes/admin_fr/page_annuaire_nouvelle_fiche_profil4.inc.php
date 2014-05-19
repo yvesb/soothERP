@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("liste_categories_client");
 check_page_variables ($page_variables);
 
@@ -20,7 +20,7 @@ check_page_variables ($page_variables);
 
 ?>
 
-<!-- Début de l'affichage -->
+<!-- DÃ©but de l'affichage -->
 <hr class="bleu_liner" />
 <div class="">
 	<p class="sous_titre1">Informations client </p>
@@ -71,7 +71,7 @@ check_page_variables ($page_variables);
 				<option value="prospect">Prospect</option>
 				<option value="client">Client</option>
 				<option value="ancien client">Ancien client</option>
-				<option value="Compte bloqué">Compte bloqué</option>
+				<option value="Compte bloquÃ©">Compte bloquÃ©</option>
 			</select>
 			</td>
 		</tr>
@@ -145,11 +145,11 @@ check_page_variables ($page_variables);
 <!-- 	MAJ du 28/06/2010 version 2.058 modification affichage formulaire client 	-->
 	<script type="text/javascript" language="javascript">
 		
-			//  la fonction toggle_cadenas_et_valeurs est définie dans _annuaire.js		
+			//  la fonction toggle_cadenas_et_valeurs est dÃ©finie dans _annuaire.js		
 			Event.observe('valeurs_default_flag', 'click',function(evt){$("champs_par_defaut").toggle();}, false);
 			Event.observe('libelle_valeurs_default_flag', 'click',function(evt){$("valeurs_default_flag").click();}, false);
 
-			// si on change la catégorie client, les cadenas sont mis à ouvert
+			// si on change la catÃ©gorie client, les cadenas sont mis Ã  ouvert
 			Event.observe('id_client_categ', 'change',function(evt)
 			{
 				toggle_cadenas_et_valeurs('flg_facturation_periodique', 	'facturation_periodique',	'img_facturation_periodique_cadenas-ouvert',	'img_facturation_periodique_cadenas-ferme',		'listereadonly', 'ferme', 'def_facturation_periodique', 	'retour_value_facturation_periodique');
@@ -165,21 +165,21 @@ check_page_variables ($page_variables);
 				toggle_cadenas_et_valeurs('flg_app_tarifs', 				'app_tarifs', 				'img_app_tarifs_cadenas-ouvert', 				'img_app_tarifs_cadenas-ferme', 				'listereadonly', 'ferme', 'def_app_tarifs', 				'retour_value_app_tarifs');
 				
 			}, false);
-			// facturation périodique
+			// facturation pÃ©riodique
 			Event.observe('img_facturation_periodique_cadenas-ferme',	'click', function(evt){toggle_cadenas_et_valeurs('flg_facturation_periodique', 'facturation_periodique', 'img_facturation_periodique_cadenas-ouvert', 'img_facturation_periodique_cadenas-ferme', 'listereadonly', 'ouvert',	'def_facturation_periodique', 'retour_value_facturation_periodique');}, false);
 			Event.observe('img_facturation_periodique_cadenas-ouvert',	'click', function(evt){toggle_cadenas_et_valeurs('flg_facturation_periodique', 'facturation_periodique', 'img_facturation_periodique_cadenas-ouvert', 'img_facturation_periodique_cadenas-ferme', 'listereadonly', 'ferme', 	'def_facturation_periodique', 'retour_value_facturation_periodique');}, false);
 			Event.observe('facturation_periodique', 					'click', function(evt){toggle_cadenas_et_valeurs('flg_facturation_periodique', 'facturation_periodique', 'img_facturation_periodique_cadenas-ouvert', 'img_facturation_periodique_cadenas-ferme', 'listereadonly', 'ouvert', 	'def_facturation_periodique', 'retour_value_facturation_periodique');}, false);
-			// mode édition favori
+			// mode Ã©dition favori
 			Event.observe('img_id_edition_mode_favori_cadenas-ferme',	'click', function(evt){toggle_cadenas_et_valeurs('flg_id_edition_mode_favori', 'id_edition_mode_favori', 'img_id_edition_mode_favori_cadenas-ouvert', 'img_id_edition_mode_favori_cadenas-ferme', 'listereadonly', 'ouvert',	'def_id_edition_mode_favori', 'retour_value_id_edition_mode_favori');}, false);
 			Event.observe('img_id_edition_mode_favori_cadenas-ouvert',	'click', function(evt){toggle_cadenas_et_valeurs('flg_id_edition_mode_favori', 'id_edition_mode_favori', 'img_id_edition_mode_favori_cadenas-ouvert', 'img_id_edition_mode_favori_cadenas-ferme', 'listereadonly', 'ferme', 	'def_id_edition_mode_favori', 'retour_value_id_edition_mode_favori');}, false);
 			Event.observe('id_edition_mode_favori', 					'click', function(evt){toggle_cadenas_et_valeurs('flg_id_edition_mode_favori', 'id_edition_mode_favori', 'img_id_edition_mode_favori_cadenas-ouvert', 'img_id_edition_mode_favori_cadenas-ferme', 'listereadonly', 'ouvert', 	'def_id_edition_mode_favori', 'retour_value_id_edition_mode_favori');}, false);
-			// délai de règlement
+			// dÃ©lai de rÃ¨glement
 			Event.observe('img_delai_reglement_cadenas-ferme',			'click', function(evt){toggle_cadenas_et_valeurs('flg_delai_reglement', 'delai_reglement', 'img_delai_reglement_cadenas-ouvert', 'img_delai_reglement_cadenas-ferme', 'listereadonly', 'ouvert',	'def_delai_reglement', 'retour_value_delai_reglement');toggle_cadenas_et_valeurs('flg_delai_reglement', 'delai_reglement_fdm', 'img_delai_reglement_cadenas-ouvert', 'img_delai_reglement_cadenas-ferme', 'listereadonly', 'ouvert', 'def_delai_reglement_fdm', 'retour_value_delai_reglement_fdm');}, false);
 			Event.observe('img_delai_reglement_cadenas-ouvert',			'click', function(evt){toggle_cadenas_et_valeurs('flg_delai_reglement', 'delai_reglement', 'img_delai_reglement_cadenas-ouvert', 'img_delai_reglement_cadenas-ferme', 'listereadonly', 'ferme', 	'def_delai_reglement', 'retour_value_delai_reglement');toggle_cadenas_et_valeurs('flg_delai_reglement', 'delai_reglement_fdm', 'img_delai_reglement_cadenas-ouvert', 'img_delai_reglement_cadenas-ferme', 'listereadonly', 'ferme', 'def_delai_reglement_fdm', 'retour_value_delai_reglement_fdm');}, false);
 			Event.observe('delai_reglement', 							'click', function(evt){toggle_cadenas_et_valeurs('flg_delai_reglement', 'delai_reglement', 'img_delai_reglement_cadenas-ouvert', 'img_delai_reglement_cadenas-ferme', 'listereadonly', 'ouvert', 	'def_delai_reglement', 'retour_value_delai_reglement');toggle_cadenas_et_valeurs('flg_delai_reglement', 'delai_reglement_fdm', 'img_delai_reglement_cadenas-ouvert', 'img_delai_reglement_cadenas-ferme', 'listereadonly', 'ouvert', 'def_delai_reglement_fdm', 'retour_value_delai_reglement_fdm');}, false);
 			Event.observe('delai_reglement', 							'change',function(evt){toggle_cadenas_et_valeurs('flg_delai_reglement', 'delai_reglement', 'img_delai_reglement_cadenas-ouvert', 'img_delai_reglement_cadenas-ferme', 'listereadonly', 'ouvert', 	'def_delai_reglement', 'retour_value_delai_reglement');}, false);			
 			Event.observe('delai_reglement_fdm', 						'click', function(evt){toggle_cadenas_et_valeurs('flg_delai_reglement', 'delai_reglement', 'img_delai_reglement_cadenas-ouvert', 'img_delai_reglement_cadenas-ferme', 'listereadonly', 'ouvert', 	'def_delai_reglement', 'retour_value_delai_reglement');toggle_cadenas_et_valeurs('flg_delai_reglement', 'delai_reglement_fdm', 'img_delai_reglement_cadenas-ouvert', 'img_delai_reglement_cadenas-ferme', 'listereadonly', 'ouvert', 'def_delai_reglement_fdm', 'retour_value_delai_reglement_fdm');}, false);
-			// règlement favori
+			// rÃ¨glement favori
 			Event.observe('img_id_reglement_mode_favori_cadenas-ferme',	'click', function(evt){toggle_cadenas_et_valeurs('flg_id_reglement_mode_favori', 'id_reglement_mode_favori', 'img_id_reglement_mode_favori_cadenas-ouvert', 'img_id_reglement_mode_favori_cadenas-ferme', 'listereadonly', 'ouvert',	'def_id_reglement_mode_favori', 'retour_value_id_reglement_mode_favori');}, false);
 			Event.observe('img_id_reglement_mode_favori_cadenas-ouvert','click', function(evt){toggle_cadenas_et_valeurs('flg_id_reglement_mode_favori', 'id_reglement_mode_favori', 'img_id_reglement_mode_favori_cadenas-ouvert', 'img_id_reglement_mode_favori_cadenas-ferme', 'listereadonly', 'ferme', 	'def_id_reglement_mode_favori', 'retour_value_id_reglement_mode_favori');}, false);
 			Event.observe('id_reglement_mode_favori', 					'click', function(evt){toggle_cadenas_et_valeurs('flg_id_reglement_mode_favori', 'id_reglement_mode_favori', 'img_id_reglement_mode_favori_cadenas-ouvert', 'img_id_reglement_mode_favori_cadenas-ferme', 'listereadonly', 'ouvert', 	'def_id_reglement_mode_favori', 'retour_value_id_reglement_mode_favori');}, false);
@@ -219,7 +219,7 @@ check_page_variables ($page_variables);
 		
 		<p class="labelled_ralonger" style="width: 100%; margin-left: 25px;"><input
 	type="checkbox" id="valeurs_default_flag" style="cursor:pointer"/><a
-	id="libelle_valeurs_default_flag" style="cursor:pointer">Editer les informations avancées</a></p>
+	id="libelle_valeurs_default_flag" style="cursor:pointer">Editer les informations avancÃ©es</a></p>
 <div class="reduce_in_edit_mode" id="champs_par_defaut"
 	style="display: none">
 
@@ -258,7 +258,7 @@ check_page_variables ($page_variables);
 					<option value="<?php echo $key;?>" class="listereadonly"><?php echo $valeur;?></option>
 					<?php
 				}	?>
-			</select> <!-- la valeur par défaut $FACTURES_PAR_MOIS[0] --> 
+			</select> <!-- la valeur par dÃ©faut $FACTURES_PAR_MOIS[0] --> 
 				<input
 					type="text" id="def_facturation_periodique" class="classinput_xsize"
 					value="
@@ -272,7 +272,7 @@ check_page_variables ($page_variables);
 						echo $def_facturation_periodique;
 					?>
 					" style="display: none">
-				<!-- le champ qui sera renvoyé -->
+				<!-- le champ qui sera renvoyÃ© -->
 				<input
 				id="retour_value_facturation_periodique"
 				name="retour_value_facturation_periodique" type="text" value=""
@@ -297,7 +297,7 @@ check_page_variables ($page_variables);
 				type="checkbox" id="flg_id_edition_mode_favori"
 				style="display: none;" />
 		</td>
-		<td colspan="4" style="width: 100%;"><!-- valeurs par défaut catégorie client -->
+		<td colspan="4" style="width: 100%;"><!-- valeurs par dÃ©faut catÃ©gorie client -->
 			<select id="id_edition_mode_favori"
 				class="classinput_xsize listereadonly" style="cursor:pointer">
 				<?php
@@ -308,9 +308,9 @@ check_page_variables ($page_variables);
 					$def_edition_mode = $liste_categorie_client->id_edition_mode_favori;
 				}
 				if (is_null($def_edition_mode) || ($def_edition_mode==0))
-					$def_edition_mode = 0; // non défini
+					$def_edition_mode = 0; // non dÃ©fini
 				?>
-				<option value="0"<?php if ($def_edition_mode==0) echo ' selected="selected" ';?>>Non Défini</option>
+				<option value="0"<?php if ($def_edition_mode==0) echo ' selected="selected" ';?>>Non DÃ©fini</option>
 				<?php
 				$modes_edition = getEdition_modes_actifs();
 				foreach ($modes_edition as $mode_edition)
@@ -322,12 +322,12 @@ check_page_variables ($page_variables);
 				}
 				?>
 			</select>
-			<!-- la valeur par défaut catégorie client, mode édition -->
+			<!-- la valeur par dÃ©faut catÃ©gorie client, mode Ã©dition -->
 			<input id="def_id_edition_mode_favori" type="text"
 				class="classinput_xsize"
 				value="<?php echo $def_edition_mode; ?>"
 				style="display:none">
-				<!-- le champ qui sera renvoyé -->
+				<!-- le champ qui sera renvoyÃ© -->
 			<input
 				name="retour_value_id_edition_mode_favori"
 				id="retour_value_id_edition_mode_favori" type="text" value=""
@@ -350,7 +350,7 @@ check_page_variables ($page_variables);
 			<input
 				type="checkbox" id="flg_delai_reglement" style="display: none;">
 		</td>
-		<td colspan="2"><!-- valeurs par défaut catégorie client délai de règlement -->
+		<td colspan="2"><!-- valeurs par dÃ©faut catÃ©gorie client dÃ©lai de rÃ¨glement -->
 			<input id="delai_reglement" type="text"
 				value="
 							<?php 
@@ -373,13 +373,13 @@ check_page_variables ($page_variables);
 							?>
 							"
 				class="classinput_lsize listereadonly" size="4" maxlength="4"
-				style="width: 30px;cursor:pointer"> jour(s)</input> <!-- la valeur par défaut catégorie client, délai règlement -->
+				style="width: 30px;cursor:pointer"> jour(s)</input> <!-- la valeur par dÃ©faut catÃ©gorie client, dÃ©lai rÃ¨glement -->
 			<input id="def_delai_reglement" type="text"
 				value="<?php echo $def_delai_reglement;?>" class="classinput_lsize"
-				size="4" style="width:30px; display:none" /> <!-- le champ qui sera renvoyé -->
+				size="4" style="width:30px; display:none" /> <!-- le champ qui sera renvoyÃ© -->
 			<input id="retour_value_delai_reglement" name="retour_value_delai_reglement"
 				type="text" value="" class="classinput_lsize" size="4"
-				style="width:30px; display:none" /> <!-- catégorie client delai règlement fin de mois -->
+				style="width:30px; display:none" /> <!-- catÃ©gorie client delai rÃ¨glement fin de mois -->
 			<input type="checkbox" id="delai_reglement_fdm" value="1"
 				class="listereadonly"
 				<?php
@@ -387,9 +387,9 @@ check_page_variables ($page_variables);
 				{
 					echo 'checked=true';
 				}
-				?> style="cursor:pointer"> Fin de mois</input> <!-- valeurs par défaut catégorie client delai règlement fin de mois -->
+				?> style="cursor:pointer"> Fin de mois</input> <!-- valeurs par dÃ©faut catÃ©gorie client delai rÃ¨glement fin de mois -->
 			<input type="checkbox" id="def_delai_reglement_fdm" value="1" style="display:none">
-			<!-- le champ qui sera renvoyé -->
+			<!-- le champ qui sera renvoyÃ© -->
 			<input type="checkbox"
 				id="retour_value_delai_reglement_fdm"
 				name="retour_value_delai_reglement_fdm" value="1" style="display:none">
@@ -428,7 +428,7 @@ check_page_variables ($page_variables);
 				$premiereligneSelectionnee = 0;
 				if (is_null($id_reglement_mode_favori) || ($id_reglement_mode_favori==""))
 					$premiereligneSelectionnee = 1;
-				?><option value="0" <?php if ($premiereligneSelectionnee==1 ) echo ' selected="selected" '; ?>>Non Défini</option><?php
+				?><option value="0" <?php if ($premiereligneSelectionnee==1 ) echo ' selected="selected" '; ?>>Non DÃ©fini</option><?php
 				foreach ($modes_reglement as $mode_reglement)
 				{
 					echo '<option ';
@@ -440,10 +440,10 @@ check_page_variables ($page_variables);
 					echo 'value="'.$mode_reglement->id_reglement_mode.'"/>'.$mode_reglement->lib_reglement_mode;
 				}
 				?>
-			</select> <!-- valeur par défaut catégorie client règlement favori -->
+			</select> <!-- valeur par dÃ©faut catÃ©gorie client rÃ¨glement favori -->
 			<input id="def_id_reglement_mode_favori" type="text"
 				value="<?php echo $def_id_reglement_mode_favori; ?>"
-				style="display:none"> <!-- le champ qui sera renvoyé -->
+				style="display:none"> <!-- le champ qui sera renvoyÃ© -->
 			<input
 				name="retour_value_id_reglement_mode_favori"
 				id="retour_value_id_reglement_mode_favori" type="text" style="display:none">
@@ -491,10 +491,10 @@ check_page_variables ($page_variables);
 					echo 'value="'.$cycle_relance->id_relance_modele.'"/>'.$cycle_relance->lib_relance_modele;
 				}
 				?>
-			</select> <!-- valeur par défaut catégorie client règlement favori -->
+			</select> <!-- valeur par dÃ©faut catÃ©gorie client rÃ¨glement favori -->
 			<input id="def_id_cycle_relance" type="text"
 				value="<?php echo $def_id_cycle_relance; ?>"
-				style="display:none"> <!-- le champ qui sera renvoyé -->
+				style="display:none"> <!-- le champ qui sera renvoyÃ© -->
 			<input
 				name="retour_value_id_cycle_relance"
 				id="retour_value_id_cycle_relance" type="text" style="display:none">
@@ -513,7 +513,7 @@ check_page_variables ($page_variables);
 			style="float: center; cursor: pointer; display: none;"></img> <input
 			type="checkbox" id="flg_encours"
 			style="display: none;"></td>
-		<td style="width: 80px;"><!-- valeurs règlement favori -->
+		<td style="width: 80px;"><!-- valeurs rÃ¨glement favori -->
 			<input id="encours" class="classinput_lsize listereadonly" type="text"
 				value="0" size="4"
 				value="
@@ -527,9 +527,9 @@ check_page_variables ($page_variables);
 								echo $defaut_encours;
 							?>
 							"
-				style="width: 80px; cursor:pointer"> <?php echo $MONNAIE[1];?> <!-- valeur par défaut catégorie client règlement favori -->
+				style="width: 80px; cursor:pointer"> <?php echo $MONNAIE[1];?> <!-- valeur par dÃ©faut catÃ©gorie client rÃ¨glement favori -->
 			<input id="def_encours" type="text" class="classinput_xsize"
-				value="<?php echo $defaut_encours; ?>" style="display:none"> <!-- le champ qui sera renvoyé -->
+				value="<?php echo $defaut_encours; ?>" style="display:none"> <!-- le champ qui sera renvoyÃ© -->
 			<input name="retour_value_encours" id="retour_value_encours"
 				type="text" class="classinput_xsize" style="display:none">
 		</td>
@@ -537,7 +537,7 @@ check_page_variables ($page_variables);
 
 
 	<tr>
-		<td class="size_strict"><span class="labelled_ralonger">Pré-paiement:</span>
+		<td class="size_strict"><span class="labelled_ralonger">PrÃ©-paiement:</span>
 		</td>
 		<td>
 			<img id="img_prepaiement_type_cadenas-ferme"
@@ -549,7 +549,7 @@ check_page_variables ($page_variables);
 				style="float: center; cursor: pointer; display: none;"></img> <input
 				type="checkbox" id="flg_prepaiement_type"
 				style="display: none" /></td>
-			<!-- valeurs par défaut -->
+			<!-- valeurs par dÃ©faut -->
 			<select id="prepaiement_type" class="classinput_xsize listereadonly" style="cursor:pointer">
 			<?php
 				$prepaiement_type = "Acompte";
@@ -572,14 +572,14 @@ check_page_variables ($page_variables);
 				<!-- <option value="Acompte" selected="selected">Acompte</option>-->
 				<!-- <option value="Arrhes">Arrhes</option>-->
 			</select>
-			<!-- valeur par défaut -->
+			<!-- valeur par dÃ©faut -->
 			<input id="def_prepaiement_type" type="text" class="classinput_lsize listereadonly" value="<?php echo $prepaiement_type; ?>" style="display:none">
 			<input name="retour_value_prepaiement_type"
 				id="retour_value_prepaiement_type" type="text" style="display:none">
 		</td>
-		<td colspan="2">&nbsp; <!-- valeurs par défaut -->
+		<td colspan="2">&nbsp; <!-- valeurs par dÃ©faut -->
 			<input id="prepaiement_ratio" type="text" value="Par defaut"
-				class="classinput_lsize listereadonly" style="width: 30px;cursor:pointer" /> % <!-- valeur par défaut -->
+				class="classinput_lsize listereadonly" style="width: 30px;cursor:pointer" /> % <!-- valeur par dÃ©faut -->
 			<input id="def_prepaiement_ratio" type="text" class="classinput_xsize" style="display:none">
 			<input name="retour_value_prepaiement_ratio" id="retour_value_prepaiement_ratio" type="text" class="classinput_xsize" style="display:none">
 		</td>
@@ -600,7 +600,7 @@ check_page_variables ($page_variables);
 				style="float: center; cursor: pointer; display: none;"></img>
 			<input type="checkbox" id="flg_id_tarif" style="display: none;">
 		</td>
-		<td colspan="4" style="width: 100%;"><!-- valeurs par défaut -->
+		<td colspan="4" style="width: 100%;"><!-- valeurs par dÃ©faut -->
 			<select id="id_tarif" class="classinput_xsize listereadonly" style="cursor:pointer">
 				<option value="0">Automatique</option>
 				<?php
@@ -612,7 +612,7 @@ check_page_variables ($page_variables);
 				<?php
 				}
 				?>
-			</select> <!-- valeur par défaut -->
+			</select> <!-- valeur par dÃ©faut -->
 			<input id="def_id_tarif" type="text" class="classinput_xsize" value="
 				<?php
 					if (is_null($tarif_liste->id_tarif) || ($tarif_liste->id_tarif == 0))
@@ -639,13 +639,13 @@ check_page_variables ($page_variables);
 				style="display: none;">
 		</td>
 		<td colspan="4" style="width: 100%;">
-			<!-- valeurs par défaut en dur Afficher tarifs -->
+			<!-- valeurs par dÃ©faut en dur Afficher tarifs -->
 			<select id="app_tarifs" class="classinput_xsize listereadonly" style="cursor:pointer">
 				<option value="0" selected="selected">Automatique</option>
 				<option value="1">HT</option>
 				<option value="2">TTC</option>
 			</select>
-			<!-- valeur par défaut -->
+			<!-- valeur par dÃ©faut -->
 			<input id="def_app_tarifs" type="text" style="display:none" value="0">
 			<!-- valeur de retour -->
 			<input name="retour_value_app_tarifs" id="retour_value_app_tarifs" type="text" value="" style="display:none">
@@ -677,9 +677,9 @@ Event.observe("prepaiement_type", "change", function(evt){
 
 annu_client_categ_preselect ($("id_client_categ").value);
 
-//masque numérique pour l'encours
+//masque numÃ©rique pour l'encours
 Event.observe("encours", "blur", function(evt){ nummask(evt, "0", "X");}, false);	
-//masque numérique pour le délai de règlement
+//masque numÃ©rique pour le dÃ©lai de rÃ¨glement
 Event.observe("delai_reglement", "blur", function(evt){ nummask(evt, "0", "X");}, false);	
 <?php
 if (isset($_REQUEST["crea"])) {

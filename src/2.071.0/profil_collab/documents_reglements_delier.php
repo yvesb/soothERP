@@ -15,7 +15,7 @@ if (isset($_REQUEST["ref_reglement"])) {
 	
 	$ref_doc = $_REQUEST["ref_doc"];
 	$document = open_doc($ref_doc);
-	//supression du règlement
+	//supression du rÃ¨glement
 	$document->delier_reglement ($_REQUEST["ref_reglement"]);  
 	}
 	

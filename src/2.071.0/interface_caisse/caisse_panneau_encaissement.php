@@ -12,7 +12,7 @@ $enCompte = false;
 $ref_contact = "";
 
 if (!isset($_REQUEST['ref_ticket'])) {
-	echo "La rÈfÈrence du ticket n'est pas spÈcifiÈ";
+	echo "La r√©f√©rence du ticket n'est pas sp√©cifi√©";
 	exit;
 }
 $ticket = open_doc($_REQUEST['ref_ticket']);
@@ -26,7 +26,7 @@ if (isset($_REQUEST['ref_contact']) && $_REQUEST['ref_contact'] != "") {
 
 	$id_profil = 4; //4 = profil client
 	if ($profils[$id_profil]->getFactures_par_mois() > 0) {$enCompte =  true;}
-	//getFactures_par_mois == 0 -> Facture immÈdiate
+	//getFactures_par_mois == 0 -> Facture imm√©diate
 	else {$enCompte =  false;}
 	
 	unset($client, $profils, $id_profil);

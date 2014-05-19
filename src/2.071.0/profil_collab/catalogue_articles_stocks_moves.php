@@ -15,13 +15,13 @@ require ($DIR."_session.inc.php");
 //$stocks_moves =  stock::charger_stocks_moves ($_REQUEST['id_stock']);
 
 if (!isset($_REQUEST['ref_article'])) {
-	echo "La référence de l'article n'est pas précisée";
+	echo "La rÃ©fÃ©rence de l'article n'est pas prÃ©cisÃ©e";
 	exit;
 }
 
 $article = new article ($_REQUEST['ref_article']);
 if (!$article->getRef_article()) {
-	echo "La référence de l'article est inconnue";		exit;
+	echo "La rÃ©fÃ©rence de l'article est inconnue";		exit;
 
 }
 
@@ -95,7 +95,7 @@ if ($article->getRef_article()) {
 	}
 	
 	
-	// Sélection des mouvements stocks
+	// SÃ©lection des mouvements stocks
 	$stocks_moves = array();
 	$query = "SELECT sm.ref_stock_move, sm.id_stock, s.lib_stock, s.abrev_stock, sm.qte, sm.date, sm.ref_doc, sm.ref_article, d.id_etat_doc, d.id_type_doc, de.lib_etat_doc,
 										a.ref_contact, a.nom,
@@ -118,7 +118,7 @@ if ($article->getRef_article()) {
 	while ($var = $resultat->fetchObject()) { $stocks_moves[] = $var; }
 	unset ($var, $resultat, $query);
 	
-	//quantité en stock
+	//quantitÃ© en stock
 	$decompte_stock = 0;
 	$query = "SELECT SUM(sa.qte) total_article_en_stock 
 						FROM stocks_articles sa
@@ -127,7 +127,7 @@ if ($article->getRef_article()) {
 	$resultat = $bdd->query ($query);
 	if ($tmp = $resultat->fetchObject()) { $decompte_stock += $tmp->total_article_en_stock;}
 	
-	// quantité en stock (pagination)
+	// quantitÃ© en stock (pagination)
 	$end_limit = (($search['page_to_show']-1)*$search['fiches_par_page']);
 
 	$query = "SELECT SUM(sm.qte) as qte
@@ -141,7 +141,7 @@ if ($article->getRef_article()) {
 	$resultat = $bdd->query ($query);
 	while ($tmp = $resultat->fetchObject()) { $decompte_stock -= $tmp->qte;}
 	
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 	$query = "SELECT COUNT(sm.ref_stock_move) nb_fiches
 						FROM stocks_moves sm 
 						".$query_where;
@@ -151,8 +151,8 @@ if ($article->getRef_article()) {
 	unset ($result, $resultat, $query);
 	
 	
-	//cas spécifique des inventaires
-	//si le premier enregistrement des résultats est un inventaires
+	//cas spÃ©cifique des inventaires
+	//si le premier enregistrement des rÃ©sultats est un inventaires
 	if (isset($stocks_moves[0]->id_type_doc) && $stocks_moves[0]->id_type_doc == $INVENTAIRE_ID_TYPE_DOC && isset($stocks_moves[1]->ref_doc) && $stocks_moves[0]->ref_doc != $stocks_moves[1]->ref_doc && (($search['page_to_show']-1)*$search['fiches_par_page']) != 0) {
 		// on cherche le mouvement d'inventaire precedent si il existe il remplacera le premier de la liste
 		$query = "SELECT sm.ref_stock_move, sm.id_stock, s.lib_stock, s.abrev_stock, sm.qte, sm.date, sm.ref_doc, sm.ref_article, d.id_etat_doc, d.id_type_doc, de.lib_etat_doc,
@@ -175,7 +175,7 @@ if ($article->getRef_article()) {
 		$resultat = $bdd->query ($query);
 		while ($var = $resultat->fetchObject()) { 
 			if ($var->ref_doc == $stocks_moves[0]->ref_doc) {
-				// verification pour affichage d'une erreur en cas de différence de stocks sur l'inventaire 
+				// verification pour affichage d'une erreur en cas de diffÃ©rence de stocks sur l'inventaire 
 				if (abs($stocks_moves[0]->qte) != abs($var->qte)) {$var_line_inv_errreur = true;}
 				//remplacement de la premiere ligne par la ligne d'affichage du stock lors de l'inventaire
 				$stocks_moves[0] = $var; 
@@ -184,10 +184,10 @@ if ($article->getRef_article()) {
 		
 	unset ($var, $resultat, $query);
 	}
-	//on repete l'opération si un inventaire est le dernier enregistrement de la page
+	//on repete l'opÃ©ration si un inventaire est le dernier enregistrement de la page
 	
 	if (isset($stocks_moves[count($stocks_moves)-1]->id_type_doc) && $stocks_moves[count($stocks_moves)-1]->id_type_doc == $INVENTAIRE_ID_TYPE_DOC && isset($stocks_moves[count($stocks_moves)-2]->ref_doc) && $stocks_moves[count($stocks_moves)-1]->ref_doc != $stocks_moves[count($stocks_moves)-2]->ref_doc && ((($search['page_to_show']-1)*$search['fiches_par_page'])+count($stocks_moves)-1) != $nb_fiches) {
-		// on cherche le mouvement d'inventaire suivant si il existe et que les qte en stock son différentes on mettra en rouge l'inventaire
+		// on cherche le mouvement d'inventaire suivant si il existe et que les qte en stock son diffÃ©rentes on mettra en rouge l'inventaire
 		$query = "SELECT sm.ref_stock_move, sm.id_stock, s.lib_stock, s.abrev_stock, sm.qte, sm.date, sm.ref_doc, sm.ref_article, d.id_etat_doc, d.id_type_doc, de.lib_etat_doc,
 											a.ref_contact, a.nom,
 											c.nom as nom_contact_doc, 
@@ -207,7 +207,7 @@ if ($article->getRef_article()) {
 		$resultat = $bdd->query ($query);
 		while ($var = $resultat->fetchObject()) { 
 			if ($var->ref_doc == $stocks_moves[count($stocks_moves)-1]->ref_doc) {
-				// verification pour affichage d'une erreur en cas de différence de stocks sur l'inventaire 
+				// verification pour affichage d'une erreur en cas de diffÃ©rence de stocks sur l'inventaire 
 				if (abs($stocks_moves[count($stocks_moves)-1]->qte) != abs($var->qte)) {$var_line_inv_last_errreur = true;}
 				
 			}

@@ -1,13 +1,13 @@
 <?php
 // *************************************************************************************************************
-// Ajout d'un véhicule
+// Ajout d'un vÃ©hicule
 // *************************************************************************************************************
 
 require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
-//traitement des données transmises
+//traitement des donnÃ©es transmises
 
 
 if (!$_REQUEST['lib_vehicule'] || !$_REQUEST['marque'] || !$_REQUEST['attribution']) {	

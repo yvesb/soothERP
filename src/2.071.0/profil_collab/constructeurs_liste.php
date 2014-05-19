@@ -25,7 +25,7 @@ $constructeurs_liste = get_constructeurs ($ref_art_categ);
 // *************************************************************************************************************
 // AFFICHAGE
 // *************************************************************************************************************
-// on boucle sur tous les éléments
+// on boucle sur tous les Ã©lÃ©ments
 	$result = Array();
 	if (count($constructeurs_liste)) {
 	$result[] = "=Tous";

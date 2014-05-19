@@ -26,7 +26,7 @@ class pdf_stat_cmd {
 		$this->pdf->lMargin = 15;
 		$this->pdf->SetFont("Arial","B",15);
 		$this->pdf->Ln(0);
-		$this->pdf->Cell(70,10,"QuantitÈ commandÈe par article",0,1,"L");
+		$this->pdf->Cell(70,10,"Quantit√© command√©e par article",0,1,"L");
 		$this->pdf->Ln(20);
 	
 	} 
@@ -51,7 +51,7 @@ class pdf_stat_cmd {
 		$this->TableauCA();
 	}
 		
-	//Tableau colorÈ
+	//Tableau color√©
 	public function TableauCA(){
 
 		//intialisation des sous totaux
@@ -67,7 +67,7 @@ class pdf_stat_cmd {
     		}
 		}		
 		
-		//DEBUT de l'Èdition du tableau CA
+		//DEBUT de l'√©dition du tableau CA
 		$this->pdf->SetFillColor(0,0,0);            //fond noir
 	    $this->pdf->SetTextColor(255,255,255);      //texte blanc
 	    $this->pdf->SetDrawColor(0,0,0);
@@ -83,7 +83,7 @@ class pdf_stat_cmd {
 		$this->pdf->SetFillColor(0,0,0);            //fond noir
 	    $this->pdf->SetTextColor(255,255,255);      //texte blanc
 	    
-	    $this->pdf->Cell($this->LARGEUR_CELL_LIB,6,"Total GÈnÈral",1,0,'L',1);
+	    $this->pdf->Cell($this->LARGEUR_CELL_LIB,6,"Total G√©n√©ral",1,0,'L',1);
 	    $qte_total = 0;
 	 	for($y=$_REQUEST['annee_date_deb']; $y<=$_REQUEST['annee_date_fin'] ; ++$y ){
 	    	
@@ -105,12 +105,12 @@ class pdf_stat_cmd {
 		
 	}
 	
-	//CrÈation de l'entÍte du tableau
+	//Cr√©ation de l'ent√™te du tableau
  	protected function create_entete(){
  		$this->pdf->SetFillColor(0,0,0);            //fond noir
 	    $this->pdf->SetTextColor(255,255,255);      //texte blanc
 	    $this->pdf->SetFont('Arial','B','7');
-	    $this->pdf->Cell($this->LARGEUR_CELL_LIB,6,"Chiffre d'affaires",1,0,'L',1); //colonne libellÈ
+	    $this->pdf->Cell($this->LARGEUR_CELL_LIB,6,"Chiffre d'affaires",1,0,'L',1); //colonne libell√©
 	    for($y=$_REQUEST['annee_date_deb']; $y<=$_REQUEST['annee_date_fin'] ; ++$y ){
 	    	
 	    	if($y==$_REQUEST['annee_date_fin']){ $mois_max = $_REQUEST['mois_date_fin']; }
@@ -160,8 +160,8 @@ class pdf_stat_cmd {
 	
 	/*	$super : pointeur vers la class courante ($this)
 	 * 	$ref_art : reference de l'article
-	 *  $lib_art : libellÈ de la categorie d'article
-	 *  RequiËre $_REQUEST['annee_date_deb'], $_REQUEST['mois_date_deb'], $_REQUEST['mois_date_fin'] et $_REQUEST['annee_date_fin']
+	 *  $lib_art : libell√© de la categorie d'article
+	 *  Requi√®re $_REQUEST['annee_date_deb'], $_REQUEST['mois_date_deb'], $_REQUEST['mois_date_fin'] et $_REQUEST['annee_date_fin']
 	 */
 	protected function create_line_tableauCA($super, $ref_art , $lib_art){
 		
@@ -211,7 +211,7 @@ class pdf_stat_cmd {
 	// FONCTION DE RECUPERATION DES INFORMATIONS
 	
 	protected function charger_qte_cmd(){
-		//creer un tableau contenant la quantitÈ commander par mois et par categorie d'article
+		//creer un tableau contenant la quantit√© commander par mois et par categorie d'article
 		global $bdd;
 		
 		$query = "SELECT dl.ref_article, doc.date_creation_doc as date, dl.ref_article, dl.qte
@@ -234,14 +234,14 @@ class pdf_stat_cmd {
 	}
 	
 	protected function get_qte_cmd_mensuel($ref_article, $annee, $mois){
-		//retourne la quantitÈ
+		//retourne la quantit√©
 		if(!$this->qte_cmd_loaded){ $this->charger_qte_cmd(); }
 		if(empty($this->qte_cmd[$ref_article][$annee][$mois])){ return 0; }
 		return $this->qte_cmd[$ref_article][$annee][$mois];
 	} 
 	
 	protected function get_qte_cmd($annee_deb, $mois_deb){
-		//retourne la quantitÈ
+		//retourne la quantit√©
 		if(!$this->qte_cmd_loaded){ $this->charger_qte_cmd(); }
 		if(empty($this->qte_cmd)){ return 0; }
 		
@@ -262,17 +262,17 @@ class pdf_stat_cmd {
 	protected function getLib_mois($i){
 		switch ($i){
 			case 1 : return "janvier"; break;
-			case 2 : return "fÈvrier"; break;
+			case 2 : return "f√©vrier"; break;
 			case 3 : return "mars"; break;
 			case 4 : return "avril"; break;
 			case 5 : return "mai"; break;
 			case 6 : return "juin"; break;
 			case 7 : return "juillet"; break;
-			case 8 : return "ao˚t"; break;
+			case 8 : return "ao√ªt"; break;
 			case 9 : return "septembre"; break;
 			case 10 : return "octobre"; break;
 			case 11 : return "novembre"; break;
-			case 12 : return "dÈcembre"; break;
+			case 12 : return "d√©cembre"; break;
 			default : return false; 
 		}
 	}

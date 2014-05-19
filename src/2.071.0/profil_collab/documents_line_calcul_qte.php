@@ -9,19 +9,19 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 if (!isset($_REQUEST['ref_article'])) {
-	echo "La référence des l'article n'est pas spécifiée";
+	echo "La rÃ©fÃ©rence des l'article n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $ref_article = $_REQUEST['ref_article'];
 
 if (!isset($_REQUEST['ref_doc_line'])) {
-	echo "La référence de la ligne du document n'est pas spécifiée";
+	echo "La rÃ©fÃ©rence de la ligne du document n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $ref_doc_line = $_REQUEST['ref_doc_line'];
 	
 if (!isset($_REQUEST['cible'])) {
-	echo "La cible n'est pas spécifiée";
+	echo "La cible n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $cible = $_REQUEST['cible'];
@@ -47,7 +47,7 @@ switch ($id_valo) {
 			$collisages = explode(";",$tab);
 			include ($DIR.$_SESSION['theme']->getDir_theme()."page_documents_line_calcul_qte.inc.php");
 		}else{
-			echo "<br/>Le collisage n'est pas renseigné pour cet article.";
+			echo "<br/>Le collisage n'est pas renseignÃ© pour cet article.";
 			
 		}
 		break;}

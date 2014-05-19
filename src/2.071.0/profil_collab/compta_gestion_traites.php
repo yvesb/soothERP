@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 if(!$COMPTA_GEST_PRELEVEMENTS){
-    echo "Cette fonctionalité est désactivée par votre administrateur.";
+    echo "Cette fonctionalitÃ© est dÃ©sactivÃ©e par votre administrateur.";
     exit();
 }
 

@@ -11,15 +11,15 @@ require ($DIR."_session.inc.php");
 
 if (isset($_REQUEST['ref_art_categ'])) {	
 	// *************************************************
-	// Controle des données fournies par le formulaire
+	// Controle des donnÃ©es fournies par le formulaire
 
 	
 	$new_ordre				= $_REQUEST['ordre'];
 	$new_ordre_other			= $_REQUEST['ordre_other'];
-	//on récupére fonction de l'ordre et et de la réf_art_categ le premier ref_carac_groupe
+	//on rÃ©cupÃ©re fonction de l'ordre et et de la rÃ©f_art_categ le premier ref_carac_groupe
 	$ref_carac	= art_categ::getRef_carac_from_ordre ($_REQUEST['ref_art_categ'] , $_REQUEST['ordre_other']);
 	
-	//on récupére fonction de l'ordre et et de la réf_art_categ le deuxième ref_carac_groupe
+	//on rÃ©cupÃ©re fonction de l'ordre et et de la rÃ©f_art_categ le deuxiÃ¨me ref_carac_groupe
 	$ref_carac_other	= art_categ::getRef_carac_from_ordre ($_REQUEST['ref_art_categ'] , $_REQUEST['ordre']);
 	
 	

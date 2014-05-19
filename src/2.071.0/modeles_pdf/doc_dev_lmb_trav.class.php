@@ -10,7 +10,7 @@ class pdf_content_doc_dev_lmb_trav extends pdf_content_doc_standard {
 	var $texte_corps_pieds;
 
 
-// Créé une nouvelle page du document PDF
+// CrÃ©Ã© une nouvelle page du document PDF
 protected function create_pdf_page () {
 	
 	global $IMAGES_DIR;
@@ -37,7 +37,7 @@ protected function create_pdf_page () {
 	
 	
 	foreach ($this->tvas as $tva => $montant_tva) {
-		if ($tva == "5.5" && $this->page_actuelle == $this->nb_pages) {										// si la TVA pratiquée est à 5.5 %
+		if ($tva == "5.5" && $this->page_actuelle == $this->nb_pages) {										// si la TVA pratiquÃ©e est Ã  5.5 %
 		$this->page_actuelle++;									// ajout du formulaire TVA
 		$this->pdf->AddPage();
 		$this->pdf->Image($IMAGES_DIR.$this->FORMULAIRE_TVA_1, $this->MARGE_GAUCHE-10, $this->MARGE_HAUT-10, 200, 290);}}
@@ -65,7 +65,7 @@ protected function create_pdf_page () {
 
 
 
-// Créé l'entete du document PDF
+// CrÃ©Ã© l'entete du document PDF
 protected function create_pdf_entete () {
 	global $IMAGES_DIR;
 
@@ -80,10 +80,10 @@ protected function create_pdf_entete () {
 	$this->pdf->Cell (95, 10, strtoupper($this->lib_type_printed.' de travaux'), 0, 0, 'L');
 
 	// ***************************************************
-	// Référence du document
+	// RÃ©fÃ©rence du document
 	$this->pdf->SetXY(101, 27);
 	$this->pdf->SetFont('Arial', '', 8);
-	$ref_doc_lib = "Référence";
+	$ref_doc_lib = "RÃ©fÃ©rence";
 	$this->pdf->Cell (13, 3, $ref_doc_lib, 0, 0, 'L');
 	$this->pdf->Cell (3, 3, ":", 0, 0, 'L');
 	$this->pdf->Cell (40, 3, $this->ref_doc, 0, 0, 'L');
@@ -100,7 +100,7 @@ protected function create_pdf_entete () {
 }
 
 
-// Créé le corps du PDF
+// CrÃ©Ã© le corps du PDF
 protected function create_pdf_corps () {
 	global $AFF_REMISES;
 	global $CORPS_HAUTEUR_DEPART;
@@ -109,7 +109,7 @@ protected function create_pdf_corps () {
 	$this->decalage_corps_actuel	= 0;
 	
 	// ***************************************************
-	// Cadre de texte à rajouter
+	// Cadre de texte Ã  rajouter
 	                            			
 		$this->pdf->SetXY($this->MARGE_GAUCHE, $this->NOTE_HAUTEUR_DEPART);    //affichage du cadre de texte
 		$this->pdf->Cell (180,$this->NOTE_HAUTEUR_MAX, "", 1, 0, 'L'); 
@@ -132,7 +132,7 @@ protected function create_pdf_corps () {
 			
 
 	// ***************************************************
-	// Numéro de page
+	// NumÃ©ro de page
 	$this->pdf->SetXY(-45, $this->CORPS_HAUTEUR_DEPART - 6);
 	$this->pdf->SetFont('Arial', 'I', 8);
 	$page_lib = "Page ".$this->page_actuelle." / ".$this->nb_pages;
@@ -172,11 +172,11 @@ protected function create_pdf_corps () {
 			break; 
 		}
 
-		// Controle de la nécessité de changer de page
+		// Controle de la nÃ©cessitÃ© de changer de page
 		if (in_array($i, $this->contenu_end_page)) { break;	}
 	}
 
-	// Faire décendre le tableau jusqu'en bas du corps
+	// Faire dÃ©cendre le tableau jusqu'en bas du corps
 	while ($this->decalage_corps_actuel <= $this->CORPS_HAUTEUR_MAX-1) {
 		$line = new stdClass();
 		$this->create_pdf_corps_line($line);
@@ -193,7 +193,7 @@ protected function create_pdf_corps_line ($line) {
 	global $TARIFS_NB_DECIMALES;
 
 	// ***************************************************
-	// Valeurs par défaut
+	// Valeurs par dÃ©faut
 	if (!isset($line->type_of_line)) 	{ $line->type_of_line = "vide"; }
 	if (!isset($line->ref_article)) 	{ $line->ref_article = ""; 			}
 	if (!isset($line->ref_interne)) 	{ $line->ref_interne = ""; 			}
@@ -209,9 +209,9 @@ protected function create_pdf_corps_line ($line) {
 	// Cadre
 	$cadre = "LR"; // Gauche et droite
 
-	// Positionnement au début de la ligne
+	// Positionnement au dÃ©but de la ligne
 	$this->pdf->SetXY($this->MARGE_GAUCHE, $this->CORPS_HAUTEUR_DEPART + $this->decalage_corps_actuel);
-	// Style d'écriture par défaut
+	// Style d'Ã©criture par dÃ©faut
 	$this->pdf->SetFont('Arial', '', 9);
 	
 	// Calcul du Prix unitaire et du Prix total
@@ -221,7 +221,7 @@ protected function create_pdf_corps_line ($line) {
 	}
 	$line->pt = round($line->pu * $line->qte * (1-$line->remise/100), $TARIFS_NB_DECIMALES);
 
-	// Spécifités à l'affichage
+	// SpÃ©cifitÃ©s Ã  l'affichage
 	switch ($line->type_of_line) {
 		case "article":
 			if ($line->remise) { $line->remise = $line->remise." %"; }
@@ -299,7 +299,7 @@ protected function create_pdf_corps_line ($line) {
 	// Cadre de pieds de page
 	$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS, $this->PIEDS_HAUTEUR_MAX, "", '1', 1, 'L');
 
-	// Information société
+	// Information sociÃ©tÃ©
 	$this->pdf->SetXY($this->MARGE_GAUCHE, $this->PIEDS_HAUTEUR_DEPART + $this->PIEDS_HAUTEUR_MAX + 1);
 	foreach ($this->PIEDS_GAUCHE as $texte) {
 		$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS, 4.5, '', '0', 2, 'L');//$texte
@@ -372,10 +372,10 @@ protected function create_pdf_corps_line ($line) {
 	// Bloc central
 	$this->pdf->SetXY($this->MARGE_GAUCHE, $this->PIEDS_HAUTEUR_DEPART);
 	$this->pdf->SetFont('Arial', '', 9);
-	$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_col1_tva, 8,"Conditions de règlement..." , '1', 0, 'L');
+	$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_col1_tva, 8,"Conditions de rÃ¨glement..." , '1', 0, 'L');
 	$this->pdf->SetXY($this->MARGE_GAUCHE, $this->PIEDS_HAUTEUR_DEPART+8);
 	$this->pdf->SetFont('Arial', '', 7);
-	$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_col1_tva, 6,"Mention manuscrite « Bon pour accord » + Tampon & Signature" , '0', 0, 'L');
+	$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_col1_tva, 6,"Mention manuscrite Â« Bon pour accord Â» + Tampon & Signature" , '0', 0, 'L');
 	
 }
 

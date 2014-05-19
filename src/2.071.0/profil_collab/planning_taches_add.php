@@ -18,7 +18,7 @@ foreach ($_REQUEST as $variable => $valeur) {
 }
 //fonctions de collaborateurs
 $liste_fonctions_collab = charger_fonctions ($COLLAB_ID_PROFIL);
-//on parcoure les fonctions pour retrouver les categories de collaborateurs cochées
+//on parcoure les fonctions pour retrouver les categories de collaborateurs cochÃ©es
 foreach ($liste_fonctions_collab as $liste_fonction_collab) {
 	if (isset($_REQUEST['id_fonction_'.$liste_fonction_collab->id_fonction])) {
 	$collabs_fonctions[] = $liste_fonction_collab->id_fonction;

@@ -89,7 +89,7 @@ if (isset($_REQUEST["id_stock"])) {
 		$query_where 	.= " d.id_etat_doc IN (".$search['id_etat_doc']." )";
 	}
  
-	// Sélection des mouvements stocks
+	// SÃ©lection des mouvements stocks
 	$stocks_docs = array();
 	$query = "SELECT sm.ref_stock_move, sm.id_stock, s.lib_stock, s.abrev_stock, sm.qte, sm.date, sm.ref_doc, sm.ref_article, d.id_etat_doc, d.id_type_doc, de.lib_etat_doc, a.lib_article, a.ref_art_categ, a.ref_constructeur,
 										an.ref_contact, an.nom
@@ -110,7 +110,7 @@ if (isset($_REQUEST["id_stock"])) {
 	while ($var = $resultat->fetchObject()) { $stocks_docs[] = $var; }
 	unset ($var, $resultat, $query);
 	
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 	$query = "SELECT COUNT(sm.ref_doc) as  nb_fiches
 						FROM stocks_moves sm 
 							LEFT JOIN documents d ON d.ref_doc = sm.ref_doc

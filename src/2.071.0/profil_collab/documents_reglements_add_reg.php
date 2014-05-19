@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// AJOUT D'UN REGLEMENT NON ATTRIBUÉ À UNE FACTURE
+// AJOUT D'UN REGLEMENT NON ATTRIBUÃ‰ Ã€ UNE FACTURE
 // *************************************************************************************************************
 
 
@@ -13,7 +13,7 @@ if (isset($_REQUEST["ref_doc"])) {
 	
 	//Ouverture du reglement
 	$reglement = new reglement($_REQUEST['ref_reglement']);
-	//rapprochement du reglement  au document ciblé
+	//rapprochement du reglement  au document ciblÃ©
 	$document = open_doc ($_REQUEST['ref_doc']);
 	 $document->rapprocher_reglement ($reglement);
          exit();

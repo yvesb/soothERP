@@ -2,34 +2,34 @@
 // *************************************************************************************************************
 // CLASSE DE GESTION DE L'UTILISATEUR DU PROGRAMME
 // *************************************************************************************************************
-// La classe USER gère l'utilisateur en cours pour une session.
-// La classe UTILISATEUR gère l'utilisateur d'un contact en dehors de toute session.
+// La classe USER gÃ¨re l'utilisateur en cours pour une session.
+// La classe UTILISATEUR gÃ¨re l'utilisateur d'un contact en dehors de toute session.
 
 final class user {
-	private $ref_user;						// Référence de l'utilisateur
+	private $ref_user;						// RÃ©fÃ©rence de l'utilisateur
 
-	private $ref_coord_user;			// Coordonnées de l'utilisateur
-	private $ref_contact;					// Référence du contact propriétaire de l'utilisateur
+	private $ref_coord_user;			// CoordonnÃ©es de l'utilisateur
+	private $ref_contact;					// RÃ©fÃ©rence du contact propriÃ©taire de l'utilisateur
 	private $master;							// 1 si il s'agit du compte maitre de ce contact
 
-	private $pseudo;							// Pseudo affiché
+	private $pseudo;							// Pseudo affichÃ©
 	private $code;
-	private $login;								// 1 si l'utilisateur est loggué
+	private $login;								// 1 si l'utilisateur est logguÃ©
 	private $login_time;					// Heure de connexion
 
 	private $actif;								// 1 si le compte utilisateur est actif
 	private $ordre;								// Ordre d'affichage de ce compte utilisateur dans la liste du contact
 
 	public  $profil;							// Profil en cours pour la session
-	private $allowed_profils;			// Tableau des profils autorisés
+	private $allowed_profils;			// Tableau des profils autorisÃ©s
 
 	private $id_interface;				// Interface en cours d'utilisation
-	private $last_id_interface;		// Derniere interface utilisée
-	private $last_id_theme;				// Dernier theme utilisé
+	private $last_id_interface;		// Derniere interface utilisÃ©e
+	private $last_id_theme;				// Dernier theme utilisÃ©
 
 	private $permissions;					// Tableau des permissions de l'utilisateur (tout profil confondu)
 
-	private $email;								// Email associé aux coordonnées
+	private $email;								// Email associÃ© aux coordonnÃ©es
 	private $contact;
 
 
@@ -38,9 +38,9 @@ function __construct () {
 	global $DEFAUT_PROFILS;
 
 	$this->login = false;
-	// Profils autorisés par défaut
+	// Profils autorisÃ©s par dÃ©faut
 	foreach ($DEFAUT_PROFILS as $id_profil) { $this->allowed_profils[$id_profil] = $id_profil; }
-	// Les autres profils seront autorisés après le login en fonction de l'utilisateur
+	// Les autres profils seront autorisÃ©s aprÃ¨s le login en fonction de l'utilisateur
 	
 	return true;
 }
@@ -60,7 +60,7 @@ final public function login ($login, $code, $page_from = "", $login_id_interface
 	}
 
 	// ************************************************
-	// Sélection des informations sur l'utilisateur
+	// SÃ©lection des informations sur l'utilisateur
 	$query = "SELECT ref_user, u.ref_contact, master, ref_coord_user, pseudo, code, actif, u.last_id_interface, c.email
 						FROM users u
 							LEFT JOIN coordonnees c ON u.ref_coord_user = c.ref_coord
@@ -102,7 +102,7 @@ final public function login ($login, $code, $page_from = "", $login_id_interface
 
  
 	// ************************************************
-	// Création du Cookie 
+	// CrÃ©ation du Cookie 
 	$used_users = array();
 	if (isset($_COOKIE['predefined_user'])) { 
 		$pred_user = explode(";", $_COOKIE['predefined_user']); 
@@ -128,24 +128,24 @@ final public function login ($login, $code, $page_from = "", $login_id_interface
   $this->contact = new contact ($this->ref_contact);
 	if ($this->contact->getDate_archivage () != NULL ) {
 		$this->contact->blocages_utilisateurs ();
-		$GLOBALS['_ALERTES']['contact archivé'] = 1;
+		$GLOBALS['_ALERTES']['contact archivÃ©'] = 1;
 		return false;
 	} 
 	
 	
 	// ************************************************
-  // Sélection des permissions de l'utilisateur (dont les profils autorisés)
+  // SÃ©lection des permissions de l'utilisateur (dont les profils autorisÃ©s)
   $this->define_permissions (); 
   
   // ************************************************
-  // Sélection de l'interface à utiliser
+  // SÃ©lection de l'interface Ã  utiliser
   $this->select_login_interface ($login_id_interface);  
 
 
   // ************************************************
   // Page de redirection suite au login
 	if ($this->id_interface <= 1) {
-		// Si l'interface à utiliser n'est pas définie, redirection vers la page de sélection du profil
+		// Si l'interface Ã  utiliser n'est pas dÃ©finie, redirection vers la page de sÃ©lection du profil
 		$redirection = $_ENV['CHEMIN_ABSOLU']."site/__user_choix_profil.php";
 	}
 	else {
@@ -173,7 +173,7 @@ final private function log_connexion () {
 // DEFINITION DES PERMISSIONS DE L'UTILISATEUR 
 // *************************************************************************************************************
 
-// permissions associés à l'utilisateurs
+// permissions associÃ©s Ã  l'utilisateurs
 final private function define_permissions () {
 	global $bdd;
 
@@ -190,9 +190,9 @@ final private function define_permissions () {
 	$result = $bdd->query ($query);
 	while ($var = $result->fetchObject()) { $this->permissions[] = $var; } 
 	
-	// Défini quels profils sont accessibles
+	// DÃ©fini quels profils sont accessibles
 	foreach ($this->permissions as $permission) {
-		if ($permission->id_permission_parent) { continue; } 										// Si il y a une permission parent, nous ne sommes pas à la racine
+		if ($permission->id_permission_parent) { continue; } 										// Si il y a une permission parent, nous ne sommes pas Ã  la racine
 		if (!isset($_SESSION['profils'][$permission->id_profil])) { continue; } // Si le profil n'est pas en session, ne pas l'autoriser
 
 		$this->allowed_profils[$permission->id_profil] = $permission->id_profil;
@@ -230,7 +230,7 @@ public function check_permission ($id_permission,$id_perm_value="") {
 // DEFINITION DE L'INTERFACE DE L'UTILISATEUR 
 // *************************************************************************************************************
 
-// Vérifie le droit d'accéder à une interface
+// VÃ©rifie le droit d'accÃ©der Ã  une interface
 public function interface_is_allowed ($tested_id_interface) {
 	if (!isset($_SESSION['interfaces'][$tested_id_interface])) { 
 		return false; 
@@ -241,15 +241,15 @@ public function interface_is_allowed ($tested_id_interface) {
 	return true;
 }
 
-// Défini l'interface dans laquelle l'utilisateur sera redirigé directement après un login
+// DÃ©fini l'interface dans laquelle l'utilisateur sera redirigÃ© directement aprÃ¨s un login
 final private function select_login_interface ($login_id_interface) {
-	// Interface prédéfinie via le formulaire de login
+	// Interface prÃ©dÃ©finie via le formulaire de login
 	if ($this->interface_is_allowed($login_id_interface)) {
 		$this->set_interface ($login_id_interface);
 		return true;
 	}
 
-	// Derniere Interface utilisée avec succès
+	// Derniere Interface utilisÃ©e avec succÃ¨s
 	if ($this->interface_is_allowed($this->last_id_interface)) {
 		$this->set_interface ($this->last_id_interface);
 		return true;
@@ -272,12 +272,12 @@ public function set_interface ($id_interface) {
 final private function log_user_interface ($id_interface) {
 	global $bdd;
 
-	// Si l'utilisateur n'est pas loggué, ou si aucun changement d'interface
+	// Si l'utilisateur n'est pas logguÃ©, ou si aucun changement d'interface
 	if ( !$this->login || $this->last_id_interface == $id_interface) {
 		return false;
 	}
 
-	// Enregistrement en base de donnée
+	// Enregistrement en base de donnÃ©e
 	$query = "UPDATE users 
 						SET last_id_interface = '".$this->id_interface."'
 						WHERE ref_user = '".$this->ref_user."' ";
@@ -294,7 +294,7 @@ final private function log_user_interface ($id_interface) {
 // GESTION DU PROFIL 
 // *************************************************************************************************************
 
-// Charge les informations spécifiques liées au profil d'un utilisateur
+// Charge les informations spÃ©cifiques liÃ©es au profil d'un utilisateur
 final public function set_profil ($id_profil) {
 	global $DIR;
 
@@ -311,14 +311,14 @@ final public function set_profil ($id_profil) {
 // DEFINITION DU THEME POUR L'UTILISATEUR 
 // *************************************************************************************************************
 
-// Défini le thème a utiliser
+// DÃ©fini le thÃ¨me a utiliser
 final private function define_theme_to_use ($id_theme) {
 	global $bdd;
 
-	// Le thème étant redéfini après un changement d'interface, on ne connait pas encore le thème précédent pour ce profil.
+	// Le thÃ¨me Ã©tant redÃ©fini aprÃ¨s un changement d'interface, on ne connait pas encore le thÃ¨me prÃ©cÃ©dent pour ce profil.
 	$last_id_theme = 0;
 
-	// Recherche du précédent thème de l'utilisateur pour le profil en cours
+	// Recherche du prÃ©cÃ©dent thÃ¨me de l'utilisateur pour le profil en cours
 	if ($this->login) {
 		$query = "SELECT id_theme FROM users_themes
 							WHERE ref_user = '".$this->ref_user."' && id_interface = '".$this->id_interface."' ";
@@ -332,15 +332,15 @@ final private function define_theme_to_use ($id_theme) {
 		}
 	}
 	
-	// Utilisation du thème par défaut pour cet utilisateur
+	// Utilisation du thÃ¨me par dÃ©faut pour cet utilisateur
 	$this->set_theme($_SESSION['interfaces'][$this->id_interface]->getDefaut_id_theme());
 	return true;
 }
 
 
-// Charge le thème
+// Charge le thÃ¨me
 final private function set_theme ($id_theme) {
-	// Défini le thème en cours
+	// DÃ©fini le thÃ¨me en cours
 	$_SESSION['theme'] = new theme ($id_theme);
 
 	// Enregistrement 
@@ -348,16 +348,16 @@ final private function set_theme ($id_theme) {
 }
 
 
-// Enregistre l'utilisation de ce thème pour la prochaine session
+// Enregistre l'utilisation de ce thÃ¨me pour la prochaine session
 final private function log_user_theme () {
 	global $bdd;
 
-	// Si l'utilisateur n'est pas loggué, ou que le thème n'est pas changé, inutile d'aller plus loin
+	// Si l'utilisateur n'est pas logguÃ©, ou que le thÃ¨me n'est pas changÃ©, inutile d'aller plus loin
 	if (!$this->login || $this->last_id_theme == $_SESSION['theme']->getId_theme()) {
 		return false;
 	}
 	
-	// Si aucun thème n'a été défini pour cet utilisateur et ce profil
+	// Si aucun thÃ¨me n'a Ã©tÃ© dÃ©fini pour cet utilisateur et ce profil
 	if (!$this->last_id_theme) {
 		$query = "INSERT INTO users_themes (ref_user, id_interface, id_theme)
 							VALUES ('".$this->ref_user."', '".$this->id_interface."', '".$_SESSION['theme']->getId_theme()."')";
@@ -491,7 +491,7 @@ public function last_bad_log_connexion ($ref_user) {
 
 
 
-//verification de la derière heure de connexion pour rafraichissement des infos en cache
+//verification de la deriÃ¨re heure de connexion pour rafraichissement des infos en cache
 public function last_log_connexion () {
 	global $bdd;
 
@@ -510,13 +510,13 @@ public function last_log_connexion () {
 // FONCTIONS DE PUBLICATION DES INFORMATIONS SUR L'UTILISATEUR 
 // *************************************************************************************************************
 
-// Retourne si l'utilisateur est loggué
+// Retourne si l'utilisateur est logguÃ©
 public function getLogin () {
 	if ($this->login) { return true; }
 	return false;
 }
 
-// Retourne si l'utilisateur est loggué
+// Retourne si l'utilisateur est logguÃ©
 public function getRef_user () {
 	return $this->ref_user;
 }
@@ -525,7 +525,7 @@ function getPseudo () {
 	return $this->pseudo;
 }
 
-// Retourne la liste des profils autorisés
+// Retourne la liste des profils autorisÃ©s
 public function getProfils_allowed () {
 	return $this->allowed_profils;
 }
@@ -562,7 +562,7 @@ public function getProfil_dir () {
 }
 
 }
-//fonction générant un fichier indiquant qu'une mise à jour des infos de session doit etre effectuée
+//fonction gÃ©nÃ©rant un fichier indiquant qu'une mise Ã  jour des infos de session doit etre effectuÃ©e
 function serveur_maj_file() {
 	global $DIR;
 	$file_id = fopen ($DIR."_session_maj.php", "w");

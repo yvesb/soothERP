@@ -81,7 +81,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td class="size_strict"><span class="labelled" style="width:150px">Durée de vie des articles:</span>
+			<td class="size_strict"><span class="labelled" style="width:150px">DurÃ©e de vie des articles:</span>
 			</td>
 			<td>
 			
@@ -117,8 +117,8 @@
 			<td>
 				<select name="restriction" id="restriction"  class="classinput_xsize">
 					<option value="aucune">Aucune Restriction</option>
-					<option value="achat">Restreindre à l'achat</option>
-					<option value="vente">Restreindre à la vente</option>
+					<option value="achat">Restreindre Ã  l'achat</option>
+					<option value="vente">Restreindre Ã  la vente</option>
 				</select>
 
 			</td>

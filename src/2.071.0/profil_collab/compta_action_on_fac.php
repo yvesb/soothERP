@@ -13,7 +13,7 @@ ini_set("memory_limit","40M");
 if (isset($_REQUEST["fonction_generer"]) && is_numeric($_REQUEST["fonction_generer"])) {
 	foreach ($_REQUEST as $variable => $valeur) {
 		if (substr ($variable, 0, 7) != "ref_doc") {continue;}
-		// ouverture des infos du document et mise à jour
+		// ouverture des infos du document et mise Ã  jour
 		$document = open_doc ($valeur);
 			if ($_REQUEST["fonction_generer"] == 0) {
 				$document->maj_id_niveau_relance ("");
@@ -26,12 +26,12 @@ if (isset($_REQUEST["fonction_generer"]) && is_numeric($_REQUEST["fonction_gener
 	$GLOBALS['PDF_OPTIONS']['HideToolbar'] = 0;
 	$GLOBALS['PDF_OPTIONS']['AutoPrint'] = 0;
 
-	// Création du fichier
+	// CrÃ©ation du fichier
 	$pdf = new PDF_etendu ();
 	
 	foreach ($_REQUEST as $variable => $valeur) {
 		if (substr ($variable, 0, 7) != "ref_doc") {continue;}
-		// Préférences et options
+		// PrÃ©fÃ©rences et options
 		$document = open_doc ($valeur);
 	
 		// Ajout du document au PDF

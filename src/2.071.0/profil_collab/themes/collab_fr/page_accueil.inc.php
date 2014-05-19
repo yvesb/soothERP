@@ -4,7 +4,7 @@
 // ACCUEIL DU PROFIL COLLAB
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array();
 check_page_variables($page_variables);
 
@@ -45,7 +45,7 @@ check_page_variables($page_variables);
 						<ul>
 							<li class="accueil_onglet" id="menu_accueil_1">Recherche rapide</li>
 							<li class="accueil_onglet_hide" id="menu_accueil_2">Documents ouverts</li>
-							<li class="accueil_onglet_hide" id="menu_accueil_3">Tâches</li>
+							<li class="accueil_onglet_hide" id="menu_accueil_3">TÃ¢ches</li>
 							<li class="accueil_onglet_hide" id="menu_accueil_4">Mes Liens</li>
 						</ul>
 					</div>
@@ -101,7 +101,7 @@ check_page_variables($page_variables);
 							</div>
 							<div style="height:48px; line-height:48px;">&nbsp;</div>
 							<div style="font:11px Arial, Helvetica, sans-serif; text-decoration:underline; text-align:center">
-								Veuillez remplir tout ou partie du nom recherché puis valider.			</div>
+								Veuillez remplir tout ou partie du nom recherchÃ© puis valider.			</div>
 						</div>
 
 						<div class="accueil_block_round3corner" style="display:none" id="opened_docs_list">

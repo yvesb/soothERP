@@ -7,7 +7,7 @@ require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
-//@TODO Définir $event_duree_moyenne
+//@TODO DÃ©finir $event_duree_moyenne
 $event_duree_moyenne = 1800; // = 30 min
 
 $Udate_event_deb 	= time();
@@ -22,20 +22,20 @@ define("PAS_DROIT", 4, true);
 $bt_maj_visible = VIERGE;
 
 if(!isset($_REQUEST["echelle"]) || $_REQUEST["echelle"] == ""){
-	echo "L'échelle de l'agenda n'est pas spécifiée";
+	echo "L'Ã©chelle de l'agenda n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $echelle = $_REQUEST["echelle"]; //JOUR, SEMAINE, MOIS
 
-// L'EVENT existe déjà en BD ***************************************************************
+// L'EVENT existe dÃ©jÃ  en BD ***************************************************************
 if(!isset($_REQUEST["ref_event"]) || $_REQUEST["ref_event"] == ""){
-	echo "La référence de l'évènement n'est pas spécifiée";
+	echo "La rÃ©fÃ©rence de l'Ã©vÃ¨nement n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 
 $event = new Event($_REQUEST["ref_event"]);	
 if(!$event->getRef_event($_SESSION["agenda"]["GestionnaireEvenements"])){
-	echo "La référence de l'évènement est mal formatée";
+	echo "La rÃ©fÃ©rence de l'Ã©vÃ¨nement est mal formatÃ©e";
 	exit;
 }
 
@@ -45,7 +45,7 @@ if(isset($_REQUEST["readonly"])){
 }
 
 if(!isset($_REQUEST["id_graphic_event"]) || !is_numeric($_REQUEST["id_graphic_event"])){
-	echo "L'identifiant graphique de l'évènement n'est pas spécifié";
+	echo "L'identifiant graphique de l'Ã©vÃ¨nement n'est pas spÃ©cifiÃ©";
 	exit;
 }
 $id_graphic_event = $_REQUEST["id_graphic_event"];

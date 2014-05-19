@@ -31,7 +31,7 @@ function calcul_tarif_article ($qte, $PA, $PP, $tva) {
 	if ($qte <= 0) { $qte = 1; }
 
 	// *************************************************
-	// Recherche de la première partie : Résultat du calcul
+	// Recherche de la premiÃ¨re partie : RÃ©sultat du calcul
 	$debut 	= 0;
 	$fin 		= strpos($this->formule, "=");
 	$resultat = substr($this->formule, $debut, $fin); 
@@ -49,13 +49,13 @@ function calcul_tarif_article ($qte, $PA, $PP, $tva) {
 	$arrondi 	= substr($this->formule, $debut, $fin);
 
 	// *************************************************
-	// Calcul d'un tarif (celui défini par la formule)
+	// Calcul d'un tarif (celui dÃ©fini par la formule)
 	if (is_numeric($formule)) {
-		// Défini arbritrairement
+		// DÃ©fini arbritrairement
 		$tarif[$resultat] = $formule;
 	}
 	else {
-		// Calculé
+		// CalculÃ©
 		$base = substr ($formule, 0, 2);
 		if (substr($resultat, 3, strlen($resultat)) == "TTC") {
 			${$base} *= (1+$tva/100);
@@ -119,7 +119,7 @@ function calcul_tarif_article ($qte, $PA, $PP, $tva) {
 }
 
 
-// Défini le tarif a afficher pour l'utilisateur
+// DÃ©fini le tarif a afficher pour l'utilisateur
 function define_affichage_tarif () {
 	global $MONNAIE;
 
@@ -145,7 +145,7 @@ function define_affichage_tarif () {
 // *************************************************************************************************************
 // FONCTIONS DE VERIFICATION ET DE RECEPTION
 // *************************************************************************************************************
-// Réception d'un formulaire pour créer la formule correspondante
+// RÃ©ception d'un formulaire pour crÃ©er la formule correspondante
 static function recept_formule ($reponses, $valeures) {
 	$formule = "";
 
@@ -155,13 +155,13 @@ static function recept_formule ($reponses, $valeures) {
 		$valeures[$i] = str_replace(",", ".", $valeures[$i]);
 	}
 	
-	// Vérification de la validité des réponses
+	// VÃ©rification de la validitÃ© des rÃ©ponses
 	if (!in_array($reponses[1], array("AR","PA","PP"))) 					{ $GLOBALS['_ALERTES']['bad_reponse_1'] = 1; }
 	if (!in_array($reponses[2], array("MARGE","MULTI","ADD"))) 		{ $GLOBALS['_ALERTES']['bad_reponse_2'] = 1; }
 	if (!in_array($reponses[3], array("PAS","SUP","INF","PRO")))	{ $GLOBALS['_ALERTES']['bad_reponse_3'] = 1; }
 	if (!in_array($reponses[4], array("PU_HT","PU_TTC")))					{ $GLOBALS['_ALERTES']['bad_reponse_4'] = 1; }
 
-	// Vérification de la validité des valeures
+	// VÃ©rification de la validitÃ© des valeures
 	if (isset($valeures[1]) && !is_numeric($valeures[1])) 				{ $GLOBALS['_ALERTES']['bad_valeur_1'] = 1; }
 	if (isset($valeures[2]) && !is_numeric($valeures[2]))  				{ $GLOBALS['_ALERTES']['bad_valeur_2']	= 1; }
 	if (isset($valeures[3]) && !is_numeric($valeures[3]))  				{ $GLOBALS['_ALERTES']['bad_valeur_3']	= 1; }
@@ -169,13 +169,13 @@ static function recept_formule ($reponses, $valeures) {
 
 	if (isset($valeures[2]) && $reponses[2] == "MARGE" && $valeures[2] >= 100) { $GLOBALS['_ALERTES']['bad_valeur_2']	= 1; }
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) { 
 		return false;
 	}
 
 	// *************************************************
-	// Création de la formule a partir des réponses
+	// CrÃ©ation de la formule a partir des rÃ©ponses
 	// Q4
 	$formule = $reponses[4]."=";
 
@@ -232,7 +232,7 @@ static function recept_formule ($reponses, $valeures) {
 
 
 
-// Vérifie la formule de prix
+// VÃ©rifie la formule de prix
 static function check_formule ($formule) {
 	if (!$formule) {return false;}
 	return true;

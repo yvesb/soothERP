@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("page_from", "MODE_IDENTIFICATION", "users", "predefined_user", "_ALERTES");
 check_page_variables ($page_variables);
 
@@ -110,30 +110,30 @@ document.write ('<div class="header" style="background-image:url(<?php echo $DIR
 document.write ('</span>');
 document.write ('<span style="height:60px; width:450px; float:right; vertical-align: middle; line-height:60px; padding-right:25px;"><div id="waiting" style="display:none; text-align:right">');
 document.write ('	<div id="backupwait" style="display:inline">');
-document.write ('<?php echo $SESSION_START_BACKUP?"Sauvegarde de la base de donnée en cours... &nbsp;&nbsp;":"";?>');
+document.write ('<?php echo $SESSION_START_BACKUP?"Sauvegarde de la base de donnÃ©e en cours... &nbsp;&nbsp;":"";?>');
 document.write ('	</div>');
 document.write ('	<div id="boxcontent" style="display:inline">');
 document.write ('					<strong>Chargement en cours</strong>');
 document.write ('	</div>');
 document.write ('</div></span>');
-document.write ('<div class="title_install">SoothERP <span class="compl_title">logiciel de gestion d\'entreprise, fork de la version community de Lundi Matin Business®</span></div>');
+document.write ('<div class="title_install">SoothERP <span class="compl_title">logiciel de gestion d\'entreprise, fork de la version community de Lundi Matin BusinessÂ®</span></div>');
 document.write ('	</div><br /><div style="text-align:center; margin:80px 0px;">');
 document.write ('	<div class="radius_main" style="width:710px;	margin:0px auto;">');
 document.write ('		<table class="conteneir">');
 document.write ('		<tr>');
 document.write ('			<td class="top_log" colspan="2">');
-document.write ('Connexion à l\'interface de  <?php echo addslashes($nom_entreprise);?>');
+document.write ('Connexion Ã  l\'interface de  <?php echo addslashes($nom_entreprise);?>');
 document.write ('			</td>');
 document.write ('		</tr>');
 document.write ('		<tr>');
 document.write ('			<td class="bgmain_menu">');
 document.write ('<br /><br />');
 document.write ('<div style="text-align:left">');
-document.write ('Veuillez utiliser un identifiant et un mot de passe valide pour accéder à l\'application.');
+document.write ('Veuillez utiliser un identifiant et un mot de passe valide pour accÃ©der Ã  l\'application.');
 document.write ('</div>');
 document.write ('<br />');
 document.write ('<div style="text-align:left; color:#0000FF">');
-document.write ('<a href="<?php echo $DIR."/site";?>" style="color:#0000FF">Retour à la page d\'accueil du site web.</a>');
+document.write ('<a href="<?php echo $DIR."/site";?>" style="color:#0000FF">Retour Ã  la page d\'accueil du site web.</a>');
 document.write ('</div>');
 document.write ('<br />');
 document.write ('<div style="text-align:center"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/verrou.gif"/></div>');
@@ -224,7 +224,7 @@ document.write ('  <td colspan="2" style="text-align:right; padding-right=25px;"
 // Affichage des erreurs
 foreach ($_ALERTES as $alerte => $value) {
 	if ($alerte == "login_faux") { ?>
-	document.write ('Connexion impossible.<br />Veuillez vérifiez vos identifiants de connexion.');
+	document.write ('Connexion impossible.<br />Veuillez vÃ©rifiez vos identifiants de connexion.');
 	<?php }
 }
 
@@ -245,23 +245,23 @@ document.write ('  <td colspan="2" style="text-align:right; padding-right=25px;"
 document.write ('  </td>');
 document.write ('</tr>');
 document.write ('</table>');
-document.write ('<div style="text-align:right"><a href="" style="color:#000000; display:none" >J\'ai oublié mon mot de passe</a></div></td></tr></table>');
+document.write ('<div style="text-align:right"><a href="" style="color:#000000; display:none" >J\'ai oubliÃ© mon mot de passe</a></div></td></tr></table>');
 document.write ('</form>');
 document.write ('</div><br /><a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $DIR;?>/fichiers/images/powered_by_lundimatin.png" width="150"/></a></td></tr>');
 document.write ('		<tr>');
 document.write ('			<td colspan="2">');
 document.write ('<div style="text-align:center; vertical-align: bottom; padding-left:15px" class="grey_text" >');
-document.write ('<a href="http://www.lundimatin.fr" target="_blank" class="grey_text" rel="noreferrer">Lundi Matin Business</a> est un logiciel libre de gestion d\'entreprise, distribué sous licence LMPL');
+document.write ('<a href="http://www.lundimatin.fr" target="_blank" class="grey_text" rel="noreferrer">Lundi Matin Business</a> est un logiciel libre de gestion d\'entreprise, distribuÃ© sous licence LMPL');
 document.write ('</div></td></tr>');
 document.write ('		<tr>');
 document.write ('			<td colspan="2">');
 document.write ('<div style="text-align:center; vertical-align: bottom; padding-left:15px" class="grey_text" >');
-document.write ('La présente version modifiée de Lundi Matin Business est une distribution <a href="http://www.sootherp.fr" target="_blank" class="grey_text" rel="noreferrer">SoothERP</a>');
+document.write ('La prÃ©sente version modifiÃ©e de Lundi Matin Business est une distribution <a href="http://www.sootherp.fr" target="_blank" class="grey_text" rel="noreferrer">SoothERP</a>');
 document.write ('</div></td></tr>');
 document.write ('		<tr>');
 document.write ('			<td colspan="2">');
 document.write ('<div style="text-align:center; vertical-align: bottom; padding-left:15px" class="grey_text" >');
-document.write ('<small>SoothERP ne possède aucun lien commercial ou quel qu\'il soit avec la société Lundi Matin S.A.S.</small>');
+document.write ('<small>SoothERP ne possÃ¨de aucun lien commercial ou quel qu\'il soit avec la sociÃ©tÃ© Lundi Matin S.A.S.</small>');
 document.write ('</div></td></tr>');
 document.write ('</table></div></div>');
 

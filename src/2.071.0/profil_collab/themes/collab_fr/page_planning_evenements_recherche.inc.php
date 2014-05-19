@@ -4,7 +4,7 @@
 // RECHERCHE DES EVENEMENTS
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ foreach ($_ALERTES as $alerte => $value) {
 // Formulaire de recherche
 ?>
 <div class="emarge">
-<p class="titre">Recherche des événements</p>
+<p class="titre">Recherche des Ã©vÃ©nements</p>
 
 <div id="recherche" class="corps_moteur">
 	<div id="recherche_simple" class="menu_link_affichage">

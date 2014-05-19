@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -24,8 +24,8 @@ check_page_variables ($page_variables);
 <?php
 if ($import_tarifs_fournisseur->getEtape() != "") {
 	?>
-	Un précédent import non terminé a été détecté.<br />
-	Souhaitez vous reprendre l'import des données concernées?  <span id="reprendre_import" style="cursor:pointer; font-weight:bolder"> Reprendre l'import</span>
+	Un prÃ©cÃ©dent import non terminÃ© a Ã©tÃ© dÃ©tectÃ©.<br />
+	Souhaitez vous reprendre l'import des donnÃ©es concernÃ©es?  <span id="reprendre_import" style="cursor:pointer; font-weight:bolder"> Reprendre l'import</span>
 	<script type="text/javascript">
 	Event.observe('reprendre_import', "click", function(evt){
 		page.verify('import_tarifs_fournisseur_csv','import_tarifs_fournisseur_csv_step2.php','true','sub_content');  
@@ -56,16 +56,16 @@ if ($import_tarifs_fournisseur->getEtape() != "") {
 <span style="width:380px; text-align: right; float:left">&nbsp;</span> 
 <br />
 <span style="font-weight:bolder">L'utilisation de ce module demande des connaissances techniques (utilisation Excel)</span><br />
-En cas de besoin n'hésitez pas à contact les équipes de <a href="http://www.lundimatin.fr/site2/contact_ssll.php" target="_blank">LundiMatin</a>
+En cas de besoin n'hÃ©sitez pas Ã  contact les Ã©quipes de <a href="http://www.lundimatin.fr/site2/contact_ssll.php" target="_blank">LundiMatin</a>
 <br />
-Le fichier doit être au format CSV. (texte séparé par ;)
+Le fichier doit Ãªtre au format CSV. (texte sÃ©parÃ© par ;)
 <br />
-Les informations de la première ligne doivent correspondre aux différentes informations des articles (Référence OEM, Référence interne, etc) sans symbole particulier.<br />
-Idéalement il est recommandé de supprimer les colonnes inutiles.
+Les informations de la premiÃ¨re ligne doivent correspondre aux diffÃ©rentes informations des articles (RÃ©fÃ©rence OEM, RÃ©fÃ©rence interne, etc) sans symbole particulier.<br />
+IdÃ©alement il est recommandÃ© de supprimer les colonnes inutiles.
 <br />
 <br />
 <br />
-Télecharger <span class="common_link" id="download_exemple">ici</span> un exemple de fichier CSV
+TÃ©lecharger <span class="common_link" id="download_exemple">ici</span> un exemple de fichier CSV
 <br />
 <br />
 <script type="text/javascript">

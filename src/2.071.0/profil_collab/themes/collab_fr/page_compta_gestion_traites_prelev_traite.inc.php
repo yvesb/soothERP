@@ -1,10 +1,10 @@
 <?php
 
 // *************************************************************************************************************
-// Remise en banque depuis la caisse (ou dépot bancaire depuis la caisse)
+// Remise en banque depuis la caisse (ou dÃ©pot bancaire depuis la caisse)
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -111,7 +111,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 			<td colspan="2">
 			<br />
 				<div>
-					<span style="width:120px; float:left">Solde Théorique</span>
+					<span style="width:120px; float:left">Solde ThÃ©orique</span>
 					<span style="width:40px; float:left ">&gt;&gt;&gt;</span>
 					<span id="toto_chq_theorique2" style="text-align:right; width:65px; float:left">
 					<?php
@@ -151,7 +151,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 				</td>
 				<td style="width:100px; text-align:left">Client
 				</td>
-                                <td style="width:100px; text-align:center">Date d'écheance
+                                <td style="width:100px; text-align:center">Date d'Ã©cheance
 				</td>
 				</tr>
 			</table>
@@ -197,7 +197,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 				</tr>
                                 <?php if (($infos_traitena[$j]->date <= date("Y-m-d")) && isset($infos_traitena[$j + 1]) && ($infos_traitena[$j + 1]->date > date("Y-m-d"))){
                                 ?> <tr> <br />
-                                    <br/> Traites non échues :
+                                    <br/> Traites non Ã©chues :
                                     <br />
                                     <br />
                                 </tr> <?php
@@ -273,7 +273,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 
 		}
 		?>
-		<div style="text-align:right; cursor:pointer; width:205px; " id="add_line_chq">Ajouter un chèque</div>
+		<div style="text-align:right; cursor:pointer; width:205px; " id="add_line_chq">Ajouter un chÃ¨que</div>
 
 			<script type="text/javascript">
 				Event.observe($("add_line_chq"), "click", function(evt){
@@ -335,7 +335,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 			<br /><br />
 
 			<span style="width:250px; float:left">
-			Numéro de traite:</span>
+			NumÃ©ro de traite:</span>
 			<input type="text" class="classinput_nsize" value="" id="num_prelev" name="num_traitena" />
 			<br /><br />
 

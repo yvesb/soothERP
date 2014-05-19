@@ -3,7 +3,7 @@
 // AFFICHAGE DES DIFFERENTES POSSIBILITES DE VARIANTES
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -20,7 +20,7 @@ check_page_variables ($page_variables);
 if($article->getVariante_master() != NULL){
 	?>
 	<p>&nbsp;</p>
-	<div class="link_to_master" id="goto_parent" style="width: 95%;">Accéder à l'article parent à l'origine de cette variante</div>
+	<div class="link_to_master" id="goto_parent" style="width: 95%;">AccÃ©der Ã  l'article parent Ã  l'origine de cette variante</div>
 	<script type="text/javascript">
 		Event.observe("goto_parent", "click", function(evt){
 			parent.page.verify("goto_parent","catalogue_articles_view.php?ref_article=<?php echo $article->getVariante_master(); ?>", "true", "sub_content");

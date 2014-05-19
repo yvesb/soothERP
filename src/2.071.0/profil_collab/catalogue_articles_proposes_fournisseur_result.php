@@ -29,7 +29,7 @@ $tarifs_liste = $_SESSION['tarifs_listes'];
 
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 // *************************************************
 
 $nb_fiches = 0;
@@ -92,12 +92,12 @@ if (isset($_REQUEST['ref_constructeur'])) {
 */
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 // *************************************************
 
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_select = "";
 	$query_join 	= "";
 	$count_query_join 	= "";
@@ -201,7 +201,7 @@ $query.="	ORDER BY ".$search['orderby']." ".$search['orderorder']."
 	}
 	unset ($fiche, $resultat, $query);
 
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 	/*
 	$query = "SELECT 	a.ref_article
 						FROM articles_ref_fournisseur arf

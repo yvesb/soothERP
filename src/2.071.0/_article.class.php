@@ -9,80 +9,80 @@
  *
  */
 final class article {
-	private $ref_article;				// Référence de l'article pour INFOLYEN
-	private $ref_oem;						// Référence de l'article pour le constructeur
-	private $ref_interne;				// Référence de l'article pour l'enterprise
+	private $ref_article;				// RÃ©fÃ©rence de l'article pour INFOLYEN
+	private $ref_oem;						// RÃ©fÃ©rence de l'article pour le constructeur
+	private $ref_interne;				// RÃ©fÃ©rence de l'article pour l'enterprise
 
-	private $lib_article;				// Libellé génral du produit
-	private $lib_ticket;				// Libellé imprimé sur ticket
-	private $desc_courte;				// Description affichée sur les documents
-	private $desc_longue;				// Description affichée sur la fiche produit
+	private $lib_article;				// LibellÃ© gÃ©nral du produit
+	private $lib_ticket;				// LibellÃ© imprimÃ© sur ticket
+	private $desc_courte;				// Description affichÃ©e sur les documents
+	private $desc_longue;				// Description affichÃ©e sur la fiche produit
 	
-	private $is_achetable;				// l'article peut il être acheté
-	private $is_vendable;				// l'article peut il être vendu
+	private $is_achetable;				// l'article peut il Ãªtre achetÃ©
+	private $is_vendable;				// l'article peut il Ãªtre vendu
 
-	private $ref_art_categ;			// Référence de la catégorie d'article
-	private $lib_art_categ;			// Libellé de la catégorie d'article
+	private $ref_art_categ;			// RÃ©fÃ©rence de la catÃ©gorie d'article
+	private $lib_art_categ;			// LibellÃ© de la catÃ©gorie d'article
 
-	private $modele;						// Modele d'article: Matériel, Service, Service par abonnement
-	private $id_modele_spe;			// Modèle spécifiques d'article
+	private $modele;						// Modele d'article: MatÃ©riel, Service, Service par abonnement
+	private $id_modele_spe;			// ModÃ¨le spÃ©cifiques d'article
 	private $lib_modele_spe;
 
-	private $ref_constructeur;	// Référence INFOLYEN du constructeur
+	private $ref_constructeur;	// RÃ©fÃ©rence INFOLYEN du constructeur
 	private $nom_constructeur;	// Nom du constructeur
 
-	private $prix_public_ht;		// Prix public annoncé par le constructeur
-	private $prix_achat_ht;			// Prix achat envisagé
+	private $prix_public_ht;		// Prix public annoncÃ© par le constructeur
+	private $prix_achat_ht;			// Prix achat envisagÃ©
 	private $paa_ht;						// Prix achat actuel
 	private $paa_last_maj; 			// date de maj par l'utilisateur du paa
-	private $id_tva;						// ID_TVA utilisé
+	private $id_tva;						// ID_TVA utilisÃ©
 	private $tva;								// Taux de TVA de l'article
 	private $promo;								// Taux de TVA de l'article
 
 	private $id_valo;						// id du mode de valorisation
-	private $valo_indice;				// Pas pour l'incrémentation de la quantité
+	private $valo_indice;				// Pas pour l'incrÃ©mentation de la quantitÃ©
 
-	private $lot;								// L'article est-il un lot composé d'autres articles
+	private $lot;								// L'article est-il un lot composÃ© d'autres articles
 	private $composants;				// Liste des articles composants l'article (si il s'agit d'un Lot)
-	private $composants_loaded;	// Les composants de l'article sont ils chargés ?
+	private $composants_loaded;	// Les composants de l'article sont ils chargÃ©s ?
 
 	private $composant;					// L'article est-il un composant pour d'autres articles.
 	private $lots;							// Liste des articles lot dont l'article est composant
-	private $lots_loaded;				// Les lots ont-ils été chargés
+	private $lots_loaded;				// Les lots ont-ils Ã©tÃ© chargÃ©s
 
-	private $liaisons;					// Articles liés à cet article
-	private $liaisons_loaded;		// Les liaisons sont elles chargées ?
+	private $liaisons;					// Articles liÃ©s Ã  cet article
+	private $liaisons_loaded;		// Les liaisons sont elles chargÃ©es ?
 
 	private $images;						//images de l'article
-	private $images_loaded;			//images de l'article chargées ?
+	private $images_loaded;			//images de l'article chargÃ©es ?
 
-	private $variante;					// L'article possède-t-il des variantes ? (1 = Oui, 2 = Cet article est le Modèle)
-	private $variantes;					// Liste des articles variantes de l'article (si il possède des variantes)
-	private $variante_master;		// si cet article est une variante esclave, on détermine la ref du maitre
-	private $variante_slaves;		// si cet article est une variante maitre, on détermine la liste des articles esclaves
+	private $variante;					// L'article possÃ¨de-t-il des variantes ? (1 = Oui, 2 = Cet article est le ModÃ¨le)
+	private $variantes;					// Liste des articles variantes de l'article (si il possÃ¨de des variantes)
+	private $variante_master;		// si cet article est une variante esclave, on dÃ©termine la ref du maitre
+	private $variante_slaves;		// si cet article est une variante maitre, on dÃ©termine la liste des articles esclaves
 
-	private $gestion_sn;				// Un numéro de série est-il nécessaire pour identifier une occurence
+	private $gestion_sn;				// Un numÃ©ro de sÃ©rie est-il nÃ©cessaire pour identifier une occurence
 
-	private $date_debut_dispo;	// Date de début de disponibilité de l'article
-	private $date_fin_dispo;		// Date de fin de disponibilité de l'article
+	private $date_debut_dispo;	// Date de dÃ©but de disponibilitÃ© de l'article
+	private $date_fin_dispo;		// Date de fin de disponibilitÃ© de l'article
 	private $dispo;							// L'article est-il disponible ?
 
-	private $date_creation;			// Date de création de l'article
+	private $date_creation;			// Date de crÃ©ation de l'article
 	private $date_modification;	// Date de modification de l'article
 
-	// Informations spécialisées pour les matériels
+	// Informations spÃ©cialisÃ©es pour les matÃ©riels
 	private $poids;
 	private $colisage;
 	private $duree_garantie;
 
-	// Informations spécialisées pour les services
-	// Informations spécialisées pour les services par abonnement
+	// Informations spÃ©cialisÃ©es pour les services
+	// Informations spÃ©cialisÃ©es pour les services par abonnement
 	private $duree;
 	private $engagement;
 	private $reconduction;
 	private $preavis;
 
-	// Informations spécialisées pour les services à la consommation (prépayés)
+	// Informations spÃ©cialisÃ©es pour les services Ã  la consommation (prÃ©payÃ©s)
 	private $duree_validite;
 	private $nb_credits;
 
@@ -93,14 +93,14 @@ final class article {
 		// indice_qte
 		// formule_tarif
 
-	private $tarifs;						// Prix unitaires de l'article fonction de la grille de tarif et de la quantité
+	private $tarifs;						// Prix unitaires de l'article fonction de la grille de tarif et de la quantitÃ©
 	private $tarifs_loaded;
 	// TARIFS
 		// id_tarif
 		// indice_qte
 		// pu_ht
 
-	private $taxes;							// Taxes associées à l'article
+	private $taxes;							// Taxes associÃ©es Ã  l'article
 	private $taxes_loaded;
 	// TAXES
 		// id_taxe
@@ -108,49 +108,49 @@ final class article {
 		// id_pays
 		// montant_taxe
 
-	private $caracs;						// Caractéristiques de l'article
+	private $caracs;						// CaractÃ©ristiques de l'article
 	private $caracs_loaded;
-	// CARACS										// Pas de classe spécifique
+	// CARACS										// Pas de classe spÃ©cifique
 		// ref_carac
-		// ref_art_categ						// Référence de la catégorie associée
-		// lib_carac								// Libellé
-		// unite										// Unité de mesure
-		// defaut_valeur						// Valeur par défaut
-		// moteur_recherche					// Cette carac sert-elle à la recherche des articles ? 0 = Non, 1 = Oui
-		// affichage								// Cette carac est-elle affichée sur la fiche des articles ? 1 = Basic, 2 = Avancée
-		// ref_carac_groupe					// Groupe de caractéristique
+		// ref_art_categ						// RÃ©fÃ©rence de la catÃ©gorie associÃ©e
+		// lib_carac								// LibellÃ©
+		// unite										// UnitÃ© de mesure
+		// defaut_valeur						// Valeur par dÃ©faut
+		// moteur_recherche					// Cette carac sert-elle Ã  la recherche des articles ? 0 = Non, 1 = Oui
+		// affichage								// Cette carac est-elle affichÃ©e sur la fiche des articles ? 1 = Basic, 2 = AvancÃ©e
+		// ref_carac_groupe					// Groupe de caractÃ©ristique
 		// ordre										// Ordre d'affichage
-	private $caracs_groupes;			// Groupes de caractéristiques de la catégorie d'article
+	private $caracs_groupes;			// Groupes de caractÃ©ristiques de la catÃ©gorie d'article
 	private $caracs_groupes_loaded;
-	// CARACS_GROUPES							// Pas de classe spécifique
+	// CARACS_GROUPES							// Pas de classe spÃ©cifique
 		// ref_carac_groupe
-		// ref_art_categ						// Référence de la catégorie associée
-		// lib_carac_groupe					// Libellé
+		// ref_art_categ						// RÃ©fÃ©rence de la catÃ©gorie associÃ©e
+		// lib_carac_groupe					// LibellÃ©
 		// ordre										// Ordre d'affichage
 
-	private $codes_barres;				// Codes à barre de l'article
+	private $codes_barres;				// Codes Ã  barre de l'article
 	private $codes_barres_loaded;
 
 	private $stocks;							// Stocks de l'article
 	private $stocks_loaded;
 
-	private $emplacements;				//tableau des emplacements indexé sur l'id_stock
+	private $emplacements;				//tableau des emplacements indexÃ© sur l'id_stock
 	
 	
-	private $stocks_rsv;					// Stock réservé (commande client en cours)
-	private $stocks_cdf;					// Stock en commande fournisseur (réappro)
-	private $stocks_tofab;		// Stock des composants permettant de fabriquer l'article (si composé)
-	private $stocks_arti_sn;			//numeros de série ou de lot en stock
+	private $stocks_rsv;					// Stock rÃ©servÃ© (commande client en cours)
+	private $stocks_cdf;					// Stock en commande fournisseur (rÃ©appro)
+	private $stocks_tofab;		// Stock des composants permettant de fabriquer l'article (si composÃ©)
+	private $stocks_arti_sn;			//numeros de sÃ©rie ou de lot en stock
 
 	private $stocks_alertes;			// Seuils d'alerte de stock de l'article avec emplacement dans le stock
 	private $stocks_alertes_loaded;
 	
 	private $is_in_stock; 				// l'article est il en stock (tout stock confondus)
 
-	private $last_docs;						// Derniers documents ayant intégré cet article
+	private $last_docs;						// Derniers documents ayant intÃ©grÃ© cet article
 	private $last_docs_loaded;
 
-	private $ref_externes;				// références fournisseurs de cet article
+	private $ref_externes;				// rÃ©fÃ©rences fournisseurs de cet article
 	private $ref_externes_loaded;
 
 	private $tags = array();
@@ -162,7 +162,7 @@ final class article {
 	
 	/**
 	 * @var Numeros de comptes comptables
-	 * associés a un article
+	 * associÃ©s a un article
 	 */
 	private $numero_compte_achat; //achat
 	private $numero_compte_vente; //vente
@@ -171,10 +171,10 @@ final class article {
 function __construct($ref_article = "") {
 	global $bdd;
 
-	// Controle si la ref_article est précisée
+	// Controle si la ref_article est prÃ©cisÃ©e
 	if (!$ref_article) { return false; }
 	//@FIXME utilisation de modele spe
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT ref_oem, ref_interne, lib_article, lib_ticket, desc_courte, desc_longue, is_achetable, is_vendable,
 									 prix_public_ht, prix_achat_ht, paa_ht, paa_last_maj, id_valo, valo_indice, lot, composant, variante, gestion_sn, promo,
 									 date_debut_dispo, date_fin_dispo, dispo, a.date_creation, a.date_modification,
@@ -209,10 +209,10 @@ function __construct($ref_article = "") {
 	$res = $bdd->query($query_tags);
     while ($tmp = $res->fetchObject()) $this->tags[] = $tmp->mot_cle;
 
-	// Controle si la ref_article est trouvée
+	// Controle si la ref_article est trouvÃ©e
 	if (!$article = $resultat->fetchObject()) { return false; }
 
-	// Attribution des informations à l'objet
+	// Attribution des informations Ã  l'objet
 	$this->ref_article 		= $ref_article;
 	$this->ref_oem 				= $article->ref_oem;
 	$this->ref_interne		= $article->ref_interne;
@@ -258,19 +258,19 @@ function __construct($ref_article = "") {
 	$this->id_modele_spe		= $article->id_modele_spe;
 	$this->lib_modele_spe		= $article->lib_modele_spe;
 
-	//variable de présence globaqle de l'article en stock (basé sur la somme de tout les stocks)
+	//variable de prÃ©sence globaqle de l'article en stock (basÃ© sur la somme de tout les stocks)
 	$this->is_article_in_stock ();
 
-	// Données spécialisées MATERIEL
+	// DonnÃ©es spÃ©cialisÃ©es MATERIEL
 	$this->poids				= $article->poids;
 	$this->colisage			= $article->colisage;
 	$this->duree_garantie	= $article->duree_garantie;
-	// Données spécialisées SERVICES ABO//
+	// DonnÃ©es spÃ©cialisÃ©es SERVICES ABO//
 	$this->duree					= $article->duree;
 	$this->engagement			= $article->engagement;
 	$this->reconduction		= $article->reconduction;
 	$this->preavis				= $article->preavis;
-	// Données spécialisées SERVICES CONSO
+	// DonnÃ©es spÃ©cialisÃ©es SERVICES CONSO
 	$this->duree_validite	= $article->duree_validite;
 	$this->nb_credits	= $article->nb_credits;
 
@@ -279,10 +279,10 @@ function __construct($ref_article = "") {
 	//cet article est une variante maitre, on dois trouver ses esclave
 	if ($this->variante == 2) {$this->find_my_slaves ();}
 
-	// Données spécialisées SERVICE
-	// Données spécialisées SERVICE PAR ABONNEMENT
+	// DonnÃ©es spÃ©cialisÃ©es SERVICE
+	// DonnÃ©es spÃ©cialisÃ©es SERVICE PAR ABONNEMENT
 
-	// Modèle PDF
+	// ModÃ¨le PDF
 	$this->set_default_code_pdf_modele();
 	
 	//Compte comptables
@@ -307,11 +307,11 @@ final public function create ($infos_generales, $infos_modele, $caracs, $formuls
 	global $DEFAUT_ID_VALO;
 	global $DEFAUT_VALO_INDICE;
 
-	$ARTICLE_ID_REFERENCE_TAG = 1;		// Référence Tag utilisé dans la base de donnée
+	$ARTICLE_ID_REFERENCE_TAG = 1;		// RÃ©fÃ©rence Tag utilisÃ© dans la base de donnÃ©e
 
 
 	// *************************************************
-	// Controle des données générales
+	// Controle des donnÃ©es gÃ©nÃ©rales
 	$this->ref_oem 			= $infos_generales['ref_oem'];
 	$this->ref_interne 	= $infos_generales['ref_interne'];
 	if ($this->ref_interne) {
@@ -392,7 +392,7 @@ final public function create ($infos_generales, $infos_modele, $caracs, $formuls
 	$this->is_vendable  = ($is_vendable)? true : false;
 		
 	
-	// Controle des caractéristiques
+	// Controle des caractÃ©ristiques
 	for ($i=0; $i<count($caracs); $i++) {
 		$this->caracs[$i] = $caracs[$i];
 	}
@@ -433,13 +433,13 @@ final public function create ($infos_generales, $infos_modele, $caracs, $formuls
 	}
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 
 	// *************************************************
-	// Création de la référence
+	// CrÃ©ation de la rÃ©fÃ©rence
 	if (!$ref_article) {
 		$reference = new reference ($ARTICLE_ID_REFERENCE_TAG);
 		$this->ref_article = $reference->generer_ref();
@@ -452,7 +452,7 @@ final public function create ($infos_generales, $infos_modele, $caracs, $formuls
 	// Insertion dans la base
 	$bdd->beginTransaction();
 
-	// Généralités
+	// GÃ©nÃ©ralitÃ©s
 	$query = "INSERT INTO articles
 							(ref_article, ref_oem, ref_interne, lib_article, lib_ticket, desc_courte, desc_longue,
 							 ref_art_categ, modele, ref_constructeur, prix_public_ht, prix_achat_ht, paa_ht, paa_last_maj, id_tva, id_valo, valo_indice,
@@ -512,7 +512,7 @@ final public function create ($infos_generales, $infos_modele, $caracs, $formuls
 		$formule = &$formules_tarifs[$i];
 		$this->add_formule_tarif ($formule->id_tarif, $formule->indice_qte, $formule->formule_tarif);
 	}
-	// Vérification de l'existence d'au moins 1 tarif pour chaque grille de tarif
+	// VÃ©rification de l'existence d'au moins 1 tarif pour chaque grille de tarif
 
 	if (!$this->tarifs_loaded) { $this->charger_tarifs(); }
 	get_tarifs_listes();
@@ -528,7 +528,7 @@ final public function create ($infos_generales, $infos_modele, $caracs, $formuls
 		}
 	}
 
-	// Caractéristiques
+	// CaractÃ©ristiques
 	for ($i=0; $i<count($this->caracs); $i++) {
 		$this->add_carac ($this->caracs[$i]->ref_carac, $this->caracs[$i]->valeur);
 	}
@@ -540,13 +540,13 @@ final public function create ($infos_generales, $infos_modele, $caracs, $formuls
 
 	$bdd->commit();
 
-	//mise à jour des prix de ventes
+	//mise Ã  jour des prix de ventes
 	$this->tarifs_loaded = false;
 	$this->maj_all_tarifs();
 
 	// *************************************************
-	// Résultat positif de la création
-	$GLOBALS['_INFOS']['Création_article'] = $this->ref_article;
+	// RÃ©sultat positif de la crÃ©ation
+	$GLOBALS['_INFOS']['CrÃ©ation_article'] = $this->ref_article;
 
 	//**********************************************
 	// Envoi EDI
@@ -587,13 +587,13 @@ function create_infos_modele_materiel ($infos_modele) {
 	}
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 
 	// *************************************************
-	// Insertion des infos dans la base de donnée
+	// Insertion des infos dans la base de donnÃ©e
 	$query = "REPLACE INTO articles_modele_materiel (ref_article, poids, colisage, duree_garantie)
 						VALUES ('".$this->ref_article."', '".$this->poids."', '".$this->colisage."', '".$this->duree_garantie."') ";
 	$bdd->exec ($query);
@@ -621,7 +621,7 @@ function create_infos_modele_materiel ($infos_modele) {
 	return true;
 }
 
-//Fonction qui met à jour le poids des articles lots
+//Fonction qui met Ã  jour le poids des articles lots
 function maj_poids_compo($tab_art_lots, $article_lot){
 	global $bdd;
 	
@@ -700,13 +700,13 @@ function create_infos_modele_service_abo ($infos_modele) {
 		$GLOBALS['_ALERTES']['bad_preavis'] = 1;
 	}
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 
 	// *************************************************
-	// Insertion des infos dans la base de donnée
+	// Insertion des infos dans la base de donnÃ©e
 	$query = "REPLACE INTO articles_modele_service_abo (ref_article, duree, engagement, reconduction, preavis)
 						VALUES ('".$this->ref_article."', '".$this->duree."', '".$this->engagement."', '".$this->reconduction."', '".$this->preavis."') ";
 	$bdd->exec ($query);
@@ -716,7 +716,7 @@ function create_infos_modele_service_abo ($infos_modele) {
 	return true;
 }
 
-//fonction de création d'une ligne d'abonnement d'un article service par abonnement
+//fonction de crÃ©ation d'une ligne d'abonnement d'un article service par abonnement
 function add_ligne_article_abonnement ($ref_doc, $ref_contact, $ref_doc_line, $qte = 1) {
 	global $bdd;
 
@@ -728,7 +728,7 @@ function add_ligne_article_abonnement ($ref_doc, $ref_contact, $ref_doc_line, $q
 
 
 	if (!isset($GLOBALS['_OPTIONS']['CREATE_ABO']['id_abo'])) {
-		//on récupére maintenant la date de création du doc en temps que créatiuon de l'abo
+		//on rÃ©cupÃ©re maintenant la date de crÃ©ation du doc en temps que crÃ©atiuon de l'abo
 		$doc_abo = open_doc($ref_doc);
 
 		$date_echeance = date("Y-m-d H:i:s", mktime(date("H", strtotime($doc_abo->getDate_creation())), date("i", strtotime($doc_abo->getDate_creation())), date("s", strtotime($doc_abo->getDate_creation())), date("m", strtotime($doc_abo->getDate_creation()))+($qte_mois), date("d", strtotime($doc_abo->getDate_creation()))+($qte_jours), date("Y", strtotime($doc_abo->getDate_creation()))));
@@ -739,7 +739,7 @@ function add_ligne_article_abonnement ($ref_doc, $ref_contact, $ref_doc_line, $q
 		if (!$this->reconduction) {$fin_abonnement = $fin_engagement;}
 
 		// *************************************************
-		// Insertion des infos dans la base de donnée
+		// Insertion des infos dans la base de donnÃ©e
 		$query = "INSERT INTO articles_abonnes (ref_contact, ref_article, date_souscription, date_echeance, date_preavis, fin_engagement, fin_abonnement)
 							VALUES ('".$ref_contact."', '".$this->ref_article."', '".$doc_abo->getDate_creation()."', '".$date_echeance."', '', '".$fin_engagement."', '".$fin_abonnement."') ";
 		$bdd->exec ($query);
@@ -815,7 +815,7 @@ function maj_infos_abonnement ($infos) {
 }
 
 
-//Maj du préavis d'un abonnement
+//Maj du prÃ©avis d'un abonnement
 function maj_preavis_abonnement ($infos) {
 	global $bdd;
 
@@ -840,7 +840,7 @@ function maj_preavis_abonnement ($infos) {
 
 		$fin_engagement = $abo_info->fin_engagement;
 		$fin_abonnement = $abo_info->fin_abonnement;
-		//si le préavis dépasse la fin d'abonnement on recalcul en fonction des reconductions
+		//si le prÃ©avis dÃ©passe la fin d'abonnement on recalcul en fonction des reconductions
 		if (strtotime($fin_preavis) >  strtotime($fin_engagement) && $this->reconduction) {
 			$qte_jours_eng = $this->reconduction*$qte_jours;
 			$qte_mois_eng = $this->reconduction*$qte_mois;
@@ -875,14 +875,14 @@ function calcul_prorata_abonnement ($id_abo, $qte_defaut = 1) {
 	$nb_mois_duree = floor($this->duree/ (30*24*3600));
 	$nb_jour_duree = floor(($this->duree - (floor($this->duree/ (30*24*3600)) * (30*24*3600)))/ (24*3600));
 
-	//sinon, on calcul en cas de préavis la quantité à livre
+	//sinon, on calcul en cas de prÃ©avis la quantitÃ© Ã  livre
 	$query_select = " SELECT id_abo, date_echeance, fin_engagement, fin_abonnement, date_preavis
 										FROM articles_abonnes
 										WHERE id_abo = '".$id_abo."' ";
 	$resultat_select = $bdd->query ($query_select);
 	if ($abo_info = $resultat_select->fetchObject()) {
 
-		//si l'abonnement se reconduit automatiquement et qu'aucun préavis n'est déposé, on ne calcul pas de prorata
+		//si l'abonnement se reconduit automatiquement et qu'aucun prÃ©avis n'est dÃ©posÃ©, on ne calcul pas de prorata
 		if ($this->reconduction && $abo_info->date_preavis == "0000-00-00 00:00:00") { return $qte_defaut;}
 		//on calcul la date de renouvellement
 		$qte_jours = $qte_defaut*$nb_jour_duree;
@@ -895,7 +895,7 @@ function calcul_prorata_abonnement ($id_abo, $qte_defaut = 1) {
 		$new_date_echeance = date("Y-m-d H:i:s",  mktime(date("H", strtotime($abo_info->date_echeance)), date("i", strtotime($abo_info->date_echeance)), date("s", strtotime($abo_info->date_echeance)), $mois_suivant, $jour_suivant, date("Y", strtotime($abo_info->date_echeance))) );
 
 
-		//si la nouvelle echeance dépasse la fin d'echeance, on calcul la qté au prorata des durées
+		//si la nouvelle echeance dÃ©passe la fin d'echeance, on calcul la qtÃ© au prorata des durÃ©es
 		if (strtotime($new_date_echeance) >  strtotime($abo_info->fin_engagement)) {
 			$qte_defaut = number_format((strtotime($abo_info->fin_engagement)-(strtotime($abo_info->fin_engagement)) * $qte_defaut) / (strtotime($new_date_echeance)-strtotime($abo_info->fin_engagement)), $TARIFS_NB_DECIMALES, ".", ""	);
 		}
@@ -909,7 +909,7 @@ function calcul_prorata_abonnement ($id_abo, $qte_defaut = 1) {
 function del_ligne_article_abonnement ($ref_doc, $ref_contact, $ref_doc_line) {
 	global $bdd;
 
-	//on recherche quelle ligne d'abonnement est concernée
+	//on recherche quelle ligne d'abonnement est concernÃ©e
 	//afin de supprimer
 
 	$query_select = " SELECT id_abo, date_echeance
@@ -932,7 +932,7 @@ function del_ligne_article_abonnement ($ref_doc, $ref_contact, $ref_doc_line) {
 			$query = "DELETE FROM articles_abonnes_livraisons
 								WHERE id_abo = '".$aal_info->id_abo."' &&  ref_doc = '".$ref_doc."' && ref_doc_line = '".$ref_doc_line."'  ";
 			$bdd->exec ($query);
-			//on récupére la dernière date d'echeance
+			//on rÃ©cupÃ©re la derniÃ¨re date d'echeance
 			$query_select1 = " SELECT date_echeance
 												FROM articles_abonnes_livraisons
 												WHERE id_abo = '".$aal_info->id_abo."'
@@ -940,9 +940,9 @@ function del_ligne_article_abonnement ($ref_doc, $ref_contact, $ref_doc_line) {
 												LIMIT 1";
 			$resultat_select1 = $bdd->query ($query_select1);
 			if ($aal_date_info = $resultat_select1->fetchObject()) {
-				//si la date echeance supprimée est la dernière livrée alors on met à jour
+				//si la date echeance supprimÃ©e est la derniÃ¨re livrÃ©e alors on met Ã  jour
 				if (strtotime($aal_info->date_echeance) > strtotime($aal_date_info->date_echeance)) {
-					//on met à jour avec la dernier date echeance notre abonnement
+					//on met Ã  jour avec la dernier date echeance notre abonnement
 					$query = "UPDATE articles_abonnes
 										SET date_echeance = '".$aal_date_info->date_echeance."'
 										WHERE id_abo = '".$aal_info->id_abo."' ";
@@ -963,7 +963,7 @@ function del_ligne_article_abonnement ($ref_doc, $ref_contact, $ref_doc_line) {
 }
 
 
-//fonction de comptage des abonnemés
+//fonction de comptage des abonnemÃ©s
 function compte_service_abo_nb_abonnes () {
 	global $bdd;
 
@@ -982,7 +982,7 @@ function compte_service_abo_nb_abonnes () {
 }
 
 
-//fonction de comptage des abonnements à renouveller
+//fonction de comptage des abonnements Ã  renouveller
 function compte_service_abo_a_renouveller () {
 	global $bdd;
 
@@ -1030,7 +1030,7 @@ function charger_abonnement ($id_abo) {
 						";
 	$resultat = $bdd->query ($query);
 	if ($info = $resultat->fetchObject()) {
-		//chargements de la liste des documents liés
+		//chargements de la liste des documents liÃ©s
 		$query_doc = "SELECT id_abo, aal.ref_doc, ref_doc_line, date_renouvellement, date_echeance,
 
 												( SELECT SUM(qte * pu_ht * (1-remise/100) * (1+tva/100))
@@ -1066,13 +1066,13 @@ function create_infos_modele_service_conso ($infos_modele) {
 		$GLOBALS['_ALERTES']['bad_duree_validite'] = 1;
 	}
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 
 	// *************************************************
-	// Insertion des infos dans la base de donnée
+	// Insertion des infos dans la base de donnÃ©e
 	$query = "REPLACE INTO articles_modele_service_conso (ref_article, duree_validite, nb_credits)
 						VALUES ('".$this->ref_article."', '".$this->duree_validite."', '".$this->nb_credits."') ";
 	$bdd->exec ($query);
@@ -1081,7 +1081,7 @@ function create_infos_modele_service_conso ($infos_modele) {
 }
 
 
-//fonction de création d'une ligne de consommation d'un article Service prepayés
+//fonction de crÃ©ation d'une ligne de consommation d'un article Service prepayÃ©s
 function add_ligne_article_consommation ($ref_contact, $qte = 1) {
 	global $bdd;
 
@@ -1094,7 +1094,7 @@ function add_ligne_article_consommation ($ref_contact, $qte = 1) {
 						WHERE  ref_contact = '".$ref_contact."' && ref_article = '".$this->ref_article."' ";
 	$resultat = $bdd->query ($query);
 	if ($conso = $resultat->fetchObject()) {
-		//on ajoute les crédits à l'existant
+		//on ajoute les crÃ©dits Ã  l'existant
 		$date_echeance = date("Y-m-d H:i:s", mktime(date("H", strtotime($conso->date_echeance)), date("i", strtotime($conso->date_echeance)), date("s", strtotime($conso->date_echeance)), date("m", strtotime($conso->date_echeance))+($qte_mois), date("d", strtotime($conso->date_echeance))+($qte_jours), date("Y", strtotime($conso->date_echeance))));
 		$query2 = "UPDATE articles_comptes_credits
 							SET date_echeance = '".$date_echeance."' , credits_restants = '".($conso->credits_restants+$qte*$this->nb_credits)."'
@@ -1104,7 +1104,7 @@ function add_ligne_article_consommation ($ref_contact, $qte = 1) {
 		$date_echeance = date("Y-m-d H:i:s", mktime(date("H"), date("i"), date("s"), date("m")+($qte_mois), date("d")+($qte_jours), date("Y")));
 		//il sagit d'une ajout.. on
 		// *************************************************
-		// Insertion des infos dans la base de donnée
+		// Insertion des infos dans la base de donnÃ©e
 		$query = "INSERT INTO articles_comptes_credits (ref_contact, ref_article, date_souscription, date_echeance, credits_restants)
 							VALUES ('".$ref_contact."', '".$this->ref_article."', NOW(), '".$date_echeance."', '".$qte*$this->nb_credits."') ";
 		$bdd->exec ($query);
@@ -1113,7 +1113,7 @@ function add_ligne_article_consommation ($ref_contact, $qte = 1) {
 }
 
 
-//Maj des infos d'un article à la conso
+//Maj des infos d'un article Ã  la conso
 function maj_infos_consommation ($infos) {
 	global $bdd;
 
@@ -1125,7 +1125,7 @@ function maj_infos_consommation ($infos) {
 }
 
 
-//Maj des infos d'un article à la conso
+//Maj des infos d'un article Ã  la conso
 function add_credits_consommation ($infos) {
 	global $bdd;
 
@@ -1139,7 +1139,7 @@ function add_credits_consommation ($infos) {
 	return true;
 }
 
-//fonction de suppression d'une ligne de service à la cosommation
+//fonction de suppression d'une ligne de service Ã  la cosommation
 function del_ligne_article_consommation ($ref_contact, $qte) {
 	global $bdd;
 
@@ -1155,7 +1155,7 @@ function del_ligne_article_consommation ($ref_contact, $qte) {
 		$date_echeance = date("Y-m-d H:i:s", mktime(date("H", strtotime($conso->date_echeance)), date("i", strtotime($conso->date_echeance)), date("s", strtotime($conso->date_echeance)), date("m", strtotime($conso->date_echeance))-($qte_mois), date("d", strtotime($conso->date_echeance))-($qte_jours), date("Y", strtotime($conso->date_echeance))));
 		if (strtotime($date_echeance) > strtotime($conso->date_souscription)) {
 
-			//on supprime les crédits à l'existant
+			//on supprime les crÃ©dits Ã  l'existant
 					$query2 = "UPDATE articles_comptes_credits
 								SET date_echeance = '".$date_echeance."' , credits_restants = '".($conso->credits_restants-$qte)."'
 								WHERE id_compte_credit = '".$conso->id_compte_credit."' ";
@@ -1189,7 +1189,7 @@ function compte_service_conso_nb_abonnes () {
 }
 
 
-//fonction de comptage des clients en compte expirés
+//fonction de comptage des clients en compte expirÃ©s
 function compte_service_conso_nb_abonnes_expire () {
 	global $bdd;
 
@@ -1207,7 +1207,7 @@ function compte_service_conso_nb_abonnes_expire () {
 
 }
 
-//fonction de comptage des crédits à consommer
+//fonction de comptage des crÃ©dits Ã  consommer
 function compte_service_conso_a_consommer () {
 	global $bdd;
 
@@ -1224,7 +1224,7 @@ function compte_service_conso_a_consommer () {
 	return $nb_credits;
 }
 
-//fonction de comptage des crédits consommés
+//fonction de comptage des crÃ©dits consommÃ©s
 function compte_service_conso_vide () {
 	global $bdd;
 
@@ -1240,7 +1240,7 @@ function compte_service_conso_vide () {
 	return $nb_abonnes;
 }
 
-//fonction de comptage des crédits expiré
+//fonction de comptage des crÃ©dits expirÃ©
 function compte_service_conso_expire () {
 	global $bdd;
 
@@ -1269,7 +1269,7 @@ function charger_consommation ($id_compte_credit) {
 						";
 	$resultat = $bdd->query ($query);
 	if ($info = $resultat->fetchObject()) {
-		//chargements de la liste des consommations liées
+		//chargements de la liste des consommations liÃ©es
 		$query_doc = "SELECT id_compte_credit, date_conso, credit_used
 									FROM articles_comptes_credits_consos accc
 									WHERE id_compte_credit = '".$info->id_compte_credit."' ";
@@ -1281,7 +1281,7 @@ function charger_consommation ($id_compte_credit) {
 	}
 }
 
-// Création du libellé sur ticket
+// CrÃ©ation du libellÃ© sur ticket
 function make_lib_ticket () {
 	$this->lib_ticket = $this->lib_article;
 }
@@ -1290,13 +1290,13 @@ function make_lib_ticket () {
 // FONCTIONS LIEES A LA DUPLICATION D'UN ARTICLE
 // *************************************************************************************************************
 
-//duplication de l'article maitre pour création des esclaves passés en paramètre
+//duplication de l'article maitre pour crÃ©ation des esclaves passÃ©s en paramÃ¨tre
 final public function generer_variantes ($variantes) {
 	global $bdd;
 	global $ARTICLE_VARIANTE_NOM;
 
 	$infos_generales = array();
-	//récupérer les infos de base de l'article maitre
+	//rÃ©cupÃ©rer les infos de base de l'article maitre
 	if (!$this->stocks_alertes_loaded) { $this->charger_stocks_alertes(); }
 	$stocks_alertes = $this->stocks_alertes;
 	$infos_generales['modele']	=	$this->modele;
@@ -1327,7 +1327,7 @@ final public function generer_variantes ($variantes) {
 	$infos_generales['desc_courte'] 			= $this->desc_courte;
 	$infos_generales['lib_ticket']				= $this->lib_ticket;
 	$infos_generales['desc_longue'] 			= $this->desc_longue;
-	$infos_generales['ref_interne'] 			= ''; //la référence interne doit être unique et ne peut donc pas être recopier sur les variantes
+	$infos_generales['ref_interne'] 			= ''; //la rÃ©fÃ©rence interne doit Ãªtre unique et ne peut donc pas Ãªtre recopier sur les variantes
 	$infos_generales['ref_oem'] 					= $this->ref_oem;
 	$infos_generales['ref_constructeur'] 	= $this->ref_constructeur;
 	$infos_generales['id_valo'] 					= $this->id_valo;
@@ -1427,14 +1427,14 @@ final public function generer_variantes ($variantes) {
 			}
 		}
 
-		//création de l'article esclave
+		//crÃ©ation de l'article esclave
 		$variante_article = new article ();
 		$variante_article->create ($infos_generales, $infos_modele, $caracs, $formules_tarifs, $composants, $liaisons);
 		//ajout des images
 		foreach ($images as $image){
 			$variante_article->add_image ($image->lib_file);
 		}
-		//création de la liaison type 5 (variantes de cet article)
+		//crÃ©ation de la liaison type 5 (variantes de cet article)
 		$this->add_liaison ($variante_article->getRef_article(), 5);
 		//*******************************************
 		// EDI EVENT
@@ -1443,13 +1443,13 @@ final public function generer_variantes ($variantes) {
 	return true;
 }
 
-//duplication de l'article maitre pour création de co article maitre
+//duplication de l'article maitre pour crÃ©ation de co article maitre
 final public function generer_masters ($maj_ref_carac, $maj_valeur, $update_liaisons, $ref_article_main_master) {
 	global $bdd;
 
 
 	$infos_generales = array();
-	//récupérer les infos de base de l'article maitre
+	//rÃ©cupÃ©rer les infos de base de l'article maitre
 	if (!$this->stocks_alertes_loaded) { $this->charger_stocks_alertes(); }
 	$stocks_alertes = $this->stocks_alertes;
 	$infos_generales['modele']	=	$this->modele;
@@ -1538,7 +1538,7 @@ final public function generer_masters ($maj_ref_carac, $maj_valeur, $update_liai
 		$caracs[] = $carac;
 	}
 
-	//création de l'article maitre
+	//crÃ©ation de l'article maitre
 	$master_article = new article ();
 	$master_article->create ($infos_generales, $infos_modele, $caracs, $formules_tarifs, $composants, $liaisons);
 	//ajout des images
@@ -1549,7 +1549,7 @@ final public function generer_masters ($maj_ref_carac, $maj_valeur, $update_liai
 
 	$master_article->maj_carac ($maj_ref_carac, $maj_valeur);
 
-	//mise à jour des liaisons systeme
+	//mise Ã  jour des liaisons systeme
 	if (count($update_liaisons)) {
 		$list_to_update = "''";
 		foreach ($update_liaisons as $ref_art) {
@@ -1563,12 +1563,12 @@ final public function generer_masters ($maj_ref_carac, $maj_valeur, $update_liai
 
 	return true;
 }
-//gestion des articles maitres en cas de suppression ou de passage en variante =0 d'une caractéristique de l'art_categ
-//cette fonction est lancée depuis l'art_categ si des carac variantes existent encore.
+//gestion des articles maitres en cas de suppression ou de passage en variante =0 d'une caractÃ©ristique de l'art_categ
+//cette fonction est lancÃ©e depuis l'art_categ si des carac variantes existent encore.
 final public function gestion_master ($ref_carac) {
 	global $bdd;
 
-	//chargement des différentes valeurs
+	//chargement des diffÃ©rentes valeurs
 	$query = "SELECT ac.ref_carac, ac.valeur
 						FROM articles_caracs ac
 						WHERE ac.ref_article = '".$this->ref_article."' && ac.ref_carac = '".$ref_carac."'
@@ -1585,7 +1585,7 @@ final public function gestion_master ($ref_carac) {
 		$variantes_toupdate[$carac_lib] = array();
 	}
 
-	//répartition des différentes variantes en fonctions des valeurs de la carac modifiée
+	//rÃ©partition des diffÃ©rentes variantes en fonctions des valeurs de la carac modifiÃ©e
 	$this->find_my_slaves ();
 	foreach ($this->variante_slaves as $variante_slave) {
 		foreach ($variante_slave->caracs as $carac_key_slave=>$carac_value_slave) {
@@ -1594,13 +1594,13 @@ final public function gestion_master ($ref_carac) {
 	}
 	//print_r($this->variante_slaves);
 	//print_r($variantes_toupdate); return true;
-	//mise à jour et création des  maitres
+	//mise Ã  jour et crÃ©ation des  maitres
 	$pass_first = 0;
 	foreach ($variantes_toupdate as $key_up=>$var_update) {
 		print_r($var_update);
 		// on passe le premier qui gardera le maitre d'origine
 		if (!$pass_first) {$pass_first = 1; $this->maj_carac ($ref_carac, $key_up);continue;}
-		//on généres les co-maitres
+		//on gÃ©nÃ©res les co-maitres
 		$this->generer_masters($ref_carac, $key_up, $var_update, $this->ref_article);
 	}
  return true;
@@ -1662,7 +1662,7 @@ final public function modification1 ($infos_generales) {
 
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->ref_oem 			= $infos_generales['ref_oem'];
 	$this->ref_interne 	= $infos_generales['ref_interne'];
 	if ($this->ref_interne) {
@@ -1688,7 +1688,7 @@ final public function modification1 ($infos_generales) {
 
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -1705,7 +1705,7 @@ final public function modification1 ($infos_generales) {
 
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	$GLOBALS['_INFOS']['Modification_article'] = 1;
 
     //**********************************************
@@ -1721,7 +1721,7 @@ final public function modification2 ($infos_generales, $infos_modele) {
 	global $DEFAUT_VALO_INDICE;
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->id_valo = $infos_generales['id_valo'];
 	if (!$this->id_valo) {
 		$this->id_valo = $DEFAUT_ID_VALO;
@@ -1744,7 +1744,7 @@ final public function modification2 ($infos_generales, $infos_modele) {
 
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -1768,7 +1768,7 @@ final public function modification2 ($infos_generales, $infos_modele) {
 	$bdd->commit();
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	$GLOBALS['_INFOS']['Modification_article'] = 1;
 }
 
@@ -1782,7 +1782,7 @@ final public function modification_view_0 ($infos_generales) {
 
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->lib_article 	= trim($infos_generales['lib_article']);
 	if (!$this->lib_article) {
 		$GLOBALS['_ALERTES']['lib_article_vide'] = 1;
@@ -1809,7 +1809,7 @@ final public function modification_view_0 ($infos_generales) {
 	$this->check_dispo ();
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -1827,7 +1827,7 @@ final public function modification_view_0 ($infos_generales) {
 
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	$GLOBALS['_INFOS']['Modification_article'] = 1;
 	
 	//**********************************************
@@ -1844,7 +1844,7 @@ final public function modification_view_1 ($infos_generales) {
 
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->ref_oem 			= $infos_generales['ref_oem'];
 	$this->ref_interne 	= $infos_generales['ref_interne'];
 	if ($this->ref_interne) {
@@ -1863,7 +1863,7 @@ final public function modification_view_1 ($infos_generales) {
 
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -1879,7 +1879,7 @@ final public function modification_view_1 ($infos_generales) {
 
 	if (isset($infos_generales['tags'])) { $this->maj_mots_clefs($infos_generales['tags'] );}
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	$GLOBALS['_INFOS']['Modification_article'] = 1;
 	
 	//**********************************************
@@ -1906,7 +1906,7 @@ final public function maj_mots_clefs ($mots_clefs) {
 }
 
 
-//modification  du modèle
+//modification  du modÃ¨le
 final public function modification_view_2 ($infos_generales, $infos_modele) {
 	global $CONFIG_DIR;
 	global $bdd;
@@ -1928,7 +1928,7 @@ final public function modification_view_2 ($infos_generales, $infos_modele) {
 	$bdd->commit();
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	$GLOBALS['_INFOS']['Modification_article'] = 1;
 }
 
@@ -1966,7 +1966,7 @@ final function getValeursCaracs($indice_carac, $carac_sel, $valeur_sel){
 	return $valeurs;
 }
 
-// Fonction qui va rechercher les articles fils avec les différentes variantes et le stock associé
+// Fonction qui va rechercher les articles fils avec les diffÃ©rentes variantes et le stock associÃ©
 final function findVariantesStock($annonce_ruptures = false){
 	global $bdd;
 	$query = "SELECT ac.ref_article, ac.ref_carac, ac.valeur, sa.qte, sa.id_stock, acc.lib_carac 
@@ -1994,7 +1994,7 @@ final function findVariantesStock($annonce_ruptures = false){
 	}
 	if($annonce_ruptures){
                 $caracs = array();
-                //1er parcours pour récupérer les caractéristiques
+                //1er parcours pour rÃ©cupÃ©rer les caractÃ©ristiques
                 foreach($retour as $art){
                         if(!in_array($art->ref_carac, $caracs)){
                                 $caracs[$art->ref_carac] = $art->lib_carac;
@@ -2036,7 +2036,7 @@ function construct_arbre_caracs_stock($id_stock){
             $articles[] = $tmp;
     }
     foreach($articles as $art){
-        /* @todo faire le cas général for(...) */
+        /* @todo faire le cas gÃ©nÃ©ral for(...) */
         $var = '$arbre';
         for($i=0; $i<count($caracs); $i++){
             $var .= '[$art->valeur_carac'.$i.']';
@@ -2049,14 +2049,14 @@ function construct_arbre_caracs_stock($id_stock){
 }
 
 
-// Fonction permettant de changer la catégorie d'article
+// Fonction permettant de changer la catÃ©gorie d'article
 function maj_categorie ($new_ref_categ, $infos_modele) {
 	global $bdd;
 	global $BDD_MODELES;
 	global $MAJ_PV;
 
 	// ********************************
-	// Controle des données recues
+	// Controle des donnÃ©es recues
 	if (!isset($infos_modele['modele'], $BDD_MODELES)) {
 		$GLOBALS['_ALERTES']['bad_modele'] = 1;
 		exit();
@@ -2064,15 +2064,15 @@ function maj_categorie ($new_ref_categ, $infos_modele) {
 
 	$bdd->beginTransaction();
 
-	// Suppression des caractéristiques
+	// Suppression des caractÃ©ristiques
 	$query = "DELETE FROM articles_caracs WHERE ref_article = '".$this->ref_article."' ";
 	$bdd->exec ($query);
 
-	// Suppression des informations de modèle
+	// Suppression des informations de modÃ¨le
 	$query = "DELETE FROM articles_modele_".$this->modele." WHERE ref_article = '".$this->ref_article."' ";
 	$bdd->exec ($query);
 
-	// Mise à jour de l'article
+	// Mise Ã  jour de l'article
 	$query = "UPDATE articles a
 						SET a.ref_art_categ = '".$new_ref_categ."', a.modele = '".$infos_modele['modele']."', a.date_modification = NOW()
 						WHERE a.ref_article = '".$this->ref_article."'  ";
@@ -2086,20 +2086,20 @@ function maj_categorie ($new_ref_categ, $infos_modele) {
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
-	// Mise à jour des tarifs
+	// Mise Ã  jour des tarifs
 	$this->maj_all_tarifs ();
 
 	$bdd->commit();
 }
 
 
-//mise à jour de l'article en id_modele_spe
+//mise Ã  jour de l'article en id_modele_spe
 public function maj_article_modele_spe ($id_modele_spe) {
 	//@FIXME utilisation de modele spe
 	global $bdd;
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	if ($id_modele_spe == $this->id_modele_spe ) {
 		return false;
 	}
@@ -2120,7 +2120,7 @@ public function maj_article_modele_spe ($id_modele_spe) {
 }
 
 
-//mise à jour des informations pour un article spécifique
+//mise Ã  jour des informations pour un article spÃ©cifique
 final public function maj_art_spe($infos_generales) {
 	global $bdd;
 
@@ -2137,7 +2137,7 @@ final public function maj_art_spe($infos_generales) {
 }
 
 
-//mise à jour de la description longue de l'article
+//mise Ã  jour de la description longue de l'article
 final public function maj_description_longue ($desc_longue) {
 	global $bdd;
 
@@ -2158,7 +2158,7 @@ final public function maj_description_longue ($desc_longue) {
 
 
 
-// Mise à jour du taux de tva
+// Mise Ã  jour du taux de tva
 function maj_tva ($id_tva) {
 	global $bdd;
 	global $MAJ_PV;
@@ -2171,7 +2171,7 @@ function maj_tva ($id_tva) {
 
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -2185,14 +2185,14 @@ function maj_tva ($id_tva) {
 	$bdd->exec ($query);
 
 	// *************************************************
-	// Mise à jour des prix de vente pour cet article
+	// Mise Ã  jour des prix de vente pour cet article
 	if ($MAJ_PV == "2") {	$this->maj_all_tarifs ();}
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	$GLOBALS['_INFOS']['Modification_tva'] = 1;
 }
-// Mise à jour de promo
+// Mise Ã  jour de promo
 function maj_promo ($promo) {
 	global $bdd;
 
@@ -2203,7 +2203,7 @@ function maj_promo ($promo) {
 
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -2217,12 +2217,12 @@ function maj_promo ($promo) {
 	$bdd->exec ($query);
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	$GLOBALS['_INFOS']['Modification_promo'] = 1;
 }
 
 
-// Mise à jour du prix d'achat et / ou public
+// Mise Ã  jour du prix d'achat et / ou public
 function maj_prix ($prix) {
 	global $bdd;
 	global $MAJ_PV;
@@ -2240,7 +2240,7 @@ function maj_prix ($prix) {
 	$this->id_tva = convert_numeric($prix['id_tva']);
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -2264,14 +2264,14 @@ function maj_prix ($prix) {
 	$bdd->exec ($query);
 
 	// *************************************************
-	// Mise à jour des prix de vente pour cet article
+	// Mise Ã  jour des prix de vente pour cet article
 	if ($MAJ_PV == "2") {	$this->maj_all_tarifs ();}
 
-	// on vas tester si notre article en compose un autre pour mettre à jour les prix de cet article
+	// on vas tester si notre article en compose un autre pour mettre Ã  jour les prix de cet article
 	$this->chek_my_lot();
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	$GLOBALS['_INFOS']['Modification_prix'] = 1;
 	
 	//**********************************************
@@ -2280,7 +2280,7 @@ function maj_prix ($prix) {
 }
 
 
-// Mise à jour du prix public
+// Mise Ã  jour du prix public
 function maj_prix_public_ht ($prix_public_ht) {
 	global $bdd;
 	global $MAJ_PV;
@@ -2292,7 +2292,7 @@ function maj_prix_public_ht ($prix_public_ht) {
 	}
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -2309,11 +2309,11 @@ function maj_prix_public_ht ($prix_public_ht) {
 	$bdd->exec ($query);
 
 	// *************************************************
-	// Mise à jour des prix de vente pour cet article
+	// Mise Ã  jour des prix de vente pour cet article
 	if ($MAJ_PV == "2") {	$this->maj_all_tarifs ();}
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	$GLOBALS['_INFOS']['Modification_prix_public_ht'] = 1;
 	
 	//**********************************************
@@ -2322,7 +2322,7 @@ function maj_prix_public_ht ($prix_public_ht) {
 }
 
 
-// Mise à jour du prix d'achat
+// Mise Ã  jour du prix d'achat
 function maj_prix_achat_ht ($prix_achat_ht, $qte_recu = "") {
 	global $bdd;
 	global $MAJ_PV;
@@ -2357,7 +2357,7 @@ function maj_prix_achat_ht ($prix_achat_ht, $qte_recu = "") {
 		break;
 	}
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -2376,13 +2376,13 @@ function maj_prix_achat_ht ($prix_achat_ht, $qte_recu = "") {
 	$bdd->exec ($query);
 
 	// *************************************************
-	// Mise à jour des prix de vente pour cet article
+	// Mise Ã  jour des prix de vente pour cet article
 	if ($MAJ_PV == "2") {	$this->maj_all_tarifs ();}
 
-	// on vas tester si notre article en compose un autre pour mettre à jour les prix de cet article
+	// on vas tester si notre article en compose un autre pour mettre Ã  jour les prix de cet article
 	$this->chek_my_lot();
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	$GLOBALS['_INFOS']['Modification_prix_achat_ht'] = 1;
 
 	return true;
@@ -2390,7 +2390,7 @@ function maj_prix_achat_ht ($prix_achat_ht, $qte_recu = "") {
 
 
 
-// Annule la Mise à jour du prix d'achat pour un PMP
+// Annule la Mise Ã  jour du prix d'achat pour un PMP
 function annule_maj_prix_achat_ht ($prix_achat_ht, $qte_recu = "") {
 	global $bdd;
 	global $MAJ_PV;
@@ -2425,7 +2425,7 @@ function annule_maj_prix_achat_ht ($prix_achat_ht, $qte_recu = "") {
 		break;
 	}
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -2444,21 +2444,21 @@ function annule_maj_prix_achat_ht ($prix_achat_ht, $qte_recu = "") {
 	$bdd->exec ($query);
 
 	// *************************************************
-	// Mise à jour des prix de vente pour cet article
+	// Mise Ã  jour des prix de vente pour cet article
 	if ($MAJ_PV == "2") {	$this->maj_all_tarifs ();}
 
-	// on vas tester si notre article en compose un autre pour mettre à jour les prix de cet article
+	// on vas tester si notre article en compose un autre pour mettre Ã  jour les prix de cet article
 	$this->chek_my_lot();
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	$GLOBALS['_INFOS']['Modification_prix_achat_ht'] = 1;
 
 	return true;
 }
 
 
-// Mise à jour du prix d'achat actuel
+// Mise Ã  jour du prix d'achat actuel
 function maj_prix_achat_actuel_ht ($paa_ht = "") {
 	global $bdd;
 	global $CALCUL_VAA;
@@ -2469,12 +2469,12 @@ function maj_prix_achat_actuel_ht ($paa_ht = "") {
 
 	$old_paa = $this->paa_ht;
 	$add_query = ", paa_last_maj = NOW()";
-	// si pas de paa transmis on le défini par les régles de VAA
+	// si pas de paa transmis on le dÃ©fini par les rÃ©gles de VAA
 	if (!$paa_ht) {
 		$add_query = "";
 
 		$date_paa_query = " && date_pa > '".$this->paa_last_maj."' ";
-		//si la dernier maj paa ne permet pas de récupérer un tarif fournisseur valide
+		//si la dernier maj paa ne permet pas de rÃ©cupÃ©rer un tarif fournisseur valide
 		if ($this->paa_last_maj > date("Y-m-d", mktime(0,0,0,  date("m"),date("d")-$DUREE_VALIDITE_PAF, date("Y")))) {
 			$query = "SELECT pa_unitaire FROM articles_ref_fournisseur WHERE ref_article = '".$this->ref_article."' && date_pa > '".date("Y-m-d", mktime(0,0,0,  date("m"),date("d")-$DUREE_VALIDITE_PAF, date("Y")))."' && pa_unitaire != 0 ";
 			$resultat = $bdd->query ($query);
@@ -2507,7 +2507,7 @@ function maj_prix_achat_actuel_ht ($paa_ht = "") {
 	} else {return false;}
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -2527,19 +2527,19 @@ function maj_prix_achat_actuel_ht ($paa_ht = "") {
 	$bdd->exec ($query);
 
 	// *************************************************
-	// Mise à jour du prix d'achat stocké pour cet article
+	// Mise Ã  jour du prix d'achat stockÃ© pour cet article
 	if ($CALCUL_VAS == "3") {
 		$this->maj_prix_achat_ht ($this->paa_ht);
 	} else {
 		// *************************************************
-		// Mise à jour des prix de vente pour cet article
+		// Mise Ã  jour des prix de vente pour cet article
 		if ($MAJ_PV == "2") {	$this->maj_all_tarifs ();}
 
-		// on vas tester si notre article en compose un autre pour mettre à jour les prix de cet article
+		// on vas tester si notre article en compose un autre pour mettre Ã  jour les prix de cet article
 		$this->chek_my_lot();
 	}
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	$GLOBALS['_INFOS']['Modification_paa_ht'] = 1;
 	
 	return true;
@@ -2551,12 +2551,12 @@ function maj_prix_achat_actuel_ht ($paa_ht = "") {
 // *************************************************************************************************************
 // FONCTIONS LIEES A LA SUPRESSION D'UN ARTICLE
 // *************************************************************************************************************
-// La fonction de suppression d'un article n'est normalement pas appellée
+// La fonction de suppression d'un article n'est normalement pas appellÃ©e
 final public function suppression () {
 	global $bdd;
 
 	// *************************************************
-	// Vérification que l'article n'appartient pas a un lot
+	// VÃ©rification que l'article n'appartient pas a un lot
 	if ($this->composant) {
 		$GLOBALS['_ALERTES']['appartenance_lot'] = 1;
 		return false;
@@ -2667,7 +2667,7 @@ final public function stop_article () {
 		if ($esclaves_tjr_dispo) {$this->dispo = 1; return true;}
 	}
 
-	// Mise à jour de l'article
+	// Mise Ã  jour de l'article
 	$query_set = "";
 	//si plus dispo raz de la ref_interne
 	if (!$this->dispo) { $query_set = " ,ref_interne = NULL";}
@@ -2677,7 +2677,7 @@ final public function stop_article () {
 	$bdd->exec ($query);
 
 	//gestion des cas variantes
-	//on récupére le maitre et on vérifie que tout les esclaves sont non dispo
+	//on rÃ©cupÃ©re le maitre et on vÃ©rifie que tout les esclaves sont non dispo
 	if ($this->variante == 1 && !$this->dispo) {
 		$master = new article($this->variante_master);
 		$liste_esclaves = $master->getVariante_slaves ();
@@ -2703,13 +2703,13 @@ public function fusion ($second_ref_article) {
 	}
 	$second_article = new article($second_ref_article);
 
-	// Mise à jour des lignes de document
+	// Mise Ã  jour des lignes de document
 	$query = "UPDATE docs_lines
 						SET ref_article = '".$this->ref_article."'
 						WHERE ref_doc_line = '".$second_ref_article."'  ";
 	$bdd->exec ($query);
 
-	//mise à jour des documents de fabrication et désassemblage
+	//mise Ã  jour des documents de fabrication et dÃ©sassemblage
 	$query = "UPDATE doc_fab
 						SET ref_article = '".$this->ref_article."'
 						WHERE ref_article = '".$second_ref_article."'  ";
@@ -2735,23 +2735,23 @@ public function fusion ($second_ref_article) {
 	}
 
 
-	//mise à jour des stocks et tranfert des sn
+	//mise Ã  jour des stocks et tranfert des sn
 	$ref_stock_article = "";
 
-	//On récupère tout les stock de l'article qui sera archivé
+	//On rÃ©cupÃ¨re tout les stock de l'article qui sera archivÃ©
 	$query = "SELECT ref_stock_article, qte, id_stock
 						FROM stocks_articles
 						WHERE ref_article = '".$second_ref_article."'  ";
 	$resultat = $bdd->query($query);
 	while ($tmp = $resultat->fetchObject()) {$ref_stock_article = $tmp->ref_stock_article;
 
-		//on les transfères dans l'article conservé
+		//on les transfÃ¨res dans l'article conservÃ©
 		$query_stock_art = "UPDATE stocks_articles
 							SET qte = qte + ".$tmp->qte."
 							WHERE ref_article = '".$this->ref_article."' && id_stock = '".$tmp->id_stock."' ";
 		$resultat_stock_art = $bdd->query($query_stock_art);
 		if (!$resultat_stock_art->rowCount()) {
-			// La ligne n'existe pas dans le stock, il faut la créer
+			// La ligne n'existe pas dans le stock, il faut la crÃ©er
 			$reference = new reference ($this->STOCK_ARTICLE_ID_REFERENCE_TAG);
 			$new_ref_stock_article = $reference->generer_ref();
 			$query = "INSERT INTO stocks_articles (ref_stock_article, id_stock, ref_article, qte)
@@ -2759,14 +2759,14 @@ public function fusion ($second_ref_article) {
 			$bdd->exec ($query);
 		}
 		unset ($reference, $query_stock_art, $resultat_stock_art);
-		// on récupère la ref_stock_article afin de transférer les sn vers cette ref
+		// on rÃ©cupÃ¨re la ref_stock_article afin de transfÃ©rer les sn vers cette ref
 		$query_sa = "SELECT ref_stock_article
 							FROM stocks_articles
 							WHERE ref_article = '".$this->ref_article."' && id_stock = '".$tmp->id_stock."' ";
 		$resultat_sa = $bdd->query($query_sa);
 		$stock_article = $resultat_sa->fetchObject();
 
-		//on met à jour tout les numéro de série en stock
+		//on met Ã  jour tout les numÃ©ro de sÃ©rie en stock
 		$query = "UPDATE stocks_articles_sn
 							SET ref_stock_article = '".$stock_article->ref_stock_article."'
 							WHERE ref_stock_article = '".$ref_stock_article."' ";
@@ -2777,7 +2777,7 @@ public function fusion ($second_ref_article) {
 							WHERE ref_stock_article = '".$ref_stock_article."' ";
 		$bdd->exec($query);
 
-		//on génére les mouvements de stocks
+		//on gÃ©nÃ©re les mouvements de stocks
 		if ($_SESSION['stocks'][$tmp->id_stock]->genere_move_stock (NULL, $this->ref_article, $tmp->qte)) {}
 		if ($_SESSION['stocks'][$tmp->id_stock]->genere_move_stock (NULL, $second_ref_article, -$tmp->qte)){}
 
@@ -2791,7 +2791,7 @@ public function fusion ($second_ref_article) {
 // *************************************************************************************************************
 // FONCTIONS DE GESTION DES CARACTERISTIQUES
 // *************************************************************************************************************
-// Chargements des caractéristiques de l'article
+// Chargements des caractÃ©ristiques de l'article
 public function charger_caracs () {
 	global $bdd;
 
@@ -2812,7 +2812,7 @@ public function charger_caracs () {
 }
 
 
-// Chargement des groupes de caractéristiques de la catégorie d'article
+// Chargement des groupes de caractÃ©ristiques de la catÃ©gorie d'article
 public function charger_caracs_groupes () {
 	global $bdd;
 
@@ -2829,7 +2829,7 @@ public function charger_caracs_groupes () {
 }
 
 
-// Ajout d'une caractéristique
+// Ajout d'une caractÃ©ristique
 public function add_carac ($ref_carac, $valeur) {
 	global $bdd;
 
@@ -2864,11 +2864,11 @@ public function add_carac ($ref_carac, $valeur) {
 }
 
 
-// modif d'une caractéristique
+// modif d'une caractÃ©ristique
 /**
- * @param <type> $ref_carac - référence de la carac à modifier
+ * @param <type> $ref_carac - rÃ©fÃ©rence de la carac Ã  modifier
  * @param <type> $valeur - nouvelle valeur
- * @param <type> $variante - si renseigné ne modifie la carac que si $variante ( 0 ou 1 ) que si la carac est variante ou pas
+ * @param <type> $variante - si renseignÃ© ne modifie la carac que si $variante ( 0 ou 1 ) que si la carac est variante ou pas
  * @return <type> true or false
  */
 public function maj_carac ($ref_carac, $valeur, $variante = "") {
@@ -2922,7 +2922,7 @@ public function maj_carac ($ref_carac, $valeur, $variante = "") {
 }
 
 
-// RAZ d'une caractéristique
+// RAZ d'une caractÃ©ristique
 public function del_carac ($ref_carac) {
 	global $bdd;
 
@@ -2941,7 +2941,7 @@ public function del_carac ($ref_carac) {
 }
 
 
-// RAZ de toutes les caractéristiques
+// RAZ de toutes les caractÃ©ristiques
 public function del_all_carac () {
 	global $bdd;
 
@@ -2980,7 +2980,7 @@ public function add_formule_tarif ($id_tarif, $indice_qte, $formule_tarif) {
 	if (!$indice_qte) { return false; }
 
 	// *************************************************
-	// Controles des données
+	// Controles des donnÃ©es
 	if (!formule_tarif::check_formule($formule_tarif)) {
 		$GLOBALS['_ALERTES']['bad_formule_tarif'] = 1;
 	}
@@ -2993,7 +2993,7 @@ public function add_formule_tarif ($id_tarif, $indice_qte, $formule_tarif) {
 	}
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -3004,7 +3004,7 @@ public function add_formule_tarif ($id_tarif, $indice_qte, $formule_tarif) {
 	$bdd->exec ($query);
 
 	// *************************************************
-	// Calcul et création du tarif correspondant
+	// Calcul et crÃ©ation du tarif correspondant
 	$this->create_tarif ($id_tarif, $indice_qte, $formule_tarif);
 
 	return true;
@@ -3015,7 +3015,7 @@ public function add_formule_tarif ($id_tarif, $indice_qte, $formule_tarif) {
 public function delete_formule_tarif ($id_tarif, $indice_qte) {
 	global $bdd;
 
-	// Si aucun tarif spécifié, on supprime tous les tarifs (toute la ligne)
+	// Si aucun tarif spÃ©cifiÃ©, on supprime tous les tarifs (toute la ligne)
 	$query_where = "";
 	if ($id_tarif) {
 		$query_where = "&& id_tarif = '".$id_tarif."' ";
@@ -3033,7 +3033,7 @@ public function delete_formule_tarif ($id_tarif, $indice_qte) {
 
 
 
-// Choix de la formule de tarif applicable pour la détermination d'un prix
+// Choix de la formule de tarif applicable pour la dÃ©termination d'un prix
 function select_formule_tarif ($id_tarif, $indice_qte) {
 	global $bdd;
 
@@ -3041,7 +3041,7 @@ function select_formule_tarif ($id_tarif, $indice_qte) {
 	// Recherche des formules disponibles
 	$formules_dispos = array();
 
-	// Pour l'article en priorité
+	// Pour l'article en prioritÃ©
 	if (!$this->formules_tarifs_loaded) {
 		$this->charger_formules_tarifs();
 	}
@@ -3051,7 +3051,7 @@ function select_formule_tarif ($id_tarif, $indice_qte) {
 		if ($this->formules_tarifs[$i]->indice_qte > $indice_qte) { continue; }
 		$formules_dispos[] = $this->formules_tarifs[$i];
 	}
-	// Sélection des formules de la catégorie si besoin
+	// SÃ©lection des formules de la catÃ©gorie si besoin
 	if (!count($formules_dispos)) {
 		$query = "SELECT formule_tarif
 							FROM art_categs_formules_tarifs
@@ -3060,7 +3060,7 @@ function select_formule_tarif ($id_tarif, $indice_qte) {
 		if ($var = $resultat->fetchObject()) { $formules_dispos[] = $var; }
 	}
 
-	// Prise en compte de la marge par défaut si il n'existe rien.
+	// Prise en compte de la marge par dÃ©faut si il n'existe rien.
 	if (!count($formules_dispos)) {
 		$query = "SELECT marge_moyenne formule_tarif FROM tarifs_listes
 							WHERE id_tarif = '".$id_tarif."' ";
@@ -3069,7 +3069,7 @@ function select_formule_tarif ($id_tarif, $indice_qte) {
 	}
 
 	// ************************************
-	// Sélection de la formule la plus adaptée
+	// SÃ©lection de la formule la plus adaptÃ©e
 	if (!count($formules_dispos)) {
 		$GLOBALS['_ALERTES']['aucune_formule_dispo'] = 1;
 		return false;
@@ -3120,7 +3120,7 @@ public function charger_tarifs () {
 }
 
 
-// Création d'un tarif
+// CrÃ©ation d'un tarif
 function create_tarif ($id_tarif, $indice_qte, $formule_tarif) {
 	global $bdd;
 	global $CALCUL_VAS;
@@ -3149,14 +3149,14 @@ function create_tarif ($id_tarif, $indice_qte, $formule_tarif) {
 	$formule->calcul_tarif_article ($indice_qte, $used_pa, $this->prix_public_ht, $this->tva);
 	$pu_ht = $formule->tarifs['PU_HT'];
 
-	//on récupère les informations du tarif (sans passer par le $tarif_loaded qui pause problème à la création d'un article
+	//on rÃ©cupÃ¨re les informations du tarif (sans passer par le $tarif_loaded qui pause problÃ¨me Ã  la crÃ©ation d'un article
 	$query = "SELECT id_tarif, indice_qte, pu_ht
 						FROM articles_tarifs
 						WHERE ref_article = '".$this->ref_article."' && id_tarif = '".$id_tarif."'
 						ORDER BY indice_qte ";
 	$resultat = $bdd->query($query);
 	if ($var = $resultat->fetchObject()) {
-		//on archive le tarifs si le pu_ht est modifié
+		//on archive le tarifs si le pu_ht est modifiÃ©
 		if ($var->indice_qte == $indice_qte && $indice_qte == 1 && $pu_ht != $var->pu_ht) {
 			$var->pu_ht = $pu_ht;
 			$var->id_tarif = $id_tarif;
@@ -3178,7 +3178,7 @@ function create_tarif ($id_tarif, $indice_qte, $formule_tarif) {
 function delete_tarif ($id_tarif, $indice_qte) {
 	global $bdd;
 
-	// Si aucun tarif spécifié, on supprime tous les tarifs (toute la ligne)
+	// Si aucun tarif spÃ©cifiÃ©, on supprime tous les tarifs (toute la ligne)
 	$query_where = "";
 	if ($id_tarif) {
 		$query_where = "&& id_tarif = '".$id_tarif."' ";
@@ -3199,11 +3199,11 @@ function maj_tarif ($id_tarif, $indice_qte) {
 	global $bdd;
 
 	// *************************************************
-	// Recherche de la formule adaptée
+	// Recherche de la formule adaptÃ©e
 	$formule = $this->select_formule_tarif ($id_tarif, $indice_qte);
 
 	// *************************************************
-	// Création du tarif de l'article
+	// CrÃ©ation du tarif de l'article
 	if (!$formule) { return false; }
 	$this->create_tarif($id_tarif, $indice_qte, $formule);
 
@@ -3214,11 +3214,11 @@ function maj_tarif ($id_tarif, $indice_qte) {
 }
 
 
-// Vérifie que chaque tarif pour l'article est défini
+// VÃ©rifie que chaque tarif pour l'article est dÃ©fini
 protected function check_tarif ($id_tarif = 0) {
 	global $bdd;
 
-	// Si aucune grille de tarif précisée, "check" de chacun des tarifs
+	// Si aucune grille de tarif prÃ©cisÃ©e, "check" de chacun des tarifs
 	if (!$id_tarif) {
 		get_tarifs_listes ();
 		foreach ($_SESSION['tarifs_listes'] as $tarif) {
@@ -3227,7 +3227,7 @@ protected function check_tarif ($id_tarif = 0) {
 		return true;
 	}
 
-	// Vérification
+	// VÃ©rification
 	$query = "SELECT COUNT(pu_ht) tarif_exist
 						FROM articles_tarifs
 						WHERE ref_article = '".$this->ref_article."' && id_tarif = '".$id_tarif."' ";
@@ -3237,7 +3237,7 @@ protected function check_tarif ($id_tarif = 0) {
 		return true;
 	}
 
-	// Création d'un tarif à partir de la catégorie
+	// CrÃ©ation d'un tarif Ã  partir de la catÃ©gorie
 	$query = "SELECT formule_tarif
 						FROM art_categs_formules_tarifs
 						WHERE ref_art_categ = '".$this->ref_art_categ."' && id_tarif = '".$id_tarif."' ";
@@ -3245,7 +3245,7 @@ protected function check_tarif ($id_tarif = 0) {
 	if ($formule = $resultat->fetchObject()) {
 		$this->create_tarif ($id_tarif, 1, $formule->formule_tarif);
 	}
-	else { // Ou tu tarif par défaut de la grille de tarif.
+	else { // Ou tu tarif par dÃ©faut de la grille de tarif.
 		$query = "SELECT marge_moyenne FROM tarifs_listes
 							WHERE id_tarif = '".$id_tarif."' ";
 		$resultat = $bdd->query ($query);
@@ -3270,7 +3270,7 @@ public function call_maj_all_tarifs () {
 }
 
 
-//fonction d'archivage du prix d'achat en cas de mise à jour
+//fonction d'archivage du prix d'achat en cas de mise Ã  jour
 protected function pa_archive ($pa) {
 	global $bdd;
 
@@ -3280,7 +3280,7 @@ protected function pa_archive ($pa) {
 	return true;
 }
 
-//fonction d'archivage du prix d'achat actuel en cas de mise à jour
+//fonction d'archivage du prix d'achat actuel en cas de mise Ã  jour
 protected function paa_archive ($paa) {
 	global $bdd;
 
@@ -3290,7 +3290,7 @@ protected function paa_archive ($paa) {
 	return true;
 }
 
-//fonction d'archivage des prix de vente en cas de mise à jour
+//fonction d'archivage des prix de vente en cas de mise Ã  jour
 protected function pv_archive ($tarif) {
 	global $bdd;
 
@@ -3318,7 +3318,7 @@ protected function chargerpv_last_maj () {
 // FONCTIONS DE GESTION DES TAXES
 // *************************************************************************************************************
 
-// Chargement des taxes associées à l'article
+// Chargement des taxes associÃ©es Ã  l'article
 public function charger_taxes () {
 	global $bdd;
 
@@ -3349,7 +3349,7 @@ function add_taxe ($id_taxe, $code_taxe, $info_calcul) {
 						WHERE at.ref_article = '".$this->ref_article."' && at.id_taxe = '".$id_taxe."'";
 	$resultat = $bdd->query($query);
 	if ($tmp = $resultat->fetchObject()) {
-                //si existant mise à jour
+                //si existant mise Ã  jour
 		$this->maj_montant_taxe($id_taxe, $info_calcul);
                 return true;
 	}
@@ -3418,11 +3418,11 @@ public function add_image ($lib_file) {
 	global $bdd;
 
 	// *************************************************
-	// Controle des données générales
+	// Controle des donnÃ©es gÃ©nÃ©rales
 
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -3438,7 +3438,7 @@ public function add_image ($lib_file) {
 						VALUES ( '".$lib_file."')";
 	$bdd->exec ($query);
 
-	//on récupère le dernier id_image créé
+	//on rÃ©cupÃ¨re le dernier id_image crÃ©Ã©
 	$id_image = $bdd->lastInsertId();
 
 	$query = "INSERT INTO articles_images (ref_article, id_image, ordre)
@@ -3468,16 +3468,16 @@ public function sup_image ($id_image) {
 	global $ARTICLES_MINI_IMAGES_DIR;
 
 	// *************************************************
-	// Controle des données générales
+	// Controle des donnÃ©es gÃ©nÃ©rales
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 
 	$lib_file = "";
-	// Recherche de l'ordre actuel et on récupère le lib de l'image pour supprimer les fichiers
+	// Recherche de l'ordre actuel et on rÃ©cupÃ¨re le lib de l'image pour supprimer les fichiers
 	$query = "SELECT ai.ordre , ia.lib_file
 						FROM articles_images ai
 							LEFT JOIN images_articles ia ON ai.id_image = ia.id_image
@@ -3486,7 +3486,7 @@ public function sup_image ($id_image) {
 	if ($tmp = $resultat->fetchObject ()) {$ordre = $tmp->ordre; $lib_file = $tmp->lib_file;}
 	if (!$ordre) {$ordre = 1;}
 
-	// Décalage des ordres
+	// DÃ©calage des ordres
 	$query2 = "UPDATE articles_images
 						SET ordre = ordre - 1
 						WHERE ref_article = '".$this->ref_article."' &&
@@ -3533,7 +3533,7 @@ final public function image_maj_ordre ($id_image, $new_ordre) {
 	}
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -3562,14 +3562,14 @@ final public function image_maj_ordre ($id_image, $new_ordre) {
 	// MAJ BDD
 	$bdd->beginTransaction();
 
-	// Mise à jour des autres composants
+	// Mise Ã  jour des autres composants
 	$query = "UPDATE articles_images
 						SET ordre = ordre ".$variation." 1
 						WHERE ref_article = '".$this->ref_article."' &&
 									ordre ".$symbole1." '".$ordre."' && ordre ".$symbole2." '".$new_ordre."' ";
 	$bdd->exec ($query);
 
-	// Mise à jour de ce composant
+	// Mise Ã  jour de ce composant
 	$query = "UPDATE articles_images
 						SET ordre = '".$new_ordre."'
 						WHERE id_image = '".$id_image."'  ";
@@ -3578,7 +3578,7 @@ final public function image_maj_ordre ($id_image, $new_ordre) {
 	$bdd->commit();
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
@@ -3608,7 +3608,7 @@ public function add_composant ($ref_article_composant, $qte, $niveau, $ordre) {
 	$COMPOSANT_ID_REFERENCE_TAG = 10;
 
 	// *************************************************
-	// Controle des données générales
+	// Controle des donnÃ©es gÃ©nÃ©rales
 	if (!is_numeric($qte)) {
 		$GLOBALS['_ALERTES']['bad_qte'] = 1;
 	}
@@ -3628,20 +3628,20 @@ public function add_composant ($ref_article_composant, $qte, $niveau, $ordre) {
 		$GLOBALS['_ALERTES']['not_exist_ref_article_composant'] = $ref_article_composant;
 	}
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 
 	// *************************************************
-	// Création de la référence
+	// CrÃ©ation de la rÃ©fÃ©rence
 	$reference = new reference ($COMPOSANT_ID_REFERENCE_TAG);
 	$ref_lot_contenu = $reference->generer_ref();
 
 
 	if ($bdd->beginTransaction()) { $transac = 1; } else { $transac = 0; }
 
-	// Décalage des ordres
+	// DÃ©calage des ordres
 	$query = "UPDATE articles_composants
 						SET ordre = ordre + 1
 						WHERE ref_article_lot = '".$this->ref_article."' &&
@@ -3654,7 +3654,7 @@ public function add_composant ($ref_article_composant, $qte, $niveau, $ordre) {
 										'".$qte."', '".$niveau."', '".$ordre."')";
 	$bdd->exec ($query);
 
-	// Mise à jour du composant
+	// Mise Ã  jour du composant
 	$query = "UPDATE articles SET composant = composant + 1
 						WHERE ref_article = '".$ref_article_composant."' ";
 	$bdd->exec ($query);
@@ -3684,7 +3684,7 @@ public function maj_composant ($ref_lot_contenu, $qte, $niveau) {
 	global $bdd;
 
 	// *************************************************
-	// Controle des données générales
+	// Controle des donnÃ©es gÃ©nÃ©rales
 	if (!is_numeric($qte)) {
 		$GLOBALS['_ALERTES']['bad_qte'] = 1;
 	}
@@ -3693,7 +3693,7 @@ public function maj_composant ($ref_lot_contenu, $qte, $niveau) {
 	}
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -3746,12 +3746,12 @@ public function del_composant ($ref_lot_contenu) {
 						WHERE ref_lot_contenu = '".addslashes($ref_lot_contenu)."' ";
 	$bdd->exec ($query);
 
-	// Mise à jour du composant
+	// Mise Ã  jour du composant
 	$query = "UPDATE articles SET composant = composant - 1
 						WHERE ref_article = '".$ref_article_composant."' ";
 	$bdd->exec ($query);
 
-	// Décalage des ordres
+	// DÃ©calage des ordres
 	$query = "UPDATE articles_composants
 						SET ordre = ordre - 1
 						WHERE ref_article_lot = '".$this->ref_article."' &&
@@ -3793,7 +3793,7 @@ public function del_all_composants () {
 	}
 
 	// ********************************
-	// Mise à jour de la BDD
+	// Mise Ã  jour de la BDD
 	$bdd->beginTransaction ();
 
 	// Suppression des composants
@@ -3816,7 +3816,7 @@ public function del_all_composants () {
 
 	$bdd->commit();
 
-	// Maj des données de session
+	// Maj des donnÃ©es de session
 	$this->composants_loaded = 1;
 	$this->composants = array();
 
@@ -3833,7 +3833,7 @@ final public function composant_maj_ordre ($ref_lot_contenu, $new_ordre) {
 	}
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -3862,14 +3862,14 @@ final public function composant_maj_ordre ($ref_lot_contenu, $new_ordre) {
 	// MAJ BDD
 	$bdd->beginTransaction();
 
-	// Mise à jour des autres composants
+	// Mise Ã  jour des autres composants
 	$query = "UPDATE articles_composants
 						SET ordre = ordre ".$variation." 1
 						WHERE ref_article_lot = '".$this->ref_article."' &&
 									ordre ".$symbole1." '".$ordre."' && ordre ".$symbole2." '".$new_ordre."' ";
 	$bdd->exec ($query);
 
-	// Mise à jour de ce composant
+	// Mise Ã  jour de ce composant
 	$query = "UPDATE articles_composants
 						SET ordre = '".$new_ordre."'
 						WHERE ref_lot_contenu = '".$ref_lot_contenu."'  ";
@@ -3878,23 +3878,23 @@ final public function composant_maj_ordre ($ref_lot_contenu, $new_ordre) {
 	$bdd->commit();
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
-//fonction de mise à jour des pa pour un article de type lot 1 ou lot 2
+//fonction de mise Ã  jour des pa pour un article de type lot 1 ou lot 2
 function check_composant_pa ($ref_article_composant_origine) {
 	global $bdd;
 	global $CALCUL_TARIFS_NB_DECIMALS;
 
-	// si l'article à l'origine de la maj pa est le même que celui-ci, ont s'arrete
+	// si l'article Ã  l'origine de la maj pa est le mÃªme que celui-ci, ont s'arrete
 	if ($ref_article_composant_origine == $this->ref_article) {return false;}
-	//vérification du type de lot
+	//vÃ©rification du type de lot
 	if ($this->lot != 1 && $this->lot != 2 ) { return false; }
-	//si ce lot est lui même composant on empeche la maj pa pour ne pas créer de boucle infine
+	//si ce lot est lui mÃªme composant on empeche la maj pa pour ne pas crÃ©er de boucle infine
 	if ($this->composant) { return false; }
 
-	//on charge lescomposant + prix_achat + paa +qté en stock
+	//on charge lescomposant + prix_achat + paa +qtÃ© en stock
 	$composants = array();
 	$query = "SELECT ac.ref_article_lot, ac.ref_lot_contenu, ac.ref_article_composant, ac.qte, ac.niveau, ac.ordre,
 									 a.lib_article, a.lot, a.valo_indice, a.paa_ht, a.prix_achat_ht,
@@ -3920,7 +3920,7 @@ function check_composant_pa ($ref_article_composant_origine) {
 // *************************************************************************************************************
 // FONCTIONS DE GESTION DES LOTS
 // *************************************************************************************************************
-// vérifie que l'article en cours compose un autre article et lance la maj des pa
+// vÃ©rifie que l'article en cours compose un autre article et lance la maj des pa
 function chek_my_lot() {
 	global $bdd;
 
@@ -4006,7 +4006,7 @@ public function add_ref_article_externe ($ref_fournisseur, $ref_article_externe,
 	global $CALCUL_VAS;
 
 	// *************************************************
-	// Controle des données générales
+	// Controle des donnÃ©es gÃ©nÃ©rales
 	if (!is_numeric($pa_unitaire)) {
 		$GLOBALS['_ALERTES']['bad_pa_unitaire'] = 1;
 	}
@@ -4023,7 +4023,7 @@ public function add_ref_article_externe ($ref_fournisseur, $ref_article_externe,
 	}
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -4050,7 +4050,7 @@ public function mod_ref_article_externe ($ref_fournisseur, $old_ref_fournisseur,
 	unset($GLOBALS['_ALERTES']['bad_pa_unitaire'], $GLOBALS['_ALERTES']['bad_ref_fournisseur'], $GLOBALS['_ALERTES']['exist_ref_article_externe']);
 
 	// *************************************************
-	// Controle des données générales
+	// Controle des donnÃ©es gÃ©nÃ©rales
 	if (!is_numeric($pa_unitaire)) {
 		$GLOBALS['_ALERTES']['bad_pa_unitaire'] = 1;
 	}
@@ -4071,7 +4071,7 @@ public function mod_ref_article_externe ($ref_fournisseur, $old_ref_fournisseur,
 	}
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -4097,13 +4097,13 @@ public function maj_ref_article_externe ($ref_fournisseur, $ref_article_externe,
 	global $bdd;
 
 	// *************************************************
-	// Controle des données générales
+	// Controle des donnÃ©es gÃ©nÃ©rales
 	if (!($ref_fournisseur)) {
 		$GLOBALS['_ALERTES']['bad_ref_fournisseur'] = 1;
 	}
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -4117,7 +4117,7 @@ public function maj_ref_article_externe ($ref_fournisseur, $ref_article_externe,
 						LIMIT 0,1";
 	$resultat0 = $bdd->query($query0);
 	if ($resultat0->rowCount()) {
-		//la ref externe existe déjà donc on vas en fait mettre à jour cette ref_externe
+		//la ref externe existe dÃ©jÃ  donc on vas en fait mettre Ã  jour cette ref_externe
 		$old_ref_article_externe = $ref_article_externe;
 		// maj dans la BDD
 		$query = "UPDATE articles_ref_fournisseur SET ref_fournisseur = '".addslashes($ref_fournisseur)."', ref_article_externe = '".addslashes($ref_article_externe)."' , pa_unitaire = '".addslashes($pa_unitaire)."', date_pa = '".$date_pa."'
@@ -4125,20 +4125,20 @@ public function maj_ref_article_externe ($ref_fournisseur, $ref_article_externe,
 		$bdd->exec ($query);
 
 	} else  {
-		//sinon il se peut que l'on mette à jour une ancienne ref_externe
+		//sinon il se peut que l'on mette Ã  jour une ancienne ref_externe
 		$query1 = "SELECT ref_article_externe
 							FROM articles_ref_fournisseur
 							WHERE ref_article = '".$this->ref_article."' && ref_fournisseur = '".$ref_fournisseur."' && ref_article_externe = '".$old_ref_article_externe."'
 							LIMIT 0,1";
 		$resultat1 = $bdd->query($query1);
 		if ($resultat1->rowCount()) {
-			// on vas mettre à jour l'ancienne ref_externe
+			// on vas mettre Ã  jour l'ancienne ref_externe
 			// maj dans la BDD
 			$query3 = "UPDATE articles_ref_fournisseur SET ref_fournisseur = '".addslashes($ref_fournisseur)."', ref_article_externe = '".addslashes($ref_article_externe)."' , pa_unitaire = '".addslashes($pa_unitaire)."', date_pa = '".$date_pa."'
 								WHERE ref_article = '".$this->ref_article."' && ref_fournisseur = '".addslashes($ref_fournisseur)."' && ref_article_externe = '".addslashes($old_ref_article_externe)."' ";
 			$bdd->exec ($query3);
 		} else {
-			// La ligne n'existe pas il faut la créer
+			// La ligne n'existe pas il faut la crÃ©er
 			$query2 = "INSERT INTO articles_ref_fournisseur (ref_article, ref_article_externe, ref_fournisseur, pa_unitaire, date_pa)
 								VALUES ('".$this->ref_article."', '".addslashes($ref_article_externe)."', '".addslashes($ref_fournisseur)."', '".addslashes($pa_unitaire)."', '".($date_pa)."') ";
 			$bdd->exec ($query2);
@@ -4152,7 +4152,7 @@ public function maj_ref_article_externe ($ref_fournisseur, $ref_article_externe,
 /**
  * @param bool $isAchetable
  * @param bool $isVendable
- * @return int retourne le nombre de ligne mise à jour dans la table, devrait retourner 1 si tout c'est bien passé
+ * @return int retourne le nombre de ligne mise Ã  jour dans la table, devrait retourner 1 si tout c'est bien passÃ©
  */
 public function maj_restriction($isAchetable, $isVendable){
 	global $bdd;
@@ -4172,7 +4172,7 @@ public function maj_restriction($isAchetable, $isVendable){
 
 /**
  * @param bool $isAchetable
- * @return int retourne le nombre de ligne mise à jour dans la table, devrait retourner 1 si tout c'est bien passé
+ * @return int retourne le nombre de ligne mise Ã  jour dans la table, devrait retourner 1 si tout c'est bien passÃ©
  */
 public function maj_achetable($isAchetable){
 	global $bdd;
@@ -4189,7 +4189,7 @@ public function maj_achetable($isAchetable){
 
 /**
  * @param bool $isVendable
- * @return int retourne le nombre de ligne mise à jour dans la table, devrait retourner 1 si tout c'est bien passé
+ * @return int retourne le nombre de ligne mise Ã  jour dans la table, devrait retourner 1 si tout c'est bien passÃ©
  */
 public function maj_vendable($isVendable){
 	global $bdd;
@@ -4271,7 +4271,7 @@ public function add_liaison ($ref_article_lie, $id_liaison_type, $ratio = "") {
 	global $bdd;
 
 	// *************************************************
-	// Controle des données générales
+	// Controle des donnÃ©es gÃ©nÃ©rales
 	if (!is_numeric($id_liaison_type)) {
 		$GLOBALS['_ALERTES']['bad_id_liaison_type'] = 1;
 	}
@@ -4289,7 +4289,7 @@ public function add_liaison ($ref_article_lie, $id_liaison_type, $ratio = "") {
 	}
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -4314,13 +4314,13 @@ public function maj_liaison ($ref_article_lie, $id_type_liaison, $ratio = 1) {
 	global $bdd;
 
 	// *************************************************
-	// Controle des données générales
+	// Controle des donnÃ©es gÃ©nÃ©rales
 	if (!is_numeric($id_type_liaison)) {
 		$GLOBALS['_ALERTES']['bad_id_liaison_type'] = 1;
 	}
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -4418,7 +4418,7 @@ public function add_stock_alerte ($id_stock, $seuil_alerte) {
 	global $bdd;
 
 	// *************************************************
-	// Controle des données générales
+	// Controle des donnÃ©es gÃ©nÃ©rales
 	if (!is_numeric($id_stock)) {
 		$GLOBALS['_ALERTES']['bad_id_stock'] = 1;
 	}
@@ -4427,7 +4427,7 @@ public function add_stock_alerte ($id_stock, $seuil_alerte) {
 	}
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -4457,13 +4457,13 @@ public function add_emplacement_stock ($id_stock, $emplacement) {
 	global $bdd;
 
 	// *************************************************
-	// Controle des données générales
+	// Controle des donnÃ©es gÃ©nÃ©rales
 	if (!is_numeric($id_stock)) {
 		$GLOBALS['_ALERTES']['bad_id_stock'] = 1;
 	}
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -4502,7 +4502,7 @@ public function delete_stock_alerte ($id_stock) {
 public function charger_stocks () {
 	global $bdd;
 
-	// Sélection des stocks disponibles
+	// SÃ©lection des stocks disponibles
 	$this->stocks = array();
 	$query = "SELECT id_stock, qte
 						FROM stocks_articles
@@ -4510,7 +4510,7 @@ public function charger_stocks () {
 	$resultat = $bdd->query ($query);
 	while ($var = $resultat->fetchObject()) { $this->stocks[$var->id_stock] = $var; }
 
-	// Sélection des stocks réservés (CDC "en cours")
+	// SÃ©lection des stocks rÃ©servÃ©s (CDC "en cours")
 	$this->stocks_rsv = array();
 	$query = "SELECT SUM(dl.qte) qte, SUM(dlc.qte_livree) qte_livree, id_stock
 						FROM docs_lines dl
@@ -4522,7 +4522,7 @@ public function charger_stocks () {
 	$resultat = $bdd->query ($query);
 	while ($var = $resultat->fetchObject()) { $this->stocks_rsv[$var->id_stock] = $var; }
 
-	// Sélection des réappro en cours
+	// SÃ©lection des rÃ©appro en cours
 	$this->stocks_cdf = array();
 	$query = "SELECT SUM(dl.qte) qte, SUM(dlf.qte_recue) qte_recue, id_stock,
 									 MIN(dc.date_livraison) date_livraison
@@ -4535,7 +4535,7 @@ public function charger_stocks () {
 	$resultat = $bdd->query ($query);
 	while ($var = $resultat->fetchObject()) { $this->stocks_cdf[$var->id_stock] = $var; }
 
-	//qté des articles composant permettant la fabrication de l'article
+	//qtÃ© des articles composant permettant la fabrication de l'article
 	$this->stocks_tofab = array();
 		if (!$this->composants_loaded) {$this->charger_composants ();}
 		foreach ($this->composants as $composant) {
@@ -4548,7 +4548,7 @@ public function charger_stocks () {
 	}
 
 
-	//qté sn
+	//qtÃ© sn
 	$this->stocks_arti_sn = array();
 			$query = "SELECT sa.ref_stock_article, id_stock, qte as qte_stock
 								FROM stocks_articles  sa
@@ -4581,7 +4581,7 @@ public function charger_stocks_moves ($id_stock = "") {
 	$where = "";
 	if ($id_stock) { $where =  "&& sm.id_stock = '".$id_stock."' "; }
 
-	// Sélection des mouvements stocks
+	// SÃ©lection des mouvements stocks
 	$this->stocks_moves = array();
 	$query = "SELECT sm.ref_stock_move, sm.id_stock, s.lib_stock, s.abrev_stock, sm.qte, sm.date, sm.ref_doc, d.id_etat_doc, d.id_type_doc, de.lib_etat_doc,
 										a.ref_contact, a.nom,
@@ -4663,11 +4663,11 @@ public function add_code_barre ($code_barre) {
 		return false;
 	}
 
-	// Vérification que le code barre n'est pas utilisé ailleurs
+	// VÃ©rification que le code barre n'est pas utilisÃ© ailleurs
 	$query = "SELECT ref_article FROM articles_codes_barres
 						WHERE code_barre = '".$code_barre."' ";
 	$resultat = $bdd->query ($query);
-	// Controle si un code barre est trouvé
+	// Controle si un code barre est trouvÃ©
 	if ($article = $resultat->fetchObject()) {
 		$GLOBALS['_ALERTES']['code_barre_exist'] = $article->ref_article;
 		return false;
@@ -4687,7 +4687,7 @@ public function add_code_barre ($code_barre) {
 // *************************************************************************************************************
 // FONCTIONS DIVERSES
 // *************************************************************************************************************
-//Verifie la disponibilité de l'article, en fonction des dates de dispo, et du stock
+//Verifie la disponibilitÃ© de l'article, en fonction des dates de dispo, et du stock
 function check_dispo () {
 	if (strtotime($this->date_fin_dispo) && (time() < strtotime($this->date_debut_dispo) || time() >= strtotime($this->date_fin_dispo)) && !(stock::still_in_stock ($this->ref_article)) ) {
 		//liaison edi
@@ -4716,7 +4716,7 @@ function round_qte($qte) {
 }
 
 
-// Chargement des derniers documents ayant intégré cet article
+// Chargement des derniers documents ayant intÃ©grÃ© cet article
 function charger_last_docs () {
 	global $bdd;
 	global $ARTICLE_NB_LAST_DOCS_SHOWED;
@@ -4748,7 +4748,7 @@ public function mail_article ($to , $sujet , $message, $fiche_content) {
 	global $bdd;
 
 
-	//on récupère l'email de l'utilisateur en cours pour envoyer le mail
+	//on rÃ©cupÃ¨re l'email de l'utilisateur en cours pour envoyer le mail
 	$reply 			= $_SESSION['user']->getEmail();
 	$from 			= $_SESSION['user']->getEmail();
 
@@ -4759,7 +4759,7 @@ public function mail_article ($to , $sujet , $message, $fiche_content) {
 	}
 }
 
-//chargement de l'évolution des prix sur 12 mois
+//chargement de l'Ã©volution des prix sur 12 mois
 function charger_pv_paa_pa_histo () {
 	global $bdd;
 
@@ -4819,7 +4819,7 @@ function charger_article_abo_stats () {
 		}
 		$liste_abo["souscription_12"][$i] = $nb_abo;
 	}
-	//evolution du nombre d'abonnés
+	//evolution du nombre d'abonnÃ©s
 	for ($i=11; $i>=0; $i--) {
 		$date_min = date("Y-m-d H:i:s", mktime(0, 0, 0, date("m")-$i, 1, date("Y")));
 		$date_max = date("Y-m-d H:i:s", mktime(0, 0, 0, date("m")+(1-$i), 1, date("Y")));
@@ -4839,7 +4839,7 @@ function charger_article_abo_stats () {
 	return $liste_abo;
 
 }
-//chargement des stats des articles à la consommation
+//chargement des stats des articles Ã  la consommation
 function charger_article_conso_stats () {
 	global $bdd;
 
@@ -5216,7 +5216,7 @@ function getLib_modele_spe () {
 
 
 
-// Données spécialisées MATERIEL
+// DonnÃ©es spÃ©cialisÃ©es MATERIEL
 function getPoids () {
 	return $this->poids;
 }
@@ -5229,7 +5229,7 @@ function getDuree_garantie () {
 	return $this->duree_garantie;
 }
 
-// Données spécialisées SERVICES ABO
+// DonnÃ©es spÃ©cialisÃ©es SERVICES ABO
 function getDuree () {
 	return $this->duree;
 }
@@ -5246,7 +5246,7 @@ function getPreavis () {
 	return $this->preavis;
 }
 
-// Données spécialisées SERVICES A LA CONSO
+// DonnÃ©es spÃ©cialisÃ©es SERVICES A LA CONSO
 function getDuree_validite () {
 	return $this->duree_validite;
 }
@@ -5256,7 +5256,7 @@ function getNb_credits () {
 }
 
 
-// Données complémentaires
+// DonnÃ©es complÃ©mentaires
 
 function getImages () {
 	if (!$this->images_loaded) { $this->charger_images(); }
@@ -5371,7 +5371,7 @@ function getStocks_alertes () {
 }
 
 /**
- * @return un tableau de String indéxé sur l'id_stock
+ * @return un tableau de String indÃ©xÃ© sur l'id_stock
  */
 function getStocks_emplacements() {
 	if (!$this->stocks_alertes_loaded) { $this->charger_stocks_alertes(); }
@@ -5501,7 +5501,7 @@ public function print_pdf(){
 	$this->view_pdf(1);
 }
 
-//mise à jour du numéro de compte achat
+//mise Ã  jour du numÃ©ro de compte achat
 /**
  * @param $numero_compte_achat
  * @return bool
@@ -5510,14 +5510,14 @@ function maj_numero_compte_achat ($numero_compte_achat) {
 	global $bdd;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	if ($numero_compte_achat == $this->numero_compte_achat ) {
 		return false;
 	}
 	$this->numero_compte_achat		= $numero_compte_achat;
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -5531,7 +5531,7 @@ function maj_numero_compte_achat ($numero_compte_achat) {
 	
 	return true;
 }
-//mise à jour du numéro de compte vente
+//mise Ã  jour du numÃ©ro de compte vente
 /**
  * @param $numero_compte_vente (int or str)
  * @return bool
@@ -5540,14 +5540,14 @@ function maj_numero_compte_vente ($numero_compte_vente) {
 	global $bdd;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	if ($numero_compte_vente == $this->numero_compte_vente ) {
 		return false;
 	}
 	$this->numero_compte_vente		= $numero_compte_vente;
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -5567,16 +5567,16 @@ function maj_numero_compte_vente ($numero_compte_vente) {
 	//*****************************************************************************************
 	
 	/**
-	 * @param string $ref_interne - La référence interne de l'article recherché
-	 * @return article - retourne l'article correspondant à la référence fourni ou nulle
+	 * @param string $ref_interne - La rÃ©fÃ©rence interne de l'article recherchÃ©
+	 * @return article - retourne l'article correspondant Ã  la rÃ©fÃ©rence fourni ou nulle
 	 */
 	public static function getArticle_by_ref_interne($ref_interne){
 		return article::getArticle_by('ref_interne', $ref_interne);		
 	}
 	
 	/**
-	 * @param string $ref_oem - La référence constructeur de l'article recherché
-	 * @return article - retourne l'article correspondant à la référence fourni ou nulle
+	 * @param string $ref_oem - La rÃ©fÃ©rence constructeur de l'article recherchÃ©
+	 * @return article - retourne l'article correspondant Ã  la rÃ©fÃ©rence fourni ou nulle
 	 */
 	public static function getArticle_by_ref_oem($ref_oem){
 		return article::getArticle_by('ref_oem', $ref_oem);		
@@ -5585,7 +5585,7 @@ function maj_numero_compte_vente ($numero_compte_vente) {
 	/**
 	 * @param $nom_champ_type_ref 
 	 * @param $ref
-	 * @return article - retourne l'article correspondant à la référence fourni ou null
+	 * @return article - retourne l'article correspondant Ã  la rÃ©fÃ©rence fourni ou null
 	 */
 	protected static function getArticle_by($nom_champ_type_ref, $ref){
 		global $bdd;
@@ -5607,11 +5607,11 @@ function maj_numero_compte_vente ($numero_compte_vente) {
 	}
 
 	/**
-	 * récupères tous les articles dont le stock n'est pas suffisant ou n'est pas défini
+	 * rÃ©cupÃ¨res tous les articles dont le stock n'est pas suffisant ou n'est pas dÃ©fini
 	 * pour effectuer la livraison de toutes les commandes (en cours)
-	 * @param string $stateDoc default'vente' : etat de document utilisé pour comparaison prepa | vente | attente
+	 * @param string $stateDoc default'vente' : etat de document utilisÃ© pour comparaison prepa | vente | attente
 	 * @param boolean $miniStock default true : prise en compte du stock_alerte ou pas ...
-	 * @return mixed soit le tableau des stocks > ref_articles > array(stock, sorties, mini) soit false si aucun article n'est retourné
+	 * @return mixed soit le tableau des stocks > ref_articles > array(stock, sorties, mini) soit false si aucun article n'est retournÃ©
 	 */
 	public static function getAllInsufStockByStock($stateDoc='vente', $miniStock = true) {
 		$articlesInsuf = array();
@@ -5629,7 +5629,7 @@ function maj_numero_compte_vente ($numero_compte_vente) {
 		return (count($articlesInsuf)>0) ? $articlesInsuf : false ;
 	}
 	/**
-	 * getLibStock retourne le libélé du stock
+	 * getLibStock retourne le libÃ©lÃ© du stock
 	 * @param int $idStock
 	 * @return string | false
 	 */
@@ -5642,7 +5642,7 @@ function maj_numero_compte_vente ($numero_compte_vente) {
 		return false ;
 	}
 	/**
-	 * getLibStock retourne le libélé d'u stock'un article
+	 * getLibStock retourne le libÃ©lÃ© d'u stock'un article
 	 * @param string $ref_article
 	 * @return string | false
 	 */
@@ -5655,10 +5655,10 @@ function maj_numero_compte_vente ($numero_compte_vente) {
 		return false ;
 	}
 	/**
-	 * getArticleStockInfos retourne un tableau des quantités d'articles par catégorie
+	 * getArticleStockInfos retourne un tableau des quantitÃ©s d'articles par catÃ©gorie
 	 * ref_article > id_stock > array(alerte, stock, prepa, vente, attente)
 	 * @param string $ref_article ou chaine vide
-	 * @return mixed tous les articles si empty($ref_article) ou les états de stocks de l'article renseigné ou false si l'article renseigné n'est pas valide
+	 * @return mixed tous les articles si empty($ref_article) ou les Ã©tats de stocks de l'article renseignÃ© ou false si l'article renseignÃ© n'est pas valide
 	 */
 	public static function getArticleStockInfos($ref_article=""){
 		if(empty($ref_article))
@@ -5774,7 +5774,7 @@ function mail_html_message ($to , $sujet , $message , $reply , $from) {
 
 }
 
-//fonction renvoyant les sous composant d'un article donné
+//fonction renvoyant les sous composant d'un article donnÃ©
 function composant_order_by_lot (&$tab1, $tab2, $cle1, $cle2, $cle3) {
 	static $tab1 = array();
 	static $indentation = 0;
@@ -5931,7 +5931,7 @@ function getListeOffByCat($categ, &$count) {
   return $out;
 }
 
-//modele pdf par défaut
+//modele pdf par dÃ©faut
 function defaut_art_modele_pdf ($ref_art_categ, $id_pdf_modele) {
 	global $bdd;
 
@@ -5977,7 +5977,7 @@ function active_art_modele_pdf ($ref_art_categ, $id_pdf_modele) {
 	return true;
 }
 
-//désactivation d'un modele pdf
+//dÃ©sactivation d'un modele pdf
 function desactive_art_modele_pdf ($ref_art_categ, $id_pdf_modele) {
 	global $bdd;
 

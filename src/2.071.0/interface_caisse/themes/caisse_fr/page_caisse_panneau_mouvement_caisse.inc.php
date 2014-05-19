@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("sens_mouvement");
 check_page_variables ($page_variables);
 
@@ -33,7 +33,7 @@ check_page_variables ($page_variables);
 					<?php if($sens_mouvement == "ajout")
 					{			echo "Ajout ";}
 					else{	echo "Retrait ";}?>
-					dans la caisse effectué
+					dans la caisse effectuÃ©
 				</td>
 			</tr>
 			<tr>

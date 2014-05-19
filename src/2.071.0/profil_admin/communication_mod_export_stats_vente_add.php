@@ -8,7 +8,7 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 
-//vÈrification des donnÈes reÁues
+//v√©rification des donn√©es re√ßues
 if (!isset($_REQUEST["choix_source"])  || ($_REQUEST["choix_source"] != 1 && $_REQUEST["choix_source"] != 2)  ) {$GLOBALS['_ALERTES']['choisir_source'] = 1; }
 if (isset($_REQUEST["choix_source"]) && $_REQUEST["choix_source"] == 1 ) {
   if ($_REQUEST["lib_modele"] == "") {$GLOBALS['_ALERTES']['indiquer_lib_modele'] = 1;}
@@ -21,9 +21,9 @@ if (isset($_REQUEST["choix_source"]) && $_REQUEST["choix_source"] == 2 ) {
 
 if (!count($GLOBALS['_ALERTES'])) {
   
-  //crÈation ‡ partir d'un modele existant
+  //cr√©ation √† partir d'un modele existant
   if (isset($_REQUEST["choix_source"]) && $_REQUEST["choix_source"] == 1 ) {
-    //rÈcupÈration du modele export choisi pour etre dupliquÈ
+    //r√©cup√©ration du modele export choisi pour etre dupliqu√©
     $model_infos = charge_modele_export ($_REQUEST["id_export_modele"]);
     
     $query = "SELECT MAX(id_export_modele) indent FROM exports_modeles  ";
@@ -37,7 +37,7 @@ if (!count($GLOBALS['_ALERTES'])) {
     $query = "SELECT  code_export_modele FROM exports_modeles WHERE code_export_modele = '".$class_name."'  ";
     $resultat = $bdd->query($query);
     if (!$tmp = $resultat->fetchObject()) {
-      // on passe ‡ la suite
+      // on passe √† la suite
       // ouverture des fichiers
       $old_config_file = file($ODS_MODELES_DIR."config/".$model_infos->code_export_modele.".config.php");
       $old_class_file = file($ODS_MODELES_DIR.$model_infos->code_export_modele.".class.php");
@@ -69,7 +69,7 @@ if (!count($GLOBALS['_ALERTES'])) {
       $GLOBALS['_ALERTES']['exist_pdf_modele'];
     }
   }
-  //crÈation ‡ partir d'un nouveau modele
+  //cr√©ation √† partir d'un nouveau modele
   if (isset($_REQUEST["choix_source"]) && $_REQUEST["choix_source"] == 2 ) {
   
     if (!empty($_FILES['file_1']['tmp_name'])) {
@@ -90,12 +90,12 @@ if (!count($GLOBALS['_ALERTES'])) {
         $class_name = str_replace(".class.php","",$_FILES["file_2"]["name"] );
       } 
     }
-    //vÈrification de la   prÈsence de ce modele dans la base
+    //v√©rification de la   pr√©sence de ce modele dans la base
     
     $query = "SELECT  code_export_modele FROM exports_modeles WHERE code_export_modele = '".$class_name."'  ";
     $resultat = $bdd->query($query);
     if (!$tmp = $resultat->fetchObject()) {
-      //si le ce type de class n'as pas dÈj‡ ÈtÈ installÈe, alors on copie les fichiers
+      //si le ce type de class n'as pas d√©j√† √©t√© install√©e, alors on copie les fichiers
       if (!empty($_FILES['file_1']['tmp_name'])) {
           
         //copie du fichier
@@ -123,7 +123,7 @@ if (!count($GLOBALS['_ALERTES'])) {
     }
   
   }
-  //les fichiers sont copiÈs , il n'y a pas d'erreur de class, on enregistre les infos dans la base
+  //les fichiers sont copi√©s , il n'y a pas d'erreur de class, on enregistre les infos dans la base
   if (isset($class_name) && isset($config_name) && ($class_name == $config_name) && !count($GLOBALS['_ALERTES'])) {
     $query = "INSERT INTO exports_modeles (id_export_type, lib_modele, desc_modele , code_export_modele,extension)
               VALUES ('5', '".addslashes($_REQUEST["lib_modele"])."', '".addslashes($_REQUEST["desc_modele"])."',

@@ -1,10 +1,10 @@
 <?php
 
 // *************************************************************************************************************
-// Création d'une télécollecte
+// CrÃ©ation d'une tÃ©lÃ©collecte
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
 
 ?>
 <p>&nbsp;</p>
-<p>Création d'une télécollecte</p>
+<p>CrÃ©ation d'une tÃ©lÃ©collecte</p>
 <p>&nbsp; </p>
 <?php 
 foreach ($_ALERTES as $alerte => $value) {

@@ -4,7 +4,7 @@
 // RESUME DES STOCK D'UN ARTICLE (affichage dans les moteurs de recherche article)
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -113,18 +113,18 @@ $article_sns = $article->getStocks_arti_sn ();
 								
 									?>
 									<div style="text-align:left">
-									Détails des numéros de série en stock pour <?php echo $article->getLib_article();?><br />
-									<?php echo htmlentities($stock_liste->getLib_stock()); ?>: Quantité en stock: <?php if (isset($art_stocks[$stock_liste->getId_stock ()]->qte)) {
+									DÃ©tails des numÃ©ros de sÃ©rie en stock pour <?php echo $article->getLib_article();?><br />
+									<?php echo htmlentities($stock_liste->getLib_stock()); ?>: QuantitÃ© en stock: <?php if (isset($art_stocks[$stock_liste->getId_stock ()]->qte)) {
 										echo $art_stocks[$stock_liste->getId_stock ()]->qte ;
 										
 									} else {
 										echo "0";
-									}?> dont <?php echo count($liste_sn );?> possédant un numéro de série.<br />
+									}?> dont <?php echo count($liste_sn );?> possÃ©dant un numÃ©ro de sÃ©rie.<br />
 									</div>
 									<table width="100%" style="text-align:left">
 									<tr>
 									<td style="font-weight:bolder">
-									Numéro de série
+									NumÃ©ro de sÃ©rie
 									</td>
 									<td>
 									
@@ -171,8 +171,8 @@ $article_sns = $article->getStocks_arti_sn ();
 								
 									?>
 									<div style="text-align:left">
-									Détails des numéros de lots en stock pour <?php echo $article->getLib_article();?><br />
-									<?php echo htmlentities($stock_liste->getLib_stock()); ?>: Quantité en stock: <?php if (isset($art_stocks[$stock_liste->getId_stock ()]->qte)) {
+									DÃ©tails des numÃ©ros de lots en stock pour <?php echo $article->getLib_article();?><br />
+									<?php echo htmlentities($stock_liste->getLib_stock()); ?>: QuantitÃ© en stock: <?php if (isset($art_stocks[$stock_liste->getId_stock ()]->qte)) {
 								echo $art_stocks[$stock_liste->getId_stock ()]->qte ;
 								
 							} else {
@@ -185,15 +185,15 @@ $article_sns = $article->getStocks_arti_sn ();
 								}
 								echo $combien;
 								
-									?> possédant un numéro de lot
+									?> possÃ©dant un numÃ©ro de lot
 									</div>
 									<table width="100%" style="text-align:left">
 									<tr>
 									<td style="font-weight:bolder">
-									Numéro de lot
+									NumÃ©ro de lot
 									</td>
 									<td style="font-weight:bolder">
-									Quantité
+									QuantitÃ©
 									</td>
 									</tr>
 									<?php 

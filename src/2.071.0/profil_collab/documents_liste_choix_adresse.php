@@ -23,7 +23,7 @@ $contact = new contact ($_REQUEST['ref_contact']);
 
 if ($contact->getRef_contact()) {
 
-// Préparations des variables d'affichage
+// PrÃ©parations des variables d'affichage
 $adresses = $contact->getAdresses();
 
 // *************************************************************************************************************

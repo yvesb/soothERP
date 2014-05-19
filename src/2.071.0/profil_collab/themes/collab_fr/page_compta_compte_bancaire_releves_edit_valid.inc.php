@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
 
 ?>
 <p>&nbsp;</p>
-<p>comptes bancaire (edition relevé) </p>
+<p>comptes bancaire (edition relevÃ©) </p>
 <p>&nbsp; </p>
 <?php 
 foreach ($_ALERTES as $alerte => $value) {
@@ -54,10 +54,10 @@ foreach ($_ALERTES as $alerte => $value) {
 if (erreur) {
 
 	if (bad_releve_solde_reel) {
-		texte_erreur += "Le Solde réél n'est pas valide.";
+		texte_erreur += "Le Solde rÃ©Ã©l n'est pas valide.";
 	}
 	if (releve_in_closed_exercice) {
-		texte_erreur += "Le Relevé fait parti d'un exercice comptable clôt.<br /> Modification impossible.";
+		texte_erreur += "Le RelevÃ© fait parti d'un exercice comptable clÃ´t.<br /> Modification impossible.";
 	}
 
 	window.parent.alerte.alerte_erreur ('Erreur de saisie', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');

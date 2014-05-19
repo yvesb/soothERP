@@ -11,7 +11,7 @@ require ($DIR."_session.inc.php");
 
 if (isset($_REQUEST['ref_doc'])) {
 
-// mise à jour de l'app_tarif
+// mise Ã  jour de l'app_tarif
 	 
 	$ref_doc= $_REQUEST["ref_doc"];
 	$document = open_doc ($ref_doc);

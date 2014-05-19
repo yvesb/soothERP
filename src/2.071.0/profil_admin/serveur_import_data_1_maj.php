@@ -42,28 +42,28 @@ $fichier = $import_serveur->getUrl_serveur_import().$ECHANGE_LMB_DIR."export_cat
     // Fonction de traitement des balises fermantes
     function fonctionBaliseFermante($parseur, $nomBalise)
     {
-        // On oublie la dernière balise rencontrée
+        // On oublie la derniÃ¨re balise rencontrÃ©e
         global $derniereBaliseRencontree;
 
         $derniereBaliseRencontree = "";
     }
 
     //Fonction de traitement du texte
-    // qui est appelée par le "parseur"
+    // qui est appelÃ©e par le "parseur"
     function fonctionTexte($parseur, $texte)
     {
     }
 
-    // Création du parseur XML
+    // CrÃ©ation du parseur XML
     $parseurXML = xml_parser_create("ISO-8859-1");
 
-    // Nom des fonctions à appeler
-    // lorsque des balises ouvrantes ou fermantes sont rencontrées
+    // Nom des fonctions Ã  appeler
+    // lorsque des balises ouvrantes ou fermantes sont rencontrÃ©es
     xml_set_element_handler($parseurXML, "fonctionBaliseOuvrante"
                                        , "fonctionBaliseFermante");
 
-    // Nom de la fonction à appeler
-    // lorsque du texte est rencontré
+    // Nom de la fonction Ã  appeler
+    // lorsque du texte est rencontrÃ©
     xml_set_character_data_handler($parseurXML, "fonctionTexte");
 
     // Ouverture du fichier
@@ -73,7 +73,7 @@ $fichier = $import_serveur->getUrl_serveur_import().$ECHANGE_LMB_DIR."export_cat
     // Lecture ligne par ligne
     while ( $ligneXML = fgets($fp, 1024)) {
         // Analyse de la ligne
-        // REM: feof($fp) retourne TRUE s'il s'agit de la dernière
+        // REM: feof($fp) retourne TRUE s'il s'agit de la derniÃ¨re
         //      ligne du fichier.
         xml_parse($parseurXML, $ligneXML, feof($fp)) or
             die("Erreur XML");
@@ -86,10 +86,10 @@ $fichier = $import_serveur->getUrl_serveur_import().$ECHANGE_LMB_DIR."export_cat
 	$list_art_categ =	import_order_by_parent ($categs, $import_art_categs, "REF_ART_CATEG", "REF_ART_CATEG_PARENT", "", "");
 //print_r($import_art_categs_carac);
 	$presentes_art_categ =	get_articles_categories();
-echo "<p class=\"titre\">Mise à jour du catalogue ".$import_serveur->getLib_serveur_import()."</p>";
-echo "Mise à jour en cours.<br />";
+echo "<p class=\"titre\">Mise Ã  jour du catalogue ".$import_serveur->getLib_serveur_import()."</p>";
+echo "Mise Ã  jour en cours.<br />";
 	
-//mise à jour des catégories existantes	
+//mise Ã  jour des catÃ©gories existantes	
 foreach ($list_art_categ  as $art_categ){
 	foreach ($presentes_art_categ as $p_art_categ) {
 		if ($art_categ["REF_ART_CATEG"] == $p_art_categ->ref_art_categ) {

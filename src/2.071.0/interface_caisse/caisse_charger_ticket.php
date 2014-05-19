@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ("_session.inc.php");
 
 if(!isset($_REQUEST['ref_ticket'])){
-	echo "La référence du ticket n'est pas spécifiée";
+	echo "La rÃ©fÃ©rence du ticket n'est pas spÃ©cifiÃ©e";
 	exit;
 
 }
@@ -46,7 +46,7 @@ if($ligne2 == ""){
 }
 
 if($ligne1 == "" && $ligne2 == "" && $ligne3 == ""){
-	$ligne1 = "Client non identifié";
+	$ligne1 = "Client non identifiÃ©";
 }
 
 $grille_tarrifaire = null;
@@ -60,7 +60,7 @@ if($document->getRef_contact() != ""){
 	$resultat = $bdd->query($query);
 	
 	if(!$grille_tarrifaire = $resultat->fetchObject()){
-		echo "Ce lient n'a pas de grille tarifaire spécidiée";
+		echo "Ce lient n'a pas de grille tarifaire spÃ©cidiÃ©e";
 		$lib_grille_tarrifaire = $_SESSION['magasin']->getLib_tarif();
 		exit;
 	}else

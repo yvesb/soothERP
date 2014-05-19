@@ -213,7 +213,7 @@ Event.observe("link_sous__composant_<?php echo $serialisation_composant;?>", "cl
 	</table>
 	</form>
 <script type="text/javascript">
-//fonction de validation de l'étape 4
+//fonction de validation de l'Ã©tape 4
 function valide_etape_4() {
 if (!$("composant_ul").empty()) {
 var liste = Sortable.serialize('composant_ul').replace(/composant_ul\[\]=/g,"");

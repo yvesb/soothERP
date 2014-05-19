@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// OUVERTURE D'UN DOCUMENT SPECIFIQUE POUR INVENTAIRE (insertion des art_categ selectionnées)
+// OUVERTURE D'UN DOCUMENT SPECIFIQUE POUR INVENTAIRE (insertion des art_categ selectionnÃ©es)
 // *************************************************************************************************************
 
 
@@ -18,7 +18,7 @@ if (isset($_REQUEST["Submit"])) {
 	$document = open_doc ($ref_doc);
 	$id_type_doc = $document->getID_TYPE_DOC ();
 	$ref_contact = $document->getRef_contact ();
-	//on envois en param la liste des art_categ séléctionnées
+	//on envois en param la liste des art_categ sÃ©lÃ©ctionnÃ©es
 	$art_categs = array();
 	foreach ($_REQUEST as $variable => $valeur) {
 		if (substr ($variable, 0, 8) != "ins_art_") { continue; }
@@ -35,7 +35,7 @@ if (isset($_REQUEST["Submit"])) {
 	
 	$document->define_art_categ($art_categs);
 	
-	//si un montant est négatif
+	//si un montant est nÃ©gatif
 	$montant_negatif = false;
 	$montant_positif = 1;
 	if (isset($_REQUEST["montant_neg"])) { $montant_negatif = true; $montant_positif = -1;}

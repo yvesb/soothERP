@@ -17,7 +17,7 @@ require ($DIR."_session.inc.php");
 
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 $form['type'] = $search['type'] = 1;
 if (isset($_REQUEST['type'])) {
 	$form['type'] = $_REQUEST['type'];
@@ -84,7 +84,7 @@ if (isset($_REQUEST['in_archive'])) {
 }
 
 // *************************************************
-// Stock et Tarif affichés
+// Stock et Tarif affichÃ©s
 $form['id_stock'] = $search['id_stock'] = $_SESSION['magasin']->getId_stock();
 if (isset($_REQUEST['id_stock'])) {
 	$form['id_stock'] = $_REQUEST['id_stock'];
@@ -100,7 +100,7 @@ if (isset($_REQUEST['id_tarif'])) {
 
 
 // *************************************************
-// Caractéristiques
+// CaractÃ©ristiques
 $caracs = array();
 foreach ($_REQUEST as $variable => $valeur) {
 	if (substr ($variable, 0, 5) != "carac") { continue; }
@@ -113,10 +113,10 @@ foreach ($_REQUEST as $variable => $valeur) {
 
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_select = "";
 	$query_join 	= "";
 	$query_where 	= "";
@@ -141,7 +141,7 @@ if (isset($_REQUEST['recherche'])) {
 		}
 		$query_where 	.= " ) ) ";
 	}
-	// Catégorie
+	// CatÃ©gorie
 	if ($search['ref_art_categ']) { 
 		$liste_categories = "";
 		$liste_categs = array();
@@ -164,7 +164,7 @@ if (isset($_REQUEST['recherche'])) {
 			$query_where 	.= " ISNULL(a.ref_constructeur)";
 		}
 	}
-	// Nouveauté
+	// NouveautÃ©
 	if ($search['is_nouveau']) {
 		if ($query_where) { $query_where .= " && "; }
 		$query_where 	.= " a.date_creation > '".date("Y:m:d h:i:s", time()-$DELAI_ARTICLE_IS_NEW)."'";
@@ -185,7 +185,7 @@ if (isset($_REQUEST['recherche'])) {
 	}
 
 
-	/*/ Caractéristiques
+	/*/ CaractÃ©ristiques
 	$already_join = 0;
 	foreach ($caracs as $carac) {
 		if ($carac->valeur == "") { continue; }
@@ -261,7 +261,7 @@ if (isset($_REQUEST['recherche'])) {
 	}
 	unset ($fiche, $resultat, $query);
 	
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 	$query = "SELECT a.ref_article
 						FROM articles a 
 							".$count_query_join."

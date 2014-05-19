@@ -15,7 +15,7 @@ function prepare_envoi ($keep_alive = 0, $recevoir_copie = 1) {
 	global $CONFIG_DIR;
 	require ($CONFIG_DIR."config_mail.inc.php");
 
-	// Paramètres de configuration. Par défaut Mail classique.
+	// ParamÃ¨tres de configuration. Par dÃ©faut Mail classique.
 	switch ($MAIL_METHODE) {
 		case "SMTP":
 			$this->IsSMTP(); 
@@ -49,24 +49,24 @@ function prepare_envoi ($keep_alive = 0, $recevoir_copie = 1) {
 }
 
 function envoi ($destinataires, $sujet, $message, $infos = array(), $pieces = array()) {
-	// Paramètres pour INFOS[]
+	// ParamÃ¨tres pour INFOS[]
 	// $infos['mail_from_mail']  			
 	// $infos['mail_from_name']
 	// $infos['mail_reply_mail']
 	// $infos['mail_reply_name']
 	// $infos['no_copy']						> Interdit l'envoi d'une copie par email
-	// $infos['from_user']					> Si défini, le mail est envoyé depuis l'email de l'utilisateur actuellement loggué
+	// $infos['from_user']					> Si dÃ©fini, le mail est envoyÃ© depuis l'email de l'utilisateur actuellement logguÃ©
 
 	// Contenu du mail
 	$this->Subject  = $sujet;
 
-	// Modification éffectuée par Yves Bourvon le 03/06/2011
-	// Remplacement de 'eregi_replace'(obsolète sous php 5.3) par 'preg_replace'
+	// Modification Ã©ffectuÃ©e par Yves Bourvon le 03/06/2011
+	// Remplacement de 'eregi_replace'(obsolÃ¨te sous php 5.3) par 'preg_replace'
 
 	$body           = preg_replace('/\\\\/','', $message);
 	$this->MsgHTML($body);
 
-	// Définition de l'expéditeur
+	// DÃ©finition de l'expÃ©diteur
 	$tmp_from_mail = $tmp_from_name = $tmp_reply_mail = $tmp_reply_name = "";
 	if (isset($infos['from_user'])) {
 		$tmp_from_mail = $tmp_reply_mail = $_SESSION['user']->getEmail();
@@ -94,7 +94,7 @@ function envoi ($destinataires, $sujet, $message, $infos = array(), $pieces = ar
 	if ($tmp_from_mail) 	{ $this->SetFrom($tmp_from_mail, $tmp_from_name); 		 }
 	if ($tmp_reply_mail) 	{ $this->AddReplyTo($tmp_reply_mail, $tmp_reply_name); }
 
-	// Définition de l'expéditeur
+	// DÃ©finition de l'expÃ©diteur
 	if (is_array($destinataires)) {
 		for ($i=0; $i<count($destinataires); $i++) {
 			$this->AddAddress($destinataires[$i], $destinataires[$i]);
@@ -103,7 +103,7 @@ function envoi ($destinataires, $sujet, $message, $infos = array(), $pieces = ar
 		$this->AddAddress($destinataires, $destinataires);
 	}
 
-	// Pièces jointes
+	// PiÃ¨ces jointes
 	foreach ($pieces as $piece) {
 		$piece->type = NULL;
 		if (substr($piece->nom_fichier, -4) == ".pdf" && !isset($piece->type)) { $piece->type = "application/pdf"; }
@@ -116,7 +116,7 @@ function envoi ($destinataires, $sujet, $message, $infos = array(), $pieces = ar
 	// Envoi du mail
 	$resultat = $this->Send();
 	
-	// Suppression des Adresses et pièces jointes pour le prochain envoi, le cas échéant
+	// Suppression des Adresses et piÃ¨ces jointes pour le prochain envoi, le cas Ã©chÃ©ant
 	$this->ClearAddresses();
 	$this->ClearAttachments();
 
@@ -127,7 +127,7 @@ function envoi ($destinataires, $sujet, $message, $infos = array(), $pieces = ar
 
 
 function mail_attachement ($to , $sujet , $message , $filename , $typemime , $nom , $reply , $from, $nom_aff) {
-	// $filename et $nom_aff sont des tableaux qui contiennent chemin + nom de X pièces jointes :
+	// $filename et $nom_aff sont des tableaux qui contiennent chemin + nom de X piÃ¨ces jointes :
 	$destinataires = $to;
 	// sujet OK
 	// message OK
@@ -203,7 +203,7 @@ function envoi_email_templated ($to, $sujet, $message) {
 //***********************************************************************
 
 /**
-* Verifie que l'adresse email à bien une syntaxe valide
+* Verifie que l'adresse email Ã  bien une syntaxe valide
 * @param string $email exemple contact@domain.ltd
 * @return boolean retourne true si la syntaxe est correct, false sinon.
 */

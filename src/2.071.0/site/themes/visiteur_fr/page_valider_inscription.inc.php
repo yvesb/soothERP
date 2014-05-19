@@ -54,11 +54,11 @@
 				if($inscription_ok){
 					// Inscription OK : Rappel des identifiants
 				?>
-					<b>Votre inscription a bien été effectuée.</b><br />
-					Vous pouvez maintenant vous connecter au logiciel à l'adresse suivante : <br />
+					<b>Votre inscription a bien Ã©tÃ© effectuÃ©e.</b><br />
+					Vous pouvez maintenant vous connecter au logiciel Ã  l'adresse suivante : <br />
 					<a href="<?php echo url_site(); ?>"><?php echo url_site(); ?></a><br /><br />
 					<span style="text-align:left;">
-					Pour mémoire, voici vos identifiants: <br />
+					Pour mÃ©moire, voici vos identifiants: <br />
 					Identifiant: <?php echo $_REQUEST['login']; ?><br />
 					Mot de passe: ******
 					</span>
@@ -87,10 +87,10 @@
 					// Affichage des erreurs
 					foreach ($_ERREURS as $alerte => $value) {
 						if ($alerte == "login_used" || $alerte == "used_pseudo") { ?>
-						Erreur détectée : Le nom d'utilisateur <i><b><?php echo $pseudo;?></b></i> est déjà utilisé.<br />
+						Erreur dÃ©tectÃ©e : Le nom d'utilisateur <i><b><?php echo $pseudo;?></b></i> est dÃ©jÃ  utilisÃ©.<br />
 						<?php } elseif ($alerte == "params" || $alerte == "no_ref_coord_user" || $alerte == "no_uci_existing") {
 						?>
-						Erreur détectée : Veuillez vérifier le lien !
+						Erreur dÃ©tectÃ©e : Veuillez vÃ©rifier le lien !
 						<?php 	
 						} elseif ($alerte == "no_pseudo") {
 						?>
@@ -98,7 +98,7 @@
 						<?php 	
 						} elseif ($alerte == "used_ref_coord_user") {
 						?>
-						Erreur détectée : Un utilisateur a déjà été créé pour ce compte !
+						Erreur dÃ©tectÃ©e : Un utilisateur a dÃ©jÃ  Ã©tÃ© crÃ©Ã© pour ce compte !
 						<?php 
 						} else {
 							echo $alerte . ' => ' . $value;
@@ -218,12 +218,12 @@
 					foreach ($_ALERTES as $alerte => $value) {
 						if ($alerte == "login_used" || $alerte == "used_pseudo") { ?>
 						Erreur ! <br />
-						Le nom d'utilisateur <i><b><?php echo $pseudo;?></b></i> est déjà utilisé.<br />
+						Le nom d'utilisateur <i><b><?php echo $pseudo;?></b></i> est dÃ©jÃ  utilisÃ©.<br />
 						Veuillez en choisir un autre : 
 						<a href="_valider_inscription.php?coord=<?php echo $ref_coord;?>&code=<?php echo $code;?>">Inscription</a>
 						<?php } elseif ($alerte == "params" || $alerte == "no_ref_coord_user" || $alerte == "no_uci_existing") {
 						?>
-						Erreur détectée : Veuillez vérifier le lien !
+						Erreur dÃ©tectÃ©e : Veuillez vÃ©rifier le lien !
 						<?php 	
 						} elseif ($alerte == "no_pseudo") {
 						?>
@@ -231,7 +231,7 @@
 						<?php 	
 						} elseif ($alerte == "used_ref_coord_user") {
 						?>
-						Erreur détectée : Un utilisateur a déjà été créé pour ce compte !
+						Erreur dÃ©tectÃ©e : Un utilisateur a dÃ©jÃ  Ã©tÃ© crÃ©Ã© pour ce compte !
 						<?php 
 						} else {
 							echo $alerte . ' => ' . $value;
@@ -256,7 +256,7 @@
 						LMPL
 				</div>
 				
-				La présente version modifiée de Lundi Matin Business est une distribution <a href="http://www.sootherp.fr" target="_blank" class="grey_text" rel="noreferrer">SoothERP</a>
+				La prÃ©sente version modifiÃ©e de Lundi Matin Business est une distribution <a href="http://www.sootherp.fr" target="_blank" class="grey_text" rel="noreferrer">SoothERP</a>
 				
 				</td>
 				</tr>

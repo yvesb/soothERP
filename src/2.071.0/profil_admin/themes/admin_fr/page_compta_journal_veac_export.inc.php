@@ -4,7 +4,7 @@
 //journal des ventes
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -20,7 +20,7 @@ function nb_mois($date1, $date2) {
 
 ?>
 <script type="text/javascript">	
-tableau_smenu[0] = Array("smenu_comptabilite", "smenu_comptabilite.php" ,"true" ,"sub_content", "Comptabilité");
+tableau_smenu[0] = Array("smenu_comptabilite", "smenu_comptabilite.php" ,"true" ,"sub_content", "ComptabilitÃ©");
 tableau_smenu[1] = Array('compta_journal_veac_export','compta_journal_veac_export.php','true','sub_content', "Export des journaux des ventes et des achats");
 update_menu_arbo();
 </script>
@@ -30,10 +30,10 @@ update_menu_arbo();
 	<a href="#" id="close_compta_verify" style="float:right">
 	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
 	</a>
-	<span style="font-weight:bolder">Vérification automatique des journaux des ventes et des achats.</span><br />
+	<span style="font-weight:bolder">VÃ©rification automatique des journaux des ventes et des achats.</span><br />
 <br />
 	<br />
-	(cette opération peut durer plusieurs minutes)<br />
+	(cette opÃ©ration peut durer plusieurs minutes)<br />
 
 	<div id="aff_compta_verify" style="overflow:auto; height:430px">
 			
@@ -62,7 +62,7 @@ update_menu_arbo();
 			<div class="progress_barre"><div class="files_progress" id="progverify"></div></div>
 			<div id="verify_journal" style="display:none"></div><br />
 
-			<span id="verify_journal_start" style="display:block;  text-decoration:underline;cursor:pointer">Lancer la vérification automatique des journaux pour la période sélectionnée</span>
+			<span id="verify_journal_start" style="display:block;  text-decoration:underline;cursor:pointer">Lancer la vÃ©rification automatique des journaux pour la pÃ©riode sÃ©lectionnÃ©e</span>
 			</div>
 		</div>
 	
@@ -93,7 +93,7 @@ update_menu_arbo();
 			<select id="date_exercice" name="date_exercice" class="classinput_nsize">
 			<?php
 			for($i = 0; $i< count($liste_exercices); $i++) {
-				//décompte du nombre de mois en deux exercices
+				//dÃ©compte du nombre de mois en deux exercices
 				$date1 = date("Y-m-d",strtotime($liste_exercices[$i]->date_fin));
 				if (isset($liste_exercices[$i+1])) {
 					
@@ -151,7 +151,7 @@ update_menu_arbo();
 			<td>&nbsp; </td>
 			<td>&nbsp; </td>
 			<td style="text-align:right">
-			<span id="open_verifi_journal" style="cursor:pointer; text-decoration:underline">Vérifier les journaux des ventes et des achats</span>
+			<span id="open_verifi_journal" style="cursor:pointer; text-decoration:underline">VÃ©rifier les journaux des ventes et des achats</span>
 			<SCRIPT type="text/javascript">
 			Event.observe("open_verifi_journal", "click", function(evt){
 				ouvre_compta_verify();
@@ -188,23 +188,23 @@ update_menu_arbo();
 	
 	<div class="caract_table"> Export EBP</div>
 		
-			<span id="export_journal_ebp" style="cursor:pointer; text-decoration:underline; font-size:14px">Export des &eacute;critures  des ventes et des achats au format EBP</span> (pour la période sélectionnée)<br />
+			<span id="export_journal_ebp" style="cursor:pointer; text-decoration:underline; font-size:14px">Export des &eacute;critures  des ventes et des achats au format EBP</span> (pour la pÃ©riode sÃ©lectionnÃ©e)<br />
 <br />
 		
 	<div class="caract_table"> Export EDI</div>
-			<span id="export_journal_edi" style="cursor:pointer; text-decoration:underline; font-size:14px">Export des &eacute;critures  des ventes et des achats au format EDI</span> (pour la période sélectionnée)<br />
+			<span id="export_journal_edi" style="cursor:pointer; text-decoration:underline; font-size:14px">Export des &eacute;critures  des ventes et des achats au format EDI</span> (pour la pÃ©riode sÃ©lectionnÃ©e)<br />
 <br />
-			<span id="export_journal_edi_favori_vente" style="cursor:pointer; text-decoration:underline; font-size:14px">Export des &eacute;critures  des ventes et des comptes comptables au format EDI</span> (pour la période sélectionnée)<br />
+			<span id="export_journal_edi_favori_vente" style="cursor:pointer; text-decoration:underline; font-size:14px">Export des &eacute;critures  des ventes et des comptes comptables au format EDI</span> (pour la pÃ©riode sÃ©lectionnÃ©e)<br />
 <br />
-			<span id="export_journal_edi_favori_achat" style="cursor:pointer; text-decoration:underline; font-size:14px">Export des &eacute;critures  des achats et des comptes comptables au format EDI</span> (pour la période sélectionnée)<br />
+			<span id="export_journal_edi_favori_achat" style="cursor:pointer; text-decoration:underline; font-size:14px">Export des &eacute;critures  des achats et des comptes comptables au format EDI</span> (pour la pÃ©riode sÃ©lectionnÃ©e)<br />
 <br />
 
-			<span id="export_journal_edi_banque" style="cursor:pointer;  text-decoration:underline; font-size:14px">Export des &eacute;critures  de banque au format EDI</span> <span >(pour la période sélectionnée)</span><br />
+			<span id="export_journal_edi_banque" style="cursor:pointer;  text-decoration:underline; font-size:14px">Export des &eacute;critures  de banque au format EDI</span> <span >(pour la pÃ©riode sÃ©lectionnÃ©e)</span><br />
 <br />
 
 	<div class="caract_table"> Export Sage</div>
 	
-	Formatage des informations exportées:
+	Formatage des informations exportÃ©es:
 	<table border="0" cellspacing="0" cellpadding="0">
 	<tr>
 		<td>Champ</td>
@@ -214,10 +214,10 @@ update_menu_arbo();
 	<tr>
 		<td>
 		Code journal:<br />
-		Date de pièce:<br />
-		N° compte général:<br />
-		N° pièce:<br />
-		Libellé ecriture:<br />
+		Date de piÃ¨ce:<br />
+		NÂ° compte gÃ©nÃ©ral:<br />
+		NÂ° piÃ¨ce:<br />
+		LibellÃ© ecriture:<br />
 		Sens:<br />
 		Montant:<br />
 		
@@ -247,12 +247,12 @@ update_menu_arbo();
 <br />
 
 
-			<span id="export_journal_sage" style="cursor:pointer; text-decoration:underline; font-size:14px">Export des &eacute;critures des ventes et des achats au format Sage</span> (pour la période sélectionnée)<br />
+			<span id="export_journal_sage" style="cursor:pointer; text-decoration:underline; font-size:14px">Export des &eacute;critures des ventes et des achats au format Sage</span> (pour la pÃ©riode sÃ©lectionnÃ©e)<br />
 			
 
-<span style="color:#FF0000">Attention ce module est disponible à titre expérimental.</span><br />
-Veuillez contrôler l'intégrité des données après l'export.<br />
-N'hésitez pas à partager vos retours d'expériences et vos questions sur l'espace dédié à la communauté <span id="open_forum_lmb" style="cursor:pointer; text-decoration:underline">http://community.sootherp.fr/</span>
+<span style="color:#FF0000">Attention ce module est disponible Ã  titre expÃ©rimental.</span><br />
+Veuillez contrÃ´ler l'intÃ©gritÃ© des donnÃ©es aprÃ¨s l'export.<br />
+N'hÃ©sitez pas Ã  partager vos retours d'expÃ©riences et vos questions sur l'espace dÃ©diÃ© Ã  la communautÃ© <span id="open_forum_lmb" style="cursor:pointer; text-decoration:underline">http://community.sootherp.fr/</span>
 
 
 			<SCRIPT type="text/javascript">

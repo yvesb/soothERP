@@ -2,10 +2,10 @@
 
 
 
-Mise à jour terminée.<br />
+Mise Ã  jour terminÃ©e.<br />
 <br />
 
-<div style="text-align:center"><span style="cursor:pointer" id="import_art_categ">Retour à l'import des catégories.</span></div>
+<div style="text-align:center"><span style="cursor:pointer" id="import_art_categ">Retour Ã  l'import des catÃ©gories.</span></div>
 <script type="text/javascript">
 	Event.observe('import_art_categ', 'click',  function(evt){
 		Event.stop(evt); 

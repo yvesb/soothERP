@@ -5,7 +5,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -43,7 +43,7 @@ if (erreur) {
 	
 	if (caisse_fonds_present) {
 $("actif_<?php echo $_REQUEST['id_compte_caisse']?>").checked="checked";
-		texte_erreur += "Votre caisse contient actuellement des fonds.<br/> Veuillez depuis l'interface collaborateur procéder à un transfert entre caisse ou à une remise en banque avant d'inactiver la caisse ";
+		texte_erreur += "Votre caisse contient actuellement des fonds.<br/> Veuillez depuis l'interface collaborateur procÃ©der Ã  un transfert entre caisse ou Ã  une remise en banque avant d'inactiver la caisse ";
 	} 
 	alerte.alerte_erreur ('Inactivation impossible', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 

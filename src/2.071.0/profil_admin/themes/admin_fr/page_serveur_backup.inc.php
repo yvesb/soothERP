@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -30,23 +30,23 @@ update_menu_arbo();
 <p class="titre">Gestion des sauvegardes</p>
 <div class="contactview_corps"><br />
 
-<span style="color:#FF0000;"> <p style="margin:10px;">Système de sauvegarde testé avec succès mais toujours en version d'évaluation, merci de faire part de vos retours.<br />
+<span style="color:#FF0000;"> <p style="margin:10px;">SystÃ¨me de sauvegarde testÃ© avec succÃ¨s mais toujours en version d'Ã©valuation, merci de faire part de vos retours.<br />
 </p>
 </span>
 <p style="margin:10px;">
-Un backup automatique peut être lancé, en appelant le fichier "/taches_auto/cron_backup.php" depuis une tâche cron (avec les mêmes paramètres que ceux du fichier config. du gestionnaire de backup, sauf le nombre de backup(s) qui peut être spécifique et est à définir dans ce même fichier).
+Un backup automatique peut Ãªtre lancÃ©, en appelant le fichier "/taches_auto/cron_backup.php" depuis une tÃ¢che cron (avec les mÃªmes paramÃ¨tres que ceux du fichier config. du gestionnaire de backup, sauf le nombre de backup(s) qui peut Ãªtre spÃ©cifique et est Ã  dÃ©finir dans ce mÃªme fichier).
 </p>
 <p style="margin:10px;">
-Un backup de session peut être lancé à l'ouverture d'une session Sooth ERP (configurable dans le fichier "config_serveur.inc.php"), pour récupération éventuelle de l'état précédent en cas de fausse manip.</ br>
+Un backup de session peut Ãªtre lancÃ© Ã  l'ouverture d'une session Sooth ERP (configurable dans le fichier "config_serveur.inc.php"), pour rÃ©cupÃ©ration Ã©ventuelle de l'Ã©tat prÃ©cÃ©dent en cas de fausse manip.</ br>
 Cette option augmente le temps d'ouverture de la session.
 </p>
 <p style="margin:10px;">
-Les backups sont classés dans le dossier "backup", dans un sous-dossier du nom de la base (possibilité de plusieurs bases), avec pour chaque base jusqu'à trois sous-dossiers selon le type de backup ("cron_job" pour les backups automatiques, "user" pour les backups manuels et "session_start" pour les backups de session).
+Les backups sont classÃ©s dans le dossier "backup", dans un sous-dossier du nom de la base (possibilitÃ© de plusieurs bases), avec pour chaque base jusqu'Ã  trois sous-dossiers selon le type de backup ("cron_job" pour les backups automatiques, "user" pour les backups manuels et "session_start" pour les backups de session).
 </p>
 <br /> </span>
 
 
-<span id="create_backup" style="cursor:pointer; margin:10px;" class="titre_config">Créer une sauvegarde</span>
+<span id="create_backup" style="cursor:pointer; margin:10px;" class="titre_config">CrÃ©er une sauvegarde</span>
 <br />
 <table style="margin: 10px;">
   <thead>
@@ -68,7 +68,7 @@ Les backups sont classés dans le dossier "backup", dans un sous-dossier du nom d
           },false);
         </script>
         </td>
-        <td id="dl_<?php echo basename($backup); ?>" class="titre_config" style="cursor: pointer">Télécharger
+        <td id="dl_<?php echo basename($backup); ?>" class="titre_config" style="cursor: pointer">TÃ©lÃ©charger
         <script type="text/javascript">
           Event.observe('dl_<?php echo basename($backup); ?>', 'click', function (evt) {
               window.location.href="<?php echo "download_backup.php?file=".$backup; ?>";
@@ -114,7 +114,7 @@ H_loading();
 				$idx = 0;
 				while($fichier = readdir($dir)){
 					if(is_dir(__DIR__.'/../../../ressources/phpbackup4mysql/config/'.$fichier) || $fichier == '.' || $fichier =='..'){ continue; }
-					// Masque le fichier index destiné à protéger le répertoire du listing
+					// Masque le fichier index destinÃ© Ã  protÃ©ger le rÃ©pertoire du listing
 					if ( basename($fichier) == "index.html"){ continue; }
 					++$idx;
 					
@@ -163,11 +163,11 @@ for($i=1; $i<=$idx; ++$i){
 	Event.observe("titre_<?php echo $i; ?>", "click",  function(evt){
 		Event.stop(evt);
 
-		//masquage de l'ancien fichier selectionné
+		//masquage de l'ancien fichier selectionnÃ©
 		$("line_txt_file_"+idx_open).hide();
 		$("line_input_file_"+idx_open).hide();
 
-		//affichage du fichier selectionné
+		//affichage du fichier selectionnÃ©
 		idx_open = <?php echo $i; ?>;
 		$("line_txt_file_<?php echo $i; ?>").show();
 		$("line_input_file_<?php echo $i; ?>").show();

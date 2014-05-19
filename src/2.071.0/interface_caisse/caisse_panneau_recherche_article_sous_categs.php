@@ -5,7 +5,7 @@
 
 if(isset($NoHeader_caisse_panneau_recherche_article)){
 	if(!isset($art_categs_racine_selected)){
-		echo "La catégorie fille n'est pas spécifiée";
+		echo "La catÃ©gorie fille n'est pas spÃ©cifiÃ©e";
 		exit; 
 	}
 }else{
@@ -15,7 +15,7 @@ if(isset($NoHeader_caisse_panneau_recherche_article)){
 	require ("_session.inc.php");
 
 	if(!isset($_REQUEST["art_categs_racine_selected"])){
-		echo "La catégorie fille n'est pas spécifiée";
+		echo "La catÃ©gorie fille n'est pas spÃ©cifiÃ©e";
 		exit; 
 	}
 	$art_categs_racine_selected = $_REQUEST["art_categs_racine_selected"];

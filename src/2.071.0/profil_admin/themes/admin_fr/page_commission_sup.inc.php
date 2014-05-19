@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -52,7 +52,7 @@ foreach ($_ALERTES as $alerte => $value) {
 ?>
 if (erreur) {
 
-	window.parent.alerte.alerte_erreur ('Veuillez sélectionner une grille de remplacement', '','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+	window.parent.alerte.alerte_erreur ('Veuillez sÃ©lectionner une grille de remplacement', '','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 
 }
 else

@@ -11,39 +11,39 @@ final class tache {
 	private $text_tache;
 	private $importance;
 	private $urgence;
-	private $etat_tache;			// 0, A effectuer / 1, En cours / 2, Effetuée
+	private $etat_tache;			// 0, A effectuer / 1, En cours / 2, EffetuÃ©e
 	private $date_creation;
 	private $date_echeance;
-	private $ref_user_createur;					// Utilisateur ayant créé la tache
-	private $pseudo_createur;						// Utilisateur ayant créé la tache
+	private $ref_user_createur;					// Utilisateur ayant crÃ©Ã© la tache
+	private $pseudo_createur;						// Utilisateur ayant crÃ©Ã© la tache
 	private $note;											// Note de la tache
 
-	private $collabs;										// Contacts directs assignés
+	private $collabs;										// Contacts directs assignÃ©s
 	private $collabs_loaded;
-	private $collabs_fonctions;						// Groupes de collaborateurs assignés
+	private $collabs_fonctions;						// Groupes de collaborateurs assignÃ©s
 	private $collabs_fonctions_loaded;
 
-	private $assigned_collabs;					// Contacts collaborateurs assignés à la tache
+	private $assigned_collabs;					// Contacts collaborateurs assignÃ©s Ã  la tache
 	private $assigned_collabs_loaded;
 
 
 function __construct($id_tache = 0) {
 	global $bdd;
 
-	// Controle si la id_tache est précisée
+	// Controle si la id_tache est prÃ©cisÃ©e
 	if (!$id_tache) { return false; }
 
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT lib_tache, text_tache, importance, urgence, date_creation, date_echeance, ref_user_createur, pseudo, etat_tache, note
 						FROM taches t
 							LEFT JOIN users u ON t.ref_user_createur = u.ref_user
 						WHERE id_tache = '".$id_tache."' ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si la id_tache est trouvée
+	// Controle si la id_tache est trouvÃ©e
 	if (!$tache = $resultat->fetchObject()) { return false; }
 
-	// Attribution des informations à l'objet
+	// Attribution des informations Ã  l'objet
 	$this->id_tache 	= $id_tache;
 	$this->lib_tache	= $tache->lib_tache;
 	$this->text_tache	= $tache->text_tache;
@@ -69,7 +69,7 @@ public function create_tache ($lib_tache, $text_tache, $importance, $urgence, $d
 	global $bdd;
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->lib_tache 	= trim($lib_tache);
 	if (!$this->lib_tache) {
 		$GLOBALS['_ALERTES']['bad_lib_tache'] = 1;
@@ -86,7 +86,7 @@ public function create_tache ($lib_tache, $text_tache, $importance, $urgence, $d
 	if (!is_array($collabs_fonctions)) { $collabs_fonctions = array(); }
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -114,8 +114,8 @@ public function create_tache ($lib_tache, $text_tache, $importance, $urgence, $d
 	}
 
 	// *************************************************
-	// Résultat positif de la création
-	$GLOBALS['_INFOS']['Création_tache'] = $this->id_tache;
+	// RÃ©sultat positif de la crÃ©ation
+	$GLOBALS['_INFOS']['CrÃ©ation_tache'] = $this->id_tache;
 
 	return true;
 }
@@ -129,7 +129,7 @@ public function maj_tache ($lib_tache, $text_tache, $importance, $urgence, $date
 	global $bdd;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->lib_tache 	= trim($lib_tache);
 	if (!$this->lib_tache) {
 		$GLOBALS['_ALERTES']['bad_lib_tache'] = 1;
@@ -142,7 +142,7 @@ public function maj_tache ($lib_tache, $text_tache, $importance, $urgence, $date
 	$this->date_echeance 		= $date_echeance;
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -157,7 +157,7 @@ public function maj_tache ($lib_tache, $text_tache, $importance, $urgence, $date
 	$bdd->exec ($query);
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
@@ -167,7 +167,7 @@ public function maj_tache_note ($new_note) {
 	global $bdd;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->note 		= $new_note;
 
 	// *************************************************
@@ -178,7 +178,7 @@ public function maj_tache_note ($new_note) {
 	$bdd->exec ($query);
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
@@ -187,7 +187,7 @@ public function maj_etat_tache ($new_etat_tache) {
 	global $bdd;
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	if ($new_etat_tache != 0 && $new_etat_tache != 1 && $new_etat_tache != 2) {
 		return false;
 	}
@@ -203,7 +203,7 @@ public function maj_etat_tache ($new_etat_tache) {
 	$bdd->exec ($query);
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
@@ -215,7 +215,7 @@ public function delete_tache () {
 	global $bdd;
 
 	// *************************************************
-	// Controle à effectuer le cas échéant
+	// Controle Ã  effectuer le cas Ã©chÃ©ant
 
 	// *************************************************
 	// Suppression de l'tache
@@ -232,7 +232,7 @@ public function delete_tache () {
 // *************************************************************************************************************
 // GESTION DES COLLABORATEURS ET fonctionS ASSIGNES A LA TACHE
 // *************************************************************************************************************
-// Charge la liste des contacts collaborateurs assignés à la tache
+// Charge la liste des contacts collaborateurs assignÃ©s Ã  la tache
 protected function charger_assigned_collabs () {
 	global $bdd;
 
@@ -257,7 +257,7 @@ protected function charger_assigned_collabs () {
 }
 
 
-// Charge les contacts collaborateurs assignés (en dehors des fonctions)
+// Charge les contacts collaborateurs assignÃ©s (en dehors des fonctions)
 protected function charger_collabs () {
 	global $bdd;
 
@@ -273,7 +273,7 @@ protected function charger_collabs () {
 	return true;
 }
 
-// Assigne un collaborateur à la tache
+// Assigne un collaborateur Ã  la tache
 public function add_collab ($ref_contact) {
 	global $bdd;
 
@@ -283,7 +283,7 @@ public function add_collab ($ref_contact) {
 	return true;
 }
 
-// Désassigne un collaborateur à la tache
+// DÃ©sassigne un collaborateur Ã  la tache
 public function del_collab ($ref_contact) {
 	global $bdd;
 
@@ -294,7 +294,7 @@ public function del_collab ($ref_contact) {
 }
 
 
-// Charge les fonctions de collaborateurs assignés à la tache
+// Charge les fonctions de collaborateurs assignÃ©s Ã  la tache
 protected function charger_collabs_fonctions () {
 	global $bdd;
 
@@ -310,7 +310,7 @@ protected function charger_collabs_fonctions () {
 	return true;
 }
 
-// Assigne un collaborateur à la tache
+// Assigne un collaborateur Ã  la tache
 public function add_fonction ($id_fonction) {
 	global $bdd;
 
@@ -320,7 +320,7 @@ public function add_fonction ($id_fonction) {
 	return true;
 }
 
-// Désassigne un collaborateur à la tache
+// DÃ©sassigne un collaborateur Ã  la tache
 public function del_fonction ($id_fonction) {
 	global $bdd;
 

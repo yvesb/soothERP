@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// IMPORT FICHIER tarifs_fournisseur CSV ETAPE 1 (après import du fichier)
+// IMPORT FICHIER tarifs_fournisseur CSV ETAPE 1 (aprÃ¨s import du fichier)
 // *************************************************************************************************************
 
 require ("_dir.inc.php");

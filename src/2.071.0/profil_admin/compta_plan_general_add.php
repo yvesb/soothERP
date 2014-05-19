@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// AJOUT D'UN compte de plan comptable général
+// AJOUT D'UN compte de plan comptable gÃ©nÃ©ral
 // *************************************************************************************************************
 
 
@@ -22,7 +22,7 @@ if (isset($_REQUEST["favori"]) ) {
 $infos['favori'] 		= $favori;
 	
 	
-	//création du compte
+	//crÃ©ation du compte
 	$compte_plan_general->create_compte_plan_comptable ($infos);
 
 // *************************************************************************************************************

@@ -148,10 +148,10 @@ if ($article->getVariante() == 1 && is_object($article_master)) {
 				Event.observe($("caract_value_<?php echo $serialisation_carac; ?>"), "blur", function(evt){
 					
 					Event.stop(evt); 
-					//si on supprime toutes les valeur d'un carac variante, c'est impossible en mode édition donc on interdit
+					//si on supprime toutes les valeur d'un carac variante, c'est impossible en mode Ã©dition donc on interdit
 					if ($("caract_value_<?php echo $serialisation_carac; ?>").value == "" && $("old_caract_value_<?php echo $serialisation_carac; ?>").value != "" || $("caract_value_<?php echo $serialisation_carac; ?>").value != "" && $("old_caract_value_<?php echo $serialisation_carac; ?>").value == "" ) {
 						$("caract_value_<?php echo $serialisation_carac; ?>").value = $("old_caract_value_<?php echo $serialisation_carac; ?>").value ;
-							alerte.alerte_erreur ('Erreur de saisie', "Vous ne pouvez pas rajouter de variante depuis une caractéristique vide <br/>  ou rajouter des variantes si aucune valeur n'a été définie à la création",'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+							alerte.alerte_erreur ('Erreur de saisie', "Vous ne pouvez pas rajouter de variante depuis une caractÃ©ristique vide <br/>  ou rajouter des variantes si aucune valeur n'a Ã©tÃ© dÃ©finie Ã  la crÃ©ation",'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 					} else {
 						if ($("caract_value_<?php echo $serialisation_carac; ?>").value.substr(0,$("old_caract_value_<?php echo $serialisation_carac; ?>").value.length) != $("old_caract_value_<?php echo $serialisation_carac; ?>").value || ( $("caract_value_<?php echo $serialisation_carac; ?>").value.split(";").length < $("old_caract_value_<?php echo $serialisation_carac; ?>").value.split(";").length)) {
 							$("caract_value_<?php echo $serialisation_carac; ?>").value = $("old_caract_value_<?php echo $serialisation_carac; ?>").value ;
@@ -203,18 +203,18 @@ if ($article->getVariante() == 1 && is_object($article_master)) {
 			<input name="serialisation_carac" id="serialisation_carac" type="hidden" value="<?php echo $serialisation_carac; ?>" />
 	<br />
 	<span class="bolder">RS</span>=Crit&egrave;re de Recherche Simple - <span class="bolder">RA</span>=Crit&egrave;re de Recherche Avanc&eacute;e - <span class="bolder">N</span>=Affichage Normal - <span class="bolder">P</span>=Affichage Prioritaire<br />
-<span class="bolder">Variantes</span>= Veuillez préciser les différentes valeurs par des points virgules. <span style="font-style:italic"> Exemple:</span>  Bleu; Rouge; Vert ...
+<span class="bolder">Variantes</span>= Veuillez prÃ©ciser les diffÃ©rentes valeurs par des points virgules. <span style="font-style:italic"> Exemple:</span>  Bleu; Rouge; Vert ...
 <script type="text/javascript">
 Event.observe($("bt_etape_1"), "click", function(evt){
 	Event.stop(evt);
 	<?php if($article->getVariante()) { ?>
 		$("titre_alert").innerHTML = "Confirmation";
 		<?php if($article_fils) { ?>
-		$("texte_alert").innerHTML = "Voulez-vous appliquer cette modification uniquement à l'article en cours ou à toutes les variantes ?";
+		$("texte_alert").innerHTML = "Voulez-vous appliquer cette modification uniquement Ã  l'article en cours ou Ã  toutes les variantes ?";
 		$("bouton_alert").innerHTML = '<input type="submit" id="bouton0" name="bouton0" value="Article en cours" /> ';
 		$("bouton_alert").innerHTML += '<input type="submit" name="bouton1" id="bouton1" value="Tous" /> ';
 		<?php } else { ?>
-		$("texte_alert").innerHTML = "Voulez-vous appliquer cette modification uniquement à l'article parent ou à toutes les variantes ?";
+		$("texte_alert").innerHTML = "Voulez-vous appliquer cette modification uniquement Ã  l'article parent ou Ã  toutes les variantes ?";
 		$("bouton_alert").innerHTML = '<input type="submit" id="bouton0" name="bouton0" value="Article parent" /> ';
 		$("bouton_alert").innerHTML += '<input type="submit" name="bouton1" id="bouton1" value="Tous" /> ';
 		<?php } ?>

@@ -18,7 +18,7 @@ public function __construct ($ref_doc_line = 0) {
 	//$this->ref_doc_line = $ref_doc_line;
 
 	// *************************************************
-	// Sélection dans la base
+	// SÃ©lection dans la base
 	$query = "SELECT ref_doc_line, date_debut, duree
 						FROM doc_line_duree
 						WHERE ref_doc_line = '".$ref_doc_line."' ";

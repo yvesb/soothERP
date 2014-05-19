@@ -4,7 +4,7 @@
 // CONFIG DES DONNEES tarifs
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -38,7 +38,7 @@ update_menu_arbo();
 	</tr>
 	
 	<tr>
-		<td class="lib_config">Gérer le commissionnement des commerciaux?</td>
+		<td class="lib_config">GÃ©rer le commissionnement des commerciaux?</td>
 		<td>
 		<form action="configuration_commission_maj.php" enctype="multipart/form-data" method="POST"  id="form_gestion_comm_commerciaux" name="form_gestion_comm_commerciaux" target="formFrame" >
 		<input id="gestion_comm_commerciaux" name="gestion_comm_commerciaux" value="<?php echo  $GESTION_COMM_COMMERCIAUX; ?>" <?php if ($GESTION_COMM_COMMERCIAUX) {?>checked="checked"<?php } ?> type="checkbox" />
@@ -228,7 +228,7 @@ update_menu_arbo();
 				</table>
 				</div>
 				</div>
-				<span id="add_commission" style="cursor:pointer; text-decoration:underline; display:">Créer une nouvelle grille</span>
+				<span id="add_commission" style="cursor:pointer; text-decoration:underline; display:">CrÃ©er une nouvelle grille</span>
 			</div>
 			</td>
 			</tr>
@@ -239,7 +239,7 @@ update_menu_arbo();
 		<td colspan="3">&nbsp;</td>
 	</tr>
 	<tr>
-		<td colspan="2" style="font-weight:bolder">Exceptions aux règles de commissionnements / Catégories d'articles</td>
+		<td colspan="2" style="font-weight:bolder">Exceptions aux rÃ¨gles de commissionnements / CatÃ©gories d'articles</td>
 		<td>
 		<span style="cursor:pointer; text-decoration:underline" id="comm_consult_art_categ">Consulter</span>
 		<script type="text/javascript">
@@ -251,7 +251,7 @@ update_menu_arbo();
 		</td>
 	</tr>
 	<tr>
-		<td colspan="2" style="font-weight:bolder">Exceptions aux règles de commissionnements / Articles</td>
+		<td colspan="2" style="font-weight:bolder">Exceptions aux rÃ¨gles de commissionnements / Articles</td>
 		<td>
 		<span style="cursor:pointer; text-decoration:underline" id="comm_consult_article">Consulter</span>
 		<script type="text/javascript">
@@ -272,7 +272,7 @@ update_menu_arbo();
 		<td colspan="3">&nbsp;</td>
 	</tr>
 	<tr>
-		<td class="titre_config" colspan="3">Catégories de commerciaux:		</td>
+		<td class="titre_config" colspan="3">CatÃ©gories de commerciaux:		</td>
 	</tr>
 	<tr>
 		<td colspan="3">
@@ -333,7 +333,7 @@ update_menu_arbo();
 								</tr>	
 								<tr>
 									<td style="text-align:center">
-									<input name="defaut_commercial_categ_<?php echo $liste_categorie->id_commercial_categ; ?>"  type="checkbox" id="defaut_commercial_categ_<?php echo $liste_categorie->id_commercial_categ; ?>" value="1" <?php if ( $DEFAUT_ID_COMMERCIAL_CATEG == $liste_categorie->id_commercial_categ) { echo 'checked="checked"';} ?> alt="Catégorie par défaut" title="Catégorie par défaut" />
+									<input name="defaut_commercial_categ_<?php echo $liste_categorie->id_commercial_categ; ?>"  type="checkbox" id="defaut_commercial_categ_<?php echo $liste_categorie->id_commercial_categ; ?>" value="1" <?php if ( $DEFAUT_ID_COMMERCIAL_CATEG == $liste_categorie->id_commercial_categ) { echo 'checked="checked"';} ?> alt="CatÃ©gorie par dÃ©faut" title="CatÃ©gorie par dÃ©faut" />
 									</td>
 									<td>
 									<input id="lib_commercial_categ_<?php echo $liste_categorie->id_commercial_categ; ?>" name="lib_commercial_categ_<?php echo $liste_categorie->id_commercial_categ; ?>" type="text" value="<?php echo htmlentities($liste_categorie->lib_commercial_categ); ?>"  class="classinput_lsize"/>
@@ -463,7 +463,7 @@ update_menu_arbo();
 				</div>
 				</div>
 				<br />
-				<span id="add_categ" style="cursor:pointer; text-decoration:underline; display:">Créer une nouvelle catégorie</span>
+				<span id="add_categ" style="cursor:pointer; text-decoration:underline; display:">CrÃ©er une nouvelle catÃ©gorie</span>
 			</div>
 			
 			</td>

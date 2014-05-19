@@ -5,9 +5,9 @@
 
 
 final class import_catalogue_csv {
-	protected $ref_art_categ; // ref_art_categ à créer lors de l'import
+	protected $ref_art_categ; // ref_art_categ Ã  crÃ©er lors de l'import
 	protected $etape;			//etape en cours de l'import
-	protected $limite;		// limite des informations importée (1: fiches valides 2: fiches avertissements, 3: toutes les fiches
+	protected $limite;		// limite des informations importÃ©e (1: fiches valides 2: fiches avertissements, 3: toutes les fiches
 		
 
 function __construct() {
@@ -23,7 +23,7 @@ function __construct() {
 	return true;
 }
 
-//import des données en fiche contact
+//import des donnÃ©es en fiche contact
 function import_colonne($contenu, $ref_art_categ) {
 	global $bdd;
 	global $DIR;
@@ -99,7 +99,7 @@ function import_colonne($contenu, $ref_art_categ) {
 			$dao_csv_import_catalogue_ligne->write($ligne);	
 		}
 	}
-	//création de l'information sur l'étape et le profil à créer pour les contacts importés
+	//crÃ©ation de l'information sur l'Ã©tape et le profil Ã  crÃ©er pour les contacts importÃ©s
 	$query = "INSERT INTO csv_import_catalogue_etape	 (ref_art_categ, etape, limite) VALUES (".num_or_null($ref_art_categ).", 1, 1)
 						";
 	$bdd->exec ($query);
@@ -116,7 +116,7 @@ function import_colonne($contenu, $ref_art_categ) {
 	 $GLOBALS['_INFOS']['count_erreur'] = $count_erreur;
 }
 
-//mise à jour de l'étape de l'import
+//mise Ã  jour de l'Ã©tape de l'import
 public function maj_ref_art_categ ($ref_art_categ) {
 	global $bdd;
 	// maj dans la base
@@ -124,7 +124,7 @@ public function maj_ref_art_categ ($ref_art_categ) {
 	$bdd->exec ($query);
 	return true;
 }
-//mise à jour de l'étape de l'import
+//mise Ã  jour de l'Ã©tape de l'import
 public function maj_etape($etape) {
 	global $bdd;
 	// maj dans la base
@@ -132,7 +132,7 @@ public function maj_etape($etape) {
 	$bdd->exec ($query);
 	return true;
 }
-//mise à jour de la limite d'import
+//mise Ã  jour de la limite d'import
 public function maj_limite($limite) {
 	global $bdd;
 	// maj dans la base
@@ -141,7 +141,7 @@ public function maj_limite($limite) {
 	return true;
 }
 
-//import des données en fiche contact
+//import des donnÃ©es en fiche contact
 function create($liste_ligne = array(), $filename) {
 	global $DIR;
 	global $bdd;
@@ -205,7 +205,7 @@ function create($liste_ligne = array(), $filename) {
 		$infos_modele['duree_garantie']	=	0;
 		$infos_modele['stocks_alertes']	=	$stocks_alertes;
 		
-                // Infos spécifiques aux categs service par abonnement
+                // Infos spÃ©cifiques aux categs service par abonnement
                 $infos_modele['duree'] = 0;
                 $infos_modele['engagement'] = 0;
                 $infos_modele['reconduction'] = 0;
@@ -269,7 +269,7 @@ function create($liste_ligne = array(), $filename) {
 			if($arrayValidColonne[$id_colonne] == "ref_art_categ" ){
 				if ($id_valeur) {
 					if ($id_valeur == "creer") {	
-						//on vérifie que l'art_categ ne fait pas partie de celle déjà créer lors ce cet import
+						//on vÃ©rifie que l'art_categ ne fait pas partie de celle dÃ©jÃ  crÃ©er lors ce cet import
 						$art_cc = 0;
 						foreach ($art_categ_cree as $acc) {
 							if ($acc[1] == $indexarraydao_csv_import_catalogue_ligne->__getValeur()) {
@@ -277,14 +277,14 @@ function create($liste_ligne = array(), $filename) {
 						}
 						if (!$art_cc) {
 							// *************************************************
-							// Création de la catégorie
+							// CrÃ©ation de la catÃ©gorie
 							$art_categ = new art_categ ();
 							$tva_id = ""; if ($DEFAUT_ID_TVA) {$tva_id = $DEFAUT_ID_TVA;}
 						
 							$art_categ->create ($indexarraydao_csv_import_catalogue_ligne->__getValeur(), "", "", "materiel", $tva_id, $DEFAUT_ARTICLE_LT);
 							
-							//mise à jour des autres valeurs
-							// et on conserve pour la série en cour le fait d'avoir créé cette art_categ
+							//mise Ã  jour des autres valeurs
+							// et on conserve pour la sÃ©rie en cour le fait d'avoir crÃ©Ã© cette art_categ
 							$art_categ_cree[] = array($art_categ->getRef_art_categ(), $indexarraydao_csv_import_catalogue_ligne->__getValeur());
 							$indexarraydao_csv_import_catalogue_ligne->updateParLot($id_colonne, $indexarraydao_csv_import_catalogue_ligne->__getValeur(), $art_categ->getRef_art_categ());
 							$infos_generales['ref_art_categ'] = $art_categ->getRef_art_categ() ;
@@ -357,7 +357,7 @@ function create($liste_ligne = array(), $filename) {
 			if($arrayValidColonne[$id_colonne] == "ref_constructeur" ){
 				if ($id_valeur) {
 					if ($id_valeur == "creer") {	
-						//on vérifie que le contact ne fait pas partie de celle déjà créer lors ce cet import
+						//on vÃ©rifie que le contact ne fait pas partie de celle dÃ©jÃ  crÃ©er lors ce cet import
 						$c_cc = 0;
 						foreach ($ref_constructeur_cree as $ccc) {
 							if ($ccc[1] == $indexarraydao_csv_import_catalogue_ligne->__getValeur()) {
@@ -365,7 +365,7 @@ function create($liste_ligne = array(), $filename) {
 						}
 						if (!$c_cc) {
 							// *************************************************
-							// Création du contact
+							// CrÃ©ation du contact
 							$contact = new contact ();
 							$inf_const = array();
 							$inf_const_profil = array();
@@ -383,8 +383,8 @@ function create($liste_ligne = array(), $filename) {
 							$inf_const_profil[$CONSTRUCTEUR_ID_PROFIL]['conditions_garantie'] = "";
 							
 							$contact->create ($inf_const, $inf_const_profil);
-							//mise à jour des autres valeurs
-							// et on conserve pour la série en cour le fait d'avoir créé cette art_categ
+							//mise Ã  jour des autres valeurs
+							// et on conserve pour la sÃ©rie en cour le fait d'avoir crÃ©Ã© cette art_categ
 							$ref_constructeur_cree[] = array($contact->getRef_contact(), $indexarraydao_csv_import_catalogue_ligne->__getValeur());
 							$indexarraydao_csv_import_catalogue_ligne->updateParLot($id_colonne, $indexarraydao_csv_import_catalogue_ligne->__getValeur(), $contact->getRef_contact());
 							$infos_generales['ref_constructeur'] = $contact->getRef_contact() ;
@@ -473,12 +473,12 @@ function create($liste_ligne = array(), $filename) {
 		if($id_colonne == $lastIdCols){
 		
 			// *************************************************
-			// Création du contact
+			// CrÃ©ation du contact
 			if (isset($infos_generales['lib_article']) && trim($infos_generales['lib_article']) ) {
 				$nom_doublon = 0;
 				$ref_interne_doublon = 0;
 				//verification des doublon d'email et de nom
-				// si on tente d'importer quand même les avertissements
+				// si on tente d'importer quand mÃªme les avertissements
 				$libs = explode (" ", trim($infos_generales['lib_article']));
 				
 				$query_where 	= "";
@@ -508,7 +508,7 @@ function create($liste_ligne = array(), $filename) {
 				if ($fiche = $resultat->fetchObject()) {
 					$nom_doublon = 1;
 				}
-				//on vérifie la ref car dans tout les cas on n'ecrassera pas une ref déjà présente
+				//on vÃ©rifie la ref car dans tout les cas on n'ecrassera pas une ref dÃ©jÃ  prÃ©sente
 				if (isset($infos_generales['ref_interne']) && trim($infos_generales['ref_interne'])) {
 					
 					$query_where 	= "";
@@ -550,10 +550,10 @@ function create($liste_ligne = array(), $filename) {
 								if (is_file($ARTICLES_IMAGES_DIR.$file_upload)) {$file_upload = md5(uniqid(rand(), true)).$extension; }
 								
 								copy ($DIR.$import_catalogue_csv['import_images_folder'].$image_article, $ARTICLES_IMAGES_DIR.$file_upload); 
-									// Générer la miniature 
+									// GÃ©nÃ©rer la miniature 
 								 // si notre image est de type jpeg 
 								 if ($tableau[2] == 2) { 
-										// on crée une image à partir de notre grande image à l'aide de la librairie GD 
+										// on crÃ©e une image Ã  partir de notre grande image Ã  l'aide de la librairie GD 
 										$src = imagecreatefromjpeg($ARTICLES_IMAGES_DIR.$file_upload); 
 										// on teste si notre image est de type paysage ou portrait 
 										if ($tableau[0] > $tableau[1]) { 
@@ -578,7 +578,7 @@ function create($liste_ligne = array(), $filename) {
 											 $im = imagecreatetruecolor($x_size, $y_size); 
 											 imagecopyresampled($im, $src, 0, 0, 0, 0, $x_size, $y_size, $tableau[0], $tableau[1]); 
 										}
-										// on copie notre fichier généré dans le répertoire des miniatures 
+										// on copie notre fichier gÃ©nÃ©rÃ© dans le rÃ©pertoire des miniatures 
 										imagejpeg ($im, $ARTICLES_MINI_IMAGES_DIR.$file_upload); 
 								 } 
 								 elseif ($tableau[2] == 3) { 
@@ -881,7 +881,7 @@ public function readAll() {
 }
 
 // *******
-// répartition des lignes
+// rÃ©partition des lignes
 // *******
 
 

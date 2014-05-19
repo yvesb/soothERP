@@ -4,7 +4,7 @@
 // PAGE POUR CHOISIR LE TYPE ET LE MODELE PDF D'UN COURRIER
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -31,7 +31,7 @@ check_page_variables ($page_variables);
 	<table width="100%">
 			<tr>
 				<td style="width:3%"></td>
-				<td style="width:94%;" class="label_titre_popup" >Rédaction d'un nouveau Messaget</td>
+				<td style="width:94%;" class="label_titre_popup" >RÃ©daction d'un nouveau Messaget</td>
 				<td style="width:3%"></td>
 			</tr>
 	</table>
@@ -76,7 +76,7 @@ check_page_variables ($page_variables);
 	<table width="100%">
 			<tr>
 				<td style="width:3%"></td>
-				<td style="width:94%;" class="label_titre_popup" >Choix du Modèle de mise en page</td>
+				<td style="width:94%;" class="label_titre_popup" >Choix du ModÃ¨le de mise en page</td>
 				<td style="width:3%"></td>
 			</tr>
 		</table>
@@ -86,7 +86,7 @@ check_page_variables ($page_variables);
 	<br />
 
 	<!-- C'est dans cette div que nous affichons la page pour choisir un model de pdf en fonction du type qu'on a choisi plus haut -->
-	<!-- par défaut on affiche le 1er type que l'on trouve -->
+	<!-- par dÃ©faut on affiche le 1er type que l'on trouve -->
 	<div id="choix_modele_pdf"></div>
 	<script type="text/javascript">
 		//page.traitecontent.changed = false;

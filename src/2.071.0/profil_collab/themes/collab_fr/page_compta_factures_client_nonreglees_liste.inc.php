@@ -4,7 +4,7 @@
 // AFFICHAGE DES FACTURES CLIENTS NON REGLEES
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -25,7 +25,7 @@ function barre_navigation($nbtotal,
 													
 {
 	// --------------------------------------------------------------------
-	global $cfg_nb_pages; // Nb de n° de pages affichées dans la barre
+	global $cfg_nb_pages; // Nb de nÂ° de pages affichÃ©es dans la barre
 global $DIR;
 	$barre= "";	$lien_on 	= "&nbsp;<a href='#' id='link_pagi_{cible}'>{lien}</a>&nbsp;
 								<script type='text/javascript'>
@@ -35,7 +35,7 @@ global $DIR;
 	// --------------------------------------------------------------------
     
 
-	// début << .
+	// dÃ©but << .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -55,7 +55,7 @@ global $DIR;
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
 
 
-	// précédent < .
+	// prÃ©cÃ©dent < .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -161,7 +161,7 @@ function image_html($img)
 
 //
 //
-//création de la barre de nav
+//crÃ©ation de la barre de nav
 //
 //
 if (!isset($_REQUEST['id_client_categ']))
@@ -271,7 +271,7 @@ Event.observe('print_factures', "click", function(evt){
 				</td>
 				<td style="font-weight:bolder; width:100px; text-align:center">
 				Montant<br />
-				Restant dû
+				Restant dÃ»
 				</td>
 				<td style="font-weight:bolder; width:70px; text-align:right;">
 				<div style="padding-right:1px">
@@ -313,7 +313,7 @@ Event.observe('print_factures', "click", function(evt){
 					<td style="" >
 						<select id="coche_action_<?php echo $groupe_by_relance?>" name="coche_action_<?php echo $groupe_by_relance?>" class="classinput_nsize">
 							<option value="">Pour la s&eacute;lection</option>
-							<option value="0">Non défini</option>
+							<option value="0">Non dÃ©fini</option>
 							<?php 
 							foreach ($liste_niveaux_relance as $niveau_relance) {
 								?>
@@ -530,7 +530,7 @@ Event.observe("coche_action_<?php echo $groupe_by_relance?>", "change", function
 				<td style="font-weight:bolder; text-align:center; width:90px;">&nbsp;
 				</td>
 				<td style="font-weight:bolder; text-align:right; width:240px;">&nbsp;
-				Montant Total dû: 
+				Montant Total dÃ»: 
 				</td>
 				<td style="font-weight:bolder; width:100px; text-align:right">
 				<?php echo(number_format($factures_total, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[1]);?>

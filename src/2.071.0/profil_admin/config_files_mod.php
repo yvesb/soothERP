@@ -2,7 +2,7 @@
 // *************************************************************************************************************
 // EDITION DES FICHIERS DE CONFIGURATION
 // *************************************************************************************************************
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 
 require ("_dir.inc.php");
 require ("_profil.inc.php");
@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 $file_name = $_REQUEST['nom_fichier'];
 
-//création du nouveau fichier
+//crÃ©ation du nouveau fichier
 $new_file_id = fopen ($DIR."config/tmp_".$file_name, "w");
 fwrite($new_file_id, $_REQUEST['new_text_file']);
 fclose($new_file_id);

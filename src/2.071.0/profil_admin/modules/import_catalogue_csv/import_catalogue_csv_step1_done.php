@@ -66,7 +66,7 @@ if (isset($array_verif_corresp_doublon)) {
 
 
 if(!$flagChampNomObigatoire){
-	$GLOBALS['_ALERTES']['flagChampNomObigatoire'] = "Champ libellé de l'article Obigatoire";
+	$GLOBALS['_ALERTES']['flagChampNomObigatoire'] = "Champ libellÃ© de l'article Obigatoire";
 }
 if (!count($GLOBALS['_ALERTES'])) {
 	

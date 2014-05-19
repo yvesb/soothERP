@@ -10,16 +10,16 @@ require_once ($DIR."/profil_client/_contact_client.class.php");
 
 
 	if (!isset($_REQUEST['ref_client'])) {
-		echo "La référence client n'est pas précisée";
+		echo "La rÃ©fÃ©rence client n'est pas prÃ©cisÃ©e";
 		exit;
 	}
 
 	if (!isset($_REQUEST['id_edition_mode'])) {
-		echo "Le mode d'édition n'est pas précisée";
+		echo "Le mode d'Ã©dition n'est pas prÃ©cisÃ©e";
 		exit;
 	}
 	if (!isset($_REQUEST['id_niveau_relance'])) {
-		echo "Le niveau de relance n'est pas précisée";
+		echo "Le niveau de relance n'est pas prÃ©cisÃ©e";
 		exit;
 	}        
 	$ref_client      = $_REQUEST['ref_client'];

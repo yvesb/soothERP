@@ -19,15 +19,15 @@ echo "
 <b>UTILISATEUR :</b> ";
 if ($_SESSION['user']->getPseudo()) {
 	echo $_SESSION['user']->getPseudo()."<br>
-	Début de session à ".date("d-m-Y H:i:s", $_SESSION['date_debut_user_session']);
+	DÃ©but de session Ã  ".date("d-m-Y H:i:s", $_SESSION['date_debut_user_session']);
 }
 else {
-	echo "Non identifié";
+	echo "Non identifiÃ©";
 }
 echo "<hr><br>
 
 <b>MAGASIN</b> :".$_SESSION['magasin']->getLib_magasin()." (<b>".$_SESSION['magasin']->getId_magasin()."</b>)<br>
-Tarif associé : ".$_SESSION['magasin']->getLib_tarif()." (<b>".$_SESSION['magasin']->getId_tarif()."</b>)<br> 
-Stock utilisé : ".$_SESSION['magasin']->getLib_stock()." (<b>".$_SESSION['magasin']->getId_stock()."</b>)<br> ";
+Tarif associÃ© : ".$_SESSION['magasin']->getLib_tarif()." (<b>".$_SESSION['magasin']->getId_tarif()."</b>)<br> 
+Stock utilisÃ© : ".$_SESSION['magasin']->getLib_stock()." (<b>".$_SESSION['magasin']->getId_stock()."</b>)<br> ";
 
 ?>

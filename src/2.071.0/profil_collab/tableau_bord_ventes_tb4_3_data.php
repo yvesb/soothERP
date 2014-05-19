@@ -13,7 +13,7 @@ require ($DIR.$_SESSION['theme']->getDir_theme()."_theme.config.php" );
 require_once ($RESSOURCE_DIR."/php-ofc-library/open-flash-chart.php");
 
 
-$mois_liste = array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre");
+$mois_liste = array("Janvier", "FÃ©vrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "DÃ©cembre");
 
 // mauve $bar2->colour('#8a5b9d' );
 
@@ -74,7 +74,7 @@ switch ($_REQUEST["type"]) {
 		
 		
 		case "2":
-		$title = new title(utf8_encode("Evolution du nombre de création clients sur les 12 derniers mois"));
+		$title = new title(utf8_encode("Evolution du nombre de crÃ©ation clients sur les 12 derniers mois"));
 		$line = new line();
 		$line->set_default_dot_style($d2);
 		$line->set_width( 1 );

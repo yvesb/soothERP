@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -22,12 +22,12 @@ check_page_variables ($page_variables);
 ?>
 <script type="text/javascript">
 tableau_smenu[0] = Array("smenu_maintenance", "smenu_maintenance.php" ,"true" ,"sub_content", "Maintenance");
-tableau_smenu[1] = Array('gestion_document_purge','documents_gestion_purge.php','true','sub_content', "Délestage des documents annulés. ");
+tableau_smenu[1] = Array('gestion_document_purge','documents_gestion_purge.php','true','sub_content', "DÃ©lestage des documents annulÃ©s. ");
 update_menu_arbo();
 </script>
 <div class="emarge">
 
-<p class="titre">Délestage des documents annulés.  </p>
+<p class="titre">DÃ©lestage des documents annulÃ©s.  </p>
 <div style="height:50px">
 
 <table class="minimizetable">
@@ -38,7 +38,7 @@ update_menu_arbo();
 <br />
 <div style="text-align:center">
 <?php if (isset($nb_docs_purged)) {?>
-<?php echo $nb_docs_purged ;?> documents annulés ayant dépassé leur durée de conservation ont été effacés.<br />
+<?php echo $nb_docs_purged ;?> documents annulÃ©s ayant dÃ©passÃ© leur durÃ©e de conservation ont Ã©tÃ© effacÃ©s.<br />
 <?php } ?>
 </div>
 <br />
@@ -54,7 +54,7 @@ update_menu_arbo();
 							<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 						</tr>
 						<tr>
-							<td>Les <?php echo htmlentities($document_type->lib_type_doc); ?> annulé(e)s dont la date est antérieure au <?php echo date("d-m-Y" , mktime(0, 0, 0, date("m"), date("d")-(${"DUREE_AVANT_PURGE_ANNULE_".$document_type->code_doc}), date("Y")));?> vont être définitivement supprimé(e)s.
+							<td>Les <?php echo htmlentities($document_type->lib_type_doc); ?> annulÃ©(e)s dont la date est antÃ©rieure au <?php echo date("d-m-Y" , mktime(0, 0, 0, date("m"), date("d")-(${"DUREE_AVANT_PURGE_ANNULE_".$document_type->code_doc}), date("Y")));?> vont Ãªtre dÃ©finitivement supprimÃ©(e)s.
 							</td>
 							<td style="text-align:center">
 							
@@ -71,7 +71,7 @@ update_menu_arbo();
 	
 	}
 	?>
-								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" id="purge_type" style="cursor:pointer" /> le délestage de tout les types de documents.
+								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" id="purge_type" style="cursor:pointer" /> le dÃ©lestage de tout les types de documents.
 								<script type="text/javascript">
 								Event.observe("purge_type", "click",  function(evt){Event.stop(evt);page.verify('gestion_document_purge','documents_gestion_purge.php?purge=1','true','sub_content');}, false);
 								</script>

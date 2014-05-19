@@ -11,7 +11,7 @@ require ($DIR."_session.inc.php");
 
 if (isset($_REQUEST['id_magasin'])) {	
 	// *************************************************
-	// Controle des données fournies par le formulaire
+	// Controle des donnÃ©es fournies par le formulaire
 
 	
 	$lib_magasin					= $_REQUEST['lib_magasin_'.$_REQUEST['id_magasin']];
@@ -26,13 +26,13 @@ if (isset($_REQUEST['id_magasin'])) {
 		$actif						= 0;
 	}
 	// *************************************************
-	// Création de la catégorie
+	// CrÃ©ation de la catÃ©gorie
 	$magasin_liste = new magasin ($_REQUEST['id_magasin']);
 	$magasin_liste->modification ($lib_magasin, $abrev_magasin, $id_mag_enseigne, $id_stock, $id_tarif, $mode_vente, $actif);
 	
-	//Mise à jour du magasin par defaut
+	//Mise Ã  jour du magasin par defaut
 	if (isset($_REQUEST['defaut_magasin_'.$_REQUEST['id_magasin']]) && $_REQUEST['id_magasin'] != $DEFAUT_ID_MAGASIN && !isset($GLOBALS['_ALERTES']['last_active_magasin']) && $actif) {
-		maj_configuration_file ("config_generale.inc.php", "maj_line", "\$DEFAUT_ID_MAGASIN	=", "\$DEFAUT_ID_MAGASIN	= ".$_REQUEST['id_magasin'].";			// Magasin par défaut", $CONFIG_DIR);
+		maj_configuration_file ("config_generale.inc.php", "maj_line", "\$DEFAUT_ID_MAGASIN	=", "\$DEFAUT_ID_MAGASIN	= ".$_REQUEST['id_magasin'].";			// Magasin par dÃ©faut", $CONFIG_DIR);
 	}
 }
 

@@ -2,8 +2,8 @@
 
 
 
-Mise à jour terminée.<br />
-<?php echo $count_import;?> contact(s) importé(s)
+Mise Ã  jour terminÃ©e.<br />
+<?php echo $count_import;?> contact(s) importÃ©(s)
 
 <script type="text/javascript">
 

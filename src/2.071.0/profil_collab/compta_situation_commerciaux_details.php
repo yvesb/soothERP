@@ -10,19 +10,19 @@ require ($DIR."_session.inc.php");
 
 if (!$_SESSION['user']->check_permission ("17")) {
 	//on indique l'interdiction et on stop le script
-	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accés ne vous permettent pas de visualiser ce type de page</span>";
+	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accÃ©s ne vous permettent pas de visualiser ce type de page</span>";
 	exit();
 }
 
 $compta_e = new compta_exercices ();
 $liste_exercices	= $compta_e->charger_compta_exercices();
-//on récupère la dte du dernier exercice cloturé
+//on rÃ©cupÃ¨re la dte du dernier exercice cloturÃ©
 foreach ($liste_exercices as $exercice) {
 	if (!$exercice->etat_exercice) {$last_date_before_cloture = $exercice->date_fin; break;}
 }
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -79,14 +79,14 @@ foreach ($liste_commerciaux as $commercial) {
 		$query_where .=  " d.date_creation_doc <= '".date_Fr_to_Us($search['date_fin'])." 23:59:59' "; 
 	}
 	// *************************************************
-	// Résultat de la recherche
+	// RÃ©sultat de la recherche
 	$commercial->ca = 0;
 	$commercial->mg = 0;
 	$commercial->comm = 0;
 	$commercial->docs = array();
 	switch ($doc_fom_comm) {
 		case "CDC": 
-				// Préparation de la requete
+				// PrÃ©paration de la requete
 				// Recherche des documents
 				$queryd = "SELECT dvc.ref_doc , dvc.part, d.date_creation_doc
 									FROM doc_ventes_commerciaux  dvc
@@ -132,7 +132,7 @@ foreach ($liste_commerciaux as $commercial) {
 				}
 		break;
 		case "FAC": 
-				// Préparation de la requete
+				// PrÃ©paration de la requete
 				// Recherche des documents
 				$queryd = "SELECT dvc.ref_doc , dvc.part, d.date_creation_doc
 									FROM doc_ventes_commerciaux  dvc
@@ -179,7 +179,7 @@ foreach ($liste_commerciaux as $commercial) {
 
 		break;
 		case "RGM": 
-				// Préparation de la requete
+				// PrÃ©paration de la requete
 				// Recherche des documents
 				$queryd = "SELECT dvc.ref_doc , dvc.part, d.date_creation_doc
 									FROM doc_ventes_commerciaux  dvc

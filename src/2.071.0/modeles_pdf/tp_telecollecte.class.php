@@ -40,7 +40,7 @@ public function create_pdf ($compte_tp, $id_compte_tp_telecollecte) {
 	
 	$this->compte_tp	= $compte_tp;
 	$this->telecollecte = $this->compte_tp->charger_telecollecte ($id_compte_tp_telecollecte);
-	$this->lib_type_printed 	= "Télécollecte";
+	$this->lib_type_printed 	= "TÃ©lÃ©collecte";
 	
 	
 	include_once ($PDF_MODELES_DIR."config/".$this->code_pdf_modele.".config.php");
@@ -55,12 +55,12 @@ public function create_pdf ($compte_tp, $id_compte_tp_telecollecte) {
 
 
 	// ***************************************************
-	// Valeurs par défaut
+	// Valeurs par dÃ©faut
 	foreach ($TELECOLL as $var => $valeur) {
 		$this->{$var} = $valeur;
 	}
 
-	// Création de la première page
+	// CrÃ©ation de la premiÃ¨re page
 	$this->create_pdf_page ();
 
 
@@ -68,12 +68,12 @@ public function create_pdf ($compte_tp, $id_compte_tp_telecollecte) {
 }
 
 
-// Créé une nouvelle page du document PDF
+// CrÃ©Ã© une nouvelle page du document PDF
 protected function create_pdf_page () {
 	// Comptage du nombre de page
 	$this->page_actuelle++;
 	$this->SetAutoPageBreak(true,2*$this->MARGE_GAUCHE);;
-	// Création d'une nouvelle page
+	// CrÃ©ation d'une nouvelle page
 	$this->AddPage();
 	$this->Header() ;
 	$this->create_pdf_corps ();
@@ -81,7 +81,7 @@ protected function create_pdf_page () {
 }
 
 
-// Créé l'entete du document PDF
+// CrÃ©Ã© l'entete du document PDF
 public function Header() {
 	global $MONNAIE;
 	global $TARIFS_NB_DECIMALES;
@@ -148,7 +148,7 @@ public function Header() {
 }
 
 
-// Créé le corps du PDF
+// CrÃ©Ã© le corps du PDF
 protected function create_pdf_corps () {
 	global $MONNAIE;
 	global $TARIFS_NB_DECIMALES;
@@ -157,7 +157,7 @@ protected function create_pdf_corps () {
 
 	$this->SetFont('Arial', '', 8);
 
-	//définition du contenu
+	//dÃ©finition du contenu
 	
 	//liste des CB
 	

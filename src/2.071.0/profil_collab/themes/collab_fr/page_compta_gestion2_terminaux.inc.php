@@ -4,7 +4,7 @@
 // AFFICHAGE DU TABLEAU DE BORD D'UN Terminal de paiement
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -49,7 +49,7 @@ $solde = $totaux_theoriques;
 								<td>&nbsp;</td>
 							</tr>
 							<tr>
-								<td><div class="bold_caisse" style="font-size:16px">Solde Théorique &gt;&gt;</div></td>
+								<td><div class="bold_caisse" style="font-size:16px">Solde ThÃ©orique &gt;&gt;</div></td>
 								<td align="right"><div class="bold_caisse" style="font-size:16px"><?php echo number_format($solde, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[1];?></div></td>
 								<td style="width:20%">&nbsp;</td>
 							</tr>
@@ -65,7 +65,7 @@ $solde = $totaux_theoriques;
 								<td colspan="2">
 								<br />
 								<?php if ($last_date_telecollecte) {?>
-								<div style="float:left; color:#999999">Derniere télécollecte: <?php echo date_Us_to_Fr($last_date_telecollecte)." ".getTime_from_date ($last_date_telecollecte);?></div>
+								<div style="float:left; color:#999999">Derniere tÃ©lÃ©collecte: <?php echo date_Us_to_Fr($last_date_telecollecte)." ".getTime_from_date ($last_date_telecollecte);?></div>
 								<?php } ?>
 								<span style="color:#97bf0d; float:right">
 								<span id="telecollecte_tp_<?php echo $compte_tp->getId_compte_tp(); ?>"  class="green_underlined"  ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_telecollecte.gif" />
@@ -81,7 +81,7 @@ $solde = $totaux_theoriques;
 
 						<table width="100%" border="0" cellspacing="0" cellpadding="0">
 							<tr>
-								<td><div class="bold_caisse" style="font-size:16px">10 dernières opérations</div></td>
+								<td><div class="bold_caisse" style="font-size:16px">10 derniÃ¨res opÃ©rations</div></td>
 								<td align="right"></td>
 								<td style="width:20%">&nbsp;</td>
 							</tr>
@@ -99,7 +99,7 @@ $solde = $totaux_theoriques;
 										Date
 									</td>
 									<td style="font-weight:bolder">
-										Référence
+										RÃ©fÃ©rence
 									</td>
 									<td style="width:15%; text-align:right; font-weight:bolder">Montant</td>
 								</tr>
@@ -187,18 +187,18 @@ $solde = $totaux_theoriques;
 			<br />
 					<div style="padding: 15px 25px;">
 					<div class="line_caisse_bottom"></div>
-					<div class="bold_caisse" style="font-size:16px">Opérations de gestion</div> 
+					<div class="bold_caisse" style="font-size:16px">OpÃ©rations de gestion</div> 
 					<div class="line_caisse_top"></div>
 					<br />
 					<br />
 
-						<span id="telecollecte_tp_historique_<?php echo $compte_tp->getId_compte_tp(); ?>" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />  Historique des télécollectes
+						<span id="telecollecte_tp_historique_<?php echo $compte_tp->getId_compte_tp(); ?>" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />  Historique des tÃ©lÃ©collectes
 						</span><br /><br />
 						
 					<!--<span id="compta_tp_stat" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Statistiques</span><br /><br />-->
 <br />
 
-					<span id="compta_tp_raz" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Remise à zéro</span><br /><br />
+					<span id="compta_tp_raz" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Remise Ã  zÃ©ro</span><br /><br />
 					</div>
 						<script type="text/javascript">
 						

@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables, $articles_categories);
 
@@ -14,7 +14,7 @@ check_page_variables ($page_variables, $articles_categories);
 // AFFICHAGE
 // *************************************************************************************************************
 
-echo "Création d'une fiche article<br><br>
+echo "CrÃ©ation d'une fiche article<br><br>
 
 <form action='' method='POST'>
 <input type=hidden name='create' value='1'>";
@@ -25,11 +25,11 @@ foreach ($_ALERTES as $alerte => $value) {
 }
 
 echo "
-<li><b>Libellé de l'article</b><br>
+<li><b>LibellÃ© de l'article</b><br>
 <textarea name='lib_article' rows=2 cols=50></textarea>
 <br><br>
 
-<li><b>Catégorie</b><br>
+<li><b>CatÃ©gorie</b><br>
 <select name='categorie'>";
 	foreach ($articles_categories as $categorie) {
 		echo "<option value='".$categorie->ref_art_categ."'> ";
@@ -42,14 +42,14 @@ echo "</select>
 // Rajouter toutes les autres caracs
 
 echo "
-<input type=submit value='Créer la fiche de contact'>
+<input type=submit value='CrÃ©er la fiche de contact'>
 
 </form>
 
 <br><br><br>
 
-<a href='".$DIR.$_SESSION['user']->getProfil_dir()."'>Retour à l'index Administrateur</a><br><br>
+<a href='".$DIR.$_SESSION['user']->getProfil_dir()."'>Retour Ã  l'index Administrateur</a><br><br>
 
-<a href='".$DIR."'>Retour à l'index principal</a> ";
+<a href='".$DIR."'>Retour Ã  l'index principal</a> ";
 
 ?>

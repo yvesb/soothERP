@@ -8,7 +8,7 @@ require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
-//chargement des livraisons non facturées
+//chargement des livraisons non facturÃ©es
 $livraisons = array();
 $order = "";
 //liste des lieux de stock

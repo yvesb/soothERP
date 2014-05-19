@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -53,13 +53,13 @@ update_menu_arbo();
 
 				<span class="titre_smenu_page" id="annuaire_smenu_gestion_profils"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des Profils</span><br /><br />
 
-				<span class="titre_smenu_page" id="annuaire_gestion_clients_categ"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des catégories de Clients</span><br /><br />
+				<span class="titre_smenu_page" id="annuaire_gestion_clients_categ"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des catÃ©gories de Clients</span><br /><br />
 
-				<span class="titre_smenu_page" id="annuaire_gestion_fournisseurs_categ"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des catégories de Fournisseurs</span><br /><br />
+				<span class="titre_smenu_page" id="annuaire_gestion_fournisseurs_categ"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des catÃ©gories de Fournisseurs</span><br /><br />
 
-			<!--	<span class="titre_smenu_page" id="annuaire_gestion_commerciaux_categ"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des catégories de Commerciaux</span><br /><br />-->
+			<!--	<span class="titre_smenu_page" id="annuaire_gestion_commerciaux_categ"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des catÃ©gories de Commerciaux</span><br /><br />-->
 				
-				<span class="titre_smenu_page" id="annuaire_gestion_evenements_contact"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des événements</span><br /><br />
+				<span class="titre_smenu_page" id="annuaire_gestion_evenements_contact"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des Ã©vÃ©nements</span><br /><br />
 
 				<span class="titre_smenu_page" id="annuaire_gestion_liaisons_contact"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des relations</span><br /><br />
 

@@ -3,7 +3,7 @@
 // MAJ D'UN MODELE DE LIGNE D'INFORMATION DE DOCUMENTS
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -21,7 +21,7 @@ check_page_variables ($page_variables);
 
 ?>
 <p>&nbsp;</p>
-<p>modèle de ligne d'info(maj) </p>
+<p>modÃ¨le de ligne d'info(maj) </p>
 <p>&nbsp; </p>
 <?php 
 foreach ($_ALERTES as $alerte => $value) {
@@ -53,12 +53,12 @@ foreach ($_ALERTES as $alerte => $value) {
 if (erreur) {
 	
 	if (bad_id_type_doc) {
-		texte_erreur += "Sélectionnez au moins un type de document.<br/>";
+		texte_erreur += "SÃ©lectionnez au moins un type de document.<br/>";
 	}
 	
 	if (bad_lib_line) {
 		window.parent.document.getElementById("lib_line").className="alerteform_xsize";
-		texte_erreur += "Indiquez le libellé de la ligne.<br/>";
+		texte_erreur += "Indiquez le libellÃ© de la ligne.<br/>";
 	} else {
 		window.parent.document.getElementById("lib_line").className="classinput_xsize";
 	}

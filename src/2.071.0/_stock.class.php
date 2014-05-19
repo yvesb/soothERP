@@ -8,7 +8,7 @@ final class stock {
 	private $id_stock;
 
 	private $lib_stock;			// Nom du lieu de stockage
-	private $abrev_stock;			// Abréviation du Nom du lieu de stockage
+	private $abrev_stock;			// AbrÃ©viation du Nom du lieu de stockage
 	private $ref_adr_stock;	// Ref_adresse du lieu de stockage
 	private $actif;					// 1 si le stock est actif (sinon aucnu mouvmeent possible)
 
@@ -23,25 +23,25 @@ final class stock {
 function __construct ($id_stock = 0, $infos_stock = NULL) {
 	global $bdd;
 
-	// Controle si objet créé depuis une requete
+	// Controle si objet crÃ©Ã© depuis une requete
 	if (isset($infos_stock)) {
 		$this->charger_from_object($infos_stock);
 		return true;
 	}
 	
-	// Controle si le id_stock est précisé
+	// Controle si le id_stock est prÃ©cisÃ©
 	if (!$id_stock) { return false; }
 
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT lib_stock, abrev_stock, ref_adr_stock, actif
 						FROM stocks s
 						WHERE id_stock = '".$id_stock."' ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si le id_stock est trouvé
+	// Controle si le id_stock est trouvÃ©
 	if (!$stock = $resultat->fetchObject()) { return false; }
 
-	// Attribution des informations à l'objet
+	// Attribution des informations Ã  l'objet
 	$this->id_stock 			= $id_stock;
 	$this->lib_stock			= $stock->lib_stock;
 	$this->abrev_stock		= $stock->abrev_stock;
@@ -78,7 +78,7 @@ final public function create ($lib_stock, $abrev_stock, $ref_adr_stock, $actif) 
 	global $bdd;
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->lib_stock 	= $lib_stock;
 	if (!$this->lib_stock) { 
 		$GLOBALS['_ALERTES']['lib_stock_vide'] = 1; 
@@ -91,7 +91,7 @@ final public function create ($lib_stock, $abrev_stock, $ref_adr_stock, $actif) 
 		$this->abrev_stock = substr($this->lib_stock , 0, 3);
 	}
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -104,12 +104,12 @@ final public function create ($lib_stock, $abrev_stock, $ref_adr_stock, $actif) 
 	$bdd->exec($query);
 	$this->id_stock = $bdd->lastInsertId();
 	
-	//on demande à ce que la session soit mise à jour lors de l'ouverture des prochaines pages
+	//on demande Ã  ce que la session soit mise Ã  jour lors de l'ouverture des prochaines pages
 	serveur_maj_file();
 	
 	// *************************************************
-	// Résultat positif de la création
-	$GLOBALS['_INFOS']['Création_stock'] = $this->id_stock;
+	// RÃ©sultat positif de la crÃ©ation
+	$GLOBALS['_INFOS']['CrÃ©ation_stock'] = $this->id_stock;
 
 	return true;
 }
@@ -124,7 +124,7 @@ final public function modification ($lib_stock, $abrev_stock, $ref_adr_stock, $a
 	global $bdd;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->lib_stock 	= $lib_stock;
 	if (!$this->lib_stock) { 
 		$GLOBALS['_ALERTES']['lib_stock_vide'] = 1; 
@@ -137,7 +137,7 @@ final public function modification ($lib_stock, $abrev_stock, $ref_adr_stock, $a
 	}
 	// Controle si inactivation du stock
 	if ($this->actif && !$actif) {
-		// Qu'il n'est pas utilisé par un document en cours
+		// Qu'il n'est pas utilisÃ© par un document en cours
 		$query = "SELECT d.ref_doc FROM documents d
 							LEFT JOIN doc_blc dblc ON d.ref_doc = dblc.ref_doc 
 							LEFT JOIN doc_cdc dcdc ON d.ref_doc = dcdc.ref_doc 
@@ -164,7 +164,7 @@ final public function modification ($lib_stock, $abrev_stock, $ref_adr_stock, $a
 		if (isset($GLOBALS['_ALERTES']['documents_using_stock'])) { 
 			return false;
 		}
-		// Qu'il n'est pas utilisé par un magasin actif
+		// Qu'il n'est pas utilisÃ© par un magasin actif
 		$query = "SELECT id_magasin FROM magasins WHERE actif = 1 && id_stock = '".$this->id_stock."' ";
 		$resultat = $bdd->query ($query);
 		if ($magasin = $resultat->fetchObject()) { 
@@ -183,7 +183,7 @@ final public function modification ($lib_stock, $abrev_stock, $ref_adr_stock, $a
 	$this->actif = $actif;
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -196,10 +196,10 @@ final public function modification ($lib_stock, $abrev_stock, $ref_adr_stock, $a
 						WHERE id_stock = '".$this->id_stock."' ";
 	$bdd->exec ($query);
 
-	//on demande à ce que la session soit mise à jour lors de l'ouverture des prochaines pages
+	//on demande Ã  ce que la session soit mise Ã  jour lors de l'ouverture des prochaines pages
 	serveur_maj_file();
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
@@ -210,7 +210,7 @@ final public function modification ($lib_stock, $abrev_stock, $ref_adr_stock, $a
 public function check_used_stock () {
 	global $bdd;
 		
-	// Qu'il n'est pas utilisé par un document en cours
+	// Qu'il n'est pas utilisÃ© par un document en cours
 	$query = "SELECT d.ref_doc FROM documents d
 						LEFT JOIN doc_blc dblc ON d.ref_doc = dblc.ref_doc 
 						LEFT JOIN doc_cdc dcdc ON d.ref_doc = dcdc.ref_doc 
@@ -237,7 +237,7 @@ public function check_used_stock () {
 	if (isset($GLOBALS['_ALERTES']['documents_using_stock'])) { 
 		return false;
 	}
-	// Qu'il n'est pas utilisé par un magasin actif
+	// Qu'il n'est pas utilisÃ© par un magasin actif
 	$query = "SELECT id_magasin FROM magasins WHERE actif = 1 && id_stock = '".$this->id_stock."' ";
 	$resultat = $bdd->query ($query);
 	if ($magasin = $resultat->fetchObject()) { 
@@ -255,7 +255,7 @@ public function check_used_stock () {
 	return true;
 }
 
-//supression du stock avec transfere des articles en stock vers un lieu de stockage différent
+//supression du stock avec transfere des articles en stock vers un lieu de stockage diffÃ©rent
 public function supprime_stock_transferer ($new_id_stock) {
 	global $bdd;
 	global $TRANSFERT_ID_TYPE_DOC;
@@ -266,7 +266,7 @@ public function supprime_stock_transferer ($new_id_stock) {
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['id_stock_cible'] = $new_id_stock;
 	
 	$count_nbs_article = 0;
-	//on selectionne l'ensemble des articles du stock pour générer des TRM vers le nouveau stock
+	//on selectionne l'ensemble des articles du stock pour gÃ©nÃ©rer des TRM vers le nouveau stock
 	$query = "SELECT ref_stock_article, ref_article, qte FROM stocks_articles  WHERE id_stock = '".$this->id_stock."' && qte > 0 ";
 	$resultat = $bdd->query ($query);
 	while ($articles = $resultat->fetchObject()) {
@@ -318,7 +318,7 @@ public function supprime_stock_transferer ($new_id_stock) {
 						WHERE id_stock = '".$this->id_stock."' ";
 	$resultat = $bdd->query($query);
 	
-	//on supprime les articles restant en stocks (articles en stock négatifs) du stock en cours
+	//on supprime les articles restant en stocks (articles en stock nÃ©gatifs) du stock en cours
 	$query = "DELETE FROM stocks_articles  
 						WHERE id_stock = '".$this->id_stock."' ";
 	$bdd->exec($query);
@@ -331,13 +331,13 @@ public function supprime_stock_transferer ($new_id_stock) {
 	$bdd->exec($query);
 	unset ($_SESSION['stocks'][$this->id_stock], $this);
 	
-	//on demande à ce que la session soit mise à jour lors de l'ouverture des prochaines pages
+	//on demande Ã  ce que la session soit mise Ã  jour lors de l'ouverture des prochaines pages
 	serveur_maj_file();
 	
 	return true;
 }
 
-//suppression du stock avec livraison des articles en stock à un contact
+//suppression du stock avec livraison des articles en stock Ã  un contact
 public function supprime_stock_livrer ($ref_contact) {
 	global $bdd;
 	global $LIVRAISON_CLIENT_ID_TYPE_DOC;
@@ -348,7 +348,7 @@ public function supprime_stock_livrer ($ref_contact) {
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['not_generer_facture'] = 1;
 	
 	$count_nbs_article = 0;
-	//on selectionne l'ensemble des articles du stock pour générer des BLC vers le nouveau stock
+	//on selectionne l'ensemble des articles du stock pour gÃ©nÃ©rer des BLC vers le nouveau stock
 	$query = "SELECT ref_stock_article, ref_article, qte FROM stocks_articles  WHERE id_stock = '".$this->id_stock."' && qte > 0 ";
 	$resultat = $bdd->query ($query);
 	while ($articles = $resultat->fetchObject()) {
@@ -400,7 +400,7 @@ public function supprime_stock_livrer ($ref_contact) {
 						WHERE id_stock = '".$this->id_stock."' ";
 	$resultat = $bdd->query($query);
 	
-	//on supprime les articles restant en stocks (articles en stock négatifs) du stock en cours
+	//on supprime les articles restant en stocks (articles en stock nÃ©gatifs) du stock en cours
 	$query = "DELETE FROM stocks_articles  
 						WHERE id_stock = '".$this->id_stock."' ";
 	$bdd->exec($query);
@@ -413,7 +413,7 @@ public function supprime_stock_livrer ($ref_contact) {
 	$bdd->exec($query);
 	unset ($_SESSION['stocks'][$this->id_stock], $this);
 	
-	//on demande à ce que la session soit mise à jour lors de l'ouverture des prochaines pages
+	//on demande Ã  ce que la session soit mise Ã  jour lors de l'ouverture des prochaines pages
 	serveur_maj_file();
 	
 	return true;
@@ -447,7 +447,7 @@ public function add_to_stock ($doc_line, $ref_doc) {
 						WHERE ref_article = '".$ref_article."' && id_stock = '".$this->id_stock."' ";
 	$resultat = $bdd->query($query);
 	if (!$resultat->rowCount()) {
-		// La ligne n'existe pas dans le stock, il faut la créer
+		// La ligne n'existe pas dans le stock, il faut la crÃ©er
 		$reference = new reference ($this->STOCK_ARTICLE_ID_REFERENCE_TAG);
 		$ref_stock_article = $reference->generer_ref();
 		$query = "INSERT INTO stocks_articles (ref_stock_article, id_stock, ref_article, qte)
@@ -467,7 +467,7 @@ public function add_to_stock ($doc_line, $ref_doc) {
 
 	
 	// *************************************************
-	// Numéros de série
+	// NumÃ©ros de sÃ©rie
 	if (!count($sn)) { return true; }
 
 	// Ligne du stock
@@ -481,20 +481,20 @@ public function add_to_stock ($doc_line, $ref_doc) {
 	}
 	
 	if ($doc_line->gestion_sn == 1) {
-		// Préparation de la requete
+		// PrÃ©paration de la requete
 		$query_sn = "";
 		foreach ($sn as $numero) {
 			if ($query_sn) { $query_sn .= ","; }
 			$query_sn .= "('".$ref_stock_article."','".$numero->numero_serie."','$numero->sn_qte')";
 		}
 	
-		// Insertion des numéros de série dans le stock
+		// Insertion des numÃ©ros de sÃ©rie dans le stock
 		$query = "INSERT INTO stocks_articles_sn (ref_stock_article, numero_serie, sn_qte)
 							VALUES ".$query_sn;
 		$bdd->exec($query);
 	}
 	if ($doc_line->gestion_sn == 2) {
-		// Préparation de la requete
+		// PrÃ©paration de la requete
 		$query_sn = "";
 		foreach ($sn as $numero) {
 			$query = "SELECT sn_qte from stocks_articles_sn
@@ -541,7 +541,7 @@ public function del_from_stock ($doc_line, $ref_doc) {
 						WHERE ref_article = '".$ref_article."' && id_stock = '".$this->id_stock."' ";
 	$resultat = $bdd->query($query);
 	if (!$resultat->rowCount()) {
-		// La ligne n'existe pas dans le stock, il faut la créer
+		// La ligne n'existe pas dans le stock, il faut la crÃ©er
 		$reference = new reference ($this->STOCK_ARTICLE_ID_REFERENCE_TAG);
 		$ref_stock_article = $reference->generer_ref();
 		$query = "INSERT INTO stocks_articles (ref_stock_article, id_stock, ref_article, qte)
@@ -560,7 +560,7 @@ public function del_from_stock ($doc_line, $ref_doc) {
 	$bdd->exec ($query);
 
 	// *************************************************
-	// Numéros de série
+	// NumÃ©ros de sÃ©rie
 	if (!count($sn)) { return true; }
 
 	// Ligne du stock
@@ -574,14 +574,14 @@ public function del_from_stock ($doc_line, $ref_doc) {
 	}
 	//supression de SN
 	if ($doc_line->gestion_sn == 1) {
-		// Préparation de la requete
+		// PrÃ©paration de la requete
 		$query_sn = "";
 		foreach ($sn as $numero) {
 			if ($query_sn) { $query_sn .= ","; }
 			$query_sn .= "'".$numero->numero_serie."'";
 		}
 	
-		// Suppression des numéros de série dans le stock
+		// Suppression des numÃ©ros de sÃ©rie dans le stock
 		$query = "DELETE FROM stocks_articles_sn 
 							WHERE ref_stock_article = '".$ref_stock_article."' && numero_serie IN (".$query_sn.")";
 		$bdd->exec($query);
@@ -589,7 +589,7 @@ public function del_from_stock ($doc_line, $ref_doc) {
 	
 	//supression des lots
 	if ($doc_line->gestion_sn == 2) {
-		// Préparation de la requete
+		// PrÃ©paration de la requete
 		$query_sn = "";
 		foreach ($sn as $numero) {
 			$query = "SELECT sn_qte from stocks_articles_sn
@@ -628,7 +628,7 @@ public function insert_to_stock ($ref_doc, $ref_article, $qte, $sn) {
 						WHERE ref_article = '".$ref_article."' && id_stock = '".$this->id_stock."' ";
 	$resultat = $bdd->query($query);
 	if (!$resultat->rowCount()) {
-		// La ligne n'existe pas dans le stock, il faut la créer
+		// La ligne n'existe pas dans le stock, il faut la crÃ©er
 		$reference = new reference ($this->STOCK_ARTICLE_ID_REFERENCE_TAG);
 		$ref_stock_article = $reference->generer_ref();
 		$query = "INSERT INTO stocks_articles (ref_stock_article, id_stock, ref_article, qte)
@@ -636,14 +636,14 @@ public function insert_to_stock ($ref_doc, $ref_article, $qte, $sn) {
 		$bdd->exec ($query);
 		unset ($reference, $resultat);
 	}
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_sn = "";
 	foreach ($sn as $numero) {
 		if ($query_sn) { $query_sn .= ","; }
 		$query_sn .= "('".$ref_stock_article."', '".$numero->numero_serie."', '".$numero->sn_qte."')";
 	}
 	if (count($sn)) {
-		// Ajout des numéros de série dans le stock
+		// Ajout des numÃ©ros de sÃ©rie dans le stock
 		$query = "INSERT INTO stocks_articles_sn (ref_stock_article, numero_serie,sn_qte)
 							VALUES ".$query_sn."";
 		$bdd->exec($query);
@@ -672,7 +672,7 @@ public function supprimer_to_stock ($ref_doc, $ref_article, $qte, $sn ) {
 						WHERE ref_article = '".$ref_article."' && id_stock = '".$this->id_stock."' ";
 	$resultat = $bdd->query($query);
 	if (!$resultat->rowCount()) {
-		// La ligne n'existe pas dans le stock, il faut la créer
+		// La ligne n'existe pas dans le stock, il faut la crÃ©er
 		$reference = new reference ($this->STOCK_ARTICLE_ID_REFERENCE_TAG);
 		$ref_stock_article = $reference->generer_ref();
 		$query = "INSERT INTO stocks_articles (ref_stock_article, id_stock, ref_article, qte)
@@ -683,18 +683,18 @@ public function supprimer_to_stock ($ref_doc, $ref_article, $qte, $sn ) {
 	
 	
 	if (count($sn)) {
-		// Préparation de la requete
+		// PrÃ©paration de la requete
 		$tmp_article = new article($ref_article);
 		//supression de SN
 		if ($tmp_article->getGestion_sn() == 1) {
-			// Préparation de la requete
+			// PrÃ©paration de la requete
 			$query_sn = "";
 			foreach ($sn as $numero) {
 				if ($query_sn) { $query_sn .= ","; }
 				$query_sn .= "'".$numero."'";
 			}
 		
-			// Suppression des numéros de série dans le stock
+			// Suppression des numÃ©ros de sÃ©rie dans le stock
 			$query = "DELETE FROM stocks_articles_sn 
 								WHERE ref_stock_article = '".$ref_stock_article."' && numero_serie IN (".$query_sn.")";
 			$bdd->exec($query);
@@ -702,7 +702,7 @@ public function supprimer_to_stock ($ref_doc, $ref_article, $qte, $sn ) {
 		
 		//supression des lots
 		if ($tmp_article->getGestion_sn() == 2) {
-			// Préparation de la requete
+			// PrÃ©paration de la requete
 			foreach ($sn as $numero) {
 				$query = "SELECT sn_qte FROM stocks_articles_sn 
 									WHERE ref_stock_article = '".$ref_stock_article."' && numero_serie IN ('".$numero->numero_serie."')";
@@ -729,7 +729,7 @@ public function supprimer_to_stock ($ref_doc, $ref_article, $qte, $sn ) {
 }
 
 
-// Générer un mouvement de stock
+// GÃ©nÃ©rer un mouvement de stock
 public function genere_move_stock ($ref_doc, $ref_article, $qte) {
 	global $bdd;
 	// *************************************************
@@ -812,7 +812,7 @@ static function getArticles_sn ($id_stock, $ref_article) {
 	return $numeros;
 }
 
-//charge les numéros de lot
+//charge les numÃ©ros de lot
 static function getArticles_nl ($id_stock, $ref_article) {
 	global $bdd;
 
@@ -941,8 +941,8 @@ public static function desactive_modele_pdf($id_pdf_modele) {
 }
 
 
-//fonction d'impression des états des stocks
-//$infos["id_stock"] contient la liste des id de stocks séparé par une virgule
+//fonction d'impression des Ã©tats des stocks
+//$infos["id_stock"] contient la liste des id de stocks sÃ©parÃ© par une virgule
 public static function imprimer_etat_stocks ($infos, $print = 0) {
 	global $bdd;
 	global $PDF_MODELES_DIR;
@@ -952,13 +952,13 @@ public static function imprimer_etat_stocks ($infos, $print = 0) {
 	$tab = explode(",",$infos["id_stocks"]);
 	// Recherche des resultats
 	$fiches = array();
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_select = "";
 	$query_join 	= "";
 	$query_where 	= " dispo = 1 && a.lot != '2' && a.modele = 'materiel'  ";
 	$query_group	= "";
 
-	// Catégorie
+	// CatÃ©gorie
 	if ($infos['ref_art_categ']) { 
 		$query_where 	.= " && a.ref_art_categ = '".$infos['ref_art_categ']."'";
 	}
@@ -971,7 +971,7 @@ public static function imprimer_etat_stocks ($infos, $print = 0) {
 		$query_select 	.= ",  a.prix_achat_ht, a.paa_ht ";
 	}
 
-	// Sélection des stocks disponibles
+	// SÃ©lection des stocks disponibles
 	$where_stock = "";
 	$where_stock .= " && (";
 	$bool = false;
@@ -1061,7 +1061,7 @@ public static function imprimer_etat_stocks ($infos, $print = 0) {
 	$fiches = $fiches_tmp; 
 	
 	// Affichage du pdf
-	// Préférences et options
+	// PrÃ©fÃ©rences et options
 	$GLOBALS['PDF_OPTIONS']['HideToolbar'] = 0;
 	$GLOBALS['PDF_OPTIONS']['AutoPrint'] = $print;
 
@@ -1070,7 +1070,7 @@ public static function imprimer_etat_stocks ($infos, $print = 0) {
 	$class = "pdf_".$code_model_pdf;
 	$pdf = new $class;
 	
-	// Création
+	// CrÃ©ation
 	if($pdf->create_pdf($tab, $fiches, $infos)){
 		// Sortie
 		$pdf->Output();
@@ -1110,7 +1110,7 @@ function getAdresse () {
 
 }
 
-//fonction qui retourne la quantité d'un article en stock (indication de quantité lors de la maj_qte de certains documents
+//fonction qui retourne la quantitÃ© d'un article en stock (indication de quantitÃ© lors de la maj_qte de certains documents
 function getArticle_qte_instock ($ref_article, $id_stock) {
 	global $bdd;
 	

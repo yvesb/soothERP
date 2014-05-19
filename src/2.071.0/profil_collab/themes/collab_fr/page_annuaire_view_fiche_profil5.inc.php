@@ -199,7 +199,7 @@ H_loading();
 		<td colspan="2" style="height: 20px; vertical-align: middle;">
 			<span id="articlesDispDuFournisseur" style="cursor:pointer;">
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif" align="absmiddle" />
-				Liste des articles disponibles auprès de ce fournisseur
+				Liste des articles disponibles auprÃ¨s de ce fournisseur
 			</span>
 			<script type="text/javascript">
 				Event.observe("articlesDispDuFournisseur", "click", function(evt){

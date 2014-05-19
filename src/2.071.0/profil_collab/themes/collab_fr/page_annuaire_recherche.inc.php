@@ -4,7 +4,7 @@
 // RECHERCHE D'UN CONTACT
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES", "listepays");
 check_page_variables ($page_variables);
 $query = "SELECT pays FROM pays";
@@ -184,7 +184,7 @@ array_menu_r_contact[2] 	=	new Array('recherche_perso', 'menu_3');
 				</tr>
 				<tr id="liste_categ_client" style="display:none">
 					<td>&nbsp;</td>
-					<td><span class="labelled">Catégorie de client : </span></td>
+					<td><span class="labelled">CatÃ©gorie de client : </span></td>
 					<td>
 					<select  id="id_client_categ"  name="id_client_categ" class="classinput_xsize">
 								<option value="">Tous</option>
@@ -214,7 +214,7 @@ array_menu_r_contact[2] 	=	new Array('recherche_perso', 'menu_3');
 						<option value="prospect">Prospect</option>
 						<option value="client">Client</option>
 						<option value="ancien client">Ancien client</option>
-						<option value="Compte bloqué">Compte bloqué</option>
+						<option value="Compte bloquÃ©">Compte bloquÃ©</option>
 					</select>
 					</td>
 					<td>&nbsp;</td>
@@ -264,7 +264,7 @@ array_menu_r_contact[2] 	=	new Array('recherche_perso', 'menu_3');
 				
 				
 				<?php
-				$DEFAUT_ID_PAYS = 0; // pour que "Tous" soit sélectionné par défaut
+				$DEFAUT_ID_PAYS = 0; // pour que "Tous" soit sÃ©lectionnÃ© par dÃ©faut
 				$separe_listepays = 0;
 				foreach($listepays as $les_pays){
 				if ((!$separe_listepays) && (!$les_pays->affichage)) { 
@@ -348,7 +348,7 @@ array_menu_r_contact[2] 	=	new Array('recherche_perso', 'menu_3');
 					</td>
 					<?php
 					}else{
-					echo 'Aucune recherche personnalisée';
+					echo 'Aucune recherche personnalisÃ©e';
 					}
 					?>
 					<td>&nbsp;</td>
@@ -378,7 +378,7 @@ Event.observe("code_postal", "click",  function(evt){
 Position.includeScrollOffsets = true;
 
 
-//creation d'un nouveau contact (transfère la ref_doc si on est dans un document
+//creation d'un nouveau contact (transfÃ¨re la ref_doc si on est dans un document
 Event.observe("create_new_contact", "click",  function(evt){
 	Event.stop(evt);
 	page.verify('annuaire_nouvelle_fiche','annuaire_nouvelle_fiche.php','true','sub_content');

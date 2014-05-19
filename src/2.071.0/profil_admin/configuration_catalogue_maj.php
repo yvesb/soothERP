@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// CONFIGURATION DES DONNÉES catalogue
+// CONFIGURATION DES DONNÃ‰ES catalogue
 // *************************************************************************************************************
 
 
@@ -8,7 +8,7 @@ require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
-//mise à jour des données transmises
+//mise Ã  jour des donnÃ©es transmises
 
 if (isset($_REQUEST["gestion_stock"]) && $_REQUEST["gestion_stock"] == "1") {
 	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$GESTION_STOCK				=", "\$GESTION_STOCK				= 1;								// Gestion des stocks", $CONFIG_DIR);
@@ -17,9 +17,9 @@ if (isset($_REQUEST["gestion_stock"]) && $_REQUEST["gestion_stock"] == "1") {
 }
 
 if (isset($_REQUEST["gestion_sn"]) && $_REQUEST["gestion_sn"] == "1") {
-	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$GESTION_SN 					=", "\$GESTION_SN 					= 1; 								// Gestion des numéros de série", $CONFIG_DIR);
+	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$GESTION_SN 					=", "\$GESTION_SN 					= 1; 								// Gestion des numÃ©ros de sÃ©rie", $CONFIG_DIR);
 } else {
-	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$GESTION_SN 					=", "\$GESTION_SN 					= 0; 								// Gestion des numéros de série", $CONFIG_DIR);
+	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$GESTION_SN 					=", "\$GESTION_SN 					= 0; 								// Gestion des numÃ©ros de sÃ©rie", $CONFIG_DIR);
 }
 
 
@@ -30,29 +30,29 @@ if (isset($_REQUEST["article_abo_time"]) && $_REQUEST["article_abo_time"] == "1"
 }
 
 if (isset($_REQUEST["article_qte_nb_dec"]) && is_numeric($_REQUEST["article_qte_nb_dec"])) {
-	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$ARTICLE_QTE_NB_DEC =", "\$ARTICLE_QTE_NB_DEC = ".$_REQUEST["article_qte_nb_dec"].";									// Nombre de décimale pour la quantité d'un article", $CONFIG_DIR);
+	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$ARTICLE_QTE_NB_DEC =", "\$ARTICLE_QTE_NB_DEC = ".$_REQUEST["article_qte_nb_dec"].";									// Nombre de dÃ©cimale pour la quantitÃ© d'un article", $CONFIG_DIR);
 }
 
 if (isset($_REQUEST["gestion_constructeur"]) && $_REQUEST["gestion_constructeur"] == "1") {
-	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$GESTION_CONSTRUCTEUR	=", "\$GESTION_CONSTRUCTEUR	= 1;								// Gestion de la référence du constructeur et de la référence OEM", $CONFIG_DIR);
+	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$GESTION_CONSTRUCTEUR	=", "\$GESTION_CONSTRUCTEUR	= 1;								// Gestion de la rÃ©fÃ©rence du constructeur et de la rÃ©fÃ©rence OEM", $CONFIG_DIR);
 } else {
-	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$GESTION_CONSTRUCTEUR	=", "\$GESTION_CONSTRUCTEUR	= 0;								// Gestion de la référence du constructeur et de la référence OEM", $CONFIG_DIR);
+	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$GESTION_CONSTRUCTEUR	=", "\$GESTION_CONSTRUCTEUR	= 0;								// Gestion de la rÃ©fÃ©rence du constructeur et de la rÃ©fÃ©rence OEM", $CONFIG_DIR);
 }
 
 if (isset($_REQUEST["gestion_ref_interne"]) && $_REQUEST["gestion_ref_interne"] == "1") {
-	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$GESTION_REF_INTERNE	=", "\$GESTION_REF_INTERNE	= 1;								// Gestion de la référence interne", $CONFIG_DIR);
+	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$GESTION_REF_INTERNE	=", "\$GESTION_REF_INTERNE	= 1;								// Gestion de la rÃ©fÃ©rence interne", $CONFIG_DIR);
 } else {
-	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$GESTION_REF_INTERNE	=", "\$GESTION_REF_INTERNE	= 0;								// Gestion de la référence interne", $CONFIG_DIR);
+	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$GESTION_REF_INTERNE	=", "\$GESTION_REF_INTERNE	= 0;								// Gestion de la rÃ©fÃ©rence interne", $CONFIG_DIR);
 }
 
 
 
 if (isset($_REQUEST["defaut_garantie"]) && is_numeric($_REQUEST["defaut_garantie"])) {
-	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$DEFAUT_GARANTIE			=", "\$DEFAUT_GARANTIE			= ".$_REQUEST["defaut_garantie"].";								// Durée de la garantie par défaut", $CONFIG_DIR);
+	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$DEFAUT_GARANTIE			=", "\$DEFAUT_GARANTIE			= ".$_REQUEST["defaut_garantie"].";								// DurÃ©e de la garantie par dÃ©faut", $CONFIG_DIR);
 }
 
 if (isset($_REQUEST["defaut_article_lt"]) && is_numeric($_REQUEST["defaut_article_lt"])) {
-	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$DEFAUT_ARTICLE_LT 		=", "\$DEFAUT_ARTICLE_LT 		= ".$_REQUEST["defaut_article_lt"]."*24*3600;		// Durée de vie d'un article, par défaut", $CONFIG_DIR);
+	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$DEFAUT_ARTICLE_LT 		=", "\$DEFAUT_ARTICLE_LT 		= ".$_REQUEST["defaut_article_lt"]."*24*3600;		// DurÃ©e de vie d'un article, par dÃ©faut", $CONFIG_DIR);
 }
 
 
@@ -74,15 +74,15 @@ if (isset($_REQUEST["defaut_lot"]) && is_numeric($_REQUEST["defaut_lot"])) {
 }
 
 if (isset($_REQUEST["defaut_id_tva"])) {
-	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$DEFAUT_ID_TVA				=", "\$DEFAUT_ID_TVA				= ".$_REQUEST["defaut_id_tva"].";								// Taux de TVA par défaut pour les catégories d'articles", $CONFIG_DIR);
+	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$DEFAUT_ID_TVA				=", "\$DEFAUT_ID_TVA				= ".$_REQUEST["defaut_id_tva"].";								// Taux de TVA par dÃ©faut pour les catÃ©gories d'articles", $CONFIG_DIR);
 }
 
 if (isset($_REQUEST["delai_article_is_new"]) && is_numeric($_REQUEST["delai_article_is_new"])) {
-	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$DELAI_ARTICLE_IS_NEW	=", "\$DELAI_ARTICLE_IS_NEW	= ".($_REQUEST["delai_article_is_new"]*24*3600).";					// Délai pendant lequel un article est considéré comme nouveau. (30j)", $CONFIG_DIR);
+	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$DELAI_ARTICLE_IS_NEW	=", "\$DELAI_ARTICLE_IS_NEW	= ".($_REQUEST["delai_article_is_new"]*24*3600).";					// DÃ©lai pendant lequel un article est considÃ©rÃ© comme nouveau. (30j)", $CONFIG_DIR);
 }
 
 if (isset($_REQUEST["article_image_miniature_ratio"]) && is_numeric($_REQUEST["article_image_miniature_ratio"])) {
-	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$ARTICLE_IMAGE_MINIATURE_RATIO =", "\$ARTICLE_IMAGE_MINIATURE_RATIO = ".$_REQUEST["article_image_miniature_ratio"]."; //ratio de réduction des images d'articles pour la miniature", $CONFIG_DIR);
+	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$ARTICLE_IMAGE_MINIATURE_RATIO =", "\$ARTICLE_IMAGE_MINIATURE_RATIO = ".$_REQUEST["article_image_miniature_ratio"]."; //ratio de rÃ©duction des images d'articles pour la miniature", $CONFIG_DIR);
 }
 
 if (isset($_REQUEST["article_variante_nom"]) && is_numeric($_REQUEST["article_variante_nom"])) {

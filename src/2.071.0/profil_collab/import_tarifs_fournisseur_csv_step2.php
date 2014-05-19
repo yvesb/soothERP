@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// IMPORT FICHIER tarifs_fournisseur CSV ETAPE 2 (après correspondance des colonnes et des valeurs du fichier)
+// IMPORT FICHIER tarifs_fournisseur CSV ETAPE 2 (aprÃ¨s correspondance des colonnes et des valeurs du fichier)
 // *************************************************************************************************************
 
 require ("_dir.inc.php");
@@ -12,13 +12,13 @@ $import_tarifs_fournisseur = new import_tarifs_fournisseur_csv();
 $donnee = new import_tarifs_fournisseur_csv_donnee();
 $lignes = $donnee->readAll();
 if (!count($lignes)) {
-	// Import terminé ou aucun enregistrement à traiter
+	// Import terminÃ© ou aucun enregistrement Ã  traiter
 	$import_tarifs_fournisseur->maj_etape(3);
 	header ("Location: ".$DIR."profil_".$_SESSION['profils'][$ID_PROFIL]->getCode_profil()."/import_tarifs_fournisseur_csv_step3.php");
 	exit();
 }
 		
-// On récupère les données devant être importées (les colonnes qui ont été sélectionnées par l'utilisateur)
+// On rÃ©cupÃ¨re les donnÃ©es devant Ãªtre importÃ©es (les colonnes qui ont Ã©tÃ© sÃ©lectionnÃ©es par l'utilisateur)
 $array_retour = $import_tarifs_fournisseur->recupererDonneesAImporter();
 
 $count_prix_vide = 0;

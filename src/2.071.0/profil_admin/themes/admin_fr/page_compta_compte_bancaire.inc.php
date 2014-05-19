@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -21,7 +21,7 @@ check_page_variables ($page_variables);
 
 ?>
 <script type="text/javascript">
-    tableau_smenu[0] = Array("smenu_comptabilite", "smenu_comptabilite.php" ,"true" ,"sub_content", "Comptabilité");
+    tableau_smenu[0] = Array("smenu_comptabilite", "smenu_comptabilite.php" ,"true" ,"sub_content", "ComptabilitÃ©");
     tableau_smenu[1] = Array('compta_compte_bancaire','compta_compte_bancaire.php','true','sub_content', "Comptes bancaires de l'entreprise");
     update_menu_arbo();
 </script>
@@ -34,7 +34,7 @@ check_page_variables ($page_variables);
             <tr>
                 <td class="contactview_corps">
                     <div id="cat_client" style="padding-left:10px; padding-right:10px">
-                        <p>Activer la gestion des traites et prélevements<input type="checkbox" value="1" id="compta_gest_prelevements" name="compta_gest_prelevements" <?php if($COMPTA_GEST_PRELEVEMENTS) echo "checked=\"checked\""; ?> /></p>
+                        <p>Activer la gestion des traites et prÃ©levements<input type="checkbox" value="1" id="compta_gest_prelevements" name="compta_gest_prelevements" <?php if($COMPTA_GEST_PRELEVEMENTS) echo "checked=\"checked\""; ?> /></p>
                         <div style="" id="show_new_compte">
                             <p>Ajouter un compte bancaire </p>
 

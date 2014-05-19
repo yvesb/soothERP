@@ -5,7 +5,7 @@
 //  MODIFICATION DE LA COORDONNEE D'UN CONTACT
 // *************************************************************************************************************
 
-// Variables nÈcessaires ‡ l'affichage
+// Variables n√©cessaires √† l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -23,7 +23,7 @@ check_page_variables ($page_variables);
 
 ?>
 <p>&nbsp;</p>
-<p>coordonnÈes: modification dans un contact existant </p>
+<p>coordonn√©es: modification dans un contact existant </p>
 <p>&nbsp; </p>
 <?php 
 foreach ($_ALERTES as $alerte => $value) {
@@ -52,7 +52,7 @@ if (erreur) {
 if (email) {
 	window.parent.document.getElementById("coordonnee_email<?php echo $_REQUEST['ref_idform']?>").className="alerteform_lsize";
 	window.parent.document.getElementById("coordonnee_email<?php echo $_REQUEST['ref_idform']?>").focus();
-texte_erreur += "Cette adresse email est dÈj‡ utilisÈe par <br/> <a href=\"index.php#annuaire_view_fiche.php?ref_contact=<?php if (isset( $_ALERTES["email_used"])) { echo $_ALERTES["email_used"][0];}?>\" target=\"_blank\"><?php if (isset( $_ALERTES["email_used"])) {  echo str_replace("\n", " ",addslashes($_ALERTES["email_used"][1]));}?></a>";
+texte_erreur += "Cette adresse email est d√©j√† utilis√©e par <br/> <a href=\"index.php#annuaire_view_fiche.php?ref_contact=<?php if (isset( $_ALERTES["email_used"])) { echo $_ALERTES["email_used"][0];}?>\" target=\"_blank\"><?php if (isset( $_ALERTES["email_used"])) {  echo str_replace("\n", " ",addslashes($_ALERTES["email_used"][1]));}?></a>";
 } else {
 	window.parent.document.getElementById("coordonnee_email<?php echo $_REQUEST['ref_idform']?>").className="classinput_lsize";
 }

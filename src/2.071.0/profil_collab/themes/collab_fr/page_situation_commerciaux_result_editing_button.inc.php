@@ -96,7 +96,7 @@ if (isset($liste_modeles_pdf_valides) && count($liste_modeles_pdf_valides)>1 ) {
 <div id="comm" class="choix_commercial"> 
 <?php
 
-// on crée la liste de commerciaux
+// on crÃ©e la liste de commerciaux
 $i=0;
 $liste = charger_liste_commerciaux ();
 

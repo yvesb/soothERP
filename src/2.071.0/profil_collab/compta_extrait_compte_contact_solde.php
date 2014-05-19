@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 if (!$_SESSION['user']->check_permission ("11")) {
 	//on indique l'interdiction et on stop le script
-	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accés ne vous permettent pas de visualiser ce type de page</span>";
+	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accÃ©s ne vous permettent pas de visualiser ce type de page</span>";
 	exit();
 }
 
@@ -26,7 +26,7 @@ function tri($array, $critere)
   return $array;
 }
 
-//fonction de génération des lettrages (double numérotation alphabétique)
+//fonction de gÃ©nÃ©ration des lettrages (double numÃ©rotation alphabÃ©tique)
 function cre_lettrage ($old_lettrage){
 	$a="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
  	$part_a = substr($old_lettrage ,0,1);
@@ -132,8 +132,8 @@ foreach ($fiches as $ctact) {
 		if (!$query_where2) { $query_where2 .= "WHERE "; }
 		$query_where2 .=  " date_reglement < '".($search['date_fin'])."' "; 
 	}
-	// Sélection
-	// Sélection des documents du contact
+	// SÃ©lection
+	// SÃ©lection des documents du contact
 	$grand_livre_documents = array();
 	$query = "SELECT d.ref_doc, d.id_type_doc, dt.lib_type_doc, d.id_etat_doc, ref_contact, de.lib_etat_doc,
 
@@ -158,7 +158,7 @@ foreach ($fiches as $ctact) {
 		$grand_livre_documents[$var->ref_doc] = $var; 
 	}
 	
-	// Sélection des règlements du contact
+	// SÃ©lection des rÃ¨glements du contact
 	$grand_livre_reglements = array();
 	$query = "SELECT r.ref_reglement, r.id_reglement_mode, r.ref_contact, rm.lib_reglement_mode,
 									 r.date_saisie, r.date_reglement as date, r.montant_reglement as montant_ttc, rm.type_reglement, 
@@ -190,7 +190,7 @@ foreach ($fiches as $ctact) {
 	if (!$search['date_debut']) {
 		$ctact->ran = 0;
 	} else {
-		//on récupère le report à nouveau si il existe
+		//on rÃ©cupÃ¨re le report Ã  nouveau si il existe
 		$query_ran = "SELECT id_exercice_ran, ref_contact, date_ran as date, montant_ran
 									FROM compta_exercices_reports
 									WHERE date_ran = '".$search['date_debut']." 00:00:00' && ref_contact = '".$ref_contact."' ";
@@ -225,13 +225,13 @@ foreach ($fiches as $ctact) {
 					$ran_last_livre_documents[$var_ran_last_doc->ref_doc] = $var_ran_last_doc; 
 				}
 				
-				//on calcul un ran qui cumule l'ensemble des résultats
+				//on calcul un ran qui cumule l'ensemble des rÃ©sultats
 				foreach ($ran_last_livre_documents as $ran_last_documents) {
-					//document en débit
+					//document en dÃ©bit
 					if (isset($ran_last_documents->ref_doc) && !is_array($ran_last_documents->ref_doc) && (($ran_last_documents->id_type_doc == 4 && $ran_last_documents->montant_ttc >= 0) || ($ran_last_documents->id_type_doc == 8 && $ran_last_documents->montant_ttc < 0))) {
 						$ctact->ran = $ctact->ran - abs(number_format($ran_last_documents->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	));
 					} 
-					//document en crédit
+					//document en crÃ©dit
 					if (isset($ran_last_documents->ref_doc) && !is_array($ran_last_documents->ref_doc) && (($ran_last_documents->id_type_doc == 4 && $ran_last_documents->montant_ttc < 0) || ($ran_last_documents->id_type_doc == 8 && $ran_last_documents->montant_ttc >= 0)) ) { 
 						$ctact->ran = $ctact->ran + abs(number_format($ran_last_documents->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	));
 					} 
@@ -242,24 +242,24 @@ foreach ($fiches as $ctact) {
 	
 	$ctact->credit = 0;
 	$ctact->debit = 0;
-	//on calcul un ran qui cumule l'ensemble des résultats
+	//on calcul un ran qui cumule l'ensemble des rÃ©sultats
 	foreach ($grand_livre_documents as $ran_last_documents) {
-		//document en débit
+		//document en dÃ©bit
 		if (isset($ran_last_documents->ref_doc) && !is_array($ran_last_documents->ref_doc) && (($ran_last_documents->id_type_doc == 4 && $ran_last_documents->montant_ttc >= 0) || ($ran_last_documents->id_type_doc == 8 && $ran_last_documents->montant_ttc < 0))) {
 			$ctact->debit = $ctact->debit + abs(number_format($ran_last_documents->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	));
 		} 
-		//document en crédit
+		//document en crÃ©dit
 		if (isset($ran_last_documents->ref_doc) && !is_array($ran_last_documents->ref_doc) && (($ran_last_documents->id_type_doc == 4 && $ran_last_documents->montant_ttc < 0) || ($ran_last_documents->id_type_doc == 8 && $ran_last_documents->montant_ttc >= 0)) ) { 
 			$ctact->credit = $ctact->credit + abs(number_format($ran_last_documents->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	));
 		} 
 		
 	}
 	foreach ($grand_livre_reglements as $ran_last_reglement) {	
-		// Règlement en débit
+		// RÃ¨glement en dÃ©bit
 		if (isset($ran_last_reglement->ref_reglement) && $ran_last_reglement->type_reglement == "sortant") {
 			$ctact->debit = $ctact->debit + abs(number_format($ran_last_reglement->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	));
 		} 
-		//règlement en crédit
+		//rÃ¨glement en crÃ©dit
 		if (isset($ran_last_reglement->ref_reglement) && $ran_last_reglement->type_reglement == "entrant") { 
 			$ctact->credit = $ctact->credit + abs(number_format($ran_last_reglement->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	));
 		} 
@@ -286,10 +286,10 @@ foreach ($fiches as $ctact) {
 		Report
 		</td>
 		<td style="font-weight:bolder; text-align:right">
-		Débit
+		DÃ©bit
 		</td>
 		<td style="font-weight:bolder; text-align:right">
-		Crédit
+		CrÃ©dit
 		</td>
 		<td style="font-weight:bolder; text-align:right">
 		Solde

@@ -16,7 +16,7 @@ ini_set("memory_limit","40M");
 
 $ANNUAIRE_CATEGORIES	=	get_categories();
 // *************************************************
-// Profils à afficher
+// Profils Ã  afficher
 $profils = array();
 foreach ($_SESSION['profils'] as $profil) {
 	if ($profil->getActif() == 0) { continue; }
@@ -26,7 +26,7 @@ unset ($profil);
 
 
 // *************************************************
-// Données pour le formulaire et la recherche
+// DonnÃ©es pour le formulaire et la recherche
 
 $nb_fiches = 0;
 $form['orderby'] = $search['orderby'] = "nom";
@@ -115,10 +115,10 @@ if (isset($_REQUEST['archive'])) {
 
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_select 	= "";
 	$query_join 	= "";
 	$query_join_count 	= "";
@@ -193,7 +193,7 @@ if (isset($_REQUEST['recherche'])) {
 	if ($search['ville'] || $search['code_postal']) {
 		$query_join_count 	.= " LEFT JOIN adresses ad ON a.ref_contact = ad.ref_contact  ";
 	}
-	// Coordonnées
+	// CoordonnÃ©es
 	if ($search['tel']) {
 		if ($query_where) { $query_where .= " && "; }
 		$query_where .= "(tel1 LIKE '%".$search['tel']."%' || tel2 LIKE '%".$search['tel']."%' || fax LIKE '%".$search['tel']."%')";

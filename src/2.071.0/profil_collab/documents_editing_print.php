@@ -14,7 +14,7 @@ if (isset($_REQUEST["ref_doc"])) {
         $GLOBALS['PDF_OPTIONS']['HideToolbar'] = 0;
 	$GLOBALS['PDF_OPTIONS']['AutoPrint'] = 0;
 
-	// Création du fichier
+	// CrÃ©ation du fichier
 	$pdf = new PDF_etendu ();
         $pdf->disable_footer = true;
         // Ajout du courrier de relance

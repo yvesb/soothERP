@@ -3,7 +3,7 @@
 // IMPORT FICHIER tarifs_fournisseur CSV
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -30,10 +30,10 @@ echo 'jsfdlkqfjdsmfj';
 		if(empty($erreurs)){ 
 			?>
 			var nb_lignes = <?php echo $import_commandes->getNb_lignes(); ?>;
-			texte += "L'analyse du fichier <b><?php echo $_FILES['fichier_csv']['name'];?></b> est terminé .<br />";
+			texte += "L'analyse du fichier <b><?php echo $_FILES['fichier_csv']['name'];?></b> est terminÃ© .<br />";
 			texte += "<b>"+nb_lignes+"</b> ligne";
 			if(nb_lignes > 0){ texte += "s"; }
-			texte += " ont été traitées.<br />";
+			texte += " ont Ã©tÃ© traitÃ©es.<br />";
 			<?php 
 		}else{
 			foreach($erreurs as $erreur){

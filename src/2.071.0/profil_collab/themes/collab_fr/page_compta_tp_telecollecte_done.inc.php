@@ -4,7 +4,7 @@
 // controle de tp
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
 <iframe frameborder="0" scrolling="no" src="about:_blank" id="edition_reglement_iframe" class="edition_reglement_iframe" style="display:none"></iframe>
 <div id="edition_reglement" class="edition_reglement" style="display:none">
 </div>
-<div class="titre" style="width:60%; padding-left:140px">Télécollecte <?php echo htmlentities($compte_tp->getLib_tp()); ?> effectuée
+<div class="titre" style="width:60%; padding-left:140px">TÃ©lÃ©collecte <?php echo htmlentities($compte_tp->getLib_tp()); ?> effectuÃ©e
 </div>
 
 
@@ -49,7 +49,7 @@ check_page_variables ($page_variables);
 	<span id="link_retour_tp" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Retour au Tableau de bord</span><br /><br />
 
 
-	<span id="print_rapport" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />Impression du rapport de télécollecte</span><br />
+	<span id="print_rapport" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />Impression du rapport de tÃ©lÃ©collecte</span><br />
 <br />
 
 						<script type="text/javascript">

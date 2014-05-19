@@ -19,7 +19,7 @@ $code_promo = new code_promo();
 $code_promo->create($lib_code_promo, $code, $pourcentage);
 
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 

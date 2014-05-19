@@ -11,7 +11,7 @@ require ($CONFIG_DIR."profil_".$_SESSION['profils'][$CLIENT_ID_PROFIL]->getCode_
 
 if (!$_SESSION['user']->check_permission ("11")) {
 	//on indique l'interdiction et on stop le script
-	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accés ne vous permettent pas de visualiser ce type de page</span>";
+	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accÃ©s ne vous permettent pas de visualiser ce type de page</span>";
 	exit();
 }
 //infos de recherche 
@@ -43,7 +43,7 @@ $categorie_client_var = $DEFAUT_ID_CLIENT_CATEG;
 
 // chargement de la class du profil
 contact::load_profil_class($CLIENT_ID_PROFIL);
-// Préparations des variables d'affichage
+// PrÃ©parations des variables d'affichage
 $liste_categories_client = contact_client::charger_clients_categories ();
 foreach ($liste_categories_client as $key => $categorie_client) {
 	$categorie_client->count_fact = count_factures_to_pay($categorie_client->id_client_categ);

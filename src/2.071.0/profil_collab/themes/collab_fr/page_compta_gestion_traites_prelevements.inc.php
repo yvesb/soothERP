@@ -1,10 +1,10 @@
 <?php
 
 // *************************************************************************************************************
-// Remise en banque depuis la caisse (ou dépot bancaire depuis la caisse)
+// Remise en banque depuis la caisse (ou dÃ©pot bancaire depuis la caisse)
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -31,7 +31,7 @@ array_menu_v_prelev[2] 	=	new Array('prelev_validation', 'chemin_etape_2');
 <script type="text/javascript">
 Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); page.verify('compta_gestion_traites_tb','compta_gestion_traites_tb.php?id_compte_bancaire=<?php echo $id_compte_bancaire;?>','true','sub_content');}, false);
 </script>
-<div class="titre" style="width:60%; padding-left:140px">Traites acceptées vers <?php echo htmlentities($compte_bancaire->getLib_compte()); ?>
+<div class="titre" style="width:60%; padding-left:140px">Traites acceptÃ©es vers <?php echo htmlentities($compte_bancaire->getLib_compte()); ?>
 </div>
 
 
@@ -110,7 +110,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 			<td colspan="2">
 			<br />
 				<div>
-					<span style="width:120px; float:left">Solde Théorique</span>
+					<span style="width:120px; float:left">Solde ThÃ©orique</span>
 					<span style="width:40px; float:left ">&gt;&gt;&gt;</span> 
 					<span id="toto_chq_theorique2" style="text-align:right; width:65px; float:left">
 					<?php
@@ -128,7 +128,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 					if (isset($count_prelev_a_effectuer)) {
 						echo $count_prelev_a_effectuer;
 					} 
-                                        ?> traite(s) acceptée(s))</span>
+                                        ?> traite(s) acceptÃ©e(s))</span>
 				</div>
 	
 			
@@ -260,7 +260,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 			
 		}
 		?>
-		<div style="text-align:right; cursor:pointer; width:205px; " id="add_line_chq">Ajouter un chèque</div>
+		<div style="text-align:right; cursor:pointer; width:205px; " id="add_line_chq">Ajouter un chÃ¨que</div>
 		
 			<script type="text/javascript">
 				Event.observe($("add_line_chq"), "click", function(evt){
@@ -322,7 +322,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 			<br /><br />
 
 			<span style="width:250px; float:left">
-			Numéro de traite:</span>
+			NumÃ©ro de traite:</span>
 			<input type="text" class="classinput_nsize" value="" id="num_prelev" name="num_prelev" />
 			<br /><br />
 					
@@ -370,14 +370,14 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 			
 			</div>
 			<br />
-			Traites acceptées vers <?php echo htmlentities($compte_bancaire->getLib_compte()); ?>
+			Traites acceptÃ©es vers <?php echo htmlentities($compte_bancaire->getLib_compte()); ?>
 			</span>
 			<br />
 			<br />
 			<table width="780" border="0" cellspacing="0" cellpadding="0">
 				<tr>
 					<td height="35" valign="middle" class="line_compta_bottom_rigth">
-                                            <div style="width:235px; height:35px; line-height:35px;">Traite(s) acceptée(s) disponible(s)</div>		</td>
+                                            <div style="width:235px; height:35px; line-height:35px;">Traite(s) acceptÃ©e(s) disponible(s)</div>		</td>
 					<td height="35" align="right" valign="middle" class="line_compta_bottom">
 					<div style="width:75px; height:35px; line-height:35px;"  id="line1_chq">
 					<span id="toto_prelev_theorique"><?php
@@ -411,7 +411,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 				</tr>
 				<tr>
 					<td height="35" valign="middle" class="line_compta_bottom_rigth">
-                                            <div style="width:235px; height:35px; line-height:35px;">Traite(s) acceptée(s) s&eacute;lection&eacute;(s)</div>		</td>
+                                            <div style="width:235px; height:35px; line-height:35px;">Traite(s) acceptÃ©e(s) s&eacute;lection&eacute;(s)</div>		</td>
 					<td height="35" width="40%" align="right" valign="middle" class="line_compta_bottom">
 					<div style="width:75px; height:35px; line-height:35px;" id="line3_esp">
 					<span id="toto_prelev_select">0.00</span><?php echo "&nbsp;". $MONNAIE[1];?>		</div>

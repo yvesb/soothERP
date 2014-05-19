@@ -46,23 +46,23 @@ public function create_pdf ($infos, $liste_commerciaux) {
 
 
 	// ***************************************************
-	// Valeurs par défaut
+	// Valeurs par dÃ©faut
 	foreach ($COMMISSIONS as $var => $valeur) {
 		$this->{$var} = $valeur;
 	}
 
-	// Création de la première page
+	// CrÃ©ation de la premiÃ¨re page
 	$this->create_pdf_page ();
 	return $this;
 }
 
 
-// Créé une nouvelle page du document PDF
+// CrÃ©Ã© une nouvelle page du document PDF
 protected function create_pdf_page () {
 	// Comptage du nombre de page
 	$this->page_actuelle++;
 	$this->SetAutoPageBreak(true,2*$this->MARGE_GAUCHE);;
-	// Création d'une nouvelle page
+	// CrÃ©ation d'une nouvelle page
 	$this->AddPage();
 	$this->Header() ;
 	$this->create_pdf_corps ();
@@ -70,7 +70,7 @@ protected function create_pdf_page () {
 }
 
 
-// Créé l'entete du document PDF
+// CrÃ©Ã© l'entete du document PDF
 public function Header() {
 	global $MONNAIE;
 	global $TARIFS_NB_DECIMALES;
@@ -88,7 +88,7 @@ public function Header() {
 	if ($this->details == 1) {
 		$this->SetFont('Arial', 'B', 10);
 		$this->SetXY($this->MARGE_GAUCHE , $this->MARGE_HAUT+15);
-		$this->Cell ($this->LARGEUR_TOTALE_CORPS, 3, "Tableau synthètique ".$this->dates, 0, 0, 'C');
+		$this->Cell ($this->LARGEUR_TOTALE_CORPS, 3, "Tableau synthÃ¨tique ".$this->dates, 0, 0, 'C');
 		$this->x = $this->MARGE_GAUCHE ;	
 		$this->y +=5;
 		$this->Cell ($this->LARGEUR_TOTALE_CORPS, 3, "", "B", 0, 'C');
@@ -99,7 +99,7 @@ public function Header() {
 }
 
 
-// Créé le corps du PDF
+// CrÃ©Ã© le corps du PDF
 protected function create_pdf_corps () {
 	global $MONNAIE;
 	global $TARIFS_NB_DECIMALES;
@@ -107,7 +107,7 @@ protected function create_pdf_corps () {
 
 
 	$this->SetFont('Arial', '', 9);
-	//définition du contenu
+	//dÃ©finition du contenu
 	
 		$this->x = $this->MARGE_GAUCHE ;	
 	//liste des commerciaux
@@ -118,13 +118,13 @@ protected function create_pdf_corps () {
 	$text_fom_comm = $result[1]."% du Chifre d'affaire plus ".$result[2]."% de la Marge acquit " ;
 	switch ($commercial->doc_fom_comm) {
 		case "CDC": 
-		$text_fom_comm .= "à la commande";
+		$text_fom_comm .= "Ã  la commande";
 		break;
 		case "FAC": 
-		$text_fom_comm .= "à la facturation";
+		$text_fom_comm .= "Ã  la facturation";
 		break;
 		case "RGM": 
-		$text_fom_comm .= "à la facturation acquitée";
+		$text_fom_comm .= "Ã  la facturation acquitÃ©e";
 		break;
 	}
 		if ($this->details == 2) {
@@ -156,13 +156,13 @@ protected function create_pdf_corps () {
 		
 	$this->SetFont('Arial', '', 9);
 		$this->Cell (15, 3, "", 0, 0, 'L');
-		$this->Cell (60, 3, "Chiffre d'affaire généré:	 ", 0, 0, 'L');
+		$this->Cell (60, 3, "Chiffre d'affaire gÃ©nÃ©rÃ©:	 ", 0, 0, 'L');
 		$this->Cell (30, 3, number_format($commercial->ca, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[0], 0, 0, 'R');
 		
 		$this->x = $this->MARGE_GAUCHE ;		
 		$this->y +=6;		
 		$this->Cell (15, 3, "", 0, 0, 'L');
-		$this->Cell (60, 3, "Marge générée:	 ", 0, 0, 'L');
+		$this->Cell (60, 3, "Marge gÃ©nÃ©rÃ©e:	 ", 0, 0, 'L');
 		$this->Cell (30, 3, number_format($commercial->mg, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[0], 0, 0, 'R');
 		
 		$this->x = $this->MARGE_GAUCHE ;		

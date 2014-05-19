@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -21,7 +21,7 @@ check_page_variables ($page_variables);
 
 ?><div class="emarge"><br />
 
-<span class="titre" style="float:left; padding-left:140px; width: 40%">Relevés du compte <?php echo $compte_bancaire->getLib_compte ();?></span>
+<span class="titre" style="float:left; padding-left:140px; width: 40%">RelevÃ©s du compte <?php echo $compte_bancaire->getLib_compte ();?></span>
 
 
 <span style=" float:right; text-align:right; width:19%"><br />
@@ -94,7 +94,7 @@ page.verify('compte_bancaire_gestion2','compta_compte_bancaire_gestion2.php?id_c
 				?>
 				<table style="width:100%" id="line_releve_<?php echo $releve->id_compte_bancaire_releve;?>">
 					<tr>
-						<td style="width:10%" title="Afficher les opérations">
+						<td style="width:10%" title="Afficher les opÃ©rations">
 						<div style="text-align:left; cursor:pointer" id="releve_<?php echo $releve->id_compte_bancaire_releve;?>">
 						
 			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_compta_left_arrow.gif" id="bt_view_releve_<?php echo $releve->id_compte_bancaire_releve;?>" style="cursor:pointer"/>
@@ -106,7 +106,7 @@ page.verify('compte_bancaire_gestion2','compta_compte_bancaire_gestion2.php?id_c
 						</div>
 						</td>
 						<td id="mod_releve_2_<?php echo $releve->id_compte_bancaire_releve;?>" style="cursor:pointer" >
-						<div title="solde calculé : <?php echo price_format($releve->solde_calcule)." ".$MONNAIE[1];?>" style="text-align:right; <?php if (price_format($releve->solde_calcule) != price_format($releve->solde_reel)) { ?>color:#FF0000;<?php } ?>">
+						<div title="solde calculÃ© : <?php echo price_format($releve->solde_calcule)." ".$MONNAIE[1];?>" style="text-align:right; <?php if (price_format($releve->solde_calcule) != price_format($releve->solde_reel)) { ?>color:#FF0000;<?php } ?>">
 						<?php echo price_format($releve->solde_reel)." ".$MONNAIE[1];?>
 						</div>
 						</td>

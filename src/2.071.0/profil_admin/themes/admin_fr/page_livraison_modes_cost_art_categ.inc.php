@@ -1,9 +1,9 @@
 <?php
 // *************************************************************************************************************
-// commissionnements des catégories d'articles
+// commissionnements des catÃ©gories d'articles
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -31,7 +31,7 @@ page.verify('livraison_modes','livraison_modes.php' ,"true" ,"sub_content");
 }, false);
 </script>
 </div>
-<p class="titre">Coûts de livraison associés aux catégories d'articles</p>
+<p class="titre">CoÃ»ts de livraison associÃ©s aux catÃ©gories d'articles</p>
 <div style="height:50px">
 <table class="minimizetable">
 <tr>
@@ -43,7 +43,7 @@ page.verify('livraison_modes','livraison_modes.php' ,"true" ,"sub_content");
 		<tr style="">
 			<td>
 			<div style="text-align:right; font-size:16px; padding-right:35px; font-weight:bolder">
-			Valeurs par défaut:
+			Valeurs par dÃ©faut:
 			</div>
 			</td>
 			<td style="text-align:left; font-weight:bolder;  width:50%">
@@ -65,7 +65,7 @@ page.verify('livraison_modes','livraison_modes.php' ,"true" ,"sub_content");
 					} else {
 						?>
 						<?php echo $BASE_CALCUL_LIVRAISON[$cost->base_calcul][0];?> >= <?php echo $cost->indice_min;?> <?php echo $BASE_CALCUL_LIVRAISON[$cost->base_calcul][1];?> <br />
-						Coût = <?php echo $fixe;?> + <?php echo $variab;?> x <?php echo $BASE_CALCUL_LIVRAISON[$cost->base_calcul][0];?> 
+						CoÃ»t = <?php echo $fixe;?> + <?php echo $variab;?> x <?php echo $BASE_CALCUL_LIVRAISON[$cost->base_calcul][0];?> 
 						<div style="border-bottom:1px solid #999999; "></div>
 						<?php 
 					}
@@ -91,7 +91,7 @@ page.verify('livraison_modes','livraison_modes.php' ,"true" ,"sub_content");
 				<td style="text-align:center; border-bottom:1px solid #FFFFFF;">
 					<div id="mode_liv_cost_<?php echo $fiche->ref_art_categ;?>">
 						<?php if (!count($fiche->livraisons_tarifs)) { ?>
-							<div id="more_mode_liv_<?php echo $fiche->ref_art_categ;?>" style="cursor:pointer; display:inherit"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" /> Définir </div>
+							<div id="more_mode_liv_<?php echo $fiche->ref_art_categ;?>" style="cursor:pointer; display:inherit"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" /> DÃ©finir </div>
 							
 							<script type="text/javascript">
 							Event.observe('more_mode_liv_<?php echo $fiche->ref_art_categ;?>', 'click',  function(){

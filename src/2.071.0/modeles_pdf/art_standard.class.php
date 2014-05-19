@@ -27,7 +27,7 @@ class pdf_art_standard {
 		
 		$this->garantie = $this->article->getDuree_garantie ();
 		if (!isset($this->garantie)) {
-			$this->garantie = 'Néant';
+			$this->garantie = 'NÃ©ant';
 		}
 		$this->tabcodebarre = $this->article->getCodes_barres () ;
 		
@@ -40,7 +40,7 @@ class pdf_art_standard {
 				$this->SetTextColor(0,0,0);
 				$this->SetXY(120,30);
 				$this->SetFont("Arial","B",11);
-				$this->Cell(15,15,"Réf. Produit :     '.$this->article->getRef_article ().'",0,1);
+				$this->Cell(15,15,"RÃ©f. Produit :     '.$this->article->getRef_article ().'",0,1);
 				$this->SetXY(120,40);
 				$this->SetFont("Arial","B",11);
 				$this->Cell(15,15,"Code Fabricant :     '.$this->article->getRef_constructeur ().'",0,1);
@@ -110,7 +110,7 @@ class pdf_art_standard {
 		$entete .= '$this->SetXY('.$this->MARGE_IMAGE_GAUCHE.'-5,'.$this->MARGE_IMAGE_HAUT.'+105);
 				$this->SetTextColor('.$this->R_PRIX.','.$this->G_PRIX.','.$this->B_PRIX.');
 				$this->SetFont("Arial","B",24);
-				$this->Cell(15,15,"'.price_format($prix_u_ht * (1+($this->article->getTva () / 100))).' € TTC",0,1);
+				$this->Cell(15,15,"'.price_format($prix_u_ht * (1+($this->article->getTva () / 100))).' â‚¬ TTC",0,1);
 				$this->SetTextColor(0,0,0);
 				$this->SetXY('.$this->MARGE_IMAGE_GAUCHE.'-5,'.$this->MARGE_IMAGE_HAUT.'+120);
 				$this->SetFont("Arial","B",13);
@@ -125,7 +125,7 @@ class pdf_art_standard {
 		
 		
 		
-		// Information société
+		// Information sociÃ©tÃ©
 		$pied = '
 			$this->SetFont("Arial","I",8);
 			$this->SetXY('.$this->MARGE_GAUCHE.', '.$this->MARGE_PIED_HAUTEUR.'-5);

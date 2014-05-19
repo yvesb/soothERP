@@ -2,7 +2,7 @@
 // *************************************************************************************************************
 // CLASSE UTILISEE A LA PLACE DE PDO POUR GERER LA BASE DE DONNEE 
 // *************************************************************************************************************
-// Certaines fonctions sont redéfinies afin de permettre le comptage des requetes.
+// Certaines fonctions sont redÃ©finies afin de permettre le comptage des requetes.
 
 class PDO_etendu extends PDO {
 	private $transac_encours = 0;
@@ -21,7 +21,7 @@ function __construct($dsn, $username = "", $password = "", $driver_options = NUL
 }
 
 
-// Paire de fonction afin d'éviter les chevauchements de transaction
+// Paire de fonction afin d'Ã©viter les chevauchements de transaction
 function beginTransaction () {
 	if ($this->transac_encours) { return false; }
 	
@@ -79,7 +79,7 @@ function log_query ($query) {
 }
 
 
-// Affiche les statistiques sur les requetes exécutées sur cette page
+// Affiche les statistiques sur les requetes exÃ©cutÃ©es sur cette page
 function affiche_stats () {
 	echo "Nombre de requetes : <b>".$this->nb_requetes."</b><br>";
 
@@ -101,12 +101,12 @@ function unsetDebug () {
 }
 
 
-// INFO: Fonction pour récupérer le dernier ID inséré: lastInsertId()
+// INFO: Fonction pour rÃ©cupÃ©rer le dernier ID insÃ©rÃ©: lastInsertId()
 
 // *************************************************************************************************************
 // FONCTION UTILISEE POUR TRAITER LES DONNES AVANT INSERTION DANS LA BASE DE DONNEE 
 // *************************************************************************************************************
-// Variable de type numérique
+// Variable de type numÃ©rique
 function num_or_null ($var) {
 	if (!is_numeric($var)) {
 		return "NULL";

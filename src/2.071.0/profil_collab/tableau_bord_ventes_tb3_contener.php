@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// Tableau de bord des données clients
+// Tableau de bord des donnÃ©es clients
 // *************************************************************************************************************
 
 
@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 
-$liste_type_clients = array("piste"=>array("lib"=>"Clients non prospectés", "nb"=>0), "prospect"=>array("lib"=>"Clients prospectés", "nb"=>0),"client"=>array("lib"=>"Clients actifs", "nb"=>0), "ancien client"=>array("lib"=>"Anciens Clients", "nb"=>0));
+$liste_type_clients = array("piste"=>array("lib"=>"Clients non prospectÃ©s", "nb"=>0), "prospect"=>array("lib"=>"Clients prospectÃ©s", "nb"=>0),"client"=>array("lib"=>"Clients actifs", "nb"=>0), "ancien client"=>array("lib"=>"Anciens Clients", "nb"=>0));
 
 foreach ($liste_type_clients as $key=>$client_type) {
 	

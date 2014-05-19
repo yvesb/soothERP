@@ -4,7 +4,7 @@
 // RECHERCHE DES MINIMUMS DE STOCK
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -121,7 +121,7 @@ foreach ($_ALERTES as $alerte => $value) {
 
 </div>
 <script type="text/javascript">
-//remise à zero du formulaire
+//remise Ã  zero du formulaire
 Event.observe('annuler_recherche_s', "click", function(evt){Event.stop(evt); reset_moteur_s ('form_recherche_s', 'ref_art_categ_s');	});
 
 //lance la recherche

@@ -12,12 +12,12 @@ require ($DIR."_session.inc.php");
 // Moteur de recherche pour les documents 
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 $id_stock = 1;
 if (isset($_REQUEST['id_stock'])) {
 	$id_stock = $_REQUEST['id_stock'];
 	// *************************************************
-	// Résultat de la recherche
+	// RÃ©sultat de la recherche
 	$fiches = array();
 	// Recherche
 	$query = "SELECT d.ref_doc, d.id_type_doc, dt.lib_type_doc, d.id_etat_doc, de.lib_etat_doc, ref_contact, nom_contact , 
@@ -56,7 +56,7 @@ if (isset($_REQUEST['id_stock'])) {
 	//echo nl2br ($query);
 	unset ($fiche, $resultat, $query);
 	
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 	 $nb_fiches = count($fiches);
 
 

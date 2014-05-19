@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// GESTION DES EVENEMENTS (supression d'un type d'événement)
+// GESTION DES EVENEMENTS (supression d'un type d'Ã©vÃ©nement)
 // *************************************************************************************************************
 
 
@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 if (isset($_REQUEST["id_comm_event_type"])) {
-	//modification d'un type d'évenement
+	//modification d'un type d'Ã©venement
 	contact::sup_types_evenements ($_REQUEST["id_comm_event_type"]);
 }
 // *************************************************************************************************************

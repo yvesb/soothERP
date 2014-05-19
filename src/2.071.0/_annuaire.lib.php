@@ -3,7 +3,7 @@
 // FONCTIONS LIEES A L'ANNUAIRE
 // *************************************************************************************************************
 
-// Fonction retournant la liste des catégories
+// Fonction retournant la liste des catÃ©gories
 function get_categories () {
 	global $bdd;
 	static $categories;
@@ -23,7 +23,7 @@ function get_categories () {
 }
 
 
-// Fonction retournant la liste des civilites en fonction d'une catégorie
+// Fonction retournant la liste des civilites en fonction d'une catÃ©gorie
 function get_civilites ($id_categorie = "") {
 	global $bdd;
 	$civilites = array();
@@ -119,23 +119,23 @@ function getLangues () {
 	return $langages;
 }
 
-//fonction qui cré un petit libélé à afficher pour l'adresse pour un profil client (par exemple)
+//fonction qui crÃ© un petit libÃ©lÃ© Ã  afficher pour l'adresse pour un profil client (par exemple)
 function getLib_adresse ($ref_adresse) {
 	global $bdd;
 	
-	// Controle si la ref_adresse est précisée
+	// Controle si la ref_adresse est prÃ©cisÃ©e
 	if (!$ref_adresse) { return false; }
 
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT lib_adresse, text_adresse, code_postal, ville
 						FROM adresses 
 						WHERE ref_adresse = '".$ref_adresse."' ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si la ref_coord est trouvée
+	// Controle si la ref_coord est trouvÃ©e
 	if (!$adresse = $resultat->fetchObject()) { return false; }
 
-	// Attribution des informations à l'objet
+	// Attribution des informations Ã  l'objet
 	if ($adresse->lib_adresse!="") {
 		return substr($adresse->lib_adresse,0,20)."..";
 	} else {
@@ -144,23 +144,23 @@ function getLib_adresse ($ref_adresse) {
 }
 
 
-//fonction qui cré un petit libélé à afficher pour la coordonnée d'un utilisateur
+//fonction qui crÃ© un petit libÃ©lÃ© Ã  afficher pour la coordonnÃ©e d'un utilisateur
 function getLib_coordonnee ($ref_coord) {
 	global $bdd;
 	
-	// Controle si la ref_coord est précisée
+	// Controle si la ref_coord est prÃ©cisÃ©e
 	if (!$ref_coord) { return false; }
 
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT lib_coord, tel1, tel2, fax, email
 						FROM coordonnees 
 						WHERE ref_coord = '".$ref_coord."' ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si la ref_coord est trouvée
+	// Controle si la ref_coord est trouvÃ©e
 	if (!$coordonnee = $resultat->fetchObject()) { return false; }
 
-	// Attribution des informations à l'objet
+	// Attribution des informations Ã  l'objet
 	if ($coordonnee->lib_coord!="") {
 		return substr($coordonnee->lib_coord,0,20)."..";
 	} else {

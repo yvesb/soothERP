@@ -5,7 +5,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nÈcessaires ‡ l'affichage
+// Variables n√©cessaires √† l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -55,14 +55,14 @@ if (erreur) {
 	if (cant_change_modele) {
 		window.parent.document.getElementById("modele").className="alerteform_xsize";
 		window.parent.document.getElementById("modele").focus();
-		texte_erreur += "Cette catÈgorie comporte dÈj‡ des articles.<br />Vous ne pouvez pas changer le modÈle de cette catÈgorie.<br />";
+		texte_erreur += "Cette cat√©gorie comporte d√©j√† des articles.<br />Vous ne pouvez pas changer le mod√©le de cette cat√©gorie.<br />";
 	}else {
 		window.parent.document.getElementById("modele").className="classinput_xsize";
 	}
 	if (lib_vide) {
 		window.parent.document.getElementById("lib_art_categ").className="alerteform_xsize";
 		window.parent.document.getElementById("lib_art_categ").focus();
-		texte_erreur += "Veuillez indiquer un libellÈ ‡ la catÈgorie.<br />";
+		texte_erreur += "Veuillez indiquer un libell√© √† la cat√©gorie.<br />";
 	}else {
 		window.parent.document.getElementById("lib_art_categ").className="classinput_xsize";
 	}

@@ -21,13 +21,13 @@ final class compte_bancaire {
 	protected $iban;
 	protected $swift;
 	
-	protected $releves_compte;	// liste des relevés du compte
+	protected $releves_compte;	// liste des relevÃ©s du compte
 	protected $releves_comptes_loaded;
 	
-	protected $releves_comptes_exercice;	// liste des relevés du compte par exercice
+	protected $releves_comptes_exercice;	// liste des relevÃ©s du compte par exercice
 	protected $releves_comptes_exercice_loaded;
 	
-	private $defaut_numero_compte;	// numéro de compte comptable par defaut 
+	private $defaut_numero_compte;	// numÃ©ro de compte comptable par defaut 
 	
 
 	protected $actif;
@@ -84,7 +84,7 @@ public function create_compte_bancaire ($infos) {
 	global $REF_CONTACT_ENTREPRISE;
 	
 	// *************************************************
-	// Réception des données
+	// RÃ©ception des donnÃ©es
 	$this->ref_contact 		= $infos['ref_contact'];
 	$query = "SELECT nom nom_contact FROM annuaire WHERE ref_contact = '".$this->ref_contact."' ";
 	$resultat = $bdd->query ($query);
@@ -127,7 +127,7 @@ public function create_compte_bancaire ($infos) {
 	}
 	$numero_compte_comptable = "";
 	if ($REF_CONTACT_ENTREPRISE == $this->ref_contact) {
-		// ajout du numéro de compte bancaire incrémenté à partir du compte par defaut
+		// ajout du numÃ©ro de compte bancaire incrÃ©mentÃ© Ã  partir du compte par defaut
 		$numero_compte_comptable = $DEFAUT_COMPTE_BANQUES;
 		
 		$query = "SELECT numero_compte 
@@ -175,7 +175,7 @@ public function create_compte_bancaire ($infos) {
 
 
 private function create_lib_compte () {
-	$this->lib_compte = "Compte ".$this->nom_contact." n°".$this->numero_compte;
+	$this->lib_compte = "Compte ".$this->nom_contact." nÂ°".$this->numero_compte;
 }
 
 
@@ -187,7 +187,7 @@ public function maj_compte_bancaire ($infos) {
 	global $bdd;
 
 	// *************************************************
-	// Réception des données
+	// RÃ©ception des donnÃ©es
 	if ($this->ref_contact != $infos['ref_contact']) {
 		$this->ref_contact 		= $infos['ref_contact'];
 		$query = "SELECT nom nom_contact FROM annuaire WHERE ref_contact = '".$this->ref_contact."' ";
@@ -238,19 +238,19 @@ public function maj_compte_bancaire ($infos) {
 	return true;
 }
 
-//mise à jour du numéro de compte par défaut
+//mise Ã  jour du numÃ©ro de compte par dÃ©faut
 public function maj_defaut_numero_compte ($defaut_numero_compte) {
 	global $bdd;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	if ($defaut_numero_compte == $this->defaut_numero_compte ) {
 		return false;
 	}
 	$this->defaut_numero_compte		= $defaut_numero_compte;
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -273,7 +273,7 @@ function active_compte () {
 	if ($this->actif) { return false; }
 
 	// *************************************************
-	// MAJ de la base de donnée
+	// MAJ de la base de donnÃ©e
 	$query = "UPDATE comptes_bancaires 
 						SET actif = 1
 						WHERE id_compte_bancaire = '".$this->id_compte_bancaire."' "; 
@@ -283,18 +283,18 @@ function active_compte () {
 	return true;
 }
 
-// Désactive un compte
+// DÃ©sactive un compte
 function desactive_compte () {
 	global $bdd;
 
 	if (!$this->actif) { return false; }
 
 	// *************************************************
-	// Controle de la possibilité de désactiver ce compte (TPE, etc ?)
+	// Controle de la possibilitÃ© de dÃ©sactiver ce compte (TPE, etc ?)
 
 
 	// *************************************************
-	// MAJ de la base de donnée
+	// MAJ de la base de donnÃ©e
 	$query = "UPDATE comptes_bancaires 
 						SET actif = 0
 						WHERE id_compte_bancaire = '".$this->id_compte_bancaire."' "; 
@@ -314,7 +314,7 @@ public function modifier_ordre ($new_ordre) {
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -332,14 +332,14 @@ public function modifier_ordre ($new_ordre) {
 
 	$bdd->beginTransaction();
 
-	// Mise à jour des autres comptes bancaires
+	// Mise Ã  jour des autres comptes bancaires
 	$query = "UPDATE comptes_bancaires
 						SET ordre = ordre ".$variation." 1
 						WHERE ref_contact = '".$this->ref_contact."' && 
 									ordre ".$symbole1." '".$this->ordre."' && ordre ".$symbole2." '".$new_ordre."' ";
 	$bdd->exec ($query);
 
-	// Mise à jour de ce compte bancaire
+	// Mise Ã  jour de ce compte bancaire
 	$query = "UPDATE comptes_bancaires
 						SET ordre = '".$new_ordre."'
 						WHERE id_compte_bancaire = '".$this->id_compte_bancaire."'  ";
@@ -350,7 +350,7 @@ public function modifier_ordre ($new_ordre) {
 	$this->ordre = $new_ordre;
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
@@ -360,7 +360,7 @@ public function suppression () {
 	global $bdd;
 
 	// *************************************************
-	// Controle de la possibilité de supprimer le compte bancaire
+	// Controle de la possibilitÃ© de supprimer le compte bancaire
 
 
 	// Suppression dans la BDD
@@ -374,7 +374,7 @@ public function suppression () {
 // *************************************************************************************************************
 // FONCTIONS DE GESTION DES RELEVES DU COMPTE
 // *************************************************************************************************************
-//fonction de chargement des relevés du compte
+//fonction de chargement des relevÃ©s du compte
 public function charger_releves_compte () {
 	global $bdd;
 	
@@ -389,14 +389,14 @@ public function charger_releves_compte () {
 	$this->releves_comptes_loaded = true;
 	return true;
 }
-//chargement des relevés de compte par exercice
+//chargement des relevÃ©s de compte par exercice
 static function charger_releves_compte_exercices ($id_exercice, $id_compte_bancaire) {
 	global $bdd;
 	
 	$releves_comptes_exercices = array();
 	$compta_tmp = new compta_exercices ($id_exercice);
 	
-	//chargement des relevés
+	//chargement des relevÃ©s
 	$compte_bancaire	= new compte_bancaire($id_compte_bancaire);
 	$releves = $compte_bancaire->getReleves_compte();
 	if (count($releves)) {
@@ -412,7 +412,7 @@ static function charger_releves_compte_exercices ($id_exercice, $id_compte_banca
 	return $releves_comptes_exercices;
 }
 
-//fonction de chargement des informations d'un relevé du compte
+//fonction de chargement des informations d'un relevÃ© du compte
 public function charger_compte_bancaire_releve ($id_compte_bancaire_releve) {
 	global $bdd;
 	
@@ -427,7 +427,7 @@ public function charger_compte_bancaire_releve ($id_compte_bancaire_releve) {
 	return $releve_compte;
 }
 
-//fonction d'ajout d'un relevé
+//fonction d'ajout d'un relevÃ©
 public function add_releve_compte ($date_releve, $solde_reel) {
 	global $bdd;
 	
@@ -443,7 +443,7 @@ public function add_releve_compte ($date_releve, $solde_reel) {
 		$GLOBALS['_ALERTES']['bad_date_releve'] = 1;
 	} 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -451,7 +451,7 @@ public function add_releve_compte ($date_releve, $solde_reel) {
 	//calcul du solde
 	$solde_calcule = $this->solde_calcule_releve ($date_releve);
 	
-	//insertion dans la base de données
+	//insertion dans la base de donnÃ©es
 	$query = "INSERT INTO comptes_bancaires_releves 
 							(id_compte_bancaire, date_releve, solde_calcule, solde_reel)
 						VALUES ('".$this->id_compte_bancaire."' , '".$date_releve." 23:59:59', 
@@ -464,7 +464,7 @@ public function add_releve_compte ($date_releve, $solde_reel) {
 }
 
 
-//fonction d'edition d'un relevé
+//fonction d'edition d'un relevÃ©
 public function maj_compte_bancaire_releve ($id_compte_bancaire_releve, $date_releve, $solde_reel) {
 	global $bdd;
 	
@@ -478,7 +478,7 @@ public function maj_compte_bancaire_releve ($id_compte_bancaire_releve, $date_re
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -487,7 +487,7 @@ public function maj_compte_bancaire_releve ($id_compte_bancaire_releve, $date_re
 	//calcul du solde
 	$solde_calcule = $this->solde_calcule_releve ($date_releve);
 	
-	//insertion dans la base de données
+	//insertion dans la base de donnÃ©es
 	$query = "UPDATE comptes_bancaires_releves 
 						SET	date_releve = '".$date_releve." 23:59:59', solde_calcule = '".$solde_calcule."', solde_reel = '".$solde_reel."' 
 						WHERE id_compte_bancaire_releve	= '".$id_compte_bancaire_releve."' 
@@ -498,7 +498,7 @@ public function maj_compte_bancaire_releve ($id_compte_bancaire_releve, $date_re
 	
 }
 
-//fonction de supressiond'un relevé
+//fonction de supressiond'un relevÃ©
 public function del_compte_bancaire_releve ($id_compte_bancaire_releve) {
 	global $bdd;
 	
@@ -514,11 +514,11 @@ public function del_compte_bancaire_releve ($id_compte_bancaire_releve) {
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
-	//suppression dans la base de données
+	//suppression dans la base de donnÃ©es
 	$query = "DELETE FROM comptes_bancaires_releves 
 						WHERE id_compte_bancaire_releve	= '".$id_compte_bancaire_releve."' 
 						";
@@ -529,13 +529,13 @@ public function del_compte_bancaire_releve ($id_compte_bancaire_releve) {
 	
 }
 
-//fonction de calcul du solde_calcule d'un relevé
+//fonction de calcul du solde_calcule d'un relevÃ©
 public function solde_calcule_releve ($date_releve) {
 	global $bdd;
 	
 	$date_debut = "";
 	$solde_calcule = 0;
-	//on recherche le relevé précédent
+	//on recherche le relevÃ© prÃ©cÃ©dent
 	$query = "SELECT date_releve, solde_reel
 						FROM comptes_bancaires_releves
 						WHERE id_compte_bancaire = '".$this->id_compte_bancaire."'  && date_releve < '".$date_releve." 23:59:59'
@@ -549,7 +549,7 @@ public function solde_calcule_releve ($date_releve) {
 	}
 	unset ($query, $resultat, $tmp);
 	
-	//on calcul le solde depuis ce relevé
+	//on calcul le solde depuis ce relevÃ©
 	$query = "SELECT SUM(montant_move) as solde
 							FROM comptes_bancaires_moves 
 						WHERE  id_compte_bancaire = '".$this->id_compte_bancaire."' && date_move < '".$date_releve." 23:59:59' ".$date_debut." 
@@ -559,7 +559,7 @@ public function solde_calcule_releve ($date_releve) {
 	return $solde_calcule;
 }
 
-//fonction de recalcul des relevés
+//fonction de recalcul des relevÃ©s
 public function check_calcul_releve ($date_debut) {
 	global $bdd;
 	
@@ -579,13 +579,13 @@ public function check_calcul_releve ($date_debut) {
 	return true;
 }
 
-//fonction renvoyant le solde réél à partir d'une date
+//fonction renvoyant le solde rÃ©Ã©l Ã  partir d'une date
 public function solde_reel_releve ($date_releve) {
 	global $bdd;
 	
 	$date_debut = "";
 	$solde_reel = 0;
-	//on recherche le relevé précédent
+	//on recherche le relevÃ© prÃ©cÃ©dent
 	$query = "SELECT date_releve, solde_reel
 						FROM comptes_bancaires_releves
 						WHERE id_compte_bancaire = '".$this->id_compte_bancaire."'  && date_releve <= '".$date_releve."'
@@ -600,9 +600,9 @@ public function solde_reel_releve ($date_releve) {
 }
 
 // *************************************************************************************************************
-// FONCTIONS DE GESTION DES OPÉRATIONS DU COMPTE
+// FONCTIONS DE GESTION DES OPÃ‰RATIONS DU COMPTE
 // *************************************************************************************************************
-//chargement d'une opération
+//chargement d'une opÃ©ration
 public function charger_compte_bancaire_move ($id_compte_bancaire_move) {
 	global $bdd;
 	
@@ -618,7 +618,7 @@ public function charger_compte_bancaire_move ($id_compte_bancaire_move) {
 	return $operation;
 }
 
-//ajout d'une opération
+//ajout d'une opÃ©ration
 public function add_compte_bancaire_move ($date_move, $lib_move, $montant_move, $commentaire_move = "", $fitid = "", $trntype = "", $trninfo = "") {
 	global $bdd;
 	
@@ -645,12 +645,12 @@ public function add_compte_bancaire_move ($date_move, $lib_move, $montant_move, 
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 	
-	//insertion dans la base de données
+	//insertion dans la base de donnÃ©es
 	$query = "INSERT INTO comptes_bancaires_moves 
 							(id_compte_bancaire, date_move, lib_move, montant_move, commentaire_move, fitid, trntype, trninfo)
 						VALUES ('".$this->id_compte_bancaire."' , '".$date_move."', 
@@ -663,7 +663,7 @@ public function add_compte_bancaire_move ($date_move, $lib_move, $montant_move, 
 	return true;
 }
 
-//mise à jour des infos d'une opération
+//mise Ã  jour des infos d'une opÃ©ration
 public function maj_compte_bancaire_move ($id_compte_bancaire_move, $date_move, $lib_move, $montant_move, $commentaire_move = "", $fitid = "", $trntype = "", $trninfo = "") {
 	global $bdd;
 	
@@ -687,7 +687,7 @@ public function maj_compte_bancaire_move ($id_compte_bancaire_move, $date_move, 
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -709,7 +709,7 @@ public function maj_compte_bancaire_move ($id_compte_bancaire_move, $date_move, 
 	return true;
 }
 
-//suppression d'une opération
+//suppression d'une opÃ©ration
 public function del_compte_bancaire_move ($id_compte_bancaire_move, $date_move) {
 	global $bdd;
 	
@@ -717,7 +717,7 @@ public function del_compte_bancaire_move ($id_compte_bancaire_move, $date_move) 
 		$GLOBALS['_ALERTES']['operation_in_closed_exercice'] = 1;
 	}
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -736,11 +736,11 @@ public function add_compte_bancaire_rapprochement ($id_compte_bancaire_move, $id
 		$GLOBALS['_ALERTES']['operation_in_closed_exercice'] = 1;
 	}
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
-	// on récupère les informations de rapprochement existantes
+	// on rÃ©cupÃ¨re les informations de rapprochement existantes
 	$query_2 = "SELECT 	cbm.montant_move, cbor.id_operation, cbor.montant_rapproche, cjo.montant
 							FROM comptes_bancaires_moves cbm
 								LEFT JOIN comptes_bancaires_ope_rapp cbor ON cbor.id_operation = ".$id_operation."
@@ -749,16 +749,16 @@ public function add_compte_bancaire_rapprochement ($id_compte_bancaire_move, $id
 							";
 	$resultat_2 = $bdd->query ($query_2);
 	
-	// on met à jour le mouvement
+	// on met Ã  jour le mouvement
 	$query = "UPDATE comptes_bancaires_moves
 						SET id_operation = '".$id_operation."'  
 						WHERE id_compte_bancaire_move = '".$id_compte_bancaire_move."' ";
 	$bdd->exec ($query);
 	
 	if (!$tmp_2 = $resultat_2->fetchObject()) { return false;}
-	//on vérifi que id_ope est utilié 
+	//on vÃ©rifi que id_ope est utiliÃ© 
 	if ($tmp_2->id_operation) {
-		//si l'opé est déjà rapprochée, on met à jour
+		//si l'opÃ© est dÃ©jÃ  rapprochÃ©e, on met Ã  jour
 		$rapp_complet = 0;
 		if ((abs($tmp_2->montant)-0.01 )<= ($tmp_2->montant_rapproche+abs($tmp_2->montant_move))) {$rapp_complet = 1;}
 		$query = "UPDATE comptes_bancaires_ope_rapp 
@@ -767,7 +767,7 @@ public function add_compte_bancaire_rapprochement ($id_compte_bancaire_move, $id
 		$bdd->exec ($query);
 		return true;
 	}
-	//sinon on charge le montant ope et on insère 
+	//sinon on charge le montant ope et on insÃ¨re 
 	$query_3 = "SELECT cjo.montant
 							FROM compta_journaux_opes cjo
 							WHERE cjo.id_operation = '".$id_operation."' 
@@ -791,11 +791,11 @@ public function del_compte_bancaire_rapprochement ($id_compte_bancaire_move, $da
 		$GLOBALS['_ALERTES']['operation_in_closed_exercice'] = 1;
 	}
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
-	//on récupère les informations de rapprochement existant
+	//on rÃ©cupÃ¨re les informations de rapprochement existant
 	$query_2 = "SELECT 	cbm.montant_move, cbm.id_operation, cbor.montant_rapproche, cjo.montant
 							FROM comptes_bancaires_moves cbm
 								LEFT JOIN comptes_bancaires_ope_rapp cbor ON cbor.id_operation = cbm.id_operation
@@ -813,14 +813,14 @@ public function del_compte_bancaire_rapprochement ($id_compte_bancaire_move, $da
 	
 	if ($tmp_2 = $resultat_2->fetchObject()) {
 		$id_operation = $tmp_2->id_operation;
-		//si on est retourné à zéro on supprime le récap du rapprochement pour l'opé
+		//si on est retournÃ© Ã  zÃ©ro on supprime le rÃ©cap du rapprochement pour l'opÃ©
 		if ( ($tmp_2->montant_rapproche-abs($tmp_2->montant_move)) <= 0.01 ) {
 			$query = "DELETE FROM comptes_bancaires_ope_rapp 
 								WHERE id_operation  = '".$id_operation."' ";
 			$bdd->exec ($query);
 		return true;
 		}
-		//sinon on met à jour
+		//sinon on met Ã  jour
 		$rapp_complet = 0;
 		$query = "UPDATE comptes_bancaires_ope_rapp 
 							SET montant_rapproche = '".($tmp_2->montant_rapproche-abs($tmp_2->montant_move))."', complet = ".$rapp_complet."
@@ -839,7 +839,7 @@ public function imprimer_rib_bancaire ($print = 0) {
 	global $bdd;
 	global $PDF_MODELES_DIR;
 	// Affichage du pdf
-	// Préférences et options
+	// PrÃ©fÃ©rences et options
 	$GLOBALS['PDF_OPTIONS']['HideToolbar'] = 0;
 	$GLOBALS['PDF_OPTIONS']['AutoPrint'] = $print;
 	
@@ -847,7 +847,7 @@ public function imprimer_rib_bancaire ($print = 0) {
 	$class = "pdf_".$this->code_pdf_modele;
 	$pdf = new $class;
 	
-	// Création
+	// CrÃ©ation
 	$pdf->create_pdf($this);
 	
 	// Sortie

@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 
 
-//liste des catégories d'articles
+//liste des catÃ©gories d'articles
 $list_art_categ =	get_articles_categories();
 // *************************************************************************************************************
 // AFFICHAGE

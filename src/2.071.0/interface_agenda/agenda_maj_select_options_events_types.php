@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 if(!isset($_REQUEST["ref_agenda"])){
-	echo "la référence de l'agenda n'est pas spécifiée";
+	echo "la rÃ©fÃ©rence de l'agenda n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $ref_agenda = $_REQUEST["ref_agenda"];

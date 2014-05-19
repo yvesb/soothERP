@@ -5,7 +5,7 @@
 //  MODIFICATION DES INFORMATIONS GENERALES D'UN CONTACT
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -23,7 +23,7 @@ check_page_variables ($page_variables);
 
 ?>
 <p>&nbsp;</p>
-<p>contact info générales</p>
+<p>contact info gÃ©nÃ©rales</p>
 <p>&nbsp; </p>
 <?php 
 foreach ($_ALERTES as $alerte => $value) {

@@ -114,7 +114,7 @@ public function create_doc () {
 }
 
 
-// Charge les informations supplémentaire du contact
+// Charge les informations supplÃ©mentaire du contact
 protected function load_infos_contact () {
 	global $CLIENT_ID_PROFIL;
 	global $COMMERCIAL_ID_PROFIL;
@@ -149,12 +149,12 @@ protected function load_infos_contact () {
 }
 
 
-// Renvoie l'adresse a utiliser dans le document pour un contact donné
+// Renvoie l'adresse a utiliser dans le document pour un contact donnÃ©
 function define_adresse_contact () {
 	return parent::define_adresse_contact_et_livraison ();
 }
 
-//attibution par défaut du commercial
+//attibution par dÃ©faut du commercial
 protected function load_defauts_infos_contact () {
 	global $COMMERCIAL_ID_PROFIL;
 	
@@ -183,7 +183,7 @@ function define_stock_expe () {
 
 	$this->id_stock = $_SESSION['magasin']->getId_stock ();
 
-	// Stock d'ou réserver les marchandises
+	// Stock d'ou rÃ©server les marchandises
 	$livraison_externe = 0;
 	foreach ($_SESSION['magasins'] as $id_magasin => $magasin) {
 		if ($this->ref_adr_livraison != $magasin->getRef_adr_stock ()) { continue; }
@@ -227,7 +227,7 @@ public function maj_contact ($ref_contact) {
 
 
 
-// Met à jour la ref_doc_externe
+// Met Ã  jour la ref_doc_externe
 public function maj_ref_doc_externe ($ref_doc_externe) {
 	global $bdd;	
 
@@ -243,7 +243,7 @@ public function maj_ref_doc_externe ($ref_doc_externe) {
 	return true;
 }
 
-// Met à jour l' id_magasin pour ce bon de commande
+// Met Ã  jour l' id_magasin pour ce bon de commande
 public function maj_id_magasin ($new_id_magasin) {
 	global $bdd;	
 
@@ -270,7 +270,7 @@ public function maj_id_magasin ($new_id_magasin) {
 	return true;
 }
 
-// Met à jour la date de livraison demandée
+// Met Ã  jour la date de livraison demandÃ©e
 public function maj_date_livraison ($new_date_livraison) {
 	global $bdd;
 	
@@ -283,7 +283,7 @@ public function maj_date_livraison ($new_date_livraison) {
 	return true;
 }
 
-// Met à jour la date de livraison demandée
+// Met Ã  jour la date de livraison demandÃ©e
 public function maj_id_livraison_mode ($id_livraison_mode) {
 	global $bdd;
 	
@@ -297,23 +297,23 @@ public function maj_id_livraison_mode ($id_livraison_mode) {
 	}
 	
 	$livraison_mode = new livraison_modes($id_livraison_mode);
-	//mise à jour du nouveau mode de livraison
+	//mise Ã  jour du nouveau mode de livraison
 	$this->id_livraison_mode = $id_livraison_mode;
 
 	$query = "UPDATE doc_cdc SET id_livraison_mode = ".num_or_null($this->id_livraison_mode)."
 						WHERE ref_doc = '".$this->ref_doc."' ";
 	$bdd->exec ($query);
 	
-	//calcul et insertion pour ce document des frais de port (calcul effectué depuis la class livraison mode)
+	//calcul et insertion pour ce document des frais de port (calcul effectuÃ© depuis la class livraison mode)
 	$livraison_mode->calcul_frais_livraison_doc ($this);
 	
 	return true;
 }
 
 
-// Liste des documents pouvant être fusionner
+// Liste des documents pouvant Ãªtre fusionner
 public function check_allow_fusion ($second_document) {
-	//verifcation que l'état des document permet la fusion
+	//verifcation que l'Ã©tat des document permet la fusion
 	if (($this->id_etat_doc != "6" && $this->id_etat_doc != "9") && ($second_document->getId_etat_doc () != "6" && $second_document->getId_etat_doc () != "9")) {
 		return false;
 	}
@@ -321,7 +321,7 @@ public function check_allow_fusion ($second_document) {
 }
 
 
-// Liste des documents pouvant être fusionner
+// Liste des documents pouvant Ãªtre fusionner
 public function liste_doc_fusion () {
 	global $bdd;
 	
@@ -356,7 +356,7 @@ protected function doc_line_infos_supp () {
 }
 
 
-// Mise à jour de l'information "qte_livree" d'une ligne de document
+// Mise Ã  jour de l'information "qte_livree" d'une ligne de document
 static function maj_line_infos_supp ($ref_doc_line, $donnees, $maj_donnees=NULL) {
 	$table = "doc_lines_cdc";
 	$maj_donnees = "qte_livree = ".$donnees['qte_livree']." ";
@@ -367,7 +367,7 @@ static function maj_line_infos_supp ($ref_doc_line, $donnees, $maj_donnees=NULL)
 }
 
 
-// Vérifie si la commande est traitée
+// VÃ©rifie si la commande est traitÃ©e
 function check_if_traitee () {
 	global $bdd;
 
@@ -394,7 +394,7 @@ function check_if_traitee () {
 // FONCTIONS LIEES A LA MODIFICATION DE L'ETAT D'UN DOCUMENT
 // *************************************************************************************************************
 
-// Action après de changer l'état du document
+// Action aprÃ¨s de changer l'Ã©tat du document
 protected function action_after_maj_etat ($old_etat_doc) {
 	global $bdd;
 
@@ -441,7 +441,7 @@ function check_profils () {
 // FONCTIONS SPECIFIQUES AU TYPE DE DOC 
 // *************************************************************************************************************
 
-// Génère un BL Client à partir de cette commande.
+// GÃ©nÃ¨re un BL Client Ã  partir de cette commande.
 public function generer_bl_client ($lines = false) {
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['ref_adr_contact'] = $this->ref_adr_livraison;
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['adresse_contact'] = $this->adresse_livraison;
@@ -463,7 +463,7 @@ public function generer_bl_client ($lines = false) {
 	return $this->copie_doc (3);
 }
 
-// Génère un FA Client à partir de cette commande.
+// GÃ©nÃ¨re un FA Client Ã  partir de cette commande.
 public function generer_fa_client ($lines = false) {
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['ref_adr_contact'] = $this->ref_adr_livraison;
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['adresse_contact'] = $this->adresse_livraison;
@@ -484,9 +484,9 @@ public function generer_fa_client ($lines = false) {
 	return $this->copie_doc (4);
 }
 
-// Renouvelle une commande à partir de celle-ci.
+// Renouvelle une commande Ã  partir de celle-ci.
 public function generer_commande_client ($lines = false) {
-	// Possible uniquement si la commande est annulée ou traitée
+	// Possible uniquement si la commande est annulÃ©e ou traitÃ©e
 	if ($this->id_etat_doc != 7 && $this->id_etat_doc != 10) { return false; }
 
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['ref_adr_contact'] = $this->ref_adr_contact;
@@ -517,7 +517,7 @@ public function generer_commande_client ($lines = false) {
 // FONCTIONS DE RECOPIE D'UN DOCUMENT
 // *************************************************************************************************************
 
-// Lors de la copie vers un Bon de Livraison, la Quantité à livrer est ajustée à ce qu'il manque
+// Lors de la copie vers un Bon de Livraison, la QuantitÃ© Ã  livrer est ajustÃ©e Ã  ce qu'il manque
 function action_before_copie_line_to_doc ($new_doc, $line) {
 	if ($new_doc->getID_TYPE_DOC() != 3) { return true; }
 	if ($line->type_of_line != "article") { return true; }
@@ -534,7 +534,7 @@ function action_before_copie_line_to_doc ($new_doc, $line) {
 function action_after_copie_line_to_doc ($new_doc, $line) {
 	global $bdd;
 
-	//en cas de fusion on met à jour les blc lié et les qté livrée
+	//en cas de fusion on met Ã  jour les blc liÃ© et les qtÃ© livrÃ©e
   if (isset($GLOBALS['_OPTIONS']['FUSION'])) {
 		$query = "UPDATE doc_lines_blc SET ref_doc_line_cdc = '".$line->ref_doc_line."'
 							WHERE  ref_doc_line_cdc = '".$line->old_ref_doc_line."' ";
@@ -557,7 +557,7 @@ function action_after_copie_line_to_doc ($new_doc, $line) {
 
 
 protected function create_info_copie_line_texte ($doc_source) { 
-	return "Votre référence: ".$this->ref_doc_externe; 
+	return "Votre rÃ©fÃ©rence: ".$this->ref_doc_externe; 
 }
 
 
@@ -577,7 +577,7 @@ public function create_info_copie_line_pac ($doc_source) {
 // *************************************************************************************************************
 // FONCTIONS DE LIAISON ENTRE DOCUMENTS 
 // *************************************************************************************************************
-// Chargement des documents à lier : Devis(1) Accepté(4), non lié à une commande (2)
+// Chargement des documents Ã  lier : Devis(1) AcceptÃ©(4), non liÃ© Ã  une commande (2)
 public function charger_liaisons_possibles () {
 	global $bdd;
 
@@ -608,7 +608,7 @@ protected function action_before_break_liaison ($ref_doc) {
 	global $bdd;
 
 	// *************************************************
-	// Actions spéciales uniquement en cas de rupture d'une liaison avec un BLC
+	// Actions spÃ©ciales uniquement en cas de rupture d'une liaison avec un BLC
 	$query = "SELECT id_type_doc, id_etat_doc FROM documents WHERE ref_doc = '".$this->ref_doc."'";
 	$resultat = $bdd->query ($query);
 	if (!$doc = $resultat->fetchObject()) { return false; }
@@ -616,7 +616,7 @@ protected function action_before_break_liaison ($ref_doc) {
 	if ($doc->id_type_doc != 3) { return false; }
 
 	// *************************************************
-	// Diminution des quantités livrées le cas échéant
+	// Diminution des quantitÃ©s livrÃ©es le cas Ã©chÃ©ant
 	if ($doc->id_etat_doc == 13 || $doc->id_etat_doc == 14 || $doc->id_etat_doc == 15) {
 		$query = "UPDATE doc_lines_cdc dl_cdc, doc_lines_blc dl_blc, docs_lines dl1, docs_lines dl2
 							SET dl_cdc.qte_livree -= dl2.qte 
@@ -626,7 +626,7 @@ protected function action_before_break_liaison ($ref_doc) {
 	}
 
 	// *************************************************
-	// Suppression de la liaison ligne à ligne
+	// Suppression de la liaison ligne Ã  ligne
 	$query = "UPDATE doc_lines_blc dl_blc, docs_lines dl1, docs_lines dl2
 						SET dl_blc.ref_doc_line_cdc = NULL 
 						WHERE dl1.ref_doc = '".$this->ref_doc."' && dl2.ref_doc = '".$ref_doc."' &&
@@ -642,14 +642,14 @@ protected function action_before_break_liaison ($ref_doc) {
 // *************************************************************************************************************
 
 protected function need_infos_facturation () {
-	// Si la commande est annulée ou traitée, les informations de facturation ne sont pas nécessaires.
+	// Si la commande est annulÃ©e ou traitÃ©e, les informations de facturation ne sont pas nÃ©cessaires.
 	if ($this->id_etat_doc == $this->ID_ETAT_ANNULE || $this->id_etat_doc == 10) { return false; }
 	return true;
 }
 
 
 protected function reglement_partiel () {
-	// Une commande en saisie devient "en cours" lorsqu'un règlement est enregistré.
+	// Une commande en saisie devient "en cours" lorsqu'un rÃ¨glement est enregistrÃ©.
 	if ($this->id_etat_doc == 6) {
 		$this->maj_etat_doc(9);
 	}

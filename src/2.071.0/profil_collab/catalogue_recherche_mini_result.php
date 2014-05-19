@@ -20,7 +20,7 @@ $article_compose = true;
 
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -78,7 +78,7 @@ if ($_REQUEST['in_promotion']) {
 
 
 // *************************************************
-// Stock et Tarif affichés
+// Stock et Tarif affichÃ©s
 $form['id_stock'] = $search['id_stock'] = $_SESSION['magasin']->getId_stock();
 if (isset($_REQUEST['id_stock'])) {
 	$form['id_stock'] = $_REQUEST['id_stock'];
@@ -94,10 +94,10 @@ if (isset($_REQUEST['id_tarif'])) {
 
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_select = "";
 	$query_join 	= "";
 	$query_where 	= " dispo = 1 ";
@@ -120,7 +120,7 @@ if (isset($_REQUEST['recherche'])) {
 		}
 		$query_where 	.= " ) )";
 	}
-	// Catégorie
+	// CatÃ©gorie
 	if ($search['ref_art_categ']) { 
 		$liste_categories = "";
 		$liste_categs = array();
@@ -140,7 +140,7 @@ if (isset($_REQUEST['recherche'])) {
 			$query_where 	.= " && ISNULL(a.ref_constructeur)";
 		}
 	}
-	// Nouveauté
+	// NouveautÃ©
 	if ($search['is_nouveau']) {
 		$query_where 	.= " && date_creation > '".date("Y:m:d h:i:s", time()-$DELAI_ARTICLE_IS_NEW)."'";
 	}
@@ -160,7 +160,7 @@ if (isset($_REQUEST['recherche'])) {
 		$query_group  .= " GROUP BY a.ref_article ";
 	}
 
-	// article composé
+	// article composÃ©
 	if ($article_compose) {
 		$query_where 	.= " && a.lot = 1 ";
 		
@@ -194,7 +194,7 @@ if (isset($_REQUEST['recherche'])) {
 	}
 	unset ($fiche, $resultat, $query);
 	
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 	$query = "SELECT a.ref_article
 						FROM articles a 
 							LEFT JOIN articles_codes_barres acb ON acb.ref_article = a.ref_article

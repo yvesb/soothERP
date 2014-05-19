@@ -3,7 +3,7 @@
 // FICHIER DE CONFIGURATION DES FACTURES CLIENT
 // *************************************************************************************************************
 
-$DUREE_AVANT_PURGE_ANNULE_FAC = 1198;	// Délai avant la suppression des docs annulés
+$DUREE_AVANT_PURGE_ANNULE_FAC = 1198;	// DÃ©lai avant la suppression des docs annulÃ©s
 
 $FACTURE_CLIENT_ID_TYPE_DOC = 4;
 

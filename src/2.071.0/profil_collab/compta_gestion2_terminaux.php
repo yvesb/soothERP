@@ -12,7 +12,7 @@ require ($DIR."_session.inc.php");
 if (isset($_REQUEST["id_tpe"])) {
 if (!$_SESSION['user']->check_permission ("33",$_REQUEST["id_tpe"])) {
 		//on indique l'interdiction et on stop le script
-		echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accés ne vous permettent pas de visualiser ce type de page</span>";
+		echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accÃ©s ne vous permettent pas de visualiser ce type de page</span>";
 		exit();
 }
 	
@@ -45,7 +45,7 @@ $query_search = "
 if (isset($_REQUEST["id_tpv"])) {
 if (!$_SESSION['user']->check_permission ("37",$_REQUEST["id_tpv"])) {
 		//on indique l'interdiction et on stop le script
-		echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accés ne vous permettent pas de visualiser ce type de page</span>";
+		echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accÃ©s ne vous permettent pas de visualiser ce type de page</span>";
 		exit();
 }
 //on traite un TPE

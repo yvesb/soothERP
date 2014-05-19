@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -75,7 +75,7 @@ foreach ($result as $compte) {
 	<table>
 		<tr>
 			<td style="width:70px; ">
-			<div  style="width:70px; display:block ">Néant</div>
+			<div  style="width:70px; display:block ">NÃ©ant</div>
 			</td>
 			<td>
 			<span >

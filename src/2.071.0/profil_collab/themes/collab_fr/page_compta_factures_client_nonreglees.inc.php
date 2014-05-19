@@ -4,7 +4,7 @@
 // AFFICHAGE DES FACTURES CLIENTS NON REGLEES
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("factures");
 check_page_variables ($page_variables);
 
@@ -61,7 +61,7 @@ check_page_variables ($page_variables);
                 <tr>
                     <td>&nbsp;</td>
                     <td>
-                        <!-- Catégories client-->
+                        <!-- CatÃ©gories client-->
                        <!-- <select name="categ_client" id="categ_client" class="classinput_lsize" style="width:80%">
                             <option value='0'>Toutes</option>-->
                            <input type="checkbox" name="" id="categ_all"/> Toutes<br/>

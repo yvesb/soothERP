@@ -13,13 +13,13 @@ require ($DIR."_session.inc.php");
 // Controle
 
 	if (!isset($_REQUEST['ref_art_categ'])) {
-		echo "La référence de la catégorie n'est pas précisée";
+		echo "La rÃ©fÃ©rence de la catÃ©gorie n'est pas prÃ©cisÃ©e";
 		exit;
 	}
 
 	$art_categ = new art_categ ($_REQUEST['ref_art_categ']);
 	
-	// on récupére la liste des caractéristiques
+	// on rÃ©cupÃ©re la liste des caractÃ©ristiques
 	
 	$caracs= array();
 	$query = "SELECT ref_carac, lib_carac, unite, allowed_values, default_value, moteur_recherche, variante, affichage, 
@@ -33,7 +33,7 @@ require ($DIR."_session.inc.php");
 	
 	
 	if (!$art_categ->getRef_art_categ()) {
-		echo "La référence de la catégorie est inconnue";		exit;
+		echo "La rÃ©fÃ©rence de la catÃ©gorie est inconnue";		exit;
 
 	}
 

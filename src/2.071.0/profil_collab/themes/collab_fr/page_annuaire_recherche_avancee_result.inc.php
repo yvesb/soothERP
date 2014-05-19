@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES", "fiches", "profils", "ANNUAIRE_CATEGORIES", "form['nom']", "form['id_profil']",   "form['code_postal']", "form['ville']",  "form['pays']", "form['tel']", "form['email']", "form['url']", "form['page_to_show']", "form['fiches_par_page']", "nb_fiches", "form['orderby']", "form['orderorder']", "form['archive']");
 check_page_variables ($page_variables);
 
@@ -26,7 +26,7 @@ function barre_navigation($nbtotal,
 													
 {
 	// --------------------------------------------------------------------
-	global $cfg_nb_pages; // Nb de n° de pages affichées dans la barre
+	global $cfg_nb_pages; // Nb de nÂ° de pages affichÃ©es dans la barre
 global $DIR;
 	$barre= "";
 
@@ -38,7 +38,7 @@ global $DIR;
 	// --------------------------------------------------------------------
     
 
-	// début << .
+	// dÃ©but << .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -58,7 +58,7 @@ global $DIR;
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
 
 
-	// précédent < .
+	// prÃ©cÃ©dent < .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -165,7 +165,7 @@ function image_html($img)
 
 //
 //
-//création de la barre de nav
+//crÃ©ation de la barre de nav
 //
 //
 
@@ -193,8 +193,8 @@ foreach ($_ALERTES as $alerte => $value) {
 ?><br />
 <div style="text-align:right">
 <?php if ($_SESSION['user']->check_permission ("20")){?>
-<a href="annuaire_recherche_print.php?recherche=1&orderby=<?php echo $form['orderby'];?>&orderorder=<?php echo $form['orderorder'];?>&nom=<?php echo urlencode($form['nom']);?>&id_categorie=<?php echo urlencode($form['id_categorie']);?>&id_profil=<?php echo ($form['id_profil']);?>&code_postal=<?php echo urlencode($form['code_postal']);?>&ville=<?php echo urlencode($form['ville']);?>&pays=<?php echo urlencode($form['pays']);?>&tel=<?php echo urlencode($form['tel']);?>&email=<?php echo urlencode($form['email']);?>&url=<?php echo urlencode($form['url']);?><?php if ($form['archive']) { echo "&archive=true";}?>&id_client_categ=<?php echo $form['id_client_categ'];?>&type_client=<?php echo $form['type_client'];?>" target="_blank" style="color:#000000">Imprimer les étiquettes</a>
-<a href="annuaire_recherche_avancee_export_csv.php?recherche=1&orderby=<?php echo $form['orderby'];?>&orderorder=<?php echo $form['orderorder'];?>&nom=<?php echo urlencode($form['nom']);?>&id_categorie=<?php echo urlencode($form['id_categorie']);?>&id_profil=<?php echo ($form['id_profil']);?>&code_postal=<?php echo urlencode($form['code_postal']);?>&ville=<?php echo urlencode($form['ville']);?>&pays=<?php echo urlencode($form['pays']);?>&tel=<?php echo urlencode($form['tel']);?>&email=<?php echo urlencode($form['email']);?>&url=<?php echo urlencode($form['url']);?><?php if ($form['archive']) { echo "&archive=true";}?>&id_client_categ=<?php echo $form['id_client_categ'];?>&type_client=<?php echo $form['type_client'];?>" target="_blank" style="color:#000000">Exporter les résultats</a>
+<a href="annuaire_recherche_print.php?recherche=1&orderby=<?php echo $form['orderby'];?>&orderorder=<?php echo $form['orderorder'];?>&nom=<?php echo urlencode($form['nom']);?>&id_categorie=<?php echo urlencode($form['id_categorie']);?>&id_profil=<?php echo ($form['id_profil']);?>&code_postal=<?php echo urlencode($form['code_postal']);?>&ville=<?php echo urlencode($form['ville']);?>&pays=<?php echo urlencode($form['pays']);?>&tel=<?php echo urlencode($form['tel']);?>&email=<?php echo urlencode($form['email']);?>&url=<?php echo urlencode($form['url']);?><?php if ($form['archive']) { echo "&archive=true";}?>&id_client_categ=<?php echo $form['id_client_categ'];?>&type_client=<?php echo $form['type_client'];?>" target="_blank" style="color:#000000">Imprimer les Ã©tiquettes</a>
+<a href="annuaire_recherche_avancee_export_csv.php?recherche=1&orderby=<?php echo $form['orderby'];?>&orderorder=<?php echo $form['orderorder'];?>&nom=<?php echo urlencode($form['nom']);?>&id_categorie=<?php echo urlencode($form['id_categorie']);?>&id_profil=<?php echo ($form['id_profil']);?>&code_postal=<?php echo urlencode($form['code_postal']);?>&ville=<?php echo urlencode($form['ville']);?>&pays=<?php echo urlencode($form['pays']);?>&tel=<?php echo urlencode($form['tel']);?>&email=<?php echo urlencode($form['email']);?>&url=<?php echo urlencode($form['url']);?><?php if ($form['archive']) { echo "&archive=true";}?>&id_client_categ=<?php echo $form['id_client_categ'];?>&type_client=<?php echo $form['type_client'];?>" target="_blank" style="color:#000000">Exporter les rÃ©sultats</a>
 <?php }?>
 </div>
 <div  class="mt_size_optimise">

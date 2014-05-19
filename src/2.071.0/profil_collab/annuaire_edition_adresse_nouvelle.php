@@ -32,7 +32,7 @@ if (isset($_REQUEST['ref_contact'.$_REQUEST['ref_idform']])) {
         }
 
 	// *************************************************
-	// Création de l'adresse
+	// CrÃ©ation de l'adresse
 	$adresse = new adresse ();
 	$adresse->create($ref_contact, $lib_adresse, $text_adresse,  $code_postal, $ville, $id_pays, $note, $type);
 	

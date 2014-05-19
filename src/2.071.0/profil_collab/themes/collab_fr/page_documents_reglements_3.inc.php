@@ -4,7 +4,7 @@
 // REGLEMENT ENTRANT CB
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -114,7 +114,7 @@ if (count($comptes_tpes) || count($comptes_tpv)) {
 			}
 			?>
 			</select>
-			<input type="checkbox" id="done_reg_tpv" name="done_reg_tpv" value="1" style=" <?php if ($no_display_tpv_yet) {?>display:none<?php } ?>" title="Cocher pour valider automatiquement ce règlement sans passer par l'interface de paiement virtuel" />
+			<input type="checkbox" id="done_reg_tpv" name="done_reg_tpv" value="1" style=" <?php if ($no_display_tpv_yet) {?>display:none<?php } ?>" title="Cocher pour valider automatiquement ce rÃ¨glement sans passer par l'interface de paiement virtuel" />
 			</td>
 		</tr>
 		<tr>

@@ -120,7 +120,7 @@ class AgendaLoacationMateriel extends Agenda{
 	// *************************************************************************************************************
 	// Getters & Setters
 	// *************************************************************************************************************
-	//Cerataines fonctions sont redondante avec les fonctions "static" -> normales, c'est plus simple à utiliser
+	//Cerataines fonctions sont redondante avec les fonctions "static" -> normales, c'est plus simple Ã  utiliser
 	public function getArticle()
 	{	if($this->article == null)
 				$this->article = new article($this->ref_article);

@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -46,7 +46,7 @@ update_menu_arbo();
 					</tr>
 					<tr>
 						<td>
-							Nom du modèle:<br />
+							Nom du modÃ¨le:<br />
 							<input name="lib_mail_template" id="lib_mail_template" type="text" value=""  class="classinput_lsize"  />
 						</td>
 						<td>
@@ -55,7 +55,7 @@ update_menu_arbo();
 							
 						</td>
 						<td style="text-align:right">
-							Jeu de caractères:<br />
+							Jeu de caractÃ¨res:<br />
 							<select name="mail_html_charset" id="mail_html_charset"  class="classinput_lsize" >
 								<option value="iso-8859-1">Europe</option>
 							</select>
@@ -64,15 +64,15 @@ update_menu_arbo();
 						</td>
 					</tr>
 					<tr>
-						<td class="undered_titre_config" colspan="4">Entête de l'email  :		</td>
+						<td class="undered_titre_config" colspan="4">EntÃªte de l'email  :		</td>
 					</tr>
 					<tr>
 						<td>
-							Emplacement de l'image d'entête: <br />
+							Emplacement de l'image d'entÃªte: <br />
 							<input name="header_img_template" id="header_img_template" type="file"  size="35" class="classinput_nsize"  />
 						</td>
 						<td>
-							Texte d'entête:<br />
+							Texte d'entÃªte:<br />
               <textarea id="header_mail_template" name="header_mail_template" rows="3"  class="classinput_xsize"></textarea>
 						</td>
 						<td>
@@ -118,7 +118,7 @@ update_menu_arbo();
 				<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			</tr>	
 			<tr>
-				<td class="titre_config" colspan="4">Modèles d'email	</td>
+				<td class="titre_config" colspan="4">ModÃ¨les d'email	</td>
 			</tr>
 		</table>
 		</div>
@@ -144,7 +144,7 @@ update_menu_arbo();
 					</tr>
 					<tr>
 						<td>
-							Nom du modèle:<br />
+							Nom du modÃ¨le:<br />
 							<input name="lib_mail_template_<?php echo $mail_template->id_mail_template;?>" id="lib_mail_template_<?php echo $mail_template->id_mail_template;?>" type="text" value="<?php echo $mail_template->lib_mail_template;?>"  class="classinput_lsize"  />
 						</td>
 						<td>
@@ -157,7 +157,7 @@ update_menu_arbo();
 							
 						</td>
 						<td style="text-align:right">
-							Jeu de caractères:<br />
+							Jeu de caractÃ¨res:<br />
 							<select name="mail_html_charset_<?php echo $mail_template->id_mail_template;?>" id="mail_html_charset_<?php echo $mail_template->id_mail_template;?>"  class="classinput_lsize" >
 								<option value="iso-8859-1">Europe</option>
 							</select>
@@ -166,11 +166,11 @@ update_menu_arbo();
 						</td>
 					</tr>
 					<tr>
-						<td class="undered_titre_config" colspan="4">Entête de l'email:		</td>
+						<td class="undered_titre_config" colspan="4">EntÃªte de l'email:		</td>
 					</tr>
 					<tr>
 						<td>
-							Emplacement de l'image d'entête: 
+							Emplacement de l'image d'entÃªte: 
 							<br />
 							<input name="header_img_template_<?php echo $mail_template->id_mail_template;?>" id="header_img_template_<?php echo $mail_template->id_mail_template;?>" type="file"  size="35" class="classinput_nsize"  />
 							<?php if ($mail_template->header_img_template) {?>
@@ -179,7 +179,7 @@ update_menu_arbo();
 							<?php } ?>
 						</td>
 						<td>
-							Texte d'entête:<br />
+							Texte d'entÃªte:<br />
               <textarea id="header_mail_template_<?php echo $mail_template->id_mail_template;?>" name="header_mail_template_<?php echo $mail_template->id_mail_template;?>" rows="3"  class="classinput_xsize"><?php echo $mail_template->header_mail_template;?></textarea>
 						</td>
 						<td>

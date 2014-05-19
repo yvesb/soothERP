@@ -18,7 +18,7 @@ $infos['id_magasin'] 		= $_REQUEST["id_magasin"];
 $infos['id_compte_tpe'] 	= $_REQUEST["id_compte_tpe"];
 	
 	
-	//création du compte
+	//crÃ©ation du compte
 	$compte_caisse->create_compte_caisse ($infos);
 
 // *************************************************************************************************************

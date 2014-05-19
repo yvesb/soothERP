@@ -12,19 +12,19 @@ require("_session.inc.php");
 //$interface = new interfaces ($ID_INTERFACE);
 
 if(isset($_REQUEST["pseudo"])){
-	if($_SESSION['user']->getLogin()){	// Le user est loggé
+	if($_SESSION['user']->getLogin()){	// Le user est loggÃ©
 		if($_SESSION['user']->getPseudo() != $_REQUEST["pseudo"])	// Si le pseudo est != alors on teste
 		{			check_pseudo_present($_REQUEST["pseudo"]);}
 		else{/*NE RIEN FAIRE*/}
-	}else{	// Le user n'est pas loggé -> on teste
+	}else{	// Le user n'est pas loggÃ© -> on teste
 		check_pseudo_present($_REQUEST["pseudo"]);
 	}
-}else{	echo "Le pseudo n'est pas spécifié";}
+}else{	echo "Le pseudo n'est pas spÃ©cifiÃ©";}
 
 // *************************************************************************************************************
 // AFFICHAGE
 // *************************************************************************************************************
 
 if(isset($GLOBALS['_ALERTES']['pseudo_used']))
-{		echo "identifiant dejà présent";}
+{		echo "identifiant dejÃ  prÃ©sent";}
 ?>

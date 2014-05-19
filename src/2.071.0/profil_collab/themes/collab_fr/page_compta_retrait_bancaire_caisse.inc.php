@@ -1,10 +1,10 @@
 <?php
 
 // *************************************************************************************************************
-// retrait en banque depuis la caisse (ou dépot bancaire depuis la caisse)
+// retrait en banque depuis la caisse (ou dÃ©pot bancaire depuis la caisse)
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -72,7 +72,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 			</tr>
 			<tr>
 				<td colspan="3" class="chemin_texte_choisi" style="width:14%" id="chemin_etape_0_3">Banque</td>
-				<td colspan="3" class="chemin_texte_gris" style="width:14%" id="chemin_etape_1_3">Espèces</td>
+				<td colspan="3" class="chemin_texte_gris" style="width:14%" id="chemin_etape_1_3">EspÃ¨ces</td>
 				<td colspan="3" class="chemin_texte_gris" style="width:14%" id="chemin_etape_2_3">Validation</td>
 				<td style="width:2%"></td>
 				</tr>
@@ -146,7 +146,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 				<tr>
 					<td align="right" style="width:85px;">&nbsp;</td>
 					<td style="width:10px">&nbsp;</td>
-					<td align="center" style="font-weight:bolder; width:85px;">Qté</td>
+					<td align="center" style="font-weight:bolder; width:85px;">QtÃ©</td>
 					<td style="width:10px">&nbsp;</td>
 					<td align="right" style="font-weight:bolder; width:160px;">Total</td>
 					<td>&nbsp;</td>
@@ -197,7 +197,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 				<tr>
 					<td align="right" colspan="4" style="font-weight:bolder; ">
 					<div style="height:25px; line-height:25px; " class="controle_color_toto">
-					Montant&nbsp;retiré: 
+					Montant&nbsp;retirÃ©: 
 					</div>
 					</td>
 					<td align="right" class="controle_color_toto">
@@ -210,7 +210,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 				<tr>
 					<td align="right" colspan="4" style="font-weight:bolder; ">
 					<div style="height:25px; line-height:25px; " class="controle_color_toto">
-					Fond de caisse théorique: 
+					Fond de caisse thÃ©orique: 
 					</div>
 					</td>
 					<td align="right" class="controle_color_toto">
@@ -316,8 +316,8 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 			
 			</div>
 			<br />
-			Retrait bancaire : <span id="selected_bancaire_sour">
-			</span>  à destination de <?php echo htmlentities($compte_caisse->getLib_caisse()); ?>
+			Retrait bancaireÂ : <span id="selected_bancaire_sour">
+			</span> Â Ã  destination de <?php echo htmlentities($compte_caisse->getLib_caisse()); ?>
 			<br />
 			<br />
 			<table width="780" border="0" cellspacing="0" cellpadding="0">
@@ -354,7 +354,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 				</tr>
 				<tr>
 					<td height="35" valign="middle" class="line_compta_bottom_rigth">
-					<div style="width:135px; height:35px; line-height:35px;">Solde versé</div>		</td>
+					<div style="width:135px; height:35px; line-height:35px;">Solde versÃ©</div>		</td>
 					<td height="35" align="right" valign="middle" class="line_compta_bottom">
 					<div style="width:75px; height:35px; line-height:35px;">
 					<span id="toto_esp_saisie"></span><?php echo "&nbsp;". $MONNAIE[1];?>		</div>		</td>

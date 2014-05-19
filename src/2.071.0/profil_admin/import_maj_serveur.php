@@ -22,15 +22,15 @@ if (isset($version_file[0]) && $version_file[0] != "0") {
 	ftp_pasv($ftp_id_connect, true);
 	$ftp_login_result 	= ftp_login($ftp_id_connect, "anonymous", ""); 
 
-	// Vérification de la connexion
+	// VÃ©rification de la connexion
 	if ((!$ftp_id_connect) || (!$ftp_login_result)) {
-		$erreur = "La connexion FTP au serveur de mise à jour semble impossible actuellement"; 
+		$erreur = "La connexion FTP au serveur de mise Ã  jour semble impossible actuellement"; 
 	} else {
 		//test du ftp_get
 		restore_error_handler();
 		error_reporting(0);
 		if(!@ftp_get ($ftp_id_connect, "test.txt", "/__maj_serveur/test_connexion_maj.txt", FTP_BINARY)) {
-			$erreur = "L'import de données via FTP semble impossible. Contacter votre administrateur réseaux ou rendez-vous sur <a href='http://www.lundimatin.fr/' target='_blank'>www.lundimatin.fr</a> pour plus d'informations";
+			$erreur = "L'import de donnÃ©es via FTP semble impossible. Contacter votre administrateur rÃ©seaux ou rendez-vous sur <a href='http://www.lundimatin.fr/' target='_blank'>www.lundimatin.fr</a> pour plus d'informations";
 		} else {
 			@unlink("test.txt");
 			//test si on autorise les maj

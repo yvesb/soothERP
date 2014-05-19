@@ -8,10 +8,10 @@ require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
-//chargement du modèle
+//chargement du modÃ¨le
 $modele_pdf = charge_modele_pdf ($_REQUEST["id_pdf_modele"]);
 
-//chargement des infos de configuration du modèle
+//chargement des infos de configuration du modÃ¨le
 $config_files = file($PDF_MODELES_DIR."config/".$modele_pdf->code_pdf_modele.".config.php");
 	
 // *************************************************************************************************************

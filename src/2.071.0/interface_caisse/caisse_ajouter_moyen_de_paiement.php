@@ -9,13 +9,13 @@
 	require ("_session.inc.php");
 
 	if (!isset($_REQUEST['ref_ticket']) || $_REQUEST['ref_ticket'] == "") {
-		echo "La référence du ticket n'est pas spécifiée";
+		echo "La rÃ©fÃ©rence du ticket n'est pas spÃ©cifiÃ©e";
 		exit;
 	}
 	$ticket = open_doc($_REQUEST['ref_ticket']);
 	
 	if (!isset($_REQUEST['moyen_de_paiement']) || $_REQUEST['moyen_de_paiement'] == "") {
-		echo "Le moyen de paiememnt n'est pas spécifié";
+		echo "Le moyen de paiememnt n'est pas spÃ©cifiÃ©";
 		exit;
 	}
 	$mdp = $_REQUEST['moyen_de_paiement'];
@@ -24,7 +24,7 @@
 	
 	switch ($mdp){
 		case "mdp_cheque": {
-			$mdp_lib = "Chèque";
+			$mdp_lib = "ChÃ¨que";
 			break;
 		}
 		case "mdp_cb": {
@@ -32,7 +32,7 @@
 				break;
 			}
 		case "mdp_especes": {
-				$mdp_lib = "Espèces";
+				$mdp_lib = "EspÃ¨ces";
 				break;
 			}
 		case "mdp_compte": {

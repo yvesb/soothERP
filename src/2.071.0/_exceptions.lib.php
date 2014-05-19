@@ -15,20 +15,20 @@ function exception_handler ($exception) {
     $exceptions = $exception->getTrace();
 
 
-    // Exceptions à l'affichage complet du message d'erreur visant a ne pas afficher d'informations techniques sur le serveur.
+    // Exceptions Ã  l'affichage complet du message d'erreur visant a ne pas afficher d'informations techniques sur le serveur.
     // Soyez plus restrictif si vous le souhaitez pour ne rien laisser filtrer en cas de bug
     if (substr($exception->getMessage(), 0, strlen("could not find driver")) == "could not find driver") {
-        $erreur = "Driver PDO non installé";
+        $erreur = "Driver PDO non installÃ©";
     }
     elseif (substr_count($exception->getMessage(),"SQLSTATE[42000]") || substr_count($exception->getMessage(),"SQLSTATE[HY000]")) {
-        $erreur = "Erreur lors de la requête serveur MySQL ";
+        $erreur = "Erreur lors de la requÃªte serveur MySQL ";
         if($ETAT_APPLICATION == 'DEV') {
             $erreur .= "<br />";
 			if (is_null($bdd)) {
-            $erreur .= "Pas de connexion possible à la BDD";
+            $erreur .= "Pas de connexion possible Ã  la BDD";
 			}
 			else {
-            $erreur .= "Dernières requêtes : '".$bdd->affiche_stats()."'";
+            $erreur .= "DerniÃ¨res requÃªtes : '".$bdd->affiche_stats()."'";
 			}
         }
     }
@@ -66,16 +66,16 @@ function exception_handler ($exception) {
         $mess .= "| \n".$exception->errorInfo[999];
     }
 
-    // Il s'agit d'une exception non reçues, donc à traiter comme une erreur
+    // Il s'agit d'une exception non reÃ§ues, donc Ã  traiter comme une erreur
     alerte_dev ($erreur, " ".substr($exception->getFile(),strlen($_SERVER['DOCUMENT_ROOT']))." - ".$exception->getLine(), $exception->getCode(), $mess, $exception->getFile(), $exception->getLine());
 }
 
-// Déclaration de la fonction de récupération des exceptions non recues
+// DÃ©claration de la fonction de rÃ©cupÃ©ration des exceptions non recues
 set_exception_handler('exception_handler');
 
 
 // *************************************************************************************************************
-// GESTION DES EXCEPTIONS: Accès restreint
+// GESTION DES EXCEPTIONS: AccÃ¨s restreint
 // *************************************************************************************************************
 class AccesException extends Exception {
 	private $stop;
@@ -88,12 +88,12 @@ class AccesException extends Exception {
 		global $DIR;
 		global $ID_PROFIL;
 			// Affichage du message d'erreur
-			echo "<b>Erreur : Accès à la page ".$_SERVER['PHP_SELF']." restreint.</b><br>
-			Vous n'etes pas autorisé à consulter cette page.<br>
+			echo "<b>Erreur : AccÃ¨s Ã  la page ".$_SERVER['PHP_SELF']." restreint.</b><br>
+			Vous n'etes pas autorisÃ© Ã  consulter cette page.<br>
 			Votre profil : ".$_SESSION['user']->getId_profil()."<br>
 			Profil de la page : ".$ID_PROFIL."<br><br>
 	
-			<a href='".$DIR."'>Retour à l'accueil</a>";
+			<a href='".$DIR."'>Retour Ã  l'accueil</a>";
 			
 			exit();
 	}
@@ -102,7 +102,7 @@ class AccesException extends Exception {
 
 
 // *************************************************************************************************************
-// GESTION DES EXCEPTIONS: Exception générique
+// GESTION DES EXCEPTIONS: Exception gÃ©nÃ©rique
 // *************************************************************************************************************
 class IyException extends Exception {
 	private $stop;
@@ -116,13 +116,13 @@ class IyException extends Exception {
 		// Affichage du message d'erreur
 		echo "<b>Erreur : ".$this->message."</b><br>";
 
-		// Choix concernant la suite des évennements
+		// Choix concernant la suite des Ã©vennements
 		switch ($this->stop) {
 			case 0:
-				// Simple affichage, le script continuera a etre executé
+				// Simple affichage, le script continuera a etre executÃ©
 			break;
 			case 1:
-				echo "Script arreté";
+				echo "Script arretÃ©";
 				exit();
 			break;
 			case 2: 

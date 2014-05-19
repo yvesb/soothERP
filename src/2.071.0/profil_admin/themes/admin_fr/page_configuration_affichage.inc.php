@@ -4,7 +4,7 @@
 // CONFIG DES DONNEES d'affichage
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -21,11 +21,11 @@ check_page_variables ($page_variables);
 ?>
 <script type="text/javascript">
 tableau_smenu[0] = Array("smenu_affichage", "smenu_affichage.php" ,"true" ,"sub_content", "Affichage");
-tableau_smenu[1] = Array('configuration_affichage','configuration_affichage.php','true','sub_content', "Configuration de l'affichage des résultats de recherche.");
+tableau_smenu[1] = Array('configuration_affichage','configuration_affichage.php','true','sub_content', "Configuration de l'affichage des rÃ©sultats de recherche.");
 update_menu_arbo();
 </script>
 <div class="emarge">
-<p class="titre">Configuration de l'affichage des résultats de recherche.</p>
+<p class="titre">Configuration de l'affichage des rÃ©sultats de recherche.</p>
 
 <div class="contactview_corps">
 <form action="configuration_affichage_maj.php" enctype="multipart/form-data" method="POST"  id="configuration_affichage_maj" name="configuration_affichage_maj" target="formFrame" >
@@ -91,7 +91,7 @@ update_menu_arbo();
 		<td colspan="3"> </td>
 	</tr>
 	<tr>
-		<td class="lib_config">Afficher le montant total par page de résultat </td>
+		<td class="lib_config">Afficher le montant total par page de rÃ©sultat </td>
 		<td>
 		<input id="document_recherche_montant_total" name="document_recherche_montant_total" value="<?php echo  $DOCUMENT_RECHERCHE_MONTANT_TOTAL; ?>" type="checkbox" <?php if ($DOCUMENT_RECHERCHE_MONTANT_TOTAL) {?>checked="checked"<?php } ?>  /></td>
 		<td class="infos_config">&nbsp;</td>

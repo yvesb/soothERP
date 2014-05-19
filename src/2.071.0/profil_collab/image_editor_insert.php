@@ -18,7 +18,7 @@ if (!empty($_FILES['fichier_img']['tmp_name'])) {
 		$extension = substr($_FILES["fichier_img"]["name"], strrpos($_FILES["fichier_img"]["name"], "."));
 		$footer_img_template = md5(uniqid(rand(), true)).$extension;
 		if (is_file($_REQUEST["folder_stock"].$footer_img_template)) {$footer_img_template = md5(uniqid(rand(), true)).$extension; }
-		// on copie le fichier que l'on vient d'uploader dans le répertoire des images
+		// on copie le fichier que l'on vient d'uploader dans le rÃ©pertoire des images
 		copy ($_FILES['fichier_img']['tmp_name'], $_REQUEST["folder_stock"].$footer_img_template); 
 		$complete_url = 'http://'. $_SERVER['HTTP_HOST'].str_replace("/profil_collab/image_editor_insert.php", "", $_SERVER['PHP_SELF']).str_replace("..", "", $_REQUEST["folder_stock"].$footer_img_template);
 	} 

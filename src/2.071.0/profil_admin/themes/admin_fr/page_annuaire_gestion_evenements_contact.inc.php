@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -22,12 +22,12 @@ check_page_variables ($page_variables);
 ?>
 <script type="text/javascript">
 tableau_smenu[0] = Array("smenu_annuaire", "smenu_annuaire.php" ,"true" ,"sub_content", "Annuaire");
-tableau_smenu[1] = Array('annuaire_gestion_evenements_contact','annuaire_gestion_evenements_contact.php',"true" ,"sub_content", "Gestion des événements");
+tableau_smenu[1] = Array('annuaire_gestion_evenements_contact','annuaire_gestion_evenements_contact.php',"true" ,"sub_content", "Gestion des Ã©vÃ©nements");
 update_menu_arbo();
 </script>
 <div class="emarge">
 
-<p class="titre">Gestion des événements</p>
+<p class="titre">Gestion des Ã©vÃ©nements</p>
 <table class="minimizetable">
 <tr>
 <td class="contactview_corps">
@@ -40,7 +40,7 @@ update_menu_arbo();
 		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr>
-		<td class="titre_config" colspan="3">Ajouter un type d'événement </td>
+		<td class="titre_config" colspan="3">Ajouter un type d'Ã©vÃ©nement </td>
 	</tr>
 	<tr>
 		<td colspan="3">
@@ -80,7 +80,7 @@ update_menu_arbo();
 	?>
 	<tr>
 		<td class="titre_config" colspan="3">
-		Liste des types d'événements
+		Liste des types d'Ã©vÃ©nements
 
 		</td>
 	</tr>

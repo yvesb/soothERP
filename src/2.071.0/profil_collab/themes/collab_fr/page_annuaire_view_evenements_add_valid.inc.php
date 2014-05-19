@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
 
 ?>
 <p>&nbsp;</p>
-<p>ccontact ajout d'événement </p>
+<p>ccontact ajout d'Ã©vÃ©nement </p>
 <p>&nbsp; </p>
 <?php 
 foreach ($_ALERTES as $alerte => $value) {
@@ -50,7 +50,7 @@ if (erreur) {
 
 	if (bad_date_event) {
 			window.parent.document.getElementById("date_event").className="alerteform_nsize";
-		texte_erreur += "Vérifier la date de l'événement.<br />";
+		texte_erreur += "VÃ©rifier la date de l'Ã©vÃ©nement.<br />";
 	} else {
 		window.parent.document.getElementById("date_event").className="classinput_nsize";
 	}

@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES", "form['lib_article']", "form['ref_art_categ']", "form['page_to_show']", "form['fiches_par_page']", "nb_fiches", "form['orderby']", "form['orderorder']");
 check_page_variables ($page_variables);
 
@@ -31,7 +31,7 @@ function barre_navigation($nbtotal,
 													
 {
 	// --------------------------------------------------------------------
-	global $cfg_nb_pages; // Nb de n° de pages affichées dans la barre
+	global $cfg_nb_pages; // Nb de nÂ° de pages affichÃ©es dans la barre
 	global $DIR;
 	$barre= "";	
 	$lien_on 	= "&nbsp;<a href='#' id='link_pagi_{cible}'>{lien}</a>&nbsp;
@@ -42,7 +42,7 @@ function barre_navigation($nbtotal,
 	// --------------------------------------------------------------------
     
 
-	// début << .
+	// dÃ©but << .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -62,7 +62,7 @@ function barre_navigation($nbtotal,
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
 
 
-	// précédent < .
+	// prÃ©cÃ©dent < .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -168,7 +168,7 @@ function image_html($img)
 
 //
 //
-//création de la barre de nav
+//crÃ©ation de la barre de nav
 //
 //
 
@@ -194,7 +194,7 @@ foreach ($_ALERTES as $alerte => $value) {
 <div id="affresult" >
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 	<tr>
-		<td style="text-align:left; font-weight:bolder">Liste des contacts à générer</td>
+		<td style="text-align:left; font-weight:bolder">Liste des contacts Ã  gÃ©nÃ©rer</td>
 		<td id="nvbar"><?php echo $barre_nav;?></td>
 		<td style="text-align:right;">R&eacute;ponse <?php echo $debut+1?> &agrave; <?php echo $debut+$nb_affiche?> sur <?php echo $nb_fiches?></td>
 	</tr>
@@ -227,9 +227,9 @@ foreach ($_ALERTES as $alerte => $value) {
 						if ("id_tarif_".$tarif->id_tarif == $k) {echo $tarif->lib_tarif; break;}
 					}
 					foreach ($tarifs_liste as $tarif) {
-						if ("id_tarif_qte_".$tarif->id_tarif == $k) {echo "Qté ".$tarif->lib_tarif; break;}
+						if ("id_tarif_qte_".$tarif->id_tarif == $k) {echo "QtÃ© ".$tarif->lib_tarif; break;}
 					}
-					if ("ref_art_categ" == $k) {echo "Catégorie d'article "; }
+					if ("ref_art_categ" == $k) {echo "CatÃ©gorie d'article "; }
 				 ?></div></td>
 				<?php
 			}
@@ -251,8 +251,8 @@ foreach ($_ALERTES as $alerte => $value) {
 	<input id="check_s_<?php echo $i;?>" name="check_s_<?php echo $i;?>" type="checkbox" value="<?php echo ($i);?>"/>
 			</td>
 			<td style="text-align:left" >
-			 <?php if (isset($array_retour[$i]["averti"])) {?><img src="modules/<?php echo $import_catalogue_csv['folder_name'];?>themes/<?php echo $_SESSION['theme']->getCode_theme();?>/images/ding.gif" title="Cette ligne pourrait ne pas être totalement importée"/><?php } ?>
-			 <?php if (isset($array_retour[$i]["alerte"])) {?><img src="modules/<?php echo $import_catalogue_csv['folder_name'];?>themes/<?php echo $_SESSION['theme']->getCode_theme();?>/images/alerte.gif" title="Cette ligne ne sera pas importée"/><?php } ?>
+			 <?php if (isset($array_retour[$i]["averti"])) {?><img src="modules/<?php echo $import_catalogue_csv['folder_name'];?>themes/<?php echo $_SESSION['theme']->getCode_theme();?>/images/ding.gif" title="Cette ligne pourrait ne pas Ãªtre totalement importÃ©e"/><?php } ?>
+			 <?php if (isset($array_retour[$i]["alerte"])) {?><img src="modules/<?php echo $import_catalogue_csv['folder_name'];?>themes/<?php echo $_SESSION['theme']->getCode_theme();?>/images/alerte.gif" title="Cette ligne ne sera pas importÃ©e"/><?php } ?>
 			</td>
 			<td style="text-align:left" >
 			<img src="../<?php echo $_SESSION['theme']->getDir_theme()?>images/supprime.gif" style="cursor:pointer" id="del_ligne_<?php echo $i;?>"/>

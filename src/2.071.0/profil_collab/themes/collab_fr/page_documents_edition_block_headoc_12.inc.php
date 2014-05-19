@@ -4,7 +4,7 @@
 // ENTETE BON DE FABRICATION
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -98,7 +98,7 @@ check_page_variables ($page_variables);
 									}
 									?>
 									<?php 
-									//ajout pour les stocks inactifs qui auraient été utilisés par le document
+									//ajout pour les stocks inactifs qui auraient Ã©tÃ© utilisÃ©s par le document
 									$stocks_supp	= fetch_all_stocks();
 									foreach ($stocks_supp as $stock_supp) {
 										if (!$stock_supp->actif && $stock_supp->id_stock == $document->getId_stock ()) {
@@ -128,7 +128,7 @@ check_page_variables ($page_variables);
 									}
 									?>
 									<?php 
-									//ajout pour les stocks inactifs qui auraient été utilisés par le document
+									//ajout pour les stocks inactifs qui auraient Ã©tÃ© utilisÃ©s par le document
 									$stocks_supp	= fetch_all_stocks();
 									foreach ($stocks_supp as $stock_supp) {
 										if (!$stock_supp->actif && $stock_supp->id_stock == $document->getId_stock ()) {
@@ -208,7 +208,7 @@ check_page_variables ($page_variables);
 		</table>
 		<script type="text/javascript">
 				
-		// observateur de changement de texte dans l'entete du doc pour mise à jour des infos
+		// observateur de changement de texte dans l'entete du doc pour mise Ã  jour des infos
 		Event.observe("code_affaire", "blur", function(evt){
 			if ($("code_affaire").value != $("code_affaire_old").value) {
 				$("code_affaire_old").value = $("code_affaire").value;
@@ -262,7 +262,7 @@ check_page_variables ($page_variables);
 			<?php 
 			if ($document->getId_etat_doc () == 47) {
 				?>
-				// à fabriquer
+				// Ã  fabriquer
 				Event.observe("fab_afabriquer", "click", function(evt){Event.stop(evt);
 						maj_etat_doc (49);
 				}, false);
@@ -272,7 +272,7 @@ check_page_variables ($page_variables);
 			<?php 
 			if ($document->getId_etat_doc () == 49) {
 				?>
-				// à fabriquer
+				// Ã  fabriquer
 				Event.observe("fab_encours", "click", function(evt){Event.stop(evt);
 						maj_etat_doc (50);
 				}, false);
@@ -311,7 +311,7 @@ check_page_variables ($page_variables);
 					} else {
 					
 						$("titre_alert").innerHTML = 'Confirmer';
-						$("texte_alert").innerHTML = 'Les numéros de série de l\'article à fabriquer ne sont pas tous indiqués<br />Confirmer la validation du bon de fabrication ?<br /> ';
+						$("texte_alert").innerHTML = 'Les numÃ©ros de sÃ©rie de l\'article Ã  fabriquer ne sont pas tous indiquÃ©s<br />Confirmer la validation du bon de fabrication ?<br /> ';
 						$("bouton_alert").innerHTML = '<input type="submit" id="bouton0" name="bouton0" value="Confirmer" /><input type="submit" id="bouton1" name="bouton1" value="Annuler" />';
 						
 						$("alert_pop_up_tab").style.display = "block";
@@ -364,7 +364,7 @@ check_page_variables ($page_variables);
 		<table cellpadding="0" cellspacing="0" border="0" style="width:100%" id="document_reglement_entete" class="document_box">
 			<tr style=" line-height:20px; height:20px;" class="document_head_list">
 				<td  style=" padding-left:3px;" class="doc_bold" >
-					Article fabriqué
+					Article fabriquÃ©
 					
 				</td>
 			</tr>
@@ -395,7 +395,7 @@ check_page_variables ($page_variables);
 							if ($document->getId_etat_doc () != 51) {
 								?>
 								<div id="modifier_art_to_fab" style="cursor:pointer">
-								Changer l'article à fabriquer
+								Changer l'article Ã  fabriquer
 								</div>
 								<SCRIPT type="text/javascript">
 								
@@ -412,7 +412,7 @@ check_page_variables ($page_variables);
 						</tr>
 						<tr>
 							<td style="width:235px">
-								Quantité à fabriquer: <span id="aff_qte_fab"><?php echo $document->getQte_fab();?></span>
+								QuantitÃ© Ã  fabriquer: <span id="aff_qte_fab"><?php echo $document->getQte_fab();?></span>
 								<span id="edi_qte_fab" style="display: none;">
 								<input value="<?php echo $document->getQte_fab();?>" type="text" id="qte_fab" name="qte_fab" size="4"/>
 								&nbsp;&nbsp;&nbsp;&nbsp; initialiser le contenu <input type="radio" id="raz_doc_1" name="maj_raz_qte_fab" value="1" checked="checked"/> oui <input type="radio" id="raz_doc_0" name="maj_raz_qte_fab" value="0"/> non 
@@ -425,7 +425,7 @@ check_page_variables ($page_variables);
 							if ($document->getId_etat_doc () != 51) {
 								?>
 								<div id="modifier_qte_art_to_fab" style="cursor:pointer">
-								Modifier la quantité à fabriquer
+								Modifier la quantitÃ© Ã  fabriquer
 								</div>
 								<span id="set_qte_art_to_fab" style="cursor:pointer; display:none" >
 								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" border="0">		
@@ -541,7 +541,7 @@ check_page_variables ($page_variables);
 				} else {
 					?>
 					<div>
-					<span id="define_ref_article" style="cursor:pointer"> Définir l'article à fabriquer </span>
+					<span id="define_ref_article" style="cursor:pointer"> DÃ©finir l'article Ã  fabriquer </span>
 					<SCRIPT type="text/javascript">
 					
 					Event.observe('define_ref_article', "click", function(evt){  

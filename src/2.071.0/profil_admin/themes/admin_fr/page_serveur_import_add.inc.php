@@ -4,7 +4,7 @@
 // AJOUT D'UN SERVEUR D'IMPORT
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -30,7 +30,7 @@ foreach ($_ALERTES as $alerte => $value) {
 <script type="text/javascript">
 var erreur=false;
 var serveur_existants = false;
-var serveur_non_trouvé = false;
+var serveur_non_trouvÃ© = false;
 var texte_erreur = "";
 <?php 
 if (count($_ALERTES)>0) {
@@ -40,8 +40,8 @@ foreach ($_ALERTES as $alerte => $value) {
 		echo "serveur_existants=true;";
 		echo "erreur=true;\n";
 	}
-	if ($alerte=="serveur_non_trouvé") {
-		echo "serveur_non_trouvé=true;";
+	if ($alerte=="serveur_non_trouvÃ©") {
+		echo "serveur_non_trouvÃ©=true;";
 		echo "erreur=true;\n";
 	}
 	
@@ -52,11 +52,11 @@ if (erreur) {
 
 	
 	if (serveur_existants) {
-		texte_erreur += "Cette référence ou l'URL serveur fait déjà partie de liste des serveurs d'import.<br/>";
+		texte_erreur += "Cette rÃ©fÃ©rence ou l'URL serveur fait dÃ©jÃ  partie de liste des serveurs d'import.<br/>";
 	} 
 
-	if (serveur_non_trouvé) {
-		texte_erreur += "Le serveur n'a pas été trouvé.<br/>";
+	if (serveur_non_trouvÃ©) {
+		texte_erreur += "Le serveur n'a pas Ã©tÃ© trouvÃ©.<br/>";
 	} 
 	window.parent.alerte.alerte_erreur ('Erreur de saisie', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 

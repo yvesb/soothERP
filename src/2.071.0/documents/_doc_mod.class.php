@@ -8,12 +8,12 @@
 	protected $desc_modele;
 
 	protected $ID_TYPE_DOC = 14;
-	protected $LIB_TYPE_DOC = "Modèle";
+	protected $LIB_TYPE_DOC = "ModÃ¨le";
 	protected $CODE_DOC = "MOD";
 	protected $DOC_ID_REFERENCE_TAG = 30;
     
 	protected $DEFAUT_ID_ETAT 	= 57;
-	protected $DEFAUT_LIB_ETAT 	= "Modèle actif";
+	protected $DEFAUT_LIB_ETAT 	= "ModÃ¨le actif";
 	protected $ID_ETAT_ANNULE	= 58;
 	
 	protected $GESTION_SN = 0;
@@ -47,7 +47,7 @@
 	  return $bdd->exec($query);
 	}
 	
-	// Charge les lignes correspondantes aux modèles
+	// Charge les lignes correspondantes aux modÃ¨les
 	public function loadLines() {
 	  global $bdd;
 	  

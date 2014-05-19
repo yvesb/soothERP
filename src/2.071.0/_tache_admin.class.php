@@ -17,18 +17,18 @@ final class tache_admin {
 function __construct($id_tache_admin = 0) {
 	global $bdd;
 
-	// Controle si la id_tache est précisée
+	// Controle si la id_tache est prÃ©cisÃ©e
 	if (!$id_tache_admin) { return false; }
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT lib_tache_admin, description, url_action, date_creation, date_execution 
 						FROM taches_admin t
 						WHERE id_tache_admin = '".$id_tache_admin."' ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si la id_tache est trouvée
+	// Controle si la id_tache est trouvÃ©e
 	if (!$tache = $resultat->fetchObject()) { return false; }
 
-	// Attribution des informations à l'objet
+	// Attribution des informations Ã  l'objet
 	$this->id_tache_admin 	= $id_tache_admin;
 	$this->lib_tache_admin	= $tache->lib_tache_admin;
 	$this->description			= $tache->description;
@@ -49,13 +49,13 @@ public function create_tache ($lib_tache_admin, $description, $url_action) {
 	global $bdd;
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->lib_tache_admin 	= trim($lib_tache_admin);
 	$this->description = $description;
 	$this->url_action = $url_action;
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -70,8 +70,8 @@ public function create_tache ($lib_tache_admin, $description, $url_action) {
 	$this->id_tache_admin = $bdd->lastInsertId();
 
 	// *************************************************
-	// Résultat positif de la création
-	$GLOBALS['_INFOS']['Création_tache'] = $this->id_tache_admin;
+	// RÃ©sultat positif de la crÃ©ation
+	$GLOBALS['_INFOS']['CrÃ©ation_tache'] = $this->id_tache_admin;
 
 	return true;
 }
@@ -85,10 +85,10 @@ public function exec_tache () {
 	global $bdd;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -101,14 +101,14 @@ public function exec_tache () {
 	$bdd->exec ($query);
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
 // *************************************************************************************************************
 // FONCTIONS DE CHARGEMENT DES TACHES
 // *************************************************************************************************************
-//chargement des taches non executées
+//chargement des taches non executÃ©es
 static function charger_taches_todo () {
 	global $bdd;
 	
@@ -122,7 +122,7 @@ static function charger_taches_todo () {
 
 	return $taches;
 }
-//chargement des taches executées de moins de 7 jours
+//chargement des taches executÃ©es de moins de 7 jours
 static function charger_taches_done () {
 	global $bdd;
 	

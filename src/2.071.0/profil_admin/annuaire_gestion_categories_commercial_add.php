@@ -10,12 +10,12 @@ require ($DIR."_session.inc.php");
 
 // chargement de la class du profil
 contact::load_profil_class($COMMERCIAL_ID_PROFIL);
-// Préparations des variables 
+// PrÃ©parations des variables 
 
 	$infos	=	array();
 	$infos['id_commission_regle']				=	$_REQUEST["categ_id_commission_regle"];
 	$infos['lib_commercial_categ']	=	$_REQUEST["lib_commercial_categ"];
-	//création de la catégorie
+	//crÃ©ation de la catÃ©gorie
 	contact_commercial::create_commerciaux_categories ($infos);
 
 // *************************************************************************************************************

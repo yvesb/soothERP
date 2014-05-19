@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -50,7 +50,7 @@ check_page_variables ($page_variables);
 					<br />
 					
 				<div style="text-align:left">
-					Félicitation, votre identité a été confirmée avec succès !<br />
+					FÃ©licitation, votre identitÃ© a Ã©tÃ© confirmÃ©e avec succÃ¨sÂ !<br />
 					L'un de nos collaborateurs va prochainement valider votre fiche. Vous recevrez un email de confirmation prochainement.
 
 

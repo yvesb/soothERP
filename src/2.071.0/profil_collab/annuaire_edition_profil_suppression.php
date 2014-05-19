@@ -11,7 +11,7 @@ require ($DIR."_session.inc.php");
 
 if (isset($_REQUEST['id_profil'])) {	
 	// *************************************************
-	// Controle des données fournies par le formulaire
+	// Controle des donnÃ©es fournies par le formulaire
 
 	$infos_profils = array();
 	$id_profil	=	$_REQUEST['id_profil'];
@@ -21,7 +21,7 @@ if (isset($_REQUEST['id_profil'])) {
 	$infos_profils[$id_profil]['id_profil'] = $id_profil;
 	
 	// *************************************************
-	// Suppréssion du profil
+	// SupprÃ©ssion du profil
 	$contact= new contact ($_REQUEST['ref_contact']);
 	$result = $contact->delete_profiled_infos ($infos_profils[$id_profil]);
 		

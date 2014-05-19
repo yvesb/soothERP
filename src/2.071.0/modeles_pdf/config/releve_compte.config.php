@@ -10,9 +10,9 @@ $RELEVE_COMPTE['HAUTEUR_LINE_TOTAUX_GENERAUX']		= 5;
 $RELEVE_COMPTE['HAUTEUR_LINE_VIDE']				= 5;
 
 $RELEVE_COMPTE['ENTETE_COL_DATE'] = "Date";
-$RELEVE_COMPTE['ENTETE_COL_LIBELLE'] = "Libellé";
-$RELEVE_COMPTE['ENTETE_COL_CREDIT'] = "Crédit";
-$RELEVE_COMPTE['ENTETE_COL_DEBIT']  = "Débit";
+$RELEVE_COMPTE['ENTETE_COL_LIBELLE'] = "LibellÃ©";
+$RELEVE_COMPTE['ENTETE_COL_CREDIT'] = "CrÃ©dit";
+$RELEVE_COMPTE['ENTETE_COL_DEBIT']  = "DÃ©bit";
 $RELEVE_COMPTE['ENTETE_COL_SOLDE']  = "Solde";
 $RELEVE_COMPTE['ENTETE_COL_REPORT'] 	= "Report";
 
@@ -52,15 +52,15 @@ $RELEVE_COMPTE['PIEDS_DROIT'][1]	= $PIED_DE_PAGE_DROIT_1;
 
 
 
-//variable//type de champ(parametre)//libéllé//commentaire
+//variable//type de champ(parametre)//libÃ©llÃ©//commentaire
 // PARAMETRES MODIFIABLES
 // FIN PARAMETRES MODIFIABLES
 // CONFIGURATION PAR DEFAUT
-// Portion de code recopiée dans la partie « paramètres modifiables » en cas de remise à 0 des paramètres.
+// Portion de code recopiÃ©e dans la partie Â«Â paramÃ¨tres modifiablesÂ Â» en cas de remise Ã  0 des paramÃ¨tres.
 /*
 */
 // FIN CONFIGURATION PAR DEFAUT
-// INFORMATIONS SUR L’AUTEUR
+// INFORMATIONS SUR Lâ€™AUTEUR
 /* 
 */
 ?>

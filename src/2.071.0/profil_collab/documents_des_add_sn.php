@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// AJOUT D'UN NUMERO DE SERIE A UN ARTICLE DESASSEMBLÉ
+// AJOUT D'UN NUMERO DE SERIE A UN ARTICLE DESASSEMBLÃ‰
 // *************************************************************************************************************
 
 
@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 
 if (isset($_REQUEST['ref_doc'])) {
-// ouverture des infos du document et mise à jour
+// ouverture des infos du document et mise Ã  jour
 	$document = open_doc ($_REQUEST['ref_doc']);
 	$document->add_des_sn ($_REQUEST['sn']);
 	$id_type_doc = $document->getID_TYPE_DOC ();

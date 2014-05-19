@@ -20,12 +20,12 @@ $import_catalogue_csv['liste_entete'] 	= array(
 				array(
 						"main_lib" => "Description",
 						"champs" => array(
-						array("lib"=>'Libellé:' 					,"id"	=>'lib_article', 	"multiple" => "3","correps" => array("libelle", "article")),
-						array("lib"=>'Libellé court:'			,"id"	=>'lib_ticket',  "correps" => array()),
+						array("lib"=>'LibellÃ©:' 					,"id"	=>'lib_article', 	"multiple" => "3","correps" => array("libelle", "article")),
+						array("lib"=>'LibellÃ© court:'			,"id"	=>'lib_ticket',  "correps" => array()),
 						array("lib"=>'Description courte:' ,"id"	=>'desc_courte', "multiple" => "3", "correps" => array("description")),
 						array("lib"=>'Description Longue:' ,"id"	=>'desc_longue',  "multiple" => "3", "correps" => array()),
-						array("lib"=>'Référence Interne:'	 ,"id"	=>'ref_interne', 										"correps" => array("reference")),
-						array("lib"=>'Référence constructeur:'	,"id"	=>'ref_oem', 										"correps" => array("eom")),
+						array("lib"=>'RÃ©fÃ©rence Interne:'	 ,"id"	=>'ref_interne', 										"correps" => array("reference")),
+						array("lib"=>'RÃ©fÃ©rence constructeur:'	,"id"	=>'ref_oem', 										"correps" => array("eom")),
 						array("lib"=>'Constructeur:'	 ,"id"	=>'ref_constructeur', "id_type" => "o", "correps" => array("constructeur", "fabricant"))
 						)
 						)
@@ -34,9 +34,9 @@ $import_catalogue_csv['liste_entete'] 	= array(
 				array(
 						"main_lib" => "Gestion",
 						"champs" => array(
-						array("lib"=>'Date de début de disponibilité:',"id"	=>'date_debut_dispo', "correps" => array()),
-						array("lib"=>'Date de fin de disponibilité:',"id"	=>'date_fin_dispo', 		"correps" => array()),
-						array("lib"=>'Suivi des numéros de série:'	,"id"	=>'gestion_sn', "id_type" => "o", "correps" => array()),
+						array("lib"=>'Date de dÃ©but de disponibilitÃ©:',"id"	=>'date_debut_dispo', "correps" => array()),
+						array("lib"=>'Date de fin de disponibilitÃ©:',"id"	=>'date_fin_dispo', 		"correps" => array()),
+						array("lib"=>'Suivi des numÃ©ros de sÃ©rie:'	,"id"	=>'gestion_sn', "id_type" => "o", "correps" => array()),
 						array("lib"=>'Valorisation:'			,"id"	=>'id_valo', "id_type" => "o", 			"correps" => array()),
 						array("lib"=>'Code barre: '			,"id"	=>'code_barre', 		"multiple" => "3", 	"correps" => array())
 						)
@@ -44,11 +44,11 @@ $import_catalogue_csv['liste_entete'] 	= array(
 						,
 						
 				array(
-						"main_lib" => "Matériel",
+						"main_lib" => "MatÃ©riel",
 						"champs" => array(
 						array("lib"=>'Poids:'							,"id"	=>'poids', 					"correps" => array("poids")),
 						array("lib"=>'Colisage:'					,"id"	=>'colisage', 	 		"correps" => array("colisage")),
-						array("lib"=>'Durée de Garantie:' ,"id"	=>'duree_garantie', "correps" => array())
+						array("lib"=>'DurÃ©e de Garantie:' ,"id"	=>'duree_garantie', "correps" => array())
 						)
 						),
 						

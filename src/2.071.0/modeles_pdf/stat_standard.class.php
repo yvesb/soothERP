@@ -25,7 +25,7 @@ class pdf_stat_standard {
 		$this->pdf->lMargin = 15;
 		$this->pdf->SetFont("Arial","B",15);
 		$this->pdf->Ln(0);
-		$this->pdf->Cell(70,10,"Chiffre d'affaires par catÈgories d'articles",0,0,"L");
+		$this->pdf->Cell(70,10,"Chiffre d'affaires par cat√©gories d'articles",0,0,"L");
 		$this->pdf->Ln(20);
 	} 
 	
@@ -49,7 +49,7 @@ class pdf_stat_standard {
 		$this->TableauCA();
 	}
 		
-	//Tableau colorÈ
+	//Tableau color√©
 	public function TableauCA(){
 
 		//intialisation des sous totaux
@@ -65,7 +65,7 @@ class pdf_stat_standard {
     		}
 		}		
 		
-		//DEBUT de l'Èdition du tableau CA
+		//DEBUT de l'√©dition du tableau CA
 		$this->pdf->SetFillColor(0,0,0);            //fond noir
 	    $this->pdf->SetTextColor(255,255,255);      //texte blanc
 	    $this->pdf->SetDrawColor(0,0,0);
@@ -82,7 +82,7 @@ class pdf_stat_standard {
 		$this->pdf->SetFillColor(0,0,0);            //fond noir
 	    $this->pdf->SetTextColor(255,255,255);      //texte blanc
 	    
-	    $this->pdf->Cell($this->LARGEUR_CELL_LIB,6,"Total GÈnÈral",1,0,'L',1);
+	    $this->pdf->Cell($this->LARGEUR_CELL_LIB,6,"Total G√©n√©ral",1,0,'L',1);
 	 	for($y=$_REQUEST['annee_date_deb']; $y<=$_REQUEST['annee_date_fin'] ; ++$y ){
 	    	
 	    	if($y==$_REQUEST['annee_date_fin']){ $mois_max = $_REQUEST['mois_date_fin']; }
@@ -92,23 +92,23 @@ class pdf_stat_standard {
 	    	//affichage des totaux par mois
 	    	for($m=$mois_deb; $m<=$mois_max ; ++$m ){
 	    		if($m==12){ $m_fin=1; $y_fin=$y+1; }else{$m_fin=$m+1; $y_fin = $y ;}
-	    		$this->pdf->Cell($this->LARGEUR_CELL_MOIS,6,price_format(charger_doc_CA (array((date("Y-m-d H:i:s", mktime(0,0,0,$m, 0, $y) ) ) , (date("Y-m-d H:i:s", mktime(23,59,59, $m_fin,0, $y_fin) ) )) ))." Ä",'LR',0,'R',1);
+	    		$this->pdf->Cell($this->LARGEUR_CELL_MOIS,6,price_format(charger_doc_CA (array((date("Y-m-d H:i:s", mktime(0,0,0,$m, 0, $y) ) ) , (date("Y-m-d H:i:s", mktime(23,59,59, $m_fin,0, $y_fin) ) )) ))." ‚Ç¨",'LR',0,'R',1);
 		   	}
 	    }
 		if($_REQUEST['mois_date_fin']==12){ $m_fin=1; $y_fin=$_REQUEST['annee_date_fin']+1; }else{$m_fin=$_REQUEST['mois_date_fin']+1; $y_fin = $_REQUEST['annee_date_fin'] ;}
-		$this->pdf->Cell($this->LARGEUR_CELL_TOTAL,6,price_format(charger_doc_CA (array((date("Y-m-d H:i:s", mktime(0,0,0,$_REQUEST['mois_date_deb'], 1, $_REQUEST['annee_date_deb']) ) ) , (date("Y-m-d H:i:s", mktime(23,59,59, $m_fin ,0, $y_fin) ) )) ))." Ä",'LR',0,'R',1);
+		$this->pdf->Cell($this->LARGEUR_CELL_TOTAL,6,price_format(charger_doc_CA (array((date("Y-m-d H:i:s", mktime(0,0,0,$_REQUEST['mois_date_deb'], 1, $_REQUEST['annee_date_deb']) ) ) , (date("Y-m-d H:i:s", mktime(23,59,59, $m_fin ,0, $y_fin) ) )) ))." ‚Ç¨",'LR',0,'R',1);
 		$this->pdf->Ln();
 	    //FIN ligne des totaux	
 	    $this->create_footer();
 		
 	}
 	
-	//CrÈation de l'entÍte du tableau
+	//Cr√©ation de l'ent√™te du tableau
  	protected function create_entete(){
  		$this->pdf->SetFillColor(0,0,0);            //fond noir
 	    $this->pdf->SetTextColor(255,255,255);      //texte blanc
 	    $this->pdf->SetFont('Arial','B','7');
-	    $this->pdf->Cell($this->LARGEUR_CELL_LIB,6,"Chiffre d'affaires",1,0,'L',1); //colonne libellÈ
+	    $this->pdf->Cell($this->LARGEUR_CELL_LIB,6,"Chiffre d'affaires",1,0,'L',1); //colonne libell√©
 	    for($y=$_REQUEST['annee_date_deb']; $y<=$_REQUEST['annee_date_fin'] ; ++$y ){
 	    	
 	    	if($y==$_REQUEST['annee_date_fin']){ $mois_max = $_REQUEST['mois_date_fin']; }
@@ -129,7 +129,7 @@ class pdf_stat_standard {
 	//et appelle create_line_categ pour chacun de leurs fils
 	protected function create_line_categ_racine(){
 		$list_racine = get_art_categs_racine ();
-		foreach ($list_racine as $categ) {  //on parcourt les catÈgories racines
+		foreach ($list_racine as $categ) {  //on parcourt les cat√©gories racines
 		
 			$type_data["art_categ"] = $categ->ref_art_categ;
 			$cat = new art_categ($type_data["art_categ"]); 
@@ -153,10 +153,10 @@ class pdf_stat_standard {
 				if(count($tab_fils)>1){
 					$this->create_line_sous_total_tableauCA($this, $type_data , 'Total - '.$cat->getLib_art_categ(), true); //on affiche la ligne
 					$this->pdf->Ln();
-					// on Ècrit la ligne pour chaque fils
+					// on √©crit la ligne pour chaque fils
 					foreach ($tab_fils as $fils) {  //on parcourt les fils
-						if($fils != '' && $fils != $type_data["art_categ"]){ //test si non egal ‡ la categorie parente
-							//on Ècrit les fils 
+						if($fils != '' && $fils != $type_data["art_categ"]){ //test si non egal √† la categorie parente
+							//on √©crit les fils 
 							$this->create_line_categ($fils, '   ');
 						}else if($fils != ''){
 							$this->pdf->SetTextColor(0);  //texte noir
@@ -168,7 +168,7 @@ class pdf_stat_standard {
 				}else{
 					$this->create_line_sous_total_tableauCA($this, $type_data , 'Total - '.$cat->getLib_art_categ(), true); //on affiche la ligne
 					$this->pdf->Ln();
-					// on Ècrit la ligne pour chaque fils
+					// on √©crit la ligne pour chaque fils
 				}		
 				
 			}
@@ -196,11 +196,11 @@ class pdf_stat_standard {
 			if(count($tab_fils)>1){
 				$this->create_line_sous_total_tableauCA($this, $type_data , $niveau.'Total - '.$cat->getLib_art_categ()); //on affiche la ligne
 				$this->pdf->Ln();
-				// on Ècrit la ligne pour chaque fils
+				// on √©crit la ligne pour chaque fils
 				$niveau = $niveau.'   ';
 				foreach ($tab_fils as $fils) {  //on parcourt les fils
 					if($fils != '' && $fils != $categ){
-						//on Ècrit les fils 
+						//on √©crit les fils 
 						$this->create_line_categ($fils, $niveau);
 					}else if($fils != ''){
 						$this->pdf->SetTextColor(0);  //texte noir
@@ -221,9 +221,9 @@ class pdf_stat_standard {
 	
 	/*	$super : pointeur vers la class courante ($this)
 	 * 	$type_data : categorie d'article 
-	 *  $lib_art_categ : libellÈ de la categorie d'article
-	 *  $cell_width : tableau contenant la taille des cellules libellÈ, mois et total respectivement $this->LARGEUR_CELL_LIB, $this->LARGEUR_CELL_MOIS et $this->LARGEUR_CELL_TOTAL.
-	 *  RequiËre $_REQUEST['annee_date_deb'], $_REQUEST['mois_date_deb'], $_REQUEST['mois_date_fin'] et $_REQUEST['annee_date_fin']
+	 *  $lib_art_categ : libell√© de la categorie d'article
+	 *  $cell_width : tableau contenant la taille des cellules libell√©, mois et total respectivement $this->LARGEUR_CELL_LIB, $this->LARGEUR_CELL_MOIS et $this->LARGEUR_CELL_TOTAL.
+	 *  Requi√®re $_REQUEST['annee_date_deb'], $_REQUEST['mois_date_deb'], $_REQUEST['mois_date_fin'] et $_REQUEST['annee_date_fin']
 	 */
 	protected function create_line_tableauCA($super, $type_data , $lib_art_categ){
 		
@@ -238,25 +238,25 @@ class pdf_stat_standard {
     		for($m=$mois_deb; $m<=$mois_max ; ++$m ){
     			if($m==12){ $m_fin=1; $y_fin=$y+1; }else{$m_fin=$m+1; $y_fin = $y ;}
     			$ca = charger_doc_CA (array((date("Y-m-d H:i:s", mktime(0,0,0,$m, 1, $y) ) ) , (date("Y-m-d H:i:s", mktime(23,59,59, $m_fin,0, $y_fin) ) )),$type_data);
-    			$super->pdf->Cell($this->LARGEUR_CELL_MOIS,6,price_format($ca) ." Ä",'LR',0,'R',1); 
+    			$super->pdf->Cell($this->LARGEUR_CELL_MOIS,6,price_format($ca) ." ‚Ç¨",'LR',0,'R',1); 
     			                       
     		}
     		
 	 	}
 	 	//total
 	 	if($_REQUEST['mois_date_fin']==12){ $m_fin=1; $y_fin=$_REQUEST['annee_date_fin']+1; }else{$m_fin=$_REQUEST['mois_date_fin']+1; $y_fin = $_REQUEST['annee_date_fin'] ;}
-	 	$super->pdf->Cell($this->LARGEUR_CELL_TOTAL,6,price_format(charger_doc_CA (array((date("Y-m-d H:i:s", mktime(0,0,0,$_REQUEST['mois_date_deb'], 1, $_REQUEST['annee_date_deb']) ) ) , (date("Y-m-d H:i:s", mktime(23,59,59, $m_fin ,0, $y_fin) ) )) ,$type_data))." Ä",'LR',0,'R',1);
+	 	$super->pdf->Cell($this->LARGEUR_CELL_TOTAL,6,price_format(charger_doc_CA (array((date("Y-m-d H:i:s", mktime(0,0,0,$_REQUEST['mois_date_deb'], 1, $_REQUEST['annee_date_deb']) ) ) , (date("Y-m-d H:i:s", mktime(23,59,59, $m_fin ,0, $y_fin) ) )) ,$type_data))." ‚Ç¨",'LR',0,'R',1);
 	
 	 
 	}
 
 		
 	/*	$super : pointeur vers la class courante ($this)
-	 * 	$tab_fils : tableau indexÈ de 0 ‡ n contenant la rÈfÈrence vers les fils de la categorie d'article
-	 * 	$type_data : rÈfÈrence categorie d'article 
-	 *  $lib_art_categ : libellÈ de la categorie d'article
-	 *  $cell_width : tableau contenant la taille des cellules libellÈ, mois et total respectivement $this->LARGEUR_CELL_LIB, $this->LARGEUR_CELL_MOIS et $this->LARGEUR_CELL_TOTAL.
-	 *  $_REQUEST : $_REQUEST --- RequiËre $_REQUEST['annee_date_deb'], $_REQUEST['mois_date_deb'], $_REQUEST['mois_date_fin'] et $_REQUEST['annee_date_fin']
+	 * 	$tab_fils : tableau index√© de 0 √† n contenant la r√©f√©rence vers les fils de la categorie d'article
+	 * 	$type_data : r√©f√©rence categorie d'article 
+	 *  $lib_art_categ : libell√© de la categorie d'article
+	 *  $cell_width : tableau contenant la taille des cellules libell√©, mois et total respectivement $this->LARGEUR_CELL_LIB, $this->LARGEUR_CELL_MOIS et $this->LARGEUR_CELL_TOTAL.
+	 *  $_REQUEST : $_REQUEST --- Requi√®re $_REQUEST['annee_date_deb'], $_REQUEST['mois_date_deb'], $_REQUEST['mois_date_fin'] et $_REQUEST['annee_date_fin']
 	 */
 	protected function create_line_sous_total_tableauCA($super, $type_data , $lib_art_categ, $addSousTotal = false){
 		$liste_fils = '';
@@ -276,7 +276,7 @@ class pdf_stat_standard {
     			if($m==12){ $m_fin=1; $y_fin=$y+1; }else{$m_fin=$m+1; $y_fin = $y ;}
     			$ca = 0;
     			foreach ($tab_fils as $fils) {  //on parcourt les fils
-					//on Ècrit les fils 
+					//on √©crit les fils 
 					$fi = new art_categ ($fils); 
 					$type_data["art_categ"] = $fils;
 					$ca += charger_doc_CA (array((date("Y-m-d H:i:s", mktime(0,0,0,$m, 1, $y) ) ) , (date("Y-m-d H:i:s", mktime(23,59,59, $m_fin,0, $y_fin) ) )) ,$type_data);			
@@ -284,7 +284,7 @@ class pdf_stat_standard {
     			if($addSousTotal){
     				$this->sousTotaux[$m.' '.$y] += $ca;
     			}
-    			$super->pdf->Cell($this->LARGEUR_CELL_MOIS,6,price_format($ca)." Ä",'LR',0,'R',1);    
+    			$super->pdf->Cell($this->LARGEUR_CELL_MOIS,6,price_format($ca)." ‚Ç¨",'LR',0,'R',1);    
     			++$i;                      
     		}
     		
@@ -293,16 +293,16 @@ class pdf_stat_standard {
 	 	$ca = 0;
 	 	if($_REQUEST['mois_date_fin']==12){ $m_fin=1; $y_fin=$_REQUEST['annee_date_fin']+1; }else{$m_fin=$_REQUEST['mois_date_fin']+1; $y_fin = $_REQUEST['annee_date_fin'] ;}
 	 	foreach ($tab_fils as $fils) {  //on parcourt les fils
-			//on Ècrit les fils 
+			//on √©crit les fils 
 			$fi = new art_categ ($fils); 
 			$type_data["art_categ"] = $fils;
 			$ca += charger_doc_CA (array((date("Y-m-d H:i:s", mktime(0,0,0,$_REQUEST['mois_date_deb'],1 , $_REQUEST['annee_date_deb']) ) ) , (date("Y-m-d H:i:s", mktime(23,59,59, $m_fin ,0, $y_fin) ) )) ,$type_data);
     	}
-	 	$super->pdf->Cell($this->LARGEUR_CELL_TOTAL,6,price_format($ca)." Ä",'LR',0,'R',1);
+	 	$super->pdf->Cell($this->LARGEUR_CELL_TOTAL,6,price_format($ca)." ‚Ç¨",'LR',0,'R',1);
   	}//fin function create_line_sous_total_tableauCA
   	
   	
-  	//CrÈation du ligne de sous total 
+  	//Cr√©ation du ligne de sous total 
 	protected function sous_total_feuille(){
 		//DEBUT totaux par feuille
 		/*$this->pdf->SetFillColor(0,0,0);            //fond noir
@@ -318,12 +318,12 @@ class pdf_stat_standard {
 	    	else{ $mois_deb = 1; }
 	    	//affichage des mois
     		for($m=$mois_deb; $m<=$mois_max ; ++$m ){
-	    		$this->pdf->Cell($this->LARGEUR_CELL_MOIS,6,price_format($this->sousTotaux[$m.' '.$y])." Ä",'LR',0,'R',1);
+	    		$this->pdf->Cell($this->LARGEUR_CELL_MOIS,6,price_format($this->sousTotaux[$m.' '.$y])." ‚Ç¨",'LR',0,'R',1);
 	    		$total += $this->sousTotaux[$m.' '.$y];
 	    		$this->sousTotaux[$m.' '.$y] = 0;
     		}
     	}
-	    $this->pdf->Cell($this->LARGEUR_CELL_TOTAL,6,price_format($total)." Ä",'LR',0,'R',1);
+	    $this->pdf->Cell($this->LARGEUR_CELL_TOTAL,6,price_format($total)." ‚Ç¨",'LR',0,'R',1);
 		$this->pdf->Ln();*/
 	    //FIN totaux par feuille	
 	   
@@ -332,17 +332,17 @@ class pdf_stat_standard {
 	protected function getLib_mois($i){
 		switch ($i){
 			case 1 : return "janvier"; break;
-			case 2 : return "fÈvrier"; break;
+			case 2 : return "f√©vrier"; break;
 			case 3 : return "mars"; break;
 			case 4 : return "avril"; break;
 			case 5 : return "mai"; break;
 			case 6 : return "juin"; break;
 			case 7 : return "juillet"; break;
-			case 8 : return "ao˚t"; break;
+			case 8 : return "ao√ªt"; break;
 			case 9 : return "septembre"; break;
 			case 10 : return "octobre"; break;
 			case 11 : return "novembre"; break;
-			case 12 : return "dÈcembre"; break;
+			case 12 : return "d√©cembre"; break;
 			default : return false; 
 		}
 	}

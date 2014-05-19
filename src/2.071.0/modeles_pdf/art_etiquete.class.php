@@ -140,7 +140,7 @@ class pdf_art_etiquete extends pdf_art_standard {
 	}
 
 	/**
-	 * 0=DESC_CHAR_MAX, 1=Total char de la description, 2=Description coupÈ ‡ DESC_CHAR_MAX
+	 * 0=DESC_CHAR_MAX, 1=Total char de la description, 2=Description coup√© √† DESC_CHAR_MAX
 	 * @param $desc
 	 * @param $tab
 	 * @return bool
@@ -152,8 +152,8 @@ class pdf_art_etiquete extends pdf_art_standard {
 			$tab[2] = substr_count ($desc,"<br>"); //Nb de retours a la ligne
 			$tab[3] = $this->pdf->GetStringWidth('_'); //taille du _ en Mm
 			$tab[4] = floor( $this->ARTICLE_H_DESC / $tab[3]);
-			$max_ln = $tab[4]-1;//nb de lignes affichÈ maximum
-			$char_max_ln = floor( $this->PDF_LARGEUR_MAX / $tab[3]) ; //nombre de charactere affichÈ max par lignes
+			$max_ln = $tab[4]-1;//nb de lignes affich√© maximum
+			$char_max_ln = floor( $this->PDF_LARGEUR_MAX / $tab[3]) ; //nombre de charactere affich√© max par lignes
 			
 			$exploded_desc = explode("<br>",$desc);
 			$desc_char_tt = strlen($desc);
@@ -300,13 +300,13 @@ class pdf_art_etiquete extends pdf_art_standard {
 				// formatage strings pied
 				$string_ht = " Prix: ".$prix_u_ht;
 				$string_valo = "(/".$valo->abrev_valo.")";
-				$string_tva_1 = price_format($prix_u_ht * (1+($this->TAUX_TVA[1] / 100)))." Ä TTC (TVA:".strval($this->TAUX_TVA[1])."%)";
-				$string_tva_2 = price_format($prix_u_ht * (1+($this->TAUX_TVA[2] / 100)))." Ä TTC (TVA:".strval($this->TAUX_TVA[2])."%)";
+				$string_tva_1 = price_format($prix_u_ht * (1+($this->TAUX_TVA[1] / 100)))." ‚Ç¨ TTC (TVA:".strval($this->TAUX_TVA[1])."%)";
+				$string_tva_2 = price_format($prix_u_ht * (1+($this->TAUX_TVA[2] / 100)))." ‚Ç¨ TTC (TVA:".strval($this->TAUX_TVA[2])."%)";
 				
 				$entete .= '$this->SetXY('.$this->ARTICLE_X_PRIX.','.$this->ARTICLE_Y_PRIX.');
 							$this->SetTextColor('.$this->R_PRIX.','.$this->G_PRIX.','.$this->B_PRIX.');
 							$this->SetFont("Arial","B",'.$this->FONT_SIZES[3].');
-							$this->Cell('.$this->ARTICLE_W_PRIX[0].','.$this->ARTICLE_H_PRIX.',"'.$string_ht."Ä HT ".$string_valo.'","LBT",0);
+							$this->Cell('.$this->ARTICLE_W_PRIX[0].','.$this->ARTICLE_H_PRIX.',"'.$string_ht."‚Ç¨ HT ".$string_valo.'","LBT",0);
 							$this->SetFont("Arial","",'.$this->FONT_SIZES[1].');
 							$this->Cell('.$this->ARTICLE_W_PRIX[1].','.$this->ARTICLE_H_PRIX.',"","BT",0,"C");
 							$this->SetFont("Arial","",'.$this->FONT_SIZES[0].');
@@ -337,7 +337,7 @@ class pdf_art_etiquete extends pdf_art_standard {
 	public function getFooter(){
 		/*
 		 global $IMAGES_DIR;
-		 // Information sociÈtÈ
+		 // Information soci√©t√©
 		 $pied = '
 			$this->SetFont("Arial","I",8);
 			$this->SetXY('.$this->MARGE_GAUCHE.', '.$this->MARGE_PIED_HAUTEUR.'-5);

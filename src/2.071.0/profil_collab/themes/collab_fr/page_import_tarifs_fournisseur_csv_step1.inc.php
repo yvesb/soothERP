@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -27,7 +27,7 @@ if(is_object($colonne)) {
 
 <p class="titre">Renseigner les correspondances</p>
 <div>
-Sélectionnez les correspondances entre les informations de LMB et les différentes colonnes de votre fichier CSV.
+SÃ©lectionnez les correspondances entre les informations de LMB et les diffÃ©rentes colonnes de votre fichier CSV.
 <p>
 <form action="import_tarifs_fournisseur_csv_step1_done.php" enctype="multipart/form-data" 
 		method="POST" id="import_tarifs_fournisseur_csv_done" name="import_tarifs_fournisseur_csv_done" 
@@ -74,7 +74,7 @@ foreach ($import_tarifs_fournisseur_csv['liste_entete'] as $entete_corresp) {
 if($fournisseurs_import_tarifs->getId_ref_oem() != ""){
 	?>
 	<p>
-	<input type="button" value="Utiliser les correspondances du précédent import pour ce fournisseur" id="use_old_corres" />
+	<input type="button" value="Utiliser les correspondances du prÃ©cÃ©dent import pour ce fournisseur" id="use_old_corres" />
 	<script type="text/javascript">
 		Event.observe("use_old_corres", "click", function(evt){
 			<?php 

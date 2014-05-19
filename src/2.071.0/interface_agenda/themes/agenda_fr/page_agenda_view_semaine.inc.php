@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("Udate_used", "Udate_deb_semaine", "Udate_fin_semaine", "Udate_now", "numSemaine", "gride_is_locked");
 array_push($page_variables, "Udate_lundi", "Udate_mardi", "Udate_mercredi", "Udate_jeudi", "Udate_vendredi", "Udate_samedi", "Udate_dimanche");
 check_page_variables ($page_variables);
@@ -312,7 +312,7 @@ for($i = 0; $i < count($eventsGrilleAvecDroit); $i++){
 				
 		if($droitvisu == 0){?>
 		event_y = Math.floor(<?php echo strftime("(%H+%M/60)", $eventsGrilleAvecDroit[$index]->getUdate_event($_SESSION["agenda"]["GestionnaireEvenements"])); ?> * 2 * HAUTEUR_DEMIE_HEURE);
-		duree = Math.floor(<?php echo $eventsGrilleAvecDroit[$index]->getDuree_event($_SESSION["agenda"]["GestionnaireEvenements"]); ?> * HAUTEUR_DEMIE_HEURE / 30);//durée en px
+		duree = Math.floor(<?php echo $eventsGrilleAvecDroit[$index]->getDuree_event($_SESSION["agenda"]["GestionnaireEvenements"]); ?> * HAUTEUR_DEMIE_HEURE / 30);//durÃ©e en px
 		eventNode = CreateDivEvenement("eventId_"+id, event_y, event_x, evenementMaxWidthSemaine(), duree, "");
 		$("ZEROsemaine").appendChild(eventNode);
 		event = new_Evenement($("grille_semaine"), $("ZEROsemaine"), eventNode, gestionnaireEvent, <?php 
@@ -342,6 +342,6 @@ resizeMaxHeight();
 <script type="text/javascript">
 
 <?php 
-//@TODO mettre ici le script qui met à jour le petit calendrier 
+//@TODO mettre ici le script qui met Ã  jour le petit calendrier 
 ?>
 </script>

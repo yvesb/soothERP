@@ -3,7 +3,7 @@
 // Affichage RAPPROCHEMENT BANCAIRE automatique
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -54,13 +54,13 @@ page.verify('compta_compte_bancaire_rapprochement_gestion','compta_compte_bancai
 		<br />
 
 		<div style="text-align:center">
-		<span class="bolder">LundiMatin Business</span> va rapprocher les opérations bancaires du compte <?php echo $compte_bancaire->getLib_compte ();?> <?php echo $compte_bancaire->getNumero_compte ();?>  avec le journal de banque <?php echo $journal->getContrepartie();?><br />
+		<span class="bolder">LundiMatin Business</span> va rapprocher les opÃ©rations bancaires du compte <?php echo $compte_bancaire->getLib_compte ();?> <?php echo $compte_bancaire->getNumero_compte ();?>  avec le journal de banque <?php echo $journal->getContrepartie();?><br />
 		<br />
 		<br /><br />
 
 
 
-			(cette opération peut durer plusieurs minutes)<br />
+			(cette opÃ©ration peut durer plusieurs minutes)<br />
 			<div id="rapprochement_auto_result" style="text-align:center" >
 			
 						

@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -43,7 +43,7 @@ window.parent.alerte.alerte_erreur ('Test de la newsletter', "<?php if (isset($e
 }
 else
 {
-window.parent.alerte.alerte_erreur ('Test de la newsletter', 'Un email de test vient de vous être envoyé','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+window.parent.alerte.alerte_erreur ('Test de la newsletter', 'Un email de test vient de vous Ãªtre envoyÃ©','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 
 window.parent.changed = false;
 }

@@ -20,7 +20,7 @@ require ($DIR."_session.inc.php");
 	$impression = 0;
 	if (isset($_REQUEST["impression"])) {$impression	=	1;}
 	
-	//création du niveau de relance
+	//crÃ©ation du niveau de relance
 	$fact_n_r->create_niveau_relance ($id_client_categ, $lib_niveau_relance, $delai_before_next, $id_edition_mode, $id_courrier_joint, $impression);
 
 // *************************************************************************************************************

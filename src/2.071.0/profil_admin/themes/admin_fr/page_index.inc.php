@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -18,11 +18,11 @@ check_page_variables ($page_variables);
 $menu1=array (
 			array('default_content','accueil.php','true','sub_content','Interface administrateur',
 					array (
-							array('separateur','','true','sub_content','Paramétrage&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'),
+							array('separateur','','true','sub_content','ParamÃ©trage&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'),
 							array('smenu_entreprise', 'smenu_entreprise.php','true','sub_content','Entreprise'),
 							array('smenu_annuaire', 'smenu_annuaire.php','true','sub_content','Annuaire'),
 							array('smenu_catalogue', 'smenu_catalogue.php','true','sub_content','Catalogue'),
-							array('smenu_comptabilite', 'smenu_comptabilite.php','true','sub_content','Comptabilité'),
+							array('smenu_comptabilite', 'smenu_comptabilite.php','true','sub_content','ComptabilitÃ©'),
 							array('smenu_affichage', 'smenu_affichage.php','true','sub_content','Affichage'),
 							array('separateur','','true','',''),
 							array('separateur','','true','sub_content','Gestion'),
@@ -30,12 +30,12 @@ $menu1=array (
 							array('smenu_site_internet', 'smenu_site_internet.php','true','sub_content','Interfaces'),
 							array('smenu_communication', 'smenu_communication.php','true','sub_content','Communication'),
 							array('separateur','','true','',''),
-							array('separateur','','true','sub_content','Système'),
-							array('smenu_secusys','smenu_secusys.php','true','sub_content','Sécurité du système'),
+							array('separateur','','true','sub_content','SystÃ¨me'),
+							array('smenu_secusys','smenu_secusys.php','true','sub_content','SÃ©curitÃ© du systÃ¨me'),
 							array('smenu_maintenance','smenu_maintenance.php','true','sub_content','Maintenance'),
-							array('smenu_transfert_donnees','smenu_transfert_donnees.php','true','sub_content','Transfert de données'),
+							array('smenu_transfert_donnees','smenu_transfert_donnees.php','true','sub_content','Transfert de donnÃ©es'),
 							array('smenu_gestion_modules','smenu_gestion_modules.php','true','sub_content','Gestion des modules'),
-//							array('import_maj_serveur','import_maj_serveur.php','true','sub_content','Mise à jour')
+//							array('import_maj_serveur','import_maj_serveur.php','true','sub_content','Mise Ã  jour')
 							)
 							
 					)
@@ -118,8 +118,8 @@ if (isset($modules)) {
 <script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_systeme.js"></script>
 <script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_compta_export.js"></script>
 
-<!-- Modification éffectuée par Yves Bourvon -->
-<!-- On teste l'abscence de valeur FALSE car retour glob() imprévisible si array vide (Système serveur dépendant) -->
+<!-- Modification Ã©ffectuÃ©e par Yves Bourvon -->
+<!-- On teste l'abscence de valeur FALSE car retour glob() imprÃ©visible si array vide (SystÃ¨me serveur dÃ©pendant) -->
 <?php if(glob($DIR_PLUS.$_SESSION['theme']->getDir_theme()."javascript/*.js") != false) 
 { 
 foreach (glob($DIR_PLUS.$_SESSION['theme']->getDir_theme()."javascript/*.js") as $filejs){ ?>
@@ -131,7 +131,7 @@ foreach (glob($DIR_PLUS.$_SESSION['theme']->getDir_theme()."javascript/*.js") as
 <script type="text/javascript"> 
 <!--/*--><![CDATA[//><!--
 
-//vérif d'état du log de session
+//vÃ©rif d'Ã©tat du log de session
 
 function verif_session() {
 	$("code_relogin").value="";
@@ -309,7 +309,7 @@ foreach ($smenu[5] as $ssmenu) {
 $i++;
  }
 ?>
-	//Construction et placement des éléments du menu principal
+	//Construction et placement des Ã©lÃ©ments du menu principal
 	//require _general.js
 	construct_menu ();
 	
@@ -326,16 +326,16 @@ $i++;
 		$("framealert").style.display = "none";
 		$("alert_onException").style.display = "none";
 	}, false);
-	//mise à hauteur des éléments principaux
+	//mise Ã  hauteur des Ã©lÃ©ments principaux
 	//require _general.js
 	setsize_to_element ();
 	set_tomax_height('sub_content' , -20);
-	// mise à la bonne largeur du sub_content
+	// mise Ã  la bonne largeur du sub_content
 	set_size_to_sub_content ();
-	//observateur de resize pour mise à hauteur des éléments principaux
+	//observateur de resize pour mise Ã  hauteur des Ã©lÃ©ments principaux
 	Event.observe(window, "resize", function() {setsize_to_element(); set_tomax_height('sub_content' , -20); set_size_to_sub_content ();}, false);
 	
-	//lancement de la page par défaut
+	//lancement de la page par dÃ©faut
 	//require _general.js
 	
 	page.verify('<?php echo $default_page[0]?>','<?php echo $default_page[1]?>','<?php echo $default_page[2]?>','<?php echo $default_page[3]?>');
@@ -343,7 +343,7 @@ $i++;
 }
 
 var tempo_session=<?php echo round($USER_SESSION_LT / $TEST_SESSION_TIMER);?>000;
-// verif de validité session
+// verif de validitÃ© session
 setTimeout ("verif_session()", tempo_session);
 
 Event.observe(window, "load", initEventHandlers, false);

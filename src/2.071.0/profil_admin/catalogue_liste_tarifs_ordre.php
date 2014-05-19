@@ -11,16 +11,16 @@ require ($DIR."_session.inc.php");
 
 
 // *************************************************
-// Controle des données fournies par le formulaire
+// Controle des donnÃ©es fournies par le formulaire
 
 
 $new_ordre				= $_REQUEST['ordre'];
 $new_ordre_other	= $_REQUEST['ordre_other'];
 
-//on récupére fonction de l'ordre la premier ref
+//on rÃ©cupÃ©re fonction de l'ordre la premier ref
 $id_tarif	= getId_tarif_from_ordre($_REQUEST['ordre_other']);
 
-//on récupére fonction de l'ordre la deuxième ref
+//on rÃ©cupÃ©re fonction de l'ordre la deuxiÃ¨me ref
 $id_tarif_other	= getId_tarif_from_ordre ($_REQUEST['ordre']);
 
 

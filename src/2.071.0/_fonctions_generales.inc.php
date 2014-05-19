@@ -17,7 +17,7 @@ function load_class ($class) {
 }	
 
 
-// Classe objet fictive permettant de créer des objets à la volée sans erreur PHP
+// Classe objet fictive permettant de crÃ©er des objets Ã  la volÃ©e sans erreur PHP
 class objet_virtuel {
 	function __construct() {}
 }
@@ -29,12 +29,12 @@ function import_file ($local_taxe_file, $distant_taxe_file) {
 }
 	
 	
-// Vérifie l'existence des variables pour l'affichage de la page.
+// VÃ©rifie l'existence des variables pour l'affichage de la page.
 function check_page_variables ($tab) {
 	$not_defined = 0;
 
 	foreach ($tab as $variable) {
-		// Recherche du nom de la variable si il s'agit d'un élément de tableau
+		// Recherche du nom de la variable si il s'agit d'un Ã©lÃ©ment de tableau
 		$var_name = $variable;
 		$var_component = "";
 		if (strpos($variable, "[")) {
@@ -50,11 +50,11 @@ function check_page_variables ($tab) {
 	}
 
 	if (!$not_defined) { 
-		// Toutes les variables sont définies
+		// Toutes les variables sont dÃ©finies
 		return true;
 	}
 
-	// Erreur : Au moins une variable non affichéey
+	// Erreur : Au moins une variable non affichÃ©ey
 	error_checking_page_variables ($tab);
 
 	exit();
@@ -62,7 +62,7 @@ function check_page_variables ($tab) {
 
 
 
-// Transmet les attributs d'un objet à un autre
+// Transmet les attributs d'un objet Ã  un autre
 function transfert_attributs (&$objet1, $objet2) {
 	global $sql;
 	
@@ -76,20 +76,20 @@ function transfert_attributs (&$objet1, $objet2) {
 }
 
 
-// Ordonne un tableau par référence d'objet parent
-// Ajoute l'information "indentation" à chacun des objets du tableau
+// Ordonne un tableau par rÃ©fÃ©rence d'objet parent
+// Ajoute l'information "indentation" Ã  chacun des objets du tableau
 function order_by_parent (&$tab1, $tab2, $cle1, $cle2, $ref_cle_parent, $ref_cle_ignored = "") {
 	static $tab1 = array();
 	static $indentation = 0;
 
 	for ($i=0; $i<count($tab2); $i++) {
-		// Si la clé indiquant le parent n'est pas égale à ref_cle_parent, on passe a l'enregistrement suivant
+		// Si la clÃ© indiquant le parent n'est pas Ã©gale Ã  ref_cle_parent, on passe a l'enregistrement suivant
 		if ($tab2[$i]->{$cle2} != $ref_cle_parent) { continue; }
 		
-		// Si l'enregistrement a déjà été inséré dans le tableau, on passe au suivant
+		// Si l'enregistrement a dÃ©jÃ  Ã©tÃ© insÃ©rÃ© dans le tableau, on passe au suivant
 		if (isset($tab1[$tab2[$i]->{$cle1}])) { continue; }
 		
-		// Si l'enregistrement ne doit pas etre enregistré: on saute
+		// Si l'enregistrement ne doit pas etre enregistrÃ©: on saute
 		if ($tab2[$i]->{$cle1} == $ref_cle_ignored) { continue; }
 
 		// Ajout de l'enregistrement en cours au tableau 1
@@ -105,20 +105,20 @@ function order_by_parent (&$tab1, $tab2, $cle1, $cle2, $ref_cle_parent, $ref_cle
 	return $tab1;
 }
 
-// Ordonne un tableau par référence d'objet parent
-// Ajoute l'information "indentation" à chacun des objets du tableau
+// Ordonne un tableau par rÃ©fÃ©rence d'objet parent
+// Ajoute l'information "indentation" Ã  chacun des objets du tableau
 function order_by_parent_bis (&$tab1_bis, $tab2_bis, $cle1_bis, $cle2_bis, $ref_cle_parent_bis, $ref_cle_ignored_bis = "") {
 	static $tab1_bis = array();
 	static $indentation_bis = 0;
 
 	for ($i=0; $i<count($tab2_bis); $i++) {
-		// Si la clé indiquant le parent n'est pas égale à ref_cle_parent, on passe a l'enregistrement suivant
+		// Si la clÃ© indiquant le parent n'est pas Ã©gale Ã  ref_cle_parent, on passe a l'enregistrement suivant
 		if ($tab2_bis[$i]->{$cle2_bis} != $ref_cle_parent_bis) { continue; }
 		
-		// Si l'enregistrement a déjà été inséré dans le tableau, on passe au suivant
+		// Si l'enregistrement a dÃ©jÃ  Ã©tÃ© insÃ©rÃ© dans le tableau, on passe au suivant
 		if (isset($tab1_bis[$tab2_bis[$i]->{$cle1_bis}])) { continue; }
 		
-		// Si l'enregistrement ne doit pas etre enregistré: on saute
+		// Si l'enregistrement ne doit pas etre enregistrÃ©: on saute
 		if ($tab2_bis[$i]->{$cle1_bis} == $ref_cle_ignored_bis) { continue; }
 
 		// Ajout de l'enregistrement en cours au tableau 1

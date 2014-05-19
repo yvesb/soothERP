@@ -12,7 +12,7 @@ require ($DIR."_session.inc.php");
 include_once ($CONFIG_DIR."profil_client.config.php");
 // chargement de la class du profil
 contact::load_profil_class($CLIENT_ID_PROFIL);
-// Préparations des variables 
+// PrÃ©parations des variables 
 //_vardump($_REQUEST);
 
 	$infos	=	array();
@@ -34,11 +34,11 @@ contact::load_profil_class($CLIENT_ID_PROFIL);
 	$infos['edition_mode_favori']		= 	$_REQUEST["edition_mode_favori_".$_REQUEST["id_client_categ"]];
 	$infos['cycle_relance']				= 	$_REQUEST["cycle_relance_".$_REQUEST["id_client_categ"]];
 
-	//création de la catégorie
+	//crÃ©ation de la catÃ©gorie
 	_vardump($infos);
 	contact_client::maj_client_categorie ($infos);
 
-	//Mise à jour de la catégorie  par defaut
+	//Mise Ã  jour de la catÃ©gorie  par defaut
 	if (isset($_REQUEST["defaut_client_categ_".$_REQUEST["id_client_categ"]]) && $_REQUEST['id_client_categ'] != $DEFAUT_ID_CLIENT_CATEG) {
 		maj_configuration_file ("profil_client.config.php", "maj_line", "\$DEFAUT_ID_CLIENT_CATEG	= ", "\$DEFAUT_ID_CLIENT_CATEG	= ".$_REQUEST['id_client_categ']."; ", $CONFIG_DIR);
 	}

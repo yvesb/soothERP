@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES", "fiches", "form['ref_contact']", "form['page_to_show']", "form['fiches_par_page']", "nb_fiches", "form['orderby']", "form['orderorder']", "form['id_type_doc']", "form['id_etat_doc']");
 check_page_variables ($page_variables);
 
@@ -27,7 +27,7 @@ function barre_navigation($nbtotal,
 													
 {
 	// --------------------------------------------------------------------
-	global $cfg_nb_pages; // Nb de n° de pages affichées dans la barre
+	global $cfg_nb_pages; // Nb de nÂ° de pages affichÃ©es dans la barre
 global $DIR;
 	$barre= "";	$lien_on 	= "&nbsp;<a href='#' id='link_pagi_{cible}'>{lien}</a>&nbsp;
 								<script type='text/javascript'>
@@ -37,7 +37,7 @@ global $DIR;
 	// --------------------------------------------------------------------
     
 
-	// début << .
+	// dÃ©but << .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -57,7 +57,7 @@ global $DIR;
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
 
 
-	// précédent < .
+	// prÃ©cÃ©dent < .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -163,7 +163,7 @@ function image_html($img)
 
 //
 //
-//création de la barre de nav
+//crÃ©ation de la barre de nav
 //
 //
 
@@ -180,7 +180,7 @@ function image_html($img)
 
 
 
-// Affichage des résultats
+// Affichage des rÃ©sultats
 ?>
 <div   class="mt_size_optimise">
 <div id="affresult">
@@ -243,8 +243,8 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 	</script>
 	</td>
 	<td style="text-align:left">
-		<a  href="#" id="link_contact_doc_<?php echo ($fiche->ref_doc)?>" style="display:block; width:100%" alt="<?php	if ($fiche->nom_contact) { echo ($fiche->nom_contact); }?>" title="<?php	if ($fiche->nom_contact) { echo str_replace("€", "&euro;", $fiche->nom_contact); }?>">
-		<?php	if ($fiche->nom_contact) { echo substr(str_replace("€", "&euro;", $fiche->nom_contact), 0, 28); }?>&nbsp;
+		<a  href="#" id="link_contact_doc_<?php echo ($fiche->ref_doc)?>" style="display:block; width:100%" alt="<?php	if ($fiche->nom_contact) { echo ($fiche->nom_contact); }?>" title="<?php	if ($fiche->nom_contact) { echo str_replace("â‚¬", "&euro;", $fiche->nom_contact); }?>">
+		<?php	if ($fiche->nom_contact) { echo substr(str_replace("â‚¬", "&euro;", $fiche->nom_contact), 0, 28); }?>&nbsp;
 		</a>
 	<script type="text/javascript">
 	Event.observe("link_contact_doc_<?php echo ($fiche->ref_doc)?>", "click",  function(evt){Event.stop(evt); <?php echo $_REQUEST['fonction_retour']?>(<?php echo $_REQUEST['param_retour']?>, '<?php echo ($fiche->ref_doc)?>');}, false);

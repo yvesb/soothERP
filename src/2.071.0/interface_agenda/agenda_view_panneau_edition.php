@@ -7,7 +7,7 @@ require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
-//@TODO Définir $event_duree_moyenne
+//@TODO DÃ©finir $event_duree_moyenne
 $event_duree_moyenne = 1800; // = 30 min
 
 $id_graphic_event = "";
@@ -21,29 +21,29 @@ $note_event 			= "";
 
 $bt_maj_visible = "vierge"; 
 
-// L'EVENT existe déjà en BD ***************************************************************
+// L'EVENT existe dÃ©jÃ  en BD ***************************************************************
 if(isset($_REQUEST["ref_event"]) && $_REQUEST["ref_event"] != ""){
 	$event = new Event($_REQUEST["ref_event"]);	
 	if(!$event->getRef_event()){
-		echo "La référence de l'évènement est mal formatée";
+		echo "La rÃ©fÃ©rence de l'Ã©vÃ¨nement est mal formatÃ©e";
 		exit;
 	}
 	
 	if(isset($_REQUEST["id_graphic_event"]) && is_numeric($_REQUEST["id_graphic_event"])){
 		if(!isset($_REQUEST["id_graphic_event"])){
-			echo "L'identifiant de l'évènement n'est pas spécifié";
+			echo "L'identifiant de l'Ã©vÃ¨nement n'est pas spÃ©cifiÃ©";
 			exit;
 		}
 		$id_graphic_event = $_REQUEST["id_graphic_event"];
 		
 		if(!isset($_REQUEST["Udate_event"]) || !is_numeric($_REQUEST["Udate_event"]) ){
-			echo "La date de l'évènement n'est pas spécifiée";
+			echo "La date de l'Ã©vÃ¨nement n'est pas spÃ©cifiÃ©e";
 			exit;
 		}
 		$event->setUdate_event($_REQUEST["Udate_event"]/1000);
 		
 		if(!isset($_REQUEST["duree_event"]) || !is_numeric($_REQUEST["duree_event"]) ){
-			echo "La durée de l'évènement n'est pas spécifiée";
+			echo "La durÃ©e de l'Ã©vÃ¨nement n'est pas spÃ©cifiÃ©e";
 			exit;
 		}
 		$event->setDuree_event(round($_REQUEST["duree_event"]/60));
@@ -62,19 +62,19 @@ if(isset($_REQUEST["ref_event"]) && $_REQUEST["ref_event"] != ""){
 }// L'EVENT n'existe pas en BD. Il n'est visible QUE graphiquement *************************
 	elseif(isset($_REQUEST["id_graphic_event"]) && is_numeric($_REQUEST["id_graphic_event"])){
 	if(!isset($_REQUEST["id_graphic_event"])){
-		echo "L'identifiant de l'évènement n'est pas spécifié";
+		echo "L'identifiant de l'Ã©vÃ¨nement n'est pas spÃ©cifiÃ©";
 		exit;
 	}
 	$id_graphic_event = $_REQUEST["id_graphic_event"];
 	
 	if(!isset($_REQUEST["Udate_event"]) || !is_numeric($_REQUEST["Udate_event"]) ){
-		echo "La date de l'évènement n'est pas spécifiée";
+		echo "La date de l'Ã©vÃ¨nement n'est pas spÃ©cifiÃ©e";
 		exit;
 	}
 	$Udate_event_deb = $_REQUEST["Udate_event"]/1000;
 	
 	if(!isset($_REQUEST["duree_event"]) || !is_numeric($_REQUEST["duree_event"]) ){
-		echo "La durée de l'évènement n'est pas spécifiée";
+		echo "La durÃ©e de l'Ã©vÃ¨nement n'est pas spÃ©cifiÃ©e";
 		exit;
 	}
 	$Udate_event_fin = $Udate_event_deb + round($_REQUEST["duree_event"]);

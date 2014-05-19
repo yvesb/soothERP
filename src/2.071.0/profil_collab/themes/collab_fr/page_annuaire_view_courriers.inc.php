@@ -3,7 +3,7 @@
 // CHARGEMENTS DES COURRIERS D'UN CONTACT
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES", "courriers", "coordonnees", "form['id_profil']", "form['page_to_show']", "form['courriers_par_page']", "nb_courriers", "profils", "form['orderby']", "form['orderorder']");
 check_page_variables ($page_variables);
 
@@ -16,17 +16,17 @@ check_page_variables ($page_variables);
 // barre_navigation
 // ------------------------------------------------------------------------
 
-function barre_navigation($nbtotal, //nb total d'élement
-                          $nbenr,  //num de la page à afficher
-                          $cfg_nbres_ppage, //nb d'élément par page à afficger
-                          $debut, //début de l'interval à afficher
-													$cfg_nb_pages, //nb d'élément par page à afficger
-                          $idformtochange, //le input stockant numéro de la page affichée 
-													$fonctiontolauch) //fonction javascript à appeler lors du changement de page
+function barre_navigation($nbtotal, //nb total d'Ã©lement
+                          $nbenr,  //num de la page Ã  afficher
+                          $cfg_nbres_ppage, //nb d'Ã©lÃ©ment par page Ã  afficger
+                          $debut, //dÃ©but de l'interval Ã  afficher
+													$cfg_nb_pages, //nb d'Ã©lÃ©ment par page Ã  afficger
+                          $idformtochange, //le input stockant numÃ©ro de la page affichÃ©e 
+													$fonctiontolauch) //fonction javascript Ã  appeler lors du changement de page
 													
 {
 	// --------------------------------------------------------------------
-	global $cfg_nb_pages; // Nb de n° de pages affichées dans la barre
+	global $cfg_nb_pages; // Nb de nÂ° de pages affichÃ©es dans la barre
 global $DIR;
 	$barre= "";	$lien_on 	= "&nbsp;<a href='#' id='link_pagi_{cible}'>{lien}</a>&nbsp;
 								<script type='text/javascript'>
@@ -36,7 +36,7 @@ global $DIR;
 	// --------------------------------------------------------------------
     
 
-	// début << .
+	// dÃ©but << .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -56,7 +56,7 @@ global $DIR;
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
 
 
-	// précédent < .
+	// prÃ©cÃ©dent < .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -162,7 +162,7 @@ function image_html($img)
 
 //
 //
-//création de la barre de nav
+//crÃ©ation de la barre de nav
 //
 //
 
@@ -170,13 +170,13 @@ function image_html($img)
 	$barre_nav = "";
 	$debut =(($form['page_to_show']-1)*$form['courriers_par_page']);
 	//
-	$barre_nav .= barre_navigation(	$nb_courriers,	//nb total d'élement
-																	$form['page_to_show'],	//num de la page à afficher
-																	$form['courriers_par_page'], //nb d'élément par page à afficger
-																	$debut,		//début de l'interval à afficher
-																	$cfg_nb_pages,	//nb d'élément par page à afficger
-																	'page_to_show_s',//le input stockant numéro de la page affichée 
-																 	'page.annuaire_recherche_courriers()'); //fonction javascript à appeler lors du changement de page
+	$barre_nav .= barre_navigation(	$nb_courriers,	//nb total d'Ã©lement
+																	$form['page_to_show'],	//num de la page Ã  afficher
+																	$form['courriers_par_page'], //nb d'Ã©lÃ©ment par page Ã  afficger
+																	$debut,		//dÃ©but de l'interval Ã  afficher
+																	$cfg_nb_pages,	//nb d'Ã©lÃ©ment par page Ã  afficger
+																	'page_to_show_s',//le input stockant numÃ©ro de la page affichÃ©e 
+																 	'page.annuaire_recherche_courriers()'); //fonction javascript Ã  appeler lors du changement de page
 																			
 
 // Affichage des erreurs
@@ -187,7 +187,7 @@ foreach ($_ALERTES as $alerte => $value) {
 // Formulaire de recherche
 ?>
 
-<!-- 	Script pour gérer la pop-up "courrier_choix_type" pour choisir lors de la création d'un courrier le type et 
+<!-- 	Script pour gÃ©rer la pop-up "courrier_choix_type" pour choisir lors de la crÃ©ation d'un courrier le type et 
 			le modele d'impression d 'un courrier -->
 <script type="text/javascript">
 	centrage_element("courrier_choix_type");
@@ -204,7 +204,7 @@ foreach ($_ALERTES as $alerte => $value) {
 	});
 </script>
 
-<!-- Script pour gérer la pop-up "courrier_options" pour gérer les option d'un courrier -->
+<!-- Script pour gÃ©rer la pop-up "courrier_options" pour gÃ©rer les option d'un courrier -->
 <script type="text/javascript">
 	centrage_element("courrier_options");
 	Event.observe(window, "resize", function(evt){centrage_element("courrier_options");});
@@ -212,7 +212,7 @@ foreach ($_ALERTES as $alerte => $value) {
 <br/>
 <div style=" text-align:left; padding:0 20px">
 	<?php 
-		//@TODO COURRIER : changer l'image du bouton test en [Rédaction d'un nouveau message]
+		//@TODO COURRIER : changer l'image du bouton test en [RÃ©daction d'un nouveau message]
 	?> 
 	<a  href="#" id="nouveau_message"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-redac_nouv_msg.gif" /></a>
 	<?php // integration gmail 
@@ -240,7 +240,7 @@ if(count($coordonnees)>0) {
 }
 else {
 ?>
-	<span  href="#" id="gmail_messages" style="float:right">Ajoutez une adresse email aux coordonnées pour voir les mails sur Gmail</span>
+	<span  href="#" id="gmail_messages" style="float:right">Ajoutez une adresse email aux coordonnÃ©es pour voir les mails sur Gmail</span>
 <?php
 }
 ?>
@@ -273,7 +273,7 @@ else {
 								<span id="order_objet" style="cursor:pointer;font-weight:bold" >Objet</span>
 							</td>
 							<td style="text-align:left;" >
-								<span id="order_expediteur" style="cursor:pointer;font-weight:bold" >Expéditeur</span>
+								<span id="order_expediteur" style="cursor:pointer;font-weight:bold" >ExpÃ©diteur</span>
 							</td>
 							<td></td>
 							<td style="text-align:left;" >
@@ -320,18 +320,18 @@ else {
 						</tr>
 						<tr id="ligne_courrier_<?php echo $courrier->getId_courrier(); ?>" >
 						<?php 
-							// Colore la ligne en fonction de l'état du courrier
+							// Colore la ligne en fonction de l'Ã©tat du courrier
 							$color_line = "";
 							switch ($courrier->getId_etat_courrier()) {
-								case 1:{$color_line = "color:red;"; break;}	// état : En cours de rédaction
-								case 2:{$color_line = ""; break;}						// état : Courrié rédigé	
-								case 3:{$color_line = "color:gray;"; break;} // état : Courrié annulé
+								case 1:{$color_line = "color:red;"; break;}	// Ã©tat : En cours de rÃ©daction
+								case 2:{$color_line = ""; break;}						// Ã©tat : CourriÃ© rÃ©digÃ©	
+								case 3:{$color_line = "color:gray;"; break;} // Ã©tat : CourriÃ© annulÃ©
 								default:{$color_line = ""; break;}
 							}
 						?>
 							<td style="text-align:center;<?php echo $color_line;?>" >
 								<?php 
-									//@TODO COURRIER : emplacement du BOUTON suivi (petite étoile plus ou moins comme dans Gmail) 
+									//@TODO COURRIER : emplacement du BOUTON suivi (petite Ã©toile plus ou moins comme dans Gmail) 
 								?>
 								&nbsp;
 							</td>
@@ -412,22 +412,22 @@ else {
 										$("envoyer_courrier_<?php echo $courrier->getId_courrier();?>").style.fontWeight="";
 										<?php
 											//@TODO COURRIER : RAFRECHIR LA LISTE DES COURRIERS QUAND ON IMPRIME UN COURRIER
-											//il y a un changement d'état -> changement de couleur
+											//il y a un changement d'Ã©tat -> changement de couleur
 											/*$("ligne_courrier_<?php echo $courrier->getId_courrier(); ?>").style.color = "black";*/
 										?>
 									}, false);
 
 									<?php 
-										//@TODO COURRIER : Gestion du FAX : emplacement du code Javascript qui gère le bouton
+										//@TODO COURRIER : Gestion du FAX : emplacement du code Javascript qui gÃ¨re le bouton
 									?>
 									Event.observe("courrier_fax_<?php echo $courrier->getId_courrier();?>", "click",  function(evt){
 										Event.stop(evt); 
-										alert("fonction non gérée");
+										alert("fonction non gÃ©rÃ©e");
 										$("choix_send_courrier_<?php echo $courrier->getId_courrier();?>").style.display="none";
 										$("envoyer_courrier_<?php echo $courrier->getId_courrier();?>").style.fontWeight="";
 										<?php
 												//@TODO COURRIER : RAFRECHIR LA LISTE DES COURRIERS QUAND ON IMPRIME UN COURRIER
-												//il y a un changement d'état -> changement de couleur
+												//il y a un changement d'Ã©tat -> changement de couleur
 												/*$("ligne_courrier_<?php echo $courrier->getId_courrier(); ?>").style.color = "black";*/
 											?>
 									}, false);
@@ -435,14 +435,14 @@ else {
 									Event.observe("courrier_email_<?php echo $courrier->getId_courrier();?>", "click",  function(evt){
 										Event.stop(evt);
 									 	<?php
-										 		//@TODO COURRIER : MODES_EDITIONS : gérer porprement le paramètre mode_edition -> Voir table editions_modes 
+										 		//@TODO COURRIER : MODES_EDITIONS : gÃ©rer porprement le paramÃ¨tre mode_edition -> Voir table editions_modes 
 										?>
 										PopupCentrer("courriers_editing_email.php<?php echo "?id_courrier=".$courrier->getId_courrier()."&mode_edition=2&code_pdf_modele=".$courrier->getCode_pdf_modele(); ?>",800,450,"menubar=no,statusbar=no,scrollbars=yes,resizable=yes");
 										$("choix_send_courrier_<?php echo $courrier->getId_courrier();?>").style.display="none";
 										$("envoyer_courrier_<?php echo $courrier->getId_courrier();?>").style.fontWeight="";
 										<?php
 												//@TODO COURRIER : RAFRECHIR LA LISTE DES COURRIERS QUAND ON IMPRIME UN COURRIER
-												//il y a un changement d'état -> changement de couleur
+												//il y a un changement d'Ã©tat -> changement de couleur
 												/*$("ligne_courrier_<?php echo $courrier->getId_courrier(); ?>").style.color = "black";*/
 											?>
 									}, false);
@@ -482,17 +482,17 @@ else {
 	<?php echo $barre_nav;?>
 </div>
 
-<!-- Pour débugguer mettre display:block -->
+<!-- Pour dÃ©bugguer mettre display:block -->
 <div style="text-align:right; display:none;">
 	<?php $d = new DateTime();
-				echo "dernière mise à jour de la page :".$d->format("H:i:s"); ?><br/>
+				echo "derniÃ¨re mise Ã  jour de la page :".$d->format("H:i:s"); ?><br/>
 	nb_courriers<input value="<?php echo $nb_courriers;?>" /><br/>
 	form[page_to_show]<input value="<?php echo $form['page_to_show'];?>" /><br/>
 	form[courriers_par_page]<input value="<?php echo $form['courriers_par_page'];?>" /><br/>
 	debut<input value="<?php echo $debut;?>" /><br/>
 	cfg_nb_pages<input value="<?php echo $cfg_nb_pages;?>" /><br/>
 
-	<!-- Inputs nécessaires pour la barre de navigation  -->
+	<!-- Inputs nÃ©cessaires pour la barre de navigation  -->
 	ref_contact<input type="text" name="ref_contact" id="ref_contact" value="<?php echo $ref_contact;?>"/><br/>
 	page_to_show<input type="text" name="page_to_show" id="page_to_show" value="1"/><br/>
 	page_to_show_s<input type="text" name="page_to_show_s" id="page_to_show_s" value="1"/><br/>
@@ -511,11 +511,11 @@ else {
 }*/
 </SCRIPT>
 
-<!-- Script pour trier les résultats suivant le suivi, l'objet, l'expediteu ou la date -->
+<!-- Script pour trier les rÃ©sultats suivant le suivi, l'objet, l'expediteu ou la date -->
 <SCRIPT type="text/javascript">
 Event.observe("order_suivi", "click",  function(evt){
 	Event.stop(evt);
-	//Pour l'instant, le suivi des courriers n'est pas géré, donc, on le traite comme quand on clic sur objet
+	//Pour l'instant, le suivi des courriers n'est pas gÃ©rÃ©, donc, on le traite comme quand on clic sur objet
 	$('orderby_s').value='objet';
 	$('orderorder_s').value='<?php if ($form['orderorder']=="ASC" && $form['orderby']=="objet") {echo "DESC";} else {echo "ASC";}?>';
 	page.annuaire_recherche_courriers();

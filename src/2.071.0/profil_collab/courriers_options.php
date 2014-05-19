@@ -27,7 +27,7 @@ if(!isset($_REQUEST['cible'])){
 $cible = $_REQUEST['cible'];
 
 if(!isset($_REQUEST['ref_destinataire'])){
-	echo "La référence du destinataire est inconnue";
+	echo "La rÃ©fÃ©rence du destinataire est inconnue";
 	exit;
 }
 $ref_destinataire = $_REQUEST['ref_destinataire'];

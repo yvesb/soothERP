@@ -13,19 +13,19 @@ final class livraison_modes {
 function __construct($id_livraison_mode = "") {
 	global $bdd;
 
-	// Controle si la id_livraison_mode est précisée
+	// Controle si la id_livraison_mode est prÃ©cisÃ©e
 	if (!$id_livraison_mode) { return false; }
 
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT id_livraison_mode, ref_article
 						FROM livraisons_modes 
 						WHERE id_livraison_mode = '".$id_livraison_mode."' ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si la id_art_modele est trouvée
+	// Controle si la id_art_modele est trouvÃ©e
 	if (!$liv_mode = $resultat->fetchObject()) { return false; }
 
-	// Attribution des informations à l'objet
+	// Attribution des informations Ã  l'objet
 	$this->id_livraison_mode 		= $id_livraison_mode;
 	$this->ref_article					= $liv_mode->ref_article;
 	$this->article						= new article($this->ref_article);
@@ -49,20 +49,20 @@ function create($lib_livraison_mode, $abrev_livraison_mode, $ref_transporteur) {
 		$GLOBALS['_ALERTES']['ref_transporteur_vide'] = 1;
 	}
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 	
-	//établir notre transporteur comme constructeur de l'article (donc lui attribuer le profil constructeur
+	//Ã©tablir notre transporteur comme constructeur de l'article (donc lui attribuer le profil constructeur
 	$this->check_transporteur_as_constructeur ($ref_transporteur);
 
-	//verification d'un art_categ définie par défaut pour le mode de livraison
+	//verification d'un art_categ dÃ©finie par dÃ©faut pour le mode de livraison
 	if (!$LIVRAISON_MODE_ART_CATEG) {
 		$LIVRAISON_MODE_ART_CATEG = $this->check_art_categ_livraison_exist ();
 	}
 	
-	//création de l'article
+	//crÃ©ation de l'article
 	$stocks_alertes = array();
 	$code_barre = array();
 	$infos_generales['modele']	=	"service";
@@ -102,7 +102,7 @@ function create($lib_livraison_mode, $abrev_livraison_mode, $ref_transporteur) {
 	$this->article->create($infos_generales, $infos_modele, $caracs, $formules_tarifs, $composants, $liaisons);
 	$this->article->maj_article_modele_spe ($MODELE_SPE_LIVRAISON);
 	
-	//création du mode de livraison
+	//crÃ©ation du mode de livraison
 	$query = "INSERT INTO livraisons_modes (ref_article)
 						VALUES ('".$this->article->getRef_article()."') ";
 	$bdd->exec ($query);
@@ -128,20 +128,20 @@ function modifier($lib_livraison_mode, $abrev_livraison_mode, $ref_transporteur)
 		$GLOBALS['_ALERTES']['ref_transporteur_vide'] = 1;
 	}
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 	
-	//établir notre transporteur comme constructeur de l'article (donc lui attribuer le profil constructeur
+	//Ã©tablir notre transporteur comme constructeur de l'article (donc lui attribuer le profil constructeur
 	$this->check_transporteur_as_constructeur ($ref_transporteur);
 
-	//verification d'un art_categ définie par défaut pour le mode de livraison
+	//verification d'un art_categ dÃ©finie par dÃ©faut pour le mode de livraison
 	if (!$LIVRAISON_MODE_ART_CATEG) {
 		$LIVRAISON_MODE_ART_CATEG = $this->check_art_categ_livraison_exist ();
 	}
 	
-	//mise à jour de l'article associé
+	//mise Ã  jour de l'article associÃ©
 	$infos_generales = array();
 	$infos_generales['lib_article'] 			= trim($lib_livraison_mode);
 	$infos_generales['lib_ticket']				= $abrev_livraison_mode;
@@ -169,7 +169,7 @@ function supprimer() {
 function create_zone($liste_cp, $id_pays) {
 	global $bdd;
 
-	//création de la zone de livraison
+	//crÃ©ation de la zone de livraison
 	$query = "INSERT INTO livraisons_modes_zones (id_livraison_mode, id_pays, liste_cp)
 						VALUES ('".$this->id_livraison_mode."', '".$id_pays."', '".$liste_cp."') ";
 	$bdd->exec ($query);
@@ -198,7 +198,7 @@ function supprimer_zone($id_livraison_zone) {
 
 	return true;
 }
-//cout de transport général
+//cout de transport gÃ©nÃ©ral
 function create_cost($base_calcul, $liste_cost) {
 	global $bdd;
 
@@ -263,14 +263,14 @@ function charger_livraisons_modes_zone() {
 
 
 	$liste_livraison_zones = array();
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT id_livraison_zone, id_livraison_mode, id_pays, liste_cp
 						FROM livraisons_modes_zones 
 						WHERE id_livraison_mode = '".$this->id_livraison_mode."'
 						 ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si la id_art_modele est trouvée
+	// Controle si la id_art_modele est trouvÃ©e
 	while ($liv_zone = $resultat->fetchObject()) { 
 		$liste_livraison_zones[] = $liv_zone;
 	}
@@ -283,7 +283,7 @@ function charger_livraisons_modes_cost() {
 
 
 	$liste_livraison_tarifs = array();
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT id_livraison_mode, base_calcul, indice_min, formule
 						FROM livraisons_modes_tarifs 
 						WHERE id_livraison_mode = '".$this->id_livraison_mode."'
@@ -291,7 +291,7 @@ function charger_livraisons_modes_cost() {
 						 ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si la id_art_modele est trouvée
+	// Controle si la id_art_modele est trouvÃ©e
 	while ($liv_tarifs = $resultat->fetchObject()) { 
 		$liste_livraison_tarifs[] = $liv_tarifs;
 	}
@@ -335,9 +335,9 @@ function check_art_categ_livraison_exist () {
 						WHERE id_modele_spe = '".$LIVRAISON_MODE_ART_CATEG."' ";
 	$resultat = $bdd->query ($query);
 	
-	// Controle si la ref_art_categ est trouvée
+	// Controle si la ref_art_categ est trouvÃ©e
 	if (!$art_categ = $resultat->fetchObject()) { 
-		//on cré alors la ref_art_categ
+		//on crÃ© alors la ref_art_categ
 		
 		$lib_art_categ				= "Frais de transport et de livraison";
 		$modele 							= "service";
@@ -349,13 +349,13 @@ function check_art_categ_livraison_exist () {
 		$duree_dispo 					= 0;
 		
 		// *************************************************
-		// Création de la catégorie
+		// CrÃ©ation de la catÃ©gorie
 		$art_categ = new art_categ ();
 		$art_categ->create ($lib_art_categ, $desc_art_categ, $ref_art_categ_parent, $modele, $defaut_id_tva_art, $duree_dispo);
 		$art_categ->maj_art_categ_modele_spe ($MODELE_SPE_LIVRAISON);
 		
 		$LIVRAISON_MODE_ART_CATEG = $art_categ->getRef_art_categ();
-		//mise à jour de la vairable systeme
+		//mise Ã  jour de la vairable systeme
 		maj_configuration_file ("config_systeme.inc.php", "maj_line", "\$LIVRAISON_MODE_ART_CATEG =", "\$LIVRAISON_MODE_ART_CATEG = \"".$art_categ->getRef_art_categ()."\";", $DIR."config/");
 	}
 		
@@ -386,7 +386,7 @@ function contenu_calcul_frais_livraison($document){
 	global $BASE_CALCUL_LIVRAISON;
 	global $CALCUL_TARIFS_NB_DECIMALS;
 	
-	//récupération du code postal et de l'idpays du document
+	//rÃ©cupÃ©ration du code postal et de l'idpays du document
 	$id_type_doc = $document->getId_type_doc();
 	$code_postal = "";
 	$id_pays = "";
@@ -410,7 +410,7 @@ function contenu_calcul_frais_livraison($document){
 	}
 	
 	
-	//si pas de zone définie alors calcul impossible
+	//si pas de zone dÃ©finie alors calcul impossible
 	if ((!trim($code_postal) || !is_numeric($code_postal)) && !$id_pays) {
 		$GLOBALS['_INFOS']['calcul_livraison_mode_nozone'] = 1;
 		return "0";
@@ -426,7 +426,7 @@ function contenu_calcul_frais_livraison($document){
 			if ( substr_count(substr($code_postal, 0 , strlen($cp)), $cp) ) { $id_zone = $zone_liv->id_livraison_zone; break;}
 		}
 	}
-	//si pas de zone définie alors calcul impossible
+	//si pas de zone dÃ©finie alors calcul impossible
 	if (!isset($id_zone)) {
 		$GLOBALS['_INFOS']['calcul_livraison_mode_impzone'] = 1;
 		return "0";
@@ -435,9 +435,9 @@ function contenu_calcul_frais_livraison($document){
 	//chargement tarification de la livraison
 	$tarifs_livraison = $this->charger_livraisons_modes_cost();
 	
-	//constuction conteneur de résultat
+	//constuction conteneur de rÃ©sultat
 	$livraison_cost_result = array();
-	//tableau des formules utilisées
+	//tableau des formules utilisÃ©es
 	$formules_liste = array();
 	
 	$prix_fraisport = 0;
@@ -479,7 +479,7 @@ function contenu_calcul_frais_livraison($document){
 			} 
 			if (count($art_categ_livraisons_tarifs)) {$article_regle_cost = $art_categ_livraisons_tarifs;}
 		}
-		//si aprés tout ça rien ne resort (aucun tarif défini) on est en ND
+		//si aprÃ©s tout Ã§a rien ne resort (aucun tarif dÃ©fini) on est en ND
 		if (!isset($article_regle_cost[0])) { $GLOBALS['_INFOS']['calcul_livraison_mode_ND'] = 1; return "0";}
 		$article_base = $article_regle_cost[0]->base_calcul;
 		$clef_liste_formule = "";
@@ -490,7 +490,7 @@ function contenu_calcul_frais_livraison($document){
 				$poids_unit =  $tmp_article->getPoids();
 				if (!$poids_unit || !is_numeric($poids_unit)) {$poids_unit = 0 ;} 
 				$article_valeur_indice = $contenu->qte * $poids_unit;
-				//on injecte pour mémoire l'objet des tarifs
+				//on injecte pour mÃ©moire l'objet des tarifs
 				if ( !isset($formules_liste[$article_base][$clef_liste_formule]) ) {
 					$formules_liste[$article_base][$clef_liste_formule] = $article_regle_cost;
 				} 
@@ -502,7 +502,7 @@ function contenu_calcul_frais_livraison($document){
 			break;
 			case "QTE": 
 				$article_valeur_indice = $contenu->qte;
-				//on injecte pour mémoire l'objet des tarifs
+				//on injecte pour mÃ©moire l'objet des tarifs
 				if ( !isset($formules_liste[$article_base][$clef_liste_formule]) ) {
 					$formules_liste[$article_base][$clef_liste_formule] = $article_regle_cost;
 				} 
@@ -514,7 +514,7 @@ function contenu_calcul_frais_livraison($document){
 			break;
 			case "PRIX": 
 				$article_valeur_indice = round ($contenu->pu_ht * $contenu->qte * (1-$contenu->remise/100), $CALCUL_TARIFS_NB_DECIMALS);
-				//on injecte pour mémoire l'objet des tarifs
+				//on injecte pour mÃ©moire l'objet des tarifs
 				if ( !isset($formules_liste[$article_base][$clef_liste_formule]) ) {
 					$formules_liste[$article_base][$clef_liste_formule] = $article_regle_cost;
 				} 
@@ -535,7 +535,7 @@ function contenu_calcul_frais_livraison($document){
 					$article_valeur_indice = ceil($contenu->qte/$colis); break;
 				}
 				if (!$article_valeur_indice) { $article_valeur_indice = $contenu->qte; }
-				//on injecte pour mémoire l'objet des tarifs
+				//on injecte pour mÃ©moire l'objet des tarifs
 				if ( !isset($formules_liste[$article_base][$clef_liste_formule]) ) {
 					$formules_liste[$article_base][$clef_liste_formule] = $article_regle_cost;
 				} 
@@ -594,13 +594,13 @@ function charger_livraisons_modes () {
 	global $bdd;
 
 	$liste_livraison_modes = array();
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT id_livraison_mode, ref_article
 						FROM livraisons_modes 
 						 ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si la id_art_modele est trouvée
+	// Controle si la id_art_modele est trouvÃ©e
 	while ($liv_mode = $resultat->fetchObject()) { 
 		$liv_mode->article = new article($liv_mode->ref_article);
 		$liste_livraison_modes[] = $liv_mode;

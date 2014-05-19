@@ -86,7 +86,7 @@ switch ($_REQUEST["type_data"]) {
 }
 
 if ($CA_global) {
-	$tmp[] = new pie_value($CA_global, utf8_encode("Non attribué"));
+	$tmp[] = new pie_value($CA_global, utf8_encode("Non attribuÃ©"));
 }
 
 $title = new title("");

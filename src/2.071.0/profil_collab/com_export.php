@@ -8,7 +8,7 @@ require ($DIR."_session.inc.php");
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -47,7 +47,7 @@ check_page_variables ($page_variables);
 <br /><br />
 <div id="comm" class="choix_commercial"> 
 <?php
-// on crée la liste de commerciaux
+// on crÃ©e la liste de commerciaux
 $i=0;
 $liste = charger_liste_commerciaux ();
 
@@ -99,17 +99,17 @@ $liste = charger_liste_commerciaux ();
 function getLib_mois($i){
 	switch ($i){
 		case 1 : return "janvier"; break;
-		case 2 : return "février"; break;
+		case 2 : return "fÃ©vrier"; break;
 		case 3 : return "mars"; break;
 		case 4 : return "avril"; break;
 		case 5 : return "mai"; break;
 		case 6 : return "juin"; break;
 		case 7 : return "juillet"; break;
-		case 8 : return "août"; break;
+		case 8 : return "aoÃ»t"; break;
 		case 9 : return "septembre"; break;
 		case 10 : return "octobre"; break;
 		case 11 : return "novembre"; break;
-		case 12 : return "décembre"; break;
+		case 12 : return "dÃ©cembre"; break;
 		default : return false; 
 	}
 }

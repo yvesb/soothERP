@@ -24,7 +24,7 @@ if (isset($array_verif_doublon)) {
 		if (count($alt)<2) {continue;}
 		
 		?>
-		texte_erreur += window.parent.document.getElementById("<?php echo  $alt[0];?>").options[<?php echo $ck-1;?>].text+" utilisé dans:<br />";
+		texte_erreur += window.parent.document.getElementById("<?php echo  $alt[0];?>").options[<?php echo $ck-1;?>].text+" utilisÃ© dans:<br />";
 		<?php	
 		foreach ($alt as $alerte => $value) {
 			?>
@@ -70,7 +70,7 @@ if (count($_ALERTES)) {
 		
 			?>
 				window.parent.document.getElementById("nom").className="alerteform_lsize";
-			texte_erreur += "<br /><b>Au moins une correspondance dois être attribuée au nom du contact.</b><br />";
+			texte_erreur += "<br /><b>Au moins une correspondance dois Ãªtre attribuÃ©e au nom du contact.</b><br />";
 			<?php	
 	}
 	?>
@@ -82,7 +82,7 @@ else
 {
 	?>
 	window.parent.changed = false;
-	window.parent.alerte.alerte_erreur ('Etape 2', "Correspondances des informations avec LMB effectuée",'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+	window.parent.alerte.alerte_erreur ('Etape 2', "Correspondances des informations avec LMB effectuÃ©e",'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 	window.parent.page.verify('import_annuaire_csv_step2','modules/import_annuaire_csv/import_annuaire_csv_step2.php','true','sub_content');
 	<?php
 };

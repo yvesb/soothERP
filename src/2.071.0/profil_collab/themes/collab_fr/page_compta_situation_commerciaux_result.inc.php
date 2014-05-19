@@ -4,7 +4,7 @@
 // AFFICHAGE DU CHOIX DES CAISSES
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -47,7 +47,7 @@ check_page_variables ($page_variables);
 				<?php echo number_format($commercial->comm, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[1];?>
 			</td>
 			<td style="width:15%; text-align:center">
-				<span class="green_underlined" id="drc_<?php echo $commercial->ref_contact; ?>">Détails</span>
+				<span class="green_underlined" id="drc_<?php echo $commercial->ref_contact; ?>">DÃ©tails</span>
 				<script type="text/javascript">
 					Event.observe('drc_<?php echo $commercial->ref_contact; ?>', "click", function(evt){
 						$("pop_up_commerciaux_det").style.display = "block";

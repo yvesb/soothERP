@@ -5,39 +5,39 @@
 // *************************************************************************************************************
 
 
-$CHECK_EXISTING_REF = 1;	// Vérification double de l'existence d'une référence avant sa création
+$CHECK_EXISTING_REF = 1;	// VÃ©rification double de l'existence d'une rÃ©fÃ©rence avant sa crÃ©ation
 
 
 
 final class reference {
 
-	private $id_reference;				// Identifiant de la catégorie de références
-	private $lib_reference;				// Libellé
+	private $id_reference;				// Identifiant de la catÃ©gorie de rÃ©fÃ©rences
+	private $lib_reference;				// LibellÃ©
 
-	private $lib_table;						// Table principale où sera inséré la référence et où elle doit être unique
+	private $lib_table;						// Table principale oÃ¹ sera insÃ©rÃ© la rÃ©fÃ©rence et oÃ¹ elle doit Ãªtre unique
 	private $champs;							// Champs dans la table
 
-	private $prefixe;							// Chaine fixe permettant d'identifier la catégorie
-	private $ref_rules;						// Règle de génération de la référence 
-	private $last_id;							// Dernier id pour la génération d'une référence unique
+	private $prefixe;							// Chaine fixe permettant d'identifier la catÃ©gorie
+	private $ref_rules;						// RÃ¨gle de gÃ©nÃ©ration de la rÃ©fÃ©rence 
+	private $last_id;							// Dernier id pour la gÃ©nÃ©ration d'une rÃ©fÃ©rence unique
 
 
-// Chargement des infos sur la référence
+// Chargement des infos sur la rÃ©fÃ©rence
 function __construct($id_reference) {
 	global $bdd;
 
 	if (!is_numeric($id_reference)) {
-		$erreur = "Référence non numérique appelée. [".$id_reference."]";
+		$erreur = "RÃ©fÃ©rence non numÃ©rique appelÃ©e. [".$id_reference."]";
 		alerte_dev ($erreur);
 	}
 
-	// Selection des informations sur la référence
+	// Selection des informations sur la rÃ©fÃ©rence
 	$query = "SELECT id_reference, lib_reference, lib_table, champs, prefixe, ref_rules, last_id
 						FROM references_tags
 						WHERE id_reference = '".$id_reference."' ";
 	$result = $bdd->query ($query);
   if (!$reference = $result->fetchObject()) {
-    $erreur = "Référence invalide appelée. [".$id_reference."]";
+    $erreur = "RÃ©fÃ©rence invalide appelÃ©e. [".$id_reference."]";
 		alerte_dev ($erreur);
   }
   
@@ -51,16 +51,16 @@ function __construct($id_reference) {
 } 
 
 
-// Création d'une référence unique
+// CrÃ©ation d'une rÃ©fÃ©rence unique
 // Ne fonctionne pas si X = 0 !!
 private function calculer_ref ($id = 0) {
 	global $bdd;
 
 	if (!$id) { $id = $this->last_id + 1; }
 
-	// X représente le nombre de caractères en base 36 : 0-9 puis A-Z
+	// X reprÃ©sente le nombre de caractÃ¨res en base 36 : 0-9 puis A-Z
 	$x = substr ($this->ref_rules, 0, 1);
-	// Y représente le nombre de caractères en base 10
+	// Y reprÃ©sente le nombre de caractÃ¨res en base 10
 	$y = substr ($this->ref_rules, 2);
 
   // Valeures maximales
@@ -69,9 +69,9 @@ private function calculer_ref ($id = 0) {
   $max_id = $max_base_10 * $max_base_36;
 
   if ($id >= $max_id) { // 0 est une des $max_id valeur
-  	$erreur = "	La valeur limite pour la référence [".$this->id_reference."] est atteinte !<br>
+  	$erreur = "	La valeur limite pour la rÃ©fÃ©rence [".$this->id_reference."] est atteinte !<br>
 								Valeur : ".$id." <br>
-								Règle : ".$this->ref_rules;
+								RÃ¨gle : ".$this->ref_rules;
 		alerte_dev ($erreur);
   }
 
@@ -95,7 +95,7 @@ private function calculer_ref ($id = 0) {
 
 
 
-// Génère une reférence unique
+// GÃ©nÃ¨re une refÃ©rence unique
 function generer_ref ($id = 0) {
 	global $bdd;
 	global $CHECK_EXISTING_REF;
@@ -103,7 +103,7 @@ function generer_ref ($id = 0) {
 	if (!$id) { $id = $this->last_id+1; }
 
 	
-	// Calcul de la référence
+	// Calcul de la rÃ©fÃ©rence
 	$ref_ok = 0;
 	while (!$ref_ok) {
 		$ref = $this->calculer_ref($id);
@@ -113,7 +113,7 @@ function generer_ref ($id = 0) {
 		}
 		
 		$ref_ok = 1;
-		// Mise à jour du dernier ID utilisé
+		// Mise Ã  jour du dernier ID utilisÃ©
   	$query = "UPDATE references_tags SET last_id = '".$id."'
   						WHERE id_reference = '".$this->id_reference."' ";
   	$bdd->exec($query);
@@ -124,7 +124,7 @@ function generer_ref ($id = 0) {
 
 
 
-// Vérification de l'existence d'une référence
+// VÃ©rification de l'existence d'une rÃ©fÃ©rence
 function ref_is_free ($ref) {
 	global $bdd;
 	

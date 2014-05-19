@@ -12,7 +12,7 @@ require ($DIR."_session.inc.php");
 // RECUPERATION DES DONNNES
 // ************************************************************************************
 if(!isset($_REQUEST["scale_used"])){
-	echo "l'échelle n'est pas spécifiée";
+	echo "l'Ã©chelle n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $scale_used = $_REQUEST["scale_used"];
@@ -22,43 +22,43 @@ if(isset($_REQUEST["id_graphic_event"]))
 else{	$id_graphic_event = "";}
 
 if(!isset($_REQUEST["event_lib"])){
-	echo "le libélé de l'évènement n'est pas spécifié";
+	echo "le libÃ©lÃ© de l'Ã©vÃ¨nement n'est pas spÃ©cifiÃ©";
 	exit;
 }
 $event_lib = htmlspecialchars(utf8_decode($_REQUEST["event_lib"]));
 
 if(!isset($_REQUEST["ref_agenda"])){
-	echo "la référence de l'agenda n'est pas spécifiée";
+	echo "la rÃ©fÃ©rence de l'agenda n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $ref_agenda = $_REQUEST["ref_agenda"];
 
 if(!isset($_REQUEST["id_type_event"])){
-	echo "l'identifiant du type de l'événement n'est pas spécifié";
+	echo "l'identifiant du type de l'Ã©vÃ©nement n'est pas spÃ©cifiÃ©";
 	exit;
 }
 $id_type_event = $_REQUEST["id_type_event"];
 
 if(!isset($_REQUEST["sdate_deb"])){
-	echo "la date de commencement de l'évènement n'est pas spécifiée";
+	echo "la date de commencement de l'Ã©vÃ¨nement n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $sdate_deb = $_REQUEST["sdate_deb"];
 
 if(!isset($_REQUEST["sdate_fin"])){
-	echo "la date de fin de l'évènement n'est pas spécifiée";
+	echo "la date de fin de l'Ã©vÃ¨nement n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $sdate_fin = $_REQUEST["sdate_fin"];
 
 if(!isset($_REQUEST["sheure_deb"])){
-	echo "l'heure de commencement de l'évènement n'est pas spécifiée";
+	echo "l'heure de commencement de l'Ã©vÃ¨nement n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $sheure_deb = $_REQUEST["sheure_deb"];
 
 if(!isset($_REQUEST["sheure_fin"])){
-	echo "l'heure de fin de l'évènement n'est pas spécifiée";
+	echo "l'heure de fin de l'Ã©vÃ¨nement n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $sheure_fin = $_REQUEST["sheure_fin"];
@@ -78,10 +78,10 @@ $Udate_deb = strtotime($date_deb);
 $Udate_fin = strtotime($date_fin);
 	
 if($Udate_deb > $Udate_fin){
-	echo "l'heure de fin de l'évènement est avant l'heure de commencement";
+	echo "l'heure de fin de l'Ã©vÃ¨nement est avant l'heure de commencement";
 	exit;
 }
-$duree = round( ($Udate_fin - $Udate_deb) / 60 ); //durée en minutes
+$duree = round( ($Udate_fin - $Udate_deb) / 60 ); //durÃ©e en minutes
 $event_Parent = null;
 
 // ************************************************************************************

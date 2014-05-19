@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("lib_panneau", "ticket_editable");
 check_page_variables ($page_variables);
 
@@ -65,7 +65,7 @@ check_page_variables ($page_variables);
 								<td colspan="4">&nbsp;</td>
 							</tr>
 							<tr>
-								<td align="left" class="liste_ticket_date_etat">Création :</td>
+								<td align="left" class="liste_ticket_date_etat">CrÃ©ation :</td>
 								<td colspan="3" align="right" class="liste_ticket_date_etat"><?php echo date_format(new DateTime($ticket->getDate_creation()), "d/m/Y H:i:s");?></td>
 							</tr>
 							<tr>

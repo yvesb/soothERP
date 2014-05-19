@@ -9,7 +9,7 @@ require("_profil.inc.php");
 require("_session.inc.php");
 
 
-// Chargement des caractéristiques de l'entreprise
+// Chargement des caractÃ©ristiques de l'entreprise
 $contact_entreprise = new contact($REF_CONTACT_ENTREPRISE);
 $nom_entreprise = str_replace (CHR(13), " " ,str_replace (CHR(10), " " , $contact_entreprise->getNom()));
 $adresse_entreprise = $contact_entreprise->getAdresses();

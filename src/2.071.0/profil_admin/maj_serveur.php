@@ -10,24 +10,24 @@ require ("_dir.inc.php");
 require ($DIR."_session.inc.php");
 require ($DIR."_maj.class.php");
 
-set_time_limit(600);	// Fixe la durée d'execution du script à 10 minutes.
+set_time_limit(600);	// Fixe la durÃ©e d'execution du script Ã  10 minutes.
 
 
 // *************************************************************************************************************
-// Controle de la nécessité de mettre à jour
+// Controle de la nÃ©cessitÃ© de mettre Ã  jour
 $version_file[0] = "0";
 if($ACTIVE_MAJ)
 	$version_file = file ($MAJ_SERVEUR['url']."check_version.php?version_actuelle=".$_SERVER['VERSION']);
 
 if ($version_file[0] == "0") { 
-	echo "Aucune mise à jour nécessaire";
+	echo "Aucune mise Ã  jour nÃ©cessaire";
 	exit; 
 }
 $last_version =  str_replace("\n", "", $version_file[0]);
 $new_version =  str_replace("\n", "",$version_file[1]);
 
 
-// Réception de paramètres communiqués par le serveur et à utiliser dans le script (Nouvelle version + Parametres FTP)
+// RÃ©ception de paramÃ¨tres communiquÃ©s par le serveur et Ã  utiliser dans le script (Nouvelle version + Parametres FTP)
 for ($i=2; $i<count($version_file); $i++) {
 	if (!eval($version_file[$i])) {
 		$GLOBALS['_ALERTES']['bad_eval_params'] = nl2br($version_file[$i]);
@@ -37,10 +37,10 @@ for ($i=2; $i<count($version_file); $i++) {
 
 
 // *************************************************************************************************************
-// Initialisation de la mise à jour
+// Initialisation de la mise Ã  jour
 $maj = new maj_serveur($new_version);
 
-// Téléchargement des fichiers de mise à jour
+// TÃ©lÃ©chargement des fichiers de mise Ã  jour
 if ($maj->last_break_point <= 1) {
 	$maj->get_maj_files (1);		// Tous les fichiers de MAJ 
 }
@@ -58,16 +58,16 @@ $maj->set_break_point(2);
 
 
 // *************************************************************************************************************
-// Action spécifiques à la mise à jour
+// Action spÃ©cifiques Ã  la mise Ã  jour
 if ($maj->last_break_point <= 101) {
 	$GLOBALS['_INFOS']['maj_actions'][] = "-----------------------------------------------------------------------";
 	if (is_file ($DIR."echange_lmb/maj_lmb_".$new_version."/maj.php")) { 
 	$maj->make_download_state (95, "Mise &agrave; jour vers version ".$new_version." en cours", "Execution des requ&ecirc;tes SQL", "");
-		$GLOBALS['_INFOS']['maj_actions'][] = "<i>Actions spécifiques à effectuer</i>";
+		$GLOBALS['_INFOS']['maj_actions'][] = "<i>Actions spÃ©cifiques Ã  effectuer</i>";
 		require_once($DIR."echange_lmb/maj_lmb_".$new_version."/maj.php"); 
 	}
 	else {
-		$GLOBALS['_INFOS']['maj_actions'][] = "<i>Aucune action spécifique à effectuer</i>";
+		$GLOBALS['_INFOS']['maj_actions'][] = "<i>Aucune action spÃ©cifique Ã  effectuer</i>";
 	}
 	$GLOBALS['_INFOS']['maj_actions'][] = "-----------------------------------------------------------------------";
 }
@@ -77,7 +77,7 @@ if ($maj->last_break_point <= 101) {
 
 
 // *************************************************************************************************************
-// Fin de la mise à jour
+// Fin de la mise Ã  jour
 
 if ($maj->last_break_point <= 103) {
 	$maj->maj_version();
@@ -123,13 +123,13 @@ if ($last_version != $new_version) {
 	?>
 	stp_prog_file = true;
 	$("files_progress").style.width = "100%";
-	$("maj_etat").innerHTML = "Mise à jour effectuée avec succès";
+	$("maj_etat").innerHTML = "Mise Ã  jour effectuÃ©e avec succÃ¨s";
 	setTimeout('	window.open("<?php echo $_ENV['CHEMIN_ABSOLU']."site/__user_login.php?page_from=profil_admin/#import_maj_serveur.php";?>", "_self")', 5000);
 	<?php
 	if (isset($_SESSION['NEW_MAJ_DISPO'])) {
 		if ($_SESSION['NEW_MAJ_DISPO'] != $new_version) {
 			?>
-	$("maj_etat").innerHTML = "Mise à jour effectuée avec succès<br/> D'autres mises à jours sont disponibles.<br/> Veuillez revenir sur cette page après ré identification";
+	$("maj_etat").innerHTML = "Mise Ã  jour effectuÃ©e avec succÃ¨s<br/> D'autres mises Ã  jours sont disponibles.<br/> Veuillez revenir sur cette page aprÃ¨s rÃ© identification";
 			<?php
 		}
 		unset($_SESSION['NEW_MAJ_DISPO']);

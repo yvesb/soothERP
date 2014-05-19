@@ -4,7 +4,7 @@
 // OPTIONS AVANCEES D'UN ARTICLE 
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -86,7 +86,7 @@ check_page_variables ($page_variables);
 				echo date("d-m-Y", mktime (date("m"),date("i"),date("s")+$art_categs->getDuree_dispo(), date("m"), date("d"), date("Y")))  ;
 			} 
 			?>"  class="classinput_xsize" style="<?php if ($an_fin_dispo >2099) {echo "display: none";}?>"/>
-			<span id="infinite_choix" style="<?php if ($an_fin_dispo <2099) {echo "display: none;";}?> width:33%">Durée infinie &nbsp;</span>
+			<span id="infinite_choix" style="<?php if ($an_fin_dispo <2099) {echo "display: none;";}?> width:33%">DurÃ©e infinie &nbsp;</span>
 			
 			<script type="text/javascript">
 			Event.observe('infinite', 'click',  function(evt){
@@ -161,7 +161,7 @@ check_page_variables ($page_variables);
 			<td>
 			<select name="lot" id="lot" class="classinput_xsize">
 				<option value="0" <?php if ($article->getLot () == 0) { ?> selected="selected"<?php } ?>>Article simple</option>
-				<option value="1" <?php if ($article->getLot () == 1) { ?> selected="selected"<?php } ?>>Article à fabriquer</option>
+				<option value="1" <?php if ($article->getLot () == 1) { ?> selected="selected"<?php } ?>>Article Ã  fabriquer</option>
 				<option value="2" <?php if ($article->getLot () == 2) { ?> selected="selected"<?php } ?>>Composition Interne</option>
 				<option value="3" <?php if ($article->getLot () == 3) { ?> selected="selected"<?php } ?>>Composition Fabriquant</option>
 			</select>
@@ -174,13 +174,13 @@ check_page_variables ($page_variables);
 			<?php 
 			if ($GESTION_SN) {
 				?>
-			<td class="labelled_text">Identifiant de traçabilité:</td>
+			<td class="labelled_text">Identifiant de traÃ§abilitÃ©:</td>
 			<td>	
 			
 		<select name="gestion_sn" id="gestion_sn" class="classinput_hsize">
 					<option value="0" <?php if ($article->getGestion_sn () == 0) {echo 'selected="selected"';} ?>>Aucun</option>
-					<option value="1" <?php if ($article->getGestion_sn () == 1) {echo 'selected="selected"';} ?>>Numéro de s&eacute;rie</option>
-					<option value="2" <?php if ($article->getGestion_sn () == 2) {echo 'selected="selected"';} ?>>Numéro de lot</option>
+					<option value="1" <?php if ($article->getGestion_sn () == 1) {echo 'selected="selected"';} ?>>NumÃ©ro de s&eacute;rie</option>
+					<option value="2" <?php if ($article->getGestion_sn () == 2) {echo 'selected="selected"';} ?>>NumÃ©ro de lot</option>
 			</select>
 			</td>
 				<?php 
@@ -207,7 +207,7 @@ check_page_variables ($page_variables);
 		<td> 
 		<?php if ($article->getVariante() == 0 && !$article->getId_modele_spe ()) { ?>
 		<a  href="#" id="link_fusion" class="common_link">Fusionner cet article.</a><br />
-Les documents et quantités en stock de l'article en cours seront attribués à l'article choisi.
+Les documents et quantitÃ©s en stock de l'article en cours seront attribuÃ©s Ã  l'article choisi.
 			<script type="text/javascript">
 			Event.observe("link_fusion", "click",  function(evt){
 			Event.stop(evt); 
@@ -234,7 +234,7 @@ Les documents et quantités en stock de l'article en cours seront attribués à l'a
 </div>
 <SCRIPT type="text/javascript">
 
-//fonction de validation de l'étape 0
+//fonction de validation de l'Ã©tape 0
 function valide_etape_0() {
 	if ($("lib_article").value!="") {	
 		$("lib_article").className="classinput_xsize";

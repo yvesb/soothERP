@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -21,10 +21,10 @@ check_page_variables ($page_variables);
 // *************************************************************************************************************
 
 ?><br />
-<span class="labelled_text" style="font-weight:bolder">Service prepayés :</span>
+<span class="labelled_text" style="font-weight:bolder">Service prepayÃ©s :</span>
 <table style="width:100%">
 	<tr>
-		<td style="width:40%" class="labelled_text">Durée de validité: </td>
+		<td style="width:40%" class="labelled_text">DurÃ©e de validitÃ©: </td>
 		<td style="width:36%">
 			<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
 			<tr>
@@ -40,7 +40,7 @@ check_page_variables ($page_variables);
 		<td style="width:29%"></td>
 	</tr>
  <tr>
-		<td style="width:40%" class="labelled_text">Nombre de crédits: </td>
+		<td style="width:40%" class="labelled_text">Nombre de crÃ©dits: </td>
 		<td style="width:36%">
 			<input type="text" name="nb_credits" id="nb_credits" value="1" size="3"  class="classinput_nsize"/>
 		</td>

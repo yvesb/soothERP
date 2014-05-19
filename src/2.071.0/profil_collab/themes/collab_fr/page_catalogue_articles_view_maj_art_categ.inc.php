@@ -5,7 +5,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -65,14 +65,14 @@ if (erreur) {
 
 //limite basse des stock fauses
 	if (bad_seuil_alerte) {
-		texte_erreur += "il y a une erreur dans les quantités des seuils d'alerte de stock bas.<br/>";
+		texte_erreur += "il y a une erreur dans les quantitÃ©s des seuils d'alerte de stock bas.<br/>";
 	}
 	
 	//modele garantie fause
 	if (bad_dure_garantie) {
 		window.parent.document.getElementById("m_dure_garantie").className="alerteform_xsize";
 		window.parent.document.getElementById("m_dure_garantie").focus();
-		texte_erreur += "La durée de garantie dois être une valeur numérique.<br/>";
+		texte_erreur += "La durÃ©e de garantie dois Ãªtre une valeur numÃ©rique.<br/>";
 	}else {
 		window.parent.document.getElementById("m_dure_garantie").className="classinput_xsize";
 	}

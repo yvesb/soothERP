@@ -1,13 +1,13 @@
 <?php
 // *************************************************************************************************************
-// Suppression des types de pièces jointes
+// Suppression des types de piÃ¨ces jointes
 // *************************************************************************************************************
 
 require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
-//mise à jour des données transmises
+//mise Ã  jour des donnÃ©es transmises
 if(isset($_REQUEST['id_piece_type'])){
 	del_types_ged($_REQUEST['id_piece_type']);
 }

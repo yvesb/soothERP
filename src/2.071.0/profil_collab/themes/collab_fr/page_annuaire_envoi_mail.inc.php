@@ -10,6 +10,6 @@ $coordonnee->envoi_mail_invitation();
 
 ?>
 <SCRIPT type="text/javascript">
-alert("<?php echo "Invitation envoyée";?>");
+alert("<?php echo "Invitation envoyÃ©e";?>");
 page.traitecontent('userlist', 'annuaire_view_fiche.php?ref_contact=<?php echo $ref_contact;?>' ,"true" ,"sub_content");
 </script>

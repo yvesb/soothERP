@@ -5,7 +5,7 @@
 // FUSION DE DOCUMENT
 // *************************************************************************************************************
 
-// Variables nécessaires Ã  l'affichage
+// Variables nÃ©cessaires ÃƒÂ  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -38,10 +38,10 @@ $echeances = $facture->getEcheancier();
 ?>
 <input name="sortir" id="sortir" type="image" style="position:absolute;right:10px" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" />
 <input name="valider" id="valider" type="image" style="position:absolute;bottom:30px;left:45%;" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />
-<div style="text-align:center; background-color:#809eb6; width : 97% " class="doc_bold2">Edition de l'échéancier</div>
+<div style="text-align:center; background-color:#809eb6; width : 97% " class="doc_bold2">Edition de l'Ã©chÃ©ancier</div>
 <div style="height:5px">&nbsp;</div>
 <div style="position:absolute;right:30px;top:40px;">
-    Choix du modele d'échéancier :
+    Choix du modele d'Ã©chÃ©ancier :
     <select style="width:150px;" id="slct_modele_ech">
         <option value=""></option>
         <?php foreach($modeles as $modele){ ?>
@@ -66,7 +66,7 @@ $echeances = $facture->getEcheancier();
         <td>&nbsp;</td>
         </tr>
         <tr>
-        <td style="text-align:right">Nombre de règlements :
+        <td style="text-align:right">Nombre de rÃ¨glements :
         </td>
         <td>
             <input name="nb_reglements" id="nb_reglements" type="text" value="" onfocus="$('valider_nb_reg').style.display = '';" class="classinput_xsize" style="width:20px" MAXLENGTH="2"/>
@@ -92,21 +92,21 @@ $echeances = $facture->getEcheancier();
                         i=1;
                         strlignetot = '<table id="tb_liste_regl" name="tb_liste_regl">'+
                         '<tr class="smallheight">'+
-                        '<td style="width:25%"><strong>Echéance</strong></td>'+
-                        '<td style="width:20%;text-align:center"><strong>Type d\'échéance</strong></td>'+
-                        '<td style="width:20%;text-align:center"><strong>Mode de règlement</strong></td>'+
-                        '<td style="width:20%;text-align:center"><strong><a href="#" id="lien_delai" onclick="toggleDisplay(\'inp_delai\',\'inp_date\');" >Délai</a> / <a href="#" id="lien_date" onclick="toggleDisplay(\'inp_date\',\'inp_delai\');" >Date</a></strong></td>'+
+                        '<td style="width:25%"><strong>EchÃ©ance</strong></td>'+
+                        '<td style="width:20%;text-align:center"><strong>Type d\'Ã©chÃ©ance</strong></td>'+
+                        '<td style="width:20%;text-align:center"><strong>Mode de rÃ¨glement</strong></td>'+
+                        '<td style="width:20%;text-align:center"><strong><a href="#" id="lien_delai" onclick="toggleDisplay(\'inp_delai\',\'inp_date\');" >DÃ©lai</a> / <a href="#" id="lien_date" onclick="toggleDisplay(\'inp_date\',\'inp_delai\');" >Date</a></strong></td>'+
                         '<td style="width:15%;text-align:center"><strong><a href="#" id="lien_pourcent">%</a> / <a href="#" id="lien_euro"><?php echo $MONNAIE[1];?></a></strong></td>'+
                         '</tr>';
                     <?php if(!empty($ref_doc))
                         {
                             $document = open_doc($ref_doc);
-                            //Récupération du contact
+                            //RÃ©cupÃ©ration du contact
                             if(!empty($document)){
 
                                 $contact_document = $document->getRef_contact();
                                 $contact = new contact($contact_document);
-                                //Récupération du mode préféré de paiement
+                                //RÃ©cupÃ©ration du mode prÃ©fÃ©rÃ© de paiement
                                 if(!empty($contact))
                                 {
                                     $profils = $contact->getProfils ();
@@ -114,11 +114,11 @@ $echeances = $facture->getEcheancier();
                                     {
                                         $id_reglement_mode_favori = $profils[4]->getId_reglement_mode_favori (false);
                                         
-                                        //Si pas de mode de reglement favori trouvé on va dans la categ
+                                        //Si pas de mode de reglement favori trouvÃ© on va dans la categ
                                         if(empty($id_reglement_mode_favori))
                                         {
                                             $id_client_categ = $contact->getId_Categorie();
-                                            //Charger la liste des catégories de client
+                                            //Charger la liste des catÃ©gories de client
                                             $liste_categories_client = contact_client::charger_clients_categories ();
                                             if(!empty($id_client_categ) && !empty($id_client_categ))
                                             {
@@ -166,7 +166,7 @@ $echeances = $facture->getEcheancier();
                                         for(i=1;i<=nbregl;i++){
                                                 if(i==nbregl){
                                                         strligne = '<tr>'+
-                                                        '<td>'+ i +'<sup>e</sup> échéance : </td>'+
+                                                        '<td>'+ i +'<sup>e</sup> Ã©chÃ©ance : </td>'+
                                                         '<td style="text-align:center"><select name="slct_type_'+i+'" id="slct_type_'+i+'" style="width:100px"><option value="4">Solde</option></select></td>'+
                                                         '<td style="text-align:center"><select name="slct_mode_'+i+'" id="slct_mode_'+i+'" style="width:160px">'+str_mode_regl_select+'</select></td>'+
                                                         '<td style="text-align:center" name="inp_delai" ><input name="inp_delai_'+i+'" id="inp_delai_'+i+'" type="text" value="" onchange="maj_date(this.value,\'<?php echo $date_creation ?>\',\'inp_date_'+i+'\');" class="classinput_xsize" style="width:30px;text-align:right;" MAXLENGTH="3"/> jours</td>'+
@@ -180,7 +180,7 @@ $echeances = $facture->getEcheancier();
                                                 else{
                                                         if(i==1){
                                                                 strligne = '<tr>'+
-                                                                '<td>'+ i +'<sup>e</sup> échéance : </td>'+
+                                                                '<td>'+ i +'<sup>e</sup> Ã©chÃ©ance : </td>'+
                                                                 '<td style="text-align:center"><select name="slct_type_'+i+'" id="slct_type_'+i+'" style="width:100px"><option value="1">Acompte</option><option value="2">Arrhes</option><option value="3">Echeance</option></select></td>'+
                                                                 '<td style="text-align:center"><select name="slct_mode_'+i+'" id="slct_mode_'+i+'" style="width:160px">'+str_mode_regl_select+'</select></td>'+
                                                                 '<td style="text-align:center" name="inp_delai" ><input name="inp_delai_'+i+'" id="inp_delai_'+i+'" type="text" value="" onchange="maj_date(this.value,\'<?php echo $date_creation ?>\',\'inp_date_'+i+'\');" class="classinput_xsize" style="width:30px;text-align:right;" MAXLENGTH="3"/> jours</td>'+
@@ -192,7 +192,7 @@ $echeances = $facture->getEcheancier();
                                                                 '</tr>';
                                                         }else{
                                                                 strligne = '<tr>'+
-                                                                '<td>'+ i +'<sup>e</sup> échéance : </td>'+
+                                                                '<td>'+ i +'<sup>e</sup> Ã©chÃ©ance : </td>'+
                                                                 '<td style="text-align:center"><select name="slct_type_'+i+'" id="slct_type_'+i+'" style="width:100px"><option value="3">Echeance</option></select></td>'+
                                                                 '<td style="text-align:center"><select name="slct_mode_'+i+'" id="slct_mode_'+i+'" style="width:160px">'+str_mode_regl_select+'</select></td>'+
                                                                 '<td style="text-align:center" name="inp_delai" ><input name="inp_delai_'+i+'" id="inp_delai_'+i+'" type="text" value="" onchange="maj_date(this.value,\'<?php echo $date_creation ?>\',\'inp_date_'+i+'\');" class="classinput_xsize" style="width:30px;text-align:right;" MAXLENGTH="3"/> jours</td>'+
@@ -208,7 +208,7 @@ $echeances = $facture->getEcheancier();
                                         }
                                 }else{
                                         strlignetot += '<tr>'+
-                                        '<td>1<sup>e</sup> échéance : </td>'+
+                                        '<td>1<sup>e</sup> Ã©chÃ©ance : </td>'+
                                         '<td style="text-align:center"><select name="slct_type_'+i+'" id="slct_type_'+i+'" style="width:100px"><option value="1">Acompte</option><option value="2">Arrhes</option><option value="4">Solde</option></select></td>'+
                                         '<td style="text-align:center"><select name="slct_mode_'+i+'" id="slct_mode_'+i+'" style="width:160px">'+str_mode_regl_select+'</select></td>'+
                                         '<td style="text-align:center" name="inp_delai" ><input name="inp_delai_'+i+'" id="inp_delai_'+i+'" type="text" value="" onchange="maj_date(this.value,\'<?php echo $date_creation ?>\',\'inp_date_'+i+'\');" class="classinput_xsize" style="width:30px;text-align:right;" MAXLENGTH="3"/> jours</td>'+
@@ -244,7 +244,7 @@ $echeances = $facture->getEcheancier();
     </table>
     <table style="width:100%">
         <tr id="tr_lignes_reglement" style="width:100%" >
-        <!--------Lignes en affichage dynamique en fonction du nombre de règlements -------->
+        <!--------Lignes en affichage dynamique en fonction du nombre de rÃ¨glements -------->
         <td style="width:900px">
              <form action="documents_edition_modifier_echeance_maj.php" method="post" id="form_echeance" name="form_echeance" target="formFrame" >
                  <input type = "hidden" name="ref_doc" value ="<?php echo $ref_doc; ?>" >
@@ -262,22 +262,22 @@ $echeances = $facture->getEcheancier();
 				<tr>
 				</tr>
 				<tr id="tr_lignes_reglement" >
-				<!--------Lignes en affichage dynamique en fonction du nombre de rÃ¨glements -------->
+				<!--------Lignes en affichage dynamique en fonction du nombre de rÃƒÂ¨glements -------->
 				<td colspan="4">
 				<div id="div_lignes_reglement">
 				<table id="tb_liste_regl" >
 						<tr class="smallheight">
-						<td style="width:25%"><strong>Echéance</strong></td>
-						<td style="width:20%;text-align:center"><strong>Type d'échéance</strong></td>
-						<td style="width:20%;text-align:center"><strong>Mode de règlement</strong></td>
-						<td style="width:20%;text-align:center"><strong><a href="#" id="lien_delai" onclick='toggleDisplay("inp_delai","inp_date");' >Délai</a> / <a href="#" id="lien_date" onclick='toggleDisplay("inp_date","inp_delai");' >Date</a></strong></td>
+						<td style="width:25%"><strong>EchÃ©ance</strong></td>
+						<td style="width:20%;text-align:center"><strong>Type d'Ã©chÃ©ance</strong></td>
+						<td style="width:20%;text-align:center"><strong>Mode de rÃ¨glement</strong></td>
+						<td style="width:20%;text-align:center"><strong><a href="#" id="lien_delai" onclick='toggleDisplay("inp_delai","inp_date");' >DÃ©lai</a> / <a href="#" id="lien_date" onclick='toggleDisplay("inp_date","inp_delai");' >Date</a></strong></td>
 						<td style="width:15%;text-align:center"><strong><a href="#" id="lien_pourcent">%</a> / <a href="#" id="lien_euro"><?php echo $MONNAIE[1];?></a></strong></td>
 						</tr>
                                         <?php $i = 1;
 					$echTot = count($echeances);
 					 foreach($echeances as $echeance){?>
 							<tr>
-							<td><?php echo $i;?><sup>e</sup> échéance : </td>
+							<td><?php echo $i;?><sup>e</sup> Ã©chÃ©ance : </td>
 							<td style="text-align:center">
 							<select name="slct_type_<?php echo $i;?>" id="slct_type_<?php echo $i;?>" style="width:100px">
 							<?php if($i==1 && $echTot> 1){?>
@@ -349,7 +349,7 @@ $echeances = $facture->getEcheancier();
         </td>
         </tr>
     </table>
-    <div style="position:absolute;bottom:10px;left:38%;cursor:pointer" id="div_regenere" >Regénérer l'échéancier par défaut</div>
+    <div style="position:absolute;bottom:10px;left:38%;cursor:pointer" id="div_regenere" >RegÃ©nÃ©rer l'Ã©chÃ©ancier par dÃ©faut</div>
 <div id="div_lignes_reglement_modeles">
    <?php
     if($modeles){   ?>
@@ -371,22 +371,22 @@ $echeances = $facture->getEcheancier();
 				<tr>
 				</tr>
 				<tr id="tr_lignes_reglement" >
-				<!--------Lignes en affichage dynamique en fonction du nombre de règlements -------->
+				<!--------Lignes en affichage dynamique en fonction du nombre de rÃ¨glements -------->
 				<td colspan="4">
 				<div id="div_lignes_reglement_mod_<?php echo $modele_echeancier->getId_echeancier_modele();?>">
 				<table id="tb_liste_regl" >
 						<tr class="smallheight">
-						<td style="width:25%"><strong>Echéance</strong></td>
-						<td style="width:20%;text-align:center"><strong>Type d'échéance</strong></td>
-						<td style="width:20%;text-align:center"><strong>Mode de règlement</strong></td>
-						<td style="width:20%;text-align:center"><strong>Délai</strong></td>
+						<td style="width:25%"><strong>EchÃ©ance</strong></td>
+						<td style="width:20%;text-align:center"><strong>Type d'Ã©chÃ©ance</strong></td>
+						<td style="width:20%;text-align:center"><strong>Mode de rÃ¨glement</strong></td>
+						<td style="width:20%;text-align:center"><strong>DÃ©lai</strong></td>
 						<td style="width:15%;text-align:center"><strong>Montant</strong></td>
 						</tr>
 					<?php $i = 1;
 					$echTot = count($modele_echeancier->getEcheances());
 					 foreach($modele_echeancier->getEcheances() as $echeance){?>
 							<tr>
-							<td><?php echo $i;?><sup>e</sup> échéance : </td>
+							<td><?php echo $i;?><sup>e</sup> Ã©chÃ©ance : </td>
 							<td style="text-align:center">
 							<select name="slct_type_<?php echo $i;?>" id="slct_type_<?php echo $i;?>" style="width:100px">
 							<?php if($i==1 && $echTot> 1){?>

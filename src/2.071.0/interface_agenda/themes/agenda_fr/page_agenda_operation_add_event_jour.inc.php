@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -13,10 +13,10 @@ check_page_variables ($page_variables);
 // *************************************************************************************************************
 ?>
 
-<!-- L'événement vient d'être créer côté serveur, nous devons mettre à jour l'interface graphique -->
+<!-- L'Ã©vÃ©nement vient d'Ãªtre crÃ©er cÃ´tÃ© serveur, nous devons mettre Ã  jour l'interface graphique -->
 <script type="text/javascript">
 
-//l'événement à été créé à la souris
+//l'Ã©vÃ©nement Ã  Ã©tÃ© crÃ©Ã© Ã  la souris
 function maj_event_graphic_jour(){
 	<?php if($id_graphic_event != ""){ ?>
 		if(Udate_deb_jour < <?php echo $event->getUdate_event()."000 && ".$event->getUdate_event(); ?>000 < (Udate_deb_jour+86400000)){
@@ -35,9 +35,9 @@ function maj_event_graphic_jour(){
 	<?php } ?>
 }
 
-//l'événement à été créé grace au panneau d'édition
+//l'Ã©vÃ©nement Ã  Ã©tÃ© crÃ©Ã© grace au panneau d'Ã©dition
 function new_event_graphic_jour(){
-	alert("new_event_graphic_jour() n'est pas encore implémentée");
+	alert("new_event_graphic_jour() n'est pas encore implÃ©mentÃ©e");
 }
 
 <?php if($id_graphic_event == ""){//NEW ?>

@@ -4,7 +4,7 @@
 // Transfert de fonds
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -23,7 +23,7 @@ check_page_variables ($page_variables);
 <div id="edition_reglement" class="edition_reglement" style="display:none">
 </div>
 
-<div class="titre" style="width:60%; padding-left:140px">Transfert de fonds depuis <?php echo htmlentities($compte_caisse->getLib_caisse()); ?> effectué
+<div class="titre" style="width:60%; padding-left:140px">Transfert de fonds depuis <?php echo htmlentities($compte_caisse->getLib_caisse()); ?> effectuÃ©
 </div>
 
 

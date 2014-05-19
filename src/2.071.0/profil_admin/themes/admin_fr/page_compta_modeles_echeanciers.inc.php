@@ -4,7 +4,7 @@
 //journal des ventes
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -16,20 +16,20 @@ check_page_variables ($page_variables);
 
 ?>
 <script type="text/javascript">	
-tableau_smenu[0] = Array("smenu_comptabilite", "smenu_comptabilite.php" ,"true" ,"sub_content", "Comptabilité");
-tableau_smenu[1] = Array('compta_modeles_echeanciers','compta_modeles_echeanciers.php','true','sub_content', "Modèles d'échéanciers");
+tableau_smenu[0] = Array("smenu_comptabilite", "smenu_comptabilite.php" ,"true" ,"sub_content", "ComptabilitÃ©");
+tableau_smenu[1] = Array('compta_modeles_echeanciers','compta_modeles_echeanciers.php','true','sub_content', "ModÃ¨les d'Ã©chÃ©anciers");
 update_menu_arbo();
 </script>
 <div id="dev_debug_compta_mod_ech"></div>
 <div id="div_export" class="emarge">
 	<div id="div_mod_ech_titre" class="titre">
-		Gestion des modèles d'échéanciers
+		Gestion des modÃ¨les d'Ã©chÃ©anciers
 	</div>
 <table class="minimizetable">
 <tr>
 <td class="contactview_corps">
 <div id="cat_client" style="padding-left:10px; padding-right:10px">
-<p>Ajouter un modèle d'échéancier </p>
+<p>Ajouter un modÃ¨le d'Ã©chÃ©ancier </p>
 
 	<div class="caract_table">
 
@@ -44,7 +44,7 @@ update_menu_arbo();
 					<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 				</tr>
 				<tr>
-				<td style="text-align:right">Libellé du modèle d'échéancier :
+				<td style="text-align:right">LibellÃ© du modÃ¨le d'Ã©chÃ©ancier :
 				</td>
 				<td>
 					<input name="lib_modele" id="lib_modele" type="text" value=""  class="classinput_xsize" style="width:41%"/>
@@ -52,7 +52,7 @@ update_menu_arbo();
 				<td>&nbsp;</td>
 				</tr>
 				<tr>
-				<td style="text-align:right">Nombre de règlements :
+				<td style="text-align:right">Nombre de rÃ¨glements :
 				</td>
 				<td>
                                     <input name="nb_reglements" id="nb_reglements" type="text" value="" onfocus="$('valider_nb_reg').style.display = '';" class="classinput_xsize" style="width:20px" MAXLENGTH="2"/>
@@ -69,10 +69,10 @@ update_menu_arbo();
 						i=1;
 						strlignetot = '<table id="tb_liste_regl" name="tb_liste_regl">'+
 						'<tr class="smallheight">'+
-						'<td style="width:25%"><strong>Echéance</strong></td>'+
-						'<td style="width:20%;text-align:center"><strong>Type d\'échéance</strong></td>'+
-						'<td style="width:20%;text-align:center"><strong>Mode de règlement</strong></td>'+
-						'<td style="width:20%;text-align:center"><strong>Délai</strong></td>'+
+						'<td style="width:25%"><strong>EchÃ©ance</strong></td>'+
+						'<td style="width:20%;text-align:center"><strong>Type d\'Ã©chÃ©ance</strong></td>'+
+						'<td style="width:20%;text-align:center"><strong>Mode de rÃ¨glement</strong></td>'+
+						'<td style="width:20%;text-align:center"><strong>DÃ©lai</strong></td>'+
 						'<td style="width:15%;text-align:center"><strong>Montant</strong></td>'+
 						'</tr>';
 						str_mode_regl_select = '<option value="">Au choix du client</option><?php foreach ($reglements_modes as $reglement_mode) {?><option value="<?php echo $reglement_mode->id_reglement_mode; ?>"><?php echo htmlentities($reglement_mode->lib_reglement_mode); ?></option><?php } ?>';
@@ -83,7 +83,7 @@ update_menu_arbo();
 								for(i=1;i<=nbregl;i++){
 									if(i==nbregl){
 										strligne = '<tr>'+
-										'<td>'+ i +'<sup>e</sup> échéance : </td>'+
+										'<td>'+ i +'<sup>e</sup> Ã©chÃ©ance : </td>'+
 										'<td style="text-align:center"><select name="slct_type_'+i+'" id="slct_type_'+i+'" style="width:100px"><option value="Solde">Solde</option></select></td>'+
 										'<td style="text-align:center"><select name="slct_mode_'+i+'" id="slct_mode_'+i+'" style="width:160px">'+str_mode_regl_select+'</select></td>'+
 										'<td style="text-align:center"><input name="inp_delai_'+i+'" id="inp_delai_'+i+'" type="text" value="" class="classinput_xsize" style="width:30px" MAXLENGTH="3"/> jours</td>'+
@@ -93,7 +93,7 @@ update_menu_arbo();
 									else{
 										if(i==1){
 											strligne = '<tr>'+
-											'<td>'+ i +'<sup>e</sup> échéance : </td>'+
+											'<td>'+ i +'<sup>e</sup> Ã©chÃ©ance : </td>'+
 											'<td style="text-align:center"><select name="slct_type_'+i+'" id="slct_type_'+i+'" style="width:100px"><option value="Acompte">Acompte</option><option value="Arrhes">Arrhes</option><option value="Echeance">Echeance</option></select></td>'+
 											'<td style="text-align:center"><select name="slct_mode_'+i+'" id="slct_mode_'+i+'" style="width:160px">'+str_mode_regl_select+'</select></td>'+
 											'<td style="text-align:center"><input name="inp_delai_'+i+'" id="inp_delai_'+i+'" type="text" value="" class="classinput_xsize" style="width:30px" MAXLENGTH="3"/> jours</td>'+
@@ -101,7 +101,7 @@ update_menu_arbo();
 											'</tr>';
 										}else{
 											strligne = '<tr>'+
-											'<td>'+ i +'<sup>e</sup> échéance : </td>'+
+											'<td>'+ i +'<sup>e</sup> Ã©chÃ©ance : </td>'+
 											'<td style="text-align:center"><select name="slct_type_'+i+'" id="slct_type_'+i+'" style="width:100px"><option value="Echeance">Echeance</option></select></td>'+
 											'<td style="text-align:center"><select name="slct_mode_'+i+'" id="slct_mode_'+i+'" style="width:160px">'+str_mode_regl_select+'</select></td>'+
 											'<td style="text-align:center"><input name="inp_delai_'+i+'" id="inp_delai_'+i+'" type="text" value="" class="classinput_xsize" style="width:30px" MAXLENGTH="3"/> jours</td>'+
@@ -113,7 +113,7 @@ update_menu_arbo();
 								}
 							}else{
 								strlignetot += '<tr>'+
-								'<td>1<sup>e</sup> échéance : </td>'+
+								'<td>1<sup>e</sup> Ã©chÃ©ance : </td>'+
 								'<td style="text-align:center"><select name="slct_type_'+i+'" id="slct_type_'+i+'" style="width:100px"><option value="Acompte">Acompte</option><option value="Arrhes">Arrhes</option><option value="Solde">Solde</option></select></td>'+
 								'<td style="text-align:center"><select name="slct_mode_'+i+'" id="slct_mode_'+i+'" style="width:160px">'+str_mode_regl_select+'</select></td>'+
 								'<td style="text-align:center"><input name="inp_delai_'+i+'" id="inp_delai_'+i+'" type="text" value="" class="classinput_xsize" style="width:30px" MAXLENGTH="3"/> jours</td>'+
@@ -136,7 +136,7 @@ update_menu_arbo();
 				</td>				
 				</tr>
 				<tr id="tr_lignes_reglement" style="display: none">
-				<!--------Lignes en affichage dynamique en fonction du nombre de règlements -------->
+				<!--------Lignes en affichage dynamique en fonction du nombre de rÃ¨glements -------->
 				<td colspan="4">
 					<div id="div_lignes_reglement"></div>
 				</td>
@@ -152,7 +152,7 @@ update_menu_arbo();
 	</div>
 
 <?php if($modeles){?>
-	<p>Modèles d'échéanciers </p>
+	<p>ModÃ¨les d'Ã©chÃ©anciers </p>
 	<?php foreach($modeles as $modele){
 	$modele_echeancier = new modele_echeancier($modele->id_echeancier_modele);?>
 	<div class="caract_table">
@@ -167,7 +167,7 @@ update_menu_arbo();
 					<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>					
 				<tr>
-				<td style="text-align:right">Modèle d'échéancier :
+				<td style="text-align:right">ModÃ¨le d'Ã©chÃ©ancier :
 				<input name="id_mod_ech" id="id_mod_ech" type="hidden" value="<?php echo $modele_echeancier->getId_echeancier_modele();?>" />
 				</td>
 				<td>
@@ -176,7 +176,7 @@ update_menu_arbo();
 				<td>&nbsp;</td>
 				</tr>
 				<tr>
-				<td style="text-align:right">Nombre de règlements :
+				<td style="text-align:right">Nombre de rÃ¨glements :
 				</td>
 				<td>
 					<input name="nb_reglements_mod_<?php echo $modele_echeancier->getId_echeancier_modele();?>" id="nb_reglements_mod_<?php echo $modele_echeancier->getId_echeancier_modele();?>" type="text" value="<?php echo count($modele_echeancier->getEcheances());?>" class="classinput_xsize" style="width:20px" MAXLENGTH="2"/>
@@ -190,10 +190,10 @@ update_menu_arbo();
 					Event.observe('nb_reglements_mod_<?php echo $modele_echeancier->getId_echeancier_modele();?>', 'change',  function(){
 						strlignetot = '<table id="tb_liste_regl" name="tb_liste_regl">'+
 						'<tr class="smallheight">'+
-						'<td style="width:25%"><strong>Echéance</strong></td>'+
-						'<td style="width:20%;text-align:center"><strong>Type d\'échéance</strong></td>'+
-						'<td style="width:20%;text-align:center"><strong>Mode de règlement</strong></td>'+
-						'<td style="width:20%;text-align:center"><strong>Délai</strong></td>'+
+						'<td style="width:25%"><strong>EchÃ©ance</strong></td>'+
+						'<td style="width:20%;text-align:center"><strong>Type d\'Ã©chÃ©ance</strong></td>'+
+						'<td style="width:20%;text-align:center"><strong>Mode de rÃ¨glement</strong></td>'+
+						'<td style="width:20%;text-align:center"><strong>DÃ©lai</strong></td>'+
 						'<td style="width:15%;text-align:center"><strong>Montant</strong></td>'+
 						'</tr>';
 						str_type_select = '<option value="0">Solde</option><option value="1">Acompte</option></select>';							
@@ -205,7 +205,7 @@ update_menu_arbo();
 								for(i=1;i<=nbregl;i++){
 									if(i==nbregl){
 										strligne = '<tr>'+
-										'<td>'+ i +'<sup>e</sup> échéance : </td>'+
+										'<td>'+ i +'<sup>e</sup> Ã©chÃ©ance : </td>'+
 										'<td style="text-align:center"><select name="slct_type_'+i+'" id="slct_type_'+i+'" style="width:100px"><option value="Solde">Solde</option></select></td>'+
 										'<td style="text-align:center"><select name="slct_mode_'+i+'" id="slct_mode_'+i+'" style="width:160px">'+str_mode_regl_select+'</select></td>'+
 										'<td style="text-align:center"><input name="inp_delai_'+i+'" id="inp_delai_'+i+'" type="text" value="" class="classinput_xsize" style="width:30px" MAXLENGTH="3"/> jours</td>'+
@@ -215,7 +215,7 @@ update_menu_arbo();
 									else{
 										if(i==1){
 											strligne = '<tr>'+
-											'<td>'+ i +'<sup>e</sup> échéance : </td>'+
+											'<td>'+ i +'<sup>e</sup> Ã©chÃ©ance : </td>'+
 											'<td style="text-align:center"><select name="slct_type_'+i+'" id="slct_type_'+i+'" style="width:100px"><option value="Acompte">Acompte</option><option value="Arrhes">Arrhes</option><option value="Echeance">Echeance</option></select></td>'+
 											'<td style="text-align:center"><select name="slct_mode_'+i+'" id="slct_mode_'+i+'" style="width:160px">'+str_mode_regl_select+'</select></td>'+
 											'<td style="text-align:center"><input name="inp_delai_'+i+'" id="inp_delai_'+i+'" type="text" value="" class="classinput_xsize" style="width:30px" MAXLENGTH="3"/> jours</td>'+
@@ -223,7 +223,7 @@ update_menu_arbo();
 											'</tr>';
 										}else{
 											strligne = '<tr>'+
-											'<td>'+ i +'<sup>e</sup> échéance : </td>'+
+											'<td>'+ i +'<sup>e</sup> Ã©chÃ©ance : </td>'+
 											'<td style="text-align:center"><select name="slct_type_'+i+'" id="slct_type_'+i+'" style="width:100px"><option value="Echeance">Echeance</option></select></td>'+
 											'<td style="text-align:center"><select name="slct_mode_'+i+'" id="slct_mode_'+i+'" style="width:160px">'+str_mode_regl_select+'</select></td>'+
 											'<td style="text-align:center"><input name="inp_delai_'+i+'" id="inp_delai_'+i+'" type="text" value="" class="classinput_xsize" style="width:30px" MAXLENGTH="3"/> jours</td>'+
@@ -235,7 +235,7 @@ update_menu_arbo();
 								}
 							}else{
 								strlignetot += '<tr>'+
-								'<td>1<sup>e</sup> échéance : </td>'+
+								'<td>1<sup>e</sup> Ã©chÃ©ance : </td>'+
 								'<td style="text-align:center"><select name="slct_type_'+i+'" id="slct_type_'+i+'" style="width:100px"><option value="Acompte">Acompte</option><option value="Arrhes">Arrhes</option><option value="Solde">Solde</option></select></td>'+
 								'<td style="text-align:center"><select name="slct_mode_'+i+'" id="slct_mode_'+i+'" style="width:160px">'+str_mode_regl_select+'</select></td>'+
 								'<td style="text-align:center"><input name="inp_delai_'+i+'" id="inp_delai_'+i+'" type="text" value="" class="classinput_xsize" style="width:30px" MAXLENGTH="3"/> jours</td>'+
@@ -258,22 +258,22 @@ update_menu_arbo();
 				</td>				
 				</tr>
 				<tr id="tr_lignes_reglement" >
-				<!--------Lignes en affichage dynamique en fonction du nombre de règlements -------->
+				<!--------Lignes en affichage dynamique en fonction du nombre de rÃ¨glements -------->
 				<td colspan="4">
 				<div id="div_lignes_reglement_mod_<?php echo $modele_echeancier->getId_echeancier_modele();?>">
 				<table id="tb_liste_regl" >
 						<tr class="smallheight">
-						<td style="width:25%"><strong>Echéance</strong></td>
-						<td style="width:20%;text-align:center"><strong>Type d'échéance</strong></td>
-						<td style="width:20%;text-align:center"><strong>Mode de règlement</strong></td>
-						<td style="width:20%;text-align:center"><strong>Délai</strong></td>
+						<td style="width:25%"><strong>EchÃ©ance</strong></td>
+						<td style="width:20%;text-align:center"><strong>Type d'Ã©chÃ©ance</strong></td>
+						<td style="width:20%;text-align:center"><strong>Mode de rÃ¨glement</strong></td>
+						<td style="width:20%;text-align:center"><strong>DÃ©lai</strong></td>
 						<td style="width:15%;text-align:center"><strong>Montant</strong></td>
 						</tr>
 					<?php $i = 1;
 					$echTot = count($modele_echeancier->getEcheances());
 					 foreach($modele_echeancier->getEcheances() as $echeance){?>					
 							<tr>
-							<td><?php echo $i;?><sup>e</sup> échéance : </td>
+							<td><?php echo $i;?><sup>e</sup> Ã©chÃ©ance : </td>
 							<td style="text-align:center">
 							<select name="slct_type_<?php echo $i;?>" id="slct_type_<?php echo $i;?>" style="width:100px">
 							<?php if($i==1 && $echTot> 1){?>

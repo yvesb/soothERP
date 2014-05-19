@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nÈcessaires ‡ l'affichage
+// Variables n√©cessaires √† l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -38,12 +38,12 @@ array_menu_accueil[2] 	=	new Array('histo_liste', 'menu_accueil_2');
 	<a href="#" id="close_acc_wecome" style="float:right">
 	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
 	</a>
-<span class="titre_second">Bienvenue dans l'interface d'administration de SoothERP, un fork du logiciel Lundi Matin BusinessÆ.</span><br />
+<span class="titre_second">Bienvenue dans l'interface d'administration de SoothERP, un fork du logiciel Lundi Matin Business¬Æ.</span><br />
 <br />
 
-Pour votre confort, nous avons prÈ-paramÈtrÈ votre solution, mais il est important de consulter ces paramÈtrages afin de les adapter ‡ votre activitÈ.<br />
+Pour votre confort, nous avons pr√©-param√©tr√© votre solution, mais il est important de consulter ces param√©trages afin de les adapter √† votre activit√©.<br />
 <br />
-Vous trouverez la liste des t‚ches d'administration sur la page d'accueil.<br />
+Vous trouverez la liste des t√¢ches d'administration sur la page d'accueil.<br />
 <br />
 <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/acc_welcome.jpg" border="0"><br />
 <br />
@@ -66,8 +66,8 @@ Vous trouverez la liste des t‚ches d'administration sur la page d'accueil.<br />
 		<div style=" height:310px">
 			<div style="height:22px">
 				<ul>
-				<li class="accueil_onglet" id="menu_accueil_0">SystËme</li>
-				<li class="accueil_onglet_hide" id="menu_accueil_1"><span style="color:#FF0000"><?php echo count($taches_todo);?></span> T‚ches</li>
+				<li class="accueil_onglet" id="menu_accueil_0">Syst√®me</li>
+				<li class="accueil_onglet_hide" id="menu_accueil_1"><span style="color:#FF0000"><?php echo count($taches_todo);?></span> T√¢ches</li>
 				<li class="accueil_onglet_hide" id="menu_accueil_2">Historique</li>
 				</ul>
 			</div>
@@ -94,7 +94,7 @@ Vous trouverez la liste des t‚ches d'administration sur la page d'accueil.<br />
 							<span class="sbold_ita_text" style="color: #999999" id="go_tache_<?php echo $tache->id_tache_admin;?>_4"><?php echo ($tache->description );?></span>						</div>					</td>
 						<td style="text-align:right;">
 						<div id="etat_tache_<?php echo $tache->id_tache_admin;?>_l" style="cursor:pointer; width:10px; display:block ">
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/actcoch.jpg" alt="ConsidÈrer cette t‚che comme accomplie" title="ConsidÈrer cette t‚che comme accomplie" id="etat_tache_<?php echo $tache->id_tache_admin;?>_2" />					</div>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/actcoch.jpg" alt="Consid√©rer cette t√¢che comme accomplie" title="Consid√©rer cette t√¢che comme accomplie" id="etat_tache_<?php echo $tache->id_tache_admin;?>_2" />					</div>
 					<script type="text/javascript">
 					
 						//observateurs pour afficher les taches de l'utilisateur
@@ -167,11 +167,11 @@ Vous trouverez la liste des t‚ches d'administration sur la page d'accueil.<br />
 					<div>
 					<?php 
 					//nouvelle maj dispo
-					if (0==1 /* Ne jamais proposer de mise ‡ jour, incompatible avec SoothERP. isset($_SESSION['NEW_MAJ_DISPO']) && $_SESSION['NEW_MAJ_DISPO'] != "0" */) {					
+					if (0==1 /* Ne jamais proposer de mise √† jour, incompatible avec SoothERP. isset($_SESSION['NEW_MAJ_DISPO']) && $_SESSION['NEW_MAJ_DISPO'] != "0" */) {					
 						?><span style="float:left; padding-right:20px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>/images/ico_unvalide.png" alt="Nouvelle version de LundiMatin Business disponible !" title="Nouvelle version de LundiMatin Business disponible !"/></span>
-						Version actuelle : <?php echo affiche_version ($_SERVER['VERSION']);?> / DerniËre version : <?php echo affiche_version ($_SESSION['NEW_MAJ_DISPO']);?>
+						Version actuelle : <?php echo affiche_version ($_SERVER['VERSION']);?> / Derni√®re version : <?php echo affiche_version ($_SESSION['NEW_MAJ_DISPO']);?>
 						<br /><br />
-						<span style="float:left; padding-right:20px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>/images/blank.gif" width="22px" /></span>Vous devez mettre ‡ jour LundiMatin Business : <span id="id_new_maj_dispo2" style="cursor:pointer; text-decoration:underline"  >Cliquez ici
+						<span style="float:left; padding-right:20px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>/images/blank.gif" width="22px" /></span>Vous devez mettre √† jour LundiMatin Business : <span id="id_new_maj_dispo2" style="cursor:pointer; text-decoration:underline"  >Cliquez ici
 						</span>
 						<script type="text/javascript">
 							Event.observe("id_new_maj_dispo2", "click", function() {	page.verify('import_maj_serveur','import_maj_serveur.php','true','sub_content');}, false);
@@ -233,7 +233,7 @@ Vous trouverez la liste des t‚ches d'administration sur la page d'accueil.<br />
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_maintenance_small.jpg" id="osmenu_maintenance" style="cursor:pointer" />
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_transfert_donnees_small.jpg" id="osmenu_transfert_donnees" style="cursor:pointer" />
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_gestion_modules_small.jpg" id="osmenu_gestion_modules" style="cursor:pointer" />
-				<!-- Mise ‡ jour incompatible SoothERP, ligne  commentÈe <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_maj_small.jpg" id="osmenu_maj" style="cursor:pointer" /><br />-->
+				<!-- Mise √† jour incompatible SoothERP, ligne  comment√©e <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_maj_small.jpg" id="osmenu_maj" style="cursor:pointer" /><br />-->
 				<br />
 			</div>
 		</td>
@@ -261,7 +261,7 @@ Event.observe("osmenu_secusys", "click",  function(evt){Event.stop(evt); page.ve
 Event.observe("osmenu_maintenance", "click",  function(evt){Event.stop(evt); page.verify('smenu_maintenance','smenu_maintenance.php' ,"true" ,"sub_content");}, false);
 Event.observe("osmenu_transfert_donnees", "click",  function(evt){Event.stop(evt); page.verify('smenu_transfert_donnees','smenu_transfert_donnees.php' ,"true" ,"sub_content");}, false);
 Event.observe("osmenu_gestion_modules", "click",  function(evt){Event.stop(evt); page.verify('smenu_gestion_modules','smenu_gestion_modules.php' ,"true" ,"sub_content");}, false);
-// Mise ‡ jour incompatible SoothERP, ligne suivante commentÈe
+// Mise √† jour incompatible SoothERP, ligne suivante comment√©e
 //Event.observe("osmenu_maj", "click",  function(evt){Event.stop(evt); page.verify('import_maj_serveur','import_maj_serveur.php' ,"true" ,"sub_content");}, false);
 
 

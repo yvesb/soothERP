@@ -4,7 +4,7 @@
 // visualisation d'un controle de caisse
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -24,14 +24,14 @@ check_page_variables ($page_variables);
 <script type="text/javascript">
 Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); page.verify('compta_gestion2_caisse','compta_gestion2_caisse.php?id_caisse=<?php echo $compte_caisse_controle->id_compte_caisse;?>','true','sub_content');}, false);
 </script>
-<div class="titre">Contrôle <?php echo htmlentities($compte_caisse->getLib_caisse()); ?>
+<div class="titre">ContrÃ´le <?php echo htmlentities($compte_caisse->getLib_caisse()); ?>
 </div>
 
 <div class="articletview_corps" id="controle_validation"  style="OVERFLOW-Y: auto; OVERFLOW-X: auto; width:100%;">
 <div class="emarge"><br />
 <span class="controle_sub_title">
-Contrôle effectué par <span style="font-weight:bolder"><?php echo htmlentities($compte_caisse_controle->pseudo);?></span> le 
-<?php echo Date_Us_To_Fr($compte_caisse_controle->date_controle);?> à
+ContrÃ´le effectuÃ© par <span style="font-weight:bolder"><?php echo htmlentities($compte_caisse_controle->pseudo);?></span> le 
+<?php echo Date_Us_To_Fr($compte_caisse_controle->date_controle);?> Ã 
  <?php echo getTime_from_date($compte_caisse_controle->date_controle);?>
 </span>
 <br />
@@ -168,7 +168,7 @@ Contrôle effectué par <span style="font-weight:bolder"><?php echo htmlentities($
 		</div></td>
 	</tr>
 	<tr>
-		<td height="35" colspan="3"><div style=" font-weight:bolder; text-align:right">Rappel des opérations saisies: </div></td>
+		<td height="35" colspan="3"><div style=" font-weight:bolder; text-align:right">Rappel des opÃ©rations saisies: </div></td>
 		
 		<td height="35" valign="middle" class="line_compta_right">&nbsp;</td>
 		<td height="35" valign="middle" align="right">

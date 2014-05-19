@@ -8,7 +8,7 @@ class pdf_factures_apayer extends PDF_etendu {
 	var $code_pdf_modele = "factures_apayer";
 
 	var $factures;				// exercice 
-	var $lib_client_categ;			// Lib de la catégorie de client
+	var $lib_client_categ;			// Lib de la catÃ©gorie de client
 	var $lib_niveau_relance;			// Lib du niveau de relance
 	var $total_factures;
 
@@ -62,7 +62,7 @@ public function create_pdf ($factures, $lib_client_categ = "", $lib_niveau_relan
 	$this->date_impression 	= date("d/m/Y");
 	$this->total_factures = 0;
 	
-	$lib_printed = "Factures Clients non réglées";
+	$lib_printed = "Factures Clients non rÃ©glÃ©es";
 	
 	$this->lib_type_printed 	= $lib_printed;
 	
@@ -77,12 +77,12 @@ public function create_pdf ($factures, $lib_client_categ = "", $lib_niveau_relan
 	// Initialisation des variables
 	$this->nb_pages					= 1;
 	$this->contenu_actuel 	= 0;					// Ligne du document en cours de traitement
-	$this->contenu_end_page = array();		// Lignes de contenu terminant les différentes pages
+	$this->contenu_end_page = array();		// Lignes de contenu terminant les diffÃ©rentes pages
 	$this->page_actuelle		= 0;
 	$this->content_printed	= 0;
 
 	// ***************************************************
-	// Valeurs par défaut
+	// Valeurs par dÃ©faut
 	foreach ($EXTRAIT_COMPTE as $var => $valeur) {
 		$this->{$var} = $valeur;
 	}
@@ -95,14 +95,14 @@ public function create_pdf ($factures, $lib_client_categ = "", $lib_niveau_relan
 
 
 	// ***************************************************
-	// Comptage du nombre de page nécessaires
+	// Comptage du nombre de page nÃ©cessaires
 	$hauteur_totale = 0;
 	for ($i=0; $i<count($this->contenu); $i++) {
 
 		// Hauteur de la ligne
 		$hauteur_ligne = $this->HAUTEUR_LINE_FACTURE;
 
-		// Vérification de la nécessité de changer de page
+		// VÃ©rification de la nÃ©cessitÃ© de changer de page
 		$hauteur_totale += $hauteur_ligne;
 		if ($hauteur_totale >= $this->CORPS_HAUTEUR_MAX) {
 			
@@ -116,7 +116,7 @@ public function create_pdf ($factures, $lib_client_categ = "", $lib_niveau_relan
 	}
 
 	// ***************************************************
-	// Création de la première page
+	// CrÃ©ation de la premiÃ¨re page
 	$this->create_pdf_page ();
 
 
@@ -124,12 +124,12 @@ public function create_pdf ($factures, $lib_client_categ = "", $lib_niveau_relan
 }
 
 
-// Créé une nouvelle page du document PDF
+// CrÃ©Ã© une nouvelle page du document PDF
 protected function create_pdf_page () {
 	// Comptage du nombre de page
 	$this->page_actuelle++;
 
-	// Création d'une nouvelle page
+	// CrÃ©ation d'une nouvelle page
 	$this->AddPage();
 	$this->create_pdf_entete ();
 	$this->create_pdf_corps ();
@@ -142,7 +142,7 @@ protected function create_pdf_page () {
 }
 
 
-// Créé l'entete du document PDF
+// CrÃ©Ã© l'entete du document PDF
 protected function create_pdf_entete () {
 	global $IMAGES_DIR;
 
@@ -157,10 +157,10 @@ protected function create_pdf_entete () {
 	$this->Cell (95, 10, $this->lib_type_printed, 0, 0, 'L');
 
 	// ***************************************************
-	// Catégorie de client
+	// CatÃ©gorie de client
 	$this->SetXY($this->MARGE_GAUCHE+1, 27);
 	$this->SetFont('Arial', '', 8);
-	/*$this->Cell (13, 3, "Catégorie", 0, 0, 'L');
+	/*$this->Cell (13, 3, "CatÃ©gorie", 0, 0, 'L');
 	$this->Cell (3, 3, ":", 0, 0, 'L');
 	$this->Cell (13, 3, $this->lib_client_categ, 0, 0, 'L');*/
 	
@@ -188,7 +188,7 @@ protected function create_pdf_entete () {
 
 
 
-// Créé le corps du PDF
+// CrÃ©Ã© le corps du PDF
 protected function create_pdf_corps () {
 	global $MONNAIE;
 
@@ -196,7 +196,7 @@ protected function create_pdf_corps () {
 
 
 	// ***************************************************
-	// Numéro de page
+	// NumÃ©ro de page
 	$this->SetXY(-45, $this->CORPS_HAUTEUR_DEPART - 6);
 	$this->SetFont('Arial', 'I', 8);
 	$page_lib = "Page ".$this->page_actuelle." / ".$this->nb_pages;
@@ -234,7 +234,7 @@ protected function create_pdf_corps () {
 			break; 
 		}
 
-		// Controle de la nécessité de changer de page
+		// Controle de la nÃ©cessitÃ© de changer de page
 		if (in_array($i, $this->contenu_end_page)) { break;	}
 	}
 	
@@ -242,7 +242,7 @@ protected function create_pdf_corps () {
 		$this->decalage_corps_actuel += $this->HAUTEUR_LINE_FACTURE;
 		$this->SetXY($this->MARGE_GAUCHE, $this->CORPS_HAUTEUR_DEPART + $this->decalage_corps_actuel);
 		
-		$this->Cell ($this->LARGEUR_COL_REF+$this->LARGEUR_COL_CLIENT+$this->LARGEUR_COL_CREATION+$this->LARGEUR_COL_ECHEANCE+$this->LARGEUR_COL_RELANCE, 6, "Montant Total dû:", 0, 0, 'R');
+		$this->Cell ($this->LARGEUR_COL_REF+$this->LARGEUR_COL_CLIENT+$this->LARGEUR_COL_CREATION+$this->LARGEUR_COL_ECHEANCE+$this->LARGEUR_COL_RELANCE, 6, "Montant Total dÃ»:", 0, 0, 'R');
 		  	 
 		$this->Cell($this->LARGEUR_COL_MONTANT, $this->HAUTEUR_LINE_FACTURE,  price_format($this->total_factures)." ".$MONNAIE[0], 0, 0, 'R');
 		
@@ -272,15 +272,15 @@ protected function create_pdf_corps_line ($line) {
 	$this->montant_en_credit = "";
 	$this->montant_en_debit = "";
 	
-	// Positionnement au début de la ligne
+	// Positionnement au dÃ©but de la ligne
 	$this->SetXY($this->MARGE_GAUCHE, $this->CORPS_HAUTEUR_DEPART + $this->decalage_corps_actuel);
-	// Style d'écriture par défaut
+	// Style d'Ã©criture par dÃ©faut
 	$this->SetFont('Arial', '', 9);
 	
 	$hauteur = $this->HAUTEUR_LINE_FACTURE;
 	$this->decalage_corps_actuel += $hauteur;
 
-	// Spécifités à l'affichage
+	// SpÃ©cifitÃ©s Ã  l'affichage
 			$cadre = "LRBT";
 			
 			//ref
@@ -318,7 +318,7 @@ protected function create_pdf_texte_corps_pieds () {
 protected function create_pdf_pieds () {
 	global $MONNAIE;
 
-	// Information société
+	// Information sociÃ©tÃ©
 	$this->SetXY($this->MARGE_GAUCHE, $this->PIEDS_HAUTEUR_DEPART + $this->PIEDS_HAUTEUR_MAX + 1);
 	foreach ($this->PIEDS_GAUCHE as $texte) {
 		$this->Cell ($this->LARGEUR_TOTALE_CORPS, 4.5, $texte, '0', 2, 'L');

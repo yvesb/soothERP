@@ -2,7 +2,7 @@
 <span class="labelled_text" style="font-weight:bolder">Abonnement :</span>
 <table style="width:100%">
 	<tr>
-		<td style="width:40%" class="labelled_text">Durée de l'abonnement: </td>
+		<td style="width:40%" class="labelled_text">DurÃ©e de l'abonnement: </td>
 		<td style="width:36%">
 			<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
 			<tr>
@@ -25,14 +25,14 @@
 		<td></td>
 	</tr>
 	<tr>
-		<td class="labelled_text">Réengagement automatique: </td>
+		<td class="labelled_text">RÃ©engagement automatique: </td>
 		<td>
 			<input type="text" name="m_reconduction" id="m_reconduction" value="0" size="3" class="classinput_nsize"/> x <span id="duree_rec">0</span> mois <span id="duree_rec_j">0</span> jours
 		</td>
 		<td></td>
 	</tr>
 	<tr>
-		<td class="labelled_text">Délai du préavis avant résiliation: </td>
+		<td class="labelled_text">DÃ©lai du prÃ©avis avant rÃ©siliation: </td>
 		<td>
 			<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
 			<tr>

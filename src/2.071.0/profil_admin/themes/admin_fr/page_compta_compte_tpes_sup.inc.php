@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -47,7 +47,7 @@ if (erreur) {
 	
 	
 	if (exist_reglements) {
-		texte_erreur += "La suppression de ce TPE est impossible car des règlements ont été effectués via ce TPE.<br/>Vous pouvez néamoins désactiver un TPE";
+		texte_erreur += "La suppression de ce TPE est impossible car des rÃ¨glements ont Ã©tÃ© effectuÃ©s via ce TPE.<br/>Vous pouvez nÃ©amoins dÃ©sactiver un TPE";
 	}
 
 	window.parent.alerte.alerte_erreur ('Suppression Impossible', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');

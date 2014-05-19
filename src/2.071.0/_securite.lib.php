@@ -4,7 +4,7 @@
 // *************************************************************************************************************
 
 
-// Vérifie que l'utilisateur a tel droit ou non
+// VÃ©rifie que l'utilisateur a tel droit ou non
 function check_permission () {
 	
 }

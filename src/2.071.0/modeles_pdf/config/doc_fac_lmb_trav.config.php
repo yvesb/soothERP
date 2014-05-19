@@ -6,7 +6,7 @@ global $DOCUMENTS_IMG_LOGO;
 $DOC_STANDARD['IMG_LOGO']	= $DOCUMENTS_IMG_LOGO;
 
 $DOC_STANDARD['FORMULAIRE_TVA_1']	= "1.jpg"; // nom du fichier image du formulaire tva
-// à placer dans ..\htdocs\LMB\fichiers\images
+// Ã  placer dans ..\htdocs\LMB\fichiers\images
 
 $DOC_STANDARD['AFF_REMISES']	= $AFF_REMISES;
 
@@ -23,9 +23,9 @@ $DOC_STANDARD['HAUTEUR_AFTER_LINE_INFORMATION']	= 0;
 $DOC_STANDARD['HAUTEUR_AFTER_LINE_SOUSTOTAL']		= 0;
 $DOC_STANDARD['HAUTEUR_AFTER_LINE_DESCRIPTION']	= 0;
 
-$DOC_STANDARD['ENTETE_COL_REF'] = "Référence";
-$DOC_STANDARD['ENTETE_COL_DES'] = "Désignation";
-$DOC_STANDARD['ENTETE_COL_QTE'] = "Qté";
+$DOC_STANDARD['ENTETE_COL_REF'] = "RÃ©fÃ©rence";
+$DOC_STANDARD['ENTETE_COL_DES'] = "DÃ©signation";
+$DOC_STANDARD['ENTETE_COL_QTE'] = "QtÃ©";
 $DOC_STANDARD['ENTETE_COL_PU']  = "PU ".$this->app_tarifs;
 $DOC_STANDARD['ENTETE_COL_REM'] = "Rem.";
 $DOC_STANDARD['ENTETE_COL_PT']  = "Montant";
@@ -68,21 +68,21 @@ $DOC_STANDARD['PIEDS_DROIT'][0]	=  $PIED_DE_PAGE_DROIT_0;
 $DOC_STANDARD['PIEDS_DROIT'][1]	= $PIED_DE_PAGE_DROIT_1;
 
 
-//variable//type de champ(parametre)//libéllé//commentaire
+//variable//type de champ(parametre)//libÃ©llÃ©//commentaire
 // PARAMETRES MODIFIABLES
-$DOC_STANDARD['TEXTE_CORPS_PIEDS'][0]="";//TXTE()// Texte entre corps et pied de page//ligne n°1   
-$DOC_STANDARD['TEXTE_CORPS_PIEDS'][1]="";//TXTE()// Texte entre corps et pied de page//ligne n°2 
-$DOC_STANDARD['TEXTE_CORPS_PIEDS'][2]="";//TXTE()// Texte entre corps et pied de page//ligne n°3
+$DOC_STANDARD['TEXTE_CORPS_PIEDS'][0]="";//TXTE()// Texte entre corps et pied de page//ligne nÂ°1   
+$DOC_STANDARD['TEXTE_CORPS_PIEDS'][1]="";//TXTE()// Texte entre corps et pied de page//ligne nÂ°2 
+$DOC_STANDARD['TEXTE_CORPS_PIEDS'][2]="";//TXTE()// Texte entre corps et pied de page//ligne nÂ°3
 // FIN PARAMETRES MODIFIABLES
 // CONFIGURATION PAR DEFAUT
-// Portion de code recopiée dans la partie « paramètres modifiables » en cas de remise à 0 des paramètres.
+// Portion de code recopiÃ©e dans la partie Â«Â paramÃ¨tres modifiablesÂ Â» en cas de remise Ã  0 des paramÃ¨tres.
 /*
-$DOC_STANDARD['TEXTE_CORPS_PIEDS'][0]="Devis établi gratuitement";//TXTE()// Texte entre corps et pied de page//ligne n°1
-$DOC_STANDARD['TEXTE_CORPS_PIEDS'][1]="Les prix indiqués sur ce devis sont valables: 30 jours.";//TXTE()// Texte entre corps et pied de page//ligne n°2
-$DOC_STANDARD['TEXTE_CORPS_PIEDS'][2]="";//TXTE()// Texte entre corps et pied de page//ligne n°3
+$DOC_STANDARD['TEXTE_CORPS_PIEDS'][0]="Devis Ã©tabli gratuitement";//TXTE()// Texte entre corps et pied de page//ligne nÂ°1
+$DOC_STANDARD['TEXTE_CORPS_PIEDS'][1]="Les prix indiquÃ©s sur ce devis sont valables: 30 jours.";//TXTE()// Texte entre corps et pied de page//ligne nÂ°2
+$DOC_STANDARD['TEXTE_CORPS_PIEDS'][2]="";//TXTE()// Texte entre corps et pied de page//ligne nÂ°3
 */
 // FIN CONFIGURATION PAR DEFAUT
-// INFORMATIONS SUR L’AUTEUR
+// INFORMATIONS SUR Lâ€™AUTEUR
 /* 
 */
 ?>

@@ -4,7 +4,7 @@
 // retrait en la banque vers caisse 
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
 <iframe frameborder="0" scrolling="no" src="about:_blank" id="edition_reglement_iframe" class="edition_reglement_iframe" style="display:none"></iframe>
 <div id="edition_reglement" class="edition_reglement" style="display:none">
 </div>
-<div class="titre" style="width:60%; padding-left:140px">Retrait bancaire vers  <?php echo htmlentities($compte_caisse->getLib_caisse()); ?> effectué
+<div class="titre" style="width:60%; padding-left:140px">Retrait bancaire vers  <?php echo htmlentities($compte_caisse->getLib_caisse()); ?> effectuÃ©
 </div>
 
 

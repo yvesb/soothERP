@@ -4,7 +4,7 @@
 // Rapprochement automatique affichage de la progression
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -15,7 +15,7 @@ check_page_variables ($page_variables);
 // *************************************************************************************************************
 
 if ($_REQUEST["a_rapprocher"] >0) { 
-echo ($nb_ope)." rapprochements effectués automatiquement  / ".$_REQUEST["a_rapprocher"]." à rapprocher ";
+echo ($nb_ope)." rapprochements effectuÃ©s automatiquement  / ".$_REQUEST["a_rapprocher"]." Ã  rapprocher ";
 }
 ?>
 <SCRIPT type="text/javascript">
@@ -44,5 +44,5 @@ if ($nb_move < $_REQUEST["a_rapprocher"]  && $next_date_fin_moves != $ENTREPRISE
 	H_loading();
 </SCRIPT>
 <br />
-Rapprochements automatiques terminés.
+Rapprochements automatiques terminÃ©s.
 <?php }?>

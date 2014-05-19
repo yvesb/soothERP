@@ -33,7 +33,7 @@ if ($FOURNISSEUR_ID_PROFIL != 0) {
 //liste des lieux de stock
 $stocks_liste	= fetch_all_stocks();
 
-//liste des catégories d'articles principales
+//liste des catÃ©gories d'articles principales
 $liste_art_categ = get_art_categs_racine ();
 
 //chargement des comptes bancaires
@@ -49,7 +49,7 @@ $comptes_caisses	= compte_caisse::charger_comptes_caisses("", 1);
 
 
 
-//Chargemant des différents CA et soldes
+//Chargemant des diffÃ©rents CA et soldes
 
 $CA_categ_client = array();
 $CA_categ_fournisseur = array();
@@ -64,7 +64,7 @@ $Solde_categ_fournisseur = array();
 for ($i = 0; $i < 3 ; $i++) {
 	if (!isset($last_exercices[$i])) { break;}
 	
-	//chargement des CA par catégorie de client
+	//chargement des CA par catÃ©gorie de client
 	foreach ($liste_categories_client as $categ_client) {
 		if (!isset($CA_categ_client[$categ_client->id_client_categ])) {$CA_categ_client[$categ_client->id_client_categ] = array();}
 		$where = "";
@@ -91,7 +91,7 @@ for ($i = 0; $i < 3 ; $i++) {
 	}
 	unset ($doc, $query, $resultat);
 	
-	//chargement des CA par catégorie de fournisseur
+	//chargement des CA par catÃ©gorie de fournisseur
 	foreach ($liste_categories_fournisseur as $categ_fournisseur) {
 		if (!isset($CA_categ_fournisseur[$categ_fournisseur->id_fournisseur_categ])) {$CA_categ_fournisseur[$categ_fournisseur->id_fournisseur_categ] = array();}
 		$where = "";
@@ -147,7 +147,7 @@ for ($i = 0; $i < 3 ; $i++) {
 	unset ($doc, $query, $resultat);
 	
 	
-	//chargement des CA par activité
+	//chargement des CA par activitÃ©
 	foreach ($liste_art_categ as $art_categ) {
 		if (!isset($CA_activites[$art_categ->ref_art_categ])) {$CA_activites[$art_categ->ref_art_categ] = array();}
 		
@@ -246,7 +246,7 @@ foreach ($comptes_caisses as $caisse) {
 	$Solde_caisses[$caisse->id_compte_caisse] = 0;
 }
 
-//Solde des comptes par catégories client
+//Solde des comptes par catÃ©gories client
 foreach ($liste_categories_client as $categ_client) {
 	$solde_contact = 0;
 	$where = "";
@@ -275,7 +275,7 @@ foreach ($liste_categories_client as $categ_client) {
 	while ($var_doc = $doc->fetchObject()) {
 		$solde_contact += -1*number_format($var_doc->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	);
 	}
-	// Sélection des règlements du contact
+	// SÃ©lection des rÃ¨glements du contact
 	$where = "";
 	if ($categ_client->id_client_categ == $DEFAUT_ID_CLIENT_CATEG) {$where .= " || ac.id_client_categ IS NULL ";}
 	$livre_reglements = array();
@@ -298,15 +298,15 @@ foreach ($liste_categories_client as $categ_client) {
 	while ($var_reg = $resultat_reg->fetchObject()) {
 		$livre_reglements[$var_reg->ref_reglement] = $var_reg; 
 	}
-	//on calcul un ran qui cumule l'ensemble des résultats
+	//on calcul un ran qui cumule l'ensemble des rÃ©sultats
 
 	foreach ($livre_reglements as $reglement) {	
-		// Règlement en débit
+		// RÃ¨glement en dÃ©bit
 		if (isset($reglement->ref_reglement) && $reglement->type_reglement == "sortant") {
 			if ($reglement->id_fournisseur_categ && $reglement->id_type_doc == NULL ) {continue;}
 			$solde_contact = $solde_contact - number_format($reglement->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	);
 		} 
-		//règlement en crédit
+		//rÃ¨glement en crÃ©dit
 		if (isset($reglement->ref_reglement) && $reglement->type_reglement == "entrant") { 
 			$solde_contact = $solde_contact + number_format($reglement->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	);
 		}
@@ -319,7 +319,7 @@ foreach ($liste_categories_client as $categ_client) {
 
 
 
-//Solde des comptes par catégories fournisseur
+//Solde des comptes par catÃ©gories fournisseur
 foreach ($liste_categories_fournisseur as $categ_fournisseur) {
 	$solde_contact = 0;
 	$where = "";
@@ -350,7 +350,7 @@ foreach ($liste_categories_fournisseur as $categ_fournisseur) {
 		$solde_contact += -1*number_format($var_doc->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	);
 	}
 
-	// Sélection des règlements du contact
+	// SÃ©lection des rÃ¨glements du contact
 	$where = "";
 	if ($categ_fournisseur->id_fournisseur_categ == $DEFAUT_ID_FOURNISSEUR_CATEG) {$where .= " || af.id_fournisseur_categ IS NULL ";}
 	$livre_reglements = array();
@@ -373,14 +373,14 @@ foreach ($liste_categories_fournisseur as $categ_fournisseur) {
 	while ($var_reg = $resultat_reg->fetchObject()) {
 		$livre_reglements[$var_reg->ref_reglement] = $var_reg; 
 	}
-	//on calcul un ran qui cumule l'ensemble des résultats
+	//on calcul un ran qui cumule l'ensemble des rÃ©sultats
 
 	foreach ($livre_reglements as $reglement) {	
-		// Règlement en débit
+		// RÃ¨glement en dÃ©bit
 		if (isset($reglement->ref_reglement) && $reglement->type_reglement == "sortant") {
 			$solde_contact = $solde_contact + number_format($reglement->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	);
 		} 
-		//règlement en crédit
+		//rÃ¨glement en crÃ©dit
 		if (isset($reglement->ref_reglement) && $reglement->type_reglement == "entrant") { 
 			if ($reglement->id_client_categ && $reglement->id_type_doc == NULL ) {continue;}
 			$solde_contact = $solde_contact - number_format($reglement->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	);

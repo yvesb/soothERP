@@ -26,7 +26,7 @@ final class reglement {
 	protected $documents_lettrages_loaded;
 
 
-	// Informations complémentaires fonction du mode de règlement
+	// Informations complÃ©mentaires fonction du mode de rÃ¨glement
 	protected $date_echeance;
 
 	protected $id_compte_bancaire_source;
@@ -43,7 +43,7 @@ final class reglement {
 	protected $info_banque;
 	protected $info_compte;
 
-	protected $ref_reglement_comp;				// Référence du règlement utilisé en compensation d'un avoir AVC ou AVF
+	protected $ref_reglement_comp;				// RÃ©fÃ©rence du rÃ¨glement utilisÃ© en compensation d'un avoir AVC ou AVF
 	protected $ref_avc;
 	protected $ref_avf;
 
@@ -126,7 +126,7 @@ public function create_reglement ($infos) {
 	}
 
 	// *************************************************
-	// Réception des données
+	// RÃ©ception des donnÃ©es
 	$this->ref_contact 		= $infos['ref_contact'];
 	$this->id_reglement_mode = $infos['id_reglement_mode'];
 	if (!is_numeric($this->id_reglement_mode)) {
@@ -145,7 +145,7 @@ public function create_reglement ($infos) {
 	}
 
 	// *************************************************
-	// Réception des données spécifiques au mode de règlement
+	// RÃ©ception des donnÃ©es spÃ©cifiques au mode de rÃ¨glement
 	switch ($this->id_reglement_mode) {
 		case $ESP_E_ID_REGMT_MODE: 
 			$this->id_compte_caisse_dest = $infos['id_compte_caisse_dest'];
@@ -230,7 +230,7 @@ public function create_reglement ($infos) {
 	}
 
 	// *************************************************
-	// Création de la référence
+	// CrÃ©ation de la rÃ©fÃ©rence
 	$reference = new reference ($REGLEMENT_ID_REFERENCE_TAG);
 	$this->ref_reglement = $reference->generer_ref();
 
@@ -299,17 +299,17 @@ public function create_reglement ($infos) {
 								VALUES ('".$this->ref_reglement."', '".$this->id_compte_bancaire_dest."') ";
 			$bdd->exec ($query);
 			
-			//création de l'opération dans le journal de banque correspondant
+			//crÃ©ation de l'opÃ©ration dans le journal de banque correspondant
 			$compte_bancaire_cible = new compte_bancaire ($this->id_compte_bancaire_dest);
-			//vérification du journal correspondant au compte
+			//vÃ©rification du journal correspondant au compte
 			$journal_banque_arrivee = compta_journaux::check_exist_journaux ($DEFAUT_ID_JOURNAL_BANQUES, $compte_bancaire_cible->getDefaut_numero_compte ());
-			// récupération du compte tier vente
+			// rÃ©cupÃ©ration du compte tier vente
 			$numero_compte_comptable = $DEFAUT_COMPTE_TIERS_VENTE;
 			if (isset($infos["doc_ACCEPT_REGMT"]) && $infos["doc_ACCEPT_REGMT"] == "-1") {$numero_compte_comptable = $DEFAUT_COMPTE_TIERS_ACHAT;}
 			$tmp_contact = new contact ($this->ref_contact);
 			if ($tmp_contact->getRef_contact()) {
 				$profils 	= $tmp_contact->getProfils ();
-				//gestion des cas ambigus entre profils et sens de règlement
+				//gestion des cas ambigus entre profils et sens de rÃ¨glement
 				if (isset($profils[$CLIENT_ID_PROFIL]) && !isset($profils[$FOURNISSEUR_ID_PROFIL]) ) { $ID_PROFIL = $CLIENT_ID_PROFIL;}
 				if (!isset($profils[$CLIENT_ID_PROFIL]) && isset($profils[$FOURNISSEUR_ID_PROFIL]) ) { $ID_PROFIL = $FOURNISSEUR_ID_PROFIL;}
 				
@@ -319,7 +319,7 @@ public function create_reglement ($infos) {
 				}
 				$numero_compte_comptable = $profils[$ID_PROFIL]->getDefaut_numero_compte ();
 			} 
-			//création des opérations de journaux		
+			//crÃ©ation des opÃ©rations de journaux		
 			$journal_banque_arrivee->create_operation ($numero_compte_comptable, $this->montant_reglement, $this->ref_reglement, $this->date_reglement, 5); 
 
 		break;
@@ -330,17 +330,17 @@ public function create_reglement ($infos) {
 												'".$this->id_compte_bancaire_source."', '".$this->id_compte_bancaire_dest."') ";
 			$bdd->exec ($query);
 			
-			//création de l'opération dans le journal de banque correspondant
+			//crÃ©ation de l'opÃ©ration dans le journal de banque correspondant
 			$compte_bancaire_cible = new compte_bancaire ($this->id_compte_bancaire_dest);
-			//vérification du journal correspondant au compte
+			//vÃ©rification du journal correspondant au compte
 			$journal_banque_arrivee = compta_journaux::check_exist_journaux ($DEFAUT_ID_JOURNAL_BANQUES, $compte_bancaire_cible->getDefaut_numero_compte ());
-			// récupération du compte tier vente
+			// rÃ©cupÃ©ration du compte tier vente
 			$numero_compte_comptable = $DEFAUT_COMPTE_TIERS_VENTE;
 			if (isset($infos["doc_ACCEPT_REGMT"]) && $infos["doc_ACCEPT_REGMT"] == "-1") {$numero_compte_comptable = $DEFAUT_COMPTE_TIERS_ACHAT;}
 			$tmp_contact = new contact ($this->ref_contact);
 			if ($tmp_contact->getRef_contact()) {
 				$profils 	= $tmp_contact->getProfils ();
-				//gestion des cas ambigus entre profils et sens de règlement
+				//gestion des cas ambigus entre profils et sens de rÃ¨glement
 				if (isset($profils[$CLIENT_ID_PROFIL]) && !isset($profils[$FOURNISSEUR_ID_PROFIL]) ) { $ID_PROFIL = $CLIENT_ID_PROFIL;}
 				if (!isset($profils[$CLIENT_ID_PROFIL]) && isset($profils[$FOURNISSEUR_ID_PROFIL]) ) { $ID_PROFIL = $FOURNISSEUR_ID_PROFIL;}
 				
@@ -350,7 +350,7 @@ public function create_reglement ($infos) {
 				}
 				$numero_compte_comptable = $profils[$ID_PROFIL]->getDefaut_numero_compte ();
 			} 
-			//création des opérations de journaux		
+			//crÃ©ation des opÃ©rations de journaux		
 			$journal_banque_arrivee->create_operation ($numero_compte_comptable, $this->montant_reglement, $this->ref_reglement, $this->date_reglement, 5); 
 
 		break;
@@ -360,17 +360,17 @@ public function create_reglement ($infos) {
 								VALUES ('".$this->ref_reglement."', 
 												'".$this->id_compte_bancaire_source."', '".$this->id_compte_bancaire_dest."') ";
 			$bdd->exec ($query);
-			//création de l'opération dans le journal de banque correspondant
+			//crÃ©ation de l'opÃ©ration dans le journal de banque correspondant
 			$compte_bancaire_cible = new compte_bancaire ($this->id_compte_bancaire_dest);
-			//vérification du journal correspondant au compte
+			//vÃ©rification du journal correspondant au compte
 			$journal_banque_arrivee = compta_journaux::check_exist_journaux ($DEFAUT_ID_JOURNAL_BANQUES, $compte_bancaire_cible->getDefaut_numero_compte ());
-			// récupération du compte tier vente
+			// rÃ©cupÃ©ration du compte tier vente
 			$numero_compte_comptable = $DEFAUT_COMPTE_TIERS_VENTE;
 			if (isset($infos["doc_ACCEPT_REGMT"]) && $infos["doc_ACCEPT_REGMT"] == "-1") {$numero_compte_comptable = $DEFAUT_COMPTE_TIERS_ACHAT;}
 			$tmp_contact = new contact ($this->ref_contact);
 			if ($tmp_contact->getRef_contact()) {
 				$profils 	= $tmp_contact->getProfils ();
-				//gestion des cas ambigus entre profils et sens de règlement
+				//gestion des cas ambigus entre profils et sens de rÃ¨glement
 				if (isset($profils[$CLIENT_ID_PROFIL]) && !isset($profils[$FOURNISSEUR_ID_PROFIL]) ) { $ID_PROFIL = $CLIENT_ID_PROFIL;}
 				if (!isset($profils[$CLIENT_ID_PROFIL]) && isset($profils[$FOURNISSEUR_ID_PROFIL]) ) { $ID_PROFIL = $FOURNISSEUR_ID_PROFIL;}
 				
@@ -380,7 +380,7 @@ public function create_reglement ($infos) {
 				}
 				$numero_compte_comptable = $profils[$ID_PROFIL]->getDefaut_numero_compte ();
 			} 
-			//création des opérations de journaux		
+			//crÃ©ation des opÃ©rations de journaux		
 			$journal_banque_arrivee->create_operation ($numero_compte_comptable, $this->montant_reglement, $this->ref_reglement, $this->date_reglement, 5); 
 		break;
 
@@ -407,17 +407,17 @@ public function create_reglement ($infos) {
 			setcookie('last_id_compte_bancaire_source',  $this->id_compte_bancaire_source, time() + $COOKIE_SYSTEME_LT, "/");
 			
 			
-			//création de l'opération dans le journal de banque correspondant
+			//crÃ©ation de l'opÃ©ration dans le journal de banque correspondant
 			$compte_bancaire_cible = new compte_bancaire ($this->id_compte_bancaire_source);
-			//vérification du journal correspondant au compte
+			//vÃ©rification du journal correspondant au compte
 			$journal_banque_arrivee = compta_journaux::check_exist_journaux ($DEFAUT_ID_JOURNAL_BANQUES, $compte_bancaire_cible->getDefaut_numero_compte ());
-			// récupération du compte tier vente
+			// rÃ©cupÃ©ration du compte tier vente
 			$numero_compte_comptable = $DEFAUT_COMPTE_TIERS_ACHAT;
 			if (isset($infos["doc_ACCEPT_REGMT"]) && $infos["doc_ACCEPT_REGMT"] == "1") {$numero_compte_comptable = $DEFAUT_COMPTE_TIERS_VENTE;}
 			$tmp_contact = new contact ($this->ref_contact);
 			if ($tmp_contact->getRef_contact()) {
 				$profils 	= $tmp_contact->getProfils ();
-				//gestion des cas ambigus entre profils et sens de règlement
+				//gestion des cas ambigus entre profils et sens de rÃ¨glement
 				if (isset($profils[$CLIENT_ID_PROFIL]) && !isset($profils[$FOURNISSEUR_ID_PROFIL]) ) { $ID_PROFIL = $CLIENT_ID_PROFIL;}
 				if (!isset($profils[$CLIENT_ID_PROFIL]) && isset($profils[$FOURNISSEUR_ID_PROFIL]) ) { $ID_PROFIL = $FOURNISSEUR_ID_PROFIL;}
 				
@@ -427,7 +427,7 @@ public function create_reglement ($infos) {
 				}
 				$numero_compte_comptable = $profils[$ID_PROFIL]->getDefaut_numero_compte ();
 			} 
-			//création des opérations de journaux		
+			//crÃ©ation des opÃ©rations de journaux		
 			$journal_banque_arrivee->create_operation ($numero_compte_comptable, -$this->montant_reglement, $this->ref_reglement, $this->date_reglement, 6); 
 			
 		break;
@@ -439,19 +439,19 @@ public function create_reglement ($infos) {
 			setcookie ("id_compte_cb_source", "", time() - 3600);
 			setcookie('last_id_compte_cb_source',  $this->id_compte_cb_source, time() + $COOKIE_SYSTEME_LT, "/");
 			
-			//récuperation du compte bancaire lié à la carte
+			//rÃ©cuperation du compte bancaire liÃ© Ã  la carte
 			$compte_cb = new compte_cb ($this->id_compte_cb_source);
-			//création de l'opération dans le journal de banque correspondant
+			//crÃ©ation de l'opÃ©ration dans le journal de banque correspondant
 			$compte_bancaire_cible = new compte_bancaire ($compte_cb->getId_compte_bancaire ());
-			//vérification du journal correspondant au compte
+			//vÃ©rification du journal correspondant au compte
 			$journal_banque_arrivee = compta_journaux::check_exist_journaux ($DEFAUT_ID_JOURNAL_BANQUES, $compte_bancaire_cible->getDefaut_numero_compte ());
-			// récupération du compte tier vente
+			// rÃ©cupÃ©ration du compte tier vente
 			$numero_compte_comptable = $DEFAUT_COMPTE_TIERS_ACHAT;
 			if (isset($infos["doc_ACCEPT_REGMT"]) && $infos["doc_ACCEPT_REGMT"] == "1") {$numero_compte_comptable = $DEFAUT_COMPTE_TIERS_VENTE;}
 			$tmp_contact = new contact ($this->ref_contact);
 			if ($tmp_contact->getRef_contact()) {
 				$profils 	= $tmp_contact->getProfils ();
-				//gestion des cas ambigus entre profils et sens de règlement
+				//gestion des cas ambigus entre profils et sens de rÃ¨glement
 				if (isset($profils[$CLIENT_ID_PROFIL]) && !isset($profils[$FOURNISSEUR_ID_PROFIL]) ) { $ID_PROFIL = $CLIENT_ID_PROFIL;}
 				if (!isset($profils[$CLIENT_ID_PROFIL]) && isset($profils[$FOURNISSEUR_ID_PROFIL]) ) { $ID_PROFIL = $FOURNISSEUR_ID_PROFIL;}
 				
@@ -461,7 +461,7 @@ public function create_reglement ($infos) {
 				}
 				$numero_compte_comptable = $profils[$ID_PROFIL]->getDefaut_numero_compte ();
 			} 
-			//création des opérations de journaux		
+			//crÃ©ation des opÃ©rations de journaux		
 			$journal_banque_arrivee->create_operation ($numero_compte_comptable, -$this->montant_reglement, $this->ref_reglement, $this->date_reglement, 6); 
 		break;
 
@@ -471,17 +471,17 @@ public function create_reglement ($infos) {
 												'".$this->id_compte_bancaire_source."', '".$this->id_compte_bancaire_dest."') ";
 			$bdd->exec ($query);
 			
-			//création de l'opération dans le journal de banque correspondant
+			//crÃ©ation de l'opÃ©ration dans le journal de banque correspondant
 			$compte_bancaire_cible = new compte_bancaire ($this->id_compte_bancaire_source);
-			//vérification du journal correspondant au compte
+			//vÃ©rification du journal correspondant au compte
 			$journal_banque_arrivee = compta_journaux::check_exist_journaux ($DEFAUT_ID_JOURNAL_BANQUES, $compte_bancaire_cible->getDefaut_numero_compte ());
-			// récupération du compte tier vente
+			// rÃ©cupÃ©ration du compte tier vente
 			$numero_compte_comptable = $DEFAUT_COMPTE_TIERS_ACHAT;
 			if (isset($infos["doc_ACCEPT_REGMT"]) && $infos["doc_ACCEPT_REGMT"] == "1") {$numero_compte_comptable = $DEFAUT_COMPTE_TIERS_VENTE;}
 			$tmp_contact = new contact ($this->ref_contact);
 			if ($tmp_contact->getRef_contact()) {
 				$profils 	= $tmp_contact->getProfils ();
-				//gestion des cas ambigus entre profils et sens de règlement
+				//gestion des cas ambigus entre profils et sens de rÃ¨glement
 				if (isset($profils[$CLIENT_ID_PROFIL]) && !isset($profils[$FOURNISSEUR_ID_PROFIL]) ) { $ID_PROFIL = $CLIENT_ID_PROFIL;}
 				if (!isset($profils[$CLIENT_ID_PROFIL]) && isset($profils[$FOURNISSEUR_ID_PROFIL]) ) { $ID_PROFIL = $FOURNISSEUR_ID_PROFIL;}
 				
@@ -491,7 +491,7 @@ public function create_reglement ($infos) {
 				}
 				$numero_compte_comptable = $profils[$ID_PROFIL]->getDefaut_numero_compte ();
 			} 
-			//création des opérations de journaux		
+			//crÃ©ation des opÃ©rations de journaux		
 			$journal_banque_arrivee->create_operation ($numero_compte_comptable, -$this->montant_reglement, $this->ref_reglement, $this->date_reglement, 6); 
 		break;
 
@@ -500,17 +500,17 @@ public function create_reglement ($infos) {
 								VALUES ('".$this->ref_reglement."', '".$this->id_compte_bancaire_source."') ";
 			$bdd->exec ($query);
 			
-			//création de l'opération dans le journal de banque correspondant
+			//crÃ©ation de l'opÃ©ration dans le journal de banque correspondant
 			$compte_bancaire_cible = new compte_bancaire ($this->id_compte_bancaire_source);
-			//vérification du journal correspondant au compte
+			//vÃ©rification du journal correspondant au compte
 			$journal_banque_arrivee = compta_journaux::check_exist_journaux ($DEFAUT_ID_JOURNAL_BANQUES, $compte_bancaire_cible->getDefaut_numero_compte ());
-			// récupération du compte tier vente
+			// rÃ©cupÃ©ration du compte tier vente
 			$numero_compte_comptable = $DEFAUT_COMPTE_TIERS_ACHAT;
 			if (isset($infos["doc_ACCEPT_REGMT"]) && $infos["doc_ACCEPT_REGMT"] == "1") {$numero_compte_comptable = $DEFAUT_COMPTE_TIERS_VENTE;}
 			$tmp_contact = new contact ($this->ref_contact);
 			if ($tmp_contact->getRef_contact()) {
 				$profils 	= $tmp_contact->getProfils ();
-				//gestion des cas ambigus entre profils et sens de règlement
+				//gestion des cas ambigus entre profils et sens de rÃ¨glement
 				if (isset($profils[$CLIENT_ID_PROFIL]) && !isset($profils[$FOURNISSEUR_ID_PROFIL]) ) { $ID_PROFIL = $CLIENT_ID_PROFIL;}
 				if (!isset($profils[$CLIENT_ID_PROFIL]) && isset($profils[$FOURNISSEUR_ID_PROFIL]) ) { $ID_PROFIL = $FOURNISSEUR_ID_PROFIL;}
 				
@@ -520,7 +520,7 @@ public function create_reglement ($infos) {
 				}
 				$numero_compte_comptable = $profils[$ID_PROFIL]->getDefaut_numero_compte ();
 			} 
-			//création des opérations de journaux		
+			//crÃ©ation des opÃ©rations de journaux		
 			$journal_banque_arrivee->create_operation ($numero_compte_comptable, -$this->montant_reglement, $this->ref_reglement, $this->date_reglement, 6); 
 		break;
 
@@ -529,17 +529,17 @@ public function create_reglement ($infos) {
 								VALUES ('".$this->ref_reglement."', '".$this->id_compte_bancaire_source."') ";
 			$bdd->exec ($query);
 			
-			//création de l'opération dans le journal de banque correspondant
+			//crÃ©ation de l'opÃ©ration dans le journal de banque correspondant
 			$compte_bancaire_cible = new compte_bancaire ($this->id_compte_bancaire_source);
-			//vérification du journal correspondant au compte
+			//vÃ©rification du journal correspondant au compte
 			$journal_banque_arrivee = compta_journaux::check_exist_journaux ($DEFAUT_ID_JOURNAL_BANQUES, $compte_bancaire_cible->getDefaut_numero_compte ());
-			// récupération du compte tier vente
+			// rÃ©cupÃ©ration du compte tier vente
 			$numero_compte_comptable = $DEFAUT_COMPTE_TIERS_ACHAT;
 			if (isset($infos["doc_ACCEPT_REGMT"]) && $infos["doc_ACCEPT_REGMT"] == "1") {$numero_compte_comptable = $DEFAUT_COMPTE_TIERS_VENTE;}
 			$tmp_contact = new contact ($this->ref_contact);
 			if ($tmp_contact->getRef_contact()) {
 				$profils 	= $tmp_contact->getProfils ();
-				//gestion des cas ambigus entre profils et sens de règlement
+				//gestion des cas ambigus entre profils et sens de rÃ¨glement
 				if (isset($profils[$CLIENT_ID_PROFIL]) && !isset($profils[$FOURNISSEUR_ID_PROFIL]) ) { $ID_PROFIL = $CLIENT_ID_PROFIL;}
 				if (!isset($profils[$CLIENT_ID_PROFIL]) && isset($profils[$FOURNISSEUR_ID_PROFIL]) ) { $ID_PROFIL = $FOURNISSEUR_ID_PROFIL;}
 				
@@ -549,7 +549,7 @@ public function create_reglement ($infos) {
 				}
 				$numero_compte_comptable = $profils[$ID_PROFIL]->getDefaut_numero_compte ();
 			} 
-			//création des opérations de journaux		
+			//crÃ©ation des opÃ©rations de journaux		
 			$journal_banque_arrivee->create_operation ($numero_compte_comptable, -$this->montant_reglement, $this->ref_reglement, $this->date_reglement, 6); 
 		break;
 
@@ -606,17 +606,17 @@ public function create_reglement ($infos) {
 												'".$this->id_compte_bancaire_source."', '".$this->id_compte_bancaire_dest."') ";
 			$bdd->exec ($query);
 
-			//création de l'opération dans le journal de banque correspondant
+			//crÃ©ation de l'opÃ©ration dans le journal de banque correspondant
 			$compte_bancaire_cible = new compte_bancaire ($this->id_compte_bancaire_dest);
-			//vérification du journal correspondant au compte
+			//vÃ©rification du journal correspondant au compte
 			$journal_banque_arrivee = compta_journaux::check_exist_journaux ($DEFAUT_ID_JOURNAL_BANQUES, $compte_bancaire_cible->getDefaut_numero_compte ());
-			// récupération du compte tier vente
+			// rÃ©cupÃ©ration du compte tier vente
 			$numero_compte_comptable = $DEFAUT_COMPTE_TIERS_VENTE;
 			if (isset($infos["doc_ACCEPT_REGMT"]) && $infos["doc_ACCEPT_REGMT"] == "-1") {$numero_compte_comptable = $DEFAUT_COMPTE_TIERS_ACHAT;}
 			$tmp_contact = new contact ($this->ref_contact);
 			if ($tmp_contact->getRef_contact()) {
 				$profils 	= $tmp_contact->getProfils ();
-				//gestion des cas ambigus entre profils et sens de règlement
+				//gestion des cas ambigus entre profils et sens de rÃ¨glement
 				if (isset($profils[$CLIENT_ID_PROFIL]) && !isset($profils[$FOURNISSEUR_ID_PROFIL]) ) { $ID_PROFIL = $CLIENT_ID_PROFIL;}
 				if (!isset($profils[$CLIENT_ID_PROFIL]) && isset($profils[$FOURNISSEUR_ID_PROFIL]) ) { $ID_PROFIL = $FOURNISSEUR_ID_PROFIL;}
 
@@ -626,7 +626,7 @@ public function create_reglement ($infos) {
 				}
 				$numero_compte_comptable = $profils[$ID_PROFIL]->getDefaut_numero_compte ();
 			}
-			//création des opérations de journaux
+			//crÃ©ation des opÃ©rations de journaux
 			$journal_banque_arrivee->create_operation ($numero_compte_comptable, $this->montant_reglement, $this->ref_reglement, $this->date_reglement, 5);
 		break;
 		
@@ -668,7 +668,7 @@ public function delete_reglement () {
 	global $LC_E_ID_REGMT_MODE;
 
 	// *************************************************
-	// Controle de la possibilité de supprimer le règlement
+	// Controle de la possibilitÃ© de supprimer le rÃ¨glement
 	
 	//si le reglement est du type espece cheque ou cB
 	if (($this->id_reglement_mode == $ESP_E_ID_REGMT_MODE) || ($this->id_reglement_mode == $ESP_S_ID_REGMT_MODE) || ($this->id_reglement_mode == $CHQ_E_ID_REGMT_MODE) || ($this->id_reglement_mode == $CB_E_ID_REGMT_MODE) ) {
@@ -679,33 +679,33 @@ public function delete_reglement () {
 		if (count($reg_infos)) {
 			switch ($this->id_reglement_mode) {
 				case $ESP_E_ID_REGMT_MODE:
-					// on cré un mouvement de caisse inverse
+					// on crÃ© un mouvement de caisse inverse
 					compte_caisse::create_compte_caisse_move ($id_compte_caisse, 1, $this->id_reglement_mode, -$this->montant_reglement, $this->ref_reglement);
-					//on cherche à supprimer du contenu de caisse le règlement
+					//on cherche Ã  supprimer du contenu de caisse le rÃ¨glement
 					compte_caisse::maj_esp_compte_caisse_contenu ($id_compte_caisse, $ESP_E_ID_REGMT_MODE, -$this->montant_reglement);
 				break;
 				case $ESP_S_ID_REGMT_MODE:
-					// on cré un mouvement de caisse inverse
+					// on crÃ© un mouvement de caisse inverse
 					compte_caisse::create_compte_caisse_move ($id_compte_caisse, 1, $this->id_reglement_mode, $this->montant_reglement, $this->ref_reglement);
-					//on cherche à supprimer du contenu de caisse le règlement
+					//on cherche Ã  supprimer du contenu de caisse le rÃ¨glement
 					compte_caisse::maj_esp_compte_caisse_contenu ($id_compte_caisse, $ESP_E_ID_REGMT_MODE, $this->montant_reglement);
 				break;
 				case $CHQ_E_ID_REGMT_MODE:
-					// on cré un mouvement de caisse inverse
+					// on crÃ© un mouvement de caisse inverse
 					compte_caisse::create_compte_caisse_move ($id_compte_caisse, 1, $this->id_reglement_mode, -$this->montant_reglement, $this->ref_reglement);
-					//on cherche à supprimer du contenu de caisse le règlement
+					//on cherche Ã  supprimer du contenu de caisse le rÃ¨glement
 					compte_caisse::del_line_compte_caisse_contenu (array("id_compte_caisse_source"=>$id_compte_caisse, "id_reglement_mode"=>$this->id_reglement_mode,"montant_contenu"=>$this->montant_reglement, "infos_supp"=>$this->ref_reglement)) ;
 				break;
 				case $CB_E_ID_REGMT_MODE:
-					// on cré un mouvement de caisse inverse
+					// on crÃ© un mouvement de caisse inverse
 					compte_caisse::create_compte_caisse_move ($id_compte_caisse, 1, $this->id_reglement_mode, -$this->montant_reglement, $this->ref_reglement);
-					//on cherche à supprimer du contenu de tp le règlement
+					//on cherche Ã  supprimer du contenu de tp le rÃ¨glement
 					compte_tpe::del_line_compte_tp_contenu (array("id_compte_caisse_source"=>$id_compte_caisse, "montant_contenu"=>$this->montant_reglement, "infos_supp"=>$this->ref_reglement)) ;
 				break;
 				case $LC_E_ID_REGMT_MODE:
-					// on cré un mouvement de caisse inverse
+					// on crÃ© un mouvement de caisse inverse
 					compte_caisse::create_compte_caisse_move ($id_compte_caisse, 1, $this->id_reglement_mode, -$this->montant_reglement, $this->ref_reglement);
-					//on cherche à supprimer du contenu de tp le règlement
+					//on cherche Ã  supprimer du contenu de tp le rÃ¨glement
 					compte_tpe::del_line_compte_tp_contenu (array("id_compte_caisse_source"=>$id_compte_caisse, "montant_contenu"=>$this->montant_reglement, "infos_supp"=>$this->ref_reglement)) ;				
 				break;
 			}
@@ -714,7 +714,7 @@ public function delete_reglement () {
 	}
 	//si le reglement est du type TPV
 	if ($this->id_reglement_mode == $TPV_E_ID_REGMT_MODE) {
-		//on cherche à supprimer du contenu de tp le règlement
+		//on cherche Ã  supprimer du contenu de tp le rÃ¨glement
 		compte_tpv::del_line_compte_tp_contenu (array("id_compte_caisse_source"=>"", "montant_contenu"=>$this->montant_reglement, "infos_supp"=>$this->ref_reglement)) ;
 	}
 	//supression des lignes comptables dans journaux de caisse ou banque
@@ -728,7 +728,7 @@ case $CHQ_S_ID_REGMT_MODE: case $CB_S_ID_REGMT_MODE: case $VIR_S_ID_REGMT_MODE: 
 		break;
 	}
 	
-	//on supprime le règlement
+	//on supprime le rÃ¨glement
 	$query = "DELETE FROM reglements WHERE ref_reglement = '".$this->ref_reglement."' ";
 	$bdd->exec ($query);
 	
@@ -775,7 +775,7 @@ protected function charger_montant_lettrages () {
 	$this->montant_dispo_loaded = true;
 
 	if ($this->montant_disponible < 0) {
-	//	alerte_dev ("Un reglement a été lettré pour plus que son montant : ".$this->ref_reglement);
+	//	alerte_dev ("Un reglement a Ã©tÃ© lettrÃ© pour plus que son montant : ".$this->ref_reglement);
 	}
 
 	return true;
@@ -842,7 +842,7 @@ function getMontant_disponible () {
 
 
 // *************************************************************************************************************
-// Informations complémentaires fonction du mode de règlement
+// Informations complÃ©mentaires fonction du mode de rÃ¨glement
 function getDate_echeance () {
 	return $this->date_echeance;
 }
@@ -864,7 +864,7 @@ function getRef_avf () {
 
 
 //******************************************************************************
-// Fonctions informative (fonctionne pour les chèques)
+// Fonctions informative (fonctionne pour les chÃ¨ques)
 
 public function getInfos_depot(){
     global $bdd;
@@ -879,12 +879,12 @@ public function getInfos_depot(){
             $compte = new compte_bancaire($depot->id_compte_bancaire_destination);
             $date_depot = $depot->date_depot; 
             $stt->closeCursor();
-            return "Chèque remisé le ".date_Us_to_Fr($date_depot)." (".$compte->getLib_compte().").";
+            return "ChÃ¨que remisÃ© le ".date_Us_to_Fr($date_depot)." (".$compte->getLib_compte().").";
         }
         
         $reglements_infos = get_infos_reglement_type ($this->getId_reglement_mode(), $this->getRef_reglement());
         $caisse = new compte_caisse(load_caisse_move($reglements_infos->id_compte_caisse_move));
-        return "Chèque en caisse (".$caisse->getLib_caisse().").";
+        return "ChÃ¨que en caisse (".$caisse->getLib_caisse().").";
     }
     return "";
 }
@@ -932,7 +932,7 @@ function getReglements_modes_date_echeance ($id_reglement_mode) {
 function get_infos_reglement_type ($id_reglement_mode, $ref_reglement) {
 	global $bdd;
 	
-	//liste des correspondance entre les mode de règlement et les infos correspondantes au règlement
+	//liste des correspondance entre les mode de rÃ¨glement et les infos correspondantes au rÃ¨glement
 	$reglements_correspond = array (1=>"regmt_e_esp" , 2=>"regmt_e_chq" , 3=>"regmt_e_cb" , 4=>"regmt_e_vir" , 5=>"regmt_e_lcr" , 6=>"regmt_e_prb" , 7=>"regmt_s_esp" , 8=>"regmt_s_chq" , 9=>"regmt_s_cb" , 10=>"regmt_s_vir" , 11=>"regmt_s_lcr" , 12=>"regmt_s_prb" , 13=>"regmt_avc" , 15=>"regmt_avf" , 17=>"regmt_e_tpv" , 18=>"regmt_e_lcr");
 	
 	$colum_correspond = array(1=>"" , 2=>"" , 3=>"" , 4=>"" , 5=>"" , 6=>"" , 7=>"" , 8=>"" , 9=>"" , 10=>"" , 11=>"" , 12=>"" , 13=>"_avc" , 15=>"_avf" , 17=>"" , 18=>"" )
@@ -953,12 +953,12 @@ function get_infos_reglement_type ($id_reglement_mode, $ref_reglement) {
 
 /*
 Information sur la gestion des avoirs
-Un Avoir Client est avant tout une facture d'avoir. Une facture ayant un montant négatif.
-Cette facture d'avoir peut soit donner lieu à un remboursement (espèce, chèque, etc.)
-Cette facture d'avoir peut aussi etre déduite des règlements dus pour une autre facture.
-- Dans ce dernier cas, on génère une "Compensation" depuis l'avoir.
-Cette compensation est considéré comme un moyen de régler (solder) la facture d'avoir.
-Dans le meme temps, il est créé un règlement appelé Avoir Client (AVC) qui lui sera utilisé comme un règlement standard.
+Un Avoir Client est avant tout une facture d'avoir. Une facture ayant un montant nÃ©gatif.
+Cette facture d'avoir peut soit donner lieu Ã  un remboursement (espÃ¨ce, chÃ¨que, etc.)
+Cette facture d'avoir peut aussi etre dÃ©duite des rÃ¨glements dus pour une autre facture.
+- Dans ce dernier cas, on gÃ©nÃ¨re une "Compensation" depuis l'avoir.
+Cette compensation est considÃ©rÃ© comme un moyen de rÃ©gler (solder) la facture d'avoir.
+Dans le meme temps, il est crÃ©Ã© un rÃ¨glement appelÃ© Avoir Client (AVC) qui lui sera utilisÃ© comme un rÃ¨glement standard.
 */
 
 ?>

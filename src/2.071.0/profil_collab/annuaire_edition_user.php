@@ -14,7 +14,7 @@ if (isset($_REQUEST['ref_contact'.$_REQUEST['ref_idform']])) {
 
 
 	// *************************************************
-	// création d'une coordonnée
+	// crÃ©ation d'une coordonnÃ©e
 	$ref_contact		= $_REQUEST['ref_contact'.$_REQUEST['ref_idform']];
 	$pseudo 				= $_REQUEST['user_pseudo'.$_REQUEST['ref_idform']];
 	$code 					= $_REQUEST['user_code'.$_REQUEST['ref_idform']];
@@ -37,16 +37,16 @@ if (isset($_REQUEST['ref_contact'.$_REQUEST['ref_idform']])) {
 		$GLOBALS['_ALERTES']['Erreur_code'] = 1;
 	}
 	
-	//utilisateur mis à Maitre
+	//utilisateur mis Ã  Maitre
 	$users = array();
 	
 	if (isset($_REQUEST['user_master'.$_REQUEST['ref_idform']]) && ($_REQUEST['user_master'.$_REQUEST['ref_idform']]=="0")) {
 		$utilisateur->set_master ();
-		// on récupére tout les réf_user pour rafraichir l'affichage
+		// on rÃ©cupÃ©re tout les rÃ©f_user pour rafraichir l'affichage
 		$users = $utilisateur->liste_ref_user_actif();
 	}
 	
-	//mise à jour de l'utilisateur
+	//mise Ã  jour de l'utilisateur
 	$utilisateur->modification ($ref_coord_user, $pseudo, $actif, $id_langage);
 }
 	

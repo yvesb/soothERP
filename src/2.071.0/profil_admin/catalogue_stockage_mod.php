@@ -11,7 +11,7 @@ require ($DIR."_session.inc.php");
 
 if (isset($_REQUEST['id_stock'])) {	
 	// *************************************************
-	// Controle des données fournies par le formulaire
+	// Controle des donnÃ©es fournies par le formulaire
 
 	
 	$lib_stock						= $_REQUEST['lib_stock_'.$_REQUEST['id_stock']];
@@ -25,7 +25,7 @@ if (isset($_REQUEST['id_stock'])) {
 
 	
 	// *************************************************
-	// Création de la catégorie
+	// CrÃ©ation de la catÃ©gorie
 	$stock_liste = new stock ($_REQUEST['id_stock']);
 	$stock_liste->modification ($lib_stock, $abrev_stock, $ref_adr_stock, $actif);
 }

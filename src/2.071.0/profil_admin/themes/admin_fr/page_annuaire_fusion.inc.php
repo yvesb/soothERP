@@ -5,7 +5,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -48,7 +48,7 @@ foreach ($_ALERTES as $alerte => $value) {
 if (erreur) {
 
 if (bad_ref_contact) {
-		texte_erreur += "La référence du contact est invalide.<br/>";
+		texte_erreur += "La rÃ©fÃ©rence du contact est invalide.<br/>";
 }
 
 window.parent.alerte.alerte_erreur ('Erreur de saisie', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');

@@ -4,7 +4,7 @@
 // CONFIRMATION D'AJOUT D'UN SERVEUR D'EXPORT
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -31,14 +31,14 @@ var texte_erreur = "";
 if (erreur) {
 	
 	if (serveur_existants) {
-		texte_erreur += "Vous êtes déjà abonné à ce serveur de mise à jour.<br/>";
+		texte_erreur += "Vous Ãªtes dÃ©jÃ  abonnÃ© Ã  ce serveur de mise Ã  jour.<br/>";
 	} 
 	window.parent.alerte.alerte_erreur ('Erreur de saisie', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 
 }
 else
 {
-	texte_erreur += "Votre demande a bien été prise en compte par le serveur.<br/>";
+	texte_erreur += "Votre demande a bien Ã©tÃ© prise en compte par le serveur.<br/>";
 	window.parent.alerte.alerte_erreur ('Confirmation', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 	window.parent.page.verify('liste_serveur_import','<?php echo $DIR."profil_admin/";?>serveur_import_liste.php','true','sub_content');
 }

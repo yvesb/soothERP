@@ -4,7 +4,7 @@
 // LISTE FACTURES NON PAYEES
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -182,7 +182,7 @@ if( $id_type_doc == $FACTURE_FOURNISSEUR_ID_TYPE_DOC && $montant_positif == 1) {
 if( $id_type_doc == $FACTURE_CLIENT_ID_TYPE_DOC && $montant_positif == -1) { 
 	?>
 				<div>
-					<div style="display:block; text-align:left; font-weight:bolder"> Factures d'avoir non soldés. </div>
+					<div style="display:block; text-align:left; font-weight:bolder"> Factures d'avoir non soldÃ©s. </div>
 					<table width="100%" border="0"  cellspacing="0" style="width:100%; background-color:#FFFFFF; border:1px solid #d6d6d6;">
 						<tr>
 							<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
@@ -262,7 +262,7 @@ if( $id_type_doc == $FACTURE_CLIENT_ID_TYPE_DOC && $montant_positif == -1) {
 if( $id_type_doc == $FACTURE_FOURNISSEUR_ID_TYPE_DOC && $montant_positif == -1) { 
 	?>
 				<div>
-					<div style="display:block; text-align:left; font-weight:bolder"> Factures d'avoir non soldés. </div>
+					<div style="display:block; text-align:left; font-weight:bolder"> Factures d'avoir non soldÃ©s. </div>
 					<table width="100%" border="0"  cellspacing="0" style="width:100%; background-color:#FFFFFF; border:1px solid #d6d6d6;">
 						<tr>
 							<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
@@ -490,7 +490,7 @@ if( $id_type_doc == $FACTURE_FOURNISSEUR_ID_TYPE_DOC && $montant_positif == 1) {
 if( ($id_type_doc == $FACTURE_CLIENT_ID_TYPE_DOC && $montant_positif != 0) || ($id_type_doc == $COMMANDE_CLIENT_ID_TYPE_DOC && $id_etat_doc == 9))  {
 	?>
 				<div>
-					<div style="display:block; text-align:left; font-weight:bolder"> Règlements non attribués . </div>
+					<div style="display:block; text-align:left; font-weight:bolder"> RÃ¨glements non attribuÃ©s . </div>
 					<table width="100%" border="0"  cellspacing="0" style="width:100%; background-color:#FFFFFF; border:1px solid #d6d6d6;">
 						<tr>
 							<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
@@ -548,7 +548,7 @@ if( ($id_type_doc == $FACTURE_CLIENT_ID_TYPE_DOC && $montant_positif != 0) || ($
 if( $id_type_doc == $FACTURE_FOURNISSEUR_ID_TYPE_DOC && $montant_positif == 1) { 
 	?>
 				<div>
-					<div style="display:block; text-align:left; font-weight:bolder"> Règlements non attribués . </div>
+					<div style="display:block; text-align:left; font-weight:bolder"> RÃ¨glements non attribuÃ©s . </div>
 					<table width="100%" border="0"  cellspacing="0" style="width:100%; background-color:#FFFFFF; border:1px solid #d6d6d6;">
 						<tr>
 							<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>

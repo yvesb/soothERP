@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("stocks_liste", "adresses_liste");
 check_page_variables ($page_variables);
 
@@ -34,7 +34,7 @@ update_menu_arbo();
 			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
 			</a>
 
-			<div style="font-weight:bolder">Déplacer les articles du stock <span id="lib_stock_to_move"></span></div>
+			<div style="font-weight:bolder">DÃ©placer les articles du stock <span id="lib_stock_to_move"></span></div>
 	<br />
 <br />
 <br />
@@ -48,7 +48,7 @@ update_menu_arbo();
 			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 		</tr>
 		<tr>
-			<td >Transfèrer les articles vers le stock:
+			<td >TransfÃ¨rer les articles vers le stock:
 			</td>
 			<td>
 				<select name="new_id_stock" id="new_id_stock" class="classinput_xsize" >
@@ -71,7 +71,7 @@ update_menu_arbo();
 			</td>
 		</tr>
 		<tr>
-			<td colspan="3">Les articles seront répartis dans différents Transferts de Marchandises
+			<td colspan="3">Les articles seront rÃ©partis dans diffÃ©rents Transferts de Marchandises
 			
 			</td>
 			<td >
@@ -86,7 +86,7 @@ update_menu_arbo();
 			</td>
 		</tr>
 		<tr>
-			<td>Livrer les articles à un contact
+			<td>Livrer les articles Ã  un contact
 			</td>
 			<td>
 					<input name="ref_contact" id="ref_contact" type="hidden" value="" />
@@ -117,7 +117,7 @@ update_menu_arbo();
 			</td>
 		</tr>
 		<tr>
-			<td colspan="3">Les articles seront répartis dans différents Bons de Livraison
+			<td colspan="3">Les articles seront rÃ©partis dans diffÃ©rents Bons de Livraison
 			
 			</td>
 			<td>
@@ -135,8 +135,8 @@ update_menu_arbo();
 		Event.observe('transferer_stock', 'click',  function(evt){
 			Event.stop(evt); 
 			if ($('new_id_stock').value != "") {
-				$("titre_alert").innerHTML = "Désactivation d'un lieux de stockage";
-				$("texte_alert").innerHTML = "Confirmer le transfére des articles vers le nouveau lieu de stockage selectionné et la désactivation du lieux de stockage actuel.";
+				$("titre_alert").innerHTML = "DÃ©sactivation d'un lieux de stockage";
+				$("texte_alert").innerHTML = "Confirmer le transfÃ©re des articles vers le nouveau lieu de stockage selectionnÃ© et la dÃ©sactivation du lieux de stockage actuel.";
 				$("bouton_alert").innerHTML = "<input type=\"submit\" name=\"bouton1\" id=\"bouton1\" value=\"Confirmer\" /><input type=\"submit\" id=\"bouton0\" name=\"bouton0\" value=\"Annuler\" />";
 			
 				$("alert_pop_up_tab").style.display = "block";
@@ -160,8 +160,8 @@ update_menu_arbo();
 		Event.observe('livrer_stock', 'click',  function(evt){
 			Event.stop(evt); 
 			if ($('ref_contact').value != "") {
-				$("titre_alert").innerHTML = "Désactivation d'un lieux de stockage";
-				$("texte_alert").innerHTML = "Confirmer la livraison des articles vers le contact selectionné et la désactivation de ce lieux de stockage.";
+				$("titre_alert").innerHTML = "DÃ©sactivation d'un lieux de stockage";
+				$("texte_alert").innerHTML = "Confirmer la livraison des articles vers le contact selectionnÃ© et la dÃ©sactivation de ce lieux de stockage.";
 				$("bouton_alert").innerHTML = "<input type=\"submit\" name=\"bouton1\" id=\"bouton1\" value=\"Confirmer\" /><input type=\"submit\" id=\"bouton0\" name=\"bouton0\" value=\"Annuler\" />";
 			
 				$("alert_pop_up_tab").style.display = "block";
@@ -207,7 +207,7 @@ update_menu_arbo();
 					<tr>
 						<td ><span class="labelled">Libell&eacute;:</span>
 						</td>
-						<td ><span class="labelled">Abréviation:</span>
+						<td ><span class="labelled">AbrÃ©viation:</span>
 						</td>
 						<td ><span class="labelled">Adresse:</span>
 						</td>
@@ -290,7 +290,7 @@ update_menu_arbo();
 					<tr>
 						<td ><span class="labelled">Libell&eacute;:</span>
 						</td>
-						<td ><span class="labelled">Abréviation:</span>
+						<td ><span class="labelled">AbrÃ©viation:</span>
 						</td>
 						<td ><span class="labelled">Adresse:</span>
 						</td>
@@ -380,9 +380,9 @@ update_menu_arbo();
 		Event.observe('actif_<?php echo $stock_liste->id_stock; ?>', 'click',  function(evt){
 			Event.stop(evt);
 		if (!$("actif_<?php echo $stock_liste->id_stock; ?>").checked) {
-		$("titre_alert").innerHTML = "Désactivation d'un lieux de stockage";
-		$("texte_alert").innerHTML = "Confirmer la désactivation de ce lieux de stockage.";
-		$("bouton_alert").innerHTML = "<input type=\"submit\" name=\"bouton1\" id=\"bouton1\" value=\"Désactiver\" /><input type=\"submit\" id=\"bouton0\" name=\"bouton0\" value=\"Annuler\" />";
+		$("titre_alert").innerHTML = "DÃ©sactivation d'un lieux de stockage";
+		$("texte_alert").innerHTML = "Confirmer la dÃ©sactivation de ce lieux de stockage.";
+		$("bouton_alert").innerHTML = "<input type=\"submit\" name=\"bouton1\" id=\"bouton1\" value=\"DÃ©sactiver\" /><input type=\"submit\" id=\"bouton0\" name=\"bouton0\" value=\"Annuler\" />";
 	
 		$("alert_pop_up_tab").style.display = "block";
 		$("framealert").style.display = "block";

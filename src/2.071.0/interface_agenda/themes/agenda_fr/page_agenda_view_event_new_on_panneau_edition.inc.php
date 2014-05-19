@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
    
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("id_graphic_event", "Udate_event_deb", "Udate_event_fin", "duree_event");
 check_page_variables ($page_variables);
 

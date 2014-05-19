@@ -36,7 +36,7 @@ if (isset($_REQUEST["ref_doc"])) {
 	$nom_aff			= array();
 	$nom_aff[]			= "FACTURES_".$nom_entreprise.".pdf";
 
-        //on récupère l'email de l'utilisateur en cours pour envoyer le mail
+        //on rÃ©cupÃ¨re l'email de l'utilisateur en cours pour envoyer le mail
 	$reply 			= $_SESSION['user']->getEmail();
 	$from 			= $_SESSION['user']->getEmail();
         // Envoi de l'email

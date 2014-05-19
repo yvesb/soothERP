@@ -14,7 +14,7 @@ if($_SESSION["agenda"]["GestionnaireEvenements"]->gride_is_locked()){
 
 // L'EVENT n'existe pas en BD. Il n'est visible QUE graphiquement *************************
 
-//@TODO Définir $event_duree_moyenne
+//@TODO DÃ©finir $event_duree_moyenne
 $event_duree_moyenne = 1800; // = 30 min
 
 // *******************************************************************************
@@ -22,7 +22,7 @@ $event_duree_moyenne = 1800; // = 30 min
 // *******************************************************************************
 
 if(!isset($_REQUEST["id_graphic_event"]) || !is_numeric($_REQUEST["id_graphic_event"])){
-	echo "L'identifiant de l'évènement n'est pas spécifié";
+	echo "L'identifiant de l'Ã©vÃ¨nement n'est pas spÃ©cifiÃ©";
 	exit;
 }
 $id_graphic_event = $_REQUEST["id_graphic_event"];

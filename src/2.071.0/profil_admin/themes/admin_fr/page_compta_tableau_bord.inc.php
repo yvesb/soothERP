@@ -4,7 +4,7 @@
 // TABLEAU DE BORD COMPLET
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -27,7 +27,7 @@ check_page_variables ($page_variables);
 <p class="titre">Tableau de bord</p>
 
 
-<div class="sous_titre1">CA par catégorie de client</div>
+<div class="sous_titre1">CA par catÃ©gorie de client</div>
 <table width="70%" border="0" cellspacing="0" cellpadding="0">
 	<tr>
 		<td style="width:40%">&nbsp;</td>
@@ -81,7 +81,7 @@ check_page_variables ($page_variables);
 <br />
 <br />
 
-<div class="sous_titre1">Achats par catégorie de fournisseur</div>
+<div class="sous_titre1">Achats par catÃ©gorie de fournisseur</div>
 <table width="70%" border="0" cellspacing="0" cellpadding="0">
 	<tr>
 		<td style="width:40%">&nbsp;</td>
@@ -191,7 +191,7 @@ check_page_variables ($page_variables);
 <br />
 <br />
 
-<div class="sous_titre1">CA par activité</div>
+<div class="sous_titre1">CA par activitÃ©</div>
 <table width="70%" border="0" cellspacing="0" cellpadding="0">
 	<tr>
 		<td style="width:40%">&nbsp;</td>
@@ -316,7 +316,7 @@ check_page_variables ($page_variables);
 	foreach ($comptes_bancaires as $compte_b) {
 		?>
 		<tr>
-			<td>Compte <?php echo $compte_b->lib_compte;?> n° <?php echo $compte_b->numero_compte;?></td>
+			<td>Compte <?php echo $compte_b->lib_compte;?> nÂ° <?php echo $compte_b->numero_compte;?></td>
 			<td style="text-align:right">
 			<?php
 			if (isset($Solde_compte_bancaire[$compte_b->id_compte_bancaire])) {
@@ -401,7 +401,7 @@ check_page_variables ($page_variables);
 	}
 	?>
 	<tr>
-		<td style="font-weight:bolder">Solde <?php if ( $total_compte_client< 0) {  ?>débiteur<?php } else {?>créditeur<?php } ?>:</td>
+		<td style="font-weight:bolder">Solde <?php if ( $total_compte_client< 0) {  ?>dÃ©biteur<?php } else {?>crÃ©diteur<?php } ?>:</td>
 		<td style="text-align:right; font-weight:bolder"><?php echo price_format($total_compte_client)." ".$MONNAIE[1];?></td>
 	</tr>
 </table>
@@ -436,7 +436,7 @@ check_page_variables ($page_variables);
 	}
 	?>
 	<tr>
-		<td style="font-weight:bolder">Solde <?php if ( $total_compte_fournisseur< 0) {  ?>débiteur<?php } else {?>créditeur<?php } ?>:</td>
+		<td style="font-weight:bolder">Solde <?php if ( $total_compte_fournisseur< 0) {  ?>dÃ©biteur<?php } else {?>crÃ©diteur<?php } ?>:</td>
 		<td style="text-align:right; font-weight:bolder"><?php echo price_format($total_compte_fournisseur)." ".$MONNAIE[1];?></td>
 	</tr>
 </table>

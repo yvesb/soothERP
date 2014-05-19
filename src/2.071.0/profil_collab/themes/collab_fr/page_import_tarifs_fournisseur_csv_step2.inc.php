@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -16,7 +16,7 @@ check_page_variables ($page_variables);
 // *************************************************************************************************************
 ?>
 <div class="emarge">
-<p class="titre">Listes des tarifs fournisseur à importer</p>
+<p class="titre">Listes des tarifs fournisseur Ã  importer</p>
 <div>
 <form action="import_tarifs_fournisseur_csv_step2_done.php" 
 	enctype="multipart/form-data" method="POST" 
@@ -34,10 +34,10 @@ check_page_variables ($page_variables);
 		</td>
 		<td>
 			<p>
-				<?php echo count($array_retour); ?> article(s) à importer<br />
+				<?php echo count($array_retour); ?> article(s) Ã  importer<br />
 				<strong><?php echo count($array_retour)-$count_prix_vide-$count_corres_non_trouvee; ?> article(s) valide(s)</strong><br />
 				<?php if ($count_corres_non_trouvee) { ?>
-					<strong><?php echo $count_corres_non_trouvee; ?> correspondance(s) non trouvée(s)</strong><br />
+					<strong><?php echo $count_corres_non_trouvee; ?> correspondance(s) non trouvÃ©e(s)</strong><br />
 				<?php }
 				if ($count_prix_vide) { ?>
 					<strong><?php echo $count_prix_vide; ?> fiche(s) invalide(s)</strong><br />

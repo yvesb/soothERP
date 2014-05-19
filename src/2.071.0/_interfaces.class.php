@@ -16,7 +16,7 @@ class interfaces {
 function __construct ($id_interface = 0, $infos_interface) {
 	global $bdd;
 
-	// Controle si objet créé depuis une requete
+	// Controle si objet crÃ©Ã© depuis une requete
 	if (isset($infos_interface)) {
 		$this->charger_from_object($infos_interface);
 		return true;
@@ -110,10 +110,10 @@ public function maj_interface  ($lib_interface, $url) {
 
 
 // *************************************************************************************************************
-// Fonctions de réception de données supplémentaires
+// Fonctions de rÃ©ception de donnÃ©es supplÃ©mentaires
 // *************************************************************************************************************
 
-//envoi du mail permettant à l'utilisateur de changer son mot de passe
+//envoi du mail permettant Ã  l'utilisateur de changer son mot de passe
 function mdp_oublie($identifiant){
 	global $bdd;
 	global $REF_CONTACT_ENTREPRISE;
@@ -173,9 +173,9 @@ public function inscription_contact($liste_reponse, $email) {
 	
 	
 	$CONTENU_INSCRIPTION_VALIDATION_2 = "http:".$_SERVER['HTTP_HOST'].str_replace($this->dossier."_inscription_envoi.php", "", $_SERVER['PHP_SELF']).$this->dossier."_inscription_valide.php?id_contact_tmp=".$id_contact_tmp."&code_validation=".$code_validation."
-	 
+	Â 
 	".$nom_entreprise."
-	 
+	Â 
 	-------------------------------------------------------------------------------------------------------------------------
 	";
 	
@@ -230,8 +230,8 @@ public function inscription_avec_valid($liste_reponse, $email) {
 	
 	$SUJET_INSCRIPTION_AVEC_VALID_2 = "Inscription sur ".$_SERVER['HTTP_HOST'];
 	$CONTENU_INSCRIPTION_AVEC_VALID_2 = "Bonjour,<br />
-	Un nouvel inscrit s'est enregistré sur ".$_SERVER['HTTP_HOST']."
-	Vous devez valider son inscription à partir de votre interface collaborateur.
+	Un nouvel inscrit s'est enregistrÃ© sur ".$_SERVER['HTTP_HOST']."
+	Vous devez valider son inscription Ã  partir de votre interface collaborateur.
 	<br />
 	<br />
 	<br />
@@ -249,7 +249,7 @@ public function inscription_avec_valid($liste_reponse, $email) {
 }
 
 /*
- * Fonction permettant de valider l'inscription (commune aux différents modes de validation)
+ * Fonction permettant de valider l'inscription (commune aux diffÃ©rents modes de validation)
  */
 function valider_inscription($liste_reponse){
 	global $bdd;
@@ -321,12 +321,12 @@ function valider_inscription($liste_reponse){
 	}
 	
 	// *************************************************
-	// Création du contact
+	// CrÃ©ation du contact
 	$contact = new contact ();
 	$contact->create ($infos_generales, $infos_profils);
 	
 	$coord = $contact->getCoordonnees ();
-	// Générer un utilisateur pour ce contact
+	// GÃ©nÃ©rer un utilisateur pour ce contact
 	if (isset($coord[0])) {
 		$utilisateur = new utilisateur ();
 		$utilisateur->create ($contact->getRef_contact(), $coord[0]->getRef_coord (), $liste_reponse['admin_pseudo'], 1,  $liste_reponse['admin_passworda'], 1);
@@ -361,9 +361,9 @@ function inscription_valide_panier ($liste_reponse, $email) {
 		$CONTENU_INSCRIPTION_VALIDATION_FINAL_2 = "<br />
 		Votre identifiant: ".$liste_reponse['admin_pseudo']." ou ".$liste_reponse['admin_emaila']."<br />
 		Votre mot de passe: ".$liste_reponse['admin_passworda']."
-		 <br /><br />
+		Â <br /><br />
 		".$nom_entreprise."
-		 <br />
+		Â <br />
 		-------------------------------------------------------------------------------------------------------------------------<br />
 		";
 		$message = $CONTENU_INSCRIPTION_VALIDATION_FINAL.$CONTENU_INSCRIPTION_VALIDATION_FINAL_2;
@@ -403,7 +403,7 @@ function inscription_valide ($id_contact_tmp, $code ) {
 	
 	//si le code est bon on valide l'inscription
 	if (verifier_code_unique ($code, $email, $this->id_interface)) {
-		// si inscription auto on cré le contact on cré l'user, on log l'utilisateur, on vire le tmp
+		// si inscription auto on crÃ© le contact on crÃ© l'user, on log l'utilisateur, on vire le tmp
 		if ($INSCRIPTION_ALLOWED == 2 ) {
 			$this->valider_inscription($annuaire_resultat);
 			
@@ -415,9 +415,9 @@ function inscription_valide ($id_contact_tmp, $code ) {
 			Votre identifiant: ".$annuaire_resultat['admin_pseudo']." ou ".$annuaire_resultat['admin_emaila']."<br />
 			Votre mot de passe: ".$annuaire_resultat['admin_passworda']."<br /><br />
 			http:".$_SERVER['HTTP_HOST'].str_replace($this->dossier."_inscription_valide.php", "", $_SERVER['PHP_SELF'])."
-			 <br /><br />
+			Â <br /><br />
 			".$nom_entreprise."
-			 <br />
+			Â <br />
 			-------------------------------------------------------------------------------------------------------------------------<br />
 			";
 			$message = $CONTENU_INSCRIPTION_VALIDATION_FINAL.$CONTENU_INSCRIPTION_VALIDATION_FINAL_2;
@@ -425,7 +425,7 @@ function inscription_valide ($id_contact_tmp, $code ) {
 			return true;
 		}
 		
-		//si inscription auto, on met le tmp en valide, on envoie un mail aux collab désignés pour la validation
+		//si inscription auto, on met le tmp en valide, on envoie un mail aux collab dÃ©signÃ©s pour la validation
 		if ($INSCRIPTION_ALLOWED == 1 ) {
 			if ($MAIL_ENVOI_INSCRIPTIONS){
 			$this->envoi_email_templated ($MAIL_ENVOI_INSCRIPTIONS , "Nouvelle inscription sur le site" , "Rendez-vous dans l'interface Collaborateur > Annuaire > Valider les inscriptions.   pour confirmer les nouvelles inscriptions" );
@@ -520,12 +520,12 @@ function inscription_contact_valide ($id_contact_tmp) {
 			}
 			
 			// *************************************************
-			// Création du contact
+			// CrÃ©ation du contact
 			$contact = new contact ();
 			$contact->create ($infos_generales, $infos_profils);
 			
 			$coord = $contact->getCoordonnees ();
-			//générer un utilisateur pour ce contact
+			//gÃ©nÃ©rer un utilisateur pour ce contact
 			if (isset($coord[0])) {
 			
 				$utilisateur = new utilisateur ();
@@ -547,9 +547,9 @@ function inscription_contact_valide ($id_contact_tmp) {
 			Votre mot de passe: ".$annuaire_resultat['admin_passworda']."
 			
 			http:".$_SERVER['HTTP_HOST'].str_replace($this->dossier."_inscription_valide.php", "", $_SERVER['PHP_SELF'])."
-			 
+			Â 
 			".$nom_entreprise."
-			 
+			Â 
 			-------------------------------------------------------------------------------------------------------------------------
 			";
 			
@@ -651,7 +651,7 @@ function valider_inscription_contact ($id_contact_tmp) {
 			}
 			
 			// *************************************************
-			// Création du contact
+			// CrÃ©ation du contact
 			$contact = new contact ();
 			$contact->create ($infos_generales, $infos_profils);
 			
@@ -681,7 +681,7 @@ function valider_inscription_contact ($id_contact_tmp) {
 			$message = $CONTENU_VALIDATION_INSCRIPTION;
 			
 			
-			//générer un utilisateur pour ce contact
+			//gÃ©nÃ©rer un utilisateur pour ce contact
 			if (isset($coord[0])) {
 			
 				$utilisateur = new utilisateur ();
@@ -729,9 +729,9 @@ public function modification_contact ($liste_reponse, $ref_contact, $email) {
 	
 	if ($liste_coordonnees[0]->getEmail() != $email) {
 		$CONTENU_MODIFICATION_VALIDATION_2 = "http:".$_SERVER['HTTP_HOST'].str_replace($this->dossier."_inscription_envoi.php", "", $_SERVER['PHP_SELF']).$this->dossier."_modification_valide.php?id_contact_tmp=".$id_contact_tmp."&code_validation=".$code_validation."
-		 
+		Â 
 		".$nom_entreprise."
-		 
+		Â 
 		-------------------------------------------------------------------------------------------------------------------------
 		";
 		$message = $CONTENU_MODIFICATION_VALIDATION.$CONTENU_MODIFICATION_VALIDATION_2;
@@ -843,9 +843,9 @@ function modification_contact_valide ($id_contact_tmp) {
 		} else {
 			$adresse = new adresse ();
 			$adresse->create ($ref_contact, "", $annuaire_resultat['livraison_adresse'], $annuaire_resultat['livraison_code'], $annuaire_resultat['livraison_ville'], $annuaire_resultat['id_pays_livraison'], "");
-			if (isset($GLOBALS['_INFOS']['Création_adresse'])) {
-				$profil_client->maj_ref_adr_livraison($GLOBALS['_INFOS']['Création_adresse']);
-				unset ($GLOBALS['_INFOS']['Création_adresse']);
+			if (isset($GLOBALS['_INFOS']['CrÃ©ation_adresse'])) {
+				$profil_client->maj_ref_adr_livraison($GLOBALS['_INFOS']['CrÃ©ation_adresse']);
+				unset ($GLOBALS['_INFOS']['CrÃ©ation_adresse']);
 			}
 		}
 		unset($adresse);
@@ -857,9 +857,9 @@ function modification_contact_valide ($id_contact_tmp) {
 		} else {
 			$adresse = new adresse ();
 			$adresse->create ($ref_contact, "", $annuaire_resultat['adresse_adresse'], $annuaire_resultat['adresse_code'], $annuaire_resultat['adresse_ville'], $annuaire_resultat['id_pays_contact'], "");
-			if (isset($GLOBALS['_INFOS']['Création_adresse'])) {
-				$profil_client->maj_ref_adr_facturation($GLOBALS['_INFOS']['Création_adresse']);
-				unset ($GLOBALS['_INFOS']['Création_adresse']);
+			if (isset($GLOBALS['_INFOS']['CrÃ©ation_adresse'])) {
+				$profil_client->maj_ref_adr_facturation($GLOBALS['_INFOS']['CrÃ©ation_adresse']);
+				unset ($GLOBALS['_INFOS']['CrÃ©ation_adresse']);
 			}
 		}
 	}
@@ -890,7 +890,7 @@ function modification_contact_valide ($id_contact_tmp) {
 		Votre identifiant: ".$annuaire_resultat['admin_pseudo']." ou ".$annuaire_resultat['admin_emaila']."
 		Votre mot de passe: ".$annuaire_resultat['admin_passworda']."
 		".$nom_entreprise."
-		 
+		Â 
 		-------------------------------------------------------------------------------------------------------------------------
 		";
 		$message = $CONTENU_MODIFICATION_VALIDATION_FINAL.$CONTENU_MODIFICATION_VALIDATION_FINAL_2;
@@ -918,7 +918,7 @@ function envoi_email_templated ($to, $sujet, $message) {
 }
 
 // *************************************************************************************************************
-// Fonctions d'accès aux données
+// Fonctions d'accÃ¨s aux donnÃ©es
 // *************************************************************************************************************
 
 // Retourne l'identifiant du id_interface

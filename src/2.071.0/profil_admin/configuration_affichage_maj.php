@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// CONFIGURATION DES DONNÉES d'affichage
+// CONFIGURATION DES DONNÃ‰ES d'affichage
 // *************************************************************************************************************
 
 
@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 
 
-//mise à jour des données transmises
+//mise Ã  jour des donnÃ©es transmises
 if (isset($_REQUEST["annuaire_recherche_showed_fiches"]) && is_numeric($_REQUEST["annuaire_recherche_showed_fiches"])) {
 	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$ANNUAIRE_RECHERCHE_SHOWED_FICHES =", "\$ANNUAIRE_RECHERCHE_SHOWED_FICHES = ".$_REQUEST["annuaire_recherche_showed_fiches"]."; ", $CONFIG_DIR);
 }

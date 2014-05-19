@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -60,7 +60,7 @@ foreach ($result as $compte) {
 		Event.stop(evt);
 		if ($("retour_value").value == "") {
 			$("aff_<?php echo $_REQUEST["indent"];?>").innerHTML = "...";
-			$("aff_<?php echo $_REQUEST["indent"];?>").title = "Sélectionnez un n° de compte";
+			$("aff_<?php echo $_REQUEST["indent"];?>").title = "SÃ©lectionnez un nÂ° de compte";
 		} else {
 			$("aff_<?php echo $_REQUEST["indent"];?>").innerHTML = $("retour_value").value;
 			$("aff_<?php echo $_REQUEST["indent"];?>").title = $("retour_lib").value;
@@ -80,7 +80,7 @@ foreach ($result as $compte) {
 	<table>
 		<tr>
 			<td style="width:70px; ">
-			<div  style="width:70px; display:block ">Néant</div>
+			<div  style="width:70px; display:block ">NÃ©ant</div>
 			</td>
 			<td>
 			<span >

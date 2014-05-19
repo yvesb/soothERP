@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 if(!isset($_REQUEST["id_stock"])){
-	echo "stock non specifié";
+	echo "stock non specifiÃ©";
 	exit;
 }
 $id_stock = $_REQUEST["id_stock"];

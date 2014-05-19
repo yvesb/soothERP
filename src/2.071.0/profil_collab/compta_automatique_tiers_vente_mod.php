@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// Modification d'un compte de catégorie de client
+// Modification d'un compte de catÃ©gorie de client
 // *************************************************************************************************************
 
 
@@ -20,7 +20,7 @@ if (isset($_REQUEST["id_client_categ"])) {
 	$infos	=	array();
 	$infos['id_client_categ']				=	$_REQUEST["id_client_categ"];
 	$infos['defaut_numero_compte']				=	$_REQUEST["retour_value"];
-	//création de la catégorie
+	//crÃ©ation de la catÃ©gorie
 	contact_client::maj_defaut_numero_compte_categories ($infos);
 
 }

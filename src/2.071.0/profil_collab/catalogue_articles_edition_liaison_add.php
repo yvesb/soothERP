@@ -12,17 +12,17 @@ require ($DIR."_session.inc.php");
 // Controle
 
 	if (!isset($_REQUEST['ref_article_A'])) {
-		echo "La référence de l'article n'est pas précisée";
+		echo "La rÃ©fÃ©rence de l'article n'est pas prÃ©cisÃ©e";
 		exit;
 	}
 
 	if (!isset($_REQUEST['ref_article_B'])) {
-		echo "La référence de l'article est inconnue";
+		echo "La rÃ©fÃ©rence de l'article est inconnue";
 		exit;
 	}
 
 	if (!isset($_REQUEST['id_liaison_type'])) {
-		echo "La référence de l'article est inconnue";
+		echo "La rÃ©fÃ©rence de l'article est inconnue";
 		exit;
 	}
 

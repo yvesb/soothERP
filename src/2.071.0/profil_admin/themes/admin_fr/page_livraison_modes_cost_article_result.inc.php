@@ -1,9 +1,9 @@
 <?php
 // *************************************************************************************************************
-// commissionnements des catégories d'articles
+// commissionnements des catÃ©gories d'articles
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -25,7 +25,7 @@ function barre_navigation($nbtotal,
 													
 {
 	// --------------------------------------------------------------------
-	global $cfg_nb_pages; // Nb de n° de pages affichées dans la barre
+	global $cfg_nb_pages; // Nb de nÂ° de pages affichÃ©es dans la barre
 global $DIR;
 	$barre= "";	$lien_on 	= "&nbsp;<a href='#' id='link_pagi_{cible}'>{lien}</a>&nbsp;
 								<script type='text/javascript'>
@@ -35,7 +35,7 @@ global $DIR;
 	// --------------------------------------------------------------------
     
 
-	// début << .
+	// dÃ©but << .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -55,7 +55,7 @@ global $DIR;
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
 
 
-	// précédent < .
+	// prÃ©cÃ©dent < .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -161,7 +161,7 @@ function image_html($img)
 
 //
 //
-//création de la barre de nav
+//crÃ©ation de la barre de nav
 //
 //
 
@@ -205,7 +205,7 @@ function image_html($img)
 		<tr style="">
 			<td>
 			<div style="text-align:right; font-size:16px; padding-right:35px; font-weight:bolder">
-			Valeurs par défaut:
+			Valeurs par dÃ©faut:
 			</div>
 			</td>
 			<td style="text-align:left; font-weight:bolder;  width:50%">
@@ -227,7 +227,7 @@ function image_html($img)
 					} else {
 						?>
 						<?php echo $BASE_CALCUL_LIVRAISON[$cost->base_calcul][0];?> >= <?php echo $cost->indice_min;?> <?php echo $BASE_CALCUL_LIVRAISON[$cost->base_calcul][1];?> <br />
-						Coût = <?php echo $fixe;?> + <?php echo $variab;?> x <?php echo $BASE_CALCUL_LIVRAISON[$cost->base_calcul][0];?> 
+						CoÃ»t = <?php echo $fixe;?> + <?php echo $variab;?> x <?php echo $BASE_CALCUL_LIVRAISON[$cost->base_calcul][0];?> 
 						<div style="border-bottom:1px solid #999999; "></div>
 						<?php 
 					}
@@ -253,7 +253,7 @@ function image_html($img)
 				<td style="text-align:center; border-bottom:1px solid #FFFFFF;">
 					<div id="mode_liv_cost_<?php echo $fiche->ref_article;?>">
 						<?php if (!count($fiche->livraisons_tarifs)) { ?>
-							<div id="more_mode_liv_<?php echo $fiche->ref_article;?>" style="cursor:pointer; display:inherit"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" /> Définir </div>
+							<div id="more_mode_liv_<?php echo $fiche->ref_article;?>" style="cursor:pointer; display:inherit"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" /> DÃ©finir </div>
 							
 							<script type="text/javascript">
 							Event.observe('more_mode_liv_<?php echo $fiche->ref_article;?>', 'click',  function(){

@@ -15,7 +15,7 @@ require ($DIR."_session.inc.php");
 // *************************************************************************************************************
 
 	// *************************************************
-// Profils à afficher
+// Profils Ã  afficher
 $profils = array();
 foreach ($_SESSION['profils'] as $profil) {
 	if ($profil->getActif() != 1) { continue; }
@@ -25,7 +25,7 @@ unset ($profil);
 
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -72,10 +72,10 @@ if (isset($_REQUEST['date_fin'])) {
 }
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_join 	= "";
 	$query_where 	= "date_archivage IS NULL";
 	$query_limit	= (($search['page_to_show']-1)*$search['fiches_par_page']).", ".$search['fiches_par_page'];
@@ -132,7 +132,7 @@ if (isset($_REQUEST['recherche'])) {
 	//echo nl2br ($query);
 	unset ($fiche, $resultat, $query);
 	
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 	$query = "SELECT COUNT(ul.id_log) nb_fiches
 						FROM users_logs ul 
 							LEFT JOIN users u ON ul.ref_user = u.ref_user

@@ -15,9 +15,9 @@ $articles_categories = get_articles_categories ();
 
 if (isset($_REQUEST['create'])) {	
 	// *************************************************
-	// Controle des données fournies par le formulaire
+	// Controle des donnÃ©es fournies par le formulaire
 	if (!isset($_REQUEST['lib_article'])) {
-		$erreur = "Une variable nécessaire à la création de l'article n'est pas précisée.";
+		$erreur = "Une variable nÃ©cessaire Ã  la crÃ©ation de l'article n'est pas prÃ©cisÃ©e.";
 		alerte_dev($erreur);
 	}
 
@@ -44,7 +44,7 @@ if (isset($_REQUEST['create'])) {
 	include_once ("./modele_create_".$_REQUEST['code_modele'].".inc.php");
 	
 	// *************************************************
-	// Création de l'article
+	// CrÃ©ation de l'article
 	$article = new article ();
 	$article->create ($infos_generales, $infos_modele);
 }

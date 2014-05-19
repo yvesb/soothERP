@@ -11,11 +11,11 @@ require ($DIR."_session.inc.php");
 
 if (isset($_REQUEST['id_tarif'])) {	
 	// *************************************************
-	// Controle des données fournies par le formulaire
+	// Controle des donnÃ©es fournies par le formulaire
 
 	
 	// *************************************************
-	// Création de la catégorie
+	// CrÃ©ation de la catÃ©gorie
 	$tarif_liste = new tarif_liste ($_REQUEST['id_tarif']);
 	$tarif_liste->suppression ($_REQUEST['id_tarif_remplacement_'.$_REQUEST['id_tarif']]);
 }

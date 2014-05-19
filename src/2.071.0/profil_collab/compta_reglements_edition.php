@@ -25,7 +25,7 @@ if (isset($_REQUEST["ref_reglement"])) {
 }
 
 
-//function de présentation des types renvoyer par $reglement->getId_reglement_mode()
+//function de prÃ©sentation des types renvoyer par $reglement->getId_reglement_mode()
 function format_info($type,$val){
     switch($type){
         case 'numero_cheque' :

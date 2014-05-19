@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("listepays");
 check_page_variables ($page_variables);
 
@@ -41,7 +41,7 @@ check_page_variables ($page_variables);
 				<table cellpadding="0" cellspacing="0" border="0" style="width:100%">
 				<tr>
 				<td>
-				<span id="lib_art_categ_s" style=" float:left; height:18px; margin-left:3px; line-height:18px;">Définir la ou les fonctions</span>				</td>
+				<span id="lib_art_categ_s" style=" float:left; height:18px; margin-left:3px; line-height:18px;">DÃ©finir la ou les fonctions</span>				</td>
 				<td>
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif"/ style="float:right" id="lib_art_categ_bt_select_s">				</td>
 				</tr>
@@ -198,7 +198,7 @@ check_page_variables ($page_variables);
 			<td class="size_strict"><span class="labelled_ralonger">Nationalit&eacute;:</span>
 			</td><td>
 			<select  id="collab_id_pays"  name="collab_id_pays" class="classinput_xsize">
-						<option value="" >non défini</option>
+						<option value="" >non dÃ©fini</option>
 			<?php
 				$separe_listepays = 0;
 				foreach ($listepays as $payslist){

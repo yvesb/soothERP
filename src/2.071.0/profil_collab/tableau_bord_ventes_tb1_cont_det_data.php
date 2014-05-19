@@ -14,7 +14,7 @@ require_once ($RESSOURCE_DIR."/php-ofc-library/open-flash-chart.php");
 	
 $jour_liste = array("Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche");
 
-$mois_liste = array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre");
+$mois_liste = array("Janvier", "FÃ©vrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "DÃ©cembre");
 
 // mauve $bar2->colour('#8a5b9d' );
 
@@ -64,7 +64,7 @@ switch ($_REQUEST["data"]) {
 		
 	break;
 	case "7_less":
-		$title = new title(utf8_encode("Evolution du chiffre d'affaire sur les 7 jours précédents "));
+		$title = new title(utf8_encode("Evolution du chiffre d'affaire sur les 7 jours prÃ©cÃ©dents "));
 		$resultats = array();
 		for ($j = 6; $j >= 0; $j--) {
 			$resultats[] = array(
@@ -90,7 +90,7 @@ switch ($_REQUEST["data"]) {
 		
 	break;
 	case "7_equi":
-		$title = new title(utf8_encode("Evolution du chiffre d'affaire sur la période équivalente l'an passé"));
+		$title = new title(utf8_encode("Evolution du chiffre d'affaire sur la pÃ©riode Ã©quivalente l'an passÃ©"));
 		$resultats = array();
 		$lasemaine = get_semaine(date("W"), date("Y")-1);
 		$lejour = $lasemaine[date("N")-1];
@@ -146,7 +146,7 @@ switch ($_REQUEST["data"]) {
 		
 	break;
 	case "30_less":
-		$title = new title(utf8_encode("Evolution du chiffre d'affaire sur les 30 jours précédents "));
+		$title = new title(utf8_encode("Evolution du chiffre d'affaire sur les 30 jours prÃ©cÃ©dents "));
 		$resultats = array();
 		for ($j = 29; $j >= 0; $j--) {
 			$resultats[] = array(
@@ -172,7 +172,7 @@ switch ($_REQUEST["data"]) {
 		
 	break;
 	case "30_equi":
-		$title = new title(utf8_encode("Evolution du chiffre d'affaire sur la période équivalente l'an passé"));
+		$title = new title(utf8_encode("Evolution du chiffre d'affaire sur la pÃ©riode Ã©quivalente l'an passÃ©"));
 		$resultats = array();
 		$lasemaine = get_semaine(date("W"), date("Y")-1);
 		
@@ -227,7 +227,7 @@ switch ($_REQUEST["data"]) {
 		
 	break;
 	case "12_less":
-		$title = new title(utf8_encode("Evolution du chiffre d'affaire sur les 12 mois précédents "));
+		$title = new title(utf8_encode("Evolution du chiffre d'affaire sur les 12 mois prÃ©cÃ©dents "));
 		$resultats = array();
 		for ($j = 11; $j >= 0; $j--) {
 			$resultats[] = array(
@@ -255,7 +255,7 @@ switch ($_REQUEST["data"]) {
 	//periode 3 ans
 	
 	case "3":
-		$title = new title(utf8_encode("Evolution du chiffre d'affaire sur les 3 dernières années"));
+		$title = new title(utf8_encode("Evolution du chiffre d'affaire sur les 3 derniÃ¨res annÃ©es"));
 		$resultats = array();
 		for ($j = 2; $j >= 0; $j--) {
 			$resultats[] = array(

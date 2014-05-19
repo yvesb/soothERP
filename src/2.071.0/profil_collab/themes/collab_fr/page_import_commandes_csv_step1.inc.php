@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -29,7 +29,7 @@ if(is_null($import_commandes)){ ?>
 		<?php $erreurs = $import_commandes->getErreurs();
 		if(empty($erreurs)){ 
 			?>
-			texte += "L'import s'est terminé avec succès.<br />";
+			texte += "L'import s'est terminÃ© avec succÃ¨s.<br />";
 			<?php 
 		}else{
 			foreach($erreurs as $erreur){
@@ -60,22 +60,22 @@ if(is_null($import_commandes)){ ?>
 
 <p class="titre">Renseigner les correspondances</p>
 <div>
-	Sélectionnez les correspondances entre les informations de LMB et les différentes colonnes de votre fichier CSV.
+	SÃ©lectionnez les correspondances entre les informations de LMB et les diffÃ©rentes colonnes de votre fichier CSV.
 	
 	<form action="import_commandes_csv_step1_done.php" enctype="multipart/form-data" 
 			method="POST" id="import_commandes_csv_step1_done" name="import_commandes_csv_step1_done" 
 			target="formFrame" style ="margin:20px;" />
 		<table>
 			<tr>
-				<td><span id="lib_type_ref_article">Référence article :</span></td>
+				<td><span id="lib_type_ref_article">RÃ©fÃ©rence article :</span></td>
 				<td><select id="val_type_ref_article" name="val_type_ref_article" >
-					<option value="interne" >Référence interne		</option>
-					<option value="oem" 	>Référence constructeur	</option>
-					<option value="lmb" 	>Référence LMB			</option>
+					<option value="interne" >RÃ©fÃ©rence interne		</option>
+					<option value="oem" 	>RÃ©fÃ©rence constructeur	</option>
+					<option value="lmb" 	>RÃ©fÃ©rence LMB			</option>
 				</select></td>
 			</tr>
 			<tr>
-				<td><span id="lib_categ_client">Catégorie client :</span></td>
+				<td><span id="lib_categ_client">CatÃ©gorie client :</span></td>
 				<td><select id="val_categ_client" name="val_categ_client" >
 					<?php
 					contact::load_profil_class($CLIENT_ID_PROFIL);

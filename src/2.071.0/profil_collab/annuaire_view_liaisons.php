@@ -14,7 +14,7 @@ require_once ($DIR."_contact_liaisons_types.class.php");
 // Controle
 
 if(!isset($_REQUEST["ref_contact"])){
-	echo "la référence du contact n'est pas spécifiée.";
+	echo "la rÃ©fÃ©rence du contact n'est pas spÃ©cifiÃ©e.";
 	exit;
 }
 

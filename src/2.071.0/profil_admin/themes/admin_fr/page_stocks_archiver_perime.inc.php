@@ -4,7 +4,7 @@
 // ARCHIVAGE D'ARTICLE PERIMES
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -17,18 +17,18 @@ check_page_variables ($page_variables);
 // *************************************************************************************************************
 
 
-// Affichage des résultats
+// Affichage des rÃ©sultats
 ?>
 <script type="text/javascript">
 tableau_smenu[0] = Array("smenu_catalogue", "smenu_catalogue.php" ,"true" ,"sub_content", "Catalogue");
-tableau_smenu[1] = Array('archiver_perimer','stocks_archiver_perime.php','true','sub_content', "Archiver les articles périmés");
+tableau_smenu[1] = Array('archiver_perimer','stocks_archiver_perime.php','true','sub_content', "Archiver les articles pÃ©rimÃ©s");
 update_menu_arbo();
 </script>
 <div class="emarge">
 <p class="titre">Liste des articles mis en archive</p>
 <div   class="mt_size_optimise">
 
-<?php echo count($fiches);?> articles archivés
+<?php echo count($fiches);?> articles archivÃ©s
 <table width="100%"  border="0" cellspacing="0" cellpadding="0" id="tableresult">
 	<tr class="colorise0">
 		<td style="width:20%">R&eacute;f&eacute;rence

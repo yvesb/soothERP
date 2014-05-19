@@ -116,17 +116,17 @@ abstract class Agenda implements IGestionnaireEvenements{
 		else{$res = null; return res;}//null
 	}
 	
-	//retourne la couleur n°1 sous forme d'une chaine de charactère de la forme #e3a869
+	//retourne la couleur nÂ°1 sous forme d'une chaine de charactÃ¨re de la forme #e3a869
 	public function getCouleur_1(){
 		return $this->couleur_1;
 	}
 	
-	//retourne la couleur n°2 sous forme d'une chaine de charactère de la forme #e3a869
+	//retourne la couleur nÂ°2 sous forme d'une chaine de charactÃ¨re de la forme #e3a869
 	public function getCouleur_2(){
 		return $this->couleur_2;
 	}
 	
-	//retourne la couleur n°3 sous forme d'une chaine de charactère de la forme #e3a869
+	//retourne la couleur nÂ°3 sous forme d'une chaine de charactÃ¨re de la forme #e3a869
 	public function getCouleur_3(){
 		return $this->couleur_3;
 	}

@@ -5,7 +5,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -61,7 +61,7 @@ if (erreur) {
 	//alerte.confirm_supprimer('catalogue_stockage_documents_using_stock', '');
 	
 		texte_erreur += "";
-		alerte.alerte_erreur ('Lieu de stockage utilisé', 'Ce lieu de stockage est utilisé par un ou des documents en attente de validation, vous ne pouvez pas le désactiver<br/><span style="cursor:pointer; text-decoration:underline; " id="view_doc_block_stock">Voir les documents</span>'+texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+		alerte.alerte_erreur ('Lieu de stockage utilisÃ©', 'Ce lieu de stockage est utilisÃ© par un ou des documents en attente de validation, vous ne pouvez pas le dÃ©sactiver<br/><span style="cursor:pointer; text-decoration:underline; " id="view_doc_block_stock">Voir les documents</span>'+texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 		
 	Event.observe("view_doc_block_stock", "click",  function(evt){Event.stop(evt); page.verify('catalogue_stockage_documents_result','index.php#'+escape('catalogue_stockage_documents_result.php?id_stock=<?php echo $_REQUEST['id_stock']?>'),'true','_blank');}, false);
 	}

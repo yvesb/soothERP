@@ -28,7 +28,7 @@ function calcul_commission ($CA, $Mg) {
 
 
 	// *************************************************
-	// Recherche de la première partie : CA
+	// Recherche de la premiÃ¨re partie : CA
 	preg_match('#([0-9\.]*)%CA\+([0-9\.]*)%Mg#i', $this->formule, $result);
 
 	$pc_CA = $result[1]; 
@@ -48,7 +48,7 @@ function calcul_commission ($CA, $Mg) {
 // *************************************************************************************************************
 // FONCTIONS DE VERIFICATION ET DE RECEPTION
 // *************************************************************************************************************
-// Réception d'un formulaire pour créer la formule correspondante
+// RÃ©ception d'un formulaire pour crÃ©er la formule correspondante
 static function recept_formule ($reponses, $valeures) {
 	$formule = "";
 
@@ -58,10 +58,10 @@ static function recept_formule ($reponses, $valeures) {
 		$valeures[$i] = str_replace(",", ".", $valeures[$i]);
 	}
 	
-	// Vérification de la validité des réponses
+	// VÃ©rification de la validitÃ© des rÃ©ponses
 	if (!in_array($reponses[2], array("CDC","FAC","RGM"))) 				{ $GLOBALS['_ALERTES']['bad_reponse_2'] = 1; }
 
-	// Vérification de la validité des valeures
+	// VÃ©rification de la validitÃ© des valeures
 	if (isset($valeures[1]) && !is_numeric($valeures[1])) 				{ $GLOBALS['_ALERTES']['bad_valeur_1'] = 1; }
 	if (isset($valeures["1a"]) && !is_numeric($valeures["1a"])) 				{ $GLOBALS['_ALERTES']['bad_valeur_1a'] = 1; }
 
@@ -69,13 +69,13 @@ static function recept_formule ($reponses, $valeures) {
 	if (isset($valeures[1])  && $valeures[1] >= 100) { $GLOBALS['_ALERTES']['bad_valeur_1']	= 1; }
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) { 
 		return false;
 	}
 
 	// *************************************************
-	// Création de la formule a partir des réponses
+	// CrÃ©ation de la formule a partir des rÃ©ponses
 	$formule = $valeures[1]."%".$reponses[1]."+".$valeures["1a"]."%".$reponses["1a"];
 
 	
@@ -92,7 +92,7 @@ static function recept_formule ($reponses, $valeures) {
 
 
 
-// Vérifie la formule de comm
+// VÃ©rifie la formule de comm
 static function check_formule ($formule) {
 	if (!$formule) {return false;}
 	return true;

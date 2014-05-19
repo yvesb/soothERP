@@ -4,7 +4,7 @@
 // telecollecte de tp
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -34,7 +34,7 @@ array_menu_v_telecollecte[4] 	=	new Array('telecollecte_validation', 'chemin_eta
 <script type="text/javascript">
 Event.observe("link_retour_tp", "click",  function(evt){Event.stop(evt); page.verify('compta_gestion2_terminaux','compta_gestion2_terminaux.php?<?php echo $retour_var;?>','true','sub_content');}, false);
 </script>
-<div class="titre" style="width:60%; padding-left:140px">Télécollecte <?php echo $compte_tp->getLib_tp(); ?>
+<div class="titre" style="width:60%; padding-left:140px">TÃ©lÃ©collecte <?php echo $compte_tp->getLib_tp(); ?>
 </div>
 
 
@@ -105,7 +105,7 @@ Event.observe("link_retour_tp", "click",  function(evt){Event.stop(evt); page.ve
 			<br />
 			<br />
 				<div>
-					<span style="width:180px; float:left; font-weight:bolder">Date de la télécollecte</span>
+					<span style="width:180px; float:left; font-weight:bolder">Date de la tÃ©lÃ©collecte</span>
 					<span style="width:40px; float:left ">&gt;&gt;&gt;</span> 
 					<input type="text" id="date_telecollecte" name="date_telecollecte" value="<?php 
 					echo date("d-m-Y")." ".date("H:i") ;
@@ -150,7 +150,7 @@ Event.observe("link_retour_tp", "click",  function(evt){Event.stop(evt); page.ve
 			<div style="width:350px;">
 			<br /><br /><br />
 				<div>
-					<span style="width:120px; float:left">Solde Théorique</span>
+					<span style="width:120px; float:left">Solde ThÃ©orique</span>
 					<span style="width:40px; float:left ">&gt;&gt;&gt;</span> 
 					<span id="toto_cb_theorique2" style="text-align:right; width:65px; float:left">
 					<?php
@@ -172,7 +172,7 @@ Event.observe("link_retour_tp", "click",  function(evt){Event.stop(evt); page.ve
 				</div><br />
 	
 				<div>
-					<span style="width:120px; float:left">Solde télécollecté</span>
+					<span style="width:120px; float:left">Solde tÃ©lÃ©collectÃ©</span>
 					<span style="width:40px; float:left ">&gt;&gt;&gt;</span> 
 					<span id="toto_cb_saisie2" style="text-align:right; width:65px; float:left ">0.00</span><?php echo "&nbsp;". $MONNAIE[1];?> <span style="padding-left:10px">(<span id="saisie_op_cb2"></span> CB)</span>
 				</div><br />
@@ -309,10 +309,10 @@ Event.observe("link_retour_tp", "click",  function(evt){Event.stop(evt); page.ve
 			<br />
 			<div style="text-align:right; width:380px"><span id="aff_date_telecollecte" style="width:180px; float:right; text-align:right"></span>
 			<span style="width:190px; float:left; text-align:left; font-weight:bolder">Date: </span> <br />
-			<span style="width:290px; float:left; text-align:left; font-weight:bolder">Nombre d'opérations: </span> <span id="aff_nombre_ope" style="width:80px; text-align:right"></span><br />
+			<span style="width:290px; float:left; text-align:left; font-weight:bolder">Nombre d'opÃ©rations: </span> <span id="aff_nombre_ope" style="width:80px; text-align:right"></span><br />
 			<span style="width:290px; float:left; text-align:left; font-weight:bolder">Montant total: </span> <span id="aff_montant_total" style="width:80px; text-align:right"></span><?php echo "&nbsp;".$MONNAIE[1];?><br />
 			<span style="width:290px; float:left; text-align:left; font-weight:bolder">Montant de la commission bancaire: </span> <span id="aff_montant_commission" style="width:80px; text-align:right"></span><?php echo "&nbsp;".$MONNAIE[1];?><br />
-			<span style="width:290px; float:left; text-align:left; font-weight:bolder">Montant tranféré sur le compte bancaire: </span> <span id="aff_montant_transfere" style="width:80px; text-align:right"></span><?php echo "&nbsp;".$MONNAIE[1];?><br />
+			<span style="width:290px; float:left; text-align:left; font-weight:bolder">Montant tranfÃ©rÃ© sur le compte bancaire: </span> <span id="aff_montant_transfere" style="width:80px; text-align:right"></span><?php echo "&nbsp;".$MONNAIE[1];?><br />
 			<br />
 			</div>
 			<br />

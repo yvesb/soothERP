@@ -46,7 +46,7 @@
 			<td style="width:35%">
 				<div class="end_menu">
 					<?php if($_SESSION['user']->getLogin()) { ?>
-					<span id="sedeconnecter" >Se déconnecter</span>
+					<span id="sedeconnecter" >Se dÃ©connecter</span>
 					<script type="text/javascript">
 						Event.observe('sedeconnecter', 'click',  function(evt){
 							Event.stop(evt);

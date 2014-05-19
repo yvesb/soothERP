@@ -4,7 +4,7 @@
 // *************************************************************************************************************
    
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("echelle", "event", "id_graphic_event", "bt_maj_visible");
 check_page_variables ($page_variables);
 

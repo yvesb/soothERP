@@ -22,7 +22,7 @@ if (isset ($_REQUEST['id_profil'])) {
 // TRAITEMENTS 
 // *************************************************************************************************************
 
-// Liste des profils autorisés
+// Liste des profils autorisÃ©s
 $profils_allowed = $_SESSION['user']->getProfils_allowed();
 
 

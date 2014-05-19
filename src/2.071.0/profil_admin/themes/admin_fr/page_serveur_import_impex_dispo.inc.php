@@ -4,7 +4,7 @@
 //  LISTE DES TYPES D'IMPORT MIS A DISPOSITION
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -66,7 +66,7 @@ check_page_variables ($page_variables);
 	
 	<tr>
 		<td colspan="3">
-			Le serveur indiqué semble ne proposer aucun type de données en partage.
+			Le serveur indiquÃ© semble ne proposer aucun type de donnÃ©es en partage.
 		</td>
 	</tr>
 	<?php

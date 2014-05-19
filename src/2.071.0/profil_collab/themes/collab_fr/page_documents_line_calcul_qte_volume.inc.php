@@ -1,6 +1,6 @@
 <?php
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -16,15 +16,15 @@ check_page_variables ($page_variables);
 		</tr>
 		<tr>
 			<td></td>
-			<td style="text-align:center;">forme géométrique : </td>
+			<td style="text-align:center;">forme gÃ©omÃ©trique : </td>
 			<td></td>
 			<td>
 				<select  id="forme_geo"  name="forme_geo" class="classinput_xsize">
 					<option value="cube"			>Cube</option>
-					<option selected="selected" value="pave_droit">Pavé</option>
+					<option selected="selected" value="pave_droit">PavÃ©</option>
 					<option value="cylindre"	>Cylindre</option>
 				</select>
-				<!-- Div sélectionné par défaut -->
+				<!-- Div sÃ©lectionnÃ© par dÃ©faut -->
 				<input type="hidden" id="selectedDiv" value="calcul_pave_droit"/>
 
 				<script type="text/javascript">
@@ -83,7 +83,7 @@ check_page_variables ($page_variables);
 				<td>
 					<table width="100%" border="0">
 						<tr>
-							<td style="width:25% ;text-align:right;">côté : </td>
+							<td style="width:25% ;text-align:right;">cÃ´tÃ© : </td>
 							<td style="width:75% ;text-align:left;"><input style="text-align:right;" id="calcul_cube_cote" value="0"/>&nbsp;<?php if($id_valo == 10){echo "m";}elseif($id_valo == 11){echo "cm";} ?>
 						</tr>
 					</table>
@@ -178,7 +178,7 @@ check_page_variables ($page_variables);
 				<td></td>
 				<td></td>
 				<td></td>
-				<td style="text-align:right;">Résultat :</td>
+				<td style="text-align:right;">RÃ©sultat :</td>
 				<td style="text-align:left;">
 					<input id="resultat_calcul" name="resultat_calcul" style="text-align:right;" value="0"/>&nbsp;
 					<?php 

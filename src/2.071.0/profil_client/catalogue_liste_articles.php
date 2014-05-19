@@ -16,7 +16,7 @@ $id_tarif = "";
 
 $list_catalogue_dir =	get_catalogue_client_dirs($ID_CATALOGUE_INTERFACE);
 
-//récup de l'id_tarif du client
+//rÃ©cup de l'id_tarif du client
 if ($_SESSION['user']->getRef_contact ()) {
 	$contact = new contact($_SESSION['user']->getRef_contact ());
 	$profils 	= $contact->getProfils();
@@ -47,7 +47,7 @@ if (isset($_REQUEST['id_catalogue_client_dir'])) {
 }
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -76,7 +76,7 @@ if (isset($_REQUEST['lib_article'])) {
 $nb_fiches = 0;
 
 $fiches = array();
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_select = "";
 	$query_join 	= "";
 	$query_where 	= " dispo = 1 ";
@@ -101,7 +101,7 @@ $fiches = array();
 		$query_where 	.= " ) )";
 	}
 	
-	// Catégorie
+	// CatÃ©gorie
 	if (isset($catalogue_client_dir_parents[0]->ref_art_categ)) { 
 	//	$query_where 	.= " && a.ref_art_categ = '".$catalogue_client_dir_parents[0]->ref_art_categ."'";
 		
@@ -119,7 +119,7 @@ $fiches = array();
 		$query_where 	.= " && a.ref_art_categ IN ( ".$liste_categories." ) ";
 		
 	} else {
-		//onlimite au catégories autorisées pour l'interface
+		//onlimite au catÃ©gories autorisÃ©es pour l'interface
 		if (count($list_catalogue_dir)){
 			$tmp_art_categ = array();
 			foreach ($list_catalogue_dir as $cat_dir) {$tmp_art_categ[] = "'".$cat_dir->ref_art_categ."'";}
@@ -162,7 +162,7 @@ $fiches = array();
 	}
 	unset ($fiche, $resultat, $query);
 
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 	$query = "SELECT COUNT(a.ref_article) nb_fiches
 						FROM articles a 
 							".$query_join."

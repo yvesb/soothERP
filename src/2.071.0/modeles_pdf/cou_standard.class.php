@@ -6,9 +6,9 @@
 class pdf_cou_standard {
 	var $code_pdf_modele = "cou_standard";
 
-	var $pdf;							// PDF destiné à contenir le document
-	var $courrier;						// Courrier à imprimer
-	var $contenu;						// Contenu du Courrier à imprimer
+	var $pdf;							// PDF destinÃ© Ã  contenir le document
+	var $courrier;						// Courrier Ã  imprimer
+	var $contenu;						// Contenu du Courrier Ã  imprimer
 	var $contenu_line;
 
 	
@@ -89,12 +89,12 @@ public function pdf_cou_standard (&$pdf, $courrier) {
 	// Initialisation des variables
 	$this->nb_pages	= 1;
 	$this->contenu_actuel = 0;					// Ligne du document en cours de traitement
-	$this->contenu_end_page = array();		// Lignes de contenu terminant les différentes pages
+	$this->contenu_end_page = array();		// Lignes de contenu terminant les diffÃ©rentes pages
 	$this->page_actuelle = 0;
 	$this->content_printed = 0;
 
 	// ***************************************************
-	// Valeurs par défaut
+	// Valeurs par dÃ©faut
 	foreach ($DOC_STANDARD as $var => $valeur) {
 		$this->{$var} = $valeur;
 	}
@@ -126,7 +126,7 @@ public function pdf_cou_standard (&$pdf, $courrier) {
 	$this->LARGEUR_TOTALE_CORPS  = $this->MARGE_GAUCHE + 160;
 	$this->pdf->SetLeftMargin($this->MARGE_GAUCHE);
 	// ***************************************************
-	// Comptage du nombre de page nécessaires
+	// Comptage du nombre de page nÃ©cessaires
 	$hauteur_totale = 0;
 	$this->contenu_line = explode("<br>",$this->contenu);
 	for ($i=0; $i<count($this->contenu_line); $i++) {
@@ -134,7 +134,7 @@ public function pdf_cou_standard (&$pdf, $courrier) {
 		// Hauteur de la ligne
 		$this->hauteur_ligne = 5;
 
-		// Vérification de la nécessité de changer de page
+		// VÃ©rification de la nÃ©cessitÃ© de changer de page
 		$hauteur_totale += $this->hauteur_ligne;
 		if ($hauteur_totale >= $this->CORPS_HAUTEUR_MAX) {
 			
@@ -150,7 +150,7 @@ public function pdf_cou_standard (&$pdf, $courrier) {
 }
 
 
-// Créé une nouvelle page du document PDF
+// CrÃ©Ã© une nouvelle page du document PDF
 /**
  * @return bool
  */
@@ -158,7 +158,7 @@ protected function create_pdf_page () {
 	// Comptage du nombre de page
 	$this->page_actuelle++;
 
-	// Création d'une nouvelle page
+	// CrÃ©ation d'une nouvelle page
 	$this->pdf->AddPage();
 	
 	$this->pdf->Line(205, 105, 212, 105); //ligne de pli pour courrier
@@ -170,7 +170,7 @@ protected function create_pdf_page () {
 	return true;
 }
 
-// Créé une nouvelle page du document PDF
+// CrÃ©Ã© une nouvelle page du document PDF
 /**
  * @return bool
  */
@@ -178,7 +178,7 @@ protected function create_pdf_page_txt () {
 	// Comptage du nombre de page
 	$this->page_actuelle++;
 
-	// Création d'une nouvelle page
+	// CrÃ©ation d'une nouvelle page
 	$this->pdf->AddPage();
 	
 	$this->pdf->Line(205, 105, 212, 105); //ligne de pli pour courrier
@@ -191,7 +191,7 @@ protected function create_pdf_page_txt () {
 	return true;
 }
 
-// Créé l'entete du document PDF
+// CrÃ©Ã© l'entete du document PDF
 /**
  * @return bool
  */
@@ -207,7 +207,7 @@ protected function create_pdf_entete () {
 }
 
 
-// Créé l'adresse du PDF
+// CrÃ©Ã© l'adresse du PDF
 /**
  * @return bool
  */
@@ -236,7 +236,7 @@ protected function create_pdf_adresse () {
 	return true;
 }
 
-// Créé l'objet & infos sup du PDF
+// CrÃ©Ã© l'objet & infos sup du PDF
 /**
  * @return bool
  */
@@ -250,12 +250,12 @@ protected function create_pdf_objet () {
 	$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS, 5,html_entity_decode ("&#192;&nbsp;").$format_ville.",",0,2,"R");
 	
 	// ***************************************************
-	// Référence courrier
+	// RÃ©fÃ©rence courrier
 	$this->pdf->SetXY($this->MARGE_GAUCHE, $this->OBJET_HAUTEUR_DEPART);
 	$this->pdf->SetFont('Arial', '', 10);
 	$ref = "";
 	if(is_subclass_of($this->courrier, "Courrier")){
-		$ref .= "Références : ";
+		$ref .= "RÃ©fÃ©rences : ";
 		$ref_courrier = strval( $this->courrier->getId_courrier ());
 		$ref .= $ref_courrier;
 		if( $ref_courrier != "" ){ $ref .= " | "; }
@@ -275,7 +275,7 @@ protected function create_pdf_objet () {
 }
 
 
-// Créé le corps du PDF
+// CrÃ©Ã© le corps du PDF
 /**
  * @return bool
  */
@@ -328,7 +328,7 @@ protected function createPdfCourrier_corps () {
 			break; 
 		}
 
-		// Controle de la nécessité de changer de page
+		// Controle de la nÃ©cessitÃ© de changer de page
 		if (in_array($i, $this->contenu_end_page)) { break;	}
 	}
 	// Faire descendre le tableau jusqu'en bas du corps
@@ -345,9 +345,9 @@ protected function createPdfCourrier_corps () {
  * @return bool
  */
 protected function create_pdf_corps_line ($line) {
-	// Positionnement au début de la ligne
+	// Positionnement au dÃ©but de la ligne
 	$this->pdf->SetXY($this->MARGE_GAUCHE, $this->CORPS_HAUTEUR_DEPART + $this->decalage_corps_actuel);
-	// Style d'écriture par défaut
+	// Style d'Ã©criture par dÃ©faut
 	$this->pdf->SetFont('Arial', '', 9);
 	// decalage naturel
 	$this->decalage_corps_actuel += $this->hauteur_ligne;
@@ -387,7 +387,7 @@ protected function create_pdf_texte_corps_pieds () {
 protected function create_pdf_pieds () {
 
 	// ***************************************************
-	// Numéro de page
+	// NumÃ©ro de page
 	$this->pdf->SetXY($this->MARGE_GAUCHE, $this->PIEDS_HAUTEUR_DEPART+ $this->PIEDS_HAUTEUR_MAX - 6);
 	$this->pdf->SetFont('Arial', 'I', 8);
 	$page_lib = "Page ".$this->page_actuelle." / ".$this->nb_pages;
@@ -420,7 +420,7 @@ protected function create_pdf_pieds () {
 		$this->pdf->SetXY($this->MARGE_GAUCHE, $this->MARGE_HAUT);
 		$this->pdf->SetFont('Arial', 'I', 9);
 		$this->pdf->Write(3, "\n");
-		$this->pdf->MultiCell(0, 3, str_replace("¤","€",str_replace("&#8211;","-",str_replace("&#8230;","...",str_replace("&#8217;", "'", $this->CG_VERSO)))));
+		$this->pdf->MultiCell(0, 3, str_replace("Â¤","â‚¬",str_replace("&#8211;","-",str_replace("&#8230;","...",str_replace("&#8217;", "'", $this->CG_VERSO)))));
 	}
 	
 	/**
@@ -429,7 +429,7 @@ protected function create_pdf_pieds () {
 	public function writePdf(){
 		//@FIXME rewrite construct
 		// ***************************************************
-		// Création de la première page
+		// CrÃ©ation de la premiÃ¨re page
 		$this->create_pdf_page ();
 		// content printed w/ constructor
 		return true;
@@ -496,7 +496,7 @@ public function html2fpdf($html){
 	
 	public function getFooter(){
 		// ***************************************************
-		// Numéro de page
+		// NumÃ©ro de page
 		$footer = "";
 		$x = $this->LARGEUR_TOTALE_CORPS+$this->MARGE_GAUCHE;
 		$y = $this->PIEDS_HAUTEUR_DEPART+ $this->PIEDS_HAUTEUR_MAX;
@@ -523,7 +523,7 @@ public function html2fpdf($html){
 	}
 	
 		/*public function getFooter() {
-		// Information société
+		// Information sociÃ©tÃ©
 		$pied_y = $this->PIEDS_HAUTEUR_DEPART+$this->PIEDS_HAUTEUR_MAX;
 		$pied = '
 			$this->SetFont("Arial","I",8);
@@ -545,7 +545,7 @@ public function html2fpdf($html){
 	public function getFooter2 () {
 
 	// ***************************************************
-	// Numéro de page
+	// NumÃ©ro de page
 	$this->SetXY($this->MARGE_GAUCHE, $this->PIEDS_HAUTEUR_DEPART+ $this->PIEDS_HAUTEUR_MAX - 6);
 	$this->SetFont('Arial', 'I', 8);
 	$page_lib = "Page ".$this->page_actuelle." / ".$this->nb_pages;

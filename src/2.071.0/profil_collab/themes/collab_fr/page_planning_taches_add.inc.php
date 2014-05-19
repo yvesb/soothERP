@@ -5,7 +5,7 @@
 // AJOUT D'UNE NOUVELLE TACHE
 // *************************************************************************************************************
 
-// Variables nÈcessaires ‡ l'affichage
+// Variables n√©cessaires √† l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -50,7 +50,7 @@ if (erreur) {
 if (bad_lib_tache) {
 	window.parent.document.getElementById("lib_tache").className="alerteform_xsize";
 	window.parent.document.getElementById("lib_tache").focus();
-texte_erreur += "Indiquez un titre ‡ la t‚che.<br/>";
+texte_erreur += "Indiquez un titre √† la t√¢che.<br/>";
 } else {
 	window.parent.document.getElementById("lib_tache").className="classinput_xsize";
 }

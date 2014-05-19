@@ -1,13 +1,13 @@
 <?php
 // *************************************************************************************************************
-// Ajout d'un évènement
+// Ajout d'un Ã©vÃ¨nement
 // *************************************************************************************************************
 
 require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
-//traitement des données transmises
+//traitement des donnÃ©es transmises
 
 
 

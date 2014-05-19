@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 if (!$_SESSION['user']->check_permission ("11")) {
 	//on indique l'interdiction et on stop le script
-	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accés ne vous permettent pas de visualiser ce type de page</span>";
+	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accÃ©s ne vous permettent pas de visualiser ce type de page</span>";
 	exit();
 }
 
@@ -25,7 +25,7 @@ function tri($array, $critere)
   return $array;
 }
 
-//fonction de génération des lettrages (double numérotation alphabétique)
+//fonction de gÃ©nÃ©ration des lettrages (double numÃ©rotation alphabÃ©tique)
 function cre_lettrage ($old_lettrage){
 	$a="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
  	$part_a = substr($old_lettrage ,0,1);

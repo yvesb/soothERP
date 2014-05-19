@@ -8,7 +8,7 @@ require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
-if (isset($_REQUEST["id_courrier"])&&$_REQUEST["id_courrier"]!=""){ //le courrier existe déjà
+if (isset($_REQUEST["id_courrier"])&&$_REQUEST["id_courrier"]!=""){ //le courrier existe dÃ©jÃ 
 	$courrier = new courrierEtendu($_REQUEST["id_courrier"]);
 	$courrier->setContenu($_REQUEST["contenu_courrier"]);
 	$courrier->setObjet($_REQUEST["objet_courrier"]);

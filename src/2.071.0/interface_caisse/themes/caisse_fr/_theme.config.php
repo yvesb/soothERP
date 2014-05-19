@@ -1,4 +1,4 @@
 <?php
-// Fichier de configuration et reconfiguration des variables de niveau inférieur sur le thème
+// Fichier de configuration et reconfiguration des variables de niveau infÃ©rieur sur le thÃ¨me
 
 ?>

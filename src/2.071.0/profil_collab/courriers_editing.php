@@ -14,7 +14,7 @@ if(!isset($_REQUEST["id_courrier"])){
 }
 $id_courrier= $_REQUEST["id_courrier"];
 
-//parametre pour l'url appellée quand on clic sur le bouton
+//parametre pour l'url appellÃ©e quand on clic sur le bouton
 $params_b = "?id_courrier=".$id_courrier;
 if (isset($_REQUEST["code_pdf_modele"]))
 	$params_b.= "&code_pdf_modele=".$_REQUEST["code_pdf_modele"];
@@ -22,7 +22,7 @@ if (isset($_REQUEST["code_pdf_modele"]))
 if (isset($_REQUEST["filigrane"]))
 	$params_b.="&filigrane=".$_REQUEST["filigrane"];
 	
-//parametre pour l'url appellée quand on clic sur le bouton IMPRIMER
+//parametre pour l'url appellÃ©e quand on clic sur le bouton IMPRIMER
 $params_p = "?id_courrier=".$id_courrier;
 if (isset($_REQUEST["print"]))
 	$params_p.="&print=1";

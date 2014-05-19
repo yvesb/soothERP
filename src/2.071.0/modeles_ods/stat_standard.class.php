@@ -17,7 +17,7 @@ class ods_stat_standard {
 		
 		// Create Ods object
 		$this->ods  = new ods();
-		// Liste cmd non chargé
+		// Liste cmd non chargÃ©
 		$this->qte_cmd_loaded = false;
 
 		// Create table
@@ -31,7 +31,7 @@ class ods_stat_standard {
 		$this->ods->addTable($this->table);
 		
 		// Download the file
-		$this->ods->downloadOdsFile("Chiffre d'affaires par catégories d'articles.ods");
+		$this->ods->downloadOdsFile("Chiffre d'affaires par catÃ©gories d'articles.ods");
 		
 	}
 	
@@ -43,7 +43,7 @@ class ods_stat_standard {
 		
 		// Titre
 		$row = new odsTableRow();
-		$cell = new odsTableCellString(utf8_encode("Chiffre d'affaires par catégories d'articles"), $titre);
+		$cell = new odsTableCellString(utf8_encode("Chiffre d'affaires par catÃ©gories d'articles"), $titre);
 		$cell->setNumberColumnsSpanned(4);
 		$row->addCell( $cell );
 		$this->table->addRow($row);
@@ -52,7 +52,7 @@ class ods_stat_standard {
 	} 
 	
 	public function create_entete() {
-		//Création de l'entête du tableau
+		//CrÃ©ation de l'entÃªte du tableau
 		$fond_gris = new odsStyleTableCell();
 		$fond_gris->setBackgroundColor('#999999');
 	
@@ -125,7 +125,7 @@ class ods_stat_standard {
 	$this->table->addTableColumn($col1);
 	}
 	
-	//Tableau coloré
+	//Tableau colorÃ©
 	public function TableauCA(){
 
 		//intialisation des sous totaux
@@ -148,7 +148,7 @@ class ods_stat_standard {
 		//DEBUT ligne des totaux
 	    
 		$row=$this->create_row();
-		$this->create_cellgrey("Total Général",$row);
+		$this->create_cellgrey("Total GÃ©nÃ©ral",$row);
 	 	for($y=$_REQUEST['annee_date_deb']; $y<=$_REQUEST['annee_date_fin'] ; ++$y ){
 	    	
 	    	if($y==$_REQUEST['annee_date_fin']){ $mois_max = $_REQUEST['mois_date_fin']; }
@@ -174,7 +174,7 @@ class ods_stat_standard {
 	//et appelle create_line_categ pour chacun de leurs fils
 	protected function create_line_categ_racine(){
 		$list_racine = get_art_categs_racine ();
-		foreach ($list_racine as $categ) {  //on parcourt les catégories racines
+		foreach ($list_racine as $categ) {  //on parcourt les catÃ©gories racines
 			$type_data["art_categ"] = $categ->ref_art_categ;
 			$cat = new art_categ($type_data["art_categ"]); 
 			$liste_fils = '';
@@ -185,10 +185,10 @@ class ods_stat_standard {
 				
 				if(count($tab_fils)>1){
 					$this->create_line_sous_total_tableauCA($this, $type_data , 'Total - '.$cat->getLib_art_categ(), true); //on affiche la ligne
-					// on écrit la ligne pour chaque fils
+					// on Ã©crit la ligne pour chaque fils
 					foreach ($tab_fils as $fils) {  //on parcourt les fils
-						if($fils != '' && $fils != $type_data["art_categ"]){ //test si non egal à la categorie parente
-							//on écrit les fils 
+						if($fils != '' && $fils != $type_data["art_categ"]){ //test si non egal Ã  la categorie parente
+							//on Ã©crit les fils 
 							$this->create_line_categ($fils, '   ');
 						}else if($fils != ''){
 							$this->create_line_tableauCA($this, $type_data , '   '.$cat->getLib_art_categ());
@@ -196,7 +196,7 @@ class ods_stat_standard {
 					}
 				}else{
 					$this->create_line_sous_total_tableauCA($this, $type_data , 'Total - '.$cat->getLib_art_categ(), true); //on affiche la ligne
-					// on écrit la ligne pour chaque fils
+					// on Ã©crit la ligne pour chaque fils
 				}		
 				
 			}
@@ -213,11 +213,11 @@ class ods_stat_standard {
 			//ligne total par categorie
 			if(count($tab_fils)>1){	
 				$this->create_line_sous_total_tableauCA($this, $type_data , $niveau.'Total - '.$cat->getLib_art_categ()); //on affiche la ligne
-				// on écrit la ligne pour chaque fils
+				// on Ã©crit la ligne pour chaque fils
 				$niveau = $niveau.'   ';
 				foreach ($tab_fils as $fils) {  //on parcourt les fils
 					if($fils != '' && $fils != $categ){
-						//on écrit les fils 
+						//on Ã©crit les fils 
 						$this->create_line_categ($fils, $niveau);
 					}else if($fils != ''){
 						$this->create_line_tableauCA($this, $type_data ,  $niveau.$cat->getLib_art_categ()); 
@@ -232,9 +232,9 @@ class ods_stat_standard {
 	
 	/*	$super : pointeur vers la class courante ($this)
 	 * 	$type_data : categorie d'article 
-	 *  $lib_art_categ : libellé de la categorie d'article
-	 *  $cell_width : tableau contenant la taille des cellules libellé, mois et total respectivement $this->LARGEUR_CELL_LIB, $this->LARGEUR_CELL_MOIS et $this->LARGEUR_CELL_TOTAL.
-	 *  Requière $_REQUEST['annee_date_deb'], $_REQUEST['mois_date_deb'], $_REQUEST['mois_date_fin'] et $_REQUEST['annee_date_fin']
+	 *  $lib_art_categ : libellÃ© de la categorie d'article
+	 *  $cell_width : tableau contenant la taille des cellules libellÃ©, mois et total respectivement $this->LARGEUR_CELL_LIB, $this->LARGEUR_CELL_MOIS et $this->LARGEUR_CELL_TOTAL.
+	 *  RequiÃ¨re $_REQUEST['annee_date_deb'], $_REQUEST['mois_date_deb'], $_REQUEST['mois_date_fin'] et $_REQUEST['annee_date_fin']
 	 */
 	protected function create_line_tableauCA($super, $type_data , $lib_art_categ){
 		$soustotal=0;
@@ -263,11 +263,11 @@ class ods_stat_standard {
 
 		
 	/*	$super : pointeur vers la class courante ($this)
-	 * 	$tab_fils : tableau indexé de 0 à n contenant la référence vers les fils de la categorie d'article
-	 * 	$type_data : référence categorie d'article 
-	 *  $lib_art_categ : libellé de la categorie d'article
-	 *  $cell_width : tableau contenant la taille des cellules libellé, mois et total respectivement $this->LARGEUR_CELL_LIB, $this->LARGEUR_CELL_MOIS et $this->LARGEUR_CELL_TOTAL.
-	 *  $_REQUEST : $_REQUEST --- Requière $_REQUEST['annee_date_deb'], $_REQUEST['mois_date_deb'], $_REQUEST['mois_date_fin'] et $_REQUEST['annee_date_fin']
+	 * 	$tab_fils : tableau indexÃ© de 0 Ã  n contenant la rÃ©fÃ©rence vers les fils de la categorie d'article
+	 * 	$type_data : rÃ©fÃ©rence categorie d'article 
+	 *  $lib_art_categ : libellÃ© de la categorie d'article
+	 *  $cell_width : tableau contenant la taille des cellules libellÃ©, mois et total respectivement $this->LARGEUR_CELL_LIB, $this->LARGEUR_CELL_MOIS et $this->LARGEUR_CELL_TOTAL.
+	 *  $_REQUEST : $_REQUEST --- RequiÃ¨re $_REQUEST['annee_date_deb'], $_REQUEST['mois_date_deb'], $_REQUEST['mois_date_fin'] et $_REQUEST['annee_date_fin']
 	 */
 	protected function create_line_sous_total_tableauCA($super, $type_data , $lib_art_categ, $addSousTotal = false){
 		$liste_fils = '';
@@ -289,7 +289,7 @@ class ods_stat_standard {
     			if($m==12){ $m_fin=1; $y_fin=$y+1; }else{$m_fin=$m+1; $y_fin = $y ;}
     			$ca = 0;
     			foreach ($tab_fils as $fils) {  //on parcourt les fils
-					//on écrit les fils 
+					//on Ã©crit les fils 
 					$fi = new art_categ ($fils); 
 					$type_data["art_categ"] = $fils;
 					$ca += charger_doc_CA (array((date("Y-m-d H:i:s", mktime(0,0,0,$m, 1, $y) ) ) , (date("Y-m-d H:i:s", mktime(23,59,59, $m_fin,0, $y_fin) ) )) ,$type_data);			
@@ -306,7 +306,7 @@ class ods_stat_standard {
 	 	$ca = 0;
 	 	if($_REQUEST['mois_date_fin']==12){ $m_fin=1; $y_fin=$_REQUEST['annee_date_fin']+1; }else{$m_fin=$_REQUEST['mois_date_fin']+1; $y_fin = $_REQUEST['annee_date_fin'] ;}
 	 	foreach ($tab_fils as $fils) {  //on parcourt les fils
-			//on écrit les fils 
+			//on Ã©crit les fils 
 			$fi = new art_categ ($fils); 
 			$type_data["art_categ"] = $fils;
 			$ca += charger_doc_CA (array((date("Y-m-d H:i:s", mktime(0,0,0,$_REQUEST['mois_date_deb'],1 , $_REQUEST['annee_date_deb']) ) ) , (date("Y-m-d H:i:s", mktime(23,59,59, $m_fin ,0, $y_fin) ) )) ,$type_data);
@@ -315,7 +315,7 @@ class ods_stat_standard {
   	}//fin function create_line_sous_total_tableauCA
   	
   	
-  	//Création du ligne de sous total 
+  	//CrÃ©ation du ligne de sous total 
 	protected function sous_total_feuille(){
 		//DEBUT totaux par feuille
 		/*$this->ods->SetFillColor(0,0,0);            //fond noir
@@ -331,12 +331,12 @@ class ods_stat_standard {
 	    	else{ $mois_deb = 1; }
 	    	//affichage des mois
     		for($m=$mois_deb; $m<=$mois_max ; ++$m ){
-	    		$this->ods->Cell($this->LARGEUR_CELL_MOIS,6,price_format($this->sousTotaux[$m.' '.$y])." €",'LR',0,'R',1);
+	    		$this->ods->Cell($this->LARGEUR_CELL_MOIS,6,price_format($this->sousTotaux[$m.' '.$y])." â‚¬",'LR',0,'R',1);
 	    		$total += $this->sousTotaux[$m.' '.$y];
 	    		$this->sousTotaux[$m.' '.$y] = 0;
     		}
     	}
-	    $this->ods->Cell($this->LARGEUR_CELL_TOTAL,6,price_format($total)." €",'LR',0,'R',1);
+	    $this->ods->Cell($this->LARGEUR_CELL_TOTAL,6,price_format($total)." â‚¬",'LR',0,'R',1);
 		$this->ods->Ln();*/
 	    //FIN totaux par feuille	
 	   
@@ -345,17 +345,17 @@ class ods_stat_standard {
 	protected function getLib_mois($i){
 		switch ($i){
 			case 1 : return "janvier"; break;
-			case 2 : return "février"; break;
+			case 2 : return "fÃ©vrier"; break;
 			case 3 : return "mars"; break;
 			case 4 : return "avril"; break;
 			case 5 : return "mai"; break;
 			case 6 : return "juin"; break;
 			case 7 : return "juillet"; break;
-			case 8 : return "août"; break;
+			case 8 : return "aoÃ»t"; break;
 			case 9 : return "septembre"; break;
 			case 10 : return "octobre"; break;
 			case 11 : return "novembre"; break;
-			case 12 : return "décembre"; break;
+			case 12 : return "dÃ©cembre"; break;
 			default : return false; 
 		}
 	}

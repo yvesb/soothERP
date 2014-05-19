@@ -14,19 +14,19 @@ final class tva {
 function __construct($id_tva = 0) {
 	global $bdd;
 
-	// Controle si l'Id_tva est précisé
+	// Controle si l'Id_tva est prÃ©cisÃ©
 	if (!$id_tva) { return false; }
 
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT id_tva, tva, id_pays
 						FROM tvas
 						WHERE id_tva = '".$id_tva."' ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si l'Id_tva est trouvé
+	// Controle si l'Id_tva est trouvÃ©
 	if (!$tva = $resultat->fetchObject()) { return false; }
 
-	// Attribution des informations à l'objet
+	// Attribution des informations Ã  l'objet
 	$this->id_tva 	= $id_tva;
 	$this->tva			= $tva->tva;
 	$this->id_pays	= $tva->id_pays;
@@ -39,17 +39,17 @@ function __construct($id_tva = 0) {
 // *************************************************************************************************************
 // FONCTIONS LIEES A LA CREATION D'UNE TVA
 // *************************************************************************************************************
-// Créé un Taux de TVA. Utile uniquement pour les développeur
+// CrÃ©Ã© un Taux de TVA. Utile uniquement pour les dÃ©veloppeur
 final public function create ($tva, $id_pays) {
 	global $bdd;
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->tva 	= $tva;
 	$this->id_pays 	= $id_pays;
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -61,7 +61,7 @@ final public function create ($tva, $id_pays) {
 	$bdd->exec($query);
 	
 	// *************************************************
-	// Résultat positif de la création
+	// RÃ©sultat positif de la crÃ©ation
 	return true;
 }
 
@@ -71,13 +71,13 @@ final public function import ($id_tva, $tva, $id_pays) {
 	global $bdd;
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->id_tva 	= $id_tva;
 	$this->tva 			= $tva;
 	$this->id_pays 	= $id_pays;
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -89,7 +89,7 @@ final public function import ($id_tva, $tva, $id_pays) {
 	$bdd->exec($query);
 	
 	// *************************************************
-	// Résultat positif de la création
+	// RÃ©sultat positif de la crÃ©ation
 	return true;
 }
 
@@ -103,7 +103,7 @@ final public function modification ($tva, $id_pays) {
 	global $bdd;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->tva 			= $tva;
 	$this->id_pays 	= $id_pays;
 	if (!is_numeric($this->id_pays)) {
@@ -111,20 +111,20 @@ final public function modification ($tva, $id_pays) {
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 
 	// *************************************************
-	// Mise à jour de la base
+	// Mise Ã  jour de la base
 	$query = "UPDATE tvas 
 						SET tva = '".addslashes($this->tva)."', id_pays = '".$this->id_pays."'
 						WHERE id_tva = '".$this->id_tva."' ";
 	$bdd->exec ($query);
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
@@ -133,7 +133,7 @@ final public function suppression () {
 	global $bdd;
 
 	// *************************************************
-	// Controle à effectuer le cas échéant
+	// Controle Ã  effectuer le cas Ã©chÃ©ant
 
 	// *************************************************
 	// Suppression de la tva

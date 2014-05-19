@@ -11,7 +11,7 @@ require ($DIR."_session.inc.php");
 
 if (isset($CLIENT_ID_PROFIL)) {	
 	// *************************************************
-	// Controle des données fournies par le formulaire
+	// Controle des donnÃ©es fournies par le formulaire
 
 	$infos_profils = array();
 	$id_profil	=	$CLIENT_ID_PROFIL;

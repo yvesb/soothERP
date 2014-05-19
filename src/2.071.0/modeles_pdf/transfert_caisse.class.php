@@ -55,12 +55,12 @@ public function create_pdf ($compte_caisse, $id_compte_caisse_transfert) {
 
 
 	// ***************************************************
-	// Valeurs par défaut
+	// Valeurs par dÃ©faut
 	foreach ($TRSF_CAIS as $var => $valeur) {
 		$this->{$var} = $valeur;
 	}
 
-	// Création de la première page
+	// CrÃ©ation de la premiÃ¨re page
 	$this->create_pdf_page ();
 
 
@@ -68,12 +68,12 @@ public function create_pdf ($compte_caisse, $id_compte_caisse_transfert) {
 }
 
 
-// Créé une nouvelle page du document PDF
+// CrÃ©Ã© une nouvelle page du document PDF
 protected function create_pdf_page () {
 	// Comptage du nombre de page
 	$this->page_actuelle++;
 	$this->SetAutoPageBreak(true,2*$this->MARGE_GAUCHE);;
-	// Création d'une nouvelle page
+	// CrÃ©ation d'une nouvelle page
 	$this->AddPage();
 	$this->Header() ;
 	$this->create_pdf_corps ();
@@ -81,7 +81,7 @@ protected function create_pdf_page () {
 }
 
 
-// Créé l'entete du document PDF
+// CrÃ©Ã© l'entete du document PDF
 public function Header() {
 	global $MONNAIE;
 	global $TARIFS_NB_DECIMALES;
@@ -162,7 +162,7 @@ public function Header() {
 }
 
 
-// Créé le corps du PDF
+// CrÃ©Ã© le corps du PDF
 protected function create_pdf_corps () {
 	global $MONNAIE;
 	global $TARIFS_NB_DECIMALES;
@@ -171,9 +171,9 @@ protected function create_pdf_corps () {
 
 	$this->SetFont('Arial', '', 8);
 
-	//définition du contenu
+	//dÃ©finition du contenu
 	
-	//liste des espèces
+	//liste des espÃ¨ces
 	$esp_liste = explode("\n",$this->transfert->ESP->infos_transfert);
 	
 	$this->text_contenu_transfert = $this->ENTETE_ESP." : ". number_format($this->transfert->ESP->montant_transfert, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[0]."\n";
@@ -187,7 +187,7 @@ protected function create_pdf_corps () {
 	$this->SetXY($this->MARGE_GAUCHE, $this->y);
 	$this->MultiCell ($this->LARGEUR_TOTALE_CORPS, 4, $this->text_contenu_transfert, 0, 'L');
 	
-	//liste des chèques
+	//liste des chÃ¨ques
 	$this->text_contenu_transfert = "\n";
 	
 	$chq_liste = explode("\n",$this->transfert->CHQ->infos_transfert);
@@ -196,7 +196,7 @@ protected function create_pdf_corps () {
 	}
 	$this->text_contenu_transfert .= $this->ENTETE_CHQ." : ";
 		$this->text_contenu_transfert .= " (".count($chq_liste);
-		$this->text_contenu_transfert .= " opérations )";
+		$this->text_contenu_transfert .= " opÃ©rations )";
 		foreach ($chq_liste as $chq_cont) {
 			$tmp = explode(";", $chq_cont);
 			if (isset($tmp[0]) && $tmp[0] && isset($tmp[1])  && (empty($tmp[1]) || $tmp[1] == "" || $tmp[1] ==" ") ) {$this->text_contenu_transfert .= " ".number_format($tmp[0], $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[0]." * ; "; continue;}

@@ -16,14 +16,14 @@ require ($DIR."_session.inc.php");
 
 
 if(!isset($_REQUEST["ref_contact"])){
-	echo "La référence du contact est inconnue";
+	echo "La rÃ©fÃ©rence du contact est inconnue";
 	exit;
 }
 $ref_contact = $_REQUEST["ref_contact"];
 $contact = new contact ($_REQUEST['ref_contact']);
 $coordonnees = $contact->getCoordonnees ();
 // *************************************************
-// Profils à afficher
+// Profils Ã  afficher
 $profils = array();
 foreach ($_SESSION['profils'] as $profil) {
 	if ($profil->getActif() != 1) { continue; }
@@ -33,7 +33,7 @@ unset ($profil);
 
 
 // *************************************************
-// Données nécessaire à la barre de navigation + le tri des données par objet, date, expéditeur 
+// DonnÃ©es nÃ©cessaire Ã  la barre de navigation + le tri des donnÃ©es par objet, date, expÃ©diteur 
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -45,7 +45,7 @@ if (isset($_REQUEST['courriers_par_page'])) {
 	$search['courriers_par_page'] = $_REQUEST['courriers_par_page'];
 }
 
-//On tri les résultat par defaut par date
+//On tri les rÃ©sultat par defaut par date
 $form['orderby'] = $search['orderby'] = "date";
 if (isset($_REQUEST['orderby'])) {
 	$form['orderby'] = $_REQUEST['orderby'];
@@ -64,7 +64,7 @@ if (isset($_REQUEST['id_profil'])) {
 
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 
 
 $courriers =  getCourriersDunDestinataire($ref_contact, ($search['page_to_show']-1)*$search['courriers_par_page'], $search['courriers_par_page'], $search['orderby'], $search['orderorder']);

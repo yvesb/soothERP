@@ -4,7 +4,7 @@
 // ONGLET 
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -57,7 +57,7 @@ Event.observe("link_close_pop_up_infos", "click",  function(evt){Event.stop(evt)
         <td><?php echo $ins[0][0]->infos['livraison_code']." ".$ins[0][0]->infos['livraison_ville']; ?></td>  
       </tr>
       <tr>
-        <td>Téléphone : </td>
+        <td>TÃ©lÃ©phone : </td>
         <td>Fax : </td>
       </tr>
       <tr>

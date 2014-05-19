@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -54,7 +54,7 @@ check_page_variables ($page_variables);
 			
 		</td>
 		<td valign="top" style="width:48%">
-		<!--block specifique à l'entete-->
+		<!--block specifique Ã  l'entete-->
 		<!--Pour le document devis client -->
 			<?php
 			if ($document->getID_TYPE_DOC() == $DEVIS_CLIENT_ID_TYPE_DOC) {
@@ -229,11 +229,11 @@ check_page_variables ($page_variables);
 		
 
 <?php
-// gestion des évenements pour un document type devis client
+// gestion des Ã©venements pour un document type devis client
 
 if ($document->getID_TYPE_DOC() == $DEVIS_CLIENT_ID_TYPE_DOC) {
  ?>
-	// observateurde changement de texte dans l'entete du doc pour mise à jour des infos
+	// observateurde changement de texte dans l'entete du doc pour mise Ã  jour des infos
 	Event.observe("date_echeance", "blur", function(evt){
 		if ($("date_echeance").value != $("date_echeance_old").value) { datemask (evt); $("date_echeance_old").value = $("date_echeance").value; maj_date_echeance ("date_echeance");  } }, false);
 		
@@ -281,11 +281,11 @@ if ($document->getID_TYPE_DOC() == $DEVIS_CLIENT_ID_TYPE_DOC) {
 ?>
 
 <?php
-// gestion des évenements pour un document type commande client
+// gestion des Ã©venements pour un document type commande client
 
 if ($document->getID_TYPE_DOC() == $COMMANDE_CLIENT_ID_TYPE_DOC) {
  ?>
-	// observateurde changement de texte dans l'entete du doc pour mise à jour des infos
+	// observateurde changement de texte dans l'entete du doc pour mise Ã  jour des infos
 	Event.observe("ref_doc_externe", "blur", function(evt){
 		if ($("ref_doc_externe").value != $("ref_doc_externe_old").value) { $("ref_doc_externe_old").value = $("ref_doc_externe").value; maj_ref_doc_externe ("ref_doc_externe");  } }, false);
 		

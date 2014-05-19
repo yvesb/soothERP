@@ -2,7 +2,7 @@
 // *************************************************************************************************************
 // CLASSE REGISSANT LES INFORMATIONS GENERIQUE SUR UN PROFIL D'UTILISATEUR 
 // *************************************************************************************************************
-// Les classes de profils sont dérivées de celle-ci.
+// Les classes de profils sont dÃ©rivÃ©es de celle-ci.
 
 
 class profil {
@@ -15,7 +15,7 @@ class profil {
 	private $actif;
 	private $niveau_secu;
 
-	private $defaut_id_interface;						// Interface par défaut pour ce profil
+	private $defaut_id_interface;						// Interface par dÃ©faut pour ce profil
 
 	private $desc_publique;
 	private $desc_interne;
@@ -26,7 +26,7 @@ class profil {
 
 function __construct ($profil) {
 
-	// Informations générales
+	// Informations gÃ©nÃ©rales
 	if (get_class($profil) == "stdClass") {
 		// Il s'agit d'un objet issue d'une requete.
 		$this->id_profil 			= $profil->id_profil;
@@ -38,7 +38,7 @@ function __construct ($profil) {
 		$this->defaut_id_interface 	= $profil->defaut_id_interface;
 	}
 	else {
-		// Il s'agit déjà d'un objet de classe "profil"
+		// Il s'agit dÃ©jÃ  d'un objet de classe "profil"
 		$this->id_profil 			= $profil->getId_profil();
 		$this->lib_profil 		= $profil->getLib_profil();
 		$this->code_profil 		= $profil->getCode_profil();
@@ -65,7 +65,7 @@ static public function maj_profil ($infos) {
 						WHERE id_profil = '".$infos['id_profil']."' ";
 	$bdd->exec ($query);
 
-	//on demande à ce que la session soit mise à jour lors de l'ouverture des prochaines pages
+	//on demande Ã  ce que la session soit mise Ã  jour lors de l'ouverture des prochaines pages
 	serveur_maj_file();
 	
 	return true;
@@ -74,7 +74,7 @@ static public function maj_profil ($infos) {
 
 
 // *************************************************************************************************************
-// Fonctions de réception de données supplémentaires
+// Fonctions de rÃ©ception de donnÃ©es supplÃ©mentaires
 // *************************************************************************************************************
 function set_user ($ref_user, $ref_contact) {
 	$this->ref_user 		= $ref_user;
@@ -83,7 +83,7 @@ function set_user ($ref_user, $ref_contact) {
 
 
 // *************************************************************************************************************
-// Fonctions d'accès aux données
+// Fonctions d'accÃ¨s aux donnÃ©es
 // *************************************************************************************************************
 
 // Retourne l'identifiant du profil
@@ -101,27 +101,27 @@ final public function getDir_profil () {
 	return "profil_".$this->code_profil."/";
 }
 
-// Retourne le libellé du profil
+// Retourne le libellÃ© du profil
 final public function getLib_profil () {
 	return $this->lib_profil;
 }
 
-// Retourne le niveau d'acivité du profil
+// Retourne le niveau d'acivitÃ© du profil
 final public function getOrdre () {
 	return $this->ordre;
 }
 
-// Retourne le niveau d'acivité du profil
+// Retourne le niveau d'acivitÃ© du profil
 final public function getActif () {
 	return $this->actif;
 }
 
-// Retourne le niveau de sécurité demandé pour ce profil
+// Retourne le niveau de sÃ©curitÃ© demandÃ© pour ce profil
 final public function getNiveau_secu () {
 	return $this->niveau_secu;
 }
 
-// Retourne l'interface par défaut
+// Retourne l'interface par dÃ©faut
 final public function getDefaut_id_interface() {
 	return $this->defaut_id_interface;
 }

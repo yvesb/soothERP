@@ -6,7 +6,7 @@ include ($path_parts["dirname"]."/_redirection_extension.inc.php");
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -104,7 +104,7 @@ check_page_variables ($page_variables);
 												if(divAffichee != "")
 												{		$(divAffichee).hide();}
 												divAffichee = "agenda_AgendaReservationRessource";
-												//initialisation des éléments de la div agenda_AgendaReservationRessource
+												//initialisation des Ã©lÃ©ments de la div agenda_AgendaReservationRessource
 												$("type_agenda").value = <?php echo AgendaReservationRessource::_getId_type_agenda(); ?>;
 												$(divAffichee).show();
 												break;}
@@ -113,7 +113,7 @@ check_page_variables ($page_variables);
 												{		$(divAffichee).hide();}
 												divAffichee = "agenda_AgendaContact";
 												$("type_agenda").value = <?php echo AgendaContact::_getId_type_agenda(); ?>;
-												//initialisation des éléments de la div agenda_AgendaReservationRessource
+												//initialisation des Ã©lÃ©ments de la div agenda_AgendaReservationRessource
 												$(divAffichee).show();
 												break;}
 											case "<?php echo AgendaLoacationMateriel::_getId_type_agenda(); ?>":{
@@ -121,7 +121,7 @@ check_page_variables ($page_variables);
 												{		$(divAffichee).hide();}
 												divAffichee = "agenda_AgendaLoacationMateriel";
 												$("type_agenda").value = <?php echo AgendaLoacationMateriel::_getId_type_agenda(); ?>;
-												//initialisation des éléments de la div agenda_AgendaReservationRessource
+												//initialisation des Ã©lÃ©ments de la div agenda_AgendaReservationRessource
 												$(divAffichee).show();
 												break;}
 											default:{
@@ -237,7 +237,7 @@ check_page_variables ($page_variables);
 													var error = false;
 													if($("lib_agenda").value == ""){
 														//erreur
-														alert("le libélé de l'agenda est vide");
+														alert("le libÃ©lÃ© de l'agenda est vide");
 														error = true;
 													}
 													if($("ref_article_AgendaLoacationMateriel").value == ""){
@@ -306,7 +306,7 @@ check_page_variables ($page_variables);
 													var error = false;
 													if($("lib_agenda").value == ""){
 														//erreur
-														alert("le libélé de l'agenda est vide");
+														alert("le libÃ©lÃ© de l'agenda est vide");
 														error = true;
 													}
 													if($("ref_contact_AgendaContact").value == ""){
@@ -334,7 +334,7 @@ check_page_variables ($page_variables);
 										<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 									</tr>
 									<tr>
-										<td>Ressource associée à cet agenda : </td>
+										<td>Ressource associÃ©e Ã  cet agenda : </td>
 										<td>
 											<select id="ressources_AgendaReservationRessource"  name="ressources_AgendaReservationRessource" style="width:90%">
 											<?php /*STRUCTURE : $all_ressource_AgendaReservationRessource[ref_ressource] = lib_ressource*/
@@ -357,7 +357,7 @@ check_page_variables ($page_variables);
 													Event.stop(ev);
 													if($("lib_agenda").value == ""){
 														//erreur	
-														alert("le libélé de l'agenda est vide");
+														alert("le libÃ©lÃ© de l'agenda est vide");
 													}else{
 														agenda_create_AgendaReservationRessource($F("lib_agenda"), $("ressources_AgendaReservationRessource").options[$("ressources_AgendaReservationRessource").selectedIndex].value, $F("nouvAg_valCouleur_1"), $F("nouvAg_valCouleur_2"));
 													}
@@ -500,7 +500,7 @@ check_page_variables ($page_variables);
 												Ressource
 											</td>
 											<td>
-												<!-- POUR l'instant 1 AGENDA gère 1 RESSOURCE, MAIS A l'AVENIR 1 AGENDA gèrera plusiseurs ressources -->
+												<!-- POUR l'instant 1 AGENDA gÃ¨re 1 RESSOURCE, MAIS A l'AVENIR 1 AGENDA gÃ¨rera plusiseurs ressources -->
 												<select id="ressources_<?php echo $index; ?>"  name="ressources_<?php echo $index; ?>" style="width:90%">
 												<?php //STRUCTURE : $all_ressource_AgendaReservationRessource[ref_ressource] = lib_ressource
 												$ressources = $all_agendas[$index]->getRessources();
@@ -516,7 +516,7 @@ check_page_variables ($page_variables);
 												<script type="text/javascript">
 													Event.observe("modifier_<?php echo $index; ?>", "click",  function(evt){
 														Event.stop(evt); 
-														if($("lib_agenda_<?php echo $index; ?>").value == ""){		alert("le libélé de l'agenda est vide");}
+														if($("lib_agenda_<?php echo $index; ?>").value == ""){		alert("le libÃ©lÃ© de l'agenda est vide");}
 															else{		agenda_modif_AgendaReservationRessource("<?php echo $index; ?>", $F("lib_agenda_<?php echo $index; ?>"), $("ressources_<?php echo $index; ?>").options[$("ressources_<?php echo $index; ?>").selectedIndex].value, $F("ag_<?php echo $index; ?>_valCouleur_1"), $F("ag_<?php echo $index; ?>_valCouleur_2"));
 														}
 													}, false);														
@@ -569,7 +569,7 @@ check_page_variables ($page_variables);
 														var error = false;
 														if($("lib_agenda_<?php echo $index; ?>").value == ""){
 															//erreur
-															alert("le libélé de l'agenda est vide");
+															alert("le libÃ©lÃ© de l'agenda est vide");
 															error = true;
 														}
 														if($("ref_contact_<?php echo $index; ?>").value == ""){
@@ -618,7 +618,7 @@ check_page_variables ($page_variables);
 														var error = false;
 														if($("lib_agenda_<?php echo $index; ?>").value == ""){
 															//erreur
-															alert("le libélé de l'agenda est vide");
+															alert("le libÃ©lÃ© de l'agenda est vide");
 															error = true;
 														}
 														if($("ref_article_<?php echo $index; ?>").value == ""){

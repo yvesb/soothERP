@@ -14,14 +14,14 @@ $stocks_liste = $_SESSION['stocks'];
 
 if (isset($_REQUEST['ref_doc'])) {
 
-	// ouverture des infos du document et mise à jour
+	// ouverture des infos du document et mise Ã  jour
 	$document = open_doc ($_REQUEST['ref_doc']); 	 
 	$document->maj_id_niveau_relance (urldecode($_REQUEST['info_content']));
 		
 	$id_type_doc = $document->getID_TYPE_DOC ();
 	$ref_contact = $document->getRef_contact ();
 			
-	//si un montant est négatif
+	//si un montant est nÃ©gatif
 	$montant_negatif = false;
 	$montant_positif = 1;
 	if (isset($_REQUEST["montant_neg"])) { $montant_negatif = true; $montant_positif = -1;}

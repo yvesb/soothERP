@@ -83,7 +83,7 @@ switch ( $_REQUEST['step'] ){
 		// *************************************************************************************************************
 		break;
 	//	step 3:
-	//	set : journaux selectionés, logiciel selectionés
+	//	set : journaux selectionÃ©s, logiciel selectionÃ©s
 	//	set : liste des modeles dispo. en fonction
 	//	nex step : wait action
 	case "3": 
@@ -97,7 +97,7 @@ switch ( $_REQUEST['step'] ){
 			<script type="text/javascript">
 			$('progress_barre').hide();
 			$('export_progress').style.width = '0%';
-			$('export_etat').innerHTML = "Pas de modèle disponibles pour cette selection (contactez nous) ";
+			$('export_etat').innerHTML = "Pas de modÃ¨le disponibles pour cette selection (contactez nous) ";
 			$("lancer").hide();
 			$("continuer").hide();
 			$("cancel").show();	
@@ -135,7 +135,7 @@ switch ( $_REQUEST['step'] ){
 		// *************************************************************************************************************
 		break;
 	//	step 4 :
-	//	selon modele selectioné
+	//	selon modele selectionÃ©
 	//		* nouveau : formulaire de creation d'un nouveau modele
 	//		* affect sinon
 	//	next step : wait action
@@ -163,7 +163,7 @@ switch ( $_REQUEST['step'] ){
 	//	verification des valeurs
 	//	nex step : path 2 : automatique
 	case "4a":
-		//	clean l'instance des recherches précédentes
+		//	clean l'instance des recherches prÃ©cÃ©dentes
 		$compta_export->obj_cleanup();
 		$compta_export->set_etat(4);
 		//	checklist
@@ -193,20 +193,20 @@ switch ( $_REQUEST['step'] ){
 	case "4b":
 		$script ="";
 		// affichage
-		//	si le traitement n'est pas validé , break
+		//	si le traitement n'est pas validÃ© , break
 		$step = $compta_export->process_valid('4b');
 		if ( $step == false ) { print " Erreur : ".$compta_export->debug_get_infostring(); break; }
 		$type_process = $compta_export->get_process_type();
 		//	progress bar
 		if ($effectue_pcent = $compta_export->get_process_pourcentage()){
-			$export_etat_string = "Recherche des écritures - "
+			$export_etat_string = "Recherche des Ã©critures - "
 				.$compta_export->get_process_type()
 				." "
 				.$compta_export->get_process_cheminement()
 				." - ".$effectue_pcent."%";
 		} else {
 			//	no process
-			$export_etat_string = "Attente de réponse du serveur.";
+			$export_etat_string = "Attente de rÃ©ponse du serveur.";
 		}
 		// *************************************************************************************************************
 		// JScript to Eval
@@ -225,7 +225,7 @@ switch ( $_REQUEST['step'] ){
 		// *************************************************************************************************************
 		break;
 	// 	step 4 : path 3
-	//	export terminé, reset form
+	//	export terminÃ©, reset form
 	//	next step : disable step 2,3 & 4, wait action
 	case "4c":
 		$script =""; 
@@ -237,7 +237,7 @@ switch ( $_REQUEST['step'] ){
 			}
 		} else {
 			//	no process
-			$export_etat_string = "Aucune informations à exporter.";
+			$export_etat_string = "Aucune informations Ã  exporter.";
 		}
 		// affichage
 		// *************************************************************************************************************

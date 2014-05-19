@@ -32,7 +32,7 @@ class pdf_ann_standard {
 				$this->Code39('.$this->MARGE_GAUCHE.'-10, '.$this->MARGE_HAUT.'+12, "'.$this->contact->getRef_contact ().'", 0.8, 5);
 				$this->SetXY('.$this->MARGE_GAUCHE.'-10, '.$this->MARGE_HAUT.'+17);
 				$this->SetFont("Arial","B",11);
-				$this->Cell(50,7,"Référence : '.$this->contact->getRef_contact ().'",0,0,"L");
+				$this->Cell(50,7,"RÃ©fÃ©rence : '.$this->contact->getRef_contact ().'",0,0,"L");
 				
 
 				';
@@ -55,18 +55,18 @@ class pdf_ann_standard {
 		$this->pdf->SetFont('Arial','B',9);
 		
 		$this->pdf->SetDrawColor(200,200,200);
-		$this->pdf->Cell(190,35,"",1,0); // cadre Informations Générales
+		$this->pdf->Cell(190,35,"",1,0); // cadre Informations GÃ©nÃ©rales
 		$this->pdf->SetDrawColor(0,0,0);
 		
 		$this->pdf->SetXY(15, 42);
 		$this->pdf->SetTextColor(153, 204, 51);
 		$this->pdf->SetFont('Arial','B',11);
-		$this->pdf->Cell(40,5,"Informations Générales",0,2);
+		$this->pdf->Cell(40,5,"Informations GÃ©nÃ©rales",0,2);
 		$this->pdf->SetFont('Arial','B',9);
 		$this->pdf->SetTextColor(0,0,0);
 		
 		$this->pdf->SetTextColor(200,200,200);
-		$this->pdf->Cell(20,10,"Civilité :",0,0);
+		$this->pdf->Cell(20,10,"CivilitÃ© :",0,0);
 		$this->pdf->SetTextColor(0,0,0);
 		$this->pdf->Cell(70,10,$this->contact->getLib_civ_court (),0,0);
 		
@@ -85,7 +85,7 @@ class pdf_ann_standard {
 		
 		$this->pdf->SetXY(15, 62);
 		$this->pdf->SetTextColor(200,200,200);
-		$this->pdf->Cell(20,10,"N°Siret :",0,0);
+		$this->pdf->Cell(20,10,"NÂ°Siret :",0,0);
 		$this->pdf->SetTextColor(0,0,0);
 		$this->pdf->Cell(70,10,$this->contact->getSiret (),0,0);
 		
@@ -146,7 +146,7 @@ class pdf_ann_standard {
 		
 		if(!empty($this->coordonnees[0])){
 			$this->pdf->SetDrawColor(200,200,200);
-			$this->pdf->Cell(90,55,"",1,2);    // cadre Coordonnées
+			$this->pdf->Cell(90,55,"",1,2);    // cadre CoordonnÃ©es
 			$this->pdf->SetDrawColor(0,0,0);
 			
 			$this->pdf->SetXY(115,82);
@@ -154,23 +154,23 @@ class pdf_ann_standard {
 			$this->pdf->SetFont('Arial','B',11);
 			$libcoord = $this->coordonnees[0]->getLib_coord();
 			if(isset($libcoord)) {
-			$this->pdf->Cell(85,8,"Coordonnées (".$libcoord.")",0,2);
+			$this->pdf->Cell(85,8,"CoordonnÃ©es (".$libcoord.")",0,2);
 			unset($libcoord);
 			}else{
-			$this->pdf->Cell(85,8,"Coordonnées",0,2);
+			$this->pdf->Cell(85,8,"CoordonnÃ©es",0,2);
 			}
 			$this->pdf->SetFont('Arial','B',9);
 			$this->pdf->SetTextColor(0,0,0);
 			
 			$this->pdf->SetTextColor(200,200,200);
-			$this->pdf->Cell(22,8,"Téléphone :",0,0);
+			$this->pdf->Cell(22,8,"TÃ©lÃ©phone :",0,0);
 			$this->pdf->SetTextColor(0,0,0);
 			if (isset($this->coordonnees[0])) {
 			$this->pdf->Cell(65,8,$this->coordonnees [0]->getTel1 (),0,2);}
 			
 			$this->pdf->SetXY(115,98);
 			$this->pdf->SetTextColor(200,200,200);
-			$this->pdf->Cell(22,8,"Téléphone 2 :",0,0);
+			$this->pdf->Cell(22,8,"TÃ©lÃ©phone 2 :",0,0);
 			$this->pdf->SetTextColor(0,0,0);
 			if (isset($this->coordonnees[0])) {
 			$this->pdf->Cell(65,8,$this->coordonnees [0]->getTel2 (),0,2);}
@@ -207,7 +207,7 @@ class pdf_ann_standard {
         $this->pdf->SetXY(110,140);
 		
 		$this->pdf->SetDrawColor(200,200,200);
-		$this->pdf->Cell(90,55,"",1,2);    // cadre Coordonnées 2
+		$this->pdf->Cell(90,55,"",1,2);    // cadre CoordonnÃ©es 2
 		$this->pdf->SetDrawColor(0,0,0);
 		
 		$this->pdf->SetXY(115,60+82);
@@ -215,22 +215,22 @@ class pdf_ann_standard {
 		$this->pdf->SetFont('Arial','B',11);
 		$libcoord = $this->coordonnees[1]->getLib_coord();
 		if(isset($libcoord)) {
-		$this->pdf->Cell(85,8,"Coordonnées (".$libcoord.")",0,2);
+		$this->pdf->Cell(85,8,"CoordonnÃ©es (".$libcoord.")",0,2);
 		}else{
-		$this->pdf->Cell(85,8,"Coordonnées",0,2);
+		$this->pdf->Cell(85,8,"CoordonnÃ©es",0,2);
 		}
 		$this->pdf->SetFont('Arial','B',9);
 		$this->pdf->SetTextColor(0,0,0);
 		
 		$this->pdf->SetTextColor(200,200,200);
-		$this->pdf->Cell(22,8,"Téléphone :",0,0);
+		$this->pdf->Cell(22,8,"TÃ©lÃ©phone :",0,0);
 		$this->pdf->SetTextColor(0,0,0);
 		if (isset($this->coordonnees[1])) {
 		$this->pdf->Cell(65,8,$this->coordonnees [1]->getTel1 (),0,2);}
 		
 		$this->pdf->SetXY(115,60+98);
 		$this->pdf->SetTextColor(200,200,200);
-		$this->pdf->Cell(22,8,"Téléphone 2 :",0,0);
+		$this->pdf->Cell(22,8,"TÃ©lÃ©phone 2 :",0,0);
 		$this->pdf->SetTextColor(0,0,0);
 		if (isset($this->coordonnees[1])) {
 		$this->pdf->Cell(65,8,$this->coordonnees [1]->getTel2 (),0,2);}
@@ -269,7 +269,7 @@ class pdf_ann_standard {
 		$this->pdf->SetXY(10,140);
 		
 		$this->pdf->SetDrawColor(200,200,200);
-		$this->pdf->Cell(90,55,"",1,2);    // cadre Adresse n°2
+		$this->pdf->Cell(90,55,"",1,2);    // cadre Adresse nÂ°2
 		$this->pdf->SetDrawColor(0,0,0);
 		
 		$this->pdf->SetXY(15,142);

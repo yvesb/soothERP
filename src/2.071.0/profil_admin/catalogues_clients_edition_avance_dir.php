@@ -13,7 +13,7 @@ require ($DIR.$_SESSION['theme']->getDir_theme()."_theme.config.php" );
 
 // Controle
 if (!isset($_REQUEST['id_catalogue_client_dir'])) {
-	echo "La référence de la catégorie n'est pas précisée";
+	echo "La rÃ©fÃ©rence de la catÃ©gorie n'est pas prÃ©cisÃ©e";
 	exit;
 }
 

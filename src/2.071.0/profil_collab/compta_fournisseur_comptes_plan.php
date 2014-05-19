@@ -12,11 +12,11 @@ require ($DIR."_session.inc.php");
 
 if (!$_SESSION['user']->check_permission ("13")) {
 	//on indique l'interdiction et on stop le script
-	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accés ne vous permettent pas de visualiser ce type de page</span>";
+	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accÃ©s ne vous permettent pas de visualiser ce type de page</span>";
 	exit();
 }
 
-//profil affichés pour la recherche simple
+//profil affichÃ©s pour la recherche simple
 $profils = array();
 foreach ($_SESSION['profils'] as $profil) {
 	if ($profil->getActif() != 1) { continue; }
@@ -24,7 +24,7 @@ foreach ($_SESSION['profils'] as $profil) {
 }
 unset ($profil);
 
-//profil affichés pour la recherche avancee
+//profil affichÃ©s pour la recherche avancee
 $profils_avancees = array();
 foreach ($_SESSION['profils'] as $profil) {
 	if ($profil->getActif() != 1) { continue; }

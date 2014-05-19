@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 
-//mise à jour des données transmises
+//mise Ã  jour des donnÃ©es transmises
 
 $gestion_comm_commerciaux = 0;
 if (isset($_REQUEST["gestion_comm_commerciaux"]) && is_numeric($_REQUEST["gestion_comm_commerciaux"])) {

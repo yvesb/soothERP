@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 if(!isset($_REQUEST["ref_agenda"])){
-	echo "la référence de l'agenda n'est pas spécifiée";
+	echo "la rÃ©fÃ©rence de l'agenda n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $ref_agenda = $_REQUEST["ref_agenda"];
@@ -109,7 +109,7 @@ if($id_type_agenda == 1)
 <td style="text-align:left;width:150px;"> Stock Disponible : </td><td style="text-align:right"><span id="evt_info_qte" name="evt_info_qte" style="text-align:right;"></span></td>
 </tr>
 <tr>
-<td style="text-align:left;vertical-align:middle;"> Quantité : </td><td style="text-align:right"><input type="text" id="evt_edition_qte" name="evt_edition_qte" class="edition_event" style="width:32px; padding-left:2px; padding-right:2px;text-align:right" maxlength="5"  value="" /></input></td>
+<td style="text-align:left;vertical-align:middle;"> QuantitÃ© : </td><td style="text-align:right"><input type="text" id="evt_edition_qte" name="evt_edition_qte" class="edition_event" style="width:32px; padding-left:2px; padding-right:2px;text-align:right" maxlength="5"  value="" /></input></td>
 </tr>
 </table>
 

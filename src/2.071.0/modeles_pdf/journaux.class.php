@@ -7,9 +7,9 @@
 class pdf_journaux extends PDF_etendu {
 	var $code_pdf_modele = "journaux";
 
-	var $journaux;			// informations sur le type de grand livre à imprimer
-	var $fiches;					// Contenu du document à imprimer
-	var $synthese;				// Contenu des informations de synthese des comtpes pour la période
+	var $journaux;			// informations sur le type de grand livre Ã  imprimer
+	var $fiches;					// Contenu du document Ã  imprimer
+	var $synthese;				// Contenu des informations de synthese des comtpes pour la pÃ©riode
 	var $contact;
 	var $montant;
 	var $date_impression;
@@ -89,14 +89,14 @@ public function create_pdf ($infos, $fiches, $synthese) {
 	$this->nb_pages					= 1;
 	$this->nb_pages_synthese= 1;
 	$this->contenu_actuel 	= 0;					// Ligne du document en cours de traitement
-	$this->contenu_end_page = array();		// Lignes de contenu terminant les différentes pages
+	$this->contenu_end_page = array();		// Lignes de contenu terminant les diffÃ©rentes pages
 	$this->contenu_end_page_synthese = array();	
 	$this->page_actuelle		= 0;
 	$this->content_printed	= 0;
 	
 	
 	// ***************************************************
-	// Valeurs par défaut
+	// Valeurs par dÃ©faut
 	foreach ($JOURNAUX as $var => $valeur) {
 		$this->{$var} = $valeur;
 	}
@@ -112,14 +112,14 @@ public function create_pdf ($infos, $fiches, $synthese) {
 
 
 	// ***************************************************
-	// Comptage du nombre de page nécessaires
+	// Comptage du nombre de page nÃ©cessaires
 	$hauteur_totale = 0;
 	for ($i=0; $i<count($this->contenu); $i++) {
 
 		// Hauteur de la ligne
 		$hauteur_ligne = $this->HAUTEUR_LINE_ARTICLE;
 
-		// Vérification de la nécessité de changer de page
+		// VÃ©rification de la nÃ©cessitÃ© de changer de page
 		$hauteur_totale += $hauteur_ligne;
 		if ($hauteur_totale >= $this->CORPS_HAUTEUR_MAX) {
 			
@@ -133,14 +133,14 @@ public function create_pdf ($infos, $fiches, $synthese) {
 	}
 
 	// ***************************************************
-	// Comptage du nombre de page nécessaires à la synthèse
+	// Comptage du nombre de page nÃ©cessaires Ã  la synthÃ¨se
 	$hauteur_totale = 0;
 	for ($i=0; $i<count($this->synthese); $i++) {
 
 		// Hauteur de la ligne
 		$hauteur_ligne = $this->HAUTEUR_LINE_ARTICLE;
 
-		// Vérification de la nécessité de changer de page
+		// VÃ©rification de la nÃ©cessitÃ© de changer de page
 		$hauteur_totale += $hauteur_ligne;
 		if ($hauteur_totale >= $this->CORPS_HAUTEUR_MAX) {
 			
@@ -155,24 +155,24 @@ public function create_pdf ($infos, $fiches, $synthese) {
 
 
 	// ***************************************************
-	// Création de la première page de contenu
+	// CrÃ©ation de la premiÃ¨re page de contenu
 	$this->create_pdf_page ();
 
 	$this->contenu_actuel = 0;
 	// ***************************************************
-	// Création de la première page de contenu de synthese
+	// CrÃ©ation de la premiÃ¨re page de contenu de synthese
 	$this->create_pdf_page_synthese ();
 	
 	return $this;
 }
 
 
-// Créé une nouvelle page du document PDF
+// CrÃ©Ã© une nouvelle page du document PDF
 protected function create_pdf_page () {
 	// Comptage du nombre de page
 	$this->page_actuelle++;
 
-	// Création d'une nouvelle page
+	// CrÃ©ation d'une nouvelle page
 	$this->AddPage();
 	$this->create_pdf_entete ();
 	$this->create_pdf_corps ();
@@ -185,12 +185,12 @@ protected function create_pdf_page () {
 }
 
 
-// Créé une nouvelle page de synthese du document PDF
+// CrÃ©Ã© une nouvelle page de synthese du document PDF
 protected function create_pdf_page_synthese () {
 	// Comptage du nombre de page
 	$this->page_actuelle++;
 
-	// Création d'une nouvelle page
+	// CrÃ©ation d'une nouvelle page
 	$this->AddPage();
 	$this->create_pdf_entete_synthese ();
 	$this->create_pdf_corps_synthese ();
@@ -203,7 +203,7 @@ protected function create_pdf_page_synthese () {
 }
 
 
-// Créé l'entete du document PDF
+// CrÃ©Ã© l'entete du document PDF
 protected function create_pdf_entete () {
 	global $IMAGES_DIR;
 
@@ -218,10 +218,10 @@ protected function create_pdf_entete () {
 	$this->Cell (95, 10, $this->lib_type_printed, 0, 0, 'L');
 
 	// ***************************************************
-	// période
+	// pÃ©riode
 	$this->SetXY($this->MARGE_GAUCHE+1, 27);
 	$this->SetFont('Arial', '', 8);
-	$date_lib = "Période ";
+	$date_lib = "PÃ©riode ";
 	$this->Cell (13, 3, $date_lib, 0, 0, 'L');
 	$this->Cell (3, 3, ":", 0, 0, 'L');
 	$this->Cell (40, 3, $this->date_impression, 0, 0, 'L');
@@ -229,7 +229,7 @@ protected function create_pdf_entete () {
 	return true;
 }
 
-// Créé l'entete synthese du document PDF
+// CrÃ©Ã© l'entete synthese du document PDF
 protected function create_pdf_entete_synthese () {
 	global $IMAGES_DIR;
 
@@ -244,15 +244,15 @@ protected function create_pdf_entete_synthese () {
 	$this->Cell (95, 10, $this->lib_type_printed, 0, 0, 'L');
 
 	// ***************************************************
-	// période
+	// pÃ©riode
 	$this->SetXY($this->MARGE_GAUCHE+1, 27);
 	$this->SetFont('Arial', 'B', 10);
-	$this->Cell (13, 3, "Synthèse de la période en cours ", 0, 0, 'L');
+	$this->Cell (13, 3, "SynthÃ¨se de la pÃ©riode en cours ", 0, 0, 'L');
 	// ***************************************************
-	// période
+	// pÃ©riode
 	$this->SetXY($this->MARGE_GAUCHE+1, 31);
 	$this->SetFont('Arial', '', 8);
-	$date_lib = "Période ";
+	$date_lib = "PÃ©riode ";
 	$this->Cell (13, 3, $date_lib, 0, 0, 'L');
 	$this->Cell (3, 3, ":", 0, 0, 'L');
 	$this->Cell (40, 3, $this->date_impression, 0, 0, 'L');
@@ -264,14 +264,14 @@ protected function create_pdf_entete_synthese () {
 
 
 
-// Créé le corps du PDF
+// CrÃ©Ã© le corps du PDF
 protected function create_pdf_corps () {
 
 	$this->decalage_corps_actuel	= 0;
 
 
 	// ***************************************************
-	// Numéro de page
+	// NumÃ©ro de page
 	$this->SetXY(-45, $this->CORPS_HAUTEUR_DEPART - 6);
 	$this->SetFont('Arial', 'I', 8);
 	$page_lib = "Page ".$this->page_actuelle." / ".($this->nb_pages + $this->nb_pages_synthese);
@@ -307,11 +307,11 @@ protected function create_pdf_corps () {
 			break; 
 		}
 
-		// Controle de la nécessité de changer de page
+		// Controle de la nÃ©cessitÃ© de changer de page
 		if (in_array($i, $this->contenu_end_page)) { break;	}
 	}
 	
-	// Faire décendre le tableau jusqu'en bas du corps
+	// Faire dÃ©cendre le tableau jusqu'en bas du corps
 	while ($this->decalage_corps_actuel <= $this->CORPS_HAUTEUR_MAX-1) {
 		$line = new stdClass();
 		$line->type_of_line = "vide";
@@ -321,14 +321,14 @@ protected function create_pdf_corps () {
 	return true;
 }
 
-// Créé le corps du PDF
+// CrÃ©Ã© le corps du PDF
 protected function create_pdf_corps_synthese () {
 
 	$this->decalage_corps_actuel	= 0;
 
 
 	// ***************************************************
-	// Numéro de page
+	// NumÃ©ro de page
 	$this->SetXY(-45, $this->CORPS_HAUTEUR_DEPART - 6);
 	$this->SetFont('Arial', 'I', 8);
 	$page_lib = "Page ".$this->page_actuelle." / ".($this->nb_pages + $this->nb_pages_synthese);
@@ -360,11 +360,11 @@ protected function create_pdf_corps_synthese () {
 			break; 
 		}
 
-		// Controle de la nécessité de changer de page
+		// Controle de la nÃ©cessitÃ© de changer de page
 		if (in_array($i, $this->contenu_end_page_synthese)) { break;	}
 	}
 	
-	// Faire décendre le tableau jusqu'en bas du corps
+	// Faire dÃ©cendre le tableau jusqu'en bas du corps
 	while ($this->decalage_corps_actuel <= $this->CORPS_HAUTEUR_MAX-1) {
 		$line = new stdClass();
 		$line->type_of_line = "vide";
@@ -381,20 +381,20 @@ protected function create_pdf_corps_line ($line) {
 	global $TARIFS_NB_DECIMALES;
 
 	// ***************************************************
-	// Valeurs par défaut
+	// Valeurs par dÃ©faut
 		// Cadre
 		$cadre = 0; // Gauche et droite
 	if (!isset($line->type_of_line)) 	{
 	
-		// Positionnement au début de la ligne
+		// Positionnement au dÃ©but de la ligne
 		$this->SetXY($this->MARGE_GAUCHE, $this->CORPS_HAUTEUR_DEPART + $this->decalage_corps_actuel);
-		// Style d'écriture par défaut
+		// Style d'Ã©criture par dÃ©faut
 		$this->SetFont('Arial', '', 9);
 		
 		$hauteur = $this->HAUTEUR_LINE_ARTICLE;
 		$this->decalage_corps_actuel += $hauteur;
 	
-		// Spécifités à l'affichage
+		// SpÃ©cifitÃ©s Ã  l'affichage
 
 		// Traitement pour les lignes trops longues
 		if ($this->GetStringWidth($line->nom) >= $this->LARGEUR_COL_LIB-1) {
@@ -453,14 +453,14 @@ protected function create_pdf_corps_line_synthese ($line) {
 	global $TARIFS_NB_DECIMALES;
 
 	// ***************************************************
-	// Valeurs par défaut
+	// Valeurs par dÃ©faut
 		// Cadre
 		$cadre = 0; // Gauche et droite
 	if (!isset($line->type_of_line)) 	{
 	
-		// Positionnement au début de la ligne
+		// Positionnement au dÃ©but de la ligne
 		$this->SetXY($this->MARGE_GAUCHE, $this->CORPS_HAUTEUR_DEPART + $this->decalage_corps_actuel);
-		// Style d'écriture par défaut
+		// Style d'Ã©criture par dÃ©faut
 		$this->SetFont('Arial', '', 9);
 		
 		$hauteur = $this->HAUTEUR_LINE_ARTICLE;
@@ -470,7 +470,7 @@ $cadre = "LRBT";
 	
 		// Affichage de la ligne de contenu
 		$this->SetFont('Arial', 'B', 9);
-		$this->Cell($this->LARGEUR_COL_DAT + $this->LARGEUR_COL_REF + $this->LARGEUR_COL_TTC + $this->LARGEUR_COL_COM + $this->LARGEUR_COL_LIB, $hauteur, "Synthèse du compte", $cadre, 0, 'L');
+		$this->Cell($this->LARGEUR_COL_DAT + $this->LARGEUR_COL_REF + $this->LARGEUR_COL_TTC + $this->LARGEUR_COL_COM + $this->LARGEUR_COL_LIB, $hauteur, "SynthÃ¨se du compte", $cadre, 0, 'L');
 		
 		$this->SetFont('Arial', '', 9);
 		$this->Cell($this->LARGEUR_COL_CMT, $hauteur, $line->numero_compte, $cadre, 0, 'L');
@@ -500,7 +500,7 @@ protected function create_pdf_texte_corps_pieds () {
 protected function create_pdf_pieds () {
 	global $MONNAIE;
 
-	// Information société
+	// Information sociÃ©tÃ©
 	$this->SetXY($this->MARGE_GAUCHE, $this->PIEDS_HAUTEUR_DEPART + $this->PIEDS_HAUTEUR_MAX + 1);
 	foreach ($this->PIEDS_GAUCHE as $texte) {
 		$this->Cell ($this->LARGEUR_TOTALE_CORPS, 4.5, $texte, '0', 2, 'L');

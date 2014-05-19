@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -23,7 +23,7 @@ check_page_variables ($page_variables);
 ?>
 <script type="text/javascript">
 tableau_smenu[0] = Array("smenu_affichage", "smenu_affichage.php" ,"true" ,"sub_content", "Affichage");
-tableau_smenu[1] = Array("smenu_recherche_perso", "smenu_recherche_perso.php" ,"true" ,"sub_content", "Recherches personnalisées");
+tableau_smenu[1] = Array("smenu_recherche_perso", "smenu_recherche_perso.php" ,"true" ,"sub_content", "Recherches personnalisÃ©es");
 update_menu_arbo();
 </script>
 

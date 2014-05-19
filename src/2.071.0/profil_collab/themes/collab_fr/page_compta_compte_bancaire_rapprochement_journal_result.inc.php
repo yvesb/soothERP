@@ -4,7 +4,7 @@
 // journal des tresorerie pour rapprochement bancaire
 // ***********************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES", "fiches");
 check_page_variables ($page_variables);
 
@@ -28,7 +28,7 @@ function barre_navigation($nbtotal,
 													
 {
 	// --------------------------------------------------------------------
-	global $cfg_nb_pages; // Nb de n° de pages affichées dans la barre
+	global $cfg_nb_pages; // Nb de nÂ° de pages affichÃ©es dans la barre
 global $DIR;
 	$barre= "";	$lien_on 	= "&nbsp;<a href='#' id='link_pagi_{cible}'>{lien}</a>&nbsp;
 								<script type='text/javascript'>
@@ -38,7 +38,7 @@ global $DIR;
 	// --------------------------------------------------------------------
     
 
-	// début << .
+	// dÃ©but << .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -58,7 +58,7 @@ global $DIR;
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
 
 
-	// précédent < .
+	// prÃ©cÃ©dent < .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -164,7 +164,7 @@ function image_html($img)
 
 //
 //
-//création de la barre de nav
+//crÃ©ation de la barre de nav
 //
 //
 
@@ -195,7 +195,7 @@ foreach ($_ALERTES as $alerte => $value) {
 	echo $alerte." => ".$value."<br>";
 }
 
-// Affichage des résultats
+// Affichage des rÃ©sultats
 ?><br />
 
 <div id="affresult">
@@ -215,7 +215,7 @@ foreach ($_ALERTES as $alerte => $value) {
 	<tr class="colorise0">
 		<td style="width:10%; text-align:center">Date</td>
 		<td style="width:10%; text-align:center">Cpte</td>
-		<td style="text-align:center">Libellé</td>
+		<td style="text-align:center">LibellÃ©</td>
 		<td style="width:12%; text-align:right; padding-right:10px">Montant</td>
 		<td style="width:5%"></td>
 		<td style="width:10%; text-align:right; padding-right:10px"></td>
@@ -307,7 +307,7 @@ foreach ($fiches as $fiche) {
 		Event.observe('do_rap_<?php echo $fiche->id_operation;?>', 'click',  function(evt){
 			Event.stop(evt); 
 			$("titre_alert").innerHTML = 'Confirmation du rapprochement';
-			$("texte_alert").innerHTML = 'Confirmer le  rapprochement avec l\'opération';
+			$("texte_alert").innerHTML = 'Confirmer le  rapprochement avec l\'opÃ©ration';
 			$("bouton_alert").innerHTML = '<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />';
 				
 			show_pop_alerte ();

@@ -10,13 +10,13 @@ require ("_session.inc.php");
 
 
 if(!isset($_REQUEST['ref_ticket'])){
-	echo "La référence du ticket n'est pas spécifiée";
+	echo "La rÃ©fÃ©rence du ticket n'est pas spÃ©cifiÃ©e";
 	exit;	
 }
 $ref_ticket = $_REQUEST['ref_ticket'];
 
 if(!isset($_REQUEST['ref_ligne'])){
-	echo "La référence de la ligne n'est pas spécifiée";
+	echo "La rÃ©fÃ©rence de la ligne n'est pas spÃ©cifiÃ©e";
 	exit;	
 }
 $ref_ligne = $_REQUEST['ref_ligne'];
@@ -53,7 +53,7 @@ foreach ($document->getContenu() as $doc_line){
     ["gestion_sn"]=> string(1) "0"
     ["modele"]=>string(8) "materiel"
     ["lot"]=> string(1) "0"
-    ["abrev_valo"]=> string(3) "Qté"
+    ["abrev_valo"]=> string(3) "QtÃ©"
     ["type_of_line"]=> string(7) "article"
 */
 

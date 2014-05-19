@@ -14,7 +14,7 @@ require ($DIR."_session.inc.php");
 // *************************************************************************************************************
 
 	// *************************************************
-// Profils à afficher
+// Profils Ã  afficher
 
 $allowed_profils=explode(",",$_SESSION['user']->check_permission ("22"));
 
@@ -22,7 +22,7 @@ $allowed_profils=explode(",",$_SESSION['user']->check_permission ("22"));
 $listepays = getPays_select_list ();
 
 
-//profil affichés pour la recherche simple
+//profil affichÃ©s pour la recherche simple
 $profils = array();
 foreach ($_SESSION['profils'] as $key => $profil) {
 	if ($profil->getActif() != 1 || (!in_array($key,$allowed_profils) && !in_array("ALL",$allowed_profils))) { continue; }
@@ -30,7 +30,7 @@ foreach ($_SESSION['profils'] as $key => $profil) {
 }
 unset ($profil,$key);
 
-//profil affichés pour la recherche avancee
+//profil affichÃ©s pour la recherche avancee
 $profils_avancees = array();
 foreach ($_SESSION['profils'] as $key => $profil) {
 	if ($profil->getActif() != 1 || (!in_array($key,$allowed_profils) && !in_array("ALL",$allowed_profils))) { continue; }

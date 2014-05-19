@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// Gestion type coordonnées / types adresses
+// Gestion type coordonnÃ©es / types adresses
 // *************************************************************************************************************
 
 
@@ -15,5 +15,5 @@ else
 maj_configuration_file("config_generale.inc.php", "maj_line", "\$GEST_TYPE_COORD =", "\$GEST_TYPE_COORD = $valeur;", $CONFIG_DIR);
 ?>
 <script type="text/javascript">
-    	window.parent.alerte.alerte_erreur ('Modification effectué', 'Les modifications ont bien été prises en compte','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+    	window.parent.alerte.alerte_erreur ('Modification effectuÃ©', 'Les modifications ont bien Ã©tÃ© prises en compte','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 </script>

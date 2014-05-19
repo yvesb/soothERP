@@ -83,7 +83,7 @@ if (isset($_REQUEST["cible"])) {
 				$infos	=	array();
 				$infos['id_fournisseur_categ']				=	$_REQUEST["cible_id"];
 				$infos['defaut_numero_compte']				=	$_REQUEST["retour_value"];
-				//création de la catégorie
+				//crÃ©ation de la catÃ©gorie
 				contact_fournisseur::maj_defaut_numero_compte_categories ($infos);
 			
 			}
@@ -119,7 +119,7 @@ if (isset($_REQUEST["cible"])) {
 				$infos	=	array();
 				$infos['id_client_categ']		=	$_REQUEST["cible_id"];
 				$infos['defaut_numero_compte']	=	$_REQUEST["retour_value"];
-				//création de la catégorie
+				//crÃ©ation de la catÃ©gorie
 				contact_client::maj_defaut_numero_compte_categories ($infos);
 			}
 		break;	
@@ -133,7 +133,7 @@ if (isset($_REQUEST["cible"])) {
 				$infos	=	array();
 				$infos['id_fournisseur_categ']		=	$_REQUEST["cible_id"];
 				$infos['defaut_numero_compte']	=	$_REQUEST["retour_value"];
-				//création de la catégorie
+				//crÃ©ation de la catÃ©gorie
 				contact_fournisseur::maj_defaut_numero_compte_categories ($infos);
 			}
 		break;

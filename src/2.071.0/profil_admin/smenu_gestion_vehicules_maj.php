@@ -1,13 +1,13 @@
 <?php
 // *************************************************************************************************************
-// Modification des véhicules
+// Modification des vÃ©hicules
 // *************************************************************************************************************
 
 require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
-//mise à jour des données transmises
+//mise Ã  jour des donnÃ©es transmises
 if(isset($_REQUEST['id_vehicule'])){
 	$lib_vehicule = $_REQUEST['lib_vehicule_'.$_REQUEST['id_vehicule']];
 	$marque = $_REQUEST['marque_'.$_REQUEST['id_vehicule']];

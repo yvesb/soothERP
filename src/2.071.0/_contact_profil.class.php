@@ -10,7 +10,7 @@ abstract class contact_profil {
 
 
 function __construct ($ref_contact, $action) {
-	$erreur = "La fonction _CONSTRUCT n'est pas définie dans la classe ".get_class($this);
+	$erreur = "La fonction _CONSTRUCT n'est pas dÃ©finie dans la classe ".get_class($this);
 	alerte_dev ($erreur);
 }
 
@@ -20,7 +20,7 @@ function __construct ($ref_contact, $action) {
 // CREATION DES INFORMATIONS DU PROFIL   
 // *************************************************************************************************************
 function create_infos ($infos) {
-	$erreur = "La fonction CREATE_INFOS n'est pas définie dans la classe ".get_class($this);
+	$erreur = "La fonction CREATE_INFOS n'est pas dÃ©finie dans la classe ".get_class($this);
 	alerte_dev ($erreur);
 }
 
@@ -29,7 +29,7 @@ function create_infos ($infos) {
 // MODIFICATION DES INFORMATIONS DU PROFIL   
 // *************************************************************************************************************
 function maj_infos ($infos) {
-	$erreur = "La fonction MAJ_INFOS n'est pas définie dans la classe ".get_class($this);
+	$erreur = "La fonction MAJ_INFOS n'est pas dÃ©finie dans la classe ".get_class($this);
 	alerte_dev ($erreur);
 }
 
@@ -38,7 +38,7 @@ function maj_infos ($infos) {
 // SUPPRESSION DES INFORMATIONS DU PROFIL  
 // *************************************************************************************************************
 function delete_infos () {
-	$erreur = "La fonction DELETE_INFOS n'est pas définie dans la classe ".get_class($this);
+	$erreur = "La fonction DELETE_INFOS n'est pas dÃ©finie dans la classe ".get_class($this);
 	alerte_dev ($erreur);
 }
 
@@ -47,7 +47,7 @@ function delete_infos () {
 // TRANSFERT DES INFORMATIONS DU PROFIL VERS UN AUTRE CONTACT 
 // *************************************************************************************************************
 function fusionne_infos ($ref_contact) {
-	$erreur = "La fonction FUSIONNE_INFOS n'est pas définie dans la classe ".get_class($this);
+	$erreur = "La fonction FUSIONNE_INFOS n'est pas dÃ©finie dans la classe ".get_class($this);
 	alerte_dev ($erreur);
 }
 

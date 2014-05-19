@@ -4,7 +4,7 @@
 // ACCUEIL DU PROFIL COLLAB
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -114,9 +114,9 @@ $tailleDemieHeure = 20;
 	  					<table width="100%" border="1" cellpadding="0" cellspacing="0">
 	  						<thead>
 								  <tr>
-								  	<td class="button">«</td>
+								  	<td class="button">Â«</td>
 	  								<td colspan="5" class="button">December 2009</td>
-	  								<td class="button">»</td>
+	  								<td class="button">Â»</td>
 	  							</tr>
 	  							<tr>
 	  								<th class="weekend">L</th>
@@ -217,13 +217,13 @@ $tailleDemieHeure = 20;
 						<table width="100%" border="0" cellpadding="3" cellspacing="0" style="background-color:white;">
 							<tr>
 								<td colspan="7" >
-									<div style="-moz-border-radius : 3px; background-color:green; width:100%; height: 100%; padding: px" >Congées Gaelle</div>
+									<div style="-moz-border-radius : 3px; background-color:green; width:100%; height: 100%; padding: px" >CongÃ©es Gaelle</div>
 								</td>
 							</tr>
 							<tr>
 								<td width="14%"></td>
 								<td colspan="5">
-									<div style="-moz-border-radius : 3px; background-color:green; width:100%; height: 100%; padding: px" >Congées BOB</div>
+									<div style="-moz-border-radius : 3px; background-color:green; width:100%; height: 100%; padding: px" >CongÃ©es BOB</div>
 								</td>
 								<td width="14%"></td>
 							</tr>
@@ -290,7 +290,7 @@ $tailleDemieHeure = 20;
 					<td align="center">
 						<table width="90%" border="0" cellpadding="0" cellspacing="0" height="100%">
 							<tr>
-								<td>Evènement</td>
+								<td>EvÃ¨nement</td>
 							</tr>
 							<tr height="10px">
 								<td style="border-top-width:1px; border-top-color:black; border-top-style:solid;"></td>
@@ -311,7 +311,7 @@ $tailleDemieHeure = 20;
 								</td>
 							</tr>
 							<tr>
-								<td><input type="checkbox" /> Toute la journée</td>
+								<td><input type="checkbox" /> Toute la journÃ©e</td>
 							</tr>
 							<tr>
 								<td>
@@ -319,14 +319,14 @@ $tailleDemieHeure = 20;
 										<tr>
 											<td>du</td>
 											<td><input type="text" value = "" style="width:80px"/></td>
-											<td>à</td>
+											<td>Ã </td>
 											<td><input type="text" value = "" style="width:40px"/></td>
 											<td></td>
 										</tr>
 										<tr>
 											<td>du</td>
 											<td><input type="text" value = "" style="width:80px"/></td>
-											<td>à</td>
+											<td>Ã </td>
 											<td><input type="text" value = "" style="width:40px"/></td>
 											<td></td>
 										</tr>
@@ -350,7 +350,7 @@ $tailleDemieHeure = 20;
 								<td></td>
 							</tr>
 							<tr>
-								<td>Adresse & Coordonnées</td>
+								<td>Adresse & CoordonnÃ©es</td>
 							</tr>
 							<tr>
 								<td>
@@ -361,14 +361,14 @@ $tailleDemieHeure = 20;
 							</tr>
 							<tr>
 								<td>
-									<input type="button" value="Itinéraie" style="width:75px"/> <input type="button" value="Plan" style="width:50px"/>
+									<input type="button" value="ItinÃ©raie" style="width:75px"/> <input type="button" value="Plan" style="width:50px"/>
 								</td>
 							</tr>
 							<tr height="10px">
 								<td></td>
 							</tr>
 							<tr>
-								<td>Adresse & Coordonnées sélectionnées :</td>
+								<td>Adresse & CoordonnÃ©es sÃ©lectionnÃ©es :</td>
 							</tr>
 							<tr>
 								<td>
@@ -477,7 +477,7 @@ evenement.prototype = {
 	initialize: function(node, left, top) {
 		this.node = node;
 
-		//coordonnées de la souris lorsque qu'on édite ou on bouge un objet evenement
+		//coordonnÃ©es de la souris lorsque qu'on Ã©dite ou on bouge un objet evenement
 		//this.mouseX = mouseX;
 		//this.mouseY = mouseY;
 		
@@ -582,13 +582,13 @@ evenement.prototype = {
 	},
 	
 	save : function(){
-	//SI l'event à bougé -> Saubegarde + return TRUE
+	//SI l'event Ã  bougÃ© -> Saubegarde + return TRUE
 	//sinon return FALSE
 	
 	matriceDemieHeure;
 	
 	if(this.x != this.originalX || this.y != this.originalY || this.width != this.originalWidth || this.height != this.originalHeight){
-			//L'event a été modifié -> sauvegarde
+			//L'event a Ã©tÃ© modifiÃ© -> sauvegarde
 			//alert("SAUVEGARDE DE L OBEJET");
 			return true;
 		}else{

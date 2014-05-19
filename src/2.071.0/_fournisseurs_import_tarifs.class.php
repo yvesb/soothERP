@@ -27,7 +27,7 @@ class fournisseurs_import_tarifs {
 		$this->ref_fournisseur = $ref_fournisseur;
 	
 		// *************************************************
-		// Sélection dans la base
+		// SÃ©lection dans la base
 		$query = "SELECT * 
 					FROM fournisseurs_import_tarifs 
 					WHERE ref_fournisseur = '" . $ref_fournisseur . "';";

@@ -3,15 +3,15 @@
 // *************************************************************************************************************
 // FONCTIONS PERMETTANT LA GENERATION D'UN COURRIER PDF - MODELE STANDARD
 // *************************************************************************************************************
-// Ce script est appelé depuis _pdf.class.php->add_courrier_standard()
-// $this 			réfère donc à un objet de la classe PDF
-// $courrier	réfère au courrier que l'on intègre au PDF
+// Ce script est appelÃ© depuis _pdf.class.php->add_courrier_standard()
+// $this 			rÃ©fÃ¨re donc Ã  un objet de la classe PDF
+// $courrier	rÃ©fÃ¨re au courrier que l'on intÃ¨gre au PDF
 
 function add_courrier_standard ($pdf, $courrier) {
 	global $PDF_MODELES_DIR;
 
 	if (!isset($courrier)) { 
-		$erreur = "Aucun document transmit pour la création du PDF";
+		$erreur = "Aucun document transmit pour la crÃ©ation du PDF";
 		alerte_dev ($erreur);
 	}
 	include_once ($PDF_MODELES_DIR."config/".$courrier->code_pdf_modele.".config.php");
@@ -66,12 +66,12 @@ class pdf_courrier_standard {
 		// Initialisation des variables
 		$this->nb_pages			= 1;
 		$this->contenu_actuel 	= 0;					// Ligne du document en cours de traitement
-		$this->contenu_end_page = array();		// Lignes de contenu terminant les différentes pages
+		$this->contenu_end_page = array();		// Lignes de contenu terminant les diffÃ©rentes pages
 		$this->page_actuelle	= 0;
 		$this->content_printed	= 0;
 		
 		// ***************************************************
-		// Valeurs par défaut
+		// Valeurs par dÃ©faut
 		foreach ($COURRIER_STANDARD as $var => $valeur) {
 			$this->{$var} = $valeur;
 		}

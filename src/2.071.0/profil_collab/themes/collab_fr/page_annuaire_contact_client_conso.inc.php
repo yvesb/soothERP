@@ -12,8 +12,8 @@
 		
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" style="">
 			<tr style="text-align:left; vertical-align:top; color:#00336c; font-weight:bolder">
-				<td style="width:77%; text-align:left; padding-left:5px; font-weight:bolder">Services prépayés</td>
-				<td style="width:15%; text-align:left; padding-right:5px; font-weight:bolder">Echéance</td>
+				<td style="width:77%; text-align:left; padding-left:5px; font-weight:bolder">Services prÃ©payÃ©s</td>
+				<td style="width:15%; text-align:left; padding-right:5px; font-weight:bolder">EchÃ©ance</td>
 				<td style="width:8%; text-align:center; padding-right:5px; font-weight:bolder">&nbsp;</td>
 			</tr>
 		</table>

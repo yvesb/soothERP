@@ -36,7 +36,7 @@ $taches_par_page = $NB_TACHES_SHOWED;
 $liste_taches = array();
 $liste_taches = $_SESSION['user']->profil->charger_taches_todo ($order_by, $page_to_show, $taches_par_page, $etat_tache);
 
-// Comptage des résultats
+// Comptage des rÃ©sultats
 $nb_taches = $_INFOS['nb_taches'];
 
 // *************************************************************************************************************

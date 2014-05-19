@@ -14,27 +14,27 @@ ini_set("memory_limit","40M");
 $erreur = "";
 
 	if (!isset($_REQUEST['ref_article'])) {
-		echo "La référence de l'article n'est pas précisée";
+		echo "La rÃ©fÃ©rence de l'article n'est pas prÃ©cisÃ©e";
 		exit;
 	}
 
 	$article = new article ($_REQUEST['ref_article']);
 	if (!$article->getRef_article()) {
-		echo "La référence de l'article est inconnue";		exit;
+		echo "La rÃ©fÃ©rence de l'article est inconnue";		exit;
 
 	}
  // $ratio force la taille, soit en hauteur soit en largeur 
  $ratio = $ARTICLE_IMAGE_MINIATURE_RATIO;  
   
- // on teste si le formulaire permettant d'uploader un fichier a été soumis  
+ // on teste si le formulaire permettant d'uploader un fichier a Ã©tÃ© soumis  
  if (isset($_POST['add_picture'])) { 
     // on teste si le champ permettant de soumettre un fichier est vide ou non 
     if (empty($_FILES['image']['tmp_name']) && $_REQUEST["url_img"] == "") { 
        // si oui, on affiche un petit message d'erreur 
-       $erreur = 'Aucun fichier envoyé.'; 
+       $erreur = 'Aucun fichier envoyÃ©.'; 
     } 
     else { 
-       // on examine le fichier uploadé 
+       // on examine le fichier uploadÃ© 
 			 if (empty($_FILES['image']['tmp_name']) && $_REQUEST["url_img"] != "" && strlen($_REQUEST["url_img"]) < 256){
 			 
 						 $tableau = @getimagesize($_REQUEST["url_img"]);  
@@ -47,14 +47,14 @@ $erreur = "";
 			 }
 			 
        if ($tableau == FALSE) { 
-          // si le fichier uploadé n'est pas une image, on efface le fichier uploadé et on affiche un petit message d'erreur 
+          // si le fichier uploadÃ© n'est pas une image, on efface le fichier uploadÃ© et on affiche un petit message d'erreur 
           if (!empty($_FILES['image']['tmp_name'])) {unlink($_FILES['image']['tmp_name']); }
           $erreur = 'Votre fichier n\'est pas une image.'; 
        } 
        else { 
           // on teste le type de notre image : gif, jpeg ou png 
           if ($tableau[2] == 1 || $tableau[2] == 2 || $tableau[2] == 3) { 
-             // si on a déjà un fichier qui porte le même nom que le fichier que l'on tente d'uploader, on modifie le nom du fichier que l'on upload 
+             // si on a dÃ©jÃ  un fichier qui porte le mÃªme nom que le fichier que l'on tente d'uploader, on modifie le nom du fichier que l'on upload 
 						 if (!empty($_FILES['image']['tmp_name'])) {
        			 $extension = substr($_FILES["image"]["name"], strrpos($_FILES["image"]["name"], "."));
 						 } else {
@@ -64,18 +64,18 @@ $erreur = "";
              if (is_file($ARTICLES_IMAGES_DIR.$file_upload)) {$file_upload = md5(uniqid(rand(), true)).$extension; }
              
   
-             // on copie le fichier que l'on vient d'uploader dans le répertoire des images de grande taille 
+             // on copie le fichier que l'on vient d'uploader dans le rÃ©pertoire des images de grande taille 
 						 if (!empty($_FILES['image']['tmp_name'])) {
              	copy ($_FILES['image']['tmp_name'], $ARTICLES_IMAGES_DIR.$file_upload); 
 						 } else {
              	copy ($_REQUEST["url_img"], $ARTICLES_IMAGES_DIR.$file_upload); 
 						 }
   
-             // Générer la miniature 
+             // GÃ©nÃ©rer la miniature 
   
              // si notre image est de type jpeg 
              if ($tableau[2] == 2) { 
-                // on crée une image à partir de notre grande image à l'aide de la librairie GD 
+                // on crÃ©e une image Ã  partir de notre grande image Ã  l'aide de la librairie GD 
                 $src = imagecreatefromjpeg($ARTICLES_IMAGES_DIR.$file_upload); 
                 // on teste si notre image est de type paysage ou portrait 
                 if ($tableau[0] > $tableau[1]) { 
@@ -100,7 +100,7 @@ $erreur = "";
                    $im = imagecreatetruecolor($x_size, $y_size); 
                    imagecopyresampled($im, $src, 0, 0, 0, 0, $x_size, $y_size, $tableau[0], $tableau[1]); 
 								}
-                // on copie notre fichier généré dans le répertoire des miniatures 
+                // on copie notre fichier gÃ©nÃ©rÃ© dans le rÃ©pertoire des miniatures 
                 imagejpeg ($im, $ARTICLES_MINI_IMAGES_DIR.$file_upload); 
              } 
              elseif ($tableau[2] == 3) { 
@@ -195,9 +195,9 @@ $erreur = "";
              } 
           } 
           else { 
-             // si notre image n'est pas de type jpeg ou png, on supprime le fichier uploadé et on affiche un petit message d'erreur 
+             // si notre image n'est pas de type jpeg ou png, on supprime le fichier uploadÃ© et on affiche un petit message d'erreur 
              unlink($_FILES['image']['tmp_name']); 
-             $erreur = 'Votre image est d\'un format non supporté.'; 
+             $erreur = 'Votre image est d\'un format non supportÃ©.'; 
           } 
        } 
     }  

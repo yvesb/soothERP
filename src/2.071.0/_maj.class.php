@@ -9,19 +9,19 @@ class maj_serveur {
 	var $version_after_maj;
 
 	var $ftp_id_connect;					// Identifiant de la connexion FTP
-	var $tmp_files_dir;						// Dossier local temporaire de téléchargement des fichiers de mise à jour
-	var $ftp_files_dir;						// Dossier FTP de téléchargement des fichiers de mise à jour
+	var $tmp_files_dir;						// Dossier local temporaire de tÃ©lÃ©chargement des fichiers de mise Ã  jour
+	var $ftp_files_dir;						// Dossier FTP de tÃ©lÃ©chargement des fichiers de mise Ã  jour
 
-	var $xml_liste_fichiers;			// fichier xml distant listant les fichiers à downloader
-	var $install_files;						// liste des fichiers à télécharger
-	var $install_dirs;						// liste des dossiers à télécharger
-	var $install_infos;						// liste des infos de téléchargement
+	var $xml_liste_fichiers;			// fichier xml distant listant les fichiers Ã  downloader
+	var $install_files;						// liste des fichiers Ã  tÃ©lÃ©charger
+	var $install_dirs;						// liste des dossiers Ã  tÃ©lÃ©charger
+	var $install_infos;						// liste des infos de tÃ©lÃ©chargement
 	var $derniereBaliseRencontree;
 	var $download_infos_file;			//fichier de progression de la maj
 	
 	var $parseurXML;
 	
-	var $do_not_synchro_dirs;			// Tableau des dossiers qui ne peuvent etre synchronisés
+	var $do_not_synchro_dirs;			// Tableau des dossiers qui ne peuvent etre synchronisÃ©s
 
 	var $break_point_file;				// Nom du fichier contenant les Break Points
 	var $last_break_point;				// Dernier Break Point encas de restauration d'une MAJ
@@ -33,7 +33,7 @@ function __construct ($version_after_maj) {
 	global $DIR;
 	global $MAJ_SERVEUR;
 
-	// Informations sur la mise à jour
+	// Informations sur la mise Ã  jour
 	$this->version_before_maj = $_SERVER['VERSION'];
 	$this->version_after_maj 	= $version_after_maj; // Conversion en nombre
 
@@ -51,14 +51,14 @@ function __construct ($version_after_maj) {
 	$this->download_infos_file = "lmb_download_state.tmp";
 	$this->do_not_synchro_dirs = array(); //($CONFIG_DIR);
 
-	// Recherche d'un éventuel Break Point (Afin de ne pas répéter une étape de la mise à jour)
+	// Recherche d'un Ã©ventuel Break Point (Afin de ne pas rÃ©pÃ©ter une Ã©tape de la mise Ã  jour)
 	$this->last_break_point = 0;
 	$this->break_point_file = $DIR."echange_lmb/v".$this->version_after_maj."_break_points.tmp";
 
 	if (is_file($this->break_point_file)) {
 		$break_points = file ($this->break_point_file);
 		$this->last_break_point = $break_points [count($break_points)-1] * 1;
-		$GLOBALS['_INFOS']['maj_actions'][] = "<i>Récupération de la mise à jour au point n°".$this->last_break_point."</i>";
+		$GLOBALS['_INFOS']['maj_actions'][] = "<i>RÃ©cupÃ©ration de la mise Ã  jour au point nÂ°".$this->last_break_point."</i>";
 	}
 
 	return true;
@@ -67,11 +67,11 @@ function __construct ($version_after_maj) {
 
 
 // *************************************************************************************************************
-// Fonction de gestion des étapes de mise à jour
+// Fonction de gestion des Ã©tapes de mise Ã  jour
 // *************************************************************************************************************
-// Permet de gérer une erreur lors de la mise à jour, afin de reprendre à cette étape lors d'une tentative ultérieure
+// Permet de gÃ©rer une erreur lors de la mise Ã  jour, afin de reprendre Ã  cette Ã©tape lors d'une tentative ultÃ©rieure
 function set_break_point($i) {
-	$GLOBALS['_INFOS']['maj_actions'][] = "<b>Point de restauration n° ".$i." créé</b>";
+	$GLOBALS['_INFOS']['maj_actions'][] = "<b>Point de restauration nÂ° ".$i." crÃ©Ã©</b>";
 	$file_id = fopen ($this->break_point_file, "a");
 	fwrite ($file_id, $i."\n");
 	fclose ($file_id);
@@ -84,7 +84,7 @@ function unset_break_point() {
 }
 
 // *************************************************************************************************************
-// Téléchargement des fichiers nécessaires à la mise à jour
+// TÃ©lÃ©chargement des fichiers nÃ©cessaires Ã  la mise Ã  jour
 // *************************************************************************************************************
 function get_maj_files ($all) {
 	global $DIR;
@@ -97,15 +97,15 @@ function get_maj_files ($all) {
 	$this->ftp_id_connect = ftp_connect($MS['ftp_server']); 
 	$login_result = ftp_login($this->ftp_id_connect, $MS['ftp_user'], $MS['ftp_pass']);
 
-	// Vérification de la connexion
+	// VÃ©rification de la connexion
 	if ((!$this->ftp_id_connect) || (!$login_result)) {
-		$error = "La connexion FTP a échoué : ".$MS['ftp_server']." / ".$MS['ftp_user'].""; 
+		$error = "La connexion FTP a Ã©chouÃ© : ".$MS['ftp_server']." / ".$MS['ftp_user'].""; 
 		alerte_dev ($error);
 		exit; 
 	}
 	ftp_pasv($this->ftp_id_connect, true);
-	// Téléchargement du script de mise à jour (dossier complet)
-	$GLOBALS['_INFOS']['maj_actions'][] = "<b>Téléchargement des fichiers de mise à jour</b>";
+	// TÃ©lÃ©chargement du script de mise Ã  jour (dossier complet)
+	$GLOBALS['_INFOS']['maj_actions'][] = "<b>TÃ©lÃ©chargement des fichiers de mise Ã  jour</b>";
 	$this->ftp_download_dir ();
 
 	// Fermeture du flux FTP
@@ -116,14 +116,14 @@ function get_maj_files ($all) {
 // *************************************************************************************************************
 // Fonctions FTP
 // *************************************************************************************************************
-// Upload un répertoire complet
+// Upload un rÃ©pertoire complet
 function ftp_download_dir () {
 
 	if (!is_dir($this->tmp_files_dir)) { mkdir($this->tmp_files_dir);}
 	//fichier de progression
 	$this->make_download_state (1, "Mise &agrave; jour vers version ".$this->version_after_maj." en cours", "T&eacute;l&eacute;chargement des fichiers", "" );
 	
-	//chargement du fichier xml listant les fichiers et dossier à télécharger
+	//chargement du fichier xml listant les fichiers et dossier Ã  tÃ©lÃ©charger
 	set_time_limit(300);
 	ftp_get ($this->ftp_id_connect, $this->tmp_files_dir.$this->xml_liste_fichiers, $this->ftp_files_dir.$this->xml_liste_fichiers, FTP_BINARY);
 
@@ -136,7 +136,7 @@ function ftp_download_dir () {
 	$downloaded = 0;
 	$total_size = $this->install_infos[0]['TOTAL_SIZE'];
 	
-	// Création de l'arborescence des répertoires
+	// CrÃ©ation de l'arborescence des rÃ©pertoires
 	if (!is_dir($this->tmp_files_dir."files/")) { mkdir($this->tmp_files_dir."files/");}
 	$dir_list = $this->install_dirs;
 	foreach ($dir_list as $dir) {
@@ -144,34 +144,34 @@ function ftp_download_dir () {
 		$GLOBALS['_INFOS']['maj_actions'][] = "<b>Dossier</b> : ".$this->tmp_files_dir."files/".$dir['SRC']."<br>";
 	}
 	
-	// Téléchargement des fichiers 1 à 1
+	// TÃ©lÃ©chargement des fichiers 1 Ã  1
 	$files_list = $this->install_files;
 	foreach ($files_list as $file) {
 		set_time_limit(300);
 
-		// Téléchargement du fichier
+		// TÃ©lÃ©chargement du fichier
 		ftp_get ($this->ftp_id_connect, $this->tmp_files_dir."files/".$file['SRC'], $this->ftp_files_dir."files/".$file['SRC'], FTP_BINARY);
 		$GLOBALS['_INFOS']['maj_actions'][] = "<b>FICHIER</b> : ".$this->tmp_files_dir."files/".$file['SRC']."<br>";
 		
-		// Inscription des informations sur l'état du téléchargement
+		// Inscription des informations sur l'Ã©tat du tÃ©lÃ©chargement
 		$downloaded 	+= filesize ($this->tmp_files_dir."files/".$file['SRC']);
 		$percent = number_format(((90 * $downloaded)/$total_size), 0);
 		
 		$this->make_download_state ($percent, "Mise &agrave; jour vers version ".$this->version_after_maj." en cours", "T&eacute;l&eacute;chargement des fichiers", "T&eacute;l&eacute;chargement : ".number_format($downloaded/1048576,2)." MB sur ".number_format($total_size/1048576,2)." MB");
 	}
-	//Fin du téléchargement des fichiers
+	//Fin du tÃ©lÃ©chargement des fichiers
 	
-	//Vérification au moins une fois du bon téléchargement des fichiers
+	//VÃ©rification au moins une fois du bon tÃ©lÃ©chargement des fichiers
 	foreach ($files_list as $file) {
 		set_time_limit(300);
 		//le fichier
 		if (!file_exists ($this->tmp_files_dir."files/".$file['SRC'])) {
-			// Téléchargement du fichier
+			// TÃ©lÃ©chargement du fichier
 			ftp_get ($this->ftp_id_connect, $this->tmp_files_dir."files/".$file['SRC'], $this->ftp_files_dir."files/".$file['SRC'], FTP_BINARY);
 		}
 	}
 	
-	//relance de la vérification
+	//relance de la vÃ©rification
 	$liste_missing_files = array();
 	foreach ($files_list as $file) {
 		set_time_limit(300);
@@ -190,23 +190,23 @@ function ftp_download_dir () {
 
 
 
-// Vérification des fichiers présents pour une mise à jour manuel
+// VÃ©rification des fichiers prÃ©sents pour une mise Ã  jour manuel
 function check_files () {
 
 	if (!is_dir($this->tmp_files_dir)) { mkdir($this->tmp_files_dir);}
 	//fichier de progression
 	$this->make_download_state (1, "Mise &agrave; jour vers version ".$this->version_after_maj." en cours", "V&eacute;rification des fichiers", "" );
 	
-	//chargement du fichier xml listant les fichiers et dossier à télécharger
+	//chargement du fichier xml listant les fichiers et dossier Ã  tÃ©lÃ©charger
 	set_time_limit(300);
 	//lecture du fichier
 	$this->read_xml_file();
-	// Création de l'arborescence des répertoires
+	// CrÃ©ation de l'arborescence des rÃ©pertoires
 	if (!is_dir($this->tmp_files_dir."files/")) { mkdir($this->tmp_files_dir."files/");}
 	
-	// vérification des fichiers 1 à 1
+	// vÃ©rification des fichiers 1 Ã  1
 	$files_list = $this->install_files;
-	//relance de la vérification
+	//relance de la vÃ©rification
 	$liste_missing_files = array();
 	foreach ($files_list as $file) {
 		set_time_limit(300);
@@ -226,16 +226,16 @@ function check_files () {
 // Lit le fichier d'information sur le code source.
 function read_xml_file () {
 	
-	// Création du parseur XML
+	// CrÃ©ation du parseur XML
 	$this->parseurXML = xml_parser_create("ISO-8859-1");
 
 	//This is the RIGHT WAY to set everything inside the object.
 	xml_set_object ( $this->parseurXML, $this );
 	
-	// Nom des fonctions à appeler lorsque des balises ouvrantes ou fermantes sont rencontrées
+	// Nom des fonctions Ã  appeler lorsque des balises ouvrantes ou fermantes sont rencontrÃ©es
 	xml_set_element_handler($this->parseurXML, "opentag" , "closetag");
 
-	// Nom de la fonction à appeler lorsque du texte est rencontré
+	// Nom de la fonction Ã  appeler lorsque du texte est rencontrÃ©
 	xml_set_character_data_handler($this->parseurXML, "texttag");
 
 	// Ouverture du fichier
@@ -245,7 +245,7 @@ function read_xml_file () {
 	// Lecture ligne par ligne
 	while ( $ligneXML = fgets($fp, 1024)) {
 		// Analyse de la ligne
-		// REM: feof($fp) retourne TRUE s'il s'agit de la dernière ligne du fichier.
+		// REM: feof($fp) retourne TRUE s'il s'agit de la derniÃ¨re ligne du fichier.
 		xml_parse($this->parseurXML, $ligneXML, feof($fp)) or alerte_dev("Fichier incorrect sur LM.fr");
 	}
 
@@ -278,26 +278,26 @@ function closetag($parseur, $nomBalise) {
 }
 
 //Fonction de traitement du texte
-// qui est appelée par le "parseur" (non utilisée car pas de texte entre les balises)
+// qui est appelÃ©e par le "parseur" (non utilisÃ©e car pas de texte entre les balises)
 function texttag($parseur, $texte)
 {
 }
 
 // *********************************************************************************************************
-// Fonctions de création du fichier d'état de téléchargement
+// Fonctions de crÃ©ation du fichier d'Ã©tat de tÃ©lÃ©chargement
 // *********************************************************************************************************
 public function make_download_state($percent, $majetat, $majinfos, $majinfos_more) {
 	/******************************
 	* Structure du fichier :
 	avancement de la maj (en %)
-	texte appliqué pour indiqué l'état de la maj
+	texte appliquÃ© pour indiquÃ© l'Ã©tat de la maj
 	texte indiquant le type de maj en cours
-	texte complémentaire
+	texte complÃ©mentaire
 	*/
 	$entete_download_state  = $percent."\n";			// pourcentage de la maj
 	$entete_download_state .= $majetat."\n";			// majetat (texte)
 	$entete_download_state .= $majinfos."\n";	// type de maj en cours
-	$entete_download_state .= $majinfos_more."\n";				// infos complémentaires
+	$entete_download_state .= $majinfos_more."\n";				// infos complÃ©mentaires
 	
 	if (is_dir($this->tmp_files_dir)) {
 	$infos_file = fopen ($this->tmp_files_dir.$this->download_infos_file, "w");
@@ -312,9 +312,9 @@ public function make_download_state($percent, $majetat, $majinfos, $majinfos_mor
 
 
 
-// Vide le répertoire temporaire FTP
+// Vide le rÃ©pertoire temporaire FTP
 function flush_tmp_files() {
-	$GLOBALS['_INFOS']['maj_actions'][] = "Suppression des fichiers de mise à jour";
+	$GLOBALS['_INFOS']['maj_actions'][] = "Suppression des fichiers de mise Ã  jour";
 	$this->rmdir ($this->tmp_files_dir);
 }
 
@@ -351,19 +351,19 @@ function delete_depreciated_file () {
 	//@TODO
 }
 
-// Synchronise les fichiers généraux de LMB avec la mise à jour téléchargée
+// Synchronise les fichiers gÃ©nÃ©raux de LMB avec la mise Ã  jour tÃ©lÃ©chargÃ©e
 function synchronise_files () {
 	global $DIR;
 
 	$GLOBALS['_INFOS']['maj_actions'][] = "Synchronisation des fichiers recus";
 
-	// Les fichiers sont dans le répertoire files/ du répertoire temporaire
+	// Les fichiers sont dans le rÃ©pertoire files/ du rÃ©pertoire temporaire
 	$source_dir = $this->tmp_files_dir."files/";
-	// Ces fichiers vont etre déplacés à la racine
+	// Ces fichiers vont etre dÃ©placÃ©s Ã  la racine
 	$dest_dir = $DIR;
 
 	if (!is_dir($source_dir)) {
-		$GLOBALS['_INFOS']['maj_actions'][count($GLOBALS['_INFOS']['maj_actions'])-1] = " <i>( Aucun fichier à synchroniser )</i>";
+		$GLOBALS['_INFOS']['maj_actions'][count($GLOBALS['_INFOS']['maj_actions'])-1] = " <i>( Aucun fichier Ã  synchroniser )</i>";
 		return false; 
 	}
 
@@ -392,10 +392,10 @@ function synchronise_dir ($source_dir, $dest_dir) {
 		$new_source_dir = $source_dir.$files[$i]."/";
 		$new_dest_dir 	= $dest_dir.$files[$i]."/";
 
-		// Protection spéciale pour les dossiers qui ne sont jamais synchronisés
+		// Protection spÃ©ciale pour les dossiers qui ne sont jamais synchronisÃ©s
 		if (in_array($new_dest_dir, $this->do_not_synchro_dirs)) { continue; }
 
-		// Si il n'existe pas on le créé
+		// Si il n'existe pas on le crÃ©Ã©
 		if (!is_dir($new_dest_dir)) { mkdir ($new_dest_dir); }
 
 		//Synchronisation des sous dossiers
@@ -407,41 +407,41 @@ function synchronise_dir ($source_dir, $dest_dir) {
 
 
 // *************************************************************************************************************
-// Actions sur la base de données
+// Actions sur la base de donnÃ©es
 // *************************************************************************************************************
 function exec_sql ($query) {
 	global $bdd;
 	$bdd->exec ($query);
 
-	$GLOBALS['_INFOS']['maj_actions'][] = "Requete effectuée : <br>".nl2br($query);
+	$GLOBALS['_INFOS']['maj_actions'][] = "Requete effectuÃ©e : <br>".nl2br($query);
 }
 
 
 
 
 // *************************************************************************************************************
-// Mise à jour d'un fichier de configuration
+// Mise Ã  jour d'un fichier de configuration
 // *************************************************************************************************************
-//fonction maj_configuration_file déplacée et modifiée dans divers.lib.php
+//fonction maj_configuration_file dÃ©placÃ©e et modifiÃ©e dans divers.lib.php
 
 
 
 
 // *************************************************************************************************************
-// ACTIONS PREDETERMINEES SUR LE SERVEUR (Démarrage, Arret)
+// ACTIONS PREDETERMINEES SUR LE SERVEUR (DÃ©marrage, Arret)
 // *************************************************************************************************************
-// Ferme le serveur pour effectuer la mise à jour tranquillement.
+// Ferme le serveur pour effectuer la mise Ã  jour tranquillement.
 public function stop_serveur () {
 	global $CONFIG_DIR;
 	maj_configuration_file ("config_serveur.inc.php", "maj_line", "\$_SERVER['ACTIF'] =", "\$_SERVER['ACTIF'] = 0;", $CONFIG_DIR);
 	$GLOBALS['_INFOS']['maj_actions'][] = "Arret du serveur";
 }
 
-// Réouvre le serveur pour effectuer la mise à jour tranquillement.
+// RÃ©ouvre le serveur pour effectuer la mise Ã  jour tranquillement.
 public function start_serveur () {
 	global $CONFIG_DIR;
 	maj_configuration_file ("config_serveur.inc.php", "maj_line", "\$_SERVER['ACTIF'] =", "\$_SERVER['ACTIF'] = 1;", $CONFIG_DIR);
-	$GLOBALS['_INFOS']['maj_actions'][] = "Démarrage du serveur";
+	$GLOBALS['_INFOS']['maj_actions'][] = "DÃ©marrage du serveur";
 }
 
 // Inscrit la nouvelle version du serveur dans le fichier de configuration adequat
@@ -450,7 +450,7 @@ public function maj_version () {
 
 	$line = "\$_SERVER['VERSION'] = '".$this->version_after_maj."';";
 	maj_configuration_file ("config_serveur.inc.php", "maj_line", "\$_SERVER['VERSION'] =", $line, $CONFIG_DIR);
-	$GLOBALS['_INFOS']['maj_actions'][] = "Démarrage du serveur";
+	$GLOBALS['_INFOS']['maj_actions'][] = "DÃ©marrage du serveur";
 }
 
 

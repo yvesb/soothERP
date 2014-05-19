@@ -5,7 +5,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -81,13 +81,13 @@ if (erreur) {
 	
 	if (no_ref_coord_user) {
 		window.parent.document.getElementById("coordonnee_choisie<?php echo $_REQUEST['ref_idform']?>").className="simule_champs_alerte";
-		texte_erreur += "Aucune coordonnées choisie.<br/>";
+		texte_erreur += "Aucune coordonnÃ©es choisie.<br/>";
 	} else {
 		window.parent.document.getElementById("coordonnee_choisie<?php echo $_REQUEST['ref_idform']?>").className="simule_champs";
 	}
 	if (used_ref_coord_user) {
 		window.parent.document.getElementById("coordonnee_choisie<?php echo $_REQUEST['ref_idform']?>").className="simule_champs_alerte";
-		texte_erreur += "Coordonnées déjà utilisée par un autre utilisateur.<br/>";
+		texte_erreur += "CoordonnÃ©es dÃ©jÃ  utilisÃ©e par un autre utilisateur.<br/>";
 	} else {
 		window.parent.document.getElementById("coordonnee_choisie<?php echo $_REQUEST['ref_idform']?>").className="simule_champs";
 	}
@@ -102,7 +102,7 @@ if (erreur) {
 	if (used_pseudo) {
 		window.parent.document.getElementById("user_pseudo<?php echo $_REQUEST['ref_idform']?>").className="alerteform_xsize";
 		window.parent.document.getElementById("user_pseudo<?php echo $_REQUEST['ref_idform']?>").focus();
-	texte_erreur += " Le pseudo <?php echo $pseudo;?> est déjà utilisé pour l\'utilisateur attaché à <br/> <a href=\"index.php#annuaire_view_fiche.php?ref_contact=<?php if (isset( $_ALERTES["used_pseudo"])) { echo $_ALERTES["used_pseudo"][0];}?>\" target=\"_blank\"><?php if (isset( $_ALERTES["used_pseudo"])) {  echo $_ALERTES["used_pseudo"][1];}?></a>";
+	texte_erreur += "Â Le pseudo <?php echo $pseudo;?> est dÃ©jÃ  utilisÃ© pour l\'utilisateur attachÃ© Ã  <br/> <a href=\"index.php#annuaire_view_fiche.php?ref_contact=<?php if (isset( $_ALERTES["used_pseudo"])) { echo $_ALERTES["used_pseudo"][0];}?>\" target=\"_blank\"><?php if (isset( $_ALERTES["used_pseudo"])) {  echo $_ALERTES["used_pseudo"][1];}?></a>";
 	} else {
 		window.parent.document.getElementById("user_pseudo<?php echo $_REQUEST['ref_idform']?>").className="classinput_xsize";
 	}
@@ -126,9 +126,9 @@ if (isset($ref_user_previous)) {
 }
 
 
-if (isset($_INFOS['Création_utilisateur'])) {
+if (isset($_INFOS['CrÃ©ation_utilisateur'])) {
 	?>
-	window.parent.switchtagmobil('userlist2','li','usercontent', 'annuaire_edition_valid_view_user_nouvelle', '<?php echo $_INFOS['Création_utilisateur']?>');
+	window.parent.switchtagmobil('userlist2','li','usercontent', 'annuaire_edition_valid_view_user_nouvelle', '<?php echo $_INFOS['CrÃ©ation_utilisateur']?>');
 	<?php
 }
 ?>

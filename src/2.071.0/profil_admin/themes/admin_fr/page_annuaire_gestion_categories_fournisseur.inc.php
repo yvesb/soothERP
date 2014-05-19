@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -22,12 +22,12 @@ check_page_variables ($page_variables);
 ?>
 <script type="text/javascript">
 tableau_smenu[0] = Array("smenu_annuaire", "smenu_annuaire.php" ,"true" ,"sub_content", "Annuaire");
-tableau_smenu[1] = Array('annuaire_gestion_categ_fournisseur','annuaire_gestion_categories_fournisseur.php',"true" ,"sub_content", "Gestion des catégories de Fournisseurs");
+tableau_smenu[1] = Array('annuaire_gestion_categ_fournisseur','annuaire_gestion_categories_fournisseur.php',"true" ,"sub_content", "Gestion des catÃ©gories de Fournisseurs");
 update_menu_arbo();
 </script>
 <div class="emarge">
 
-<p class="titre">Gestion des catégories de Fournisseurs</p>
+<p class="titre">Gestion des catÃ©gories de Fournisseurs</p>
 <div style="height:50px">
 <table class="minimizetable">
 <tr>
@@ -142,7 +142,7 @@ update_menu_arbo();
 					</tr>	
 					<tr>
 						<td style="text-align:center">
-						<input name="defaut_fournisseur_categ_<?php echo $liste_categorie->id_fournisseur_categ; ?>"  type="checkbox" id="defaut_fournisseur_categ_<?php echo $liste_categorie->id_fournisseur_categ; ?>" value="1" <?php if ( $DEFAUT_ID_FOURNISSEUR_CATEG == $liste_categorie->id_fournisseur_categ) { echo 'checked="checked"';} ?> alt="Catégorie par défaut" title="Catégorie par défaut" />
+						<input name="defaut_fournisseur_categ_<?php echo $liste_categorie->id_fournisseur_categ; ?>"  type="checkbox" id="defaut_fournisseur_categ_<?php echo $liste_categorie->id_fournisseur_categ; ?>" value="1" <?php if ( $DEFAUT_ID_FOURNISSEUR_CATEG == $liste_categorie->id_fournisseur_categ) { echo 'checked="checked"';} ?> alt="CatÃ©gorie par dÃ©faut" title="CatÃ©gorie par dÃ©faut" />
 							
 						</td>
 						<td>

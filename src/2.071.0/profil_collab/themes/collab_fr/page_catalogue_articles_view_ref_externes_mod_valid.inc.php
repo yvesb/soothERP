@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -61,10 +61,10 @@ if (erreur) {
 		texte_erreur += "Le prix d'achat n'est pas valide n'est pas valide.<br />";
 	}
 	if (bad_ref_fournisseur) {
-		texte_erreur += "Un fournisseur doit être sélectionné.<br />";
+		texte_erreur += "Un fournisseur doit Ãªtre sÃ©lectionnÃ©.<br />";
 	}
 	if (exist_ref_article_externe) {
-		texte_erreur += "La référence externe de l'article existe déjà pour ce fournisseur.<br />";
+		texte_erreur += "La rÃ©fÃ©rence externe de l'article existe dÃ©jÃ  pour ce fournisseur.<br />";
 	}
 
 	window.parent.alerte.alerte_erreur ('Erreur de saisie', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');

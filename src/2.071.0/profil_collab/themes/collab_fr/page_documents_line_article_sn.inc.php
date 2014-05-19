@@ -1,10 +1,10 @@
 <?php
 
 // *************************************************************************************************************
-// FENÊTRE D'AFFICHAGE DES NUMÉROS DE SÉRIE D'UNE LIGNE D'ARTICLE
+// FENÃŠTRE D'AFFICHAGE DES NUMÃ‰ROS DE SÃ‰RIE D'UNE LIGNE D'ARTICLE
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -27,7 +27,7 @@ check_page_variables ($page_variables);
 		<script type="text/javascript">
 		Event.observe("link_close_mini_pop_up_article_sn", "click",  function(evt){Event.stop(evt); close_mini_pop_up_article_sn();}, false);
 		</script>
-		<div style="font-weight:bolder">édition des numéros de série </div>
+		<div style="font-weight:bolder">Ã©dition des numÃ©ros de sÃ©rie </div>
 	</div>
 
 <div id="resultat_article_sn" style="overflow:auto; height:355px; width:100%"></div>

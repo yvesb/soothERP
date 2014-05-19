@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -33,9 +33,9 @@ check_page_variables ($page_variables);
 	<span id="compte_fournisseur_extrait" class="grey_caisse" style="float:right" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Grand livre Fournisseurs</span>
 	
 	
-	<span id="compta_livraisons_fournisseur_nonfacturees" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Livraisons non facturées</span><br /><br />
+	<span id="compta_livraisons_fournisseur_nonfacturees" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Livraisons non facturÃ©es</span><br /><br />
 	
-	<span id="compta_factures_fournisseur_nonreglees" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Factures non réglées</span><br /><br />
+	<span id="compta_factures_fournisseur_nonreglees" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Factures non rÃ©glÃ©es</span><br /><br />
 
 </div>
 </td>

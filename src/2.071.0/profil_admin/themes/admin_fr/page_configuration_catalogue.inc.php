@@ -4,7 +4,7 @@
 // CONFIG DES DONNEES du catalogue
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -21,11 +21,11 @@ check_page_variables ($page_variables);
 ?>
 <script type="text/javascript">
 tableau_smenu[0] = Array("smenu_catalogue", "smenu_catalogue.php" ,"true" ,"sub_content", "Catalogue");
-tableau_smenu[1] = Array('configuration_catalogue','configuration_catalogue.php' ,"true" ,"sub_content", "Paramètres généraux du catalogue");
+tableau_smenu[1] = Array('configuration_catalogue','configuration_catalogue.php' ,"true" ,"sub_content", "ParamÃ¨tres gÃ©nÃ©raux du catalogue");
 update_menu_arbo();
 </script>
 <div class="emarge">
-<p class="titre">Paramètres généraux du catalogue </p>
+<p class="titre">ParamÃ¨tres gÃ©nÃ©raux du catalogue </p>
 
 <div class="contactview_corps">
 <form action="configuration_catalogue_maj.php" enctype="multipart/form-data" method="POST"  id="configuration_catalogue_maj" name="configuration_catalogue_maj" target="formFrame" >
@@ -47,7 +47,7 @@ update_menu_arbo();
 		<td>
 		<input id="gestion_stock" name="gestion_stock" value="1" type="checkbox" <?php if ($GESTION_STOCK) { ?>checked="checked"<?php } ?> />
 		</td>
-		<td class="infos_config">les stocks sont-ils gérés? </td>
+		<td class="infos_config">les stocks sont-ils gÃ©rÃ©s? </td>
 	</tr>
 	<tr>
 		<td colspan="3"> </td>
@@ -56,7 +56,7 @@ update_menu_arbo();
 		<td colspan="3"> </td>
 	</tr>
 	<tr>
-		<td class="lib_config">Gestion des identifiant de traçabilité: </td>
+		<td class="lib_config">Gestion des identifiant de traÃ§abilitÃ©: </td>
 		<td>
 		<input id="gestion_sn" name="gestion_sn" value="1" type="checkbox" <?php if ($GESTION_SN) { ?>checked="checked"<?php } ?> />
 		</td>
@@ -96,7 +96,7 @@ update_menu_arbo();
 	<td colspan="3"> </td>
 	</tr>
 	<tr>
-		<td class="lib_config">Nombre de décimale pour la quantité d'une article : </td>
+		<td class="lib_config">Nombre de dÃ©cimale pour la quantitÃ© d'une article : </td>
 		<td>
 			<input id="article_qte_nb_dec" name="article_qte_nb_dec" value="<?php echo  $ARTICLE_QTE_NB_DEC; ?>" type="text" class="classinput_hsize" maxlength="70" /> 
 		</td>
@@ -113,7 +113,7 @@ update_menu_arbo();
 		<td colspan="3"> </td>
 	</tr>
 	<tr>
-		<td class="lib_config">Durée de garantie des articles par d&eacute;faut </td>
+		<td class="lib_config">DurÃ©e de garantie des articles par d&eacute;faut </td>
 		<td>
 		<input id="defaut_garantie" name="defaut_garantie" value="<?php echo  $DEFAUT_GARANTIE; ?>" type="text" class="classinput_hsize" maxlength="70" /> 
 		 mois</td>
@@ -123,7 +123,7 @@ update_menu_arbo();
 		<td colspan="3"> </td>
 	</tr>
 	<tr>
-		<td class="lib_config">Durée de vie des articles</td>
+		<td class="lib_config">DurÃ©e de vie des articles</td>
 		<td>
 		<input id="defaut_article_lt" name="defaut_article_lt" value="<?php echo  $DEFAUT_ARTICLE_LT/(24*3600); ?>" type="text" class="classinput_hsize" maxlength="70" /> 
 		 jours</td>
@@ -169,17 +169,17 @@ update_menu_arbo();
 		<td colspan="3"> </td>
 	</tr>
 	<tr>
-		<td class="lib_config">L'article g&egrave;re les identifiants de traçabilité:</td>
+		<td class="lib_config">L'article g&egrave;re les identifiants de traÃ§abilitÃ©:</td>
 		<td>
 		
 		<select name="defaut_gestion_sn" id="defaut_gestion_sn" class="classinput_hsize">
 					<option value="0" <?php if ($DEFAUT_GESTION_SN == 0) {echo 'selected="selected"';} ?>>Aucun</option>
-					<option value="1" <?php if ($DEFAUT_GESTION_SN == 1) {echo 'selected="selected"';} ?>>Numéro de s&eacute;rie</option>
-					<option value="2" <?php if ($DEFAUT_GESTION_SN == 2) {echo 'selected="selected"';} ?>>Numéro de lot</option>
+					<option value="1" <?php if ($DEFAUT_GESTION_SN == 1) {echo 'selected="selected"';} ?>>NumÃ©ro de s&eacute;rie</option>
+					<option value="2" <?php if ($DEFAUT_GESTION_SN == 2) {echo 'selected="selected"';} ?>>NumÃ©ro de lot</option>
 			</select>
 		
 		</td>
-		<td class="infos_config">&agrave; la cr&eacute;ation de l'article, la gestion des num&eacute;ros de s&eacute;rie ou de numéros de lots est active ou non ? </td>
+		<td class="infos_config">&agrave; la cr&eacute;ation de l'article, la gestion des num&eacute;ros de s&eacute;rie ou de numÃ©ros de lots est active ou non ? </td>
 	</tr>
 	<tr>
 		<td colspan="3"> </td>
@@ -189,7 +189,7 @@ update_menu_arbo();
 		<td>
 		<select name="defaut_lot" id="defaut_lot" class="classinput_hsize">
 			<option value="0" <?php if ($DEFAUT_LOT == 0) { ?> selected="selected"<?php } ?>>Article simple</option>
-			<option value="1" <?php if ($DEFAUT_LOT == 1) { ?> selected="selected"<?php } ?>>Article à fabriquer</option>
+			<option value="1" <?php if ($DEFAUT_LOT == 1) { ?> selected="selected"<?php } ?>>Article Ã  fabriquer</option>
 			<option value="2" <?php if ($DEFAUT_LOT == 2) { ?> selected="selected"<?php } ?>>Composition Interne</option>
 			<option value="3" <?php if ($DEFAUT_LOT == 3) { ?> selected="selected"<?php } ?>>Composition Fabriquant</option>
 		</select>
@@ -254,9 +254,9 @@ update_menu_arbo();
 		<td class="lib_config">Comment nommer les variantes d'articles?</td>
 		<td>
 		<select name="article_variante_nom" id="article_variante_nom" class="classinput_xsize">
-				<option value="1" <?php if ($ARTICLE_VARIANTE_NOM==1) {echo 'selected="selected"';} ?>>Valeurs des caractéristiques dans le libellé (Teeshirt Rouge 34)</option>
-				<option value="2" <?php if ($ARTICLE_VARIANTE_NOM==2) {echo 'selected="selected"';} ?>>Caractéristique et valeurs dans le libellé (Teeshirt Couleur Rouge, Taille 34)</option>
-				<option value="3" <?php if ($ARTICLE_VARIANTE_NOM==3) {echo 'selected="selected"';} ?>>Caractéristique et valeurs dans la description courte</option>
+				<option value="1" <?php if ($ARTICLE_VARIANTE_NOM==1) {echo 'selected="selected"';} ?>>Valeurs des caractÃ©ristiques dans le libellÃ© (Teeshirt Rouge 34)</option>
+				<option value="2" <?php if ($ARTICLE_VARIANTE_NOM==2) {echo 'selected="selected"';} ?>>CaractÃ©ristique et valeurs dans le libellÃ© (Teeshirt Couleur Rouge, Taille 34)</option>
+				<option value="3" <?php if ($ARTICLE_VARIANTE_NOM==3) {echo 'selected="selected"';} ?>>CaractÃ©ristique et valeurs dans la description courte</option>
 			</select>
 		 </td>
 		<td class="infos_config">&nbsp;</td>

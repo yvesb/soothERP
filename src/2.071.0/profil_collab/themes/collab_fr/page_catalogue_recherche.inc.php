@@ -4,7 +4,7 @@
 // RECHERCHE D'UN ARTICLE
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -273,7 +273,7 @@ array_menu_r_article[2] 	=	new Array('recherche_perso', 'menu_3');
 					</td>
 					<?php
 					}else{
-					echo 'Aucune recherche personnalisée';
+					echo 'Aucune recherche personnalisÃ©e';
 					}
 					?>
 					<td>&nbsp;</td>
@@ -315,7 +315,7 @@ Event.observe("create_new_article_a", "click",  function(evt){
 	page.verify('catalogue_articles','catalogue_articles.php','true','sub_content');
 }, false);
 
-//remise à zero du formulaire
+//remise Ã  zero du formulaire
 Event.observe('annuler_recherche_s', "click", function(evt){Event.stop(evt); reset_moteur_s ('form_recherche_s', 'ref_art_categ_s');	});
 Event.observe('annuler_recherche', "click", function(evt){Event.stop(evt); reset_moteur_a ('form_recherche_a', 'ref_art_categ');	});
 
@@ -345,7 +345,7 @@ Event.observe('ref_art_categ', "change", function(evt){
 	charger_carac_simple($("ref_art_categ").options[$("ref_art_categ").selectedIndex].value, "caract_simple");
 });
 
-//blocage du retour chariot automatique à la saisie du code barre
+//blocage du retour chariot automatique Ã  la saisie du code barre
 function stopifcode_barre (event) {
 
 	var key = event.which || event.keyCode; 

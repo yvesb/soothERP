@@ -5,7 +5,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -50,7 +50,7 @@ if (erreur) {
 	
 	if (bad_ref_banque) {
 		window.parent.document.getElementById("nom_banque_<?php echo $_REQUEST["id_compte_bancaire"]?>").className="alerteform_xsize";
-		texte_erreur += "Vous devez sélectionner une banque.<br/>";
+		texte_erreur += "Vous devez sÃ©lectionner une banque.<br/>";
 	} else {
 		window.parent.document.getElementById("nom_banque_<?php echo $_REQUEST["id_compte_bancaire"]?>").className="classinput_xsize";
 	}

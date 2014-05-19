@@ -12,12 +12,12 @@ require ($DIR."_session.inc.php");
 if (isset($_REQUEST['ref_article'])) {	
 	switch ($_REQUEST['step']) {
 	
-	//données de la description d'article
+	//donnÃ©es de la description d'article
 	case "0":
 		// *************************************************
-		// Controle des données fournies par le formulaire
+		// Controle des donnÃ©es fournies par le formulaire
 		if (!isset($_REQUEST['lib_article'])) {
-			$erreur = "Une variable nécessaire à la Modification de l'article n'est pas précisée.";
+			$erreur = "Une variable nÃ©cessaire Ã  la Modification de l'article n'est pas prÃ©cisÃ©e.";
 			alerte_dev($erreur);
 		}
 				
@@ -46,7 +46,7 @@ if (isset($_REQUEST['ref_article'])) {
 
 
 	
-	//données des caractéristiques
+	//donnÃ©es des caractÃ©ristiques
 	case "1":
 		$caracs	=	array();
 		for ($i = 0; $i < $_REQUEST['serialisation_carac']; $i++) {
@@ -66,7 +66,7 @@ if (isset($_REQUEST['ref_article'])) {
 	break;
 
 	
-	//données de la gestion d'article
+	//donnÃ©es de la gestion d'article
 	case "2":
 		
 		$variante = '';
@@ -180,11 +180,11 @@ if (isset($_REQUEST['ref_article'])) {
 //					// si c'est une nouvelle formule 
 //					if ( $_REQUEST['qte_tarif_old_'.$j] == "newqte" && $_REQUEST['formule_cree_'.$i.'_'.$j]=="1") {
 //			$article->add_formule_tarif ($_REQUEST['id_tarif_'.$i.'_'.$j], $_REQUEST['qte_tarif_'.$j], $_REQUEST['formule_tarif_'.$i.'_'.$j]);
-//					// si c'est une ancienne formule mais la quantité à changé 
+//					// si c'est une ancienne formule mais la quantitÃ© Ã  changÃ© 
 //					} elseif (($_REQUEST['formule_cree_'.$i.'_'.$j]=="2" && ($_REQUEST['qte_tarif_'.$j] != $_REQUEST['qte_tarif_old_'.$j])) || ($_REQUEST['formule_cree_'.$i.'_'.$j]=="1" && $_REQUEST['formule_exist_'.$i.'_'.$j]=="1")){
 //			$article->delete_formule_tarif ($_REQUEST['id_tarif_'.$i.'_'.$j], $_REQUEST['qte_tarif_old_'.$j]);
 //			$article->add_formule_tarif ($_REQUEST['id_tarif_'.$i.'_'.$j], $_REQUEST['qte_tarif_'.$j], $_REQUEST['formule_tarif_'.$i.'_'.$j]);
-//					// si c'est une formule modifiée 
+//					// si c'est une formule modifiÃ©e 
 //					} elseif ($_REQUEST['formule_cree_'.$i.'_'.$j]=="1" && $_REQUEST['formule_exist_'.$i.'_'.$j]=="0"){
 //			$article->add_formule_tarif ($_REQUEST['id_tarif_'.$i.'_'.$j], $_REQUEST['qte_tarif_'.$j], $_REQUEST['formule_tarif_'.$i.'_'.$j]);
 //					}
@@ -195,7 +195,7 @@ if (isset($_REQUEST['ref_article'])) {
 	
 	break;
 			
-	// mise à jour des composants
+	// mise Ã  jour des composants
 	case "4":
 		$composants_serie = explode(",", $_REQUEST['liste_composant']);
 		$composant_niveau=1;
@@ -239,7 +239,7 @@ if (isset($_REQUEST['ref_article'])) {
 			
 			
 			
-//les liaisons sont mise à jour à la volée
+//les liaisons sont mise Ã  jour Ã  la volÃ©e
 	
 	case "8":
 		$article = new article ($_REQUEST['ref_article']);

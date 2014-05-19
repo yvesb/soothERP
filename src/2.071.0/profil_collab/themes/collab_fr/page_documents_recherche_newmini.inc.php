@@ -1,9 +1,9 @@
 <?php
 // *************************************************************************************************************
-// CREATION D'UN NOUVEAU DOC À PARTIR DES LIGNES D'ARTICLES D'UN ANCIEN
+// CREATION D'UN NOUVEAU DOC Ã€ PARTIR DES LIGNES D'ARTICLES D'UN ANCIEN
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -122,7 +122,7 @@ Event.observe("link_close_pop_up_newmini_moteur_doc", "click",  function(evt){Ev
 		<td></td>
 		<td></td>
 		<td>
-			<input type="checkbox" name="link_doc_doc_nm" id="link_doc_doc_nm" ><span class="labelled_text">Créer une liaison avec le document source:</span>
+			<input type="checkbox" name="link_doc_doc_nm" id="link_doc_doc_nm" ><span class="labelled_text">CrÃ©er une liaison avec le document source:</span>
 		</td>
 		<td>&nbsp;</td>
 	</tr>

@@ -7,8 +7,8 @@
 class pdf_stock_a_renouveller extends PDF_etendu {
 	var $code_pdf_modele = "stock_a_renouveller";
 
-	var $stock;					// stock à imprimer
-	var $fiches;						// Contenu du document à imprimer
+	var $stock;					// stock Ã  imprimer
+	var $fiches;						// Contenu du document Ã  imprimer
 	var $id_stock;
 	var $lib_stock;
 	var $date_impression;
@@ -67,7 +67,7 @@ public function create_pdf ($id_stock,$fiches, $infos) {
 	$this->contenu 	= $fiches;
 	$this->infos 		= $infos;
 	$this->date_impression 	= date("d/m/Y");
-	$this->lib_type_printed 	= "Stock à renouveller";
+	$this->lib_type_printed 	= "Stock Ã  renouveller";
 
 	include_once ($PDF_MODELES_DIR."config/".$this->code_pdf_modele.".config.php");
 
@@ -79,7 +79,7 @@ public function create_pdf ($id_stock,$fiches, $infos) {
 	// Initialisation des variables
 	$this->nb_pages					= 1;
 	$this->contenu_actuel 	= 0;					// Ligne du document en cours de traitement
-	$this->contenu_end_page = array();		// Lignes de contenu terminant les différentes pages
+	$this->contenu_end_page = array();		// Lignes de contenu terminant les diffÃ©rentes pages
 	$this->page_actuelle		= 0;
 	$this->content_printed	= 0;
 	$this->current_ref_art_categ = "";
@@ -91,7 +91,7 @@ public function create_pdf ($id_stock,$fiches, $infos) {
 	$this->totaux_generaux_prix = 0;
 
 	// ***************************************************
-	// Valeurs par défaut
+	// Valeurs par dÃ©faut
 	foreach ($STOCK_RNV as $var => $valeur) {
 		$this->{$var} = $valeur;
 	}
@@ -110,7 +110,7 @@ public function create_pdf ($id_stock,$fiches, $infos) {
 
 
 	// ***************************************************
-	// Comptage du nombre de page nécessaires
+	// Comptage du nombre de page nÃ©cessaires
 	$hauteur_totale = 0;
 	for ($i=0; $i<count($this->contenu); $i++) {
 		
@@ -128,7 +128,7 @@ public function create_pdf ($id_stock,$fiches, $infos) {
 		// Hauteur de la ligne
 		$hauteur_ligne = $this->HAUTEUR_LINE_ARTICLE;
 
-		// Vérification de la nécessité de changer de page
+		// VÃ©rification de la nÃ©cessitÃ© de changer de page
 		$hauteur_totale += $hauteur_ligne;
 		if ($hauteur_totale >= $this->CORPS_HAUTEUR_MAX) {
 			
@@ -143,7 +143,7 @@ public function create_pdf ($id_stock,$fiches, $infos) {
 
 	$this->current_ref_art_categ = "";
 	// ***************************************************
-	// Création de la première page
+	// CrÃ©ation de la premiÃ¨re page
 	
 	$this->create_pdf_page ();
 	
@@ -152,12 +152,12 @@ public function create_pdf ($id_stock,$fiches, $infos) {
 }
 
 
-// Créé une nouvelle page du document PDF
+// CrÃ©Ã© une nouvelle page du document PDF
 protected function create_pdf_page () {
 	// Comptage du nombre de page
 	$this->page_actuelle++;
 
-	// Création d'une nouvelle page
+	// CrÃ©ation d'une nouvelle page
 	$this->AddPage();
 	$this->create_pdf_entete ();
 	$this->create_pdf_corps ();
@@ -170,7 +170,7 @@ protected function create_pdf_page () {
 }
 
 
-// Créé l'entete du document PDF
+// CrÃ©Ã© l'entete du document PDF
 protected function create_pdf_entete () {
 	global $IMAGES_DIR;
 
@@ -185,7 +185,7 @@ protected function create_pdf_entete () {
 	$this->Cell (95, 10, $this->lib_type_printed, 0, 0, 'L');
 
 	// ***************************************************
-	// Référence du stock
+	// RÃ©fÃ©rence du stock
 	$this->SetXY($this->MARGE_GAUCHE+1, 27);
 	$this->SetFont('Arial', '', 8);
 	$stock_lib = "Stock";
@@ -208,14 +208,14 @@ protected function create_pdf_entete () {
 
 
 
-// Créé le corps du PDF
+// CrÃ©Ã© le corps du PDF
 protected function create_pdf_corps () {
 
 	$this->decalage_corps_actuel	= 0;
 
 
 	// ***************************************************
-	// Numéro de page
+	// NumÃ©ro de page
 	$this->SetXY(-45, $this->CORPS_HAUTEUR_DEPART - 6);
 	$this->SetFont('Arial', 'I', 8);
 	$page_lib = "Page ".$this->page_actuelle." / ".$this->nb_pages;
@@ -268,7 +268,7 @@ protected function create_pdf_corps () {
 			$this->content_printed= 1;
 			break; 
 		}
-		// Controle de la nécessité de changer de page
+		// Controle de la nÃ©cessitÃ© de changer de page
 		if (in_array($i, $this->contenu_end_page)) { break;	}
 		
 		break;
@@ -286,7 +286,7 @@ protected function create_pdf_corps () {
 		$this->create_pdf_corps_line($line);
 	}		
 	
-	// Faire décendre le tableau jusqu'en bas du corps
+	// Faire dÃ©cendre le tableau jusqu'en bas du corps
 	while ($this->decalage_corps_actuel <= $this->CORPS_HAUTEUR_MAX-1) {
 		$line = new stdClass();
 		$this->create_pdf_corps_line($line);
@@ -303,7 +303,7 @@ protected function create_pdf_corps_line ($line) {
 		$this->Write (10,serialize  ( $line) );
 		return true; } else {*/
 	// ***************************************************
-	// Valeurs par défaut
+	// Valeurs par dÃ©faut
 	if (!isset($line->type_of_line)) 	{ $line->type_of_line = "vide"; 			}
 	if (!isset($line->ref_article)) 	{ $line->ref_article = ""; 			}
 	if (!isset($line->lib_article)) 	{ $line->lib_article = ""; 			}
@@ -314,15 +314,15 @@ protected function create_pdf_corps_line ($line) {
 	// Cadre
 	$cadre = 0; // Gauche et droite
 
-	// Positionnement au début de la ligne
+	// Positionnement au dÃ©but de la ligne
 	$this->SetXY($this->MARGE_GAUCHE, $this->CORPS_HAUTEUR_DEPART + $this->decalage_corps_actuel);
-	// Style d'écriture par défaut
+	// Style d'Ã©criture par dÃ©faut
 	$this->SetFont('Arial', '', 9);
 	
 	$hauteur = $this->{"HAUTEUR_LINE_".strtoupper($line->type_of_line)};
 	$this->decalage_corps_actuel += $hauteur;
 
-	// Spécifités à l'affichage
+	// SpÃ©cifitÃ©s Ã  l'affichage
 	switch ($line->type_of_line) {
 		case "article":
 			if ((isset($line->seuil_alerte) && isset($line->qte) && ($line->qte < $line->seuil_alerte)) || (isset($line->seuil_alerte) && !isset($line->qte) )) { 
@@ -408,7 +408,7 @@ protected function create_pdf_texte_corps_pieds () {
 protected function create_pdf_pieds () {
 	global $MONNAIE;
 
-	// Information société
+	// Information sociÃ©tÃ©
 	$this->SetXY($this->MARGE_GAUCHE, $this->PIEDS_HAUTEUR_DEPART + $this->PIEDS_HAUTEUR_MAX + 1);
 	foreach ($this->PIEDS_GAUCHE as $texte) {
 		$this->Cell ($this->LARGEUR_TOTALE_CORPS, 4.5, $texte, '0', 2, 'L');

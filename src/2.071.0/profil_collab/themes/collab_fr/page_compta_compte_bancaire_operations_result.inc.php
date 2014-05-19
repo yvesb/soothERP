@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES", "fiches", "form['page_to_show']", "form['fiches_par_page']", "nb_fiches");
 check_page_variables ($page_variables);
 
@@ -26,7 +26,7 @@ function barre_navigation($nbtotal,
 													
 {
 	// --------------------------------------------------------------------
-	global $cfg_nb_pages; // Nb de n° de pages affichées dans la barre
+	global $cfg_nb_pages; // Nb de nÂ° de pages affichÃ©es dans la barre
 global $DIR;
 	$barre= "";
 
@@ -38,7 +38,7 @@ global $DIR;
 	// --------------------------------------------------------------------
     
 
-	// début << .
+	// dÃ©but << .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -58,7 +58,7 @@ global $DIR;
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
 
 
-	// précédent < .
+	// prÃ©cÃ©dent < .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -165,7 +165,7 @@ function image_html($img)
 
 //
 //
-//création de la barre de nav
+//crÃ©ation de la barre de nav
 //
 //
 
@@ -194,20 +194,20 @@ foreach ($_ALERTES as $alerte => $value) {
 
 <div  class="mt_size_optimise">
 <span style=" font-weight:bolder">
-Relevé du <?php echo date_Us_to_Fr(date("Y-m-d H:i:s", mktime(0, 0, 0, date ("m", strtotime($search['date_debut'])) , date ("d", strtotime($search['date_debut']))+1, date ("Y", strtotime($search['date_debut'])) ) ));?> au <?php echo date_Us_to_Fr($search['date_fin']);?>
+RelevÃ© du <?php echo date_Us_to_Fr(date("Y-m-d H:i:s", mktime(0, 0, 0, date ("m", strtotime($search['date_debut'])) , date ("d", strtotime($search['date_debut']))+1, date ("Y", strtotime($search['date_debut'])) ) ));?> au <?php echo date_Us_to_Fr($search['date_fin']);?>
 </span>
 	
 <br /><?php
 if (isset($id_compte_bancaire_releve)) {
 	?>
 	<div style=" width:223px; text-align:left" >
-	Solde réél: <?php if (isset($releve_encours->solde_reel)) {echo  price_format($releve_encours->solde_reel)." ".$MONNAIE[1];}?>
+	Solde rÃ©Ã©l: <?php if (isset($releve_encours->solde_reel)) {echo  price_format($releve_encours->solde_reel)." ".$MONNAIE[1];}?>
 	<br />
-	Solde calculé: <?php if (isset($releve_encours->solde_calcule)) {echo  price_format($releve_encours->solde_calcule)." ".$MONNAIE[1];}?>
+	Solde calculÃ©: <?php if (isset($releve_encours->solde_calcule)) {echo  price_format($releve_encours->solde_calcule)." ".$MONNAIE[1];}?>
 
 	</div>
 	<script type="text/javascript">
-	$("more_releve_infos").innerHTML = '<span id="maj_releve" class="grey_caisse" style="float:right; width:250px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Modifier le relevé</span>';
+	$("more_releve_infos").innerHTML = '<span id="maj_releve" class="grey_caisse" style="float:right; width:250px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Modifier le relevÃ©</span>';
 	
 	Event.observe("maj_releve", "click",  function(evt){ Event.stop(evt);S_loading();  page.verify("edit_releve_compte","compta_compte_bancaire_releves_edit.php?id_compte_bancaire=<?php echo $compte_bancaire->getId_compte_bancaire()?>&id_compte_bancaire_releve=<?php echo $id_compte_bancaire_releve;?>","true","edition_operation");	 $("edition_operation").show();	} ); 
 	</script>
@@ -239,11 +239,11 @@ if (isset($id_compte_bancaire_releve)) {
 				Date
 			</td>
 			<td style="width:35%;">
-				Libellé
+				LibellÃ©
 			</td>
-			<td style="width:15%; text-align:right">Débit
+			<td style="width:15%; text-align:right">DÃ©bit
 			</td>
-			<td style="width:15%; text-align:right">Crédit
+			<td style="width:15%; text-align:right">CrÃ©dit
 			</td>
 			<td style="width:15%; text-align:right">Solde
 			</td>
@@ -389,7 +389,7 @@ if (isset($id_compte_bancaire_releve)) {
 				Event.observe('del_<?php echo htmlentities($fiche->id_compte_bancaire_move)?>', 'click',  function(evt){
 					Event.stop(evt); 
 					$("titre_alert").innerHTML = 'Confirmation de la suppression';
-					$("texte_alert").innerHTML = 'Suppression d\'une opération';
+					$("texte_alert").innerHTML = 'Suppression d\'une opÃ©ration';
 					$("bouton_alert").innerHTML = '<input type="submit" name="bouton1" id="bouton1" value="Supprimer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />';
 						
 					show_pop_alerte ();

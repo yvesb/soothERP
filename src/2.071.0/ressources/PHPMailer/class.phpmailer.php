@@ -1466,7 +1466,7 @@ class PHPMailer {
           return false;
         }
       }
-	  // Modifié le 03/06/2011
+	  // ModifiÃ© le 03/06/2011
 	  // Application du patch http://sourceforge.net/tracker/?func=detail&aid=2928600&group_id=26031&atid=385709
 	  // Remplacement '(PHP_VERSION < 6)'par '(PHP_VERSION < 5.3)' 
       if (PHP_VERSION < 5.3) {

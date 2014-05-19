@@ -11,7 +11,7 @@ class pdf_content_doc_fac_lmb_ae extends pdf_content_doc_standard {
 
 
 
-// Créé l'entete du document PDF
+// CrÃ©Ã© l'entete du document PDF
 protected function create_pdf_entete () {
 	global $IMAGES_DIR;
 
@@ -26,10 +26,10 @@ protected function create_pdf_entete () {
 	$this->pdf->Cell (95, 10, $this->lib_type_printed, 0, 0, 'L');
 
 	// ***************************************************
-	// Référence du document
+	// RÃ©fÃ©rence du document
 	$this->pdf->SetXY(101, 27);
 	$this->pdf->SetFont('Arial', '', 8);
-	$ref_doc_lib = "Référence";
+	$ref_doc_lib = "RÃ©fÃ©rence";
 	$this->pdf->Cell (13, 3, $ref_doc_lib, 0, 0, 'L');
 	$this->pdf->Cell (3, 3, ":", 0, 0, 'L');
 	$this->pdf->Cell (40, 3, $this->ref_doc, 0, 0, 'L');
@@ -57,14 +57,14 @@ protected function create_pdf_entete () {
 	return true;
 }
 
-// Créé le corps du PDF
+// CrÃ©Ã© le corps du PDF
 protected function create_pdf_corps () {
 	global $AFF_REMISES;
 
 	$this->decalage_corps_actuel	= 0;
 
 	// ***************************************************
-	// Numéro de page
+	// NumÃ©ro de page
 	$this->pdf->SetXY(-45, $this->CORPS_HAUTEUR_DEPART - 6);
 	$this->pdf->SetFont('Arial', 'I', 8);
 	$page_lib = "Page ".$this->page_actuelle." / ".$this->nb_pages;
@@ -103,11 +103,11 @@ protected function create_pdf_corps () {
 			break; 
 		}
 
-		// Controle de la nécessité de changer de page
+		// Controle de la nÃ©cessitÃ© de changer de page
 		if (in_array($i, $this->contenu_end_page)) { break;	}
 	}
 
-	// Faire décendre le tableau jusqu'en bas du corps
+	// Faire dÃ©cendre le tableau jusqu'en bas du corps
 	while ($this->decalage_corps_actuel <= $this->CORPS_HAUTEUR_MAX-1) {
 		$line = new stdClass();
 		$this->create_pdf_corps_line($line);
@@ -124,7 +124,7 @@ protected function create_pdf_corps_line ($line) {
 	global $TARIFS_NB_DECIMALES;
 
 	// ***************************************************
-	// Valeurs par défaut
+	// Valeurs par dÃ©faut
 	if (!isset($line->type_of_line)) 	{ $line->type_of_line = "vide"; }
 	if (!isset($line->ref_article)) 	{ $line->ref_article = ""; 			}
 	if (!isset($line->ref_interne)) 	{ $line->ref_interne = ""; 			}
@@ -140,9 +140,9 @@ protected function create_pdf_corps_line ($line) {
 	// Cadre
 	$cadre = "LR"; // Gauche et droite
 
-	// Positionnement au début de la ligne
+	// Positionnement au dÃ©but de la ligne
 	$this->pdf->SetXY($this->MARGE_GAUCHE, $this->CORPS_HAUTEUR_DEPART + $this->decalage_corps_actuel);
-	// Style d'écriture par défaut
+	// Style d'Ã©criture par dÃ©faut
 	$this->pdf->SetFont('Arial', '', 9);
 	
 	// Calcul du Prix unitaire et du Prix total
@@ -152,7 +152,7 @@ protected function create_pdf_corps_line ($line) {
 	}
 	$line->pt = round($line->pu * $line->qte * (1-$line->remise/100), $TARIFS_NB_DECIMALES);
 
-	// Spécifités à l'affichage
+	// SpÃ©cifitÃ©s Ã  l'affichage
 	switch ($line->type_of_line) {
 		case "article":
 			if ($line->remise) { $line->remise = $line->remise." %"; }
@@ -226,7 +226,7 @@ protected function create_pdf_pieds () {
 	// Cadre de pieds de page
 	$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS, $this->PIEDS_HAUTEUR_MAX, "", '1', 1, 'L');
 
-	// Information société
+	// Information sociÃ©tÃ©
 	$this->pdf->SetXY($this->MARGE_GAUCHE, $this->PIEDS_HAUTEUR_DEPART + $this->PIEDS_HAUTEUR_MAX + 1);
 	foreach ($this->PIEDS_GAUCHE as $texte) {
 		$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS, 4.5, $texte, '0', 2, 'L');
@@ -259,7 +259,7 @@ protected function create_pdf_pieds () {
 	// Bloc central
 	$this->pdf->SetXY($this->MARGE_GAUCHE , $this->PIEDS_HAUTEUR_DEPART);
 	$this->pdf->SetFont('Arial', 'B', 10);
-	$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant, 8,"Conditions de règlement" , '1', 0, 'C');
+	$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant, 8,"Conditions de rÃ¨glement" , '1', 0, 'C');
 	
 	// Bloc partie acquitement
 	$this->pdf->SetXY($this->MARGE_GAUCHE, $this->PIEDS_HAUTEUR_DEPART+8);
@@ -273,9 +273,9 @@ protected function create_pdf_pieds () {
 		foreach($reglements as $reglement) {
 			if ( $last_reglement < $reglement->date_reglement ){$last_reglement = $reglement->date_reglement;}
 		}
-		$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant, 8, "Facture acquittée le ".date_Us_to_Fr($last_reglement), '1', 0, 'L');
+		$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant, 8, "Facture acquittÃ©e le ".date_Us_to_Fr($last_reglement), '1', 0, 'L');
 	} else {
-		$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant, 8, "Echéance le: ".date_Us_to_Fr($this->document->getDate_echeance ())."   Restant dû : ".price_format ($this->document->getMontant_to_pay ()).$MONNAIE[0], '1', 0, 'L');
+		$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant, 8, "EchÃ©ance le: ".date_Us_to_Fr($this->document->getDate_echeance ())."   Restant dÃ»Â : ".price_format ($this->document->getMontant_to_pay ()).$MONNAIE[0], '1', 0, 'L');
 	}
 	
 	//reglements

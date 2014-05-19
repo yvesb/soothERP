@@ -11,7 +11,7 @@ require ($DIR."_session.inc.php");
 if (isset($_REQUEST['ref_idform'])) {
 	if (isset($_REQUEST['ref_contact'.$_REQUEST['ref_idform']])) {	
 	
-		// on récupére la dernier ref site si existe pour la réactualiser (afin de rafraichir l'affiche des ordres
+		// on rÃ©cupÃ©re la dernier ref site si existe pour la rÃ©actualiser (afin de rafraichir l'affiche des ordres
 		$ordre_previous	=	getMax_ordre("sites_web", $_REQUEST['ref_contact'.$_REQUEST['ref_idform']]);
 		if ($ordre_previous>0) {
 			$ref_site_previous	= site::getRef_site_from_ordre ($_REQUEST['ref_contact'.$_REQUEST['ref_idform']], $ordre_previous);

@@ -5,7 +5,7 @@
 // MISE A JOUR DE LA DESCRIPTION LONGUE D'UN ARTICLE
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 

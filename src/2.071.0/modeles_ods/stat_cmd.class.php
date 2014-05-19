@@ -17,7 +17,7 @@ class ods_stat_cmd {
 
 	// Create Ods object
 	$ods  = new ods();
-	// Liste cmd non chargé
+	// Liste cmd non chargÃ©
 	$this->qte_cmd_loaded = false;
 
 	// Create table
@@ -30,7 +30,7 @@ class ods_stat_cmd {
 
 	// Titre
 	$row = new odsTableRow();
-	$cell = new odsTableCellString(utf8_encode('Quantité commandée par article'), $titre);
+	$cell = new odsTableCellString(utf8_encode('QuantitÃ© commandÃ©e par article'), $titre);
 	$cell->setNumberColumnsSpanned(4);
 	$row->addCell( $cell );
 	$table->addRow($row);
@@ -43,7 +43,7 @@ class ods_stat_cmd {
 	$col1 = new odsTableColumn($stylecol1);
 	$table->addTableColumn($col1);
 
-	//Création de l'entête du tableau
+	//CrÃ©ation de l'entÃªte du tableau
 		//protected function create_entete(){
 	
 		$fond_gris = new odsStyleTableCell();
@@ -105,7 +105,7 @@ class ods_stat_cmd {
 	$table->addRow($row);
 	}
 	$row   = new odsTableRow();
-	$row->addCell( new odsTableCellString(utf8_encode('Total général'), $fond_gris));
+	$row->addCell( new odsTableCellString(utf8_encode('Total gÃ©nÃ©ral'), $fond_gris));
 
 	for($y=$_REQUEST['annee_date_deb']; $y<=$_REQUEST['annee_date_fin'] ; ++$y ){
     	
@@ -127,14 +127,14 @@ class ods_stat_cmd {
 	//Ajout de la table
 	$ods->addTable($table);
 	// Download the file
-	$ods->downloadOdsFile("Quantité commandée par article.ods");
+	$ods->downloadOdsFile("QuantitÃ© commandÃ©e par article.ods");
 }
 
 	//**************************************************
 	// FONCTION DE RECUPERATION DES INFORMATIONS
 	
 	protected function charger_qte_cmd(){
-		//creer un tableau contenant la quantité commander par mois et par categorie d'article
+		//creer un tableau contenant la quantitÃ© commander par mois et par categorie d'article
 		global $bdd;
 		
 		$query = "SELECT dl.ref_article, doc.date_creation_doc as date, dl.ref_article, dl.qte
@@ -157,14 +157,14 @@ class ods_stat_cmd {
 	}
 	
 	protected function get_qte_cmd_mensuel($ref_article, $annee, $mois){
-		//retourne la quantité
+		//retourne la quantitÃ©
 		if(!$this->qte_cmd_loaded){ $this->charger_qte_cmd(); }
 		if(empty($this->qte_cmd[$ref_article][$annee][$mois])){ return 0; }
 		return $this->qte_cmd[$ref_article][$annee][$mois];
 	} 
 	
 	public function get_qte_cmd($annee_deb, $mois_deb){
-		//retourne la quantité
+		//retourne la quantitÃ©
 		if(!$this->qte_cmd_loaded){ $this->charger_qte_cmd(); }
 		if(empty($this->qte_cmd)){ return 0; }
 		
@@ -183,17 +183,17 @@ class ods_stat_cmd {
 	protected function getLib_mois($i){
 		switch ($i){
 			case 1 : return "janvier"; break;
-			case 2 : return "février"; break;
+			case 2 : return "fÃ©vrier"; break;
 			case 3 : return "mars"; break;
 			case 4 : return "avril"; break;
 			case 5 : return "mai"; break;
 			case 6 : return "juin"; break;
 			case 7 : return "juillet"; break;
-			case 8 : return "août"; break;
+			case 8 : return "aoÃ»t"; break;
 			case 9 : return "septembre"; break;
 			case 10 : return "octobre"; break;
 			case 11 : return "novembre"; break;
-			case 12 : return "décembre"; break;
+			case 12 : return "dÃ©cembre"; break;
 			default : return false; 
 		}
 	}

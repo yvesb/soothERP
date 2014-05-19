@@ -13,7 +13,7 @@ $_REQUEST['recherche'] = 1;
 // Moteur de recherche pour les documents 
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -62,10 +62,10 @@ if (isset($_REQUEST['ref_doc'])) {
 
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_join 	= "";
 	$query_join_count = "";
 	$query_where 	= "1 ";
@@ -124,11 +124,11 @@ if (isset($_REQUEST['recherche'])) {
 						LIMIT ".$query_limit;
 	$resultat = $bdd->query($query);
 
-	// Liste des documents ne contenant pas de référence externe
+	// Liste des documents ne contenant pas de rÃ©fÃ©rence externe
 	$list = array('DES','DES_SN','ECHEANCIERS','FAB','FAB_SN','INV','MOD','PAC','TIC','TRM');
 
 	while ($fiche = $resultat->fetchObject()) {
-		// Recherche référence externe
+		// Recherche rÃ©fÃ©rence externe
 		if(!in_array(substr($fiche->ref_doc, 0, 3), $list)) {
 			$query_ref_doc_externe 	= "SELECT ref_doc, ref_doc_externe FROM doc_".strtolower(substr($fiche->ref_doc, 0, 3))." WHERE ref_doc = '".$fiche->ref_doc."'";
 			$result = $bdd->query($query_ref_doc_externe);
@@ -140,7 +140,7 @@ if (isset($_REQUEST['recherche'])) {
 	//echo nl2br ($query);
 	unset ($fiche, $resultat, $query);
 	
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 	$query = "SELECT COUNT(d.ref_doc) nb_fiches
 						FROM documents d 
 							".$query_join_count

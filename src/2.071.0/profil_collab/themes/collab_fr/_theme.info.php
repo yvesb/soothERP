@@ -1,5 +1,5 @@
 <?php
-// Fichier d'information sur le thème
+// Fichier d'information sur le thÃ¨me
 
 $THEME_ID 	= 2;
 $THEME_NAME = "BASIC";

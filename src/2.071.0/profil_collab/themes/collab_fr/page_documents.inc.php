@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -29,7 +29,7 @@ check_page_variables ($page_variables);
   
   <br/>
   
-  <a href="<?php echo $DIR?>">Retour à l'index principal</a> 
+  <a href="<?php echo $DIR?>">Retour Ã  l'index principal</a> 
   
 </p>
 </div>

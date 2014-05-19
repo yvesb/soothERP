@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -25,7 +25,7 @@ function barre_navigation($nbtotal,
 													
 {
 	// --------------------------------------------------------------------
-	global $cfg_nb_pages; // Nb de n° de pages affichées dans la barre
+	global $cfg_nb_pages; // Nb de nÂ° de pages affichÃ©es dans la barre
 global $DIR;
 	$barre= "";
 
@@ -37,7 +37,7 @@ global $DIR;
 	// --------------------------------------------------------------------
     
 
-	// début << .
+	// dÃ©but << .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -57,7 +57,7 @@ global $DIR;
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
 
 
-	// précédent < .
+	// prÃ©cÃ©dent < .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -164,7 +164,7 @@ function image_html($img)
 
 //
 //
-//création de la barre de nav
+//crÃ©ation de la barre de nav
 //
 //
 
@@ -206,12 +206,12 @@ function image_html($img)
 			<td>&nbsp;
 			</td>
 			<td style="text-align:center; font-weight:bolder;  width:15% ">
-				<span>Numéro de compte:</span>
+				<span>NumÃ©ro de compte:</span>
 			</td>
 			<td style="width:10%">&nbsp;
 			</td>
 			<td style="text-align:left; font-weight:bolder;  width:45% ">
-				<span>Libellé:</span>
+				<span>LibellÃ©:</span>
 			</td>
 		</tr>
 <?php

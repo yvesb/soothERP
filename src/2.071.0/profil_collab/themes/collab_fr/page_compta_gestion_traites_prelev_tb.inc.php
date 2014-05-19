@@ -4,7 +4,7 @@
 // Tableau de BORD compte bancaire
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -142,7 +142,7 @@ check_page_variables ($page_variables);
                                                                     </span>
 								</span>
 								<?php if ($last_operation) {?>
-								<div style="float:left; color:#999999">Dernier opération enregistrée: <?php echo date_Us_to_Fr($last_operation);?></div>
+								<div style="float:left; color:#999999">Dernier opÃ©ration enregistrÃ©e: <?php echo date_Us_to_Fr($last_operation);?></div>
 								<?php } ?>
 								</td>
 								<td>&nbsp;</td>
@@ -253,7 +253,7 @@ check_page_variables ($page_variables);
 			<br />
 					<div style="padding: 15px 25px;">
 					<div class="line_caisse_bottom"></div>
-					<div class="bold_caisse" style="font-size:16px">Opérations de gestion</div> 
+					<div class="bold_caisse" style="font-size:16px">OpÃ©rations de gestion</div> 
 					<div class="line_caisse_top"></div>
 					<br />
 					<br />

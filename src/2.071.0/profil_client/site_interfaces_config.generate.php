@@ -80,10 +80,10 @@ if (!count($GLOBALS['_ALERTES'])) {
 <?php
 
 // *************************************************************************************************************
-// ajout de modËle d'article pdf
+// ajout de mod√®le d'article pdf
 // *************************************************************************************************************
 
-// Variables nÈcessaires ‡ l'affichage
+// Variables n√©cessaires √† l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -175,19 +175,19 @@ if (erreur) {
   
   if (choisir_duree_aff_doc_dev) {
     window.parent.document.getElementById("duree_aff_doc_dev").className="alerteform_xsize";
-    texte_erreur += "Vous devez choisir une durÈe d'affichage pour les devis.<br/>";
+    texte_erreur += "Vous devez choisir une dur√©e d'affichage pour les devis.<br/>";
   } else {
     window.parent.document.getElementById("duree_aff_doc_dev").className="classinput_xsize";
   }
   if (choisir_duree_aff_doc_cdc) {
     window.parent.document.getElementById("duree_aff_doc_cdc").className="alerteform_xsize";
-    texte_erreur += "Vous devez choisir une durÈe d'affichage pour les commandes.<br/>";
+    texte_erreur += "Vous devez choisir une dur√©e d'affichage pour les commandes.<br/>";
   } else {
     window.parent.document.getElementById("duree_aff_doc_cdc").className="classinput_xsize";
   }
   if (choisir_duree_aff_doc_fac) {
     window.parent.document.getElementById("duree_aff_doc_fac").className="alerteform_xsize";
-    texte_erreur += "Vous devez choisir une durÈe d'affichage pour les factures.<br/>";
+    texte_erreur += "Vous devez choisir une dur√©e d'affichage pour les factures.<br/>";
   } else {
     window.parent.document.getElementById("duree_aff_doc_fac").className="classinput_xsize";
   }
@@ -205,7 +205,7 @@ if (erreur) {
   }
   if (bad_extension) {
     window.parent.document.getElementById("img_logo").className="alerteform_xsize";
-    texte_erreur += "Vous devez sÈlectionner un format d'image valide.<br/>";
+    texte_erreur += "Vous devez s√©lectionner un format d'image valide.<br/>";
   } else {
 	window.parent.document.getElementById("img_logo").className="classinput_xsize";
   }
@@ -247,7 +247,7 @@ else
 
 window.parent.changed = false;
 window.parent.page.traitecontent('Site_interfaces_config','site_interfaces_config.php','true','sub_content');
-window.parent.alerte.alerte_erreur ('Configuration effectuÈe', 'La configuration de l\'interface ‡ ÈtÈ effectuÈe avec succËs.','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+window.parent.alerte.alerte_erreur ('Configuration effectu√©e', 'La configuration de l\'interface √† √©t√© effectu√©e avec succ√®s.','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 
 }
 

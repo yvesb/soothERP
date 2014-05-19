@@ -3,7 +3,7 @@
 // IMPORT FICHIER tarifs_fournisseur CSV
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -39,7 +39,7 @@ if (erreur) {
 	if (count($lignes)) { 
 		?>
 		window.parent.alerte.alerte_erreur ('Import en cours', 
-						"<?php echo $GLOBALS['_INFOS']['count_import']."/".$GLOBALS['_INFOS']['total_import']; ?> enregistrements importés<br />",
+						"<?php echo $GLOBALS['_INFOS']['count_import']."/".$GLOBALS['_INFOS']['total_import']; ?> enregistrements importÃ©s<br />",
 						'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 		window.parent.page.verify('import_tarifs_fournisseur_csv_step2_done',
 						'import_tarifs_fournisseur_csv_step2_done.php?count_import=<?php echo $GLOBALS['_INFOS']['count_import'];?>&total_import=<?php echo $GLOBALS['_INFOS']['total_import'];?>',
@@ -47,8 +47,8 @@ if (erreur) {
 		<?php 
 	} else {
 		?>
-		window.parent.alerte.alerte_erreur ('Import effectué', 
-						"<?php echo $GLOBALS['_INFOS']['count_import']."/".$GLOBALS['_INFOS']['total_import']; ?> enregistrements importés<br />",
+		window.parent.alerte.alerte_erreur ('Import effectuÃ©', 
+						"<?php echo $GLOBALS['_INFOS']['count_import']."/".$GLOBALS['_INFOS']['total_import']; ?> enregistrements importÃ©s<br />",
 						'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 		window.parent.page.verify('import_tarifs_fournisseur_csv_step3',
 						'import_tarifs_fournisseur_csv_step3.php',

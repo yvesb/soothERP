@@ -4,7 +4,7 @@
 // RECHERCHE D'UN ARTICLE
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -82,7 +82,7 @@ foreach ($_ALERTES as $alerte => $value) {
                         </td>
 			<!--<td>&nbsp;</td>-->
 			<td style="padding-left:35px">
-				<span class="labelled_text"> Filtre par état de stock:</span><br />
+				<span class="labelled_text"> Filtre par Ã©tat de stock:</span><br />
 				<select name="in_stock_s" id="in_stock_s" class="classinput_xsize" style="width:100%">
 					<option value='2'>Uniquement les articles en stock</option>
 					<option value='1'>Uniquement les articles en erreur</option>
@@ -177,7 +177,7 @@ foreach ($_ALERTES as $alerte => $value) {
 include ("page_stock_export.php");
 ?>
 <SCRIPT type="text/javascript">
-//remise à zero du formulaire
+//remise Ã  zero du formulaire
 Event.observe('annuler_recherche_s', "click", function(evt){Event.stop(evt); reset_moteur_s ('form_recherche_s', 'ref_art_categ_s');	});
 
 //lance la recherche
@@ -202,7 +202,7 @@ Event.observe('export_stock', "click", function(evt){
 		if ($F('id_stock_l').length >0) {
 			if($F('id_stock_l')=='' || $F('id_stock_l').length ==2){
 
-                        alerte.alerte_erreur('Erreur de stock','Veuillez sélectionner un seul stock',"<input type='submit' value='Valider' name='button_0' onclick='hide_pop_alerte ();'/>");
+                        alerte.alerte_erreur('Erreur de stock','Veuillez sÃ©lectionner un seul stock',"<input type='submit' value='Valider' name='button_0' onclick='hide_pop_alerte ();'/>");
 			}else{
 			id_stock_s = $F('id_stock_l');
 			$("pop_up_export_det").style.display = "block";

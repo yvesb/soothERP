@@ -20,7 +20,7 @@ $liste_exercices	= $compta_e->charger_compta_exercices();
 
 $id_exercice = $liste_exercices[0]->id_exercice;
 if (isset($_REQUEST["id_exercice"])) {$id_exercice = $_REQUEST["id_exercice"];}
-//chargement des relevés de l'exercice sélectionné
+//chargement des relevÃ©s de l'exercice sÃ©lectionnÃ©
 if (isset($_REQUEST["id_compte_bancaire"])) {
 $compte_bancaire	= new compte_bancaire($_REQUEST["id_compte_bancaire"]);
 

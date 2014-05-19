@@ -102,17 +102,17 @@ function Calcul_pack_equiv(&$Mydoc, &$Myarticle, $Myquantite){
 }		
 		
 if (!isset($_REQUEST['ref_article'])){
-	echo "la référence de l'article n'est pas spécifiée";
+	echo "la rÃ©fÃ©rence de l'article n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 
 if (!isset($_REQUEST['ref_doc'])){
-	echo "la référence du document n'est pas spécifiée";
+	echo "la rÃ©fÃ©rence du document n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 
 if (!isset($_REQUEST['qte_article'])){
-	echo "la quantité de l'article n'est pas spécifiée";
+	echo "la quantitÃ© de l'article n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 

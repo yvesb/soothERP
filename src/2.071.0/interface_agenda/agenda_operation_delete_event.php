@@ -12,13 +12,13 @@ require ($DIR."_session.inc.php");
 // RECUPERATION ET VERIFICATION DES DONNNES
 // ************************************************************************************
 if(!isset($_REQUEST["scale_used"])){
-	echo "l'échelle n'est pas spécifiée";
+	echo "l'Ã©chelle n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $scale_used = $_REQUEST["scale_used"];
 
 if(!isset($_REQUEST["id_graphic_event"])){
-	echo "l'identifiant de l'événement graphique n'est pas spécifié";
+	echo "l'identifiant de l'Ã©vÃ©nement graphique n'est pas spÃ©cifiÃ©";
 	exit;
 }
 $id_graphic_event = $_REQUEST["id_graphic_event"];
@@ -27,7 +27,7 @@ $id_graphic_event = $_REQUEST["id_graphic_event"];
 // CREATION DE L'obj Event
 // ************************************************************************************
 if(!isset($_REQUEST["ref_event"]) || $_REQUEST["ref_event"] == ""){
-	echo "la référence de l'événement n'est pas spécifiée";
+	echo "la rÃ©fÃ©rence de l'Ã©vÃ©nement n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $ref_event = $_REQUEST["ref_event"];
@@ -39,7 +39,7 @@ $event = new Event($ref_event);
 // ************************************************************************************
 /*
 if(!$_SESSION["agenda"]["GestionnaireAgendas"]->addEvent($event->getRef_agenda(), $event->getId_type_event())){
-	echo "Vous n'avez pas les droits de supprimer cet événement";
+	echo "Vous n'avez pas les droits de supprimer cet Ã©vÃ©nement";
 	exit;
 }
 */
@@ -48,7 +48,7 @@ if(!$_SESSION["agenda"]["GestionnaireAgendas"]->addEvent($event->getRef_agenda()
 
 
 if(!$event->deleteOnCascade($_SESSION["agenda"]["GestionnaireEvenements"]))
-{echo "Vous n'avez pas le droit de supprimer cet événement";}
+{echo "Vous n'avez pas le droit de supprimer cet Ã©vÃ©nement";}
 unset($event);
 
 // *************************************************************************************************************

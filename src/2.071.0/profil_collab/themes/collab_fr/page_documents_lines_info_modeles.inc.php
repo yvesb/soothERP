@@ -1,9 +1,9 @@
 <?php
 // *************************************************************************************************************
-// CREATION D'UN NOUVEAU DOC À PARTIR DES LIGNES D'ARTICLES D'UN ANCIEN
+// CREATION D'UN NOUVEAU DOC Ã€ PARTIR DES LIGNES D'ARTICLES D'UN ANCIEN
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -27,7 +27,7 @@ $modeles_lignes = charge_docs_infos_lines ($id_type_doc);
 <script type="text/javascript">
 Event.observe("link_close_pop_up_lines_info_modeles_doc", "click",  function(evt){Event.stop(evt); $("pop_up_lines_info_modeles_doc").style.display = "none";}, false);
 </script>
-<div style="font-weight:bolder">Lignes d'information prédéfinies</div>
+<div style="font-weight:bolder">Lignes d'information prÃ©dÃ©finies</div>
 </div>
 </div><br />
 
@@ -65,7 +65,7 @@ Event.observe("link_close_pop_up_lines_info_modeles_doc", "click",  function(evt
 			</script>
 		</td>
 		<td style="width:20px">
-			<span class="common_link" id="add_line_info_modele_<?php echo $modele_infos->id_doc_info_line;?>" >Insérer</span>
+			<span class="common_link" id="add_line_info_modele_<?php echo $modele_infos->id_doc_info_line;?>" >InsÃ©rer</span>
 			<script type="text/javascript">
 			Event.observe("add_line_info_modele_<?php echo $modele_infos->id_doc_info_line;?>", "click", function(evt){
 				add_new_line_info_modele ($("ref_doc").value, "information", '<?php echo $modele_infos->id_doc_info_line;?>');
@@ -93,7 +93,7 @@ Event.observe("link_close_pop_up_lines_info_modeles_doc", "click",  function(evt
 
 		</td>
 		<td style="width:20px">
-			<span class="common_link" id="add_line_info_modele" >Insérer</span>
+			<span class="common_link" id="add_line_info_modele" >InsÃ©rer</span>
 			<script type="text/javascript">
 			Event.observe("add_line_info_modele", "click", function(evt){
 				add_new_line_info_modele ($("ref_doc").value, "information", '');

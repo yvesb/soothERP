@@ -4,7 +4,7 @@
 // CONFIG DES DONNEES du logiciel
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -20,12 +20,12 @@ check_page_variables ($page_variables);
 
 ?>
 <script type="text/javascript">
-tableau_smenu[0] = Array("smenu_secusys", "smenu_secusys.php" ,"true" ,"sub_content", "Sécurité du système");
-tableau_smenu[1] = Array('Configuration','configuration_divers.php' ,"true" ,"sub_content", "Définir la durée des sessions");
+tableau_smenu[0] = Array("smenu_secusys", "smenu_secusys.php" ,"true" ,"sub_content", "SÃ©curitÃ© du systÃ¨me");
+tableau_smenu[1] = Array('Configuration','configuration_divers.php' ,"true" ,"sub_content", "DÃ©finir la durÃ©e des sessions");
 update_menu_arbo();
 </script>
 <div class="emarge">
-<p class="titre">Définir la durée des sessions</p>
+<p class="titre">DÃ©finir la durÃ©e des sessions</p>
 
 <div class="contactview_corps">
 <form action="configuration_divers_maj.php" enctype="multipart/form-data" method="POST"  id="configuration_divers_maj" name="configuration_divers_maj" target="formFrame" >

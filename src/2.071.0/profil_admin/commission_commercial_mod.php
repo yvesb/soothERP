@@ -11,7 +11,7 @@ require ($DIR."_session.inc.php");
 
 if ($COMMERCIAL_ID_PROFIL != 0) {	
 	// *************************************************
-	// Controle des données fournies par le formulaire
+	// Controle des donnÃ©es fournies par le formulaire
 
 	$infos_profils = array();
 	$id_profil	=	$COMMERCIAL_ID_PROFIL;

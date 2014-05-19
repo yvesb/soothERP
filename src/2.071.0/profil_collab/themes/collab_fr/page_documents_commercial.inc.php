@@ -4,7 +4,7 @@
 // ONGLET DES MARGES DU DOCUMENT
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -62,7 +62,7 @@ $o = 0;
 			<table style="width:100%">
 				<tr>
 					<td>
-						<!-- Afficher le moteur de recherche 1°param:id_associé, texte initial input, filtre sur affichage -->
+						<!-- Afficher le moteur de recherche 1Â°param:id_associÃ©, texte initial input, filtre sur affichage -->
 						 <?php echo Helper::createInputAnnu("attrib_ref_commercial_$i","",array("filtres"=>"lib=Commercial")); ?>
 					</td>
 					<td style="width:85px">

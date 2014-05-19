@@ -10,19 +10,19 @@ require ($DIR."_session.inc.php");
 
 
 if (!isset($_REQUEST['ref_contact_A'])) {
-	echo "la référence du contactact n'est pas spécifiée";
+	echo "la rÃ©fÃ©rence du contactact n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $ref_contact_A = $_REQUEST['ref_contact_A'];
 
 if (!isset($_REQUEST['ref_contact_B'])) {
-	echo "la référence du contactact lié n'est pas spécifiée";
+	echo "la rÃ©fÃ©rence du contactact liÃ© n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $ref_contact_B = $_REQUEST['ref_contact_B'];
 
 if (!isset($_REQUEST['id_liaison_type'])) {
-	echo "le type de liaison n'est pas spécifiée";
+	echo "le type de liaison n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $id_liaison_type = $_REQUEST['id_liaison_type'];

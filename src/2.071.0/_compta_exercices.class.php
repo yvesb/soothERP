@@ -10,8 +10,8 @@ final class compta_exercices {
 	protected $lib_exercice;
 	protected $date_fin;
 	protected $etat_exercice;
-	protected $date_debut; //date de début de l'exercice
-	protected $date_debut_next;	//date de début du prochain exercice
+	protected $date_debut; //date de dÃ©but de l'exercice
+	protected $date_debut_next;	//date de dÃ©but du prochain exercice
 
 	private $code_extrait_contact_pdf_modele = "extrait_compte"; // code pour la class d'impression de l'extrait de compte d'un contact
 	
@@ -68,7 +68,7 @@ public function create_compta_exercice ($infos) {
 	return true;
 }
 
-//création d'un lib par defaut
+//crÃ©ation d'un lib par defaut
 private function create_lib_exercice () {
 	
 	$this->lib_exercice = date ("Y", strtotime($this->date_fin));
@@ -82,12 +82,12 @@ private function create_lib_exercice () {
 }
 
 
-//verification de la cohérence des exercices
+//verification de la cohÃ©rence des exercices
 public function check_exercice () {
 	global $bdd;
 	global $ENTREPRISE_DATE_CREATION;
 	
-	//on vérifie qu'un exercice précédent existe déjà
+	//on vÃ©rifie qu'un exercice prÃ©cÃ©dent existe dÃ©jÃ 
 	$query = "SELECT ce.id_exercice, ce.lib_exercice, ce.date_fin, ce.etat_exercice
 	
 						FROM compta_exercices ce
@@ -95,7 +95,7 @@ public function check_exercice () {
 						LIMIT 1
 						 ";
 	$resultat = $bdd->query ($query);
-	//si aucun exercice créé, on cré un exercice  démarrant de la date de création de l'entreprise au 31/12/n+1
+	//si aucun exercice crÃ©Ã©, on crÃ© un exercice  dÃ©marrant de la date de crÃ©ation de l'entreprise au 31/12/n+1
 	if (!$compta_e = $resultat->fetchObject()) {
 		$this->create_date_debut ();
 		$infos = array();
@@ -109,7 +109,7 @@ public function check_exercice () {
 		if ($compta_e->date_fin >= date("Y-m-d") && $compta_e->etat_exercice == 1) {
 			$GLOBALS['_ALERTES']['exercice_en_cours'] = 1;
 		} 
-		//ou un exercice non cloturé ou clorturé du coup il faut en recréer un en cours
+		//ou un exercice non cloturÃ© ou clorturÃ© du coup il faut en recrÃ©er un en cours
 		if ($compta_e->date_fin < date("Y-m-d")) {
 			$this->create_date_debut ();
 			$infos = array();
@@ -122,12 +122,12 @@ public function check_exercice () {
 	
 }
 
-//cré la date de début du prochain exercice (afin de générer la date_fin correspondante dans le check_exercice)
+//crÃ© la date de dÃ©but du prochain exercice (afin de gÃ©nÃ©rer la date_fin correspondante dans le check_exercice)
 public function create_date_debut () {
 	global $bdd;
 	global $ENTREPRISE_DATE_CREATION;
 	
-	//on vérifie qu'un exercice précédent existe déjà
+	//on vÃ©rifie qu'un exercice prÃ©cÃ©dent existe dÃ©jÃ 
 	$query = "SELECT ce.id_exercice, ce.lib_exercice, ce.date_fin, ce.etat_exercice
 						FROM compta_exercices ce
 						ORDER BY ce.date_fin DESC
@@ -144,14 +144,14 @@ public function create_date_debut () {
 	
 }
 
-//recupère la date de début de l'exercice 
+//recupÃ¨re la date de dÃ©but de l'exercice 
 public function find_date_debut () {
 	global $bdd;
 	global $ENTREPRISE_DATE_CREATION;
 	
 	$where ="";
 	if ($this->id_exercice) {$where ="WHERE id_exercice < '".$this->id_exercice."' ";}
-	//on vérifie qu'un exercice précédent existe déjà
+	//on vÃ©rifie qu'un exercice prÃ©cÃ©dent existe dÃ©jÃ 
 	$query = "SELECT ce.id_exercice, ce.lib_exercice, ce.date_fin, ce.etat_exercice
 						FROM compta_exercices ce
 						".$where."
@@ -176,29 +176,29 @@ public function maj_exercice ($lib_exercice , $date_fin) {
 	global $bdd;
 
 	// *************************************************
-	// Réception des données
+	// RÃ©ception des donnÃ©es
 	$this->lib_exercice 	= $lib_exercice;
 	
 	if (!$this->lib_exercice) {
 		$this->create_lib_exercice ();
 	}
 	
-	//si la date de fin est modifiée et passée avant la date de debut alors on bloque la maj
+	//si la date de fin est modifiÃ©e et passÃ©e avant la date de debut alors on bloque la maj
 	if (!$this->date_debut ) {$this->find_date_debut ();}
 	if ($date_fin < $this->date_debut) {$GLOBALS['_ALERTES']["bad_date_fin"] = 1;}
 	
-	//si l'exercice est cloturé on bloque la maj
-	if (!$this->etat_exercice) {$GLOBALS['_ALERTES']["etat_exercice"] = "cloturé";}
+	//si l'exercice est cloturÃ© on bloque la maj
+	if (!$this->etat_exercice) {$GLOBALS['_ALERTES']["etat_exercice"] = "cloturÃ©";}
 	
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 	
-	//si la date de fin de l'exercice est augmentée alors on doit supprimer les exercices en trop
+	//si la date de fin de l'exercice est augmentÃ©e alors on doit supprimer les exercices en trop
 	if ($date_fin > $this->date_fin	) {
 		$query_max_date = " && date_fin <= '".$date_fin." 23:59:59' ";
 		
-		//si le changement de date nous fait passer l'exercice à "en cours", alors tout les exercices suivant sont supprimés
+		//si le changement de date nous fait passer l'exercice Ã  "en cours", alors tout les exercices suivant sont supprimÃ©s
 		if ($date_fin > date("Y-m-d")) {
 			$query_max_date = "";
 		}
@@ -255,7 +255,7 @@ public function cloture_exercice () {
 	
 	
 	while ($tmp_contact = $resultat->fetchObject()) {
-		//on récupère le report à nouveau si il existe
+		//on rÃ©cupÃ¨re le report Ã  nouveau si il existe
 		$ran = 0;
 		$query_ran = "SELECT ref_contact, date_ran, montant_ran
 									FROM compta_exercices_reports
@@ -263,8 +263,8 @@ public function cloture_exercice () {
 		$resultat_ran = $bdd->query ($query_ran);
 		if ($tmp_ran = $resultat_ran->fetchObject()) { $ran = $tmp_ran->montant_ran; }
 		
-		// on sélectionne les montant des opérations du contact (factures et règlements)
-		// Sélection des documents du contact
+		// on sÃ©lectionne les montant des opÃ©rations du contact (factures et rÃ¨glements)
+		// SÃ©lection des documents du contact
 		$grand_livre_documents = array();
 		$query_doc = "SELECT d.ref_doc, d.id_type_doc, dt.lib_type_doc, d.id_etat_doc, ref_contact, de.lib_etat_doc,
 	
@@ -289,7 +289,7 @@ public function cloture_exercice () {
 			$grand_livre_documents[$var_doc->ref_doc] = $var_doc; 
 		}
 		
-		// Sélection des règlements du contact
+		// SÃ©lection des rÃ¨glements du contact
 		$grand_livre_reglements = array();
 		$query_reg = "SELECT r.ref_reglement, r.id_reglement_mode, r.ref_contact, rm.lib_reglement_mode,
 										 r.date_reglement as date, r.montant_reglement as montant_ttc, rm.type_reglement
@@ -337,7 +337,7 @@ public function cloture_exercice () {
 			} 
 		}
 
-		//si le report à nouveau est différent de zéro
+		//si le report Ã  nouveau est diffÃ©rent de zÃ©ro
 		if ($solde != 0) {
 			// *************************************************
 			// Insertion dans la bdd
@@ -375,8 +375,8 @@ public function imprimer_extrait_compte ($ref_contact, $print = 0) {
 		$query_where2 .=  " && date_reglement < '".$this->date_fin."'"; 
 	}
 	
-	// on sélectionne les montant des opérations du contact (factures et règlements)
-	// Sélection des documents du contact
+	// on sÃ©lectionne les montant des opÃ©rations du contact (factures et rÃ¨glements)
+	// SÃ©lection des documents du contact
 	$grand_livre_documents = array();
 	$query_doc = "SELECT d.ref_doc, d.id_type_doc, dt.lib_type_doc, d.id_etat_doc, ref_contact, de.lib_etat_doc,
 
@@ -401,7 +401,7 @@ public function imprimer_extrait_compte ($ref_contact, $print = 0) {
 		$grand_livre_documents[$var_doc->ref_doc] = $var_doc; 
 	}
 	
-	// Sélection des règlements du contact
+	// SÃ©lection des rÃ¨glements du contact
 	$grand_livre_reglements = array();
 	$query_reg = "SELECT r.ref_reglement, r.id_reglement_mode, r.ref_contact, rm.lib_reglement_mode,
 									 r.date_saisie, r.date_reglement as date, r.montant_reglement as montant_ttc, rm.type_reglement, 
@@ -437,7 +437,7 @@ public function imprimer_extrait_compte ($ref_contact, $print = 0) {
 			// A moins qu'un lettrage existe pour le document
 			if (isset($documents->lettrage)) {$use_lettrage = $documents->lettrage;}
 			
-			// Sinon on récupére le lettrage attribué à un autre documents qui fait parti des règlements
+			// Sinon on rÃ©cupÃ©re le lettrage attribuÃ© Ã  un autre documents qui fait parti des rÃ¨glements
 			if ($use_lettrage == 0) {
 				foreach ($grand_livre_reglements as $reglement) {
 					foreach ($reglement->ref_doc as $nref_doc) {
@@ -454,7 +454,7 @@ public function imprimer_extrait_compte ($ref_contact, $print = 0) {
 					}
 				}
 			}
-			// On recupére le lettrage si un reglement correspondant au document est deja existant
+			// On recupÃ©re le lettrage si un reglement correspondant au document est deja existant
 			if ($use_lettrage == 0) {
 				foreach ($grand_livre_reglements as $reglement) {
 					if ($use_lettrage != 0) {continue;}
@@ -463,21 +463,21 @@ public function imprimer_extrait_compte ($ref_contact, $print = 0) {
 					}
 				}
 			}
-			// Si aucun lettrage n'as été trouvé
+			// Si aucun lettrage n'as Ã©tÃ© trouvÃ©
 			if ($use_lettrage == 0) { $use_lettrage = $lettrage; $lettrage = cre_lettrage ($lettrage);}
 			
-			// Alors on injecte le lettrage dans tout les règlements et les documents associés
+			// Alors on injecte le lettrage dans tout les rÃ¨glements et les documents associÃ©s
 			foreach ($grand_livre_reglements as $reglement) {
 				if (isset($reglement->ref_doc[$documents->ref_doc]) && !isset($reglement->lettrage)) {
 				$reglement->lettrage = $use_lettrage;
 				}
 			}
-		// Par sécurité on attribut le lettrage au document actuel
+		// Par sÃ©curitÃ© on attribut le lettrage au document actuel
 		if (!isset($documents->lettrage)) {
 		$documents->lettrage = $use_lettrage;
 		}
 	}
-	// On attribut des lettrages aux règlements n'étant pas relié à des factures (en vérifiant si il n'y a pas de document auquel il est lié qui aurait un letttrage)
+	// On attribut des lettrages aux rÃ¨glements n'Ã©tant pas reliÃ© Ã  des factures (en vÃ©rifiant si il n'y a pas de document auquel il est liÃ© qui aurait un letttrage)
 	foreach ($grand_livre_reglements as $reglement) {
 		if (!isset($reglement->lettrage)) {
 			//$lettrage = cre_lettrage ($lettrage);
@@ -485,9 +485,9 @@ public function imprimer_extrait_compte ($ref_contact, $print = 0) {
 		}
 	}
 	
-	// On injecte les résultats des factures et des règlements
+	// On injecte les rÃ©sultats des factures et des rÃ¨glements
 	$grand_livre_tmp = array();
-	//on récupère le report à nouveau relatif au précédent exercice
+	//on rÃ©cupÃ¨re le report Ã  nouveau relatif au prÃ©cÃ©dent exercice
 	$query_ran = "SELECT id_exercice_ran, ref_contact, date_ran as date, montant_ran
 								FROM compta_exercices_reports
 								WHERE date_ran = '".$this->date_debut." 00:00:00' && ref_contact = '".$ref_contact."' ";
@@ -496,7 +496,7 @@ public function imprimer_extrait_compte ($ref_contact, $print = 0) {
 		$tmp_ran->lettrage = "--";
 		$grand_livre_tmp[] = $tmp_ran;
 	} else {
-		//sauf si le précédent exercice n'est pas clôturé alors on va calculer le report depuis le dernier exercice clôturé
+		//sauf si le prÃ©cÃ©dent exercice n'est pas clÃ´turÃ© alors on va calculer le report depuis le dernier exercice clÃ´turÃ©
 		$query_ran_last = "SELECT id_exercice_ran, ref_contact, date_ran as date, montant_ran
 											FROM compta_exercices_reports
 											WHERE date_ran < '".$this->date_debut." 00:00:00' && ref_contact = '".$ref_contact."' 
@@ -538,7 +538,7 @@ public function imprimer_extrait_compte ($ref_contact, $print = 0) {
 				$ran_last_livre_documents[$var_ran_last_doc->ref_doc] = $var_ran_last_doc; 
 			}
 			
-			// Sélection des règlements du contact
+			// SÃ©lection des rÃ¨glements du contact
 			$ran_last_livre_reglements = array();
 			$query_ran_last_reg = "SELECT r.ref_reglement, r.id_reglement_mode, r.ref_contact, rm.lib_reglement_mode,
 											 r.date_reglement as date, r.montant_reglement as montant_ttc, rm.type_reglement, 
@@ -556,24 +556,24 @@ public function imprimer_extrait_compte ($ref_contact, $print = 0) {
 			while ($var_ran_last_reg = $resultat_ran_last_reg->fetchObject()) {
 				$ran_last_livre_reglements[$var_ran_last_reg->ref_reglement] = $var_ran_last_reg; 
 			}
-			//on calcul un ran qui cumule l'ensemble des résultats
+			//on calcul un ran qui cumule l'ensemble des rÃ©sultats
 			foreach ($ran_last_livre_documents as $ran_last_documents) {
-				//document en débit
+				//document en dÃ©bit
 				if (isset($ran_last_documents->ref_doc) && !is_array($ran_last_documents->ref_doc) && (($ran_last_documents->id_type_doc == 4 && $ran_last_documents->montant_ttc >= 0) || ($ran_last_documents->id_type_doc == 8 && $ran_last_documents->montant_ttc < 0))) {
 					$tmp_ran_last->montant_ran = $tmp_ran_last->montant_ran - abs(number_format($ran_last_documents->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	));
 				} 
-				//document en crédit
+				//document en crÃ©dit
 				if (isset($ran_last_documents->ref_doc) && !is_array($ran_last_documents->ref_doc) && (($ran_last_documents->id_type_doc == 4 && $ran_last_documents->montant_ttc < 0) || ($ran_last_documents->id_type_doc == 8 && $ran_last_documents->montant_ttc >= 0)) ) { 
 					$tmp_ran_last->montant_ran = $tmp_ran_last->montant_ran + abs(number_format($ran_last_documents->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	));
 				} 
 				
 			}
 			foreach ($ran_last_livre_reglements as $ran_last_reglement) {	
-				// Règlement en débit
+				// RÃ¨glement en dÃ©bit
 				if (isset($ran_last_reglement->ref_reglement) && $ran_last_reglement->type_reglement == "sortant") {
 					$tmp_ran_last->montant_ran = $tmp_ran_last->montant_ran - abs(number_format($ran_last_reglement->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	));
 				} 
-				//règlement en crédit
+				//rÃ¨glement en crÃ©dit
 				if (isset($ran_last_reglement->ref_reglement) && $ran_last_reglement->type_reglement == "entrant") { 
 					$tmp_ran_last->montant_ran = $tmp_ran_last->montant_ran + abs(number_format($ran_last_reglement->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	));
 				} 
@@ -595,7 +595,7 @@ public function imprimer_extrait_compte ($ref_contact, $print = 0) {
 		$pdf_grand_livre[] = $line_livre;
 	}
 	// Affichage du pdf
-	// Préférences et options
+	// PrÃ©fÃ©rences et options
 	$GLOBALS['PDF_OPTIONS']['HideToolbar'] = 0;
 	$GLOBALS['PDF_OPTIONS']['AutoPrint'] = $print;
 	
@@ -603,7 +603,7 @@ public function imprimer_extrait_compte ($ref_contact, $print = 0) {
 	$class = "pdf_".$this->code_extrait_contact_pdf_modele;
 	$pdf = new $class;
 	
-	// Création
+	// CrÃ©ation
 	$pdf->create_pdf($this, $pdf_grand_livre, $ref_contact);
 	
 	// Sortie
@@ -624,7 +624,7 @@ static function solde_extrait_compte ($ref_contact) {
 			
 	$grand_livre_tmp = array();
 	$solde_contact = 0;
-	//on récupère le report à nouveau relatif au dernier exercice
+	//on rÃ©cupÃ¨re le report Ã  nouveau relatif au dernier exercice
 	$query_ran = "SELECT id_exercice_ran, ref_contact, date_ran as date, montant_ran
 								FROM compta_exercices_reports
 								WHERE ref_contact = '".$ref_contact."' 
@@ -635,7 +635,7 @@ static function solde_extrait_compte ($ref_contact) {
 		$date_debut = $tmp_ran->date;
 		$solde_contact = $solde_contact + $tmp_ran->montant_ran;
 	} else {
-		//si aucun exercice alors on calcule depuis la création  de l'entreprise
+		//si aucun exercice alors on calcule depuis la crÃ©ation  de l'entreprise
 		$date_debut = $ENTREPRISE_DATE_CREATION;
 	}
 	$ran_last_livre_documents = array();
@@ -662,7 +662,7 @@ static function solde_extrait_compte ($ref_contact) {
 		$ran_last_livre_documents[$var_ran_last_doc->ref_doc] = $var_ran_last_doc; 
 	}
 	
-	// Sélection des règlements du contact
+	// SÃ©lection des rÃ¨glements du contact
 	$ran_last_livre_reglements = array();
 	$query_ran_last_reg = "SELECT r.ref_reglement, r.id_reglement_mode, r.ref_contact, rm.lib_reglement_mode,
 									 r.date_reglement as date, r.montant_reglement as montant_ttc, rm.type_reglement, 
@@ -680,24 +680,24 @@ static function solde_extrait_compte ($ref_contact) {
 	while ($var_ran_last_reg = $resultat_ran_last_reg->fetchObject()) {
 		$ran_last_livre_reglements[$var_ran_last_reg->ref_reglement] = $var_ran_last_reg; 
 	}
-	//on calcul un ran qui cumule l'ensemble des résultats
+	//on calcul un ran qui cumule l'ensemble des rÃ©sultats
 	foreach ($ran_last_livre_documents as $ran_last_documents) {
-		//document en débit
+		//document en dÃ©bit
 		if (isset($ran_last_documents->ref_doc) && !is_array($ran_last_documents->ref_doc) && (($ran_last_documents->id_type_doc == 4 && $ran_last_documents->montant_ttc >= 0) || ($ran_last_documents->id_type_doc == 8 && $ran_last_documents->montant_ttc < 0))) {
 			$solde_contact = $solde_contact - abs(number_format($ran_last_documents->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	));
 		} 
-		//document en crédit
+		//document en crÃ©dit
 		if (isset($ran_last_documents->ref_doc) && !is_array($ran_last_documents->ref_doc) && (($ran_last_documents->id_type_doc == 4 && $ran_last_documents->montant_ttc < 0) || ($ran_last_documents->id_type_doc == 8 && $ran_last_documents->montant_ttc >= 0)) ) { 
 			$solde_contact = $solde_contact + abs(number_format($ran_last_documents->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	));
 		} 
 		
 	}
 	foreach ($ran_last_livre_reglements as $ran_last_reglement) {	
-		// Règlement en débit
+		// RÃ¨glement en dÃ©bit
 		if (isset($ran_last_reglement->ref_reglement) && $ran_last_reglement->type_reglement == "sortant") {
 			$solde_contact = $solde_contact - abs(number_format($ran_last_reglement->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	));
 		} 
-		//règlement en crédit
+		//rÃ¨glement en crÃ©dit
 		if (isset($ran_last_reglement->ref_reglement) && $ran_last_reglement->type_reglement == "entrant") { 
 			$solde_contact = $solde_contact + abs(number_format($ran_last_reglement->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	));
 		} 

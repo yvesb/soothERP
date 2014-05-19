@@ -20,7 +20,7 @@ $infos['com_var'] 						= $_REQUEST["com_var"];
 $infos['id_compte_bancaire'] 	= $_REQUEST["id_compte_bancaire"];
 	
 	
-//création du compte
+//crÃ©ation du compte
 $compte_tpv->create_compte_tpv ($infos);
 
 // *************************************************************************************************************

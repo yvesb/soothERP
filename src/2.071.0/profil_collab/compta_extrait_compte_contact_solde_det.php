@@ -11,7 +11,7 @@ require ($DIR."_session.inc.php");
 
 if (!$_SESSION['user']->check_permission ("12")) {
 	//on indique l'interdiction et on stop le script
-	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accés ne vous permettent pas de visualiser ce type de page</span>";
+	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accÃ©s ne vous permettent pas de visualiser ce type de page</span>";
 	exit();
 }
 
@@ -25,7 +25,7 @@ function tri($array, $critere){
   return $array;
 }
 
-//fonction de génération des lettrages (double numérotation alphabétique)
+//fonction de gÃ©nÃ©ration des lettrages (double numÃ©rotation alphabÃ©tique)
 function cre_lettrage ($old_lettrage){
 	$a="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
  	$part_a = substr($old_lettrage ,0,1);
@@ -159,8 +159,8 @@ foreach ($fiches as $ctact) {
 		if (!$query_where2) { $query_where2 .= "WHERE "; }
 		$query_where2 .=  " date_reglement < '".($search['date_fin'])."' "; 
 	}
-	// Sélection
-	// Sélection des documents du contact
+	// SÃ©lection
+	// SÃ©lection des documents du contact
 	$grand_livre_documents = array();
 	$query = "SELECT d.ref_doc, d.id_type_doc, dt.lib_type_doc, d.id_etat_doc, ref_contact, de.lib_etat_doc,
 
@@ -185,7 +185,7 @@ foreach ($fiches as $ctact) {
 		$grand_livre_documents[$var->ref_doc] = $var; 
 	}
 	
-	// Sélection des règlements du contact
+	// SÃ©lection des rÃ¨glements du contact
 	$grand_livre_reglements = array();
 	$query = "SELECT r.ref_reglement, r.id_reglement_mode, r.ref_contact, rm.lib_reglement_mode,
 									 r.date_saisie, r.date_reglement as date, r.montant_reglement as montant_ttc, rm.type_reglement, 
@@ -221,7 +221,7 @@ foreach ($fiches as $ctact) {
 			// A moins qu'un lettrage existe pour le document
 			if (isset($documents->lettrage)) {$use_lettrage = $documents->lettrage;}
 			
-			// Sinon on récupére le lettrage attribué à un autre documents qui fait parti des règlements
+			// Sinon on rÃ©cupÃ©re le lettrage attribuÃ© Ã  un autre documents qui fait parti des rÃ¨glements
 			if ($use_lettrage == 0) {
 				foreach ($grand_livre_reglements as $reglement) {
 					foreach ($reglement->ref_doc as $nref_doc) {
@@ -238,7 +238,7 @@ foreach ($fiches as $ctact) {
 					}
 				}
 			}
-			// On recupére le lettrage si un reglement correspondant au document est deja existant
+			// On recupÃ©re le lettrage si un reglement correspondant au document est deja existant
 			if ($use_lettrage == 0) {
 				foreach ($grand_livre_reglements as $reglement) {
 					if ($use_lettrage != 0) {continue;}
@@ -247,21 +247,21 @@ foreach ($fiches as $ctact) {
 					}
 				}
 			}
-			// Si aucun lettrage n'as été trouvé
+			// Si aucun lettrage n'as Ã©tÃ© trouvÃ©
 			if ($use_lettrage == 0) { $use_lettrage = $lettrage; $lettrage = cre_lettrage ($lettrage);}
 			
-			// Alors on injecte le lettrage dans tout les règlements et les documents associés
+			// Alors on injecte le lettrage dans tout les rÃ¨glements et les documents associÃ©s
 			foreach ($grand_livre_reglements as $reglement) {
 				if (isset($reglement->ref_doc[$documents->ref_doc]) && !isset($reglement->lettrage)) {
 				$reglement->lettrage = $use_lettrage;
 				}
 			}
-		// Par sécurité on attribut le lettrage au document actuel
+		// Par sÃ©curitÃ© on attribut le lettrage au document actuel
 		if (!isset($documents->lettrage)) {
 		$documents->lettrage = $use_lettrage;
 		}
 	}
-	// On attribut des lettrages aux règlements n'étant pas relié à des factures (en vérifiant si il n'y a pas de document auquel il est lié qui aurait un letttrage)
+	// On attribut des lettrages aux rÃ¨glements n'Ã©tant pas reliÃ© Ã  des factures (en vÃ©rifiant si il n'y a pas de document auquel il est liÃ© qui aurait un letttrage)
 	foreach ($grand_livre_reglements as $reglement) {
 		if (!isset($reglement->lettrage)) {
 			//$lettrage = cre_lettrage ($lettrage);
@@ -270,7 +270,7 @@ foreach ($fiches as $ctact) {
 	}
 	
 	
-	// On injecte les résultats des factures et des règlements
+	// On injecte les rÃ©sultats des factures et des rÃ¨glements
 	$grand_livre_tmp = array();
 	if (!isset($_REQUEST["report"])) {
 	if (!$search['date_debut']) {
@@ -282,7 +282,7 @@ foreach ($fiches as $ctact) {
 		$tmp_ran->lettrage = "--";
 		$grand_livre_tmp[] = $tmp_ran;
 	} else {
-		//on récupère le report à nouveau si il existe
+		//on rÃ©cupÃ¨re le report Ã  nouveau si il existe
 		$query_ran = "SELECT id_exercice_ran, ref_contact, date_ran as date, montant_ran
 									FROM compta_exercices_reports
 									WHERE date_ran = '".$search['date_debut']." 00:00:00' && ref_contact = '".$ref_contact."' ";
@@ -291,7 +291,7 @@ foreach ($fiches as $ctact) {
 			$tmp_ran->lettrage = "--";
 			$grand_livre_tmp[] = $tmp_ran;
 		} else {
-			//sauf si le précédent exercice n'est pas clôturé alors on va calculer le report depuis le dernier exercice clôturé
+			//sauf si le prÃ©cÃ©dent exercice n'est pas clÃ´turÃ© alors on va calculer le report depuis le dernier exercice clÃ´turÃ©
 			$query_ran_last = "SELECT id_exercice_ran, ref_contact, date_ran as date, montant_ran
 												FROM compta_exercices_reports
 												WHERE date_ran = '".$search['date_debut']." 00:00:00' && ref_contact = '".$ref_contact."' 
@@ -331,7 +331,7 @@ foreach ($fiches as $ctact) {
 					$ran_last_livre_documents[$var_ran_last_doc->ref_doc] = $var_ran_last_doc; 
 				}
 				
-				// Sélection des règlements du contact
+				// SÃ©lection des rÃ¨glements du contact
 				$ran_last_livre_reglements = array();
 				$query_ran_last_reg = "SELECT r.ref_reglement, r.id_reglement_mode, r.ref_contact, rm.lib_reglement_mode,
 												 r.date_reglement as date, r.montant_reglement as montant_ttc, rm.type_reglement, 
@@ -349,24 +349,24 @@ foreach ($fiches as $ctact) {
 				while ($var_ran_last_reg = $resultat_ran_last_reg->fetchObject()) {
 					$ran_last_livre_reglements[$var_ran_last_reg->ref_reglement] = $var_ran_last_reg; 
 				}
-				//on calcul un ran qui cumule l'ensemble des résultats
+				//on calcul un ran qui cumule l'ensemble des rÃ©sultats
 				foreach ($ran_last_livre_documents as $ran_last_documents) {
-					//document en débit
+					//document en dÃ©bit
 					if (isset($ran_last_documents->ref_doc) && !is_array($ran_last_documents->ref_doc) && (($ran_last_documents->id_type_doc == 4 && $ran_last_documents->montant_ttc >= 0) || ($ran_last_documents->id_type_doc == 8 && $ran_last_documents->montant_ttc < 0))) {
 						$tmp_ran_last->montant_ran = $tmp_ran_last->montant_ran - abs(number_format($ran_last_documents->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	));
 					} 
-					//document en crédit
+					//document en crÃ©dit
 					if (isset($ran_last_documents->ref_doc) && !is_array($ran_last_documents->ref_doc) && (($ran_last_documents->id_type_doc == 4 && $ran_last_documents->montant_ttc < 0) || ($ran_last_documents->id_type_doc == 8 && $ran_last_documents->montant_ttc >= 0)) ) { 
 						$tmp_ran_last->montant_ran = $tmp_ran_last->montant_ran + abs(number_format($ran_last_documents->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	));
 					} 
 					
 				}
 				foreach ($ran_last_livre_reglements as $ran_last_reglement) {	
-					// Règlement en débit
+					// RÃ¨glement en dÃ©bit
 					if (isset($ran_last_reglement->ref_reglement) && $ran_last_reglement->type_reglement == "sortant") {
 						$tmp_ran_last->montant_ran = $tmp_ran_last->montant_ran - abs(number_format($ran_last_reglement->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	));
 					} 
-					//règlement en crédit
+					//rÃ¨glement en crÃ©dit
 					if (isset($ran_last_reglement->ref_reglement) && $ran_last_reglement->type_reglement == "entrant") { 
 						$tmp_ran_last->montant_ran = $tmp_ran_last->montant_ran + abs(number_format($ran_last_reglement->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	));
 					} 
@@ -382,11 +382,11 @@ foreach ($fiches as $ctact) {
 	foreach ($grand_livre_documents as $documents) {	$grand_livre_tmp[] = $documents; }
 	foreach ($grand_livre_reglements as $reglement) {	$grand_livre_tmp[] = $reglement; }
 	
-	// Tri grand livre (afin d'afficher les documents et les règlements dans l'ordre des dates
+	// Tri grand livre (afin d'afficher les documents et les rÃ¨glements dans l'ordre des dates
 	
 	$nb_fiches = count($grand_livre_documents)+count($grand_livre_reglements);
 	
-	//limitation du nombre de résultats affichés
+	//limitation du nombre de rÃ©sultats affichÃ©s
 	$tmp_grand_livre = tri($grand_livre_tmp, "date");
 	$grand_livre = array();
 	
@@ -445,7 +445,7 @@ foreach ($fiches as $ctact) {
 		</td>
 		<td style="text-align:left; font-weight:bolder; width:20%;"  >
 		<div>
-		Libellé
+		LibellÃ©
 		</div>
 		</td>
 		<td style="text-align:right; font-weight:bolder; width:15%;">
@@ -460,7 +460,7 @@ foreach ($fiches as $ctact) {
 		</td>
 		<td style="text-align:right; width:10%; font-weight:bolder">
 		<div style="width:120px">
-		Débit
+		DÃ©bit
 		</div>
 		</td>
 		<td style="padding-right:10px;  width:5%; font-weight:bolder">
@@ -470,7 +470,7 @@ foreach ($fiches as $ctact) {
 		</td>
 		<td style="text-align:right; width:10%; font-weight:bolder">
 		<div style="width:120px">
-		Crédit
+		CrÃ©dit
 		</div>
 		</td>
 		<td style="text-align:right; width:10%; font-weight:bolder">
@@ -512,7 +512,7 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 		<?php } 
 		if (isset($line->ref_reglement)) { ?>
 		<a href="#" id="grand_livre_line_<?php echo $colorise;?>" style="color:#000000; text-decoration:none">
-		<span style="font-weight:bolder">Règlement</span>  <span style="font-size:10px">(<?php echo htmlentities($line->lib_reglement_mode);?> <?php if (isset($line->nchq_s) && $line->nchq_s != "") {echo " n°".$line->nchq_s;}?><?php if (isset($line->nchq_e) && $line->nchq_e != "") {echo " n°".$line->nchq_e;}?>)</span>
+		<span style="font-weight:bolder">RÃ¨glement</span>  <span style="font-size:10px">(<?php echo htmlentities($line->lib_reglement_mode);?> <?php if (isset($line->nchq_s) && $line->nchq_s != "") {echo " nÂ°".$line->nchq_s;}?><?php if (isset($line->nchq_e) && $line->nchq_e != "") {echo " nÂ°".$line->nchq_e;}?>)</span>
 		</a><br />
 		<?php //  print_r($line->ref_doc);?>
 		</div>

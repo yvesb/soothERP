@@ -16,7 +16,7 @@ require ($DIR."_session.inc.php");
 
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 $form['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -61,7 +61,7 @@ if (isset($_REQUEST['ref_constructeur'])) {
 $document = open_doc ($_REQUEST['ref_doc']);
 
 // *************************************************
-// Stock et Tarif affichés
+// Stock et Tarif affichÃ©s
 $form['id_stock'] = $search['id_stock'] = $document->getid_stock_search();
 if (isset($_REQUEST['id_stock'])) {
 	$form['id_stock'] = $_REQUEST['id_stock'];
@@ -86,10 +86,10 @@ if ($document->getId_type_doc() == $DEVIS_CLIENT_ID_TYPE_DOC || $document->getId
 }
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_select	= "";
 	$query_join 	= "";
 	$query_where 	= " dispo = 1 ";
@@ -124,7 +124,7 @@ if (isset($_REQUEST['recherche'])) {
 		$query_join 	.= " LEFT JOIN articles_codes_barres acb ON acb.ref_article = a.ref_article ";
 		
 		$query_where 	.= " ) ";
-		// Aménagement en cas de recherche par numéro de série
+		// AmÃ©nagement en cas de recherche par numÃ©ro de sÃ©rie
 		if ($search['lib_article'] && count($libs) == 1 && !$search['ref_art_categ'] && !$search['ref_constructeur']) {
 			$search_sn		 = 1;
 			$query_select .= ", sas.numero_serie ";
@@ -142,7 +142,7 @@ if (isset($_REQUEST['recherche'])) {
 			$query_select .= ", arf.pa_unitaire ";
 			$query_join 	.= " LEFT JOIN articles_ref_fournisseur  arf ON arf.ref_article = a.ref_article && arf.ref_fournisseur = '".$document->getRef_contact()."' ";
 	}
-	// Catégorie
+	// CatÃ©gorie
 	if ($search['ref_art_categ']) { 
 		$liste_categories = "";
 		$liste_categs = array();
@@ -169,7 +169,7 @@ if (isset($_REQUEST['recherche'])) {
 	
 	$query_group .= " GROUP BY a.ref_article ";
 	// *************************************************
-	// Aménagement en cas de recherche automatique 
+	// AmÃ©nagement en cas de recherche automatique 
 	if ($_REQUEST['recherche_auto']) {
 		$query_more = $document->auto_search_articles ($_REQUEST['recherche_auto']);
 		$count_query_join = $query_join 	.= $query_more['query_join'];
@@ -212,7 +212,7 @@ if (isset($_REQUEST['recherche'])) {
 	}
 	unset ($fiche, $resultat, $query);
 	
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 	$query = "SELECT a.ref_article
 						FROM articles a 
 							".$query_join."

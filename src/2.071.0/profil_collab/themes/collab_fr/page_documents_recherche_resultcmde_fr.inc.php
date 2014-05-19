@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES", "fiches",  "form['page_to_show']", "form['fiches_par_page']", "nb_fiches", "form['orderby']", "form['orderorder']");
 check_page_variables ($page_variables);
 
@@ -27,7 +27,7 @@ function barre_navigation($nbtotal,
 													
 {
 	// --------------------------------------------------------------------
-	global $cfg_nb_pages; // Nb de n° de pages affichées dans la barre
+	global $cfg_nb_pages; // Nb de nÂ° de pages affichÃ©es dans la barre
 global $DIR;
 	$barre= "";	$lien_on 	= "&nbsp;<a href='#' id='link_pagi_{cible}'>{lien}</a>&nbsp;
 								<script type='text/javascript'>
@@ -37,7 +37,7 @@ global $DIR;
 	// --------------------------------------------------------------------
     
 
-	// début << .
+	// dÃ©but << .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -57,7 +57,7 @@ global $DIR;
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
 
 
-	// précédent < .
+	// prÃ©cÃ©dent < .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -163,7 +163,7 @@ function image_html($img)
 
 //
 //
-//création de la barre de nav
+//crÃ©ation de la barre de nav
 //
 //
 
@@ -181,7 +181,7 @@ function image_html($img)
 
 
 
-// Affichage des résultats
+// Affichage des rÃ©sultats
 $montant_total_page_ht = 0;
 $montant_total_page_ttc = 0;
 ?><br />
@@ -224,7 +224,7 @@ $montant_total_page_ttc = 0;
 				
 				<td style="width:20% ; font-weight:bold" >
 					<a  href="#" id="link_type_doc_<?php echo ($fiche->ref_doc)?>" style="display:block; width:100%">
-					<?php	if ($fiche->nom_contact) { echo (substr(str_replace("€", "&euro;", $fiche->nom_contact), 0, 38)); }?>&nbsp;
+					<?php	if ($fiche->nom_contact) { echo (substr(str_replace("â‚¬", "&euro;", $fiche->nom_contact), 0, 38)); }?>&nbsp;
 					</a>
 					<script type="text/javascript">
 					Event.observe("link_type_doc_<?php echo ($fiche->ref_doc)?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','documents_edition.php?ref_doc=<?php echo ($fiche->ref_doc)?>','true','sub_content');}, false);

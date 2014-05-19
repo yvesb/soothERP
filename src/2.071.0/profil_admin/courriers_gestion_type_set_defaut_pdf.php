@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// GESTION DES COURRIERS (assigne un model PDF par défaut pour une type de courrier)
+// GESTION DES COURRIERS (assigne un model PDF par dÃ©faut pour une type de courrier)
 // *************************************************************************************************************
 
 

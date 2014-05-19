@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 
 
-//vÈrification des donnÈes reÁues
+//v√©rification des donn√©es re√ßues
 if (!isset($_REQUEST["choix_source"])  || ($_REQUEST["choix_source"] != 1 && $_REQUEST["choix_source"] != 2)  ) {$GLOBALS['_ALERTES']['choisir_source'] = 1; }
 if (isset($_REQUEST["choix_source"]) && $_REQUEST["choix_source"] == 1 ) {
   if ($_REQUEST["lib_modele"] == "") {$GLOBALS['_ALERTES']['indiquer_lib_modele'] = 1;}
@@ -23,10 +23,10 @@ if (isset($_REQUEST["choix_source"]) && $_REQUEST["choix_source"] == 2 ) {
 
 if (!count($GLOBALS['_ALERTES'])) {
 
-  //crÈation ‡ partir d'un modele existant
+  //cr√©ation √† partir d'un modele existant
   if (isset($_REQUEST["choix_source"]) && $_REQUEST["choix_source"] == 1 ) {
 
-    //rÈcupÈration du modele pdf choisi pour etre dupliquÈ
+    //r√©cup√©ration du modele pdf choisi pour etre dupliqu√©
     $model_infos = charge_modele_pdf ($_REQUEST["id_pdf_modele"]);
     
     $query = "SELECT MAX(id_pdf_modele) indent FROM pdf_modeles  ";
@@ -44,7 +44,7 @@ if (!count($GLOBALS['_ALERTES'])) {
    
     if (!$tmp = $resultat->fetchObject()) {
    
-     	// on passe ‡ la suite
+     	// on passe √† la suite
     	// ouverture des fichiers
    		$old_config_file = file($PDF_MODELES_DIR."config/".$model_infos->code_pdf_modele.".config.php");
      	$old_class_file = file($PDF_MODELES_DIR.$model_infos->code_pdf_modele.".class.php");
@@ -80,7 +80,7 @@ if (!count($GLOBALS['_ALERTES'])) {
   }
   
  
-  //crÈation ‡ partir d'un nouveau modele
+  //cr√©ation √† partir d'un nouveau modele
   if (isset($_REQUEST["choix_source"]) && $_REQUEST["choix_source"] == 2 ) {
   	 
     if (!empty($_FILES['file_1']['tmp_name'])) {
@@ -103,13 +103,13 @@ if (!count($GLOBALS['_ALERTES'])) {
         $class_name = str_replace(".class.php","",$_FILES["file_2"]["name"] );
       } 
     }
-    //vÈrification de la   prÈsence de ce modele dans la base
+    //v√©rification de la   pr√©sence de ce modele dans la base
 
     $query = "SELECT  code_pdf_modele FROM pdf_modeles WHERE code_pdf_modele = '".$class_name."'  ";
     $resultat = $bdd->query($query);
     
     if (!$tmp = $resultat->fetchObject()) {
-      //si le ce type de class n'as pas dÈj‡ ÈtÈ installÈe, alors on copie les fichiers
+      //si le ce type de class n'as pas d√©j√† √©t√© install√©e, alors on copie les fichiers
       if (!empty($_FILES['file_1']['tmp_name'])) {
     
         //copie du fichier
@@ -138,7 +138,7 @@ if (!count($GLOBALS['_ALERTES'])) {
   
   }
 
-  //les fichiers sont copiÈs , il n'y a pas d'erreur de class, on enregistre les infos dans la base
+  //les fichiers sont copi√©s , il n'y a pas d'erreur de class, on enregistre les infos dans la base
   if (isset($class_name) && isset($config_name) && ($class_name == $config_name) && !count($GLOBALS['_ALERTES'])) {
  
     $query = "INSERT INTO pdf_modeles (id_pdf_type, lib_modele, desc_modele , code_pdf_modele)

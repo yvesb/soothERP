@@ -7,7 +7,7 @@
 var erreur=false;
 var texte_erreur = "";
 <?php 
-// Remise à zéro des css champs alerte
+// Remise Ã  zÃ©ro des css champs alerte
 foreach ($_POST as $k => $v){
 	?>
 	window.parent.document.getElementById("<?php echo $k;?>").className="classinput_lsize";
@@ -19,7 +19,7 @@ if (isset($array_verif_doublon)) {
 	foreach ($array_verif_doublon as $ck=>$alt) {
 		if(count($alt)>=2) {
 			$i = 1; ?>
-			texte_erreur += window.parent.document.getElementById("<?php echo  $alt[0];?>").options[<?php echo $ck-1;?>].text+" utilisé dans:<br />";
+			texte_erreur += window.parent.document.getElementById("<?php echo  $alt[0];?>").options[<?php echo $ck-1;?>].text+" utilisÃ© dans:<br />";
 			<?php	
 			foreach ($alt as $alerte => $value) {
 				?>
@@ -62,7 +62,7 @@ if (count($_ALERTES)) {
 }else{
 	?>
 	window.parent.changed = false;
-	window.parent.alerte.alerte_erreur ('Etape 2', "Correspondances des informations avec LMB effectuée",'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+	window.parent.alerte.alerte_erreur ('Etape 2', "Correspondances des informations avec LMB effectuÃ©e",'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 	window.parent.page.verify('import_tarifs_fournisseur_csv_step2','import_tarifs_fournisseur_csv_step2.php','true','sub_content');
 	<?php
 };

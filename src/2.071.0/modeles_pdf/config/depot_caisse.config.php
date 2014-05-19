@@ -7,9 +7,9 @@ $DPT_CAIS['IMG_LOGO']	= $DOCUMENTS_IMG_LOGO;
 
 $DPT_CAIS['LARGEUR_TOTALE_CORPS']			= 180;
 
-$DPT_CAIS['ENTETE_TT_CNT'] = "Solde déposé";
-$DPT_CAIS['ENTETE_ESP']  = "Espèces";
-$DPT_CAIS['ENTETE_CHQ'] 	= "Chèques";
+$DPT_CAIS['ENTETE_TT_CNT'] = "Solde dÃ©posÃ©";
+$DPT_CAIS['ENTETE_ESP']  = "EspÃ¨ces";
+$DPT_CAIS['ENTETE_CHQ'] 	= "ChÃ¨ques";
 $DPT_CAIS['ENTETE_TT'] 	= "Total";
 $DPT_CAIS['ENTETE_COM'] 	= "Commentaires: ";
 
@@ -23,15 +23,15 @@ $DPT_CAIS['CORPS_HAUTEUR_DEPART']	= 115;
 $DPT_CAIS['CORPS_HAUTEUR_MAX']		= 210;
 
 
-//variable//type de champ(parametre)//libéllé//commentaire
+//variable//type de champ(parametre)//libÃ©llÃ©//commentaire
 // PARAMETRES MODIFIABLES
 // FIN PARAMETRES MODIFIABLES
 // CONFIGURATION PAR DEFAUT
-// Portion de code recopiée dans la partie « paramètres modifiables » en cas de remise à 0 des paramètres.
+// Portion de code recopiÃ©e dans la partie Â«Â paramÃ¨tres modifiablesÂ Â» en cas de remise Ã  0 des paramÃ¨tres.
 /*
 */
 // FIN CONFIGURATION PAR DEFAUT
-// INFORMATIONS SUR L’AUTEUR
+// INFORMATIONS SUR Lâ€™AUTEUR
 /* 
 */
 ?>

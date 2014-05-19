@@ -16,9 +16,9 @@ $ETAT_STOCK['HAUTEUR_AFTER_LINE_ARTICLE']			= 0;
 $ETAT_STOCK['HAUTEUR_AFTER_LINE_CATEGORIE']			= 0;
 $ETAT_STOCK['HAUTEUR_AFTER_LINE_TOTAUX_CATEGORIE']	= 0;
 
-$ETAT_STOCK['ENTETE_COL_REF'] = "Référence";
-$ETAT_STOCK['ENTETE_COL_DES'] = "Désignation";
-$ETAT_STOCK['ENTETE_COL_QTE'] = "Qté";
+$ETAT_STOCK['ENTETE_COL_REF'] = "RÃ©fÃ©rence";
+$ETAT_STOCK['ENTETE_COL_DES'] = "DÃ©signation";
+$ETAT_STOCK['ENTETE_COL_QTE'] = "QtÃ©";
 $ETAT_STOCK['ENTETE_COL_PU']  = "PU HT";
 $ETAT_STOCK['ENTETE_COL_PT'] 	= "PT HT";
 
@@ -57,15 +57,15 @@ $ETAT_STOCK['PIEDS_DROIT'][0]	= $PIED_DE_PAGE_DROIT_0;
 $ETAT_STOCK['PIEDS_DROIT'][1]	= $PIED_DE_PAGE_DROIT_1;
 
 
-//variable//type de champ(parametre)//libéllé//commentaire
+//variable//type de champ(parametre)//libÃ©llÃ©//commentaire
 // PARAMETRES MODIFIABLES
 // FIN PARAMETRES MODIFIABLES
 // CONFIGURATION PAR DEFAUT
-// Portion de code recopiée dans la partie « paramètres modifiables » en cas de remise à 0 des paramètres.
+// Portion de code recopiÃ©e dans la partie Â«Â paramÃ¨tres modifiablesÂ Â» en cas de remise Ã  0 des paramÃ¨tres.
 /*
 */
 // FIN CONFIGURATION PAR DEFAUT
-// INFORMATIONS SUR L’AUTEUR
+// INFORMATIONS SUR Lâ€™AUTEUR
 /* 
 */
 ?>

@@ -10,10 +10,10 @@
  *
  */
 class msg_type {
-	public static $nom_table = "msg_types";	// Le nom de la table dans la base de données
+	public static $nom_table = "msg_types";	// Le nom de la table dans la base de donnÃ©es
 	
 	private $id_msg_type;	// L'identifiant du type de message
-	private $lib_msg_type;	// Le libellé du type de message
+	private $lib_msg_type;	// Le libellÃ© du type de message
 	
 	/**
 	 * Getter pour id_msg_type
@@ -52,23 +52,23 @@ class msg_type {
 	public function __construct($id_msg_type = ""){
 		global $bdd;
 	
-		// Controle si l'id_msg_type est précisé
+		// Controle si l'id_msg_type est prÃ©cisÃ©
 		if (!$id_msg_type) {
 			return false;
 		}
 	
-		// Sélection des informations dans la base de données
+		// SÃ©lection des informations dans la base de donnÃ©es
 		$query = "SELECT * 
 					FROM " . self::$nom_table . " 
 					WHERE id_msg_type = '" . $id_msg_type . "';";
 		$resultat = $bdd->query ($query);
 	
-		// Controle si le type de message est trouvé en base
+		// Controle si le type de message est trouvÃ© en base
 		if (!$msg_type = $resultat->fetchObject()) {
 			return false;
 		}
 	
-		// Attribution des informations à l'objet
+		// Attribution des informations Ã  l'objet
 		$this->id_msg_type		= $id_msg_type;
 		$this->lib_msg_type		= $msg_type->lib_msg_type;
 		
@@ -76,7 +76,7 @@ class msg_type {
 	}
 	
 	/**
-	 * Fonction permettant d'enregistrer l'objet en base de données
+	 * Fonction permettant d'enregistrer l'objet en base de donnÃ©es
 	 * @return Boolean
 	 */
 	public function save(){
@@ -91,7 +91,7 @@ class msg_type {
 	 * ****************************************/
 	
 	/**
-	 * Fonction permettant de créer un msg_type
+	 * Fonction permettant de crÃ©er un msg_type
 	 * @param String $lib_msg_type
 	 * @return Boolean
 	 */
@@ -100,7 +100,7 @@ class msg_type {
 		if(!$lib_msg_type){
 			return false;
 		}
-		// On vérifie qu'un type avec le même libellé n'existe pas déjà
+		// On vÃ©rifie qu'un type avec le mÃªme libellÃ© n'existe pas dÃ©jÃ 
 		$query = "SELECT * 
 					FROM " . self::$nom_table . " 
 					WHERE lib_msg_type = '" . $lib_msg_type . "';";
@@ -109,7 +109,7 @@ class msg_type {
 			return false;
 		}
 		
-		// Insertion des données en base
+		// Insertion des donnÃ©es en base
 		$query = "INSERT INTO " . self::$nom_table . "(lib_msg_type)
 					VALUES('" . $lib_msg_type . "');";
 		if(!$bdd->query($query)){
@@ -128,7 +128,7 @@ class msg_type {
 		if(!$id_msg_type){
 			return false;
 		}
-		// Suppression des données en base
+		// Suppression des donnÃ©es en base
 		$query = "DELETE 
 					FROM " . self::$nom_table . " 
 					WHERE id_msg_type = '" . $id_msg_type . "';";
@@ -136,7 +136,7 @@ class msg_type {
 	}
 	
 	/**
-	 * Fonction permettant de récupérer tous les types de message
+	 * Fonction permettant de rÃ©cupÃ©rer tous les types de message
 	 * @return Array
 	 */
 	public final static function getAll_msg_types(){

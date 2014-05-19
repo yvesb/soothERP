@@ -3,14 +3,14 @@
 class Helper {
 
 	/*
-	 * Filtres "id=untruc,unautretruc, ...;actif=truc1,truc2;lib=libellé1,libellé2"
+	 * Filtres "id=untruc,unautretruc, ...;actif=truc1,truc2;lib=libellÃ©1,libellÃ©2"
 	 */
     public static function createInputAnnu($id, $defaultText="", $params = array()) {
         global $DIR;
         if(!isset($params['callback']))
         //Mise a jour simple des champs
             $params['callback'] = "update_field_anu";
-        //Par défaut affichage de tous les profil sauf Visiteur 
+        //Par dÃ©faut affichage de tous les profil sauf Visiteur 
         if(!isset($params['filtres']))
             $params['filtres'] = "actif=1,2";
 
@@ -74,7 +74,7 @@ class Helper {
      * $options["drag"] = true|false
      * $options["style_popup"] = 'style=width:50%' etc...
      * $options["forced"] = true|false
-     * @param <type> $content contenu de la popup (vide par défaut, puis appel à page.traitecontent()
+     * @param <type> $content contenu de la popup (vide par dÃ©faut, puis appel Ã  page.traitecontent()
      * @return <type> 
      */
     public static function createPopup($id, $options=array(), $content=""){

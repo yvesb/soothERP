@@ -4,7 +4,7 @@
 // RECHERCHE D'UN DOCUMENT
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 $listes_magasin = charger_all_magasins ();
@@ -535,7 +535,7 @@ array_menu_r_article[2] 	=	new Array('recherche_perso', 'menu_3');
 					</td>
 					<?php
 					}else{
-					echo 'Aucune recherche personnalisée';
+					echo 'Aucune recherche personnalisÃ©e';
 					}
 					?>
 					<td>&nbsp;</td>
@@ -564,7 +564,7 @@ Event.observe("menu_2", "click",  function(evt){Event.stop(evt); view_menu_1('re
 Event.observe("menu_3", "click",  function(evt){Event.stop(evt); view_menu_1('recherche_perso', 'menu_3', array_menu_r_article );}, false);
 
 $("ref_doc_s").focus();
-//clic sur text check radio, focus field dans recherche avancée
+//clic sur text check radio, focus field dans recherche avancÃ©e
 Event.observe('mode_recherche_ref_article_txt', "click", function(evt){
 	if ($("mode_recherche_ref_article").checked) { $("mode_recherche_ref_article").checked= false;} else { $("mode_recherche_ref_article").checked=true;}
 });
@@ -661,7 +661,7 @@ Event.observe('code_affaire', "focus", function(evt){
 });
 
 
-//remise à zero du formulaire
+//remise Ã  zero du formulaire
 Event.observe('annuler_recherche_s', "click", function(evt){Event.stop(evt); reset_moteur_doc_s ('form_recherche_s', 'ref_contact_s', 'ref_contact_nom_s', 'id_etat_doc_s');	});
 Event.observe('annuler_recherche', "click", function(evt){Event.stop(evt); $('form_recherche_a').reset();});
 
@@ -671,7 +671,7 @@ Event.observe('form_recherche_s', "submit", function(evt){page.documents_recherc
 Event.observe('form_recherche_a', "submit", function(evt){page.documents_recherche_avancee();  
 	Event.stop(evt);});
 	
-//blocage du retour chariot automatique à la saisie du code barre
+//blocage du retour chariot automatique Ã  la saisie du code barre
 function stopifcode_barre (event) {
 
 	var key = event.which || event.keyCode; 
@@ -741,7 +741,7 @@ centrage_element("pop_up_mini_moteur_iframe");
 centrage_element("pop_up_mini_moteur");
 });
 
-//demarage de l'observateur pour le changement detype decos afin d'afficher les états correspondant
+//demarage de l'observateur pour le changement detype decos afin d'afficher les Ã©tats correspondant
 
 start_doc_etat("id_type_doc_s", "id_etat_doc_s", "documents_etat.php?doc_type=");
 start_doc_etat("id_type_doc", "id_etat_doc", "documents_etat.php?doc_type=");

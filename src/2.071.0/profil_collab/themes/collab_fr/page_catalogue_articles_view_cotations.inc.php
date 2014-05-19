@@ -3,7 +3,7 @@
 // VISUALISATION DES COTATIONS D'UN ARTICLE
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -38,7 +38,7 @@ if (count($liste_cotations_article)>0){
 	<tr>
 		<td style="text-align: left; padding-left: 5px; font-weight: bolder;">Date</td>
 		<td style="text-align: left; padding-left: 5px; font-weight: bolder;">Client</td>
-		<td style="text-align: left; padding-left: 5px; text-align: center; font-weight: bolder;">Quantité</td>
+		<td style="text-align: left; padding-left: 5px; text-align: center; font-weight: bolder;">QuantitÃ©</td>
 		<td style="text-align: left; padding-left: 5px; text-align: center; font-weight: bolder;">Expiration</td>
 		<td style="text-align: left; padding-left: 5px; font-weight: bolder;">Action</td>
 	</tr>

@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
 
 ?>
 <script type="text/javascript" language="javascript">
-tableau_smenu[0] = Array("smenu_transfert_donnees", "smenu_transfert_donnees.php" ,"true" ,"sub_content", "Transfert de données");
+tableau_smenu[0] = Array("smenu_transfert_donnees", "smenu_transfert_donnees.php" ,"true" ,"sub_content", "Transfert de donnÃ©es");
 tableau_smenu[1] = Array("", "" ,"" ,"", "");
 update_menu_arbo();
 </script>
@@ -57,7 +57,7 @@ update_menu_arbo();
 			<?php 
 				if (isset($modules) && isset($export_general)) {
 					?>
-					<span class="titre_smenu_page" id="transfert_donnnees_export_dispo"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Données disponibles à l'export</span><br />
+					<span class="titre_smenu_page" id="transfert_donnnees_export_dispo"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />DonnÃ©es disponibles Ã  l'export</span><br />
 					<br />
 					<span class="titre_smenu_page" id="transfert_donnnees_export_servers"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des serveurs d'export</span><br />
 					<br />
@@ -74,11 +74,11 @@ update_menu_arbo();
 					<?php
 				} else {
 					?>
-					<span class="titre_smenu_page_unvalid" id="transfert_donnnees_export_dispo" title="Vous devez installer le module d'export de données pour accéder à cette fonctionnalité"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Données disponibles à l'export <br />
-(Vous devez installer le module d'export de données pour accéder à cette fonctionnalité)</span><br />
+					<span class="titre_smenu_page_unvalid" id="transfert_donnnees_export_dispo" title="Vous devez installer le module d'export de donnÃ©es pour accÃ©der Ã  cette fonctionnalitÃ©"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />DonnÃ©es disponibles Ã  l'export <br />
+(Vous devez installer le module d'export de donnÃ©es pour accÃ©der Ã  cette fonctionnalitÃ©)</span><br />
 					<br />
-					<span class="titre_smenu_page_unvalid" id="transfert_donnnees_export_servers" title="Vous devez installer le module d'export de données pour accéder à cette fonctionnalité"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des serveurs d'export <br />
-(Vous devez installer le module d'export de données pour accéder à cette fonctionnalité)</span><br />
+					<span class="titre_smenu_page_unvalid" id="transfert_donnnees_export_servers" title="Vous devez installer le module d'export de donnÃ©es pour accÃ©der Ã  cette fonctionnalitÃ©"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des serveurs d'export <br />
+(Vous devez installer le module d'export de donnÃ©es pour accÃ©der Ã  cette fonctionnalitÃ©)</span><br />
 					<br />
 					<?php
 				}

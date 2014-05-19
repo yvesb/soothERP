@@ -27,7 +27,7 @@ class import_commandes_csv {
 		$this->erreur = array();
 		$this->id_categ_client = 1;
 		
-		//création d'un import
+		//crÃ©ation d'un import
 		if($id == 0){
 			$this->id_import = $this->create();
 		}else{
@@ -38,7 +38,7 @@ class import_commandes_csv {
 	}
 	
 	/**
-	 * @return int l'id de l'import en base de données
+	 * @return int l'id de l'import en base de donnÃ©es
 	 */
 	private function create(){
 		global $bdd;
@@ -147,10 +147,10 @@ class import_commandes_csv {
 						
 						//Gestion des erreurs
 						if(count($infos_ligne) != 12 ){ $this->erreurs[] = "Nombre de colonne incorrect ligne $this->ligne_number."; }
-						if(is_numeric($infos_ligne[2])){ $this->erreurs[] = "La colonne PU doit être de type numerique ligne $this->ligne_number."; }
+						if(is_numeric($infos_ligne[2])){ $this->erreurs[] = "La colonne PU doit Ãªtre de type numerique ligne $this->ligne_number."; }
 						
 						if(!empty($ref_cdc_externe) && empty($tab_ref_cdc[$ref_cdc_externe])){
-							$this->erreurs[] = "La commande de référence $ref_cdc_externe n'est pas défini à la ligne $this->ligne_number .";
+							$this->erreurs[] = "La commande de rÃ©fÃ©rence $ref_cdc_externe n'est pas dÃ©fini Ã  la ligne $this->ligne_number .";
 							return false;
 						}
 						$id_cdc = (!empty($ref_cdc_externe))? $tab_ref_cdc[$ref_cdc_externe]  : $ref_commande_tmp;						
@@ -204,7 +204,7 @@ class import_commandes_csv {
 				
 			
 				//*************************************************************
-				// Création du contact
+				// CrÃ©ation du contact
 				$contact = null;
 				if(!empty($cdc->ref_client)){					
 					$contact = new contact_client($cdc->ref_client);					
@@ -231,7 +231,7 @@ class import_commandes_csv {
 				
 
 				//*************************************************************
-				// Création de la commande
+				// CrÃ©ation de la commande
 				$GLOBALS['_OPTIONS']['CREATE_DOC']['ref_contact'] 		= $contact->getRef_contact();
 				$GLOBALS['_OPTIONS']['CREATE_DOC']['id_etat_doc'] 		= '8';
 				$GLOBALS['_OPTIONS']['CREATE_DOC']['id_stock']			= $_SESSION['magasin']->getId_stock();
@@ -252,7 +252,7 @@ class import_commandes_csv {
 				
 				
 				//**************************************************************
-				// Création des lignes de la commande
+				// CrÃ©ation des lignes de la commande
 				$query2 = "SELECT * FROM csv_import_cdc_infos_lines
 							WHERE id_import_cdc_infos_doc = '".$cdc->id_import_cdc_infos_doc."' ";
 				$stt2 = $bdd->query($query2);
@@ -280,8 +280,8 @@ class import_commandes_csv {
 							$doc->add_line($infos);
 						
 						}else{
-							$this->erreurs[] = "l'article $art->ref_lmb / $art->ref_interne / $art->ref_oem / $art->lib n'a pas été trouvé";
-							//@TODO Création de l'article ?
+							$this->erreurs[] = "l'article $art->ref_lmb / $art->ref_interne / $art->ref_oem / $art->lib n'a pas Ã©tÃ© trouvÃ©";
+							//@TODO CrÃ©ation de l'article ?
 						}
 					}
 				}
@@ -321,14 +321,14 @@ class import_commandes_csv {
 						WHERE id_import_cdc = '".$this->id_import."' ;";
 			$bdd->exec($query);
 		}else{
-			$this->erreurs[] = 'Type de référence article incorrect.';
+			$this->erreurs[] = 'Type de rÃ©fÃ©rence article incorrect.';
 		}
 	}
 	
 	public function setId_categ_client($id_categ_client){
 		global $bdd;
 		
-		if(!is_numeric($id_categ_client)){ $this->erreurs[] = 'Identifiant de catégorie client incorrect.';	}
+		if(!is_numeric($id_categ_client)){ $this->erreurs[] = 'Identifiant de catÃ©gorie client incorrect.';	}
 		
 		$this->id_categ_client = $id_categ_client;
 		$query = "UPDATE csv_import_cdc SET
@@ -371,7 +371,7 @@ class import_commandes_csv {
 	}
 	
 	/**
-	 * @return int le nombre de lignes traitées.
+	 * @return int le nombre de lignes traitÃ©es.
 	 */
 	public function getNb_lignes(){
 		return $this->ligne_number;

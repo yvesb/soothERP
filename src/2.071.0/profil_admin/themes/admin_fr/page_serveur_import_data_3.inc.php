@@ -57,7 +57,7 @@ if (count($import_annuaire_data_dispo)) {
 	<?php 
 } else {
 	?>
-	Aucune donnée à importer
+	Aucune donnÃ©e Ã  importer
 	<?php
 }
 ?>

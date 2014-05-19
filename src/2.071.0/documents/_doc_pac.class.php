@@ -79,7 +79,7 @@ public function create_doc () {
 	
 	$this->id_magasin 			= $_SESSION['magasin']->getId_magasin (); //$DEFAUT_ID_MAGASIN
 	
-	//on récupère le magasin défini par defaut pour l'interface
+	//on rÃ©cupÃ¨re le magasin dÃ©fini par defaut pour l'interface
 	
 	if (isset($ID_MAGASIN)) {$this->id_magasin = $ID_MAGASIN;}
 	
@@ -101,14 +101,14 @@ public function create_doc () {
 
 
 
-// Charge les informations supplémentaire du contact
+// Charge les informations supplÃ©mentaire du contact
 protected function load_infos_contact () {
 	$this->load_infos_contact_client ();
 	parent::load_infos_contact();
 }
 
 
-// Renvoie l'adresse a utiliser dans le document pour un contact donné
+// Renvoie l'adresse a utiliser dans le document pour un contact donnÃ©
 function define_adresse_contact () {
 	return parent::define_adresse_contact_et_livraison ();
 }
@@ -119,7 +119,7 @@ function define_adresse_contact () {
 // *************************************************************************************************************
 // FONCTIONS LIEES A LA MODIFICATION D'UN DOCUMENT
 // *************************************************************************************************************
-// Met à jour l' id_magasin pour ce panier
+// Met Ã  jour l' id_magasin pour ce panier
 public function maj_id_magasin ($new_id_magasin) {
 	global $bdd;	
 
@@ -168,7 +168,7 @@ public function maj_contact ($ref_contact) {
 
 
 
-// Met à jour la date de livraison demandée
+// Met Ã  jour la date de livraison demandÃ©e
 public function maj_id_livraison_mode ($id_livraison_mode) {
 	global $bdd;
 	
@@ -182,14 +182,14 @@ public function maj_id_livraison_mode ($id_livraison_mode) {
 	}
 	
 	$livraison_mode = new livraison_modes($id_livraison_mode);
-	//mise à jour du nouveau mode de livraison
+	//mise Ã  jour du nouveau mode de livraison
 	$this->id_livraison_mode = $id_livraison_mode;
 
 	$query = "UPDATE doc_pac SET id_livraison_mode = ".num_or_null($this->id_livraison_mode)."
 						WHERE ref_doc = '".$this->ref_doc."' ";
 	$bdd->exec ($query);
 	
-	//calcul et insertion pour ce document des frais de port (calcul effectué depuis la class livraison mode)
+	//calcul et insertion pour ce document des frais de port (calcul effectuÃ© depuis la class livraison mode)
 	$livraison_mode->calcul_frais_livraison_doc ($this);
 	
 	return true;
@@ -206,10 +206,10 @@ public function maj_id_livraison_mode ($id_livraison_mode) {
 // FONCTIONS LIEES A LA MODIFICATION DE L'ETAT D'UN DOCUMENT
 // *************************************************************************************************************
 
-// Action après de changer l'état du document
+// Action aprÃ¨s de changer l'Ã©tat du document
 protected function action_after_maj_etat ($old_etat_doc) {
 	
-	// Si passage a un état Panier Validé, création du bon de commande lié
+	// Si passage a un Ã©tat Panier ValidÃ©, crÃ©ation du bon de commande liÃ©
 	if ($this->id_etat_doc == 42) { 
 		$this->generer_commande_client();
 	}
@@ -241,7 +241,7 @@ function empty_lines () {
 // FONCTIONS SPECIFIQUES AU TYPE DE DOC 
 // *************************************************************************************************************
 
-// Génère une commande client à partir de ce panier.
+// GÃ©nÃ¨re une commande client Ã  partir de ce panier.
 public function generer_commande_client ($lines = false) {
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['ref_adr_livraison'] = $this->ref_adr_livraison;
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['adresse_livraison'] = $this->adresse_livraison;
@@ -250,7 +250,7 @@ public function generer_commande_client ($lines = false) {
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['id_pays_livraison'] = $this->id_pays_livraison;
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['description'] = $this->description;
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['info_line_pac'] = 1;
-	//mise à jour de l'état de la commande à commande en cours
+	//mise Ã  jour de l'Ã©tat de la commande Ã  commande en cours
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['maj_etat_copie_doc'] = 8;
 	
 	if (is_array($lines)) {
@@ -261,7 +261,7 @@ public function generer_commande_client ($lines = false) {
 }
 
 
-// Génère un autre devis client à partir de ce panier.
+// GÃ©nÃ¨re un autre devis client Ã  partir de ce panier.
 public function generer_devis_client ($lines = false) {
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['ref_adr_livraison'] = $this->ref_adr_livraison;
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['adresse_livraison'] = $this->adresse_livraison;
@@ -292,7 +292,7 @@ public function generer_devis_client ($lines = false) {
 protected function edit_doc ($id_edition_mode, $infos) {
 	global $bdd;
 
-	// Si édition d'un devis en saisie, le devis est pret!
+	// Si Ã©dition d'un devis en saisie, le devis est pret!
 	if ($this->id_etat_doc == 41) {
 		$this->maj_etat_doc(42);
 	}

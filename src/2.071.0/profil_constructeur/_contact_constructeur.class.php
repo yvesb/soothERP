@@ -22,7 +22,7 @@ function __construct ($ref_contact, $action = "open") {
 						WHERE ref_contact = '".$this->ref_contact."' ";	
 	$resultat = $bdd->query ($query);
 
-	// Controle si la ref_contact est trouvée
+	// Controle si la ref_contact est trouvÃ©e
 	if (!$contact_constructeur = $resultat->fetchObject()) { return false; }
 	
 	$this->identifiant_revendeur 		= $contact_constructeur->identifiant_revendeur;
@@ -39,7 +39,7 @@ function create_infos ($infos) {
 	global $DIR, $CONFIG_DIR;
 	global $bdd;
 
-	// Controle si ces informations sont déjà existantes
+	// Controle si ces informations sont dÃ©jÃ  existantes
 	if ($this->profil_loaded) {
 		return false;
 	}
@@ -59,7 +59,7 @@ function create_infos ($infos) {
 	}
 
 	// *************************************************
-	// Insertion des données
+	// Insertion des donnÃ©es
 	$query = "INSERT INTO annu_constructeur 
 							(ref_contact, identifiant_revendeur, conditions_garantie) 
 						VALUES ('".$this->ref_contact."', '".addslashes($this->identifiant_revendeur)."', '".addslashes($this->conditions_garantie)."' )"; 
@@ -78,7 +78,7 @@ function maj_infos ($infos) {
 	global $bdd;
 
 	if (!$this->profil_loaded) {
-		$GLOBALS['_ALERTES']['profil_non_chargé'] = 1;
+		$GLOBALS['_ALERTES']['profil_non_chargÃ©'] = 1;
 	}
 
 	// *************************************************
@@ -93,7 +93,7 @@ function maj_infos ($infos) {
 	}
 
 	// *************************************************
-	// Mise à jour des données
+	// Mise Ã  jour des donnÃ©es
 	$query = "UPDATE annu_constructeur 
 						SET identifiant_revendeur = '".addslashes($this->identifiant_revendeur)."' ,
 								conditions_garantie = '".addslashes($this->conditions_garantie)."' 
@@ -112,7 +112,7 @@ function delete_infos () {
 	global $bdd;
 	
 	
-	// Vérifie si la suppression de ces informations est possible.
+	// VÃ©rifie si la suppression de ces informations est possible.
 	
 	// Supprime les informations
 	$query = "DELETE FROM annu_constructeur WHERE ref_contact = '".$this->ref_contact."' ";
@@ -158,7 +158,7 @@ function charger_constructeur_vente_CA () {
 	return $liste_CA;
 }
 
-//chargement du CA des articles achetés au constructeur
+//chargement du CA des articles achetÃ©s au constructeur
 function charger_constructeur_achat_CA () {
 	global $bdd;
 	
@@ -189,7 +189,7 @@ function charger_constructeur_achat_CA () {
 	return $liste_CA;
 }
 
-//décompte du nombre d'articles en catalogue de ce construteur
+//dÃ©compte du nombre d'articles en catalogue de ce construteur
 function count_constructeur_articles () {
 	global $bdd;
 	
@@ -207,7 +207,7 @@ function count_constructeur_articles () {
 	return $count_articles;
 }
 
-//décompte du nombre de categories de ce construteur
+//dÃ©compte du nombre de categories de ce construteur
 function count_constructeur_art_categ () {
 	global $bdd;
 	
@@ -252,7 +252,7 @@ function charger_constructeur_fournisseurs_liste () {
 }
 
 
-//retour des derniers d'articles ajoutés au catalogue de ce construteur
+//retour des derniers d'articles ajoutÃ©s au catalogue de ce construteur
 function charger_last_constructeur_articles () {
 	global $bdd;
 	global $ARTICLE_NB_LAST_ADDED_SHOWED;
@@ -289,7 +289,7 @@ function charger_last_constructeur_articles () {
 function transfert_infos ($new_contact, $is_already_profiled) {
 	global $bdd;
 
-	// Vérifie si le transfert de ces informations est possible.
+	// VÃ©rifie si le transfert de ces informations est possible.
 	if (!$is_already_profiled) {
 		// TRANSFERT les informations
 		$query = "UPDATE annu_constructeur SET ref_contact = '".$new_contact->getRef_contact()."' 

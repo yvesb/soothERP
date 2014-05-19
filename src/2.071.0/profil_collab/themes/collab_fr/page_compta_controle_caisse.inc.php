@@ -4,7 +4,7 @@
 // controle de caisse
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -35,7 +35,7 @@ array_menu_v_controle[4] 	=	new Array('controle_validation', 'chemin_etape_3');
 <script type="text/javascript">
 Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); page.verify('compta_gestion2_caisse','compta_gestion2_caisse.php?id_caisse=<?php echo $_REQUEST["id_caisse"];?>','true','sub_content');}, false);
 </script>
-<div class="titre" style="width:60%; padding-left:140px">Contrôle <?php echo htmlentities($compte_caisse->getLib_caisse()); ?>
+<div class="titre" style="width:60%; padding-left:140px">ContrÃ´le <?php echo htmlentities($compte_caisse->getLib_caisse()); ?>
 </div>
 
 
@@ -76,8 +76,8 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 				<td style="width:2%">&nbsp;</td>
 			</tr>
 			<tr>
-				<td colspan="3" class="chemin_texte_choisi" style="width:14%" id="chemin_etape_0_3">Espèces</td>
-				<td colspan="3" class="chemin_texte_gris" style="width:14%" id="chemin_etape_1_3">Chèques</td>
+				<td colspan="3" class="chemin_texte_choisi" style="width:14%" id="chemin_etape_0_3">EspÃ¨ces</td>
+				<td colspan="3" class="chemin_texte_gris" style="width:14%" id="chemin_etape_1_3">ChÃ¨ques</td>
 				<td colspan="3" class="chemin_texte_gris<?php if (!$compte_caisse->getId_compte_tpe ()) { ?>se<?php } ?>" style="width:14%" id="chemin_etape_2_3">CB</td>
 				<td colspan="3" class="chemin_texte_gris" style="width:14%" id="chemin_etape_3_3">Validation</td>
 				<td style="width:2%"></td>
@@ -91,7 +91,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 		<table width="100%" cellpadding="0" cellspacing="0" border="0">
 		<tr>
 			<td style=" font-weight:bolder; color:#97bf0d;"><input type="checkbox" name="pass_esp" id="pass_esp" value="1" /> 
-			Ignorer cette étape
+			Ignorer cette Ã©tape
 			</td>
 			<td style="text-align:right">
 			
@@ -112,7 +112,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 			<br />
 			<br />
 				<div>
-					<span style="width:120px; float:left">Solde Théorique</span>
+					<span style="width:120px; float:left">Solde ThÃ©orique</span>
 					<span style="width:40px; float:left ">&gt;&gt;&gt;</span> 
 					<span id="toto_esp_theorique2" style="text-align:right; width:65px; float:left">
 					<?php
@@ -130,13 +130,13 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 				</div><br />
 	
 				<div>
-					<span style="width:120px; float:left">Solde Réél</span>
+					<span style="width:120px; float:left">Solde RÃ©Ã©l</span>
 					<span style="width:40px; float:left ">&gt;&gt;&gt;</span> 
 					<span id="toto_esp_saisie2" style="text-align:right; width:65px; float:left ">0.00</span><?php echo "&nbsp;".$MONNAIE[1];?>
 				</div><br />
 	
 				<div style=" font-weight:bolder;">
-					<span style="width:120px; float:left">Différentiel</span>
+					<span style="width:120px; float:left">DiffÃ©rentiel</span>
 					<span style="width:40px; float:left ">&gt;&gt;&gt;</span> 
 					<span id="diff_esp2" style="text-align:right; width:65px; float:left" >0.00</span><?php echo "&nbsp;".$MONNAIE[1];?>
 				</div>
@@ -158,11 +158,11 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 			<input name="indentation_controle_ope_spe" type="hidden" id="indentation_controle_ope_spe" value="0"/>
 			<input name="real_esp_theorique" type="hidden" id="real_esp_theorique" value="<?php echo number_format($totaux_theoriques[$ESP_E_ID_REGMT_MODE], $TARIFS_NB_DECIMALES, ".", ""	);?>"/>
 				
-			<div style="text-align:right; cursor:pointer; text-decoration:underline; width:190px;" id="add_line_ope">Ajouter une opération diverse</div>
+			<div style="text-align:right; cursor:pointer; text-decoration:underline; width:190px;" id="add_line_ope">Ajouter une opÃ©ration diverse</div>
 			<br />
 			<br />
 	
-			Les opérations diverses sont ajoutées pour corriger des oublis de mouvement de caisse en espèces avant la validation du contrôle.
+			Les opÃ©rations diverses sont ajoutÃ©es pour corriger des oublis de mouvement de caisse en espÃ¨ces avant la validation du contrÃ´le.
 			<script type="text/javascript">
 				Event.observe($("add_line_ope"), "click", function(evt){
 					$("view_ope_spe").show();
@@ -182,7 +182,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 				<tr>
 					<td align="right" style="width:85px;">&nbsp;</td>
 					<td style="width:10px">&nbsp;</td>
-					<td align="center" style="font-weight:bolder; width:85px;">Qté</td>
+					<td align="center" style="font-weight:bolder; width:85px;">QtÃ©</td>
 					<td style="width:10px">&nbsp;</td>
 					<td align="right" style="font-weight:bolder; width:160px;">Total</td>
 					<td>&nbsp;</td>
@@ -264,7 +264,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 		<table width="100%" cellpadding="0" cellspacing="0" border="0">
 		<tr>
 			<td style=" font-weight:bolder; color:#97bf0d;"><input type="checkbox" name="pass_chq" id="pass_chq" value="1" /> 
-			Ignorer cette étape
+			Ignorer cette Ã©tape
 			</td>
 			<td style="text-align:right">
 			
@@ -285,7 +285,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 			<br />
 			<br /><br /><br />
 				<div>
-					<span style="width:120px; float:left">Solde Théorique</span>
+					<span style="width:120px; float:left">Solde ThÃ©orique</span>
 					<span style="width:40px; float:left ">&gt;&gt;&gt;</span> 
 					<span id="toto_chq_theorique2" style="text-align:right; width:65px; float:left">
 					<?php
@@ -303,17 +303,17 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 					if (isset($count_chq_theoriques)) {
 						echo count($count_chq_theoriques);
 					} 
-					?> chèque(s))</span>
+					?> chÃ¨que(s))</span>
 				</div><br />
 	
 				<div>
-					<span style="width:120px; float:left">Solde Réél</span>
+					<span style="width:120px; float:left">Solde RÃ©Ã©l</span>
 					<span style="width:40px; float:left ">&gt;&gt;&gt;</span> 
-					<span id="toto_chq_saisie2" style="text-align:right; width:65px; float:left ">0.00</span><?php echo "&nbsp;".$MONNAIE[1];?> <span style="padding-left:10px">(<span id="saisie_op_cheques2"></span> chèque(s))</span>
+					<span id="toto_chq_saisie2" style="text-align:right; width:65px; float:left ">0.00</span><?php echo "&nbsp;".$MONNAIE[1];?> <span style="padding-left:10px">(<span id="saisie_op_cheques2"></span> chÃ¨que(s))</span>
 				</div><br />
 	
 				<div style=" font-weight:bolder;">
-					<span style="width:120px; float:left">Différentiel</span>
+					<span style="width:120px; float:left">DiffÃ©rentiel</span>
 					<span style="width:40px; float:left ">&gt;&gt;&gt;</span> 
 					<span id="diff_chq2" style="text-align:right; width:65px; float:left" >0.00</span><?php echo "&nbsp;".$MONNAIE[1];?>
 				</div>
@@ -407,7 +407,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 			
 		}
 		?>
-		<div style="text-align:right; cursor:pointer; width:190px;" id="add_line_chq">Ajouter un chèque</div>
+		<div style="text-align:right; cursor:pointer; width:190px;" id="add_line_chq">Ajouter un chÃ¨que</div>
 		
 			<script type="text/javascript">
 				Event.observe($("add_line_chq"), "click", function(evt){
@@ -439,7 +439,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 		<tr>
 			<td style=" font-weight:bolder; color:#97bf0d;"><input type="checkbox" name="pass_cb" id="pass_cb" value="1"
 <?php if (!$compte_caisse->getId_compte_tpe ()) { ?> checked="checked"<?php } ?> /> 
-			Ignorer cette étape
+			Ignorer cette Ã©tape
 			</td>
 			<td style="text-align:right">
 			
@@ -461,7 +461,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 					
 			<br /><br /><br />
 				<div>
-					<span style="width:120px; float:left">Solde Théorique</span>
+					<span style="width:120px; float:left">Solde ThÃ©orique</span>
 					<span style="width:40px; float:left ">&gt;&gt;&gt;</span> 
 					<span id="toto_cb_theorique2" style="text-align:right; width:65px; float:left">
 					<?php
@@ -484,13 +484,13 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 				</div><br />
 	
 				<div>
-					<span style="width:120px; float:left">Solde Réél</span>
+					<span style="width:120px; float:left">Solde RÃ©Ã©l</span>
 					<span style="width:40px; float:left ">&gt;&gt;&gt;</span> 
 					<span id="toto_cb_saisie2" style="text-align:right; width:65px; float:left ">0.00</span><?php echo "&nbsp;". $MONNAIE[1];?> <span style="padding-left:10px">(<span id="saisie_op_cb2"></span> CB)</span>
 				</div><br />
 	
 				<div style=" font-weight:bolder;">
-					<span style="width:120px; float:left">Différentiel</span>
+					<span style="width:120px; float:left">DiffÃ©rentiel</span>
 					<span style="width:40px; float:left ">&gt;&gt;&gt;</span> 
 					<span id="diff_cb2" style="text-align:right; width:65px; float:left" >0.00</span><?php echo "&nbsp;". $MONNAIE[1];?>
 				</div>
@@ -708,7 +708,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 				</tr>
 				<tr>
 					<td height="35" valign="middle" class="line_compta_bottom_rigth">
-					<div style="width:135px; height:35px; line-height:35px;">Total contrôle</div>		</td>
+					<div style="width:135px; height:35px; line-height:35px;">Total contrÃ´le</div>		</td>
 					<td height="35" align="right" valign="middle" class="line_compta_bottom">
 					<div style="width:75px; height:35px; line-height:35px;">
 					<span id="toto_esp_saisie"></span><?php echo "&nbsp;". $MONNAIE[1];?>		</div>		</td>
@@ -735,7 +735,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 				</tr>
 				<tr>
 					<td height="35" valign="middle" class="line_compta_right">
-					<div style="width:75px; height:35px; line-height:35px; font-weight:bolder">Différence</div>		</td>
+					<div style="width:75px; height:35px; line-height:35px; font-weight:bolder">DiffÃ©rence</div>		</td>
 					<td height="35" valign="middle" align="right">
 					<div style="width:75px; height:35px; line-height:35px; font-weight:bolder;">
 					<span id="diff_esp"></span><?php echo "&nbsp;". $MONNAIE[1];?>		</div>		</td>

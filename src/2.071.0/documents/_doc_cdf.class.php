@@ -86,7 +86,7 @@ public function create_doc () {
 }
 
 
-// Charge les informations supplémentaire du contact
+// Charge les informations supplÃ©mentaire du contact
 protected function load_infos_contact () {
 	$this->load_infos_contact_fournisseur();
 	parent::load_infos_contact();
@@ -105,7 +105,7 @@ protected function define_aff_tarif () {
 // *************************************************************************************************************
 
 
-//fonction de mise à jour de l'app_tarif du contact en cas de changement d'app_tarif du document
+//fonction de mise Ã  jour de l'app_tarif du contact en cas de changement d'app_tarif du document
 public function maj_app_tarifs ($new_app_tarifs) {
 	global $bdd;
 	global $FOURNISSEUR_ID_PROFIL;
@@ -116,12 +116,12 @@ public function maj_app_tarifs ($new_app_tarifs) {
 	}
 	$this->app_tarifs = $new_app_tarifs;
 	
-	// Maj de la base de données
+	// Maj de la base de donnÃ©es
 	$query = "UPDATE documents SET app_tarifs = '".$this->app_tarifs."'
 						WHERE ref_doc = '".$this->ref_doc."' ";
 	$bdd->exec ($query);
 	
-	//on met à jour l'app_tarif du contact en fonction du profil / doc dans le même temps
+	//on met Ã  jour l'app_tarif du contact en fonction du profil / doc dans le mÃªme temps
 	if (!is_object($this->contact)) { $this->contact = new contact ($this->ref_contact); }
 	if ($this->contact->charger_profiled_infos($FOURNISSEUR_ID_PROFIL)) {
 		$profil_tmp = $this->contact->getProfil($FOURNISSEUR_ID_PROFIL);
@@ -129,9 +129,9 @@ public function maj_app_tarifs ($new_app_tarifs) {
 	}
 }
 
-// Liste des documents pouvant être fusionner
+// Liste des documents pouvant Ãªtre fusionner
 public function check_allow_fusion ($second_document) {
-	//verifcation que l'état des document permet la fusion
+	//verifcation que l'Ã©tat des document permet la fusion
 	if (($this->id_etat_doc != "25" && $this->id_etat_doc != "27") && ($second_document->getId_etat_doc () != "25" && $second_document->getId_etat_doc () != "27")) {
 		return false;
 	}
@@ -139,7 +139,7 @@ public function check_allow_fusion ($second_document) {
 }
 
 
-// Liste des documents pouvant être fusionner
+// Liste des documents pouvant Ãªtre fusionner
 public function liste_doc_fusion () {
 	global $bdd;
 	
@@ -167,7 +167,7 @@ public function liste_doc_fusion () {
 
 
 
-// Met à jour la ref_doc_externe
+// Met Ã  jour la ref_doc_externe
 public function maj_ref_doc_externe ($ref_doc_externe) {
 	global $bdd;	
 
@@ -189,17 +189,17 @@ public function maj_ref_doc_externe ($ref_doc_externe) {
 public function maj_line_ref_article_externe ($ref_doc_line , $ref_article_externe, $old_ref_article_externe = "", $ref_article) {
 	global $bdd;
 	
-	//si le document n'est pas annulé ou en cours de saisie, on met à jour les ref_externes de l'article
+	//si le document n'est pas annulÃ© ou en cours de saisie, on met Ã  jour les ref_externes de l'article
 	switch ($this->id_etat_doc) {
 	case 27: case 28:
-			//si un contact est défini et que na nouvelle ref_article_externe n'est pas vide
+			//si un contact est dÃ©fini et que na nouvelle ref_article_externe n'est pas vide
 			if ($this->ref_contact) {
 				//chargement de la ligne
 				$line = $this->charger_line ($ref_doc_line);
 				// on charge l'article
 				$article = new article ($ref_article);
 				$article->maj_ref_article_externe ($this->ref_contact, $ref_article_externe, $old_ref_article_externe, $line->pu_ht, $this->date_creation);
-				// en cas d'erreur, on ne met pas à jour la ref_externe dans la ligne de document
+				// en cas d'erreur, on ne met pas Ã  jour la ref_externe dans la ligne de document
 				if (count($GLOBALS['_ALERTES'])) {
 					return false;
 				}
@@ -207,14 +207,14 @@ public function maj_line_ref_article_externe ($ref_doc_line , $ref_article_exter
 		break;
 	}
 	
-	// pas de mise à jour si  les ref_articles_externes sont identiques
+	// pas de mise Ã  jour si  les ref_articles_externes sont identiques
 	if ($ref_article_externe == $old_ref_article_externe) {return false;}
-	//mise à jour de la ligne article si pas de problème concernant la mise à jour
+	//mise Ã  jour de la ligne article si pas de problÃ¨me concernant la mise Ã  jour
 	$query = "UPDATE doc_lines_cdf SET ref_article_externe = '".$ref_article_externe."' 
 						WHERE ref_doc_line = '".$ref_doc_line."' ";
 	$resultat = $bdd->query ($query);
 	if (!$resultat->rowCount()) {
-		// La ligne n'existe pas il faut la créer
+		// La ligne n'existe pas il faut la crÃ©er
 		$query = "INSERT INTO doc_lines_cdf (ref_doc_line, ref_article_externe)
 							VALUES ('".$ref_doc_line."', '".$ref_article_externe."') ";
 		$bdd->exec ($query);
@@ -228,7 +228,7 @@ public function maj_line_ref_article_externe ($ref_doc_line , $ref_article_exter
 
 
 
-// Met à jour la date de livraison demandée
+// Met Ã  jour la date de livraison demandÃ©e
 public function maj_date_livraison ($new_date_livraison) {
 	global $bdd;
 	
@@ -254,7 +254,7 @@ protected function doc_line_infos_supp () {
 }
 
 
-// Mise à jour de l'information "qte_recue" d'une ligne de document
+// Mise Ã  jour de l'information "qte_recue" d'une ligne de document
 static function maj_line_infos_supp ($ref_doc_line, $donnees, $maj_donnees=NULL) {
 	$table = "doc_lines_cdf";
 	$maj_donnees = "qte_recue = '".$donnees['qte_recue']."' ";
@@ -278,7 +278,7 @@ public function add_line_article_info_supp ($ref_doc_line, $ref_article) {
 						WHERE ref_doc_line = '".$ref_doc_line."' ";
 	$resultat = $bdd->query ($query);
 	if (!$resultat->rowCount()) {
-		// La ligne n'existe pas il faut la créer
+		// La ligne n'existe pas il faut la crÃ©er
 		$query = "INSERT INTO doc_lines_cdf (ref_doc_line, ref_article_externe)
 							VALUES ('".$ref_doc_line."', '".$ref_article_externe."') ";
 		$bdd->exec ($query);
@@ -288,7 +288,7 @@ public function add_line_article_info_supp ($ref_doc_line, $ref_article) {
 	return true;
 }
 
-//affichage dans les résultat du prix achat fournisseur ou de la valeur d'achat actuelle
+//affichage dans les rÃ©sultat du prix achat fournisseur ou de la valeur d'achat actuelle
 protected function select_article_pa ($article) {
 
 	$ref_externes = $article->charger_ref_article_externe_fournisseur($this->ref_contact);
@@ -298,7 +298,7 @@ protected function select_article_pa ($article) {
 
 }
 
-// Vérifie si la commande est traitée
+// VÃ©rifie si la commande est traitÃ©e
 function check_if_traitee () {
 	global $bdd;
 
@@ -326,12 +326,12 @@ function check_if_traitee () {
 // FONCTIONS LIEES A LA MODIFICATION DE L'ETAT D'UN DOCUMENT
 // *************************************************************************************************************
 
-// Action après de changer l'état du document
+// Action aprÃ¨s de changer l'Ã©tat du document
 protected function action_after_maj_etat ($old_etat_doc) {
 	global $bdd;
 
 	if ($this->id_etat_doc == 27 || $this->id_etat_doc == 28 ) {
-		//mise à jour des ref_articles externes 
+		//mise Ã  jour des ref_articles externes 
 		if ($this->ref_contact) {
 			if (!$this->contenu_loaded) { $this->charger_contenu(); }
 			
@@ -364,7 +364,7 @@ function check_profils () {
 // FONCTIONS SPECIFIQUES AU TYPE DE DOC 
 // *************************************************************************************************************
 
-// Génère un Bon de Réception Fournisseur à partir de cette commande.
+// GÃ©nÃ¨re un Bon de RÃ©ception Fournisseur Ã  partir de cette commande.
 public function generer_br_fournisseur ($lines = false) {
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['ref_adr_contact'] = $this->ref_adr_contact;
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['adresse_contact'] = $this->adresse_contact;
@@ -373,7 +373,7 @@ public function generer_br_fournisseur ($lines = false) {
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['id_pays_contact'] = $this->id_pays_contact;
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['code_affaire'] = $this->code_affaire;
 
-	// Insérer le transfert de l'info STOCK
+	// InsÃ©rer le transfert de l'info STOCK
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['id_stock'] = $this->id_stock;
 
 	if (is_array($lines)) {
@@ -386,10 +386,10 @@ public function generer_br_fournisseur ($lines = false) {
 }
 
 
-// Renouvelle une commande à partir de celle-ci.
+// Renouvelle une commande Ã  partir de celle-ci.
 public function generer_commande_fournisseur ($lines = false) {
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['code_affaire'] = $this->code_affaire;
-	// Possible uniquement si la commande est annulée ou traitée
+	// Possible uniquement si la commande est annulÃ©e ou traitÃ©e
 	if ($this->id_etat_doc != 26 && $this->id_etat_doc != 28) { return false; }
 
 	if (is_array($lines)) {
@@ -405,7 +405,7 @@ public function generer_commande_fournisseur ($lines = false) {
 // FONCTIONS DE RECOPIE D'UN DOCUMENT
 // *************************************************************************************************************
 
-// Lors de la copie vers un Bon de Livraison, la Quantité à livrer est ajustée à ce qu'il manque
+// Lors de la copie vers un Bon de Livraison, la QuantitÃ© Ã  livrer est ajustÃ©e Ã  ce qu'il manque
 function action_before_copie_line_to_doc ($new_doc, $line) {
 	if ($new_doc->getID_TYPE_DOC () != 7 || isset($GLOBALS['_OPTIONS']['FUSION'])) { return true; }
 
@@ -426,7 +426,7 @@ function action_before_copie_line_to_doc ($new_doc, $line) {
 function action_after_copie_line_to_doc ($new_doc, $line) {
 	global $bdd;
 
-	//en cas de fusion on met à jour les blf lié et les qté reçues
+	//en cas de fusion on met Ã  jour les blf liÃ© et les qtÃ© reÃ§ues
   if (isset($GLOBALS['_OPTIONS']['FUSION'])) {
 		$query = "UPDATE doc_lines_blf SET ref_doc_line_cdf = '".$line->ref_doc_line."'
 							WHERE  ref_doc_line_cdf = '".$line->old_ref_doc_line."' ";
@@ -477,7 +477,7 @@ public function action_after_copie_line_from_line ($line) {
 // *************************************************************************************************************
 // FONCTIONS DE LIAISON ENTRE DOCUMENTS 
 // *************************************************************************************************************
-// Chargement les Devis Fournisseur (5) "Accepté" (23), non liés à une Commande Fournisseur (6), sauf annulée (26)
+// Chargement les Devis Fournisseur (5) "AcceptÃ©" (23), non liÃ©s Ã  une Commande Fournisseur (6), sauf annulÃ©e (26)
 public function charger_liaisons_possibles () {
 	global $bdd;
 
@@ -508,7 +508,7 @@ protected function action_before_break_liaison ($ref_doc) {
 	global $bdd;
 
 	// *************************************************
-	// Actions spéciales uniquement en cas de rupture d'une liaison avec un BLF
+	// Actions spÃ©ciales uniquement en cas de rupture d'une liaison avec un BLF
 	$query = "SELECT id_type_doc, id_etat_doc FROM documents WHERE ref_doc = '".$this->ref_doc."'";
 	$resultat = $bdd->query ($query);
 	if (!$doc = $resultat->fetchObject()) { return false; }
@@ -516,7 +516,7 @@ protected function action_before_break_liaison ($ref_doc) {
 	if ($doc->id_type_doc != 7) { return false; }
 
 	// *************************************************
-	// Diminution des quantités recues le cas échéant
+	// Diminution des quantitÃ©s recues le cas Ã©chÃ©ant
 	if ($doc->id_etat_doc == 31) {
 		$query = "UPDATE doc_lines_cdf dl_cdf, doc_lines_blf dl_blf, docs_lines dl1, docs_lines dl2
 							SET dl_cdf.qte_recue -= dl2.qte 
@@ -526,7 +526,7 @@ protected function action_before_break_liaison ($ref_doc) {
 	}
 
 	// *************************************************
-	// Suppression de la liaison ligne à ligne
+	// Suppression de la liaison ligne Ã  ligne
 	$query = "UPDATE doc_lines_blf dl_blf, docs_lines dl1, docs_lines dl2
 						SET dl_blc.ref_doc_line_cdf = NULL 
 						WHERE dl1.ref_doc = '".$this->ref_doc."' && dl2.ref_doc = '".$ref_doc."' &&
@@ -542,14 +542,14 @@ protected function action_before_break_liaison ($ref_doc) {
 // *************************************************************************************************************
 
 protected function need_infos_facturation () {
-	// Si la commande est annulée ou traitée, les informations de facturation ne sont pas nécessaires.
+	// Si la commande est annulÃ©e ou traitÃ©e, les informations de facturation ne sont pas nÃ©cessaires.
 	if ($this->id_etat_doc == $this->ID_ETAT_ANNULE || $this->id_etat_doc == 28) { return false; }
 	return true;
 }
 
 
 protected function reglement_partiel () {
-	// Une commande en saisie devient "en cours" lorsqu'un règlement est enregistré.
+	// Une commande en saisie devient "en cours" lorsqu'un rÃ¨glement est enregistrÃ©.
 	if ($this->id_etat_doc == 25) {
 		$this->maj_etat_doc(27);
 	}
@@ -565,7 +565,7 @@ public function auto_search_articles ($id_type_recherche) {
 	global $search;
 	
 	switch ($id_type_recherche) {
-	case 1: // Recherche des articles à recommander
+	case 1: // Recherche des articles Ã  recommander
 
 	$query_more['query_select']	= "	, zasa.seuil_alerte, zsa.qte ";
 	$query_more['query_join']		= "

@@ -89,7 +89,7 @@ H_loading();
 <?php 
 if (count($last_constructeur_articles)) {
 ?>
-<p class="sous_titre1">Derniers articles ajoutés</p>
+<p class="sous_titre1">Derniers articles ajoutÃ©s</p>
 <table width="100%"  border="0" cellspacing="0" cellpadding="0" id="tableresult">
 	<tr class="colorise0">
 		<td style="width:20%">
@@ -236,9 +236,9 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 <br />
  <br />
 
-<span style="font-weight:bolder">Nombre d'articles en catalogue : <?php echo $constructeur_nb_articles;?></span>
+<span style="font-weight:bolder">Nombre d'articles en catalogueÂ : <?php echo $constructeur_nb_articles;?></span>
 <br />
-<span style="font-weight:bolder">Nombre de catégories pour ces articles : <?php echo $constructeur_nb_art_categ;?></span><br />
+<span style="font-weight:bolder">Nombre de catÃ©gories pour ces articlesÂ : <?php echo $constructeur_nb_art_categ;?></span><br />
 <?php 
 if (count($constructeur_fournisseurs_liste)) {
 	?>

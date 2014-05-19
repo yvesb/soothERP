@@ -10,11 +10,11 @@ final class doc_des extends document {
 
 	protected $ref_adr_stock;
 	protected $lib_stock;
-	protected $ref_article;		//réf de l'article désassemblé
+	protected $ref_article;		//rÃ©f de l'article dÃ©sassemblÃ©
 	protected $qte_des;
 
 	protected $ID_TYPE_DOC 					= 13;
-	protected $LIB_TYPE_DOC 				= "Bon de Désassemblage";
+	protected $LIB_TYPE_DOC 				= "Bon de DÃ©sassemblage";
 	protected $CODE_DOC 						= "DES";
 	protected $DOC_ID_REFERENCE_TAG = 29;
 
@@ -30,9 +30,9 @@ final class doc_des extends document {
 	protected $client_encours;
 	protected $a_facturer = false;
 	
-	protected $des_sn; //liste des numéro de série de l'article à désassembler
+	protected $des_sn; //liste des numÃ©ro de sÃ©rie de l'article Ã  dÃ©sassembler
 	protected $des_sn_loaded; 
-	protected $des_nl; //liste des numéro de Lot de l'article à désassembler
+	protected $des_nl; //liste des numÃ©ro de Lot de l'article Ã  dÃ©sassembler
 	protected $des_nl_loaded; 
 	
 
@@ -52,7 +52,7 @@ public function open_doc ($select = "", $left_join = "") {
 	$this->ref_article 			=	$doc->ref_article;
 	$this->qte_des 			=	$doc->qte_des;
 
-	// Blocage des quantités
+	// Blocage des quantitÃ©s
 	if ($this->id_etat_doc == 56) {
 		$this->quantite_locked = true;
 	}
@@ -105,7 +105,7 @@ public function create_doc () {
 // *************************************************************************************************************
 // FONCTIONS LIEES A LA MODIFICATION D'UN DOCUMENT
 // *************************************************************************************************************
-//definition de l'article à désassembler
+//definition de l'article Ã  dÃ©sassembler
 public function define_ref_article ($ref_article = "", $qte_des = 0) {
 	global $bdd;
 	
@@ -118,7 +118,7 @@ public function define_ref_article ($ref_article = "", $qte_des = 0) {
 						WHERE ref_doc = '".$this->ref_doc."' && id_stock = '".$this->id_stock."'";
 	$bdd->exec ($query);
 
-	// on supprime les sn qui existeraient deja pour ce document (en cas de changement d'article à désassembler)
+	// on supprime les sn qui existeraient deja pour ce document (en cas de changement d'article Ã  dÃ©sassembler)
 	$this->del_all_des_sn ();
 	
 	if (isset($GLOBALS['_OPTIONS']['CREATE_DOC']['fill_content']) && $GLOBALS['_OPTIONS']['CREATE_DOC']['fill_content']) {
@@ -129,7 +129,7 @@ public function define_ref_article ($ref_article = "", $qte_des = 0) {
 }
 
 
-//Modification de la qté de l'article à désassembler
+//Modification de la qtÃ© de l'article Ã  dÃ©sassembler
 public function maj_qte_des ($qte_des = 0) {
 	global $bdd;
 	
@@ -176,7 +176,7 @@ protected function fill_content() {
 	
 			$infos = array();
 			$infos['type_of_line']	=	"article";
-			//numero de série
+			//numero de sÃ©rie
 			$infos['sn']						= array();
 			$infos['ref_article']		=	$composant->ref_article_composant;
 			$infos['qte']						=	$this->qte_des * $composant->qte;
@@ -186,7 +186,7 @@ protected function fill_content() {
 	$this->charger_contenu ();
 }
 
-// Chargement des informations supplémentaires concernant les numéros de série 
+// Chargement des informations supplÃ©mentaires concernant les numÃ©ros de sÃ©rie 
 protected function doc_line_sn_infos_supp () {
 	$query['select']		= ", IF (ISNULL(sas.numero_serie), 0, 1) as sn_exist";
 	$query['left_join'] = " LEFT JOIN stocks_articles_sn sas ON sas.numero_serie = dls.numero_serie";
@@ -196,7 +196,7 @@ protected function doc_line_sn_infos_supp () {
 // *************************************************************************************************************
 // FONCTIONS LIEES A LA MODIFICATION DE L'ETAT D'UN DOCUMENT
 // *************************************************************************************************************
-// Action avant de changer l'état du document
+// Action avant de changer l'Ã©tat du document
 protected function action_before_maj_etat ($new_etat_doc) {
 	global $bdd;
 	
@@ -216,7 +216,7 @@ protected function action_before_maj_etat ($new_etat_doc) {
 				if (!$this->des_sn_loaded) {$this->charger_des_sn();}
 				// ajout de l'article dans le stock
 				$_SESSION['stocks'][$this->id_stock]->insert_to_stock ($this->ref_doc, $this->ref_article, $this->qte_des, $this->des_sn );
-				// Annulation de désassemblage donc suppression du stock
+				// Annulation de dÃ©sassemblage donc suppression du stock
 				$this->del_content_from_stock ($this->id_stock);
 			}
 		break;
@@ -225,7 +225,7 @@ protected function action_before_maj_etat ($new_etat_doc) {
 }
 
 
-// Action après de changer l'état du document
+// Action aprÃ¨s de changer l'Ã©tat du document
 protected function action_after_maj_etat ($old_etat_doc) {
 	global $bdd;
 
@@ -261,7 +261,7 @@ function check_profils () {
 // FONCTIONS SPECIFIQUES AU TYPE DE DOC 
 // *************************************************************************************************************
 
-//fonctions de mise à jour lignes si non bloquée 
+//fonctions de mise Ã  jour lignes si non bloquÃ©e 
 protected function add_line_article ($infos) {
 	if (!$this->quantite_locked) {
 		parent::add_line_article ($infos);
@@ -327,9 +327,9 @@ protected function check_allow_maj_line_qte () {
 
 
 // *************************************************************************************************************
-// FONCTIONS DE GESTION DES NUMÉRO DE SÉRIE DE L'ARTICLE À DÉSASSEMBLER
+// FONCTIONS DE GESTION DES NUMÃ‰RO DE SÃ‰RIE DE L'ARTICLE Ã€ DÃ‰SASSEMBLER
 // *************************************************************************************************************
-//charger les numéros de série de l'article à désassembler
+//charger les numÃ©ros de sÃ©rie de l'article Ã  dÃ©sassembler
 public function charger_des_sn () {
 	global $bdd;
 
@@ -344,7 +344,7 @@ public function charger_des_sn () {
 	return true;
 }
 
-//charger les numéros de série de l'article à désassembler
+//charger les numÃ©ros de sÃ©rie de l'article Ã  dÃ©sassembler
 public function charger_des_nl () {
 	global $bdd;
 
@@ -359,12 +359,12 @@ public function charger_des_nl () {
 	return true;
 }
 
-// Ajoute un numéro de série à une ligne
+// Ajoute un numÃ©ro de sÃ©rie Ã  une ligne
 public function add_des_sn ($numero_serie) {
 	global $bdd;
 
 	// *************************************************
-	// Vérification du numéro de série
+	// VÃ©rification du numÃ©ro de sÃ©rie
 	$numero_serie = trim ($numero_serie);
 	if (!$numero_serie) { return false; }
 
@@ -396,7 +396,7 @@ public function add_des_sn ($numero_serie) {
 }
 
 
-// Supprimer un numéro de série à une ligne
+// Supprimer un numÃ©ro de sÃ©rie Ã  une ligne
 public function del_des_sn ($numero_serie) {
 	global $bdd;
 
@@ -414,7 +414,7 @@ public function del_des_sn ($numero_serie) {
 }
 
 
-// Mettre à jour un numéro de série d'une article à désassembler
+// Mettre Ã  jour un numÃ©ro de sÃ©rie d'une article Ã  dÃ©sassembler
 public function maj_des_sn ($old_sn, $new_sn) {
 	global $bdd;
 
@@ -449,7 +449,7 @@ public function maj_des_sn ($old_sn, $new_sn) {
 	return true;
 }
 
-// Supprimer les numéros de série de l'article à désassembler
+// Supprimer les numÃ©ros de sÃ©rie de l'article Ã  dÃ©sassembler
 public function del_all_des_sn () {
 	global $bdd;
 
@@ -464,7 +464,7 @@ public function del_all_des_sn () {
 
 
 
-// Mettre à jour un numéro de lot d'une article à desriquer
+// Mettre Ã  jour un numÃ©ro de lot d'une article Ã  desriquer
 public function maj_des_nl ($old_nl, $new_nl, $old_qte_nl, $new_qte_nl) {
 	global $bdd;
 
@@ -515,7 +515,7 @@ public function maj_des_nl ($old_nl, $new_nl, $old_qte_nl, $new_qte_nl) {
 
 
 
-// Supprimer un numéro de lot à une ligne
+// Supprimer un numÃ©ro de lot Ã  une ligne
 public function del_des_nl ($numero_serie, $qte) {
 	global $bdd;
 

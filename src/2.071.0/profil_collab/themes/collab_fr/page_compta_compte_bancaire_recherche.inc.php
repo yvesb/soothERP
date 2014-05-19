@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -24,7 +24,7 @@ check_page_variables ($page_variables);
 </script>
 <div class="emarge"><br />
 
-<span class="titre" style="float:left; padding-left:140px; width: 40%">Recherche d'opérations bancaires</span>
+<span class="titre" style="float:left; padding-left:140px; width: 40%">Recherche d'opÃ©rations bancaires</span>
 
 <span style=" float:right; text-align:right; width:15%"><br />
 
@@ -90,7 +90,7 @@ page.verify('compte_bancaire_gestion2','compta_compte_bancaire_gestion2.php?id_c
 		</tr>
 		<tr>
 			<td>
-			<span class="labelled">Libellé:</span>
+			<span class="labelled">LibellÃ©:</span>
 			</td>
 			<td>
 			<input type="text" name="libelle" id="libelle" value="" class="classinput_xsize"/>
@@ -119,13 +119,13 @@ page.verify('compte_bancaire_gestion2','compta_compte_bancaire_gestion2.php?id_c
 		</tr>
 		<tr>
 			<td>
-			<span class="labelled">Opérations de type:</span>
+			<span class="labelled">OpÃ©rations de type:</span>
 			</td>
 			<td>
 			<select name="ope_type" id="ope_type" class="classinput_xsize">
-			<option value="0">Débits et Crédits</option>
-			<option value="1">Débits uniquement</option>
-			<option value="2">Crédits uniquement</option>
+			<option value="0">DÃ©bits et CrÃ©dits</option>
+			<option value="1">DÃ©bits uniquement</option>
+			<option value="2">CrÃ©dits uniquement</option>
 			</select>
 			</td>
 			<td>

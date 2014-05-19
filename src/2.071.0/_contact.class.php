@@ -39,17 +39,17 @@ final class contact {
 	private $last_docs;							// Derniers documents concernant ce contact
 	private $last_docs_loaded;
 
-	private $evenements;							// Evénements concernant ce contact
+	private $evenements;							// EvÃ©nements concernant ce contact
 	private $evenements_loaded;
 
 
 function __construct($ref_contact = "") {
 	global $bdd;
 	
-	// Controle si la ref_contact est précisée
+	// Controle si la ref_contact est prÃ©cisÃ©e
 	if (!$ref_contact) { return false; }
 	
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT a.id_civilite, lib_civ_court, lib_civ_long, nom, siret, tva_intra, a.id_categorie, note, date_creation, date_modification, date_archivage, 
 							ac.lib_categorie
 						FROM annuaire a
@@ -58,10 +58,10 @@ function __construct($ref_contact = "") {
 						WHERE ref_contact = '".$ref_contact."' ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si la ref_contact est trouvée
+	// Controle si la ref_contact est trouvÃ©e
 	if (!$contact = $resultat->fetchObject()) { return false; }
 
-	// Attribution des informations à l'objet
+	// Attribution des informations Ã  l'objet
 	$this->ref_contact 				= $ref_contact;
 	$this->id_civilite 				= $contact->id_civilite;
 	$this->lib_civ_court			= $contact->lib_civ_court;
@@ -87,7 +87,7 @@ function __construct($ref_contact = "") {
 // FONCTIONS LIEES A LA CREATION D'UN CONTACT
 // *************************************************************************************************************
 
-// Fonction permettant la création d'un contact depuis le formulaire
+// Fonction permettant la crÃ©ation d'un contact depuis le formulaire
 final public function create ($infos_generales, $infos_profils) {
 	global $CONFIG_DIR;
 	global $bdd;
@@ -96,7 +96,7 @@ final public function create ($infos_generales, $infos_profils) {
 
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->id_civilite = $infos_generales['id_civilite'];
 	if (!$this->id_civilite) {
 		$GLOBALS['_ALERTES']['id_civilite_vide'] = 1;
@@ -110,7 +110,7 @@ final public function create ($infos_generales, $infos_profils) {
 	$this->siret 			= $infos_generales['siret'];
 	$this->tva_intra 	= $infos_generales['tva_intra'];
 	
-	// Dates de création & modification (en cas d'import)
+	// Dates de crÃ©ation & modification (en cas d'import)
 	$this->date_creation = date ("Y-m-d H:i:s", time());
 	$this->date_modification = date ("Y-m-d H:i:s", time());
 	if (isset($GLOBALS['options']['date_creation'])) {
@@ -118,7 +118,7 @@ final public function create ($infos_generales, $infos_profils) {
 		$this->date_creation = $GLOBALS['options']['date_modification'];
 	}
 	
-	// Adresses, sites, et coordonnées
+	// Adresses, sites, et coordonnÃ©es
 	if (!isset($infos_generales['adresses']) || !is_array($infos_generales['adresses'])) {
 		$infos_generales['adresses'] = array();
 	}
@@ -130,7 +130,7 @@ final public function create ($infos_generales, $infos_profils) {
 	}
 
 	// *************************************************
-	// Réception des données de profil
+	// RÃ©ception des donnÃ©es de profil
 	$this->profils = array();
 	foreach ($infos_profils as $profil) { 
 		if (!isset($_SESSION['profils'][$profil['id_profil']])) { 
@@ -141,13 +141,13 @@ final public function create ($infos_generales, $infos_profils) {
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 	
 	// *************************************************
-	// Création de la référence
+	// CrÃ©ation de la rÃ©fÃ©rence
 	if (!isset($infos_generales['ref_contact'])) {
 		$reference = new reference ($CONTACT_ID_REFERENCE_TAG);
 		$this->ref_contact = $reference->generer_ref();
@@ -179,19 +179,19 @@ final public function create ($infos_generales, $infos_profils) {
 		$this->ajouter_site ($infos_generales['sites'][$i]);
 	}
 
-	// SI il y a eu des erreurs, on invalide la création
+	// SI il y a eu des erreurs, on invalide la crÃ©ation
 	if (count($GLOBALS['_ALERTES'])) { return false; }
 	$bdd->commit();
 
 
-	// Controle et insertion des données relatives aux profils
+	// Controle et insertion des donnÃ©es relatives aux profils
 	foreach ($this->profils as $id_profil => $infos_profil) { 
 		if (!$this->create_profiled_infos ($infos_profil)) {
 			$GLOBALS['_ALERTES']['erreur_profil_'.$id_profil] = 1;
 		}
 	}
 	
-	// On envoie éventuellement un mail pour inviter le contact à s'inscrire
+	// On envoie Ã©ventuellement un mail pour inviter le contact Ã  s'inscrire
 	for ($i=0; $i<count($infos_generales['coordonnees']); $i++) {
 		foreach($this->getCoordonnees() as $coordonnee){
 			if($coordonnee->getEmail() == $infos_generales['coordonnees'][$i]['email']){
@@ -202,7 +202,7 @@ final public function create ($infos_generales, $infos_profils) {
 		}
 	}
 	
-	// Si il y a eu des erreurs, on invalide la création
+	// Si il y a eu des erreurs, on invalide la crÃ©ation
 	if (count($GLOBALS['_ALERTES'])) {
 		$this->suppression();
 		return false; 
@@ -210,8 +210,8 @@ final public function create ($infos_generales, $infos_profils) {
 
 
 	// *************************************************
-	// Résultat positif de la création
-	$GLOBALS['_INFOS']['Création_contact'] = $this->ref_contact;
+	// RÃ©sultat positif de la crÃ©ation
+	$GLOBALS['_INFOS']['CrÃ©ation_contact'] = $this->ref_contact;
 
 	return true;
 }
@@ -228,7 +228,7 @@ final public function modification ($infos_generales, $infos_profils = array()) 
 	$ANNUAIRE_CATEGORIES	=	get_categories();
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	if (isset($infos_generales['id_civilite']) ) {
 		$this->id_civilite = $infos_generales['id_civilite'];
 		if (!$this->id_civilite) {
@@ -249,7 +249,7 @@ final public function modification ($infos_generales, $infos_profils = array()) 
 	}
 
 	// *************************************************
-	// Réception des données de profil
+	// RÃ©ception des donnÃ©es de profil
 	$profils = array();
 	foreach ($infos_profils as $profil) { 
 		if (!isset($_SESSION['profils'][$profil['id_profil']])) { 
@@ -260,13 +260,13 @@ final public function modification ($infos_generales, $infos_profils = array()) 
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 
 	// *************************************************
-	// Mise à jour dans la base
+	// Mise Ã  jour dans la base
 	$bdd->beginTransaction();
 
 	$query = "UPDATE annuaire 
@@ -275,7 +275,7 @@ final public function modification ($infos_generales, $infos_profils = array()) 
 						WHERE ref_contact = '".$this->ref_contact."' ";
 	$bdd->exec ($query);
 
-	// Controle et mise à jour des données relatives aux profils
+	// Controle et mise Ã  jour des donnÃ©es relatives aux profils
 	foreach ($profils as $id_profil => $infos_profil) { 
 		if (!$this->maj_profiled_infos ($infos_profil)) {
 			$GLOBALS['_ALERTES']['erreur_profil_'.$id_profil] = 1;
@@ -287,64 +287,64 @@ final public function modification ($infos_generales, $infos_profils = array()) 
 	$bdd->commit();
 	
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	$GLOBALS['_INFOS']['Modification_contact'] = 1;
 
 	return true;
 }
 
 
-// Mise à jour de Tva_intra
+// Mise Ã  jour de Tva_intra
 function maj_tva_intra ($tva_intra) {
 	global $bdd;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->tva_intra = $tva_intra;
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 
 	// *************************************************
-	// Mise à jour dans la base
+	// Mise Ã  jour dans la base
 	$query = "UPDATE annuaire 
 						SET tva_intra = '".addslashes($this->tva_intra)."', date_modification = NOW()
 						WHERE ref_contact = '".$this->ref_contact."' ";
 	$bdd->exec ($query);
 	
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	$GLOBALS['_INFOS']['Modification_tva_intra'] = 1;
 
 	return true;
 }
 
-// Mise à jour de Note
+// Mise Ã  jour de Note
 function maj_note ($note) {
 	global $bdd;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->note = $note;
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 
 	// *************************************************
-	// Mise à jour dans la base
+	// Mise Ã  jour dans la base
 	$query = "UPDATE annuaire 
 						SET note = '".addslashes($this->note)."', date_modification = NOW()
 						WHERE ref_contact = '".$this->ref_contact."' ";
 	$bdd->exec ($query);
 	
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	$GLOBALS['_INFOS']['Modification_note'] = 1;
 
 	return true;
@@ -357,7 +357,7 @@ function maj_note ($note) {
 // *************************************************************************************************************
 // FONCTIONS LIEES A LA SUPPRESSION D'UN CONTACT
 // *************************************************************************************************************
-// Une fiche supprimée est en réalitée archivée
+// Une fiche supprimÃ©e est en rÃ©alitÃ©e archivÃ©e
 final public function archivage () {
 	global $bdd;
 	global $REF_CONTACT_ENTREPRISE;
@@ -375,7 +375,7 @@ final public function archivage () {
 }
 
 
-// Une fiche supprimée "réellement" ne peut l'etre qu'en cas d'erreur programme 
+// Une fiche supprimÃ©e "rÃ©ellement" ne peut l'etre qu'en cas d'erreur programme 
 private function suppression () {
 	global $bdd;
 
@@ -389,23 +389,23 @@ public function fusion ($new_ref_contact) {
 	global $bdd;
 	
 	// *************************************************
-	// Test de la validité du nouveau contact
+	// Test de la validitÃ© du nouveau contact
 	$new_contact = new contact ($new_ref_contact);
 	if (!$new_contact->getRef_contact()) { 
 		$GLOBALS['_ALERTES']['bad_ref_contact'] = 1;
 	}
 
-	// Sélection des informations de profil
+	// SÃ©lection des informations de profil
 	$new_contact->charger_all_profiled_infos();
 	$this->charger_all_profiled_infos();
 
 
 	// *************************************************
-	// Début de la mise à jour
+	// DÃ©but de la mise Ã  jour
 	$bdd->beginTransaction();
 
 	// *************************************************
-	// Modification des information générales
+	// Modification des information gÃ©nÃ©rales
 	$new_infos['nom'] = $new_contact->getNom();
 	if ($this->nom != $new_infos['nom']) {
 		$new_infos['nom'].= "\n ".$this->nom;
@@ -417,7 +417,7 @@ public function fusion ($new_ref_contact) {
 	if ($this->note) { $new_infos['note'].= "\n ".$this->note; }
 	$new_contact->modification($new_infos);
 
-	// Date de création, pour conserver la plus ancienne
+	// Date de crÃ©ation, pour conserver la plus ancienne
 	if (strtotime($new_contact->getDate_creation()) > strtotime($this->date_creation)) {
 		$query = "UPDATE annuaire SET date_creation = '".$this->date_creation."'
 							WHERE ref_contact = '".$this->ref_contact."' ";
@@ -439,7 +439,7 @@ public function fusion ($new_ref_contact) {
 	}
 
 	// *************************************************
-	// Transfert des adresses, coordonnées, sites 
+	// Transfert des adresses, coordonnÃ©es, sites 
 	$query = "SELECT COUNT(ref_adresse) nb_adresses FROM adresses
 						WHERE ref_contact = '".$new_ref_contact."' ";
 	$resultat = $bdd->query ($query);
@@ -480,7 +480,7 @@ public function fusion ($new_ref_contact) {
 	$bdd->exec ($query);
 
 	// *************************************************
-	// Transfert des règlements
+	// Transfert des rÃ¨glements
 	$query = "UPDATE reglements 
 						SET ref_contact = '".$new_ref_contact."'
 						WHERE ref_contact = '".$this->ref_contact."'";
@@ -521,13 +521,13 @@ public function fusion ($new_ref_contact) {
 // FONCTIONS LIEES A LA GESTION DES PROFILS
 // *************************************************************************************************************
 
-// Chargement des informations spécifiques aux profils
+// Chargement des informations spÃ©cifiques aux profils
 final private function charger_all_profiled_infos () {
 	global $bdd;
 
 	$this->profils = array();
 
-	// Sélection des informations spécifiques aux profils
+	// SÃ©lection des informations spÃ©cifiques aux profils
 	$query = "SELECT a.id_profil 
 						FROM annuaire_profils a
 							RIGHT JOIN profils p ON a.id_profil = p.id_profil 
@@ -539,9 +539,9 @@ final private function charger_all_profiled_infos () {
 	$this->profils_loaded = true;
 }
 
-// Chargement des informations spécifiques a un profil
+// Chargement des informations spÃ©cifiques a un profil
 final public function charger_profiled_infos ($id_profil) {
-	// Classe adaptée au profil
+	// Classe adaptÃ©e au profil
 	$this->load_profil_class ($id_profil);
 
 	$classe_profil = "contact_".$_SESSION['profils'][$id_profil]->getCode_profil();
@@ -555,13 +555,13 @@ final public function charger_profiled_infos ($id_profil) {
 }
 
 
-// Créé les informations sur un profil spécifique
+// CrÃ©Ã© les informations sur un profil spÃ©cifique
 final public function create_profiled_infos ($infos_profil) {
 	global $bdd;
 
 	$id_profil = &$infos_profil['id_profil'];
 
-	// Classe adaptée au profil
+	// Classe adaptÃ©e au profil
 	$this->load_profil_class ($id_profil);
 
 	$classe_profil = "contact_".$_SESSION['profils'][$id_profil]->getCode_profil();
@@ -575,14 +575,14 @@ final public function create_profiled_infos ($infos_profil) {
 						VALUES ('".$this->ref_contact."', '".$id_profil."')";
 	$bdd->exec($query);
 	
-	//mise à jour des permissions d'utilisateurs afin de leur attribuer le nouveau profil
+	//mise Ã  jour des permissions d'utilisateurs afin de leur attribuer le nouveau profil
 	utilisateur::set_users_permission ($this->ref_contact, $id_profil);
 	
 	return $retour;
 }
 
 
-// Mise à jour des informations particulières au profil
+// Mise Ã  jour des informations particuliÃ¨res au profil
 final public function maj_profiled_infos ($infos_profil) {
 	$id_profil = &$infos_profil['id_profil'];
 
@@ -596,7 +596,7 @@ final public function maj_profiled_infos ($infos_profil) {
 }
 
 
-// MSupprime les informations particulières au profil
+// MSupprime les informations particuliÃ¨res au profil
 final public function delete_profiled_infos ($infos_profil) {
 	global $bdd;
 
@@ -613,27 +613,27 @@ final public function delete_profiled_infos ($infos_profil) {
 		$query = "DELETE FROM annuaire_profils WHERE ref_contact = '".$this->ref_contact."' && id_profil = '".$id_profil."'  ";
 		$bdd->exec ($query);
 	}
-	//suppression des user_permissions pour les utilisateurs de ce contact pour le profil supprimé
+	//suppression des user_permissions pour les utilisateurs de ce contact pour le profil supprimÃ©
 	utilisateur::unset_users_permission ($this->ref_contact, $id_profil);
 
 	return $result;
 }
 
 
-// Vérifie si le contact à tel profil
+// VÃ©rifie si le contact Ã  tel profil
 public function is_profiled ($id_profil) {
 	global $bdd;
 
-	// Déjà loadé
+	// DÃ©jÃ  loadÃ©
 	if (isset($this->profils[$id_profil])) {
 		return true;
 	}
 
-	// Vérification en BDD
+	// VÃ©rification en BDD
 	$query = "SELECT ref_contact FROM annuaire_profils 
 						WHERE ref_contact = '".$this->ref_contact."' && id_profil = '".$id_profil."' ";
 	$resultat = $bdd->query ($query);
-	// Controle si le profil est trouvé
+	// Controle si le profil est trouvÃ©
 	if ($info = $resultat->fetchObject()) { return true; }
 
 	// N'est pas de ce profil
@@ -696,7 +696,7 @@ final public function suppression_utilisateur ($ref_user) {
 	$this->utilisateurs_loaded = 0;
 }
 
-// Déplacement d'un utilisateur
+// DÃ©placement d'un utilisateur
 final public function deplacer_utilisateur ($ref_user, $new_ordre) {
 	$utilisateur = new utilisateur ($ref_user);
 	$utilisateur->modifier_ordre($new_ordre);
@@ -738,7 +738,7 @@ final private function charger_adresses() {
 // Ajout d'une adresse
 final public function ajouter_adresse ($infos_adresse) {
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$lib_adresse 	= $infos_adresse['lib_adresse'];
 	$text_adresse = $infos_adresse['text_adresse'];
 	$code_postal	= $infos_adresse['code_postal'];
@@ -754,7 +754,7 @@ final public function ajouter_adresse ($infos_adresse) {
 	if (isset($infos_adresse['ref_adresse'])) {$ref_adresse = $infos_adresse['ref_adresse'];}
 	
 	// *************************************************
-	// Création de l'adresse
+	// CrÃ©ation de l'adresse
 	$adresse = new adresse ();
 	return $adresse->create($this->ref_contact, $lib_adresse, $text_adresse,  $code_postal, $ville, $id_pays, $note, $type, $ref_adresse);
 }
@@ -767,7 +767,7 @@ final public function suppression_adresse ($ref_adresse) {
 	$this->adresses_loaded = 0;
 }
 
-// Déplacement d'une adresse
+// DÃ©placement d'une adresse
 final public function deplacer_adresse ($ref_adresse, $new_ordre) {
 	$adresse = new adresse ($ref_adresse);
 	$adresse->modifier_ordre($new_ordre);
@@ -799,7 +799,7 @@ final private function charger_coordonnees() {
 // Ajout d'une coordonnee
 final public function ajouter_coordonnee ($infos_coordonnee) {
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$lib_coord 	= $infos_coordonnee['lib_coord'];
 	$tel1 = $infos_coordonnee['tel1'];
 	$tel2 = $infos_coordonnee['tel2'];
@@ -828,7 +828,7 @@ final public function suppression_coordonnee ($ref_coordonnee) {
 	$this->coordonnees_loaded = 0;
 }
 
-// Déplacement d'une coordonnee
+// DÃ©placement d'une coordonnee
 final public function deplacer_coordonnee ($ref_coordonnee, $new_ordre) {
 	$coordonnee = new coordonnee ($ref_coordonnee);
 	$coordonnee->modifier_ordre($new_ordre);
@@ -868,7 +868,7 @@ final private function charger_sites() {
 // Ajout d'un site
 final public function ajouter_site ($infos_site) {
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$lib_site_web = $infos_site['lib_site_web'];
 	$url 		= $infos_site['url'];
 	$login 	= $infos_site['login'];
@@ -894,7 +894,7 @@ final public function suppression_site ($ref_site) {
 	$this->sites_loaded = 0;
 }
 
-// Déplacement d'un site
+// DÃ©placement d'un site
 final public function deplacer_site ($ref_site, $new_ordre) {
 	$site = new site ($ref_site);
 	$site->modifier_ordre($new_ordre);
@@ -906,7 +906,7 @@ final public function deplacer_site ($ref_site, $new_ordre) {
 // FONCTIONS DE GESTION DES EVENEMENTS
 // *************************************************************************************************************
 
-// Chargement des événements concernant ce contact
+// Chargement des Ã©vÃ©nements concernant ce contact
 function charger_evenements () {
 	global $bdd;
 
@@ -927,7 +927,7 @@ function charger_evenements () {
 	$this->evenements_loaded = true;
 	return true;
 }
-// Chargement d'un événement concernant ce contact
+// Chargement d'un Ã©vÃ©nement concernant ce contact
 function charger_evenement ($id_comm_event) {
 	global $bdd;
 
@@ -947,7 +947,7 @@ function charger_evenement ($id_comm_event) {
 	return $evenement;
 }
 
-//ajout d'un événement pour ce contact
+//ajout d'un Ã©vÃ©nement pour ce contact
 function add_evenement ($date_event, $duree_event, $ref_user, $id_comm_event_type, $texte, $date_rappel){
 	global $bdd;
 
@@ -960,12 +960,12 @@ function add_evenement ($date_event, $duree_event, $ref_user, $id_comm_event_typ
 		$GLOBALS['_ALERTES']['bad_date_event'] = 1;
 	} 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 	
-	//insertion dans la base de données
+	//insertion dans la base de donnÃ©es
 	$query = "INSERT INTO comm_events 
 							(date_event, duree_event, ref_user, ref_contact, id_comm_event_type, texte, date_rappel)
 						VALUES ( '".$date_event."', '".$duree_event."', '".$ref_user."', '".$this->ref_contact."' , 
@@ -977,7 +977,7 @@ function add_evenement ($date_event, $duree_event, $ref_user, $id_comm_event_typ
 	return true;
 }
 
-//modification d'un événement pour ce contact
+//modification d'un Ã©vÃ©nement pour ce contact
 function mod_evenement ($id_comm_event, $date_event, $duree_event, $ref_user, $id_comm_event_type, $texte, $date_rappel){
 	global $bdd;
 
@@ -990,12 +990,12 @@ function mod_evenement ($id_comm_event, $date_event, $duree_event, $ref_user, $i
 		$GLOBALS['_ALERTES']['bad_date_event'] = 1;
 	} 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 	
-	//insertion dans la base de données
+	//insertion dans la base de donnÃ©es
 	$query = "UPDATE comm_events 
 						SET  date_event = '".$date_event."', duree_event = '".$duree_event."', ref_user = '".$ref_user."', ref_contact = '".$this->ref_contact."' , 
 									id_comm_event_type = '".$id_comm_event_type."', texte = '".addslashes($texte)."', date_rappel = '".$date_rappel."'
@@ -1006,17 +1006,17 @@ function mod_evenement ($id_comm_event, $date_event, $duree_event, $ref_user, $i
 	return true;
 }
 
-//fin de rappel d'un événement pour ce contact
+//fin de rappel d'un Ã©vÃ©nement pour ce contact
 function fin_rappel_evenement ($id_comm_event){
 	global $bdd;
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 	
-	//insertion dans la base de données
+	//insertion dans la base de donnÃ©es
 	$query = "UPDATE comm_events 
 						SET   date_rappel = ''
 						WHERE id_comm_event = '".$id_comm_event."'";
@@ -1025,17 +1025,17 @@ function fin_rappel_evenement ($id_comm_event){
 
 	return true;
 }
-//supression d'un événement pour ce contact
+//supression d'un Ã©vÃ©nement pour ce contact
 function sup_evenement ($id_comm_event){
 	global $bdd;
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 	
-	//insertion dans la base de données
+	//insertion dans la base de donnÃ©es
 	$query = "DELETE FROM comm_events WHERE id_comm_event = '".$id_comm_event."'";
 	$bdd->exec ($query);
 	
@@ -1075,7 +1075,7 @@ function charger_last_docs () {
 // *************************************************************************************************************
 // FONCTIONS DE GESTION DES TYPES D'EVENEMENTS
 // *************************************************************************************************************
-// Chargement des types d'événements
+// Chargement des types d'Ã©vÃ©nements
 static function charger_types_evenements () {
 	global $bdd;
 
@@ -1091,7 +1091,7 @@ static function charger_types_evenements () {
 	return $types_evenements;
 }
 
-// Chargement des types d'événements par ordre alphabétique
+// Chargement des types d'Ã©vÃ©nements par ordre alphabÃ©tique
 static function charger_types_evenements_liste () {
 	global $bdd;
 
@@ -1107,16 +1107,16 @@ static function charger_types_evenements_liste () {
 	return $types_evenements;
 }
 
-// ajout d'un type d'événement
+// ajout d'un type d'Ã©vÃ©nement
 static function add_types_evenements ($lib_comm_event_type, $systeme = 0) {
 	global $bdd;
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	if (!$lib_comm_event_type) {$GLOBALS['_ALERTES']["lib_comm_event_type_vide"] = 1;}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -1128,17 +1128,17 @@ static function add_types_evenements ($lib_comm_event_type, $systeme = 0) {
 	return true;
 }
 
-// modification d'un type d'événement
+// modification d'un type d'Ã©vÃ©nement
 static function mod_types_evenements ($id_comm_event_type, $lib_comm_event_type) {
 	global $bdd;
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	if (!$id_comm_event_type) {$GLOBALS['_ALERTES']["bad_id_comm_event_type"] = 1;}
 	if (!$lib_comm_event_type) {$GLOBALS['_ALERTES']["lib_comm_event_type_vide"] = 1;}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -1150,7 +1150,7 @@ static function mod_types_evenements ($id_comm_event_type, $lib_comm_event_type)
 	return true;
 }
 
-// suppression d'un type d'événement
+// suppression d'un type d'Ã©vÃ©nement
 static function sup_types_evenements ($id_comm_event_type) {
 	global $bdd;
 
@@ -1163,7 +1163,7 @@ static function sup_types_evenements ($id_comm_event_type) {
 	if ($exist_event = $resultat->fetchObject()) {$GLOBALS['_ALERTES']["exist_id_comm_event"] = 1; }
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -1253,7 +1253,7 @@ function getProfil ($id_profil) {
 
 // Retourne les adresses du contact 
 function getAdresses () {
-	// Vérifier si les adresses sont chargées
+	// VÃ©rifier si les adresses sont chargÃ©es
 	if (!$this->adresses_loaded) {
 		$this->charger_adresses();
 	}
@@ -1262,7 +1262,7 @@ function getAdresses () {
 
 // Retourne les coordonnees du contact 
 function getCoordonnees () {
-	// Vérifier si les adresses sont chargées
+	// VÃ©rifier si les adresses sont chargÃ©es
 	if (!$this->coordonnees_loaded) {
 		$this->charger_coordonnees();
 	}
@@ -1271,7 +1271,7 @@ function getCoordonnees () {
 
 // Retourne les coordonnees du contact 
 function getSites () {
-	// Vérifier si les adresses sont chargées
+	// VÃ©rifier si les adresses sont chargÃ©es
 	if (!$this->sites_loaded) {
 		$this->charger_sites();
 	}
@@ -1280,7 +1280,7 @@ function getSites () {
 
 // Retourne les utilisateurs du contact 
 function getUtilisateurs () {
-	// Vérifier si les adresses sont chargées
+	// VÃ©rifier si les adresses sont chargÃ©es
 	if (!$this->utilisateurs_loaded) {
 		$this->charger_utilisateurs();
 	}
@@ -1389,7 +1389,7 @@ public function getLiaison($actif = 1, $systeme = 0){
 	// ************************************************************************************************
 
 
-//modele pdf par défaut
+//modele pdf par dÃ©faut
 function defaut_contact_modele_pdf ($id_profil, $id_pdf_modele) {
 	global $bdd;
 	
@@ -1445,7 +1445,7 @@ function active_contact_modele_pdf ($id_profil, $id_pdf_modele) {
 
 }
 
-//désactivation d'un modele pdf
+//dÃ©sactivation d'un modele pdf
 function desactive_contact_modele_pdf ($id_profil, $id_pdf_modele) {
 	global $bdd;
 	

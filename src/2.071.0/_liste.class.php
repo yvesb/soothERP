@@ -12,19 +12,19 @@ class liste {
 function __construct($id_liste = "") {
 	global $bdd;
 	
-	// Controle si l' id_liste est précisée
+	// Controle si l' id_liste est prÃ©cisÃ©e
 	if (!$id_liste) { return false; }
 
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT id_liste, lib_liste, type_liste
 						FROM listes
 						WHERE id_liste = '".$id_liste."' ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si l' id_liste est trouvée
+	// Controle si l' id_liste est trouvÃ©e
 	if (!$liste = $resultat->fetchObject()) { return false; }
 
-	// Attribution des informations à l'objet
+	// Attribution des informations Ã  l'objet
 	$this->id_liste 		= $id_liste;
 	$this->lib_liste		= $liste->lib_liste;
 	$this->type_liste		= $liste->type_liste;
@@ -47,7 +47,7 @@ final public function create ($lib_liste) {
 public function add_exception ($sens, $ref, $id_liste_contenu) {
 	global $bdd;	
 	
-	// Si tous les parametres sont présents
+	// Si tous les parametres sont prÃ©sents
 	if( isset($sens) && isset($ref) && isset($id_liste_contenu) ) {
 		
 		//Si le sens est valide
@@ -98,7 +98,7 @@ public function is_in_liste($ref){
 							ORDER BY sens DESC";
 		$resultat = $bdd->query ($query);
 		if($exception = $resultat->fetchObject()){
-			//Exceptions trouvées
+			//Exceptions trouvÃ©es
 			if($exception->sens == -1) { return false; }
 			if($exception->sens == 1) { return true; }
 		}else{

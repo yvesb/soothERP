@@ -4,7 +4,7 @@
 // CONSULTATION DES OPERATIONS DE COMPTE BANCAIRE
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -24,7 +24,7 @@ check_page_variables ($page_variables);
 </script>
 <div class="emarge"><br />
 
-<span class="titre" style="float:left; padding-left:140px; width: 40%">Opérations du compte <?php echo $compte_bancaire->getLib_compte ();?></span>
+<span class="titre" style="float:left; padding-left:140px; width: 40%">OpÃ©rations du compte <?php echo $compte_bancaire->getLib_compte ();?></span>
 
 
 <span style=" float:right; text-align:right; width:19%"><br />
@@ -68,12 +68,12 @@ page.verify('compte_bancaire_gestion2','compta_compte_bancaire_gestion2.php?id_c
 			<td rowspan="6" style="text-align:right;">
 			<div>
 			<div style="width:250px; text-align:left; float:right">
-					<span id="add_releve" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Enregistrer un relevé.</span><br /><br />
+					<span id="add_releve" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Enregistrer un relevÃ©.</span><br /><br />
 
-					<span id="add_ope" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Enregistrer des opérations</span><br /><br />
-					<span id="search_ope" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Rechercher une opération</span><br /><br />
+					<span id="add_ope" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Enregistrer des opÃ©rations</span><br /><br />
+					<span id="search_ope" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Rechercher une opÃ©ration</span><br /><br />
 
-					<span id="print_ope" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Imprimer le relevé</span><br /><br />
+					<span id="print_ope" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Imprimer le relevÃ©</span><br /><br />
 			<script type="text/javascript">
 			
 						Event.observe("add_releve", "click",  function(evt){
@@ -151,7 +151,7 @@ page.verify('compte_bancaire_gestion2','compta_compte_bancaire_gestion2.php?id_c
 		<tr>
 			<td>
 			</td>
-			<td >Relevés: </td>
+			<td >RelevÃ©s: </td>
 			<td colspan="4">
 			<select  name="date_fin" id="date_fin" class="classinput_xsize">
 			<?php 

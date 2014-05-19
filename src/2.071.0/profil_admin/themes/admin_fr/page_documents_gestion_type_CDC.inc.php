@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -23,12 +23,12 @@ check_page_variables ($page_variables);
 ?>
 <table  style="width:350px" border="0" cellpadding="0" cellspacing="0">
   <tr>
-    <td>Depuis une commande client, permettre de :</td>
+    <td>Depuis une commande client, permettre deÂ :</td>
     <td style="text-align:center">&nbsp;</td>
     <td style="text-align:center">&nbsp;</td>
   </tr>
   <tr>
-    <td>Générer une livraison</td>
+    <td>GÃ©nÃ©rer une livraison</td>
     <td style="text-align:center">
 	<input type="radio" name="CDC_genere" value="BLC" <?php if ($COMMANDE_CLIENT_AUTO_GENERE == "BLC") { ?> checked="checked"<?php }?>/>
 	</td>
@@ -36,7 +36,7 @@ check_page_variables ($page_variables);
 	</td>
   </tr>
   <tr>
-    <td>Générer une facture</td>
+    <td>GÃ©nÃ©rer une facture</td>
     <td style="text-align:center">
 	<input type="radio" name="CDC_genere" value="FAC" <?php if ($COMMANDE_CLIENT_AUTO_GENERE == "FAC") { ?> checked="checked"<?php }?>/>
 	</td>
@@ -47,4 +47,4 @@ check_page_variables ($page_variables);
 <script type="text/javascript">
 
 </script>
-         
+ Â Â Â Â Â Â Â  

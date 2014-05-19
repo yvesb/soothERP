@@ -3,19 +3,19 @@
 //	Ceci est une librairie.
 //
 //	Elle se materialise sous forme de classe pour plusieurs raisons :
-//		- pour délimiter une nom de dommaine
-//		- pour pouvoir avoir des définir des fonctions communes à tous les e-commerces
-//			et d'autres spécifiques à un seul.
-//		- de cette manière, nous pouvons aussi 'masquer' les fonctions dans les sous classe
-//			(c'est une sorte de redéfinition)
-//	Il est à noter que :  
-//		-	TOUTES les fonctions de cette classes et de ses sous classes doivent être STATIC.
-//		-	Cette classes et ses sous classes DOIVENT être abstraites 
+//		- pour dÃ©limiter une nom de dommaine
+//		- pour pouvoir avoir des dÃ©finir des fonctions communes Ã  tous les e-commerces
+//			et d'autres spÃ©cifiques Ã  un seul.
+//		- de cette maniÃ¨re, nous pouvons aussi 'masquer' les fonctions dans les sous classe
+//			(c'est une sorte de redÃ©finition)
+//	Il est Ã  noter que :  
+//		-	TOUTES les fonctions de cette classes et de ses sous classes doivent Ãªtre STATIC.
+//		-	Cette classes et ses sous classes DOIVENT Ãªtre abstraites 
 //	E_commerce_Lib <: Profil_client_Lib			La librairie Profil_client_Lib est sous classe de E_commerce_Lib
-//																					et est propre à l'e-commerce profil client
+//																					et est propre Ã  l'e-commerce profil client
 //
 //	E_commerce_Lib <: E_commerce_Toto_Lib		La librairie E_commerce_Toto_Lib est sous classe de E_commerce_Lib
-//																					et est propre à l'e-commerce Toto
+//																					et est propre Ã  l'e-commerce Toto
 //
 
 abstract /*FINAL*/ class Profil_client_Lib extends E_commerce_Lib{

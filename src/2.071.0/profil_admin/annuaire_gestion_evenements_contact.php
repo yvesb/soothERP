@@ -8,7 +8,7 @@ require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
-// Préparations des variables d'affichage
+// PrÃ©parations des variables d'affichage
 $liste_types_evenements = contact::charger_types_evenements();
 
 // *************************************************************************************************************

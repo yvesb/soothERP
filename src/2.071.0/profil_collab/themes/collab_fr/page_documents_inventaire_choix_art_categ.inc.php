@@ -4,7 +4,7 @@
 // CHOIX DES CATEGORIES POUR UN INVENTAIRE
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -24,9 +24,9 @@ check_page_variables ($page_variables);
 </script>
 
 <div>
-Sélectionner les catégories d'articles concernées par l'inventaire
+SÃ©lectionner les catÃ©gories d'articles concernÃ©es par l'inventaire
 <form action="" method="post" id="creer_document_inventaire" name="creer_document_inventaire" target="formFrame" >
-ou faire un <span id="inventaire_complet" style="cursor:pointer; text-decoration:underline" title="générer un inventaire comportant toutes les catégories">Inventaire complet</span>
+ou faire un <span id="inventaire_complet" style="cursor:pointer; text-decoration:underline" title="gÃ©nÃ©rer un inventaire comportant toutes les catÃ©gories">Inventaire complet</span>
 <table style="">
 	<tr class="smallheight">
 		<td>
@@ -37,7 +37,7 @@ ou faire un <span id="inventaire_complet" style="cursor:pointer; text-decoration
 	</td>
 	<td width="350px">
 	<div style="display:block; font-weight:bolder">
-	Catégories
+	CatÃ©gories
 	</div>
 	</td>
 	<td width="1px">
@@ -176,7 +176,7 @@ $indentation_case_a_cocher ++;
 						<td width="180px">
 						<div style="display:block; width:180px; text-align: center">
 							<span id="coche_all" style="cursor:pointer">Tout cocher</span><br />
-							<span id="decoche_all" style="cursor:pointer">Tout décocher</span>
+							<span id="decoche_all" style="cursor:pointer">Tout dÃ©cocher</span>
 							<script type="text/javascript">
 							Event.observe('coche_all', 'click',  function(evt){
 								add_all_art_categ_to_inv (<?php echo $indentation_case_a_cocher?>);
@@ -192,7 +192,7 @@ $indentation_case_a_cocher ++;
 		</td>
 	</tr>
 	</table>
- <input type="checkbox" name="pre_remplir" id="pre_remplir" value="1"/>	Pré-remplir le document
+ <input type="checkbox" name="pre_remplir" id="pre_remplir" value="1"/>	PrÃ©-remplir le document
 <br /><br />
 
 <input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" name="Submit"

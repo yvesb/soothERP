@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -64,7 +64,7 @@ if (isset($_REQUEST['in_stock']) && $_REQUEST['in_stock']) {
 }
 	
 // *************************************************
-// Stock affichés
+// Stock affichÃ©s
 $form['id_stock'] = array();
 if (isset($_REQUEST['id_stock'])) {
 	$form['id_stock'] = explode(",", $_REQUEST['id_stock']);
@@ -74,17 +74,17 @@ if (isset($_REQUEST['id_stock'])) {
 
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_select = "";
 	$query_join 	= "";
 	$query_where 	= " dispo = 1 && a.lot != '2' && a.modele = 'materiel' ";
 	$query_group	= "";
 	$query_limit	= (($search['page_to_show']-1)*$search['fiches_par_page']).", ".$search['fiches_par_page'];
 
-	// Catégorie
+	// CatÃ©gorie
 	if ($search['ref_art_categ']) { 
 		$query_where 	.= " && a.ref_art_categ = '".$search['ref_art_categ']."'";
 	}
@@ -97,7 +97,7 @@ if (isset($_REQUEST['recherche'])) {
 		$query_select 	.= ",  a.prix_achat_ht, a.paa_ht ";
 	}
 
-		// Sélection des stocks disponibles
+		// SÃ©lection des stocks disponibles
 		$where_stock = "";
 		$where_instock = "";
 		if ($search['id_stock'] && $search['id_stock'][0] != "") {
@@ -170,7 +170,7 @@ if (isset($_REQUEST['recherche'])) {
 	}
 	unset ($fiche, $resultat, $query);
 
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 	$query = "SELECT a.ref_article
 						FROM articles a 
 							".$count_query_join."

@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// CONFIRGURATION DES DONNÉES pdf
+// CONFIRGURATION DES DONNÃ‰ES pdf
 // *************************************************************************************************************
 
 $MUST_BE_LOGIN = 1;
@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 
 
-//mise à jour des données transmises
+//mise Ã  jour des donnÃ©es transmises
 //logo
 if (!empty($_FILES['image']['tmp_name'])) {
 	//copie du fichier
@@ -28,15 +28,15 @@ if (isset($_REQUEST["aff_remises"]) && $_REQUEST["aff_remises"] == "1") {
 }
 
 //textes de pied de page pdf
-maj_configuration_file ("config_generale.inc.php", "maj_line", "\$PIED_DE_PAGE_GAUCHE_0 =", "\$PIED_DE_PAGE_GAUCHE_0 = \"".str_replace("¤", "€", (addslashes($_REQUEST["pied_de_page_gauche_0"])))."\";", $CONFIG_DIR);
+maj_configuration_file ("config_generale.inc.php", "maj_line", "\$PIED_DE_PAGE_GAUCHE_0 =", "\$PIED_DE_PAGE_GAUCHE_0 = \"".str_replace("Â¤", "â‚¬", (addslashes($_REQUEST["pied_de_page_gauche_0"])))."\";", $CONFIG_DIR);
 
-maj_configuration_file ("config_generale.inc.php", "maj_line", "\$PIED_DE_PAGE_GAUCHE_1 =", "\$PIED_DE_PAGE_GAUCHE_1 = \"".str_replace("¤", "€", (addslashes($_REQUEST["pied_de_page_gauche_1"])))."\";", $CONFIG_DIR);
+maj_configuration_file ("config_generale.inc.php", "maj_line", "\$PIED_DE_PAGE_GAUCHE_1 =", "\$PIED_DE_PAGE_GAUCHE_1 = \"".str_replace("Â¤", "â‚¬", (addslashes($_REQUEST["pied_de_page_gauche_1"])))."\";", $CONFIG_DIR);
 
-maj_configuration_file ("config_generale.inc.php", "maj_line", "\$PIED_DE_PAGE_DROIT_0 =", "\$PIED_DE_PAGE_DROIT_0 = \"".str_replace("¤", "€", (addslashes($_REQUEST["pied_de_page_droit_0"])))."\";", $CONFIG_DIR);
+maj_configuration_file ("config_generale.inc.php", "maj_line", "\$PIED_DE_PAGE_DROIT_0 =", "\$PIED_DE_PAGE_DROIT_0 = \"".str_replace("Â¤", "â‚¬", (addslashes($_REQUEST["pied_de_page_droit_0"])))."\";", $CONFIG_DIR);
 
-maj_configuration_file ("config_generale.inc.php", "maj_line", "\$PIED_DE_PAGE_DROIT_1 =", "\$PIED_DE_PAGE_DROIT_1 = \"".str_replace("¤", "€", (addslashes($_REQUEST["pied_de_page_droit_1"])))."\";", $CONFIG_DIR);
+maj_configuration_file ("config_generale.inc.php", "maj_line", "\$PIED_DE_PAGE_DROIT_1 =", "\$PIED_DE_PAGE_DROIT_1 = \"".str_replace("Â¤", "â‚¬", (addslashes($_REQUEST["pied_de_page_droit_1"])))."\";", $CONFIG_DIR);
 
-//délai commandes en cours
+//dÃ©lai commandes en cours
 
 maj_configuration_file ("config_generale.inc.php", "maj_line", "\$DELAI_COMMANDE_CLIENT_RECENTE =", "\$DELAI_COMMANDE_CLIENT_RECENTE = \"".$_REQUEST["delai_commande_client_recente"]."\";", $CONFIG_DIR);
 

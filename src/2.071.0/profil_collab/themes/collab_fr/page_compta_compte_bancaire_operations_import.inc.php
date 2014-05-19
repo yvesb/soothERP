@@ -4,7 +4,7 @@
 // IMPORT D'OPERATIONS
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -22,19 +22,19 @@ $("edition_operation").hide();
 }, false);
 </script>
 
-<p  style="font-weight:bolder">IMPORT d'opérations</p>
+<p  style="font-weight:bolder">IMPORT d'opÃ©rations</p>
 <div class="emarge">
 	<table class="minimizetable">
 		<tr>
 			<td>
-			Importer des opérations bancaires depuis un fichier au format .ofx<br />
+			Importer des opÃ©rations bancaires depuis un fichier au format .ofx<br />
 
 			<form action="compta_compte_bancaire_operations_import_valid.php" method="post" id="operations_import_valid" name="operations_import_valid" target="formFrame" enctype="multipart/form-data" >
 			
 				<table border="0" cellspacing="0" cellpadding="0" style="width:100%">
 					<tr>
 						<td style="width:20%">
-						Indiquez l'emplacement du fichier à importer:<br />
+						Indiquez l'emplacement du fichier Ã  importer:<br />
 						<input type="file" size="35" name="ope_ofx" />
 						</td>
 						<td> </td>

@@ -10,10 +10,10 @@ require ($DIR."_session.inc.php");
 
 
 if (isset($_REQUEST["id_pdf_modele"])) {
-	//chargement du modèle
+	//chargement du modÃ¨le
 	$modele_pdf = charge_modele_pdf ($_REQUEST["id_pdf_modele"]);
 	
-	//chargement des infos de configuration du modèle
+	//chargement des infos de configuration du modÃ¨le
 	$config_files = file($PDF_MODELES_DIR."config/".$modele_pdf->code_pdf_modele.".config.php");
 	
 	$new_config_files= array();
@@ -24,7 +24,7 @@ if (isset($_REQUEST["id_pdf_modele"])) {
 		if (substr_count($config_line, "// FIN PARAMETRES MODIFIABLES")) {$new_config_files[]=$config_line; $meet_edit_param = 0; continue;}
 		if (!$meet_edit_param) {$new_config_files[]=$config_line; continue;}
 	
-		// on vas recréer le contenu de la ligne	
+		// on vas recrÃ©er le contenu de la ligne	
 		$tmp_maj_line = "";
 		$tmp_infos = explode("//", str_replace("/n", "", $config_line));
 		if (isset($_REQUEST[ urlencode(substr($tmp_infos[0], 0, strpos($tmp_infos[0], "=")))])) {
@@ -68,7 +68,7 @@ if (isset($_REQUEST["id_pdf_modele"])) {
 			$new_config_files[]=$tmp_maj_line;
 		}
 	}
-	// Création du nouveau fichier de configuration
+	// CrÃ©ation du nouveau fichier de configuration
 	$new_file_id = fopen ($PDF_MODELES_DIR."config/tmp_".$modele_pdf->code_pdf_modele.".config.php", "w");
 	foreach ($new_config_files as $line) {
 		fwrite($new_file_id, $line);

@@ -4,16 +4,16 @@
 		<td class="contactview_corps">
 		<br/>
 		<p>
-		<b><font color="#AA0000">Cette fonctionnalité est dépréciée car elle sera remplacée par l'agenda intégré de Lundi Matin Business qui est en cours de finalisation (Beta).</font></b>
+		<b><font color="#AA0000">Cette fonctionnalitÃ© est dÃ©prÃ©ciÃ©e car elle sera remplacÃ©e par l'agenda intÃ©grÃ© de Lundi Matin Business qui est en cours de finalisation (Beta).</font></b>
 		</p>
-		<p class="sous_titre1">Liste des événements</p>
+		<p class="sous_titre1">Liste des Ã©vÃ©nements</p>
 		<br />
 		<div style="border-bottom:1px solid #999999">
 		<table class="main_table">
 			<tr>
 				<td style="width:140px; text-align:center; font-weight:bolder;">Date</td>
 				<td style="width:140px; text-align:center; font-weight:bolder;">Heure</td>
-				<td style="width:140px; text-align:center; font-weight:bolder;">Durée</td>
+				<td style="width:140px; text-align:center; font-weight:bolder;">DurÃ©e</td>
 				<td style=" font-weight:bolder;">Utilisateur</td>
 				<td style="width:200px; font-weight:bolder;">Type</td>
 				<td style="width:140px; text-align:center; font-weight:bolder;">Rappel</td>
@@ -24,7 +24,7 @@
 		<div id="contactview_event_liste"  style="OVERFLOW-Y: auto; OVERFLOW-X: auto; height:50px ">
 		<?php 
 		if (!count($evenements)) {
-			?> Aucun événement enregistré.
+			?> Aucun Ã©vÃ©nement enregistrÃ©.
 			<?php
 		} else {
 			$colorise=0;
@@ -83,7 +83,7 @@
 					Event.stop(evt); 
 					
 					$("titre_alert").innerHTML = 'Confirmer';
-					$("texte_alert").innerHTML = 'Confirmer la supression de cet événement';
+					$("texte_alert").innerHTML = 'Confirmer la supression de cet Ã©vÃ©nement';
 					$("bouton_alert").innerHTML = '<input type="submit" id="bouton0" name="bouton0" value="Confirmer" /><input type="submit" id="bouton1" name="bouton1" value="Annuler" />';
 					
 					$("alert_pop_up_tab").style.display = "block";

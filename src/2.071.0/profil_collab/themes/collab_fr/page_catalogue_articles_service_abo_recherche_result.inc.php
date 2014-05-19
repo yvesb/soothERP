@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -25,7 +25,7 @@ function barre_navigation($nbtotal,
 													
 {
 	// --------------------------------------------------------------------
-	global $cfg_nb_pages; // Nb de n° de pages affichées dans la barre
+	global $cfg_nb_pages; // Nb de nÂ° de pages affichÃ©es dans la barre
 global $DIR;
 	$barre= "";	$lien_on 	= "&nbsp;<a href='#' id='link_pagi_{cible}'>{lien}</a>&nbsp;
 								<script type='text/javascript'>
@@ -35,7 +35,7 @@ global $DIR;
 	// --------------------------------------------------------------------
     
 
-	// début << .
+	// dÃ©but << .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -55,7 +55,7 @@ global $DIR;
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
 
 
-	// précédent < .
+	// prÃ©cÃ©dent < .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -161,7 +161,7 @@ function image_html($img)
 
 //
 //
-//création de la barre de nav
+//crÃ©ation de la barre de nav
 //
 //
 
@@ -211,7 +211,7 @@ foreach ($_ALERTES as $alerte => $value) {
 		</td>
 		<td style="width:13%; text-align:left">
 			<a href="#"  id="order_echeance">
-			Echéance:
+			EchÃ©ance:
 			</a>
 		</td>
 		<td style="width:13%; text-align:left">
@@ -309,9 +309,9 @@ foreach ($_ALERTES as $alerte => $value) {
 			<td style="width:10%;text-align:center; ">
 			<?php
 				if ($fiche->date_echeance > date("Y-m-d H:i:s", time())) { echo "en&nbsp;cours<br />";}
-				if ($fiche->fin_abonnement > date("Y-m-d H:i:s", time()) && $fiche->date_echeance < date("Y-m-d H:i:s", time())) { echo "à&nbsp;renouveller<br />";}
-				if ($fiche->fin_abonnement < date("Y-m-d H:i:s", time()) && $fiche->fin_abonnement != '0000-00-00 00:00:00') { echo "expiré<br />";}
-				if ($fiche->date_preavis != '0000-00-00 00:00:00') { echo "préavis&nbsp;déposé<br />";}
+				if ($fiche->fin_abonnement > date("Y-m-d H:i:s", time()) && $fiche->date_echeance < date("Y-m-d H:i:s", time())) { echo "Ã &nbsp;renouveller<br />";}
+				if ($fiche->fin_abonnement < date("Y-m-d H:i:s", time()) && $fiche->fin_abonnement != '0000-00-00 00:00:00') { echo "expirÃ©<br />";}
+				if ($fiche->date_preavis != '0000-00-00 00:00:00') { echo "prÃ©avis&nbsp;dÃ©posÃ©<br />";}
 			?>
 			</td>
 			<td style="text-align:right; vertical-align:middle; padding-left:8px">
@@ -381,7 +381,7 @@ foreach ($_ALERTES as $alerte => $value) {
 			<td style="text-align:right;">
 					
 				<select id="renouveler_abos_cochees" name="renouveler_abos_cochees">
-					<option selected="selected"> action pour la sélection</option>
+					<option selected="selected"> action pour la sÃ©lection</option>
 					<option>Renouveler</option>
 				</select>
 				<form method="post" action="catalogue_articles_service_abo_renouveller_all_checked.php" id="form_renouvler_abos_coches" name="form_renouvler_abos_coches" target="formFrame">
@@ -447,7 +447,7 @@ foreach ($_ALERTES as $alerte => $value) {
 	</table>
 </div>
 <br />
-<span id="export_csv_resultats" class="common_link">Exporter le résultat de la recherche au format csv</span>
+<span id="export_csv_resultats" class="common_link">Exporter le rÃ©sultat de la recherche au format csv</span>
 
 <br />
 <br />

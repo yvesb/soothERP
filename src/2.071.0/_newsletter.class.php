@@ -69,7 +69,7 @@ public function create_newsletter ($infos) {
 	global $bdd;
 
   // *************************************************
-	// Réception des données
+	// RÃ©ception des donnÃ©es
 	$this->nom_newsletter 				= $infos['nom_newsletter'];
 	$this->periodicite 					= $infos['periodicite_newsletter'];
 	$this->description_interne 			= $infos['description_interne_newsletter'];
@@ -109,12 +109,12 @@ public function create_newsletter ($infos) {
 	return true;
 }
 
-//fonction de la mise à jour des informations de la newsletter
+//fonction de la mise Ã  jour des informations de la newsletter
 public function maj_newsletter ($infos) {
 	global $bdd;
 
   // *************************************************
-	// Réception des données
+	// RÃ©ception des donnÃ©es
 	$this->nom_newsletter 				= $infos['nom_newsletter'];
 	$this->periodicite 					= $infos['periodicite_newsletter'];
 	$this->description_interne 			= $infos['description_interne_newsletter'];
@@ -161,7 +161,7 @@ public function save_brouillon ($brouillon, $titre_brouillon) {
 	global $bdd;
 
 	// *************************************************
-	// Réception des données
+	// RÃ©ception des donnÃ©es
 	$this->brouillon 						= $brouillon;
 	$this->titre_brouillon 			= $titre_brouillon;
 	if (count($GLOBALS['_ALERTES'])) {
@@ -191,10 +191,10 @@ public function suppression () {
 
 
 // *************************************************************************************************************
-// fonction liées à la gestion des inscrits à la newsletter
+// fonction liÃ©es Ã  la gestion des inscrits Ã  la newsletter
 // *************************************************************************************************************
 
-//ajout d'un email à cette liste
+//ajout d'un email Ã  cette liste
 public function add_newsletter_inscrit ($email, $nom, $inscrit = 1) {
 	global $bdd;
 	
@@ -202,7 +202,7 @@ public function add_newsletter_inscrit ($email, $nom, $inscrit = 1) {
 						FROM newsletters_inscrits
 						WHERE id_newsletter = '".$this->id_newsletter."' && email = '".$email."' ";
 	$resultat = $bdd->query ($query);
-	//email déjà inscrit, on ne l'enregistre pas
+	//email dÃ©jÃ  inscrit, on ne l'enregistre pas
 	if ($tmp = $resultat->fetchObject()) { return false; }
 	
 	$query = "INSERT INTO newsletters_inscrits (id_newsletter, nom, email, inscrit) 
@@ -212,7 +212,7 @@ public function add_newsletter_inscrit ($email, $nom, $inscrit = 1) {
 	
 }
 
-//Mise à jour d'un inscrit à une newsletter dans les non-inscrits
+//Mise Ã  jour d'un inscrit Ã  une newsletter dans les non-inscrits
 public function maj_newsletter_inscrit ($email, $inscrit = 0, $nom = ""){
 	global $bdd;
 	
@@ -220,7 +220,7 @@ public function maj_newsletter_inscrit ($email, $inscrit = 0, $nom = ""){
 						FROM newsletters_inscrits
 						WHERE id_newsletter = '".$this->id_newsletter."' && email = '".$email."' ";
 	$resultat = $bdd->query ($query);
-	//email déjà inscrit, on le passe en desincrit
+	//email dÃ©jÃ  inscrit, on le passe en desincrit
 	if ($tmp = $resultat->fetchObject()) {
 		$query = "UPDATE newsletters_inscrits 
 							SET id_newsletter = '".$this->id_newsletter."',
@@ -259,22 +259,22 @@ public function charge_inscrits ($inscrit) {
 	return $liste;
 }
 
-//ajout préinscrit newletter
+//ajout prÃ©inscrit newletter
 
-//ajout d'un préinscrit
+//ajout d'un prÃ©inscrit
 public function add_newsletter_newsletters_inscriptions ($email) {
 	global $bdd;
 	
 	if (!$email) { return false; }
 	
-	// On vérifie que l'email n'est pas déjà inscrit (en préinscription) pour la newsletter
+	// On vÃ©rifie que l'email n'est pas dÃ©jÃ  inscrit (en prÃ©inscription) pour la newsletter
 	$query = "SELECT id_newsletter FROM newsletters_inscriptions" . 
 				" WHERE id_newsletter = '" . $this->id_newsletter . "'" . 
 				" AND email = '" . $email . "';";
 	$res = $bdd->query($query);
 	if($res->rowCount()){return false; }
 	
-	// On vérifie que l'email n'est pas déjà inscrit (inscription validée) pour la newsletter
+	// On vÃ©rifie que l'email n'est pas dÃ©jÃ  inscrit (inscription validÃ©e) pour la newsletter
 	$query = "SELECT id_newsletter FROM newsletters_inscrits" . 
 				" WHERE id_newsletter = '" . $this->id_newsletter . "'" . 
 				" AND email = '" . $email . "';";
@@ -293,14 +293,14 @@ public function add_newsletter_newsletters_inscriptions ($email) {
 	return $url_insciption;	
 }
 
-//maj d'un préinscrit
+//maj d'un prÃ©inscrit
 public function maj_newsletter_newsletters_inscriptions ($email, $code_secret) {
 	global $bdd;
 
 	$query = "SELECT id_newsletter FROM newsletters_inscrits WHERE id_newsletter = '" . $this->id_newsletter . "'
 				AND email = '" . $email . "' AND inscrit='1';";
 	$resultat = $bdd->query($query);
-	// Inscription déjà validée
+	// Inscription dÃ©jÃ  validÃ©e
 	if($tmp = $resultat->fetchObject()){
 		$GLOBALS['_INFOS']['validation_inscription_newsletter'] = -2;
 		return false;
@@ -312,7 +312,7 @@ public function maj_newsletter_newsletters_inscriptions ($email, $code_secret) {
 							&& email = '".$email."' 
 							&& date_demande > '".date ("Y-m-d", mktime(0, 0, 0, date("m")-1, date("d"),   date("Y")))."' ";
 	$resultat = $bdd->query ($query);
-	// Email (pré-inscription) non présent ou date dépassée
+	// Email (prÃ©-inscription) non prÃ©sent ou date dÃ©passÃ©e
 	if (!$tmp = $resultat->fetchObject()) {
 		return false;
 	}
@@ -330,7 +330,7 @@ public function maj_newsletter_newsletters_inscriptions ($email, $code_secret) {
 						WHERE id_newsletter = '".$this->id_newsletter."' && email = '".addslashes($email)."'";
 	$bdd->exec ($query);
 	
-	//maintenance... vidange des email préinscrits dépassant le mois
+	//maintenance... vidange des email prÃ©inscrits dÃ©passant le mois
 	$query = "DELETE FROM newsletters_inscriptions 
 						WHERE date_demande < '".date ("Y-m-d", mktime(0, 0, 0, date("m")-1, date("d"),   date("Y")))."' ";
 	$bdd->exec ($query);
@@ -340,7 +340,7 @@ public function maj_newsletter_newsletters_inscriptions ($email, $code_secret) {
 }
 
 // *************************************************************************************************************
-//fonction liées à la création d'un envois
+//fonction liÃ©es Ã  la crÃ©ation d'un envois
 // *************************************************************************************************************
 
 //ajout d'un envoi
@@ -495,7 +495,7 @@ function charger_newsletters () {
 	return $newsletters;
 }
 
-//chargement du nombre total d'abonnés à une newsletter
+//chargement du nombre total d'abonnÃ©s Ã  une newsletter
 function charger_total_abonnes ($id_newsletter) {
 	global $bdd;
 	global $ADMIN_ID_PROFIL;
@@ -631,13 +631,13 @@ function charger_total_abonnes ($id_newsletter) {
 }
 
 
-//génération d'un code de sécurité pour les inscriptions et desincriptions à une newletter
+//gÃ©nÃ©ration d'un code de sÃ©curitÃ© pour les inscriptions et desincriptions Ã  une newletter
 function creer_code_unique ($email, $id_newsletter) {
 	global $DIR;
 	if (!file_exists($DIR."config/newsletter.config.php")){
-		//vérification de l'existence du code sécurité de l'envoi de newsletter
+		//vÃ©rification de l'existence du code sÃ©curitÃ© de l'envoi de newsletter
 		if(!$file_config_newsletter = @fopen ($DIR."config/newsletter.config.php", "w")){
-			$erreur = "Impossible de créer le fichier de configuration config/newsletter.config.php ";
+			$erreur = "Impossible de crÃ©er le fichier de configuration config/newsletter.config.php ";
 			return false;	// L'ERREUR N'EST PAS GEREE DANS CE CODE : Trouver un moyen propre de le faire proprement
 		}else{
 //Il est important de coller le code contre le bord de la page
@@ -650,7 +650,7 @@ $file_content = "<?php
 
 ?>";
 			if (!fwrite ($file_config_newsletter, $file_content)) {
-				$erreur = "Impossible d'écrire dans le fichier de configuration config/newsletter.config.php";
+				$erreur = "Impossible d'Ã©crire dans le fichier de configuration config/newsletter.config.php";
 				return false;	// L'ERREUR N'EST PAS GEREE DANS CE CODE : Trouver un moyen propre de le faire proprement
 			}
 		}
@@ -661,12 +661,12 @@ $file_content = "<?php
 	return $code_unique;
 }
 
-//vérification de la validité d'un code de sécurité
+//vÃ©rification de la validitÃ© d'un code de sÃ©curitÃ©
 function verifier_code_unique ($code_unique, $email, $id_newsletter) {
 	global $DIR;
 	if (!file_exists($DIR."config/newsletter.config.php"))
 	{		return false;}	// L'ERREUR N'EST PAS GEREE DANS LE CODE : Trouver un moyen propre de le faire proprement
-											// Il n'est pas nécessaire de générer le fichier car dans tous les cas, le code ne sera pas vérifié
+											// Il n'est pas nÃ©cessaire de gÃ©nÃ©rer le fichier car dans tous les cas, le code ne sera pas vÃ©rifiÃ©
 	require($DIR."config/newsletter.config.php");
 	$code_unique2 = crypt ($email."_".$id_newsletter, $CODE_SECU_NEWSLETTER);
 	if ($code_unique != $code_unique2)
@@ -688,7 +688,7 @@ function charger_envoi_newsletter ($id_envoi) {
 
 }
 
-//mettre à jour l'état de lecture d'un email
+//mettre Ã  jour l'Ã©tat de lecture d'un email
 function maj_envoi_lecture ($id_envoi, $email, $lecture = 1) {
 	global $bdd;
 	
@@ -701,7 +701,7 @@ function maj_envoi_lecture ($id_envoi, $email, $lecture = 1) {
 	
 }
 
-//miseà jour de la durée de l'envoi
+//miseÃ  jour de la durÃ©e de l'envoi
 function duree_newsletter_envoi ($id_envoi) {
 	global $bdd;
 	

@@ -166,7 +166,7 @@
 			<?php }?>
 			<tr>
 				<td style="text-align:left;">
-				<span style=" float:right"><a href="#" id="more_det<?php echo $caiu?>" style="color:#000000">+ de détails</a>
+				<span style=" float:right"><a href="#" id="more_det<?php echo $caiu?>" style="color:#000000">+ de dÃ©tails</a>
 				</span>
 				<div><a href="#" id="link2_annu_edition_user_suppression<?php echo $caiu?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
 				<script type="text/javascript">

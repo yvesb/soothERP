@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ("contact",  "ANNUAIRE_CATEGORIES", "DEFAUT_ID_PAYS" , "listepays", "coordonnees", "sites_web", "civilites", "profils");
 check_page_variables ($page_variables);
 
@@ -21,7 +21,7 @@ check_page_variables ($page_variables);
 if (($contact->getRef_contact()) == $REF_CONTACT_ENTREPRISE) {
 	?>
 	tableau_smenu[0] = Array("smenu_entreprise", "smenu_entreprise.php" ,"true" ,"sub_content", "Entreprise");
-	tableau_smenu[1] = Array("annuaire_contact", "annuaire_view_fiche.php?ref_contact=<?php echo $REF_CONTACT_ENTREPRISE;?>" ,"true" ,"sub_content", "Renseignements généraux");
+	tableau_smenu[1] = Array("annuaire_contact", "annuaire_view_fiche.php?ref_contact=<?php echo $REF_CONTACT_ENTREPRISE;?>" ,"true" ,"sub_content", "Renseignements gÃ©nÃ©raux");
 	<?php
 } else {
 	?>
@@ -118,7 +118,7 @@ Event.observe("contactview_menu_a", "click",  function(evt){Event.stop(evt); vie
 	</script>
 			
 			</td>
-			<td><span class="labelled" id="line_siret3"  style="margin-left:50px; display:none;" title="Numéro de Siret">Siret:</span></td>
+			<td><span class="labelled" id="line_siret3"  style="margin-left:50px; display:none;" title="NumÃ©ro de Siret">Siret:</span></td>
 			<td><a href="#" id="line_siret4" class="modif_textarea3" style="display:none"><?php echo $contact->getSiret ();?></a>
 	<script type="text/javascript">
 	Event.observe("line_siret4", "click",  function(evt){Event.stop(evt); show_edit_form('nom_mask', 'nom_lib','siret');}, false);
@@ -153,7 +153,7 @@ Event.observe("contactview_menu_a", "click",  function(evt){Event.stop(evt); vie
 			<td><span class="labelled" style="width:85px">Nom:</span></td>
 			<td ><textarea id="nom" name="nom"  rows="<?php if (stristr($_SERVER["HTTP_USER_AGENT"], "firefox")) { echo "1"; } else { echo "2"; } ?>" class="classinput_xsize"><?php echo htmlentities($contact->getNom())?></textarea></td>
 			
-			<td><span class="labelled" id="line_siret"  style="margin-left:50px; display:none;" title="Numéro de Siret">Siret:</span></td>
+			<td><span class="labelled" id="line_siret"  style="margin-left:50px; display:none;" title="NumÃ©ro de Siret">Siret:</span></td>
 			<td><span id="line_siret2" style="display:none;">
 						<input type="text" id="siret" name="siret" rows="2" value="<?php echo $contact->getSiret ();?>"  class="classinput_xsize"/></span>
 			</td>

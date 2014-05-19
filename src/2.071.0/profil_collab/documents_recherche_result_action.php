@@ -16,11 +16,11 @@ if(isset($_REQUEST["fonction_generer"])){
 			$GLOBALS['PDF_OPTIONS']['HideToolbar'] = 0;
 			$GLOBALS['PDF_OPTIONS']['AutoPrint'] = 0;
 		
-			$pdf = new PDF_etendu ();// CrÈation du fichier
+			$pdf = new PDF_etendu ();// Cr√©ation du fichier
 			
 			foreach ($_REQUEST as $variable => $valeur) {
 				if (substr ($variable, 0, 7) != "ref_doc") {continue;}
-				$document = open_doc ($valeur);// PrÈfÈrences et options
+				$document = open_doc ($valeur);// Pr√©f√©rences et options
 				$pdf->add_doc ("", $document);// Ajout du document au PDF
 			}
 			// Sortie
@@ -40,7 +40,7 @@ if(isset($_REQUEST["fonction_generer"])){
 				unset($GLOBALS['_OPTIONS']['CREATE_DOC']);
 				// Ouverture et annulation du doc
 				$document = open_doc ($valeur);
-				$document->maj_etat_doc(5);//ETAT 5 = RefusÈ pour un doc de type DEV
+				$document->maj_etat_doc(5);//ETAT 5 = Refus√© pour un doc de type DEV
 			}
 		break;}
 		case "DEV_aRealiser_to_attenteReponseClient":{//************
@@ -49,7 +49,7 @@ if(isset($_REQUEST["fonction_generer"])){
 				unset($GLOBALS['_OPTIONS']['CREATE_DOC']);
 				// Ouverture et annulation du doc
 				$document = open_doc ($valeur);
-				$document->maj_etat_doc(3);//ETAT 3 = Attente rÈponse client pour un doc de type DEV
+				$document->maj_etat_doc(3);//ETAT 3 = Attente r√©ponse client pour un doc de type DEV
 			}
 		break;}
 		case "CDC_enCours_generate_BLC_enSaisie":{//****************
@@ -67,7 +67,7 @@ if(isset($_REQUEST["fonction_generer"])){
 				unset($GLOBALS['_OPTIONS']['CREATE_DOC']);
 				// Ouverture et annulation du doc
 				$document = open_doc ($valeur);
-				$document->maj_etat_doc(15);//ETAT 15 = LivrÈ pour un doc de type BLC
+				$document->maj_etat_doc(15);//ETAT 15 = Livr√© pour un doc de type BLC
 			}
 		break;}
 		case "BLC_enSaisie_to_pretAuDepart":{//**********************
@@ -76,7 +76,7 @@ if(isset($_REQUEST["fonction_generer"])){
 				unset($GLOBALS['_OPTIONS']['CREATE_DOC']);
 				// Ouverture et annulation du doc
 				$document = open_doc ($valeur);
-				$document->maj_etat_doc(13);//ETAT 13 = PrÍt au dÈpart pour un doc de type BLC
+				$document->maj_etat_doc(13);//ETAT 13 = Pr√™t au d√©part pour un doc de type BLC
 			}
 		break;}		
 		case "FAC_enSaisie_to_aRegler":{//***************************
@@ -85,7 +85,7 @@ if(isset($_REQUEST["fonction_generer"])){
 				unset($GLOBALS['_OPTIONS']['CREATE_DOC']);
 				// Ouverture et annulation du doc
 				$document = open_doc ($valeur);
-				$document->maj_etat_doc(18);//ETAT 15 = LivrÈ pour un doc de type BLC
+				$document->maj_etat_doc(18);//ETAT 15 = Livr√© pour un doc de type BLC
 			}
 		break;}
 		default:{//**************************************************

@@ -55,12 +55,12 @@ public function create_pdf ($compte_caisse, $id_compte_caisse_depot) {
 
 
 	// ***************************************************
-	// Valeurs par défaut
+	// Valeurs par dÃ©faut
 	foreach ($DPT_CAIS as $var => $valeur) {
 		$this->{$var} = $valeur;
 	}
 
-	// Création de la première page
+	// CrÃ©ation de la premiÃ¨re page
 	$this->create_pdf_page ();
 
 
@@ -68,12 +68,12 @@ public function create_pdf ($compte_caisse, $id_compte_caisse_depot) {
 }
 
 
-// Créé une nouvelle page du document PDF
+// CrÃ©Ã© une nouvelle page du document PDF
 protected function create_pdf_page () {
 	// Comptage du nombre de page
 	$this->page_actuelle++;
 	$this->SetAutoPageBreak(true,2*$this->MARGE_GAUCHE);;
-	// Création d'une nouvelle page
+	// CrÃ©ation d'une nouvelle page
 	$this->AddPage();
 	$this->Header() ;
 	$this->create_pdf_corps ();
@@ -81,7 +81,7 @@ protected function create_pdf_page () {
 }
 
 
-// Créé l'entete du document PDF
+// CrÃ©Ã© l'entete du document PDF
 public function Header() {
 	global $MONNAIE;
 	global $TARIFS_NB_DECIMALES;
@@ -101,7 +101,7 @@ public function Header() {
 	//de caisse vers caisse
 	$this->SetFont('Arial', 'B', 10);
 	$this->SetXY($this->MARGE_GAUCHE , $this->MARGE_HAUT+15);
-	$this->Cell (70, 3, ($this->depot->lib_caisse)." vers compte ".($this->depot->lib_compte).", ".($this->depot->nom)." n°".($this->depot->numero_compte), 0, 0, 'L');
+	$this->Cell (70, 3, ($this->depot->lib_caisse)." vers compte ".($this->depot->lib_compte).", ".($this->depot->nom)." nÂ°".($this->depot->numero_compte), 0, 0, 'L');
 	// ***************************************************
 	// tableau
 	$this->SetFont('Arial', 'B', 8);
@@ -151,7 +151,7 @@ public function Header() {
 }
 
 
-// Créé le corps du PDF
+// CrÃ©Ã© le corps du PDF
 protected function create_pdf_corps () {
 	global $MONNAIE;
 	global $TARIFS_NB_DECIMALES;
@@ -160,14 +160,14 @@ protected function create_pdf_corps () {
 
 	$this->SetFont('Arial', '', 8);
 
-	//définition du contenu
+	//dÃ©finition du contenu
 	
 	if (isset($this->depot->ESP->infos_depot)) {
-		//liste des espèces
+		//liste des espÃ¨ces
 		$esp_liste = explode("\n",$this->depot->ESP->infos_depot);
 		$this->text_contenu_depot = $this->ENTETE_ESP." :  \n";
 		if ($this->depot->num_remise) {
-			$this->text_contenu_depot .= "Numéro de remise: ".$this->depot->num_remise."   \n";
+			$this->text_contenu_depot .= "NumÃ©ro de remise: ".$this->depot->num_remise."   \n";
 		}
 		
 		foreach ($esp_liste as $esp_cont) {
@@ -181,14 +181,14 @@ protected function create_pdf_corps () {
 	}
 	
 	if(isset($this->depot->CHQ ) && count ($this->depot->CHQ)){
-		//liste des chèques
+		//liste des chÃ¨ques
 		
 		//$this->AddPage();
 		$this->text_contenu_depot = $this->ENTETE_CHQ." : ";
 		$this->text_contenu_depot .= " (".count($this->depot->CHQ);
-		$this->text_contenu_depot .= " opérations )\n";
+		$this->text_contenu_depot .= " opÃ©rations )\n";
 		if ($this->depot->num_remise) {
-			$this->text_contenu_depot .= "Numéro de remise: ".$this->depot->num_remise."   \n";
+			$this->text_contenu_depot .= "NumÃ©ro de remise: ".$this->depot->num_remise."   \n";
 		}
 		
 		$this->SetXY($this->MARGE_GAUCHE, $this->y);
@@ -200,7 +200,7 @@ protected function create_pdf_corps () {
 		$this->Cell (5, 5, "", 1, 0, 'R');
 		$this->Cell (60, 5, "Porteur", 1, 0, 'C');
 		$this->Cell (45, 5, "Banque", 1, 0, 'C');
-		$this->Cell (35, 5, "Numéro de chèque", 1, 0, 'C');
+		$this->Cell (35, 5, "NumÃ©ro de chÃ¨que", 1, 0, 'C');
 		$this->Cell (35, 5, "Montant", 1, 0, 'C');
 		$this->y =$this->y +5;
 		

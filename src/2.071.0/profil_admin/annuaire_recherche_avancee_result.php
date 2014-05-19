@@ -15,7 +15,7 @@ require ($DIR."_session.inc.php");
 
 $ANNUAIRE_CATEGORIES	=	get_categories();
 // *************************************************
-// Profils à afficher
+// Profils Ã  afficher
 $profils = array();
 foreach ($_SESSION['profils'] as $profil) {
 	if ($profil->getActif() == 0) { continue; }
@@ -25,7 +25,7 @@ unset ($profil);
 
 
 // *************************************************
-// Données pour le formulaire et la recherche
+// DonnÃ©es pour le formulaire et la recherche
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -111,10 +111,10 @@ if (isset($_REQUEST['archive'])) {
 
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_join 	= "";
 	$query_join_count 	= "";
 	$query_where 	= "";
@@ -155,7 +155,7 @@ if (isset($_REQUEST['recherche'])) {
 	if ($search['ville'] || $search['code_postal']) {
 		$query_join_count 	.= " LEFT JOIN adresses ad ON a.ref_contact = ad.ref_contact  ";
 	}
-	// Coordonnées
+	// CoordonnÃ©es
 	if ($search['tel']) {
 		if ($query_where) { $query_where .= " && "; }
 		$query_where .= "(tel1 LIKE '%".$search['tel']."%' || tel2 LIKE '%".$search['tel']."%' || fax LIKE '%".$search['tel']."%')";
@@ -205,7 +205,7 @@ if (isset($_REQUEST['recherche'])) {
 	//echo nl2br ($query);
 	unset ($fiche, $resultat, $query);
 
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 	$query = "SELECT (a.ref_contact) 
 						FROM annuaire a 
 							".$query_join_count."

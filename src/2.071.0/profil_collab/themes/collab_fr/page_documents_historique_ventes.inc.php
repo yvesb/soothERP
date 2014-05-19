@@ -4,7 +4,7 @@
 // AFFICHAGE DE HISTORIQUE DES VENTES
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("histo_ventes");
 check_page_variables ($page_variables);
 

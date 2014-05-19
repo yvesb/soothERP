@@ -13,7 +13,7 @@ require ($DIR.$_SESSION['theme']->getDir_theme()."_theme.config.php" );
 include_once ($CONFIG_DIR."profil_client.config.php");
 // chargement de la class du profil
 contact::load_profil_class($CLIENT_ID_PROFIL);
-// Préparations des variables d'affichage
+// PrÃ©parations des variables d'affichage
 $liste_categories = contact_client::charger_clients_categories ();
 
 //liste des tarifs

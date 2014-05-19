@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -86,7 +86,7 @@ check_page_variables ($page_variables);
 		</tr>
 		<tr>
 			<td></td>
-			<td>Sélectionnez un résultat et validez:
+			<td>SÃ©lectionnez un rÃ©sultat et validez:
 			</td>
 			<td></td>
 			<td></td>

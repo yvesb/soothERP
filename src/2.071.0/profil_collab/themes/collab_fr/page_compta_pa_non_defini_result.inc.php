@@ -1,10 +1,10 @@
 <?php
 
 // *************************************************************************************************************
-// RECHERCHE DES ARTICLES DONT LE PRIX D'ACHAT N'EST PAS DÉFINI
+// RECHERCHE DES ARTICLES DONT LE PRIX D'ACHAT N'EST PAS DÃ‰FINI
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES", "fiches", "form['lib_article']", "form['page_to_show']", "form['fiches_par_page']", "nb_fiches", "form['orderby']", "form['orderorder']", "form['ref_art_categ']", "form['ref_constructeur']","form['in_pa_zero']");
 check_page_variables ($page_variables);
 
@@ -28,7 +28,7 @@ function barre_navigation($nbtotal,
 													
 {
 	// --------------------------------------------------------------------
-	global $cfg_nb_pages; // Nb de n° de pages affichées dans la barre
+	global $cfg_nb_pages; // Nb de nÂ° de pages affichÃ©es dans la barre
 global $DIR;
 	$barre= "";	$lien_on 	= "&nbsp;<a href='#' id='link_pagi_{cible}'>{lien}</a>&nbsp;
 								<script type='text/javascript'>
@@ -38,7 +38,7 @@ global $DIR;
 	// --------------------------------------------------------------------
     
 
-	// début << .
+	// dÃ©but << .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -58,7 +58,7 @@ global $DIR;
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
 
 
-	// précédent < .
+	// prÃ©cÃ©dent < .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -164,7 +164,7 @@ function image_html($img)
 
 //
 //
-//création de la barre de nav
+//crÃ©ation de la barre de nav
 //
 //
 
@@ -185,7 +185,7 @@ foreach ($_ALERTES as $alerte => $value) {
 	echo $alerte." => ".$value."<br>";
 }
 
-// Affichage des résultats
+// Affichage des rÃ©sultats
 ?><br />
 <div   class="mt_size_optimise">
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -329,7 +329,7 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 	</div>
 	</td>
 	<td style="text-align:right; padding-right:29px">
-	<div id="aff_pa_ht_<?php echo $colorise;?>" style=" <?php //permission (6) Accès Consulter les prix d’achat
+	<div id="aff_pa_ht_<?php echo $colorise;?>" style=" <?php //permission (6) AccÃ¨s Consulter les prix dâ€™achat
 if (!$_SESSION['user']->check_permission ("6")) {?>display:none;<?php } ?>" >
 		<input type="text" name="pa_ht_<?php echo $colorise;?>" id="pa_ht_<?php echo $colorise;?>" size="5" value="<?php	
 			if(!is_null($fiche->prix_achat_ht)) {

@@ -1,10 +1,10 @@
 <?php
 
 // *************************************************************************************************************
-// ajout de modèle de stats export
+// ajout de modÃ¨le de stats export
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -19,7 +19,7 @@ check_page_variables ($page_variables);
 
 ?>
 <p>&nbsp;</p>
-<p>modèle de documents export (ajouter un nouveau) </p>
+<p>modÃ¨le de documents export (ajouter un nouveau) </p>
 <p>&nbsp; </p>
 <?php 
 foreach ($_ALERTES as $alerte => $value) {
@@ -64,31 +64,31 @@ foreach ($_ALERTES as $alerte => $value) {
 ?>
 if (erreur) {
   if (choisir_source) {
-    texte_erreur += "Vous devez indiquez la source utilisée.<br/>";
+    texte_erreur += "Vous devez indiquez la source utilisÃ©e.<br/>";
   }
   if (indiquer_lib_modele) {
     window.parent.document.getElementById("lib_modele").className="alerteform_xsize";
-    texte_erreur += "Vous devez indiquer un libellé au nouveau modèle.<br/>";
+    texte_erreur += "Vous devez indiquer un libellÃ© au nouveau modÃ¨le.<br/>";
   } else {
     window.parent.document.getElementById("lib_modele").className="classinput_xsize";
   }
   if (choisir_id_export_modele) {
     window.parent.document.getElementById("choix_id_export_stats").className="alerteform_xsize";
-    texte_erreur += "Vous devez sélectionner un modèle de document source.<br/>";
+    texte_erreur += "Vous devez sÃ©lectionner un modÃ¨le de document source.<br/>";
   } else {
     window.parent.document.getElementById("choix_id_export_stats").className="classinput_xsize";
   }
   if (indiquer_fichiers_source) {
     window.parent.document.getElementById("file_1").className="alerteform_nsize";
     window.parent.document.getElementById("file_2").className="alerteform_nsize";
-    texte_erreur += "Vous devez indiquer les emplacements du fichier configuration et du fichier de classe du nouveau modèle.<br/>";
+    texte_erreur += "Vous devez indiquer les emplacements du fichier configuration et du fichier de classe du nouveau modÃ¨le.<br/>";
   } else {
     window.parent.document.getElementById("file_1").className="classinput_nsize";
     window.parent.document.getElementById("file_2").className="classinput_nsize";
   }
 
   if (exist_export_modele) {
-    texte_erreur += "Ce modèle d&acute;export est déjà installé dans LMB.<br/>";
+    texte_erreur += "Ce modÃ¨le d&acute;export est dÃ©jÃ  installÃ© dans LMB.<br/>";
   }
   window.parent.alerte.alerte_erreur ('Erreur de saisie', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 
@@ -99,7 +99,7 @@ else
 
 window.parent.changed = false;
 window.parent.page.traitecontent('communication_mod_export_stats_vente','communication_mod_export_stats_vente.php','true','sub_content');
-window.parent.alerte.alerte_erreur ('Nouveau modèle ajouté', 'Ce nouveau modèle d\'impression est désormais disponible, cliquez sur « Utiliser un nouveau modèle d\'impression. » et activez le.','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+window.parent.alerte.alerte_erreur ('Nouveau modÃ¨le ajoutÃ©', 'Ce nouveau modÃ¨le d\'impression est dÃ©sormais disponible, cliquez sur Â«Â Utiliser un nouveau modÃ¨le d\'impression.Â Â» et activez le.','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 
 }
 

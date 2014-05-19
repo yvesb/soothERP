@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -11,7 +11,7 @@ check_page_variables ($page_variables);
 // AFFICHAGE
 // *************************************************************************************************************
 ?>
-<!-- Script pour gérer la pop-up "courrier_options" pour gérer les option d'un courrier -->
+<!-- Script pour gÃ©rer la pop-up "courrier_options" pour gÃ©rer les option d'un courrier -->
 <script type="text/javascript">
 	centrage_element("courrier_options");
 	Event.observe(window, "resize", function(evt){centrage_element("courrier_options");});
@@ -32,7 +32,7 @@ check_page_variables ($page_variables);
 					<tr>
 						<td></td>
 						<td colspan="3">
-							<span style="font-weight:bolder; color:#97bf0d;">&gt;&gt;&nbsp;Rédaction du Message</span> 
+							<span style="font-weight:bolder; color:#97bf0d;">&gt;&gt;&nbsp;RÃ©daction du Message</span> 
 						</td>
 						<td style="text-align:right; color:#012772;font-size:9pt;">
 							(<span id="lib_etat_courrier"><?php echo $courrier->getLib_etat_courrier(); ?></span>)
@@ -104,7 +104,7 @@ check_page_variables ($page_variables);
 								$("cmd").value = 'apercu';
 								$("courrier_edition_save").submit();
 							}, false);
-							<?php //@TODO COURRIER : Gestion de la VALIDATION : javascript gérant le bouton VALIDER ?>
+							<?php //@TODO COURRIER : Gestion de la VALIDATION : javascript gÃ©rant le bouton VALIDER ?>
 							<?php 
 							if($courrier->getId_etat_courrier() == Courrier::ETAT_REDIGE()){ ?>
 								var etatCanChange = false;
@@ -144,7 +144,7 @@ check_page_variables ($page_variables);
 								$("courrier_edition_save").submit();
 							}, false);
 							<?php 
-								//@TODO COURRIER : Gestion du FAX : javascript gérant l'évènement du bouton FAX
+								//@TODO COURRIER : Gestion du FAX : javascript gÃ©rant l'Ã©vÃ¨nement du bouton FAX
 							?>
 							Event.observe("courrier_fax", "click",  function(evt){
 								Event.stop(evt); 
@@ -165,7 +165,7 @@ check_page_variables ($page_variables);
 								$("cmd").value = 'email';
 								$("courrier_edition_save").submit();
 							 	<?php
-							 		//@TODO COURRIER : MODES_EDITIONS : gérer porprement le paramètre mode_edition -> Voir table editions_modes 
+							 		//@TODO COURRIER : MODES_EDITIONS : gÃ©rer porprement le paramÃ¨tre mode_edition -> Voir table editions_modes 
 							 	?>
 								PopupCentrer("courriers_editing_email.php<?php echo "?id_courrier=".$courrier->getId_courrier()."&mode_edition=2&code_pdf_modele=".$courrier->getCode_pdf_modele(); ?>",800,450,"menubar=no,statusbar=no,scrollbars=yes,resizable=yes");
 							}, false);
@@ -316,7 +316,7 @@ check_page_variables ($page_variables);
 
 <SCRIPT type="text/javascript">
 	//---------------------------------------------------------------
-	//debut d'intialisation de l'éditeur
+	//debut d'intialisation de l'Ã©diteur
 	//---------------------------------------------------------------	
 	editeur.HTML_editor("contenu_courrier_tmp", "contenu_courrier_html", "editeur");
 	Event.observe('editeur_bold', "click", function(evt){Event.stop(evt); editeur.HTML_exeCmd("bold", null);});
@@ -358,7 +358,7 @@ check_page_variables ($page_variables);
 	});
 	Event.observe($("contenu_courrier_html"), "blur", function(evt){editeur.HTML_save();});
 	//---------------------------------------------------------------
-	//fin d'intialisation de l'éditeur
+	//fin d'intialisation de l'Ã©diteur
 	//---------------------------------------------------------------	
 	
 	//on masque le chargement

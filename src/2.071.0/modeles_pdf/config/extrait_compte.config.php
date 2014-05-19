@@ -11,10 +11,10 @@ $EXTRAIT_COMPTE['HAUTEUR_LINE_VIDE']				= 5;
 
 
 $EXTRAIT_COMPTE['ENTETE_COL_DATE'] = "Date";
-$EXTRAIT_COMPTE['ENTETE_COL_LIB'] = "Libellé";
-$EXTRAIT_COMPTE['ENTETE_COL_DEBIT'] = "Dédit";
+$EXTRAIT_COMPTE['ENTETE_COL_LIB'] = "LibellÃ©";
+$EXTRAIT_COMPTE['ENTETE_COL_DEBIT'] = "DÃ©dit";
 $EXTRAIT_COMPTE['ENTETE_COL_LT']  = "LT";
-$EXTRAIT_COMPTE['ENTETE_COL_CREDIT'] 	= "Crédit";
+$EXTRAIT_COMPTE['ENTETE_COL_CREDIT'] 	= "CrÃ©dit";
 $EXTRAIT_COMPTE['ENTETE_COL_SOLDE'] 	= "Solde";
 
 $EXTRAIT_COMPTE['LARGEUR_COL_DATE'] = 20;
@@ -54,15 +54,15 @@ $EXTRAIT_COMPTE['PIEDS_DROIT'][1]	= $PIED_DE_PAGE_DROIT_1;
 
 
 
-//variable//type de champ(parametre)//libéllé//commentaire
+//variable//type de champ(parametre)//libÃ©llÃ©//commentaire
 // PARAMETRES MODIFIABLES
 // FIN PARAMETRES MODIFIABLES
 // CONFIGURATION PAR DEFAUT
-// Portion de code recopiée dans la partie « paramètres modifiables » en cas de remise à 0 des paramètres.
+// Portion de code recopiÃ©e dans la partie Â«Â paramÃ¨tres modifiablesÂ Â» en cas de remise Ã  0 des paramÃ¨tres.
 /*
 */
 // FIN CONFIGURATION PAR DEFAUT
-// INFORMATIONS SUR L’AUTEUR
+// INFORMATIONS SUR Lâ€™AUTEUR
 /* 
 */
 ?>

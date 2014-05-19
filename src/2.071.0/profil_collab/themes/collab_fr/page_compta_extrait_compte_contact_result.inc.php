@@ -4,7 +4,7 @@
 // AFFICHAGE DU GRAND LIVRE D'UN CONTACT
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -25,7 +25,7 @@ function barre_navigation($nbtotal,
 													
 {
 	// --------------------------------------------------------------------
-	global $cfg_nb_pages; // Nb de n° de pages affichées dans la barre
+	global $cfg_nb_pages; // Nb de nÂ° de pages affichÃ©es dans la barre
 global $DIR;
 	$barre= "";	$lien_on 	= "&nbsp;<a href='#' id='link_pagi_{cible}'>{lien}</a>&nbsp;
 								<script type='text/javascript'>
@@ -35,7 +35,7 @@ global $DIR;
 	// --------------------------------------------------------------------
     
 
-	// début << .
+	// dÃ©but << .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -55,7 +55,7 @@ global $DIR;
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
 
 
-	// précédent < .
+	// prÃ©cÃ©dent < .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -161,7 +161,7 @@ function image_html($img)
 
 //
 //
-//création de la barre de nav
+//crÃ©ation de la barre de nav
 //
 //
 
@@ -211,7 +211,7 @@ function image_html($img)
 		</td>
 		<td style="text-align:left; font-weight:bolder"  >
 		<div>
-		Libellé
+		LibellÃ©
 		</div>
 		</td>
 		<td style="text-align:right; font-weight:bolder">
@@ -226,7 +226,7 @@ function image_html($img)
 		</td>
 		<td style="text-align:right; width:120px; font-weight:bolder">
 		<div style="width:120px">
-		Débit
+		DÃ©bit
 		</div>
 		</td>
 		<td style="padding-right:10px; width:55px; font-weight:bolder">
@@ -236,7 +236,7 @@ function image_html($img)
 		</td>
 		<td style="text-align:right; width:120px; font-weight:bolder">
 		<div style="width:120px">
-		Crédit
+		CrÃ©dit
 		</div>
 		</td>
 		<td style="text-align:right; width:120px; font-weight:bolder">
@@ -284,7 +284,7 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 		<?php } 
 		if (isset($line->ref_reglement)) { ?>
 		<a href="#" id="grand_livre_line_<?php echo $colorise;?>" style="color:#000000; text-decoration:none">
-		<span style="font-weight:bolder">Règlement</span>  <span style="font-size:10px">(<?php echo htmlentities($line->lib_reglement_mode);?> <?php if (isset($line->nchq_s) && $line->nchq_s != "") {echo " n°".$line->nchq_s;}?><?php if (isset($line->nchq_e) && $line->nchq_e != "") {echo " n°".$line->nchq_e;}?>)</span>
+		<span style="font-weight:bolder">RÃ¨glement</span>  <span style="font-size:10px">(<?php echo htmlentities($line->lib_reglement_mode);?> <?php if (isset($line->nchq_s) && $line->nchq_s != "") {echo " nÂ°".$line->nchq_s;}?><?php if (isset($line->nchq_e) && $line->nchq_e != "") {echo " nÂ°".$line->nchq_e;}?>)</span>
 		</a><br />
 		<?php //  print_r($line->ref_doc);?>
 		</div>

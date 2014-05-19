@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -37,7 +37,7 @@ foreach ($_ALERTES as $alerte => $value) {
 	?>
 	if (erreur) {}
 	else{
-		window.parent.alerte.alerte_erreur ('Enregistrement du courrier', 'Le courrier a été bien été enregistré','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+		window.parent.alerte.alerte_erreur ('Enregistrement du courrier', 'Le courrier a Ã©tÃ© bien Ã©tÃ© enregistrÃ©','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 		//window.parent.changed = false;
 		window.parent.page.traitecontent('communication_courrier','annuaire_view_courriers.php?ref_contact=<?php echo $ref_destinataire; ?>','true','contactview_courrier');
 		//window.parent.document.getElementById("edition_courrier").style.display = "none";

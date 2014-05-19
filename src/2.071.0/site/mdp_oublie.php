@@ -26,7 +26,7 @@ if (!empty($_REQUEST['email'])) {
 		global $ID_MAIL_TEMPLATE_INVITATION_INSCRIPTION;
 		global $ID_MAIL_TEMPLATE;
 		global $REF_CONTACT_ENTREPRISE;
-		// On récupère l'identifiant du template de mail pour l'invitation à la création d'un compte
+		// On rÃ©cupÃ¨re l'identifiant du template de mail pour l'invitation Ã  la crÃ©ation d'un compte
 		$ID_MAIL_TEMPLATE = $ID_MAIL_TEMPLATE_INVITATION_INSCRIPTION;
 		// Chargement du nom de l'entreprise
 		$contact_entreprise = new contact($REF_CONTACT_ENTREPRISE);
@@ -36,12 +36,12 @@ if (!empty($_REQUEST['email'])) {
 		$destinataire = $coord->email;
 		$sujet = "[" . $nom_entreprise . "] Votre compte utilisateur LMB";
 		$message = "<br /><br />Bonjour, <br />
-						Votre demande de mot de passe oublié sur le site " . $lib_civ . " " . $nom_entreprise . " a été prise en compte. <br />
-						Veuillez cliquer sur le lien suivant pour en définir un nouveau : <br />
+						Votre demande de mot de passe oubliÃ© sur le site " . $lib_civ . " " . $nom_entreprise . " a Ã©tÃ© prise en compte. <br />
+						Veuillez cliquer sur le lien suivant pour en dÃ©finir un nouveau : <br />
 						<a href=\"" . url_site() . "/site/_change_mdp.php?sid=$code\">" . url_site() . "</a><br /><br />
 						";
 		if (!$mail->envoi_email_templated($destinataire, $sujet, $message)) {
-			echo "Une erreur est survenue lors de l'envoi à " . $_POST['email'] . "<br />";
+			echo "Une erreur est survenue lors de l'envoi Ã  " . $_POST['email'] . "<br />";
 		}
 		set_error_handler("error_handler");
 	}

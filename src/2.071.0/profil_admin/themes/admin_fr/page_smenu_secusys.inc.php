@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
 
 ?>
 <script type="text/javascript" language="javascript">
-tableau_smenu[0] = Array("smenu_secusys", "smenu_secusys.php" ,"true" ,"sub_content", "Sécurité du système");
+tableau_smenu[0] = Array("smenu_secusys", "smenu_secusys.php" ,"true" ,"sub_content", "SÃ©curitÃ© du systÃ¨me");
 tableau_smenu[1] = Array("", "" ,"" ,"", "");
 update_menu_arbo();
 </script>
@@ -51,9 +51,9 @@ update_menu_arbo();
 			<td style="text-align:left;" valign="top">
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="20px" /><br />
 
-				<span class="titre_smenu_page" id="smenu_secusys_session"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Définir la durée des sessions</span><br /><br />
+				<span class="titre_smenu_page" id="smenu_secusys_session"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />DÃ©finir la durÃ©e des sessions</span><br /><br />
 				
-				<span class="titre_smenu_page_unvalid" id="smenu_secusys_niv_secu"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Régler les niveaux de sécurité</span><br />
+				<span class="titre_smenu_page_unvalid" id="smenu_secusys_niv_secu"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />RÃ©gler les niveaux de sÃ©curitÃ©</span><br />
 				<br />
 			<span class="titre_smenu_page" id="smenu_secusys_liste_admin"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Liste des administrateurs</span><br />
 			<br />		</td>

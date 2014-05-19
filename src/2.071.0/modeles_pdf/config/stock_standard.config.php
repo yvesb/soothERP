@@ -19,9 +19,9 @@ $ETAT_STOCK['HAUTEUR_AFTER_LINE_ARTICLE']			= 0;
 $ETAT_STOCK['HAUTEUR_AFTER_LINE_CATEGORIE']			= 0;
 $ETAT_STOCK['HAUTEUR_AFTER_LINE_TOTAUX_CATEGORIE']	= 0;
 
-$ETAT_STOCK['COL']['ENTETE']['REF'] = "Référence";
-$ETAT_STOCK['COL']['ENTETE']['DES'] = "Désignation";
-$ETAT_STOCK['COL']['ENTETE']['QTE'] = "Qté";
+$ETAT_STOCK['COL']['ENTETE']['REF'] = "RÃ©fÃ©rence";
+$ETAT_STOCK['COL']['ENTETE']['DES'] = "DÃ©signation";
+$ETAT_STOCK['COL']['ENTETE']['QTE'] = "QtÃ©";
 $ETAT_STOCK['COL']['ENTETE']['PT']  = "PT HT";
 $ETAT_STOCK['COL']['ENTETE']['PAU'] = "PA HT";
 
@@ -60,14 +60,14 @@ $ETAT_STOCK['PIEDS_DROIT'][0]	= $PIED_DE_PAGE_DROIT_0;
 $ETAT_STOCK['PIEDS_DROIT'][1]	= $PIED_DE_PAGE_DROIT_1;
 
 
-//variable//type de champ(parametre)//libéllé//commentaire
+//variable//type de champ(parametre)//libÃ©llÃ©//commentaire
 // PARAMETRES MODIFIABLES
-$ETAT_STOCK['REF_ARTICLE']="Article";//SLCT()// Affichage de la colonne référence //  //Aucune@Article@Interne@Oem
+$ETAT_STOCK['REF_ARTICLE']="Article";//SLCT()// Affichage de la colonne rÃ©fÃ©rence //  //Aucune@Article@Interne@Oem
 // FIN PARAMETRES MODIFIABLES
 // CONFIGURATION PAR DEFAUT
-// Portion de code recopiée dans la partie « paramètres modifiables » en cas de remise à 0 des paramètres.
+// Portion de code recopiÃ©e dans la partie Â«Â paramÃ¨tres modifiablesÂ Â» en cas de remise Ã  0 des paramÃ¨tres.
 /*
-$DOC_STANDARD['REF_ARTICLE']="Article";//SLCT()// Affichage de la colonne référence //  //Aucune@Article@Interne@Oem
+$DOC_STANDARD['REF_ARTICLE']="Article";//SLCT()// Affichage de la colonne rÃ©fÃ©rence //  //Aucune@Article@Interne@Oem
 */
 // FIN CONFIGURATION PAR DEFAUT
 // INFORMATIONS SUR L'AUTEUR

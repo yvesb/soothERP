@@ -224,7 +224,7 @@ Event.observe("link_sous__composant_<?php echo $serialisation_composant;?>", "cl
 	</form>
 <script type="text/javascript">
 Sortable.create('composant_ul',{dropOnEmpty:true, ghosting:true, handle: 'composant_li_lib_handle'});
-//fonction de validation de l'étape 4
+//fonction de validation de l'Ã©tape 4
 function valide_etape_4() {
 if (!$("composant_ul").empty()) {
 var liste = Sortable.serialize('composant_ul');

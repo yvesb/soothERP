@@ -5,33 +5,33 @@
 
 
 final class catalogue_client {
-	private $id_catalogue_client;			// Identifiant de la catégorie client
+	private $id_catalogue_client;			// Identifiant de la catÃ©gorie client
 	private $lib_catalogue_client;
 	private $id_catalogue_client_dir;		//
 	private $lib_catalogue_client_dir;		
 	private $ref_art_categ;
-	private $id_catalogue_dir_parent;	// Identifiant de la categorie client parent, permettant de créer une hierarchie
+	private $id_catalogue_dir_parent;	// Identifiant de la categorie client parent, permettant de crÃ©er une hierarchie
 
-	private $catalogue_client_dirs_childs; //liste des dirs enfant d'une catégorie
+	private $catalogue_client_dirs_childs; //liste des dirs enfant d'une catÃ©gorie
 
-	private $catalogue_client_dirs_parents; //liste des dirs parents d'une catégorie
+	private $catalogue_client_dirs_parents; //liste des dirs parents d'une catÃ©gorie
 
 function __construct($id_catalogue_client = "") {
 	global $bdd;
 
-	// Controle si la id_catalogue_client est précisée
+	// Controle si la id_catalogue_client est prÃ©cisÃ©e
 	if (!$id_catalogue_client) { return false; }
 
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT id_catalogue_client, lib_catalogue_client
 						FROM catalogues_clients 
 						WHERE id_catalogue_client = '".$id_catalogue_client."' ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si l' id_catalogue_client est trouvée
+	// Controle si l' id_catalogue_client est trouvÃ©e
 	if (!$catalogue_client = $resultat->fetchObject()) { return false; }
 
-	// Attribution des informations à l'objet
+	// Attribution des informations Ã  l'objet
 	$this->id_catalogue_client 		= $id_catalogue_client;
 	$this->lib_catalogue_client		= $catalogue_client->lib_catalogue_client;
 
@@ -48,11 +48,11 @@ final public function create ($lib_catalogue_client) {
 	global $bdd;
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->lib_catalogue_client		= $lib_catalogue_client;
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -67,7 +67,7 @@ final public function create ($lib_catalogue_client) {
 
 	
 	// *************************************************
-	// Résultat positif de la création
+	// RÃ©sultat positif de la crÃ©ation
 	return true;
 }
 
@@ -81,12 +81,12 @@ final public function modification ($lib_catalogue_client) {
 	global $bdd;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->lib_catalogue_client		= $lib_catalogue_client;
 	
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -109,7 +109,7 @@ final public function suppression () {
 	global $bdd;
 
 	// *************************************************
-	// Controle de l'existance d'un article de cette catégorie
+	// Controle de l'existance d'un article de cette catÃ©gorie
 	$query = "SELECT id_catalogue_client FROM magasins WHERE !ISNULL(id_catalogue_client)";
 	$resultat = $bdd->query ($query);
 	if ($catalogue_client = $resultat->fetchObject()) {
@@ -117,7 +117,7 @@ final public function suppression () {
 	}
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -136,21 +136,21 @@ final public function suppression () {
 
 
 // *************************************************************************************************************
-// FONCTIONS LIEES A LA GESTION DES CATÉGORIES DU CATALOGUE CLIENT
+// FONCTIONS LIEES A LA GESTION DES CATÃ‰GORIES DU CATALOGUE CLIENT
 // *************************************************************************************************************
-//fonction d'ajout  d'une catalogue_client_dir (depuis la création "simple" du catalogue)
+//fonction d'ajout  d'une catalogue_client_dir (depuis la crÃ©ation "simple" du catalogue)
 final public function add_catalogue_client_dir ($ref_art_categ =  "", $ref_art_categ_parent = "") {
 	global $bdd;
 	
 	if (!$ref_art_categ) {$GLOBALS['_ALERTES']['bad_ref_art_categ'] = 1;}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 	
-	//récupération des informations depuis l'art_categ
+	//rÃ©cupÃ©ration des informations depuis l'art_categ
 	$this->ref_art_categ = $ref_art_categ;
 	$this->lib_catalogue_client_dir = "";
 	
@@ -164,7 +164,7 @@ final public function add_catalogue_client_dir ($ref_art_categ =  "", $ref_art_c
 		}
 	}
 	
-	//récupération de l'id_catalogue_client_dir si existant
+	//rÃ©cupÃ©ration de l'id_catalogue_client_dir si existant
 	$this->id_catalogue_dir_parent =	NULL;
 	
 	if ($ref_art_categ_parent) {
@@ -200,19 +200,19 @@ final public function add_catalogue_client_dir ($ref_art_categ =  "", $ref_art_c
         edi_event(101, $ref_art_categ, $this->id_catalogue_client);
 	
 	// *************************************************
-	// Résultat positif de la création
+	// RÃ©sultat positif de la crÃ©ation
 	return true;
 	
 }
 
-//fonction de suppression  d'une catalogue_client_dir (depuis la création "simple" du catalogue)
+//fonction de suppression  d'une catalogue_client_dir (depuis la crÃ©ation "simple" du catalogue)
 final public function del_catalogue_client_dir ($ref_art_categ =  "") {
 	global $bdd;
 	
 	if (!$ref_art_categ) {$GLOBALS['_ALERTES']['bad_ref_art_categ'] = 1;}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -239,7 +239,7 @@ final public function del_catalogue_client_dir ($ref_art_categ =  "") {
 	$bdd->exec ($query);
 	
 	// *************************************************
-	// Résultat positif de la suppression
+	// RÃ©sultat positif de la suppression
 	return true;
 	
 }
@@ -248,7 +248,7 @@ final public function del_catalogue_client_dir ($ref_art_categ =  "") {
 final public function add_all_catalogue_client_dir () {
 	global $bdd;
 	
-	//liste des catégories d'articles
+	//liste des catÃ©gories d'articles
 	$list_art_categ =	get_articles_categories();
 	
 	// *************************************************
@@ -264,7 +264,7 @@ final public function add_all_catalogue_client_dir () {
 	}
 	
 	// *************************************************
-	// Résultat positif de la création
+	// RÃ©sultat positif de la crÃ©ation
 	return true;
 
 }
@@ -280,11 +280,11 @@ final public function del_all_catalogue_client_dir () {
 	$bdd->exec ($query);
 
 	// *************************************************
-	// Résultat positif de la suppression
+	// RÃ©sultat positif de la suppression
 	return true;
 
 }
-//fonction de creation d'une catalogue_client_dir (depuis la création "avancée" du catalogue)
+//fonction de creation d'une catalogue_client_dir (depuis la crÃ©ation "avancÃ©e" du catalogue)
 final public function create_catalogue_client_dir ($lib_catalogue_client_dir, $ref_art_categ ,$id_catalogue_dir_parent) {
 	global $bdd;
 	
@@ -292,7 +292,7 @@ final public function create_catalogue_client_dir ($lib_catalogue_client_dir, $r
 	if (!$ref_art_categ) {$GLOBALS['_ALERTES']['bad_ref_art_categ'] = 1;}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -310,12 +310,12 @@ final public function create_catalogue_client_dir ($lib_catalogue_client_dir, $r
 
 	
 	// *************************************************
-	// Résultat positif de la création
+	// RÃ©sultat positif de la crÃ©ation
 	return true;
 	
 }
 
-//fonction de modification d'une catalogue_client_dir (depuis la création "avancée" du catalogue)
+//fonction de modification d'une catalogue_client_dir (depuis la crÃ©ation "avancÃ©e" du catalogue)
 final public function modification_catalogue_client_dir ($id_catalogue_client_dir, $lib_catalogue_client_dir, $ref_art_categ ,$id_catalogue_dir_parent) {
 	global $bdd;
 	
@@ -323,7 +323,7 @@ final public function modification_catalogue_client_dir ($id_catalogue_client_di
 	if (!$ref_art_categ) {$GLOBALS['_ALERTES']['bad_ref_art_categ'] = 1;}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -345,18 +345,18 @@ final public function modification_catalogue_client_dir ($id_catalogue_client_di
 	
 	
 	// *************************************************
-	// Résultat positif de la création
+	// RÃ©sultat positif de la crÃ©ation
 	return true;
 	
 }
 
 
-//fonction de suppression d'une catalogue_client_dir (depuis la création "avancée" du catalogue)
+//fonction de suppression d'une catalogue_client_dir (depuis la crÃ©ation "avancÃ©e" du catalogue)
 final public function suppression_catalogue_client_dir ($id_catalogue_client_dir, $new_id_catalogue_dir_parent = "") {
 	global $bdd;
 	
 
-	// Controle de l'existance d'une catégorie d'article enfant
+	// Controle de l'existance d'une catÃ©gorie d'article enfant
 	$query = "SELECT id_catalogue_client_dir FROM catalogues_clients_dirs
 						WHERE id_catalogue_dir_parent = '".$id_catalogue_client_dir."' LIMIT 0,1";
 	$resultat = $bdd->query ($query);
@@ -370,22 +370,22 @@ final public function suppression_catalogue_client_dir ($id_catalogue_client_dir
 		}
 	}
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 	
 	// *************************************************
-	// Suppression de la catégorie
+	// Suppression de la catÃ©gorie
 	
 	$bdd->beginTransaction();
 	
-	// Changement des catégories enfants
+	// Changement des catÃ©gories enfants
 	$query = "UPDATE catalogues_clients_dirs SET id_catalogue_dir_parent = '".$new_id_catalogue_dir_parent."'  
 						WHERE id_catalogue_dir_parent = '".$id_catalogue_client_dir."' ";
 	$bdd->exec ($query);
 	
-	// Suppression de la catégorie
+	// Suppression de la catÃ©gorie
 	$query = "DELETE FROM catalogues_clients_dirs 
 						WHERE id_catalogue_client_dir = '".$id_catalogue_client_dir."' ";
 	$bdd->exec ($query);
@@ -457,7 +457,7 @@ static function charger_liste_catalogues_clients () {
 	global $bdd;
 
 	$catalogues_clients = array();
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT id_catalogue_client, lib_catalogue_client
 						FROM catalogues_clients ";
 	$resultat = $bdd->query ($query);
@@ -466,12 +466,12 @@ static function charger_liste_catalogues_clients () {
 	return $catalogues_clients;
 }
 
-//retourne un tableau d'objets des catalogues contenant la categorie passée en paramètre
+//retourne un tableau d'objets des catalogues contenant la categorie passÃ©e en paramÃ¨tre
 static function &getListe_catalogue_client($ref_art_categ){
 	global $bdd;
 
 	$catalogues_clients = array();
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT id_catalogue_client
 						FROM catalogues_clients_dirs
 						WHERE ref_art_categ = '".$ref_art_categ."'";
@@ -501,7 +501,7 @@ static function charger_liste_catalogues_clients_dir () {
 	return $catalogue_client_dir;
 }
 
-//Chargement des informations d'une catégorie d'un catalogue client
+//Chargement des informations d'une catÃ©gorie d'un catalogue client
 static function charger_catalogue_client_dir ($id_catalogue_client_dir) {
 	global $bdd;
 
@@ -530,7 +530,7 @@ function getLib_catalogue_client () {
 }
 // fin de class
 
-// Renvoie un tableau des catégories d'articles disponibles
+// Renvoie un tableau des catÃ©gories d'articles disponibles
 function get_catalogue_client_dirs ($id_catalogue_client, $id_cle_ignored = "") {
 	global $bdd;
 

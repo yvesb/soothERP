@@ -33,7 +33,7 @@
         </tr>
         <tr>
             <td>
-                <span class="labelled">Libellé:</span>
+                <span class="labelled">LibellÃ©:</span>
             </td>
             <td>
                 <input type="text" name="lib_bonus" id="lib_bonus" class="classinput_xsize" value="<?php echo $current->lib_bonus; ?>" />
@@ -56,7 +56,7 @@
             <td>
                 <input type="text" name="montant" id="montant" class="classinput_xsize" value="<?php echo $current->montant; ?>" />
             </td>
-            <td>¤</td>
+            <td>Â¤</td>
         </tr>
         <tr>
             <td>

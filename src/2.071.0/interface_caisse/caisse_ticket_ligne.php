@@ -7,7 +7,7 @@ require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ("_session.inc.php");
 
-//paramètres demandés
+//paramÃ¨tres demandÃ©s
 //id_ligne
 //ref_article
 //ref_doc
@@ -15,19 +15,19 @@ require ("_session.inc.php");
 //num_serie -> optionnel
 
 if (!isset($_REQUEST['id_ligne'])) {
-	echo "La l'id de la ligne du ticket n'est pas précisé";
+	echo "La l'id de la ligne du ticket n'est pas prÃ©cisÃ©";
 	exit;
 }
 $id_ligne = $_REQUEST['id_ligne'];
 
 if (!isset($_REQUEST['ref_article'])) {
-	echo "La référence de l'article n'est pas précisée";
+	echo "La rÃ©fÃ©rence de l'article n'est pas prÃ©cisÃ©e";
 	exit;
 }
 $ref_article = $_REQUEST['ref_article'];
 
 if (!isset($_REQUEST['ref_doc'])) {
-	echo "La référence du document n'est pas précisé";
+	echo "La rÃ©fÃ©rence du document n'est pas prÃ©cisÃ©";
 	exit;
 }
 $document = $document = open_doc($_REQUEST['ref_doc']);
@@ -51,7 +51,7 @@ $infos['qte']						=	$qte_article;
 $document->add_line($infos);
 
 $lignes = $document->getContenu();
-$ligne = $lignes[count($lignes)-1]; //On prends la dernière ligne, donc, celle qui vient d'être créé
+$ligne = $lignes[count($lignes)-1]; //On prends la derniÃ¨re ligne, donc, celle qui vient d'Ãªtre crÃ©Ã©
 $article = new article($ref_article);
 
 // *************************************************************************************************************

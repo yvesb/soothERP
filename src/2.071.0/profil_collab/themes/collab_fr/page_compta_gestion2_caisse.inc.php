@@ -4,7 +4,7 @@
 // AFFICHAGE DU TABLEAU DE BORD D'UNE CAISSE
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -52,7 +52,7 @@ foreach ($totaux_theoriques as $s_total) {
 								<td>&nbsp;</td>
 							</tr>
 							<tr>
-								<td><div class="bold_caisse" style="font-size:16px">Solde Théorique &gt;&gt;</div></td>
+								<td><div class="bold_caisse" style="font-size:16px">Solde ThÃ©orique &gt;&gt;</div></td>
 								<td align="right"><div class="bold_caisse" style="font-size:16px"><?php echo number_format($solde, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[1];?></div></td>
 								<td style="width:20%">&nbsp;</td>
 							</tr>
@@ -101,7 +101,7 @@ foreach ($totaux_theoriques as $s_total) {
 								<td colspan="2">
 								<br />
 								<?php if ($last_date_controle) {?>
-								<div style="float:left; color:#999999">Dernier contrôle: <?php echo date_Us_to_Fr($last_date_controle)." ".getTime_from_date ($last_date_controle);?></div>
+								<div style="float:left; color:#999999">Dernier contrÃ´le: <?php echo date_Us_to_Fr($last_date_controle)." ".getTime_from_date ($last_date_controle);?></div>
 								<?php } ?>
 								<span style="color:#97bf0d; float:right">
 								<span id="controle_caisse_<?php echo $compte_caisse->getId_compte_caisse(); ?>"  class="green_underlined"  ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_controler.gif" />
@@ -117,7 +117,7 @@ foreach ($totaux_theoriques as $s_total) {
 
 						<table width="100%" border="0" cellspacing="0" cellpadding="0">
 							<tr>
-								<td><div class="bold_caisse" style="font-size:16px">10 dernières opérations</div></td>
+								<td><div class="bold_caisse" style="font-size:16px">10 derniÃ¨res opÃ©rations</div></td>
 								<td align="right"></td>
 								<td style="width:20%">&nbsp;</td>
 							</tr>
@@ -137,8 +137,8 @@ foreach ($totaux_theoriques as $s_total) {
 									<td style="font-weight:bolder">
 										Type
 									</td>
-									<td style="width:15%; text-align:right; font-weight:bolder">Débit</td>
-									<td style="width:15%; text-align:right; font-weight:bolder">Crédit</td>
+									<td style="width:15%; text-align:right; font-weight:bolder">DÃ©bit</td>
+									<td style="width:15%; text-align:right; font-weight:bolder">CrÃ©dit</td>
 								</tr>
 							<?php 
 							$solde_page = 0;
@@ -282,7 +282,7 @@ foreach ($totaux_theoriques as $s_total) {
 			<br />
 					<div style="padding: 15px 25px;">
 					<div class="line_caisse_bottom"></div>
-					<div class="bold_caisse" style="font-size:16px">Opérations de gestion</div> 
+					<div class="bold_caisse" style="font-size:16px">OpÃ©rations de gestion</div> 
 					<div class="line_caisse_top"></div>
 					<br />
 					<br />
@@ -296,7 +296,7 @@ foreach ($totaux_theoriques as $s_total) {
 					<span id="retrait_bancaire" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Retrait bancaire</span><br /><br />
 
 						<br />
-					<span id="ajout_retrait_fonds" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Enregistrer une opération</span><br /><br />
+					<span id="ajout_retrait_fonds" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Enregistrer une opÃ©ration</span><br /><br />
 
 						<span id="controle_caisse_historique_<?php echo $compte_caisse->getId_compte_caisse(); ?>" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />  Historique des op&eacute;rations de gestion
 						</span>
@@ -316,7 +316,7 @@ foreach ($totaux_theoriques as $s_total) {
 						<?php 
 						}
 						?>
-						//remise (ou dépot bancaire)
+						//remise (ou dÃ©pot bancaire)
 						Event.observe("remise_bancaire", "click", function(evt){
 							Event.stop(evt);
 							page.verify("compta_remise_bancaire_caisse", "compta_remise_bancaire_caisse.php?id_caisse=<?php echo $compte_caisse->getId_compte_caisse(); ?>", "true", "sub_content");

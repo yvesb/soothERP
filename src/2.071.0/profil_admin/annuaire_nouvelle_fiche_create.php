@@ -14,9 +14,9 @@ $ANNUAIRE_CATEGORIES	=	get_categories();
 
 if (isset($_REQUEST['create_contact'])) {	
 	// *************************************************
-	// Controle des données fournies par le formulaire
+	// Controle des donnÃ©es fournies par le formulaire
 	if (!isset($_REQUEST['nom']) || !isset($_REQUEST['id_categorie']) || !isset($_REQUEST['note'])) {
-		$erreur = "Une variable nécessaire à la création du contact n'est pas précisée.";
+		$erreur = "Une variable nÃ©cessaire Ã  la crÃ©ation du contact n'est pas prÃ©cisÃ©e.";
 		alerte_dev($erreur);
 	}
 
@@ -81,7 +81,7 @@ if (isset($_REQUEST['create_contact'])) {
 	}
 	
 	// *************************************************
-	// Création du contact
+	// CrÃ©ation du contact
 	$contact = new contact ();
 	$contact->create ($infos_generales, $infos_profils);
 	
@@ -91,7 +91,7 @@ if (isset($_REQUEST['create_contact'])) {
 	if(isset($profils[$COLLAB_ID_PROFIL]) ) {
 		//fonctions de collaborateurs
 		$liste_fonctions_collab = charger_fonctions ($COLLAB_ID_PROFIL);
-		//on parcoure les fonctions pour retrouver les categories de collaborateurs cochées
+		//on parcoure les fonctions pour retrouver les categories de collaborateurs cochÃ©es
 		foreach ($liste_fonctions_collab as $liste_fonction_collab) {
 			if (isset($_REQUEST['id_fonction_'.$liste_fonction_collab->id_fonction])) {
 			$profils[$COLLAB_ID_PROFIL]->add_fonction ($liste_fonction_collab->id_fonction);

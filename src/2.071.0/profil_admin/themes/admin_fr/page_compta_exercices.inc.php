@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -20,7 +20,7 @@ check_page_variables ($page_variables);
 
 ?>
 <script type="text/javascript">
-tableau_smenu[0] = Array("smenu_comptabilite", "smenu_comptabilite.php" ,"true" ,"sub_content", "Comptabilité");
+tableau_smenu[0] = Array("smenu_comptabilite", "smenu_comptabilite.php" ,"true" ,"sub_content", "ComptabilitÃ©");
 tableau_smenu[1] = Array('compta_exercices','compta_exercices.php','true','sub_content', "Gestion des exercices comptables");
 update_menu_arbo();
 </script>
@@ -70,7 +70,7 @@ if ($liste_exercices) {
 							<?php
 							if (!$exercice->etat_exercice) {
 								?>
-								Clôturé
+								ClÃ´turÃ©
 								<?php
 							} else {
 								if ($exercice->date_fin >= date("Y-m-d")) {
@@ -79,7 +79,7 @@ if ($liste_exercices) {
 									<?php
 								} else {
 									?>
-									Non clôturé
+									Non clÃ´turÃ©
 									<?php
 									if ((isset($liste_exercices[$i+1]) && !$liste_exercices[$i+1]->etat_exercice) || !isset($liste_exercices[$i+1])) {
 										?>

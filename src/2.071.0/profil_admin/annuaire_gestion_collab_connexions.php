@@ -14,7 +14,7 @@ require ($DIR."_session.inc.php");
 // *************************************************************************************************************
 
 	// *************************************************
-// Profils à afficher
+// Profils Ã  afficher
 
 $profils_avancees = array();
 foreach ($_SESSION['profils'] as $profil) {

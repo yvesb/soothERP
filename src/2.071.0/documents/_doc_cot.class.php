@@ -110,7 +110,7 @@ public function create_doc () {
 
 
 
-// Charge les informations supplémentaire du contact
+// Charge les informations supplÃ©mentaire du contact
 protected function load_infos_contact () {
 	global $CLIENT_ID_PROFIL;
 	global $COMMERCIAL_ID_PROFIL;
@@ -149,7 +149,7 @@ protected function load_infos_contact () {
 	}
 }
 
-//attibution par défaut du commercial
+//attibution par dÃ©faut du commercial
 protected function load_defauts_infos_contact () {
 	global $COMMERCIAL_ID_PROFIL;
 	
@@ -171,7 +171,7 @@ protected function load_defauts_infos_contact () {
 }
 
 
-// Renvoie l'adresse a utiliser dans le document pour un contact donné
+// Renvoie l'adresse a utiliser dans le document pour un contact donnÃ©
 function define_adresse_contact () {
 	return parent::define_adresse_contact_et_livraison ();
 }
@@ -182,7 +182,7 @@ function define_adresse_contact () {
 // *************************************************************************************************************
 // FONCTIONS LIEES A LA MODIFICATION D'UN DOCUMENT
 // *************************************************************************************************************
-// Met à jour l' id_magasin pour ce devis
+// Met Ã  jour l' id_magasin pour ce devis
 public function maj_id_magasin ($new_id_magasin) {
 	global $bdd;	
 
@@ -209,7 +209,7 @@ public function maj_id_magasin ($new_id_magasin) {
 	return true;
 }
 
-// Met à jour la ref_doc_externe
+// Met Ã  jour la ref_doc_externe
 public function maj_ref_doc_externe ($ref_doc_externe) {
 	global $bdd;	
 
@@ -247,7 +247,7 @@ public function maj_contact ($ref_contact) {
 
 
 
-// Met à jour la date d'échéance du devis
+// Met Ã  jour la date d'Ã©chÃ©ance du devis
 public function maj_date_echeance ($new_date_echeance) {
 	global $bdd;
 	
@@ -261,7 +261,7 @@ public function maj_date_echeance ($new_date_echeance) {
 }
 
 
-// Met à jour la date de livraison demandée
+// Met Ã  jour la date de livraison demandÃ©e
 public function maj_date_livraison ($new_date_livraison) {
 	global $bdd;
 	
@@ -275,7 +275,7 @@ public function maj_date_livraison ($new_date_livraison) {
 }
 
 
-// Met à jour la date de livraison demandée
+// Met Ã  jour la date de livraison demandÃ©e
 public function maj_id_livraison_mode ($id_livraison_mode) {
 	global $bdd;
 	
@@ -289,14 +289,14 @@ public function maj_id_livraison_mode ($id_livraison_mode) {
 	}
 	
 	$livraison_mode = new livraison_modes($id_livraison_mode);
-	//mise à jour du nouveau mode de livraison
+	//mise Ã  jour du nouveau mode de livraison
 	$this->id_livraison_mode = $id_livraison_mode;
 
 	$query = "UPDATE doc_cot SET id_livraison_mode = ".num_or_null($this->id_livraison_mode)."
 						WHERE ref_doc = '".$this->ref_doc."' ";
 	$bdd->exec ($query);
 	
-	//calcul et insertion pour ce document des frais de port (calcul effectué depuis la class livraison mode)
+	//calcul et insertion pour ce document des frais de port (calcul effectuÃ© depuis la class livraison mode)
 	$livraison_mode->calcul_frais_livraison_doc ($this);
 	
 	return true;
@@ -314,7 +314,7 @@ public function maj_id_livraison_mode ($id_livraison_mode) {
 // FONCTIONS LIEES A LA MODIFICATION DE L'ETAT D'UN DOCUMENT
 // *************************************************************************************************************
 
-// Action après de changer l'état du document
+// Action aprÃ¨s de changer l'Ã©tat du document
 protected function action_after_maj_etat ($old_etat_doc) {
 
 
@@ -337,7 +337,7 @@ function check_profils () {
 // FONCTIONS SPECIFIQUES AU TYPE DE DOC 
 // *************************************************************************************************************
 
-// Génère une commande client à partir de cette cotation
+// GÃ©nÃ¨re une commande client Ã  partir de cette cotation
 public function generer_commande_client ($lines = false) {
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['ref_adr_livraison'] = $this->ref_adr_livraison;
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['adresse_livraison'] = $this->adresse_livraison;
@@ -353,7 +353,7 @@ public function generer_commande_client ($lines = false) {
 	return $this->copie_doc (2);
 }
 
-// Génère un bl client à partir de cette cotation.
+// GÃ©nÃ¨re un bl client Ã  partir de cette cotation.
 public function generer_bl_client ($lines = false) {
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['date_echeance'] 	= $this->date_echeance;
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['date_livraison'] 	= $this->date_livraison;
@@ -371,7 +371,7 @@ public function generer_bl_client ($lines = false) {
 	return $this->copie_doc (3);
 }
 
-// Génère une autre cotation à partir de cette cotation.
+// GÃ©nÃ¨re une autre cotation Ã  partir de cette cotation.
 public function generer_cotation_client ($lines = false) {
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['date_echeance'] 	= $this->date_echeance;
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['date_livraison'] 	= $this->date_livraison;
@@ -395,7 +395,7 @@ public function generer_cotation_client ($lines = false) {
 // *************************************************************************************************************
 
 protected function create_info_copie_line_texte ($doc_source) { 
-	return "Votre référence: ".$this->ref_doc_externe; 
+	return "Votre rÃ©fÃ©rence: ".$this->ref_doc_externe; 
 }
 
 

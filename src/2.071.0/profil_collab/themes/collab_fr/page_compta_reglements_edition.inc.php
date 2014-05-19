@@ -4,7 +4,7 @@
 // EDITION D'UNE TACHE
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -16,7 +16,7 @@ check_page_variables ($page_variables);
 if (!$reglement->getRef_reglement()) {
 	?>
 	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="close_reglement_edit" style="cursor:pointer; float:right" alt="Fermer" title="Fermer" />
-	<span style="font-weight:bolder">Ce règlement n'existe pas ou a été supprimé</span>
+	<span style="font-weight:bolder">Ce rÃ¨glement n'existe pas ou a Ã©tÃ© supprimÃ©</span>
 
 	<SCRIPT type="text/javascript">
 
@@ -42,7 +42,7 @@ if (!$reglement->getRef_reglement()) {
 <table style="width:100%;">
 	<tr>
 		<td style="width:50%;">
-			<span style="font-weight:bolder">D&eacute;tails du règlement</span>
+			<span style="font-weight:bolder">D&eacute;tails du rÃ¨glement</span>
 
                         <a href="#" id="link_documents_reglements_sup_<?php echo $reglement->getRef_reglement(); ?>" style="color:blue;left:305px;position:absolute;top:25px;">Supprimer</a>
                         <script type="text/javascript">
@@ -72,11 +72,11 @@ if (!$reglement->getRef_reglement()) {
                                  } ?>
 
                                  <tr>
-					<td>Date de réglement :</td>
+					<td>Date de rÃ©glement :</td>
                                          <td><?php echo $reglement->getDate_reglement(); ?></td>
 				</tr>
 				<tr>
-					<td>Date d'échéance :</td>
+					<td>Date d'Ã©chÃ©ance :</td>
                                         <td><?php echo $reglement->getDate_echeance(); ?></td>
 				</tr>
                                 <tr>
@@ -89,7 +89,7 @@ if (!$reglement->getRef_reglement()) {
                         <?php /* if($reglement->getId_reglement_mode() == )*/ ?>
 		</td>
 		<td style="width:50%;">
-			<span style="font-weight:bolder">Liste des documents liés à ce règlement</span>
+			<span style="font-weight:bolder">Liste des documents liÃ©s Ã  ce rÃ¨glement</span>
 			<div style=" background-color:#FFFFFF; border:1px solid #d6d6d6;">
 
 			<?php
@@ -151,9 +151,9 @@ if (!$reglement->getRef_reglement()) {
 			}
 
                         if($total_attribuer == $reglement->getMontant_reglement()){
-                            echo '<span style="font-size: 11px; padding-left:10px; font-style: italic; " >Réglement totalement attribué.</span>';
+                            echo '<span style="font-size: 11px; padding-left:10px; font-style: italic; " >RÃ©glement totalement attribuÃ©.</span>';
                         }else{
-                            echo '<span style="font-size: 11px; padding-left:10px; font-style: italic; " >Soit '.price_format($total_attribuer).$MONNAIE[1].' attribués (<span style="color: red;">'.price_format($reglement->getMontant_reglement()-$total_attribuer).$MONNAIE[1].' disponibles</span>).</span>';
+                            echo '<span style="font-size: 11px; padding-left:10px; font-style: italic; " >Soit '.price_format($total_attribuer).$MONNAIE[1].' attribuÃ©s (<span style="color: red;">'.price_format($reglement->getMontant_reglement()-$total_attribuer).$MONNAIE[1].' disponibles</span>).</span>';
                         }
 			?>
 		</div>

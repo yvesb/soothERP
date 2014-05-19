@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -16,9 +16,9 @@ check_page_variables ($page_variables);
 // *************************************************************************************************************
 
 
-// Affichage des résultats
+// Affichage des rÃ©sultats
 ?><br />
-<p class="titre">Documents non traités du stock <?php echo $_SESSION['stocks'][$id_stock]->getLib_stock();?></p>
+<p class="titre">Documents non traitÃ©s du stock <?php echo $_SESSION['stocks'][$id_stock]->getLib_stock();?></p>
 <div class="mt_size_optimise">
 
 <table width="100%"  border="0" cellspacing="0" cellpadding="0" id="tableresult">

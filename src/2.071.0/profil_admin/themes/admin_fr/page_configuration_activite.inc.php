@@ -4,7 +4,7 @@
 // CONFIG DES DONNEES des documents
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -21,11 +21,11 @@ check_page_variables ($page_variables);
 ?>
 <script type="text/javascript">
 tableau_smenu[0] = Array("smenu_entreprise", "smenu_entreprise.php" ,"true" ,"sub_content", "Entreprise");
-tableau_smenu[1] = Array('configuration_activite','configuration_activite.php',"true" ,"sub_content", "Renseignements sur l'activité");
+tableau_smenu[1] = Array('configuration_activite','configuration_activite.php',"true" ,"sub_content", "Renseignements sur l'activitÃ©");
 update_menu_arbo();
 </script>
 <div class="emarge">
-<p class="titre">Renseignements sur l'activité de l'entreprise</p>
+<p class="titre">Renseignements sur l'activitÃ© de l'entreprise</p>
 
 <div class="contactview_corps">
 <form action="configuration_activite_maj.php" enctype="multipart/form-data" method="POST"  id="configuration_activite_maj" name="configuration_activite_maj" target="formFrame" >
@@ -52,7 +52,7 @@ update_menu_arbo();
 		<td colspan="3"> </td>
 	</tr>
 	<tr>
-		<td class="lib_config">Pays dans lequel l'entreprise est implantée: </td>
+		<td class="lib_config">Pays dans lequel l'entreprise est implantÃ©e: </td>
 		<td>
 				<select id="defaut_id_pays"  name="defaut_id_pays" class="classinput_xsize">
 					<?php
@@ -71,7 +71,7 @@ update_menu_arbo();
 					?>
 				</select>
 		</td>
-		<td class="infos_config">Cette information détermine notamment les taux de TVA utilisés </td>
+		<td class="infos_config">Cette information dÃ©termine notamment les taux de TVA utilisÃ©s </td>
 	</tr>
 	<tr>
 		<td colspan="3"> </td>

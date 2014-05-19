@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -80,7 +80,7 @@ foreach ($fiche->livraisons_tarifs as $cost) {
 		</tr>
 		<tr>
 			<td>
-				Coût = 
+				CoÃ»t = 
 				<input name="fixe_<?php echo $i;?>_<?php echo str_replace(".", "_", $fiche->ref_article); ?>" id="fixe_<?php echo $i;?>_<?php echo str_replace(".", "_", $fiche->ref_article); ?>"  type="text" value="<?php echo $fixe ;?>" <?php if ($nd) { echo 'READONLY';}?> size="5" style="text-align:right" />
 				<span style=" <?php if ( $selected_base == "PRIX") {?>display:none;<?php }?>">
 			 +  
@@ -133,7 +133,7 @@ foreach ($fiche->livraisons_tarifs as $cost) {
 			</td>
 		</tr>
 		<tr>
-			<td>Coût = 
+			<td>CoÃ»t = 
 			<input name="fixe_0_<?php echo str_replace(".", "_", $fiche->ref_article); ?>" id="fixe_0_<?php echo str_replace(".", "_", $fiche->ref_article); ?>"  type="text" value="0" class="classinput_nsize" size="5" style="text-align:right" />
 				<span style=" <?php if ( $selected_base == "PRIX") {?>display:none;<?php }?>">
 			 +  <input name="variab_0_<?php echo str_replace(".", "_", $fiche->ref_article); ?>" id="variab_0_<?php echo str_replace(".", "_", $fiche->ref_article); ?>"  type="text" value="0" class="classinput_nsize" size="5" style="text-align:right"/>

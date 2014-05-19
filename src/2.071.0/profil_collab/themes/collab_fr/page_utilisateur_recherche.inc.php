@@ -4,7 +4,7 @@
 // RECHERCHE DES CONNEXIONS DES UTILISATEURS
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -75,7 +75,7 @@ foreach ($_ALERTES as $alerte => $value) {
 				</tr>
 	<tr>
 		<td></td>
-		<td><span class="labelled">Période&nbsp;du&nbsp; </span></td>
+		<td><span class="labelled">PÃ©riode&nbsp;du&nbsp; </span></td>
 		<td><input type="text" id="date_debut" name="date_debut" value="" class="classinput_nsize" size="10" /> au&nbsp;<input type="text" id="date_fin" name="date_fin" value="" class="classinput_nsize" size="10" /></td>
 		<td></td>
 		<td></td>

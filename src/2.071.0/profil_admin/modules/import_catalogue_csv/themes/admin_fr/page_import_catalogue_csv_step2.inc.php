@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -28,7 +28,7 @@ update_menu_arbo();
 <div class="emarge">
 
 
-<p class="titre">Listes des articles à importer</p>
+<p class="titre">Listes des articles Ã  importer</p>
 <div>
 
 <form action="modules/import_catalogue_csv/import_catalogue_csv_step2_done.php" enctype="multipart/form-data" method="POST" id="import_catalogue_csv_done" name="import_catalogue_csv_done" target="formFrame" class="classinput_nsize" />
@@ -74,12 +74,12 @@ update_menu_arbo();
 			<input type="submit" value="Lancer l'import">
 		</td>
 		<td>
-		<?php echo count($array_retour); ?> article(s) à importer<br />
+		<?php echo count($array_retour); ?> article(s) Ã  importer<br />
 		<strong><?php echo count($array_retour)-$total_avert-$count_nom_vide; ?> article(s) valide(s)</strong><br />
 		<?php if ($total_avert) { ?>
 			<strong><?php echo $total_avert; ?> Avertissement(s)</strong><br />
-			dont <?php echo $count_nom_doublon; ?> libellé existant dans vos articles<br />
-			dont <?php echo $count_ref_interne_doublon; ?> Référence(s) interne(s) existante(s) dans vos articles<br />
+			dont <?php echo $count_nom_doublon; ?> libellÃ© existant dans vos articles<br />
+			dont <?php echo $count_ref_interne_doublon; ?> RÃ©fÃ©rence(s) interne(s) existante(s) dans vos articles<br />
 		<?php } ?>
 		<?php if ($count_nom_vide) { ?>
 			<strong><?php echo $count_nom_vide; ?> fiche(s) invalides</strong><br />

@@ -126,13 +126,13 @@ border:0px;
 		<tr>
 			<td>Titre:</td>
 			<td>
-				<input name="titre" id="titre" type="text" value="<?php if (isset($_REQUEST["titre"])) {echo $_REQUEST["titre"];} else { echo "Résultats des commerciaux";}?>" size="38" />
+				<input name="titre" id="titre" type="text" value="<?php if (isset($_REQUEST["titre"])) {echo $_REQUEST["titre"];} else { echo "RÃ©sultats des commerciaux";}?>" size="38" />
 			</td>
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
 			<td>Message:</td>
-			<td><textarea name="message" id="message" cols="50" rows="12"><?php if (isset($_REQUEST["message"])) {echo $_REQUEST["message"];} echo "\nLe document ci-joint vous est envoyé par \"".$contact_entreprise->getNom()."\".\nLa lecture du fichier joint nécessite la présence sur votre ordinateur du logiciel Adobe Acrobat Reader.\n Si vous ne possédez pas ce logiciel cliquez sur : <a href='http://get.adobe.com/fr/reader/'>http://get.adobe.com/fr/reader/</a> pour le télécharger.";?></textarea></td>
+			<td><textarea name="message" id="message" cols="50" rows="12"><?php if (isset($_REQUEST["message"])) {echo $_REQUEST["message"];} echo "\nLe document ci-joint vous est envoyÃ© par \"".$contact_entreprise->getNom()."\".\nLa lecture du fichier joint nÃ©cessite la prÃ©sence sur votre ordinateur du logiciel Adobe Acrobat Reader.\n Si vous ne possÃ©dez pas ce logiciel cliquez sur : <a href='http://get.adobe.com/fr/reader/'>http://get.adobe.com/fr/reader/</a> pour le tÃ©lÃ©charger.";?></textarea></td>
 			<td>&nbsp;</td>
 		</tr>
 		<tr>

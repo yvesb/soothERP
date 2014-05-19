@@ -10,20 +10,20 @@ require ($DIR."_session.inc.php");
 
 
 	if (!isset($_REQUEST['ref_contact'])) {
-		echo "La référence du contact n'est pas précisée";
+		echo "La rÃ©fÃ©rence du contact n'est pas prÃ©cisÃ©e";
 		exit;
 	}
 
 	$contact = new contact ($_REQUEST['ref_contact']);
 	if (!$contact->getRef_contact()) {
-		echo "La référence du contact est inconnue";		exit;
+		echo "La rÃ©fÃ©rence du contact est inconnue";		exit;
 
 	}
 
 //chargement des comptes bancaires
 $comptes_bancaires	= compte_bancaire::charger_comptes_bancaires($contact->getRef_contact());
 
-// Préparations des variables d'affichage
+// PrÃ©parations des variables d'affichage
 $profils 	= $contact->getProfils();
 
 //infos pour mini moteur de recherche contact

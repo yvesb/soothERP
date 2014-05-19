@@ -11,7 +11,7 @@ require ($DIR."_session.inc.php");
 
 if (isset($_REQUEST['site_ref'.$_REQUEST['ref_idform']])) {	
 	// *************************************************
-	// création d'une coordonnée
+	// crÃ©ation d'une coordonnÃ©e
 	$site_ref  = $_REQUEST['site_ref'.$_REQUEST['ref_idform']];
 	$lib_site_web	= $_REQUEST['site_lib'.$_REQUEST['ref_idform']];
 	$url = $_REQUEST['site_url'.$_REQUEST['ref_idform']];

@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 if (!$_SESSION['user']->check_permission ("13")) {
 	//on indique l'interdiction et on stop le script
-	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accés ne vous permettent pas de visualiser ce type de page</span>";
+	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accÃ©s ne vous permettent pas de visualiser ce type de page</span>";
 	exit();
 }
 
@@ -23,7 +23,7 @@ $liste_exercices	= $compta_e->charger_compta_exercices();
 if (isset($_REQUEST["ref_contact"])) {
 	$contact = new contact ($_REQUEST['ref_contact']);
 	if (!$contact->getRef_contact()) {
-		echo "La référence du contact est inconnue";		exit;
+		echo "La rÃ©fÃ©rence du contact est inconnue";		exit;
 
 	}
 }

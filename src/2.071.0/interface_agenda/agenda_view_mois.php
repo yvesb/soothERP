@@ -14,7 +14,7 @@ require ($DIR."_session.inc.php");
 // *************************************************************************************************************
 
 if(!isset($_REQUEST["Udate_used"])){
-	echo "la date au format timestamp UNIX n'est pas spécifié";
+	echo "la date au format timestamp UNIX n'est pas spÃ©cifiÃ©";
 	exit;
 }
 $Udate_used = intval($_REQUEST["Udate_used"]/1000);
@@ -25,9 +25,9 @@ $Udate_used = intval($_REQUEST["Udate_used"]/1000);
 // *************************************************************************************************************
 
 $array_Udate_used = getdate($Udate_used);
-//$Udate_fdm = date du 1er jour du mois 01/MM/YYYY à 00h00
+//$Udate_fdm = date du 1er jour du mois 01/MM/YYYY Ã  00h00
 $Udate_fdm = mktime( 0,  0,  0, $array_Udate_used["mon"]  , 1, $array_Udate_used["year"]);
-//$Udate_ldm = date du dernier jour du mois 28/02/YYYY ou 29/02/YYYY ou 30/MM/YYYY ou 31/MM/YYYY à 00h00
+//$Udate_ldm = date du dernier jour du mois 28/02/YYYY ou 29/02/YYYY ou 30/MM/YYYY ou 31/MM/YYYY Ã  00h00
 $Udate_ldm = mktime(23, 59, 59, $array_Udate_used["mon"]+1, 0, $array_Udate_used["year"]);
 
 $Udate_now 	= time();
@@ -56,7 +56,7 @@ unset($nb_jour_en_plus);
 //echo strftime("Udate_ldm : %Y-%m-%d %H:%M:%S %w", $Udate_ldm);
 //echo strftime("Udate_last_sunday : %Y-%m-%d %H:%M:%S %w", $Udate_last_sunday);
 
-// *********** Récupération des événements
+// *********** RÃ©cupÃ©ration des Ã©vÃ©nements
 	$joursMois = array();
 	$Udate_tmp_deb = $Udate_first_monday;
 	$s = 0;

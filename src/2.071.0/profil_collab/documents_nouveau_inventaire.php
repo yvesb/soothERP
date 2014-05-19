@@ -17,7 +17,7 @@ if (isset($_REQUEST['id_type_doc'])) {
 	
 	if (isset($_REQUEST['ref_contact'])) {$GLOBALS['_OPTIONS']['CREATE_DOC']['ref_contact'] =  $_REQUEST['ref_contact'];}
 	
-	//on envois en param la liste des art_categ séléectionnées
+	//on envois en param la liste des art_categ sÃ©lÃ©ectionnÃ©es
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['art_categs'] = array();
 	foreach ($_REQUEST as $variable => $valeur) {
 		if (substr ($variable, 0, 4) != "ins_") { continue; }
@@ -54,7 +54,7 @@ if (isset($_REQUEST['id_type_doc'])) {
 			$document->add_line ($infos);
 		}
 	}
-	//si un montant est négatif
+	//si un montant est nÃ©gatif
 	$montant_negatif = false;
 	$montant_positif = 1;
 	if (isset($_REQUEST["montant_neg"])) { $montant_negatif = true; $montant_positif = -1;}

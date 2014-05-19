@@ -12,7 +12,7 @@ require ($DIR."_session.inc.php");
 include_once ($CONFIG_DIR."profil_client.config.php");
 // chargement de la class du profil
 contact::load_profil_class($CLIENT_ID_PROFIL);
-// Préparations des variables d'affichage
+// PrÃ©parations des variables d'affichage
 $ANNUAIRE_CATEGORIES	=	get_categories();
 
 $liste_categories_clients = contact_client::charger_clients_categories ();

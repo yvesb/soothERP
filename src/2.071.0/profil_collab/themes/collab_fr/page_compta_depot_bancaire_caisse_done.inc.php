@@ -1,10 +1,10 @@
 <?php
 
 // *************************************************************************************************************
-// Remise en banque depuis la caisse (ou dépot bancaire depuis la caisse)
+// Remise en banque depuis la caisse (ou dÃ©pot bancaire depuis la caisse)
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
 <iframe frameborder="0" scrolling="no" src="about:_blank" id="edition_reglement_iframe" class="edition_reglement_iframe" style="display:none"></iframe>
 <div id="edition_reglement" class="edition_reglement" style="display:none">
 </div>
-<div class="titre" style="width:60%; padding-left:140px">Remise en banque depuis  <?php echo htmlentities($compte_caisse->getLib_caisse()); ?> effectuée
+<div class="titre" style="width:60%; padding-left:140px">Remise en banque depuis  <?php echo htmlentities($compte_caisse->getLib_caisse()); ?> effectuÃ©e
 </div>
 
 

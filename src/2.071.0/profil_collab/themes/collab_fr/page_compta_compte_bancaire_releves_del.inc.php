@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
 
 ?>
 <p>&nbsp;</p>
-<p>comptes bancaire (supression relevé) </p>
+<p>comptes bancaire (supression relevÃ©) </p>
 <p>&nbsp; </p>
 <?php 
 foreach ($_ALERTES as $alerte => $value) {
@@ -49,7 +49,7 @@ foreach ($_ALERTES as $alerte => $value) {
 ?>
 if (erreur) {
 	if (releve_in_closed_exercice) {
-		texte_erreur += "Le Relevé fait parti d'un exercice comptable clôt.<br /> Supression impossible.";
+		texte_erreur += "Le RelevÃ© fait parti d'un exercice comptable clÃ´t.<br /> Supression impossible.";
 	}
 
 	window.parent.alerte.alerte_erreur ('Erreur de saisie', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');

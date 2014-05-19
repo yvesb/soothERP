@@ -11,24 +11,24 @@ require_once ($DIR."_contact_liaisons_types.class.php");
 
 
 // *************************************************
-// Controle des données fournies par le formulaire
+// Controle des donnÃ©es fournies par le formulaire
 
 if(!$_REQUEST['ordre']){
-	echo "la variable ordre n'est pas spécifiée";
+	echo "la variable ordre n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $new_ordre = $_REQUEST['ordre'];
 
 if(!$_REQUEST['ordre_other']){
-	echo "la variable ordre_other n'est pas spécifiée";
+	echo "la variable ordre_other n'est pas spÃ©cifiÃ©e";
 	exit;
 }
 $new_ordre_other = $_REQUEST['ordre_other'];
 
-//on récupére fonction de l'ordre la premier ref
+//on rÃ©cupÃ©re fonction de l'ordre la premier ref
 $id_liaison_type	= Contact_liaison_type::getId_liaison_type_from_ordre ($_REQUEST['ordre_other']);
 
-//on récupére fonction de l'ordre la deuxième ref
+//on rÃ©cupÃ©re fonction de l'ordre la deuxiÃ¨me ref
 $id_liaison_type_other	= Contact_liaison_type::getId_liaison_type_from_ordre ($_REQUEST['ordre']);
 
 // *************************************************

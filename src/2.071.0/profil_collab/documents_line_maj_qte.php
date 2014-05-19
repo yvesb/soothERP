@@ -11,17 +11,17 @@ require ($DIR."_session.inc.php");
 $stocks_qte = 0;
 if (isset($_REQUEST['ref_doc'])) {
 
-	// ouverture des infos du document et mise à jour
+	// ouverture des infos du document et mise Ã  jour
 	$document = open_doc ($_REQUEST['ref_doc']);
 	
 	
 	// *************************************************
-	// maj auto du pu en fonction des quantités
+	// maj auto du pu en fonction des quantitÃ©s
 	$line_infos0 = $document->getInfos_line ($_REQUEST['ref_doc_line']);
 	$ref_article 	= $line_infos0->ref_article;
 	$article = new article ($ref_article);
 	if ( ($_REQUEST['qte_article'] == 1 && $line_infos0->qte == 0) || ($_REQUEST['qte_article'] == 0 && $line_infos0->qte == 1)) {
-	//si la quantité passe de zéro à un ou inversement, on touche pas au pu
+	//si la quantitÃ© passe de zÃ©ro Ã  un ou inversement, on touche pas au pu
 	} else {
 		if ($article->getRef_article() && (count($article->getFormules_tarifs ()) > 1 || $document->select_article_pcotation ($article, $_REQUEST['qte_article'])) ) {
 			// on test combien de grilles on a, si 1 ou moins, on n'a pas besoin de faire de maj pu

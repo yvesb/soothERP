@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 if (!$_SESSION['user']->check_permission ("14")) {
 		//on indique l'interdiction et on stop le script
-		echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accés ne vous permettent pas de visualiser ce type de page</span>";
+		echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accÃ©s ne vous permettent pas de visualiser ce type de page</span>";
 		exit();
 }
 
@@ -63,8 +63,8 @@ if ($mail_template->getFooter_img_template()) {
 $pied .= '</div>';
 
 $pied .= '<div  class="down_page">
-Vous recevez ce courriel parce que vous êtes inscrit à la newsletter de <a href="http://'.$_SERVER['HTTP_HOST'].str_replace("profil_collab/communication_newsletters_gestion_envoi_tester.php", "", $_SERVER['PHP_SELF']).'" style="color:#999999;"><?php echo $nom_entreprise;?></a>. <br />
-Conformément à notre engagement, vous pouvez vous désinscrire en suivant le lien suivant: <a href="**liendesinscription**"  style="color:#999999;">désinscription</a><br />
+Vous recevez ce courriel parce que vous Ãªtes inscrit Ã  la newsletter de <a href="http://'.$_SERVER['HTTP_HOST'].str_replace("profil_collab/communication_newsletters_gestion_envoi_tester.php", "", $_SERVER['PHP_SELF']).'" style="color:#999999;"><?php echo $nom_entreprise;?></a>. <br />
+ConformÃ©ment Ã  notre engagement, vous pouvez vous dÃ©sinscrire en suivant le lien suivant: <a href="**liendesinscription**"  style="color:#999999;">dÃ©sinscription</a><br />
 <img src="**liendelecture**" width="0px" height="0px" style="display:none"/>
 ';
 
@@ -98,7 +98,7 @@ $pied .= '
 	$mail = new email();
 	$mail->prepare_envoi(0, 0);
 	if (!$mail->envoi($destinataires , $sujet , $message , $infos)) {
-		$erreur = "Une erreur est survenue lors de l'envoi à ".$_SESSION['user']->getEmail ()."<br />";
+		$erreur = "Une erreur est survenue lors de l'envoi Ã  ".$_SESSION['user']->getEmail ()."<br />";
 	}
 	
 	set_error_handler("error_handler");

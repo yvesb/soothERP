@@ -10,7 +10,7 @@ class tab_result {
 
 		// Create Ods object
 		$this->ods  = new ods();
-		// Liste cmd non chargé
+		// Liste cmd non chargÃ©
 		$this->qte_cmd_loaded = false;
 
 		// Create table
@@ -56,18 +56,18 @@ class tab_result {
 	}
 	
 	public function create_entete($result_recherche) {
-		//Création de l'entête du tableau
+		//CrÃ©ation de l'entÃªte du tableau
 		$fond_gris = new odsStyleTableCell();
 		$fond_gris->setBackgroundColor('#999999');
 		$this->table->addRow($row = new odsTableRow());
 		
-		//Un objet pour récuperer les dénominations des champs pour l'entete
+		//Un objet pour rÃ©cuperer les dÃ©nominations des champs pour l'entete
 		$entete=array();
 		if(isset($result_recherche[0]))
 		$entete=$result_recherche[0];
 		else{
 		$this->create_stylecol("3cm");
-		$row->addCell( new odsTableCellString(utf8_encode("Pas de résultat"), $fond_gris));
+		$row->addCell( new odsTableCellString(utf8_encode("Pas de rÃ©sultat"), $fond_gris));
 		}
 		foreach ($entete as $cle => $valeur) {
 			$row->addCell( new odsTableCellString(utf8_encode($cle), $fond_gris));
@@ -75,7 +75,7 @@ class tab_result {
 	}
 	
 	public function create_tab($result_recherche) {
-		//Création du tableau
+		//CrÃ©ation du tableau
 		//Affichage des lignes
 		foreach ($result_recherche as $objet) {
 			$this->table->addRow($row = new odsTableRow());	

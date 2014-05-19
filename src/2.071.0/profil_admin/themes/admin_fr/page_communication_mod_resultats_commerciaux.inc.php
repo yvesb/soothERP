@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -22,47 +22,47 @@ check_page_variables ($page_variables);
 ?>
 <script type="text/javascript">
 tableau_smenu[0] = Array('smenu_communication', 'smenu_communication.php' ,'true' , 'sub_content', 'Communication');
-tableau_smenu[1] = Array('communication_mod_resultats_commerciaux','communication_mod_resultats_commerciaux.php','true','sub_content', 'Mod&egrave;les de résultats des commerciaux');
+tableau_smenu[1] = Array('communication_mod_resultats_commerciaux','communication_mod_resultats_commerciaux.php','true','sub_content', 'Mod&egrave;les de rÃ©sultats des commerciaux');
 update_menu_arbo();
 </script>
 <div class="emarge">
 
-<p class="titre">Gestion des mod&egrave;les de résultats des commerciaux</p>
+<p class="titre">Gestion des mod&egrave;les de rÃ©sultats des commerciaux</p>
 <div style="height:50px">
 <div class="contactview_corps">
 	<table style="width:100%;">
 		<tr>
-			<td class="titre_config" colspan="4">Ajouter un mod&egrave;le de résultats des commerciaux</td>
+			<td class="titre_config" colspan="4">Ajouter un mod&egrave;le de rÃ©sultats des commerciaux</td>
 		</tr>
 		<tr>
 			<td>
 				<form action="communication_mod_resultats_commerciaux_add.php" enctype="multipart/form-data" method="POST"  id="communication_mod_resultats_commerciaux_add" name="communication_mod_resultats_commerciaux_add" target="formFrame" >
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
-				<td style="width:35%" class="lib_config">Création de ce modèle </td>
+				<td style="width:35%" class="lib_config">CrÃ©ation de ce modÃ¨le </td>
 				<td style="width:30%">
-					à partir d'un modèle existant
+					Ã  partir d'un modÃ¨le existant
 				</td>
 				<td style="text-align:left"><input type="radio" name="choix_source" id="exist_model" value="1" /></td>
 			</tr>
 			<tr>
 				<td> </td>
 				<td>
-					à partir des fichiers programme
+					Ã  partir des fichiers programme
 				</td>
 				<td style="text-align:left"><input type="radio" name="choix_source" id="new_model" value="2" /></td>
 			</tr>
 		</table>
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" style="display:none" id="step2_a">
 			<tr>
-				<td style="width:35%" class="lib_config">Nouveau nom de ce modèle: </td>
+				<td style="width:35%" class="lib_config">Nouveau nom de ce modÃ¨le: </td>
 				<td style="width:30%">
 					<input type="text" name="lib_modele" id="lib_modele" value="" class="classinput_xsize" />
 				</td>
 				<td class="infos_config">&nbsp;</td>
 			</tr>
 			<tr>
-				<td class="lib_config">Description de ce modèle: </td>
+				<td class="lib_config">Description de ce modÃ¨le: </td>
 				<td>
 					<textarea name="desc_modele" id="desc_modele" class="classinput_xsize" ></textarea>
 				</td>
@@ -71,7 +71,7 @@ update_menu_arbo();
 		</table>
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" style="display:none" id="step2_b">
 			<tr>
-				<td style="width:35%" class="lib_config">Modèle source:  </td>
+				<td style="width:35%" class="lib_config">ModÃ¨le source:  </td>
 				<td style="width:30%">
 					<select name="id_pdf_modele" id="choix_id_pdf_resultats_commerciaux" class="classinput_xsize">
 					<?php 
@@ -119,7 +119,7 @@ update_menu_arbo();
 <?php
 if (count($liste_pour_activation)) {
 	?>
-	Modèles disponibles pour l'impression de résultats des commerciaux: 
+	ModÃ¨les disponibles pour l'impression de rÃ©sultats des commerciaux: 
         <?php
       //  $pdf_inactif = 0;
         foreach ($liste_pour_activation as $modele_pdf) {
@@ -151,7 +151,7 @@ if (count($liste_pour_activation)) {
                
                                 <td style="width:15%">
                                 <?php if ($modele_pdf->usage != "defaut") {?>
-                                        <span id="unactive_pdf_<?php echo $modele_pdf->id_pdf_modele;?>" style="cursor:pointer; text-decoration:underline">Désactiver</span>
+                                        <span id="unactive_pdf_<?php echo $modele_pdf->id_pdf_modele;?>" style="cursor:pointer; text-decoration:underline">DÃ©sactiver</span>
 
                                         <form action="communication_mod_resultats_commerciaux_des.php" method="post" id="communication_mod_resultats_commerciaux_des_<?php echo $modele_pdf->id_pdf_modele;?>" name="communication_mod_resultats_commerciaux_des_<?php echo $modele_pdf->id_pdf_modele;?>" target="formFrame" >
                                                 <input name="id_pdf_modele" type="hidden" value="<?php echo $modele_pdf->id_pdf_modele; ?>" />
@@ -176,7 +176,7 @@ if (count($liste_pour_activation)) {
         }}
         //if ($pdf_inactif) {
         ?>
-        <span style="cursor:pointer; text-decoration:underline; display:block;" id="show_pdf_inactif">Utiliser un nouveau modèle d'impression.</span><br />
+        <span style="cursor:pointer; text-decoration:underline; display:block;" id="show_pdf_inactif">Utiliser un nouveau modÃ¨le d'impression.</span><br />
         <div id="more_pdf" style="display:none;">
         <?php
         foreach ($liste_pour_activation as $modele_pdf) {
@@ -190,7 +190,7 @@ if (count($liste_pour_activation)) {
                                 </td>
                                 <td style="width:15%"><span style="text-decoration:underline; cursor:pointer" id="show_desc_<?php echo $modele_pdf->id_pdf_modele;?>">Plus d'informations</span></td>
                                 <!-- <td style="width:15%; color:#999999"><a href="configuration_pdf_preview.php" target="_blank" style="color:#000000">Visualiser</a></td> -->
-                                <!-- <td style="width:15%; color:#999999">Paramétrer</td> -->
+                                <!-- <td style="width:15%; color:#999999">ParamÃ©trer</td> -->
                                 <td style="width:15%">
 
                                         <span id="active_pdf_<?php echo $modele_pdf->id_pdf_modele;?>" style="cursor:pointer; text-decoration:underline">Activer</span>

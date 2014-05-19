@@ -53,9 +53,9 @@
 			</td>
 			<td>
 				<select  id="collab_id_pays"  name="collab_id_pays" class="classinput_xsize">
-						<option value="" >non défini</option>
+						<option value="" >non dÃ©fini</option>
 					<?php
-					$pays_collab = "non défini";
+					$pays_collab = "non dÃ©fini";
 					$separe_listepays = 0;
 					foreach ($listepays as $payslist){
 						if ((!$separe_listepays) && (!$payslist->affichage)) { 
@@ -285,7 +285,7 @@
 				?>
 					</div>
 					<div id="avertissement_droits" style="display:none; width:312px;">
-					<center><b><font color="#FF0000">Attention ! Réinitialisez les droits des utilisateurs si necessaire</font></b></center>
+					<center><b><font color="#FF0000">Attention ! RÃ©initialisez les droits des utilisateurs si necessaire</font></b></center>
 				</div>
 				<div id="maj_droits" style="display:block; width:312px;">
 				<br>
@@ -295,7 +295,7 @@
 					$user_fonctions = $mon_utilisateur->get_user_fonctions();
 					if (is_array($user_fonctions)){
 						if (count($user_fonctions) > 0){					
-							echo '<a href="#" id="maj_droits_user_'.$mon_utilisateur->getRef_user().'" class="common_link">'."Réinitialiser les droits de l'utilisateur ".$mon_utilisateur->getPseudo()."</a><br>";
+							echo '<a href="#" id="maj_droits_user_'.$mon_utilisateur->getRef_user().'" class="common_link">'."RÃ©initialiser les droits de l'utilisateur ".$mon_utilisateur->getPseudo()."</a><br>";
 							?>
 							<script type="text/javascript">
 							Event.observe($("maj_droits_user_<?php echo $mon_utilisateur->getRef_user() ?>"), "click", function(evt){

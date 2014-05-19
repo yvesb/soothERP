@@ -225,7 +225,7 @@ text-align:center;
 background-color:#7fa8ea;
 }
 
-/* textes généraux*/
+/* textes gÃ©nÃ©raux*/
 
 .titre {
 font: 1.6em  Arial, Helvetica, sans-serif ;
@@ -354,7 +354,7 @@ height:20px;
 }
 
 /*
-couleur pour catégories d'articles dans la création d'article
+couleur pour catÃ©gories d'articles dans la crÃ©ation d'article
 */
 
 
@@ -469,7 +469,7 @@ function PopupCentrer(page,largeur,hauteur,optionsi) {
 			
 			<table border="0" cellspacing="0" cellpadding="0">
 			<tr>
-				<td>Référence: &nbsp;</td>
+				<td>RÃ©fÃ©rence: &nbsp;</td>
 				<td><?php echo $article->getRef_article();?>&nbsp;</td>
 			</tr>
 			<tr>
@@ -477,7 +477,7 @@ function PopupCentrer(page,largeur,hauteur,optionsi) {
 				<td><?php echo $article->getNom_constructeur();?>&nbsp;</td>
 			</tr>
 			<tr>
-				<td>Référence &nbsp;constructeur:&nbsp;</td>
+				<td>RÃ©fÃ©rence &nbsp;constructeur:&nbsp;</td>
 				<td><?php echo $article->getRef_eom();?>&nbsp;</td>
 			</tr>
 		</table>
@@ -504,7 +504,7 @@ function PopupCentrer(page,largeur,hauteur,optionsi) {
 				<div style="text-align:center">
 				
 				<?php
-				//tarif affiché
+				//tarif affichÃ©
 				
 				if (isset($_REQUEST["autre_prix"])) {
 					?>

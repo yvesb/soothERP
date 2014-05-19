@@ -3,7 +3,7 @@
 // AFFICHAGE DU TABLEAU DE BORD DES VENTES
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -62,18 +62,18 @@ check_page_variables ($page_variables);
 		</script>
 		<div id="tb1_data4">
 		</div>
-		<div style="text-align:center; font-weight:bolder">Cette année<br />
+		<div style="text-align:center; font-weight:bolder">Cette annÃ©e<br />
 			<span style="color:#999999"><?php echo $CA_year_0." ".$MONNAIE[1];?></span></div>
 		</td>
 		<td style="width:70px; background-image: url(<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/stats_bg_2.gif); background-repeat:repeat-y; background-position:right; padding-bottom:10px; padding-top:10px;">
 		<div style="border:1px solid #999999; background-color:#FFFFFF; font-size:10px; text-align:left; padding:5px; width:70px">
 		<span style="height:5px; width:5px; background-color:#f29400">
 		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="5px" height="5px"/>
-		</span>&nbsp;&nbsp; Année N-1<br /><br />
+		</span>&nbsp;&nbsp; AnnÃ©e N-1<br /><br />
 
 		<span style="height:5px; width:5px; background-color: #8a5b9d">
 		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="5px" height="5px"/>
-		</span>&nbsp;&nbsp; Année N<br />
+		</span>&nbsp;&nbsp; AnnÃ©e N<br />
         <img id="print_stats" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" alt="PDF" title="PDF" style="cursor:pointer;"/>
 		<img id="export_stats" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ods.gif" alt="ODS" title="ODS" style="cursor:pointer;"/>
 		</div>
@@ -82,11 +82,11 @@ check_page_variables ($page_variables);
 </table>
 </div>
 <div style="text-align:right; color:#999999; font-size:10px">
-Les données de la période N-1 correspondent à la période équivalente prise en compte pour la période N
+Les donnÃ©es de la pÃ©riode N-1 correspondent Ã  la pÃ©riode Ã©quivalente prise en compte pour la pÃ©riode N
 </div><br />
 <br />
 <div style=" float:right; color:#97bf0d">
-<span class="green_link_stat_actif" id="tb1_det_7">7 jours</span> | <span class="green_link_stat" id="tb1_det_30">30 jours</span> | <span class="green_link_stat" id="tb1_det_12">12 mois</span> | <span class="green_link_stat" id="tb1_det_3">3 années</span>
+<span class="green_link_stat_actif" id="tb1_det_7">7 jours</span> | <span class="green_link_stat" id="tb1_det_30">30 jours</span> | <span class="green_link_stat" id="tb1_det_12">12 mois</span> | <span class="green_link_stat" id="tb1_det_3">3 annÃ©es</span>
 </div>
 <script type="text/javascript">
 
@@ -169,7 +169,7 @@ Event.observe("tb1_det_3", "click",  function(evt){
 
 
 <div id="more_7" style="padding-left:45px; display:">
-Comparer avec: <span class="underline_stat_link" id="tb1_det_7_less">7 jours précédents</span> | <span class="underline_stat_link" id="tb1_det_7_equi">Période équivalente l'an passé</span>
+Comparer avec: <span class="underline_stat_link" id="tb1_det_7_less">7 jours prÃ©cÃ©dents</span> | <span class="underline_stat_link" id="tb1_det_7_equi">PÃ©riode Ã©quivalente l'an passÃ©</span>
 <script type="text/javascript">
 Event.observe("tb1_det_7_less", "click",  function(evt){
 	swfobject.embedSWF("open-flash-chart.swf", "tb1_det_aff2", "800", "110", "9.0.0", "expressInstall.swf", {"data-file":"tableau_bord_ventes_tb1_cont_det_data.php?data=7_less", loading : "Chargement.." },{wmode: "transparent", quality: "high"}, {});
@@ -180,7 +180,7 @@ Event.observe("tb1_det_7_equi", "click",  function(evt){
 </script>
 </div>
 <div id="more_30" style="padding-left:45px; display:none">
-Comparer avec: <span class="underline_stat_link" id="tb1_det_30_less">30 jours précédents</span> | <span class="underline_stat_link" id="tb1_det_30_equi">Période équivalente l'an passé</span>
+Comparer avec: <span class="underline_stat_link" id="tb1_det_30_less">30 jours prÃ©cÃ©dents</span> | <span class="underline_stat_link" id="tb1_det_30_equi">PÃ©riode Ã©quivalente l'an passÃ©</span>
 <script type="text/javascript">
 Event.observe("tb1_det_30_less", "click",  function(evt){
 	swfobject.embedSWF("open-flash-chart.swf", "tb1_det_aff2", "800", "110", "9.0.0", "expressInstall.swf", {"data-file":"tableau_bord_ventes_tb1_cont_det_data.php?data=30_less", loading : "Chargement.." },{wmode: "transparent", quality: "high"}, {});
@@ -192,7 +192,7 @@ Event.observe("tb1_det_30_equi", "click",  function(evt){
 </div>
 
 <div id="more_12" style="padding-left:45px; display:none">
-Comparer avec: <span class="underline_stat_link" id="tb1_det_12_less">12 mois précédents</span> 
+Comparer avec: <span class="underline_stat_link" id="tb1_det_12_less">12 mois prÃ©cÃ©dents</span> 
 <script type="text/javascript">
 Event.observe("tb1_det_12_less", "click",  function(evt){
 	swfobject.embedSWF("open-flash-chart.swf", "tb1_det_aff2", "800", "110", "9.0.0", "expressInstall.swf", {"data-file":"tableau_bord_ventes_tb1_cont_det_data.php?data=12_less", loading : "Chargement.." },{wmode: "transparent", quality: "high"}, {});

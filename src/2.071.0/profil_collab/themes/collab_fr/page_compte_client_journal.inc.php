@@ -4,7 +4,7 @@
 //journal des ventes
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -37,7 +37,7 @@ function nb_mois($date1, $date2) {
 			<select id="date_exercice" name="date_exercice" class="classinput_nsize">
 			<?php
 			for($i = 0; $i< count($liste_exercices); $i++) {
-				//décompte du nombre de mois en deux exercices
+				//dÃ©compte du nombre de mois en deux exercices
 				$date1 = date("Y-m-d",strtotime($liste_exercices[$i]->date_fin));
 				if (isset($liste_exercices[$i+1])) {
 					
@@ -124,7 +124,7 @@ function nb_mois($date1, $date2) {
 		</tr>
 		<tr>
 			<td></td>
-			<td style="text-align:right">Comptes non équilibrés uniquement:</td>
+			<td style="text-align:right">Comptes non Ã©quilibrÃ©s uniquement:</td>
 			<td colspan="4"><input type="checkbox" id="equi" name="equi" value="1" /></td>
 			<td>&nbsp; </td>
 			<td>&nbsp; </td>

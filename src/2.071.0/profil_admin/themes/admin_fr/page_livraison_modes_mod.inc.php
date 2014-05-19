@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -57,14 +57,14 @@ if (erreur) {
 	
 	if (lib_livraison_mode_vide) {
 		window.parent.document.getElementById("lib_livraison_mode_<?php echo $id_livraison_mode;?>").className="alerteform_xsize";
-		texte_erreur += "Vous devez indiquer un libellé au mode de transport.<br/>";
+		texte_erreur += "Vous devez indiquer un libellÃ© au mode de transport.<br/>";
 	} else {
 		window.parent.document.getElementById("lib_livraison_mode_<?php echo $id_livraison_mode;?>").className="classinput_xsize";
 	}
 	
 	if (ref_transporteur_vide) {
 		window.parent.document.getElementById("nom_transporteur_<?php echo $id_livraison_mode;?>").className="alerteform_xsize";
-		texte_erreur += "Vous devez sélectionner un transporteur.<br/>";
+		texte_erreur += "Vous devez sÃ©lectionner un transporteur.<br/>";
 	} else {
 		window.parent.document.getElementById("nom_transporteur_<?php echo $id_livraison_mode;?>").className="classinput_xsize";
 	}

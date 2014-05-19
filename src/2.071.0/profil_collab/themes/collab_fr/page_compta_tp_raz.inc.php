@@ -4,7 +4,7 @@
 // RAZ CONTENU TP
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -28,7 +28,7 @@ $solde = $totaux_theoriques;
 <script type="text/javascript">
 Event.observe("link_retour_tp", "click",  function(evt){Event.stop(evt); page.verify('compta_gestion2_terminaux','compta_gestion2_terminaux.php?<?php echo $retour_var;?>','true','sub_content');}, false);
 </script>
-<div class="titre" style="width:60%; padding-left:140px"><?php echo htmlentities($compte_tp->getLib_tp()); ?> -  Remise à zéro
+<div class="titre" style="width:60%; padding-left:140px"><?php echo htmlentities($compte_tp->getLib_tp()); ?> -  Remise Ã  zÃ©ro
 </div>
 <div class="emarge" style="text-align:right" >
 <div  id="corps_gestion_tps">
@@ -48,14 +48,14 @@ Event.observe("link_retour_tp", "click",  function(evt){Event.stop(evt); page.ve
 			<div>
 				<div style="padding: 15px 25px; display:block" id="first_before_raz">
 					<div class="line_caisse_bottom"></div>
-					<div class="bold_caisse" style="font-size:16px">Remise à zéro du terminal de paiment </div> 
+					<div class="bold_caisse" style="font-size:16px">Remise Ã  zÃ©ro du terminal de paiment </div> 
 					<div class="line_caisse_top"></div>
 					<br />
 					<br />
-					<span style="color:#FF0000"> Attention, réinitialiser le terminal de paiement remet à zéro l'ensemble des valeurs sans préciser la destination des fonds.</span><br />
+					<span style="color:#FF0000">Â Attention, rÃ©initialiser le terminal de paiement remet Ã  zÃ©ro l'ensemble des valeurs sans prÃ©ciser la destination des fonds.</span><br />
 <br />
 
-Vous devriez plutôt utiliser la télécollecte (pour transférer tout ou partie des fonds vers les compte bancaires). 
+Vous devriez plutÃ´t utiliser la tÃ©lÃ©collecte (pour transfÃ©rer tout ou partie des fonds vers les compte bancaires).Â 
 					<br />
 <br /><br />
 
@@ -63,11 +63,11 @@ Vous devriez plutôt utiliser la télécollecte (pour transférer tout ou partie des
 					<div style="text-align:center">
 						<div style="width:450px; padding-left:20%; padding-right:20%">
 						
-						<span id="telecollecte_tp" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; " vspace="3" /> Télécollecte</span>
+						<span id="telecollecte_tp" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; " vspace="3" /> TÃ©lÃ©collecte</span>
 						
 						<br /><br /><br /><br />
 
-						<span id="ignorer_continuer" style="cursor:pointer; font-weight:bolder; text-decoration:underline" >Ignorer cet avertissement et réinitialiser le terminal de paiement</span>
+						<span id="ignorer_continuer" style="cursor:pointer; font-weight:bolder; text-decoration:underline" >Ignorer cet avertissement et rÃ©initialiser le terminal de paiement</span>
 						<br /><br />
 						</div>
 					</div>
@@ -100,7 +100,7 @@ Vous devriez plutôt utiliser la télécollecte (pour transférer tout ou partie des
 					<td>
 					<div>
 					<div class="line_caisse_bottom"></div>
-					<div class="bold_caisse" style="font-size:16px">Remise à zéro du terminal de paiement</div> 
+					<div class="bold_caisse" style="font-size:16px">Remise Ã  zÃ©ro du terminal de paiement</div> 
 					<div class="line_caisse_top"></div>
 					<br />
 					<br />
@@ -110,14 +110,14 @@ Vous devriez plutôt utiliser la télécollecte (pour transférer tout ou partie des
 								<td>&nbsp;</td>
 							</tr>
 							<tr>
-								<td><div class="bold_caisse">Solde Théorique &gt;&gt;</div></td>
+								<td><div class="bold_caisse">Solde ThÃ©orique &gt;&gt;</div></td>
 								<td align="right"><div class="bold_caisse" ><?php echo number_format($solde, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[1];?></div></td>
 								<td style="width:30%">&nbsp;</td>
 							</tr>
 						</table><br />
 
 								<?php if ($last_date_telecollecte) {?>
-								<div style="float:left; color:#999999">Derniere télécollecte: <?php echo date_Us_to_Fr($last_date_telecollecte)." ".getTime_from_date ($last_date_telecollecte);?></div>
+								<div style="float:left; color:#999999">Derniere tÃ©lÃ©collecte: <?php echo date_Us_to_Fr($last_date_telecollecte)." ".getTime_from_date ($last_date_telecollecte);?></div>
 								<?php } ?>
 								<br />
 								<br />
@@ -129,7 +129,7 @@ Vous devriez plutôt utiliser la télécollecte (pour transférer tout ou partie des
 						</table><br />
 						<br />
 						<br />
-						<div style=" text-align:center; font-weight:bolder"><span id="valid_raz" style="cursor:pointer; text-decoration:underline">Valider l'opération</span></div>
+						<div style=" text-align:center; font-weight:bolder"><span id="valid_raz" style="cursor:pointer; text-decoration:underline">Valider l'opÃ©ration</span></div>
 						
 					<form action="compta_tp_raz_valid.php" target="formFrame" method="post" name="compta_tp_raz_valid" id="compta_tp_raz_valid">
 					<input id="id_compte_tp" name="id_compte_tp"  value="<?php echo $compte_tp->getId_compte_tp(); ?>"  type="hidden">

@@ -4,7 +4,7 @@
 //journal des achats
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -15,7 +15,7 @@ check_page_variables ($page_variables);
 // *************************************************************************************************************
 
 if ($nb_fiches >0) { 
-echo (($search['page_to_show']-1)*$search['fiches_par_page'] + $nb_doc_aff)." / ".$nb_fiches." documents vérifiés";
+echo (($search['page_to_show']-1)*$search['fiches_par_page'] + $nb_doc_aff)." / ".$nb_fiches." documents vÃ©rifiÃ©s";
 }
 ?>
 <SCRIPT type="text/javascript">
@@ -45,5 +45,5 @@ if ((($search['page_to_show']-1)*$search['fiches_par_page'] + $nb_doc_aff) < $nb
 	H_loading();
 </SCRIPT>
 <br />
-Vérification terminée.
+VÃ©rification terminÃ©e.
 <?php }?>

@@ -1,10 +1,10 @@
 <?php
 
 // *************************************************************************************************************
-// Remise en banque dépot bancaire depuis la caisse
+// Remise en banque dÃ©pot bancaire depuis la caisse
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -110,7 +110,7 @@ array_menu_v_prelev[2] 	=	new Array('depot_validation', 'chemin_etape_2');
 			<td colspan="2">
 			<br />
 				<div>
-					<span style="width:120px; float:left">Solde Théorique</span>
+					<span style="width:120px; float:left">Solde ThÃ©orique</span>
 					<span style="width:40px; float:left ">&gt;&gt;&gt;</span> 
 					<span id="toto_chq_theorique2" style="text-align:right; width:65px; float:left">
 					<?php
@@ -303,7 +303,7 @@ array_menu_v_prelev[2] 	=	new Array('depot_validation', 'chemin_etape_2');
 					
 
 			<span style="width:250px; float:left">
-			Numéro de remise:</span>
+			NumÃ©ro de remise:</span>
 			<input type="text" class="classinput_nsize" value="" id="num_remise" name="num_remise" />
 			<br /><br />
 					

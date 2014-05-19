@@ -8,7 +8,7 @@ require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
-// Préparations des variables d'affichage
+// PrÃ©parations des variables d'affichage
 $ANNUAIRE_CATEGORIES	=	get_categories();
 
 $civilites = get_civilites ($ANNUAIRE_CATEGORIES[0]->id_categorie);

@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -24,7 +24,7 @@ check_page_variables ($page_variables);
 <script type="text/javascript" language="javascript">
 </script>
 <div class=""> 
-	<p class="titre_config" >Critères Fournisseurs</p>
+	<p class="titre_config" >CritÃ¨res Fournisseurs</p>
 	<div class="reduce_in_edit_mode">
 		<table class="minimizetable">
 			<tr>
@@ -44,7 +44,7 @@ check_page_variables ($page_variables);
 			}else {
 				?>
 				<td>
-				<span>Catégories:</span>
+				<span>CatÃ©gories:</span>
 				</td>
 				<td>
 				<input type="checkbox" value="0" id="tous_fourn" name="tous_fourn" checked="checked" >Toutes 

@@ -4,7 +4,7 @@
 // AJOUT D'UNE OPERATION
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ $("edition_operation").hide();
 }, false);
 </script>
 
-<p  style="font-weight:bolder">Ajout des opérations</p>
+<p  style="font-weight:bolder">Ajout des opÃ©rations</p>
 <div class="emarge">
 	<table class="minimizetable">
 		<tr>
@@ -35,7 +35,7 @@ $("edition_operation").hide();
 						<td style="width:20%">
 						Date:<br />
 						<input type="text" name="date_move_<?php echo $indentation_add_ope;?>" id="date_move_<?php echo $indentation_add_ope;?>" value="" class="classinput_nsize" size="12"/>						</td>
-						<td>Libellé: <br />
+						<td>LibellÃ©: <br />
 						<input type="text" name="lib_move_<?php echo $indentation_add_ope;?>" id="lib_move_<?php echo $indentation_add_ope;?>" value="" class="classinput_xsize"/>						</td>
 						<td style="text-align:right; width:25%">
 						Montant:<br />

@@ -100,7 +100,7 @@ public function maj_fonction ($lib_fonction, $desc_fonction, $id_fonction_parent
 
 
 
-// Défini les permissions d'une fonction
+// DÃ©fini les permissions d'une fonction
 public function set_fonction_perms ($permission_liste) {
 	global $bdd;
 
@@ -109,7 +109,7 @@ public function set_fonction_perms ($permission_liste) {
 						WHERE id_fonction = '".$this->id_fonction."'";
 	$bdd->exec ($query);
 
-	// Création des droits associés
+	// CrÃ©ation des droits associÃ©s
 	$query_insert = "";
 	foreach ($permission_liste as $permission) {
 		if (!$permission) {continue;}
@@ -128,7 +128,7 @@ public function set_fonction_perms ($permission_liste) {
 
 
 
-// Défini les fonctions d'un user
+// DÃ©fini les fonctions d'un user
 static function set_user_fonction ($ref_user, $liste_fonctions) {
 	global $bdd;
 
@@ -137,7 +137,7 @@ static function set_user_fonction ($ref_user, $liste_fonctions) {
 						WHERE ref_user = '".$ref_user."'";
 	$bdd->exec ($query);
 
-	// Création des droits associés
+	// CrÃ©ation des droits associÃ©s
 	$query_insert = "";
 	foreach ($liste_fonctions as $id_fonction) {
 		if ($query_insert) { $query_insert .= ","; }
@@ -152,12 +152,12 @@ static function set_user_fonction ($ref_user, $liste_fonctions) {
 	return true;
 }
 
-//mise à jour des permissions des utilisateurs
+//mise Ã  jour des permissions des utilisateurs
 static function maj_user_permissions ($ref_contact , $ref_user = "") {
 	global $bdd;
 	$contact_perms = array();
 	
-	//selection des permissions liées aux fonctions définies pour un utilisateur
+	//selection des permissions liÃ©es aux fonctions dÃ©finies pour un utilisateur
 	$query = "SELECT fp.id_fonction,id_permission, value
 						FROM fonctions_permissions fp
 						RIGHT JOIN annu_collab_fonctions acf ON acf.id_fonction = fp.id_fonction && acf.ref_contact = '".$ref_contact."'
@@ -230,11 +230,11 @@ static function maj_user_permissions ($ref_contact , $ref_user = "") {
 	return true;
 }
 
-// Maj des permissions utilisateurs lors de mise à jour de fonction
+// Maj des permissions utilisateurs lors de mise Ã  jour de fonction
 public function maj_fonction_user_permissions () {
 	global $bdd;
 
-	//selection des utilisateurs liées aux fonctions
+	//selection des utilisateurs liÃ©es aux fonctions
 	$query = "SELECT DISTINCT u.ref_contact
 						FROM users u
 						LEFT JOIN users_permissions up ON up.ref_user = u.ref_user
@@ -403,7 +403,7 @@ function charger_fonctions ($id_profil = "") {
 	return $fonction;
 }
 
-// Chargement de la liste des permissions dépendantes
+// Chargement de la liste des permissions dÃ©pendantes
 function charger_permissions_dependantes ($id_permission = "") {
 	global $bdd;
 
@@ -421,7 +421,7 @@ function charger_permissions_dependantes ($id_permission = "") {
 		return $permissions_dependantes;
 }
 
-// Chargement de la liste des permissions dépendantes activées pour un utilisateur
+// Chargement de la liste des permissions dÃ©pendantes activÃ©es pour un utilisateur
 function charger_permissions_dependantes_actives ($id_permission = "", $ref_user = "", $reset=false) {
 	global $bdd;
 
@@ -443,7 +443,7 @@ function charger_permissions_dependantes_actives ($id_permission = "", $ref_user
 		return $permissions_dependantes_a;
 }
 
-// Chargement de la liste des permissions dépendantes activées pour une fonction
+// Chargement de la liste des permissions dÃ©pendantes activÃ©es pour une fonction
 function charger_permissions_dependantes_actives_fonctions ($id_permission = "", $id_fonction = "", $reset=false) {
 	global $bdd;
 
@@ -465,7 +465,7 @@ function charger_permissions_dependantes_actives_fonctions ($id_permission = "",
 		return $permissions_dependantes_a;
 }
 
-// Chargement de la liste des permissions dépendantes du meme type
+// Chargement de la liste des permissions dÃ©pendantes du meme type
 function charger_permissions_dependantes_meme_type ($id_permission = "", $reset=false) {
 	global $bdd;
 
@@ -491,7 +491,7 @@ function charger_permissions_dependantes_meme_type ($id_permission = "", $reset=
 		return $permissions_dependantes_mt;
 }
 
-// Chargement de la liste des permissions dépendantes du meme type
+// Chargement de la liste des permissions dÃ©pendantes du meme type
 function charger_permissions_parentes_meme_type ($id_permission = "", $reset=false) {
 	global $bdd;
 
@@ -518,7 +518,7 @@ function charger_permissions_parentes_meme_type ($id_permission = "", $reset=fal
 }
 
 
-// Chargement de la liste des permissions dépendantes désactivées pour un utilisateur
+// Chargement de la liste des permissions dÃ©pendantes dÃ©sactivÃ©es pour un utilisateur
 function charger_permissions_dependantes_inactives ($id_permission = "", $ref_user = "", $reset=false) {
 	global $bdd;
 
@@ -542,7 +542,7 @@ function charger_permissions_dependantes_inactives ($id_permission = "", $ref_us
 		return $permissions_dependantes_i;
 }
 
-// Chargement de la liste des permissions dépendantes désactivées pour une fonction
+// Chargement de la liste des permissions dÃ©pendantes dÃ©sactivÃ©es pour une fonction
 function charger_permissions_dependantes_inactives_fonctions ($id_permission = "", $id_fonction = "", $reset=false) {
 	global $bdd;
 
@@ -654,7 +654,7 @@ function getDroitVoirAgenda($ref_user, $id_perm){
 	global $bdd;
 	$tab_tmp = array();
 	$tableauDroits = array();
-	$tab_droits = array("Voir la dispo","Voir les détails","Modifier");
+	$tab_droits = array("Voir la dispo","Voir les dÃ©tails","Modifier");
 	
 	$query = "SELECT value FROM users_permissions WHERE ref_user = '".$ref_user."' AND id_permission = ".$id_perm." ";
 	$res = $bdd->query($query);

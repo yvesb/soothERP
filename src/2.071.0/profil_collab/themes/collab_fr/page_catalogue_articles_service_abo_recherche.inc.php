@@ -4,7 +4,7 @@
 // RECHERCHE DES ABONNEMENTS
 // *************************************************************************************************************
 
-// Variables nÈcessaires ‡ l'affichage
+// Variables n√©cessaires √† l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -88,8 +88,8 @@ foreach ($_ALERTES as $alerte => $value) {
 						<input type="hidden" name="ref_client" id="ref_client" />
 						<script type="text/javascript">
 							Event.observe('nom_client', 'click',  function(evt){
-								// recherche_client_set_contact -> fonction java script qui sera appellÈe par show_mini_moteur_contacts
-								// les rÈsultats seront insÈrÈs dans les inputs ref_contact et nom_contact
+								// recherche_client_set_contact -> fonction java script qui sera appell√©e par show_mini_moteur_contacts
+								// les r√©sultats seront ins√©r√©s dans les inputs ref_contact et nom_contact
 								Event.stop(evt); show_mini_moteur_contacts ("recherche_client_set_contact", "\'ref_client\', \'nom_client\' ");
 								preselect ('<?php echo $CLIENT_ID_PROFIL; ?>', 'id_profil_m');
 								page.annuaire_recherche_mini();
@@ -123,13 +123,13 @@ foreach ($_ALERTES as $alerte => $value) {
 						<select  id="etat_abo"  name="etat_abo" class="classinput_xsize" style="width:250px">
 							<option value="0" selected="selected">Tous</option>
 							<option value="1"<?php if(isset($_REQUEST["type_recherche"]) && $_REQUEST["type_recherche"] == "1" ) { ?> selected="selected"<?php } ?>>Abonnement en cours</option>
-							<option value="2"<?php if(isset($_REQUEST["type_recherche"]) && $_REQUEST["type_recherche"] == "2" ) { ?> selected="selected"<?php } ?>>Abonnement ‡ renouveler</option>
-							<option value="3"<?php if(isset($_REQUEST["type_recherche"]) && $_REQUEST["type_recherche"] == "3" ) { ?> selected="selected"<?php } ?>>Abonnement expirÈ</option>
+							<option value="2"<?php if(isset($_REQUEST["type_recherche"]) && $_REQUEST["type_recherche"] == "2" ) { ?> selected="selected"<?php } ?>>Abonnement √† renouveler</option>
+							<option value="3"<?php if(isset($_REQUEST["type_recherche"]) && $_REQUEST["type_recherche"] == "3" ) { ?> selected="selected"<?php } ?>>Abonnement expir√©</option>
 						</select>
 					</td>
 					<td></td>
 					<td>
-						<span class="labelled">CartÈgorie&nbsp;de&nbsp;clients:</span>
+						<span class="labelled">Cart√©gorie&nbsp;de&nbsp;clients:</span>
 					</td>
 					<td>
 						<select id="id_client_categ" name="id_client_categ" class="classinput_xsize" style="width:220px">
@@ -147,10 +147,10 @@ foreach ($_ALERTES as $alerte => $value) {
 					<td></td>
 					<td>
 						<div id="afficher_plus_de_criteres" style="display:block; cursor:pointer">
-							<span class="labelled">+ de critËres</span>
+							<span class="labelled">+ de crit√®res</span>
 						</div>
 						<div id="afficher_moins_de_criteres" style="display:none; cursor:pointer">
-							<span class="labelled">- de critËres</span>
+							<span class="labelled">- de crit√®res</span>
 						</div>
 						<script type="text/javascript">
 							Event.observe("afficher_plus_de_criteres", "click",  function(evt){
@@ -214,7 +214,7 @@ foreach ($_ALERTES as $alerte => $value) {
 					<tr >
 						<td></td>
 						<td>
-							<span class="labelled">Date d'ÈchÈance:</span>
+							<span class="labelled">Date d'√©ch√©ance:</span>
 						</td>
 						<td>
 							<input type="text" name="date_echeance_min" id="date_echeance_min" class="classinput_xsize" style="width:100px">

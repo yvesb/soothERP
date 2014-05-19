@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nÈcessaires ‡ l'affichage
+// Variables n√©cessaires √† l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
 
 ?>
 <p>&nbsp;</p>
-<p>compte plan gÈnÈral (ajouter) </p>
+<p>compte plan g√©n√©ral (ajouter) </p>
 <p>&nbsp; </p>
 <?php 
 foreach ($_ALERTES as $alerte => $value) {
@@ -55,14 +55,14 @@ if (erreur) {
 	
 	if (exist_numero_compte) {
 		window.parent.document.getElementById("numero_compte").className="alerteform_xsize";
-		texte_erreur += "Ce numÈro de compte existe dÈj‡.<br/>";
+		texte_erreur += "Ce num√©ro de compte existe d√©j√†.<br/>";
 	} else {
 		window.parent.document.getElementById("numero_compte").className="classinput_xsize";
 	}
 
 	if (numero_compte_vide) {
 		window.parent.document.getElementById("numero_compte").className="alerteform_xsize";
-		texte_erreur += "Indiquez un numÈro de compte.<br/>";
+		texte_erreur += "Indiquez un num√©ro de compte.<br/>";
 	} else {
 		window.parent.document.getElementById("numero_compte").className="classinput_xsize";
 	}

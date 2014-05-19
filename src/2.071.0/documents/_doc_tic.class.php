@@ -112,7 +112,7 @@ public function create_doc () {
 }
 
 
-// Charge les informations supplémentaire du contact
+// Charge les informations supplÃ©mentaire du contact
 protected function load_infos_contact () {
 	global $CLIENT_ID_PROFIL;
 	global $COMMERCIAL_ID_PROFIL;
@@ -150,7 +150,7 @@ protected function load_infos_contact () {
 }
 
 
-//attibution par défaut du commercial
+//attibution par dÃ©faut du commercial
 protected function load_defauts_infos_contact () {
 	global $COMMERCIAL_ID_PROFIL;
 	
@@ -172,7 +172,7 @@ protected function load_defauts_infos_contact () {
 }
 
 
-// Renvoie l'adresse a utiliser dans le document pour un contact donné
+// Renvoie l'adresse a utiliser dans le document pour un contact donnÃ©
 function define_adresse_contact () {
 	global $bdd;
 
@@ -203,7 +203,7 @@ function define_adresse_contact () {
 		$this->adresse_contact = $_SESSION['magasin']->getLib_magasin ();
 	}
 	elseif (!$adresse_contact_ok) {
-		// Sélection des adresses prédéfinies
+		// SÃ©lection des adresses prÃ©dÃ©finies
 		$query = "SELECT ref_adr_livraison, a1.text_adresse ta1, a1.code_postal cp1, a1.ville v1, a1.id_pays ip1, p1.pays p1
 							FROM annu_client ac
 								LEFT JOIN adresses a1 ON ac.ref_adr_livraison = a1.ref_adresse
@@ -231,7 +231,7 @@ function define_adresse_contact () {
 // *************************************************************************************************************
 
 /*
-// Met à jour l' id_magasin pour ce ticket de caisse
+// Met Ã  jour l' id_magasin pour ce ticket de caisse
 public function maj_id_magasin ($new_id_magasin) {
 	global $bdd;	
 
@@ -260,7 +260,7 @@ public function maj_id_magasin ($new_id_magasin) {
 */
 
 /*
-// Met à jour la date de livraison demandée
+// Met Ã  jour la date de livraison demandÃ©e
 public function maj_id_livraison_mode ($id_livraison_mode) {
 	global $bdd;
 	
@@ -274,14 +274,14 @@ public function maj_id_livraison_mode ($id_livraison_mode) {
 	}
 	
 	$livraison_mode = new livraison_modes($id_livraison_mode);
-	//mise à jour du nouveau mode de livraison
+	//mise Ã  jour du nouveau mode de livraison
 	$this->id_livraison_mode = $id_livraison_mode;
 
 	$query = "UPDATE doc_blc SET id_livraison_mode = ".num_or_null($this->id_livraison_mode)."
 						WHERE ref_doc = '".$this->ref_doc."' ";
 	$bdd->exec ($query);
 	
-	//calcul et insertion pour ce document des frais de port (calcul effectué depuis la class livraison mode)
+	//calcul et insertion pour ce document des frais de port (calcul effectuÃ© depuis la class livraison mode)
 	$livraison_mode->calcul_frais_livraison_doc ($this);
 	
 	return true;
@@ -289,9 +289,9 @@ public function maj_id_livraison_mode ($id_livraison_mode) {
 */
 
 /*
-// Liste des documents pouvant être fusionner
+// Liste des documents pouvant Ãªtre fusionner
 public function check_allow_fusion ($second_document) {
-	//verifcation que l'état des document permet la fusion
+	//verifcation que l'Ã©tat des document permet la fusion
 	if (($this->id_etat_doc != "11" && $this->id_etat_doc != "13") && ($second_document->getId_etat_doc () != "11" && $second_document->getId_etat_doc () != "13")) {
 		return false;
 	}
@@ -300,7 +300,7 @@ public function check_allow_fusion ($second_document) {
 */
 
 /*
-// Liste des documents pouvant être fusionner
+// Liste des documents pouvant Ãªtre fusionner
 public function liste_doc_fusion () {
 	global $bdd;
 	
@@ -340,7 +340,7 @@ protected function doc_line_infos_supp () {
 */
 
 /*
-// Chargement des informations supplémentaires concernant les numéros de série 
+// Chargement des informations supplÃ©mentaires concernant les numÃ©ros de sÃ©rie 
 protected function doc_line_sn_infos_supp () {
 	$query['select']		= ", IF (ISNULL(sas.numero_serie), 0, 1) as sn_exist";
 	$query['left_join'] = " LEFT JOIN stocks_articles_sn sas ON sas.numero_serie = dls.numero_serie";
@@ -355,25 +355,25 @@ protected function doc_line_sn_infos_supp () {
 
 //(`id_etat_doc`,`id_type_doc`,`lib_etat_doc`,`ordre`,`is_open`) VALUES
 //(59, 						15, 					'En saisie', 		1, 			1)
-//(60, 						15,						'Annulé', 			2, 			0)
+//(60, 						15,						'AnnulÃ©', 			2, 			0)
 //(61, 						15,						'En Attente', 	3, 			0)
-//(62, 						15, 					'Encaissé', 		4, 			0)
+//(62, 						15, 					'EncaissÃ©', 		4, 			0)
 
-// Action avant de changer l'état du document
+// Action avant de changer l'Ã©tat du document
 protected function action_before_maj_etat ($new_etat_doc) {
 	return true;
 }
 
 
-// Action après de changer l'état du document
+// Action aprÃ¨s de changer l'Ã©tat du document
 protected function action_after_maj_etat ($old_etat_doc) {
 	if (!$this->liaisons_loaded) { $this->charger_liaisons () ; }
 	foreach ($this->liaisons['dest'] as $dest) {
-		//si le TIC est déjà lié avec une facture (et la liaison valide), alors on ne facture pas
+		//si le TIC est dÃ©jÃ  liÃ© avec une facture (et la liaison valide), alors on ne facture pas
 		if ($dest->active ) { $GLOBALS['_OPTIONS']['CREATE_DOC']['not_generer_facture'] = 1;}
 	}
 
-	if (($this->id_etat_doc == 62)  && !isset($GLOBALS['_OPTIONS']['CREATE_DOC']['not_generer_facture'])) { //62 = encaissé
+	if (($this->id_etat_doc == 62)  && !isset($GLOBALS['_OPTIONS']['CREATE_DOC']['not_generer_facture'])) { //62 = encaissÃ©
 		$this->generer_bl_client();
 	}
 
@@ -386,7 +386,7 @@ protected function action_after_maj_etat ($old_etat_doc) {
 
 
 
-// Génère un BL Client à partir de cette commande.
+// GÃ©nÃ¨re un BL Client Ã  partir de cette commande.
 public function generer_bl_client ($lines = false) {	//@TODO champs a renseigner
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['ref_adr_contact'] = $this->ref_adr_contact; //adresse de livraison
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['adresse_contact'] = $this->getAdresse_contact();
@@ -425,7 +425,7 @@ function check_profils () {
 // *************************************************************************************************************
 //@TODO ???
 protected function need_infos_facturation () {
-	// Si le ticket a été encaissé, ou si il est annulée, les informations de facturation seront gérées dans la facture.
+	// Si le ticket a Ã©tÃ© encaissÃ©, ou si il est annulÃ©e, les informations de facturation seront gÃ©rÃ©es dans la facture.
 	if ($this->id_etat_doc == $this->ID_ETAT_ANNULE || $this->id_etat_doc == 62) { return false; }
 	return true;
 }
@@ -455,7 +455,7 @@ function getA_facturer () {
 		return $this->a_facturer;
 	}
 
-	// Sinon le BLC est a facturer sauf si l'on trouve une facture (non annulée) liée
+	// Sinon le BLC est a facturer sauf si l'on trouve une facture (non annulÃ©e) liÃ©e
 	$this->a_facturer = true;
 	if (!$this->liaisons_loaded) { $this->charger_liaisons(); }
 

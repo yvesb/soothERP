@@ -5,7 +5,7 @@
 // MODIFICATION D'UNE CATEGORIE D'UN CATALOGUE CLIENT
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -55,7 +55,7 @@ if (erreur) {
 	if (bad_lib_catalogue_client_dir) {
 		window.parent.document.getElementById("lib_catalogue_client_dir").className="alerteform_xsize";
 		window.parent.document.getElementById("lib_catalogue_client_dir").focus();
-		texte_erreur += "Le libellé de la catégorie ne peut être vide.<br />";
+		texte_erreur += "Le libellÃ© de la catÃ©gorie ne peut Ãªtre vide.<br />";
 	}else {
 		window.parent.document.getElementById("lib_catalogue_client_dir").className="classinput_xsize";
 	}

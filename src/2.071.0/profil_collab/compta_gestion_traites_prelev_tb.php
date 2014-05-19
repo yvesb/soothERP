@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 if(!$COMPTA_GEST_PRELEVEMENTS){
-    echo "Cette fonctionalité est désactivée par votre administrateur.";
+    echo "Cette fonctionalitÃ© est dÃ©sactivÃ©e par votre administrateur.";
     exit();
 }
 
@@ -29,7 +29,7 @@ $echeances_prog = 0;
 
 
 // *************************************************************************************************************
-// REQUETES A SYNTHETISER ET PLACER DANS UNE METHODE !! (Fonctionne en l'état mais pas optimisé)
+// REQUETES A SYNTHETISER ET PLACER DANS UNE METHODE !! (Fonctionne en l'Ã©tat mais pas optimisÃ©)
 // *************************************************************************************************************
 
 
@@ -112,7 +112,7 @@ while ($info_echeance_sans_aut = $resultat->fetchObject()) {
     $prelev_sans_auth_montant += $info_echeance_sans_aut->montant;
     }
 
-//Sélection des traites NA echues avec autorisation
+//SÃ©lection des traites NA echues avec autorisation
 $query = "SELECT cb2.id_compte_bancaire,cb2.lib_compte,d.ref_doc,a1.ref_contact ,de.id_doc_echeance, de.date, de.type_reglement ,cb2.iban,  montant
                 FROM `doc_echeanciers` de
                 JOIN documents d ON de.ref_doc = d.ref_doc
@@ -149,7 +149,7 @@ while ($info_traitena = $resultat->fetchObject()) {
     }
 
 
-//Sélection des echeances traites NA SANS autorisation
+//SÃ©lection des echeances traites NA SANS autorisation
 $query = "SELECT DISTINCT d.ref_doc,a1.ref_contact ,de.id_doc_echeance, de.date, de.type_reglement ,  montant
                 FROM `doc_echeanciers` de
                 INNER JOIN documents d ON de.ref_doc = d.ref_doc

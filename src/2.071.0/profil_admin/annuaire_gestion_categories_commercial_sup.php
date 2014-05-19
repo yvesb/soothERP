@@ -14,7 +14,7 @@ include_once ($CONFIG_DIR."profil_commercial.config.php");
 // chargement de la class du profil
 contact::load_profil_class($COMMERCIAL_ID_PROFIL);
 
-//suppression de la catégorie
+//suppression de la catÃ©gorie
 contact_commercial::delete_infos_commerciaux_categories ($_REQUEST["id_commercial_categ"]);
 
 // *************************************************************************************************************

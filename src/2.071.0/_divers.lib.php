@@ -9,46 +9,46 @@
 // string setlocale  ( int $category  , array $locale  )
 //
 // L'information locale est maintenue par processus, non par thread. 
-// Si vous faites fonctionner PHP sur un serveur multi-threadé comme 
+// Si vous faites fonctionner PHP sur un serveur multi-threadÃ© comme 
 // IIS ou Apache sur Windows, vous pourriez obtenir des changements 
 // soudains des configurations locales pendant qu'un script fonctionne, 
-// même si celui-ci n'appelle jamais la fonction setlocale().
-// Ceci survient à cause des autres scripts qui fonctionnent dans des 
-// threads différents du même processus. Ces scripts changent les 
+// mÃªme si celui-ci n'appelle jamais la fonction setlocale().
+// Ceci survient Ã  cause des autres scripts qui fonctionnent dans des 
+// threads diffÃ©rents du mÃªme processus. Ces scripts changent les 
 // configurations locales dans le processus au complet en utilisant 
 // la fonction setlocale()
 //
-// Deplus, sur certain serveur LINUX, le setlocale() ne passe pas et empèche l'impression des pdf
+// Deplus, sur certain serveur LINUX, le setlocale() ne passe pas et empÃ¨che l'impression des pdf
 //
-// Pour ces raisons, nous déconseillons l'utilisation de la fonction setlocale()
+// Pour ces raisons, nous dÃ©conseillons l'utilisation de la fonction setlocale()
 // 
-// Pour les dates, il est préférable d'utiliser la fonction lmb_strftime(string $format , string $info_locale [, int $timestamp = time()  ] )
-// $info_locale <= $INFO_LOCALE variable globale définie dans config/config_generale.inc.php
+// Pour les dates, il est prÃ©fÃ©rable d'utiliser la fonction lmb_strftime(string $format , string $info_locale [, int $timestamp = time()  ] )
+// $info_locale <= $INFO_LOCALE variable globale dÃ©finie dans config/config_generale.inc.php
 
 
 //string lmb_strftime(string $format , string $info_locale [, int $timestamp = time()  ] )
 function lmb_strftime(			 $format, 				$info_locale  ,			$timestamp = -1){if($timestamp < 0){$timestamp = time();}
 
 	//Jour
-	//%a 	Nom abrégé du jour de la semaine 	De lun à dim
-	//%A 	Nom complet du jour de la semaine 	De lundi à dimanche
+	//%a 	Nom abrÃ©gÃ© du jour de la semaine 	De lun Ã  dim
+	//%A 	Nom complet du jour de la semaine 	De lundi Ã  dimanche
 	$pattern = '(%a|%A)';
 	
 	//Mois
-	//%b 	Nom du mois, abrégé, suivant la locale 	De janv à déc
-	//%B 	Nom complet du mois, suivant la locale 	De janvier à décembre
-	//%h 	Nom du mois abrégé, suivant la locale (alias de %b) 	De janv à déc
+	//%b 	Nom du mois, abrÃ©gÃ©, suivant la locale 	De janv Ã  dÃ©c
+	//%B 	Nom complet du mois, suivant la locale 	De janvier Ã  dÃ©cembre
+	//%h 	Nom du mois abrÃ©gÃ©, suivant la locale (alias de %b) 	De janv Ã  dÃ©c
 	$pattern.= '|(%b|%B|%h)';
 	
 	//Heure
-	//%X 	Représentation de l'heure, basée sur la locale, sans la date 	Exemple : 03:59:16 ou 15:59:16
-	//%z 	Soit le décalage horaire depuis UTC, ou son abréviation (suivant le système d'exploitation) 	Exemple : -0500 ou EST pour l'heure de l'Est
-	//%Z 	Le décalage horaire ou son abréviation NON fournie par %z (suivant le système d'exploitation) 	Exemple : -0500 ou EST pour l'heure de l'Est
+	//%X 	ReprÃ©sentation de l'heure, basÃ©e sur la locale, sans la date 	Exemple : 03:59:16 ou 15:59:16
+	//%z 	Soit le dÃ©calage horaire depuis UTC, ou son abrÃ©viation (suivant le systÃ¨me d'exploitation) 	Exemple : -0500 ou EST pour l'heure de l'Est
+	//%Z 	Le dÃ©calage horaire ou son abrÃ©viation NON fournie par %z (suivant le systÃ¨me d'exploitation) 	Exemple : -0500 ou EST pour l'heure de l'Est
 	$pattern.= '|(%X|%z|%Z)';
 	
 	//L'heure et la date
-	//%c 	Date et heure préférées, basées sur la locale 	Exemple : Tue Feb 5 00:45:10 2009 pour le 4 Février 2009 à 12:45:10 AM
-	//%x 	Représentation préférée de la date, basée sur la locale, sans l'heure 	Exemple : 02/05/09 pour le 5 Février 2009
+	//%c 	Date et heure prÃ©fÃ©rÃ©es, basÃ©es sur la locale 	Exemple : Tue Feb 5 00:45:10 2009 pour le 4 FÃ©vrier 2009 Ã  12:45:10 AM
+	//%x 	ReprÃ©sentation prÃ©fÃ©rÃ©e de la date, basÃ©e sur la locale, sans l'heure 	Exemple : 02/05/09 pour le 5 FÃ©vrier 2009
 	$pattern.= '|(%c|%x)';
 	
 	switch($info_locale[0]){
@@ -64,36 +64,36 @@ function lmb_strftime(			 $format, 				$info_locale  ,			$timestamp = -1){if($ti
 function _lmb_strftime_fr_FRA($matches, $timestamp){
 	switch ($matches[0]) {
 		//JOUR
-		case "%a":{//%a 	Nom abrégé du jour de la semaine 	De lun à dim
+		case "%a":{//%a 	Nom abrÃ©gÃ© du jour de la semaine 	De lun Ã  dim
 			$tab = array("dim", "lun", "mar", "mer", "jeu", "ven", "sam");
 			return $tab[strftime("%w", $timestamp)];
 		}
-		case "%A":{//%A 	Nom complet du jour de la semaine De lundi à dimanche
+		case "%A":{//%A 	Nom complet du jour de la semaine De lundi Ã  dimanche
 			$tab = array("dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi");
 			return $tab[strftime("%w", $timestamp)];
 		}
 		//Mois
-		case "%b":{//%b 	Nom du mois, abrégé, suivant la locale 	De janv à déc
-			$tab = array("janv.", "févr.", "mars", "avr.", "mai", "juin", "juil", "août", "sept", "oct", "nov", "déc");
+		case "%b":{//%b 	Nom du mois, abrÃ©gÃ©, suivant la locale 	De janv Ã  dÃ©c
+			$tab = array("janv.", "fÃ©vr.", "mars", "avr.", "mai", "juin", "juil", "aoÃ»t", "sept", "oct", "nov", "dÃ©c");
 			return $tab[strftime("%m", $timestamp)-1];
 		}
-		case "%B":{//%B 	Nom complet du mois, suivant la locale 	De janvier à décembre
-			$tab = array("janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre");
+		case "%B":{//%B 	Nom complet du mois, suivant la locale 	De janvier Ã  dÃ©cembre
+			$tab = array("janvier", "fÃ©vrier", "mars", "avril", "mai", "juin", "juillet", "aoÃ»t", "septembre", "octobre", "novembre", "dÃ©cembre");
 			return $tab[strftime("%m", $timestamp)-1];
 		}
-		case "%h":{//%b 	Nom du mois, abrégé, suivant la locale 	De janv à déc
-			$tab = array("janv.", "févr.", "mars", "avr.", "mai", "juin", "juil", "août", "sept", "oct", "nov", "déc");
+		case "%h":{//%b 	Nom du mois, abrÃ©gÃ©, suivant la locale 	De janv Ã  dÃ©c
+			$tab = array("janv.", "fÃ©vr.", "mars", "avr.", "mai", "juin", "juil", "aoÃ»t", "sept", "oct", "nov", "dÃ©c");
 			return $tab[strftime("%m", $timestamp)-1];
 		}
 		
 		//Heure
-		//%X 	Représentation de l'heure, basée sur la locale, sans la date 	Exemple : 03:59:16 ou 15:59:16
-		//%z 	Soit le décalage horaire depuis UTC, ou son abréviation (suivant le système d'exploitation) 	Exemple : -0500 ou EST pour l'heure de l'Est
-		//%Z 	Le décalage horaire ou son abréviation NON fournie par %z (suivant le système d'exploitation) 	Exemple : -0500 ou EST pour l'heure de l'Est
+		//%X 	ReprÃ©sentation de l'heure, basÃ©e sur la locale, sans la date 	Exemple : 03:59:16 ou 15:59:16
+		//%z 	Soit le dÃ©calage horaire depuis UTC, ou son abrÃ©viation (suivant le systÃ¨me d'exploitation) 	Exemple : -0500 ou EST pour l'heure de l'Est
+		//%Z 	Le dÃ©calage horaire ou son abrÃ©viation NON fournie par %z (suivant le systÃ¨me d'exploitation) 	Exemple : -0500 ou EST pour l'heure de l'Est
 		
 		//L'heure et la date
-		//%c 	Date et heure préférées, basées sur la locale 	Exemple : Tue Feb 5 00:45:10 2009 pour le 4 Février 2009 à 12:45:10 AM
-		//%x 	Représentation préférée de la date, basée sur la locale, sans l'heure 	Exemple : 02/05/09 pour le 5 Février 2009
+		//%c 	Date et heure prÃ©fÃ©rÃ©es, basÃ©es sur la locale 	Exemple : Tue Feb 5 00:45:10 2009 pour le 4 FÃ©vrier 2009 Ã  12:45:10 AM
+		//%x 	ReprÃ©sentation prÃ©fÃ©rÃ©e de la date, basÃ©e sur la locale, sans l'heure 	Exemple : 02/05/09 pour le 5 FÃ©vrier 2009
 		
 		default:return $matches[0];
 	}
@@ -127,13 +127,13 @@ function convert_date_Us_to_Fr ($requete,$separateur) {
 }
 
 // renvois une date en string Lettre FR
-// utilisation fortement déconseillée !!
+// utilisation fortement dÃ©conseillÃ©e !!
 function date_Lettre_Fr ($requete) {
 	setlocale (LC_TIME, 'fr_FR','fra'); 
 	return strftime('%A, %d %B %Y', strtotime($requete));
 }
 
-// Retourne l'heure à partir d'une date
+// Retourne l'heure Ã  partir d'une date
 function getTime_from_date ($requete) {
 	$aff_seconde = 0;
 
@@ -186,8 +186,8 @@ function getPays_in_list ($list) {
 	return $liste_pays;
 }
 
-//fonction de maj des fichier de config (ici principalement utilisé dans le cas de maj_line
-//ou l'on peu choisir soit la ligne dans le fichier à modifier, soit le nom de la variable à modifier
+//fonction de maj des fichier de config (ici principalement utilisÃ© dans le cas de maj_line
+//ou l'on peu choisir soit la ligne dans le fichier Ã  modifier, soit le nom de la variable Ã  modifier
 function maj_configuration_file ($filename, $action, $line_number, $line_texte = "", $dir_file) {
 	// Suppression des espaces en fin de ligne & Ajout d'un saut de ligne
 	$line_texte = rtrim($line_texte)."\n";
@@ -203,14 +203,14 @@ function maj_configuration_file ($filename, $action, $line_number, $line_texte =
 			}
 		break;
 		case "del_line":
-			//on vérifi que c'est un numéro de ligne qui est indiqué
+			//on vÃ©rifi que c'est un numÃ©ro de ligne qui est indiquÃ©
 			if (is_numeric($line_number)) {
 				for ($i=0; $i<count($old_file); $i++) {
 					if ($i == $line_number-1) { continue; }
 					$new_file[] = $old_file[$i];
 				}
 			} else {
-				//alors on a indiqué le nom de la variabe que l'on vas chercher dans tout le fichier
+				//alors on a indiquÃ© le nom de la variabe que l'on vas chercher dans tout le fichier
 				for ($i=0; $i<count($old_file); $i++) {
 					if (substr_count($old_file[$i], $line_number)) { continue; }
 					$new_file[] = $old_file[$i];
@@ -218,12 +218,12 @@ function maj_configuration_file ($filename, $action, $line_number, $line_texte =
 			}
 		break;
 		case "maj_line":
-			//on vérifi que c'est un numéro de ligne qui est indiqué
+			//on vÃ©rifi que c'est un numÃ©ro de ligne qui est indiquÃ©
 			if (is_numeric($line_number)) {
 				$new_file = $old_file;
 				$new_file[$line_number-1] = $line_texte;
 			} else {
-				//alors on a indiqué le nom de la variabe que l'on vas chercher dans tout le fichier
+				//alors on a indiquÃ© le nom de la variabe que l'on vas chercher dans tout le fichier
 				$new_file = $old_file;
 				
 				for ($i=0; $i<count($old_file); $i++) {
@@ -234,7 +234,7 @@ function maj_configuration_file ($filename, $action, $line_number, $line_texte =
 			}
 		break;
 	}
-	// Création du nouveau fichier de coniguration
+	// CrÃ©ation du nouveau fichier de coniguration
 	$new_file_id = fopen ($dir_file."tmp_".$filename, "w");
 	foreach ($new_file as $line) {
 		fwrite($new_file_id, $line);
@@ -546,8 +546,8 @@ function rainbowDegrader($longueur, $coulDep, $coulArr) {
 
   $degrader = array();
 
-  //$coulDep  Couleur de départ (gauche), RVB
-  // $coulArr Couleur d'arrivée (droite), RVB
+  //$coulDep  Couleur de dÃ©part (gauche), RVB
+  // $coulArr Couleur d'arrivÃ©e (droite), RVB
 
   $sens_r = 0;
   $sens_v = 0;
@@ -627,7 +627,7 @@ function add_ged ($fichier, $lib_piece, $type_pj, $nom, $note, $type_objet, $ref
 	global $bdd;
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -679,7 +679,7 @@ function del_ged ($id_piece, $fichier) {
 	return true;
 }
 
-//Fonction de chargement des types de pièces jointes
+//Fonction de chargement des types de piÃ¨ces jointes
 function charger_types_ged(){
 	global $bdd;
 	
@@ -693,7 +693,7 @@ function charger_types_ged(){
 	return $types_pieces;
 }
 
-//Fonction de modification des types de pièces jointes
+//Fonction de modification des types de piÃ¨ces jointes
 function maj_types_ged($id_type, $lib_type, $abrev_type, $actif){
 	global $bdd;
 	
@@ -720,7 +720,7 @@ function maj_types_ged($id_type, $lib_type, $abrev_type, $actif){
 	return true;
 }*/
 
-//Fonction d'ajout de type de pièce jointe
+//Fonction d'ajout de type de piÃ¨ce jointe
 function add_types_ged($lib_type, $abrev){
 	global $bdd;
 	
@@ -732,7 +732,7 @@ function add_types_ged($lib_type, $abrev){
 	return true;
 }
 
-//Fonction de suppression de type de pièce jointe
+//Fonction de suppression de type de piÃ¨ce jointe
 function del_types_ged($id_type){
 	global $bdd;
 	
@@ -755,7 +755,7 @@ function del_types_ged($id_type){
 // ******************************************************************
 
 
-//Fonction de chargement de la liste des véhicules
+//Fonction de chargement de la liste des vÃ©hicules
 function charger_liste_vehicules(){
 	global $bdd;
 	
@@ -768,7 +768,7 @@ function charger_liste_vehicules(){
 	
 	return $liste_vehicules;
 }
-//Fonction d'ajout de véhicules
+//Fonction d'ajout de vÃ©hicules
 function add_vehicules($lib_vehicule, $marque, $attribution){
 	global $bdd;
 	
@@ -780,7 +780,7 @@ function add_vehicules($lib_vehicule, $marque, $attribution){
 	return true;
 }
 
-//Fonction de modification des véhicules
+//Fonction de modification des vÃ©hicules
 function maj_vehicules($id_vehicule, $lib_vehicule, $marque, $attribution){
 	global $bdd;
 	
@@ -794,7 +794,7 @@ function maj_vehicules($id_vehicule, $lib_vehicule, $marque, $attribution){
 	
 	return true;
 }
-//Fonction de suppression d'un véhicule
+//Fonction de suppression d'un vÃ©hicule
 function del_vehicule($id_vehicule){
 	global $bdd;
 	
@@ -814,7 +814,7 @@ function del_vehicule($id_vehicule){
 
 
 
-//Fonction de chargement de la liste des évènements pour un véhicule
+//Fonction de chargement de la liste des Ã©vÃ¨nements pour un vÃ©hicule
 function charger_liste_evenements($where){
 	global $bdd;
 	
@@ -840,7 +840,7 @@ function add_evenement($id_vehicule, $date_evenement, $lib_evenement, $cout){
 }
 
 
-//Fonction de suppression d'un évènement pour un véhicule
+//Fonction de suppression d'un Ã©vÃ¨nement pour un vÃ©hicule
 function del_evenement($id_evenement){
 	global $bdd;
 	
@@ -853,7 +853,7 @@ function del_evenement($id_evenement){
 	return true;
 }
 
-//Fonction de modification des évènements des véhicules
+//Fonction de modification des Ã©vÃ¨nements des vÃ©hicules
 function maj_evenement($id_evenement, $date_evenement, $lib_evenement, $cout){
 	global $bdd;
 	
@@ -1060,11 +1060,11 @@ function charger_doc_qte ($periode, $type_data = array()) {
 
 function get_semaine($semaine,$annee)
 {
-// on sait que le 4 janvier est tout le temps en première semaine
+// on sait que le 4 janvier est tout le temps en premiÃ¨re semaine
 // cf. fr.wikipedia.org/wiki/ISO...
 // donc on part du 4 janvier et on avance de ($semaine-1) semaines
 // et on teste si on est un lundi. Si ce n'est pas le cas on recule
-// d'un jour jusqu'à trouver un lundi.
+// d'un jour jusqu'Ã  trouver un lundi.
 $date_depart = 4 ;
 while (date("w",mktime(0,0,0,01,($date_depart+($semaine-1)*7),$annee)) != 1)
 $date_depart-- ;
@@ -1105,7 +1105,7 @@ function get_code_pdf_modele_stat(){
 	return $tmp;
 }
 
-//modele pdf par défaut
+//modele pdf par dÃ©faut
 function defaut_stats_modele_pdf ($id_stat, $id_pdf_modele) {
 	global $bdd;
 	
@@ -1135,7 +1135,7 @@ function active_stats_modele_pdf ($id_stat, $id_pdf_modele) {
 	return true;
 }
 
-//désactivation d'un modele pdf
+//dÃ©sactivation d'un modele pdf
 function desactive_stats_modele_pdf ($id_stat, $id_pdf_modele) {
 	global $bdd;
 	
@@ -1161,7 +1161,7 @@ function getListePdfStats(){
 	return $liste;
 }
 //****************************************************************
-// Quelque fnctions pour les modèles de résultats des commerciaux
+// Quelque fnctions pour les modÃ¨les de rÃ©sultats des commerciaux
 
 function charge_modele_pdf_res_com (){
 	global $bdd;
@@ -1193,7 +1193,7 @@ function get_code_pdf_modele_res_com(){
 	return $tmp;
 }
 
-//modele pdf par défaut
+//modele pdf par dÃ©faut
 function defaut_resultats_commerciaux_modele_pdf ($id_pdf_modele) {
 	global $bdd;
 	
@@ -1223,7 +1223,7 @@ function active_resultats_commerciaux_modele_pdf ($id_pdf_modele) {
 	return true;
 }
 
-//désactivation d'un modele pdf
+//dÃ©sactivation d'un modele pdf
 function desactive_resultats_commerciaux_modele_pdf ($id_pdf_modele) {
 	global $bdd;
 	
@@ -1281,7 +1281,7 @@ function get_code_pdf_modele_commande_client(){
 	return $tmp;
 }
 
-//modele pdf par défaut
+//modele pdf par dÃ©faut
 function defaut_commande_client_modele_pdf ($id_pdf_modele) {
 	global $bdd;
 	
@@ -1311,7 +1311,7 @@ function active_commande_client_modele_pdf ($id_pdf_modele) {
 	return true;
 }
 
-//désactivation d'un modele pdf
+//dÃ©sactivation d'un modele pdf
 function desactive_commande_client_modele_pdf ($id_pdf_modele) {
 	global $bdd;
 	
@@ -1338,9 +1338,9 @@ function getListePdfCommandeClient(){
 }
 
 //**************************************\\
-// Fonctions pour les modèles d'exports
+// Fonctions pour les modÃ¨les d'exports
 
-//pour les résultats commerciaux
+//pour les rÃ©sultats commerciaux
 function charge_modele_export_result_commerciaux(){
 	global $bdd;
 	
@@ -1383,7 +1383,7 @@ function get_code_export_result_commerciaux(){
 	return $tmp;
 }
 
-//modele ods par défaut
+//modele ods par dÃ©faut
 function defaut_resultats_commerciaux_export ($id_export_modele) {
 	global $bdd;
 	
@@ -1413,7 +1413,7 @@ function active_resultats_commerciaux_export ($id_export_modele) {
 	return true;
 }
 
-//désactivation d'un modele ods
+//dÃ©sactivation d'un modele ods
 function desactive_resultats_commerciaux_export ($id_export_modele) {
 	global $bdd;
 	
@@ -1438,7 +1438,7 @@ function getListeExportResultatsCommerciaux(){
 	while ($r = $res->fetchObject()) { $liste[] = $r;}
 	return $liste;
 }
-//Fin pour les résultats commerciaux
+//Fin pour les rÃ©sultats commerciaux
 
 //pour les stats
 function charge_modele_export_stat(){
@@ -1478,7 +1478,7 @@ function active_documents_export ($id_export_modele) {
 	return true;
 }
 
-//désactivation d'un modele ods
+//dÃ©sactivation d'un modele ods
 function desactive_documents_export ($id_export_modele) {
 	global $bdd;
 	
@@ -1520,7 +1520,7 @@ function get_code_export_stat(){
 	return $tmp;
 }
 
-//modele ods par défaut
+//modele ods par dÃ©faut
 function defaut_stat_export ($id_export_modele) {
 	global $bdd;
 	
@@ -1550,7 +1550,7 @@ function active_stat_export ($id_export_modele) {
 	return true;
 }
 
-//désactivation d'un modele ods
+//dÃ©sactivation d'un modele ods
 function desactive_stat_export ($id_export_modele) {
 	global $bdd;
 	
@@ -1575,7 +1575,7 @@ function getListeExportStat(){
 	while ($r = $res->fetchObject()) { $liste[] = $r;}
 	return $liste;
 }
-// Fin Fonctions pour les modèles d'exports
+// Fin Fonctions pour les modÃ¨les d'exports
 
 //*********************************************************
 function dumpDB($path, $host, $db, $user, $pw){      
@@ -1655,7 +1655,7 @@ if(!$pb4ms->saveFile($sql_dump, "manual", "user")){
 	return "Echec de la sauvegarde";
 	} else {
 
-	return "Sauvegarde effectuée";
+	return "Sauvegarde effectuÃ©e";
 	}
 
 }
@@ -1697,8 +1697,8 @@ return true;
 }
 
 /**
- * @param $string - une chaine de caractère à transformer
- * @return string - la chaine de character moins les caractères suivant:
+ * @param $string - une chaine de caractÃ¨re Ã  transformer
+ * @return string - la chaine de character moins les caractÃ¨res suivant:
  * a-zA-Z
  */
 function string2ref($string, $pattern = '/[^a-zA-Z0-9\-_\.]/'){
@@ -1707,9 +1707,9 @@ function string2ref($string, $pattern = '/[^a-zA-Z0-9\-_\.]/'){
 }
 
 /**
- * Actuellement cette fontion n'est pas utilisée
- * @param $string - une chaine de caractère à transformer
- * @return string - la chaine de character moins les caractères suivant:
+ * Actuellement cette fontion n'est pas utilisÃ©e
+ * @param $string - une chaine de caractÃ¨re Ã  transformer
+ * @return string - la chaine de character moins les caractÃ¨res suivant:
  * /[^a-zA-Z0-9\-_\.\(\)\[\]#]/
  */
 function string2ref_etendu($string){
@@ -1725,9 +1725,9 @@ function _vardump($var){
 	
 }
 /**
- * traite les différents caractère spéciaux pour le javascript
- * @param string $string - la chaine à traiter
- * @return string la chaine traitée
+ * traite les diffÃ©rents caractÃ¨re spÃ©ciaux pour le javascript
+ * @param string $string - la chaine Ã  traiter
+ * @return string la chaine traitÃ©e
  */
 function filtre_js($string){
 	return addslashes(preg_replace('(\r\n|\n|\r)','<br/>',$string));

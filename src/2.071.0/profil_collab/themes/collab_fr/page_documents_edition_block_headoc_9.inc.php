@@ -4,7 +4,7 @@
 // CONTROLE DU THEME TRM
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -80,7 +80,7 @@ check_page_variables ($page_variables);
 									}
 									?>
 									<?php 
-									//ajout pour les stocks supprimés
+									//ajout pour les stocks supprimÃ©s
 									
 									$stocks_supp	= fetch_all_stocks();
 									foreach ($stocks_supp as $stock_supp) {
@@ -115,7 +115,7 @@ check_page_variables ($page_variables);
 									}
 									?>
 									<?php 
-									//ajout pour les stocks supprimés
+									//ajout pour les stocks supprimÃ©s
 									
 									foreach ($stocks_supp as $stock_supp) {
 										if (!$stock_supp->actif && $stock_supp->id_stock == $document->getId_stock_cible ()) {
@@ -146,7 +146,7 @@ check_page_variables ($page_variables);
 									}
 									?>
 									<?php 
-									//ajout pour les stocks supprimés
+									//ajout pour les stocks supprimÃ©s
 									
 									$stocks_supp	= fetch_all_stocks();
 									foreach ($stocks_supp as $stock_supp) {
@@ -172,7 +172,7 @@ check_page_variables ($page_variables);
 									}
 									?>
 									<?php 
-									//ajout pour les stocks supprimés
+									//ajout pour les stocks supprimÃ©s
 									
 									foreach ($stocks_supp as $stock_supp) {
 										if (!$stock_supp->actif && $stock_supp->id_stock == $document->getId_stock_cible ()) {
@@ -234,7 +234,7 @@ check_page_variables ($page_variables);
 			
 			<script type="text/javascript">
 					
-			// observateur de changement de texte dans l'entete du doc pour mise à jour des infos						
+			// observateur de changement de texte dans l'entete du doc pour mise Ã  jour des infos						
 			<?php
 			if (count($stocks_liste)>1) {
 				?>

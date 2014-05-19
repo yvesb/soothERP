@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// Recherche BANCAIRE chèque remisés
+// Recherche BANCAIRE chÃ¨que remisÃ©s
 // *************************************************************************************************************
 
 
@@ -14,7 +14,7 @@ $compte_bancaire	= new compte_bancaire($_REQUEST["id_compte_bancaire"]);
 
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -89,10 +89,10 @@ if (isset($_REQUEST['delta_montant']) && $_REQUEST['delta_montant'] != "") {
 $nb_fiches = 0;
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_join 	= "";
 	$query_having = "";
 	$query_where 	= "";
@@ -160,7 +160,7 @@ if (isset($_REQUEST['recherche'])) {
 	
 	$fiches2 = array();
 	if (!count($fiches)) {
-		//on recherche dans les contenus de caisses si on a rien trouvé dans les remises
+		//on recherche dans les contenus de caisses si on a rien trouvÃ© dans les remises
 		$query = "SELECT ccc.id_compte_caisse, ccc.id_reglement_mode, ccc.montant_contenu, ccc.infos_supp, ccc.controle, 
 										rec.ref_reglement, rec.numero_cheque, rec.info_banque, rec.info_compte,
 										r.ref_contact, r.date_saisie,

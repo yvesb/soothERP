@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -53,11 +53,11 @@ update_menu_arbo();
 
 				<span class="titre_smenu_page_unvalid" id="smenu_maintenance_disk"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Espace disque</span><br /><br />
 				
-				<span class="titre_smenu_page" id="smenu_maintenance_delestage"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Délestage des documents</span><br />
+				<span class="titre_smenu_page" id="smenu_maintenance_delestage"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />DÃ©lestage des documents</span><br />
 				<br />
-				<span class="titre_smenu_page" id="smenu_maintenance_save_bdd"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Sauvegarde de la base de données</span><br />
+				<span class="titre_smenu_page" id="smenu_maintenance_save_bdd"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Sauvegarde de la base de donnÃ©es</span><br />
 				<br />
-				<!-- Accès édition des fichiers de configuration désactivée - commentée - ci-dessous, pour des raisons de sécurité. Simplement commenté en cas de réimplantation ultérieure sous une autre forme -->		
+				<!-- AccÃ¨s Ã©dition des fichiers de configuration dÃ©sactivÃ©e - commentÃ©e - ci-dessous, pour des raisons de sÃ©curitÃ©. Simplement commentÃ© en cas de rÃ©implantation ultÃ©rieure sous une autre forme -->		
 				<!--<span class="titre_smenu_page" id="smenu_maintenance_config_files"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Edition des fichiers de configurations</span><br />-->
 				<br />	
 			</td>
@@ -74,7 +74,7 @@ Event.observe('smenu_maintenance_delestage', "click", function(evt){
 	page.verify('gestion_document_purge','documents_gestion_purge.php','true','sub_content');  
 	Event.stop(evt);}
 );
-/* désactivé pour raison de sécurité
+/* dÃ©sactivÃ© pour raison de sÃ©curitÃ©
 Event.observe("smenu_maintenance_config_files", "click",  function(evt){
 	page.verify('configuration_config_files','configuration_config_files.php' ,"true" ,"sub_content");
 	Event.stop(evt);}

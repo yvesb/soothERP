@@ -10,12 +10,12 @@
 	
 	
 	if (!isset($_REQUEST['ref_doc']) || $_REQUEST['ref_doc'] == "") {
-		echo "La référence du ticket n'est pas spécifiée";
+		echo "La rÃ©fÃ©rence du ticket n'est pas spÃ©cifiÃ©e";
 		exit;
 	}
 	
 	if (!isset($_REQUEST['new_etat_doc']) || $_REQUEST['new_etat_doc'] == "") {
-		echo "Le nouvel état n'est pas spécifié";
+		echo "Le nouvel Ã©tat n'est pas spÃ©cifiÃ©";
 		exit;
 	}
 	

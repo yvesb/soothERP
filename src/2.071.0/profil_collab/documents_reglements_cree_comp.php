@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// TRANSFORMATION D'UN FAC NEGATIVE EN COMPENSATION PUIS TRANSFERT DE L'AVOIR À UNE FACTURE
+// TRANSFORMATION D'UN FAC NEGATIVE EN COMPENSATION PUIS TRANSFERT DE L'AVOIR Ã€ UNE FACTURE
 // *************************************************************************************************************
 
 
@@ -24,7 +24,7 @@ if (isset($_REQUEST["ref_doc_neg"])) {
 		$reglement = new reglement($ref_avc);
 	}
 	
-	//rapprochement du reglement  au document ciblé
+	//rapprochement du reglement  au document ciblÃ©
 	$document2 = open_doc ($_REQUEST['ref_doc']);
 	$document2->rapprocher_reglement ($reglement);
 	

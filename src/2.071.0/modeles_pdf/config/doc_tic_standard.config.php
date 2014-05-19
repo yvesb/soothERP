@@ -22,9 +22,9 @@ $DOC_STANDARD['HAUTEUR_AFTER_LINE_INFORMATION']	= 0;
 $DOC_STANDARD['HAUTEUR_AFTER_LINE_SOUSTOTAL']		= 0;
 $DOC_STANDARD['HAUTEUR_AFTER_LINE_DESCRIPTION']	= 0;
 
-$DOC_STANDARD['ENTETE_COL_REF'] = "Référence";
-$DOC_STANDARD['ENTETE_COL_LIB'] = "Désignation";
-$DOC_STANDARD['ENTETE_COL_QTE'] = "Qté";
+$DOC_STANDARD['ENTETE_COL_REF'] = "RÃ©fÃ©rence";
+$DOC_STANDARD['ENTETE_COL_LIB'] = "DÃ©signation";
+$DOC_STANDARD['ENTETE_COL_QTE'] = "QtÃ©";
 $DOC_STANDARD['ENTETE_COL_PU']  = "PU";
 $DOC_STANDARD['ENTETE_COL_REM'] = "%";
 $DOC_STANDARD['ENTETE_COL_PT']  = "TOTAL";
@@ -68,35 +68,35 @@ $DOC_STANDARD['PIEDS_DROIT'][0]	= $PIED_DE_PAGE_DROIT_0;
 $DOC_STANDARD['PIEDS_DROIT'][1]	= $PIED_DE_PAGE_DROIT_1;
 
 
-//variable//type de champ(parametre)//libéllé//commentaire [// option séparé par un @ exemple: valeur1@valeur2@valeur3 ]
+//variable//type de champ(parametre)//libÃ©llÃ©//commentaire [// option sÃ©parÃ© par un @ exemple: valeur1@valeur2@valeur3 ]
 // PARAMETRES MODIFIABLES
-$DOC_STANDARD['LIB_NEG']="Ticket de Caisse";//TXTE()// Libellé si total négatif // 
-$DOC_STANDARD['TEXTE_ENTETE']="";//TXTA()// Texte en en-tête// 
+$DOC_STANDARD['LIB_NEG']="Ticket de Caisse";//TXTE()// LibellÃ© si total nÃ©gatif // 
+$DOC_STANDARD['TEXTE_ENTETE']="";//TXTA()// Texte en en-tÃªte// 
 $DOC_STANDARD['TEXTE_PIED']="";//TXTA()// Texte en pied de page// 
-$DOC_STANDARD['REF_ARTICLE']="Article";//SLCT()// Affichage de la colonne référence //  //Aucune@Article@Interne@Oem
-$DOC_STANDARD['AFF_CODE_BARRE']="true";//CBOX()// Afficher le code barre en entête// 
+$DOC_STANDARD['REF_ARTICLE']="Article";//SLCT()// Affichage de la colonne rÃ©fÃ©rence //  //Aucune@Article@Interne@Oem
+$DOC_STANDARD['AFF_CODE_BARRE']="true";//CBOX()// Afficher le code barre en entÃªte// 
 $DOC_STANDARD['AFF_PRIX']="true";//CBOX()// Afficher les prix // 
 $DOC_STANDARD['AFF_DESC']="true";//CBOX()// Afficher la description courte // 
-$DOC_STANDARD['AFF_SN']="";//CBOX()// Afficher les informations de traçabilité // 
-$DOC_STANDARD['AFF_CG']="";//CBOP()// Afficher au dos les conditions générales // 
-$DOC_STANDARD['CG_VERSO']="";//TXTP()// Conditions générales : // 
+$DOC_STANDARD['AFF_SN']="";//CBOX()// Afficher les informations de traÃ§abilitÃ© // 
+$DOC_STANDARD['AFF_CG']="";//CBOP()// Afficher au dos les conditions gÃ©nÃ©rales // 
+$DOC_STANDARD['CG_VERSO']="";//TXTP()// Conditions gÃ©nÃ©rales : // 
 // FIN PARAMETRES MODIFIABLES
 // CONFIGURATION PAR DEFAUT
-// Portion de code recopiée dans la partie « paramètres modifiables » en cas de remise à 0 des paramètres.
+// Portion de code recopiÃ©e dans la partie Â«Â paramÃ¨tres modifiablesÂ Â» en cas de remise Ã  0 des paramÃ¨tres.
 /*
-$DOC_STANDARD['LIB_NEG']="";//TXTE()// Libellé si total négatif // 
-$DOC_STANDARD['TEXTE_ENTETE']="";//TXTA()// Texte en en-tête// 
+$DOC_STANDARD['LIB_NEG']="";//TXTE()// LibellÃ© si total nÃ©gatif // 
+$DOC_STANDARD['TEXTE_ENTETE']="";//TXTA()// Texte en en-tÃªte// 
 $DOC_STANDARD['TEXTE_PIED']="";//TXTA()// Texte en pied de page// 
-$DOC_STANDARD['REF_ARTICLE']="Article";//SLCT()// Affichage de la colonne référence //  //Aucune@Article@Interne@Oem
-$DOC_STANDARD['AFF_CODE_BARRE']="true";//CBOX()// Afficher le code barre en entête// 
+$DOC_STANDARD['REF_ARTICLE']="Article";//SLCT()// Affichage de la colonne rÃ©fÃ©rence //  //Aucune@Article@Interne@Oem
+$DOC_STANDARD['AFF_CODE_BARRE']="true";//CBOX()// Afficher le code barre en entÃªte// 
 $DOC_STANDARD['AFF_PRIX']="true";//CBOX()// Afficher les prix // 
 $DOC_STANDARD['AFF_DESC']="true";//CBOX()// Afficher la description courte // 
-$DOC_STANDARD['AFF_SN']="";//CBOX()// Afficher les informations de traçabilité // 
-$DOC_STANDARD['AFF_CG']="";//CBOP()// Afficher au dos les conditions générales // 
-$DOC_STANDARD['CG_VERSO']="";//TXTP()// Conditions générales : // 
+$DOC_STANDARD['AFF_SN']="";//CBOX()// Afficher les informations de traÃ§abilitÃ© // 
+$DOC_STANDARD['AFF_CG']="";//CBOP()// Afficher au dos les conditions gÃ©nÃ©rales // 
+$DOC_STANDARD['CG_VERSO']="";//TXTP()// Conditions gÃ©nÃ©rales : // 
 */
 // FIN CONFIGURATION PAR DEFAUT
-// INFORMATIONS SUR L’AUTEUR
+// INFORMATIONS SUR Lâ€™AUTEUR
 /* 
 */
 

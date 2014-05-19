@@ -12,7 +12,7 @@
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                     <td style="width: 5%;">&nbsp;</td>
-                    <td style="font-style: italic; font-weight: bold;">Créer un bonus / malus</td>
+                    <td style="font-style: italic; font-weight: bold;">CrÃ©er un bonus / malus</td>
                 </tr>
                 <tr>
                     <td style="width:15%">
@@ -50,7 +50,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <span class="labelled">Libellé:</span>
+                        <span class="labelled">LibellÃ©:</span>
                     </td>
                     <td>
                         <input type="text" name="lib_search" id="lib_search" value="" class="classinput_xsize"/>
@@ -80,9 +80,9 @@
                     </td>
                     <td>
                         <select name="order_search" id="order_search" class="classinput_xsize">
-                            <option value="0">Débits et Crédits</option>
-                            <option value="1">Débits uniquement</option>
-                            <option value="2">Crédits uniquement</option>
+                            <option value="0">DÃ©bits et CrÃ©dits</option>
+                            <option value="1">DÃ©bits uniquement</option>
+                            <option value="2">CrÃ©dits uniquement</option>
                         </select>
                     </td>
                     <td >&nbsp;</td>
@@ -110,7 +110,7 @@
                 <tr>
                     <td style="width:25%; font-weight:bolder; text-align:left">Commercial</td>
                     <td style="width:20%; font-weight:bolder; text-align:center; ">Date</td>
-                    <td style="width:20%; font-weight:bolder; text-align:center">Libellé</td>
+                    <td style="width:20%; font-weight:bolder; text-align:center">LibellÃ©</td>
                     <td style="width:20%; font-weight:bolder; text-align:center">Montant</td>
                     <td style="font-weight:bolder; text-align:center" colspan="3">Action</td>
                 </tr>

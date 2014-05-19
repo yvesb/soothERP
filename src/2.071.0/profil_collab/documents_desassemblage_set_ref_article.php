@@ -25,7 +25,7 @@ if (isset($_REQUEST["ref_doc"])) {
 		$document->define_ref_article($_REQUEST["ref_article"], $_REQUEST["qte_des"]);
 	}
 	
-	//si un montant est négatif
+	//si un montant est nÃ©gatif
 	$montant_negatif = false;
 	$montant_positif = 1;
 	if (isset($_REQUEST["montant_neg"])) { $montant_negatif = true; $montant_positif = -1;}

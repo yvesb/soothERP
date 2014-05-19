@@ -4,7 +4,7 @@
 // CONTROLE DU THEME TICKET
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -82,7 +82,7 @@ if(false){$document = new doc_tic();}
 										</option>
 										<?php } ?>
 									<?php 
-									//ajout du magasin inactif qui aurait été utilisé par le document
+									//ajout du magasin inactif qui aurait Ã©tÃ© utilisÃ© par le document
 									$magasins_supp	= charger_all_magasins();
 									foreach ($magasins_supp as $magasin_supp) {
 										if (!$magasin_supp->actif && $magasin_supp->id_magasin == $document->getId_magasin ()) { ?>
@@ -101,7 +101,7 @@ if(false){$document = new doc_tic();}
 								<option value="<?php echo $magasin->getId_magasin (); ?>" <?php if ($magasin->getId_magasin () == $document->getId_magasin ()){echo 'selected="selected"';}?>><?php echo ($magasin->getLib_magasin()); ?>
 								</option>
 								<?php } 
-								//ajout du magasin inactif qui aurait été utilisé par le document
+								//ajout du magasin inactif qui aurait Ã©tÃ© utilisÃ© par le document
 								$magasins_supp	= charger_all_magasins();
 								foreach ($magasins_supp as $magasin_supp) {
 									if (!$magasin_supp->actif && $magasin_supp->id_magasin == $document->getId_magasin ()) { ?>
@@ -122,7 +122,7 @@ if(false){$document = new doc_tic();}
 								<td style="text-align:right; padding-right:3px;">
 									<div style="height:5px; line-height:5px;"></div>
 									<?php if ($document->getId_etat_doc () == 59) {
-										//[59]En saisie => [62]Encaissé ?>
+										//[59]En saisie => [62]EncaissÃ© ?>
 									<?php /*<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_fac_aregler.gif" id="facture_a_regler" style="cursor:pointer"/>*/ ?>
 									<span id="ticket_a_encaisser" style="cursor:pointer">Encaisser</span>
 									<div style="height:3px; line-height:3px;"></div>
@@ -141,7 +141,7 @@ if(false){$document = new doc_tic();}
 			
 			<script type="text/javascript">
 					
-				// observateurde changement de texte dans l'entete du doc pour mise à jour des infos
+				// observateurde changement de texte dans l'entete du doc pour mise Ã  jour des infos
 				Event.observe("code_affaire", "blur", function(evt){
 					if ($("code_affaire").value != $("code_affaire_old").value) {
 						$("code_affaire_old").value = $("code_affaire").value;
@@ -190,7 +190,7 @@ if(false){$document = new doc_tic();}
 					maj_entete_id_magasin ("id_magasin");
 				}, false);
 			<?php }
-			if ($document->getId_etat_doc () == 59) { //[59]En saisie => [62]Encaissé ?>
+			if ($document->getId_etat_doc () == 59) { //[59]En saisie => [62]EncaissÃ© ?>
 				Event.observe("ticket_a_encaisser", "click", function(evt){
 					Event.stop(evt);
 						maj_etat_doc (62);
@@ -261,7 +261,7 @@ if(false){$document = new doc_tic();}
 				</td>
 				<td style="width:250px;">
 					<textarea type="text" name="nom_contact"  id="nom_contact" class="classinput_xsize" rows="<?php if (stristr($_SERVER["HTTP_USER_AGENT"], "firefox")) { echo "1"; } else { echo "2"; } ?>">
-						<?php echo str_replace("€", "&euro;", $document->getNom_contact());?>
+						<?php echo str_replace("â‚¬", "&euro;", $document->getNom_contact());?>
 					</textarea>
 					<script type="text/javascript">
 					
@@ -274,7 +274,7 @@ if(false){$document = new doc_tic();}
 						
 					</script>
 					<div id="nom_contact_old" style="display:none">
-						<?php echo str_replace("€", "&euro;", $document->getNom_contact());?>
+						<?php echo str_replace("â‚¬", "&euro;", $document->getNom_contact());?>
 					</div>
 				</td>
 				<td>
@@ -384,7 +384,7 @@ if(false){$document = new doc_tic();}
 				$("view_doc_adresse_resume").hide();
 			}, false);
 			
-			// observateurde changement de texte dans les infos contact pour mise à jour des infos
+			// observateurde changement de texte dans les infos contact pour mise Ã  jour des infos
 			
 			Event.observe("nom_contact", "blur", function(evt){
 				if ($("nom_contact").value != $("nom_contact_old").innerHTML) {
@@ -421,8 +421,8 @@ if(false){$document = new doc_tic();}
 			force_rows ("adresse_contact", "1");
 			
 			<?php 
-			//si on change de contact alors les infos sont retournées par $_infos
-			// on met juste à jour l'app_tarifs par rapport au contact mis à jour
+			//si on change de contact alors les infos sont retournÃ©es par $_infos
+			// on met juste Ã  jour l'app_tarifs par rapport au contact mis Ã  jour
 			if ($document->getApp_tarifs()) { ?>
 				$("app_tarifs").value = "<?php echo ($document->getApp_tarifs());?>";
 				if ($("app_tarifs").value	== "HT") { $("prix_afficher_ht").checked = "checked"; }

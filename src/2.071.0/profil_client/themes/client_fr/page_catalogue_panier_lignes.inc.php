@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-//step int : avancÈ de la commande
+//step int : avanc√© de la commande
 //	= 0		: Affichage du pannier
 //	= 1		: Identification
 //	= 2		: Choix du monde de liavraison
@@ -12,10 +12,10 @@
 
 //choix_livraison int
 //	= -1	: On n'affiche pas la ligne de livraison
-//	= 0		: On affiche la ligne et l'utilisateur devra en sÈlectionner
-//	> 0		: On affiche la ligne a dÈj‡ choisi son mode de livraison
+//	= 0		: On affiche la ligne et l'utilisateur devra en s√©lectionner
+//	> 0		: On affiche la ligne a d√©j√† choisi son mode de livraison
 
-// Variables nÈcessaires ‡ l'affichage
+// Variables n√©cessaires √† l'affichage
 $page_variables = array ("Montant_ht", "Montant_ttc", "liste_contenu", "step", "page", "choix_livraison");
 check_page_variables ($page_variables);
 
@@ -115,13 +115,13 @@ $panier_vide = !count($liste_contenu);
 	<tr>
 		<td style="width: 5%;" class="colorise0_debut" >&nbsp;</td>
 		<td style="width:10%; text-align:left;" >
-			RÈfÈrence
+			R√©f√©rence
 		</td>
 		<td style="width:25%; text-align:left; padding-left: 3px;">
 			Description
 		</td>
 		<td style="width:10%;	text-align:center;">
-			QtÈ
+			Qt√©
 		</td>	
 		<td style="width:10%; text-align:center;">
 			Dispo
@@ -159,7 +159,7 @@ foreach ($liste_contenu as $contenu) { ?>
 	<tr>
 		<td style="width: 5%;"></td>
 		<td style="width:35%">
-			SÈlectionnez votre mode de livraison
+			S√©lectionnez votre mode de livraison
 		</td>
 		<td style="width:35%" colspan="2">
 			<div style="text-align:right; padding-top:3px; padding-bottom:5px;">

@@ -18,7 +18,7 @@
 // *************************************************************************************************************
 abstract class Courrier{
 
-	//@TODO COURRIER : PDF : doc_tmp est-il le bon rÈpertoire pour stocker temporairement un courrier temporaire?
+	//@TODO COURRIER : PDF : doc_tmp est-il le bon r√©pertoire pour stocker temporairement un courrier temporaire?
 	//exemple : envoi d'un courrier par mail
 	public static final function GET_TMP_FOLDER() {return  "doc_tmp/";}
 	
@@ -36,7 +36,7 @@ abstract class Courrier{
 	//voir dans la BD la TABLE : COURRIERS_ETATS
 	private $id_etat_courrier;
 	private $lib_etat_courrier;
-	//Valeur des diffÈrents Ètats
+	//Valeur des diff√©rents √©tats
 	public static final function ETAT_EN_REDAC(){return 1;}
 	public static final function ETAT_REDIGE()  {return 2;}
 	public static final function ETAT_ANNULE()  {return 3;}
@@ -49,8 +49,8 @@ abstract class Courrier{
 	private $lib_pdf_type;
 	
 	//@TODO COURRIER : MODELE PDF : comment utiliser $code_file
-	private $code_file; //code md5 du nom du fichier pdf gÈnÈrÈ lors de l'envois du document
-	private $code_pdf_modele;			// Code du modËle utilisÈ pour l'impression	
+	private $code_file; //code md5 du nom du fichier pdf g√©n√©r√© lors de l'envois du document
+	private $code_pdf_modele;			// Code du mod√®le utilis√© pour l'impression	
 
 	
 	public function __construct($id_type_courrier, $id_pdf_modele,  $id_etat_courrier, $date_courrier, $objet, $contenu){
@@ -129,11 +129,11 @@ abstract class Courrier{
                 );
                 $replace = array(
                     "<br>",
-                    "È",
-                    "Ë",
+                    "√©",
+                    "√®",
                     "'",
-                    "‡",
-                    "˘",
+                    "√†",
+                    "√π",
                     "EUR"
                 );
 
@@ -268,11 +268,11 @@ abstract class Courrier{
 	/*
 	//@TODO COURRIER : MODELE PDF : doit-on utiliser $code_file, et si oui, comment
 	public function getCode_file(){
-		return $this->code_file; //code md5 du nom du fichier pdf gÈnÈrÈ lors de l'envois du document
+		return $this->code_file; //code md5 du nom du fichier pdf g√©n√©r√© lors de l'envois du document
 	}
 	
 	protected  function setCode_file($code_file){
-		$this->code_file = $code_file; //code md5 du nom du fichier pdf gÈnÈrÈ lors de l'envois du document
+		$this->code_file = $code_file; //code md5 du nom du fichier pdf g√©n√©r√© lors de l'envois du document
 	}
 	*/
 	
@@ -280,11 +280,11 @@ abstract class Courrier{
 	// FONCTIONS DE GENERATION D'UN PDF 
 	// *************************************************************************************************************
 	public function create_pdf ($print = 0) {	
-		// PrÈfÈrences et options
+		// Pr√©f√©rences et options
 		$GLOBALS['PDF_OPTIONS']['HideToolbar'] = 0;
 		$GLOBALS['PDF_OPTIONS']['AutoPrint'] = $print;
 	
-		// CrÈation du fichier
+		// Cr√©ation du fichier
 		$pdf = new PDF_etendu ();
 		// Sortie
 		return $pdf;
@@ -330,7 +330,7 @@ class CourrierPDFvierge extends Courrier{
 	// FONCTIONS DE GENERATION D'UN PDF 
 	// *************************************************************************************************************
 	
-	// CrÈÈ et affiche le PDF d'un document
+	// Cr√©√© et affiche le PDF d'un document
 	public function create_pdf($print = 0) {
 		
 		$pdf = parent::create_pdf($print);
@@ -410,11 +410,11 @@ class CourrierEtendu extends Courrier{
                 );
                 $replace = array(
                     "<br>",
-                    "È",
-                    "Ë",
+                    "√©",
+                    "√®",
                     "'",
-                    "‡",
-                    "˘",
+                    "√†",
+                    "√π",
                     "EUR"
                 );
 		$contenu = str_replace($search, $replace, $contenu);
@@ -436,9 +436,9 @@ class CourrierEtendu extends Courrier{
 			
 			$date_event = new DateTime();
 			
-			$event = $date_event->format("d-m-Y H:i:s")." - CrÈation du courrier n∞".$tmp_id_courrier."<br/>";
+			$event = $date_event->format("d-m-Y H:i:s")." - Cr√©ation du courrier n¬∞".$tmp_id_courrier."<br/>";
 			$event.= "Destinataire : ".$ref_destinataire."<br/>";
-			$event.= "ExpÈditeur : ".$utilisateur->getRef_user()."<br/>"; 
+			$event.= "Exp√©diteur : ".$utilisateur->getRef_user()."<br/>"; 
 			
 			CourrierEvent::newCourrierEvent($tmp_id_courrier, $date_event->format("Y-m-d H:i:s"), 1, $event, $utilisateur->getRef_user());
 			
@@ -497,14 +497,14 @@ class CourrierEtendu extends Courrier{
 		parent::setContenu($contenu); 
 	}
 
-	// ATTENTION, POUR l'instant, on considËre que l'expÈditeur est le crÈateur du mail
+	// ATTENTION, POUR l'instant, on consid√®re que l'exp√©diteur est le cr√©ateur du mail
 	public function getExpediteur(){
 		$e = $this->getEvents();
 		return $e[0]->getUtilisateur();
 	}
 	
 	// *************************************************************************************************************
-	// Getters & Setters de l'Ètat du courrier
+	// Getters & Setters de l'√©tat du courrier
 	// *************************************************************************************************************
 	public function setId_etat_courrier($id_etat_courrier){
 		if (!parent::setId_etat_courrier($id_etat_courrier)) return false; 
@@ -537,7 +537,7 @@ class CourrierEtendu extends Courrier{
 		return (parent::setId_pdf_modele($id_pdf_modele));
 	}
 	// *************************************************************************************************************
-	// Fonction liÈes au PDF
+	// Fonction li√©es au PDF
 	// *************************************************************************************************************
 	// Affiche le PDF du document
 	public function print_pdf () {
@@ -545,7 +545,7 @@ class CourrierEtendu extends Courrier{
 		parent::print_pdf();
 	}
 	
-	// CrÈÈ et affiche le PDF d'un document
+	// Cr√©√© et affiche le PDF d'un document
 	public function create_pdf($print = 0) {
 		
 		$pdf = parent::create_pdf($print);
@@ -570,7 +570,7 @@ class CourrierEtendu extends Courrier{
 	}
 
 	// *************************************************************************************************************
-	// Fonction liÈes ‡ la table courriers_editions
+	// Fonction li√©es √† la table courriers_editions
 	// *************************************************************************************************************
 	
 	//voir dans la BD la TABLE : COURRIERS_EDITIONS
@@ -590,7 +590,7 @@ class CourrierEtendu extends Courrier{
 		return true;
 	}
 	
-	//retourne le nombre de fois que ce courrier a ÈtÈ envoyÈ
+	//retourne le nombre de fois que ce courrier a √©t√© envoy√©
 	public function getNb_envois($id_edition_mode = "", $ref_user = "", $date_edition_deb = "" /*format Y-m-d H:i:s*/,$date_edition_fin = "" /*format Y-m-d H:i:s*/){
 		global $bdd;
 		$query_where = "";
@@ -617,11 +617,11 @@ class CourrierEtendu extends Courrier{
 	}
 	
 	// *************************************************************************************************************
-	// Fonction liÈes ‡ l'envoi d'un courrier
+	// Fonction li√©es √† l'envoi d'un courrier
 	// *************************************************************************************************************
 
 	// Envoi du document par email
-	//fonction recopiÈe depuis la classe document 
+	//fonction recopi√©e depuis la classe document 
 	//@TODO COURRIER : Gestion du mail : A tester
 	public function mail_courrier ($to , $sujet , $message) {
 		global $bdd;
@@ -636,14 +636,14 @@ class CourrierEtendu extends Courrier{
 		$nom				= array();
 		$nom[]			= $this->id_courrier."_".$this->getCode_file().".pdf";
 		
-		//on gÈnere un nom de fichier en remplacement
+		//on g√©nere un nom de fichier en remplacement
 		$contact_entreprise = new contact($REF_CONTACT_ENTREPRISE);
 		$nom_entreprise = str_replace (CHR(13), " " ,str_replace (CHR(10), " " , $contact_entreprise->getNom()));
 		$nom_aff				= array();
 		$nom_aff[]			= $this->id_courrier."_".$nom_entreprise.".pdf";
 	
 	
-		//on rÈcupËre l'email de l'utilisateur en cours pour envoyer le mail
+		//on r√©cup√®re l'email de l'utilisateur en cours pour envoyer le mail
 		$reply 			= $_SESSION['user']->getEmail();
 		$from 			= $_SESSION['user']->getEmail();
 		
@@ -661,7 +661,7 @@ class CourrierEtendu extends Courrier{
 	}
 	
 	//@TODO COURRIER : Gestion du FAX : Traitement du FAX dans la classe courrier
-	//fonction recopiÈe depuis la classe document 
+	//fonction recopi√©e depuis la classe document 
 	public function faxer_courrier ($to , $sujet , $message) {
 		global $bdd;
 		global $FICHIERS_DIR;
@@ -675,14 +675,14 @@ class CourrierEtendu extends Courrier{
 		$nom				= array();
 		$nom[]			= $this->id_courrier."_".$this->code_file.".pdf";
 		
-		//on gÈnere un nom de fichier en remplacement
+		//on g√©nere un nom de fichier en remplacement
 		$contact_entreprise = new contact($REF_CONTACT_ENTREPRISE);
 		$nom_entreprise = str_replace (CHR(13), " " ,str_replace (CHR(10), " " , $contact_entreprise->getNom()));
 		$nom_aff				= array();
 		$nom_aff[]			= $this->id_courrier."_".$nom_entreprise.".pdf";
 	
 	
-		//on rÈcupËre l'email de l'utilisateur en cours pour envoyer le mail
+		//on r√©cup√®re l'email de l'utilisateur en cours pour envoyer le mail
 		$reply 			= $_SESSION['user']->getEmail();
 		$from 			= $_SESSION['user']->getEmail();
 		
@@ -700,7 +700,7 @@ class CourrierEtendu extends Courrier{
 // *************************************************************************************************************
 // CLASSE CourrierEvent
 // *************************************************************************************************************
-// Classe rÈgissant les information d'une ÈvËnement VOIR la TABLE : COURRIERS_EVENTS_TYPES
+// Classe r√©gissant les information d'une √©v√®nement VOIR la TABLE : COURRIERS_EVENTS_TYPES
 class CourrierEvent{
 	
 	//voir dans la BD la TABLE : COURRIERS_EVENTS et la TABLE : COURRIERS_EVENTS_TYPES

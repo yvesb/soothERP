@@ -4,7 +4,7 @@
 // MODIFICATION D'UN EVENEMENT
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -22,10 +22,10 @@ $("edition_event").hide();
 }, false);
 </script>
 
-<p  style="font-weight:bolder">Modifier un événement pour <?php echo $contact->getNom();?></p>
+<p  style="font-weight:bolder">Modifier un Ã©vÃ©nement pour <?php echo $contact->getNom();?></p>
 <div class="emarge">
 <?php if (!$evenement) {?>
-Aucun événement correspondant.
+Aucun Ã©vÃ©nement correspondant.
 <?php } else {?>
 	<table class="minimizetable" style="width:100%">
 		<tr>
@@ -72,7 +72,7 @@ Aucun événement correspondant.
 				</tr>
 				<tr>
 					<td>
-					Durée:
+					DurÃ©e:
 					</td>
 					<td>
 					<input type="text" id="duree_event" name="duree_event" value="<?php echo substr($evenement->duree_event,0,5);?>" class="classinput_nsize" /> hh:mn

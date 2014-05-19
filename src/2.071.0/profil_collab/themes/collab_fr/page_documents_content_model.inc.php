@@ -1,9 +1,9 @@
 <?php
 // *************************************************************************************************************
-// CREATION D'UN NOUVEAU DOC À PARTIR DES LIGNES D'ARTICLES D'UN ANCIEN
+// CREATION D'UN NOUVEAU DOC Ã€ PARTIR DES LIGNES D'ARTICLES D'UN ANCIEN
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 

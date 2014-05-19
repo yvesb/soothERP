@@ -234,7 +234,7 @@
 		</span>
 
 				<?php
-				// Flag permettant de vérifier si les données sont renseignées ( vérification simple )
+				// Flag permettant de vÃ©rifier si les donnÃ©es sont renseignÃ©es ( vÃ©rification simple )
                 $isAdresseValide = $adresse->getVille()!= "" && $lepays!="" && $adresse->getCode_postal() && $adresse->getText_adresse()!="";
                 
                 if ($VIEW_BT_ITI && $isAdresseValide) { ?>

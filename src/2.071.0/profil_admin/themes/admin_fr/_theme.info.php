@@ -1,8 +1,8 @@
 <?php
-// Fichier d'information sur le thème
+// Fichier d'information sur le thÃ¨me
 
 $THEME_ID 	= 2;
 $THEME_NAME = "admin_fr";
-$THEME_DESC = "Thème de base pour le profil administrateur ";
+$THEME_DESC = "ThÃ¨me de base pour le profil administrateur ";
 
 ?>

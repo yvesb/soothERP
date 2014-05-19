@@ -41,28 +41,28 @@ class pdf_commande_client extends PDF_etendu {
 
 
 	// ***************************************************
-	// Valeurs par défaut
+	// Valeurs par dÃ©faut
 	foreach ($COMMISSIONS as $var => $valeur) {
 		$this->{$var} = $valeur;
 	}
 	
-	// Création de la première page
+	// CrÃ©ation de la premiÃ¨re page
 	$this->create_pdf_page ();
 	return $this;
 }
 
-// Créé une nouvelle page du document PDF
+// CrÃ©Ã© une nouvelle page du document PDF
 protected function create_pdf_page () {
 	// Comptage du nombre de page
 	$this->page_actuelle++;
 	$this->SetAutoPageBreak(true,2*$this->MARGE_GAUCHE);;
-	// Création d'une nouvelle page
+	// CrÃ©ation d'une nouvelle page
 	$this->AddPage();
 	$this->Header() ;
 	$this->create_pdf_corps ();
 
 }
-// Créé l'entete du document PDF
+// CrÃ©Ã© l'entete du document PDF
 public function Header() {
 	global $MONNAIE;
 	global $TARIFS_NB_DECIMALES;
@@ -85,7 +85,7 @@ public function Header() {
 }
 
 
-// Créé le corps du PDF
+// CrÃ©Ã© le corps du PDF
 protected function create_pdf_corps () {
 	global $MONNAIE;
 	global $TARIFS_NB_DECIMALES;
@@ -93,7 +93,7 @@ protected function create_pdf_corps () {
 
 
 	$this->SetFont('Arial', '', 9);
-	//définition du contenu
+	//dÃ©finition du contenu
 	
 		$this->x = $this->MARGE_GAUCHE ;	
 		$this->y +=5;
@@ -121,12 +121,12 @@ protected function create_pdf_corps () {
 				if($fiche->lib_etat_doc=='En saisie')
 				$this->SetTextColor(255,0,0);
 				else $this->SetTextColor(0);
-				if ($fiche->lib_etat_doc=='Prêt au départ')
+				if ($fiche->lib_etat_doc=='PrÃªt au dÃ©part')
                                 $this->Cell (20, 3, $fiche->lib_etat_doc, 0, 0, 'L');
                                 else $this->Cell (13, 3, $fiche->lib_etat_doc, 0, 0, 'L');
 				$this->SetTextColor(0);
 				$this->Cell (6, 3, ")", 0, 0, 'L');
-				if ($fiche->lib_etat_doc=='Prêt au départ')
+				if ($fiche->lib_etat_doc=='PrÃªt au dÃ©part')
                                 $this->Cell (63, 3, substr($fiche->nom_contact,0,45), 0, 0, 'L');
                                 else $this->Cell (70, 3, substr($fiche->nom_contact,0,45), 0, 0, 'L');
 
@@ -143,10 +143,10 @@ protected function create_pdf_corps () {
 			$this->x = $this->MARGE_GAUCHE ;
 			$this->y +=5;
 			$this->SetFont('Arial', 'B', 6);
-			$this->Cell (20, 3, "Réf article", 0, 0, 'L');
-			$this->Cell (40, 3, "Libellé", 0, 0, 'L');
-			$this->Cell (15, 3, "Commandé", 0, 0, 'R');
-			$this->Cell (15, 3, "Livré", 0, 0, 'R');
+			$this->Cell (20, 3, "RÃ©f article", 0, 0, 'L');
+			$this->Cell (40, 3, "LibellÃ©", 0, 0, 'L');
+			$this->Cell (15, 3, "CommandÃ©", 0, 0, 'R');
+			$this->Cell (15, 3, "LivrÃ©", 0, 0, 'R');
 			$this->Cell (20, 3, "Reliquat", 0, 0, 'R');
 			$this->Cell (20, 3, "PU HT", 0, 0, 'R');	
 			$this->Cell (20, 3, "PU TTC", 0, 0, 'R');

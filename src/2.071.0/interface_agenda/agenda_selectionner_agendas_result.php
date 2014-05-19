@@ -26,12 +26,12 @@ if(!isset($NoRequireFor_agenda_selectionner_agendas_result)){
 	$id_liste_agenda = $_REQUEST['id_liste_agenda'];
 }else{
 	if(!isset($page_source)){
-		echo "La page source n'est pas spécifiée";
+		echo "La page source n'est pas spÃ©cifiÃ©e";
 		exit;
 	}
 	
 	if(!isset($page_cible)){
-		echo "La page cible n'est pas spécifiée";
+		echo "La page cible n'est pas spÃ©cifiÃ©e";
 		exit;
 	}
 	

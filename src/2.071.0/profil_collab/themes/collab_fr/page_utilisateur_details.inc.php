@@ -4,7 +4,7 @@
 // RECHERCHE DES CONNEXIONS DES UTILISATEURS
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -31,11 +31,11 @@ array_menu_d_user_contact[3] 	=	new Array('droits', 'menu_4');
 <?php }?>
 </script>
 <div class="emarge">
-<p class="titre">Détails de l'utilisateur <?php echo $utilisateur->getPseudo()?></p>
+<p class="titre">DÃ©tails de l'utilisateur <?php echo $utilisateur->getPseudo()?></p>
 
 <div>
 	<ul id="menu_utilisateur" class="menu">
-	<li><a href="#" id="menu_2" class="menu_select">Informations générales</a></li>
+	<li><a href="#" id="menu_2" class="menu_select">Informations gÃ©nÃ©rales</a></li>
 	<li><a href="#" id="menu_1" class="menu_unselect">Recherche des connexions</a></li>
 <?php if ($_SESSION['user']->check_permission ("1")){?>	
 	<li><a href="#" id="menu_4" class="menu_unselect">Droits Utilisateur</a></li>
@@ -192,7 +192,7 @@ array_menu_d_user_contact[3] 	=	new Array('droits', 'menu_4');
 				</tr>
 				<tr>
 					<td></td>
-					<td><span class="labelled">Période&nbsp;du&nbsp; </span></td>
+					<td><span class="labelled">PÃ©riode&nbsp;du&nbsp; </span></td>
 					<td><input type="text" id="date_debut" name="date_debut" value="" class="classinput_nsize" size="10" /> au&nbsp;<input type="text" id="date_fin" name="date_fin" value="" class="classinput_nsize" size="10" /></td>
 					<td></td>
 					<td></td>
@@ -264,7 +264,7 @@ Event.observe("date_debut", "blur", function(evt){
 			} else {
 			
 			<?php if (count($users) > 1) { ?>
-				$("titre_alert").innerHTML = 'Sélectionnez le nouvel utilisateur principal:';
+				$("titre_alert").innerHTML = 'SÃ©lectionnez le nouvel utilisateur principal:';
 				$("texte_alert").innerHTML = '<?php 
 				foreach ($users as $user) {
 					if ($user->ref_user == $utilisateur->getRef_user()) {continue;}

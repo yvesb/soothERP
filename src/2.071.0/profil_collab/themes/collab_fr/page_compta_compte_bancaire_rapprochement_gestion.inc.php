@@ -4,7 +4,7 @@
 // Gestion des comptes bancaires
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -54,7 +54,7 @@ check_page_variables ($page_variables);
 					<td style="text-align:left; font-weight:bolder;">N&deg; compte
 					</td>
 					<td style="text-align: center; font-weight:bolder;">
-					Opérations à rapprocher
+					OpÃ©rations Ã  rapprocher
 					</td>
 					<td style="text-align:center; font-weight:bolder;" colspan="3">
 					Rapprochement

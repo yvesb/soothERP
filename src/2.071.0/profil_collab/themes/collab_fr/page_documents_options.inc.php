@@ -4,7 +4,7 @@
 // ONGLET DES OPTIONS DU DOCUMENT
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -23,8 +23,8 @@ check_page_variables ($page_variables);
 ?>
 <div style="width:100%; ">
 <div style="padding:20px">
-        <!-- <a href="documents_mod_contenu_add.php?ref_doc=<?php //echo $document->getRef_doc();?>&types_docs=2;3&lib_mod=test&desc_mod=description_test" id="use_content_mod" style="float:right;" class="common_link">Utiliser ce document en tant que modèle de Contenu</a><br /><br /> -->
-        <a href="#" id="use_content_mod" style="float:right;" class="common_link">Utiliser ce document en tant que modèle de Contenu</a><br /><br />
+        <!-- <a href="documents_mod_contenu_add.php?ref_doc=<?php //echo $document->getRef_doc();?>&types_docs=2;3&lib_mod=test&desc_mod=description_test" id="use_content_mod" style="float:right;" class="common_link">Utiliser ce document en tant que modÃ¨le de Contenu</a><br /><br /> -->
+        <a href="#" id="use_content_mod" style="float:right;" class="common_link">Utiliser ce document en tant que modÃ¨le de Contenu</a><br /><br />
 		<a href="#" id="aff_historique" style="float:right" class="common_link" >Consulter l'historique de ce document</a>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 	<tr>
@@ -48,11 +48,11 @@ check_page_variables ($page_variables);
 					}
 				}
 			}
-			//si un document n'est pas terminé, alors de toutes façons on autorise l'annulation
+			//si un document n'est pas terminÃ©, alors de toutes faÃ§ons on autorise l'annulation
 			$etat_doc_termine = array(5 ,4 ,10 ,15, 19, 23, 24, 28, 31, 35, 40, 42, 46, 51, 56);
 			if (!in_array($document->getId_etat_doc(), $etat_doc_termine )) {$stop_annule = false;}
 			
-			//sauf les inventaires terminés qui ne peuvent etre annulés
+			//sauf les inventaires terminÃ©s qui ne peuvent etre annulÃ©s
 			if ($document->getId_etat_doc () == 46) {$stop_annule = true;}
 			
 			if (!$stop_annule) {
@@ -62,7 +62,7 @@ check_page_variables ($page_variables);
 			}
 		} else {
 			?>
-			<a href="#" id="reactiver_document" class="doc_link_standard"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_reactiver_doc.gif" alt="Réactiver le document" title="Réactiver le document" /></a>
+			<a href="#" id="reactiver_document" class="doc_link_standard"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_reactiver_doc.gif" alt="RÃ©activer le document" title="RÃ©activer le document" /></a>
 		<?php 
 		}
 		?>
@@ -199,7 +199,7 @@ if (isset($liste_doc_fusion) && count($liste_doc_fusion)) {
 		Event.stop(evt);
 		if ($("fusion_doc_choix").value != "") {
 			$("titre_alert").innerHTML = "Confirmer la fusion des documents";
-			$("texte_alert").innerHTML = "Confirmer la fusion des deux documents<br /> Les règlements du document choisi seront ré-attribués au document en cours";
+			$("texte_alert").innerHTML = "Confirmer la fusion des deux documents<br /> Les rÃ¨glements du document choisi seront rÃ©-attribuÃ©s au document en cours";
 			$("bouton_alert").innerHTML = '<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />';
 		
 			$("alert_pop_up_tab").style.display = "block";
@@ -233,7 +233,7 @@ Event.observe('use_content_mod', "click", function(evt){
   reglement_rapide = false;
   Event.stop(evt);
 });
-//centrage de la pop_up modèles de contenu
+//centrage de la pop_up modÃ¨les de contenu
 centrage_element("mod_contenu_content");
 
 Event.observe('aff_historique', "click", function(evt){

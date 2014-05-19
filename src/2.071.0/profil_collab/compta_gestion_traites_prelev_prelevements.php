@@ -20,7 +20,7 @@ $prelev_a_effectuer = 0;
 
 
 // *************************************************************************************************************
-// REQUETES A SYNTHETISER ET PLACER DANS UNE METHODE !! (Fonctionne en l'état mais pas optimisé)
+// REQUETES A SYNTHETISER ET PLACER DANS UNE METHODE !! (Fonctionne en l'Ã©tat mais pas optimisÃ©)
 // *************************************************************************************************************
 
 $query = "SELECT cb2.id_compte_bancaire,cb2.lib_compte,d.ref_doc,a1.ref_contact ,de.id_doc_echeance, de.date, de.type_reglement ,cb2.iban,  montant

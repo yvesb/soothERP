@@ -15,19 +15,19 @@ require ($DIR."_session.inc.php");
 
 
 if (!isset($_REQUEST['ref_article'])){
-	echo "la référence de l'article n'est pas spécifiée.";
+	echo "la rÃ©fÃ©rence de l'article n'est pas spÃ©cifiÃ©e.";
 	exit;
 }
 $article = new article($_REQUEST['ref_article']);
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 // *************************************************
 
 $nb_fiches = 0;
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 // *************************************************
 
 $fiches = array();
@@ -68,7 +68,7 @@ FROM ((
 ORDER BY res.ref_contact";
 */
 
-// bac 2.054.0 simplification de la requête et inclusion de la date de livraison
+// bac 2.054.0 simplification de la requÃªte et inclusion de la date de livraison
 $query =   "SELECT dl.ref_doc, dl.qte as qte, ifnull(dlc.qte_livree,0) as qte_livree, d.nom_contact as ref_contact, d.nom_contact, d.date_creation_doc, dc.date_livraison
 			FROM docs_lines dl
 			    LEFT JOIN doc_lines_cdc dlc ON dlc.ref_doc_line = dl.ref_doc_line

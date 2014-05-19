@@ -4,7 +4,7 @@
 // AFFICHAGE DES STOCKS A RENOUVELER
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -29,7 +29,7 @@ check_page_variables ($page_variables);
 <table style="width:100%">
 <tr>
 	<td>
-		<p class="titre">Stocks à renouveler</p>
+		<p class="titre">Stocks Ã  renouveler</p>
 	</td>
 	<td style="width:20%; vertical-align: bottom;">
 		<?php 

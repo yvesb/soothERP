@@ -4,7 +4,7 @@
 // SUPPRESSION D'UNE OPERATION
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
 
 ?>
 <p>&nbsp;</p>
-<p>comptes bancaire (supression opération) </p>
+<p>comptes bancaire (supression opÃ©ration) </p>
 <p>&nbsp; </p>
 <?php 
 foreach ($_ALERTES as $alerte => $value) {
@@ -47,7 +47,7 @@ foreach ($_ALERTES as $alerte => $value) {
 if (erreur) {
 
 	if (operation_in_closed_exercice) {
-		texte_erreur += "La date de l'opération correspond à un exercice comptable déjà clôturé.<br/> La supression d'opération est impossible dans un exercice clôturé.<br />";
+		texte_erreur += "La date de l'opÃ©ration correspond Ã  un exercice comptable dÃ©jÃ  clÃ´turÃ©.<br/> La supression d'opÃ©ration est impossible dans un exercice clÃ´turÃ©.<br />";
 	} 
 
 	window.parent.alerte.alerte_erreur ('Suppression Impossible', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');

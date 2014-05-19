@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -37,7 +37,7 @@ update_menu_arbo();
 
 <p class="titre">Renseigner les correspondances</p>
 <div>
-Sélectionnez les correspondances entre les informations de LMB et les différentes colonnes de votre fichier csv.
+SÃ©lectionnez les correspondances entre les informations de LMB et les diffÃ©rentes colonnes de votre fichier csv.
 <br />&nbsp;
 <form action="modules/import_catalogue_csv/import_catalogue_csv_step1_done.php" enctype="multipart/form-data" method="POST" id="import_catalogue_csv_done" name="import_catalogue_csv_done" target="formFrame" class="classinput_nsize" />
  
@@ -45,11 +45,11 @@ Sélectionnez les correspondances entre les informations de LMB et les différente
 			
 			
 			
-<div style="font-weight:bolder">Catégories d'articles</div>
+<div style="font-weight:bolder">CatÃ©gories d'articles</div>
 <table class="contactview_corps" style=" width:100%">
 		<tr>
-			<td style="width:50%"><span id="lib_champ_ref_art_categ">Catégorie d'article par défaut</span>
-<span style="text-align: left; float:left; font-style:italic">Indiquez la catégorie d'article qui sera utilisée si aucune catégorie n'est définie:</span>
+			<td style="width:50%"><span id="lib_champ_ref_art_categ">CatÃ©gorie d'article par dÃ©faut</span>
+<span style="text-align: left; float:left; font-style:italic">Indiquez la catÃ©gorie d'article qui sera utilisÃ©e si aucune catÃ©gorie n'est dÃ©finie:</span>
 			</td>
 			<td>
 			<select  name="ref_art_categ_import" id="ref_art_categ_import" class="classinput_lsize">
@@ -68,7 +68,7 @@ Sélectionnez les correspondances entre les informations de LMB et les différente
 			</td>
 		</tr>
 		<tr>
-			<td style="width:50%"><span id="lib_champ_ref_art_categ">Catégorie d'article</span>
+			<td style="width:50%"><span id="lib_champ_ref_art_categ">CatÃ©gorie d'article</span>
 			</td>
 			<td>
 			<div style="position:relative; top:0px; left:0px; width:100%; height:0px;">

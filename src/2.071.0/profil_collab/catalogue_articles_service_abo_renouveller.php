@@ -13,7 +13,7 @@ require ($DIR."_session.inc.php");
 // Controle
 
 	if (!isset($_REQUEST['ref_article_service_renouveller_'.$_REQUEST["id_abo"]])) {
-		echo "La référence de l'article n'est pas précisée";
+		echo "La rÃ©fÃ©rence de l'article n'est pas prÃ©cisÃ©e";
 		exit;
 	}
 
@@ -25,7 +25,7 @@ require ($DIR."_session.inc.php");
 	
 	
 	if (!$article->getRef_article()) {
-		echo "La référence de l'article est inconnue";
+		echo "La rÃ©fÃ©rence de l'article est inconnue";
 		exit;
 	}
 	
@@ -55,7 +55,7 @@ require ($DIR."_session.inc.php");
 	$infos['qte']						=	$article->calcul_prorata_abonnement ($_REQUEST["id_abo"], $_REQUEST['reconduction_service_renouveller_'.$_REQUEST["id_abo"]]);
 
 
-	// gestion facturation immédiate ?
+	// gestion facturation immÃ©diate ?
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['not_generer_facture'] = 1;
 	$GLOBALS['_OPTIONS']['CREATE_DOC']['maj_etat_copie_doc'] = 18;
 	if (($document->getRef_contact () && $document->getClient_facturation () == "immediate" ) || (!$document->getRef_contact () && $FACTURE_IMMEDIATE )) { unset($GLOBALS['_OPTIONS']['CREATE_DOC']['not_generer_facture']); }

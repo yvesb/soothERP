@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -44,7 +44,7 @@ check_page_variables ($page_variables);
 								<table class="conteneir">
 									<tr>
 										<td class="top_log" colspan="2">
-											Connexion à <?php echo $_SESSION['interfaces'][$_INTERFACE['ID_INTERFACE']]->getLib_interface();?> de  <?php echo addslashes($nom_entreprise);?>
+											Connexion Ã  <?php echo $_SESSION['interfaces'][$_INTERFACE['ID_INTERFACE']]->getLib_interface();?> de  <?php echo addslashes($nom_entreprise);?>
 										</td>
 									</tr>
 									<tr>
@@ -52,11 +52,11 @@ check_page_variables ($page_variables);
 											<br />
 											<br />
 											<div style="text-align:left">
-												Veuillez utiliser un identifiant et un mot de passe valide pour accéder à l'application.
+												Veuillez utiliser un identifiant et un mot de passe valide pour accÃ©der Ã  l'application.
 											</div>
 											<br />
 											<div style="text-align:left; color:#0000FF">
-												<a href="<?php echo $DIR."/site";?>" >Retour à la page d'accueil du site web.</a>
+												<a href="<?php echo $DIR."/site";?>" >Retour Ã  la page d'accueil du site web.</a>
 											</div>
 											<br />
 											<div style="text-align:center">
@@ -111,7 +111,7 @@ check_page_variables ($page_variables);
 																			<?php // Affichage des erreurs
 																			foreach ($_ALERTES as $alerte => $value) {
 																				if ($alerte == "login_faux") { ?>
-																					Connexion impossible.<br />Veuillez vérifiez vos identifiants de connexion.
+																					Connexion impossible.<br />Veuillez vÃ©rifiez vos identifiants de connexion.
 																				<?php }
 																			} ?>
 																			<br />
@@ -148,7 +148,7 @@ check_page_variables ($page_variables);
 										<td colspan="2">
 											<div style="text-align:right; vertical-align: bottom" class="grey_text" >
 												<a href="http://www.lundimatin.fr" target="_blank" class="grey_text">Lundi Matin Business</a> 
-												est un logiciel libre de gestion d'entreprise, distribué sous licence 
+												est un logiciel libre de gestion d'entreprise, distribuÃ© sous licence 
 												LMPL
 											</div>
 										</td>

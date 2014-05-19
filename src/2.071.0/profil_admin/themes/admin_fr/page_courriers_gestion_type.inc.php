@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -23,11 +23,11 @@ check_page_variables ($page_variables);
 <!-- Fil rouge dans la barre d'outils en haut de l'application -->
 <script type="text/javascript">
 tableau_smenu[0] = Array('smenu_communication', 'smenu_communication.php' ,'true' , 'sub_content', 'Communication');
-tableau_smenu[1] = Array('gestion_courrier_type','courriers_gestion_type.php',"true" ,"sub_content", "Gérer les modèles de courrier");
+tableau_smenu[1] = Array('gestion_courrier_type','courriers_gestion_type.php',"true" ,"sub_content", "GÃ©rer les modÃ¨les de courrier");
 update_menu_arbo();
 </script>
 <div class="emarge">
-	<!-- pop up qui apparait quand on clic sur "paramètres" --> 
+	<!-- pop up qui apparait quand on clic sur "paramÃ¨tres" --> 
 	<?php include $DIR.$_SESSION['theme']->getDir_theme()."page_courriers_gestion_type_mini.inc.php" ?>
 
 	<p class="titre">Courriers</p>
@@ -56,7 +56,7 @@ update_menu_arbo();
 										</tr>
 										<tr>
 											<td>
-											Libellé affiché
+											LibellÃ© affichÃ©
 											<input name="id_type_courrier" id="id_type_courrier" type="hidden" value="<?php echo $infos_tc_et_mp[$i]->id_type_courrier; ?>" />
 											</td>
 											<td>
@@ -78,7 +78,7 @@ update_menu_arbo();
 									</table>
 								</form>
 								<br />
-								Modèles disponibles pour l'impression de <?php echo ($infos_tc_et_mp[$i]->lib_type_courrier); ?>:
+								ModÃ¨les disponibles pour l'impression de <?php echo ($infos_tc_et_mp[$i]->lib_type_courrier); ?>:
 								<br/>
 								<?php
 								$id_courrier_type_tmp = $infos_tc_et_mp[$i]->id_type_courrier;
@@ -118,7 +118,7 @@ update_menu_arbo();
 												<a href="configuration_pdf_preview.php?type=courrier&id_type_courrier=<?php echo $infos_tc_et_mp[$i]->id_type_courrier; ?>&id_pdf_modele=<?php echo $infos_tc_et_mp[$i]->id_pdf_modele;?>" target="_blank" style="color:#000000">Visualiser</a>
 											</td>
 											<td style="width:15%">
-												<span id="param_pdf_<?php echo $infos_tc_et_mp[$i]->id_type_courrier; ?>" style="cursor:pointer; text-decoration:underline">Paramétrer</span>
+												<span id="param_pdf_<?php echo $infos_tc_et_mp[$i]->id_type_courrier; ?>" style="cursor:pointer; text-decoration:underline">ParamÃ©trer</span>
 												<script type="text/javascript">
 													Event.observe("param_pdf_<?php echo $infos_tc_et_mp[$i]->id_type_courrier; ?>", "click" , function(evt){
 													ouvre_mini_moteur_courrier_type();
@@ -132,7 +132,7 @@ update_menu_arbo();
 											<td style="width:15%">
 												<span id="activer_desactiver_pdf_<?php echo $infos_tc_et_mp[$i]->id_type_courrier; ?>" style="cursor:pointer; text-decoration:underline">
 													<?php if($infos_tc_et_mp[$i]->actif) {
-														echo "Désactiver";
+														echo "DÃ©sactiver";
 													} else {
 														echo "Activer";
 													} ?>

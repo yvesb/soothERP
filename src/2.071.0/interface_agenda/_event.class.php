@@ -23,7 +23,7 @@ class Event{
 	private $ref_event;
 	private $lib_event;
 	private $note_event;
-	private $Udate_event;			// int : temps mesurée en secondes depuis le début de l'époque UNIX, (1er janvier 1970 00:00:00 GMT). 
+	private $Udate_event;			// int : temps mesurÃ©e en secondes depuis le dÃ©but de l'Ã©poque UNIX, (1er janvier 1970 00:00:00 GMT). 
 	private $duree_event;			// int
 	private $duree_all_day;
 	
@@ -107,7 +107,7 @@ class Event{
 			$query = "UPDATE agendas_events SET ref_agenda = '".$ref_agenda."'
 								WHERE ref_agenda_event = '".$this->ref_event."' ";
 			$resultat = $bdd->query ($query);
-			$this->agenda = null; // l'agenda est chargé à la demande
+			$this->agenda = null; // l'agenda est chargÃ© Ã  la demande
 		}
 	}
 	
@@ -148,7 +148,7 @@ class Event{
 			}else{
 				$this->event_parent = new Event($this->ref_event_parent);
 				//ATTENTION $this->event_parent->events_fils[$i] != $this;
-				//il faut mettre à jour la référence de l'objet
+				//il faut mettre Ã  jour la rÃ©fÃ©rence de l'objet
 				$cousins =& $this->event_parent->getEvents_fils();
 				for ($i = 0; i< count($cousins); $i++){
 					if($cousins[$i]->getRef_event() == $this->getRef_event())
@@ -175,7 +175,7 @@ class Event{
 					$ev = new Event($ref_ev_fils);
 					$ev->event_parent =& $this;
 					//ATTENTION $this->events_fils[$i]->event_parent != $this;
-					//il faut mettre à jour la référence de l'objet
+					//il faut mettre Ã  jour la rÃ©fÃ©rence de l'objet
 					$this->events_fils[] = ev;
 				}
 				return $this->events_fils;

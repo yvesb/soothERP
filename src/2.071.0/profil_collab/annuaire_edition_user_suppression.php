@@ -14,7 +14,7 @@ if (isset($_REQUEST['user_ref'.$_REQUEST['ref_idform']])) {
 	$ref_user  = $_REQUEST['user_ref'.$_REQUEST['ref_idform']];
 
 	$utilisateur = new utilisateur ($ref_user);
-	// on récupére tout les réf_user qui sont aprés la réf_user supprimée pour rafraichir l'affichage des ordres
+	// on rÃ©cupÃ©re tout les rÃ©f_user qui sont aprÃ©s la rÃ©f_user supprimÃ©e pour rafraichir l'affichage des ordres
 	$users = $utilisateur->liste_ref_user_in_ordre ();
 	
 	$utilisateur->suppression ();

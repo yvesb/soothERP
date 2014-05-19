@@ -21,9 +21,9 @@ $DOC_STANDARD['HAUTEUR_AFTER_LINE_INFORMATION']	= 0;
 $DOC_STANDARD['HAUTEUR_AFTER_LINE_SOUSTOTAL']		= 0;
 $DOC_STANDARD['HAUTEUR_AFTER_LINE_DESCRIPTION']	= 0;
 
-$DOC_STANDARD['ENTETE_COL_REF'] = "Référence";
-$DOC_STANDARD['ENTETE_COL_DES'] = "Désignation";
-$DOC_STANDARD['ENTETE_COL_QTE'] = "Qté";
+$DOC_STANDARD['ENTETE_COL_REF'] = "RÃ©fÃ©rence";
+$DOC_STANDARD['ENTETE_COL_DES'] = "DÃ©signation";
+$DOC_STANDARD['ENTETE_COL_QTE'] = "QtÃ©";
 $DOC_STANDARD['ENTETE_COL_PU']  = "PU ".$this->app_tarifs;
 $DOC_STANDARD['ENTETE_COL_REM'] = "Rem.";
 $DOC_STANDARD['ENTETE_COL_PT']  = "Montant";
@@ -62,32 +62,32 @@ $DOC_STANDARD['PIEDS_DROIT'][1]	= $PIED_DE_PAGE_DROIT_1;
 
 
 
-//variable//type de champ(parametre)//libéllé//commentaire [// option séparé par un @ exemple: valeur1@valeur2@valeur3 ]
+//variable//type de champ(parametre)//libÃ©llÃ©//commentaire [// option sÃ©parÃ© par un @ exemple: valeur1@valeur2@valeur3 ]
 // PARAMETRES MODIFIABLES
-$DOC_STANDARD['LIB_NEG']="Facture d'avoir";//TXTE()// Libellé si total négatif // 
-$DOC_STANDARD['TEXTE_CORPS_PIEDS']="Aucun escompte ne sera accordé pour paiement anticipé.\nTout retard de paiement engendre des pénalités exigibles le jour suivant, calculées sur la base du taux légal + 5%.\nRéserve de propriété applicable selon la loi n°80.335 du 12 mai 1980. En cas de litige, est seul compétent le tribunal du ressort du siège social de l'entreprise.";//TXTA()// Texte entre corps et pied de page// texte sur trois lignes
-$DOC_STANDARD['REF_ARTICLE']="Article";//SLCT()// Affichage de la colonne référence //  //Aucune@Article@Interne@Oem
+$DOC_STANDARD['LIB_NEG']="Facture d'avoir";//TXTE()// LibellÃ© si total nÃ©gatif // 
+$DOC_STANDARD['TEXTE_CORPS_PIEDS']="Aucun escompte ne sera accordÃ© pour paiement anticipÃ©.\nTout retard de paiement engendre des pÃ©nalitÃ©s exigibles le jour suivant, calculÃ©es sur la base du taux lÃ©gal + 5%.\nRÃ©serve de propriÃ©tÃ© applicable selon la loi nÂ°80.335 du 12 mai 1980. En cas de litige, est seul compÃ©tent le tribunal du ressort du siÃ¨ge social de l'entreprise.";//TXTA()// Texte entre corps et pied de page// texte sur trois lignes
+$DOC_STANDARD['REF_ARTICLE']="Article";//SLCT()// Affichage de la colonne rÃ©fÃ©rence //  //Aucune@Article@Interne@Oem
 $DOC_STANDARD['TVA']="true";//CBOX()// Afficher la TVA des clients //
-$DOC_STANDARD['AFF_CODE_BARRE']="true";//CBOX()// Afficher le code barre en entête// 
+$DOC_STANDARD['AFF_CODE_BARRE']="true";//CBOX()// Afficher le code barre en entÃªte// 
 $DOC_STANDARD['AFF_DESC']="true";//CBOX()// Afficher la description courte // 
-$DOC_STANDARD['AFF_CG']="";//CBOP()// Afficher au dos les conditions générales // 
-$DOC_STANDARD['CG_VERSO']="";//TXTP()// Conditions générales : // 
-$DOC_STANDARD['line_ech_max']=3;//SLCT()// Nombre de lignes d'echeances à afficher //  //0@1@2@3
-$DOC_STANDARD['line_regl_max']=3;//SLCT()// Nombre de lignes de règlement à afficher //  //0@1@2@3
+$DOC_STANDARD['AFF_CG']="";//CBOP()// Afficher au dos les conditions gÃ©nÃ©rales // 
+$DOC_STANDARD['CG_VERSO']="";//TXTP()// Conditions gÃ©nÃ©rales : // 
+$DOC_STANDARD['line_ech_max']=3;//SLCT()// Nombre de lignes d'echeances Ã  afficher //  //0@1@2@3
+$DOC_STANDARD['line_regl_max']=3;//SLCT()// Nombre de lignes de rÃ¨glement Ã  afficher //  //0@1@2@3
 // FIN PARAMETRES MODIFIABLES
 // CONFIGURATION PAR DEFAUT
-// Portion de code recopiée dans la partie « paramètres modifiables » en cas de remise à 0 des paramètres.
+// Portion de code recopiÃ©e dans la partie Â«Â paramÃ¨tres modifiablesÂ Â» en cas de remise Ã  0 des paramÃ¨tres.
 /*
-$DOC_STANDARD['LIB_NEG']="Facture d'avoir";//TXTE()// Libellé si total négatif // 
-$DOC_STANDARD['TEXTE_CORPS_PIEDS']="Aucun escompte ne sera accordé pour paiement anticipé.\nTout retard de paiement engendre des pénalités exigibles le jour suivant, calculées sur la base du taux légal + 5%.\nRéserve de propriété applicable selon la loi n°80.335 du 12 mai 1980. En cas de litige, est seul compétent le tribunal du ressort du siège social de l'entreprise.";//TXTA()// Texte entre corps et pied de page// texte sur trois lignes
-$DOC_STANDARD['REF_ARTICLE']="Article";//SLCT()// Affichage de la colonne référence //  //Aucune@Article@Interne@Oem
-$DOC_STANDARD['AFF_CODE_BARRE']="true";//CBOX()// Afficher le code barre en entête// 
+$DOC_STANDARD['LIB_NEG']="Facture d'avoir";//TXTE()// LibellÃ© si total nÃ©gatif // 
+$DOC_STANDARD['TEXTE_CORPS_PIEDS']="Aucun escompte ne sera accordÃ© pour paiement anticipÃ©.\nTout retard de paiement engendre des pÃ©nalitÃ©s exigibles le jour suivant, calculÃ©es sur la base du taux lÃ©gal + 5%.\nRÃ©serve de propriÃ©tÃ© applicable selon la loi nÂ°80.335 du 12 mai 1980. En cas de litige, est seul compÃ©tent le tribunal du ressort du siÃ¨ge social de l'entreprise.";//TXTA()// Texte entre corps et pied de page// texte sur trois lignes
+$DOC_STANDARD['REF_ARTICLE']="Article";//SLCT()// Affichage de la colonne rÃ©fÃ©rence //  //Aucune@Article@Interne@Oem
+$DOC_STANDARD['AFF_CODE_BARRE']="true";//CBOX()// Afficher le code barre en entÃªte// 
 $DOC_STANDARD['AFF_DESC']="true";//CBOX()// Afficher la description courte // 
-$DOC_STANDARD['AFF_CG']="";//CBOP()// Afficher au dos les conditions générales // 
-$DOC_STANDARD['CG_VERSO']="";//TXTP()// Conditions générales : // 
+$DOC_STANDARD['AFF_CG']="";//CBOP()// Afficher au dos les conditions gÃ©nÃ©rales // 
+$DOC_STANDARD['CG_VERSO']="";//TXTP()// Conditions gÃ©nÃ©rales : // 
 */
 // FIN CONFIGURATION PAR DEFAUT
-// INFORMATIONS SUR L’AUTEUR
+// INFORMATIONS SUR Lâ€™AUTEUR
 /* 
 */
 ?>

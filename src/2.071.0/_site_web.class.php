@@ -23,19 +23,19 @@ final class site {
 function __construct($ref_site = "") {
 	global $bdd;
 
-	// Controle si la ref_site est précisée
+	// Controle si la ref_site est prÃ©cisÃ©e
 	if (!$ref_site) { return false; }
 
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT ref_contact, lib_site_web, url, login, pass, note, ordre, id_type_site_web
 						FROM sites_web 
 						WHERE ref_site = '".$ref_site."' ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si la ref_site est trouvée
+	// Controle si la ref_site est trouvÃ©e
 	if (!$site = $resultat->fetchObject()) { return false; }
 
-	// Attribution des informations à l'objet
+	// Attribution des informations Ã  l'objet
 	$this->ref_site 		= $ref_site;
 	$this->ref_contact 	= $site->ref_contact;
 	$this->lib_site_web	= $site->lib_site_web;
@@ -58,10 +58,10 @@ function __construct($ref_site = "") {
 final public function create ($ref_contact, $lib_site_web, $url, $login, $pass, $note, $type = 0, $ref_site = "") {
 	global $bdd;
 
-	$SITE_ID_REFERENCE_TAG = 7;		// Référence Tag utilisé dans la base de donnée
+	$SITE_ID_REFERENCE_TAG = 7;		// RÃ©fÃ©rence Tag utilisÃ© dans la base de donnÃ©e
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->ref_contact 	= $ref_contact;
 	$this->lib_site_web = $lib_site_web;
 	$this->url 		= $url;
@@ -71,17 +71,17 @@ final public function create ($ref_contact, $lib_site_web, $url, $login, $pass, 
 	$this->type		= $type;
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (0) {
 		return false;
 	}
-	// Si aucune valeur, inutile de créer la coordonnée
+	// Si aucune valeur, inutile de crÃ©er la coordonnÃ©e
 	if (!$this->lib_site_web && !$this->url && !$this->login && !$this->pass && !$this->note) {
 		return false;
 	}
 
 	// *************************************************
-	// Création de la référence
+	// CrÃ©ation de la rÃ©fÃ©rence
 	if(!$ref_site) {
 		$reference = new reference ($SITE_ID_REFERENCE_TAG);
 		$this->ref_site = $reference->generer_ref();
@@ -105,8 +105,8 @@ final public function create ($ref_contact, $lib_site_web, $url, $login, $pass, 
 	$bdd->exec($query);
 	
 	// *************************************************
-	// Résultat positif de la création
-	$GLOBALS['_INFOS']['Création_site_web'] = $this->ref_site;
+	// RÃ©sultat positif de la crÃ©ation
+	$GLOBALS['_INFOS']['CrÃ©ation_site_web'] = $this->ref_site;
 	return true;
 }
 
@@ -120,7 +120,7 @@ final public function modification ($lib_site_web, $url, $login, $pass, $note, $
 	global $bdd;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->lib_site_web = $lib_site_web;
 	$this->url 		= $url;
 	$this->login 	= $login;
@@ -129,7 +129,7 @@ final public function modification ($lib_site_web, $url, $login, $pass, $note, $
 	$this->type		= $type;
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -155,7 +155,7 @@ final public function modifier_ordre ($new_ordre) {
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -173,14 +173,14 @@ final public function modifier_ordre ($new_ordre) {
 
 	$bdd->beginTransaction();
 	
-	// Mise à jour des autres sites
+	// Mise Ã  jour des autres sites
 	$query = "UPDATE sites_web
 						SET ordre = ordre ".$variation." 1
 						WHERE ref_contact = '".$this->ref_contact."' && 
 									ordre ".$symbole1." '".$this->ordre."' && ordre ".$symbole2." '".$new_ordre."' ";
 	$bdd->exec ($query);
 	
-	// Mise à jour de cette site
+	// Mise Ã  jour de cette site
 	$query = "UPDATE sites_web
 						SET ordre = '".$new_ordre."'
 						WHERE ref_site = '".$this->ref_site."'  ";
@@ -191,7 +191,7 @@ final public function modifier_ordre ($new_ordre) {
 	$this->ordre = $new_ordre;
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
@@ -200,7 +200,7 @@ final public function suppression () {
 	global $bdd;
 
 	// *************************************************
-	// Controle à effectuer le cas échéant
+	// Controle Ã  effectuer le cas Ã©chÃ©ant
 
 	// *************************************************
 	// Suppression du site
@@ -236,7 +236,7 @@ static function getRef_site_from_ordre ($ref_contact, $ordre) {
 	return $site_web;
 }
 
-//retourne une liste des ref_site en fonction d'un plage d'ordre (mise à jour de l'affichage des sites)
+//retourne une liste des ref_site en fonction d'un plage d'ordre (mise Ã  jour de l'affichage des sites)
 public function liste_ref_site_in_ordre () {
 	global $bdd;
 	

@@ -56,7 +56,7 @@ Event.observe("link_close_pop_up_art_categ", "click",  function(evt){Event.stop(
 </div>
 <script type="text/javascript">
 //------------------------------------------------------------------------------------
-// select de la catégorie
+// select de la catÃ©gorie
 //
 //------------------------------------------------------------------------------------
 
@@ -90,7 +90,7 @@ Event.observe('mod_ref_art_categ', 'change',  function(evt){
 }, false);
 					
 //
-//fin de la gestion du select de catégorie
+//fin de la gestion du select de catÃ©gorie
 //
 </script>
 </div>

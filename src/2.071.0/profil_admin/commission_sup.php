@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 
 if (isset($_REQUEST['id_commission_regle'])) {	
-	// Création de la catégorie
+	// CrÃ©ation de la catÃ©gorie
 	$commission_liste = new commission_liste ($_REQUEST['id_commission_regle']);
 	$commission_liste->suppression ($_REQUEST['id_commission_regle_remplacement_'.$_REQUEST['id_commission_regle']]);
 }

@@ -5,7 +5,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -64,14 +64,14 @@ foreach ($_ALERTES as $alerte => $value)
 			<?php }?>
 			
 			// bac 15/04/2010 version 2.051
-			// facturation périodique
+			// facturation pÃ©riodique
 			$("def_facturation_periodique").value = '<?php if (isset($liste_categorie_client->facturation_periodique)) { echo $liste_categorie_client->facturation_periodique; } else { echo "0";}?>';
 			preselect (<?php if (isset($liste_categorie_client->facturation_periodique)) { echo $liste_categorie_client->facturation_periodique;} else { echo "0";}?>, "facturation_periodique");
-			// mode édition favori
+			// mode Ã©dition favori
 			$("def_id_edition_mode_favori").value = '<?php if ((isset($liste_categorie_client->id_edition_mode_favori)) && ($liste_categorie_client->id_edition_mode_favori)!=0) { echo $liste_categorie_client->id_edition_mode_favori; } else { echo "0";}?>';
 			preselect (<?php if (isset($liste_categorie_client->id_edition_mode_favori)) { echo $liste_categorie_client->id_edition_mode_favori;} else { echo "0";}?>, "id_edition_mode_favori");
-			// delai de règlement défini plus haut
-			// règlement favori
+			// delai de rÃ¨glement dÃ©fini plus haut
+			// rÃ¨glement favori
 			<?php $premier_mode_reglement= 0; //$modes_reglement = getReglements_modes(); foreach ($modes_reglement as $mode_reglement){$premier_mode_reglement = $mode_reglement->id_reglement_mode; break;}?>
 			preselect (<?php if (isset($liste_categorie_client->id_reglement_mode_favori)) { echo $liste_categorie_client->id_reglement_mode_favori;} else { echo $premier_mode_reglement;}?>, "id_reglement_mode_favori");
 			$("def_id_reglement_mode_favori").value = '<?php if (isset($liste_categorie_client->id_reglement_mode_favori)) { echo $liste_categorie_client->id_reglement_mode_favori; } else { echo $premier_mode_reglement;}?>';
@@ -82,7 +82,7 @@ foreach ($_ALERTES as $alerte => $value)
 			// encours
 			$("encours").value = '<?php if (isset($liste_categorie_client->defaut_encours)) { echo $liste_categorie_client->defaut_encours;} else { echo "0";}?>';
 			$("def_encours").value = '<?php if (isset($liste_categorie_client->defaut_encours)) { echo $liste_categorie_client->defaut_encours;} else { echo "0";}?>';			
-			// pré-paiement
+			// prÃ©-paiement
 			preselect (<?php if (isset($liste_categorie_client->prepaiement_type)) { echo "'" . $liste_categorie_client->prepaiement_type . "'";} else { echo 'Acompte';}?>, "prepaiement_type");
 			$("def_prepaiement_type").value  = '<?php if (isset($liste_categorie_client->prepaiement_type)) { echo $liste_categorie_client->prepaiement_type;} else { echo 'Acompte';}?>';
 			$("def_prepaiement_ratio").value = '<?php echo $liste_categorie_client->prepaiement_ratio?>';

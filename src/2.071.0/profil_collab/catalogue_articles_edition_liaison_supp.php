@@ -9,24 +9,24 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 	if (!isset($_REQUEST['ref_article_A'])) {
-		echo "La référence A de l'article n'est pas précisée";
+		echo "La rÃ©fÃ©rence A de l'article n'est pas prÃ©cisÃ©e";
 		exit;
 	}
 
 	if (!isset($_REQUEST['ref_article_B'])) {
-		echo "La référence B de l'article n'est pas précisée";
+		echo "La rÃ©fÃ©rence B de l'article n'est pas prÃ©cisÃ©e";
 		exit;
 	}
 	
 	if (!isset($_REQUEST['id_liaison_type'])) {
-		echo "Le type de liaison n'est pas précisée";
+		echo "Le type de liaison n'est pas prÃ©cisÃ©e";
 		exit;
 	}
 	
 	$article = new article ($_REQUEST['ref_article_A']);
 	
 	if (!$article->getRef_article()) {
-		echo "La référence de l'article est inconnue";
+		echo "La rÃ©fÃ©rence de l'article est inconnue";
 		exit;
 	}
 

@@ -69,9 +69,9 @@ function make_reglement_prelevement(&$infos, $id_compte_bancaire_source){
 function make_reglement_last_step(&$infos, &$doc){
 	$reglement = new reglement ();
 	$reglement->create_reglement($infos);
-	if($cdc->rapprocher_reglement($reglement))//le rËglement a ÈtÈ associÈ	=> CDC passe en Ètat 'En cours' (Ètat 9)
+	if($cdc->rapprocher_reglement($reglement))//le r√®glement a √©t√© associ√©	=> CDC passe en √©tat 'En cours' (√©tat 9)
 	{		$cdc->maj_etat_doc(9);}
-	else{}//aucun rËglement n'a ÈtÈ associÈ	=> CDC reste en Ètat 'A valider' (Ètat 8)
+	else{}//aucun r√®glement n'a √©t√© associ√©	=> CDC reste en √©tat 'A valider' (√©tat 8)
 	
 	return $cdc->getId_etat_doc();
 }
@@ -82,9 +82,9 @@ function make_reglement_last_step(&$infos, &$doc){
 if (!$_SESSION['user']->getLogin())
 {		header ("Location: _user_login.php?page_from=".$_SERVER['PHP_SELF']);}
 
-//On rÈcupËre le moyen de paiement
+//On r√©cup√®re le moyen de paiement
 if(!isset($_REQUEST["id_reglement_mode"])){
-	echo "le regelement n'est pas spÈcifiÈ";
+	echo "le regelement n'est pas sp√©cifi√©";
 	exit;
 }
 $id_reglement_mode = $_REQUEST["id_reglement_mode"];
@@ -94,7 +94,7 @@ gestion_panier();
 if (count($_SESSION["panier_interface_".$_INTERFACE['ID_INTERFACE']]["contenu"]) == 0) 
 {		header ("Location: catalogue_panier_view.php");}
 
-//RÈcupÈration du panier
+//R√©cup√©ration du panier
 unset($GLOBALS['_OPTIONS']['CREATE_DOC']);
 $GLOBALS['_OPTIONS']['CREATE_DOC']['ref_contact'] = $_SESSION['user']->getRef_contact();
 $panier = open_client_panier ();
@@ -106,11 +106,11 @@ if (count($panier->getContenu()) == 0)
 //On valide le panier
 //Etats du documents 'Panier Client / PAC'
 //41 => En saisie
-//42 => ValidÈ
-//43 => AnnulÈ
+//42 => Valid√©
+//43 => Annul√©
 $panier->maj_etat_doc(42);
 
-//On rÈcupËre le BLC crÈÈ par le changement d'Ètat du panier
+//On r√©cup√®re le BLC cr√©√© par le changement d'√©tat du panier
 $cdc = open_doc($GLOBALS['_INFOS']['ref_doc_copie']);
 
 //On supprime le panier, on en a plus besoin
@@ -122,18 +122,18 @@ unset($panier);
 
 //Etats du document 'Bon de Commande / CDC'
 //6 => En saisie
-//7 => AnnulÈe
+//7 => Annul√©e
 //8 => A valider
 //9 => En cours
-//10 => TraitÈe 
-//Si aucun rËglement n'est associÈ 		=> CDC reste en Ètat 'A valider' (Ètat 8)
-//Si on a associe un rËglement valide	=> CDC passe en Ètat 'En cours' (Ètat 9)
+//10 => Trait√©e 
+//Si aucun r√®glement n'est associ√© 		=> CDC reste en √©tat 'A valider' (√©tat 8)
+//Si on a associe un r√®glement valide	=> CDC passe en √©tat 'En cours' (√©tat 9)
 
 //On traite le moyen de paiement
 $infos = array();
 $t = time();
 switch ($id_reglement_mode) {
-	case "2":{ //entrant cheque => rËglement ‡ la rÈception du chËque
+	case "2":{ //entrant cheque => r√®glement √† la r√©ception du ch√®que
 	break;}
 	
 	case "3":{ //entrant cb
@@ -148,7 +148,7 @@ switch ($id_reglement_mode) {
 		make_reglement_last_step($infos, $doc);
 	break;}
 	
-	case "5":{ //entrant lettre => rËglement ‡ la rÈception de la lettre
+	case "5":{ //entrant lettre => r√®glement √† la r√©ception de la lettre
 	break;}
 	
 	case "6":{ //entrant prelevement

@@ -10,7 +10,7 @@ class Modification_compte_user extends InscriptionModification {
 		parent::__construct($id_interface);
 		
 		if($modificationAllowed == -1){
-			// Les valeur pour $this->inscription_allowed ou $this->modificationAllowed n'ont pas ÈtÈs dÈfinies
+			// Les valeur pour $this->inscription_allowed ou $this->modificationAllowed n'ont pas √©t√©s d√©finies
 			// il faut ouvrir les fichier config pour pouvoir charger ces valeurs.
 			
 			// Lecture du fichier config de l'interface $id_interface
@@ -50,13 +50,13 @@ class Modification_compte_user extends InscriptionModification {
 	private static function search_MODIFICATION_ALLOWED_value($texte){
 		$pattern = '\$MODIFICATION_ALLOWED([^\/]{0,2})*=([^\/]{0,2})*(\d);.*';
 		$value_searched = preg_replace('/'.$pattern.'/', '$3', $texte);
-		if($value_searched != $texte)//	la valeur a ÈtÈ trouvÈe
+		if($value_searched != $texte)//	la valeur a √©t√© trouv√©e
 		{			return intval($value_searched);}
 		else{ return -1;}
 	}
 	
 	// *************************************************************************************************************
-	// Fonctions d'accËs aux donnÈes
+	// Fonctions d'acc√®s aux donn√©es
 	// *************************************************************************************************************
 	
 	// Retourne inscription_allowed
@@ -76,20 +76,20 @@ class Modification_compte_user extends InscriptionModification {
 	//
 	//	id_contact_tmp		smallint(5) UNSIGNED 	NOTNULL	auto_increment	:	
 	//	id_interface			smallint(5) UNSIGNED	NOTNULL									:	
-	//	infos							mediumtext						NOTNULL									:	liste de couple clÈ/valeur sÈparÈ par un ;
+	//	infos							mediumtext						NOTNULL									:	liste de couple cl√©/valeur s√©par√© par un ;
 	//	date_demande			datetime							NOTNULL									:	
 	//	code_validation		varchar(64)						NOTNULL									:	code pour que l'utilisateur confirme son inscription 
 	//	validation_email	tinyint(2)						NOTNULL									:	1 => validation par un collab : ce contact n'a pas de besoin la confirmation par mail :
 	//																																				 - soit c'est une modification sans confirmation
-	//																																				 - soit c'est une modification avec confirmation, mais l'utilisateur a dÈj‡ confirmÈ son modification
+	//																																				 - soit c'est une modification avec confirmation, mais l'utilisateur a d√©j√† confirm√© son modification
 	//																																		2 => validation par un collab : cet utilisateur doit confirmer son modification pour pouvoir passer 
-	//																																				 ‡ l'Ètape suivante : validation_email <- 1
+	//																																				 √† l'√©tape suivante : validation_email <- 1
 	//																																		3 => validation automatique : cet utilisateur doit confirmer son modification pour pouvoir passer 
-	//																																				 ‡ l'Ètape suivante (modification du contact et supression de la ligne)
+	//																																				 √† l'√©tape suivante (modification du contact et supression de la ligne)
 	//	mode							enum('inscription', 'modification')	NOTNULL		:	
 	//
 	//
-	// listes des clÈ contenu dans le champ infos :
+	// listes des cl√© contenu dans le champ infos :
 	//	id_categorie
 	//	civilite
 	//	nom
@@ -118,7 +118,7 @@ class Modification_compte_user extends InscriptionModification {
 	//
 	//	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	//	$this->modification_allowed == 1 : modification d'un contact avec une validation par un collaborateur mais sans un mail de confirmation
-	//		etape 1 la modification est enregistrÈe
+	//		etape 1 la modification est enregistr√©e
 	//		modification_contact
 	//			modification_contact_avec_validation_sans_mail_confirmation
 	//				modification_contact_avec_validation_get_sujet_pour_contact
@@ -142,14 +142,14 @@ class Modification_compte_user extends InscriptionModification {
 	//
 	//	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	//	$this->modification_allowed == 3 : modification d'un contact avec une validation par un collaborateur mais avec un mail confirmation
-	//		etape 1 la modification est enregistrÈe
+	//		etape 1 la modification est enregistr√©e
 	//		modification_contact
 	//			modification_contact_avec_validation_avec_mail_confirmation
 	//				modification_contact_avec_validation_avec_mail_confirmation_get_sujet_pour_contact
 	//				modification_contact_avec_validation_avec_mail_confirmation_get_message_pour_contact
 	//				envoi_email_templated => CONTACT
 	//
-	//		etape 2 l'utilisateur reÁoit le mail et confirme sa modification
+	//		etape 2 l'utilisateur re√ßoit le mail et confirme sa modification
 	//		contact_confirme_sa_modification
 	//			contact_confirme_sa_modification_puis_validation_par_collab
 	//				modification_contact_avec_validation_get_sujet_pour_contact
@@ -174,7 +174,7 @@ class Modification_compte_user extends InscriptionModification {
 	//	
 	//	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	//	$this->modification_allowed == 2 : modification d'un contact automatique sans mail de confirmation
-	//		etape 1 la modification est enregistrÈe
+	//		etape 1 la modification est enregistr√©e
 	//		modification_contact
 	//			modification_contact_automatique_sans_mail_confirmation
 	//				validation_modification_contact
@@ -184,14 +184,14 @@ class Modification_compte_user extends InscriptionModification {
 	//	
 	//	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	//	$this->modification_allowed == 4 : modification d'un contact automatique avec mail de confirmation
-	//		etape 1 la modification est enregistrÈe
+	//		etape 1 la modification est enregistr√©e
 	//		modification_contact
 	//			modification_contact_automatique_avec_mail_confirmation
 	//				modification_contact_automatique_avec_mail_confirmation_get_sujet_pour_contact
 	//				modification_contact_automatique_avec_mail_confirmation_get_message_pour_contact
 	//				envoi_email_templated => CONTACT
 	//
-	//		etae 2 l'utilisateur reÁoit le mail et confirme son modification
+	//		etae 2 l'utilisateur re√ßoit le mail et confirme son modification
 	//		contact_confirme_sa_modification
 	//			contact_confirme_sa_modification_puis_validation_automatique
 	//				validation_modification_contact
@@ -209,10 +209,10 @@ class Modification_compte_user extends InscriptionModification {
 	//lance la procedure de modification pour un contact
 	//@param $infos_contact array : tableau associatif contenant les informations du contact
 	//@param $email string : email du contact.
-	//@return boolean	: vrai si la modification du contact s'est bien passÈ, faux sinon.
+	//@return boolean	: vrai si la modification du contact s'est bien pass√©, faux sinon.
 	//attention, la modification peut se faire en plusieurs temps suivant la valeur de $this->modification_allowed
 	public function modification_contact($ref_contact, $infos_contact, $email){	
-		//vÈrification des paramËtres d'entrÈ
+		//v√©rification des param√®tres d'entr√©
 		if(is_null($infos_contact) || !is_array($infos_contact) || !$this->verifie_infos_contact_pour_inscription_ou_modification_contact($infos_contact))
 		{		return false;}
 		
@@ -239,7 +239,7 @@ class Modification_compte_user extends InscriptionModification {
 	//procedure de modification pour un contact AVEC VALIDATION et SANS MAIL DE CONFIRMATION
 	//@param $infos_contact array : tableau associatif contenant les informations du contact
 	//@param $email string : email du contact.
-	//@return boolean : vrai si l'inscrition du contact s'est bien passÈ, faux sinon. 
+	//@return boolean : vrai si l'inscrition du contact s'est bien pass√©, faux sinon. 
 	protected function modification_contact_avec_validation_sans_mail_confirmation($ref_contact, $infos_contact, $email){
 		global $bdd;
 		
@@ -257,7 +257,7 @@ class Modification_compte_user extends InscriptionModification {
 							(id_interface, infos, date_demande, code_validation, validation_email, mode) VALUES 
 	 						(".$this->getId_interface().", '".addslashes(implode(";", $infos_contact))."', NOW(), '".$code_validation."', 1, 'modification')";
 		if($bdd->exec($query) == 0)
-		{		return false;}	//Aucune ligne n'È ÈtÈ modifiÈe
+		{		return false;}	//Aucune ligne n'√© √©t√© modifi√©e
 		
 		$id_contact_tmp = $bdd->lastInsertId();
 		
@@ -280,7 +280,7 @@ class Modification_compte_user extends InscriptionModification {
 	//procedure de modification pour un contact AVEC VALIDATION et AVEC MAIL DE CONFIRMATION
 	//@param $infos_contact array : tableau associatif contenant les informations du contact
 	//@param $email string : email du contact.
-	//@return boolean : vrai si la modification du contact s'est bien passÈ, faux sinon. 
+	//@return boolean : vrai si la modification du contact s'est bien pass√©, faux sinon. 
 	protected function modification_contact_avec_validation_avec_mail_confirmation($ref_contact, $infos_contact, $email){
 		if(is_null($infos_contact) || !is_array($infos_contact))
 		{		return false;}
@@ -298,7 +298,7 @@ class Modification_compte_user extends InscriptionModification {
 							(id_interface, infos, date_demande, code_validation, validation_email, mode) VALUES 
 	 						(".$this->getId_interface().", '".addslashes(implode(";", $infos_contact))."', NOW(), '".$code_validation."', 2, 'modification')";
 		if($bdd->exec($query) == 0)
-		{		return false;}	//Aucune ligne n'È ÈtÈ modifiÈe
+		{		return false;}	//Aucune ligne n'√© √©t√© modifi√©e
 		
 		$id_contact_tmp = $bdd->lastInsertId();
 		
@@ -311,9 +311,9 @@ class Modification_compte_user extends InscriptionModification {
 		
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//sujet du mail envoyÈ ‡ l'UTILISATEUR quand il s'inscrit sur le site (modification avec validation)
-	//@return string : retourne le sujet de l'email envoyÈ par la fonction Inscription->modification_contact_avec_validation_sans_mail_confirmation()
-	//Pour personnaliser ce message, il faut crÈer un sous classe et redÈfinir la fonction.
+	//sujet du mail envoy√© √† l'UTILISATEUR quand il s'inscrit sur le site (modification avec validation)
+	//@return string : retourne le sujet de l'email envoy√© par la fonction Inscription->modification_contact_avec_validation_sans_mail_confirmation()
+	//Pour personnaliser ce message, il faut cr√©er un sous classe et red√©finir la fonction.
 	//Cette nouvelle classe sera propre au E-commerce, donc, elle sera dans son dossier !
 	protected function modification_contact_avec_validation_get_sujet_pour_contact(){
 		return "modification de votre compte sur ".$_SERVER['HTTP_HOST'];
@@ -321,13 +321,13 @@ class Modification_compte_user extends InscriptionModification {
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//message du mail envoyÈ ‡ l'UTILISATEUR quand il s'inscrit sur le site (modification avec validation)
-	//@return string : retourne le sujet de l'email envoyÈ par la fonction Inscription->modification_contact_avec_validation_sans_mail_confirmation()
-	//Pour personnaliser ce message, il faut crÈer un sous classe et redÈfinir la fonction.
+	//message du mail envoy√© √† l'UTILISATEUR quand il s'inscrit sur le site (modification avec validation)
+	//@return string : retourne le sujet de l'email envoy√© par la fonction Inscription->modification_contact_avec_validation_sans_mail_confirmation()
+	//Pour personnaliser ce message, il faut cr√©er un sous classe et red√©finir la fonction.
 	//Cette nouvelle classe sera propre au E-commerce, donc, elle sera dans son dossier !
 	protected function modification_contact_avec_validation_get_message_pour_contact(){
 		global $INFO_LOCALE;
-		return "Date d'envois ".lmb_strftime('le %A %d %B %Y ‡ %H:%M:%S', $INFO_LOCALE)."<br />
+		return "Date d'envois ".lmb_strftime('le %A %d %B %Y √† %H:%M:%S', $INFO_LOCALE)."<br />
 		<br />
 		Bonjour,<br />
 		Vous venez de modifier mes information concernant votre compte.<br />
@@ -344,9 +344,9 @@ class Modification_compte_user extends InscriptionModification {
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//sujet du mail envoyÈ A UN COLLABORATEUR quand un utilisateur s'inscrit sur le site (modification avec validation)
-	//@return string : retourne le sujet de l'email envoyÈ par la fonction Inscription->modification_contact_avec_validation_sans_mail_confirmation()
-	//Pour personnaliser ce message, il faut crÈer un sous classe et redÈfinir la fonction.
+	//sujet du mail envoy√© A UN COLLABORATEUR quand un utilisateur s'inscrit sur le site (modification avec validation)
+	//@return string : retourne le sujet de l'email envoy√© par la fonction Inscription->modification_contact_avec_validation_sans_mail_confirmation()
+	//Pour personnaliser ce message, il faut cr√©er un sous classe et red√©finir la fonction.
 	//Cette nouvelle classe sera propre au E-commerce, donc, elle sera dans son dossier !
 	protected function modification_contact_avec_validation_get_sujet_pour_collaborateur(){
 		return "modification d'un compte sur ".$_SERVER['HTTP_HOST'];
@@ -354,17 +354,17 @@ class Modification_compte_user extends InscriptionModification {
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//corps du mail envoyÈ A UN COLLABORATEUR quand un utilisateur s'inscrit sur le site (modification avec validation)
-	//@return string : retourne le corps de l'email envoyÈ par la fonction Inscription->modification_contact_avec_validation_sans_mail_confirmation()
-	//Pour personnaliser ce message, il faut crÈer un sous classe et redÈfinir la fonction.
+	//corps du mail envoy√© A UN COLLABORATEUR quand un utilisateur s'inscrit sur le site (modification avec validation)
+	//@return string : retourne le corps de l'email envoy√© par la fonction Inscription->modification_contact_avec_validation_sans_mail_confirmation()
+	//Pour personnaliser ce message, il faut cr√©er un sous classe et red√©finir la fonction.
 	//Cette nouvelle classe sera propre au E-commerce, donc, elle sera dans son dossier !
 	protected function modification_contact_avec_validation_get_message_pour_collaborateur(){
 		global $INFO_LOCALE;
-		return "Date d'envois ".lmb_strftime('le %A %d %B %Y ‡ %H:%M:%S', $INFO_LOCALE)."<br />
+		return "Date d'envois ".lmb_strftime('le %A %d %B %Y √† %H:%M:%S', $INFO_LOCALE)."<br />
 		<br />
 		Bonjour,<br />
 		Un utilisateur vient de modifier son compte sur '".$this->getLib_interface()."' du site '".$_SERVER['HTTP_HOST']."'<br />
-		Vous devez valider cette modification ‡ partir de votre interface collaborateur.
+		Vous devez valider cette modification √† partir de votre interface collaborateur.
 		<br />
 		<br />
 		<br />
@@ -378,10 +378,10 @@ class Modification_compte_user extends InscriptionModification {
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//sujet du mail envoyÈ ‡ l'UTILISATEUR quand il s'inscrit sur le site (modification avec validation)
-	//ce message invite l'utilisateur ‡ confirmer sa modification (avant toute autre validation)
-	//@return string : retourne le sujet de l'email envoyÈ par la fonction Inscription->modification_contact_avec_validation_avec_mail_confirmation()
-	//Pour personnaliser ce message, il faut crÈer un sous classe et redÈfinir la fonction.
+	//sujet du mail envoy√© √† l'UTILISATEUR quand il s'inscrit sur le site (modification avec validation)
+	//ce message invite l'utilisateur √† confirmer sa modification (avant toute autre validation)
+	//@return string : retourne le sujet de l'email envoy√© par la fonction Inscription->modification_contact_avec_validation_avec_mail_confirmation()
+	//Pour personnaliser ce message, il faut cr√©er un sous classe et red√©finir la fonction.
 	//Cette nouvelle classe sera propre au E-commerce, donc, elle sera dans son dossier !
 	protected function modification_contact_avec_validation_avec_mail_confirmation_get_sujet_pour_contact(){
 		return "modification de votre compte sur ".$_SERVER['HTTP_HOST'];
@@ -389,26 +389,26 @@ class Modification_compte_user extends InscriptionModification {
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//message du mail envoyÈ ‡ l'UTILISATEUR quand il s'inscrit sur le site (modification avec validation)
-	//ce message invite l'utilisateur ‡ confirmer sa modification (avant toute autre validation)
-	//@return string : retourne le message de l'email envoyÈ par la fonction Inscription->modification_contact_avec_validation_avec_mail_confirmation()
-	//Pour personnaliser ce message, il faut crÈer un sous classe et redÈfinir la fonction.
+	//message du mail envoy√© √† l'UTILISATEUR quand il s'inscrit sur le site (modification avec validation)
+	//ce message invite l'utilisateur √† confirmer sa modification (avant toute autre validation)
+	//@return string : retourne le message de l'email envoy√© par la fonction Inscription->modification_contact_avec_validation_avec_mail_confirmation()
+	//Pour personnaliser ce message, il faut cr√©er un sous classe et red√©finir la fonction.
 	//Cette nouvelle classe sera propre au E-commerce, donc, elle sera dans son dossier !
 	protected function modification_contact_avec_validation_avec_mail_confirmation_get_message_pour_contact($id_contact_tmp, $code_validation){
 		global $INFO_LOCALE;
 		
 		$my_pathinfo = pathinfo(str_replace(str_replace("/",  "\\", $_SERVER['DOCUMENT_ROOT']), "", __FILE__));
 		
-		return "Date d'envois ".lmb_strftime('le %A %d %B %Y ‡ %H:%M:%S', $INFO_LOCALE)."<br />
+		return "Date d'envois ".lmb_strftime('le %A %d %B %Y √† %H:%M:%S', $INFO_LOCALE)."<br />
 		<br />
 		Bonjour,<br />
-		La finalisation de la modification de votre compte se fait en deux Ètape.<br />
-		PremiËrement, vous devez confirmer votre modification en cliquant ou en copiant/collant le lien ci-dessous.<br />
+		La finalisation de la modification de votre compte se fait en deux √©tape.<br />
+		Premi√®rement, vous devez confirmer votre modification en cliquant ou en copiant/collant le lien ci-dessous.<br />
 		<br />
 		http://".$_SERVER['HTTP_HOST']."/".$my_pathinfo["dirname"]."/".$this->getDossier()."_modification_valide.php?id_contact_tmp=".$id_contact_tmp.
 		"&code_validation=".$code_validation."&modification_allowed=".$this->getModification_allowed()."<br />
 		<br />
-		DeuxiËmement, un de nos collaborateurs va prochainement valider votre fiche. Vous recevrez alors un email de confirmation.<br />
+		Deuxi√®mement, un de nos collaborateurs va prochainement valider votre fiche. Vous recevrez alors un email de confirmation.<br />
 		<br />
 		".$this->getNom_entreprise()."
 		<br />
@@ -419,9 +419,9 @@ class Modification_compte_user extends InscriptionModification {
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//retourne l'eamil du collaborateur ‡ qui les demandes de validation doivent Ítre envoyÈ
+	//retourne l'eamil du collaborateur √† qui les demandes de validation doivent √™tre envoy√©
 	//@param $id_contact_tmp int : indentifiant du contact temporaire
-	//@return mixed : l'email sous forme de string s'il a ÈtÈ trouvÈ, faux sinon.
+	//@return mixed : l'email sous forme de string s'il a √©t√© trouv√©, faux sinon.
 	protected function modification_contact_email_du_contact($id_contact_tmp){
 		global $bdd;
 		
@@ -442,7 +442,7 @@ class Modification_compte_user extends InscriptionModification {
 	//procedure de modification pour un contact AUTOMATIQUE et SANS MAIL de confirmation
 	//@param $infos_contact array : tableau associatif contenant les informations du contact
 	//@param $email string : email du contact.
-	//@return boolean : vrai si l'inscrition du contact s'est bien passÈ, faux sinon.
+	//@return boolean : vrai si l'inscrition du contact s'est bien pass√©, faux sinon.
 	protected function modification_contact_automatique_sans_mail_confirmation($ref_contact, $infos_contact, $email){
 		global $bdd;
 		if(is_null($infos_contact) || !is_array($infos_contact))
@@ -466,9 +466,9 @@ class Modification_compte_user extends InscriptionModification {
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//sujet du mail envoyÈ ‡ l'UTILISATEUR pour lui indiquer que sa modification est terminÈe
-	//@return string : retourne le sujet de l'email envoyÈ par la fonction Inscription->modification_contact_automatique_sans_mail_confirmation()
-	//Pour personnaliser ce message, il faut crÈer un sous classe et redÈfinir la fonction.
+	//sujet du mail envoy√© √† l'UTILISATEUR pour lui indiquer que sa modification est termin√©e
+	//@return string : retourne le sujet de l'email envoy√© par la fonction Inscription->modification_contact_automatique_sans_mail_confirmation()
+	//Pour personnaliser ce message, il faut cr√©er un sous classe et red√©finir la fonction.
 	//Cette nouvelle classe sera propre au E-commerce, donc, elle sera dans son dossier !
 	protected function modification_contact_automatique_sans_mail_confirmation_get_suejt_pour_contact(){
 		return "modification sur ".$_SERVER['HTTP_HOST'];
@@ -476,13 +476,13 @@ class Modification_compte_user extends InscriptionModification {
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//message du mail envoyÈ ‡ l'UTILISATEUR pour lui indiquer que sa modification est terminÈe
-	//@return string : retourne le message de l'email envoyÈ par la fonction Inscription->modification_contact_automatique_sans_mail_confirmation()
-	//Pour personnaliser ce message, il faut crÈer un sous classe et redÈfinir la fonction.
+	//message du mail envoy√© √† l'UTILISATEUR pour lui indiquer que sa modification est termin√©e
+	//@return string : retourne le message de l'email envoy√© par la fonction Inscription->modification_contact_automatique_sans_mail_confirmation()
+	//Pour personnaliser ce message, il faut cr√©er un sous classe et red√©finir la fonction.
 	//Cette nouvelle classe sera propre au E-commerce, donc, elle sera dans son dossier !
 	protected function modification_contact_automatique_sans_mail_confirmation_get_message_pour_contact(){
 		global $INFO_LOCALE;
-		return "Date d'envois ".lmb_strftime('le %A %d %B %Y ‡ %H:%M:%S', $INFO_LOCALE)."<br />
+		return "Date d'envois ".lmb_strftime('le %A %d %B %Y √† %H:%M:%S', $INFO_LOCALE)."<br />
 		<br />
 		Bonjour et bienvenue,<br />
 		Vous venez de vous inscrire sur notre site et nous vous en remercions.<br />
@@ -500,7 +500,7 @@ class Modification_compte_user extends InscriptionModification {
 	//procedure de modification pour un contact AUTOMATIQUE et SANS MAIL de confirmation
 	//@param $infos_contact array : tableau associatif contenant les informations du contact
 	//@param $email string : email du contact.
-	//@return boolean : vrai si l'inscrition du contact s'est bien passÈ, faux sinon.
+	//@return boolean : vrai si l'inscrition du contact s'est bien pass√©, faux sinon.
 	protected function modification_contact_automatique_avec_mail_confirmation($ref_contact, $infos_contact, $email){
 		if(is_null($infos_contact) || !is_array($infos_contact))
 		{		return false;}
@@ -518,7 +518,7 @@ class Modification_compte_user extends InscriptionModification {
 							(id_interface, infos, date_demande, code_validation, validation_email, mode) VALUES 
 	 						(".$this->getId_interface().", '".addslashes(implode(";", $infos_contact))."', NOW(), '".$code_validation."', 3, 'modification')";
 		if($bdd->exec($query) == 0)
-		{		return false;}	//Aucune ligne n'È ÈtÈ modifiÈe
+		{		return false;}	//Aucune ligne n'√© √©t√© modifi√©e
 		
 		$id_contact_tmp = $bdd->lastInsertId();
 		
@@ -531,9 +531,9 @@ class Modification_compte_user extends InscriptionModification {
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//sujet du mail envoyÈ ‡ l'UTILISATEUR pour qu'il confirme son modification automatique
-	//@return string : retourne le sujet de l'email envoyÈ par la fonction Inscription->modification_contact_automatique_avec_mail_confirmation()
-	//Pour personnaliser ce message, il faut crÈer un sous classe et redÈfinir la fonction.
+	//sujet du mail envoy√© √† l'UTILISATEUR pour qu'il confirme son modification automatique
+	//@return string : retourne le sujet de l'email envoy√© par la fonction Inscription->modification_contact_automatique_avec_mail_confirmation()
+	//Pour personnaliser ce message, il faut cr√©er un sous classe et red√©finir la fonction.
 	//Cette nouvelle classe sera propre au E-commerce, donc, elle sera dans son dossier !
 	protected function modification_contact_automatique_avec_mail_confirmation_get_sujet_pour_contact(){
 		return "Confirmation de votre email pour votre modification sur ".$_SERVER['HTTP_HOST'];
@@ -541,16 +541,16 @@ class Modification_compte_user extends InscriptionModification {
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//message du mail envoyÈ ‡ l'UTILISATEUR pour qu'il confirme son modification automatique
-	//@return string : retourne le message de l'email envoyÈ par la fonction Inscription->modification_contact_automatique_avec_mail_confirmation()
-	//Pour personnaliser ce message, il faut crÈer un sous classe et redÈfinir la fonction.
+	//message du mail envoy√© √† l'UTILISATEUR pour qu'il confirme son modification automatique
+	//@return string : retourne le message de l'email envoy√© par la fonction Inscription->modification_contact_automatique_avec_mail_confirmation()
+	//Pour personnaliser ce message, il faut cr√©er un sous classe et red√©finir la fonction.
 	//Cette nouvelle classe sera propre au E-commerce, donc, elle sera dans son dossier !
 	protected function modification_contact_automatique_avec_mail_confirmation_get_message_pour_contact($id_contact_tmp, $code_validation){
 		global $INFO_LOCALE;
 		
 		$my_pathinfo = pathinfo(str_replace(str_replace("/",  "\\", $_SERVER['DOCUMENT_ROOT']), "", __FILE__));
 		
-		return "Date d'envois ".lmb_strftime('le %A %d %B %Y ‡ %H:%M:%S', $INFO_LOCALE)."<br />
+		return "Date d'envois ".lmb_strftime('le %A %d %B %Y √† %H:%M:%S', $INFO_LOCALE)."<br />
 		<br />
 		Bonjour et bienvenue,<br />
 		Pour finaliser votre modification sur notre site, vous confirmer votre email en cliquant ou en copiant/collant le lien ci-dessous.<br />
@@ -575,13 +575,13 @@ class Modification_compte_user extends InscriptionModification {
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//procedure pour qu'un contact confirme sa modification aprËs avoir reÁu un mail l'invitant ‡ le faire
-	//envoyÈ par Inscription->modification_contact_avec_validation_avec_mail_confirmation()
+	//procedure pour qu'un contact confirme sa modification apr√®s avoir re√ßu un mail l'invitant √† le faire
+	//envoy√© par Inscription->modification_contact_avec_validation_avec_mail_confirmation()
 	//		ou par Inscription->modification_contact_automatique_avec_mail_confirmation()
-	//AprËs cette Ètape un collaborateur devra valider cette modification
+	//Apr√®s cette √©tape un collaborateur devra valider cette modification
 	//@param $id_contact_tmp int : 
 	//@param $code string : 
-	//@return boolean : vrai si la confirmation de la modification du contact s'est bien passÈ, faux sinon.
+	//@return boolean : vrai si la confirmation de la modification du contact s'est bien pass√©, faux sinon.
 	protected function contact_confirme_sa_modification_puis_validation_automatique($id_contact_tmp, $code){
 		if($this->getModification_allowed() != 4)
 		{		return false;}
@@ -625,14 +625,14 @@ class Modification_compte_user extends InscriptionModification {
 	// CONFIRMATION DE LA PART DE L'UTILISATEUR DE SON MODIFICATION (ne pas confondre avec la validation par un collab) 
 	// *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *
 	
-	//procedure pour qu'un contact confirme sa modification aprËs avoir reÁu un mail l'invitant ‡ le faire
-	//envoyÈ par Inscription->modification_contact_avec_validation_avec_mail_confirmation()
+	//procedure pour qu'un contact confirme sa modification apr√®s avoir re√ßu un mail l'invitant √† le faire
+	//envoy√© par Inscription->modification_contact_avec_validation_avec_mail_confirmation()
 	//		ou par Inscription->modification_contact_automatique_avec_mail_confirmation()
 	//@param $id_contact_tmp int : 
 	//@param $code string : 
-	//@return boolean : vrai si la confirmation de la modification du contact s'est bien passÈ, faux sinon. 
+	//@return boolean : vrai si la confirmation de la modification du contact s'est bien pass√©, faux sinon. 
 	public function contact_confirme_sa_modification($id_contact_tmp, $code){
-		//vÈrification des paramËtres d'entrÈ
+		//v√©rification des param√®tres d'entr√©
 		if(is_null($id_contact_tmp) || !is_numeric($id_contact_tmp))
 		{		return false;}
 		
@@ -645,10 +645,10 @@ class Modification_compte_user extends InscriptionModification {
 		switch ($this->getModification_allowed()){
 			case 0 : {	return false;}	//modification interdite
 			
-			case 1 : {	return false;}	//la confirmation n'est pas nÈncessaire
+			case 1 : {	return false;}	//la confirmation n'est pas n√©ncessaire
 			case 3 : {	return $this->contact_confirme_sa_modification_puis_validation_par_collab($id_contact_tmp, $code); break;}
 			
-			case 2 : {	return false;}	//la confirmation n'est pas nÈncessaire
+			case 2 : {	return false;}	//la confirmation n'est pas n√©ncessaire
 			case 4 : {	return $this->contact_confirme_sa_modification_puis_validation_automatique($id_contact_tmp, $code); break;}
 			
 			default: {	return false;}	//valeur non permises
@@ -657,13 +657,13 @@ class Modification_compte_user extends InscriptionModification {
 	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
-	//procedure pour qu'un contact confirme sa modification aprËs avoir reÁu un mail l'invitant ‡ le faire
-	//envoyÈ par Inscription->modification_contact_avec_validation_avec_mail_confirmation()
+	//procedure pour qu'un contact confirme sa modification apr√®s avoir re√ßu un mail l'invitant √† le faire
+	//envoy√© par Inscription->modification_contact_avec_validation_avec_mail_confirmation()
 	//		ou par Inscription->modification_contact_automatique_avec_mail_confirmation()
-	//AprËs cette Ètape un collaborateur devra valider cette modification
+	//Apr√®s cette √©tape un collaborateur devra valider cette modification
 	//@param $id_contact_tmp int : 
 	//@param $code string : 
-	//@return boolean : vrai si la confirmation de lamodificationon du contact s'est bien passÈ, faux sinon.
+	//@return boolean : vrai si la confirmation de lamodificationon du contact s'est bien pass√©, faux sinon.
 	protected function contact_confirme_sa_modification_puis_validation_par_collab($id_contact_tmp, $code){
 		if($this->getModification_allowed() != 3)
 		{		return false;}
@@ -687,7 +687,7 @@ class Modification_compte_user extends InscriptionModification {
 		$query = "UPDATE annuaire_tmp  SET validation_email = 1
 							WHERE id_contact_tmp = '".$id_contact_tmp."' ";
 		if($bdd->exec($query) == 0)
-		{		return false;}	//Aucune ligne n'È ÈtÈ modifiÈe
+		{		return false;}	//Aucune ligne n'√© √©t√© modifi√©e
 				
 		$sujet_pour_contact		= $this->modification_contact_avec_validation_get_sujet_pour_contact();
 		$message_pour_contact	= $this->modification_contact_avec_validation_get_message_pour_contact();
@@ -718,7 +718,7 @@ class Modification_compte_user extends InscriptionModification {
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
 	public function validation_modification_contact_par_collaborateur($id_contact_tmp){
-		// vÈrification si on peut crÈer un user ‡ partir d'une modification
+		// v√©rification si on peut cr√©er un user √† partir d'une modification
 		switch ($this->getModification_allowed()){
 			case 1 : case 2 : case 3: case 4 : {break;}	//les modifications sont permises
 			default : {return false;}
@@ -759,10 +759,10 @@ class Modification_compte_user extends InscriptionModification {
 	
 	protected function validation_modification_contact_par_collaborateur_get_message_pour_contact(){
 		global $INFO_LOCALE;
-		return "Date d'envois ".lmb_strftime('le %A %d %B %Y ‡ %H:%M:%S', $INFO_LOCALE)."<br />
+		return "Date d'envois ".lmb_strftime('le %A %d %B %Y √† %H:%M:%S', $INFO_LOCALE)."<br />
 		<br />
 		Bonjour,<br />
-		Votre modification vient d'Ítre validÈe, Vous pouvez maintenant vous connecter sur ".$_SERVER['HTTP_HOST']." ‡ l'aide de votre login et mot de passe 
+		Votre modification vient d'√™tre valid√©e, Vous pouvez maintenant vous connecter sur ".$_SERVER['HTTP_HOST']." √† l'aide de votre login et mot de passe 
 		<br />
 		<br />
 		".$this->getNom_entreprise()."
@@ -781,7 +781,7 @@ class Modification_compte_user extends InscriptionModification {
 		{		return false;}
 		
 		// *************************************************
-		// vÈrification si on peut crÈer un user ‡ partir d'une modification
+		// v√©rification si on peut cr√©er un user √† partir d'une modification
 		
 		switch($this->getModification_allowed()){
 			case 1	: case 2	: case 3	: case 4	: {break;}	//les modifications sont permises
@@ -789,7 +789,7 @@ class Modification_compte_user extends InscriptionModification {
 		}
 		
 		// *************************************************
-		//	VÈrification et initialisation des variables
+		//	V√©rification et initialisation des variables
 		
 		$this->verifie_infos_contact_pour_inscription_ou_modification_contact($infos_from_modification);
 		
@@ -801,7 +801,7 @@ class Modification_compte_user extends InscriptionModification {
 		$infos_edit_contact['sites']				= array();
 		
 		// *************************************************
-		//	RÈcupÈration des valeurs de l'modification 
+		//	R√©cup√©ration des valeurs de l'modification 
 		
 		
 		
@@ -853,10 +853,10 @@ class Modification_compte_user extends InscriptionModification {
 		if(!isset($infos_contact['id_pays_contact']))
 		{			$infos_contact['id_pays_contact'] = "";}
 		
-		if($ref_adresse_facturation != ""){// l'adresse de facturation exitse -> Èdition
+		if($ref_adresse_facturation != ""){// l'adresse de facturation exitse -> √©dition
 			$adresse = new adresse($ref_adresse_facturation);
 			$adresse->modification("Adresse de Facturation", $infos_contact['adresse_adresse'], $infos_contact['adresse_code'], $infos_contact['adresse_ville'], $infos_contact['id_pays_contact'], "",false);
-		}else{//l'adresse de facturation n'exitse pas -> crÈation
+		}else{//l'adresse de facturation n'exitse pas -> cr√©ation
 			$adresse = new adresse();
 			if(!$adresse->create($ref_contact, "Adresse de Facturation", $infos_contact['adresse_adresse'], $infos_contact['adresse_code'], $infos_contact['adresse_ville'], $infos_contact['id_pays_contact'], ""))
 			{		return false;}
@@ -878,11 +878,11 @@ class Modification_compte_user extends InscriptionModification {
 		if(!isset($infos_contact['id_pays_livraison']))
 		{			$infos_contact['id_pays_livraison'] = "";}
 		
-		if($ref_adresse_livraison != ""){//l'adresse de livraison existe -> Èdition
+		if($ref_adresse_livraison != ""){//l'adresse de livraison existe -> √©dition
 			$adresse = new adresse($ref_adresse_livraison);			
 			$adresse->modification("Adresse de Livraison", $infos_contact['livraison_adresse'], $infos_contact['livraison_code'], $infos_contact['livraison_ville'], $infos_contact['id_pays_livraison'], "",false);
 			unset($adresse);
-		}else{//l'adresse de livraison n'existe pas -> crÈation
+		}else{//l'adresse de livraison n'existe pas -> cr√©ation
 			$adresse = new adresse();
 			if(!$adresse->create($ref_contact, "Adresse de Livraison", $infos_contact['livraison_adresse'], $infos_contact['livraison_code'], $infos_contact['livraison_ville'], $infos_contact['id_pays_livraison'], ""))
 			{		return false;}
@@ -905,12 +905,12 @@ class Modification_compte_user extends InscriptionModification {
 		// *************************************************
 		$ref_coordonnee = coordonnee::getRef_coord_from_ordre($ref_contact, 1);
 		
-		if($ref_coordonnee != ""){//l'adresse de livraison existe -> Èdition
+		if($ref_coordonnee != ""){//l'adresse de livraison existe -> √©dition
 			$coordonnee = new coordonnee($ref_coordonnee);
-			$coordonnee->modification("CoordonnÈes principales", $infos_contact['coordonnee_tel1'], $infos_contact['coordonnee_tel2'], $infos_contact['coordonnee_fax'], $infos_contact['admin_emaila'], "", "",false);
-		}else{//l'adresse de livraison n'existe pas -> crÈation
+			$coordonnee->modification("Coordonn√©es principales", $infos_contact['coordonnee_tel1'], $infos_contact['coordonnee_tel2'], $infos_contact['coordonnee_fax'], $infos_contact['admin_emaila'], "", "",false);
+		}else{//l'adresse de livraison n'existe pas -> cr√©ation
 			$coordonnee = new coordonnee();
-			if(!$coordonnee->create($ref_contact, "CoordonnÈes principales", $infos_contact['coordonnee_tel1'], $infos_contact['coordonnee_tel2'], $infos_contact['coordonnee_fax'], $infos_contact['admin_emaila'], "", "", ""))
+			if(!$coordonnee->create($ref_contact, "Coordonn√©es principales", $infos_contact['coordonnee_tel1'], $infos_contact['coordonnee_tel2'], $infos_contact['coordonnee_fax'], $infos_contact['admin_emaila'], "", "", ""))
 			{		return false;}
 		}
 		unset($coordonnee);
@@ -933,11 +933,11 @@ class Modification_compte_user extends InscriptionModification {
 	//$_SESSION['user']->login ($infos_from_modification['admin_pseudo'], $infos_from_modification['admin_passworda'], "", $infos_from_modification['profils_modification']);
 	
 	
-	//crÈer un nouveau contact gr‚ce aux informations rÈcoltÈes lors de l'modifications.
-	//Ce nouveau contact sera retournÈ (pointer)
-	//@param string $ref_contact : rÈfÈrence du contact
-	//@param array $infos_from_modification : informations rÈcupÈrÈes lors de l'modification
-	//@return boolean : retourne vrai si la modification a eu lieu et s'est bien dÈroulÈe, faux sinon
+	//cr√©er un nouveau contact gr√¢ce aux informations r√©colt√©es lors de l'modifications.
+	//Ce nouveau contact sera retourn√© (pointer)
+	//@param string $ref_contact : r√©f√©rence du contact
+	//@param array $infos_from_modification : informations r√©cup√©r√©es lors de l'modification
+	//@return boolean : retourne vrai si la modification a eu lieu et s'est bien d√©roul√©e, faux sinon
 	protected function modification_edition_contact($ref_contact, $infos_from_modification){
 		//// *************************************************
 		////Profils
@@ -947,7 +947,7 @@ class Modification_compte_user extends InscriptionModification {
 		////include_once ("./profil_create_".$_SESSION['profils'][$id_profil]->getCode_profil().".inc.php");
 		
 		// *************************************************
-		// CrÈation du contact
+		// Cr√©ation du contact
 		$contact = new contact($ref_contact);
 		$contact->modification($infos_from_modification);
 		$contact->maj_tva_intra($infos_from_modification['tva_intra']);
@@ -962,13 +962,13 @@ class Modification_compte_user extends InscriptionModification {
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	
 	//Edite un user
-	//@param string $ref_contact : informations rÈcupÈrÈes lors de l'modification
+	//@param string $ref_contact : informations r√©cup√©r√©es lors de l'modification
 	//@param string $pseudo : 
 	//@param string $password : 
-	//@return boolean :  si la l'Èdition de l'utilisateur s'est bien passÈe, faux sinon.
+	//@return boolean :  si la l'√©dition de l'utilisateur s'est bien pass√©e, faux sinon.
 	protected function modification_edition_user($ref_contact, $pseudo, $password, $password_old){
 		$password_changed = false;
-		$ref_utilisateur = utilisateur::getRef_user_from_ordre($ref_contact, 1);// @todo : modifier la structure pour rÈcupÈrer le bon utilisateur s'il y en a plusieurs !
+		$ref_utilisateur = utilisateur::getRef_user_from_ordre($ref_contact, 1);// @todo : modifier la structure pour r√©cup√©rer le bon utilisateur s'il y en a plusieurs !
 		if($ref_utilisateur == "")
 		{		return false;}
 		// *************************************************

@@ -37,14 +37,14 @@ function getStock_sorties ($id_stock, $date_debut, $date_fin, $begin = 0, $nb_fi
 	return $sorties;
 }*/
 
-// Affiche un tarif au format désiré
+// Affiche un tarif au format dÃ©sirÃ©
 function qte_format($qte) {
 	global $ARTICLE_QTE_NB_DEC;
 	return round($qte,$ARTICLE_QTE_NB_DEC);
 }
 
 //**************************************\\
-// Fonctions pour les modèles d'exports
+// Fonctions pour les modÃ¨les d'exports
 
 function charge_modele_export_etat_stocks(){
 	global $bdd;
@@ -76,7 +76,7 @@ function get_code_export_etat_stocks(){
 	return $tmp;
 }
 
-//modele ods par défaut
+//modele ods par dÃ©faut
 function defaut_etat_stocks_export ($id_export_modele) {
 	global $bdd;
 	
@@ -106,7 +106,7 @@ function active_etat_stocks_export ($id_export_modele) {
 	return true;
 }
 
-//désactivation d'un modele ods
+//dÃ©sactivation d'un modele ods
 function desactive_etat_stocks_export ($id_export_modele) {
 	global $bdd;
 	
@@ -131,5 +131,5 @@ function getListeExportEtatStocks(){
 	while ($r = $res->fetchObject()) { $liste[] = $r;}
 	return $liste;
 }
-//Fin pour les résultats commerciaux
+//Fin pour les rÃ©sultats commerciaux
 

@@ -190,7 +190,7 @@ update_menu_arbo();
 				</tr>
 				<tr>
 					<td colspan="5">
-						<p class="titre_config">Critères par profils</p>
+						<p class="titre_config">CritÃ¨res par profils</p>
 					</td>
 				</tr>
 				<tr>
@@ -243,7 +243,7 @@ update_menu_arbo();
 					<table style="width:100%">
 						<tr>
 							<td style="width:48%; text-align:left">
-								<p class="titre_config">Envoyer à:</p>
+								<p class="titre_config">Envoyer Ã :</p>
 								<table>
 									<tr>
 										<td>Nom:<br />
@@ -343,7 +343,7 @@ update_menu_arbo();
 							<td style="width:4%;">&nbsp;
 							</td>
 							<td style="width:48%; text-align:left">
-								<p class="titre_config">Ne pas envoyer à:</p>
+								<p class="titre_config">Ne pas envoyer Ã :</p>
 								<table>
 									<tr>
 										<td>Nom:<br />
@@ -447,7 +447,7 @@ update_menu_arbo();
 								   <table>
 								   <br />
 								   <tr>
-								   		Type de formatage des données : 
+								   		Type de formatage des donnÃ©es : 
 								    	<td>
 								    		<select name="format_csv">
 								    			<option name="format_1">email;nom</option>

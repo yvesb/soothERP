@@ -4,7 +4,7 @@
 // ABONNEMENT D'UN ARTICLE 
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -32,7 +32,7 @@ check_page_variables ($page_variables);
 			<input type="hidden" name="modele" id="modele" value="<?php echo $art_categs->getModele()?>" />
 			<table style="width:100%" cellspacing="4">
 				<tr>
-					<td style="width:55%; font-weight:bolder; border-bottom:1px solid #FFFFFF; line-height:36px;" >Durée de l'abonnement:  </td>
+					<td style="width:55%; font-weight:bolder; border-bottom:1px solid #FFFFFF; line-height:36px;" >DurÃ©e de l'abonnement:  </td>
 					<td style="width:45%">
 						<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
 						<tr>
@@ -49,7 +49,7 @@ check_page_variables ($page_variables);
 				<tr>
 					<td style="font-weight:bolder; border-bottom:1px solid #FFFFFF; line-height:36px;">Engagement initial:</td>
 					<td style="line-height:36px; font-weight:bolder">
-						<input type="text" name="engagement" id="engagement" value="<?php echo $article->getEngagement();?>" size="5" class="classinput_nsize"/> x durée de l'abonnement
+						<input type="text" name="engagement" id="engagement" value="<?php echo $article->getEngagement();?>" size="5" class="classinput_nsize"/> x durÃ©e de l'abonnement
 					</td>
 				</tr>
 				<tr>
@@ -68,13 +68,13 @@ check_page_variables ($page_variables);
 					</td>
 				</tr>
 				<tr <?php if (!$article->getReconduction()) {?>style="display:none"<?php }?> id="choix_reconduc">
-					<td style="font-weight:bolder; border-bottom:1px solid #FFFFFF; line-height:36px;">Durée de réengagement: </td>
+					<td style="font-weight:bolder; border-bottom:1px solid #FFFFFF; line-height:36px;">DurÃ©e de rÃ©engagement: </td>
 					<td style="line-height:36px;font-weight:bolder">
-						<input type="text" name="reconduction" id="reconduction" value="<?php echo $article->getReconduction();?>" size="5" class="classinput_nsize"/> x durée de l'abonnement
+						<input type="text" name="reconduction" id="reconduction" value="<?php echo $article->getReconduction();?>" size="5" class="classinput_nsize"/> x durÃ©e de l'abonnement
 					</td>
 				</tr>
 				<tr>
-					<td style="font-weight:bolder; border-bottom:1px solid #FFFFFF; line-height:36px;">Délai du préavis avant résiliation: </td>
+					<td style="font-weight:bolder; border-bottom:1px solid #FFFFFF; line-height:36px;">DÃ©lai du prÃ©avis avant rÃ©siliation: </td>
 					<td style="line-height:36px;">
 						<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
 						<tr>
@@ -104,7 +104,7 @@ check_page_variables ($page_variables);
 		<td class="art_new_info" style="padding:10px">
 		<table style="width:100%" cellspacing="4">
 				<tr>
-					<td  style=" font-weight:bolder; border-bottom:1px solid #FFFFFF; line-height:36px;" >Informations sur les abonnés </td>
+					<td  style=" font-weight:bolder; border-bottom:1px solid #FFFFFF; line-height:36px;" >Informations sur les abonnÃ©s </td>
 				</tr>
 				<tr>
 					<td style="font-weight:bolder; border-bottom:1px solid #FFFFFF; line-height:36px;" >
@@ -126,7 +126,7 @@ check_page_variables ($page_variables);
 					<td style="font-weight:bolder; border-bottom:1px solid #FFFFFF; line-height:36px;" >
 						<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
 						<tr>
-						<td style="line-height:36px;font-weight:bolder; width:60%">Abonnements à renouveler
+						<td style="line-height:36px;font-weight:bolder; width:60%">Abonnements Ã  renouveler
 						</td>
 						<td style="line-height:36px;font-weight:bolder; width:20%">
 						<?php echo $article->compte_service_abo_a_renouveller ();?>
@@ -143,7 +143,7 @@ check_page_variables ($page_variables);
 					<td style="font-weight:bolder; border-bottom:1px solid #FFFFFF; line-height:36px;" >
 						<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
 						<tr>
-						<td style="line-height:36px;font-weight:bolder; width:60%">Abonnements expirés
+						<td style="line-height:36px;font-weight:bolder; width:60%">Abonnements expirÃ©s
 						</td>
 						<td style="line-height:36px;font-weight:bolder; width:20%">
 						<?php echo $article->compte_service_abo_echu ();?>
@@ -249,7 +249,7 @@ check_page_variables ($page_variables);
 			
 		<table border="0" cellspacing="0" cellpadding="0" class="main_aff_ca">
 				<tr>
-					<td style="padding:10px"><span style=" font-weight:bolder; color:#999999">Evolution du nombre d'abonnés sur 12 mois</span><br />
+					<td style="padding:10px"><span style=" font-weight:bolder; color:#999999">Evolution du nombre d'abonnÃ©s sur 12 mois</span><br />
 								<table border="0" cellpadding="0" cellspacing="0">
 									<tr>
 										<td>
@@ -354,7 +354,7 @@ check_page_variables ($page_variables);
  Event.observe("preavis_abo_mois", "blur", function(evt){nummask(evt,"0", "X");}, false);
  Event.observe("preavis_abo_jour", "blur", function(evt){nummask(evt,"0", "X");}, false);
 
-//fonction de validation de l'étape 3
+//fonction de validation de l'Ã©tape 3
 function valide_etape_3() {
 		submitform ("article_view_3"); 
 }

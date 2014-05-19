@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -137,7 +137,7 @@ Event.observe('annuler_recherche_doc_m', "click", function(evt){Event.stop(evt);
 Event.observe('form_recherche_doc_m', "submit", function(evt){page.documents_recherche_mini();  
 	Event.stop(evt);});
 	
-//demarage de l'observateur pour le changement detype decos afin d'afficher les états correspondant
+//demarage de l'observateur pour le changement detype decos afin d'afficher les Ã©tats correspondant
 start_doc_etat("id_type_doc_doc_m", "id_etat_doc_doc_m", "documents_etat.php?doc_type=");
 
 //on masque le chargement

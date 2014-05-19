@@ -137,7 +137,7 @@
 	<br />
 	<span class="bolder">RS</span>=Crit&egrave;re de Recherche Simple - <span class="bolder">RA</span>=Crit&egrave;re de Recherche Avanc&eacute;s - <span class="bolder">N</span>=Affichage Normal - <span class="bolder">P</span>=Affichage Prioritaire<br />
 
-<span class="bolder">Variantes</span>= Veuillez préciser les différentes valeurs par des points virgules. <span style="font-style:italic"> Exemple:</span>  Bleu; Rouge; Vert ...
+<span class="bolder">Variantes</span>= Veuillez prÃ©ciser les diffÃ©rentes valeurs par des points virgules. <span style="font-style:italic"> Exemple:</span>  Bleu; Rouge; Vert ...
 	
 <script type="text/javascript">
 Event.observe($("bt_etape_1"), "click", function(evt){Event.stop(evt); goto_etape (2);});

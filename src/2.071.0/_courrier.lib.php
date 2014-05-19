@@ -12,7 +12,7 @@ function getCourriersDunDestinataire($ref_destinataire, $limite_basse = 0, $nb_e
 	$query_group_by = "";
 	$query_limit = "";
 	
-	//définition de ORDER BY
+	//dÃ©finition de ORDER BY
 	switch ($critere_de_tri) {
 		//case "suivi":{$query_order_by.="c.suivi ";break;}
 		case "objet"			:{$query_order_by.="c.objet ".$ordre;break;}
@@ -28,7 +28,7 @@ function getCourriersDunDestinataire($ref_destinataire, $limite_basse = 0, $nb_e
 		default						:{$query_order_by.="c.date_courrier ".$ordre;break;}
 	}
 	
-	//définition de LIMIT
+	//dÃ©finition de LIMIT
 	
 	if($limite_basse >= 0 && $nb_element > 0){
 		$query_limit .= "LIMIT ".$limite_basse.", ".$nb_element;
@@ -83,7 +83,7 @@ function infos_types_courrier_actifs() {
 	return $infos_types;
 }
 
-//cahrgement du pdf par défaut pour un type de courrier
+//cahrgement du pdf par dÃ©faut pour un type de courrier
 function modele_pdf_par_defaut_du_type($id_type_courrie) {
 	global $bdd;
 	
@@ -124,7 +124,7 @@ function charger_filigranes_pdf_courrier() {
 
 
 
-//désactivation d'un modele pdf
+//dÃ©sactivation d'un modele pdf
 function desactive_courrier_modele_pdf($id_type_courrier) {
 	
 	if(!isset($id_type_courrier)){
@@ -155,7 +155,7 @@ function active_courrier_modele_pdf($id_type_courrier) {
 }
 
 
-//définie le model par défaut d'un type de courrier
+//dÃ©finie le model par dÃ©faut d'un type de courrier
 function set_defaut_courrier_modele_pdf($id_type_courrier, $id_pdf_modele) {
 	
 	if((!isset($id_type_courrier)) || (!isset($id_pdf_modele))){
@@ -181,7 +181,7 @@ function set_defaut_courrier_modele_pdf($id_type_courrier, $id_pdf_modele) {
 	return true;
 }
 
-//mise à jour du lib_type_courrier
+//mise Ã  jour du lib_type_courrier
 function setLib_type_courrier($id_type_courrier, $lib_type_courrier){
 	
 	if((!isset($id_type_courrier)) || (!isset($lib_type_courrier))){

@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES", "fiches", "form['lib_article']", "form['page_to_show']", "form['fiches_par_page']", "nb_fiches", "form['orderby']", "form['orderorder']", "form['ref_art_categ']", "form['ref_constructeur']","form['in_stock']" , "form['is_nouveau']", "form['in_promotion']");
 check_page_variables ($page_variables);
 
@@ -28,7 +28,7 @@ function barre_navigation($nbtotal,
 													
 {
 	// --------------------------------------------------------------------
-	global $cfg_nb_pages; // Nb de n° de pages affichées dans la barre
+	global $cfg_nb_pages; // Nb de nÂ° de pages affichÃ©es dans la barre
 global $DIR;
 	$barre= "";	$lien_on 	= "&nbsp;<a href='#' id='link_pagi_{cible}'>{lien}</a>&nbsp;
 								<script type='text/javascript'>
@@ -38,7 +38,7 @@ global $DIR;
 	// --------------------------------------------------------------------
     
 
-	// début << .
+	// dÃ©but << .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -58,7 +58,7 @@ global $DIR;
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
 
 
-	// précédent < .
+	// prÃ©cÃ©dent < .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -164,7 +164,7 @@ function image_html($img)
 
 //
 //
-//création de la barre de nav
+//crÃ©ation de la barre de nav
 //
 //
 
@@ -185,7 +185,7 @@ foreach ($_ALERTES as $alerte => $value) {
 	echo $alerte." => ".$value."<br>";
 }
 
-// Affichage des résultats
+// Affichage des rÃ©sultats
 ?><br />
 <div   class="mt_size_optimise">
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -273,14 +273,14 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 			//si l'article a un numero de compte vente par defaut
 			$lcpt = new compta_plan_general($fiche->numero_compte_vente);
 		} else if ( isset ($fiche->defaut_numero_compte_vente) && $fiche->defaut_numero_compte_vente != "" ){ 
-			//sinon on prend le compte par defaut de la catégorie
+			//sinon on prend le compte par defaut de la catÃ©gorie
 			$lcpt = new compta_plan_general($fiche->defaut_numero_compte_vente);
-			$lib_cmpt_comment .= "(par défaut) ";
+			$lib_cmpt_comment .= "(par dÃ©faut) ";
 		} else {
-			//il est possible que la catégorie n'ai pas de compte assigné dans la BDD
+			//il est possible que la catÃ©gorie n'ai pas de compte assignÃ© dans la BDD
 			//on assigne alors le compte GLOBAL de VENTE HT
 			$lcpt = new compta_plan_general($DEFAUT_COMPTE_HT_VENTE);
-			$lib_cmpt_comment .= "(général) ";
+			$lib_cmpt_comment .= "(gÃ©nÃ©ral) ";
 		}
 		$num_cmpt = $lcpt->getNumero_compte ();
 		$lib_cmpt = $lcpt->getLib_compte();
@@ -306,14 +306,14 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 			//si l'article a un numero de compte par defaut
 			$lcpt = new compta_plan_general($fiche->numero_compte_achat);
 		} else if ( isset ($fiche->defaut_numero_compte_achat) && $fiche->defaut_numero_compte_achat != "" ){ 
-			//sinon on prend le compte par defaut de la catégorie
+			//sinon on prend le compte par defaut de la catÃ©gorie
 			$lcpt = new compta_plan_general($fiche->defaut_numero_compte_achat);
-			$lib_cmpt_comment .= "(défaut) ";
+			$lib_cmpt_comment .= "(dÃ©faut) ";
 		} else {
-			//il est possible que la catégorie n'ai pas de compte assigné dans la BDD
+			//il est possible que la catÃ©gorie n'ai pas de compte assignÃ© dans la BDD
 			//on assigne alors le compte GLOBAL de ACHAT HT
 			$lcpt = new compta_plan_general($DEFAUT_COMPTE_HT_ACHAT);
-			$lib_cmpt_comment .= "(général) ";
+			$lib_cmpt_comment .= "(gÃ©nÃ©ral) ";
 		}
 		$num_cmpt = $lcpt->getNumero_compte ();
 		$lib_cmpt = $lcpt->getLib_compte();

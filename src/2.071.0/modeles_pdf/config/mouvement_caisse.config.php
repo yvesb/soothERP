@@ -19,8 +19,8 @@ $CAISSE_MVMNT['ENTETE_COL_DAT'] = "Date";
 $CAISSE_MVMNT['ENTETE_COL_CBIL'] = "Lib.";
 $CAISSE_MVMNT['ENTETE_COL_CTIER'] = "Utilisateur";
 //$CAISSE_MVMNT['ENTETE_COL_LIB'] = "Info. supp.";
-$CAISSE_MVMNT['ENTETE_COL_DEB'] = "Débit";
-$CAISSE_MVMNT['ENTETE_COL_CRE'] = "Crédit";
+$CAISSE_MVMNT['ENTETE_COL_DEB'] = "DÃ©bit";
+$CAISSE_MVMNT['ENTETE_COL_CRE'] = "CrÃ©dit";
 
 $CAISSE_MVMNT['LARGEUR_COL_DAT'] = 40;
 $CAISSE_MVMNT['LARGEUR_COL_CBIL'] = 60;
@@ -59,15 +59,15 @@ $CAISSE_MVMNT['PIEDS_DROIT'][1]	= $PIED_DE_PAGE_DROIT_1;
 
 
 
-//variable//type de champ(parametre)//libéllé//commentaire
+//variable//type de champ(parametre)//libÃ©llÃ©//commentaire
 // PARAMETRES MODIFIABLES
 // FIN PARAMETRES MODIFIABLES
 // CONFIGURATION PAR DEFAUT
-// Portion de code recopiée dans la partie « paramètres modifiables » en cas de remise à 0 des paramètres.
+// Portion de code recopiÃ©e dans la partie Â«Â paramÃ¨tres modifiablesÂ Â» en cas de remise Ã  0 des paramÃ¨tres.
 /*
 */
 // FIN CONFIGURATION PAR DEFAUT
-// INFORMATIONS SUR L’AUTEUR
+// INFORMATIONS SUR Lâ€™AUTEUR
 /* 
 */
 ?>

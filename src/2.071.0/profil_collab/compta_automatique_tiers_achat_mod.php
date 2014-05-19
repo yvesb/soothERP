@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// Modification d'un compte de catégorie de fournisseur
+// Modification d'un compte de catÃ©gorie de fournisseur
 // *************************************************************************************************************
 
 
@@ -20,7 +20,7 @@ if (isset($_REQUEST["id_fournisseur_categ"])) {
 	$infos	=	array();
 	$infos['id_fournisseur_categ']				=	$_REQUEST["id_fournisseur_categ"];
 	$infos['defaut_numero_compte']				=	$_REQUEST["retour_value"];
-	//création de la catégorie
+	//crÃ©ation de la catÃ©gorie
 	contact_fournisseur::maj_defaut_numero_compte_categories ($infos);
 
 }

@@ -122,7 +122,7 @@ final class compta_export {
 		$filename = $prefix.'_ECRITURES'.$complement_nom_fichier;
 		//	si le fichier existe
 		if( file_exists( $root.$filename.'.'.$this->extention ) &&
-			//	mais pas de flag lancé
+			//	mais pas de flag lancÃ©
 			( !isset($this->flag_fileinit[$this->process_actual_type]) or
 			//	ou flag est faux
 			( 	isset($this->flag_fileinit[$this->process_actual_type]) && 
@@ -138,7 +138,7 @@ final class compta_export {
 	}
 	
 	private function fic_process_writeline ( $line ){
-				//	si le fichier n'est pas chargé 
+				//	si le fichier n'est pas chargÃ© 
 				if( !$this->flag_fileinit[$this->process_actual_type]){
 					$this->fic_process_loadfile(); 
 				}
@@ -285,7 +285,7 @@ final class compta_export {
 	/***********************************/
 	
 	public function debug_get_infostring($show = false){
-		//	si le systeme en DEV > debug autorisé
+		//	si le systeme en DEV > debug autorisÃ©
 		global $ETAT_APPLICATION;
 		if( $show && $ETAT_APPLICATION == "DEV"){
 		//	on print un debug des variables de l'objet + debugstate (trace)	
@@ -296,7 +296,7 @@ final class compta_export {
 				."&nbsp;Date debut : ".htmlspecialchars($this->date_debut).";"
 				."&nbsp;Date fin : ".htmlspecialchars($this->date_fin).";"
 				."&nbsp;ID Logiciel : ".strval($this->id_export_logiciel).";"
-				."&nbsp;ID Modèle : ".htmlspecialchars(serialize($this->id_modele)).";"
+				."&nbsp;ID ModÃ¨le : ".htmlspecialchars(serialize($this->id_modele)).";"
 				."&nbsp;ID(s) journaux: ".htmlspecialchars(serialize($this->id_journaux)).";"
 				."</li><li>"
 				."Nb contents : ".htmlspecialchars($this->nb_traitements).";"
@@ -317,7 +317,7 @@ final class compta_export {
 	
 	
 	public function debug_debugMe_all($state_to_debug){
-		//	si le systeme en DEV > debug autorisé
+		//	si le systeme en DEV > debug autorisÃ©
 		//	debug obj, necessite class DebugMe en session
 		global $ETAT_APPLICATION;
 		if($ETAT_APPLICATION == "DEV" && isset($GLOBALS['dm'])){
@@ -435,7 +435,7 @@ final class compta_export {
 				// verifications des valeurs de l'objet
 				case "4a" :
 					if( ! $this->check_infos() ) { print_r($this->exp_error); return false ; }
-					// préparation du modèle d'exportation dans l'objet
+					// prÃ©paration du modÃ¨le d'exportation dans l'objet
 					$this->process_init_export();
 					$this->process_set_formatmodel();
 					return true;
@@ -550,9 +550,9 @@ final class compta_export {
 		global $bdd;
 		$this->debugstate = "d.init";
 		// *************************************************
-		// Résultat de la recherche
-		// Préparation de la requete
-		// en fonction du journal selectioné :
+		// RÃ©sultat de la recherche
+		// PrÃ©paration de la requete
+		// en fonction du journal selectionÃ© :
 		// type 1 : vente
 		// Recherche des FAC
 		$query_join 	= "";
@@ -602,9 +602,9 @@ final class compta_export {
 		global $bdd;
 		$this->debugstate = "d.init";
 		// *************************************************
-		// Résultat de la recherche
-		// Préparation de la requete
-		// en fonction du journal selectioné :
+		// RÃ©sultat de la recherche
+		// PrÃ©paration de la requete
+		// en fonction du journal selectionÃ© :
 		// type 1 : vente
 		// Recherche des FAC
 		$query_join 	= "";
@@ -654,7 +654,7 @@ final class compta_export {
 	private function process_set_moves(){
 			global $bdd;
 			$this->debugstate = "m.init";
-			// Préparation de la requete
+			// PrÃ©paration de la requete
 			$query_join 	= "";
 			$query_where 	= "";
 			$query_group	= "";
@@ -703,7 +703,7 @@ final class compta_export {
 			$resultat_cli = $bdd->query ($query_cli);
 			while ($contact_client = $resultat_cli->fetchObject()) {
 				$defaut_numero_compte = $contact_client->defaut_numero_compte;
-				//remplissage du numéro de compte achat par soit celui de la categorie client
+				//remplissage du numÃ©ro de compte achat par soit celui de la categorie client
 				if (!$defaut_numero_compte) {
 				$defaut_numero_compte = $contact_client->categ_defaut_numero_compte;
 				}
@@ -724,7 +724,7 @@ final class compta_export {
 			$resultat_fou = $bdd->query ($query_fou);
 			while ($contact_fournisseur = $resultat_fou->fetchObject()) {
 				$defaut_numero_compte = $contact_fournisseur->defaut_numero_compte;
-				//remplissage du numéro de compte achat par soit celui de la categorie client
+				//remplissage du numÃ©ro de compte achat par soit celui de la categorie client
 				if (!$defaut_numero_compte) {
 				$defaut_numero_compte = $contact_fournisseur->categ_defaut_numero_compte;
 				}
@@ -757,7 +757,7 @@ final class compta_export {
 					$this->debugstate = "bloc.in.".$i;
 					//	traite docs content
 					$this->process_traite_docs_ventes();
-					//	suivi sur les traitements effectués
+					//	suivi sur les traitements effectuÃ©s
 					$this->nb_traitements_effectues ++;
 					$i++;
 				}
@@ -775,7 +775,7 @@ final class compta_export {
 					$this->debugstate = "bloc.in.".$i;
 					//	traite docs content
 					$this->process_traite_docs_achats();
-					//	suivi sur les traitements effectués
+					//	suivi sur les traitements effectuÃ©s
 					$this->nb_traitements_effectues ++;
 					$i++;
 				}
@@ -792,7 +792,7 @@ final class compta_export {
 				while ($i <= $bloc && ( $this->nb_moves_traites < count($this->moves) ) ){
 					$this->debugstate = "bloc.in.".$i;
 					$this->process_traite_moves();
-					//	suivi sur les traitements effectués
+					//	suivi sur les traitements effectuÃ©s
 					$this->nb_traitements_effectues ++;
 					$i++;
 				}
@@ -809,7 +809,7 @@ final class compta_export {
 				while ($i <= $bloc && ( $this->nb_moves_traites < count($this->moves) ) ){
 					$this->debugstate = "bloc.in.".$i;
 					$this->process_traite_comptescomptables();
-					//	suivi sur les traitements effectués
+					//	suivi sur les traitements effectuÃ©s
 					$this->nb_traitements_effectues ++;
 					$i++;
 				}
@@ -872,7 +872,7 @@ final class compta_export {
 			$this->id_ligne++;
 			$fiche->export_type = $doc->type_journal;
 			$ligne = "";
-			// selon le modèle 1>N champs / lignes.
+			// selon le modÃ¨le 1>N champs / lignes.
 			// affectation des informations
 			foreach ($this->champs as $champ ){
 				if($ligne != ""){ $ligne .= $this->separateur; } // separateur de champs
@@ -881,7 +881,7 @@ final class compta_export {
 				$ligne .= $champ;
 			}
 			// impression dans le fichier d'export
-			// préparation du fichier	
+			// prÃ©paration du fichier	
 			$this->fic_process_loadfile($fiche);
 			$this->fic_process_writeline($ligne.$this->finaliseur."\r\n" );
 			$this->process_nbexports ++;
@@ -944,7 +944,7 @@ final class compta_export {
 		while ($fiche = $resultat->fetchObject()) {
 			$fiche->export_type = $doc->type_journal;
 			$ligne = "";
-			// selon le modèle 1>N champs / lignes.
+			// selon le modÃ¨le 1>N champs / lignes.
 			// affectation des informations
 			foreach ($this->champs as $champ ){
 				if($ligne != ""){ $ligne .= $this->separateur; } // separateur de champs
@@ -953,7 +953,7 @@ final class compta_export {
 				$ligne .= $champ;
 			}
 			// impression dans le fichier d'export
-			// préparation du fichier	
+			// prÃ©paration du fichier	
 			$this->fic_process_loadfile($fiche);
 			$this->fic_process_writeline($ligne.$this->finaliseur."\r\n" );
 			$this->process_nbexports ++;
@@ -1043,7 +1043,7 @@ final class compta_export {
 	 * @return string
 	 */
 	private function process_champ_affectfromfiche ($champ,&$fiche){
-		//SWITCH sur un champ de modèle d'exportation
+		//SWITCH sur un champ de modÃ¨le d'exportation
 		switch ($champ->type_script){
 			// est une methode de classe export
 			case "method":
@@ -1076,7 +1076,7 @@ final class compta_export {
 				// sinon faux
 				if (isset( ${$target_var})){
 					// variable est un tableu
-					// on prend l'index associé
+					// on prend l'index associÃ©
 					if(is_array(${$target_var})){
 						return ${$target_var}[$champ->index];
 					} else {
@@ -1140,7 +1140,7 @@ final class compta_export {
 	}
 	
 	/**
-	 * @param $separateur : chaine concenant le séparateur de cheminement
+	 * @param $separateur : chaine concenant le sÃ©parateur de cheminement
 	 * defaut : /
 	 * ex : $separateur = ;  affichage 1;15
 	 * @return chaine de characteres concernant le cheminement du process
@@ -1151,7 +1151,7 @@ final class compta_export {
 	}
 	
 	/**
-	 * @return entier concernant le pourcentage effectué de traitements
+	 * @return entier concernant le pourcentage effectuÃ© de traitements
 	 */
 	public function get_process_pourcentage (){
 		return $this->process_pourcentage;
@@ -1167,9 +1167,9 @@ final class compta_export {
 	/**
 	 * @param $force_next (booleen)
 	 * @return charactere b/c : 
-	 * en général 
+	 * en gÃ©nÃ©ral 
 	 * b = boucle pour traiter le prochain bloc = on boucle le step 4b
-	 * c = traitements effectués ou force break = on sors du step 4b
+	 * c = traitements effectuÃ©s ou force break = on sors du step 4b
 	 */
 	public function get_process_nextstep($force_next = false){
 		//	step a effectuer dans le cycle ajax
@@ -1211,8 +1211,8 @@ final class compta_export {
 	}
 	
 	private function exp_active_journal(){
-		// Préparation de la requete
-		// en fonction du journal selectioné :
+		// PrÃ©paration de la requete
+		// en fonction du journal selectionÃ© :
 		foreach( $this->id_journaux as $id_journal ){
 			switch ($id_journal) {
 				case "1": //ventes

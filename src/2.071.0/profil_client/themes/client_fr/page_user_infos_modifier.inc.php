@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -51,11 +51,11 @@ check_page_variables ($page_variables);
 					
 				<?php if ($MODIFICATION_ALLOWED ) {?>
 				<div style="text-align:left">
-				Bonjour votre demande a bien été prise en compte.<br />
+				Bonjour votre demande a bien Ã©tÃ© prise en compte.<br />
 					
 					<br />
 				<?php if (isset($GLOBALS['_INFOS']["mail_change"] )) {?>
-					Un email de confirmation vient de vous être envoyé afin de valider votre inscription.<br />
+					Un email de confirmation vient de vous Ãªtre envoyÃ© afin de valider votre inscription.<br />
 					<br />
 				<?php } ?>
 				<?php if (isset($GLOBALS['_INFOS']["verification_collab"])) {?>

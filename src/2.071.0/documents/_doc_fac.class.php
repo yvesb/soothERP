@@ -63,7 +63,7 @@ public function open_doc ($select = "", $left_join = "") {
 	}
 	*/
 	
-	// Blocage des quantités
+	// Blocage des quantitÃ©s
 	if ($this->id_etat_doc == 18 || $this->id_etat_doc == 19) {
 		//$this->quantite_locked = true;
 	}
@@ -88,7 +88,7 @@ public function create_doc () {
 	if (!parent::create_doc()) { return false; }
 
 	// *************************************************
-	// Informations complémentaires
+	// Informations complÃ©mentaires
 	$this->id_magasin 				= $_SESSION['magasin']->getId_magasin (); //$DEFAUT_ID_MAGASIN;
 	
 	if (isset($GLOBALS['_OPTIONS']['CREATE_DOC']['ref_doc_externe'])) {
@@ -103,7 +103,7 @@ public function create_doc () {
 	
 	$this->id_niveau_relance 	= NULL;
 
-	// Sélection de la relance adequate
+	// SÃ©lection de la relance adequate
 	$this->date_next_relance 	= $this->date_echeance;
 	
 	$query = "INSERT INTO doc_fac (ref_doc, ref_doc_externe, id_magasin, date_echeance, id_niveau_relance, date_next_relance)
@@ -117,7 +117,7 @@ public function create_doc () {
 }
 
 
-// Charge les informations supplémentaire du contact
+// Charge les informations supplÃ©mentaire du contact
 protected function load_infos_contact () {
 	global $CLIENT_ID_PROFIL;
 	global $COMMERCIAL_ID_PROFIL;
@@ -155,7 +155,7 @@ protected function load_infos_contact () {
         $this->maj_id_niveau_relance_contact($this->ref_contact);
 }
 
-//attibution par défaut du commercial
+//attibution par dÃ©faut du commercial
 protected function load_defauts_infos_contact () {
 	global $COMMERCIAL_ID_PROFIL;
 	
@@ -191,7 +191,7 @@ public function maj_contact ($ref_contact) {
 	
 }
 
-// Renvoie l'adresse a utiliser dans le document pour un contact donné
+// Renvoie l'adresse a utiliser dans le document pour un contact donnÃ©
 function define_adresse_contact () {
 	global $bdd;
 
@@ -217,7 +217,7 @@ function define_adresse_contact () {
 		$adresse_contact_ok = 1;
 	}
 
-	// Sélection des adresses prédéfinies
+	// SÃ©lection des adresses prÃ©dÃ©finies
 	if (!$adresse_contact_ok) {
 		$query = "SELECT ref_adr_facturation, a1.text_adresse ta1, a1.code_postal cp1, a1.ville v1, a1.id_pays ip1, p1.pays p1
 							FROM annu_client ac
@@ -243,7 +243,7 @@ function define_adresse_contact () {
 // *************************************************************************************************************
 // FONCTIONS LIEES A LA MODIFICATION D'UN DOCUMENT
 // *************************************************************************************************************
-// Met à jour l' id_magasin pour cette facture
+// Met Ã  jour l' id_magasin pour cette facture
 public function maj_id_magasin ($new_id_magasin) {
 	global $bdd;	
 
@@ -270,7 +270,7 @@ public function maj_id_magasin ($new_id_magasin) {
 	return true;
 }
 
-// Met à jour la ref_doc_externe
+// Met Ã  jour la ref_doc_externe
 public function maj_ref_doc_externe ($ref_doc_externe) {
 	global $bdd;	
 
@@ -286,7 +286,7 @@ public function maj_ref_doc_externe ($ref_doc_externe) {
 	return true;
 }
 
-// Met à jour la date d'échéance de la facture
+// Met Ã  jour la date d'Ã©chÃ©ance de la facture
 public function maj_date_echeance ($new_date_echeance) {
 	global $bdd;
 
@@ -312,7 +312,7 @@ public function maj_date_echeance ($new_date_echeance) {
 }
 
 
-// Met à jour le niveau de relance pour cette facture
+// Met Ã  jour le niveau de relance pour cette facture
 public function maj_id_niveau_relance ($new_id_niveau_relance) {
 	global $bdd;	
 
@@ -340,7 +340,7 @@ public function maj_id_niveau_relance ($new_id_niveau_relance) {
 	return true;
 }
 
-// Met à jour le niveau de relance pour cette facture
+// Met Ã  jour le niveau de relance pour cette facture
 public function maj_id_niveau_relance_contact ($ref_contact) {
 	global $bdd;
         
@@ -358,7 +358,7 @@ public function maj_id_niveau_relance_contact ($ref_contact) {
         }
 }
 
-// Met à jour le délai avant la prochaine relance, pour cette facture
+// Met Ã  jour le dÃ©lai avant la prochaine relance, pour cette facture
 public function maj_date_next_relance ($new_date_next_relance) {
 	global $bdd;
 
@@ -385,9 +385,9 @@ public function maj_date_next_relance ($new_date_next_relance) {
 
 
 
-// Liste des documents pouvant être fusionner
+// Liste des documents pouvant Ãªtre fusionner
 public function check_allow_fusion ($second_document) {
-	//verifcation que l'état des document permet la fusion
+	//verifcation que l'Ã©tat des document permet la fusion
 	if (($this->id_etat_doc != "16" && $this->id_etat_doc != "18") && ($second_document->getId_etat_doc () != "16" && $second_document->getId_etat_doc () != "18")) {
 		return false;
 	}
@@ -395,7 +395,7 @@ public function check_allow_fusion ($second_document) {
 }
 
 
-// Liste des documents pouvant être fusionner
+// Liste des documents pouvant Ãªtre fusionner
 public function liste_doc_fusion () {
 	global $bdd;
 	
@@ -468,7 +468,7 @@ protected function charger_niveaux_relances () {
 }
 
 
-// Action après de changer l'état du document
+// Action aprÃ¨s de changer l'Ã©tat du document
 protected function action_after_maj_etat ($old_etat_doc) {
 	global $bdd;
 
@@ -497,7 +497,7 @@ protected function action_after_maj_etat ($old_etat_doc) {
 
 protected function create_info_copie_line_texte ($doc_source) { 
 	if (method_exists($doc_source , "getRef_doc_externe") && $doc_source->getRef_doc_externe()){
-		return "Votre référence: ".$doc_source->getRef_doc_externe(); 
+		return "Votre rÃ©fÃ©rence: ".$doc_source->getRef_doc_externe(); 
 	}
 	return "";
 }
@@ -505,7 +505,7 @@ protected function create_info_copie_line_texte ($doc_source) {
 // FONCTIONS SPECIFIQUES AU TYPE DE DOC 
 // *************************************************************************************************************
 
-// Génère une facture d'avoir des produits sélectionnés
+// GÃ©nÃ¨re une facture d'avoir des produits sÃ©lectionnÃ©s
 public function generer_facture_avoir_client ($lines = false) {
 	
 	if (is_array($lines)) {
@@ -570,11 +570,11 @@ function ajout_ventilation_facture_old ($infos_lines = array()) {
 	global $CLIENT_ID_PROFIL;
 	global $TARIFS_NB_DECIMALES; 
 	
-	//si aucunes données transmise on cré un ligne d'aprés les infos de chaque art_categ présent , TVA et TTC compte tier client)
+	//si aucunes donnÃ©es transmise on crÃ© un ligne d'aprÃ©s les infos de chaque art_categ prÃ©sent , TVA et TTC compte tier client)
 	if (!count($infos_lines)) {
 		$calcul_TTC = 0;
 		//comptes HT VENTE
-		// chargement des art_categ présents dans le doc		
+		// chargement des art_categ prÃ©sents dans le doc		
 		$query = "SELECT DISTINCT ac.ref_art_categ, 
 										ac.defaut_numero_compte_vente,
 										( 
@@ -603,9 +603,9 @@ function ajout_ventilation_facture_old ($infos_lines = array()) {
 		}
 		unset($query, $resultat);
 		
-		//comptes TVA collectée
+		//comptes TVA collectÃ©e
 		$liste_tvas =  get_tvas($DEFAUT_ID_PAYS);
-		// chargement des tva présents dans le doc		
+		// chargement des tva prÃ©sents dans le doc		
 		$doc_tvas = $this->getTVAs ();
 		
 		foreach ($doc_tvas as $ttva=>$val_tva) {
@@ -651,7 +651,7 @@ function ajout_ventilation_facture_old ($infos_lines = array()) {
 	}
 	
 	foreach ($infos_lines as $line) {
-		//sinon les infos sont envoyées depuis un ou plusieurs ligne (pop_up_compta), on cré donc un enregistrement
+		//sinon les infos sont envoyÃ©es depuis un ou plusieurs ligne (pop_up_compta), on crÃ© donc un enregistrement
 		$query = "INSERT INTO compta_docs  (numero_compte, montant, ref_doc, id_journal)
 							VALUES ('".$line["numero_compte"]."', '".$line["montant"]."', '".$this->ref_doc."' , '".$line["id_journal"]."' ) 
 							";
@@ -682,17 +682,17 @@ function check_ventilation_facture () {
 	global $DEFAUT_COMPTE_TIERS_VENTE;
 	
 	
-	//on verifie si la facture est toujours acquitée
+	//on verifie si la facture est toujours acquitÃ©e
 	$this->charger_reglements();
 	$this->check_etat_reglement();
 	
-	//on bloque si la facture n'est pas à régler ou acquitée
+	//on bloque si la facture n'est pas Ã  rÃ©gler ou acquitÃ©e
 	if ($this->id_etat_doc == 16 || $this->id_etat_doc == 17 ) { return false; }
 	
 	$ventilation_facture = $this->charger_ventilation_facture ();
 	if (count($ventilation_facture)) {
 		
-			// si plusieurs lignes de définies
+			// si plusieurs lignes de dÃ©finies
 			// on verifie que le montant du document correspond au montant ht des lignes comptables par journal
 			$tmp_montant_ht = 0;
 			$tmp_montant_tva = 0;
@@ -723,7 +723,7 @@ function check_ventilation_facture () {
 // *************************************************************************************************************
 // chargement ventilation facture client
 /**
- * Ajoute les lignes de ventilations associé au document 
+ * Ajoute les lignes de ventilations associÃ© au document 
  * V2.0450.04012010 - fixed, en test
  * //@TODO TESTME.
  * @return bool
@@ -742,7 +742,7 @@ public function ajout_ventilation_facture($infos_lines = array()) {
 	global $CALCUL_TARIFS_NB_DECIMALS;
 	
 	
-	//si aucunes données transmise on cré un ligne d'aprés les infos de chaque art_categ présent , TVA et TTC compte tier client)
+	//si aucunes donnÃ©es transmise on crÃ© un ligne d'aprÃ©s les infos de chaque art_categ prÃ©sent , TVA et TTC compte tier client)
 	if (!count($infos_lines)) {
 		// requete sql : on recup. tt les lignes du documents + ref_article + montant_ht de la transaction	
 		$query = "SELECT a.ref_article,
@@ -758,7 +758,7 @@ public function ajout_ventilation_facture($infos_lines = array()) {
 					LEFT JOIN  docs_lines dl ON dl.ref_article = a.ref_article
 					WHERE dl.ref_doc = '".$this->ref_doc."' && ISNULL(dl.ref_doc_line_parent);  ";
 		$resultat = $bdd->query ($query);
-		// sur tout le tableau de résultat
+		// sur tout le tableau de rÃ©sultat
 		$ventilations_ht = array();
 		$ventilations_tva = array();
 		while ($ventil = $resultat->fetchObject()) {
@@ -772,10 +772,10 @@ public function ajout_ventilation_facture($infos_lines = array()) {
 				// on appelle la fonction de determination de compte comptable by ref_article
 				$ventil_ht->compte = doc_fac::get_compte_comptable_by_ref_article($ventil->ref_article,'vente');
 			} else {
-				// sinon on garde le compte assigné
+				// sinon on garde le compte assignÃ©
 				$ventil_ht->compte = $ventil->compte;
 			}
-			// defini le montant ht, formaté a $CALCUL_TARIFS_NB_DECIMALS chiffres apres la virgule (.)
+			// defini le montant ht, formatÃ© a $CALCUL_TARIFS_NB_DECIMALS chiffres apres la virgule (.)
 			$ventil_ht->montant_ht = round ($ventil->pu_ht * $ventil->qte * (1-$ventil->remise/100), $CALCUL_TARIFS_NB_DECIMALS);
 			
 			/* --- traitements TVA --- */
@@ -783,7 +783,7 @@ public function ajout_ventilation_facture($infos_lines = array()) {
 			$ventil_tva->taux = $ventil->tva;
 			// on appelle la fonction de determination de compte comptable by taux
 			$ventil_tva->compte = doc_fac::get_compte_comptable_by_taux_tva($ventil_tva->taux,'vente');
-			// defini le montant tva, formaté a $CALCUL_TARIFS_NB_DECIMALS chiffres apres la virgule (.)
+			// defini le montant tva, formatÃ© a $CALCUL_TARIFS_NB_DECIMALS chiffres apres la virgule (.)
 			$ventil_tva->tva = round($ventil->pu_ht * ($ventil->tva/100)* $ventil->qte * (1-$ventil->remise/100), $CALCUL_TARIFS_NB_DECIMALS) ;
 			
 			// feed du tableau de ventilation
@@ -885,7 +885,7 @@ public function ajout_ventilation_facture($infos_lines = array()) {
 			return true;
 		} else {
                     foreach ($infos_lines as $line) {
-                            //sinon les infos sont envoyées depuis un ou plusieurs ligne (pop_up_compta), on cré donc un enregistrement
+                            //sinon les infos sont envoyÃ©es depuis un ou plusieurs ligne (pop_up_compta), on crÃ© donc un enregistrement
                             $query = "INSERT INTO compta_docs  (numero_compte, montant, ref_doc, id_journal)
                                                                     VALUES ('".$line["numero_compte"]."', '".$line["montant"]."', '".$this->ref_doc."' , '".$line["id_journal"]."' )
                                                                     ";
@@ -915,7 +915,7 @@ static function get_compte_comptable_by_ref_article( $ref_article, $mode ){
 	$search = $res->fetchObject();
 	$compte = $search->compte;
 	$ref_categ = $search->ref_art_categ;
-	// si l'article n'a pas de compte associé, alors on cherche celui de sa catégorie
+	// si l'article n'a pas de compte associÃ©, alors on cherche celui de sa catÃ©gorie
 	// alors on boucle TANT QUE pas de compte && existe un parent
 	while( $compte == "" && $ref_categ != "" && count($search)>0){
 		$query = " SELECT defaut_numero_compte_".$mode." as compte, ref_art_categ_parent FROM art_categs WHERE ref_art_categ = '".$ref_categ."'";
@@ -925,7 +925,7 @@ static function get_compte_comptable_by_ref_article( $ref_article, $mode ){
 		$ref_categ = $search->ref_art_categ_parent;
 	}
 	// si la boucle ne renvois pas de compte comptable
-	// on utilise le compte global selon le mode selectioné
+	// on utilise le compte global selon le mode selectionÃ©
 	if( $compte == "" ){
 		return $defaut_compte;
 	} else {
@@ -954,7 +954,7 @@ static function get_compte_comptable_by_taux_tva( $taux, $mode ){
 		}
 	}
 	// si pas de compte comptable
-	// on utilise le compte global selon le mode selectioné
+	// on utilise le compte global selon le mode selectionÃ©
 	if( $compte == "" ){
 		return $defaut_compte;
 	} else {
@@ -972,7 +972,7 @@ static function get_compte_comptable_by_taux_tva( $taux, $mode ){
 //@FIXME End WARNING!
 /* --------------------- */
 
-//fonctions de mise à jour lignes si non bloquée et des doc_fac_compta en cas de changement du contenu du document
+//fonctions de mise Ã  jour lignes si non bloquÃ©e et des doc_fac_compta en cas de changement du contenu du document
 
 protected function add_line_article ($infos) {
 	if (!$this->quantite_locked) {
@@ -1046,7 +1046,7 @@ public function set_line_invisible ($ref_doc_line) {
 // *************************************************************************************************************
 // FONCTIONS DE LIAISON ENTRE DOCUMENTS 
 // *************************************************************************************************************
-// Chargement des documents à lier: Bon de Livraison (3) non annulé (!=12), non lié a une facture (4)
+// Chargement des documents Ã  lier: Bon de Livraison (3) non annulÃ© (!=12), non liÃ© a une facture (4)
 public function charger_liaisons_possibles () {
 	global $bdd;
 
@@ -1078,7 +1078,7 @@ public function charger_liaisons_possibles () {
 // *************************************************************************************************************
 
 protected function need_infos_facturation () {
-	// Si la facture est annulée ou acquittée, les informations de facturation ne sont pas nécessaires.
+	// Si la facture est annulÃ©e ou acquittÃ©e, les informations de facturation ne sont pas nÃ©cessaires.
 	if ($this->id_etat_doc == $this->ID_ETAT_ANNULE || $this->id_etat_doc == 19) { return false; }
 	return true;
 }
@@ -1087,7 +1087,7 @@ protected function need_infos_facturation () {
 protected function reglement_inexistant () {
 	if ($this->id_etat_doc == $this->ID_ETAT_ANNULE) { return false; }
 
-	// Une facture devient "à régler" si aucun règlement n'est enregistré, sauf si en saisie
+	// Une facture devient "Ã  rÃ©gler" si aucun rÃ¨glement n'est enregistrÃ©, sauf si en saisie
 	if ($this->id_etat_doc == 16) { return false; }
 	$this->maj_etat_doc(18);
 
@@ -1100,7 +1100,7 @@ protected function reglement_inexistant () {
 protected function reglement_partiel () {
 	if ($this->id_etat_doc == $this->ID_ETAT_ANNULE) { return false; }
 
-	// Une facture devient "à régler" en cas de règlement partiel, sauf si en saisie
+	// Une facture devient "Ã  rÃ©gler" en cas de rÃ¨glement partiel, sauf si en saisie
 	if ($this->id_etat_doc == 16) { return false; }
 	$this->maj_etat_doc(18);
 
@@ -1113,7 +1113,7 @@ protected function reglement_partiel () {
 protected function reglement_total () {
 	if ($this->id_etat_doc == $this->ID_ETAT_ANNULE) { return false; }
 
-	// Une facture devient acquittée en cas de règlement total (sauf si déjà acquittée)
+	// Une facture devient acquittÃ©e en cas de rÃ¨glement total (sauf si dÃ©jÃ  acquittÃ©e)
 	if ($this->id_etat_doc == 19 || abs($this->montant_ttc) == 0) { return false; }
 	$this->maj_etat_doc(19);
 
@@ -1135,7 +1135,7 @@ public function create_avc () {
 	// Chargement du montant disponible pour cet avoir
 	$this->calcul_montant_to_pay ();
 
-	// Création de la "Compensation" et de l'"Avoir Client"
+	// CrÃ©ation de la "Compensation" et de l'"Avoir Client"
 	$infos_comp['ref_contact'] 			= $this->ref_contact;
 	$infos_comp['id_reglement_mode'] = $COMP_S_ID_REGMT_MODE;
 	$infos_comp['date_reglement']	= date ("Y-m-d", time());
@@ -1145,9 +1145,9 @@ public function create_avc () {
 	$comp = new reglement();
 	$comp->create_reglement($infos_comp);
 
-	// Association de la compensation à cette facture
+	// Association de la compensation Ã  cette facture
 	$tmp = $this->rapprocher_reglement ($comp);;
-	// Retour de l'information sur l'avoir généré
+	// Retour de l'information sur l'avoir gÃ©nÃ©rÃ©
 	$ref_avc = $comp->getRef_avc();
 	return $ref_avc;
 }

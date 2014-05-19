@@ -37,10 +37,10 @@ $COURRIER_STANDARD['PIEDS_DROIT'][1]		= $PIED_DE_PAGE_DROIT_1;
 $COURRIER_STANDARD['PIEDS'][0]		= $COURRIER_STANDARD['PIEDS_GAUCHE'][0].'&nbsp;'.$COURRIER_STANDARD['PIEDS_DROIT'][0];
 $COURRIER_STANDARD['PIEDS'][1]		= $COURRIER_STANDARD['PIEDS_GAUCHE'][1].'&nbsp;'.$COURRIER_STANDARD['PIEDS_DROIT'][1];
 
-//variable//type de champ(parametre)//libéllé//commentaire
+//variable//type de champ(parametre)//libÃ©llÃ©//commentaire
 // PARAMETRES MODIFIABLES
-$COURRIER_STANDARD['TEXTE_CORPS_PIEDS'][0]="jour j mois annee";//TXTE()// Format de la date//ligne n°1
-$COURRIER_STANDARD['TEXTE_CORPS_PIEDS'][1]="TEST LIGNE 2";//TXTE()// Texte entre corps et pied de page//ligne n°2
-$COURRIER_STANDARD['TEXTE_CORPS_PIEDS'][2]="";//TXTE()// Texte entre corps et pied de page//ligne n°3
+$COURRIER_STANDARD['TEXTE_CORPS_PIEDS'][0]="jour j mois annee";//TXTE()// Format de la date//ligne nÂ°1
+$COURRIER_STANDARD['TEXTE_CORPS_PIEDS'][1]="TEST LIGNE 2";//TXTE()// Texte entre corps et pied de page//ligne nÂ°2
+$COURRIER_STANDARD['TEXTE_CORPS_PIEDS'][2]="";//TXTE()// Texte entre corps et pied de page//ligne nÂ°3
 // FIN PARAMETRES MODIFIABLES
 ?>

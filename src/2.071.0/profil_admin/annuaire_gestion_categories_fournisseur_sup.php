@@ -14,7 +14,7 @@ include_once ($CONFIG_DIR."profil_fournisseur.config.php");
 // chargement de la class du profil
 contact::load_profil_class($FOURNISSEUR_ID_PROFIL);
 
-//suppression de la catégorie
+//suppression de la catÃ©gorie
 contact_fournisseur::delete_infos_fournisseurs_categories ($_REQUEST["id_fournisseur_categ"]);
 
 // *************************************************************************************************************

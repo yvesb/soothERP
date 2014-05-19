@@ -14,19 +14,19 @@ final class web_link {
 function __construct($id_web_link = 0) {
 	global $bdd;
 
-	// Controle si le id_web_link est précisée
+	// Controle si le id_web_link est prÃ©cisÃ©e
 	if (!$id_web_link) { return false; }
 
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT lib_web_link, url_web_link, desc_web_link, wl.ref_user, ordre 
 						FROM users_web_link wl
 						WHERE id_web_link = '".$id_web_link."' ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si le id_web_link est trouvée
+	// Controle si le id_web_link est trouvÃ©e
 	if (!$web_link = $resultat->fetchObject()) { return false; }
 
-	// Attribution des informations à l'objet
+	// Attribution des informations Ã  l'objet
 	$this->id_web_link 		= $id_web_link;
 	$this->lib_web_link		= $web_link->lib_web_link;
 	$this->url_web_link		= $web_link->url_web_link;
@@ -47,7 +47,7 @@ public function create_web_link ($lib_web_link, $url_web_link, $desc_web_link) {
 	global $bdd;
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->lib_web_link 	= trim($lib_web_link);
 	if (!$this->lib_web_link) {
 		$GLOBALS['_ALERTES']['bad_lib_web_link'] = 1;
@@ -56,7 +56,7 @@ public function create_web_link ($lib_web_link, $url_web_link, $desc_web_link) {
 	$this->desc_web_link	= $desc_web_link;
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -80,8 +80,8 @@ public function create_web_link ($lib_web_link, $url_web_link, $desc_web_link) {
 	$this->ref_user 	 = $_SESSION['user']->getRef_user();
 
 	// *************************************************
-	// Résultat positif de la création
-	$GLOBALS['_INFOS']['Création_web_link'] = $this->id_web_link;
+	// RÃ©sultat positif de la crÃ©ation
+	$GLOBALS['_INFOS']['CrÃ©ation_web_link'] = $this->id_web_link;
 
 	return true;
 }
@@ -95,7 +95,7 @@ public function maj_web_link ($lib_web_link, $url_web_link, $desc_web_link) {
 	global $bdd;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->lib_web_link 	= trim($lib_web_link);
 	if (!$this->lib_web_link) {
 		$GLOBALS['_ALERTES']['bad_lib_web_link'] = 1;
@@ -105,7 +105,7 @@ public function maj_web_link ($lib_web_link, $url_web_link, $desc_web_link) {
 	
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -119,7 +119,7 @@ public function maj_web_link ($lib_web_link, $url_web_link, $desc_web_link) {
 	$bdd->exec ($query);
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
@@ -133,7 +133,7 @@ final public function maj_ordre ($new_ordre) {
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -156,14 +156,14 @@ final public function maj_ordre ($new_ordre) {
 	// MAJ BDD
 	$bdd->beginTransaction();
 	
-	// Mise à jour des autres composants
+	// Mise Ã  jour des autres composants
 	$query = "UPDATE users_web_link
 						SET ordre = ordre ".$variation." 1
 						WHERE ref_user = '".$this->ref_user."' && 
 									ordre ".$symbole1." '".$this->ordre."' && ordre ".$symbole2." '".$new_ordre."' ";
 	$bdd->exec ($query);
 	
-	// Mise à jour de ce composant
+	// Mise Ã  jour de ce composant
 	$query = "UPDATE users_web_link
 						SET ordre = '".$new_ordre."'
 						WHERE id_web_link = '".$this->id_web_link."'  ";
@@ -172,7 +172,7 @@ final public function maj_ordre ($new_ordre) {
 	$bdd->commit();	
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
@@ -184,7 +184,7 @@ public function delete_web_link () {
 	global $bdd;
 
 	// *************************************************
-	// Controle à effectuer le cas échéant
+	// Controle Ã  effectuer le cas Ã©chÃ©ant
 
 	// *************************************************
 	// Suppression de l'tache
@@ -192,7 +192,7 @@ public function delete_web_link () {
 						WHERE id_web_link = '".$this->id_web_link."' ";
 	$bdd->exec ($query);
 
-	// Décalage des ordres
+	// DÃ©calage des ordres
 	$query2 = "UPDATE users_web_link
 						SET ordre = ordre - 1
 						WHERE ref_user = '".$this->ref_user."' && 
@@ -209,7 +209,7 @@ public function delete_web_link () {
 // *************************************************************************************************************
 // FONCTIONS DE CHARGEMENT
 // *************************************************************************************************************
-// Charge la liste des favoris attribuées à l'utilisateur en  cours
+// Charge la liste des favoris attribuÃ©es Ã  l'utilisateur en  cours
 static function charger_web_link () {
 	global $bdd;
 

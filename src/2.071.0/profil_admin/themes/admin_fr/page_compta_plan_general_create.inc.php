@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -19,7 +19,7 @@ check_page_variables ($page_variables);
 ?>
 
 
-<div style="font-weight:bolder; border-bottom:1px solid #000000;">Ajout d'un compte au plan comptable général </div><br />
+<div style="font-weight:bolder; border-bottom:1px solid #000000;">Ajout d'un compte au plan comptable gÃ©nÃ©ral </div><br />
 <br />
 
 <div>
@@ -35,7 +35,7 @@ check_page_variables ($page_variables);
 					<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 				<tr>
-					<td style="text-align:left">Numéro du compte					</td>
+					<td style="text-align:left">NumÃ©ro du compte					</td>
 					<td style="text-align:left"><input name="numero_compte" id="numero_compte" type="text" value=""  class="classinput_xsize"/></td>
 					</tr>
 				<tr>
@@ -43,7 +43,7 @@ check_page_variables ($page_variables);
 					<td style="text-align:left">					</td>
 					</tr>
 				<tr>
-					<td style="text-align:left">Libellé du compte </td>
+					<td style="text-align:left">LibellÃ© du compte </td>
 					<td style="text-align:left">
 					<input name="lib_compte" id="lib_compte" type="text" value=""  class="classinput_xsize"/>					</td>
 					</tr>

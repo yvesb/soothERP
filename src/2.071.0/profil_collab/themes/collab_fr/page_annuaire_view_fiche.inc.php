@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ("contact",  "ANNUAIRE_CATEGORIES", "DEFAUT_ID_PAYS" , "listepays", "coordonnees", "sites_web", "civilites", "profils");
 check_page_variables ($page_variables);
 
@@ -54,7 +54,7 @@ array_menu_v_contact[<?php echo $profil->getId_profil()+5?>] =	new Array( 'x_typ
 <?php include $DIR.$_SESSION['theme']->getDir_theme()."page_annuaire_nouvelle_fiche_caiu_vide.inc.php" ?>
 </div>
 
-<!-- On indique si le contact est archivé -->
+<!-- On indique si le contact est archivÃ© -->
 <?php $date_archivage = $contact->getDate_archivage(); ?>
 <span id="contact_in_arch" style="float:right; font-weight:bolder; color:#FF0000;<?php if ($date_archivage == NULL) {?> display:none;<?php } ?>" >Contact en archive.</span>
 
@@ -84,9 +84,9 @@ array_menu_v_contact[<?php echo $profil->getId_profil()+5?>] =	new Array( 'x_typ
 	Outils
 	</span>
 	<span id="tool_uitem_menu" style="position:absolute; top:18px; left:5px; width:160px; text-align:right; display:none" >
-		<!--- Comptabilité --->
+		<!--- ComptabilitÃ© --->
 		<span id="compta_item_menu" <?php if (!isset($profils[$CLIENT_ID_PROFIL] ) && !isset($profils[$FOURNISSEUR_ID_PROFIL] )){	?>style="display:none"<?php } ?>>
-			<a href="#" id="contactview_menu_c" class="menu_unselect"  style="text-align: left">Comptabilité</a>
+			<a href="#" id="contactview_menu_c" class="menu_unselect"  style="text-align: left">ComptabilitÃ©</a>
 			<script type="text/javascript">
 				Event.observe("contactview_menu_c", "click",  function(evt){
 					Event.stop(evt);
@@ -99,9 +99,9 @@ array_menu_v_contact[<?php echo $profil->getId_profil()+5?>] =	new Array( 'x_typ
 				}, false);
 			</script>
 		</span>
-		<!--- Evénements --->
+		<!--- EvÃ©nements --->
 		<span id="event_item_menu" >
-			<a href="#" id="contactview_menu_d" class="menu_unselect"  style="text-align: left">Evénements</a>
+			<a href="#" id="contactview_menu_d" class="menu_unselect"  style="text-align: left">EvÃ©nements</a>
 			<script type="text/javascript">
 				Event.observe("contactview_menu_d", "click",  function(evt){
 					Event.stop(evt); 
@@ -116,9 +116,9 @@ array_menu_v_contact[<?php echo $profil->getId_profil()+5?>] =	new Array( 'x_typ
 				}, false);
 			</script>
 		</span>
-		<!--- Pièces jointes --->
+		<!--- PiÃ¨ces jointes --->
 		<span id="event_item_menu" >
-			<a href="#" id="menu_9" class="menu_unselect"  style="text-align: left">Pièces jointes</a>
+			<a href="#" id="menu_9" class="menu_unselect"  style="text-align: left">PiÃ¨ces jointes</a>
 			<script type="text/javascript">
 				Event.observe("menu_9", "click",  function(evt){
 					Event.stop(evt); 
@@ -217,14 +217,14 @@ Event.observe("contactview_menu_a", "click",  function(evt){
 			<?php
 			}else{
 				if($i == 3){
-					// On créé le menu supplémentaire
+					// On crÃ©Ã© le menu supplÃ©mentaire
 					?>
 					<div id="tool_item_menu_profils" style="float: left; position:relative; cursor:pointer;">
 						<span class="hymenu_unselect" style="float:right;">Autres profils</span>
 						<span id="tool_uitem_menu_profils" style="position:absolute; top:18px; width:160px; text-align:right; display:none">
 					<?php 
 				}
-				// On peuple le menu supplémentaire
+				// On peuple le menu supplÃ©mentaire
 				?>
 				<span id="compta_item_menu_<?php echo $i; ?>" <?php if (!isset($profils[$CLIENT_ID_PROFIL] ) && !isset($profils[$FOURNISSEUR_ID_PROFIL] )){	?>style="display:none"<?php } ?>>
 					<a href="#" id="typeprofil_menu_<?php echo $profil->getId_profil();?>" style="text-align: left;"
@@ -297,7 +297,7 @@ Event.observe("contactview_menu_a", "click",  function(evt){
 	</script>
 			
 			</td>
-			<td><span class="labelled" id="line_siret3"  style="margin-left:50px; display:none;" title="Numéro de Siret">Siret:</span></td>
+			<td><span class="labelled" id="line_siret3"  style="margin-left:50px; display:none;" title="NumÃ©ro de Siret">Siret:</span></td>
 			<td><a href="#" id="line_siret4" class="modif_textarea3" style="display:none"><?php echo $contact->getSiret ();?></a>
 	<script type="text/javascript">
 	Event.observe("line_siret4", "click",  function(evt){Event.stop(evt); show_edit_form('nom_mask', 'nom_lib','siret');}, false);
@@ -332,7 +332,7 @@ Event.observe("contactview_menu_a", "click",  function(evt){
 			<td><span class="labelled" style="width:85px">Nom:</span></td>
 			<td><textarea id="nom" name="nom"  rows="<?php if (stristr($_SERVER["HTTP_USER_AGENT"], "firefox")) { echo "1"; } else { echo "2"; } ?>" class="classinput_xsize"><?php echo $contact->getNom()?></textarea></td>
 			
-			<td><span class="labelled" id="line_siret"  style="margin-left:50px; display:none;" title="Numéro de Siret">Siret:</span></td>
+			<td><span class="labelled" id="line_siret"  style="margin-left:50px; display:none;" title="NumÃ©ro de Siret">Siret:</span></td>
 			<td><span id="line_siret2" style="display:none;">
 						<input type="text" id="siret" name="siret" rows="2" value="<?php echo $contact->getSiret ();?>"  class="classinput_xsize"/></span>
 			</td>
@@ -775,7 +775,7 @@ $ref_contact = $coordonnee->getRef_contact();
 $ref_coord = $coordonnee->getRef_coord();
 if($coordonnee->getEmail()){
 ?>
-	<a href="#" class="ajout" id="envoi_mail" name="envoi_mail">Inviter ce contact à créer un compte utilisateur</a>
+	<a href="#" class="ajout" id="envoi_mail" name="envoi_mail">Inviter ce contact Ã  crÃ©er un compte utilisateur</a>
 <script type="text/javascript">
 Event.observe('envoi_mail', 'click',  function(evt){
 	Event.stop(evt);
@@ -833,7 +833,7 @@ ini_set("memory_limit", "50M");
 		<?php
 		//permission (7) (8) Gestion des collaborateurs administrateurs
 		if ((!$_SESSION['user']->check_permission ("7") && $id_profil == $COLLAB_ID_PROFIL) || (!$_SESSION['user']->check_permission ("8") && $id_profil == $ADMIN_ID_PROFIL)) { 
-			echo "Vos droits d'accès ne vous permettent pas de visionner les informations de ce profil.";
+			echo "Vos droits d'accÃ¨s ne vous permettent pas de visionner les informations de ce profil.";
 		} else {
 			include $DIR.$_SESSION['theme']->getDir_theme()."page_annuaire_view_fiche_profil".$id_profil.".inc.php";
 		}
@@ -872,7 +872,7 @@ ini_set("memory_limit", "50M");
 <table >
 	<tr id="line_tva_intra" style="display:none">
 		<td>
-			<span class="labelled_ralonger" title="Numéro de TVA intracommunautaire">TVA intra.:</span>
+			<span class="labelled_ralonger" title="NumÃ©ro de TVA intracommunautaire">TVA intra.:</span>
 		</td>
 		<td>
 		<input type="text" id="tva_intra" name="tva_intra" value="<?php echo $contact->getTva_intra();?>"  class="classinput_xsize"/>
@@ -906,15 +906,15 @@ if(isset($profils[$FOURNISSEUR_ID_PROFIL] )){
 			<td>
 			</td>
 			<td style="text-align:center">
-				<span class="labelled_ralonger" title="">Numéro de compte:</span>
+				<span class="labelled_ralonger" title="">NumÃ©ro de compte:</span>
 			</td>
 			<td style="text-align:center">
-				<span class="labelled_ralonger" >Libellé:</span>
+				<span class="labelled_ralonger" >LibellÃ©:</span>
 			</td>
 		</tr>
 		<tr id="line_compte_comptable" style="">
 			<td>
-				<span class="labelled_ralonger" title="">Informations par défaut pour les factures de ce fournisseur :</span>
+				<span class="labelled_ralonger" title="">Informations par dÃ©faut pour les factures de ce fournisseurÂ :</span>
 			</td>
 			<td style="text-align:center">
 			<span style=" text-decoration:underline; cursor:pointer" id="numero_compte_compta_fournisseur">
@@ -948,15 +948,15 @@ if(isset($profils[$CLIENT_ID_PROFIL] )){
 			<td>
 			</td>
 			<td style="text-align:center">
-				<span class="labelled_ralonger" title="">Numéro de compte:</span>
+				<span class="labelled_ralonger" title="">NumÃ©ro de compte:</span>
 			</td>
 			<td style="text-align:center">
-				<span class="labelled_ralonger" >Libellé:</span>
+				<span class="labelled_ralonger" >LibellÃ©:</span>
 			</td>
 		</tr>
 		<tr id="line_compte_comptable" style="">
 			<td>
-				<span class="labelled_ralonger" title="">Informations par défaut pour les factures de ce client :</span>
+				<span class="labelled_ralonger" title="">Informations par dÃ©faut pour les factures de ce clientÂ :</span>
 			</td>
 			<td style="text-align:center">
 			<span style=" text-decoration:underline; cursor:pointer" id="numero_compte_compta_client">
@@ -982,7 +982,7 @@ if(isset($profils[$CLIENT_ID_PROFIL] )){
 	<?php
 }
 ?>
-<a href="#" id="view_compte_bancaire_contact" class="compta_text_2">Gérer les comptes bancaires</a><br />
+<a href="#" id="view_compte_bancaire_contact" class="compta_text_2">GÃ©rer les comptes bancaires</a><br />
 <script type="text/javascript">
 // <![CDATA[
 	Event.observe("view_compte_bancaire_contact", "click", function(evt){
@@ -993,7 +993,7 @@ if(isset($profils[$CLIENT_ID_PROFIL] )){
 </script>
 
 <?php if($COMPTA_GEST_PRELEVEMENTS): ?>
-<a href="#" id="view_prelevements_contact" class="compta_text_2">Gérer les autorisations de traites et prélèvements</a><br />
+<a href="#" id="view_prelevements_contact" class="compta_text_2">GÃ©rer les autorisations de traites et prÃ©lÃ¨vements</a><br />
 <script type="text/javascript">
 // <![CDATA[
 	Event.observe("view_prelevements_contact", "click", function(evt){
@@ -1016,7 +1016,7 @@ if(isset($profils[$CLIENT_ID_PROFIL] )){
 // ]]>
 </script>
 
-<a href="#" id="view_synthese_creances" class="compta_text_2">Synthèse des créances client</a><br />
+<a href="#" id="view_synthese_creances" class="compta_text_2">SynthÃ¨se des crÃ©ances client</a><br />
 <script type="text/javascript">
 // <![CDATA[
 	Event.observe("view_synthese_creances", "click", function(evt){
@@ -1029,7 +1029,7 @@ if(isset($profils[$CLIENT_ID_PROFIL] )){
 
 <a href="#" id="add_reglement_entrant" class="compta_text_2">Enregistrer un encaissement.</a><br />
 
-<a href="#" id="add_reglement_sortant" class="compta_text_2">Enregistrer un décaissement.</a><br />
+<a href="#" id="add_reglement_sortant" class="compta_text_2">Enregistrer un dÃ©caissement.</a><br />
 
 <script type="text/javascript">
 // <![CDATA[

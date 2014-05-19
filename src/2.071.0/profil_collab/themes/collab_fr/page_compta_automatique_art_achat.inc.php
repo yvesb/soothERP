@@ -4,7 +4,7 @@
 // RECHERCHE D'UN ARTICLE
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -32,7 +32,7 @@ array_menu_r_article[1] 	=	new Array('recherche_avancee', 'menu_2');
 <?php include $DIR.$_SESSION['theme']->getDir_theme()."page_compta_plan_recherche_mini.inc.php" ?>
 <div class="emarge">
 <div style=" float:right; text-align:right">
-<span id="retour_compta_auto" style="cursor:pointer; text-decoration:underline">Retour à la comptabilité automatique</span>
+<span id="retour_compta_auto" style="cursor:pointer; text-decoration:underline">Retour Ã  la comptabilitÃ© automatique</span>
 <script type="text/javascript">
 Event.observe('retour_compta_auto', 'click',  function(evt){
 Event.stop(evt); 
@@ -40,7 +40,7 @@ page.verify('compta_automatique','compta_automatique.php','true','sub_content');
 }, false);
 </script>
 </div>
-<p class="titre">Numéros de compte associés aux articles (HT Achat)</p>
+<p class="titre">NumÃ©ros de compte associÃ©s aux articles (HT Achat)</p>
 <ul id="menu_recherche" class="menu">
 <li><a href="#" id="menu_1" class="menu_select">Recherche</a></li>
 <li><a href="#" id="menu_2" class="menu_unselect">Recherche avanc&eacute;e</a></li>
@@ -268,7 +268,7 @@ Event.observe("create_new_article_a", "click",  function(evt){
 	page.verify('catalogue_articles','catalogue_articles.php','true','sub_content');
 }, false);
 
-//remise à zero du formulaire
+//remise Ã  zero du formulaire
 Event.observe('annuler_recherche_s', "click", function(evt){Event.stop(evt); reset_moteur_s ('form_recherche_s', 'ref_art_categ_s');	});
 Event.observe('annuler_recherche', "click", function(evt){Event.stop(evt); reset_moteur_a ('form_recherche_a', 'ref_art_categ');	});
 
@@ -298,7 +298,7 @@ Event.observe('ref_art_categ', "change", function(evt){
 	charger_carac_simple($("ref_art_categ").options[$("ref_art_categ").selectedIndex].value, "caract_simple");
 });
 
-//blocage du retour chariot automatique à la saisie du code barre
+//blocage du retour chariot automatique Ã  la saisie du code barre
 function stopifcode_barre (event) {
 
 	var key = event.which || event.keyCode; 

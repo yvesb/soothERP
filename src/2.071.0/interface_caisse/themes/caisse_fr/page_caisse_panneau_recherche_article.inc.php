@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("art_categs_racine", "art_categs_racine_selected", "NoHeader_caisse_panneau_recherche_article", "NoHeader_caisse_panneau_recherche_articles_result");
 check_page_variables ($page_variables);
 
@@ -115,7 +115,7 @@ check_page_variables ($page_variables);
 				<td style="background-color:#7e7e96; width:2px;"></td>
 				<td style="max-width: 867px;;padding-left:4px; padding-right:8px; padding-top:10px;" id="resultat_article">
 					<?php if($NoHeader_caisse_panneau_recherche_articles_result){
-						//Variables à définir dans caisse_panneau_recherche_articles_result.php
+						//Variables Ã  dÃ©finir dans caisse_panneau_recherche_articles_result.php
 						$art_page_to_show_s = 1;
 						$art_lib_s = "";
 						if(count($art_categs_racine)>0)

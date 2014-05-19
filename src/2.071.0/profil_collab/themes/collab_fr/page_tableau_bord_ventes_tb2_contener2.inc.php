@@ -3,7 +3,7 @@
 // AFFICHAGE DU TABLEAU DE BORD DES VENTES
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -26,16 +26,16 @@ check_page_variables ($page_variables);
 			<div class="titre_ter_stat" style="height: 28px;line-height: 28px;" >Chiffre d'affaire: <?php echo $CA_global." ".$MONNAIE[1];?>
 			</div>
 			</div><br />
-			<span style="cursor:pointer; font-weight:bolder" id="tb2_2_more_1"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_case_plus.gif" style="vertical-align: text-bottom"  />	Détail par magasin</span><br /><br />
+			<span style="cursor:pointer; font-weight:bolder" id="tb2_2_more_1"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_case_plus.gif" style="vertical-align: text-bottom"  />	DÃ©tail par magasin</span><br /><br />
 
 
-			<span style="cursor:pointer; font-weight:bolder" id="tb2_2_more_2"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_case_plus.gif" style="vertical-align:text-bottom"  />	Détail par catégorie de client</span><br /><br />
+			<span style="cursor:pointer; font-weight:bolder" id="tb2_2_more_2"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_case_plus.gif" style="vertical-align:text-bottom"  />	DÃ©tail par catÃ©gorie de client</span><br /><br />
 
 
-			<span style="cursor:pointer; font-weight:bolder" id="tb2_2_more_3"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_case_plus.gif" style="vertical-align:text-bottom"  />	Détail par catégorie de commercial</span><br /><br />
+			<span style="cursor:pointer; font-weight:bolder" id="tb2_2_more_3"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_case_plus.gif" style="vertical-align:text-bottom"  />	DÃ©tail par catÃ©gorie de commercial</span><br /><br />
 
 
-			<span style="cursor:pointer; font-weight:bolder" id="tb2_2_more_4"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_case_plus.gif" style="vertical-align:text-bottom"  />	Détail par catégorie d'article</span>
+			<span style="cursor:pointer; font-weight:bolder" id="tb2_2_more_4"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_case_plus.gif" style="vertical-align:text-bottom"  />	DÃ©tail par catÃ©gorie d'article</span>
 		</td>
 		<td style="text-align:center; padding-bottom:10px; padding-top:10px;">
 		<div style="float:right; border:1px solid #999999; text-align:left; padding:5px;">

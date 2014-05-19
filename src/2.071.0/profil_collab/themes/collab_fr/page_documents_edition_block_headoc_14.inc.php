@@ -4,7 +4,7 @@
 // ENTETE MODELE DE CONTENU
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -47,7 +47,7 @@ check_page_variables ($page_variables);
       <tr style=" line-height:20px; height:20px;" class="document_head_list">
         <td  style=" padding-left:3px;" class="doc_bold" >
         <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/doc_extend.gif" border="0" id="extend_click" style="float:right; cursor:pointer" title="Agrandir">
-          Modification d'un modèle de contenu
+          Modification d'un modÃ¨le de contenu
 
           
         </td>
@@ -67,7 +67,7 @@ check_page_variables ($page_variables);
         Event.observe("extend_click", "click", function(evt){Event.stop(evt);
           if ($("extend_liste").style.height == "135px") {
           $("extend_click").src = "<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/doc_reduire.gif";
-          $("extend_click").title = "Réduire";
+          $("extend_click").title = "RÃ©duire";
           $("extend_liste").style.width = "550px";
           $("extend_liste").style.height = "450px";
           } else {

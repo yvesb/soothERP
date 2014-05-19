@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 echo "1";
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
@@ -23,7 +23,7 @@ echo "2";
 
 ?>
 <p>&nbsp;</p>
-<p>Résultat des commerciaux type MOD</p>
+<p>RÃ©sultat des commerciaux type MOD</p>
 <p>&nbsp;</p>
 <?php 
 foreach ($_ALERTES as $alerte => $value) {

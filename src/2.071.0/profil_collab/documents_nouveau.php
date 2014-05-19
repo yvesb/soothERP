@@ -8,10 +8,10 @@ require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
-//permission (6) Accès Consulter les prix d’achat
+//permission (6) AccÃ¨s Consulter les prix dâ€™achat
 if (!$_SESSION['user']->check_permission ("6") && isset($_REQUEST['id_type_doc']) && $_REQUEST['id_type_doc'] == $FACTURE_FOURNISSEUR_ID_TYPE_DOC) {
 	//on indique l'interdiction et on stop le script
-	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accés ne vous permettent pas de visualiser ce type de document</span>";
+	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accÃ©s ne vous permettent pas de visualiser ce type de document</span>";
 	exit();
 }
 		
@@ -21,7 +21,7 @@ if (isset($_REQUEST['id_type_doc']) && $_REQUEST['id_type_doc'] != "") {
 	$id_type_doc = $_REQUEST['id_type_doc'];
 	$id_type_groupe = document::Id_type_groupe($id_type_doc);
 			if ( !($id_type_groupe == 1 && $_SESSION['user']->check_permission ("26",$id_type_doc)) && !($id_type_groupe == 2 && $_SESSION['user']->check_permission ("29",$id_type_doc)) && !($id_type_groupe == 3 && $_SESSION['user']->check_permission ("32",$id_type_doc)) ) {
-	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accés ne vous permettent pas de créer ce type de document</span>";
+	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accÃ©s ne vous permettent pas de crÃ©er ce type de document</span>";
 	exit();
 	}
 	if (isset($_REQUEST['ref_contact'])) {$GLOBALS['_OPTIONS']['CREATE_DOC']['ref_contact'] =  $_REQUEST['ref_contact'];}
@@ -35,7 +35,7 @@ if (isset($_REQUEST['id_type_doc']) && $_REQUEST['id_type_doc'] != "") {
 			}
 			$document->define_ref_article($_REQUEST["ref_article"], $_REQUEST["qte"]);
 		}
-		//si un montant est négatif
+		//si un montant est nÃ©gatif
 		$montant_negatif = false;
 		$montant_positif = 1;
 		if (isset($_REQUEST["montant_neg"])) { $montant_negatif = true; $montant_positif = -1;}

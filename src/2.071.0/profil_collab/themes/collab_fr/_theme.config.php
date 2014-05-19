@@ -1,8 +1,8 @@
 <?php
-// Fichier de configuration et reconfiguration des variables de niveau inférieur sur le thème
+// Fichier de configuration et reconfiguration des variables de niveau infÃ©rieur sur le thÃ¨me
 
 
-$BDD_MODELES				= array('materiel' => 'Matériel' ,'service' => 'Service' ,'service_abo' => 'Service par abonnement','service_conso' => 'Service prepayés') ;
+$BDD_MODELES				= array('materiel' => 'MatÃ©riel' ,'service' => 'Service' ,'service_abo' => 'Service par abonnement','service_conso' => 'Service prepayÃ©s') ;
 
 $FACTURES_PAR_MOIS	=	array(0 => 'Facture imm&eacute;diate' ,'1' => 'Quotidienne' ,'2' => 'Hebdomadaire' ,'3' => 'Bimensuelle' ,'4' => 'Mensuelle' ,'5' => 'Trimestrielle') ;
 ?>

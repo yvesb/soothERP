@@ -4,7 +4,7 @@
 // SUPPRESSION D'UN CATALOGUE CLIENT
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -45,7 +45,7 @@ foreach ($_ALERTES as $alerte => $value) {
 ?>
 if (erreur) {
  if (used_catalogue_client) {
-	texte_erreur += "Ce catalogue est utilisé par un magasin, veuillez modifier ce choix dans le menu Point de vente.<br/>";
+	texte_erreur += "Ce catalogue est utilisÃ© par un magasin, veuillez modifier ce choix dans le menu Point de vente.<br/>";
  }
 	window.parent.alerte.alerte_erreur ('Suppression impossible', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 

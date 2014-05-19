@@ -20,7 +20,7 @@ $_REQUEST['recherche'] = 1;
 // Moteur de recherche pour les devis en cours
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -107,31 +107,31 @@ if ($_REQUEST['devperim']) {
 
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_join 	= "";
 	$query_where 	= "1 ";
 	$query_limit	= (($search['page_to_show']-1)*$search['fiches_par_page']).", ".$search['fiches_par_page'];
 	}
 
-	// bouton radio : toutes les devis en cours (a réaliser et attente réponse client)
+	// bouton radio : toutes les devis en cours (a rÃ©aliser et attente rÃ©ponse client)
 	if ($search['devcours']) {
 		$query_where 	.= " && (d.id_etat_doc = 1 OR d.id_etat_doc = 3)";
 	}
 	
-	// bouton radio : uniquement les devis récents
+	// bouton radio : uniquement les devis rÃ©cents
 	if ($search['devrec']) {
 		$query_where .= " && TO_DAYS(NOW()) - TO_DAYS(d.date_creation_doc) <= '".$DELAI_DEVIS_CLIENT_RECENT."' ";
 	}
 	
-	// bouton radio : uniquement les devis périmés      
+	// bouton radio : uniquement les devis pÃ©rimÃ©s      
 	if ($search['devperim']) {
 		$query_where .= " && (TO_DAYS(NOW()) - TO_DAYS(d.date_creation_doc) >= '".$DELAI_DEVIS_CLIENT_RETARD."' )";
 	}
 	
-	// bouton radio : uniquement les devis à rédiger
+	// bouton radio : uniquement les devis Ã  rÃ©diger
 	if ($search['devaredig']) {
 	
 	$query_where .= " && d.id_etat_doc = 1";
@@ -155,13 +155,13 @@ if (isset($_REQUEST['recherche'])) {
 	if ($search['ref_client']) {
 		$query_where 	.= " && d.ref_contact = '".$search['ref_client']."'";
 	}
-	// liste déroulante : par magasin
+	// liste dÃ©roulante : par magasin
 	if ($search['id_name_mag']) {
 		$query_where 	.= " && dd.id_magasin = '".$search['id_name_mag']."'";
 	
 	}
 	
-	// liste déroulante : par catégorie d'article
+	// liste dÃ©roulante : par catÃ©gorie d'article
 
 	if ($search['id_name_categ_art']) {
 		$liste_categories = "";
@@ -187,12 +187,12 @@ if (isset($_REQUEST['recherche'])) {
 												FROM articles_ref_fournisseur 
 												WHERE ref_fournisseur = '".$search['ref_fournisseur']."'))";
 	}
-	// champ caché, ne retient que les devis
+	// champ cachÃ©, ne retient que les devis
 	if ($search['id_type_doc']) { 
 		$query_where 	.= " && ((d.id_etat_doc = 1 OR d.id_etat_doc = 3) && (d.id_type_doc = '".$search['id_type_doc']."') )";
 	}
 	
-	// Recherche : sélection des devis
+	// Recherche : sÃ©lection des devis
 	$query = "SELECT d.ref_doc, d.id_type_doc, dt.lib_type_doc, d.id_etat_doc, de.lib_etat_doc, d.ref_contact, d.nom_contact,
 
 										( SELECT SUM(qte * pu_ht * (1-remise/100) * (1+tva/100))
@@ -222,7 +222,7 @@ if (isset($_REQUEST['recherche'])) {
 	//echo nl2br ($query);
 	unset ($fiche, $resultat, $query);
 	
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 	$query = "SELECT d.ref_doc 
 						FROM documents d 
 					LEFT JOIN doc_dev dd ON d.ref_doc = dd.ref_doc
@@ -235,7 +235,7 @@ if (isset($_REQUEST['recherche'])) {
 	//echo "<br><hr>".nl2br ($query);
 	unset ($result, $resultat, $query);
 
-	// sélection des articles
+	// sÃ©lection des articles
 	foreach ($fiches as $fiche) {
 	$query = "SELECT dl.ref_doc_line, dl.ref_doc, dl.ref_article, dl.lib_article, dl.desc_article, dl.qte, dl.pu_ht,
 						a.modele, (dl.pu_ht * (1+tva/100)) as pu_ttc,

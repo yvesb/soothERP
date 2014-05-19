@@ -1,5 +1,5 @@
 <?php
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -41,7 +41,7 @@ $onglet_select = false;
 </script>
 <div class="emarge" style="margin-top: 30px">
     <div class="articletview_corps" id="grand_livre_conteneur" >
-        <div class="titre" style="margin-top: 10px; margin-left: 10px;" >Factures à relancer</div>
+        <div class="titre" style="margin-top: 10px; margin-left: 10px;" >Factures Ã  relancer</div>
         
         <ul id="menu_recherche_niv" class="menu">
         <?php
@@ -91,11 +91,11 @@ $onglet_select = false;
             <tr>
                 <td></td>
                 <td><strong>Client</strong></td>
-                <td style="text-align: center"><strong>Création</strong></td>
-                <td style="text-align: center"><strong>Référence</strong></td>
+                <td style="text-align: center"><strong>CrÃ©ation</strong></td>
+                <td style="text-align: center"><strong>RÃ©fÃ©rence</strong></td>
                 <td style="text-align: right;padding-right: 6px;"><strong>Montant</strong></td>
                 <td></td>
-                <td style="text-align: center"><strong>Echéance</strong></td>
+                <td style="text-align: center"><strong>EchÃ©ance</strong></td>
                 <td></td>
                 <td><strong>Mode d'envoi</strong></td>
                 <td></td>

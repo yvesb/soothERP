@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
 if (isset($erreur)) {
 	?>
 	<script type="text/javascript">
-	alerte.alerte_erreur ('Email déjà existant', 'Cet adresse Email est déjà présente dans la liste.','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+	alerte.alerte_erreur ('Email dÃ©jÃ  existant', 'Cet adresse Email est dÃ©jÃ  prÃ©sente dans la liste.','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 	</script>
 <?php } else {?>
 	<li id="<?php if ($_REQUEST["inscrit"]) {?>envoyer<?php } else {?>refuser<?php } ?>_a_<?php echo $serialisation_envoyer_a?>">

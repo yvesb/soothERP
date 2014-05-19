@@ -14,7 +14,7 @@ if (isset($_REQUEST["id_reglement_mode"])) {
 	$infos = array();
 	
 	$reglement_old = new reglement ($_REQUEST["ref_reglement"]);
-	//supression du règlement
+	//supression du rÃ¨glement
 	$reglement_old->delete_reglement ();  
 	
 	$infos ["id_reglement_mode"]					=	 $_REQUEST["id_reglement_mode"];

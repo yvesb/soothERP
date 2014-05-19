@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
 
 ?>
 <p>&nbsp;</p>
-<p>ajout d'un type d'événement </p>
+<p>ajout d'un type d'Ã©vÃ©nement </p>
 <p>&nbsp; </p>
 <?php 
 foreach ($_ALERTES as $alerte => $value) {
@@ -50,7 +50,7 @@ if (erreur) {
 
 	if (lib_comm_event_type_vide) {
 		window.parent.document.getElementById("lib_comm_event_type").className="alerteform_lsize";
-		texte_erreur += "Vous devez indiquer un libellé au type d'événement.<br/>";
+		texte_erreur += "Vous devez indiquer un libellÃ© au type d'Ã©vÃ©nement.<br/>";
 	} else {
 		window.parent.document.getElementById("lib_comm_event_type_vide").className="classinput_lsize";
 	}

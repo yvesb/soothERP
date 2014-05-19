@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES", "fiches");
 check_page_variables ($page_variables);
 
@@ -19,7 +19,7 @@ $total_qte_A_livre = 0;
 
 <div class="emarge">
 
-	<p class="titre">Récapitulatif des Bon de Livraison Client « Prêt au départ » pour : <?php echo $article->getLib_article(); ?></p>
+	<p class="titre">RÃ©capitulatif des Bon de Livraison Client Â« PrÃªt au dÃ©part Â» pour : <?php echo $article->getLib_article(); ?></p>
 
 	
 	<div class="mt_size_optimise">
@@ -42,13 +42,13 @@ $total_qte_A_livre = 0;
 					Date
 				</td>
 				<td width="15%">
-					Référence document
+					RÃ©fÃ©rence document
 				</td>
 				<td>
 					Client
 				</td>
 				<td width="15%" style="text-align: right;">
-					Quantité à livrer
+					QuantitÃ© Ã  livrer
 				</td>
 				<td width="1%">&nbsp;</td>
 			</tr>
@@ -78,7 +78,7 @@ $total_qte_A_livre = 0;
 				<td>
 					<?php	if ($fiche->nom_contact) {?>
 					<a href="#" id="link_to_contact_name_<?php echo $colorise; ?>" style="display:block; width:100%">
-						<?php	echo (substr(str_replace("€", "&euro;", $fiche->nom_contact), 0, 38)); ?>&nbsp;
+						<?php	echo (substr(str_replace("â‚¬", "&euro;", $fiche->nom_contact), 0, 38)); ?>&nbsp;
 					</a>
 					<script type="text/javascript">
 					Event.observe("link_to_contact_name_<?php echo $colorise; ?>", "click",  function(evt){

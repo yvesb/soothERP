@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -78,12 +78,12 @@ function sendMail($mFrom,$mTo,$sujet,$body) {
 													?> 
 													<br />
 													<br />
-													<?php // Controle du numéro de téléphone de l'entreprise
+													<?php // Controle du numÃ©ro de tÃ©lÃ©phone de l'entreprise
 														if ($coordonnees_entreprise[0]->getTel1())
-														{		echo " Tél : ", $coordonnees_entreprise[0]->getTel1();}
+														{		echo " TÃ©l : ", $coordonnees_entreprise[0]->getTel1();}
 													?>
 													<br />
-													<?php // Controle du numéro de fax de l'entreprise
+													<?php // Controle du numÃ©ro de fax de l'entreprise
 														if ($coordonnees_entreprise[0]->getFax())
 														{		echo " Fax : ", $coordonnees_entreprise[0]->getFax();}
 													?>
@@ -129,7 +129,7 @@ function sendMail($mFrom,$mTo,$sujet,$body) {
 																					<table width="100%" border="0" cellspacing="3" cellpadding="0" style="font-size:20px;">
 																						<tr>
 																							<td class="lib_contact"></td>
-																							<?php // On recherche la première adresse mail dans l'adresse du contact
+																							<?php // On recherche la premiÃ¨re adresse mail dans l'adresse du contact
 																							$i = 0;
 																							while (!$coordonnees_entreprise[$i]->getEmail())
 																							{		$i++;}																			
@@ -158,7 +158,7 @@ function sendMail($mFrom,$mTo,$sujet,$body) {
 																					</tr>
 																					<tr>
 																						<td class="lib_contact">
-																							<div class="lib_contact">Téléphone:</div>
+																							<div class="lib_contact">TÃ©lÃ©phone:</div>
 																						</td>
 																						<td>
 																							<input type=text name="tel"  class="inp_contact" />
@@ -185,16 +185,16 @@ function sendMail($mFrom,$mTo,$sujet,$body) {
 																						</tr>
 																					</table>
 																					<?php // SI LE FORM A ETE POSTE
-																					if(isset($_POST["Email"])) { // Récupère les éléments du form
+																					if(isset($_POST["Email"])) { // RÃ©cupÃ¨re les Ã©lÃ©ments du form
 																						 $temp="";
 																						 while (list($truc, $val) = each($_POST))
 																						 {		$temp .= $truc." : ".$val."\n\n";}
-																						 // Caractères spéciaux
+																						 // CaractÃ¨res spÃ©ciaux
 																						 $temp = stripslashes($temp);
 																						 // Envoie le message
-																						 // L'émetteur est aussi le récepteur dans cet exemple !
+																						 // L'Ã©metteur est aussi le rÃ©cepteur dans cet exemple !
 																						 if(@sendmail($_POST["Email"], $coordonnees_entreprise[1]->getEmail(), "Contact depuis le site Infolys.com",$temp)) // Affiche un message de confirmation
-																						 {		echo "<br /><font color=red>Le message a bien été envoyé !</font>";}
+																						 {		echo "<br /><font color=red>Le message a bien Ã©tÃ© envoyÃ© !</font>";}
 																						 else // ou un message d'erreur
 																						 {		echo "<br /><font color=red>Impossible d'envoyer le message !</font>";}
 																					}?>

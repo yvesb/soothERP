@@ -8,7 +8,7 @@ require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ("_session.inc.php");
 
-// Liste des profils autorisés
+// Liste des profils autorisÃ©s
 $profils_allowed = $_SESSION['user']->getProfils_allowed();
 
 //@TODO profil_collab => interface_caisse ?

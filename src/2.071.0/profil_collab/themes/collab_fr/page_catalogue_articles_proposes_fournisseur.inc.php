@@ -4,7 +4,7 @@
 // RECHERCHE D'UN ARTICLE
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -24,14 +24,14 @@ foreach ($_ALERTES as $alerte => $value) {
 
 <?php include $DIR.$_SESSION['theme']->getDir_theme()."page_annuaire_recherche_mini.inc.php" ?>
 
-<!-- En prévsion d'un onglet recherche avancée -->
+<!-- En prÃ©vsion d'un onglet recherche avancÃ©e -->
 <script type="text/javascript" language="javascript">
 	array_menu_r_article	=	new Array();
 	array_menu_r_article[0] 	=	new Array('recherche_simple', 'menu_1');
 </script>
 
 <div class="emarge">
-	<p class="titre">Articles disponibles auprès d'un fournisseur</p>
+	<p class="titre">Articles disponibles auprÃ¨s d'un fournisseur</p>
 	
 	<div>
 		<ul id="menu_recherche" class="menu">
@@ -149,7 +149,7 @@ page.traitecontent("cat_art_by_fournisseur_result","catalogue_articles_proposes_
 <script type="text/javascript">
 Event.observe("menu_1", "click",  function(evt){Event.stop(evt); view_menu_1('recherche_simple', 'menu_1', array_menu_r_article);}, false);
 
-//remise à zero du formulaire
+//remise Ã  zero du formulaire
 Event.observe('annuler_recherche_s', "click", function(evt){
 	Event.stop(evt);
 	reset_moteur_s ('form_recherche_s', 'ref_art_categ_s');

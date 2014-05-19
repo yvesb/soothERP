@@ -17,7 +17,7 @@ if (isset($_REQUEST['ref_art_categ'])) {
 	
 	$tvas = get_tvas($_REQUEST['tva_id_pays']);
 	
-// supprimer toutes les tva ayant le même pays
+// supprimer toutes les tva ayant le mÃªme pays
 		foreach ($tvas  as $tva){
 				
 		$resu	=	$art_categ->supprimer_tva ($tva['id_tva']);

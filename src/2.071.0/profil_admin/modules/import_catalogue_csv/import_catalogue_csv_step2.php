@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// IMPORT FICHIER catalogue CSV ETAPE 2 (après correspondance des colonnes et des valeurs du fichier)
+// IMPORT FICHIER catalogue CSV ETAPE 2 (aprÃ¨s correspondance des colonnes et des valeurs du fichier)
 // *************************************************************************************************************
 
 
@@ -16,7 +16,7 @@ $import_catalogue = new import_catalogue_csv();
 $dao_csv_import_catalogue_ligne = new import_catalogue_csv_ligne();
 $lignes = $dao_csv_import_catalogue_ligne->readAll();
 if (!count($lignes)) {
-	//import terminé ou aucun enregistrement à traiter
+	//import terminÃ© ou aucun enregistrement Ã  traiter
 	$import_catalogue->maj_etape(3);
 	header ("Location: ".$DIR."profil_".$_SESSION['profils'][$ID_PROFIL]->getCode_profil()."/modules/".$import_catalogue_csv['folder_name']."import_catalogue_csv_step3.php");
 	exit();

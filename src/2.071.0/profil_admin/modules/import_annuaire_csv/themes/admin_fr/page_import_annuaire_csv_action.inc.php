@@ -3,7 +3,7 @@
 // IMPORT FICHIER ANNUAIRE CSV
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -46,14 +46,14 @@ else
 		switch ($_REQUEST["fonction_generer"]) {
 			case "supprimer":
 				?>
-				window.parent.alerte.alerte_erreur ('Suppression éffectuée', "<?php echo count($liste_rec); ?> enregistrements supprimés",'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+				window.parent.alerte.alerte_erreur ('Suppression Ã©ffectuÃ©e', "<?php echo count($liste_rec); ?> enregistrements supprimÃ©s",'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 				
 				window.parent.page.verify('import_annuaire_csv_step2','modules/import_annuaire_csv/import_annuaire_csv_step2.php','true','sub_content');
 				<?php
 			break;
 			case "import":
 				?>
-				window.parent.alerte.alerte_erreur ('Import éffectué', "<?php echo $GLOBALS['_INFOS']['count_import']."/".count($liste_rec); ?> enregistrements importés",'<input type="submit" id="bouton0" name="bouton0" value="Ok" />', function () {window.parent.page.verify('retour_import','modules/import_annuaire_csv/retour_import.php','true','formFrame');});
+				window.parent.alerte.alerte_erreur ('Import Ã©ffectuÃ©', "<?php echo $GLOBALS['_INFOS']['count_import']."/".count($liste_rec); ?> enregistrements importÃ©s",'<input type="submit" id="bouton0" name="bouton0" value="Ok" />', function () {window.parent.page.verify('retour_import','modules/import_annuaire_csv/retour_import.php','true','formFrame');});
                                 window.parent.page.verify('import_annuaire_csv_step2','modules/import_annuaire_csv/import_annuaire_csv_step2.php','true','sub_content');
 				<?php
 			break;

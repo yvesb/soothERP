@@ -4,7 +4,7 @@
 // RECHERCHE D'UNE COMMANDE EN COURS
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -43,7 +43,7 @@ array_menu_r_article[0] 	=	new Array('recherche_cmde', 'menu_1');
 		</tr>
 		<tr>
 			<td style="width:2%">&nbsp;</td>
-			<td style="width:15%; font-style : italic ; font-weight:bold">Critères d'affichage</td>
+			<td style="width:15%; font-style : italic ; font-weight:bold">CritÃ¨res d'affichage</td>
 			<td style="width:30%"></td>
 			<td style="width:10%"></td>
 			<td style="width:20%; font-style : italic; font-weight:bold">Etat de la commande</td>
@@ -100,7 +100,7 @@ array_menu_r_article[0] 	=	new Array('recherche_cmde', 'menu_1');
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td><span class="labelled_text">Par stock de départ:</span></td>
+			<td><span class="labelled_text">Par stock de dÃ©part:</span></td>
 			<td>
 			<select name="id_name_stock_c" id="id_name_stock_c" class="classinput_xsize" style="width:100%"/>
 			<option value="">Tous</option>
@@ -118,7 +118,7 @@ array_menu_r_article[0] 	=	new Array('recherche_cmde', 'menu_1');
 			
 				<input type="radio" name="etat_c" id="cmderec_c" value="cmderec_c" />
 			
-			<span class="labelled_text">Uniquement les commandes récentes</span>
+			<span class="labelled_text">Uniquement les commandes rÃ©centes</span>
 			</td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
@@ -139,7 +139,7 @@ array_menu_r_article[0] 	=	new Array('recherche_cmde', 'menu_1');
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td><span class="labelled_text">Par catégorie d'article:</span>
+			<td><span class="labelled_text">Par catÃ©gorie d'article:</span>
 			<input type="hidden"value="" />
 			<input type="hidden" name="id_tarif_c" id="id_tarif_c" value="<?php echo $_SESSION['magasin']->getId_tarif()?>" />
 			<input type="hidden" name="id_stock_c" id="id_stock_c" value="<?php echo $_SESSION['magasin']->getId_stock()?>" />
@@ -164,7 +164,7 @@ array_menu_r_article[0] 	=	new Array('recherche_cmde', 'menu_1');
 			
 			<td style="width:20%">
 				<input type="radio" name="etat_c" id="cmdeavalid_c" value="cmdeavalid_c" /> <!--type="radio"-->
-			<span class="labelled_text">Commandes à valider</span>
+			<span class="labelled_text">Commandes Ã  valider</span>
 			</td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
@@ -212,7 +212,7 @@ array_menu_r_article[0] 	=	new Array('recherche_cmde', 'menu_1');
 			
 				<input type="radio" name="etat_c" id="cmdeaprep_c" value="cmdeaprep_c" />
 			
-			<span class="labelled_text">Commandes à livrer</span>
+			<span class="labelled_text">Commandes Ã  livrer</span>
 			</td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
@@ -361,7 +361,7 @@ array_menu_r_article[0] 	=	new Array('recherche_cmde', 'menu_1');
 <script type="text/javascript">
 
 
-//remise à zero du formulaire
+//remise Ã  zero du formulaire
 Event.observe('annuler_recherche_c', "click", function(evt){Event.stop(evt); $('form_recherche_c').reset();});
 //lance la recherche
 Event.observe('form_recherche_c', "submit", function(evt){page.documents_recherche_cmde();  

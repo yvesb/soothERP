@@ -35,7 +35,7 @@ class pdf_list_contact_70x37_sans_bord {
 			
 			$ANNUAIRE_CATEGORIES	=	get_categories();
 			// *************************************************
-			// Profils à afficher
+			// Profils Ã  afficher
 			$profils = array();
 			foreach ($_SESSION['profils'] as $profil) {
 				if ($profil->getActif() == 0) { continue; }
@@ -45,7 +45,7 @@ class pdf_list_contact_70x37_sans_bord {
 			
 			
 			// *************************************************
-			// Données pour le formulaire et la recherche
+			// DonnÃ©es pour le formulaire et la recherche
 			
 			$nb_fiches = 0;
 			$form['orderby'] = $search['orderby'] = "nom";
@@ -128,10 +128,10 @@ class pdf_list_contact_70x37_sans_bord {
 			
 			
 			// *************************************************
-			// Résultat de la recherche
+			// RÃ©sultat de la recherche
 			$fiches = array();
 			if (isset($_REQUEST['recherche'])) {
-				// Préparation de la requete
+				// PrÃ©paration de la requete
 				$query_select 	= "";
 				$query_join 	= "";
 				$query_join_count 	= "";
@@ -189,7 +189,7 @@ class pdf_list_contact_70x37_sans_bord {
 				if ($search['ville'] || $search['code_postal']) {
 					$query_join_count 	.= " LEFT JOIN adresses ad ON a.ref_contact = ad.ref_contact  ";
 				}
-				// Coordonnées
+				// CoordonnÃ©es
 				if ($search['tel']) {
 					if ($query_where) { $query_where .= " && "; }
 					$query_where .= "(tel1 LIKE '%".$search['tel']."%' || tel2 LIKE '%".$search['tel']."%' || fax LIKE '%".$search['tel']."%')";
@@ -263,7 +263,7 @@ class pdf_list_contact_70x37_sans_bord {
 						$this->pdf->cell(0, 5, substr($nom_complet,$pos_coupure,strlen($nom_complet)-1) ,  0, 2, 'L');
 						$nbLigne += 2; 
 					}
-					//attention conserver le format ci-dessus (Attrape le passage à la ligne)
+					//attention conserver le format ci-dessus (Attrape le passage Ã  la ligne)
 					/*$text = explode('\n',$fiche->text_adresse);
 					
 					foreach($text AS $t){

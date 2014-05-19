@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -21,13 +21,13 @@ check_page_variables ($page_variables);
 
 ?>
 <script type="text/javascript">
-tableau_smenu[0] = Array("smenu_comptabilite", "smenu_comptabilite.php" ,"true" ,"sub_content", "Comptabilité");
-tableau_smenu[1] = Array('annuaire_gestion_factures','annuaire_gestion_factures.php','true','sub_content', "Règles de relance des factures");
+tableau_smenu[0] = Array("smenu_comptabilite", "smenu_comptabilite.php" ,"true" ,"sub_content", "ComptabilitÃ©");
+tableau_smenu[1] = Array('annuaire_gestion_factures','annuaire_gestion_factures.php','true','sub_content', "RÃ¨gles de relance des factures");
 update_menu_arbo();
 </script>
 <div class="emarge">
 
-<p class="titre">Règles de relance des factures</p>
+<p class="titre">RÃ¨gles de relance des factures</p>
 <div style="height:50px">
 <table class="minimizetable">
 <tr>

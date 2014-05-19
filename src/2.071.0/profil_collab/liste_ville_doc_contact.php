@@ -29,7 +29,7 @@ function get_communes($cp) {
 				WHERE `code_postal` LIKE '%$cp%'";
 		$req 	= $bdd->query ($sql );
 	
-	// on boucle sur tous les éléments
+	// on boucle sur tous les Ã©lÃ©ments
 	while ($row = $req->fetchObject()) { $citys[] = $row; }
 		$i=0;
 		if (count($citys)>0){

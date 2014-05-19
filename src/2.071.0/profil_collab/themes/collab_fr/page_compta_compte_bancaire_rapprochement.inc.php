@@ -3,7 +3,7 @@
 // Affichage RAPPROCHEMENT BANCAIRE
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -106,8 +106,8 @@ page.verify('compta_compte_bancaire_rapprochement_gestion','compta_compte_bancai
 			<td style="">
 			<select id="montants" name="montants" class="classinput_nsize">
 			<option value="">Toutes</option>
-			<option value="deb">En débits</option>
-			<option value="cre">En crédits</option>
+			<option value="deb">En dÃ©bits</option>
+			<option value="cre">En crÃ©dits</option>
 			</select>
 			</td>
 		</tr>
@@ -121,7 +121,7 @@ page.verify('compta_compte_bancaire_rapprochement_gestion','compta_compte_bancai
 		</tr>
 		<tr>
 			<td>			</td>
-			<td >Relevés: </td>
+			<td >RelevÃ©s: </td>
 			<td colspan="4">
 			<select  name="date_fin" id="date_fin" class="classinput_xsize">
 			<?php 

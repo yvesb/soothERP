@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 
-//délestage des types de documents
+//dÃ©lestage des types de documents
 if (isset($_REQUEST["purge"])  ) {
 	$type = "";
 	if (isset($_REQUEST["id_type_doc"])) {$type = $_REQUEST["id_type_doc"];}

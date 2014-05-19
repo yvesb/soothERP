@@ -22,7 +22,7 @@ if (isset($_REQUEST["ref_reglement"])) {
 		$document = open_doc ($ref_doc);
 		$document->delier_reglement ($reglement->getRef_reglement());
 	} else {
-		//on vérifie les documents impactés par la suppression pour les mettre à jour.
+		//on vÃ©rifie les documents impactÃ©s par la suppression pour les mettre Ã  jour.
 		$lettrages = $reglement->getLettrages ();
 		foreach ($lettrages as $lettre) {
 			$document = open_doc ($lettre->ref_doc);
@@ -31,7 +31,7 @@ if (isset($_REQUEST["ref_reglement"])) {
 		}
 	}
 	
-	//supression du règlement
+	//supression du rÃ¨glement
 	$reglement->delete_reglement ();  
 
 }

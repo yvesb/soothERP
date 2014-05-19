@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 if (!$_SESSION['user']->check_permission ("14")) {
 		//on indique l'interdiction et on stop le script
-		echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accés ne vous permettent pas de visualiser ce type de page</span>";
+		echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accÃ©s ne vous permettent pas de visualiser ce type de page</span>";
 		exit();
 }
 
@@ -63,8 +63,8 @@ if ($mail_template->getFooter_img_template()) {
 $pied .= '</div>';
 
 $pied .= '<div  class="down_page">
-Vous recevez ce courriel parce que vous êtes inscrit à la newsletter de <a href="http://'.$_SERVER['HTTP_HOST'].str_replace("profil_collab/communication_newsletters_gestion_envoi_valide0.php", "", $_SERVER['PHP_SELF']).'" style="color:#999999;"><?php echo $nom_entreprise;?></a>. <br />
-Conformément à notre engagement, vous pouvez vous désinscrire en suivant le lien suivant: <a href="**liendesinscription**"  style="color:#999999;">désinscription</a><br />
+Vous recevez ce courriel parce que vous Ãªtes inscrit Ã  la newsletter de <a href="http://'.$_SERVER['HTTP_HOST'].str_replace("profil_collab/communication_newsletters_gestion_envoi_valide0.php", "", $_SERVER['PHP_SELF']).'" style="color:#999999;"><?php echo $nom_entreprise;?></a>. <br />
+ConformÃ©ment Ã  notre engagement, vous pouvez vous dÃ©sinscrire en suivant le lien suivant: <a href="**liendesinscription**"  style="color:#999999;">dÃ©sinscription</a><br />
 <img src="**liendelecture**" width="0px" height="0px" style="display:none"/>
 ';
 
@@ -83,9 +83,9 @@ foreach ($liste_abonnes as $abonne) {
 }
 
 if (!file_exists($DIR."config/newsletter.config.php")) {
-	//vérification de l'existence du code sécurité de l'envoi de newsletter
+	//vÃ©rification de l'existence du code sÃ©curitÃ© de l'envoi de newsletter
 	if (!$file_config_newsletter = @fopen ($DIR."config/newsletter.config.php", "w")) {
-		$erreur = "Impossible de créer le fichier de configuration config/newsletter.config.php "; 
+		$erreur = "Impossible de crÃ©er le fichier de configuration config/newsletter.config.php "; 
 	} else {
 		$file_content = "<?php
 		// *************************************************************************************************************
@@ -97,7 +97,7 @@ if (!file_exists($DIR."config/newsletter.config.php")) {
 		?>";
 		
 		if (!fwrite ($file_config_newsletter, $file_content)) {
-			$erreur = "Impossible d'écrire dans le fichier de configuration config/newsletter.config.php"; 
+			$erreur = "Impossible d'Ã©crire dans le fichier de configuration config/newsletter.config.php"; 
 		}
 	}
 	fclose ($file_config_newsletter);

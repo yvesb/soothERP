@@ -1,7 +1,7 @@
 <?php
 
 // *************************************************************************************************************
-// GESTION DES Résultats commerciaux (Modele pdf par defaut)
+// GESTION DES RÃ©sultats commerciaux (Modele pdf par defaut)
 // *************************************************************************************************************
 
 require ("_dir.inc.php");

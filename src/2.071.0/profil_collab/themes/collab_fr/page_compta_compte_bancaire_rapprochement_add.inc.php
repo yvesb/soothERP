@@ -4,7 +4,7 @@
 // AJOUT D'UN RAPPROCHEMENT
 // *************************************************************************************************************
 
-// Variables nÈcessaires ‡ l'affichage
+// Variables n√©cessaires √† l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -49,7 +49,7 @@ if (erreur) {
 
 
 	if (operation_in_closed_exercice) {
-		texte_erreur += "La date de l'opÈration correspond ‡ un exercice comptable dÈj‡ clÙturÈ.<br/> L'ajout de rapprochement  est impossible dans un exercice clÙturÈ.<br />";
+		texte_erreur += "La date de l'op√©ration correspond √† un exercice comptable d√©j√† cl√¥tur√©.<br/> L'ajout de rapprochement  est impossible dans un exercice cl√¥tur√©.<br />";
 	} 
 
 	window.parent.alerte.alerte_erreur ('Ajout Impossible', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');

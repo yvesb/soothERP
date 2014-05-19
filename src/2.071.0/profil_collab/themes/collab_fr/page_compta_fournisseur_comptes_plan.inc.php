@@ -4,7 +4,7 @@
 // RECHERCHE D'UN CONTACT
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -27,7 +27,7 @@ foreach ($_ALERTES as $alerte => $value) {
 
 <div class="emarge">
 <div style=" float:right; text-align:right">
-<span id="retour_compta_auto" style="cursor:pointer; text-decoration:underline">Retour à la comptabilité automatique</span>
+<span id="retour_compta_auto" style="cursor:pointer; text-decoration:underline">Retour Ã  la comptabilitÃ© automatique</span>
 <script type="text/javascript">
 Event.observe('retour_compta_auto', 'click',  function(evt){
 Event.stop(evt); 
@@ -35,7 +35,7 @@ page.verify('compta_automatique','compta_automatique.php','true','sub_content');
 }, false);
 </script>
 </div>
-<p class="titre">Numéros de compte associés aux contacts de fournisseurs</p>
+<p class="titre">NumÃ©ros de compte associÃ©s aux contacts de fournisseurs</p>
 
 <div id="recherche" class="corps_moteur">
 	<div id="recherche_avancee"   class="menu_link_affichage">
@@ -87,7 +87,7 @@ page.verify('compta_automatique','compta_automatique.php','true','sub_content');
 				</tr>
 				<tr id="liste_categ_fournisseur" >
 					<td>&nbsp;</td>
-					<td><span class="labelled">Catégorie de fournisseur : </span></td>
+					<td><span class="labelled">CatÃ©gorie de fournisseur : </span></td>
 					<td>
 					<select  id="id_fournisseur_categ"  name="id_fournisseur_categ" class="classinput_xsize">
 								<option value="">Tous</option>

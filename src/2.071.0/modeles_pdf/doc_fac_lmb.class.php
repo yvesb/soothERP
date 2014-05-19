@@ -11,7 +11,7 @@ class pdf_content_doc_fac_lmb extends pdf_content_doc_standard {
 
 
 
-// Créé l'entete du document PDF
+// CrÃ©Ã© l'entete du document PDF
 protected function create_pdf_entete () {
 	global $IMAGES_DIR;
 
@@ -26,10 +26,10 @@ protected function create_pdf_entete () {
 	$this->pdf->Cell (95, 10, $this->lib_type_printed, 0, 0, 'L');
 
 	// ***************************************************
-	// Référence du document
+	// RÃ©fÃ©rence du document
 	$this->pdf->SetXY(101, 27);
 	$this->pdf->SetFont('Arial', '', 8);
-	$ref_doc_lib = "Référence";
+	$ref_doc_lib = "RÃ©fÃ©rence";
 	$this->pdf->Cell (13, 3, $ref_doc_lib, 0, 0, 'L');
 	$this->pdf->Cell (3, 3, ":", 0, 0, 'L');
 	$this->pdf->Cell (40, 3, $this->ref_doc, 0, 0, 'L');
@@ -68,7 +68,7 @@ protected function create_pdf_pieds () {
 	// Cadre de pieds de page
 	$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS, $this->PIEDS_HAUTEUR_MAX, "", '1', 1, 'L');
 
-	// Information société
+	// Information sociÃ©tÃ©
 	$this->pdf->SetXY($this->MARGE_GAUCHE, $this->PIEDS_HAUTEUR_DEPART + $this->PIEDS_HAUTEUR_MAX + 1);
 	foreach ($this->PIEDS_GAUCHE as $texte) {
 		$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS, 4.5, $texte, '0', 2, 'L');
@@ -130,7 +130,7 @@ protected function create_pdf_pieds () {
 	// Bloc central
 	$this->pdf->SetXY($this->MARGE_GAUCHE + $largeur_bloc_tva, $this->PIEDS_HAUTEUR_DEPART);
 	$this->pdf->SetFont('Arial', 'B', 10);
-	$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_bloc_tva, 8,"Conditions de règlement" , '1', 0, 'C');
+	$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_bloc_tva, 8,"Conditions de rÃ¨glement" , '1', 0, 'C');
 	
 	// Bloc partie acquitement
 	$this->pdf->SetXY($this->MARGE_GAUCHE + $largeur_bloc_tva, $this->PIEDS_HAUTEUR_DEPART+8);
@@ -144,9 +144,9 @@ protected function create_pdf_pieds () {
 		foreach($reglements as $reglement) {
 			if ( $last_reglement < $reglement->date_reglement ){$last_reglement = $reglement->date_reglement;}
 		}
-		$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_bloc_tva, 8, "Facture acquittée le ".date_Us_to_Fr($last_reglement), '1', 0, 'L');
+		$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_bloc_tva, 8, "Facture acquittÃ©e le ".date_Us_to_Fr($last_reglement), '1', 0, 'L');
 	} else {
-		$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_bloc_tva, 8, "Echéance le: ".date_Us_to_Fr($this->document->getDate_echeance ())."   Restant dû : ".price_format ($this->document->getMontant_to_pay ()).$MONNAIE[0], '1', 0, 'L');
+		$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_bloc_tva, 8, "EchÃ©ance le: ".date_Us_to_Fr($this->document->getDate_echeance ())."   Restant dÃ»Â : ".price_format ($this->document->getMontant_to_pay ()).$MONNAIE[0], '1', 0, 'L');
 	}
 	
 	//reglements

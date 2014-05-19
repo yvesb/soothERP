@@ -4,7 +4,7 @@
 // AFFICHAGE DU CHOIX DES CAISSES
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -33,7 +33,7 @@ check_page_variables ($page_variables);
 </script>
 <div  class="emarge"><br />
 
-<div class="titre" id="titre_crea_art" style="width:60%; padding-left:140px">Liste des abonnés &gt;&gt; <?php echo $newsletter->getNom_newsletter() ?> 
+<div class="titre" id="titre_crea_art" style="width:60%; padding-left:140px">Liste des abonnÃ©s &gt;&gt; <?php echo $newsletter->getNom_newsletter() ?> 
  
 </div>
 <br />

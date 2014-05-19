@@ -25,9 +25,9 @@ class pdf_stock_standard extends PDF_etendu {
 	var $content_printed;
 
 	/*
-	 * @param $id_stocks	- tableau contenant les id des stocks à afficher
-	 * @param $fiches 		- tableau contenant la liste des articles à afficher
-	 * @param $infos 		- tableau de paramètre	
+	 * @param $id_stocks	- tableau contenant les id des stocks Ã  afficher
+	 * @param $fiches 		- tableau contenant la liste des articles Ã  afficher
+	 * @param $infos 		- tableau de paramÃ¨tre	
 	 */
 	public function create_pdf ($id_stocks, $fiches, $params) {
 		global $PDF_MODELES_DIR;
@@ -38,7 +38,7 @@ class pdf_stock_standard extends PDF_etendu {
 		//**********************************************************
 		$this->nb_stocks = count($id_stocks);
 		if($this->nb_stocks>$this->nb_stock_supporter){ 
-			echo 'Le nombre de stocks à afficher est supérieur au nombre de stocks affichable par le model.';
+			echo 'Le nombre de stocks Ã  afficher est supÃ©rieur au nombre de stocks affichable par le model.';
 			return false;
 		}
 		//*********************************
@@ -75,7 +75,7 @@ class pdf_stock_standard extends PDF_etendu {
 		// Initialisation des variables
 		$this->nb_pages			= 1;
 		$this->contenu_actuel 	= 0;			// Ligne du document en cours de traitement
-		$this->contenu_end_page = array();		// Lignes de contenu terminant les différentes pages
+		$this->contenu_end_page = array();		// Lignes de contenu terminant les diffÃ©rentes pages
 		$this->page_actuelle	= 0;
 		$this->content_printed	= 0;
 		$this->current_ref_art_categ = "";
@@ -100,7 +100,7 @@ class pdf_stock_standard extends PDF_etendu {
 		$this->calcul_nb_page();
 		
 		// ***************************************************
-		// Création de la première page                      *
+		// CrÃ©ation de la premiÃ¨re page                      *
 		//****************************************************
 		$this->create_pdf_page ();
 		return $this;
@@ -131,7 +131,7 @@ class pdf_stock_standard extends PDF_etendu {
 	protected function calcul_nb_page(){
 	
 		// ***************************************************
-		// Comptage du nombre de page nécessaires
+		// Comptage du nombre de page nÃ©cessaires
 		$hauteur_totale = 0;
 		for ($i=0; $i<count($this->contenu); $i++) {
 	
@@ -148,7 +148,7 @@ class pdf_stock_standard extends PDF_etendu {
 			// Hauteur de la ligne
 			$hauteur_ligne = $this->HAUTEUR_LINE_ARTICLE;
 	
-			// Vérification de la nécessité de changer de page
+			// VÃ©rification de la nÃ©cessitÃ© de changer de page
 			$hauteur_totale += $hauteur_ligne;
 			if ($hauteur_totale >= $this->CORPS_HAUTEUR_MAX) {
 				
@@ -164,12 +164,12 @@ class pdf_stock_standard extends PDF_etendu {
 	}
 	
 	//******************************************
-	// Créé une nouvelle page du document PDF
+	// CrÃ©Ã© une nouvelle page du document PDF
 	protected function create_pdf_page () {
 		// Comptage du nombre de page
 		$this->page_actuelle++;
 	
-		// Création d'une nouvelle page
+		// CrÃ©ation d'une nouvelle page
 		$this->AddPage('L');
 		$this->create_pdf_entete ();
 		$this->create_pdf_corps ();
@@ -181,7 +181,7 @@ class pdf_stock_standard extends PDF_etendu {
 	}
 	
 	//******************************************
-	// Créer l'entete du document PDF
+	// CrÃ©er l'entete du document PDF
 	protected function create_pdf_entete () {
 		global $IMAGES_DIR;
 	
@@ -196,7 +196,7 @@ class pdf_stock_standard extends PDF_etendu {
 		$this->Cell (95, 10, $this->lib_doc_entete, 0, 0, 'L');
 	
 		// ***************************************************
-		// Référence du stock
+		// RÃ©fÃ©rence du stock
 		$this->SetXY($this->MARGE_GAUCHE+1, 27);
 		$this->SetFont('Arial', '', 8);
 		$stock_lib = "Stock";
@@ -215,7 +215,7 @@ class pdf_stock_standard extends PDF_etendu {
 		$this->Cell (40, 3, $this->date_impression, 0, 0, 'L');
 	
 		// ***************************************************
-		// Numï¿½ro de page
+		// NumÃ¯Â¿Â½ro de page
 		$this->SetXY(297-$this->MARGE_GAUCHE-30, 31);
 		$this->SetFont('Arial', 'I', 8);
 		$page_lib = "Page ".$this->page_actuelle." / ".$this->nb_pages;
@@ -291,7 +291,7 @@ class pdf_stock_standard extends PDF_etendu {
 				break; 
 			}
 	
-			// Controle de la nécessité de changer de page
+			// Controle de la nÃ©cessitÃ© de changer de page
 			if (in_array($i, $this->contenu_end_page)) { break;	}
 		}
 		
@@ -307,7 +307,7 @@ class pdf_stock_standard extends PDF_etendu {
 			$this->create_pdf_corps_line($line);
 		}			
 	
-		// Faire déscendre le tableau jusqu'en bas du corps
+		// Faire dÃ©scendre le tableau jusqu'en bas du corps
 		while ($this->decalage_corps_actuel <= $this->CORPS_HAUTEUR_MAX-1) {
 			$line = new stdClass();
 			$this->create_pdf_corps_line($line);
@@ -319,7 +319,7 @@ class pdf_stock_standard extends PDF_etendu {
 	protected function create_pdf_pieds () {
 		global $MONNAIE;
 	
-		// Information société
+		// Information sociÃ©tÃ©
 		$this->SetXY($this->MARGE_GAUCHE, $this->PIEDS_HAUTEUR_DEPART + $this->PIEDS_HAUTEUR_MAX + 1);
 		foreach ($this->PIEDS_GAUCHE as $texte) {
 			$this->Cell ($this->LARGEUR_TOTALE_CORPS, 4.5, $texte, '0', 2, 'L');
@@ -339,16 +339,16 @@ class pdf_stock_standard extends PDF_etendu {
 		global $MONNAIE;
 	
 		// ***************************************************
-		// Valeurs par défaut
+		// Valeurs par dÃ©faut
 		if (!isset($line->type_of_line)) 	{ $line->type_of_line = "vide"; 	}
 		
-		// Positionnement au début de la ligne
+		// Positionnement au dÃ©but de la ligne
 		$this->SetXY($this->MARGE_GAUCHE, $this->CORPS_HAUTEUR_DEPART + $this->decalage_corps_actuel);
 		$hauteur = $this->{"HAUTEUR_LINE_".strtoupper($line->type_of_line)};
 		$this->decalage_corps_actuel += $hauteur;
 	
 		
-		// Spécifités à l'affichage
+		// SpÃ©cifitÃ©s Ã  l'affichage
 		switch ($line->type_of_line) {
 			case "article":
 				$this->create_pdf_corps_line_article($line, $hauteur);	
@@ -389,7 +389,7 @@ class pdf_stock_standard extends PDF_etendu {
 		
 		$article = new article($line->ref_article);
 		//*****************************
-		//traitement des données
+		//traitement des donnÃ©es
 		//*****************************
 		
 		//choix de la ref_article
@@ -476,9 +476,9 @@ class pdf_stock_standard extends PDF_etendu {
 		$this->SetFont('Arial', 'I', 9);
 		$cadre = "LRBT";
 		if ($this->params['aff_pa']) {
-		$texte_totaux = "".$this->totaux_articles[$this->id_stock]." articles (".$this->totaux_pieces[$this->id_stock]." pièces) ".price_format($this->totaux_prix)." ".$MONNAIE[0]." HT";
+		$texte_totaux = "".$this->totaux_articles[$this->id_stock]." articles (".$this->totaux_pieces[$this->id_stock]." piÃ¨ces) ".price_format($this->totaux_prix)." ".$MONNAIE[0]." HT";
 		} else {
-		$texte_totaux = "".$this->totaux_articles[$this->id_stock]." articles (".$this->totaux_pieces[$this->id_stock]." pièces) ";
+		$texte_totaux = "".$this->totaux_articles[$this->id_stock]." articles (".$this->totaux_pieces[$this->id_stock]." piÃ¨ces) ";
 		}
 		
 		$this->Cell($this->LARGEUR_TOTALE_CORPS, $hauteur, $texte_totaux, $cadre, 0, 'R');*/
@@ -489,9 +489,9 @@ class pdf_stock_standard extends PDF_etendu {
 		$this->SetFont('Arial', 'I', 9);
 		$cadre = "LRBT";
 		if ($this->params['aff_pa']) {
-		$texte_totaux = "TOTAL GENERAL: ".$this->totaux_generaux_articles." articles (".$this->totaux_generaux_pieces." pièces) ".price_format($this->totaux_generaux_prix)." ".$MONNAIE[0]." HT";
+		$texte_totaux = "TOTAL GENERAL: ".$this->totaux_generaux_articles." articles (".$this->totaux_generaux_pieces." piÃ¨ces) ".price_format($this->totaux_generaux_prix)." ".$MONNAIE[0]." HT";
 		} else {
-		$texte_totaux = "TOTAL GENERAL: ".$this->totaux_generaux_articles." articles (".$this->totaux_generaux_pieces." pièces) ";
+		$texte_totaux = "TOTAL GENERAL: ".$this->totaux_generaux_articles." articles (".$this->totaux_generaux_pieces." piÃ¨ces) ";
 		}
 		
 		$this->Cell($this->LARGEUR_TOTALE_CORPS, $hauteur, $texte_totaux, $cadre, 0, 'R');*/

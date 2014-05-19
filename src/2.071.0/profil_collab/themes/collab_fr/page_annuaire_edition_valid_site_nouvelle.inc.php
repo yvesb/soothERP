@@ -5,7 +5,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -62,9 +62,9 @@ if (isset($ref_site_previous)) {
 	<?php
 }
 
-if (isset($_INFOS['Création_site_web'])) {
+if (isset($_INFOS['CrÃ©ation_site_web'])) {
 	?>
-	window.parent.switchtagmobil('sitelist2','li','sitecontent', 'annuaire_edition_valid_view_site_nouvelle', '<?php echo $_INFOS['Création_site_web']?>');
+	window.parent.switchtagmobil('sitelist2','li','sitecontent', 'annuaire_edition_valid_view_site_nouvelle', '<?php echo $_INFOS['CrÃ©ation_site_web']?>');
 	<?php
 }
 ?>

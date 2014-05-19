@@ -18,7 +18,7 @@ class pdf_content_doc_dev_standard extends pdf_content_doc_standard{
 		// Cadre de pieds de page
 		$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS, $this->PIEDS_HAUTEUR_MAX, "", '1', 1, 'L');
 	
-		// Information société
+		// Information sociÃ©tÃ©
 		$this->pdf->SetXY($this->MARGE_GAUCHE, $this->PIEDS_HAUTEUR_DEPART + $this->PIEDS_HAUTEUR_MAX + 1);
 		foreach ($this->PIEDS_GAUCHE as $texte) {
 			$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS, 4.5, $texte, '0', 2, 'L');
@@ -98,7 +98,7 @@ class pdf_content_doc_dev_standard extends pdf_content_doc_standard{
 						$this->pdf->Cell (25, 3, $reglement->type_reglement, '0', 0, 'L');
 						$this->pdf->Cell (30, 3,$reglement->pourcentage."%", '0', 0, 'C');
 						
-						//Affichage du mode de reglement selectionné si il existe
+						//Affichage du mode de reglement selectionnÃ© si il existe
 						if($reglement->mode_reglement!="")
 						{
 							$this->pdf->Cell (17, 3,$reglement->montant, '0', 0, 'R');
@@ -111,7 +111,7 @@ class pdf_content_doc_dev_standard extends pdf_content_doc_standard{
 					{
 						$this->pdf->Cell (60, 3, $reglement->type_reglement, '0', 0, 'L');
 						
-						//Affichage du mode de reglement selectionné si il existe
+						//Affichage du mode de reglement selectionnÃ© si il existe
 						if($reglement->mode_reglement!="")
 						{
 							$this->pdf->Cell (12, 3,$reglement->montant, '0', 0, 'R');
@@ -133,7 +133,7 @@ class pdf_content_doc_dev_standard extends pdf_content_doc_standard{
                                                 //Si c'est une date
                                                 if(!strpos($reglement->jour,"-"))
                                                 {
-                                                    $this->pdf->Cell (25, 3, $reglement->type_reglement." à ".$reglement->jour." jours", '0', 0, 'L');
+                                                    $this->pdf->Cell (25, 3, $reglement->type_reglement." Ã  ".$reglement->jour." jours", '0', 0, 'L');
                                                 }
                                                  else
                                                  {
@@ -142,7 +142,7 @@ class pdf_content_doc_dev_standard extends pdf_content_doc_standard{
                                             }
 						$this->pdf->Cell (30, 3,$reglement->pourcentage."%", '0', 0, 'C');
 						
-						//Affichage du mode de reglement selectionné si il existe
+						//Affichage du mode de reglement selectionnÃ© si il existe
 						if($reglement->mode_reglement!="")
 						{
 							$this->pdf->Cell (17, 3,$reglement->montant, '0', 0, 'R');
@@ -162,14 +162,14 @@ class pdf_content_doc_dev_standard extends pdf_content_doc_standard{
                                                 //Si c'est une date
                                                 if(!strpos($reglement->jour,"-"))
                                                 {
-                                                    $this->pdf->Cell (25, 3, $reglement->type_reglement." à ".$reglement->jour." jours", '0', 0, 'L');
+                                                    $this->pdf->Cell (25, 3, $reglement->type_reglement." Ã  ".$reglement->jour." jours", '0', 0, 'L');
                                                 }
                                                  else
                                                  {
                                                     $this->pdf->Cell (25, 3, $reglement->type_reglement." le ".$reglement->jour, '0', 0, 'L');
                                                  }
                                             }
-						//Affichage du mode de reglement selectionné si il existe
+						//Affichage du mode de reglement selectionnÃ© si il existe
 						if($reglement->mode_reglement!="")
 						{
 							$this->pdf->Cell (12, 3,$reglement->montant, '0', 0, 'R');
@@ -188,12 +188,12 @@ class pdf_content_doc_dev_standard extends pdf_content_doc_standard{
 				}
 				else if($reglement->type_reglement=="Reglement")
 				{
-					$this->pdf->Cell (57, 4, "Règlement le ".$reglement->date_reglement, '0', 0, 'L');
+					$this->pdf->Cell (57, 4, "RÃ¨glement le ".$reglement->date_reglement, '0', 0, 'L');
 					$this->pdf->Cell (1, 4,$reglement->montant." ".$reglement->mode_reglement, '0', 0, 'L');
 				}
 				else if($reglement->type_reglement=="ReglementResume")
 				{
-					$this->pdf->Cell (57, 4, $reglement->nb_reglement_restant." autres règlements", '0', 0, 'L');
+					$this->pdf->Cell (57, 4, $reglement->nb_reglement_restant." autres rÃ¨glements", '0', 0, 'L');
 					$this->pdf->Cell (1, 4,$reglement->montant, '0', 0, 'L');
 				}
 				else
@@ -208,10 +208,10 @@ class pdf_content_doc_dev_standard extends pdf_content_doc_standard{
 		// Bloc central
 		$this->pdf->SetXY($this->MARGE_GAUCHE + $largeur_bloc_tva, $this->PIEDS_HAUTEUR_DEPART);
 		$this->pdf->SetFont('Arial', 'B', 10);
-		$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_bloc_tva, 6, "Conditions de règlement", '1', 0, 'C');
+		$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_bloc_tva, 6, "Conditions de rÃ¨glement", '1', 0, 'C');
 		$this->pdf->SetXY($this->MARGE_GAUCHE + $largeur_bloc_tva, $this->PIEDS_HAUTEUR_DEPART+26);
 		$this->pdf->SetFont('Arial', '', 7);
-		$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_bloc_tva, 0,"Mention manuscrite « Bon pour accord » + Tampon & Signature" , '0', 0, 'L');
+		$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_bloc_tva, 0,"Mention manuscrite Â« Bon pour accord Â» + Tampon & Signature" , '0', 0, 'L');
 		$this->pdf->SetXY($this->MARGE_GAUCHE + $largeur_bloc_tva, $this->PIEDS_HAUTEUR_DEPART+24);
 		$this->pdf->Cell ($this->LARGEUR_TOTALE_CORPS-$largeur_bloc_montant-$largeur_bloc_tva, 8," " , '1', 0, 'L');
 	}

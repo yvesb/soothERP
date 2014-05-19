@@ -4,7 +4,7 @@
 // AFFICHAGE DU CHOIX DES TERMINAUX DE PAIEMENT ELECTRONIQUE et VIRTUELS
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 // *************************************************************************************************************
@@ -13,7 +13,7 @@ check_page_variables ($page_variables);
 ?>
 <div class="emarge"><br />
 
- <div class="titre" id="titre_crea_art" style="width:60%; padding-left:140px">Gestion des traites et prélèvements</div>
+ <div class="titre" id="titre_crea_art" style="width:60%; padding-left:140px">Gestion des traites et prÃ©lÃ¨vements</div>
     <div class="emarge" style="text-align:right" >
         <div>
             <table width="950px" height="350px" border="0" align="right" cellpadding="0" cellspacing="0" style="background-color:#FFFFFF">
@@ -32,18 +32,18 @@ check_page_variables ($page_variables);
                             <table width="100%" border="0" cellspacing="4" cellpadding="2">
                                 <tr>
                                     <td style="width:20%; font-weight:bolder; text-align:left">Compte bancaire</td>
-                                    <td style="width:20%; font-weight:bolder; text-align:right; padding-right:25px">N° de compte</td>
-                                    <td colspan="2" style="width:20%; font-weight:bolder; text-align:center;">Prélèvements</td>
+                                    <td style="width:20%; font-weight:bolder; text-align:right; padding-right:25px">NÂ° de compte</td>
+                                    <td colspan="2" style="width:20%; font-weight:bolder; text-align:center;">PrÃ©lÃ¨vements</td>
                                     <td colspan="2" style="width:20%; font-weight:bolder; text-align:center;">Traites</td>
-                                    <td style="width:20%;font-weight:bolder; text-align:center" colspan="3">Accès Direct</td>
+                                    <td style="width:20%;font-weight:bolder; text-align:center" colspan="3">AccÃ¨s Direct</td>
                                 </tr>
                                 <tr>
                                     <td style="width:20%; font-weight:bolder; text-align:left">&nbsp;</td>
                                     <td style="width:20%; font-weight:bolder; text-align:right; padding-right:25px">&nbsp;</td>
                                     <td style="width:10%; font-weight:bolder; text-align:center;">A faire</td>
-                                    <td style="width:10%; font-weight:bolder; text-align:center;">Prévus</td>
-                                    <td style="width:15%; font-weight:bolder; text-align:center;">A Présenter</td>
-                                    <td style="width:10%; font-weight:bolder; text-align:center;">Prévues</td>
+                                    <td style="width:10%; font-weight:bolder; text-align:center;">PrÃ©vus</td>
+                                    <td style="width:15%; font-weight:bolder; text-align:center;">A PrÃ©senter</td>
+                                    <td style="width:10%; font-weight:bolder; text-align:center;">PrÃ©vues</td>
                                     <td style="width:15%;font-weight:bolder; text-align:center" colspan="3">&nbsp;</td>
                                 </tr>
                                  <tr>

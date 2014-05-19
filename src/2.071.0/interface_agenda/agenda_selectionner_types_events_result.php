@@ -8,35 +8,35 @@ if(!isset($NoRequireFor_agenda_selectionner_types_events_result)){
 	require ($DIR."_session.inc.php");
 	
 	if(!isset($_REQUEST['page_source'])){
-		echo "La page source n'est pas spécifiée";
+		echo "La page source n'est pas spÃ©cifiÃ©e";
 		exit;
 	}
 	$page_source = $_REQUEST['page_source'];
 	
 	if(!isset($_REQUEST['page_cible'])){
-		echo "La page cible n'est pas spécifiée";
+		echo "La page cible n'est pas spÃ©cifiÃ©e";
 		exit;
 	}
 	$page_cible = $_REQUEST['page_cible'];
 	
 	if(!isset($_REQUEST['id_type_agenda'])){
-		echo "L'iddentifiant du type d'agenda n'est pas spécifié";
+		echo "L'iddentifiant du type d'agenda n'est pas spÃ©cifiÃ©";
 		exit;
 	}
 	$id_type_agenda = $_REQUEST['id_type_agenda'];
 }else{
 	if(!isset($page_source)){
-		echo "La page source n'est pas spécifiée";
+		echo "La page source n'est pas spÃ©cifiÃ©e";
 		exit;
 	}
 	
 	if(!isset($page_cible)){
-		echo "La page cible n'est pas spécifiée";
+		echo "La page cible n'est pas spÃ©cifiÃ©e";
 		exit;
 	}
 	
 	if(!isset($id_type_agenda)){
-		echo "L'identifiant du type d'agenda n'est pas spécifié";
+		echo "L'identifiant du type d'agenda n'est pas spÃ©cifiÃ©";
 		exit;
 	}
 }

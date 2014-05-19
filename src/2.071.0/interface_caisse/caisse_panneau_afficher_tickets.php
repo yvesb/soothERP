@@ -21,9 +21,9 @@ $ticket_editable = false;
 
 //ETAT 		TYPE 	LIB 			ORDRE ISOPEN
 //59			15		En saisie		1		1
-//60			15		Annulé			2		0
+//60			15		AnnulÃ©			2		0
 //61			15		En Attente	3		0
-//62			15		Encaissé		4		0
+//62			15		EncaissÃ©		4		0
 
 $tickets = array();
 $ref_user = $_SESSION['user']->getRef_user();
@@ -49,7 +49,7 @@ if(isset($_REQUEST['etats_tickets'])){
 	$resultat = $bdd->query($query);
 	while ($ticket = $resultat->fetchObject()) { $tickets[] = open_doc($ticket->ref_doc); }
 
-	//Les 2 requêtes sont nécessaires parce cette architecture de requete ne marche pas :
+	//Les 2 requÃªtes sont nÃ©cessaires parce cette architecture de requete ne marche pas :
 	//(SELECT * FROM toto t WHERE t.condition = condition1 ORDER BY t.date DESC) 
 	//UNION 
 	//(SELECT * FROM toto t WHERE t.condition = condition2 ORDER BY t.date DESC)

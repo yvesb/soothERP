@@ -11,11 +11,11 @@ require("_session.inc.php");
 
 //$interface = new interfaces ($ID_INTERFACE);
 
-// Vérification de la page de provennance
+// VÃ©rification de la page de provennance
 if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], "_user_login.php")) {  $page_from = $_REQUEST['page_from'];  }
 else {                                 $page_from = "";  }
 
-//verification d'un rafraichissement de cache à faire
+//verification d'un rafraichissement de cache Ã  faire
 $uncache = "";
 
 // Identification de l'utilisateur
@@ -47,7 +47,7 @@ $liste_contenu = $_SESSION["panier_interface_".$_INTERFACE['ID_INTERFACE']]["con
 
 $users = "";
 
-// REF_USER ou LOGIN si prédéfini
+// REF_USER ou LOGIN si prÃ©dÃ©fini
 $predefined_user = array("");
 
 

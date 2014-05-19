@@ -13,7 +13,7 @@ echo $_REQUEST["id_compte_cb"];
 //ouverture de la class compte_cb
 	$compte_cb = new compte_cb ($_REQUEST["id_compte_cb"]);
 	
-	//création du compte
+	//crÃ©ation du compte
 	$compte_cb->modifier_ordre ($_REQUEST["new_ordre"]);
 
 // *************************************************************************************************************

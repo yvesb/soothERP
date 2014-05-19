@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -51,24 +51,24 @@ update_menu_arbo();
 			<td style="text-align:left;" valign="top">
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="20px" /><br />
 
-				<span class="titre_smenu_page" id="catalogue_smenu_param_gene"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Paramètres généraux</span><br /><br />
+				<span class="titre_smenu_page" id="catalogue_smenu_param_gene"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />ParamÃ¨tres gÃ©nÃ©raux</span><br /><br />
 
-				<span class="titre_smenu_page" id="catalogue_smenu_param_tarifs"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Paramètres tarifaires</span><br /><br />
+				<span class="titre_smenu_page" id="catalogue_smenu_param_tarifs"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />ParamÃ¨tres tarifaires</span><br /><br />
 				
-				<span class="titre_smenu_page" id="catalogue_smenu_param_taxes"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Paramètres taxes</span><br /><br />
+				<span class="titre_smenu_page" id="catalogue_smenu_param_taxes"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />ParamÃ¨tres taxes</span><br /><br />
 
 				<span class="titre_smenu_page" id="catalogue_smenu_livraison"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Modes de livraison</span><br /><br />
 
 				<span class="titre_smenu_page" id="catalogue_smenu_code_promo"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Codes promo</span><br /><br />
 
 <br /><br />
-				<span class="titre_smenu_page" id="catalogue_smenu_archiver_perimer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Archiver les articles périmés</span><br /><br />
+				<span class="titre_smenu_page" id="catalogue_smenu_archiver_perimer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Archiver les articles pÃ©rimÃ©s</span><br /><br />
 
 			</td>
 			<td style="text-align:left;" valign="top">
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="20px"/><br />
 
-				<span class="titre_smenu_page" id="catalogue_smenu_art_categ"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Catégories d'articles</span><br /><br />
+				<span class="titre_smenu_page" id="catalogue_smenu_art_categ"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />CatÃ©gories d'articles</span><br /><br />
 
 				<span class="titre_smenu_page" id="catalogue_smenu_catalogue_client"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Catalogues clients</span><br /><br />
 

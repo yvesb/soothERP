@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -23,7 +23,7 @@ check_page_variables ($page_variables);
 
 <script type="text/javascript" language="javascript">
 tableau_smenu[0] = Array('smenu_communication', 'smenu_communication.php' ,'true' , 'sub_content', 'Communication');
-tableau_smenu[1] = Array('communication_nouvelle_newsletter','communication_nouvelle_newsletter.php','true','sub_content', 'Création d\'une nouvelle newsletter');
+tableau_smenu[1] = Array('communication_nouvelle_newsletter','communication_nouvelle_newsletter.php','true','sub_content', 'CrÃ©ation d\'une nouvelle newsletter');
 update_menu_arbo();
 </script>
 <p class="titre">Cr&eacute;ation d&apos;une nouvelle newsletter</p>
@@ -89,7 +89,7 @@ update_menu_arbo();
 						<?php
 						if(empty($mail_templates)) {
 							?>
-							<option value="0">Aucun template d&apos;email n&apos;a été défini</option>
+							<option value="0">Aucun template d&apos;email n&apos;a Ã©tÃ© dÃ©fini</option>
 						<?php
 						}else {
 						?>
@@ -190,7 +190,7 @@ update_menu_arbo();
 				</tr>
 				<tr>
 					<td colspan="5">
-						<p class="titre_config">Critères par profils</p>
+						<p class="titre_config">CritÃ¨res par profils</p>
 					</td>
 				</tr>
 				<tr>
@@ -263,7 +263,7 @@ new Form.EventObserver('communication_nouvelle_newsletter_form', formChanged);
 Event.observe('communication_nouvelle_newsletter_form', "submit" , function(evt){
 	if($("id_mail_template_newsletter").selectedIndex=="0") {
 		Event.stop(evt);
-		alerte.alerte_erreur('Ajout impossible','Vous devez sélectionner au moins un modèle d\'email','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+		alerte.alerte_erreur('Ajout impossible','Vous devez sÃ©lectionner au moins un modÃ¨le d\'email','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 	}
 	$("id_mail_template_newsletter").focus();
 } , false);

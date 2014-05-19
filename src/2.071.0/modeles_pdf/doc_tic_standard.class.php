@@ -11,15 +11,15 @@ class pdf_content_doc_tic_standard extends pdf_content_doc_standard{
 protected function calcul_hauteur(){
 	// Taille marge du haut
 	$hauteur = $this->MARGE_HAUT;
-	// Taille en-tête paramétrable
+	// Taille en-tÃªte paramÃ©trable
 	$hauteur += count( explode("\n",$this->TEXTE_ENTETE))*3;
-	// Taille entre en-tête et corps
+	// Taille entre en-tÃªte et corps
 	$hauteur += 5*$this->HAUTEUR_LIGNE_DEFAUT;
 	// Taille corps
 	$hauteur += count($this->contenu)*$this->HAUTEUR_LINE_ARTICLE;
 	// Taille pied
 	$hauteur += 5*$this->HAUTEUR_LIGNE_DEFAUT + count($this->document->getReglements())*3;
-	// Taille pied paramétrable
+	// Taille pied paramÃ©trable
 	$hauteur += count( explode("\n",$this->TEXTE_PIED))*3;
 	// Taille marge du bas
 	$hauteur += $this->MARGE_BAS;
@@ -35,7 +35,7 @@ protected function create_pdf_page () {
 	$this->FORMAT_PDF[0] = 80;
 	$this->FORMAT_PDF[1] = $this->calcul_hauteur();
 
-	// Création d'une nouvelle page
+	// CrÃ©ation d'une nouvelle page
 	$this->pdf->AddPage('P',$this->FORMAT_PDF);
 	$this->calcul_hauteur();
 	
@@ -58,7 +58,7 @@ protected function create_pdf_page () {
 }
 
 
-	// Créé l'entete du document PDF
+	// CrÃ©Ã© l'entete du document PDF
 protected function create_pdf_entete () {
 	$hauteur = 0;
 	
@@ -97,7 +97,7 @@ protected function create_pdf_entete () {
 	$hauteur += 3;
 	$this->pdf->SetXY($this->LARGEUR_RETRAIT, $hauteur);
 	$this->pdf->SetFont('Arial', '', 8);
-	$ref_doc_lib = "Ticket n°";
+	$ref_doc_lib = "Ticket nÂ°";
 	$this->pdf->Cell ($this->LARGEUR_LIGNE, 0, $ref_doc_lib." : $this->ref_doc", 0, 0, 'C');
 
 	// ***************************************************
@@ -147,7 +147,7 @@ protected function create_pdf_entete () {
 protected function create_pdf_adresse () {}
 
 
-// Créé le corps du PDF
+// CrÃ©Ã© le corps du PDF
 protected function create_pdf_corps () {
 	global $AFF_REMISES;
 
@@ -168,11 +168,11 @@ protected function create_pdf_corps () {
 			break; 
 		}
 
-		// Controle de la nécessité de changer de page
+		// Controle de la nÃ©cessitÃ© de changer de page
 		if (in_array($i, $this->contenu_end_page)) { break;	}
 	}
 
-	// Faire décendre le tableau jusqu'en bas du corps
+	// Faire dÃ©cendre le tableau jusqu'en bas du corps
 	
 
 	return true;
@@ -185,7 +185,7 @@ protected function create_pdf_corps_line ($line) {
 	global $TARIFS_NB_DECIMALES;
 
 	// ***************************************************
-	// Valeurs par défaut
+	// Valeurs par dÃ©faut
 	if (!isset($line->type_of_line)) 	{ $line->type_of_line = "vide"; 	}
 	if (!isset($line->lib_article)) 	{ $line->lib_article = ""; 			}
 	if (!isset($line->qte)) 			{ $line->qte = ""; 					}
@@ -201,7 +201,7 @@ protected function create_pdf_corps_line ($line) {
 	}
 	$line->pt = round($line->pu * $line->qte * (1-$line->remise/100), $TARIFS_NB_DECIMALES);
 
-	// Spécifités à l'affichage
+	// SpÃ©cifitÃ©s Ã  l'affichage
 	switch ($line->type_of_line) {
 		case "article":
 			$this->pdf->SetFont('Arial', '', 8);

@@ -4,7 +4,7 @@
 // *************************************************************************************************************
    
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("agendasTypesAvecDroit");
 check_page_variables ($page_variables);
 
@@ -29,7 +29,7 @@ $page_cible = "page_cible.php";
 	<table width="100%">
 			<tr>
 				<td style="width:3%"></td>
-				<td style="width:94%;" class="label_titre_popup" >Sélectionner des types d'événements affichés</td>
+				<td style="width:94%;" class="label_titre_popup" >SÃ©lectionner des types d'Ã©vÃ©nements affichÃ©s</td>
 				<td style="width:3%"></td>
 			</tr>
 	</table>
@@ -41,7 +41,7 @@ $page_cible = "page_cible.php";
 	<table width="100%">
 		<tr>
 			<td style="width:3%"></td>
-			<td class="labelled_text" style="width:310px;vertical-align:middle">Sélectionner un types d'agenda</td>
+			<td class="labelled_text" style="width:310px;vertical-align:middle">SÃ©lectionner un types d'agenda</td>
 			<td align="center">
 				<select id="id_liste_types_agendas_selected" style="width:200px">
 				<option value="0" selected="selected">
@@ -78,7 +78,7 @@ $page_cible = "page_cible.php";
 	<table width="100%">
 			<tr>
 				<td style="width:3%"></td>
-				<td style="width:94%;" class="label_titre_popup" >Types d'événements</td>
+				<td style="width:94%;" class="label_titre_popup" >Types d'Ã©vÃ©nements</td>
 				<td style="width:3%"></td>
 			</tr>
 		</table>
@@ -87,7 +87,7 @@ $page_cible = "page_cible.php";
 	<br />
 
 	<!-- C'est dans cette div que nous affichons la page pour choisir un model de pdf en fonction du type qu'on a choisi plus haut -->
-	<!-- par défaut on affiche le 1er type que l'on trouve -->
+	<!-- par dÃ©faut on affiche le 1er type que l'on trouve -->
 	<div id="choix_type_agenda" style="margin-left:1%; margin-right:1%; height:270px; overflow: auto" >
 	<?php 
 		$NoRequireFor_agenda_selectionner_types_events_result = true;

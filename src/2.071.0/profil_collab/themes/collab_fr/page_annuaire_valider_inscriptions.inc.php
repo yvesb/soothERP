@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES", "ANNUAIRE_CATEGORIES", "DEFAUT_ID_PAYS", "listepays", "civilites", "onglet");
 check_page_variables ($page_variables);
 
@@ -67,22 +67,22 @@ $debut = 1;
 					  <tr>
 					    <td style="text-align:center;">
 					    	<span id="inscriptions_confirmees" style="<?php if($onglet == "inscriptions_confirmees"){echo 'font-weight:bold;';}else{echo 'cursor: pointer;';}?>" >
-					    		Inscriptions confirmées
+					    		Inscriptions confirmÃ©es
 					    	</span>
 					    </td>
 					    <td style="text-align:center;">
 					    	<span id="inscriptions_non_confirmees" style="<?php if($onglet == "inscriptions_non_confirmees"){echo 'font-weight:bold;';}else{echo 'cursor: pointer;';}?>" >
-					    		Inscriptions non confirmées
+					    		Inscriptions non confirmÃ©es
 					    	</span>
 					    </td>
 					    <td style="text-align:center;">
 					    	<span id="modification_confirmees" style="<?php if($onglet == "modification_confirmees"){echo 'font-weight:bold;';}else{echo 'cursor: pointer;';}?>" >
-					    		Modifications confirmées
+					    		Modifications confirmÃ©es
 					    	</span>
 					    </td>
 					    <td style="text-align:center;">
 					    	<span id="modification_non_confirmees" style="<?php if($onglet == "modification_non_confirmees"){echo 'font-weight:bold;';}else{echo 'cursor: pointer;';}?>" >
-					    		Modifications non confirmées
+					    		Modifications non confirmÃ©es
 					    	</span>
 					    </td>
 					  </tr>
@@ -118,10 +118,10 @@ $debut = 1;
 				
 				<table id="tableresult" border="0" cellspacing="0" cellpadding="0" width="100%">
 				  <tr class="colorise0">
-				    <td width="35%">Nom (Civilité)</td>
+				    <td width="35%">Nom (CivilitÃ©)</td>
 				    <td width="15%">Profil / Interface</td>
-				    <td width="15%">Catégorie</td>
-				    <td width="15%">+ de détails</td>
+				    <td width="15%">CatÃ©gorie</td>
+				    <td width="15%">+ de dÃ©tails</td>
 				    <td width="10%">&nbsp;</td>
 				    <td width="10%">&nbsp;</td>
 				  </tr>
@@ -167,7 +167,7 @@ $debut = 1;
 				      </td>
 				      <td style="width:20%; text-align:left">
 				        <a href="#" id="more_<?php echo $inscription["id_contact_tmp"]; ?>" style="width:100%;">
-				        	+ de détails
+				        	+ de dÃ©tails
 				        </a>
 				        <script type="text/javascript">
 				        Event.observe("more_<?php echo $inscription["id_contact_tmp"]; ?>", "click",  function(evt){

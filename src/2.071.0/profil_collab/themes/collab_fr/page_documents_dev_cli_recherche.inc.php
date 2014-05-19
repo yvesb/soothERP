@@ -4,7 +4,7 @@
 // RECHERCHE D'UNE COMMANDE EN COURS
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -43,7 +43,7 @@ array_menu_r_article[0] 	=	new Array('recherche_dev', 'menu_1');
 		</tr>
 		<tr>
 			<td style="width:2%">&nbsp;</td>
-			<td style="width:15%; font-style : italic ; font-weight:bold">Critères d'affichage</td>
+			<td style="width:15%; font-style : italic ; font-weight:bold">CritÃ¨res d'affichage</td>
 			<td style="width:30%"></td>
 			<td style="width:10%"></td>
 			<td style="width:20%; font-style : italic; font-weight:bold">Etat du devis</td>
@@ -152,7 +152,7 @@ array_menu_r_article[0] 	=	new Array('recherche_dev', 'menu_1');
 			
 				<input type="radio" name="etat" id="devaredig" value="devaredig" />
 			
-			<span class="labelled_text">Uniquement les devis à rédiger</span>
+			<span class="labelled_text">Uniquement les devis Ã  rÃ©diger</span>
 			</td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
@@ -201,7 +201,7 @@ array_menu_r_article[0] 	=	new Array('recherche_dev', 'menu_1');
 			
 				<input type="radio" name="etat" id="devrec" value="devrec" />
 			
-			<span class="labelled_text">Uniquement les devis récents</span>
+			<span class="labelled_text">Uniquement les devis rÃ©cents</span>
 			</td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
@@ -210,7 +210,7 @@ array_menu_r_article[0] 	=	new Array('recherche_dev', 'menu_1');
 		
 		<tr>
 			<td>&nbsp;</td>
-			<td><span class="labelled_text">Par catégorie d'article:</span>
+			<td><span class="labelled_text">Par catÃ©gorie d'article:</span>
 			<input type="hidden"value="" />
 			<input type="hidden" name="id_tarif" id="id_tarif" value="<?php echo $_SESSION['magasin']->getId_tarif()?>" />
 			<!--<input type="hidden" name="id_stock" id="id_stock" value="?php echo $_SESSION['magasin']->getId_stock()?>" />-->
@@ -235,7 +235,7 @@ array_menu_r_article[0] 	=	new Array('recherche_dev', 'menu_1');
 			
 			<td style="width:20%">
 				<input type="radio" name="etat" id="devperim" value="devperim" />
-			<span class="labelled_text">Uniquement les devis périmés</span>
+			<span class="labelled_text">Uniquement les devis pÃ©rimÃ©s</span>
 			</td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
@@ -368,7 +368,7 @@ array_menu_r_article[0] 	=	new Array('recherche_dev', 'menu_1');
 <script type="text/javascript">
 
 
-//remise à zero du formulaire
+//remise Ã  zero du formulaire
 Event.observe('annuler_recherche', "click", function(evt){Event.stop(evt); $('form_recherche').reset();});
 //lance la recherche
 Event.observe('form_recherche', "submit", function(evt){page.documents_recherche_dev();  

@@ -4,7 +4,7 @@
 //journal des ventes
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -20,7 +20,7 @@ function nb_mois($date1, $date2) {
 
 ?>
 <script type="text/javascript">	
-tableau_smenu[0] = Array("smenu_comptabilite", "smenu_comptabilite.php" ,"true" ,"sub_content", "Comptabilité");
+tableau_smenu[0] = Array("smenu_comptabilite", "smenu_comptabilite.php" ,"true" ,"sub_content", "ComptabilitÃ©");
 tableau_smenu[1] = Array('compta_journal_veac_export','compta_journal_veac_export.php','true','sub_content', "Export des journaux des ventes et des achats");
 update_menu_arbo();
 </script>
@@ -34,7 +34,7 @@ update_menu_arbo();
 	<div id="div_export_choix_step_1" class="contactview_corps" style="padding:8px">
 		<table id="table_export" width="100%" border="0" cellspacing="0" cellpadding="0" >
 			<tr>
-				<td colspan="4" class="titre_config" >Choix de la période à exporter :</td>
+				<td colspan="4" class="titre_config" >Choix de la pÃ©riode Ã  exporter :</td>
 				<td style="text-align:center" width="20px" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="reset_all" style="cursor:pointer;"/></td>
 			</tr>
 			<tr>
@@ -44,10 +44,10 @@ update_menu_arbo();
 				<td style="width:85px">P&eacute;riode:&nbsp;&nbsp; </td>
 				<td>
 					<select id="date_exercice" name="date_exercice" class="classinput_nsize">
-					<option value="--CHOISIR--">Choisissez la période</option>
+					<option value="--CHOISIR--">Choisissez la pÃ©riode</option>
 					<?php
 					for($i = 0; $i< count($liste_exercices); $i++) {
-						//décompte du nombre de mois en deux exercices
+						//dÃ©compte du nombre de mois en deux exercices
 						$date1 = date("Y-m-d",strtotime($liste_exercices[$i]->date_fin));
 						if (isset($liste_exercices[$i+1])) {
 							$date2 = date("Y-m-d", strtotime($liste_exercices[$i+1]->date_fin));
@@ -97,7 +97,7 @@ update_menu_arbo();
 	<div id="div_export_choix_step_2" class="contactview_corps" style="padding:8px;display:none">
 		<table id="table_export" style="height:100%; width:100%"  border="0" cellspacing="0" cellpadding="0">
 		<tr>
-			<td colspan="4" class="titre_config"  >Choix des journaux à exporter :</td>
+			<td colspan="4" class="titre_config"  >Choix des journaux Ã  exporter :</td>
 			<td style="text-align:center" width="20px" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="cancel_step_2" style="cursor:pointer;"/></td>
 		</tr>
 		<tr>
@@ -180,7 +180,7 @@ Event.observe("date_exercice", "change", function(evt){
 // on change select id_journaux
 Event.observe("id_journaux[]", "change", function(evt){
 	Event.stop(evt);
-	//	si un journal && logiciel selectioné : step 2 > step 3
+	//	si un journal && logiciel selectionÃ© : step 2 > step 3
 	if( compta_export_form_verif('id_journaux[]') && compta_export_form_verif('id_logiciel') ){
 		compta_export_next_step (3);
 	}
@@ -188,7 +188,7 @@ Event.observe("id_journaux[]", "change", function(evt){
 // on change select id_logiciel
 Event.observe("id_logiciel", "change", function(evt){
 	Event.stop(evt);
-	//	si un journal && logiciel selectioné : step 2 > step 3
+	//	si un journal && logiciel selectionÃ© : step 2 > step 3
 	if( compta_export_form_verif('id_journaux[]') && compta_export_form_verif('id_logiciel') ){
 		compta_export_next_step (3);
 	}
@@ -226,14 +226,14 @@ Event.observe("continuer", "click", function(evt){
 //	INPUTS OBSERVES
 //	on blur date_debut
 Event.observe("date_debut", "blur", function(evt){
-	//	re-ecrit la date pour compatibilité systeme
+	//	re-ecrit la date pour compatibilitÃ© systeme
 	datemask (evt);
 	//	valide la date dans l'objet (step 0>step1)
 	compta_export_next_step (1);
 }, false);
 //	on blur date_fin
 Event.observe("date_fin", "blur", function(evt){
-	//	re-ecrit la date pour compatibilité systeme
+	//	re-ecrit la date pour compatibilitÃ© systeme
 	datemask (evt);
 	//	valide la date dans l'objet (step 0>step1)
 	compta_export_next_step (1);

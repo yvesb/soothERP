@@ -8,16 +8,16 @@ $import_tarifs_fournisseur_csv['liste_entete']	=
 				array(
 					"main_lib" 		=> "Informations concernant les tarifs de vos fournisseurs : ",
 					"champs" 		=> array(
-						array("lib"		=>'Référence OEM',"id"=>'ref_oem',
+						array("lib"		=>'RÃ©fÃ©rence OEM',"id"=>'ref_oem',
 											"corresp"=>array("ref_oem", "ref oem", "reference_oem", "reference oem"), 
 											"obligatoire" => true),
-						array("lib"		=>'Référence interne',"id"=>'ref_interne',
+						array("lib"		=>'RÃ©fÃ©rence interne',"id"=>'ref_interne',
 											"corresp"=>array("reference_interne", "reference interne", 
 																"ref_interne", "ref interne")),
-						array("lib"		=>'Référence fournisseur',"id"=>'ref_article_externe',
+						array("lib"		=>'RÃ©fÃ©rence fournisseur',"id"=>'ref_article_externe',
 											"corresp"=>array("ref_article_externe", "ref article externe", "reference_article_externe", 
 																"reference article externe", "ref four", "Ref four", "Ref Four", "ref_four")),
-						array("lib"		=>'Libellé article (chez le fournisseur)',"id"=>'lib_article_externe',
+						array("lib"		=>'LibellÃ© article (chez le fournisseur)',"id"=>'lib_article_externe',
 											"corresp"=>array("lib", "lib_article_externe", "lib article externe", "libelle_article_externe", 
 																"libelle article externe")),
 						array("lib"		=>'Prix Unitaire d\'achat HT',"id"	=>'pa_ht',
@@ -32,10 +32,10 @@ $import_tarifs_fournisseur_csv['liste_entete']	=
 // ********************************************************************************
 final class import_tarifs_fournisseur_csv {
 	protected $id_import_tarifs_fournisseur;	// Id auto-increment
-	protected $ref_fournisseur;					// La référence du fournisseur
+	protected $ref_fournisseur;					// La rÃ©fÃ©rence du fournisseur
 	protected $date_tarif;						// La date de l'import
 	protected $etape;							// Etape en cours de l'import
-	protected $id_colonne_ref_article_existant;	// L'identifiant de la colonne stockant la référence de l'article existant (trouvée par correspondance ou choisie par l'utilisateur)
+	protected $id_colonne_ref_article_existant;	// L'identifiant de la colonne stockant la rÃ©fÃ©rence de l'article existant (trouvÃ©e par correspondance ou choisie par l'utilisateur)
 	
 	/**
 	 * Constructeur
@@ -56,11 +56,11 @@ final class import_tarifs_fournisseur_csv {
 		return true;
 	}
 	
-	// Import des données
+	// Import des donnÃ©es
 	function import($contenu) {
 		global $bdd;
 		
-		// Gestion des éventuels problèmes
+		// Gestion des Ã©ventuels problÃ¨mes
 		// Si le fichier est vide
 		if (!count($contenu)) {
 			$GLOBALS['_ALERTES']['import_fichier_vide'] = 1;
@@ -83,11 +83,11 @@ final class import_tarifs_fournisseur_csv {
 		// On importe les colonnes
 		$this->import_colonnes($ligne_entetes);
 		
-		// On importe les données
+		// On importe les donnÃ©es
 		$this->import_donnees($contenu, $count_erreur);
 		
 		$this->erase();
-		// Création de l'information sur l'étape et le profil à créer pour les contacts importés
+		// CrÃ©ation de l'information sur l'Ã©tape et le profil Ã  crÃ©er pour les contacts importÃ©s
 		$query = "INSERT INTO csv_import_tarifs_fournisseur (ref_fournisseur, date_tarif, etape) 
 					VALUES ('".$this->ref_fournisseur."', CURDATE(), 1)";
 		$bdd->exec ($query);
@@ -102,7 +102,7 @@ final class import_tarifs_fournisseur_csv {
 	}
 	
 	/**
-	 * Mise à jour de l'étape de l'import
+	 * Mise Ã  jour de l'Ã©tape de l'import
 	 */
 	public function maj_etape($etape) {
 		global $bdd;
@@ -113,7 +113,7 @@ final class import_tarifs_fournisseur_csv {
 	}
 	
 	/**
-	 * Import des données
+	 * Import des donnÃ©es
 	 */
 	function create($liste_ligne = array()) {
 		global $bdd;
@@ -144,7 +144,7 @@ final class import_tarifs_fournisseur_csv {
 					$ligne[$col] = $donnee->getValeur();
 				}
 				
-				// On met à jour l'enregistrement de la table articles_ref_fournisseur
+				// On met Ã  jour l'enregistrement de la table articles_ref_fournisseur
 				if(isset($ligne["ref_article_existant"]) && $ligne["ref_article_existant"] != ""){
 					$article = new article($ligne["ref_article_existant"]);
 					if($article->add_ref_article_externe($this->ref_fournisseur, isset($ligne["ref_article_externe"])?$ligne["ref_article_externe"]:"", 
@@ -157,11 +157,11 @@ final class import_tarifs_fournisseur_csv {
 						$count_erreur++;
 					}
 				}else{
-					// On ne fait rien car on n'a pas retrouvé l'article correspondant dans notre catalogue
-					echo "On fait rien : pas de ref_article_existant renseignée <br />";
+					// On ne fait rien car on n'a pas retrouvÃ© l'article correspondant dans notre catalogue
+					echo "On fait rien : pas de ref_article_existant renseignÃ©e <br />";
 				}
 			}
-			// On supprime les lignes que l'on a importées
+			// On supprime les lignes que l'on a importÃ©es
 			$this->delete_lines($liste_ligne);
 		}
 		
@@ -208,16 +208,16 @@ final class import_tarifs_fournisseur_csv {
 	}
 	
 	/**
-	 * Méthode d'import des colonnes
+	 * MÃ©thode d'import des colonnes
 	 * @param La ligne d'entetes du fichier CSV
 	 */
 	public function import_colonnes($ligne_entetes){
-		// Création de l'objet colonne
+		// CrÃ©ation de l'objet colonne
 		$colonne = new import_tarifs_fournisseur_csv_colonne();
 		// On vide la table
 		$colonne->erase();
 		
-		// On créé les différentes colonnes présentes dans le fichier
+		// On crÃ©Ã© les diffÃ©rentes colonnes prÃ©sentes dans le fichier
 		for($i=0; $i < count($ligne_entetes); $i++) {
 			$colonne = new import_tarifs_fournisseur_csv_colonne();
 			$colonne->setId_colonne($i+1);
@@ -228,17 +228,17 @@ final class import_tarifs_fournisseur_csv {
 	}
 	
 	public function import_donnees($contenu, &$count_erreur){
-		// Création de l'objet donnee
+		// CrÃ©ation de l'objet donnee
 		$donnee = new import_tarifs_fournisseur_csv_donnee();
 		// On vide la table
 		$donnee->erase();
 		
 		$ligne_entetes = $contenu[0];
 		$nb_col = count($ligne_entetes);
-		// On créé les différentes lignes présentes dans le fichier
+		// On crÃ©Ã© les diffÃ©rentes lignes prÃ©sentes dans le fichier
 		for($i=1; $i < count($contenu); $i++) {
 			$tmp_line =  $contenu[$i];
-			// On vérifie qu'il n'y a pas plus de colonnes que dans la ligne d'entêtes
+			// On vÃ©rifie qu'il n'y a pas plus de colonnes que dans la ligne d'entÃªtes
 			if (count($tmp_line) > $nb_col) {
 				$count_erreur++;
 			}else{
@@ -251,7 +251,7 @@ final class import_tarifs_fournisseur_csv {
 					}
 					$donnee->setId_ligne($i);
 					$donnee->setId_colonne($j+1);
-					// Ecriture en base de la donnée
+					// Ecriture en base de la donnÃ©e
 					$donnee->write();	
 				}
 			}
@@ -270,7 +270,7 @@ final class import_tarifs_fournisseur_csv {
 	
 	/**
 	 * Fonction permettant de supprimer des lignes de l'import
-	 * @param liste_lignes : La liste des identifiants des lignes à supprimer
+	 * @param liste_lignes : La liste des identifiants des lignes Ã  supprimer
 	 */
 	function delete_lines($liste_lignes){
 		$csv_donnees = new import_tarifs_fournisseur_csv_donnee();
@@ -278,8 +278,8 @@ final class import_tarifs_fournisseur_csv {
 	}
 	
 	/**
-	 * Fonction permettant de supprimer une colonne et les données associées
-	 * @param id_col : L'identifiant de la colonne à supprimer
+	 * Fonction permettant de supprimer une colonne et les donnÃ©es associÃ©es
+	 * @param id_col : L'identifiant de la colonne Ã  supprimer
 	 */
 	public function deleteColumn($id_col){
 		$col = new import_tarifs_fournisseur_csv_colonne();
@@ -290,7 +290,7 @@ final class import_tarifs_fournisseur_csv {
 	}
 	
 	/**
-	 * Fonction permettant de récupérer les données à importer sous la forme d'un tableau
+	 * Fonction permettant de rÃ©cupÃ©rer les donnÃ©es Ã  importer sous la forme d'un tableau
 	 */
 	public function recupererDonneesAImporter(){
 		global $bdd;
@@ -310,7 +310,7 @@ final class import_tarifs_fournisseur_csv {
 	}
 	
 	/**
-	 * Fonction permettant de supprimer les colonnes et données qui ne seront pas importées
+	 * Fonction permettant de supprimer les colonnes et donnÃ©es qui ne seront pas importÃ©es
 	 */
 	public function supprimerDonneesNonImportees(){
 		global $bdd;
@@ -360,7 +360,7 @@ final class import_tarifs_fournisseur_csv {
 
 
 // ********************************
-// **  Répartition des colonnes  **
+// **  RÃ©partition des colonnes  **
 // ********************************
 final class import_tarifs_fournisseur_csv_colonne{
 	private $id_colonne;
@@ -430,9 +430,9 @@ final class import_tarifs_fournisseur_csv_colonne{
 	}
 	
 	/**
-	 * Mise à jour de la table
-	 * @param id_colonne : L'identifiant de la colonne à modifier
-	 * @param value : Le libellé du champ correspondant
+	 * Mise Ã  jour de la table
+	 * @param id_colonne : L'identifiant de la colonne Ã  modifier
+	 * @param value : Le libellÃ© du champ correspondant
 	 */
 	function update($id_colonne, $value) {
 		global $bdd;
@@ -444,7 +444,7 @@ final class import_tarifs_fournisseur_csv_colonne{
 
 	/**
 	 * Lecture dans la base d'une colonne
-	 * @param id_colonne : L'identifiant de la colonne à lire
+	 * @param id_colonne : L'identifiant de la colonne Ã  lire
 	 */
 	function read($id_colonne) {
 		global $bdd;
@@ -460,7 +460,7 @@ final class import_tarifs_fournisseur_csv_colonne{
 	}
 	
 	/**
-	 * Lecture de toutes les colonnes en base de données
+	 * Lecture de toutes les colonnes en base de donnÃ©es
 	 * @return Un tableau contenant toutes les colonnes
 	 */
 	function readAll() {
@@ -504,7 +504,7 @@ final class import_tarifs_fournisseur_csv_colonne{
 }
 
 // *******************************
-// **  Répartition des données  **
+// **  RÃ©partition des donnÃ©es  **
 // *******************************
 final class import_tarifs_fournisseur_csv_donnee{
 	private $id;
@@ -560,7 +560,7 @@ final class import_tarifs_fournisseur_csv_donnee{
 	}
 	
 	/**
-	 * Ecriture en base de la donnée
+	 * Ecriture en base de la donnÃ©e
 	 */
 	function write() {
 		global $bdd;
@@ -575,7 +575,7 @@ final class import_tarifs_fournisseur_csv_donnee{
 	
 	/**
 	 * Suppression de lignes
-	 * @param liste_lignes : Les identifiants des lignes à supprimer
+	 * @param liste_lignes : Les identifiants des lignes Ã  supprimer
 	 */
 	function delete_lines($liste_lignes) {
 		global $bdd;
@@ -589,8 +589,8 @@ final class import_tarifs_fournisseur_csv_donnee{
 	}
 	
 	/**
-	 * Lecture d'une donnée depuis la base
-	 * @param id : L'identifiant de la donnée à lire
+	 * Lecture d'une donnÃ©e depuis la base
+	 * @param id : L'identifiant de la donnÃ©e Ã  lire
 	 */
 	function read($id) {
 		global $bdd;
@@ -608,9 +608,9 @@ final class import_tarifs_fournisseur_csv_donnee{
 	}
 	
 	/**
-	 * Lecture d'une donnée depuis la base
-	 * @param id_ligne : L'identifiant de la ligne de la donnée à lire
-	 * @param id_col : L'identifiant de la colonne de la donnée à lire
+	 * Lecture d'une donnÃ©e depuis la base
+	 * @param id_ligne : L'identifiant de la ligne de la donnÃ©e Ã  lire
+	 * @param id_col : L'identifiant de la colonne de la donnÃ©e Ã  lire
 	 */
 	function readLigneColonne() {
 		global $bdd;
@@ -630,9 +630,9 @@ final class import_tarifs_fournisseur_csv_donnee{
 	}
 	
 	/**
-	 * Mise à jour de la valeur
-	 * @param id : L'identifiant de la donnée
-	 * @param value : La nouvelle valeur de la donnée 
+	 * Mise Ã  jour de la valeur
+	 * @param id : L'identifiant de la donnÃ©e
+	 * @param value : La nouvelle valeur de la donnÃ©e 
 	 */
 	public function update($id, $value) {
 		global $bdd;
@@ -642,7 +642,7 @@ final class import_tarifs_fournisseur_csv_donnee{
 	}
 	
 	/**
-	 * Lecture de toutes les lignes en base de données
+	 * Lecture de toutes les lignes en base de donnÃ©es
 	 */
 	function readAll() {
 		global $bdd;
@@ -661,9 +661,9 @@ final class import_tarifs_fournisseur_csv_donnee{
 	}
 	
 	/**
-	 * Fonction permettant de lire une donnée en fonction de la ligne et de la colonne
-	 * @param id_ligne : L'identifiant de la ligne de la données à lire
-	 * @param id_colonne : L'identifiant de la colonne de la données à lire
+	 * Fonction permettant de lire une donnÃ©e en fonction de la ligne et de la colonne
+	 * @param id_ligne : L'identifiant de la ligne de la donnÃ©es Ã  lire
+	 * @param id_colonne : L'identifiant de la colonne de la donnÃ©es Ã  lire
 	 */
 	function readData($id_ligne, $id_colonne){
 		global $bdd;
@@ -684,8 +684,8 @@ final class import_tarifs_fournisseur_csv_donnee{
 	}
 
 	/**
-	 * Fonction permettant de supprimer toutes les données correspondants à une colonne
-	 * @param id_col : L'identifiant de la colonne pour laquelle il faut supprimer toutes les données
+	 * Fonction permettant de supprimer toutes les donnÃ©es correspondants Ã  une colonne
+	 * @param id_col : L'identifiant de la colonne pour laquelle il faut supprimer toutes les donnÃ©es
 	 */
 	function deleteDataForColumn($id_col){
 		global $bdd;

@@ -16,7 +16,7 @@ $stocks_liste = $_SESSION['stocks'];
 
 
 if (isset($_REQUEST['ref_doc'])) {
-// ouverture des infos du document et mise à jour
+// ouverture des infos du document et mise Ã  jour
 	$document = open_doc ($_REQUEST['ref_doc']);
 	
 	if (isset($_REQUEST["global_option"]) && $_REQUEST["global_option"] == "not_generer_facture") {$GLOBALS['_OPTIONS']['CREATE_DOC']['not_generer_facture'] = 1;}
@@ -29,7 +29,7 @@ if (isset($_REQUEST['ref_doc'])) {
 	$montant_acquite = 0;
 	$liste_reglement_valide = array();
 	
-	//si un montant est négatif
+	//si un montant est nÃ©gatif
 	$montant_negatif = false;
 	$montant_positif = 1;
 	if (isset($_REQUEST["montant_neg"])) { $montant_negatif = true; $montant_positif = -1;}

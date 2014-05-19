@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 
 $page_variables = array ();
 check_page_variables ($page_variables);
@@ -53,7 +53,7 @@ switch ($_REQUEST["lmb_col"]) {
 			<td>
 				<select id="<?php echo $_REQUEST["lmb_col"]."_pend_".$indexArrayLigne->__getId();?>" name="<?php echo $_REQUEST["lmb_col"]."_pend_".$indexArrayLigne->__getId();?>" class="classinput_lsize">
 					<option value="">Non d&eacute;termin&eacute;e</option>
-					<option value="creer">Créer</option>
+					<option value="creer">CrÃ©er</option>
 					<?php 
 					foreach ($listes_champs as $champ)  {
 						?>
@@ -122,7 +122,7 @@ switch ($_REQUEST["lmb_col"]) {
 			<td>&nbsp;</td>	
 			<td>
 				<select id="<?php echo $_REQUEST["lmb_col"]."_qte_".$_REQUEST["id_tarif"];?>" name="<?php echo $_REQUEST["lmb_col"]."_qte_".$_REQUEST["id_tarif"];?>" class="classinput_lsize">
-					<option value="">Qté 1 par défaut</option>
+					<option value="">QtÃ© 1 par dÃ©faut</option>
 					<?php 
 					foreach ($arrayColonne as $indexArrayColonne)  {
 						?>

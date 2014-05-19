@@ -31,7 +31,7 @@ if( isset ( $_REQUEST['check']) && $_REQUEST['check'] == 'true'){
 	//Verifs BDD
 	if($search['numero_compte'] != "") {
 		if (!preg_match("`^[[:alnum:]\-\_]+$`", $search['numero_compte'])) {
-			$check_erreurs['num'][] = "Le numéro n'est pas valide";
+			$check_erreurs['num'][] = "Le numÃ©ro n'est pas valide";
 		} else {
 			$query = "SELECT numero_compte, lib_compte
 							FROM plan_comptable
@@ -39,12 +39,12 @@ if( isset ( $_REQUEST['check']) && $_REQUEST['check'] == 'true'){
 			$resultat = $bdd->query($query);
 			$result = $resultat->fetchAll();
 			if(count($result) !=0){
-				$check_erreurs['num'][] = "Le numéro existe déja";
+				$check_erreurs['num'][] = "Le numÃ©ro existe dÃ©ja";
 			}
 			unset ($result, $resultat, $query);
 		}
 	} else {
-		$check_erreurs['num'][] = "Le numéro est vide ...";
+		$check_erreurs['num'][] = "Le numÃ©ro est vide ...";
 	}
 	if ($search['lib_compte'] != ""){
 		$query = "SELECT numero_compte, lib_compte
@@ -54,7 +54,7 @@ if( isset ( $_REQUEST['check']) && $_REQUEST['check'] == 'true'){
 		$result = $resultat->fetchAll();
 		
 		if(count($result)!=0){
-			$check_erreurs['lib'][] = "La description existe déja";
+			$check_erreurs['lib'][] = "La description existe dÃ©ja";
 		}
 		unset ($result, $resultat, $query);
 	} else {

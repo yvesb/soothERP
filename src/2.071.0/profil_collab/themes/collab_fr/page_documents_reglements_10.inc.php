@@ -4,7 +4,7 @@
 // REGLEMENT ENTRANT VIREMENT
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -96,16 +96,16 @@ if (count($comptes_bancaires) && count($comptes_bancaires_societe)) {
 	<?php
 	if (!count($comptes_bancaires_societe)) {
 	?>
-	Auncun compte bancaire n'est défini pour la soci&eacute;t&eacute;.<br />
+	Auncun compte bancaire n'est dÃ©fini pour la soci&eacute;t&eacute;.<br />
 	<?php
 	}
 	if (!count($comptes_bancaires)) {
 	?>
-	Aucun compte bancaire n'est défini pour ce fournisseur.<br />
+	Aucun compte bancaire n'est dÃ©fini pour ce fournisseur.<br />
 	<?php
 	}
 	?>
-	Veuillez enregistrer les coordonnées bancaires ou contacter 
+	Veuillez enregistrer les coordonnÃ©es bancaires ou contacter 
 	l'administrateur de LundiMatin Business.<br />
 	<?php
 }

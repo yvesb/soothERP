@@ -11,18 +11,18 @@ require ($DIR."_session.inc.php");
 
 if (!$_SESSION['user']->check_permission ("13")) {
 	//on indique l'interdiction et on stop le script
-	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accés ne vous permettent pas de visualiser ce type de page</span>";
+	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accÃ©s ne vous permettent pas de visualiser ce type de page</span>";
 	exit();
 }
 $compta_e = new compta_exercices ();
 $liste_exercices	= $compta_e->charger_compta_exercices();
-//on récupère la dte du dernier exercice cloturé
+//on rÃ©cupÃ¨re la dte du dernier exercice cloturÃ©
 foreach ($liste_exercices as $exercice) {
 	if (!$exercice->etat_exercice) {$last_date_before_cloture = $exercice->date_fin; break;}
 }
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -55,10 +55,10 @@ if (isset($_REQUEST['date_exercice']) && ($form['date_fin'] == "" && $form['date
 
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_join 	= "";
 	$query_where 	= "";
 	$query_group	= "";
@@ -81,7 +81,7 @@ if (isset($_REQUEST['recherche'])) {
 				if ($query_where) { $query_where .= " &&  "; }
 				$query_where .=  " ccd.date_depot <= '".date_Fr_to_Us($search['date_fin'])." 23:59:59' "; 
 			}
-		 //récuperer les depots bancaires de la periode
+		 //rÃ©cuperer les depots bancaires de la periode
 		 $query = "SELECT ccd.id_compte_caisse_depot, ccd.id_compte_caisse_source, ccd.id_compte_bancaire_destination, ccd.ref_user, ccd.date_depot, ccd.montant_depot, ccd.num_remise, ccd.commentaire,
 											cc.lib_caisse , cc.defaut_numero_compte as d_cpt_caisse,
 											cc2.lib_compte, cc2.numero_compte, cc2.defaut_numero_compte as d_cpt_banque, a.nom
@@ -107,7 +107,7 @@ if (isset($_REQUEST['recherche'])) {
 					} else {
 						$journal_caisse_depart = $journaux_caisses[$tmp->d_cpt_caisse];
 					}
-					//création de opération de journal
+					//crÃ©ation de opÃ©ration de journal
 					$journal_caisse_depart->create_operation ($DEFAUT_COMPTE_VIREMENTS_INTERNES, -$tmp->montant_depot, $tmp->id_compte_caisse_depot, $tmp->date_depot, 1); 
 				
 				}
@@ -121,7 +121,7 @@ if (isset($_REQUEST['recherche'])) {
 					} else {
 						$journal_banque_arrivee = $journaux_banques[$tmp->d_cpt_banque];
 					}
-					//création de opération de journal
+					//crÃ©ation de opÃ©ration de journal
 					$journal_banque_arrivee->create_operation ($DEFAUT_COMPTE_VIREMENTS_INTERNES, $tmp->montant_depot, $tmp->id_compte_caisse_depot, $tmp->date_depot, 2); 
 				}
 				unset ($query2, $resultat2, $tmp2);
@@ -141,7 +141,7 @@ if (isset($_REQUEST['recherche'])) {
 				if ($query_where) { $query_where .= " &&  "; }
 				$query_where .=  " ccr.date_retrait <= '".date_Fr_to_Us($search['date_fin'])." 23:59:59' "; 
 			}
-		 //récuperer les retraits bancaires de la periode
+		 //rÃ©cuperer les retraits bancaires de la periode
 		 $query = "SELECT ccr.id_compte_caisse_retrait, ccr.id_compte_caisse_destination, ccr.id_compte_bancaire_source, ccr.ref_user, ccr.date_retrait, ccr.montant_retrait, ccr.commentaire,
 											cc.lib_caisse , cc.defaut_numero_compte as d_cpt_caisse,
 											cc2.lib_compte, cc2.numero_compte, cc2.defaut_numero_compte as d_cpt_banque, a.nom
@@ -167,7 +167,7 @@ if (isset($_REQUEST['recherche'])) {
 					} else {
 						$journal_caisse_arrivee = $journaux_caisses[$tmp->d_cpt_caisse];
 					}
-					//création de opération de journal
+					//crÃ©ation de opÃ©ration de journal
 					$journal_caisse_arrivee->create_operation ($DEFAUT_COMPTE_VIREMENTS_INTERNES, $tmp->montant_retrait, $tmp->id_compte_caisse_retrait, $tmp->date_retrait, 4); 
 				
 				}
@@ -181,7 +181,7 @@ if (isset($_REQUEST['recherche'])) {
 					} else {
 						$journal_banque_depart = $journaux_banques[$tmp->d_cpt_banque];
 					}
-					//création de opération de journal
+					//crÃ©ation de opÃ©ration de journal
 					$journal_banque_depart->create_operation ($DEFAUT_COMPTE_VIREMENTS_INTERNES, -$tmp->montant_retrait, $tmp->id_compte_caisse_retrait, $tmp->date_retrait, 3); 
 				}
 				unset ($query2, $resultat2, $tmp2);
@@ -190,7 +190,7 @@ if (isset($_REQUEST['recherche'])) {
 			unset ($query, $resultat, $tmp);
 		break;
 		
-		//transfert entre caisses (de compte différents)
+		//transfert entre caisses (de compte diffÃ©rents)
 		
 		case 3:
 			if ($search['date_debut']) {
@@ -201,7 +201,7 @@ if (isset($_REQUEST['recherche'])) {
 				if ($query_where) { $query_where .= " &&  "; }
 				$query_where .=  " cct.date_transfert <= '".date_Fr_to_Us($search['date_fin'])." 23:59:59' "; 
 			}
-		 //récuperer les transferts de la periode
+		 //rÃ©cuperer les transferts de la periode
 		 $query = "SELECT cct.id_compte_caisse_transfert, cct.id_compte_caisse_source, cct.id_compte_caisse_destination, cct.ref_user, cct.date_transfert, cct.montant_theorique, cct.montant_transfert, cct.commentaire, 
 											cc.lib_caisse as lib_caisse_source, cc.defaut_numero_compte as d_cpt_caisse_source,
 											cc2.lib_caisse as lib_caisse_dest, cc2.defaut_numero_compte as d_cpt_caisse_dest
@@ -228,7 +228,7 @@ if (isset($_REQUEST['recherche'])) {
 						} else {
 							$journal_caisse_depart = $journaux_caisses[$tmp->d_cpt_caisse_source];
 						}
-						//création de opération de journal
+						//crÃ©ation de opÃ©ration de journal
 						$journal_caisse_depart->create_operation ($DEFAUT_COMPTE_VIREMENTS_INTERNES, -$tmp->montant_transfert, $tmp->id_compte_caisse_transfert, $tmp->date_transfert, 9); 
 					
 					}
@@ -242,7 +242,7 @@ if (isset($_REQUEST['recherche'])) {
 						} else {
 							$journal_caisse_arrive = $journaux_caisses[$tmp->d_cpt_caisse_dest];
 						}
-						//création de opération de journal
+						//crÃ©ation de opÃ©ration de journal
 						$journal_caisse_arrive->create_operation ($DEFAUT_COMPTE_VIREMENTS_INTERNES, $tmp->montant_transfert, $tmp->id_compte_caisse_transfert, $tmp->date_transfert, 9); 
 					}
 					unset ($query2, $resultat2, $tmp2);
@@ -264,7 +264,7 @@ if (isset($_REQUEST['recherche'])) {
 			}
 			if ($query_where) { $query_where .= " &&  "; }
 			$query_where .=  " ctt.tp_type = 'TPE' "; 
-		 //récuperer les telecollectes de la periode
+		 //rÃ©cuperer les telecollectes de la periode
 		 $query = "SELECT ctt.id_compte_tp_telecollecte, ctt.id_compte_tp, ctt.tp_type, ctt.ref_user, ctt.date_telecollecte, ctt.montant_telecollecte, ctt.montant_commission, ctt.montant_transfere, ctt.commentaire,
 		 									ct.defaut_numero_compte as d_cpt_caisse,
 		 									cb.defaut_numero_compte as d_cpt_banque
@@ -289,7 +289,7 @@ if (isset($_REQUEST['recherche'])) {
 					} else {
 						$journal_banque_arrivee = $journaux_banques[$tmp->d_cpt_banque];
 					}
-					//création de opération de journal
+					//crÃ©ation de opÃ©ration de journal
 					$journal_banque_arrivee->create_operation ($DEFAUT_COMPTE_VIREMENTS_INTERNES, $tmp->montant_transfere, $tmp->id_compte_tp_telecollecte, $tmp->date_telecollecte, 7); 
 				
 				}
@@ -303,7 +303,7 @@ if (isset($_REQUEST['recherche'])) {
 					} else {
 						$journal_caisse_depart = $journaux_caisses[$tmp->d_cpt_caisse];
 					}
-					//création de opération de journal
+					//crÃ©ation de opÃ©ration de journal
 					$journal_caisse_depart->create_operation ($DEFAUT_COMPTE_VIREMENTS_INTERNES, -$tmp->montant_transfere, $tmp->id_compte_tp_telecollecte, $tmp->date_telecollecte, 8); 
 				}
 				unset ($query2, $resultat2, $tmp2);
@@ -322,7 +322,7 @@ if (isset($_REQUEST['recherche'])) {
 			}
 			if ($query_where) { $query_where .= " &&  "; }
 			$query_where .=  " ctt.tp_type = 'TPV' "; 
-		 //récuperer les telecollectes de la periode
+		 //rÃ©cuperer les telecollectes de la periode
 		 $query = "SELECT ctt.id_compte_tp_telecollecte, ctt.id_compte_tp, ctt.tp_type, ctt.ref_user, ctt.date_telecollecte, ctt.montant_telecollecte, ctt.montant_commission, ctt.montant_transfere, ctt.commentaire,
 		 									ct.defaut_numero_compte as d_cpt_caisse,
 		 									cb.defaut_numero_compte as d_cpt_banque
@@ -347,7 +347,7 @@ if (isset($_REQUEST['recherche'])) {
 					} else {
 						$journal_banque_arrivee = $journaux_banques[$tmp->d_cpt_banque];
 					}
-					//création de opération de journal
+					//crÃ©ation de opÃ©ration de journal
 					$journal_banque_arrivee->create_operation ($DEFAUT_COMPTE_VIREMENTS_INTERNES, $tmp->montant_transfere, $tmp->id_compte_tp_telecollecte, $tmp->date_telecollecte, 7); 
 				
 				}
@@ -361,7 +361,7 @@ if (isset($_REQUEST['recherche'])) {
 					} else {
 						$journal_caisse_depart = $journaux_caisses[$tmp->d_cpt_caisse];
 					}
-					//création de opération de journal
+					//crÃ©ation de opÃ©ration de journal
 					$journal_caisse_depart->create_operation ($DEFAUT_COMPTE_VIREMENTS_INTERNES, -$tmp->montant_transfere, $tmp->id_compte_tp_telecollecte, $tmp->date_telecollecte, 8); 
 				}
 				unset ($query2, $resultat2, $tmp2);
@@ -382,7 +382,7 @@ if (isset($_REQUEST['recherche'])) {
 			if ($query_where) { $query_where .= " &&  "; }
 			$query_where .=  " r.id_reglement_mode IN (".$VIR_E_ID_REGMT_MODE.", ".$LCR_E_ID_REGMT_MODE.", ".$PRB_E_ID_REGMT_MODE.") "; 
 
-		 //récuperer les reglements de la periode
+		 //rÃ©cuperer les reglements de la periode
 		 $query = "SELECT r.ref_reglement, r.ref_contact, r.date_reglement, r.date_echeance, r.date_saisie, r.id_reglement_mode, r.montant_reglement, r.valide,
 										 cbrev.defaut_numero_compte as d_cpt_banque_rev,
 										 cbrel.defaut_numero_compte as d_cpt_banque_rel,
@@ -427,13 +427,13 @@ if (isset($_REQUEST['recherche'])) {
 						$journal_banque_arrivee = $journaux_banques[$tmp->d_cpt_banque];
 					}
 					
-					// récupération du compte tier vente
+					// rÃ©cupÃ©ration du compte tier vente
 					$numero_compte_comptable = $DEFAUT_COMPTE_TIERS_VENTE;
 					if (isset($infos["doc_ACCEPT_REGMT"]) && $infos["doc_ACCEPT_REGMT"] == "-1") {$numero_compte_comptable = $DEFAUT_COMPTE_TIERS_ACHAT;}
 					$tmp_contact = new contact ($tmp->ref_contact);
 					if ($tmp_contact->getRef_contact()) {
 						$profils 	= $tmp_contact->getProfils ();
-						//gestion des cas ambigus entre profils et sens de règlement
+						//gestion des cas ambigus entre profils et sens de rÃ¨glement
 						if (isset($profils[$CLIENT_ID_PROFIL]) && !isset($profils[$FOURNISSEUR_ID_PROFIL]) ) { $ID_PROFIL = $CLIENT_ID_PROFIL;}
 						if (!isset($profils[$CLIENT_ID_PROFIL]) && isset($profils[$FOURNISSEUR_ID_PROFIL]) ) { $ID_PROFIL = $FOURNISSEUR_ID_PROFIL;}
 						
@@ -444,7 +444,7 @@ if (isset($_REQUEST['recherche'])) {
 						$numero_compte_comptable = $profils[$ID_PROFIL]->getDefaut_numero_compte ();
 					} 
 					
-					//création de opération de journal
+					//crÃ©ation de opÃ©ration de journal
 					$journal_banque_arrivee->create_operation ($numero_compte_comptable, $tmp->montant_reglement, $tmp->ref_reglement, $tmp->date_reglement, 5); 
 				}
 				unset ($query3, $resultat3, $tmp3);
@@ -464,7 +464,7 @@ if (isset($_REQUEST['recherche'])) {
 			if ($query_where) { $query_where .= " &&  "; }
 			$query_where .=  " r.id_reglement_mode IN (".$CHQ_S_ID_REGMT_MODE.", ".$CB_S_ID_REGMT_MODE.", ".$VIR_S_ID_REGMT_MODE.", ".$LCR_S_ID_REGMT_MODE.", ".$PRB_S_ID_REGMT_MODE.") "; 
 
-		 //récuperer les reglements de la periode
+		 //rÃ©cuperer les reglements de la periode
 		 $query = "SELECT r.ref_reglement, r.ref_contact, r.date_reglement, r.date_echeance, r.date_saisie, r.id_reglement_mode, r.montant_reglement, r.valide,
 										 cbrsc.defaut_numero_compte as d_cpt_banque_rsc,
 										 cbrscb.defaut_numero_compte as d_cpt_banque_rscb,
@@ -518,13 +518,13 @@ if (isset($_REQUEST['recherche'])) {
 						$journal_banque_arrivee = $journaux_banques[$tmp->d_cpt_banque];
 					}
 					
-					// récupération du compte tier vente
+					// rÃ©cupÃ©ration du compte tier vente
 					$numero_compte_comptable = $DEFAUT_COMPTE_TIERS_ACHAT;
 					if (isset($infos["doc_ACCEPT_REGMT"]) && $infos["doc_ACCEPT_REGMT"] == "1") {$numero_compte_comptable = $DEFAUT_COMPTE_TIERS_VENTE;}
 					$tmp_contact = new contact ($tmp->ref_contact);
 					if ($tmp_contact->getRef_contact()) {
 						$profils 	= $tmp_contact->getProfils ();
-						//gestion des cas ambigus entre profils et sens de règlement
+						//gestion des cas ambigus entre profils et sens de rÃ¨glement
 						if (isset($profils[$CLIENT_ID_PROFIL]) && !isset($profils[$FOURNISSEUR_ID_PROFIL]) ) { $ID_PROFIL = $CLIENT_ID_PROFIL;}
 						if (!isset($profils[$CLIENT_ID_PROFIL]) && isset($profils[$FOURNISSEUR_ID_PROFIL]) ) { $ID_PROFIL = $FOURNISSEUR_ID_PROFIL;}
 						
@@ -535,7 +535,7 @@ if (isset($_REQUEST['recherche'])) {
 						$numero_compte_comptable = $profils[$ID_PROFIL]->getDefaut_numero_compte ();
 					} 
 					
-					//création de opération de journal
+					//crÃ©ation de opÃ©ration de journal
 					$journal_banque_arrivee->create_operation ($numero_compte_comptable, -$tmp->montant_reglement, $tmp->ref_reglement, $tmp->date_reglement, 6); 
 				}
 				unset ($query3, $resultat3, $tmp3);
@@ -548,7 +548,7 @@ if (isset($_REQUEST['recherche'])) {
 // AFFICHAGE
 // *************************************************************************************************************
 
-//affichage des résultats dans lmb
+//affichage des rÃ©sultats dans lmb
 include ($DIR.$_SESSION['theme']->getDir_theme()."page_compta_journal_tresorerie_verify.inc.php");
 
 ?>

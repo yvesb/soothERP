@@ -4,7 +4,7 @@
 // situation des commerciaux
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -39,7 +39,7 @@ function nb_mois($date1, $date2) {
 			<select id="date_exercice" name="date_exercice" class="classinput_nsize">
 			<?php
 			for($i = 0; $i< count($liste_exercices); $i++) {
-				//décompte du nombre de mois en deux exercices
+				//dÃ©compte du nombre de mois en deux exercices
 				$date1 = date("Y-m-d",strtotime($liste_exercices[$i]->date_fin));
 				if (isset($liste_exercices[$i+1])) {
 					
@@ -97,11 +97,11 @@ function nb_mois($date1, $date2) {
 			<td>&nbsp; </td>
 			<td style="text-align:right">
 			
-			<span id="imprimer_recap_comm" style="cursor:pointer; text-decoration:underline">Imprimer le récapitulatif</span>
+			<span id="imprimer_recap_comm" style="cursor:pointer; text-decoration:underline">Imprimer le rÃ©capitulatif</span>
 			<br />
-			<span id="imprimer_resultats_commerciaux" style="cursor:pointer; text-decoration:underline">Imprimer les résultats des commerciaux</span>
+			<span id="imprimer_resultats_commerciaux" style="cursor:pointer; text-decoration:underline">Imprimer les rÃ©sultats des commerciaux</span>
 			<br />
-			<span id="exporter_resultats_commerciaux" style="cursor:pointer; text-decoration:underline">Exporter les résultats des commerciaux</span>
+			<span id="exporter_resultats_commerciaux" style="cursor:pointer; text-decoration:underline">Exporter les rÃ©sultats des commerciaux</span>
 			<SCRIPT type="text/javascript">
 			Event.observe("imprimer_recap_comm", "click", function(evt){
 				Event.stop(evt);

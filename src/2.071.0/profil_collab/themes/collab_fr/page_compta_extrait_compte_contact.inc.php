@@ -4,7 +4,7 @@
 // AFFICHAGE DU GRAND LIVRE D'UN CONTACT
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -17,7 +17,7 @@ check_page_variables ($page_variables);
 
 	
 </script>
-<a  href="#" id="link_retour_contact" style="float:right" class="common_link">retour à la fiche du contact</a><br />
+<a  href="#" id="link_retour_contact" style="float:right" class="common_link">retour Ã  la fiche du contact</a><br />
 </span>
 <script type="text/javascript">
 Event.observe("link_retour_contact", "click",  function(evt){Event.stop(evt); page.verify('annuaire_view_fiche','annuaire_view_fiche.php?ref_contact=<?php echo $contact->getRef_contact();?>','true','sub_content');}, false);

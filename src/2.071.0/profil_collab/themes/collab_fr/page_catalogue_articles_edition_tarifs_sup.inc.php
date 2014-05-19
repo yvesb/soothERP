@@ -5,7 +5,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -47,7 +47,7 @@ if (erreur) {
 }
 else
 {
-window.parent.document.getElementById("aff_formule_tarif_<?php echo $_REQUEST["n_liste"]?>").innerHTML="Définir un nouveau tarif";
+window.parent.document.getElementById("aff_formule_tarif_<?php echo $_REQUEST["n_liste"]?>").innerHTML="DÃ©finir un nouveau tarif";
 window.parent.document.getElementById("formule_tarif_<?php echo $_REQUEST["n_liste"]?>").value="<?php echo $_REQUEST["reset_formule"];?>";
 window.parent.document.getElementById("formule_cree_<?php echo $_REQUEST["n_liste"]?>").value="0";
 window.parent.document.getElementById('tarif_del_<?php echo $_REQUEST["n_liste"]?>').style.display="none";

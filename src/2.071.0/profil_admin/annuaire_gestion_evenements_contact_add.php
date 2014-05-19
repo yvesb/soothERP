@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// GESTION DES EVENEMENTS (ajout d'un type d'événement)
+// GESTION DES EVENEMENTS (ajout d'un type d'Ã©vÃ©nement)
 // *************************************************************************************************************
 
 
@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 if (isset($_REQUEST["lib_comm_event_type"])) {
-	//création d'un type d'évenement
+	//crÃ©ation d'un type d'Ã©venement
 	contact::add_types_evenements ($_REQUEST["lib_comm_event_type"]);
 }
 // *************************************************************************************************************

@@ -12,7 +12,7 @@ require_once ($DIR."_article_liaisons_types.class.php");
 
 if (isset($_REQUEST['id_liaison_type'])) {	
 	// *************************************************
-	// Controle des données fournies par le formulaire
+	// Controle des donnÃ©es fournies par le formulaire
 
 	if (isset($_REQUEST['actif_'.$_REQUEST['id_liaison_type']]) || ( isset($_REQUEST['systeme_'.$_REQUEST['id_liaison_type']]) && $_REQUEST['systeme_'.$_REQUEST['id_liaison_type']] == "1")) {
 	$actif						= 1;
@@ -22,7 +22,7 @@ if (isset($_REQUEST['id_liaison_type'])) {
 
 	
 	// *************************************************
-	// Création de la catégorie
+	// CrÃ©ation de la catÃ©gorie
 	$liaison_liste = new art_liaison_type ($_REQUEST['id_liaison_type']);
 	$liaison_liste->modifier_actif ($actif);
 }

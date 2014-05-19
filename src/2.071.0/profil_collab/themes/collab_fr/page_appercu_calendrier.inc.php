@@ -14,20 +14,20 @@ function extract_time($time)
 }
 
 // *************************************************************************************************************
-// Contrôle des paramètres
+// ContrÃ´le des paramÃ¨tres
 // *************************************************************************************************************
 ?>
 <script type="text/javascript">
-/*Si l'id associé au lien est défini*/
+/*Si l'id associÃ© au lien est dÃ©fini*/
 <?php if(isset($_REQUEST['ref_lien'])){?>
 
 /*On recupere la reference du lien*/
 ref_lien="<?php echo $_REQUEST['ref_lien'];?>";
 <?php }?>
 
-/*On recupere l'id associé à la date*/
+/*On recupere l'id associÃ© Ã  la date*/
 ref_date="<?php echo $_REQUEST['ref_date'];?>";
-/*On récupère le type de MAJ a faire (1=MAJ, 0=aucune)*/
+/*On rÃ©cupÃ¨re le type de MAJ a faire (1=MAJ, 0=aucune)*/
 type_ref="<?php echo $_REQUEST['type_ref'];?>";
 </script>
 
@@ -41,13 +41,13 @@ type_ref="<?php echo $_REQUEST['type_ref'];?>";
   <thead>
 	  <tr valign="middle" align="center">
 	  	<td>
-	  		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/gauche_on.gif" style="cursor:pointer" alt="mois précédent" title="mois précédent" id="mini_calendrier_mois_precedent" />
+	  		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/gauche_on.gif" style="cursor:pointer" alt="mois prÃ©cÃ©dent" title="mois prÃ©cÃ©dent" id="mini_calendrier_mois_precedent" />
 	  		<script type="text/javascript">
 /**********************Mois Precedent*********************/
 	  			Event.observe("mini_calendrier_mois_precedent", "click", function(ev) {
 						Event.stop(ev);
 						<?php 
-						//Si pas de reference lien renseignée
+						//Si pas de reference lien renseignÃ©e
 						if(!isset($_REQUEST['ref_lien']))
 						{ ?>
 							page.traitecontent("mini_calendrier", "appercu_calendrier.php?Udate_mini_calendrier=<?php echo strtotime("-1 month", $Udate_mini_calendrier); ?>000&ref_date=<?php echo $_REQUEST['ref_date'];?>&type_ref=<?php echo $_REQUEST['type_ref'];?>", true ,"mini_calendrier");
@@ -67,7 +67,7 @@ type_ref="<?php echo $_REQUEST['type_ref'];?>";
 	  			Event.observe("mini_calendrier_mois_suivant", "click", function(ev) {
 						Event.stop(ev);
 						<?php 
-								//Si pas de reference lien renseignée
+								//Si pas de reference lien renseignÃ©e
 								if(!isset($_REQUEST['ref_lien']))
 		{
 		?>
@@ -216,7 +216,7 @@ type_ref="<?php echo $_REQUEST['type_ref'];?>";
 					}
 					
 					echo "</tr><tr>";
-					$j = -1; // à cause du $j++ à la fin du while
+					$j = -1; // Ã  cause du $j++ Ã  la fin du while
 				}else
 				{
 					extract_time($Udate_tmp);

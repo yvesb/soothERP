@@ -11,7 +11,7 @@ require ($DIR."_session.inc.php");
 include_once ($CONFIG_DIR."profil_fournisseur.config.php");
 // chargement de la class du profil
 contact::load_profil_class($FOURNISSEUR_ID_PROFIL);
-// Préparations des variables d'affichage
+// PrÃ©parations des variables d'affichage
 $liste_categories = contact_fournisseur::charger_fournisseurs_categories ();
 
 // *************************************************************************************************************

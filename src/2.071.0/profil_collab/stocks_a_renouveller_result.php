@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -48,7 +48,7 @@ $nb_fiches = 0;
 
 
 // *************************************************
-// Stock affichés
+// Stock affichÃ©s
 $form['id_stock'] = "";
 if (isset($_REQUEST['id_stock'])) {
 	$form['id_stock'] = $_REQUEST['id_stock'];
@@ -58,13 +58,13 @@ if (isset($_REQUEST['id_stock'])) {
 
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
 
-//soit on recherche pour un stock spécifié
+//soit on recherche pour un stock spÃ©cifiÃ©
 	
-		// Préparation de la requete
+		// PrÃ©paration de la requete
 		$query_select = "";
 		$query_join 	= "";
 		$query_where 	= " dispo = 1 && a.lot !='2' && a.modele = 'materiel'  ";
@@ -92,7 +92,7 @@ if (isset($_REQUEST['recherche'])) {
 		$search_stock_query4.=" && sa.qte >0";
 		
 	}
-	// Catégorie
+	// CatÃ©gorie
 	if ($search['ref_art_categ']) { 
 		$query_where 	.= " && a.ref_art_categ = '".$search['ref_art_categ']."'";
 	}
@@ -140,7 +140,7 @@ if (isset($_REQUEST['recherche'])) {
 									 ";
 				$resultat01 = $bdd->query ($query01);
 				while ($seuil_alerte = $resultat01->fetchObject()) { $fiche->seuil_alerte = $seuil_alerte->seuil_alerte; }
-				// Sélection des stocks réservés (CDC "en cours")
+				// SÃ©lection des stocks rÃ©servÃ©s (CDC "en cours")
 				$fiche->stocks_rsv["qte"] = 0;
 				$fiche->stocks_rsv["qte_livree"] = 0;
 				$query2 = "SELECT SUM(dl.qte) qte, SUM(dlc.qte_livree) qte_livree, id_stock 
@@ -155,7 +155,7 @@ if (isset($_REQUEST['recherche'])) {
 						$fiche->stocks_rsv["qte"] = $fiche->stocks_rsv["qte"]+$rsv->qte;
 						$fiche->stocks_rsv["qte_livree"] = $fiche->stocks_rsv["qte_livree"]+$rsv->qte_livree;
 				}
-				//réappro en cours
+				//rÃ©appro en cours
 				$fiche->stocks_cdf["qte"] = 0;
 				$fiche->stocks_cdf["qte_recue"] = 0;
 				
@@ -179,7 +179,7 @@ if (isset($_REQUEST['recherche'])) {
 		}
 		unset ($fiche, $resultat, $resultat2, $query, $query2);
 		
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 			
 	if (isset($search['id_stock']) && $search['id_stock'] != "") {
 			$query = "SELECT a.ref_article
@@ -199,7 +199,7 @@ if (isset($_REQUEST['recherche'])) {
 			
 	} else {
 		$nb_fiches = count($fiches);
-	 // on découpe les résultats trouvés pour réspecter une pagination
+	 // on dÃ©coupe les rÃ©sultats trouvÃ©s pour rÃ©specter une pagination
 	 $tmp_fiches = array();
 		for ($i = (($search['page_to_show'] - 1)*$search['fiches_par_page']); $i <($search['page_to_show']*$search['fiches_par_page']) ; $i++) {
 			if (isset($fiches[$i])) {
@@ -228,12 +228,12 @@ if ( isset($_REQUEST["print"]) ){
 	// Controle
 	$infos = array();
 	$code_pdf_modele = "stock_a_renouveller";
-	// Ouverture du fichier pdf des états des stocks
+	// Ouverture du fichier pdf des Ã©tats des stocks
 	include_once ($PDF_MODELES_DIR.$code_pdf_modele.".class.php");
 	$class = "pdf_".$code_pdf_modele;
 	$pdf = new $class;
 	
-	// Création
+	// CrÃ©ation
 	$pdf->create_pdf($search['id_stock'],$fiches,$infos );
 	
 	// Sortie

@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -130,7 +130,7 @@ next($list_art_categ);
 		</td>
 		<?php 
 		foreach ($catalogues_clients as $catalogue_client) {
-			//génération des cases à cocher
+			//gÃ©nÃ©ration des cases Ã  cocher
 			?>
 			<td width="180px">
 			<div style="width:180px; text-align: center">

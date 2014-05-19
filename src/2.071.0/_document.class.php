@@ -45,30 +45,30 @@ abstract class document {
 	protected $liaisons_possibles;
 	protected $liaisons_possibles_loaded;
 	
-	protected $code_file; //code md5 du nom du fichier pdf généré lors de l'envois du document
+	protected $code_file; //code md5 du nom du fichier pdf gÃ©nÃ©rÃ© lors de l'envois du document
 
 	protected $events;
 	protected $events_loaded;
 
 	protected $montant_ht;
 	protected $montant_tva;
-	protected $montant_ttc = -1;		// Montant TTC du doc, = -1 quand non chargé
+	protected $montant_ttc = -1;		// Montant TTC du doc, = -1 quand non chargÃ©
 	protected $tvas;
 
 	protected $ACCEPT_REGMT = 0;
-	protected $reglements;					// Règlements rapprochés à ce document
+	protected $reglements;					// RÃ¨glements rapprochÃ©s Ã  ce document
 	protected $reglements_loaded;
-	protected $montant_reglements;	// Montant total des règlements (Inversé lorsqu'il s'agit d'emettre les règlements.)
-	protected $montant_to_pay;			// Montant restant à payer.
+	protected $montant_reglements;	// Montant total des rÃ¨glements (InversÃ© lorsqu'il s'agit d'emettre les rÃ¨glements.)
+	protected $montant_to_pay;			// Montant restant Ã  payer.
 
 	protected $echeancier;
 	
-	protected $commerciaux;					// commerciaux attribués à ce document
+	protected $commerciaux;					// commerciaux attribuÃ©s Ã  ce document
 	protected $commerciaux_loaded;
 	
-	protected $code_pdf_modele;			// Code du modèle utilisé pour l'impression
+	protected $code_pdf_modele;			// Code du modÃ¨le utilisÃ© pour l'impression
 
-	protected $quantite_locked;			// Les quantités pour ce document sont FIGEES
+	protected $quantite_locked;			// Les quantitÃ©s pour ce document sont FIGEES
 
 
 public function __construct($ref_doc = "") {
@@ -84,7 +84,7 @@ public function __construct($ref_doc = "") {
 public function open_doc ($select = "", $left_join = "") {
 	global $bdd;
 
-	// Controle si la ref_document est précisée
+	// Controle si la ref_document est prÃ©cisÃ©e
 	if (!$this->ref_doc) { return false; }
 
 	$query = "SELECT d.ref_contact, d.nom_contact, d.ref_adr_contact, d.adresse_contact, d.code_postal_contact, d.ville_contact, d.id_pays_contact, d.app_tarifs, d.description, 
@@ -153,7 +153,7 @@ public function create_doc () {
 	}
 
 	// *************************************************
-	// Valeur par défaut des informations du document
+	// Valeur par dÃ©faut des informations du document
 	$this->check_profils ();
 	$this->ref_contact = "";
 	if (isset($GLOBALS['_OPTIONS']['CREATE_DOC']['ref_contact'])) {
@@ -186,11 +186,11 @@ public function create_doc () {
 	}
 	
 	//**************************************************
-	//création du code file
+	//crÃ©ation du code file
 	$this->code_file = md5(uniqid(rand(), true));
 	
 	// *************************************************
-	// Création de la référence
+	// CrÃ©ation de la rÃ©fÃ©rence
 	$reference = new reference ($this->DOC_ID_REFERENCE_TAG);
 	$this->ref_doc = $reference->generer_ref();
 	$this->echeancier = new document_echeancier($this->getRef_doc(),$this);
@@ -215,7 +215,7 @@ public function create_doc () {
 	}	
 	
 	// *************************************************
-	// Ajout de l'évennement de création
+	// Ajout de l'Ã©vennement de crÃ©ation
 	$this->add_event(1);
 	
 	$bdd->commit();
@@ -223,14 +223,14 @@ public function create_doc () {
 	$GLOBALS['_INFOS']['ref_doc'] = $this->ref_doc;
 
 	// *************************************************
-	// Informations complémentaires
+	// Informations complÃ©mentaires
 	$this->date_creation	= date ("Y-m-d H:i:s");
 
 	return true;
 }
 
 
-// Charge les informations supplémentaires du contact
+// Charge les informations supplÃ©mentaires du contact
 protected function load_infos_contact () {
 	//conditions de reglement
 
@@ -246,7 +246,7 @@ protected function load_infos_contact () {
 	// Adresse
 	$this->define_adresse_contact ();
 
-	// Préférences d'affichage du tarif
+	// PrÃ©fÃ©rences d'affichage du tarif
 	$this->define_aff_tarif ();
 }
 
@@ -280,7 +280,7 @@ protected function load_infos_contact_fournisseur () {
 }
 
 
-// Défini le nom du contact
+// DÃ©fini le nom du contact
 protected function define_nom_contact () {
 	if (isset($GLOBALS['_OPTIONS']['CREATE_DOC']['nom_contact'])) {
 		$this->nom_contact = $GLOBALS['_OPTIONS']['CREATE_DOC']['nom_contact'];
@@ -292,7 +292,7 @@ protected function define_nom_contact () {
 }
 
 
-// Renvoie l'adresse a utiliser dans le document pour un contact donné
+// Renvoie l'adresse a utiliser dans le document pour un contact donnÃ©
 protected function define_adresse_contact () {
 	global $bdd;
 	global $DEFAUT_ID_PAYS;
@@ -315,7 +315,7 @@ protected function define_adresse_contact () {
 	
 	
 	if (!$this->ref_adr_contact && !$this->adresse_contact && !$this->code_postal_contact && !$this->ville_contact && !$this->id_pays_contact) {
-		// Sélection de la première Adresse
+		// SÃ©lection de la premiÃ¨re Adresse
 		$query = "SELECT ref_adresse, text_adresse, code_postal, ville, a.id_pays, p.pays
 							FROM adresses a
 								LEFT JOIN pays p ON a.id_pays = p.id_pays
@@ -337,7 +337,7 @@ protected function define_adresse_contact () {
 }
 
 
-// Renvoie l'adresse a utiliser dans le document pour un contact donné
+// Renvoie l'adresse a utiliser dans le document pour un contact donnÃ©
 function define_adresse_contact_et_livraison () {
 	global $bdd;
 	global $DEFAUT_ID_PAYS;
@@ -392,7 +392,7 @@ function define_adresse_contact_et_livraison () {
 
 	
 	if ( !$adresse_contact_ok || !$adresse_livraison_ok) {
-		// Sélection des adresses prédéfinies
+		// SÃ©lection des adresses prÃ©dÃ©finies
 		$query = "SELECT ref_adr_livraison, a1.text_adresse ta1, a1.code_postal cp1, a1.ville v1, a1.id_pays ip1, p1.pays p1, 
 										 ref_adr_facturation, a2.text_adresse ta2, a2.code_postal cp2, a2.ville v2, a2.id_pays ip2, p2.pays p2
 							FROM annu_client ac
@@ -428,7 +428,7 @@ function define_adresse_contact_et_livraison () {
 }
 
 
-// Renvoie le texte précis de l'adresse qui sera affiché
+// Renvoie le texte prÃ©cis de l'adresse qui sera affichÃ©
 protected function define_text_adresse ($text_adresse, $code_postal, $ville, $id_pays, $pays) {
 	global $DEFAUT_ID_PAYS;
 
@@ -527,7 +527,7 @@ public function maj_contact ($ref_contact) {
 						WHERE ref_doc = '".$this->ref_doc."' ";
 	$bdd->exec ($query);
 	
-	// MAJ du contact pour les règlements de ce document qui ne règlent pas d'autres documents du même type
+	// MAJ du contact pour les rÃ¨glements de ce document qui ne rÃ¨glent pas d'autres documents du mÃªme type
 	$query = "SELECT rd.ref_reglement, COUNT(rd.ref_doc) as nb_docs
 						FROM reglements_docs rd
   						LEFT JOIN documents d ON d.ref_doc = rd.ref_doc
@@ -610,7 +610,7 @@ public function maj_adresse_contact ($ref_adresse) {
 		}
 	}
 	else {
-		// Sélection de l'Adresse
+		// SÃ©lection de l'Adresse
 		$query = "SELECT ref_adresse, text_adresse, code_postal, ville, a.id_pays, p.pays
 							FROM adresses a
 								LEFT JOIN pays p ON a.id_pays = p.id_pays
@@ -715,7 +715,7 @@ public function maj_adresse_livraison ($ref_adresse) {
 		}
 	}
 	else {
-		// Sélection de l'Adresse
+		// SÃ©lection de l'Adresse
 		$query = "SELECT ref_adresse, text_adresse, code_postal, ville, a.id_pays, p.pays
 							FROM adresses a
 								LEFT JOIN pays p ON a.id_pays = p.id_pays
@@ -827,12 +827,12 @@ function maj_app_tarifs ($new_app_tarifs) {
 	}
 	$this->app_tarifs = $new_app_tarifs;
 	
-	// Maj de la base de données
+	// Maj de la base de donnÃ©es
 	$query = "UPDATE documents SET app_tarifs = '".$this->app_tarifs."'
 						WHERE ref_doc = '".$this->ref_doc."' ";
 	$bdd->exec ($query);
 	
-//fonction de mise à jour de l'app_tarif du contact en cas de changement d'app_tarif du document par défaut le profil client (seul les class de doc spéciales fournisseur forceront l'app_tarifs du profil fournisseur
+//fonction de mise Ã  jour de l'app_tarif du contact en cas de changement d'app_tarif du document par dÃ©faut le profil client (seul les class de doc spÃ©ciales fournisseur forceront l'app_tarifs du profil fournisseur
 	if (!is_object($this->contact)) { $this->contact = new contact ($this->ref_contact); }
 	if ($this->contact->charger_profiled_infos($CLIENT_ID_PROFIL)) {
 		$profil_tmp = $this->contact->getProfil($CLIENT_ID_PROFIL);
@@ -846,7 +846,7 @@ public function maj_id_stock ($id_stock, $lib_var = "") {
 
 	if (!$lib_var) { $lib_var = "id_stock"; }
 
-	// Vérification de l'existence du stock
+	// VÃ©rification de l'existence du stock
 	$found = 0;
 	foreach ($_SESSION['stocks'] as $stock) {
 		if ($stock->getId_stock() != $id_stock) { continue; }
@@ -856,7 +856,7 @@ public function maj_id_stock ($id_stock, $lib_var = "") {
 	if (!$found) {
 		$GLOBALS['_ALERTES']['bad_'.$lib_var] = 1;
 	}
-	// Vérification de la possibilité de changer l'id_stock (expédiant ou recevant)
+	// VÃ©rification de la possibilitÃ© de changer l'id_stock (expÃ©diant ou recevant)
 	if (!$this->is_open) {
 		$GLOBALS['_ALERTES']['doc_is_closed'] = 1;
 	}
@@ -891,7 +891,7 @@ public function fusion_doc ($second_ref_doc) {
 	
 	if (!$this->check_allow_fusion ($second_document)) { return false; }
 	
-	//Début de la fusion
+	//DÃ©but de la fusion
 	
 	$GLOBALS['_OPTIONS']['FUSION'] = 1;
 	
@@ -918,7 +918,7 @@ public function fusion_doc ($second_ref_doc) {
 	//liaison non active prouvant la liaison entre les docs
 	$this->link_from_doc_set_active ($second_document->getRef_doc (), 0) ;
 	
-	//renvoi des règlements vers le premier document
+	//renvoi des rÃ¨glements vers le premier document
 	$query = "UPDATE reglements_docs SET ref_doc = '".$this->ref_doc."'
 						WHERE ref_doc = '".$second_document->getRef_doc ()."' ";
 	$bdd->exec ($query);
@@ -932,14 +932,14 @@ public function fusion_doc ($second_ref_doc) {
 	return true;
 }
 
-// Liste des documents pouvant être fusionner
+// Liste des documents pouvant Ãªtre fusionner
 public function check_allow_fusion ($second_document) {
 	
 	return true;
 }
 
 
-// Liste des documents pouvant être fusionner
+// Liste des documents pouvant Ãªtre fusionner
 public function liste_doc_fusion () {
 	
 	return true;
@@ -948,14 +948,14 @@ public function liste_doc_fusion () {
 // *************************************************************************************************************
 // FONCTIONS LIEES A LA MODIFICATION DE L'ETAT D'UN DOCUMENT
 // *************************************************************************************************************
-// Changement de l'état du document
+// Changement de l'Ã©tat du document
 final public function maj_etat_doc ($new_etat_doc) {
 	global $bdd;
 
 	if ($this->id_etat_doc == $new_etat_doc) 		{ return false; }
 	if (!$new_etat_doc = $this->check_maj_etat($new_etat_doc)) 	{ return false; }
 
-	// Mise à jour des liaisons avec d'autres documents le cas échéant
+	// Mise Ã  jour des liaisons avec d'autres documents le cas Ã©chÃ©ant
 	if ($new_etat_doc == $this->ID_ETAT_ANNULE) {
 		$this->maj_etat_liaisons(0);
 	}
@@ -963,7 +963,7 @@ final public function maj_etat_doc ($new_etat_doc) {
 		$this->maj_etat_liaisons(1);
 	}
 	
-	// Mise à jour des liaisons avec les règlements le cas échéant
+	// Mise Ã  jour des liaisons avec les rÃ¨glements le cas Ã©chÃ©ant
 	if ($new_etat_doc == $this->ID_ETAT_ANNULE) {
 		$this->maj_etat_reglements(0);
 	}
@@ -974,7 +974,7 @@ final public function maj_etat_doc ($new_etat_doc) {
 	// Action a effectuer avant toute chose (Controles, etc.)
 	$this->action_before_maj_etat ($new_etat_doc);
 
-	// Sélection du libellé du nouvel état
+	// SÃ©lection du libellÃ© du nouvel Ã©tat
 	$query = "SELECT lib_etat_doc FROM documents_etats
 						WHERE id_etat_doc = '".$new_etat_doc."' ";
 	$resultat = $bdd->query ($query);
@@ -991,7 +991,7 @@ final public function maj_etat_doc ($new_etat_doc) {
 						WHERE ref_doc = '".$this->ref_doc."' ";
 	$bdd->exec ($query);
 	
-	// Enregistrement de l'évennement
+	// Enregistrement de l'Ã©vennement
 	$id_event_type = 2; 
 	$event = $this->lib_etat_doc;
 	$this->add_event($id_event_type, $event);
@@ -1003,20 +1003,20 @@ final public function maj_etat_doc ($new_etat_doc) {
 }
 
 
-// Vérification de la possibilité de changer l'état du document
+// VÃ©rification de la possibilitÃ© de changer l'Ã©tat du document
 protected function check_maj_etat ($new_etat_doc) {
 	if (!is_numeric($new_etat_doc)) { return false; }
 	return $new_etat_doc;
 }
 
 
-// Action avant de changer l'état du document
+// Action avant de changer l'Ã©tat du document
 protected function action_before_maj_etat ($new_etat_doc) {
 	return true;
 }
 
 
-// Action après de changer l'état du document
+// Action aprÃ¨s de changer l'Ã©tat du document
 protected function action_after_maj_etat ($old_etat_doc) {
 	return true;
 }
@@ -1099,7 +1099,7 @@ public function charger_contenu () {
 	$this->montant_ttc = $this->montant_ht + $this->montant_tva;
 
 	// *****************************************
-	// Chargement des numéros de serie
+	// Chargement des numÃ©ros de serie
 	if (!$GESTION_SN || !$this->GESTION_SN) { return true; }
 	$query_sn_infos_supp = $this->doc_line_sn_infos_supp ();
 
@@ -1136,9 +1136,9 @@ public function charger_contenu () {
 	$resultat = $bdd->query ($query); 
 	while ($sn = $resultat->fetchObject()) { $numeros[] = $sn; }
 
-	// Association des numéros de série au contenu
+	// Association des numÃ©ros de sÃ©rie au contenu
 	for ($i=0; $i<count($this->contenu); $i++) {
-		// Création du tableau de numéros de série
+		// CrÃ©ation du tableau de numÃ©ros de sÃ©rie
 		if ($this->contenu[$i]->gestion_sn) { $this->contenu[$i]->sn = array(); }
 		// Remplissage du tableau
 		foreach ($numeros as $sn) {
@@ -1159,7 +1159,7 @@ protected function charger_line ($ref_doc_line) {
 	$query_infos_supp = $this->doc_line_infos_supp ();
 
 
-	// Sélection des informations
+	// SÃ©lection des informations
 	$query = "SELECT dl.ref_doc_line, dl.ref_article, dl.lib_article, dl.desc_article, 
 									 dl.qte, round(dl.pu_ht,".$CALCUL_TARIFS_NB_DECIMALS.") as pu_ht, dl.remise, dl.tva, 
 									 dl.ordre, dl.ref_doc_line_parent, dl.visible, dl.pa_ht, dl.pa_forced,
@@ -1179,7 +1179,7 @@ protected function charger_line ($ref_doc_line) {
 
 
 	// *****************************************
-	// Chargement des numéros de serie
+	// Chargement des numÃ©ros de serie
 	if (!$GESTION_SN || !$this->GESTION_SN || !$doc_line->gestion_sn) { return $doc_line; }
 	$query_sn_infos_supp = $this->doc_line_sn_infos_supp ();
 
@@ -1203,7 +1203,7 @@ protected function charger_line ($ref_doc_line) {
 
 
 
-// Chargement du contenu "matériel" du document
+// Chargement du contenu "matÃ©riel" du document
 public function charger_contenu_materiel () {
 	global $bdd;
 	global $GESTION_SN;
@@ -1227,7 +1227,7 @@ public function charger_contenu_materiel () {
 	$this->contenu_materiel_loaded = true;
 
 	// *****************************************
-	// Chargement des numéros de serie
+	// Chargement des numÃ©ros de serie
 	if (!$GESTION_SN || !$this->GESTION_SN) { return true; }
 	$query_sn_infos_supp = $this->doc_line_sn_infos_supp ();
 
@@ -1260,9 +1260,9 @@ public function charger_contenu_materiel () {
 		$numeros[] = $sn; 
 	}
 
-	// Association des numéros de série au contenu
+	// Association des numÃ©ros de sÃ©rie au contenu
 	for ($i=0; $i<count($this->contenu_materiel); $i++) {
-		// Création du tableau de numéros de série
+		// CrÃ©ation du tableau de numÃ©ros de sÃ©rie
 		if ($this->contenu_materiel[$i]->gestion_sn) { $this->contenu_materiel[$i]->sn = array(); }
 		// Remplissage du tableau
 		foreach ($numeros as $sn) {
@@ -1326,7 +1326,7 @@ public function charger_contenu_service_conso () {
 	return true;
 }
 
-// Défini les informations supplémentaires a charger avec une ligne de document
+// DÃ©fini les informations supplÃ©mentaires a charger avec une ligne de document
 protected function doc_line_infos_supp () {
 	$query['select']		= "";
 	$query['left_join'] = "";
@@ -1334,7 +1334,7 @@ protected function doc_line_infos_supp () {
 }
 
 
-// Chargement des informations supplémentaires concernant les numéros de série
+// Chargement des informations supplÃ©mentaires concernant les numÃ©ros de sÃ©rie
 protected function doc_line_sn_infos_supp () {
 	$query['select']		= "";
 	$query['left_join'] = "";
@@ -1346,7 +1346,7 @@ protected function doc_line_sn_infos_supp () {
 public function delete_line ($ref_doc_line) {
 	global $bdd;
 	
-	// On récupère l'article de la ligne
+	// On rÃ©cupÃ¨re l'article de la ligne
 	$query = "SELECT ref_article FROM docs_lines WHERE ref_doc_line = '".$ref_doc_line."';";
 	$res = $bdd->query($query);
 	if($enr = $res->fetchObject()){
@@ -1417,7 +1417,7 @@ protected function add_line_article ($infos) {
 	global $DEFAUT_ID_PAYS;
 	
 	// *************************************************
-	// Sélection des informations sur l'article
+	// SÃ©lection des informations sur l'article
 	$ref_article 	= $infos['ref_article'];
 	$article = new article ($ref_article);
 
@@ -1435,7 +1435,7 @@ protected function add_line_article ($infos) {
 
 
 	// *************************************************
-	// Réception des autres variables
+	// RÃ©ception des autres variables
 	if (isset($infos['pu_ht'])) 								{		$pu_ht = $infos['pu_ht']; }
 	else { $pu_ht = $this->select_article_pu ($article, $qte); }
 
@@ -1459,7 +1459,7 @@ protected function add_line_article ($infos) {
 	if ($ref_doc_line_parent || (isset($infos['visible']) && $infos['visible'])) 	{ $visible = 0; }
 
 	// *************************************************
-	// Création de la référence et de l'ordre
+	// CrÃ©ation de la rÃ©fÃ©rence et de l'ordre
 	$ref_doc_line = $this->create_ref_doc_line ();
 	$ordre = $this->new_line_order ($ref_doc_line_parent);
 	
@@ -1470,7 +1470,7 @@ protected function add_line_article ($infos) {
 		$article_taux_tva = $article->getTva();
 		if (!$ASSUJETTI_TVA && ($this->ID_TYPE_DOC == $DEVIS_CLIENT_ID_TYPE_DOC || $this->ID_TYPE_DOC == $COMMANDE_CLIENT_ID_TYPE_DOC || $this->ID_TYPE_DOC == $LIVRAISON_CLIENT_ID_TYPE_DOC || $this->ID_TYPE_DOC == $FACTURE_FOURNISSEUR_ID_TYPE_DOC)) {$article_taux_tva = 0;}
 		
-		//mise à zéro du taux de tva si pays client != pays defaut (GESTION TVA INTERNATTIONNAL)
+		//mise Ã  zÃ©ro du taux de tva si pays client != pays defaut (GESTION TVA INTERNATTIONNAL)
                 if (isset($this->id_pays_contact)) {
                     if ( $this->id_pays_contact != $DEFAUT_ID_PAYS) {
                         $article_taux_tva = 0;
@@ -1481,7 +1481,7 @@ protected function add_line_article ($infos) {
 	
 	//description courte
 	$desc_courte = (isset($infos['desc_courte']) && is_string($infos['desc_courte']))? $infos['desc_courte'] : $article->getDesc_courte() ;
-	$desc_courte =  addslashes(str_replace("¤", "€", $desc_courte ));
+	$desc_courte =  addslashes(str_replace("Â¤", "â‚¬", $desc_courte ));
 	
 	
 	// *************************************************
@@ -1490,7 +1490,7 @@ protected function add_line_article ($infos) {
 							(ref_doc_line, ref_doc, ref_article, lib_article, desc_article, qte, pu_ht, tva, ordre, 
 							 ref_doc_line_parent, visible, pa_ht)
 						VALUES ('".$ref_doc_line."', '".$this->ref_doc."', '".$article->getRef_article()."',
-                                                                                '".addslashes(str_replace("¤", "€", $article->getLib_article()))."', '".addslashes(str_replace("¤", "€", $article->getDesc_courte()))."',
+                                                                                '".addslashes(str_replace("Â¤", "â‚¬", $article->getLib_article()))."', '".addslashes(str_replace("Â¤", "â‚¬", $article->getDesc_courte()))."',
 										'".$qte."', '".$pu_ht."', '".$article_taux_tva."', '".$ordre."', 
 										".ref_or_null($ref_doc_line_parent).", '".$visible."', ".  num_or_null($pa_ht).") ";
 	$bdd->exec ($query);
@@ -1508,7 +1508,7 @@ protected function add_line_article ($infos) {
 	$retour['visible'] 			= $visible; 
 	*/
 
-	// Numeros de sï¿½rie
+	// Numeros de sÃ¯Â¿Â½rie
 	if (isset($infos['sn']) && is_array($infos['sn']) && $GESTION_SN && $this->GESTION_SN) {
 		$inserted_sn = "";
 		foreach ($infos['sn'] as $numero_serie) {
@@ -1580,14 +1580,14 @@ protected function add_line_info ($infos) {
 	global $DOC_LINE_ID_REFERENCE_TAG;
 
 	// *************************************************
-	// Réception des variables
+	// RÃ©ception des variables
 	$titre_info 	= $infos['titre'];
 	$texte_info 	= $infos['texte'];
 
 	$visible = 1;
 	if (isset($infos['visible'])) { $visible = $infos['visible'];};
 	// *************************************************
-	// Création de la référence et de l'ordre
+	// CrÃ©ation de la rÃ©fÃ©rence et de l'ordre
 	$ref_doc_line = $this->create_ref_doc_line ();
 	$ordre = $this->new_line_order ();
 
@@ -1627,7 +1627,7 @@ protected function add_line_ss_total () {
 	global $bdd;
 
 	// *************************************************
-	// Création de la référence et de l'ordre
+	// CrÃ©ation de la rÃ©fÃ©rence et de l'ordre
 	$ref_doc_line = $this->create_ref_doc_line ();
 	$ordre = $this->new_line_order ();
 
@@ -1688,7 +1688,7 @@ protected function add_line_taxe ($infos) {
 	$visible 	= $infos['visible'];
 
 	// *************************************************
-	// Création de la référence et de l'ordre
+	// CrÃ©ation de la rÃ©fÃ©rence et de l'ordre
 	$ref_doc_line = $this->create_ref_doc_line ();
 	$ordre = $this->new_line_order ($ref_doc_line_parent);
 
@@ -1736,14 +1736,14 @@ public function is_taxe($lib_taxe)
         return false;
 }
 
-// Créé la ref_doc_line pour une ligne de document
+// CrÃ©Ã© la ref_doc_line pour une ligne de document
 protected function create_ref_doc_line () {
 	global $bdd;
 
 	$DOC_LINE_ID_REFERENCE_TAG = 12;
 
 	// *************************************************
-	// Création de la référence
+	// CrÃ©ation de la rÃ©fÃ©rence
 	$reference = new reference ($DOC_LINE_ID_REFERENCE_TAG);
 	$ref_doc_line = $reference->generer_ref();
 
@@ -1831,7 +1831,7 @@ public function maj_line_qte ($ref_doc_line, $new_qte) {
 						WHERE ref_doc_line = '".$ref_doc_line."' ";
 	$bdd->exec ($query);
 
-	//on lance la fonction supprimant les numéros de série qui seraient en trop pour la ref_doc_line par rapport à la qté
+	//on lance la fonction supprimant les numÃ©ros de sÃ©rie qui seraient en trop pour la ref_doc_line par rapport Ã  la qtÃ©
 	$this->del_unused_line_sn ($ref_doc_line, $new_qte);
 	
 	/*
@@ -1844,14 +1844,14 @@ public function maj_line_qte ($ref_doc_line, $new_qte) {
 	}
 	*/
 	
-	// On met à jour les lignes liées (taxe, composition, ...)
+	// On met Ã  jour les lignes liÃ©es (taxe, composition, ...)
 	$query = "UPDATE docs_lines SET qte = '".$new_qte."'
 				WHERE ref_doc_line_parent = '".$ref_doc_line."' ";
 	$bdd->exec ($query);
 	$this->charger_contenu();
 }
 
-//mise à jour des ref_article_externe
+//mise Ã  jour des ref_article_externe
 public function maj_line_ref_article_externe ($ref_doc_line , $ref_article_externe, $old_ref_article_externe, $ref_article) {
 
 }
@@ -1985,7 +1985,7 @@ static public function maj_line_ordre ($ref_doc_line, $new_ordre) {
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -2015,14 +2015,14 @@ static public function maj_line_ordre ($ref_doc_line, $new_ordre) {
 	// MAJ de la BDD
 	$bdd->beginTransaction();
 	
-	// Mise à jour des autres lignes
+	// Mise Ã  jour des autres lignes
 	$query = "UPDATE docs_lines
 						SET ordre = ordre ".$variation." 1
 						WHERE ref_doc = '".$ref_doc."' && ref_doc_line_parent ".ref_or_null($ref_doc_line_parent, 1)." && 
 									ordre ".$symbole1." '".$ordre."' && ordre ".$symbole2." '".$new_ordre."' ";
 	$bdd->exec ($query);
 
-	// Mise à jour de cette ligne
+	// Mise Ã  jour de cette ligne
 	$query = "UPDATE docs_lines
 						SET ordre = '".$new_ordre."'
 						WHERE ref_doc_line = '".$ref_doc_line."'  ";
@@ -2032,12 +2032,12 @@ static public function maj_line_ordre ($ref_doc_line, $new_ordre) {
 
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
 
-// Mise à jour de l'information "qte_livree" d'une ligne de document
+// Mise Ã  jour de l'information "qte_livree" d'une ligne de document
 static function maj_line_infos_supp ($ref_doc_line, $table, $maj_donnees=NULL) {
 	global $bdd;
 
@@ -2061,12 +2061,12 @@ public function return_infos_from_ref_doc_line ($ref_doc_line) {
 	return $infos_doc_line;
 }
 
-// Ajoute un numéro de série à une ligne
+// Ajoute un numÃ©ro de sÃ©rie Ã  une ligne
 public function add_line_sn ($ref_doc_line, $numero_serie) {
 	global $bdd;
 
 	// *************************************************
-	// Vérification du numéro de série
+	// VÃ©rification du numÃ©ro de sÃ©rie
 	$numero_serie = trim ($numero_serie);
 	if (!$numero_serie) { return false; }
 
@@ -2091,7 +2091,7 @@ public function add_line_sn ($ref_doc_line, $numero_serie) {
 }
 
 
-// Supprimer un numéro de série à une ligne
+// Supprimer un numÃ©ro de sÃ©rie Ã  une ligne
 static function del_line_sn ($ref_doc_line, $numero_serie) {
 	global $bdd;
 
@@ -2109,7 +2109,7 @@ static function del_line_sn ($ref_doc_line, $numero_serie) {
 }
 
 
-// Supprimer un numéro de lot à une ligne
+// Supprimer un numÃ©ro de lot Ã  une ligne
 static function del_line_nl ($ref_doc_line, $numero_lot, $qte_lot) {
 	global $bdd;
 
@@ -2127,7 +2127,7 @@ static function del_line_nl ($ref_doc_line, $numero_lot, $qte_lot) {
 }
 
 
-//fonction supprimant les numéros de série suppérieurs à la quantité indiquée dans la ref_doc_line
+//fonction supprimant les numÃ©ros de sÃ©rie suppÃ©rieurs Ã  la quantitÃ© indiquÃ©e dans la ref_doc_line
 static function del_unused_line_sn ($ref_doc_line, $qte) {
 	global $bdd;
 
@@ -2151,7 +2151,7 @@ static function del_unused_line_sn ($ref_doc_line, $qte) {
 }
 
 
-// Supprimer un numéro de série à une ligne
+// Supprimer un numÃ©ro de sÃ©rie Ã  une ligne
 static function maj_line_sn ($ref_doc_line, $old_sn, $new_sn) {
 	global $bdd;
 
@@ -2180,7 +2180,7 @@ static function maj_line_sn ($ref_doc_line, $old_sn, $new_sn) {
 }
 
 
-// Supprimer un numéro de série à une ligne
+// Supprimer un numÃ©ro de sÃ©rie Ã  une ligne
 static function maj_line_nl ($ref_doc_line, $old_nl, $new_nl, $old_qte_nl, $new_qte_nl) {
 	global $bdd;
 
@@ -2219,11 +2219,11 @@ static function maj_line_nl ($ref_doc_line, $old_nl, $new_nl, $old_qte_nl, $new_
 // FONCTIONS DE GESTION DES ACTIONS MULTIPLES
 // *************************************************************************************************************
 
-// Génère une liste (MySQL) pour les fonctions de gestion du contenu
+// GÃ©nÃ¨re une liste (MySQL) pour les fonctions de gestion du contenu
 static function get_liste_of_lines ($lines) {
 	if (!count($lines)) { return false; }
 
-	// Création d'une liste à partir du tableau des lignes
+	// CrÃ©ation d'une liste Ã  partir du tableau des lignes
 	$liste_lines = "";
 	foreach ($lines as $line) {
 		if ($liste_lines) { $liste_lines .= ","; }
@@ -2254,13 +2254,13 @@ public function reset_pu_ht ($lines) {
 
 	if (!$liste_lines = $this->get_liste_of_lines ($lines)) { return false; }
 
-	// Sélection de la ref_article et de la qté pour ces lignes
+	// SÃ©lection de la ref_article et de la qtÃ© pour ces lignes
 	$query = "SELECT ref_doc_line, ref_article, qte FROM docs_lines
 						WHERE ref_doc_line IN (".$liste_lines.") ";
 	$resultat = $bdd->query ($query);
 	while ($tmp = $resultat->fetchObject()) {
 		if (define_type_of_line ($tmp->ref_article) != "article") {continue;}
-		// Sélection des caractéristiques de l'article
+		// SÃ©lection des caractÃ©ristiques de l'article
 		$article = new article ($tmp->ref_article);
 		$new_pu_ht = $this->select_article_pu ($article, $tmp->qte);
 		$this->maj_line_pu_ht ($tmp->ref_doc_line, $new_pu_ht);
@@ -2269,21 +2269,21 @@ public function reset_pu_ht ($lines) {
 	return true;
 }
 
-// Reset le prix unitaire d'une ligne en spécifiant un id_tarif
+// Reset le prix unitaire d'une ligne en spÃ©cifiant un id_tarif
 public function set_pu_ht_to_id_tarif ($lines, $id_tarif) {
 	global $bdd;
 
 	if (!$liste_lines = $this->get_liste_of_lines ($lines)) { return false; }
 
-	// Sélection de la ref_article et de la qté pour ces lignes
+	// SÃ©lection de la ref_article et de la qtÃ© pour ces lignes
 	$query = "SELECT ref_doc_line, ref_article, qte FROM docs_lines
 						WHERE ref_doc_line IN (".$liste_lines.") ";
 	$resultat = $bdd->query ($query);
 	while ($tmp = $resultat->fetchObject()) {
 		if (define_type_of_line ($tmp->ref_article) != "article") {continue;}
-		// Sélection des caractéristiques de l'article
+		// SÃ©lection des caractÃ©ristiques de l'article
 		$article = new article ($tmp->ref_article);
-		// Sélection du tarif applicable
+		// SÃ©lection du tarif applicable
 		$query = "SELECT pu_ht, indice_qte
 							FROM articles_tarifs
 							WHERE ref_article = '".$article->getRef_article()."' && id_tarif = '".$id_tarif."' 
@@ -2325,22 +2325,22 @@ public function select_article_pu ($article, $qte) {
 }
 
 
-// Sélection du prix d'achat pour cet article
+// SÃ©lection du prix d'achat pour cet article
 protected function select_article_pa ($article) {
 	$pu = $article->getPrix_achat_ht();
 	return $pu;
 }
 
 
-// Sélection du prix de vente adapté au contact
+// SÃ©lection du prix de vente adaptÃ© au contact
 protected function select_article_pv ($article, $qte) {
 	global $bdd;
 
-	// Tarif par défaut pour le magasin en cours
+	// Tarif par dÃ©faut pour le magasin en cours
 	$id_tarif = $_SESSION['magasin']->getId_tarif();
 	$pu_ht = 0;
 
-	// Sélection de la grille tarifaire particulière à ce client, si définie
+	// SÃ©lection de la grille tarifaire particuliÃ¨re Ã  ce client, si dÃ©finie
 	if ($this->ref_contact) {
             $query = "SELECT id_tarif, id_client_categ FROM annu_client
                                                     WHERE ref_contact = '".$this->ref_contact."' ";
@@ -2359,7 +2359,7 @@ protected function select_article_pv ($article, $qte) {
             }
 	}
 
-	// Sélection du tarif applicable
+	// SÃ©lection du tarif applicable
 	$query = "SELECT pu_ht, indice_qte
 						FROM articles_tarifs
 						WHERE ref_article = '".$article->getRef_article()."' && id_tarif = '".$id_tarif."' 
@@ -2373,13 +2373,13 @@ protected function select_article_pv ($article, $qte) {
 	return $pu_ht;
 }
 
-// Sélection du prix de vente adapté au contact
+// SÃ©lection du prix de vente adaptÃ© au contact
 public function select_article_pcotation ($article, $qte) {
 	global $bdd;
 	global $USE_COTATIONS;
 	
 	if($USE_COTATIONS){
-		// Tarif par défaut pour le magasin en cours
+		// Tarif par dÃ©faut pour le magasin en cours
 		$id_tarif = $_SESSION['magasin']->getId_tarif();
 		$cotation_ok = false;
 		$pu_ht = 0;
@@ -2407,13 +2407,13 @@ public function select_article_pcotation ($article, $qte) {
 	}	else{return false;}
 }
 
-// Selection du prix de vente adaptï¿½ au contact
+// Selection du prix de vente adaptÃ¯Â¿Â½ au contact
 public function select_infos_article_pcotation ($article, $qte) {
 	global $bdd;
 	global $USE_COTATIONS;
 
 	if($USE_COTATIONS){
-		// Tarif par dï¿½faut pour le magasin en cours
+		// Tarif par dÃ¯Â¿Â½faut pour le magasin en cours
 		$id_tarif = $_SESSION['magasin']->getId_tarif();
 		$cotation_ok = false;
 		$pu_ht = 0;
@@ -2464,7 +2464,7 @@ protected function charger_events() {
 }
 
 
-// Ajoute un évennement
+// Ajoute un Ã©vennement
 protected function add_event($id_event_type, $event = "") {
 	global $bdd;
 
@@ -2481,7 +2481,7 @@ protected function add_event($id_event_type, $event = "") {
 	if (!$_SESSION['user']->getRef_user()) { return false; }
 	
 	// *************************************************
-	// Création de la référence
+	// CrÃ©ation de la rÃ©fÃ©rence
 	$reference = new reference ($DOC_EVENT_ID_REFERENCE_TAG);
 	$ref_doc_event = $reference->generer_ref();
 
@@ -2500,7 +2500,7 @@ protected function add_event($id_event_type, $event = "") {
 }
 
 
-// Modifie un évennement
+// Modifie un Ã©vennement
 protected function maj_event ($ref_doc_event, $date_event, $id_event_type, $event) {
 	global $bdd;
 	
@@ -2527,7 +2527,7 @@ protected function maj_event ($ref_doc_event, $date_event, $id_event_type, $even
 }
 
 
-// Supprime un évennement
+// Supprime un Ã©vennement
 protected function del_event ($ref_doc_event) {
 	global $bdd;
 
@@ -2569,7 +2569,7 @@ public function maj_date_creation ($new_date_creation) {
 	}
 
 	// *************************************************
-	// Mise à jour et création d'un évennement de controle
+	// Mise Ã  jour et crÃ©ation d'un Ã©vennement de controle
 	$bdd->beginTransaction();
 
 	$query = "UPDATE documents
@@ -2585,7 +2585,7 @@ public function maj_date_creation ($new_date_creation) {
 	return true;
 }
 
-// Met à jour le code_affaire
+// Met Ã  jour le code_affaire
 public function maj_code_affaire ($code_affaire) {
 	global $bdd;	
 
@@ -2610,7 +2610,7 @@ protected function edit_doc ($id_edition_mode, $infos) {
 	global $bdd;
 
 	// *************************************************
-	// Réception des informations spécifiques afin de réaliser l'édition
+	// RÃ©ception des informations spÃ©cifiques afin de rÃ©aliser l'Ã©dition
 	switch ($id_edition_mode) {
 		case "1": // IMPRESSION
 		
@@ -2634,7 +2634,7 @@ protected function edit_doc ($id_edition_mode, $infos) {
 // *************************************************************************************************************
 // FONCTIONS DE LIAISON ENTRE DOCUMENTS 
 // *************************************************************************************************************
-// Chargement des documents liés
+// Chargement des documents liÃ©s
 public function charger_liaisons () {
 	global $bdd;
 
@@ -2679,14 +2679,14 @@ public static function charger_liaisons_doc ($ref_doc) {
 }
 
 
-// Chargement des documents à lier potentiellement
+// Chargement des documents Ã  lier potentiellement
 public function charger_liaisons_possibles () { 
 	$this->liaisons_possibles = array();
 	$this->liaisons_possibles_loaded = true;
 }
 
 
-// Lie un document à celui-ci
+// Lie un document Ã  celui-ci
 public function link_to_doc ($ref_doc) {
 	global $bdd;
 	
@@ -2698,7 +2698,7 @@ public function link_to_doc ($ref_doc) {
 }
 
 
-// Lie ce document à un autre, en reprennant son contenu
+// Lie ce document Ã  un autre, en reprennant son contenu
 public function link_from_doc ($ref_doc_source) {
 	global $bdd;
 
@@ -2722,7 +2722,7 @@ public function link_from_doc ($ref_doc_source) {
 	}
 
 	// *************************************************
-	// Copie des règlements
+	// Copie des rÃ¨glements
 	$doc_source->charger_reglements();
 	foreach ($doc_source->reglements as $reglement) {
 		$query = "SELECT ref_reglement,ref_doc,montant
@@ -2752,7 +2752,7 @@ public function link_from_doc ($ref_doc_source) {
 }
 
 
-// Lie ce document à un autre, en definisant l'etat de la liaison
+// Lie ce document Ã  un autre, en definisant l'etat de la liaison
 public function link_from_doc_set_active ($ref_doc_source, $active = 1) {
 	global $bdd;
 
@@ -2769,7 +2769,7 @@ public function break_liaison ($ref_doc) {
 	global $bdd;
 
 	// *************************************************
-	// Controle de la possibilité de rompre une liaison
+	// Controle de la possibilitÃ© de rompre une liaison
 
 	// *************************************************
 	// Action avant la rupture de la liaison
@@ -2788,7 +2788,7 @@ public function break_liaison ($ref_doc) {
 	return true;
 }
 
-// Actions spécifiques en cas de rupture d'une liaison
+// Actions spÃ©cifiques en cas de rupture d'une liaison
 protected function action_before_break_liaison ($ref_doc) {}
 
 
@@ -2806,7 +2806,7 @@ protected function check_profils () {
 protected function check_profil_client () {
 	global $CLIENT_ID_PROFIL;
 	if (!isset($_SESSION['profils'][$CLIENT_ID_PROFIL])) {
-		$erreur = "L'utilisation du document de type ".$this->lib_type_doc." nécessite le profil CLIENT actif";
+		$erreur = "L'utilisation du document de type ".$this->lib_type_doc." nÃ©cessite le profil CLIENT actif";
 		alerte_dev ($erreur);
 	}
 	return true;
@@ -2816,7 +2816,7 @@ protected function check_profil_client () {
 protected function check_profil_fournisseur () {
 	global $FOURNISSEUR_ID_PROFIL;
 	if (!isset($_SESSION['profils'][$FOURNISSEUR_ID_PROFIL])) {
-		$erreur = "L'utilisation du document de type ".$this->lib_type_doc." nécessite le profil FOURNISSEUR actif";
+		$erreur = "L'utilisation du document de type ".$this->lib_type_doc." nÃ©cessite le profil FOURNISSEUR actif";
 		alerte_dev ($erreur);
 	}
 	return true;
@@ -2861,7 +2861,7 @@ protected function copie_doc ($id_type_doc) {
 	}	
 	
 	// *************************************************
-	// Création du nouveau document
+	// CrÃ©ation du nouveau document
 	$doc_cible = create_doc ($id_type_doc);
 
 	// *************************************************
@@ -2891,11 +2891,11 @@ protected function copie_doc ($id_type_doc) {
 	$this->copie_content ($doc_cible);
 
 	// *************************************************
-	// Copie des règlements
+	// Copie des rÃ¨glements
 	if (isset($GLOBALS['_OPTIONS']['CREATE_DOC']['follow_reglement'])) {
 		$this->charger_reglements();
 		foreach ($this->reglements as $reglement) {
-				// Création d'une liaison entre le document cible et ces règlements
+				// CrÃ©ation d'une liaison entre le document cible et ces rÃ¨glements
 //				if($reglement->montant_on_doc > $this->getMontant_ttc()){
 //					$tmp_montant = $this->getMontant_ttc();
 //				}else{
@@ -2905,7 +2905,7 @@ protected function copie_doc ($id_type_doc) {
 				$query = "INSERT INTO reglements_docs (ref_reglement, ref_doc, montant)
 									VALUES ('".$reglement->ref_reglement."', '".$doc_cible->getRef_doc()."', '".$tmp_montant."')";
 				$bdd->exec ($query);
-				// Invalidation de la liaison entre ces règlements et le document source (pour ne le comptabiliser qu'une seule fois)
+				// Invalidation de la liaison entre ces rÃ¨glements et le document source (pour ne le comptabiliser qu'une seule fois)
 				$query = "UPDATE reglements_docs SET liaison_valide = 0 
 									WHERE ref_reglement = '".$reglement->ref_reglement."' && ref_doc = '".$this->ref_doc."' ";
 				$bdd->exec ($query);
@@ -2918,7 +2918,7 @@ protected function copie_doc ($id_type_doc) {
 	$this->echeancier->copie_to_doc($doc_cible->getRef_doc());
 	
 	// *************************************************
-	// Evennement de création
+	// Evennement de crÃ©ation
 	$this->add_event(3, $doc_cible->getLIB_TYPE_DOCUMENT()." - Ref. ".$doc_cible->getRef_doc());
 	$doc_cible->check_after_creation ();
 
@@ -2938,7 +2938,7 @@ public function copie_content ($doc_cible) {
 	if (!$this->contenu_loaded) { $this->charger_contenu(); }
 
 	// *************************************************
-	// Si l'élément "doc_lines" n'est pas défini, la copie porte sur l'ensemble du contenu.
+	// Si l'Ã©lÃ©ment "doc_lines" n'est pas dÃ©fini, la copie porte sur l'ensemble du contenu.
 	if (!isset($GLOBALS['_OPTIONS']['CREATE_DOC']['doc_lines']) || !is_array($GLOBALS['_OPTIONS']['CREATE_DOC']['doc_lines'])) {
 		$GLOBALS['_OPTIONS']['CREATE_DOC']['doc_lines'] = array();
 		for ($i=0; $i<count($this->contenu); $i++) { 
@@ -2964,7 +2964,7 @@ protected function create_info_copie_line_texte ($doc_source) { return ""; }
 
 
 // Recopie une ligne dans un autre document $doc 
-// $line correspond à une ligne provennant de charger_contenu
+// $line correspond Ã  une ligne provennant de charger_contenu
 public function copie_line_to_doc ($doc, $line) {
 	global $bdd;
 	global $GESTION_SN;
@@ -2993,7 +2993,7 @@ public function copie_line_to_doc ($doc, $line) {
 	if (isset($GLOBALS['_OPTIONS']['COPIE_LINE']['RESET_PU_HT'])) {
 		$new_line->pu_ht = $this->select_article_pu ($article, $new_line->qte);
 	}
-	// invertion de la quantité
+	// invertion de la quantitÃ©
 	if (isset($GLOBALS['_OPTIONS']['COPIE_LINE']['INVERT_QTE'])) {
 		$new_line->qte = -1 * $new_line->qte;
 	}
@@ -3007,7 +3007,7 @@ public function copie_line_to_doc ($doc, $line) {
 	//on n'ajoute pas les lignes de taxes qui n'ont pas de parent
 	if ($new_line->type_of_line == "taxe" && !$new_line->ref_doc_line_parent) {return false;}
 
-	// Informations supplémentaires pour la ligne
+	// Informations supplÃ©mentaires pour la ligne
 	if (!$this->action_before_copie_line_to_doc ($doc, $line)) { unset($tab_correspondance[$new_line->old_ref_doc_line]) ; return false; }
 
 	//gestion du taux de tva
@@ -3028,10 +3028,10 @@ public function copie_line_to_doc ($doc, $line) {
 										".num_or_null($new_line->pa_ht).", ".num_or_null($new_line->pa_forced)." ) ";
 	$bdd->exec ($query);
 	
-	// Informations supplémentaires pour la ligne
+	// Informations supplÃ©mentaires pour la ligne
 	$this->action_after_copie_line_to_doc ($doc, $new_line);
 
-	// Numéros de série
+	// NumÃ©ros de sÃ©rie
 	if (isset($line->sn) && is_array($line->sn) && $GESTION_SN && $doc->getGESTION_SN()) {
 		$inserted_sn = "";
 		foreach ($line->sn as $line_sn) {
@@ -3047,12 +3047,12 @@ public function copie_line_to_doc ($doc, $line) {
 
         // Abonnements
         if (isset($new_line->modele) && $new_line->modele == "service_abo"){
-            //Récupération des infos
+            //RÃ©cupÃ©ration des infos
             $duree_abo = new duree_abo($new_line->old_ref_doc_line);
             $date_deb_abo = $duree_abo->getDate_debut();
             $duree = $duree_abo->getDuree();
 
-            //traitement de récup des infos 
+            //traitement de rÃ©cup des infos 
             $duree_mois_abo = substr($duree,0,strpos($duree,'M'));
             $duree_jours_abo = substr($duree,strpos($duree,'M')+1,strpos($duree,'J')- strpos($duree,'M')-1);
             $duree_abo_new_line = new duree_abo($new_line->ref_doc_line);
@@ -3064,7 +3064,7 @@ public function copie_line_to_doc ($doc, $line) {
 }
 
 
-// Fonction permetant d'insérer les informations complémentaires d'une ligne lors d'une copie
+// Fonction permetant d'insÃ©rer les informations complÃ©mentaires d'une ligne lors d'une copie
 protected function action_before_copie_line_to_doc ($new_doc, $line) { return true; }
 protected function action_after_copie_line_to_doc  ($new_doc, $line) { }
 
@@ -3085,7 +3085,7 @@ public function copie_line_from_lines ($lines, $new_ref_doc_line_parent = "", $o
 	
 	if ($document_source = open_doc($old_ref_doc)) {$query_infos_supp = $document_source->getDoc_line_infos_supp () ;}
 	// *************************************************
-	// Informations sur les lignes à copier
+	// Informations sur les lignes Ã  copier
 	$liste_lines = "''";
 	if (!count($lines)) { return false; }
 	for ($i=0; $i<count($lines); $i++) {
@@ -3101,7 +3101,7 @@ public function copie_line_from_lines ($lines, $new_ref_doc_line_parent = "", $o
 	$resultat1 = $bdd->query($query);
 
 
-	// Numéros de séries des lignes à copier
+	// NumÃ©ros de sÃ©ries des lignes Ã  copier
 	$sns = array();
 	$query = "SELECT ref_doc_line, numero_serie
 						FROM docs_lines_sn dls
@@ -3131,7 +3131,7 @@ public function copie_line_from_lines ($lines, $new_ref_doc_line_parent = "", $o
 		$new_line->ref_doc_line_parent = $new_ref_doc_line_parent;
 	
 		// *************************************************
-		// Création de la référence et de l'ordre
+		// CrÃ©ation de la rÃ©fÃ©rence et de l'ordre
 		$new_line->ref_doc_line = $this->create_ref_doc_line ();
 		$new_line->ordre 				= $this->new_line_order ();
 
@@ -3155,10 +3155,10 @@ public function copie_line_from_lines ($lines, $new_ref_doc_line_parent = "", $o
 												".  num_or_null($new_line->pa_ht).", ".  num_or_null($new_line->pa_forced).") ";
 		$bdd->exec ($query);
 
-		// Informations supplémentaires pour la ligne
+		// Informations supplÃ©mentaires pour la ligne
 		$this->action_after_copie_line_from_line ($new_line);
 		
-		// Numéros de série
+		// NumÃ©ros de sÃ©rie
 		if (isset($new_line->sn) && $GESTION_SN && $this->GESTION_SN) {
 			$inserted_sn = "";
 			foreach ($new_line->sn  as $line_sn) {
@@ -3212,7 +3212,7 @@ public function del_content_from_stock ($id_stock = 0) {
 	}
 }
 
-//fonctions liées au services par abonnement
+//fonctions liÃ©es au services par abonnement
 // Ajoute le service par abo
 public function add_service_abo () {
 	if (!$this->contenu_service_abo_loaded) { $this->charger_contenu_service_abo (); }
@@ -3233,7 +3233,7 @@ public function del_service_abo () {
 	}
 }
 
-//fonctions liées au services à la consommation
+//fonctions liÃ©es au services Ã  la consommation
 // Ajoute le service a la conso
 public function add_service_conso () {
 	if (!$this->contenu_service_conso_loaded) { $this->charger_contenu_service_conso (); }
@@ -3258,7 +3258,7 @@ public function del_service_conso () {
 // *************************************************************************************************************
 // FONCTIONS DE GESTION DES COMMERCIAUX
 // *************************************************************************************************************
-// Chargement des commerciaux attribués à ce document
+// Chargement des commerciaux attribuÃ©s Ã  ce document
 protected function charger_commerciaux () {
 	global $bdd;
 	
@@ -3288,7 +3288,7 @@ protected function charger_commerciaux () {
 public function attribution_commercial ($commerciaux) {
 	global $bdd;
 
-	// Si aucune référence
+	// Si aucune rÃ©fÃ©rence
 	if (!is_array($commerciaux)) {
 		return false;
 	}
@@ -3314,7 +3314,7 @@ public function attribution_commercial ($commerciaux) {
 // *************************************************************************************************************
 // FONCTIONS DE GESTION DES REGLEMENTS
 // *************************************************************************************************************
-// Chargement des règlements rapprochés à ce document
+// Chargement des rÃ¨glements rapprochÃ©s Ã  ce document
 protected function charger_reglements () {
 	global $bdd;
 	global $CALCUL_TARIFS_NB_DECIMALS;
@@ -3406,7 +3406,7 @@ protected function calcul_montant_to_pay () {
         else
         {$query_where = "ISNULL(dl.ref_doc_line_parent)";}
 
-	// Montant total du document. La somme est effectuée sur les arrondis présentés pour ne pas entraîner d'erreur d'arrondi et sur le montant total HT (par type de TVA)
+	// Montant total du document. La somme est effectuÃ©e sur les arrondis prÃ©sentÃ©s pour ne pas entraÃ®ner d'erreur d'arrondi et sur le montant total HT (par type de TVA)
 	$query = "SELECT SUM(ROUND(subquerybytva.montant_ht*(1+(subquerybytva.tva/100)),".$TARIFS_NB_DECIMALES.")) as montant_ttc from ( 
 SELECT SUM( ROUND( qte * ROUND( pu_ht, ".$CALCUL_TARIFS_NB_DECIMALS." ) * ( 1 - remise /100 ) , ".$CALCUL_TARIFS_NB_DECIMALS." ) ) as montant_ht, tva
 FROM docs_lines dl
@@ -3418,7 +3418,7 @@ GROUP BY tva
 	$tmp = $resultat->fetchObject ();
 	$this->montant_ttc = abs($tmp->montant_ttc);
 
-	// Montant total des règlements
+	// Montant total des rÃ¨glements
 	$this->montant_reglements = 0;
 	$query = "SELECT SUM(ROUND(rd.montant,".$CALCUL_TARIFS_NB_DECIMALS.")) as montant_reglements, rm.type_reglement
 						FROM reglements_docs rd
@@ -3441,7 +3441,7 @@ GROUP BY tva
 }
 
 
-// Appelle les fonction de reglement partiel et total, afin de vérifier l'etat du document en fonction des règlements effectués
+// Appelle les fonction de reglement partiel et total, afin de vÃ©rifier l'etat du document en fonction des rÃ¨glements effectuÃ©s
 protected function check_etat_reglement () { 
 	$this->calcul_montant_to_pay ();
 
@@ -3460,11 +3460,11 @@ protected function check_etat_reglement () {
 }
 
 
-// Création d'un règlement pour ce document
+// CrÃ©ation d'un rÃ¨glement pour ce document
 public function rapprocher_reglement ($reglement) {
 	global $bdd;
 
-	// Si aucune référence, le règlement est invalide
+	// Si aucune rÃ©fÃ©rence, le rÃ¨glement est invalide
 	if (!$reglement->getRef_reglement()) {
 		return false;
 	}
@@ -3475,12 +3475,12 @@ public function rapprocher_reglement ($reglement) {
 
 	$this->calcul_montant_to_pay ();
         if ( abs($this->montant_to_pay) - abs($reglement->getMontant_disponible()) > 0.01 ) {
-		// Montant à régler supérieur au montant réglé, la totalité de ce reglement est attribuée au document
+		// Montant Ã  rÃ©gler supÃ©rieur au montant rÃ©glÃ©, la totalitÃ© de ce reglement est attribuÃ©e au document
 		$montant_rapprochement = abs($reglement->getMontant_disponible());
 		$reglement_total = 0;
 	}
 	else {
-		// Montant à régler inférieur ou égal au montant réglé, seul le montant à régler est attribuée au document
+		// Montant Ã  rÃ©gler infÃ©rieur ou Ã©gal au montant rÃ©glÃ©, seul le montant Ã  rÃ©gler est attribuÃ©e au document
 		$montant_rapprochement = abs($this->montant_to_pay);
 		$reglement_total = 1;
 	}
@@ -3488,7 +3488,7 @@ public function rapprocher_reglement ($reglement) {
 	$query = "INSERT INTO reglements_docs (ref_reglement, ref_doc, montant, liaison_valide)	
 						VALUES ('".$reglement->getRef_reglement()."', '".$this->ref_doc."', '".$montant_rapprochement."', 1) ";
     $bdd->exec ($query);
-        // Actions supplémentaires.
+        // Actions supplÃ©mentaires.
 	$this->reglement_partiel();
 	if ($reglement_total) {
 		$this->reglement_total();
@@ -3499,22 +3499,22 @@ public function rapprocher_reglement ($reglement) {
 }
 
 
-// Vérifie si il est utile de charger les informations de facturation
+// VÃ©rifie si il est utile de charger les informations de facturation
 protected function need_infos_facturation () {
 	return false;
 }
 
 
-// Va rechercher les factures à régler, les avoirs en cours, et les règlements non lettrés
+// Va rechercher les factures Ã  rÃ©gler, les avoirs en cours, et les rÃ¨glements non lettrÃ©s
 public function get_infos_facturation ($montant_positif = 1) {
 	global $bdd;
 
 	// Initialisation
-	$this->factures_to_pay	= array();	// Factures à payer pour une FAC+ ou une FAF+
-	$this->avoirs_to_use		= array();	// Avoirs à utiliser pour une FA+ / Avoirs à cumuler pour une FA-
-	$this->regmnt_to_use		= array();	// Règlements entrants (si FAC+ ou FAF-) ou sortants (si FAF+ ou FAC-) à associer au doc
+	$this->factures_to_pay	= array();	// Factures Ã  payer pour une FAC+ ou une FAF+
+	$this->avoirs_to_use		= array();	// Avoirs Ã  utiliser pour une FA+ / Avoirs Ã  cumuler pour une FA-
+	$this->regmnt_to_use		= array();	// RÃ¨glements entrants (si FAC+ ou FAF-) ou sortants (si FAF+ ou FAC-) Ã  associer au doc
 
-	// Vérification de la nécessité de charger ces informations
+	// VÃ©rification de la nÃ©cessitÃ© de charger ces informations
 	if (!$this->need_infos_facturation()) {
 		$GLOBALS['_ALERTES']['infos_non_utiles'] = 1;
 		return false;
@@ -3530,7 +3530,7 @@ public function get_infos_facturation ($montant_positif = 1) {
 		case 1: case 2: case 3: case 4: case 15:	$type = "FAC";		break;
 		case 5: case 6: case 7: case 8: 			$type = "FAF";		break;
 	}
-	// Montant positif ou négatif
+	// Montant positif ou nÃ©gatif
 	switch ($montant_positif) {
 		case 1: case -1: break;
 		default:
@@ -3542,7 +3542,7 @@ public function get_infos_facturation ($montant_positif = 1) {
 	// **************************************************
 	// Cas d'une facture client 
 	if ($type == "FAC") {
-		// Recherche des FAC- (avoirs) à utiliser ou en saisie
+		// Recherche des FAC- (avoirs) Ã  utiliser ou en saisie
 		$query = "SELECT d.ref_doc, d.id_etat_doc, d.date_creation_doc date_creation,
 										 SUM(dl.qte * dl.pu_ht * (1-dl.remise/100) * (1+dl.tva/100)) as montant_ttc,
 										 ( SELECT SUM(montant)
@@ -3579,7 +3579,7 @@ if ($montant_positif == -1) {
 		}
     
 		if ($montant_positif == 1) {
-			// Recherche des FAC+ à régler
+			// Recherche des FAC+ Ã  rÃ©gler
 			$query = "SELECT d.ref_doc, d.id_etat_doc, de.lib_etat_doc, d.date_creation_doc date_creation, df.date_echeance,
 											 SUM(dl.qte * dl.pu_ht * (1-dl.remise/100) * (1+dl.tva/100)) as montant_ttc,
 											 ( SELECT SUM(montant)
@@ -3599,7 +3599,7 @@ if ($montant_positif == -1) {
 			$resultat = $bdd->query($query); 
 			while ($tmp = $resultat->fetchObject()) { $this->factures_to_pay[] = $tmp; }
 
-			 // Règlements à utiliser (non lettrés totalement)
+			 // RÃ¨glements Ã  utiliser (non lettrÃ©s totalement)
 			$query = "SELECT r.ref_reglement, r.montant_reglement, r.date_reglement, rm.lib_reglement_mode, rd.liaison_valide,
 												SUM(rd.montant) as montant_used
 								FROM reglements r
@@ -3619,7 +3619,7 @@ if ($montant_positif == -1) {
 	// **************************************************
 	// Cas d'une facture fournisseur 
 	if ($type == "FAF") {
-		// Recherche des FAF- (avoirs) à utiliser ou en saisie
+		// Recherche des FAF- (avoirs) Ã  utiliser ou en saisie
 		$query = "SELECT d.ref_doc, d.id_etat_doc, d.date_creation_doc date_creation,
 										 SUM(dl.qte * dl.pu_ht * (1-dl.remise/100) * (1+dl.tva/100)) as montant_ttc,
 										 ( SELECT SUM(montant)
@@ -3640,7 +3640,7 @@ if ($montant_positif == -1) {
 		while ($tmp = $resultat->fetchObject()) { $this->avoirs_to_use[] = $tmp; }
 
 		if ($montant_positif == 1) {
-			// Recherche des FAF+ à régler
+			// Recherche des FAF+ Ã  rÃ©gler
 			$query = "SELECT d.ref_doc, d.id_etat_doc, de.lib_etat_doc, d.date_creation_doc date_creation, df.date_echeance,
 											 SUM(dl.qte * dl.pu_ht * (1-dl.remise/100) * (1+dl.tva/100)) as montant_ttc,
 											 ( SELECT SUM(montant)
@@ -3660,7 +3660,7 @@ if ($montant_positif == -1) {
 			$resultat = $bdd->query($query); 
 			while ($tmp = $resultat->fetchObject()) { $this->factures_to_pay[] = $tmp; }
 
-			 // Règlements à utiliser (non lettrés totalement)
+			 // RÃ¨glements Ã  utiliser (non lettrÃ©s totalement)
 			$query = "SELECT r.ref_reglement, r.montant_reglement, r.date_reglement, rm.lib_reglement_mode, rd.liaison_valide,
 												SUM(rd.montant) as montant_used
 								FROM reglements r
@@ -3680,7 +3680,7 @@ if ($montant_positif == -1) {
 }
 
 
-// Défait la liaison entre un document et un règlement
+// DÃ©fait la liaison entre un document et un rÃ¨glement
 public function delier_reglement ($ref_reglement) {
 	global $bdd;
 
@@ -3694,14 +3694,14 @@ public function delier_reglement ($ref_reglement) {
 						WHERE ref_reglement = '".$reglement->getRef_reglement()."' && ref_doc = '".$this->ref_doc."'  ";
 	$bdd->exec ($query);
 
-	// Vérification de l'état
+	// VÃ©rification de l'Ã©tat
 	$this->check_etat_reglement ();
 
 	return true;
 }
 
 
-// Invalide la liaison avec un règlement (celui-ci n'est donc plus comptabilisé lors du calcul des sommes utilisées)
+// Invalide la liaison avec un rÃ¨glement (celui-ci n'est donc plus comptabilisÃ© lors du calcul des sommes utilisÃ©es)
 protected function maj_etat_reglements ($active = 1) {
 	global $bdd;
 
@@ -3713,7 +3713,7 @@ protected function maj_etat_reglements ($active = 1) {
 
 
 
-// Fonctions complémentaires permettant les actions supplémentaires en cas de règlement
+// Fonctions complÃ©mentaires permettant les actions supplÃ©mentaires en cas de rÃ¨glement
 protected function reglement_inexistant () {}
 protected function reglement_partiel () {}
 protected function reglement_total () {
@@ -3757,13 +3757,13 @@ protected function reglement_total () {
 // *************************************************************************************************************
 // FONCTIONS DE GENERATION D'UN PDF 
 // *************************************************************************************************************
-// Créé et affiche le PDF d'un document
+// CrÃ©Ã© et affiche le PDF d'un document
 public function create_pdf ($print = 0) {	
-	// Préférences et options
+	// PrÃ©fÃ©rences et options
 	$GLOBALS['PDF_OPTIONS']['HideToolbar'] = 0;
 	$GLOBALS['PDF_OPTIONS']['AutoPrint'] = $print;
 
-	// Création du fichier
+	// CrÃ©ation du fichier
 	$pdf = new PDF_etendu ();
 
 	// Ajout du document au PDF
@@ -3835,14 +3835,14 @@ public function mail_document ($to , $sujet , $message) {
 	$nom				= array();
 	$nom[]			= $this->ref_doc."_".$this->code_file.".pdf";
 	
-	//on génere un nom de fichier en remplacement
+	//on gÃ©nere un nom de fichier en remplacement
 	$contact_entreprise = new contact($REF_CONTACT_ENTREPRISE);
 	$nom_entreprise = str_replace (CHR(13), " " ,str_replace (CHR(10), " " , $contact_entreprise->getNom()));
 	$nom_aff				= array();
 	$nom_aff[]			= $this->ref_doc."_".$nom_entreprise.".pdf";
 
 
-	//on récupère l'email de l'utilisateur en cours pour envoyer le mail
+	//on rÃ©cupÃ¨re l'email de l'utilisateur en cours pour envoyer le mail
 	$reply 			= $_SESSION['user']->getEmail();
 	$from 			= $_SESSION['user']->getEmail();
 	
@@ -3872,14 +3872,14 @@ public function fax_document ($to , $sujet , $message) {
 	$nom				= array();
 	$nom[]			= $this->ref_doc."_".$this->code_file.".pdf";
 	
-	//on génere un nom de fichier en remplacement
+	//on gÃ©nere un nom de fichier en remplacement
 	$contact_entreprise = new contact($REF_CONTACT_ENTREPRISE);
 	$nom_entreprise = str_replace (CHR(13), " " ,str_replace (CHR(10), " " , $contact_entreprise->getNom()));
 	$nom_aff				= array();
 	$nom_aff[]			= $this->ref_doc."_".$nom_entreprise.".pdf";
 
 
-	//on récupère l'email de l'utilisateur en cours pour envoyer le mail
+	//on rÃ©cupÃ¨re l'email de l'utilisateur en cours pour envoyer le mail
 	$reply 			= $_SESSION['user']->getEmail();
 	$from 			= $_SESSION['user']->getEmail();
 	
@@ -4193,7 +4193,7 @@ function getMontant_echu(){
 	return $montant_echu;
 }
 
-//Affichage des echeances et des reglements effectués
+//Affichage des echeances et des reglements effectuÃ©s
 public function get_conditions_reglement($line_ech_max,$line_regl_max)
 {
 	global $bdd;
@@ -4204,7 +4204,7 @@ public function get_conditions_reglement($line_ech_max,$line_regl_max)
 	$result=array();
 	$document_echeances=array();
 	$echeance=array();
-	//Date de début de la première echeance
+	//Date de dÃ©but de la premiÃ¨re echeance
 	$date_debut=$this->echeancier->get_Date_ref();
 	$date_echeance_debut=$date_echeance_fin="";
 	$delai_depuis_debut=0;
@@ -4217,26 +4217,26 @@ public function get_conditions_reglement($line_ech_max,$line_regl_max)
 	$result = $bdd->query ($query);
 	while ($tmp = $result->fetchObject()) { $doc[] = $tmp; }
 	
-	//Récupération des échéances et de leur état
+	//RÃ©cupÃ©ration des Ã©chÃ©ances et de leur Ã©tat
 	$echeance=$this->echeancier->get_echeances_etat();
-	//Récupération du nombre d'echeances restantes
+	//RÃ©cupÃ©ration du nombre d'echeances restantes
 	$nb_echeances= $this->echeancier->get_Nb_echeances_restantes();
         $nb_echeances_debut = count($echeance);
-	//Récupération du type de document concerné (si la facture est acquittée on affiche pas les echeances)
+	//RÃ©cupÃ©ration du type de document concernÃ© (si la facture est acquittÃ©e on affiche pas les echeances)
 	if($this->getCODE_DOC()!="")
 		$type_doc=$this->getCODE_DOC();
 	else
 		$type_doc="";
 
-	//Si il existe un échéancier et si on souhaite l'afficher
+	//Si il existe un Ã©chÃ©ancier et si on souhaite l'afficher
 	if(($this->echeancier->exist())&& ($line_ech_max > 0 ))
 	{
-		//Si le document n'est pas acquittée on affiche les echeances
+		//Si le document n'est pas acquittÃ©e on affiche les echeances
                 if((($this->getMontant_to_pay ()>0.01 ) || ($type_doc!="FAC") ))
 		{
 			foreach($echeance as $echeances)
 			{
-				//Déclaration d'un objet a transmettre
+				//DÃ©claration d'un objet a transmettre
 				$res = new stdclass;
 				$res->type_reglement="";
 				$res->pourcentage="";
@@ -4250,11 +4250,11 @@ public function get_conditions_reglement($line_ech_max,$line_regl_max)
 				$res->date_reglement="";
 				$res->mode_reglement="";
 				
-				//Récupération de l'echeance id
+				//RÃ©cupÃ©ration de l'echeance id
 				$obj_echeance=new document_echeance($echeances->id_echeance);
 				//Enregistrement type_reglement
 				$res->type_reglement=$echeances->type_reglement;
-				//1°ligne : accompte ou un arrhe affichage "'type', 'pourcent', 'soit montant'"
+				//1Â°ligne : accompte ou un arrhe affichage "'type', 'pourcent', 'soit montant'"
 				if(($echeances->type_reglement=="Acompte"||$echeances->type_reglement=="Arrhes")&& $i<($line_ech_max-1))
 				{
 					//Pour calculer les dates
@@ -4265,7 +4265,7 @@ public function get_conditions_reglement($line_ech_max,$line_regl_max)
 						$res->mode_reglement=$doc[$echeances->mode_reglement-1]->abrev_reglement_mode;
 						
 				}
-				//Si c'est une Echeance ou un solde et qu'on a pas écrit plus de ligne que la limte($line_ech_max)
+				//Si c'est une Echeance ou un solde et qu'on a pas Ã©crit plus de ligne que la limte($line_ech_max)
 				else if((($echeances->type_reglement=="Echeance"||$echeances->type_reglement=="Solde") && $i<($line_ech_max-1))||($i==($line_ech_max-1)&&($i==($nb_echeances_debut-1))))
 				{ 
 					//Si c'est un paiement fin de mois
@@ -4278,9 +4278,9 @@ public function get_conditions_reglement($line_ech_max,$line_regl_max)
 					else
 					{
 						$delai_depuis_debut+=$echeances->jour;
-						//Echeance à la facturation ou avec un délai
+						//Echeance Ã  la facturation ou avec un dÃ©lai
 						if($echeances->jour==0)
-							$res->jour=" à la facturation";
+							$res->jour=" Ã  la facturation";
 						else
                                                 {
                                                     //***************************
@@ -4301,11 +4301,11 @@ public function get_conditions_reglement($line_ech_max,$line_regl_max)
 					if($echeances->mode_reglement!="")
 						$res->mode_reglement=$doc[$echeances->mode_reglement-1]->abrev_reglement_mode;
 				}
-				else //Si on est à la limite on résume
+				else //Si on est Ã  la limite on rÃ©sume
 				{
 					//Echeance restantes
 					$echeances_restantes=$nb_echeances_debut-$i;
-					//Calcul de la date de début d'echeance 3
+					//Calcul de la date de dÃ©but d'echeance 3
 					$timestamp_debut=strtotime($date_debut) + $delai_depuis_debut*24*3600;
 					$date_echeance_debut=date('d-m-Y',$timestamp_debut);
 					//Si on affiche qu'une ligne
@@ -4314,10 +4314,10 @@ public function get_conditions_reglement($line_ech_max,$line_regl_max)
 					
 					$res->type_reglement="EcheanceResume";
 						
-					//Delai depuis début + durée echeance 3
+					//Delai depuis dÃ©but + durÃ©e echeance 3
 					$delai_depuis_debut+=$echeances->jour;
 					
-					//Calculer nombre_jours jusqu'à la fin de la derniere echeance
+					//Calculer nombre_jours jusqu'Ã  la fin de la derniere echeance
 					for($j=$i+1;$j<$nb_echeances;$j++)
 					{
 						//Si fin de mois ou non 
@@ -4342,7 +4342,7 @@ public function get_conditions_reglement($line_ech_max,$line_regl_max)
 					//Enregistrement dans le tableau
 					$resultat[$i] = $res;
 					$i +=1;
-					//Fin du résumé
+					//Fin du rÃ©sumÃ©
 					break;
 				}
 				$resultat[$i] = $res;
@@ -4361,7 +4361,7 @@ public function get_conditions_reglement($line_ech_max,$line_regl_max)
 	$montant_cumule_reglement=0;
 	$montant=0;
 
-	//Si il y a des règlements déjà effectués et si on souhaite les afficher
+	//Si il y a des rÃ¨glements dÃ©jÃ  effectuÃ©s et si on souhaite les afficher
 	if((!empty($this->reglements)) && ($type_doc!="DEV") && ($line_regl_max > 0 ))
 	{
 		//Compter le nombre de reglements
@@ -4375,7 +4375,7 @@ public function get_conditions_reglement($line_ech_max,$line_regl_max)
 		}
 		foreach($this->reglements as $paiement)
 		{
-			//Déclaration d'un objet a transmettre
+			//DÃ©claration d'un objet a transmettre
 			$res = new stdclass;
 			$res->type_reglement="Reglement";
 			$res->pourcentage="";
@@ -4394,7 +4394,7 @@ public function get_conditions_reglement($line_ech_max,$line_regl_max)
 			$timestamp_debut=strtotime($date_reglement[0]); 
 			$date_reglement=date('d-m-Y',strtotime(" 0 day",$timestamp_debut));
 				
-			//Si c'est un règlement normal on affiche les $line_regl_max
+			//Si c'est un rÃ¨glement normal on affiche les $line_regl_max
 			if(($i<($line_regl_max-1)) || ($i==($line_regl_max-1) &&($j==$i+1)))
 			{
 				//Calcul montant total regle
@@ -4403,10 +4403,10 @@ public function get_conditions_reglement($line_ech_max,$line_regl_max)
 				$res->montant=price_format(round($paiement->montant_reglement,2))." $MONNAIE[0]";
 				$res->mode_reglement=$paiement->abrev_reglement_mode;
 			}
-			else //Résumer les reglements
+			else //RÃ©sumer les reglements
 			{
 				$h=0;
-				//Calculer le total des reglements non affichés effectués
+				//Calculer le total des reglements non affichÃ©s effectuÃ©s
 				foreach($this->reglements as $paiement)
 				{
 					if((!empty($paiement))&&($h>=$i)&&($h<$j))
@@ -4427,7 +4427,7 @@ public function get_conditions_reglement($line_ech_max,$line_regl_max)
 			$i+=1;
 		}
 	}
-	//pas d'échéancier on ne modifie rien
+	//pas d'Ã©chÃ©ancier on ne modifie rien
 	return $resultat;
 }
 

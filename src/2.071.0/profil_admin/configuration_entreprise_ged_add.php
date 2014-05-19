@@ -1,13 +1,13 @@
 <?php
 // *************************************************************************************************************
-// Ajout d'un type de pièce jointe
+// Ajout d'un type de piÃ¨ce jointe
 // *************************************************************************************************************
 
 require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
-//traitement des données transmises
+//traitement des donnÃ©es transmises
 
 
 if (!$_REQUEST['lib_type_add'] || !$_REQUEST['abrev_type_add'] ) {	

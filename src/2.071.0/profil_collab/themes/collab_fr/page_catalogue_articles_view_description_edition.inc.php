@@ -174,7 +174,7 @@ border:0px;
 <SCRIPT type="text/javascript">
 
 
-//initialisation de l'éditeur de texte
+//initialisation de l'Ã©diteur de texte
 editeur.HTML_editor("desc_longue", "desc_longue_html", "editeur");
 Event.observe('editeur_bold', "click", function(evt){Event.stop(evt); editeur.HTML_exeCmd("bold", null);});
 Event.observe('editeur_italic', "click", function(evt){Event.stop(evt); editeur.HTML_exeCmd("italic", null);});
@@ -210,7 +210,7 @@ Event.observe($("desc_longue_html").contentWindow.document, "keyup", function(ev
 Event.observe($("desc_longue_html").contentWindow.document, "blur", function(evt){editeur.HTML_save();});
 Event.observe($("desc_longue_html"), "blur", function(evt){editeur.HTML_save();});
 //---------------------------------------------------------------
-//fin d'intialisation de l'éditeur
+//fin d'intialisation de l'Ã©diteur
 //---------------------------------------------------------------	
 
 

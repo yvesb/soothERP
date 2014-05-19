@@ -1,10 +1,10 @@
 <?php
 
 // *************************************************************************************************************
-//  Considére un tache d'admin comme executée
+//  ConsidÃ©re un tache d'admin comme executÃ©e
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
 
 ?>
 <p>&nbsp;</p>
-<p>tache executée </p>
+<p>tache executÃ©e </p>
 <p>&nbsp; </p>
 <?php 
 foreach ($_ALERTES as $alerte => $value) {

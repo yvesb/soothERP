@@ -3,9 +3,9 @@
 // FICHIER DE CONFIGURATION DES DEVIS CLIENT
 // *************************************************************************************************************
 
-$DUREE_AVANT_PURGE_ANNULE_DEV = 100;	// Délai avant la suppression des docs annulés
-$DEVIS_CLIENT_AUTO_GENERE	= "CDC";	// code doc du type de doc créé à la validation du devis
-$DEVIS_CLIENT_OPTION_GENERE	= array();	// code doc des types de doc en option à la validation du devis
+$DUREE_AVANT_PURGE_ANNULE_DEV = 100;	// DÃ©lai avant la suppression des docs annulÃ©s
+$DEVIS_CLIENT_AUTO_GENERE	= "CDC";	// code doc du type de doc crÃ©Ã© Ã  la validation du devis
+$DEVIS_CLIENT_OPTION_GENERE	= array();	// code doc des types de doc en option Ã  la validation du devis
 
 $DEVIS_CLIENT_ID_TYPE_DOC = 1;
 

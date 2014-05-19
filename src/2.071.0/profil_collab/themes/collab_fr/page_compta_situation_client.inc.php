@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -48,22 +48,22 @@ check_page_variables ($page_variables);
                 <td style="text-align:left;" valign="top">
                     <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="20px" /><br />
 
-                    <div style="-moz-border-radius:5px 5px 5px 5px; width:80%; background-color: #e0eafa; text-align: left; font-weight: bolder; color:#002673"><span style="padding-left:40px">Bon de livraison non facturés</span></div><br />
+                    <div style="-moz-border-radius:5px 5px 5px 5px; width:80%; background-color: #e0eafa; text-align: left; font-weight: bolder; color:#002673"><span style="padding-left:40px">Bon de livraison non facturÃ©s</span></div><br />
 
                     <span class="titre_smenu_page" id="compta_livraisons_client_nonfacturees" style="padding-left:100px;cursor:pointer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce.png" align="absmiddle" />&nbsp;&nbsp;Facturer les bons de livraisons</span><br /><br /><br />
 
-                    <div style="-moz-border-radius:5px 5px 5px 5px; width:80%; background-color: #e0eafa; text-align: left; font-weight: bolder; color:#002673"><span style="padding-left:40px">Factures non réglées</span></div><br />
+                    <div style="-moz-border-radius:5px 5px 5px 5px; width:80%; background-color: #e0eafa; text-align: left; font-weight: bolder; color:#002673"><span style="padding-left:40px">Factures non rÃ©glÃ©es</span></div><br />
 
-                    <span class="titre_smenu_page" id="compta_factures_client_nonreglees" style="padding-left:100px;cursor:pointer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce.png" align="absmiddle" />&nbsp;&nbsp;Factures non réglées </span><br /><br />
+                    <span class="titre_smenu_page" id="compta_factures_client_nonreglees" style="padding-left:100px;cursor:pointer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce.png" align="absmiddle" />&nbsp;&nbsp;Factures non rÃ©glÃ©es </span><br /><br />
 
-                    <span class="titre_smenu_page" id="compta_factures_client_non_editees" style="padding-left:100px;cursor:pointer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce.png" align="absmiddle" />&nbsp;&nbsp;Factures non éditées, procéder à l'envoi initial</span><br /><br />
+                    <span class="titre_smenu_page" id="compta_factures_client_non_editees" style="padding-left:100px;cursor:pointer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce.png" align="absmiddle" />&nbsp;&nbsp;Factures non Ã©ditÃ©es, procÃ©der Ã  l'envoi initial</span><br /><br />
 
-                    <span class="titre_smenu_page" id="compta_factures_client_a_relancer" style="padding-left:100px;cursor:pointer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce.png" align="absmiddle" />&nbsp;&nbsp;Factures à relancer</span><br /><br />
+                    <span class="titre_smenu_page" id="compta_factures_client_a_relancer" style="padding-left:100px;cursor:pointer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce.png" align="absmiddle" />&nbsp;&nbsp;Factures Ã  relancer</span><br /><br />
 
 
                     <span class="titre_smenu_page" id="compta_factures_client_contentieux" style="padding-left:100px;cursor:pointer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce.png" align="absmiddle" />&nbsp;&nbsp;Factures en contentieux</span><br /><br />
 
-                    <div style="-moz-border-radius:5px 5px 5px 5px; width:80%; background-color: #e0eafa; text-align: left; font-weight: bolder; color:#002673"><span style="padding-left:40px">Eléments Comptable</span></div><br />
+                    <div style="-moz-border-radius:5px 5px 5px 5px; width:80%; background-color: #e0eafa; text-align: left; font-weight: bolder; color:#002673"><span style="padding-left:40px">ElÃ©ments Comptable</span></div><br />
 
                     <span class="titre_smenu_page" id="compte_client_extrait" style="padding-left:100px;cursor:pointer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce.png" align="absmiddle" />&nbsp;&nbsp;Grand Livre Client</span><br /><br />
 

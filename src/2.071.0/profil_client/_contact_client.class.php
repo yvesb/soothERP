@@ -4,26 +4,26 @@
 // *************************************************************************************************************
 
 class contact_client extends contact_profil  {
-	private $ref_contact;							// Référence du contact
+	private $ref_contact;							// RÃ©fÃ©rence du contact
 
-  private $id_client_categ; 				// Identifiant de la catégorie du client
+  private $id_client_categ; 				// Identifiant de la catÃ©gorie du client
   private $type_client; 						// type de client
   private $id_tarif;								// Identifiant de la grille tarifaire
   private $ref_commercial;					// Ref_contact du commercial de ce client
  
   private $ref_adr_livraison; 			// Adresse de livraison
   private $ref_adr_facturation; 		// Adresse de facturation
-  private $app_tarifs; 							// Tarif affichés en HT ou TTC
+  private $app_tarifs; 							// Tarif affichÃ©s en HT ou TTC
   
   private $facturation_periodique;	// Nombre de facture par mois 
-  private $encours;									// Crédit maximum accordé 
-  private $delai_reglement;					// Délai de règlement des factures
-  private $prepaiement_ratio;				// % réglé a la commande
+  private $encours;									// CrÃ©dit maximum accordÃ© 
+  private $delai_reglement;					// DÃ©lai de rÃ¨glement des factures
+  private $prepaiement_ratio;				// % rÃ©glÃ© a la commande
   private $prepaiement_type;				// Acompte ou Arrhes
   private $id_reglement_mode_favori;// Mode de reglement par defaut
   private $id_cycle_relance;
   private $id_edition_mode_favori;	// Mode d'edition par defaut
-  private $defaut_numero_compte;		// numéro de compte comptable par défaut
+  private $defaut_numero_compte;		// numÃ©ro de compte comptable par dÃ©faut
 	
 
 function __construct ($ref_contact, $action = "open") {
@@ -32,7 +32,7 @@ function __construct ($ref_contact, $action = "open") {
 	global $DEFAUT_COMPTE_TIERS_VENTE;
 	
 	$this->ref_contact = $ref_contact;
-	// Controle si la ref_contact est précisée
+	// Controle si la ref_contact est prÃ©cisÃ©e
 	if (!$ref_contact) { return false; }
 	$this->ref_contact = $ref_contact;
 	
@@ -52,7 +52,7 @@ function __construct ($ref_contact, $action = "open") {
 						WHERE ac.ref_contact = '".$this->ref_contact."' ";	
 	$resultat = $bdd->query ($query);
 
-	// Controle si la ref_contact (client) est trouvée
+	// Controle si la ref_contact (client) est trouvÃ©e
 	if (!$contact_client = $resultat->fetchObject()) { return false; }
 	
 	$this->ref_contact 			= $contact_client->ref_contact;
@@ -74,7 +74,7 @@ function __construct ($ref_contact, $action = "open") {
 	$this->id_cycle_relance			= $contact_client->id_relance_modele;
 	$this->id_edition_mode_favori           = $contact_client->id_edition_mode_favori;
 	
-	//remplissage du numéro de compte achat par soit celui de la categorie client
+	//remplissage du numÃ©ro de compte achat par soit celui de la categorie client
 	if (!$this->defaut_numero_compte) {
 	$this->defaut_numero_compte = $contact_client->categ_defaut_numero_compte;
 	}
@@ -101,7 +101,7 @@ function create_infos ($infos) {
 	global $DEFAUT_APP_TARIFS_CLIENT;
 	global $COMMERCIAL_ID_PROFIL;
 
-	// Controle si ces informations sont déjà existantes
+	// Controle si ces informations sont dÃ©jÃ  existantes
 	if ($this->profil_loaded) {
 		return false;
 	}
@@ -130,7 +130,7 @@ function create_infos ($infos) {
 
 	/*$this->ref_commercial = "NULL";
 	// *************************************************
-	// Informations par défaut pour la catégorie
+	// Informations par dÃ©faut pour la catÃ©gorie
 	$query = "SELECT id_tarif, ref_commercial, facturation_periodique, delai_reglement, prepaiement_ratio, prepaiement_type, id_reglement_mode_favori, id_edition_mode_favori, defaut_encours
 						FROM clients_categories
 						WHERE id_client_categ = '".$this->id_client_categ."' ";
@@ -149,7 +149,7 @@ function create_infos ($infos) {
 			$this->id_tarif = $infos['id_tarif'];
 	}
 
-	// facturation périodique
+	// facturation pÃ©riodique
 	if (isset($infos['facturation_periodique']))
 	{
 		if ((is_numeric($infos['facturation_periodique'])) && ($infos['facturation_periodique'] >= 0 && $infos['facturation_periodique'] <= 5))
@@ -174,7 +174,7 @@ function create_infos ($infos) {
 			$this->delai_reglement .= "FDM";
 	}	
 
-	// ratio prépaiement
+	// ratio prÃ©paiement
 	if (isset($infos['prepaiement_ratio']))
 	{
 		if (($infos['prepaiement_ratio']!="") && (is_numeric($infos['prepaiement_ratio'])))
@@ -186,7 +186,7 @@ function create_infos ($infos) {
 			$this->prepaiement_type = $infos['prepaiement_type'];
 	}	
 
-	// règlement favori par
+	// rÃ¨glement favori par
 	if (isset($infos['id_reglement_mode_favori']))
 	{
 		if (($infos['id_reglement_mode_favori']!="") && (is_numeric($infos['id_reglement_mode_favori'])))
@@ -199,8 +199,8 @@ function create_infos ($infos) {
 			$this->id_cycle_relance = $infos['id_cycle_relance'];
 	}
 	
-	// mode édition favori
-	// bac 2.0.54.0 mise à vide valeurs non obligatoires
+	// mode Ã©dition favori
+	// bac 2.0.54.0 mise Ã  vide valeurs non obligatoires
 	if (isset($infos['id_edition_mode_favori']))
 	{
 		if ($infos['id_edition_mode_favori']!="" || is_numeric($infos['id_edition_mode_favori']))
@@ -209,7 +209,7 @@ function create_infos ($infos) {
 
 
 	// afficher tarifs
-	// 0 Automatique, 1 HT, 2 TTC ( par défaut ttc )
+	// 0 Automatique, 1 HT, 2 TTC ( par dÃ©faut ttc )
 	if (isset($infos['app_tarifs']))
 	{
 		if (($infos['app_tarifs']=="") || ($infos['app_tarifs']==0))
@@ -245,9 +245,9 @@ function create_infos ($infos) {
 		$tmp_ctpinfos['numero_compte'] 	= $this->defaut_numero_compte;
 		$tmp_ctpinfos['lib_compte'] 		= $this->defaut_numero_compte;
 		$tmp_ctpinfos['favori'] 		= 1;
-		//création du compte
+		//crÃ©ation du compte
 		$compte_plan_general->create_compte_plan_comptable ($tmp_ctpinfos);
-		//on supprime le global alerte que peut générer la cration du compte pour ne pas bloquer la création du contact
+		//on supprime le global alerte que peut gÃ©nÃ©rer la cration du compte pour ne pas bloquer la crÃ©ation du contact
 		if (isset($GLOBALS['_ALERTES']['numero_compte_vide'])) {unset($GLOBALS['_ALERTES']['numero_compte_vide']);}
 		if (isset($GLOBALS['_ALERTES']['exist_numero_compte'])) {unset($GLOBALS['_ALERTES']['exist_numero_compte']);}
 	}
@@ -259,7 +259,7 @@ function create_infos ($infos) {
 		$this->ref_adr_livraison = $infos['ref_adr_livraison'];
 	}
 	if (!$this->ref_adr_livraison) { $this->ref_adr_livraison = 1; }
-	// Traitements complémentaires liés à la phase de création
+	// Traitements complÃ©mentaires liÃ©s Ã  la phase de crÃ©ation
 	if (is_numeric($this->ref_adr_livraison)) {
 		$query = "SELECT ref_adresse FROM adresses 
 							WHERE ref_contact = '".$this->ref_contact."' 
@@ -293,7 +293,7 @@ function create_infos ($infos) {
 	}
 
 	// *************************************************
-	// Insertion des données
+	// Insertion des donnÃ©es
 	
 	$query = "INSERT INTO annu_client
 							(	ref_contact, id_client_categ, type_client, 
@@ -332,7 +332,7 @@ function maj_infos ($infos) {
 	global $COMMERCIAL_ID_PROFIL;
         _vardump($infos);
 	if (!$this->profil_loaded) {
-		$GLOBALS['_ALERTES']['profil_non_chargé'] = 1;
+		$GLOBALS['_ALERTES']['profil_non_chargÃ©'] = 1;
 	}
 
 	// *************************************************
@@ -367,7 +367,7 @@ function maj_infos ($infos) {
 	}
 	
 	$fdm_tmp = $infos['delai_reglement'] ;
-	if($fdm_tmp=="") $fdm_tmp = 0;	// si champ vide on le force à 0 sinon pas de maj.
+	if($fdm_tmp=="") $fdm_tmp = 0;	// si champ vide on le force Ã  0 sinon pas de maj.
 	if ( isset($infos['delai_reglement_fdm']))
 	{
 		if ($infos['delai_reglement_fdm']==1)
@@ -380,11 +380,11 @@ function maj_infos ($infos) {
 	if (($infos['app_tarifs'] == 1 ) || ($infos['app_tarifs'] == 'HT' ))  $app_tarifs = 'HT';
 	if (($infos['app_tarifs'] == 2 ) || ($infos['app_tarifs'] == 'TTC' )) $app_tarifs = 'TTC';
 
-	// si champ vide on le force à 0 sinon pas de maj.
+	// si champ vide on le force Ã  0 sinon pas de maj.
 	//if ( $infos['encours'] =="") $infos['encours']=0;
 	//if ( $infos['prepaiement_ratio'] =="") $infos['prepaiement_ratio']=0;
 	
-	// on compare les valeurs de retour avec celles de la categorie, si != on les garde, si == on les met à null
+	// on compare les valeurs de retour avec celles de la categorie, si != on les garde, si == on les met Ã  null
 	global $GESTION_COMM_COMMERCIAUX;
 	if ($GESTION_COMM_COMMERCIAUX){
 		$this->ref_commercial   	= $infos['ref_commercial'];
@@ -405,7 +405,7 @@ function maj_infos ($infos) {
 	$this->id_tarif 		     	= num_or_null ($infos['id_tarif']);
 	$this->app_tarifs		     	= text_or_null($infos['app_tarifs']);
 
-        // cas des Non définis mis à "" != NULL
+        // cas des Non dÃ©finis mis Ã  "" != NULL
         if ( $this->id_edition_mode_favori   == "'0'" ) $this->id_edition_mode_favori = "NULL";
 	if ( $this->id_reglement_mode_favori == "'0'" ) $this->id_reglement_mode_favori = "NULL";
 	if ( $this->id_tarif == "'0'" ) 	$this->id_tarif = "NULL";
@@ -418,7 +418,7 @@ function maj_infos ($infos) {
 	}
 	
 	// *************************************************
-	// Mise à jour des données		
+	// Mise Ã  jour des donnÃ©es		
 
 	$query = "UPDATE annu_client SET ";
 	$query.= "id_client_categ = "	     	 .$this->id_client_categ. ", ";
@@ -444,7 +444,7 @@ function maj_infos ($infos) {
 	return true;
 }
 
-//mise à jour de l'adresse facturation
+//mise Ã  jour de l'adresse facturation
 function maj_ref_adr_facturation ($ref_adr_facturation) {
 	global $bdd;
 
@@ -455,7 +455,7 @@ function maj_ref_adr_facturation ($ref_adr_facturation) {
 		$bdd->exec($query);
 	return true;
 }
-//mise à jour de l'adresse livraison
+//mise Ã  jour de l'adresse livraison
 function maj_ref_adr_livraison ($ref_adr_livraison) {
 	global $bdd;
 
@@ -467,7 +467,7 @@ function maj_ref_adr_livraison ($ref_adr_livraison) {
 	return true;
 }
 
-//mise à jour de l'app_tarif du profil
+//mise Ã  jour de l'app_tarif du profil
 function maj_app_tarifs ($app_tarifs) {
 	global $bdd;
 
@@ -482,7 +482,7 @@ function maj_app_tarifs ($app_tarifs) {
 }
 
 
-//mise à jour du type de client du profil depuis un document
+//mise Ã  jour du type de client du profil depuis un document
 function maj_type_client ($type_client) {
 	global $bdd;
 
@@ -498,7 +498,7 @@ function maj_type_client ($type_client) {
 	return true;
 }
 
-//mise à jour du defaut_numero_compte du profil
+//mise Ã  jour du defaut_numero_compte du profil
 function maj_defaut_numero_compte ($defaut_numero_compte) {
 	global $bdd;
 
@@ -518,7 +518,7 @@ function maj_defaut_numero_compte ($defaut_numero_compte) {
 function delete_infos () {
 	global $bdd;
 
-	// Vérifie si la suppression de ces informations est possible.
+	// VÃ©rifie si la suppression de ces informations est possible.
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -538,7 +538,7 @@ function delete_infos () {
 function transfert_infos ($new_contact, $is_already_profiled) {
 	global $bdd;
 
-	// Vérifie si le transfert de ces informations est possible.
+	// VÃ©rifie si le transfert de ces informations est possible.
 	if (!$is_already_profiled) {
 		// TRANSFERT les informations
 		$query = "UPDATE annu_client SET ref_contact = '".$new_contact->getRef_contact()."' 
@@ -633,7 +633,7 @@ function charger_client_abo(){
 	return $liste_abo;
 }
 
-//chargement des consommation (Services pré-payés) du client 
+//chargement des consommation (Services prÃ©-payÃ©s) du client 
 function charger_client_conso(){
 	
 	global $bdd;
@@ -690,7 +690,7 @@ static public function create_client_categorie ($infos) {
 		}
 	}
 	// *************************************************
-	// Insertion des données
+	// Insertion des donnÃ©es
 	$query = "INSERT INTO clients_categories  
 							(lib_client_categ, id_tarif, ref_commercial,
 							 facturation_periodique, delai_reglement, note,
@@ -724,7 +724,7 @@ static public function maj_client_categorie ($infos) {
 		}
 	}
 	// *************************************************
-	// Mise à jour des données
+	// Mise Ã  jour des donnÃ©es
 	$query = "UPDATE clients_categories  
 						SET lib_client_categ = '".addslashes($infos['lib_client_categ'])."', 
 								facturation_periodique = '".addslashes($infos['facturation_periodique'])."', 
@@ -750,7 +750,7 @@ static public function maj_defaut_numero_compte_categories  ($infos) {
 	global $bdd;
 	
 	// *************************************************
-	// Mise à jour des données
+	// Mise Ã  jour des donnÃ©es
 	$query = "UPDATE clients_categories  
 						SET defaut_numero_compte = '".addslashes($infos['defaut_numero_compte'])."'
 						WHERE id_client_categ = '".$infos['id_client_categ']."' ";
@@ -766,12 +766,12 @@ static public function delete_client_categorie ($id_client_categ) {
 	if ($id_client_categ == $DEFAUT_ID_CLIENT_CATEG) {
 		$GLOBALS['_ALERTES']['last_id_client_categ'] = 1;
 	}
-	// Vérifie si la suppression de ces informations est possible.
+	// VÃ©rifie si la suppression de ces informations est possible.
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 	// *************************************************
-	// Suppression des données
+	// Suppression des donnÃ©es
 	$query = "DELETE FROM clients_categories WHERE id_client_categ = '".$id_client_categ."' ";
 	$bdd->exec($query);
 
@@ -1028,7 +1028,7 @@ function getDelai_reglement ($raw = true) {
 
 
 
-// bac 18/05/2010 v 2.0.54.0 ajout accesseurs règlement favori, mode d'édition favori
+// bac 18/05/2010 v 2.0.54.0 ajout accesseurs rÃ¨glement favori, mode d'Ã©dition favori
 function getDelai_reglement_client () {
 	return $this->delai_reglement;
 }
@@ -1063,10 +1063,10 @@ function getId_edition_mode_favori ($raw = true) {
 	return $this->id_edition_mode_favori;
 }
 
-// rend le tarif de l'annuaire catégorie ( particulier, société ) -> HT , TTC 
+// rend le tarif de l'annuaire catÃ©gorie ( particulier, sociÃ©tÃ© ) -> HT , TTC 
 function getApp_Tarifs_Categorie (){
 	global $bdd;
-	// Si App_tarifs en automatique on récupére l'app_tarifs le l'annuaire_categorie du contact
+	// Si App_tarifs en automatique on rÃ©cupÃ©re l'app_tarifs le l'annuaire_categorie du contact
 	$app_tarifs_categorie = null;	
 	$query = "SELECT ac.app_tarifs 
 						FROM annuaire a
@@ -1079,10 +1079,10 @@ function getApp_Tarifs_Categorie (){
 	return $app_tarifs_categorie;
 }
 
-// rend le tarif de l'annuaire catégorie entré( particulier, société, .. ) -> HT , TTC 
+// rend le tarif de l'annuaire catÃ©gorie entrÃ©( particulier, sociÃ©tÃ©, .. ) -> HT , TTC 
 public static function getApp_Tarifs_Categorie_definie ($id_categorie){
 	global $bdd;
-	// Si App_tarifs en automatique on récupére l'app_tarifs le l'annuaire_categorie du contact
+	// Si App_tarifs en automatique on rÃ©cupÃ©re l'app_tarifs le l'annuaire_categorie du contact
 	$app_tarifs_categorie = null;
 	if (!(( $id_categorie=="" ) || is_null($id_categorie) || (!is_numeric($id_categorie))))
 	{  	

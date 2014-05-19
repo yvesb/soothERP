@@ -147,7 +147,7 @@ if (!isset($_REQUEST["aff_ht"])) {
 <?php 
 if (!isset($_REQUEST["aff_qte"])) { 
 	?>
-	<span id="aff_qte_tarifs" style="cursor:pointer"><input type="checkbox" name="chk_aff_qte_tarifs" id="chk_aff_qte_tarifs"  /> Afficher les prix par quantités<br />
+	<span id="aff_qte_tarifs" style="cursor:pointer"><input type="checkbox" name="chk_aff_qte_tarifs" id="chk_aff_qte_tarifs"  /> Afficher les prix par quantitÃ©s<br />
 	<script type="text/javascript">
 	Event.observe('aff_qte_tarifs', 'click',  function(evt){
 			$("chk_aff_qte_tarifs").checked="checked";

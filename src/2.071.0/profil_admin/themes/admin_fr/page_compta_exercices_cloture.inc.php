@@ -4,7 +4,7 @@
 // CLOTURE D'UN EXERCICE
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -50,7 +50,7 @@ if (erreur) {
 	
 	if (bad_date_fin) {
 		window.parent.document.getElementById("date_fin_<?php echo $_REQUEST["id_exercice"]?>").className="alerteform_lsize";
-		texte_erreur += "La date de fin d'exercice ne peut être inférieur à sa date de début.<br/>";
+		texte_erreur += "La date de fin d'exercice ne peut Ãªtre infÃ©rieur Ã  sa date de dÃ©but.<br/>";
 	} else {
 		window.parent.document.getElementById("date_fin_<?php echo $_REQUEST["id_exercice"]?>").className="classinput_lsize";
 	}

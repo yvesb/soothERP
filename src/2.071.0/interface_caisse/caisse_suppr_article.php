@@ -12,13 +12,13 @@ require ("_session.inc.php");
 //@TODO permission
 
 if(!isset($_REQUEST['ref_ligne'])){
-	echo "La référence de la ligne n'est pas spécifiée";
+	echo "La rÃ©fÃ©rence de la ligne n'est pas spÃ©cifiÃ©e";
 	exit;	
 }
 $ref_ligne = $_REQUEST['ref_ligne'];
 
 if(!isset($_REQUEST['ref_ticket'])){
-	echo "La référence du ticket n'est pas spécifiée";
+	echo "La rÃ©fÃ©rence du ticket n'est pas spÃ©cifiÃ©e";
 	exit;	
 }
 $document = open_doc($_REQUEST['ref_ticket']);

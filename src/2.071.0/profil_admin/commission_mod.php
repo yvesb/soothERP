@@ -11,13 +11,13 @@ require ($DIR."_session.inc.php");
 
 if (isset($_REQUEST['id_commission_regle'])) {	
 	// *************************************************
-	// Controle des données fournies par le formulaire
+	// Controle des donnÃ©es fournies par le formulaire
 	$lib_comm				= $_REQUEST['lib_comm_'.$_REQUEST['id_commission_regle']];
 	$formule_comm		= $_REQUEST['formule_comm_'.$_REQUEST['id_commission_regle']];
 
 
 	// *************************************************
-	// Création de la catégorie
+	// CrÃ©ation de la catÃ©gorie
 	$commission_liste = new commission_liste ($_REQUEST['id_commission_regle']);
 	$commission_liste->modification ($lib_comm, $formule_comm);
 }

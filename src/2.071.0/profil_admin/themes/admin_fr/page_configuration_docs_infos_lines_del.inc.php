@@ -3,7 +3,7 @@
 // DEL D'UN MODELE DE LIGNE D'INFORMATION DE DOCUMENTS
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -21,7 +21,7 @@ check_page_variables ($page_variables);
 
 ?>
 <p>&nbsp;</p>
-<p>modèle de ligne d'info(suppression) </p>
+<p>modÃ¨le de ligne d'info(suppression) </p>
 <p>&nbsp; </p>
 <?php 
 foreach ($_ALERTES as $alerte => $value) {

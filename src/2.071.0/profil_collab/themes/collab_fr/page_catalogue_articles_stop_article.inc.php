@@ -5,7 +5,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -44,7 +44,7 @@ foreach ($_ALERTES as $alerte => $value) {
 ?>
 if (erreur) {
 
-	//article appartenant à un lot
+	//article appartenant Ã  un lot
 	if (appartenance_lot) {
 		alerte.confirm_supprimer('article_appartenance_lot', '');
 	}

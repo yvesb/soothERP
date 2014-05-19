@@ -4,7 +4,7 @@
 // AJOUT D'UN RELEVE
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -22,7 +22,7 @@ $("edition_operation").hide();
 }, false);
 </script>
 
-<p  style="font-weight:bolder">Ajouter un relevé</p>
+<p  style="font-weight:bolder">Ajouter un relevÃ©</p>
 <div class="emarge">
 	<table class="minimizetable" style="width:450px">
 		<tr>

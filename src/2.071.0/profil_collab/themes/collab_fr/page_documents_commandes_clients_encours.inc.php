@@ -4,7 +4,7 @@
 // AFFICHAGE DES COMMANDES CLIENTS EN COURS
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("commandes");
 check_page_variables ($page_variables);
 

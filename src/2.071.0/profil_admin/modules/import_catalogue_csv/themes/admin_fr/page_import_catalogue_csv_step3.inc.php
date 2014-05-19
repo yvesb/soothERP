@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -28,13 +28,13 @@ update_menu_arbo();
 <div class="emarge">
 
 
-<p class="titre">Import terminé</p>
+<p class="titre">Import terminÃ©</p>
 <div>
 
 <table class="contactview_corps" style=" width:100%">
 	<tr>
 		<td >
-		 	l'ensemble des informations présentes dans votre fichier csv ont été transformées en article.
+		 	l'ensemble des informations prÃ©sentes dans votre fichier csv ont Ã©tÃ© transformÃ©es en article.
 		</td>
 	</tr>
 </table>

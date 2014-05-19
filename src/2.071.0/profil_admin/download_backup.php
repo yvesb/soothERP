@@ -1,25 +1,25 @@
 <?php
-// Variable pour renvoi à page d'erreur
+// Variable pour renvoi Ã  page d'erreur
 $location = "Location: http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF'])."/#erreur_download_backup.php";
 
 if (isset($_GET['file']))
 {
 
-// Prévient d'une injection qui tenterait de remonter vers un répertoire parent du répertoire backup
+// PrÃ©vient d'une injection qui tenterait de remonter vers un rÃ©pertoire parent du rÃ©pertoire backup
 
 if (strpos($_GET['file'], "../backup/") == 0)
 	{
-	// le seul chemin autorisé possible débute par ce pattern, on le masque provisoirement pour tester d'autres inclusions malveillantes
-	// qui checheraient à remonter l'arborescence
+	// le seul chemin autorisÃ© possible dÃ©bute par ce pattern, on le masque provisoirement pour tester d'autres inclusions malveillantes
+	// qui checheraient Ã  remonter l'arborescence
 	$_GET['file']= str_replace ("../backup/", "", $_GET['file']); 
 	}
 	else
 		{
-		// Si pas le pattern recherché => envoi vers page d'erreur
+		// Si pas le pattern recherchÃ© => envoi vers page d'erreur
 		header ("$location");
 		}
 
-// en dehors du chemin autorisé (masqué pour le moment), il ne doit pas y avoir de ./ possible
+// en dehors du chemin autorisÃ© (masquÃ© pour le moment), il ne doit pas y avoir de ./ possible
 if (preg_match( '#\..*/#',$_GET['file'])) 
 	{
 	// Tentative possible de remonter l'arborescense => envoi vers page d'erreur
@@ -27,14 +27,14 @@ if (preg_match( '#\..*/#',$_GET['file']))
 	}
 	else
 		{
-		// on a passé les tests, on est donc bien situé sous ..backup/ où il ne peut y avoir accès qu'à des backups.
-		// on replace le début de chemin masqué.
+		// on a passÃ© les tests, on est donc bien situÃ© sous ..backup/ oÃ¹ il ne peut y avoir accÃ¨s qu'Ã  des backups.
+		// on replace le dÃ©but de chemin masquÃ©.
 		$_GET['file'] = '../backup/'.$_GET['file'];
 		}
 }
 	else
 		{
-		// Pas de fichier passé dans la variable => envoi vers page d'erreur
+		// Pas de fichier passÃ© dans la variable => envoi vers page d'erreur
 		header ("$location");
 		}
 

@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// IMPORT FICHIER ANNUAIRE CSV ETAPE 2 (après correspondance des colonnes et des valeurs du fichier)
+// IMPORT FICHIER ANNUAIRE CSV ETAPE 2 (aprÃ¨s correspondance des colonnes et des valeurs du fichier)
 // *************************************************************************************************************
 
 
@@ -16,7 +16,7 @@ $import_annuaire = new import_annuaire_csv();
 $dao_csv_import_annu_ligne = new import_annuaire_csv_ligne();
 $lignes = $dao_csv_import_annu_ligne->readAll();
 if (!count($lignes)) {
-	//import terminé ou aucun enregistrement à traiter
+	//import terminÃ© ou aucun enregistrement Ã  traiter
 	$import_annuaire->maj_etape(3);
 	header ("Location: ".$DIR."profil_".$_SESSION['profils'][$ID_PROFIL]->getCode_profil()."/modules/".$import_annuaire_csv['folder_name']."import_annuaire_csv_step3.php");
 	exit();

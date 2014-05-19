@@ -1,6 +1,6 @@
 <table width="100%" border="0" cellspacing="4" cellpadding="2">
    <br />
-   <span style="font-style:italic;font-weight:bold;">Autorisations de prélevements :</span>
+   <span style="font-style:italic;font-weight:bold;">Autorisations de prÃ©levements :</span>
     <tr>
         <td colspan="5" style=" border-bottom:1px solid #999999">&nbsp;</td>
     </tr>
@@ -16,7 +16,7 @@
     <?php if(empty($results)){
         ?> <tr>
             <td>
-                Aucune autorisation de prélevement.
+                Aucune autorisation de prÃ©levement.
             </td>
         </tr><?php
         } else{ foreach($results as $resultat) { ?>

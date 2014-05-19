@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -108,7 +108,7 @@ foreach ($livraison_zones as $zone) {
 	</tr>
 	<tr >
 		<td >
-		Liste des codes postaux (séparés par ;) :
+		Liste des codes postaux (sÃ©parÃ©s par ;) :
 
 		</td>
 		<td >

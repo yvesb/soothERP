@@ -66,7 +66,7 @@ next($list_art_categ);
 		</td><td>
 		<a href="#" id="mod_<?php echo ($art_categ->ref_art_categ)?>" style="display:block; width:100%">
 				
-			<?php echo htmlentities($art_categ->lib_art_categ); if (!$art_categ->lib_art_categ) { echo "Pas de libellé";}?>
+			<?php echo htmlentities($art_categ->lib_art_categ); if (!$art_categ->lib_art_categ) { echo "Pas de libellÃ©";}?>
 		</a>
 		</td><td width="15px">
 			<a href="#" class="insertion" id="ins_<?php echo ($art_categ->ref_art_categ)?>" title="Inserer une cat&eacute;gorie dans <?php echo htmlentities($art_categ->lib_art_categ)?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/insert.gif" />

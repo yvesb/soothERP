@@ -1,9 +1,9 @@
 <?php
 // *************************************************************************************************************
-// commissionnements des catégories d'articles
+// commissionnements des catÃ©gories d'articles
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -25,7 +25,7 @@ function barre_navigation($nbtotal,
 													
 {
 	// --------------------------------------------------------------------
-	global $cfg_nb_pages; // Nb de n° de pages affichées dans la barre
+	global $cfg_nb_pages; // Nb de nÂ° de pages affichÃ©es dans la barre
 global $DIR;
 	$barre= "";	$lien_on 	= "&nbsp;<a href='#' id='link_pagi_{cible}'>{lien}</a>&nbsp;
 								<script type='text/javascript'>
@@ -35,7 +35,7 @@ global $DIR;
 	// --------------------------------------------------------------------
     
 
-	// début << .
+	// dÃ©but << .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -55,7 +55,7 @@ global $DIR;
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
 
 
-	// précédent < .
+	// prÃ©cÃ©dent < .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -161,7 +161,7 @@ function image_html($img)
 
 //
 //
-//création de la barre de nav
+//crÃ©ation de la barre de nav
 //
 //
 
@@ -231,9 +231,9 @@ foreach ($fiches as $fiche){
 				?>
 			<td style="text-align:center">
 			<input name="formule_comm_<?php echo $fiche->ref_article;?>_<?php echo $comm_regle->id_commission_regle;?>" id="formule_comm_<?php echo $fiche->ref_article;?>_<?php echo $comm_regle->id_commission_regle;?>" value="<?php 
-			if (!isset($fiche->id_commission_regle[$comm_regle->id_commission_regle]) || !isset($fiche->id_commission_regle[$comm_regle->id_commission_regle]->formule_comm)) {?>non définie<?php } else { echo $fiche->id_commission_regle[$comm_regle->id_commission_regle]->formule_comm; } ?>" type="hidden"  class="classinput_hsize"/>
+			if (!isset($fiche->id_commission_regle[$comm_regle->id_commission_regle]) || !isset($fiche->id_commission_regle[$comm_regle->id_commission_regle]->formule_comm)) {?>non dÃ©finie<?php } else { echo $fiche->id_commission_regle[$comm_regle->id_commission_regle]->formule_comm; } ?>" type="hidden"  class="classinput_hsize"/>
 			<span id="aff_formule_comm_<?php echo $fiche->ref_article;?>_<?php echo $comm_regle->id_commission_regle;?>" style="cursor:pointer; text-decoration:underline;" class="classinput_lsize"><?php 
-			if (!isset($fiche->id_commission_regle[$comm_regle->id_commission_regle]) || !isset($fiche->id_commission_regle[$comm_regle->id_commission_regle]->formule_comm)) {?>non définie<?php } else { echo $fiche->id_commission_regle[$comm_regle->id_commission_regle]->formule_comm; } ?></span>
+			if (!isset($fiche->id_commission_regle[$comm_regle->id_commission_regle]) || !isset($fiche->id_commission_regle[$comm_regle->id_commission_regle]->formule_comm)) {?>non dÃ©finie<?php } else { echo $fiche->id_commission_regle[$comm_regle->id_commission_regle]->formule_comm; } ?></span>
 			
 			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="del_formule_comm_<?php echo $fiche->ref_article;?>_<?php echo $comm_regle->id_commission_regle; ?>" style="cursor:pointer"/>
 			
@@ -255,7 +255,7 @@ foreach ($fiches as $fiche){
 			Event.observe('del_formule_comm_<?php echo $fiche->ref_article;?>_<?php echo $comm_regle->id_commission_regle; ?>', "click", function(evt){
 				maj_commission_article ('<?php echo $comm_regle->id_commission_regle; ?>', '<?php echo $fiche->ref_article;?>', '', '');
 				$('formule_comm_<?php echo $fiche->ref_article;?>_<?php echo $comm_regle->id_commission_regle;?>').value = "";
-				$('aff_formule_comm_<?php echo $fiche->ref_article;?>_<?php echo $comm_regle->id_commission_regle;?>').innerHTML = "non définie";
+				$('aff_formule_comm_<?php echo $fiche->ref_article;?>_<?php echo $comm_regle->id_commission_regle;?>').innerHTML = "non dÃ©finie";
 			});
 			</script>
 									

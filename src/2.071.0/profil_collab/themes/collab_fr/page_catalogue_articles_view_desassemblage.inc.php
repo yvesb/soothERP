@@ -4,7 +4,7 @@
 Event.observe("link_close_pop_up_inventory", "click",  function(evt){Event.stop(evt); 
 		$("pop_up_invetory_article").style.display = "none";}, false);
 </script>
-<span class="sous_titre1">Désassembler <?php echo  nl2br(($article->getLib_article ()));?></span>
+<span class="sous_titre1">DÃ©sassembler <?php echo  nl2br(($article->getLib_article ()));?></span>
 <div id="inventory_info_under" style="padding-left:2%; padding-right:3%; OVERFLOW-Y: auto; OVERFLOW-X: auto; height:265px">
 <form action="catalogue_articles_view_desassemblage_valide.php?ref_article=<?php echo $article->getRef_article();?>&step=1" target="formFrame" method="post" name="article_view_desassemblage" id="article_view_desassemblage">
 <input type="hidden" name="ref_article_des" id="ref_article_des" value="<?php echo $article->getRef_article ();?>" />
@@ -48,7 +48,7 @@ Event.observe("link_close_pop_up_inventory", "click",  function(evt){Event.stop(
 		</tr>
 		<tr>
 			<td style="text-align:left">&nbsp;</td>
-			<td style="text-align:left">Quantit&eacute; désassemblée </td>
+			<td style="text-align:left">Quantit&eacute; dÃ©sassemblÃ©e </td>
 			<td style="text-align:left">&nbsp;</td>
 			<td style="text-align:center">&nbsp;</td>
 			<td style="text-align:left">&nbsp;</td>
@@ -115,8 +115,8 @@ $("qte_des").value = $("old_qte_des").value = $("info_stock_qte_"+$("id_stock_de
 				$("qte_des" ).value = $("old_qte_des" ).value;
 				
 						 
-				$("titre_alert").innerHTML = 'Désassemblage impossible';
-				$("texte_alert").innerHTML = 'Vous ne pouvez pas désassembler plus d\'article que la quantité en stock';
+				$("titre_alert").innerHTML = 'DÃ©sassemblage impossible';
+				$("texte_alert").innerHTML = 'Vous ne pouvez pas dÃ©sassembler plus d\'article que la quantitÃ© en stock';
 				$("bouton_alert").innerHTML = '<input type="submit" id="bouton1" name="bouton1" value="Ok" />';
 				
 				$("alert_pop_up_tab").style.display = "block";
@@ -137,7 +137,7 @@ $("qte_des").value = $("old_qte_des").value = $("info_stock_qte_"+$("id_stock_de
 		Event.stop(evt);
 		if (parseFloat($("qte_des" ).value) > 0 ) {
 			$("titre_alert").innerHTML = 'Confirmer';
-			$("texte_alert").innerHTML = 'Confirmer la validation du désassemblage';
+			$("texte_alert").innerHTML = 'Confirmer la validation du dÃ©sassemblage';
 			$("bouton_alert").innerHTML = '<input type="submit" id="bouton0" name="bouton0" value="Confirmer" /><input type="submit" id="bouton1" name="bouton1" value="Annuler" />';
 			
 			$("alert_pop_up_tab").style.display = "block";

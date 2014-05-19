@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// CLASSE REGISSANT LES INFORMATIONS SUR UN TERMINAL DE PAIEMENT ÉLECTRONIQUE
+// CLASSE REGISSANT LES INFORMATIONS SUR UN TERMINAL DE PAIEMENT Ã‰LECTRONIQUE
 // *************************************************************************************************************
 
 
@@ -13,8 +13,8 @@ final class compte_tpv {
 	protected $lib_tpv;
 	protected $module_name;
 	
-	protected $com_ope; // commission fixe bancaire par opération
-	protected $com_var;		// commission fixe bancaire par opération
+	protected $com_ope; // commission fixe bancaire par opÃ©ration
+	protected $com_var;		// commission fixe bancaire par opÃ©ration
 
 	protected $actif;
 	protected $ordre;
@@ -23,7 +23,7 @@ final class compte_tpv {
 	protected $last_montant_telecollecte;
 	protected $last_montant_commission;
 	
-	private $defaut_numero_compte;	// numéro de compte comptable par defaut 
+	private $defaut_numero_compte;	// numÃ©ro de compte comptable par defaut 
 	
 	private $code_pdf_modele_telecollecte = "tp_telecollecte"; // code pour la class d'impression d'une telecollecte
 
@@ -68,7 +68,7 @@ public function create_compte_tpv ($infos) {
 	global $bdd;
 	
 	// *************************************************
-	// Réception des données
+	// RÃ©ception des donnÃ©es
 
 	$this->id_compte_bancaire = $infos['id_compte_bancaire'];
 	if (!is_numeric($this->id_compte_bancaire)) { 
@@ -135,7 +135,7 @@ public function create_compte_tpv ($infos) {
 
 
 private function create_lib_tpv () {
-	$this->lib_tpv = "TPV  n°".$this->ordre;
+	$this->lib_tpv = "TPV  nÂ°".$this->ordre;
 }
 
 
@@ -147,7 +147,7 @@ public function maj_compte_tpv ($infos) {
 	global $bdd;
 
 	// *************************************************
-	// Réception des données
+	// RÃ©ception des donnÃ©es
 
 	if ($this->id_compte_bancaire != $infos['id_compte_bancaire']) {
 		$this->id_compte_bancaire = $infos['id_compte_bancaire'];
@@ -203,19 +203,19 @@ public function maj_compte_tpv ($infos) {
 }
 
 
-//mise à jour du numéro de compte par défaut
+//mise Ã  jour du numÃ©ro de compte par dÃ©faut
 public function maj_defaut_numero_compte ($defaut_numero_compte) {
 	global $bdd;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	if ($defaut_numero_compte == $this->defaut_numero_compte ) {
 		return false;
 	}
 	$this->defaut_numero_compte		= $defaut_numero_compte;
 
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -238,7 +238,7 @@ function active_compte () {
 	if ($this->actif) { return false; }
 
 	// *************************************************
-	// MAJ de la base de donnée
+	// MAJ de la base de donnÃ©e
 	$query = "UPDATE comptes_tpv 
 						SET actif = 1
 						WHERE id_compte_tpv = '".$this->id_compte_tpv."' "; 
@@ -248,18 +248,18 @@ function active_compte () {
 	return true;
 }
 
-// Désactive un compte
+// DÃ©sactive un compte
 function desactive_compte () {
 	global $bdd;
 
 	if (!$this->actif) { return false; }
 
 	// *************************************************
-	// Controle de la possibilité de désactiver ce compte 
+	// Controle de la possibilitÃ© de dÃ©sactiver ce compte 
 
 
 	// *************************************************
-	// MAJ de la base de donnée
+	// MAJ de la base de donnÃ©e
 	$query = "UPDATE comptes_tpv 
 						SET actif = 0
 						WHERE id_compte_tpv = '".$this->id_compte_tpv."' "; 
@@ -279,7 +279,7 @@ public function modifier_ordre ($new_ordre) {
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -297,13 +297,13 @@ public function modifier_ordre ($new_ordre) {
 
 	$bdd->beginTransaction();
 
-	// Mise à jour des autres comptes bancaires
+	// Mise Ã  jour des autres comptes bancaires
 	$query = "UPDATE comptes_tpv
 						SET ordre = ordre ".$variation." 1
 						WHERE ordre ".$symbole1." '".$this->ordre."' && ordre ".$symbole2." '".$new_ordre."' ";
 	$bdd->exec ($query);
 
-	// Mise à jour de ce compte bancaire
+	// Mise Ã  jour de ce compte bancaire
 	$query = "UPDATE comptes_tpv
 						SET ordre = '".$new_ordre."'
 						WHERE id_compte_tpv = '".$this->id_compte_tpv."'  ";
@@ -314,7 +314,7 @@ public function modifier_ordre ($new_ordre) {
 	$this->ordre = $new_ordre;
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
@@ -324,7 +324,7 @@ public function suppression () {
 	global $bdd;
 
 	// *************************************************
-	// Controle de la possibilité de supprimer le TPV
+	// Controle de la possibilitÃ© de supprimer le TPV
 
 	$query = "SELECT id_compte_tpv_dest
 						FROM regmt_e_tpv 
@@ -348,7 +348,7 @@ public function suppression () {
 }
 
 
-//chargement du derniere télécollecte
+//chargement du derniere tÃ©lÃ©collecte
 public function charger_last_telecollecte() {
 	global $bdd;
 	
@@ -382,7 +382,7 @@ public function collecte_total (){
 }
 
 
-// fonction de création d'une telecollect
+// fonction de crÃ©ation d'une telecollect
 public function create_telecollecte ($info) {
 	global $bdd;
 	
@@ -439,13 +439,13 @@ public function create_telecollecte ($info) {
 		}
 	}
 	
-	//création des opérations dans le journal de caisse et de banque correspondant
+	//crÃ©ation des opÃ©rations dans le journal de caisse et de banque correspondant
 	$compte_bancaire_cible = new compte_bancaire ($this->id_compte_bancaire);
-		//vérification des journaux correspondant au comptes
+		//vÃ©rification des journaux correspondant au comptes
 		$journal_caisse_depart = compta_journaux::check_exist_journaux ($DEFAUT_ID_JOURNAL_CAISSES, $this->defaut_numero_compte);
 		$journal_banque_arrivee = compta_journaux::check_exist_journaux ($DEFAUT_ID_JOURNAL_BANQUES, $compte_bancaire_cible->getDefaut_numero_compte ());
 		
-		//création des opérations de journaux
+		//crÃ©ation des opÃ©rations de journaux
 		$journal_caisse_depart->create_operation ($DEFAUT_COMPTE_VIREMENTS_INTERNES, -$info["montant_telecollecte"], $id_compte_tp_telecollecte, $info["date_telecollecte"], 8); 
 		
 		$journal_banque_arrivee->create_operation ($DEFAUT_COMPTE_VIREMENTS_INTERNES, $info["montant_telecollecte"], $id_compte_tp_telecollecte, $info["date_telecollecte"], 7); 
@@ -454,7 +454,7 @@ public function create_telecollecte ($info) {
 	
 }
 
-//chargement des infos d'une télécollecte
+//chargement des infos d'une tÃ©lÃ©collecte
 public function charger_telecollecte ($id_compte_tp_telecollecte) {
 	global $bdd;
 
@@ -485,13 +485,13 @@ public function charger_telecollecte ($id_compte_tp_telecollecte) {
 }
 
 
-//fonction d'impression de la télécollect
+//fonction d'impression de la tÃ©lÃ©collect
 public function imprimer_telecollecte ($print = 0, $id_compte_tp_telecollecte) {
 	global $bdd;
 	global $PDF_MODELES_DIR;
 	
 	// Affichage du pdf
-	// Préférences et options
+	// PrÃ©fÃ©rences et options
 	$GLOBALS['PDF_OPTIONS']['HideToolbar'] = 0;
 	$GLOBALS['PDF_OPTIONS']['AutoPrint'] = $print;
 	
@@ -499,7 +499,7 @@ public function imprimer_telecollecte ($print = 0, $id_compte_tp_telecollecte) {
 	$class = "pdf_".$this->code_pdf_modele_telecollecte;
 	$pdf = new $class;
 	
-	// Création
+	// CrÃ©ation
 	$pdf->create_pdf($this, $id_compte_tp_telecollecte);
 	
 	// Sortie

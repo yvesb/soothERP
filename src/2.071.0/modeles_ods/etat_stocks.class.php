@@ -39,7 +39,7 @@ public function ods_etat_stocks () {
 	// Initialisation des variables
 	$this->nb_pages					= 1;
 	$this->contenu_actuel 	= 0;					// Ligne du document en cours de traitement
-	$this->contenu_end_page = array();		// Lignes de contenu terminant les diffï¿½rentes pages
+	$this->contenu_end_page = array();		// Lignes de contenu terminant les diffÃ¯Â¿Â½rentes pages
 	$this->page_actuelle		= 0;
 	$this->content_printed	= 0;
         $this->nb_entete_colonne = 0;
@@ -117,7 +117,7 @@ public function create_entete() {
 	$this->create_cellgrey('Ref article',$row);
 	$this->create_cellgrey('Lib article',$row);
 	$this->create_cellgrey('Nom fabricant',$row);
-	$this->create_cellgrey('Lib catégorie',$row);
+	$this->create_cellgrey('Lib catÃ©gorie',$row);
 	$this->create_cellgrey('Stock',$row);
         $this->nb_entete_colonne = 5;
 	if($_REQUEST['emplacement_s']!=''){
@@ -135,7 +135,7 @@ public function create_entete() {
 	$this->create_cellgrey('Ref OEM',$row);
 	$this->create_cellgrey('Code barre',$row);
         $this->nb_entete_colonne += 2;
-        //Si Affichage des informations de traçabilité
+        //Si Affichage des informations de traÃ§abilitÃ©
         if($_REQUEST['aff_info_tracab']==1){
             $this->create_cellgrey('Lot ou SN',$row);
             $this->create_cellgrey('Qte',$row);
@@ -160,14 +160,14 @@ public function create_corps() {
         //_vardump($this->contenu);
 	for ($i = $this->contenu_actuel; $i<count($this->contenu); $i++) {
             //echo $i;
-		//si on change de catégorie
+		//si on change de catÃ©gorie
 		if ($lib_art_categ != $this->contenu[$i]->lib_art_categ && $lib_art_categ !='') {
 			$row=$this->create_row();
 			$this->create_cellbold('Sous total : ',$row);
 			$cell = new odsTableCellString(utf8_encode($lib_art_categ));
 			$cell->setNumberColumnsSpanned(2);
 			$row->addCell( $cell );
-			$this->create_cell('Quantité total :',$row);
+			$this->create_cell('QuantitÃ© total :',$row);
 			$this->create_cellFloat($this->totaux_qte,$row);
 			if($_REQUEST['aff_pa']==1){
 			$this->create_cell('Prix total :',$row);
@@ -192,7 +192,7 @@ public function create_corps() {
 		$this->create_cell($this->contenu[$i]->lib_article,$row);
 		$this->create_cell($this->contenu[$i]->nom_constructeur,$row);
 		$this->create_cell($this->contenu[$i]->lib_art_categ,$row);
-                //Récuperer la quantite d'article en stock
+                //RÃ©cuperer la quantite d'article en stock
                 $qte_stock = 0;
                 //Fait pour un seul stock
                 if(!empty($this->contenu[$i]->stocks)){
@@ -256,7 +256,7 @@ public function create_corps() {
 		$cell = new odsTableCellString(utf8_encode($lib_art_categ));
 		$cell->setNumberColumnsSpanned(2);
 		$row->addCell( $cell );
-		$this->create_cell('Quantité total :',$row);
+		$this->create_cell('QuantitÃ© total :',$row);
 		$this->create_cellFloat($this->totaux_qte,$row);
 		if($_REQUEST['aff_pa']==1){
 			$this->create_cell('Prix total :',$row);
@@ -313,7 +313,7 @@ public function create_corps() {
 public function init(){
 global $bdd;
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -363,7 +363,7 @@ if (isset($_REQUEST['in_stock']) && $_REQUEST['in_stock']) {
 }
 	
 // *************************************************
-// Stock affichés
+// Stock affichÃ©s
 $form['id_stock'] = array();
 if (isset($_REQUEST['id_stock'])) {
 	$form['id_stock'] = explode(",", $_REQUEST['id_stock']);
@@ -373,16 +373,16 @@ if (isset($_REQUEST['id_stock'])) {
 
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_select = "";
 	$query_join 	= "";
 	$query_where 	= " dispo = 1 && a.lot != '2' && a.modele = 'materiel' ";
 	$query_group	= "";
 
-	// Catégorie
+	// CatÃ©gorie
 	if ($search['ref_art_categ']) { 
 		$query_where 	.= " && a.ref_art_categ = '".$search['ref_art_categ']."'";
 	}
@@ -402,7 +402,7 @@ $fiches = array();
 	$query_where 	.= " && lower(asa.emplacement) LIKE lower('%".$search['emplacement_s']."%')";
 	}
 	
-        // Sélection des stocks disponibles
+        // SÃ©lection des stocks disponibles
         $where_stock = "";
         $where_instock = "";
         if ($search['id_stock'] && $search['id_stock'][0] != "") {
@@ -478,7 +478,7 @@ $fiches = array();
 	}
 	unset ($fiche, $resultat, $query);
 
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 	$query = "SELECT a.ref_article
 						FROM articles a 
 							".$count_query_join."

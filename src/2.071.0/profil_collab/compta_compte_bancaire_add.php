@@ -24,7 +24,7 @@ $infos['iban'] 					= $_REQUEST["iban"];
 $infos['swift'] 				= $_REQUEST["swift"];
 	
 	
-	//création du compte
+	//crÃ©ation du compte
 	$compte_bancaire->create_compte_bancaire ($infos);
 
 // *************************************************************************************************************

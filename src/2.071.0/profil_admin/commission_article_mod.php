@@ -11,14 +11,14 @@ require ($DIR."_session.inc.php");
 
 if (isset($_REQUEST['id_commission_regle'])) {	
 	// *************************************************
-	// Controle des données fournies par le formulaire
+	// Controle des donnÃ©es fournies par le formulaire
 	$id_commission_regle				= $_REQUEST['id_commission_regle'];
 	$ref_article				= $_REQUEST['ref_article'];
 	$formule_comm					= $_REQUEST['formule_comm'];
 
 
 	// *************************************************
-	// Création de la catégorie
+	// CrÃ©ation de la catÃ©gorie
 	if ($_REQUEST["old_formule_comm"] == ""  && $formule_comm != "") {
 		commission_liste::add_form_comm_article ($id_commission_regle, $ref_article, $formule_comm) ;
 	} else {

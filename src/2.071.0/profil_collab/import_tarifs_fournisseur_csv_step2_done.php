@@ -15,7 +15,7 @@ if (isset($_REQUEST["count_import"])) {
 }
 $import_tarifs_fournisseur = new import_tarifs_fournisseur_csv();
 
-// On récupère les colonnes à importer
+// On rÃ©cupÃ¨re les colonnes Ã  importer
 $query = "SELECT id_colonne, champ_equivalent FROM csv_import_tarifs_fournisseur_cols;";
 $resultat = $bdd->query($query);
 $array_retour = array();
@@ -27,7 +27,7 @@ while ($tmp = $resultat->fetchObject()) {
 	}
 	unset ($query2, $resultat2, $tmp2);
 }
-// Traitement de la liste des infos sélectionnées
+// Traitement de la liste des infos sÃ©lectionnÃ©es
 $nb_fiches = 50;
 
 if (!isset($GLOBALS['_INFOS']["total_import"])) {
@@ -39,7 +39,7 @@ if (count($liste_ligne) < $nb_fiches) {
 
 // On effectue l'import
 $import_tarifs_fournisseur->create($liste_ligne);
-// On vérifie s'il reste des lignes
+// On vÃ©rifie s'il reste des lignes
 $csv_donnee = new import_tarifs_fournisseur_csv_donnee();
 $lignes = $csv_donnee->readAll();
 

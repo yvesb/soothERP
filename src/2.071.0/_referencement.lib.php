@@ -19,7 +19,7 @@ function get_reference ($nom_fichier = "") {
 	return $reference;
 }
 
-//enregistre une page dans le référencement
+//enregistre une page dans le rÃ©fÃ©rencement
 function add_reference ($nom_fichier, $titre, $meta_desc, $meta_motscles) {
 	global $bdd;
 	// Insertion de la page dans la bdd
@@ -29,7 +29,7 @@ function add_reference ($nom_fichier, $titre, $meta_desc, $meta_motscles) {
 	
 	return true;
 }
-//maj une page dans le référencement
+//maj une page dans le rÃ©fÃ©rencement
 function maj_reference ($nom_fichier, $titre, $meta_desc, $meta_motscles) {
 	global $bdd;
 	// Insertion de la page dans la bdd
@@ -39,7 +39,7 @@ function maj_reference ($nom_fichier, $titre, $meta_desc, $meta_motscles) {
 	
 	return true;
 }
-//suppression une page dans le référencement
+//suppression une page dans le rÃ©fÃ©rencement
 function del_reference ($nom_fichier) {
 	global $bdd;
 	// suppression de la page dans la bdd

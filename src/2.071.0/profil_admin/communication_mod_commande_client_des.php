@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// GESTION DES COMMANDES CLIENTS (Désactivation d'un modele pdf)
+// GESTION DES COMMANDES CLIENTS (DÃ©sactivation d'un modele pdf)
 // *************************************************************************************************************
 
 require ("_dir.inc.php");

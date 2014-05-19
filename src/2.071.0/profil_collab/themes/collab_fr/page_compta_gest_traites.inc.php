@@ -4,7 +4,7 @@
 // AFFICHAGE DU CHOIX DES CAISSES
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -14,9 +14,9 @@ check_page_variables ($page_variables);
 
 ?>
 <div class="emarge"><br />
-    <p class="titre">Gestion des autorisations de traites acceptées</p>
+    <p class="titre">Gestion des autorisations de traites acceptÃ©es</p>
     <!-- Popups -->
-    <!-- Créer x balises div cachés pour x popups, puis apeller la page de contenu via AJAX ? -->
+    <!-- CrÃ©er x balises div cachÃ©s pour x popups, puis apeller la page de contenu via AJAX ? -->
     <?php include $DIR.$_SESSION['theme']->getDir_theme()."page_annuaire_recherche_mini.inc.php" //mini_moteur contact?>
     <?php echo Helper::createPopup("pop_up_traites",array("style_popup"=>"width: 600px; min-height: 250px;")); ?>
     <?php echo Helper::createPopup("pop_up_piecej_add",array("style_popup"=>"width: 50%; height: 350px;")); ?>
@@ -35,7 +35,7 @@ check_page_variables ($page_variables);
             </tr>
             <tr>
                 <td>&nbsp;</td>
-                <td style="font-style : italic ; font-weight:bold">Critères d'affichage</td>
+                <td style="font-style : italic ; font-weight:bold">CritÃ¨res d'affichage</td>
                 <td></td>
                 <td></td>
                 <td style="font-style : italic; font-weight:bold">Actions</td>
@@ -69,7 +69,7 @@ check_page_variables ($page_variables);
             <tr>
                 <td>&nbsp;</td>
                 <td>
-                    <span class="labelled_text">Catégorie du client:</span>
+                    <span class="labelled_text">CatÃ©gorie du client:</span>
                 </td>
                 <td>
                     <select id="id_categ_client" name="id_categ_client" class="classinput_xsize">
@@ -86,7 +86,7 @@ check_page_variables ($page_variables);
             <tr>
                 <td>&nbsp;</td>
                 <td>
-                    <span class="labelled_text">Numéro du compte:</span>
+                    <span class="labelled_text">NumÃ©ro du compte:</span>
                 </td>
                 <td>
                     <input id="num_compte_search" name="num_compte_search" type="text" class="classinput_xsize" />

@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 
 if (isset($_REQUEST['ref_doc'])) {
-// ouverture des infos du document et mise à jour
+// ouverture des infos du document et mise Ã  jour
 	document::del_line_nl ($_REQUEST['ref_doc_line'], $_REQUEST['nl'], $_REQUEST['qte_nl']);
 }
 

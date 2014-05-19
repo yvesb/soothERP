@@ -7,14 +7,14 @@
 // *************************************************************************************************************
 // INFORMATIONS CONCERNANT LES UTIISATEURS AYANT CE PROFIL
 // *************************************************************************************************************
-$ADMIN_ID_THEME = 2;			// Thème par défaut 
+$ADMIN_ID_THEME = 2;			// ThÃ¨me par dÃ©faut 
 
 
 
 // *************************************************************************************************************
 // INFORMATIONS CONCERNANT LES CONTACTS AYANT CE PROFIL
 // *************************************************************************************************************
-// Informations par défaut concernant un Administrateur
+// Informations par dÃ©faut concernant un Administrateur
 $DEFAUT_TYPE_ADMIN = "Externe";
 
 

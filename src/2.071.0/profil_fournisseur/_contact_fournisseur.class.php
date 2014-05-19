@@ -5,14 +5,14 @@
 
 class contact_fournisseur extends contact_profil {
 
-	private $ref_fournisseur; 				// Référence du contact
-  private $id_fournisseur_categ; 		// Identifiant de la catégorie du fournisseur
-  private $code_client;							// Code client de la société chez ce fournisseur 
-  private $ref_acheteur;						// Ref_contact du collab acheteur auprès de ce fournisseur 
+	private $ref_fournisseur; 				// RÃ©fÃ©rence du contact
+  private $id_fournisseur_categ; 		// Identifiant de la catÃ©gorie du fournisseur
+  private $code_client;							// Code client de la sociÃ©tÃ© chez ce fournisseur 
+  private $ref_acheteur;						// Ref_contact du collab acheteur auprÃ¨s de ce fournisseur 
   private $conditions_commerciales; // Conditions commerciales
-  private $id_stock_livraison;			// Stock de livraison par défaut
-  private $defaut_numero_compte;		// numéro de compte comptable par défaut
-  private $delai_livraison;					// Délai habituel de livraison
+  private $id_stock_livraison;			// Stock de livraison par dÃ©faut
+  private $defaut_numero_compte;		// numÃ©ro de compte comptable par dÃ©faut
+  private $delai_livraison;					// DÃ©lai habituel de livraison
 
 
 
@@ -20,7 +20,7 @@ function __construct ($ref_fournisseur = "", $action = "open") {
 	global $bdd;
 	global $DEFAUT_COMPTE_TIERS_ACHAT;
 
-	// Controle si la ref_contact est précisée
+	// Controle si la ref_contact est prÃ©cisÃ©e
 	if (!$ref_fournisseur) { return false; }
 	$this->ref_fournisseur = $ref_fournisseur;
 	
@@ -37,7 +37,7 @@ function __construct ($ref_fournisseur = "", $action = "open") {
 						WHERE ref_fournisseur = '".$this->ref_fournisseur."' ";	
 	$resultat = $bdd->query ($query);
 
-	// Controle si la ref_contact (fournisseur) est trouvée
+	// Controle si la ref_contact (fournisseur) est trouvÃ©e
 	if (!$contact_fournisseur = $resultat->fetchObject()) { return false; }
 	
 	$this->ref_fournisseur 			= $contact_fournisseur->ref_fournisseur;
@@ -49,7 +49,7 @@ function __construct ($ref_fournisseur = "", $action = "open") {
   $this->delai_livraison			= $contact_fournisseur->delai_livraison;
 	$this->app_tarifs 					= $contact_fournisseur->app_tarifs;
 	$this->defaut_numero_compte = $contact_fournisseur->defaut_numero_compte;
-	//remplissage du numéro de compte achat par soit celui de la ctegorie fournisseur
+	//remplissage du numÃ©ro de compte achat par soit celui de la ctegorie fournisseur
 	if (!$this->defaut_numero_compte) {
 	$this->defaut_numero_compte = $contact_fournisseur->categ_defaut_numero_compte;
 	}
@@ -74,7 +74,7 @@ function create_infos ($infos) {
 	global $DEFAUT_ID_STOCK_LIVRAISON;
 	global $DEFAUT_APP_TARIFS_FOURNISSEUR;
 
-	// Controle si ces informations sont déjà existantes
+	// Controle si ces informations sont dÃ©jÃ  existantes
 	if ($this->profil_loaded) {
 		return false;
 	}
@@ -99,7 +99,7 @@ function create_infos ($infos) {
 	}
 	else {
 		// *************************************************
-		// Informations par défaut pour la catégorie
+		// Informations par dÃ©faut pour la catÃ©gorie
 		$query = "SELECT ref_acheteur
 							FROM fournisseurs_categories
 							WHERE id_fournisseur_categ = '".$this->id_fournisseur_categ."' ";
@@ -135,9 +135,9 @@ function create_infos ($infos) {
 		$tmp_ctpinfos['numero_compte'] 	= $this->defaut_numero_compte;
 		$tmp_ctpinfos['lib_compte'] 		= $this->defaut_numero_compte;
 		$tmp_ctpinfos['favori'] 		= 1;
-		//création du compte
+		//crÃ©ation du compte
 		$compte_plan_general->create_compte_plan_comptable ($tmp_ctpinfos);
-		//on supprime le global alerte que peut générer la cration du compte pour ne pas bloquer la création du contact
+		//on supprime le global alerte que peut gÃ©nÃ©rer la cration du compte pour ne pas bloquer la crÃ©ation du contact
 		if (isset($GLOBALS['_ALERTES']['numero_compte_vide'])) {unset($GLOBALS['_ALERTES']['numero_compte_vide']);}
 		if (isset($GLOBALS['_ALERTES']['exist_numero_compte'])) {unset($GLOBALS['_ALERTES']['exist_numero_compte']);}
 	}
@@ -149,7 +149,7 @@ function create_infos ($infos) {
 	}
 
 	// *************************************************
-	// Insertion des données
+	// Insertion des donnÃ©es
 	$query = "INSERT INTO annu_fournisseur 
 							(ref_fournisseur, id_fournisseur_categ, code_client, ref_acheteur, conditions_commerciales, 
 							 id_stock_livraison, delai_livraison, app_tarifs, defaut_numero_compte )
@@ -172,7 +172,7 @@ function maj_infos ($infos) {
 	global $DEFAUT_ID_STOCK_LIVRAISON;
 
 	if (!$this->profil_loaded) {
-		$GLOBALS['_ALERTES']['profil_non_chargé'] = 1;
+		$GLOBALS['_ALERTES']['profil_non_chargÃ©'] = 1;
 	}
 
 	// *************************************************
@@ -196,7 +196,7 @@ function maj_infos ($infos) {
 	}
 	else {
 		// *************************************************
-		// Informations par défaut pour la catégorie
+		// Informations par dÃ©faut pour la catÃ©gorie
 		$query = "SELECT ref_acheteur
 							FROM fournisseurs_categories
 							WHERE id_fournisseur_categ = '".$this->id_fournisseur_categ."' ";
@@ -226,7 +226,7 @@ function maj_infos ($infos) {
   $this->delai_livraison			= $infos['delai_livraison'];
 	$this->app_tarifs 					= $infos['app_tarifs'];
 
-	// Si App_tarifs en automatique on récupére l'app_tarifs le l'annuaire_categorie du contact
+	// Si App_tarifs en automatique on rÃ©cupÃ©re l'app_tarifs le l'annuaire_categorie du contact
 	if (!$this->app_tarifs) {	
 		$query = "SELECT ac.app_tarifs
 							FROM annuaire a
@@ -245,7 +245,7 @@ function maj_infos ($infos) {
 
 
 	// *************************************************
-	// Mise à jour des données
+	// Mise Ã  jour des donnÃ©es
 	$query = "UPDATE annu_fournisseur 
 						SET id_fournisseur_categ = ".num_or_null($this->id_fournisseur_categ).", 
 								code_client = '".addslashes($this->code_client)."', ref_acheteur = NULL, 
@@ -259,7 +259,7 @@ function maj_infos ($infos) {
 	return true;
 }
 
-//mise à jour de l'app_tarif du profil
+//mise Ã  jour de l'app_tarif du profil
 function maj_app_tarifs ($app_tarifs) {
 	global $bdd;
 
@@ -274,7 +274,7 @@ function maj_app_tarifs ($app_tarifs) {
 }
 
 
-//mise à jour du defaut_numero_compte du profil
+//mise Ã  jour du defaut_numero_compte du profil
 function maj_defaut_numero_compte ($defaut_numero_compte) {
 	global $bdd;
 
@@ -295,7 +295,7 @@ function maj_defaut_numero_compte ($defaut_numero_compte) {
 function delete_infos () {
 	global $bdd;
 
-	// Vérifie si la suppression de ces informations est possible.
+	// VÃ©rifie si la suppression de ces informations est possible.
 
 	// Supprime les informations
 	$query = "DELETE FROM annu_fournisseur WHERE ref_fournisseur = '".$this->ref_fournisseur."' ";
@@ -317,7 +317,7 @@ function delete_infos () {
 function transfert_infos ($new_contact, $is_already_profiled) {
 	global $bdd;
 
-	// Vérifie si le transfert de ces informations est possible.
+	// VÃ©rifie si le transfert de ces informations est possible.
 	if (!$is_already_profiled) {
 		// TRANSFERT les informations
 		$query = "UPDATE annu_fournisseur SET ref_fournisseur = '".$new_contact->getRef_contact()."' 
@@ -419,7 +419,7 @@ static public function create_fournisseurs_categories ($infos) {
 	global $bdd;
 
 	// *************************************************
-	// Insertion des données
+	// Insertion des donnÃ©es
 	$query = "INSERT INTO fournisseurs_categories (lib_fournisseur_categ, ref_acheteur, note) 
 						VALUES ('".addslashes($infos['lib_fournisseur_categ'])."', NULL,  '".addslashes($infos['note'])."')"; 
 	$bdd->exec($query);
@@ -432,7 +432,7 @@ static public function maj_infos_fournisseurs_categories  ($infos) {
 	global $bdd;
 	
 	// *************************************************
-	// Mise à jour des données
+	// Mise Ã  jour des donnÃ©es
 	$query = "UPDATE fournisseurs_categories  
 						SET lib_fournisseur_categ = '".addslashes($infos['lib_fournisseur_categ'])."', 
 						ref_acheteur = NULL, 
@@ -447,7 +447,7 @@ static public function maj_defaut_numero_compte_categories  ($infos) {
 	global $bdd;
 	
 	// *************************************************
-	// Mise à jour des données
+	// Mise Ã  jour des donnÃ©es
 	$query = "UPDATE fournisseurs_categories  
 						SET defaut_numero_compte = '".addslashes($infos['defaut_numero_compte'])."'
 						WHERE id_fournisseur_categ = '".$infos['id_fournisseur_categ']."' ";
@@ -465,12 +465,12 @@ static public function delete_infos_fournisseurs_categories  ($id_fournisseur_ca
 	if ($id_fournisseur_categ == $DEFAUT_ID_FOURNISSEUR_CATEG) {
 		$GLOBALS['_ALERTES']['last_id_fournisseur_categ'] = 1;
 	}
-	// Vérifie si la suppression de ces informations est possible.
+	// VÃ©rifie si la suppression de ces informations est possible.
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 	// *************************************************
-	// Mise à jour des données
+	// Mise Ã  jour des donnÃ©es
 	$query = "DELETE FROM fournisseurs_categories WHERE id_fournisseur_categ = '".$id_fournisseur_categ."' ";
 	$bdd->exec($query);
 	

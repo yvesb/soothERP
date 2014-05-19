@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES", "fiches", "form['page_to_show']", "form['fiches_par_page']", "nb_fiches");
 check_page_variables ($page_variables);
 
@@ -26,7 +26,7 @@ function barre_navigation($nbtotal,
 													
 {
 	// --------------------------------------------------------------------
-	global $cfg_nb_pages; // Nb de n° de pages affichées dans la barre
+	global $cfg_nb_pages; // Nb de nÂ° de pages affichÃ©es dans la barre
 global $DIR;
 	$barre= "";
 
@@ -38,7 +38,7 @@ global $DIR;
 	// --------------------------------------------------------------------
     
 
-	// début << .
+	// dÃ©but << .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -58,7 +58,7 @@ global $DIR;
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
 
 
-	// précédent < .
+	// prÃ©cÃ©dent < .
 	// --------------------------------------------------------------------
 	if ($debut >= $cfg_nbres_ppage)
 	{
@@ -165,7 +165,7 @@ function image_html($img)
 
 //
 //
-//création de la barre de nav
+//crÃ©ation de la barre de nav
 //
 //
 
@@ -217,14 +217,14 @@ foreach ($_ALERTES as $alerte => $value) {
 			</td>
 			<td style="width:35%;">
 				<a href="#"  id="order_lib_compte">
-				Libellé
+				LibellÃ©
 				</a>
 			</td>
 			<td style="width:15%; text-align:right">
-			<a href="#"  id="order_debit">Débit</a>
+			<a href="#"  id="order_debit">DÃ©bit</a>
 			</td>
 			<td style="width:15%; text-align:right">
-			<a href="#"  id="order_credit">Crédit</a>
+			<a href="#"  id="order_credit">CrÃ©dit</a>
 			</td>
 			<td style="width:15%;">
 			
@@ -293,7 +293,7 @@ foreach ($_ALERTES as $alerte => $value) {
 				Event.observe('del_<?php echo htmlentities($fiche->id_compte_bancaire_move)?>', 'click',  function(evt){
 					Event.stop(evt); 
 					$("titre_alert").innerHTML = 'Confirmation de la suppression';
-					$("texte_alert").innerHTML = 'Suppression d\'une opération';
+					$("texte_alert").innerHTML = 'Suppression d\'une opÃ©ration';
 					$("bouton_alert").innerHTML = '<input type="submit" name="bouton1" id="bouton1" value="Supprimer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />';
 						
 					show_pop_alerte ();

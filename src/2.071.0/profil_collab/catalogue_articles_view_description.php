@@ -13,13 +13,13 @@ require ($DIR."_session.inc.php");
 // Controle
 
 if (!isset($_REQUEST['ref_article'])) {
-	echo "La référence de l'article n'est pas précisée";
+	echo "La rÃ©fÃ©rence de l'article n'est pas prÃ©cisÃ©e";
 	exit;
 }
 
 $article = new article ($_REQUEST['ref_article']);
 if (!$article->getRef_article()) {
-	echo "La référence de l'article est inconnue";		exit;
+	echo "La rÃ©fÃ©rence de l'article est inconnue";		exit;
 
 }
 
@@ -37,7 +37,7 @@ if (isset($_REQUEST["aff_ht"])) {
 }
 
 $tarif_affiche = 0;
-//tarif affiché
+//tarif affichÃ©
 foreach ($tarifs_liste as $tarif_liste) {
 	if ($tarif_liste->id_tarif == $_SESSION['magasin']->getId_tarif()) {
 		foreach ($liste_tarifs as $tarifs) {

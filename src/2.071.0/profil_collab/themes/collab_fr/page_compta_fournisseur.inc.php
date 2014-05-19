@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -26,7 +26,7 @@ check_page_variables ($page_variables);
 
 
 <?php include $DIR.$_SESSION['theme']->getDir_theme()."page_compta_plan_recherche_mini.inc.php" ?>
-<p class="titre">Comptabilité fournisseur</p>
+<p class="titre">ComptabilitÃ© fournisseur</p>
 <div style="height:50px">
 <table class="minimizetable">
 <tr>

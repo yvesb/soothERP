@@ -76,7 +76,7 @@ Event.observe("dure_garantie", "blur", function(evt){nummask(evt,"<?php echo $ar
 	 
 	 }, false);		
 
-//fonction de validation de l'étape 0
+//fonction de validation de l'Ã©tape 0
 function valide_etape_3() {
 		submitform ("article_view_3"); 
 }

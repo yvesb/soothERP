@@ -45,7 +45,7 @@
 				</select>
 						<input value="" type="hidden" id="tva_value_"  name="tva_value_"/>
 				<?php
-					//liste des valeurs de tva pour calcul tarif à la volée
+					//liste des valeurs de tva pour calcul tarif Ã  la volÃ©e
 					foreach ($tvas  as $tva){
 						?>
 						<input value="<?php echo htmlentities($tva['tva']);?>" type="hidden" id="tva_value_<?php echo $tva['id_tva'];?>"  name="tva_value_<?php echo $tva['id_tva'];?>"/>
@@ -59,7 +59,7 @@
 			<?php 
 			if ($article->getPv_last_maj ()) {
 				?>
-				Dernière mise à jour le:<?php echo date_Us_to_Fr($article->getPv_last_maj ());?> à <?php echo getTime_from_date($article->getPv_last_maj ());?>
+				DerniÃ¨re mise Ã  jour le:<?php echo date_Us_to_Fr($article->getPv_last_maj ());?> Ã  <?php echo getTime_from_date($article->getPv_last_maj ());?>
 				<?php 
 			}
 			?>
@@ -70,9 +70,9 @@
 		</tr>
 			<tr>
 			<td>&nbsp;</td>
-			<td class="labelled_text"><span  <?php //permission (6) Accès Consulter les prix d’achat
+			<td class="labelled_text"><span  <?php //permission (6) AccÃ¨s Consulter les prix dâ€™achat
 if (!$_SESSION['user']->check_permission ("6")) {?>style="visibility:hidden;"<?php } ?> >Prix d'achat actuel:</span> </td>
-		<td><span <?php //permission (6) Accès Consulter les prix d’achat
+		<td><span <?php //permission (6) AccÃ¨s Consulter les prix dâ€™achat
 if (!$_SESSION['user']->check_permission ("6")) {?>style="visibility:hidden;"<?php } ?>><input type="text" name="paa_ht" id="paa_ht" value="<?php echo number_format($article->getPaa_ht (),$TARIFS_NB_DECIMALES, ".", "");?>"  class="classinput_hsize" />&nbsp;<input  name="taxation_paa" id="taxation_paa_ht" type="radio" value="HT" checked="checked" >HT&nbsp;<input  name="taxation_paa" id="taxation_paa_ttc" type="radio" value="TTC" >TTC			</span> 
 
 
@@ -83,9 +83,9 @@ if (!$_SESSION['user']->check_permission ("6")) {?>style="visibility:hidden;"<?p
 		
 		<tr>
 			<td>&nbsp;</td>
-			<td class="labelled_text"><span  <?php //permission (6) Accès Consulter les prix d’achat
+			<td class="labelled_text"><span  <?php //permission (6) AccÃ¨s Consulter les prix dâ€™achat
 if (!$_SESSION['user']->check_permission ("6") || $CALCUL_VAS == "3" || $article->getModele () != "materiel" || !$article->getIs_in_stock())  {?>style="visibility:hidden;"<?php } ?> >Valeur du produit en stock:</span> </td>
-		<td><span <?php //permission (6) Accès Consulter les prix d’achat
+		<td><span <?php //permission (6) AccÃ¨s Consulter les prix dâ€™achat
 if (!$_SESSION['user']->check_permission ("6") || $CALCUL_VAS == "3" || $article->getModele () != "materiel" || !$article->getIs_in_stock()) {?>style="visibility:hidden;"<?php } ?>><input type="text" name="prix_achat_ht" id="prix_achat_ht" value="<?php echo number_format($article->getPrix_achat_ht (), $TARIFS_NB_DECIMALES, ".", "");?>"  class="classinput_hsize" />&nbsp;<input  name="taxation_pa" id="taxation_pa_ht" type="radio" value="HT" checked="checked" >HT&nbsp;<input  name="taxation_pa" id="taxation_pa_ttc" type="radio" value="TTC" >TTC			</span>
 			</td>
 			<td>&nbsp;</td>
@@ -216,7 +216,7 @@ if (!$_SESSION['user']->check_permission ("6") || $CALCUL_VAS == "3" || $article
 				
 			});
 			</script>
-									<div id="aff_formule_tarif_<?php echo $nb_liste_tarif?>_0" style="color:#7391a9;  <?php //permission (6) Accès Consulter les prix d’achat
+									<div id="aff_formule_tarif_<?php echo $nb_liste_tarif?>_0" style="color:#7391a9;  <?php //permission (6) AccÃ¨s Consulter les prix dâ€™achat
 if (!$_SESSION['user']->check_permission ("6")) {?>display:none;<?php } ?>">
 									<?php if ($tarif_liste->formule_tarif=="")
 									{echo $tarif_liste->marge_moyenne;
@@ -376,7 +376,7 @@ foreach ($liste_formules_tarifs_ByQte as $formule_qte=>$formule_tarif) {
 				?>				
 			});
 			</script>
-								<a href="#" id="aff_formule_tarif_<?php echo $nb_liste_tarif?>_<?php echo $nb_ligne_prix?>" style="color:#7391a9;  <?php //permission (6) Accès Consulter les prix d’achat
+								<a href="#" id="aff_formule_tarif_<?php echo $nb_liste_tarif?>_<?php echo $nb_ligne_prix?>" style="color:#7391a9;  <?php //permission (6) AccÃ¨s Consulter les prix dâ€™achat
 if (!$_SESSION['user']->check_permission ("6")) {?> display:none; <?php } ?>">
 								<?php
 									if (isset ($formule_tarif[$tarif_liste->id_tarif])) {
@@ -533,7 +533,7 @@ if ($USE_COTATIONS){
 		
 		if (count($taxes_art_categ) > count ($taxes)) {
 		?>
-		<span id="aff_more_categ_taxes" style=" cursor:pointer; display:"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" /> <span style="text-decoration:underline">Taxes de catégorie</span></span>
+		<span id="aff_more_categ_taxes" style=" cursor:pointer; display:"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" /> <span style="text-decoration:underline">Taxes de catÃ©gorie</span></span>
 		<div id="more_categ_taxes" style="display:none">
 		<?php
 		foreach ($taxes_art_categ  as $taxep_art){
@@ -643,7 +643,7 @@ if ($USE_COTATIONS){
 	
 <SCRIPT type="text/javascript">
 
-//fonction de validation de l'étape 3
+//fonction de validation de l'Ã©tape 3
 function valide_etape_3() {
  	submitform ("article_edit_3"); 
 } 

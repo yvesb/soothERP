@@ -14,7 +14,7 @@ if(isset($NoHeader_caisse_panneau_recherche_articles_result) && $NoHeader_caisse
 
 	// Ouverture du document
 	if (!isset($art_page_to_show_s)) {
-		echo "la variable 'art_page_to_show_s' n'est pas spécifiée";
+		echo "la variable 'art_page_to_show_s' n'est pas spÃ©cifiÃ©e";
 		exit;
 	}
 	$form['art_page_to_show_s'] = $search['art_page_to_show_s'] = $art_page_to_show_s;
@@ -46,7 +46,7 @@ if(isset($NoHeader_caisse_panneau_recherche_articles_result) && $NoHeader_caisse
 
 	// Ouverture du document
 	if (!isset($_REQUEST['art_page_to_show_s'])) {
-		echo "La référence du document n'est pas spécifié";
+		echo "La rÃ©fÃ©rence du document n'est pas spÃ©cifiÃ©";
 		exit;
 	}
 	$form['art_page_to_show_s'] = $search['art_page_to_show_s'] = $_REQUEST['art_page_to_show_s'];
@@ -73,14 +73,14 @@ if(isset($NoHeader_caisse_panneau_recherche_articles_result) && $NoHeader_caisse
 $nb_articles = 0;
 
 // *************************************************
-// Stock et Tarif affichés
+// Stock et Tarif affichÃ©s
 $form['id_stock'] = $search['id_stock'] = $_SESSION['magasin']->getId_stock();
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $t_articles = array();
 
-// Préparation de la requete
+// PrÃ©paration de la requete
 $query_join 	= "";
 $query_where 	= " dispo = 1 && a.variante != 2 ";
 $query_limit	= (($search['art_page_to_show_s']-1)*$search['articles_par_page']).", ".$search['articles_par_page'];
@@ -106,7 +106,7 @@ if ($search['art_lib_s']) {
 	$query_where 	.= " ) )";
 }
 
-// Catégorie
+// CatÃ©gorie
 if ($search['categ_ref_selected_s']) { 
 	$liste_categories = "";
 	$liste_categs = array();
@@ -155,7 +155,7 @@ if(count($t_articles) == 1 && isset($_REQUEST["ajout_si_article_unique"]) && $_R
 		$document = open_doc($_REQUEST['ref_ticket']);
 	}else{	//Nouveau Ticket de caisse
 	
-		// Par précotion, on efface toutes les variables de création de documents
+		// Par prÃ©cotion, on efface toutes les variables de crÃ©ation de documents
 		unset($GLOBALS['_OPTIONS']['CREATE_DOC']);
 	
 		$document = create_doc($TICKET_CAISSE_ID_TYPE_DOC);
@@ -205,7 +205,7 @@ if(count($t_articles) == 1 && isset($_REQUEST["ajout_si_article_unique"]) && $_R
 	
 }else{// ***************************************************************************************
 
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 	$query = "SELECT a.ref_article
 						FROM articles a
 						".$query_join."

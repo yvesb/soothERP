@@ -5,7 +5,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -122,7 +122,7 @@ if (erreur) {
 		window.parent.document.getElementById("duree_abo_mois").className="alerteform_nsize";
 		window.parent.goto_etape(2);
 		window.parent.document.getElementById("duree_abo_mois").focus();
-		texte_erreur += "La durée d'abonnement est d\'une valeur incorrecte.<br/>";
+		texte_erreur += "La durÃ©e d'abonnement est d\'une valeur incorrecte.<br/>";
 	}else {
 		//window.parent.document.getElementById("duree_abo_mois").className="classinput_nsize";
 	}
@@ -131,7 +131,7 @@ if (erreur) {
 		window.parent.document.getElementById("engagement").className="alerteform_nsize";
 		window.parent.goto_etape(2);
 		window.parent.document.getElementById("engagement").focus();
-		texte_erreur += "La durée d'engagement est d\'une valeur incorrecte.<br/>";
+		texte_erreur += "La durÃ©e d'engagement est d\'une valeur incorrecte.<br/>";
 	}else {
 		//window.parent.document.getElementById("engagement").className="classinput_nsize";
 	}
@@ -149,7 +149,7 @@ if (erreur) {
 		window.parent.document.getElementById("preavis_abo_mois").className="alerteform_nsize";
 		window.parent.goto_etape(2);
 		window.parent.document.getElementById("preavis_abo_mois").focus();
-		texte_erreur += "La durée de préavis est d\'une valeur incorrecte.<br/>";
+		texte_erreur += "La durÃ©e de prÃ©avis est d\'une valeur incorrecte.<br/>";
 	}else {
 		//window.parent.document.getElementById("preavis_abo_mois").className="classinput_nsize";
 	}
@@ -159,13 +159,13 @@ if (erreur) {
 	//qte de composant fausse
 	if (bad_qte) {
 		window.parent.goto_etape(4);
-		texte_erreur += "il y a une erreur dans la quantité d'un des composants.<br/>";
+		texte_erreur += "il y a une erreur dans la quantitÃ© d'un des composants.<br/>";
 	}
 	
 	//qte de tarif fausse
 	if (bad_indice_qte) {
 		window.parent.goto_etape(4);
-		texte_erreur += "il y a une erreur dans la quantité d'un des tarifs.<br/>";
+		texte_erreur += "il y a une erreur dans la quantitÃ© d'un des tarifs.<br/>";
 	}
 	
 	//modele garantie fause
@@ -173,7 +173,7 @@ if (erreur) {
 		window.parent.document.getElementById("a_code_barre").className="alerteform_xsize";
 		window.parent.goto_etape(2);
 		window.parent.document.getElementById("a_code_barre").focus();
-		texte_erreur += "Un des codes barres existe déjà.<br />";
+		texte_erreur += "Un des codes barres existe dÃ©jÃ .<br />";
 	}else {
 		//window.parent.document.getElementById("a_code_barre").className="classinput_xsize";
 	}
@@ -181,7 +181,7 @@ if (erreur) {
 	//limite basse des stock fauses
 	if (bad_seuil_alerte) {
 		window.parent.goto_etape(2);
-		texte_erreur += "il y a une erreur dans les quantités des seuils d'alerte de stock bas.<br/>";
+		texte_erreur += "il y a une erreur dans les quantitÃ©s des seuils d'alerte de stock bas.<br/>";
 	}
 	
 	//modele garantie fause
@@ -189,7 +189,7 @@ if (erreur) {
 		window.parent.document.getElementById("dure_garantie").className="alerteform_xsize";
 		window.parent.goto_etape(2);
 		window.parent.document.getElementById("dure_garantie").focus();
-		texte_erreur += "La durée de garantie dois être une valeur numérique.<br/>";
+		texte_erreur += "La durÃ©e de garantie dois Ãªtre une valeur numÃ©rique.<br/>";
 	}else {
 		//window.parent.document.getElementById("dure_garantie").className="classinput_xsize";
 	}
@@ -211,7 +211,7 @@ if (erreur) {
 		window.parent.document.getElementById("ref_interne").className="alerteform_xsize";
 		window.parent.goto_etape(0);
 		window.parent.document.getElementById("ref_interne").focus();
-		texte_erreur += "La référence interne existe déjà.<br/>";
+		texte_erreur += "La rÃ©fÃ©rence interne existe dÃ©jÃ .<br/>";
 	}else {
 		//window.parent.document.getElementById("ref_interne").className="classinput_xsize";
 	}
@@ -221,7 +221,7 @@ if (erreur) {
 		window.parent.document.getElementById("lib_article").className="alerteform_xsize";
 		window.parent.goto_etape(0);
 		window.parent.document.getElementById("lib_article").focus();
-		texte_erreur += "Le libellé de l\'article est vide.<br/>";
+		texte_erreur += "Le libellÃ© de l\'article est vide.<br/>";
 	}else {
 		window.parent.document.getElementById("lib_article").className="classinput_xsize";
 	}
@@ -229,14 +229,14 @@ if (erreur) {
 	if (ref_art_categ_vide) {
 		window.parent.document.getElementById("liste_de_categorie_pour_article").className="simule_champs_alerte";
 		window.parent.goto_etape(0);
-	texte_erreur += "Choisissez une catégorie d\'article.<br/>";
+	texte_erreur += "Choisissez une catÃ©gorie d\'article.<br/>";
 	}else {
 		window.parent.document.getElementById("liste_de_categorie_pour_article").className="simule_champs";
 	}
-	//pas de variante sélectionnée
+	//pas de variante sÃ©lectionnÃ©e
 	if (no_variantes_selected) {
 		window.parent.goto_etape(1);
-		texte_erreur += "Sélectionnez une ou plusieurs variantes de l\'article.<br/>";
+		texte_erreur += "SÃ©lectionnez une ou plusieurs variantes de l\'article.<br/>";
 	}
 	
 	
@@ -248,7 +248,7 @@ else
 {
 	window.parent.submit_in_way = false;
 <?php 
-if (isset ($_INFOS['Création_article']) ) {
+if (isset ($_INFOS['CrÃ©ation_article']) ) {
 	?>
 	window.parent.changed = false;
 	window.parent.page.verify('catalogue_articles_view','catalogue_articles_view.php?ref_article=<?php echo $article->getRef_article();?>','true','sub_content');

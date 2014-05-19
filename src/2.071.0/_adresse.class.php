@@ -26,20 +26,20 @@ final class adresse {
 function __construct($ref_adresse = "") {
 	global $bdd;
 
-	// Controle si la ref_adresse est précisée
+	// Controle si la ref_adresse est prÃ©cisÃ©e
 	if (!$ref_adresse) { return false; }
 
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT ref_contact, lib_adresse, text_adresse, code_postal, ville, a.id_pays, note, ordre, id_type_adresse, p.pays
 						FROM adresses a
 							LEFT JOIN pays p ON a.id_pays = p.id_pays
 						WHERE ref_adresse = '".$ref_adresse."' ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si la ref_adresse est trouvée
+	// Controle si la ref_adresse est trouvÃ©e
 	if (!$adresse = $resultat->fetchObject()) { return false; }
 
-	// Attribution des informations à l'objet
+	// Attribution des informations Ã  l'objet
 	$this->ref_adresse 				= $ref_adresse;
 	$this->ref_contact 				= $adresse->ref_contact;
 	$this->lib_adresse				= $adresse->lib_adresse;
@@ -65,10 +65,10 @@ final public function create ($ref_contact, $lib_adresse, $text_adresse, $code_p
 	global $bdd;
 	global $DEFAUT_ID_PAYS;
 
-	$ADRESSE_ID_REFERENCE_TAG = 5;		// Référence Tag utilisé dans la base de donnée
+	$ADRESSE_ID_REFERENCE_TAG = 5;		// RÃ©fÃ©rence Tag utilisÃ© dans la base de donnÃ©e
 
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->ref_contact 	= $ref_contact;
 	$this->lib_adresse 	= $lib_adresse;
 	$this->text_adresse = $text_adresse;
@@ -79,18 +79,18 @@ final public function create ($ref_contact, $lib_adresse, $text_adresse, $code_p
 	$this->type			= $type;
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
-	// Si aucune valeur, inutile de créer l'adresse
+	// Si aucune valeur, inutile de crÃ©er l'adresse
 	if (!$this->lib_adresse && !$this->text_adresse && !$this->code_postal && !$this->ville && !$this->note) {
 		return false;
 	}
 	if (!$this->id_pays) {$this->id_pays = $DEFAUT_ID_PAYS;}
 
 	// *************************************************
-	// Création de la référence
+	// CrÃ©ation de la rÃ©fÃ©rence
 	if (!$ref_adresse) {
 		$reference = new reference ($ADRESSE_ID_REFERENCE_TAG);
 		$this->ref_adresse = $reference->generer_ref();
@@ -116,8 +116,8 @@ final public function create ($ref_contact, $lib_adresse, $text_adresse, $code_p
 	$bdd->exec($query);
 	
 	// *************************************************
-	// Résultat positif de la création
-	$GLOBALS['_INFOS']['Création_adresse'] = $this->ref_adresse;
+	// RÃ©sultat positif de la crÃ©ation
+	$GLOBALS['_INFOS']['CrÃ©ation_adresse'] = $this->ref_adresse;
 
 	return true;
 }
@@ -132,7 +132,7 @@ final public function modification ($lib_adresse, $text_adresse, $code_postal, $
 	global $bdd;
 	
 	// *************************************************
-	// Controle des données transmises
+	// Controle des donnÃ©es transmises
 	$this->lib_adresse 	= $lib_adresse;
 	$this->text_adresse = $text_adresse;
 	$this->code_postal 	= $code_postal;
@@ -142,7 +142,7 @@ final public function modification ($lib_adresse, $text_adresse, $code_postal, $
 	$this->type			= $type;
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -157,7 +157,7 @@ final public function modification ($lib_adresse, $text_adresse, $code_postal, $
 	$bdd->exec ($query);
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
@@ -172,7 +172,7 @@ final public function modifier_ordre ($new_ordre) {
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
@@ -191,14 +191,14 @@ final public function modifier_ordre ($new_ordre) {
 
 	$bdd->beginTransaction();
 	
-	// Mise à jour des autres adresses
+	// Mise Ã  jour des autres adresses
 	$query = "UPDATE adresses
 						SET ordre = ordre ".$variation." 1
 						WHERE ref_contact = '".$this->ref_contact."' && 
 									ordre ".$symbole1." '".$this->ordre."' && ordre ".$symbole2." '".$new_ordre."' ";
 	$bdd->exec ($query);
 	
-	// Mise à jour de cette adresse
+	// Mise Ã  jour de cette adresse
 	$query = "UPDATE adresses
 						SET ordre = '".$new_ordre."'
 						WHERE ref_adresse = '".$this->ref_adresse."'  ";
@@ -209,7 +209,7 @@ final public function modifier_ordre ($new_ordre) {
 	$this->ordre = $new_ordre;
 
 	// *************************************************
-	// Résultat positif de la modification
+	// RÃ©sultat positif de la modification
 	return true;
 }
 
@@ -218,7 +218,7 @@ final public function suppression () {
 	global $bdd;
 
 	// *************************************************
-	// Controle à effectuer le cas échéant
+	// Controle Ã  effectuer le cas Ã©chÃ©ant
 
 	// *************************************************
 	// Suppression de l'adresse
@@ -255,7 +255,7 @@ static function getRef_adresse_from_ordre ($ref_contact, $ordre) {
 	return $adresse;
 }
 
-//retourne une liste des ref_adresse en fonction d'un plage d'ordre (mise à jour de l'affichage des adresses)
+//retourne une liste des ref_adresse en fonction d'un plage d'ordre (mise Ã  jour de l'affichage des adresses)
 public function liste_ref_adresse_in_ordre () {
 	global $bdd;
 	

@@ -2,10 +2,10 @@
 <?php
 
 // *************************************************************************************************************
-// Mise à jour du prix d'achat d'un article depuis la liste des articles avec PA non défini
+// Mise Ã  jour du prix d'achat d'un article depuis la liste des articles avec PA non dÃ©fini
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 

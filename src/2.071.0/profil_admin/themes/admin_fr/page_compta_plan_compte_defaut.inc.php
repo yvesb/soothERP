@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -21,14 +21,14 @@ check_page_variables ($page_variables);
 
 ?>
 <script type="text/javascript">
-tableau_smenu[0] = Array("smenu_comptabilite", "smenu_comptabilite.php" ,"true" ,"sub_content", "Comptabilité");
-tableau_smenu[1] = Array('compta_plan_compte_defaut','compta_plan_compte_defaut.php','true','sub_content', "Numéros de compte par défaut");
+tableau_smenu[0] = Array("smenu_comptabilite", "smenu_comptabilite.php" ,"true" ,"sub_content", "ComptabilitÃ©");
+tableau_smenu[1] = Array('compta_plan_compte_defaut','compta_plan_compte_defaut.php','true','sub_content', "NumÃ©ros de compte par dÃ©faut");
 update_menu_arbo();
 </script>
 <div class="emarge">
 
 <?php include $DIR.$_SESSION['theme']->getDir_theme()."page_compta_plan_recherche_mini.inc.php" ?>
-<p class="titre">Numéros de compte par défaut</p>
+<p class="titre">NumÃ©ros de compte par dÃ©faut</p>
 <div style="height:50px">
 <table class="minimizetable">
 <tr>
@@ -83,7 +83,7 @@ update_menu_arbo();
 		<td>&nbsp;</td>
 	</tr>
 	<tr>
-		<td>Compte de TVA collectée:</td>
+		<td>Compte de TVA collectÃ©e:</td>
 		<td style="text-align:center">
 		
 		<span id="aff_DEFAUT_COMPTE_TVA_VENTE" style="cursor:pointer; text-decoration:underline; padding-right:15px;" title="<?php $lcpt = new compta_plan_general($DEFAUT_COMPTE_TVA_VENTE); echo $lcpt->getLib_compte();;?>"><?php if ($DEFAUT_COMPTE_TVA_VENTE) { echo ($DEFAUT_COMPTE_TVA_VENTE);} else { echo "...";}?></span>
@@ -93,7 +93,7 @@ update_menu_arbo();
 		</script>
 		</td>
 		<td>&nbsp;</td>
-		<td>Compte de TVA décaissée:</td>
+		<td>Compte de TVA dÃ©caissÃ©e:</td>
 		<td style="text-align:center">
 		
 		<span id="aff_DEFAUT_COMPTE_TVA_ACHAT" style="cursor:pointer; text-decoration:underline; padding-right:15px;" title="<?php $lcpt = new compta_plan_general($DEFAUT_COMPTE_TVA_ACHAT); echo $lcpt->getLib_compte();;?>"><?php if ($DEFAUT_COMPTE_TVA_ACHAT) { echo ($DEFAUT_COMPTE_TVA_ACHAT);} else { echo "...";}?></span>

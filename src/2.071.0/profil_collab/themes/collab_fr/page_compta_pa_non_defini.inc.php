@@ -1,10 +1,10 @@
 <?php
 
 // *************************************************************************************************************
-// RECHERCHE DES ARTICLES DONT LE PRIX D'ACHAT N'EST PAS DÉFINI
+// RECHERCHE DES ARTICLES DONT LE PRIX D'ACHAT N'EST PAS DÃ‰FINI
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -25,7 +25,7 @@ foreach ($_ALERTES as $alerte => $value) {
 <script type="text/javascript" language="javascript">
 </script>
 <div class="emarge">
-<p class="titre">Prix d'achat non définis</p>
+<p class="titre">Prix d'achat non dÃ©finis</p>
 
 <div id="recherche" class="corps_moteur">
 <div id="recherche_simple" class="menu_link_affichage">
@@ -67,7 +67,7 @@ foreach ($_ALERTES as $alerte => $value) {
 			</select></td>
 			<td style="padding-left:35px">
 				<input type="checkbox" name="in_pa_zero_s" id="in_pa_zero_s" value="1" />
-				<span class="labelled_text">Prix d'achat à zéro </span>			</td>
+				<span class="labelled_text">Prix d'achat Ã  zÃ©ro </span>			</td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
@@ -130,7 +130,7 @@ foreach ($_ALERTES as $alerte => $value) {
 $('lib_article_s').focus();
 
 
-//remise à zero du formulaire
+//remise Ã  zero du formulaire
 Event.observe('annuler_recherche_s', "click", function(evt){Event.stop(evt); reset_moteur_s ('form_recherche_s', 'ref_art_categ_s');	});
 
 //lance la recherche
@@ -145,7 +145,7 @@ Event.observe('ref_constructeur_s', "click", function(evt){
 	}
 });
 
-//blocage du retour chariot automatique à la saisie du code barre
+//blocage du retour chariot automatique Ã  la saisie du code barre
 function stopifcode_barre (event) {
 
 	var key = event.which || event.keyCode; 

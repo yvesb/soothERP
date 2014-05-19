@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -138,7 +138,7 @@ check_page_variables ($page_variables);
 //observateur pour liste adresse contact
 pre_start_adresse_doc ("adresse_contact_choisie", "bt_adresse_contact_choisie", $("ref_contact").value, "adresse_contact", "ref_adr_contact", "choix_liste_choix_adresse_contact", "iframe_liste_choix_adresse_contact", "documents_liste_choix_adresse.php", $("ref_doc").value, "adresse_contact");
 
-// observateurde changement de texte dans les infos contact pour mise à jour des infos
+// observateurde changement de texte dans les infos contact pour mise Ã  jour des infos
 
 Event.observe("nom_contact", "blur", function(evt){
 		if ($("nom_contact").value != $("nom_contact_old").innerHTML) {
@@ -162,7 +162,7 @@ if ($document->getID_TYPE_DOC() == "1" || $document->getID_TYPE_DOC() == "2") {
 	pre_start_adresse_doc ("adresse_livraison_choisie", "bt_adresse_livraison_choisie", $("ref_contact").value, "adresse_livraison", "ref_adr_livraison", "choix_liste_choix_adresse_livraison", "iframe_liste_choix_adresse_livraison", "documents_liste_choix_adresse.php", $("ref_doc").value, "adresse_livraison");
 	
 
-// observateurde changement de textedans les infos contact pour mise à jour des infos
+// observateurde changement de textedans les infos contact pour mise Ã  jour des infos
 Event.observe("adresse_livraison", "blur", function(evt){
 		if ($("adresse_livraison").value != $("adresse_livraison_old").innerHTML) {
 			docu_maj_contact_infos ($("ref_doc").value, "adresse_livraison"); 
@@ -176,8 +176,8 @@ Event.observe("adresse_livraison", "blur", function(evt){
 
 
 <?php 
-//si on change de contact alors les infos sont retournées par $_infos
-// on met juste à jour l'app_tarifs par rapport au contact mis à jour
+//si on change de contact alors les infos sont retournÃ©es par $_infos
+// on met juste Ã  jour l'app_tarifs par rapport au contact mis Ã  jour
 if ($document->getApp_tarifs()) {
 	?>
 	$("app_tarifs").value				= "<?php echo htmlentities($document->getApp_tarifs());?>";

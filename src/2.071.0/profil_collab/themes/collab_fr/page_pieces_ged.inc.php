@@ -3,7 +3,7 @@
 // CHARGEMENTS DES PIECES JOINTES D'UN OBJET
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -67,7 +67,7 @@ check_page_variables ($page_variables);
 			Event.observe('supp_img_<?php echo $piece->id_piece;?>', "click", function(evt){
 				Event.stop(evt);
 				$("titre_alert").innerHTML = "Confirmation";
-				$("texte_alert").innerHTML = "Confirmer la suppression de la pièce jointe";
+				$("texte_alert").innerHTML = "Confirmer la suppression de la piÃ¨ce jointe";
 				$("bouton_alert").innerHTML = '<input type="submit" name="bouton1" id="bouton1" value="Supprimer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />';
 			
 				$("alert_pop_up_tab").style.display = "block";
@@ -142,7 +142,7 @@ check_page_variables ($page_variables);
 			Event.observe("btn_transfert", "click", function(evt){
 				Event.stop(evt);
 				$("titre_alert").innerHTML = "Liste des fichiers";
-				$("texte_alert").innerHTML = "Choisissez le fichier à joindre";
+				$("texte_alert").innerHTML = "Choisissez le fichier Ã  joindre";
 				$("texte_alert").innerHTML += "<form action='' name='form_btn'>";
 				<?php
 				foreach($fichiers_tmp as $fichier_tmp){ ?>

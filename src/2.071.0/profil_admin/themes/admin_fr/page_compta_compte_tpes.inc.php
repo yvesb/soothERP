@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -21,7 +21,7 @@ check_page_variables ($page_variables);
 
 ?>
 <script type="text/javascript">
-tableau_smenu[0] = Array("smenu_comptabilite", "smenu_comptabilite.php" ,"true" ,"sub_content", "Comptabilité");
+tableau_smenu[0] = Array("smenu_comptabilite", "smenu_comptabilite.php" ,"true" ,"sub_content", "ComptabilitÃ©");
 tableau_smenu[1] = Array('compte_tpes','compta_compte_tpes.php','true','sub_content', "Gestion des Terminaux de paiements &eacute;lectroniques");
 update_menu_arbo();
 </script>
@@ -33,11 +33,11 @@ Event.observe("link_close_pop_up_commission", "click",  function(evt){Event.stop
 	$("pop_up_commission").hide();
 }, false);
 </script>
-<span class="bolder">Règles de commissionnement de votre banque.</span><br />
+<span class="bolder">RÃ¨gles de commissionnement de votre banque.</span><br />
 <br />
-<span style="width:350px; float:left">	Commission forfaitaire par opération:	</span>
+<span style="width:350px; float:left">	Commission forfaitaire par opÃ©ration:	</span>
 <input name="com_ope_cal" id="com_ope_cal" type="text" value="0" size="4"   class="classinput_nsize"/><br />
-<span style="width:350px; float:left">Commission variable en % du montant de l'opération:	</span>
+<span style="width:350px; float:left">Commission variable en %Â du montant de l'opÃ©ration:	</span>
 <input name="com_var_cal" id="com_var_cal" type="text" value="0" size="4"   class="classinput_nsize"/><br /><br />
 
 
@@ -177,7 +177,7 @@ if (isset($id_magasin)) {
 						<td style="text-align:center">
 						<input name="com_ope" id="com_ope" type="hidden" value="0" />
 						<input name="com_var" id="com_var" type="hidden" value="0" />
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_calcul.gif" id="cal_com" style="cursor:pointer" title="Règles de commissionnement de votre banque."/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_calcul.gif" id="cal_com" style="cursor:pointer" title="RÃ¨gles de commissionnement de votre banque."/>
 						<script type="text/javascript">
 							Event.observe("cal_com", "click",  function(evt){
 								Event.stop(evt); 
@@ -230,7 +230,7 @@ if (isset($id_magasin)) {
 								Magasin: 
 								</td>
 								<td style="text-align:center">
-								Caisses associées: 
+								Caisses associÃ©es: 
 								</td>
 								<td style="text-align:center">
 								Commission: 
@@ -310,7 +310,7 @@ if (isset($id_magasin)) {
 								<td style="text-align:center">
 								<input name="com_ope_<?php echo $compte_tpes->id_compte_tpe;?>" id="com_ope_<?php echo $compte_tpes->id_compte_tpe;?>" type="hidden" value="<?php echo $compte_tpes->com_ope;?>" />
 								<input name="com_var_<?php echo $compte_tpes->id_compte_tpe;?>" id="com_var_<?php echo $compte_tpes->id_compte_tpe;?>" type="hidden" value="<?php echo $compte_tpes->com_var;?>" />
-								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_calcul.gif" id="cal_com_<?php echo $compte_tpes->id_compte_tpe;?>" style="cursor:pointer" title="Règles de commissionnement de votre banque."/>
+								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_calcul.gif" id="cal_com_<?php echo $compte_tpes->id_compte_tpe;?>" style="cursor:pointer" title="RÃ¨gles de commissionnement de votre banque."/>
 								<script type="text/javascript">
 									Event.observe("cal_com_<?php echo $compte_tpes->id_compte_tpe;?>", "click",  function(evt){
 										Event.stop(evt); 

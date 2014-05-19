@@ -3,7 +3,7 @@
 // FICHIER DE CONFIGURATION DES DEVIS FOURNISSEUR
 // *************************************************************************************************************
 
-$DUREE_AVANT_PURGE_ANNULE_DEF = 365;	// Délai avant la suppression des docs annulés
+$DUREE_AVANT_PURGE_ANNULE_DEF = 365;	// DÃ©lai avant la suppression des docs annulÃ©s
 
 
 $DEVIS_FOURNISSEUR_ID_TYPE_DOC = 5;

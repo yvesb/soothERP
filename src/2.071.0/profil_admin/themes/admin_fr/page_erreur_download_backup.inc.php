@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -51,7 +51,7 @@ update_menu_arbo();
 			<td style="text-align:left;" valign="top">
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="20px" /><br />
 				<br />
-				<span class="titre_smenu_page" id="smenu_maintenance_save_bdd"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Retour à la sauvegarde de la base de données</span><br />
+				<span class="titre_smenu_page" id="smenu_maintenance_save_bdd"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Retour Ã  la sauvegarde de la base de donnÃ©es</span><br />
 				<br />	
 			</td>
 			<td style="text-align:left;" valign="top">

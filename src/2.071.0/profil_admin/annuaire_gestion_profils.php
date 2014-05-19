@@ -8,7 +8,7 @@ require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
-// chargement de la liste complète des profils
+// chargement de la liste complÃ¨te des profils
 $profils_liste	= getAll_profils ();
 
 // *************************************************************************************************************

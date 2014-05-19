@@ -5,9 +5,9 @@
 
 
 final class import_annuaire_csv {
-	protected $id_profil; // profil à créer lors de l'import
+	protected $id_profil; // profil Ã  crÃ©er lors de l'import
 	protected $etape;			//etape en cours de l'import
-	protected $limite;		// limite des informations importée (1: fiches valides 2: fiches avertissements, 3: toutes les fiches
+	protected $limite;		// limite des informations importÃ©e (1: fiches valides 2: fiches avertissements, 3: toutes les fiches
 		
 
 function __construct() {
@@ -23,7 +23,7 @@ function __construct() {
 	return true;
 }
 
-//import des données en fiche contact
+//import des donnÃ©es en fiche contact
 function import_colonne($contenu, $id_profil) {
 	global $bdd;
 	global $DIR;
@@ -100,7 +100,7 @@ function import_colonne($contenu, $id_profil) {
 			$dao_csv_import_annu_ligne->write($ligne);	
 		}
 	}
-	//création de l'information sur l'étape et le profil à créer pour les contacts importés
+	//crÃ©ation de l'information sur l'Ã©tape et le profil Ã  crÃ©er pour les contacts importÃ©s
 	$query = "INSERT INTO csv_import_annu_etape	 (id_profil, etape, limite) VALUES (".num_or_null($id_profil).", 1, 1)
 						";
 	$bdd->exec ($query);
@@ -117,7 +117,7 @@ function import_colonne($contenu, $id_profil) {
 	 $GLOBALS['_INFOS']['count_erreur'] = $count_erreur;
 }
 
-//mise à jour de l'étape de l'import
+//mise Ã  jour de l'Ã©tape de l'import
 public function maj_etape($etape) {
 	global $bdd;
 	// maj dans la base
@@ -125,7 +125,7 @@ public function maj_etape($etape) {
 	$bdd->exec ($query);
 	return true;
 }
-//mise à jour de la limite d'import
+//mise Ã  jour de la limite d'import
 public function maj_limite($limite) {
 	global $bdd;
 	// maj dans la base
@@ -134,7 +134,7 @@ public function maj_limite($limite) {
 	return true;
 }
 
-//import des données en fiche contact
+//import des donnÃ©es en fiche contact
 function create($liste_ligne = array(), $filename) {
     $itest = 0;
     $jtest = 0;
@@ -191,7 +191,7 @@ function create($liste_ligne = array(), $filename) {
 		$id_colonne = $indexarraydao_csv_import_annu_ligne->__getId_colonne();
 		$id_valeur = $indexarraydao_csv_import_annu_ligne->__getValeurRenseignee();
 		if($id_colonne == $firstIdCols){
-			// nombre client(s) ajouté(s)
+			// nombre client(s) ajoutÃ©(s)
 			// initialisation
 			$infos_generales = array();
 			$infos_generales['adresses']	= array();
@@ -223,7 +223,7 @@ function create($liste_ligne = array(), $filename) {
 			$site_pass = '';
 			$site_note = '';
 			
-			// alimentation par défaut
+			// alimentation par dÃ©faut
 			$infos_generales['nom'] = '';
 			$infos_generales['id_civilite'] = $id_civilite;
 			$infos_generales['id_categorie'] = $id_categorie;
@@ -421,12 +421,12 @@ function create($liste_ligne = array(), $filename) {
 				$infos_profils[$CONSTRUCTEUR_ID_PROFIL]['conditions_garantie'] 			=  $conditions_garantie;
 			}
 			// *************************************************
-			// Création du contact
+			// CrÃ©ation du contact
 			if (isset($infos_generales['nom']) && trim($infos_generales['nom']) ) {
 				$email_doublon = 0;
 				$nom_doublon = 0;
 				//verification des doublon d'email et de nom
-				// si on tente d'importer quand même les avertissements
+				// si on tente d'importer quand mÃªme les avertissements
 				$libs = explode (" ", trim($infos_generales['nom']));
 				
 				$query_where 	= "";
@@ -456,7 +456,7 @@ function create($liste_ligne = array(), $filename) {
 				if ($fiche = $resultat->fetchObject()) { 
 						$nom_doublon = 1;
 				}
-				//on vérifie l'email car dans tout les cas on n'ecrassera pas un email déjà présent
+				//on vÃ©rifie l'email car dans tout les cas on n'ecrassera pas un email dÃ©jÃ  prÃ©sent
 				if (isset($email) && trim($email)) {
 					
 					$query_where 	= "";
@@ -705,7 +705,7 @@ public function readAll() {
 }
 
 // *******
-// répartition des lignes
+// rÃ©partition des lignes
 // *******
 
 

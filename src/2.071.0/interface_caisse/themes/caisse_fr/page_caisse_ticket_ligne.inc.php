@@ -3,7 +3,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -35,7 +35,7 @@ $doc_line['visible']
 
 
 ?>
-<!-- Cette page est destiné a être appelé dans un TR d'une table -->
+<!-- Cette page est destinÃ© a Ãªtre appelÃ© dans un TR d'une table -->
 <td>
 	<!-- LIB COURT -->
 	<span><?php echo $id_ligne;?> - <?php echo $article->getDesc_courte(); ?></span>

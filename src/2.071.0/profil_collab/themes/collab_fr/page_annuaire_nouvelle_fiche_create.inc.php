@@ -5,7 +5,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nÈcessaires ‡ l'affichage
+// Variables n√©cessaires √† l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -42,7 +42,7 @@ var texte_erreur = "";
 if (count($_ALERTES)>0) {
 }
 foreach ($_ALERTES as $alerte => $value) {
-	if ($alerte=="CrÈation_contact") {
+	if ($alerte=="Cr√©ation_contact") {
 
 	}
 	
@@ -98,7 +98,7 @@ for ($i = 0; $i <= $_REQUEST['compte_info']; $i++) {
 		if (email) {
 			window.parent.document.getElementById("coordonnee_email<?php echo $i?>").className="alerteform_lsize";
 			window.parent.document.getElementById("coordonnee_email<?php echo $i?>").focus();
-		texte_erreur += "Cette adresse email est dÈj‡ utilisÈe par <br/> <a href='index.php#annuaire_view_fiche.php?ref_contact=<?php if (isset( $_ALERTES["email_used"])) { echo $_ALERTES["email_used"][0];}?>' target='_blank'><?php if (isset( $_ALERTES["email_used"])) {  echo str_replace("\n", " ",$_ALERTES["email_used"][1]);}?></a>";
+		texte_erreur += "Cette adresse email est d√©j√† utilis√©e par <br/> <a href='index.php#annuaire_view_fiche.php?ref_contact=<?php if (isset( $_ALERTES["email_used"])) { echo $_ALERTES["email_used"][0];}?>' target='_blank'><?php if (isset( $_ALERTES["email_used"])) {  echo str_replace("\n", " ",$_ALERTES["email_used"][1]);}?></a>";
 		} else {
 			window.parent.document.getElementById("coordonnee_email<?php echo $i?>").className="classinput_lsize";
 		}
@@ -166,11 +166,11 @@ window.parent.alerte.alerte_erreur ('Erreur de saisie', texte_erreur,'<input typ
 else
 {
 <?php 
-if (isset ($_INFOS['CrÈation_contact']) ) {
+if (isset ($_INFOS['Cr√©ation_contact']) ) {
 	?>
 	window.parent.changed = false;
 	if (window.parent.return_to_page == "") {
-		window.parent.page.verify('annuaire_affiche_fiche','annuaire_view_fiche.php?ref_contact=<?php echo $_INFOS['CrÈation_contact']?>','true','sub_content');
+		window.parent.page.verify('annuaire_affiche_fiche','annuaire_view_fiche.php?ref_contact=<?php echo $_INFOS['Cr√©ation_contact']?>','true','sub_content');
 	} else {
 		if (window.parent.return_to_page.indexOf("ref_doc") == 0)  {
 		window.parent.page.verify('document_nouveau_blf','documents_edition.php?'+window.parent.return_to_page,'true','sub_content');

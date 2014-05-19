@@ -5,7 +5,7 @@
 define('FPDF_FONTPATH', $RESSOURCE_DIR."FPDF_fonts/");
 require_once ($RESSOURCE_DIR."fpdf.php");
 
-// La classe FPDF doit etre définie en "abstract" afin de l'adapter à PHP5
+// La classe FPDF doit etre dÃ©finie en "abstract" afin de l'adapter Ã  PHP5
 // Doc sur http://www.fpdf.org/
 
 
@@ -20,7 +20,7 @@ class PDF_etendu extends FPDF {
 
 function __construct ($orientation= 'P', $unit = 'mm', $format = 'A4') {
 	// $orientation 		P = Portrait / L = Paysage
-	// $unit						Unité de mesure (pt,mm/cm/in)
+	// $unit						UnitÃ© de mesure (pt,mm/cm/in)
 	// $format					Format de la page: A4, A5, A3
 
 	parent::FPDF($orientation, $unit, $format);
@@ -30,15 +30,15 @@ function __construct ($orientation= 'P', $unit = 'mm', $format = 'A4') {
 	$nom_entreprise = str_replace (CHR(13), " " ,str_replace (CHR(10), " " , $contact_entreprise->getNom()));
 
 	$this->SetAuthor	($nom_entreprise);
-	$this->SetCreator	("SoothERP (un fork de Lundi Matin Business®)");
+	$this->SetCreator	("SoothERP (un fork de Lundi Matin BusinessÂ®)");
 	$this->SetDisplayMode ("real", "single");
 	$this->SetAutoPageBreak(0, 1);
 
-	// Valeurs par défaut
+	// Valeurs par dÃ©faut
 	if (!isset($GLOBALS['PDF_OPTIONS']['HideToolbar'])) { $GLOBALS['PDF_OPTIONS']['HideToolbar'] = 1; }
 	if (!isset($GLOBALS['PDF_OPTIONS']['AutoPrint'])) 	{ $GLOBALS['PDF_OPTIONS']['AutoPrint'] = 0; 	}
 
-	// Préférences et options
+	// PrÃ©fÃ©rences et options
 	if ($GLOBALS['PDF_OPTIONS']['HideToolbar']) {
 		$this->DisplayPreferences ("HideToolbar");
 	}
@@ -55,18 +55,18 @@ function __construct ($orientation= 'P', $unit = 'mm', $format = 'A4') {
 
 function Code39($xpos, $ypos, $code, $baseline=0.5, $height=5) {
 /* 
-	Ce script implémente les codes-barres Code 39. 
-	Ce type de code-barres peut encoder les chaînes composées des caractères suivants : 
-	- chiffres (0 à 9), 
-	- lettres majuscules (A à Z)
-	- 8 autres caractères (- . espace $ / + % *).
+	Ce script implÃ©mente les codes-barres Code 39. 
+	Ce type de code-barres peut encoder les chaÃ®nes composÃ©es des caractÃ¨res suivants : 
+	- chiffres (0 Ã  9), 
+	- lettres majuscules (A Ã  Z)
+	- 8 autres caractÃ¨res (- . espace $ / + % *).
 
 	Code39(float xpos, float ypos, string code [, float baseline [, float height]])
 	xpos : abscisse du code-barres
-	ypos : ordonnée du code-barres
+	ypos : ordonnÃ©e du code-barres
 	code : valeur du code-barres
-	baseline : correspond à la largeur d'une barre épaisse (valeur par défaut : 0.5)
-	height : hauteur des barres (valeur par défaut : 5) 
+	baseline : correspond Ã  la largeur d'une barre Ã©paisse (valeur par dÃ©faut : 0.5)
+	height : hauteur des barres (valeur par dÃ©faut : 5) 
 */
 
     $wide = $baseline;
@@ -153,12 +153,12 @@ function RoundedRect($x, $y, $w, $h, $r, $style = '', $angle = '1234')
 {
 /*
 	Ce script permet de tracer un rectangle avec certains bords arrondis (tous ou au choix). 
-	Les paramètres sont :
-		x, y : coin supérieur gauche du rectangle.
+	Les paramÃ¨tres sont :
+		x, y : coin supÃ©rieur gauche du rectangle.
 		w, h : largeur et hauteur.
 		r : rayon des coins arrondis.
-		style : D: contour (draw), F : remplissage (fill) => F, D (défaut), FD ou DF.
-		angle : numéro du ou des angles à arrondir : 1, 2, 3, 4 ou toutes combinaisons 
+		style : D: contour (draw), F : remplissage (fill) => F, D (dÃ©faut), FD ou DF.
+		angle : numÃ©ro du ou des angles Ã  arrondir : 1, 2, 3, 4 ou toutes combinaisons 
 						(1=haut gauche, 2=haut droite, 3=bas droite, 4=bas gauche). 
 */
         $k = $this->k;
@@ -222,14 +222,14 @@ function RoundedRect($x, $y, $w, $h, $r, $style = '', $angle = '1234')
 // GESTION DES PREFERENCES D'AFFICHAGE
 
 /* 	DisplayPreferences(string preferences)
-		Les options disponibles sont les suivantes (sensibles à la casse) :
-			FullScreen : affiche le document en plein écran (escape pour revenir en mode normal) 
+		Les options disponibles sont les suivantes (sensibles Ã  la casse) :
+			FullScreen : affiche le document en plein Ã©cran (escape pour revenir en mode normal) 
 			HideMenubar : masque la barre de menu 
 			HideToolbar : masque les barres d'outils 
-			HideWindowUI : masque tous les éléments de la fenêtre (barres de défilement, contrôles de navigation, signets...) 
+			HideWindowUI : masque tous les Ã©lÃ©ments de la fenÃªtre (barres de dÃ©filement, contrÃ´les de navigation, signets...) 
 			DisplayDocTitle : affiche le titre du document au lieu du nom du fichier (pas d'effet dans le plug-in) 
-			CenterWindow : centre la fenêtre (pas d'effet dans le plug-in) 
-			FitWindow : ajuste la taille de la fenêtre (lorsqu'elle n'est pas maximisée) sur celle de la page (pas d'effet dans le plug-in)*/
+			CenterWindow : centre la fenÃªtre (pas d'effet dans le plug-in) 
+			FitWindow : ajuste la taille de la fenÃªtre (lorsqu'elle n'est pas maximisÃ©e) sur celle de la page (pas d'effet dans le plug-in)*/
 
 protected $DisplayPreferences = '';
 
@@ -240,12 +240,12 @@ function DisplayPreferences ($preferences) {
 function _putcatalog() {
 	parent::_putcatalog();
 
-	// Partie nécessaire pour la gestion du Javascript
+	// Partie nÃ©cessaire pour la gestion du Javascript
 	if (isset($this->javascript)) {
 		$this->_out('/Names <</JavaScript '.($this->n_js).' 0 R>>');
 	}
 
-	// Partie nécessaire pour la gestion des préférences
+	// Partie nÃ©cessaire pour la gestion des prÃ©fÃ©rences
 	if(is_int(strpos($this->DisplayPreferences,'FullScreen')))
 		$this->_out('/PageMode /FullScreen');
 
@@ -307,7 +307,7 @@ function _putresources() {
 // Impression automatique
 function AutoPrint($dialog=false)
 {
-    // Lance la boîte d'impression ou imprime immediatement sur l'imprimante par défaut
+    // Lance la boÃ®te d'impression ou imprime immediatement sur l'imprimante par dÃ©faut
     $param=($dialog ? 'true' : 'false');
     $script="print($param);";
     $this->IncludeJS($script);
@@ -315,7 +315,7 @@ function AutoPrint($dialog=false)
 
 function AutoPrintToPrinter($server, $printer, $dialog=false)
 {
-    //Imprime sur une imprimante partagée (requiert Acrobat 6 ou supérieur)
+    //Imprime sur une imprimante partagÃ©e (requiert Acrobat 6 ou supÃ©rieur)
     $script = "var pp = getPrintParams();";
     if($dialog)
         $script .= "pp.interactive = pp.constants.interactionLevel.full;";
@@ -329,7 +329,7 @@ function AutoPrintToPrinter($server, $printer, $dialog=false)
 // *************************************************************************************************************
 // EXEMPLE PERMETTANT L'IMPRESSION AUTOMATIQUE APRES OUVERTURE
 /*
-Cet exemple montre comment démarrer l'impression à l'ouverture du document. Il est possible d'afficher la boîte de dialogue (en passant true à la méthode AutoPrint()), ou bien d'imprimer directement avec les paramètres par défaut (avec false).
+Cet exemple montre comment dÃ©marrer l'impression Ã  l'ouverture du document. Il est possible d'afficher la boÃ®te de dialogue (en passant true Ã  la mÃ©thode AutoPrint()), ou bien d'imprimer directement avec les paramÃ¨tres par dÃ©faut (avec false).
 
 <?php
 define('FPDF_FONTPATH','font/');
@@ -339,7 +339,7 @@ class PDF_AutoPrint extends PDF_Javascript
 {
 function AutoPrint($dialog=false)
 {
-    //Lance la boîte d'impression ou imprime immediatement sur l'imprimante par défaut
+    //Lance la boÃ®te d'impression ou imprime immediatement sur l'imprimante par dÃ©faut
     $param=($dialog ? 'true' : 'false');
     $script="print($param);";
     $this->IncludeJS($script);
@@ -347,7 +347,7 @@ function AutoPrint($dialog=false)
 
 function AutoPrintToPrinter($server, $printer, $dialog=false)
 {
-    //Imprime sur une imprimante partagée (requiert Acrobat 6 ou supérieur)
+    //Imprime sur une imprimante partagÃ©e (requiert Acrobat 6 ou supÃ©rieur)
     $script = "var pp = getPrintParams();";
     if($dialog)
         $script .= "pp.interactive = pp.constants.interactionLevel.full;";
@@ -364,7 +364,7 @@ $pdf->Open();
 $pdf->AddPage();
 $pdf->SetFont('Arial','',20);
 $pdf->Text(80, 50, 'Imprimez-moi !');
-//Ouvre la boîte d'impression
+//Ouvre la boÃ®te d'impression
 $pdf->AutoPrint(true);
 $pdf->Output();
 ?>  
@@ -373,12 +373,12 @@ $pdf->Output();
 
 
 // ************************************************************************************************************************
-// ******** Fonctions relatives à l'ajout d'un document au PDF
+// ******** Fonctions relatives Ã  l'ajout d'un document au PDF
 // ************************************************************************************************************************
 function add_doc ($ref_doc, $document = "") {
 	global $PDF_MODELES_DIR;
 
-	// On vérifie la présence du document en tant qu'objet sinon on le charge
+	// On vÃ©rifie la prÃ©sence du document en tant qu'objet sinon on le charge
 	if (!$document) {	$document = open_doc($ref_doc); }
 	if (!is_object($document)) { return false; }
 
@@ -451,7 +451,7 @@ function add_courrier ($id_courrier, $courrier = "") {
 }
 
 //@param ref_stock tableau d'id stock
-//$id_stocks contient la liste des id des stocks à imprimer séparé par une virgule
+//$id_stocks contient la liste des id des stocks Ã  imprimer sÃ©parÃ© par une virgule
 function add_stock($infos) {
 	global $PDF_MODELES_DIR;
 

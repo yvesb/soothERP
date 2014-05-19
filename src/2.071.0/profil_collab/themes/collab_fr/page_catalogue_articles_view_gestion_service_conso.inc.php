@@ -4,7 +4,7 @@
 // CONSOMMATION D'UN ARTICLE 
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -32,7 +32,7 @@ check_page_variables ($page_variables);
 			<input type="hidden" name="modele" id="modele" value="<?php echo $art_categs->getModele()?>" />
 			<table style="width:100%" cellspacing="4">
 				<tr>
-					<td style="width:55%; font-weight:bolder; border-bottom:1px solid #FFFFFF; line-height:36px;" >Durée de validité: </td>
+					<td style="width:55%; font-weight:bolder; border-bottom:1px solid #FFFFFF; line-height:36px;" >DurÃ©e de validitÃ©: </td>
 					<td style="width:45%">
 						<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
 						<tr>
@@ -47,7 +47,7 @@ check_page_variables ($page_variables);
 					</td>
 				</tr>
 				<tr>
-					<td style="width:55%; font-weight:bolder; border-bottom:1px solid #FFFFFF; line-height:36px;" >Nombre de crédits de départ: </td>
+					<td style="width:55%; font-weight:bolder; border-bottom:1px solid #FFFFFF; line-height:36px;" >Nombre de crÃ©dits de dÃ©part: </td>
 					<td style="width:45%">
 						<input type="text" name="nb_credits" id="nb_credits" value="<?php echo round($article->getNb_credits(),2);?>" size="3"  class="classinput_nsize"/>
 					</td>
@@ -70,7 +70,7 @@ check_page_variables ($page_variables);
 		<td class="art_new_info" style="padding:10px">
 		<table style="width:100%" cellspacing="4">
 				<tr>
-					<td  style=" font-weight:bolder; border-bottom:1px solid #FFFFFF; line-height:36px;" >Informations sur les abonnés </td>
+					<td  style=" font-weight:bolder; border-bottom:1px solid #FFFFFF; line-height:36px;" >Informations sur les abonnÃ©s </td>
 				</tr>
 				<tr>
 					<td style="font-weight:bolder; border-bottom:1px solid #FFFFFF; line-height:36px;" >
@@ -92,7 +92,7 @@ check_page_variables ($page_variables);
 					<td style="font-weight:bolder; border-bottom:1px solid #FFFFFF; line-height:36px;" >
 						<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
 						<tr>
-						<td style="line-height:36px;font-weight:bolder; width:60%">Clients en compte (expiré)
+						<td style="line-height:36px;font-weight:bolder; width:60%">Clients en compte (expirÃ©)
 						</td>
 						<td style="line-height:36px;font-weight:bolder; width:20%">
 						<?php echo $article->compte_service_conso_nb_abonnes_expire();?>
@@ -109,7 +109,7 @@ check_page_variables ($page_variables);
 					<td style="font-weight:bolder; border-bottom:1px solid #FFFFFF; line-height:36px;" >
 						<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
 						<tr>
-						<td style="line-height:36px;font-weight:bolder; width:60%">Crédits vides
+						<td style="line-height:36px;font-weight:bolder; width:60%">CrÃ©dits vides
 						</td>
 						<td style="line-height:36px;font-weight:bolder; width:20%">
 						<?php echo round($article->compte_service_conso_vide(),2);?>
@@ -126,7 +126,7 @@ check_page_variables ($page_variables);
 					<td style="font-weight:bolder; border-bottom:1px solid #FFFFFF; line-height:36px;" >
 						<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
 						<tr>
-						<td style="line-height:36px;font-weight:bolder; width:60%">Crédits à consommer
+						<td style="line-height:36px;font-weight:bolder; width:60%">CrÃ©dits Ã  consommer
 						</td>
 						<td style="line-height:36px;font-weight:bolder; width:20%">
 						<?php echo round($article->compte_service_conso_a_consommer(),2);?>
@@ -328,7 +328,7 @@ check_page_variables ($page_variables);
  Event.observe("nb_credits", "blur", function(evt){nummask(evt,"1", "X");
  }, false);
 
-//fonction de validation de l'étape 3
+//fonction de validation de l'Ã©tape 3
 function valide_etape_3() {
 		submitform ("article_view_3"); 
 }

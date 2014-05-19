@@ -16,10 +16,10 @@ if (isset($_REQUEST["ref_doc"])) {
 	$ref_doc= $_REQUEST["ref_doc"];
 	$document = open_doc ($ref_doc);
 	$id_type_doc = $document->getID_TYPE_DOC ();
-	//permission (6) Accès Consulter les prix d’achat
+	//permission (6) AccÃ¨s Consulter les prix dâ€™achat
 	if (!$_SESSION['user']->check_permission ("5") && ($id_type_doc == $FACTURE_FOURNISSEUR_ID_TYPE_DOC || $id_type_doc == $FACTURE_CLIENT_ID_TYPE_DOC)) {
 		//on indique l'interdiction et on stop le script
-		echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits d'accés ne vous permettent pas de visualiser ce type de document</span>";
+		echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits d'accÃ©s ne vous permettent pas de visualiser ce type de document</span>";
 		exit();
 	}
 	

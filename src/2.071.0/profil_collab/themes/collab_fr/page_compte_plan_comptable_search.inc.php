@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -19,7 +19,7 @@ check_page_variables ($page_variables);
 ?>
 
 
-<div style="font-weight:bolder; border-bottom:1px solid #000000;">Modification du numéro de compte </div>
+<div style="font-weight:bolder; border-bottom:1px solid #000000;">Modification du numÃ©ro de compte </div>
 <div>
 <div>
 	<table style="width:97%">
@@ -77,7 +77,7 @@ check_page_variables ($page_variables);
 			<td></td>
 			<td colspan="2">
 			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_recherche.gif" id="search_compte_fav" style="cursor:pointer; float:right"/>
-			<strong>Recherche à partir de la liste de Favoris</strong>
+			<strong>Recherche Ã  partir de la liste de Favoris</strong>
 			<script type="text/javascript">
 			Event.observe("search_compte_fav", "click",  function(evt){
 				Event.stop(evt);
@@ -95,7 +95,7 @@ check_page_variables ($page_variables);
 		</tr>
 		<tr>
 			<td>					</td>
-			<td>Sélectionnez un résultat et validez:			</td>
+			<td>SÃ©lectionnez un rÃ©sultat et validez:			</td>
 			<td>					</td>
 		</tr>
 		<tr>
@@ -139,7 +139,7 @@ check_page_variables ($page_variables);
 					<?php if (isset($_REQUEST["retour_value_id"])) { ?>
 					if ($("retour_value").value == "") {
 						$("<?php echo $_REQUEST["retour_value_id"];?>").innerHTML = "<?php if(isset($_REQUEST["num_compte"])) {echo $_REQUEST["num_compte"];} else {echo "...";}?>";
-						$("<?php echo $_REQUEST["retour_lib_id"];?>").innerHTML = "Sélectionnez un n° de compte";
+						$("<?php echo $_REQUEST["retour_lib_id"];?>").innerHTML = "SÃ©lectionnez un nÂ° de compte";
 					} else {
 						$("<?php echo $_REQUEST["retour_value_id"];?>").innerHTML = $("retour_value").value;
 						$("<?php echo $_REQUEST["retour_lib_id"];?>").innerHTML = $("retour_lib").value;

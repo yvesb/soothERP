@@ -13,13 +13,13 @@ require ($DIR."_session.inc.php");
 
 
 	if (!isset($_REQUEST['ref_article'])) {
-		echo "La référence de l'article n'est pas précisée";
+		echo "La rÃ©fÃ©rence de l'article n'est pas prÃ©cisÃ©e";
 		exit;
 	}
 
 	$article = new article ($_REQUEST['ref_article']);
 	if (!$article->getRef_article()) {
-		echo "La référence de l'article est inconnue";		exit;
+		echo "La rÃ©fÃ©rence de l'article est inconnue";		exit;
 
 	}
 	
@@ -29,7 +29,7 @@ $tarifs_liste = get_tarifs_listes_formules ($article->getRef_art_categ ());
 
 
 
-//appel de des infos de la categ pour liste des caracteristiques de la catégorie	
+//appel de des infos de la categ pour liste des caracteristiques de la catÃ©gorie	
 $art_categs = new art_categ ($article->getRef_art_categ ());
 
 

@@ -1,10 +1,10 @@
 <?php
 
 // *************************************************************************************************************
-// Remise en banque depuis la caisse (ou dépot bancaire depuis la caisse)
+// Remise en banque depuis la caisse (ou dÃ©pot bancaire depuis la caisse)
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -74,8 +74,8 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 			</tr>
 			<tr>
 				<td colspan="3" class="chemin_texte_choisi" style="width:14%" id="chemin_etape_0_3">Banque</td>
-				<td colspan="3" class="chemin_texte_gris" style="width:14%" id="chemin_etape_1_3">Espèces</td>
-				<td colspan="3" class="chemin_texte_gris" style="width:14%; display:none" id="chemin_etape_2_3">Chèques</td>
+				<td colspan="3" class="chemin_texte_gris" style="width:14%" id="chemin_etape_1_3">EspÃ¨ces</td>
+				<td colspan="3" class="chemin_texte_gris" style="width:14%; display:none" id="chemin_etape_2_3">ChÃ¨ques</td>
 				<td colspan="3" class="chemin_texte_gris" style="width:14%" id="chemin_etape_3_3">Validation</td>
 				<td style="width:2%"></td>
 				</tr>
@@ -154,7 +154,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 				<tr>
 					<td align="right" style="width:85px;">&nbsp;</td>
 					<td style="width:10px">&nbsp;</td>
-					<td align="center" style="font-weight:bolder; width:85px;">Qté</td>
+					<td align="center" style="font-weight:bolder; width:85px;">QtÃ©</td>
 					<td style="width:10px">&nbsp;</td>
 					<td align="right" style="font-weight:bolder; width:160px;">Total</td>
 					<td>&nbsp;</td>
@@ -206,7 +206,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 				<tr>
 					<td align="right" colspan="4" style="font-weight:bolder; ">
 					<div style="height:25px; line-height:25px; " class="controle_color_toto">
-					Montant déposé: 
+					Montant dÃ©posÃ©: 
 					</div>
 					</td>
 					<td align="right" class="controle_color_toto"><span id="TT_ESP" style=" height:25px; line-height:25px;">0.00</span> <?php echo "&nbsp;".$MONNAIE[1];?></td>
@@ -280,7 +280,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 			<td colspan="2">
 			<br />
 				<div>
-					<span style="width:120px; float:left">Solde Théorique</span>
+					<span style="width:120px; float:left">Solde ThÃ©orique</span>
 					<span style="width:40px; float:left ">&gt;&gt;&gt;</span> 
 					<span id="toto_chq_theorique2" style="text-align:right; width:65px; float:left">
 					<?php
@@ -298,7 +298,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 					if (isset($count_chq_theoriques)) {
 						echo count($count_chq_theoriques);
 					} 
-					?> chèque(s))</span>
+					?> chÃ¨que(s))</span>
 				</div>
 	
 			
@@ -316,13 +316,13 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 				</td>
 				<td style="width:75px; text-align:center">Montant
 				</td>
-				<td style="width:75px; text-align:center">Numéro de chèque
+				<td style="width:75px; text-align:center">NumÃ©ro de chÃ¨que
 				</td>
 				<td style="width:75px; text-align:center">Banque
 				</td>
 				<td style="width:75px; text-align:center">Porteur
 				</td>
-				<td style="width:75px; text-align:center">Echéance
+				<td style="width:75px; text-align:center">EchÃ©ance
 				</td>
 				</tr>
 			</table>
@@ -456,7 +456,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 			
 		}
 		?>
-		<div style="text-align:right; cursor:pointer; width:205px; " id="add_line_chq">Ajouter un chèque</div>
+		<div style="text-align:right; cursor:pointer; width:205px; " id="add_line_chq">Ajouter un chÃ¨que</div>
 		
 			<script type="text/javascript">
 				Event.observe($("add_line_chq"), "click", function(evt){
@@ -518,13 +518,13 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 			<span style="width:250px; float:left">
 			Type de remise:</span>
 			<select id="type_remise" name="type_remise">
-				<option value="ESP">Espèces</option>
-				<option value="CHQ">Chèques</option>
+				<option value="ESP">EspÃ¨ces</option>
+				<option value="CHQ">ChÃ¨ques</option>
 			</select>
 			
 			<br /><br />
 			<span style="width:250px; float:left">
-			Numéro de remise:</span>
+			NumÃ©ro de remise:</span>
 			<input type="text" class="classinput_nsize" value="" id="num_remise" name="num_remise" />
 			<br /><br />
 					
@@ -572,7 +572,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 			
 			</div>
 			<br />
-			Remise en banque : <?php echo htmlentities($compte_caisse->getLib_caisse()); ?>  à destination de <span id="selected_bancaire_dest">
+			Remise en banqueÂ : <?php echo htmlentities($compte_caisse->getLib_caisse()); ?> Â Ã  destination de <span id="selected_bancaire_dest">
 			</span>
 			<br />
 			<br />
@@ -635,7 +635,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 				</tr>
 				<tr>
 					<td height="35" valign="middle" class="line_compta_bottom_rigth">
-					<div style="width:135px; height:35px; line-height:35px;">Solde déposé</div>		</td>
+					<div style="width:135px; height:35px; line-height:35px;">Solde dÃ©posÃ©</div>		</td>
 					<td height="35" width="40%" align="right" valign="middle" class="line_compta_bottom">
 					<div style="width:75px; height:35px; line-height:35px;" id="line3_esp">
 					<span id="toto_esp_saisie"></span><?php echo "&nbsp;". $MONNAIE[1];?>		</div>

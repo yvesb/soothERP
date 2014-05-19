@@ -19,16 +19,16 @@ function __construct($id_code_promo = "") {
 
 	if ($id_code_promo) {
 
-		// Sélection des informations générales
+		// SÃ©lection des informations gÃ©nÃ©rales
 		$query = "SELECT id_code_promo, ref_article, code, pourcentage, actif
 							FROM codes_promo 
 							WHERE id_code_promo = '".$id_code_promo."'";
 		$resultat = $bdd->query ($query);
 	
-		// Controle si la id_art_modele est trouvée
+		// Controle si la id_art_modele est trouvÃ©e
 		if ($code_promo = $resultat->fetchObject()) { 
 	
-			// Attribution des informations à l'objet
+			// Attribution des informations Ã  l'objet
 			$this->id_code_promo 				= $id_code_promo;
 			$this->ref_article					= $code_promo->ref_article;
 			$this->article						= new article($this->ref_article);
@@ -58,17 +58,17 @@ function create($lib_code_promo, $code, $pourcentage) {
 	}
 	
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 
-	//verification d'un art_categ définie par défaut pour le code promo
+	//verification d'un art_categ dÃ©finie par dÃ©faut pour le code promo
 	if (!$CODE_PROMO_ART_CATEG) {
 		$CODE_PROMO_ART_CATEG = $this->check_art_categ_code_promo_exist ();
 	}
 	
-	//création de l'article
+	//crÃ©ation de l'article
 	$stocks_alertes = array();
 	$code_barre = array();
 	$infos_generales['modele']	=	"service";
@@ -107,7 +107,7 @@ function create($lib_code_promo, $code, $pourcentage) {
 	$this->article->create($infos_generales, $infos_modele, $caracs, $formules_tarifs, $composants, $liaisons);
 	$this->article->maj_article_modele_spe ($MODELE_SPE_CODE_PROMO);
 	
-	//création du code promo
+	//crÃ©ation du code promo
 	$query = "INSERT INTO codes_promo (ref_article, code, pourcentage )
 						VALUES ('".$this->article->getRef_article()."', '".addslashes($code)."', '".$pourcentage."') ";
 	$bdd->exec ($query);
@@ -135,17 +135,17 @@ function modifier($lib_code_promo, $code, $pourcentage, $actif) {
 		$GLOBALS['_ALERTES']['code_vide'] = 1;
 	}
 	// *************************************************
-	// Si les valeurs reçues sont incorrectes
+	// Si les valeurs reÃ§ues sont incorrectes
 	if (count($GLOBALS['_ALERTES'])) {
 		return false;
 	}
 	
-	//verification d'un art_categ définie par défaut pour le code promo
+	//verification d'un art_categ dÃ©finie par dÃ©faut pour le code promo
 	if (!$CODE_PROMO_ART_CATEG) {
 		$CODE_PROMO_ART_CATEG = $this->check_art_categ_code_promo_exist ();
 	}
 	
-	//mise à jour de l'article associé
+	//mise Ã  jour de l'article associÃ©
 	$infos_generales = array();
 	$infos_generales['lib_article'] 			= trim($lib_code_promo);
 	$infos_generales['lib_ticket']				= "";
@@ -197,9 +197,9 @@ function check_art_categ_code_promo_exist () {
 						WHERE id_modele_spe = '".$CODE_PROMO_ART_CATEG."' ";
 	$resultat = $bdd->query ($query);
 	
-	// Controle si la ref_art_categ est trouvée
+	// Controle si la ref_art_categ est trouvÃ©e
 	if (!$art_categ = $resultat->fetchObject()) { 
-		//on cré alors la ref_art_categ
+		//on crÃ© alors la ref_art_categ
 		
 		$lib_art_categ				= "Codes promo";
 		$modele 							= "service";
@@ -210,13 +210,13 @@ function check_art_categ_code_promo_exist () {
 		$duree_dispo 					= 0;
 		
 		// *************************************************
-		// Création de la catégorie
+		// CrÃ©ation de la catÃ©gorie
 		$art_categ = new art_categ ();
 		$art_categ->create ($lib_art_categ, $desc_art_categ, $ref_art_categ_parent, $modele, $defaut_id_tva_art, $duree_dispo);
 		$art_categ->maj_art_categ_modele_spe ($MODELE_SPE_CODE_PROMO);
 		
 		$CODE_PROMO_ART_CATEG = $art_categ->getRef_art_categ();
-		//mise à jour de la vairable systeme
+		//mise Ã  jour de la vairable systeme
 		maj_configuration_file ("config_systeme.inc.php", "maj_line", "\$CODE_PROMO_ART_CATEG =", "\$CODE_PROMO_ART_CATEG = \"".$art_categ->getRef_art_categ()."\";", $DIR."config/");
 	}
 		
@@ -282,13 +282,13 @@ public static function &charger_codes_promo () {
 	global $bdd;
 
 	$liste_codes_promo = array();
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT id_code_promo
 						FROM codes_promo 
 						 ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si la id_art_modele est trouvée
+	// Controle si la id_art_modele est trouvÃ©e
 	while ($code_promo = $resultat->fetchObject()) { 
 		$liste_codes_promo[] = new code_promo($code_promo->id_code_promo);
 	}

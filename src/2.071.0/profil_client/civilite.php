@@ -23,7 +23,7 @@ function print_plain() {
 function get_civil($cat) {
 	global $bdd;
 	$row = get_civilites ($cat);
-	// on boucle sur tous les éléments
+	// on boucle sur tous les Ã©lÃ©ments
 	foreach ($row as $civ) {
     $result[] = $civ->id_civilite."=".$civ->lib_civ_court;
   }

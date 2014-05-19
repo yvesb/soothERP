@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// AFFICHAGE DES Résultats commerciaux(partie document pdf)
+// AFFICHAGE DES RÃ©sultats commerciaux(partie document pdf)
 // *************************************************************************************************************
 
 $MUST_BE_LOGIN = 1;
@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 
 
 $form['page_to_show'] = $search['page_to_show'] = 1;
@@ -53,7 +53,7 @@ if(isset($_REQUEST['com']))
 $affichage=$_REQUEST['com'];
 else $bool_affichage=true;
 
-// on retire les commerciaux non sélectionné en checkbox
+// on retire les commerciaux non sÃ©lectionnÃ© en checkbox
 $i=0;
 if(!$bool_affichage)
 foreach($liste_commerciaux as $commercial){
@@ -80,7 +80,7 @@ foreach ($liste_commerciaux as $commercial) {
 		$query_where .=  " d.date_creation_doc <= '".date_Fr_to_Us($search['date_fin'])." 23:59:59' "; 
 	}
 	// *************************************************
-	// Résultat de la recherche
+	// RÃ©sultat de la recherche
 	$commercial->ca = 0;
 	$commercial->mg = 0;
 	$commercial->comm = 0;
@@ -88,7 +88,7 @@ foreach ($liste_commerciaux as $commercial) {
 	$commercial->docs = array();
 	switch ($doc_fom_comm) {
 		case "CDC": 
-				// Préparation de la requete
+				// PrÃ©paration de la requete
 				// Recherche des documents
 				$queryd = "SELECT dvc.ref_doc , dvc.part, d.date_creation_doc, d.ref_contact, a.nom
 									FROM doc_ventes_commerciaux  dvc
@@ -132,7 +132,7 @@ foreach ($liste_commerciaux as $commercial) {
 				}
 		break;
 		case "FAC": 
-				// Préparation de la requete
+				// PrÃ©paration de la requete
 				// Recherche des documents
 				$queryd = "SELECT dvc.ref_doc , dvc.part, d.date_creation_doc, d.ref_contact, a.nom
 									FROM doc_ventes_commerciaux  dvc
@@ -181,7 +181,7 @@ foreach ($liste_commerciaux as $commercial) {
 
 		break;
 		case "RGM": 
-				// Préparation de la requete
+				// PrÃ©paration de la requete
 				// Recherche des documents
 				$queryd = "SELECT dvc.ref_doc , dvc.part, d.date_creation_doc, d.ref_contact, a.nom
 									FROM doc_ventes_commerciaux  dvc
@@ -257,7 +257,7 @@ if (!isset($_REQUEST["code_pdf_modele"])) {
 	include_once ($PDF_MODELES_DIR.$code_pdf_modele.".class.php");
 	$class = "pdf_".$code_pdf_modele;
 	$pdf = new $class;
-		// Création
+		// CrÃ©ation
 	$pdf->create_pdf($infos, $liste_commerciaux);
 	
 	// Sortie
@@ -272,7 +272,7 @@ if (!isset($_REQUEST["code_pdf_modele"])) {
 	$class = "pdf_".$code_pdf_modele;
 	$pdf = new $class;
 	
-		// Création
+		// CrÃ©ation
 	$pdf->create_pdf($infos, $liste_commerciaux);
 	
 	// Sortie

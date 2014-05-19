@@ -4,7 +4,7 @@
 // VISUALISATION D'UN ARTICLE onglet info_generales
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -158,7 +158,7 @@ check_page_variables ($page_variables);
           <td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
         </tr>
         <tr>
-          <td class="labelled_bold" >Mots clés : </td>
+          <td class="labelled_bold" >Mots clÃ©s : </td>
           <td>&nbsp;</td>
         </tr>
         <tr>
@@ -274,7 +274,7 @@ check_page_variables ($page_variables);
 if ($article->getVariante() == 1 && is_object($article_master)) {
 	?><br />
 
-	<div class="link_to_master" id="goto_master" style="width:95%">Accéder à l'article parent à l'origine de cette variante</div>
+	<div class="link_to_master" id="goto_master" style="width:95%">AccÃ©der Ã  l'article parent Ã  l'origine de cette variante</div>
 	<script type="text/javascript">
 	Event.observe('goto_master', "click", function(evt){
 		page.verify("catalogue_articles_view",'index.php#'+escape('catalogue_articles_view.php?ref_article=<?php echo $article_master->getRef_article ();?>'), "true", "_blank");
@@ -725,7 +725,7 @@ Event.observe('tab_tarifs_ttc', "click", function(evt){
 });
 
 
-//fonction de validation de l'étape 2
+//fonction de validation de l'Ã©tape 2
 function valide_etape_2() {
 		submitform ("article_view_2"); 
 }

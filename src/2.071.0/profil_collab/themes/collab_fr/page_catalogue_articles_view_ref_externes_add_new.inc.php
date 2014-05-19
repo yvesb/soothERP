@@ -1,4 +1,4 @@
-<span style="font-weight:bolder">Ajout d'un fournisseur. (gestion des références fournisseurs)</span><br />
+<span style="font-weight:bolder">Ajout d'un fournisseur. (gestion des rÃ©fÃ©rences fournisseurs)</span><br />
 
 <form action="catalogue_articles_view_ref_externes_add_new_valid.php" target="formFrame" method="post" name="catalogue_articles_view_ref_externes_add_new_valid" id="catalogue_articles_view_ref_externes_add_new_valid">
 <input type="hidden" name="ref_article" value="<?php echo $article->getRef_article ();?>" />
@@ -8,8 +8,8 @@
 	</tr>
 	<tr>
 		<td style="width:20%" class="composant_titre_lib">Fournisseur</td>
-		<td style="width:20%" class="composant_titre_lib">Réf fournisseur</td>
-		<td style="width:20%" class="composant_titre_lib">Libellé</td>
+		<td style="width:20%" class="composant_titre_lib">RÃ©f fournisseur</td>
+		<td style="width:20%" class="composant_titre_lib">LibellÃ©</td>
 		<td style="width:20%" class="composant_titre_lib">Prix&nbsp;d'achat&nbsp;HT</td>
 		<td style="width:20%" class="composant_titre_lib">Date</td>
 	</tr>
@@ -49,7 +49,7 @@
 			<input name="lib_article_externe" id="lib_article_externe" type="text" value="" class="classinput_xsize" />
 		</td>
 		<td style="" class="composant_titre_lib">
-		<span  <?php //permission (6) Accès Consulter les prix d’achat
+		<span  <?php //permission (6) AccÃ¨s Consulter les prix dâ€™achat
 if (!$_SESSION['user']->check_permission ("6")) {?>style="display:none;"<?php } ?> >
 			<input name="pa_unitaire" id="pa_unitaire" type="text" value="0" class="classinput_xsize" />
 			</span>

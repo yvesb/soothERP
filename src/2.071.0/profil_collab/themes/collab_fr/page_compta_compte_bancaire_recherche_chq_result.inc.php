@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES", "fiches", "form['page_to_show']", "form['fiches_par_page']", "nb_fiches");
 check_page_variables ($page_variables);
 
@@ -14,7 +14,7 @@ check_page_variables ($page_variables);
 
 <div  class="mt_size_optimise">
 <div style="border-bottom:1px solid #000000; font-weight:bolder">
-Résultat de la recherche
+RÃ©sultat de la recherche
 </div><br />
 
 <?php 
@@ -29,7 +29,7 @@ if (count($fiches)) {
 			
 		</td>
 		<td style="width:15%; font-weight:bolder;">
-		Numéro
+		NumÃ©ro
 			
 		</td>
 		<td style="width:20%; font-weight:bolder;">
@@ -42,7 +42,7 @@ if (count($fiches)) {
 		Montant
 		</td>
 		<td style="width:15%; text-align:center; font-weight:bolder;">
-		Remise n°
+		Remise nÂ°
 		</td>
 		<td style="text-align:right;">
 		</td>
@@ -149,7 +149,7 @@ if (count($fiches)) {
 <?php 
 } else { 
 	?>
-	Aucun chèque correspondant trouvé dans les remises en banques<br /><br />
+	Aucun chÃ¨que correspondant trouvÃ© dans les remises en banques<br /><br />
 	<?php 
 	if (count($fiches2)) {
 		?>
@@ -166,7 +166,7 @@ Recherche dans les contenus de caisses
 				
 			</td>
 			<td style="width:15%; font-weight:bolder;">
-			Numéro
+			NumÃ©ro
 				
 			</td>
 			<td style="width:20%; font-weight:bolder;">
@@ -286,7 +286,7 @@ Recherche dans les contenus de caisses
 	<?php 
 	} else {
 		?>
-		Aucun résultat approchant dans les contenus de caisses.
+		Aucun rÃ©sultat approchant dans les contenus de caisses.
 		<?php 
 	}
 } 

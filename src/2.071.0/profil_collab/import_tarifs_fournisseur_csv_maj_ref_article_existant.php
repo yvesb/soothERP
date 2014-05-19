@@ -8,7 +8,7 @@ require ($DIR."_session.inc.php");
 
 $ref_article_existant = "";
 
-// On met à jour la référence (de l'article à importer) en base
+// On met Ã  jour la rÃ©fÃ©rence (de l'article Ã  importer) en base
 if(isset($_POST['ref_article_existant']) && isset($_POST['id_ligne'])){
 	$ref_article_existant = $_POST['ref_article_existant'];
 	$id_ligne = $_POST['id_ligne'];
@@ -23,11 +23,11 @@ if(isset($_POST['ref_article_existant']) && isset($_POST['id_ligne'])){
 		$donnee->setValeur($ref_article_existant);
 		$donnee->update($donnee->getId(), $donnee->getValeur());
 	}else{
-		$GLOBALS['ALERTES']['erreur'] = "Problème de récupération de la colonne";
+		$GLOBALS['ALERTES']['erreur'] = "ProblÃ¨me de rÃ©cupÃ©ration de la colonne";
 	}
 	unset($query, $resultat, $tmp, $query2);
 }else{
-	$GLOBALS['ALERTES']['erreur'] = "Problème de récupération des données";
+	$GLOBALS['ALERTES']['erreur'] = "ProblÃ¨me de rÃ©cupÃ©ration des donnÃ©es";
 }
 
 // *************************************************************************************************************

@@ -1,6 +1,6 @@
 <?php
 // *************************************************************************************************************
-// Remise bancaire depuis la caisse (ou dépot bancaire depuis la caisse)
+// Remise bancaire depuis la caisse (ou dÃ©pot bancaire depuis la caisse)
 // *************************************************************************************************************
 
 

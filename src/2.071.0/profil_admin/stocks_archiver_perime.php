@@ -12,7 +12,7 @@ require ($DIR."_session.inc.php");
 
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 
 

@@ -13,10 +13,10 @@ if (isset($_REQUEST['ref_contact'])) {
 	// *************************************************
 	// modification de l'ordre d'un utilisateur
 
-	//on récupére fonction de l'ordre et et de la ref_contact le premier ref_user
+	//on rÃ©cupÃ©re fonction de l'ordre et et de la ref_contact le premier ref_user
 	$ref_user	= utilisateur::getRef_user_from_ordre ($_REQUEST['ref_contact'], $_REQUEST['ordre_other']);
 	
-	//on récupére fonction de l'ordre et et de la ref_contact le deuxieme ref_user
+	//on rÃ©cupÃ©re fonction de l'ordre et et de la ref_contact le deuxieme ref_user
 	$ref_user_other = utilisateur::getRef_user_from_ordre ($_REQUEST['ref_contact'], $_REQUEST['ordre']);
 
 

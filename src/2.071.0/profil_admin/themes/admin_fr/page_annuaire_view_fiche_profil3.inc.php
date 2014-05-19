@@ -53,9 +53,9 @@
 			</td>
 			<td>
 				<select  id="collab_id_pays"  name="collab_id_pays" class="classinput_xsize">
-						<option value="" >non défini</option>
+						<option value="" >non dÃ©fini</option>
 					<?php
-					$pays_collab = "non défini";
+					$pays_collab = "non dÃ©fini";
 					$separe_listepays = 0;
 					foreach ($listepays as $payslist){
 						if ((!$separe_listepays) && (!$payslist->affichage)) { 
@@ -242,7 +242,7 @@
 				?>
 					</div>
 				<div id="avertissement_droits" style="display:none; width:312px;">
-					<center><b><font color="#FF0000">Attention ! Réinitialisez les droits des utilisateurs si necessaire</font></b></center>
+					<center><b><font color="#FF0000">Attention ! RÃ©initialisez les droits des utilisateurs si necessaire</font></b></center>
 				</div>
 				<div id="maj_droits" style="display:block; width:312px;">
 				<br>

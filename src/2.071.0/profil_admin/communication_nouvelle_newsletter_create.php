@@ -24,7 +24,7 @@ $infos['mail_retour_newsletter'] 								= $_REQUEST["mail_retour_newsletter"];
 $infos['mail_inscription_titre_newsletter'] 		= $_REQUEST["mail_inscription_titre_newsletter"];
 $infos['mail_inscription_corps_newsletter'] 		= $_REQUEST["mail_inscription_corps_newsletter"];
 
-//création de la newsletter
+//crÃ©ation de la newsletter
 $newsletter->create_newsletter ($infos);
 
 $id_newsletter = $newsletter->getId_newsletter();

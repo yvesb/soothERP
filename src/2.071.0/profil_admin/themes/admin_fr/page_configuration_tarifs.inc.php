@@ -4,7 +4,7 @@
 // CONFIG DES DONNEES tarifs
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 global $TAXE_IN_PU;
@@ -21,12 +21,12 @@ global $TAXE_IN_PU;
 ?>
 <script type="text/javascript">
 tableau_smenu[0] = Array("smenu_catalogue", "smenu_catalogue.php" ,"true" ,"sub_content", "Catalogue");
-tableau_smenu[1] = Array('configuration_tarifs','configuration_tarifs.php' ,"true" ,"sub_content", "Paramètres tarifaires");
+tableau_smenu[1] = Array('configuration_tarifs','configuration_tarifs.php' ,"true" ,"sub_content", "ParamÃ¨tres tarifaires");
 update_menu_arbo();
 </script>
 <?php include $DIR.$_SESSION['theme']->getDir_theme()."page_catalogue_liste_tarifs_assistant.inc.php" ?>
 <div class="emarge">
-<p class="titre">Paramètres tarifaires </p>
+<p class="titre">ParamÃ¨tres tarifaires </p>
 
 <div class="contactview_corps">
 <form action="configuration_tarifs_maj.php" enctype="multipart/form-data" method="POST"  id="configuration_tarifs_maj" name="configuration_tarifs_maj" target="formFrame" >
@@ -44,7 +44,7 @@ update_menu_arbo();
 		<td colspan="3"> </td>
 	</tr>
 	<tr>
-		<td class="lib_config">Quel prix d'achat doit être pris en compte pour le calcul de la Valeur d'Achat Actuelle ?</td>
+		<td class="lib_config">Quel prix d'achat doit Ãªtre pris en compte pour le calcul de la Valeur d'Achat ActuelleÂ ?</td>
 		<td>
 		<select id="CALCUL_VAA" name="CALCUL_VAA" class="classinput_xsize">
 		<?php 
@@ -63,7 +63,7 @@ update_menu_arbo();
 		<td colspan="3"> </td>
 	</tr>
 	<tr>
-		<td class="lib_config">Quelle est la durée maximale de validité d'un prix d'achat fournisseur ?</td>
+		<td class="lib_config">Quelle est la durÃ©e maximale de validitÃ© d'un prix d'achat fournisseurÂ ?</td>
 		<td>
 
 				<select name="DUREE_VALIDITE_PAF_an" id="DUREE_VALIDITE_PAF_an"  class="classinput_nsize">
@@ -110,7 +110,7 @@ update_menu_arbo();
 		<td colspan="3"> </td>
 	</tr>
 	<tr>
-		<td class="lib_config">Quel prix d'achat doit être pris en compte pour le calcul de la Valeur d'Achat Stockée ?</td>
+		<td class="lib_config">Quel prix d'achat doit Ãªtre pris en compte pour le calcul de la Valeur d'Achat StockÃ©eÂ ?</td>
 		<td>
 
 		<select id="CALCUL_VAS" name="CALCUL_VAS" class="classinput_xsize">
@@ -129,7 +129,7 @@ update_menu_arbo();
 		<td colspan="3"> </td>
 	</tr>
 	<tr>
-		<td class="lib_config">Quand mettre à jour les prix de vente ?</td>
+		<td class="lib_config">Quand mettre Ã  jour les prix de venteÂ ?</td>
 		<td>
 
 		<select id="MAJ_PV" name="MAJ_PV" class="classinput_xsize">
@@ -167,7 +167,7 @@ update_menu_arbo();
 		<td colspan="3"> </td>
 	</tr>
 	<tr>
-		<td class="lib_config">Indiquez la devise utilisée </td>
+		<td class="lib_config">Indiquez la devise utilisÃ©e </td>
 		<td>
 		<select id="devise" name="devise">
 		<?php 
@@ -201,7 +201,7 @@ update_menu_arbo();
 		<td class="lib_config">Utilisation des cotations client </td>
 		<td>
 		<input id="use_cotations" name="use_cotations" value="1" type="checkbox" <?php if ($USE_COTATIONS) { ?>checked="checked"<?php } ?> />		</td>
-		<td class="infos_config">permet d'utiliser les cotations pour calculer le prix des articles pour un client donné </td>
+		<td class="infos_config">permet d'utiliser les cotations pour calculer le prix des articles pour un client donnÃ© </td>
 	</tr>
 	<tr>
 		<td colspan="3"> </td>
@@ -251,10 +251,10 @@ update_menu_arbo();
 		<td colspan="3"> </td>
 	</tr>
 	<tr>
-		<td class="lib_config">Nombre de décimales affichées</td>
+		<td class="lib_config">Nombre de dÃ©cimales affichÃ©es</td>
 		<td>
 		<input id="tarifs_nb_decimales" name="tarifs_nb_decimales" value="<?php echo  $TARIFS_NB_DECIMALES; ?>" type="text" class="classinput_hsize" maxlength="70" />		</td>
-		<td class="infos_config">D&eacute;finit le nombre de décimales affichées pour les tarifs </td>
+		<td class="infos_config">D&eacute;finit le nombre de dÃ©cimales affichÃ©es pour les tarifs </td>
 	</tr>
 	<tr>
 		<td colspan="3"> </td>

@@ -5,7 +5,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -38,7 +38,7 @@ var texte_erreur = "";
 if (count($_ALERTES)>0) {
 }
 foreach ($_ALERTES as $alerte => $value) {
-	if ($alerte=="Création_art_categ") {
+	if ($alerte=="CrÃ©ation_art_categ") {
 
 	}
 	if ($alerte=="lib_vide") {
@@ -54,7 +54,7 @@ if (erreur) {
 	if (lib_vide) {
 		window.parent.document.getElementById("lib_art_categ").className="alerteform_xsize";
 		window.parent.document.getElementById("lib_art_categ").focus();
-		texte_erreur += "Veuillez indiquer un libellé à la catégorie.<br />";
+		texte_erreur += "Veuillez indiquer un libellÃ© Ã  la catÃ©gorie.<br />";
 	}else {
 		window.parent.document.getElementById("lib_art_categ").className="classinput_xsize";
 	}
@@ -63,10 +63,10 @@ if (erreur) {
 else
 {
 <?php 
-if (isset ($_INFOS['Création_art_categ']) ) {?>
+if (isset ($_INFOS['CrÃ©ation_art_categ']) ) {?>
 window.parent.changed = false;
 window.parent.page.verify('art_categs_list', 'catalogue_categorie_inc_list_cat.php', 'true', 'list_art_categs');
-window.parent.page.verify('art_categs_mod', 'catalogue_categorie_inc_mod.php?ref_art_categs=<?php echo $_INFOS['Création_art_categ']?>', 'true', 'content_art_categs');
+window.parent.page.verify('art_categs_mod', 'catalogue_categorie_inc_mod.php?ref_art_categs=<?php echo $_INFOS['CrÃ©ation_art_categ']?>', 'true', 'content_art_categs');
 <?php }?>
 }
 </script>

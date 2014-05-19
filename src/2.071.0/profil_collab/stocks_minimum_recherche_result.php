@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 
 // *************************************************
-// Données pour le formulaire && la requete
+// DonnÃ©es pour le formulaire && la requete
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -53,7 +53,7 @@ if ($_REQUEST['aff_pa']) {
 
 
 // *************************************************
-// Stock affichés
+// Stock affichÃ©s
 $form['id_stock'] = array();
 if (isset($_REQUEST['id_stock'])) {
 	$form['id_stock'] = explode(",", $_REQUEST['id_stock']);
@@ -63,17 +63,17 @@ if (isset($_REQUEST['id_stock'])) {
 
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_select = "";
 	$query_join 	= "";
 	$query_where 	= " dispo = 1 && a.lot !='2' && a.modele = 'materiel' ";
 	$query_group	= "";
 	$query_limit	= (($search['page_to_show']-1)*$search['fiches_par_page']).", ".$search['fiches_par_page'];
 
-	// Catégorie
+	// CatÃ©gorie
 	if ($search['ref_art_categ']) { 
 		$query_where 	.= " && a.ref_art_categ = '".$search['ref_art_categ']."'";
 	}
@@ -81,7 +81,7 @@ if (isset($_REQUEST['recherche'])) {
 	if ($search['ref_constructeur']) { 
 		$query_where 	.= " && a.ref_constructeur = '".$search['ref_constructeur']."'";
 	}
-	// Nouveauté
+	// NouveautÃ©
 	if ($search['aff_pa']) {
 		$query_select 	.= ",  a.prix_achat_ht ";
 	}
@@ -112,7 +112,7 @@ if (isset($_REQUEST['recherche'])) {
 	$resultat = $bdd->query($query);
 	while ($fiche = $resultat->fetchObject()) {
 	
-		// Sélection des stocks disponibles
+		// SÃ©lection des stocks disponibles
 		$where_stock = "";
 		if ($search['id_stock'] && $search['id_stock'][0] != "") {
 			$where_stock .= " && (";
@@ -134,7 +134,7 @@ if (isset($_REQUEST['recherche'])) {
 	}
 	unset ($fiche, $resultat, $query);
 
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 	$query = "SELECT COUNT(a.ref_article) nb_fiches
 						FROM articles a 
 							".$count_query_join."

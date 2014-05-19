@@ -12,13 +12,13 @@ require ($DIR."_session.inc.php");
 
 
 if (!isset($_REQUEST['ref_article'])) {
-	echo "La référence de l'article n'est pas précisée";
+	echo "La rÃ©fÃ©rence de l'article n'est pas prÃ©cisÃ©e";
 	exit;
 }
 
 $article = new article ($_REQUEST['ref_article']);
 if (!$article->getRef_article()) {
-	echo "La référence de l'article est inconnue";
+	echo "La rÃ©fÃ©rence de l'article est inconnue";
 	exit;
 }
 
@@ -29,7 +29,7 @@ if (!$article->getRef_article()) {
 
 $ANNUAIRE_CATEGORIES	=	get_categories();
 // *************************************************
-// Profils à afficher
+// Profils Ã  afficher
 $profils = array();
 foreach ($_SESSION['profils'] as $profil) {
 	if ($profil->getActif() == 0) { continue; }
@@ -39,7 +39,7 @@ unset ($profil);
 
 
 // *************************************************
-// Données pour le formulaire et la recherche
+// DonnÃ©es pour le formulaire et la recherche
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -145,10 +145,10 @@ if (isset($_REQUEST['ref_article'])) {
 }
 
 // *************************************************
-// Résultat de la recherche
+// RÃ©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche']) ) {
-	// Préparation de la requete
+	// PrÃ©paration de la requete
 	$query_select 	= "";
 	$query_join 	= "";
 	$query_join_count 	= "";
@@ -161,7 +161,7 @@ if (isset($_REQUEST['recherche']) ) {
 		$query_where	.= " aa.ref_article = '".($search['ref_article'])."'";
 	}
 		
-	//catégorie de clients
+	//catÃ©gorie de clients
 	if ($search['id_client_categ']) {
 		if ($query_where) { $query_where .= " && "; }
 		$query_join 	.= " LEFT JOIN annu_client ac ON a.ref_contact = ac.ref_contact  ";
@@ -200,15 +200,15 @@ if (isset($_REQUEST['recherche']) ) {
 	// etat abonnement :
 	// 0 : TOUS
 	// 1 : Abonnements en cours
-	// 2 : Abonnements échus, à renouveller
-	// 3 : Abonnements terminés
+	// 2 : Abonnements Ã©chus, Ã  renouveller
+	// 3 : Abonnements terminÃ©s
 	if ($search['etat_abo']) {
 		if ($query_where) { $query_where .= " && "; }
 		// 1 : Abonnements en cours
 		if ($search['etat_abo'] == 1) { $query_where	.= " aa.date_echeance > NOW() ";}
-		// 2 : Abonnements échus, à renouveller
+		// 2 : Abonnements Ã©chus, Ã  renouveller
 		if ($search['etat_abo'] == 2) { $query_where	.= " (aa.fin_abonnement > NOW() || aa.fin_abonnement = '0000-00-00 00:00:00') && aa.date_echeance < NOW()  ";}
-		// 3 : Abonnements terminés
+		// 3 : Abonnements terminÃ©s
 		if ($search['etat_abo'] == 3) { $query_where	.= " aa.fin_abonnement < NOW() && aa.fin_abonnement != '0000-00-00 00:00:00'";}
 	}
 	
@@ -273,7 +273,7 @@ if (isset($_REQUEST['recherche']) ) {
 	//echo nl2br ($query);
 	unset ($fiche, $resultat, $query);
 
-	// Comptage des résultats
+	// Comptage des rÃ©sultats
 	$query = "SELECT aa.id_abo
 						FROM articles_abonnes aa 
 						LEFT JOIN annuaire a ON a.ref_contact = aa.ref_contact 

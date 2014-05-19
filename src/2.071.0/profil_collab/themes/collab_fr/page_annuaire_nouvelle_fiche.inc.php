@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES", "ANNUAIRE_CATEGORIES", "DEFAUT_ID_PAYS", "listepays", "civilites");
 check_page_variables ($page_variables);
 
@@ -88,7 +88,7 @@ id_index_contentcoord=0;
 					</tr>
 					<tr id="line_siret" style="display:none">
 						<td>
-							<span class="labelled_ralonger" title="Numéro de Siret">Siret:</span>
+							<span class="labelled_ralonger" title="NumÃ©ro de Siret">Siret:</span>
 						</td>
 						<td>
 						<input type="text" id="siret" name="siret" rows="2"  class="classinput_xsize"/>
@@ -96,7 +96,7 @@ id_index_contentcoord=0;
 					</tr>
 					<tr id="line_tva_intra" style="display:none">
 						<td>
-							<span class="labelled_ralonger" title="Numéro de TVA intracommunautaire">TVA intra.:</span>
+							<span class="labelled_ralonger" title="NumÃ©ro de TVA intracommunautaire">TVA intra.:</span>
 						</td>
 						<td>
 						<input type="text" id="tva_intra" name="tva_intra" rows="2"  class="classinput_xsize"/>

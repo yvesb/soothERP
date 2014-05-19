@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -64,7 +64,7 @@ check_page_variables ($page_variables);
 										<br />
 										
 										<div class="sous_titre1">
-											Identité
+											IdentitÃ©
 										</div>
 										
 										<table class="minimizetable">
@@ -79,8 +79,8 @@ check_page_variables ($page_variables);
 												<td>
 													<select id="id_categorie" name="id_categorie" class="classinput_xsize">
 														<option value="1" selected="selected">Particulier</option>
-														<!-- Modification éffectuée par Yves Bourvon -->
-														<!-- catégorie "Société" remplacée par "Entreprise" pour cohérence juridique, table annuaire_catégories de BDD modifiée également dans le même commit -->
+														<!-- Modification Ã©ffectuÃ©e par Yves Bourvon -->
+														<!-- catÃ©gorie "SociÃ©tÃ©" remplacÃ©e par "Entreprise" pour cohÃ©rence juridique, table annuaire_catÃ©gories de BDD modifiÃ©e Ã©galement dans le mÃªme commit -->
 														<option value="2">Entreprise</option> 
 														<!-- Fin de modification -->
 														<option value="3">Administration</option>
@@ -127,7 +127,7 @@ check_page_variables ($page_variables);
 											</tr>
 											<tr id="line_siret" style="display:none">
 												<td>
-													<span class="labelled_court" title="Numéro de Siret">Siret:</span>
+													<span class="labelled_court" title="NumÃ©ro de Siret">Siret:</span>
 												</td>
 												<td>
 												<input type="text" id="siret" name="siret" maxlength="20" value="" class="classinput_xsize"/>
@@ -135,7 +135,7 @@ check_page_variables ($page_variables);
 											</tr>
 											<tr id="line_tva_intra" style="display:none">
 												<td>
-													<span class="labelled_court" title="Numéro de T.V.A. intracommunautaire">T.V.A. intra:</span>
+													<span class="labelled_court" title="NumÃ©ro de T.V.A. intracommunautaire">T.V.A. intra:</span>
 												</td>
 												<td>
 												<input type="text" id="tva_intra" name="tva_intra" maxlength="20" value="" class="classinput_xsize"/>
@@ -299,7 +299,7 @@ check_page_variables ($page_variables);
 											</table>
 											
 											<span id="adresse_livraison_identique" style="display:">
-												Adresse de facturation identique à l'adresse de livraison <input id="same_adresse_livraison" name="same_adresse_livraison" type="checkbox" value="1" />
+												Adresse de facturation identique Ã  l'adresse de livraison <input id="same_adresse_livraison" name="same_adresse_livraison" type="checkbox" value="1" />
 											</span>
 											<br />
 									
@@ -393,7 +393,7 @@ check_page_variables ($page_variables);
 										<br />
 										
 										<div class="sous_titre1">
-											Coordonnées
+											CoordonnÃ©es
 										</div>
 										
 										<table class="minimizetable">

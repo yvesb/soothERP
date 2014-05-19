@@ -4,7 +4,7 @@
 // AFFICHAGE DU CHOIX DES TERMINAUX DE PAIEMENT ELECTRONIQUE et VIRTUELS
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -15,7 +15,7 @@ check_page_variables ($page_variables);
 ?>
 <div class="emarge"><br />
 
-    <div class="titre" id="titre_crea_art" style="width:60%; padding-left:140px">Gestion des traites acceptées
+    <div class="titre" id="titre_crea_art" style="width:60%; padding-left:140px">Gestion des traites acceptÃ©es
     </div>
     <div class="emarge" style="text-align:right" >
         <div>
@@ -35,9 +35,9 @@ check_page_variables ($page_variables);
                             <table width="100%" border="0" cellspacing="4" cellpadding="2">
                                 <tr>
                                     <td style="width:25%; font-weight:bolder; text-align:left">Compte bancaire</td>
-                                    <td style="width:20%; font-weight:bolder; text-align:right; padding-right:25px">Montant à prélever</td>
-                                    <td style="width:20%; font-weight:bolder; text-align:center">Dernière traite</td>
-                                    <td style="font-weight:bolder; text-align:center" colspan="3">Accès Direct</td>
+                                    <td style="width:20%; font-weight:bolder; text-align:right; padding-right:25px">Montant Ã  prÃ©lever</td>
+                                    <td style="width:20%; font-weight:bolder; text-align:center">DerniÃ¨re traite</td>
+                                    <td style="font-weight:bolder; text-align:center" colspan="3">AccÃ¨s Direct</td>
                                 </tr>
                                 <?php
                                 $solde_total = 0;

@@ -6,7 +6,7 @@
 $Montant_ht = $Montant_ttc = 0;
 
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("Montant_ht", "Montant_ttc", "liste_contenu");
 check_page_variables ($page_variables);
 

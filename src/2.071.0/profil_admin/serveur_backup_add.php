@@ -14,6 +14,6 @@ $rc = createBackup();
 ?>
 
 <script type="text/javascript">
-  alerte.alerte_erreur ('Création de Backup', '<?php echo $rc; ?>','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+  alerte.alerte_erreur ('CrÃ©ation de Backup', '<?php echo $rc; ?>','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
   page.verify('serveur_backup','serveur_backup.php','true','sub_content');
 </script>

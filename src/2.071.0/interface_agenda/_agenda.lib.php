@@ -118,8 +118,8 @@ function &getEvents($Udate_deb = 0, $Udate_fin = 0, $duree_all_day = null){
 }
 */
 
-//retourne la liste des événements compris entre $Udate_deb et $Udate_fin et qui se déroulent
-//à partir d'une HEURE et pour une DUREE données.
+//retourne la liste des Ã©vÃ©nements compris entre $Udate_deb et $Udate_fin et qui se dÃ©roulent
+//Ã  partir d'une HEURE et pour une DUREE donnÃ©es.
 //$Udate_fin et $Udate_fin sont des Timestamp
 function &getEvents_atomiques($Udate_deb = 0, $Udate_fin = 0){
 	$events = array();
@@ -145,8 +145,8 @@ function &getEvents_atomiques($Udate_deb = 0, $Udate_fin = 0){
 	return $events;
 }
 
-//Retourne une liste d'événements
-//	Chaque événements répond l'une des clauses suivantes 
+//Retourne une liste d'Ã©vÃ©nements
+//	Chaque Ã©vÃ©nements rÃ©pond l'une des clauses suivantes 
 // 				ev.ref_agenda_event_parent = ''
 //	&&		ev.date_agenda_event + ev.duree_agenda_event * 60 > $Udate_deb
 //	&&		ev.date_agenda_event < $Udate_fin
@@ -175,7 +175,7 @@ function &getEvents_etendus($Udate_deb, $Udate_fin){
 }
 
 
-//Met à jour la référence(pointer) de l'agenda de chaque Event
+//Met Ã  jour la rÃ©fÃ©rence(pointer) de l'agenda de chaque Event
 function maj_ref_agenda_events(&$Tagenda, &$Tevents){
 	if($Tagenda == null || $Tevents == null)return false;
 	

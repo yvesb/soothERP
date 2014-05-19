@@ -4,7 +4,7 @@
 // AFFICHAGE DES FACTURES CLIENTS NON REGLEES
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("factures");
 check_page_variables ($page_variables);
 
@@ -27,19 +27,19 @@ array_menu_scc[0] 	=	new Array('scc_liste_content', 'menu_0');
 array_menu_scc[1] 	=	new Array('scc_liste_content', 'menu_1');
 </script>
 <div id="main_doc_div" style="" class="emarge">
-<a  href="#" id="link_retour_contact" style="float:right" class="common_link">retour à la fiche du contact</a><br />
+<a  href="#" id="link_retour_contact" style="float:right" class="common_link">retour Ã  la fiche du contact</a><br />
 </span>
 <script type="text/javascript">
 Event.observe("link_retour_contact", "click",  function(evt){Event.stop(evt); page.verify('annuaire_view_fiche','annuaire_view_fiche.php?ref_contact=<?php echo $contact->getRef_contact();?>','true','sub_content');}, false);
 </script>
-<p class="titre">Synthèse des créances de <?php echo htmlentities($contact->getNom())?></p>
+<p class="titre">SynthÃ¨se des crÃ©ances de <?php echo htmlentities($contact->getNom())?></p>
 
 <ul id="menu_recherche" class="menu">
 	<li id="doc_menu_0">
-		<a href="#" id="menu_0" class="menu_select">Factures non réglées</a>
+		<a href="#" id="menu_0" class="menu_select">Factures non rÃ©glÃ©es</a>
 	</li>
 	<li id="doc_menu_1">
-		<a href="#" id="menu_1" class="menu_unselect">Bon de livraison non facturés</a>
+		<a href="#" id="menu_1" class="menu_unselect">Bon de livraison non facturÃ©s</a>
 	</li>
 </ul>
 

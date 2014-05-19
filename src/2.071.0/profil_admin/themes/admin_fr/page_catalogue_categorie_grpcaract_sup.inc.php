@@ -5,7 +5,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -53,11 +53,11 @@ else
 if (isset ($_REQUEST['ref_art_categ']) ) {?>
 window.parent.changed = false;
 
-//mise à jour des grp de caracteristique
+//mise Ã  jour des grp de caracteristique
 window.parent.document.getElementById("grp_caract_art_categ").innerHTML="";
 window.parent.page.verify('grp_caract_art_categ', 'catalogue_categorie_grpcaract.php?ref_art_categs=<?php echo $_REQUEST['ref_art_categ']?>', 'true', 'grp_caract_art_categ');
 
-//mise à jour des caracteristiques
+//mise Ã  jour des caracteristiques
 window.parent.page.verify('caract_art_categ', 'catalogue_categorie_caract.php?ref_art_categs=<?php echo $_REQUEST['ref_art_categ']?>', 'true', 'caract_art_categ');
 <?php }?>
 }

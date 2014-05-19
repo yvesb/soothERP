@@ -1,9 +1,9 @@
 <?php
 // *************************************************************************************************************
-// CREATION D'UN NOUVEAU DOC À PARTIR DES LIGNES D'ARTICLES D'UN ANCIEN
+// CREATION D'UN NOUVEAU DOC Ã€ PARTIR DES LIGNES D'ARTICLES D'UN ANCIEN
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -38,7 +38,7 @@ Event.observe("link_close_pop_up_lines_livraison_modes_doc", "click",  function(
 	<tr>
 		<td>&nbsp;</td>
 		<td class="roundedtable_over" style="padding-left:15px; padding-right:15px">
-		<span class="labelled_text" sty>Mode de transport sélectionné:</span><br />
+		<span class="labelled_text" sty>Mode de transport sÃ©lectionnÃ©:</span><br />
 		<span style=" font-style:italic">
 		<select name="id_livraison_mode" id="id_livraison_mode_choisi"class="classinput_xsize">
 		<?php 

@@ -11,7 +11,7 @@ require ($DIR."_session.inc.php");
 
 if (isset($_REQUEST['ref_contact'.$_REQUEST['ref_idform']])) {	
 
-// on récupére la dernier ref user si existe pour la réactualiser (afin de rafraichir l'affiche des ordres
+// on rÃ©cupÃ©re la dernier ref user si existe pour la rÃ©actualiser (afin de rafraichir l'affiche des ordres
 
 	$ordre_previous	=	getMax_ordre("users", $_REQUEST['ref_contact'.$_REQUEST['ref_idform']], " && actif >= 0");
 	if ($ordre_previous>0) {
@@ -20,7 +20,7 @@ if (isset($_REQUEST['ref_contact'.$_REQUEST['ref_idform']])) {
 
 
 	// *************************************************
-	// création d'une coordonnée
+	// crÃ©ation d'une coordonnÃ©e
 	$ref_contact		= $_REQUEST['ref_contact'.$_REQUEST['ref_idform']];
 	$pseudo 				= $_REQUEST['user_pseudo'.$_REQUEST['ref_idform']];
 	$code 					= $_REQUEST['user_code'.$_REQUEST['ref_idform']];

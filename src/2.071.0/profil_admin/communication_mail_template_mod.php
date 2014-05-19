@@ -21,7 +21,7 @@ if (!empty($_FILES['header_img_template_'.$infos['id_mail_template']]['tmp_name'
 		$extension = substr($_FILES["header_img_template_".$infos['id_mail_template']]["name"], strrpos($_FILES["header_img_template_".$infos['id_mail_template']]["name"], "."));
 		$header_img_template = md5(uniqid(rand(), true)).$extension;
 		if (is_file($MAIL_TEMPLATES_IMAGES_DIR.$header_img_template)) {$header_img_template = md5(uniqid(rand(), true)).$extension; }
-		// on copie le fichier que l'on vient d'uploader dans le répertoire des images
+		// on copie le fichier que l'on vient d'uploader dans le rÃ©pertoire des images
 		copy ($_FILES['header_img_template_'.$infos['id_mail_template']]['tmp_name'], $MAIL_TEMPLATES_IMAGES_DIR.$header_img_template); 
 	} 
 }
@@ -34,7 +34,7 @@ if (!empty($_FILES['footer_img_template_'.$infos['id_mail_template']]['tmp_name'
 		$extension = substr($_FILES["footer_img_template_".$infos['id_mail_template']]["name"], strrpos($_FILES["footer_img_template_".$infos['id_mail_template']]["name"], "."));
 		$footer_img_template = md5(uniqid(rand(), true)).$extension;
 		if (is_file($MAIL_TEMPLATES_IMAGES_DIR.$footer_img_template)) {$footer_img_template = md5(uniqid(rand(), true)).$extension; }
-		// on copie le fichier que l'on vient d'uploader dans le répertoire des images
+		// on copie le fichier que l'on vient d'uploader dans le rÃ©pertoire des images
 		copy ($_FILES['footer_img_template_'.$infos['id_mail_template']]['tmp_name'], $MAIL_TEMPLATES_IMAGES_DIR.$footer_img_template); 
 	} 
 }
@@ -47,7 +47,7 @@ if (!empty($_FILES['mail_css_template_'.$infos['id_mail_template']]['tmp_name'])
 		$extension = substr($_FILES["mail_css_template_".$infos['id_mail_template']]["name"], strrpos($_FILES["mail_css_template_".$infos['id_mail_template']]["name"], "."));
 		$mail_css_template = md5(uniqid(rand(), true)).$extension;
 		if (is_file($MAIL_TEMPLATES_CSS_DIR.$mail_css_template)) {$mail_css_template = md5(uniqid(rand(), true)).$extension; }
-		// on copie le fichier que l'on vient d'uploader dans le répertoire des images
+		// on copie le fichier que l'on vient d'uploader dans le rÃ©pertoire des images
 		copy ($_FILES['mail_css_template_'.$infos['id_mail_template']]['tmp_name'], $MAIL_TEMPLATES_CSS_DIR.$mail_css_template); 
 	} 
 }

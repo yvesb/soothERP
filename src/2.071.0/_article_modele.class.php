@@ -15,19 +15,19 @@ final class art_modele {
 function __construct($id_art_modele = "") {
 	global $bdd;
 
-	// Controle si la id_art_modele est précisée
+	// Controle si la id_art_modele est prÃ©cisÃ©e
 	if (!$id_art_modele) { return false; }
 
-	// Sélection des informations générales
+	// SÃ©lection des informations gÃ©nÃ©rales
 	$query = "SELECT code_art_modele, lib_modele, desc_interne, desc_publique
 						FROM art_modeles 
 						WHERE id_art_modele = '".$id_art_modele."' ";
 	$resultat = $bdd->query ($query);
 
-	// Controle si la id_art_modele est trouvée
+	// Controle si la id_art_modele est trouvÃ©e
 	if (!$art_modele = $resultat->fetchObject()) { return false; }
 
-	// Attribution des informations à l'objet
+	// Attribution des informations Ã  l'objet
 	$this->id_art_modele 		= $id_art_modele;
 	$this->code_art_modele	= $art_categ->code_art_modele;
 	$this->lib_modele			= $art_categ->code_art_modele;

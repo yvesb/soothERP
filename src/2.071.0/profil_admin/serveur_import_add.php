@@ -21,7 +21,7 @@ if (strlen($info_fichier)>0) {
 	$import_serveur->create ($_REQUEST["ref_serveur_import"], $_REQUEST["lib_serveur_import"], $_REQUEST["url_serveur_import"]);
 
 
-	//récupération de la liste des impex choisis
+	//rÃ©cupÃ©ration de la liste des impex choisis
 	foreach ($_REQUEST as $variable => $valeur) {
 		if (substr ($variable, 0, 14) != "id_impex_type_") { continue; }
 		$i = count($liste_impex);
@@ -35,7 +35,7 @@ if (strlen($info_fichier)>0) {
 	}
 
 } else {
-		$GLOBALS['_ALERTES']['serveur_non_trouvé'] = 1;
+		$GLOBALS['_ALERTES']['serveur_non_trouvÃ©'] = 1;
 }
 // *************************************************************************************************************
 // AFFICHAGE

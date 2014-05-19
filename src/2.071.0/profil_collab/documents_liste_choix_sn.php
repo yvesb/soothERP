@@ -22,10 +22,10 @@ if (isset($_REQUEST['ref_article'])) {
 		// Ouverture du document
 		$document = open_doc ($_REQUEST['ref_doc']);
 		
-		// Stock affiché
+		// Stock affichÃ©
 		$id_stock = $document->getid_stock_search();
 	}
-	// Préparations des variables d'affichage
+	// PrÃ©parations des variables d'affichage
 	$choix_sns = stock::getArticles_sn ($id_stock, $_REQUEST['ref_article']);
 	
 	// *************************************************************************************************************

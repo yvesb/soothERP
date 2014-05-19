@@ -4,7 +4,7 @@
 // *************************************************************************************************************
    
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("groupesAgendasAvecDroits");
 check_page_variables ($page_variables);
 
@@ -29,7 +29,7 @@ $page_cible = "page_cible.php";
 	<table width="100%">
 			<tr>
 				<td style="width:3%"></td>
-				<td style="width:94%;" class="label_titre_popup" >Sélection des agendas affichés</td>
+				<td style="width:94%;" class="label_titre_popup" >SÃ©lection des agendas affichÃ©s</td>
 				<td style="width:3%"></td>
 			</tr>
 	</table>
@@ -41,7 +41,7 @@ $page_cible = "page_cible.php";
 	<table width="100%">
 		<tr>
 			<td style="width:3%"></td>
-			<td class="labelled_text" style="width:310px;vertical-align:middle">Sélectionner une liste d'agendas à afficher</td>
+			<td class="labelled_text" style="width:310px;vertical-align:middle">SÃ©lectionner une liste d'agendas Ã  afficher</td>
 			<td align="center">
 				<select id="id_liste_agenda_selected" style="width:200px">
 					<option value="0" selected="selected">
@@ -87,7 +87,7 @@ $page_cible = "page_cible.php";
 	<br />
 
 	<!-- C'est dans cette div que nous affichons la page pour choisir un model de pdf en fonction du type qu'on a choisi plus haut -->
-	<!-- par défaut on affiche le 1er type que l'on trouve -->
+	<!-- par dÃ©faut on affiche le 1er type que l'on trouve -->
 	<div id="choix_liste_agenda" style="margin-left:1%; margin-right:1%; height:270px; overflow: auto" >
 	<?php 
 		$NoRequireFor_agenda_selectionner_agendas_result = true;

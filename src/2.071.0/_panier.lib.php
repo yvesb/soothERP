@@ -3,7 +3,7 @@
 // FONCTION DE VERIFICATION DE L'EXISTANCE DU PANIER
 // *************************************************************************************************************
 
-//fonction qui charge ou cré le document panier du client pour une utilisation
+//fonction qui charge ou crÃ© le document panier du client pour une utilisation
 function open_client_panier () {
 	global $bdd;
 	global $DIR;
@@ -49,25 +49,25 @@ function gestion_panier() {
 		$id_panier = $_COOKIE["panier_interface_".$_INTERFACE['ID_INTERFACE']];
 	}
 	if (isset( $_SESSION["panier_interface_".$_INTERFACE['ID_INTERFACE']]["id_panier"]) && $_SESSION["panier_interface_".$_INTERFACE['ID_INTERFACE']]["id_panier"]) {
-		//récupération du numéro de panier
+		//rÃ©cupÃ©ration du numÃ©ro de panier
 		$id_panier = $_SESSION["panier_interface_".$_INTERFACE['ID_INTERFACE']]["id_panier"];
 	}
 	if (!isset($_SESSION["panier_interface_".$_INTERFACE['ID_INTERFACE']]["app_tarifs"])) {
 		$_SESSION["panier_interface_".$_INTERFACE['ID_INTERFACE']]["app_tarifs"] = $_INTERFACE['APP_TARIFS'];
 	}
 	
-	//chargement des infos du panier (si il n'existe pas on le cré, si il est dépassé on le supprime et on en cré un nouveau)
+	//chargement des infos du panier (si il n'existe pas on le crÃ©, si il est dÃ©passÃ© on le supprime et on en crÃ© un nouveau)
 	$query = "SELECT id_panier, id_interface, date FROM interface_panier
 						WHERE  id_panier = '".$id_panier."' && date > '".date("Y-m-d", time()-$TMP_PANIER_LT)."'
 						
 						";
 	$resultat = $bdd->query ($query);
 	if (!$panier = $resultat->fetchObject()) {
-		// on supprime les panier dépassés
+		// on supprime les panier dÃ©passÃ©s
 		$query = "DELETE FROM interface_panier WHERE  date < '".date("Y-m-d", time()-$TMP_PANIER_LT)."'";		
 		$bdd->exec ($query);
 		
-		//on cré le nouveau
+		//on crÃ© le nouveau
 		$query = "INSERT INTO interface_panier (id_interface, date) VALUES ('".$_INTERFACE['ID_INTERFACE']."', NOW())";		
 		$bdd->exec ($query);
 		$id_panier = $bdd->lastInsertId();
@@ -99,7 +99,7 @@ function interface_add_line_panier ($ref_article, $qte) {
 	global $bdd;
 	global $_INTERFACE;
 	
-	//si l'article est déjà dans le panier	on met juste à jour la qte
+	//si l'article est dÃ©jÃ  dans le panier	on met juste Ã  jour la qte
 	$query = "SELECT ref_article, qte FROM interface_panier_contenu
 						WHERE id_panier = '".$_SESSION["panier_interface_".$_INTERFACE['ID_INTERFACE']]["id_panier"]."'  && ref_article = '".$ref_article."'
 						";
@@ -169,11 +169,11 @@ function interface_article_pv ($article, $qte) {
 	global $bdd;
 	global $ID_MAGASIN;
 
-	// Tarif par défaut pour le magasin en cours
+	// Tarif par dÃ©faut pour le magasin en cours
 	$id_tarif = $_SESSION['magasins'][$ID_MAGASIN]->getId_tarif();
 	$pu_ht = 0;
 
-	// Sélection de la grille tarifaire particulière à ce client, si définie
+	// SÃ©lection de la grille tarifaire particuliÃ¨re Ã  ce client, si dÃ©finie
 	if ($_SESSION['user']->getRef_contact()) {
 		$query = "SELECT id_tarif FROM annu_client 
 							WHERE ref_contact = '".$_SESSION['user']->getRef_contact()."' ";
@@ -182,7 +182,7 @@ function interface_article_pv ($article, $qte) {
 		if (isset($tmp->id_tarif) && $tmp->id_tarif) { $id_tarif = $tmp->id_tarif; }
 	}
 
-	// Sélection du tarif applicable
+	// SÃ©lection du tarif applicable
 	$query = "SELECT pu_ht, indice_qte
 						FROM articles_tarifs
 						WHERE ref_article = '".$article->getRef_article()."' && id_tarif = '".$id_tarif."' 

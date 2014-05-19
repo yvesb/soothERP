@@ -1,10 +1,10 @@
 <?php
 
 // *************************************************************************************************************
-// historiques des orpérations de caisse
+// historiques des orpÃ©rations de caisse
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -25,7 +25,7 @@ check_page_variables ($page_variables);
 <script type="text/javascript">
 Event.observe("link_retour_tp", "click",  function(evt){Event.stop(evt); page.verify('compta_gestion2_terminaux','compta_gestion2_terminaux.php?<?php echo $retour_var;?>','true','sub_content');}, false);
 </script>
-<div class="titre" id="titre_crea_art" style="width:60%; padding-left:140px">Historique des opérations <?php echo htmlentities($compte_tp->getLib_tp()); ?>
+<div class="titre" id="titre_crea_art" style="width:60%; padding-left:140px">Historique des opÃ©rations <?php echo htmlentities($compte_tp->getLib_tp()); ?>
 </div>
 <input id="choix_id_tp" name="choix_id_tp"  value="<?php echo $compte_tp->getId_compte_tp(); ?>"  type="hidden">
 <input id="tp_type" name="tp_type"  value="<?php echo $compte_tp->getTp_type(); ?>"  type="hidden">
@@ -65,7 +65,7 @@ Event.observe("link_retour_tp", "click",  function(evt){Event.stop(evt); page.ve
 						<td colspan="4">		</td>
 						</tr>
 					<tr>
-						<td>Période&nbsp;</td>
+						<td>PÃ©riode&nbsp;</td>
 						<td>du&nbsp; </td>
 						<td><input type="text" id="date_debut" name="date_debut" value="" class="classinput_nsize" /></td>
 						<td>&nbsp;</td>

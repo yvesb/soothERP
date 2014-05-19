@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 if (!empty($_REQUEST['ref_doc']) &&!empty($_REQUEST['ref_doc_line']) && isset($_REQUEST['pa_ht']) && isset($_REQUEST['indentation'])) {
 
-// ouverture des infos du document et mise à  jour
+// ouverture des infos du document et mise Ã   jour
         $new_pa_ht = (float)$_REQUEST['pa_ht'] ;
         $document = open_doc ($_REQUEST['ref_doc']);
         $document->maj_line_pa_ht ($_REQUEST['ref_doc_line'], $new_pa_ht);

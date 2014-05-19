@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -63,7 +63,7 @@ foreach ($result as $compte) {
 	<table>
 		<tr>
 			<td style="width:70px; ">
-			<div  style="width:70px; display:block ">Néant</div>
+			<div  style="width:70px; display:block ">NÃ©ant</div>
 			</td>
 			<td>
 			<span >
@@ -82,7 +82,7 @@ foreach ($result as $compte) {
 	}
 	
 	$("retour_value").value = "";
-	$("retour_lib").value = "Sélectionnez  un numéro de compte";
+	$("retour_lib").value = "SÃ©lectionnez  un numÃ©ro de compte";
 	$("line_compte_choix_").style.background = "#aaaaaa";
 	}, false);
 	</script>

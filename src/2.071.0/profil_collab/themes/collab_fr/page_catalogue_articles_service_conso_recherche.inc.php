@@ -4,7 +4,7 @@
 // RECHERCHE DES ABONNEMENTS
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -125,7 +125,7 @@ array_menu_r_contact[0] 	=	new Array('recherche_simple', 'menu_1');
 				</tr>
 				<tr id="liste_categ_client" style="display:none">
 					<td>&nbsp;</td>
-					<td><span class="labelled">Catégorie de client : </span></td>
+					<td><span class="labelled">CatÃ©gorie de client : </span></td>
 					<td>
 					<select  id="id_client_categ"  name="id_client_categ" class="classinput_xsize">
 								<option value="">Tous</option>
@@ -155,7 +155,7 @@ array_menu_r_contact[0] 	=	new Array('recherche_simple', 'menu_1');
 						<option value="prospect">Prospect</option>
 						<option value="client">Client</option>
 						<option value="ancien client">Ancien client</option>
-						<option value="Compte bloqué">Compte bloqué</option>
+						<option value="Compte bloquÃ©">Compte bloquÃ©</option>
 					</select>
 					</td>
 					<td>&nbsp;</td>
@@ -171,8 +171,8 @@ array_menu_r_contact[0] 	=	new Array('recherche_simple', 'menu_1');
 					<select  id="type_recherche"  name="type_recherche" class="classinput_xsize">
 						<option value="0">Tous</option>
 						<option value="1" <?php if(isset($_REQUEST["type_recherche"]) && $_REQUEST["type_recherche"] == "1" ) { ?> selected="selected"<?php } ?>>Clients en compte (valide)</option>
-						<option value="2"<?php if(isset($_REQUEST["type_recherche"]) && $_REQUEST["type_recherche"] == "2" ) { ?> selected="selected"<?php } ?>>Clients en compte (expiré)</option>
-						<option value="3"<?php if(isset($_REQUEST["type_recherche"]) && $_REQUEST["type_recherche"] == "3" ) { ?> selected="selected"<?php } ?>>Crédits vide</option>
+						<option value="2"<?php if(isset($_REQUEST["type_recherche"]) && $_REQUEST["type_recherche"] == "2" ) { ?> selected="selected"<?php } ?>>Clients en compte (expirÃ©)</option>
+						<option value="3"<?php if(isset($_REQUEST["type_recherche"]) && $_REQUEST["type_recherche"] == "3" ) { ?> selected="selected"<?php } ?>>CrÃ©dits vide</option>
 					</select>
 					</td>
 					<td>&nbsp;</td>

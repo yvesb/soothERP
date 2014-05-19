@@ -4,7 +4,7 @@
 // ENTETE INVENTAIRE
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -82,7 +82,7 @@ check_page_variables ($page_variables);
 									?>
 												
 									<?php 
-									//ajout pour les stocks inactifs qui auraient été utilisés par le document
+									//ajout pour les stocks inactifs qui auraient Ã©tÃ© utilisÃ©s par le document
 									$stocks_supp	= fetch_all_stocks();
 									foreach ($stocks_supp as $stock_supp) {
 										if (!$stock_supp->actif && $stock_supp->id_stock == $document->getId_stock ()) {
@@ -114,7 +114,7 @@ check_page_variables ($page_variables);
 									?>
 												
 									<?php 
-									//ajout pour les stocks inactifs qui auraient été utilisés par le document
+									//ajout pour les stocks inactifs qui auraient Ã©tÃ© utilisÃ©s par le document
 									$stocks_supp	= fetch_all_stocks();
 									foreach ($stocks_supp as $stock_supp) {
 										if (!$stock_supp->actif && $stock_supp->id_stock == $document->getId_stock ()) {
@@ -178,7 +178,7 @@ check_page_variables ($page_variables);
 		</table>
 		<script type="text/javascript">
 				
-		// observateur de changement de texte dans l'entete du doc pour mise à jour des infos
+		// observateur de changement de texte dans l'entete du doc pour mise Ã  jour des infos
 
 
 				Event.observe("head_date_creation", "click", function(evt){
@@ -263,12 +263,12 @@ check_page_variables ($page_variables);
 			<tr style=" line-height:20px; height:20px;" class="document_head_list">
 				<td  style=" padding-left:3px;" class="doc_bold" >
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/doc_extend.gif" border="0" id="extend_click" style="float:right; cursor:pointer" title="Agrandir">
-					Liste des catégories
+					Liste des catÃ©gories
 				<script type="text/javascript">
 				Event.observe("extend_click", "click", function(evt){Event.stop(evt);
 					if ($("extend_liste").style.height == "135px") {
 					$("extend_click").src = "<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/doc_reduire.gif";
-					$("extend_click").title = "Réduire";
+					$("extend_click").title = "RÃ©duire";
 					$("extend_liste").style.width = "550px";
 					$("extend_liste").style.height = "450px";
 					} else {
@@ -326,7 +326,7 @@ check_page_variables ($page_variables);
 									<table cellpadding="0" cellspacing="0" border="0" style="width:100%">
 									<tr>
 									<td>
-									<span id="lib_art_categ_inv" style=" float:left; height:18px; margin-left:3px; line-height:18px;">Ajouter une catégorie</span>	
+									<span id="lib_art_categ_inv" style=" float:left; height:18px; margin-left:3px; line-height:18px;">Ajouter une catÃ©gorie</span>	
 									</td>
 									<td>
 									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif"/ style="float:right" id="lib_art_categ_bt_select_inv">
@@ -348,7 +348,7 @@ check_page_variables ($page_variables);
 									load_liste_categ ("documents_inventaire_liste_categ.php", "liste_de_categorie_selectable_inv");
 									}
 									$("extend_click").src = "<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/doc_reduire.gif";
-									$("extend_click").title = "Réduire";
+									$("extend_click").title = "RÃ©duire";
 									$("extend_liste").style.width = "550px";
 									$("extend_liste").style.height = "450px";
 								//$("liste_de_categorie_selectable_s").style.width=	return_width_element("lib_art_categ_link_select_s")+"px";
@@ -358,7 +358,7 @@ check_page_variables ($page_variables);
 									</script>	</td>
 							<td>
 								<input type="hidden" name="new_inv_ref_art_categ_inv" id="new_inv_ref_art_categ_inv" value=""/>
-								<input type="checkbox" name="add_art_categ_pre_remplir" id="add_art_categ_pre_remplir" value="1"/> pré-remplir</td>
+								<input type="checkbox" name="add_art_categ_pre_remplir" id="add_art_categ_pre_remplir" value="1"/> prÃ©-remplir</td>
 							<td>
 								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" name="add_new_art_categ_inv" id="add_new_art_categ_inv"/>
 								<SCRIPT type="text/javascript">
@@ -399,7 +399,7 @@ check_page_variables ($page_variables);
 					<?php
 				} else {
 					?>
-					<span id="define_art_categ" style="cursor:pointer<?php if ($document->getId_etat_doc () == 46) { echo ';display: none';}	?>"> Définir les catégories d'articles inventoriées </span>
+					<span id="define_art_categ" style="cursor:pointer<?php if ($document->getId_etat_doc () == 46) { echo ';display: none';}	?>"> DÃ©finir les catÃ©gories d'articles inventoriÃ©es </span>
 					<SCRIPT type="text/javascript">
 					
 					Event.observe('define_art_categ', "click", function(evt){load_content_inv_list_art_categ ();  

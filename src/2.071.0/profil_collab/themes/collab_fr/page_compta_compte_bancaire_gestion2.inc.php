@@ -4,7 +4,7 @@
 // Tableau de BORD compte bancaire
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -48,7 +48,7 @@ check_page_variables ($page_variables);
 								<td>&nbsp;</td>
 							</tr>
 							<tr>
-								<td><div class="bold_caisse" style="font-size:16px">Solde Théorique &gt;&gt;</div></td>
+								<td><div class="bold_caisse" style="font-size:16px">Solde ThÃ©orique &gt;&gt;</div></td>
 								<td align="right"><div class="bold_caisse" style="font-size:16px"><?php echo number_format($Solde_compte_bancaire, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[1];?></div></td>
 								<td style="width:20%">&nbsp;</td>
 							</tr>
@@ -64,10 +64,10 @@ check_page_variables ($page_variables);
 								</span>
 								</span>
 								<?php if (isset($liste_releves[0])) {?>
-								<div style="float:left; color:#999999">Dernier relevé enregistré: <?php echo date_Us_to_Fr($liste_releves[0]->date_releve)." ".getTime_from_date ($liste_releves[0]->date_releve);?></div>
+								<div style="float:left; color:#999999">Dernier relevÃ© enregistrÃ©: <?php echo date_Us_to_Fr($liste_releves[0]->date_releve)." ".getTime_from_date ($liste_releves[0]->date_releve);?></div>
 								<?php } ?>
 								<?php if ($last_operation) {?>
-								<div style="float:left; color:#999999">Dernier opération enregistrée: <?php echo date_Us_to_Fr($last_operation);?></div>
+								<div style="float:left; color:#999999">Dernier opÃ©ration enregistrÃ©e: <?php echo date_Us_to_Fr($last_operation);?></div>
 								<?php } ?>
 								</td>
 								<td>&nbsp;</td>
@@ -88,7 +88,7 @@ check_page_variables ($page_variables);
 							</tr>
 							<tr>
 								<td colspan="2">
-								<span style=" font-weight:bolder; color:#999999">Solde à 30 jours</span><br />
+								<span style=" font-weight:bolder; color:#999999">Solde Ã  30 jours</span><br />
 								<table border="0" cellpadding="0" cellspacing="0">
 									<tr>
 										<td>
@@ -365,22 +365,22 @@ check_page_variables ($page_variables);
 			<br />
 					<div style="padding: 15px 25px;">
 					<div class="line_caisse_bottom"></div>
-					<div class="bold_caisse" style="font-size:16px">Opérations de gestion</div> 
+					<div class="bold_caisse" style="font-size:16px">OpÃ©rations de gestion</div> 
 					<div class="line_caisse_top"></div>
 					<br />
 					<br />
 					<span id="traite" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Remise d'effet</span><br /><br />
 					
-					<span id="add_ope" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Enregistrer des opérations</span><br /><br />
+					<span id="add_ope" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Enregistrer des opÃ©rations</span><br /><br />
 
-					<span id="import_ope" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Importer des opérations</span><br /><br />
+					<span id="import_ope" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Importer des opÃ©rations</span><br /><br />
 
-					<span id="search_ope" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Rechercher une opération</span><br /><br />
+					<span id="search_ope" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Rechercher une opÃ©ration</span><br /><br />
 
-					<span id="search_chq_rem" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Rechercher un chèque remisé</span><br /><br />
+					<span id="search_chq_rem" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Rechercher un chÃ¨que remisÃ©</span><br /><br />
 
 						<br />
-					<span id="add_releve" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Enregistrer un relevé</span><br /><br />
+					<span id="add_releve" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Enregistrer un relevÃ©</span><br /><br />
 
 <br />
 

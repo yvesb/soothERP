@@ -4,7 +4,7 @@
 // CONFIG DES OPTIONS
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -52,10 +52,10 @@ update_menu_arbo();
 		<td colspan="3"> </td>
 	</tr>
 	<tr>
-		<td class="lib_config">Afficher le bouton itinéraire pour un contact </td>
+		<td class="lib_config">Afficher le bouton itinÃ©raire pour un contact </td>
 		<td>
 		<input id="view_bt_iti" name="view_bt_iti" value="<?php echo ($VIEW_BT_ITI); ?>" type="checkbox"  <?php if ($VIEW_BT_ITI){ ?> checked="checked"<?php } ?> /></td>
-		<td class="infos_config">Lien d'affichage de l'itinéraire depuis le magasin en cours vers l'adresse d'un contact </td>
+		<td class="infos_config">Lien d'affichage de l'itinÃ©raire depuis le magasin en cours vers l'adresse d'un contact </td>
 	</tr>
 	<tr>
 		<td colspan="3"> </td>

@@ -11,18 +11,18 @@ require ($DIR."_session.inc.php");
 
 if (!$_SESSION['user']->check_permission ("13")) {
 	//on indique l'interdiction et on stop le script
-	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accÈs ne vous permettent pas de visualiser ce type de page</span>";
+	echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'acc√©s ne vous permettent pas de visualiser ce type de page</span>";
 	exit();
 }
 $compta_e = new compta_exercices ();
 $liste_exercices	= $compta_e->charger_compta_exercices();
-//on rÈcupËre la dte du dernier exercice cloturÈ
+//on r√©cup√®re la dte du dernier exercice clotur√©
 foreach ($liste_exercices as $exercice) {
 	if (!$exercice->etat_exercice) {$last_date_before_cloture = $exercice->date_fin; break;}
 }
 
 // *************************************************
-// DonnÈes pour le formulaire && la requete
+// Donn√©es pour le formulaire && la requete
 $form['page_to_show'] = $search['page_to_show'] = 1;
 if (isset($_REQUEST['page_to_show'])) {
 	$form['page_to_show'] = $_REQUEST['page_to_show'];
@@ -77,10 +77,10 @@ if (isset($_REQUEST['delta_montant']) && $_REQUEST['delta_montant'] != "") {
 
 
 // *************************************************
-// RÈsultat de la recherche
+// R√©sultat de la recherche
 $fiches = array();
 if (isset($_REQUEST['recherche'])) {
-	// PrÈparation de la requete
+	// Pr√©paration de la requete
 	$query_join 	= "";
 	$query_where 	= " cjo.id_journal = '".$search['id_journal']."' && (cbor.complet = 0 ||  ISNULL(cbor.complet))";
 	$query_group	= "";
@@ -184,7 +184,7 @@ $nb_doc_aff = array();
 					$fiche->libelle = "Retrait bancaire vers ".$inf_tmp->lib_caisse;
 				}
 			break;
-			// rËglement tier banque depuis tier
+			// r√®glement tier banque depuis tier
 			case 5:
  				$query_tmp = "SELECT r.ref_contact, r.date_reglement, r.date_echeance, r.date_saisie, r.id_reglement_mode, r.montant_reglement, r.valide,
 														 rm.lib_reglement_mode, rm.abrev_reglement_mode, rm.type_reglement,
@@ -206,7 +206,7 @@ $nb_doc_aff = array();
 					$fiche->libelle = $inf_tmp->lib_reglement_mode.": ".$inf_tmp->nom;
 				}
 			break;
-			// rËglement tier banque vers tier
+			// r√®glement tier banque vers tier
 			case 6:
  				$query_tmp = "SELECT r.ref_contact, r.date_reglement, r.date_echeance, r.date_saisie, r.id_reglement_mode, r.montant_reglement, r.valide,
 														 rm.lib_reglement_mode, rm.abrev_reglement_mode, rm.type_reglement,
@@ -222,7 +222,7 @@ $nb_doc_aff = array();
 					$infos_complement = get_infos_reglement_type ($inf_tmp->id_reglement_mode, $fiche->ref_operation);
 					if (isset($infos_complement->id_compte_cb)) {
 						$compte_cb = new compte_cb ($infos_complement->id_compte_cb);
-						//crÈation de l'opÈration dans le journal de banque correspondant
+						//cr√©ation de l'op√©ration dans le journal de banque correspondant
 						$compte_bancaire_cible = new compte_bancaire ($compte_cb->getId_compte_bancaire ());
 						$nom_banque = $compte_bancaire_cible->getLib_compte();
 					} else if ($compte_bancaire_cible = new compte_bancaire ($infos_complement->id_compte_bancaire_source)) {
@@ -256,7 +256,7 @@ $nb_doc_aff = array();
 						$nom_tp = $compte_tpv->getlib_tpv();
 					}
 					$fiche->compte_tier = "";
-					$fiche->libelle = "TÈlÈcollecte depuis ".$nom_tp;
+					$fiche->libelle = "T√©l√©collecte depuis ".$nom_tp;
 				}
 			break;
 		}

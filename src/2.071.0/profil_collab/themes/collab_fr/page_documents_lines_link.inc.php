@@ -1,6 +1,6 @@
 <?php
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -50,20 +50,20 @@ check_page_variables ($page_variables);
 	</div>
 
 	<div>
-		<!-- Ongelt : Articles liés -->
-		<!-- DIV mise à jour par _documents.js > maj_pop_up_link -->
+		<!-- Ongelt : Articles liÃ©s -->
+		<!-- DIV mise Ã  jour par _documents.js > maj_pop_up_link -->
 		<div id="articles_lies">
 			<div id="link_content" class="articletview_corps" style="overflow:auto; height:285px">
 			</div>
 		</div>
 		
-		<!-- Onglet : Calcul de Qté -->
-		<!-- DIV mise à jour par _documents.js > maj_pop_up_calcul_qte -->
+		<!-- Onglet : Calcul de QtÃ© -->
+		<!-- DIV mise Ã  jour par _documents.js > maj_pop_up_calcul_qte -->
 		<div id="calcul_qte"  style="display:none;" class="menu_link_affichage">
 		</div>
 		
 		<!-- Onglet : Calcul de prix -->
-		<!-- DIV mise à jour par _documents.js > maj_pop_up_calcul_prix -->
+		<!-- DIV mise Ã  jour par _documents.js > maj_pop_up_calcul_prix -->
 		<div id="calcul_prix"  style="display:none;" class="menu_link_affichage">
 		</div>
 		
@@ -73,7 +73,7 @@ check_page_variables ($page_variables);
 <SCRIPT type="text/javascript">
 	Event.observe("menu_popup_1", "click",  function(evt){Event.stop(evt); view_menu_1('articles_lies', 'menu_popup_1', array_menu_doc_lines );}, false);
 	Event.observe("menu_popup_2", "click",  function(evt){Event.stop(evt); view_menu_1('calcul_qte', 'menu_popup_2', array_menu_doc_lines );}, false);
-	//@TODO CALCUL PRIX : Script pour gérer l'onglet "Calcul de prix"
+	//@TODO CALCUL PRIX : Script pour gÃ©rer l'onglet "Calcul de prix"
 	//Event.observe("menu_popup_3", "click",  function(evt){Event.stop(evt); view_menu_1('calcul_prix', 'menu_popup_3', array_menu_doc_lines );}, false);
 
 

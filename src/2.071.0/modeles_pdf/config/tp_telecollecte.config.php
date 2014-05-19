@@ -7,11 +7,11 @@ $TELECOLL['IMG_LOGO']	= $DOCUMENTS_IMG_LOGO;
 
 $TELECOLL['LARGEUR_TOTALE_CORPS']			= 180;
 
-$TELECOLL['ENTETE_TT_TE']		= "Montant télécollecte:";
+$TELECOLL['ENTETE_TT_TE']		= "Montant tÃ©lÃ©collecte:";
 $TELECOLL['ENTETE_TT_COM'] 	= "Montant de la commission bancaire:";
 $TELECOLL['ENTETE_DATE'] 		= "Date:";
-$TELECOLL['ENTETE_TT_TRB']  = "Montant tranféré sur le compte bancaire:";
-$TELECOLL['ENTETE_NB_OPE'] 	= "Nombre d'opérations:";
+$TELECOLL['ENTETE_TT_TRB']  = "Montant tranfÃ©rÃ© sur le compte bancaire:";
+$TELECOLL['ENTETE_NB_OPE'] 	= "Nombre d'opÃ©rations:";
 $TELECOLL['ENTETE_CB'] 			= "Carte bancaire:";
 $TELECOLL['ENTETE_COM'] 		= "Commentaires: ";
 
@@ -25,15 +25,15 @@ $TELECOLL['CORPS_HAUTEUR_DEPART']	= 115;
 $TELECOLL['CORPS_HAUTEUR_MAX']		= 210;
 
 
-//variable//type de champ(parametre)//libéllé//commentaire
+//variable//type de champ(parametre)//libÃ©llÃ©//commentaire
 // PARAMETRES MODIFIABLES
 // FIN PARAMETRES MODIFIABLES
 // CONFIGURATION PAR DEFAUT
-// Portion de code recopiée dans la partie « paramètres modifiables » en cas de remise à 0 des paramètres.
+// Portion de code recopiÃ©e dans la partie Â«Â paramÃ¨tres modifiablesÂ Â» en cas de remise Ã  0 des paramÃ¨tres.
 /*
 */
 // FIN CONFIGURATION PAR DEFAUT
-// INFORMATIONS SUR L’AUTEUR
+// INFORMATIONS SUR Lâ€™AUTEUR
 /* 
 */
 ?>

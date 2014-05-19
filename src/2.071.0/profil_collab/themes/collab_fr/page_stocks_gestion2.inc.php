@@ -4,7 +4,7 @@
 // Tableau de BORD stock
 // *************************************************************************************************************
 
-// Variables nécessaires à l"affichage
+// Variables nÃ©cessaires Ã  l"affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -119,7 +119,7 @@ check_page_variables ($page_variables);
 												}	
 											 ?>
 											 </div>
-											<?php echo htmlentities($art_categ->lib_art_categ); if (!$art_categ->lib_art_categ) { echo "Pas de libellé";}?> 
+											<?php echo htmlentities($art_categ->lib_art_categ); if (!$art_categ->lib_art_categ) { echo "Pas de libellÃ©";}?> 
 											</span>
 											</td>
 										</tr>
@@ -174,7 +174,7 @@ check_page_variables ($page_variables);
 							<tr>
 								<td colspan="2">
 								
-								<div style="float:left; color:#000000; font-weight:bolder">Erreurs de stock détectées &gt;&gt;</div>
+								<div style="float:left; color:#000000; font-weight:bolder">Erreurs de stock dÃ©tectÃ©es &gt;&gt;</div>
 								
 								<span style="float:right; font-weight:bolder">
 								<span style="color:#FF0000;" >
@@ -210,7 +210,7 @@ check_page_variables ($page_variables);
 							<?php } else { ?>
 							<tr>
 								<td colspan="2">
-								<div style="float:left; color:#000000; font-weight:bolder">Aucune erreur de stock détectée </div>
+								<div style="float:left; color:#000000; font-weight:bolder">Aucune erreur de stock dÃ©tectÃ©e </div>
 								</td>
 								<td>&nbsp;</td>
 							</tr>
@@ -234,17 +234,17 @@ check_page_variables ($page_variables);
 			<br />
 					<div style="padding: 15px 25px;">
 					<div class="line_caisse_bottom"></div>
-					<div class="bold_caisse" style="font-size:16px">Opérations de gestion</div> 
+					<div class="bold_caisse" style="font-size:16px">OpÃ©rations de gestion</div> 
 					<div class="line_caisse_top"></div>
 					<br />
 					<br />
 					<span id="etat_stock" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Etat de stock</span><br /><br />
 
-					<span id="renouveler_stock" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Stock à renouveler</span><br /><br />
+					<span id="renouveler_stock" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Stock Ã  renouveler</span><br /><br />
 
 					<?php 
 					if (count($_SESSION['stocks']) >1) {?>
-					<span id="stocks_transferer" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Stock à Transférer</span><br /><br />
+					<span id="stocks_transferer" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Stock Ã  TransfÃ©rer</span><br /><br />
 					<?php } ?>
 						
 					<span id="moves_stock" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Historique par mouvement</span><br /><br />
@@ -254,7 +254,7 @@ check_page_variables ($page_variables);
 
 <br />
 
-					<span id="raz_stock" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />Réinitialiser le stock</span><br /><br />
+					<span id="raz_stock" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />RÃ©initialiser le stock</span><br /><br />
 					</div>
 						<script type="text/javascript">
 						

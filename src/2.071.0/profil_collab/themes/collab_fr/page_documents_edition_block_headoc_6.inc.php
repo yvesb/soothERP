@@ -4,7 +4,7 @@
 // ENTETE COMMANDE FOURNISSEUR
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nÃ©cessaires Ã  l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -112,7 +112,7 @@ check_page_variables ($page_variables);
 								}
 								?>
 								<?php
-								//ajout pour les stocks inactifs qui auraient été utilisés par le document
+								//ajout pour les stocks inactifs qui auraient Ã©tÃ© utilisÃ©s par le document
 								$stocks_supp	= fetch_all_stocks();
 								foreach ($stocks_supp as $stock_supp) {
 									if (!$stock_supp->actif && $stock_supp->id_stock == $document->getId_stock ()) {
@@ -142,7 +142,7 @@ check_page_variables ($page_variables);
 								}
 								?>
 								<?php
-								//ajout pour les stocks inactifs qui auraient été utilisés par le document
+								//ajout pour les stocks inactifs qui auraient Ã©tÃ© utilisÃ©s par le document
 								$stocks_supp	= fetch_all_stocks();
 								foreach ($stocks_supp as $stock_supp) {
 									if (!$stock_supp->actif && $stock_supp->id_stock == $document->getId_stock ()) {
@@ -216,7 +216,7 @@ check_page_variables ($page_variables);
 		</table>
 		<script type="text/javascript">
 
-		// observateurde changement de texte dans l'entete du doc pour mise à jour des infos
+		// observateurde changement de texte dans l'entete du doc pour mise Ã  jour des infos
 			Event.observe("ref_doc_externe", "blur", function(evt){
 				if ($("ref_doc_externe").value != $("ref_doc_externe_old").value) {
 					$("ref_doc_externe_old").value = $("ref_doc_externe").value;
@@ -358,7 +358,7 @@ check_page_variables ($page_variables);
 					D&eacute;nomination:
 				</td>
 				<td style="width:250px;">
-					<textarea type="text" name="nom_contact"  id="nom_contact" class="classinput_xsize" rows="<?php if (stristr($_SERVER["HTTP_USER_AGENT"], "firefox")) { echo "1"; } else { echo "2"; } ?>"><?php echo str_replace("€", "&euro;", $document->getNom_contact());?></textarea>
+					<textarea type="text" name="nom_contact"  id="nom_contact" class="classinput_xsize" rows="<?php if (stristr($_SERVER["HTTP_USER_AGENT"], "firefox")) { echo "1"; } else { echo "2"; } ?>"><?php echo str_replace("â‚¬", "&euro;", $document->getNom_contact());?></textarea>
 					<script type="text/javascript">
 					Event.observe('nom_contact', 'click',  function(){
 						if ($F("nom_contact") == ""){
@@ -366,7 +366,7 @@ check_page_variables ($page_variables);
 						}
 						}, false);
 					</script>
-					<div id="nom_contact_old" style="display:none"><?php echo str_replace("€", "&euro;", $document->getNom_contact());?></div>
+					<div id="nom_contact_old" style="display:none"><?php echo str_replace("â‚¬", "&euro;", $document->getNom_contact());?></div>
 				</td>
 				<td>
 				<div style="width:17px; height:19px">
@@ -467,7 +467,7 @@ check_page_variables ($page_variables);
 			$("adresse_contact").focus();
 			$("view_doc_adresse_resume").hide();
 		}, false);
-		// observateurde changement de texte dans les infos contact pour mise à jour des infos
+		// observateurde changement de texte dans les infos contact pour mise Ã  jour des infos
 
 		Event.observe("nom_contact", "blur", function(evt){
 				if ($("nom_contact").value != $("nom_contact_old").innerHTML) {
@@ -503,8 +503,8 @@ check_page_variables ($page_variables);
 
 
 		<?php
-		//si on change de contact alors les infos sont retournées par $_infos
-		// on met juste à jour l'app_tarifs par rapport au contact mis à jour
+		//si on change de contact alors les infos sont retournÃ©es par $_infos
+		// on met juste Ã  jour l'app_tarifs par rapport au contact mis Ã  jour
 		if ($document->getApp_tarifs()) {
 			?>
 			$("app_tarifs").value				= "<?php echo ($document->getApp_tarifs());?>";

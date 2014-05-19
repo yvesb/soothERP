@@ -12,9 +12,9 @@ require ($DIR."_session.inc.php");
 
 if (isset($_REQUEST['create_article'])) {	
 	// *************************************************
-	// Controle des données fournies par le formulaire
+	// Controle des donnÃ©es fournies par le formulaire
 	if (!isset($_REQUEST['ref_art_categ']) || !isset($_REQUEST['modele']) || !isset($_REQUEST['lib_article'])) {
-		$erreur = "Une variable nécessaire à la création de l'article n'est pas précisée.";
+		$erreur = "Une variable nÃ©cessaire Ã  la crÃ©ation de l'article n'est pas prÃ©cisÃ©e.";
 		alerte_dev($erreur);
 	}
 
@@ -184,8 +184,8 @@ foreach ($_REQUEST as $variable => $valeur) {
 	}
 	
 	
-	//gestion de la création d'articles variantes
-	//cette article de par ses carac peut générer des variantes
+	//gestion de la crÃ©ation d'articles variantes
+	//cette article de par ses carac peut gÃ©nÃ©rer des variantes
 	if (isset($_REQUEST['indentations_variantes'])) {
 		$variantes	=	array();
 		for ($i = 0; $i < $_REQUEST['indentations_variantes']; $i++) {
@@ -259,7 +259,7 @@ foreach ($_REQUEST as $variable => $valeur) {
 	
 	if (count($_ALERTES) == 0) {
 		// *************************************************
-		// Création de l'article
+		// CrÃ©ation de l'article
 		$article = new article ();
 		$article->create ($infos_generales, $infos_modele, $caracs, $formules_tarifs, $composants, $liaisons_vers, "", $_REQUEST['is_achetable'], $_REQUEST['is_vendable']);
 		
@@ -274,17 +274,17 @@ foreach ($_REQUEST as $variable => $valeur) {
 		// $ratio force la taille soit en hauteur soit en largeur 
 		$ratio = $ARTICLE_IMAGE_MINIATURE_RATIO;  
 		
-		// on teste si le formulaire permettant d'uploader un fichier a été soumis  
+		// on teste si le formulaire permettant d'uploader un fichier a Ã©tÃ© soumis  
 		if ($article->getRef_article()) {
 			for ($i = 1; $i <= $_REQUEST["increment_images"] ; $i++) {
 				if (!isset($_FILES['image_'.$i]) || !isset($_REQUEST["url_img_".$i])) { continue; }
 				// on teste si le champ permettant de soumettre un fichier est vide ou non 
 				if (empty($_FILES['image_'.$i]['tmp_name']) && $_REQUEST["url_img_".$i] == "") { 
 					 // si oui, on affiche un petit message d'erreur 
-					 $erreur = 'Aucun fichier envoyé.'; 
+					 $erreur = 'Aucun fichier envoyÃ©.'; 
 				} 
 				else { 
-					 // on examine le fichier uploadé 
+					 // on examine le fichier uploadÃ© 
 					 if (empty($_FILES['image_'.$i]['tmp_name']) && $_REQUEST["url_img_".$i] != "" && strlen($_REQUEST["url_img_".$i]) < 256){
 						 $tableau = @getimagesize($_REQUEST["url_img_".$i]);  
 					 } else {
@@ -292,14 +292,14 @@ foreach ($_REQUEST as $variable => $valeur) {
 					 }
 					 
 					 if ($tableau == FALSE) { 
-							// si le fichier uploadé n'est pas une image, on efface le fichier uploadé et on affiche un petit message d'erreur 
+							// si le fichier uploadÃ© n'est pas une image, on efface le fichier uploadÃ© et on affiche un petit message d'erreur 
 							if (!empty($_FILES['image_'.$i]['tmp_name'])) {unlink($_FILES['image_'.$i]['tmp_name']); }
 							$erreur = 'Votre fichier n\'est pas une image.'; 
 					 } 
 					 else { 
 							// on teste le type de notre image : gif, jpeg ou png 
 							if ($tableau[2] == 1 || $tableau[2] == 2 || $tableau[2] == 3) { 
-								 // si on a déjà un fichier qui porte le même nom que le fichier que l'on tente d'uploader, on modifie le nom du fichier que l'on upload 
+								 // si on a dÃ©jÃ  un fichier qui porte le mÃªme nom que le fichier que l'on tente d'uploader, on modifie le nom du fichier que l'on upload 
 								 if (!empty($_FILES['image_'.$i]['tmp_name'])) {
 								 $extension = substr($_FILES["image_".$i]["name"], strrpos($_FILES["image_".$i]["name"], "."));
 								 } else {
@@ -309,18 +309,18 @@ foreach ($_REQUEST as $variable => $valeur) {
 								 if (is_file($ARTICLES_IMAGES_DIR.$file_upload)) {$file_upload = md5(uniqid(rand(), true)).$extension; }
 								 
 			
-								 // on copie le fichier que l'on vient d'uploader dans le répertoire des images de grande taille 
+								 // on copie le fichier que l'on vient d'uploader dans le rÃ©pertoire des images de grande taille 
 								 if (!empty($_FILES['image_'.$i]['tmp_name'])) {
 									copy ($_FILES['image_'.$i]['tmp_name'], $ARTICLES_IMAGES_DIR.$file_upload); 
 								 } else {
 									copy ($_REQUEST["url_img_".$i], $ARTICLES_IMAGES_DIR.$file_upload); 
 								 }
 			
-								 // Générer la miniature 
+								 // GÃ©nÃ©rer la miniature 
 			
 								 // si notre image est de type jpeg 
 								 if ($tableau[2] == 2) { 
-										// on crée une image à partir de notre grande image à l'aide de la librairie GD 
+										// on crÃ©e une image Ã  partir de notre grande image Ã  l'aide de la librairie GD 
 										$src = imagecreatefromjpeg($ARTICLES_IMAGES_DIR.$file_upload); 
 										// on teste si notre image est de type paysage ou portrait 
 										if ($tableau[0] > $tableau[1]) { 
@@ -345,7 +345,7 @@ foreach ($_REQUEST as $variable => $valeur) {
 											 $im = imagecreatetruecolor($x_size, $y_size); 
 											 imagecopyresampled($im, $src, 0, 0, 0, 0, $x_size, $y_size, $tableau[0], $tableau[1]); 
 										}
-										// on copie notre fichier généré dans le répertoire des miniatures 
+										// on copie notre fichier gÃ©nÃ©rÃ© dans le rÃ©pertoire des miniatures 
 										imagejpeg ($im, $ARTICLES_MINI_IMAGES_DIR.$file_upload); 
 								 } 
 								 elseif ($tableau[2] == 3) { 
@@ -404,9 +404,9 @@ foreach ($_REQUEST as $variable => $valeur) {
 								 } 
 							} 
 							else { 
-								 // si notre image n'est pas de type jpeg ou png, on supprime le fichier uploadé et on affiche un petit message d'erreur 
+								 // si notre image n'est pas de type jpeg ou png, on supprime le fichier uploadÃ© et on affiche un petit message d'erreur 
 								 unlink($_FILES['image_'.$i]['tmp_name']); 
-								 $erreur = 'Votre image est d\'un format non supporté.'; 
+								 $erreur = 'Votre image est d\'un format non supportÃ©.'; 
 							} 
 					 } 
 				}  

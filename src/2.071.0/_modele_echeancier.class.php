@@ -48,7 +48,7 @@ public function create_modele_echeancier ($infos) {
 	global $bdd;
 	
 	// *************************************************
-	// Réception des données
+	// RÃ©ception des donnÃ©es
 	$this->lib_echeancier_modele = $infos['lib_echeancier_modele'];
 	
 
@@ -76,7 +76,7 @@ public function maj_modele_echeancier ($infos) {
 	global $bdd;
 
 	// *************************************************
-	// Réception des données
+	// RÃ©ception des donnÃ©es
 	//_vardump($infos);
 	
 	$this->lib_echeancier_modele = $infos['lib_echeancier_modele'];
