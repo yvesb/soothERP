@@ -17,7 +17,7 @@ function reset_assistant_comm_commission(id_assist, id_iframe, id_form, step2) {
 	}
 
 //gestion des grilles tarifaires
-//alerte de suppression d'une grille tarifaire avec  de saisie avec texte d'erreur envoyé par la fonction (un seul bouton)
+//alerte de suppression d'une grille tarifaire avec  de saisie avec texte d'erreur envoyÃ© par la fonction (un seul bouton)
 function alerte_sup_grille_tarif (alerte_titre, alerte_texte, alerte_bouton, formtosend, champs_select, retour_input) {
 	
 		$("titre_alert").innerHTML = alerte_titre;
@@ -44,8 +44,8 @@ function alerte_sup_grille_tarif (alerte_titre, alerte_texte, alerte_bouton, for
 		}
 	}
 	
-//fonction équivalente à celle présente dans tarif.js du profil collab	
-//récupération des information d'un formule tarifaire pour mise à jour des informations de l'assistant des tarifs
+//fonction Ã©quivalente Ã  celle prÃ©sente dans tarif.js du profil collab	
+//rÃ©cupÃ©ration des information d'un formule tarifaire pour mise Ã  jour des informations de l'assistant des tarifs
 
 function edition_formule_tarifaire (id_field_formule) {
 	var formule = $(id_field_formule).value;

@@ -4,14 +4,14 @@ function alerte_message(){
 
 }
 alerte_message.prototype = {
-	//initialisation du système d'affichage des alertes
+	//initialisation du systÃ¨me d'affichage des alertes
 	initialize : function() {
 		$("framealert").style.display = "block";
 		$("alert_pop_up").style.display = "none";
 		$("alert_pop_up_tab").style.display = "none";
 	},
 		
-	//alerte avec texte envoyé par la fonction (deux boutons)
+	//alerte avec texte envoyÃ© par la fonction (deux boutons)
 	alerte_message: function(alerte_titre, alerte_texte, alerte_bouton) {
 	
 		$("titre_alert").innerHTML = alerte_titre;

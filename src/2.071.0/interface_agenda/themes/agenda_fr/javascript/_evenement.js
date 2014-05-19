@@ -297,12 +297,12 @@ Evenement.prototype = {
 			var res = false;
 			
 			if(!res && futurY_deFin >= (this.node.offsetTop+3*HAUTEUR_DEMIE_HEURE) && futurY_deFin <= (HAUTEUR_DEMIE_HEURE*48)){
-				this.height = (futurY_deFin - this.node.offsetTop - 7); //7 = la taille de la dernière div nommée : "event_edit_"+id avec la css : event_div_edition_zone
+				this.height = (futurY_deFin - this.node.offsetTop - 7); //7 = la taille de la derniÃ¨re div nommÃ©e : "event_edit_"+id avec la css : event_div_edition_zone
 				this.node.style.height = this.height + "px";
 				res = true;
 			}
 			if(!res && futurY_deFin <= (HAUTEUR_DEMIE_HEURE*48)){
-				this.height = 2*HAUTEUR_DEMIE_HEURE - 7; //7 = la taille de la dernière div nommée : "event_edit_"+id avec la css : event_div_edition_zone
+				this.height = 2*HAUTEUR_DEMIE_HEURE - 7; //7 = la taille de la derniÃ¨re div nommÃ©e : "event_edit_"+id avec la css : event_div_edition_zone
 				this.node.style.height = this.height + "px";
 				res = true;
 			}

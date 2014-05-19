@@ -206,7 +206,7 @@ calculette.prototype = {
 				return true;
 			}
 			/*
-			case 96:case 97:case 98:case 99:case 100:case 101:case 102:case 103:case 104:case 105:{//Touche de 0 à 9 : clavier numérique
+			case 96:case 97:case 98:case 99:case 100:case 101:case 102:case 103:case 104:case 105:{//Touche de 0 Ã  9 : clavier numÃ©rique
 				Event.stop(evt);
 				if(this.impRes.value == "-0"){
 					this.impRes.value = "-"+(evt.keyCode-96);
@@ -219,7 +219,7 @@ calculette.prototype = {
 				}
 				break;
 			}
-			case 48:case 49:case 50:case 51:case 52:case 53:case 54:case 55:case 56:case 57:{//Touche de 0 à 9 : clavier azerty
+			case 48:case 49:case 50:case 51:case 52:case 53:case 54:case 55:case 56:case 57:{//Touche de 0 Ã  9 : clavier azerty
 				Event.stop(evt);
 				if(this.impRes.value == "-0"){
 					this.impRes.value = "-"+(evt.keyCode-48);

@@ -6,7 +6,7 @@
 
 
 //
-//menu d'affichage menu horizontaux géré par tableau javascript
+//menu d'affichage menu horizontaux gÃ©rÃ© par tableau javascript
 //
 function view_menu_1(id_contenu, id_menu, array_id) {
 array_id.each(function(j) {

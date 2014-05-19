@@ -44,7 +44,7 @@ function import_art_categ (ref_art_categ, lib_art_categ, modele, desc_art_categ,
 }
 
 
-//ajout ou non d'un impex à l'import
+//ajout ou non d'un impex Ã  l'import
 
 function maj_import_type (ref_serveur_import, id_impex_type, autorise) {
 

@@ -1,10 +1,10 @@
 //------------------------------------------
 //------------------------------------------
-//fonctions destinées à l'annuaire contact
+//fonctions destinÃ©es Ã  l'annuaire contact
 //------------------------------------------
 //------------------------------------------
 
-// insertion d'un tableau pour les adresses coordonnées et site pour un nouveau contact
+// insertion d'un tableau pour les adresses coordonnÃ©es et site pour un nouveau contact
 function createnewtagmobil( idzone, nomtag, contenttag, unused) {
 	var zone= $(idzone);
 	var addli= document.createElement(nomtag);
@@ -24,7 +24,7 @@ function createnewtagmobil( idzone, nomtag, contenttag, unused) {
 }
 
 
-// insertion d'un tableau pour les adresses coordonnées et site nouveau pour un contact existant
+// insertion d'un tableau pour les adresses coordonnÃ©es et site nouveau pour un contact existant
 function createtagmobil( idzone, nomtag, contenttag, targetname) {
 	var zone= $(idzone);
 	var addli= document.createElement(nomtag);
@@ -84,8 +84,8 @@ pre_start_commune("adresse_code"+id_index_contentcoord, "adresse_ville"+id_index
 
 
 
-// switch d'un tableau pour les adresses coordonnées et site pour un contact
-//nouveau validé switch vers présentation existant
+// switch d'un tableau pour les adresses coordonnÃ©es et site pour un contact
+//nouveau validÃ© switch vers prÃ©sentation existant
 function switchtagmobil( idzone, nomtag, contenttag, pagetogo, ref_caiu) {
 	var zone= $(idzone);
 	var addli= document.createElement(nomtag);
@@ -109,8 +109,8 @@ function switchtagmobil( idzone, nomtag, contenttag, pagetogo, ref_caiu) {
 }
 
 
-// rafraichissement d'un tableau pour les adresses coordonnées et site pour un contact
-//modifié et validé qui retourne à la présentation visuelle.
+// rafraichissement d'un tableau pour les adresses coordonnÃ©es et site pour un contact
+//modifiÃ© et validÃ© qui retourne Ã  la prÃ©sentation visuelle.
 function refreshtagmobil( idzone, nomtag, contenttag, pagetogo, ref_caiu, num_caiu) {
 	if (num_caiu=="" || num_caiu) {
 	num_caiu	=	$(ref_caiu).value;
@@ -129,7 +129,7 @@ function refreshtagmobil( idzone, nomtag, contenttag, pagetogo, ref_caiu, num_ca
 
 
 
-// affichage des formulaires de profil à la création d'une nouvelle fiche contact
+// affichage des formulaires de profil Ã  la crÃ©ation d'une nouvelle fiche contact
 function affiche_annu_nvlf_profil (nprofil) {
 	if ($("profils"+nprofil).checked) {
 		var npzone=$("zoneprofils");
@@ -145,7 +145,7 @@ function affiche_annu_nvlf_profil (nprofil) {
 }
 
 
-// affichage des formulaires de profil (profil ajouté) à l'édition d'une fiche contact
+// affichage des formulaires de profil (profil ajoutÃ©) Ã  l'Ã©dition d'une fiche contact
 function affiche_annu_edif_profil (nprofil, intitule_profil) {
 	if ($("profils"+nprofil).checked) {
 		var npzone=$("zoneprofils");
@@ -210,7 +210,7 @@ function affiche_annu_edif_profil (nprofil, intitule_profil) {
 	}
 }
 
-//insertion du bouton correspondant à un nouveau profil choisi 
+//insertion du bouton correspondant Ã  un nouveau profil choisi 
 function insert_profil_button(nprofil, intitule_profil) {
 
 		new Insertion.Before ($('last_item_menu'), "<li id='exist_profil_"+nprofil+"'></li>");
@@ -223,12 +223,12 @@ function insert_profil_button(nprofil, intitule_profil) {
 
 
 
-// rétabli la coche sur un profil existant si la supression a été annulée
+// rÃ©tabli la coche sur un profil existant si la supression a Ã©tÃ© annulÃ©e
 function check_profil (profil_check) {
 $(profil_check).checked="checked";
 }
 
-// suppréssion du profil et du bouton dans l'affichage d'un contact
+// supprÃ©ssion du profil et du bouton dans l'affichage d'un contact
 function remove_provil_visu (nprofil) {
 	remove_tag("exist_profil_"+nprofil);
 	remove_tag("x_typeprofil"+nprofil);
@@ -273,7 +273,7 @@ function refreshprofil_edit(id_profil, div_target, page_include) {
 
 
 
-// edition d'une fiche (efet roll over remplacé par champs du formulaire)
+// edition d'une fiche (efet roll over remplacÃ© par champs du formulaire)
 function showform (appear, unshow) {
 	$(appear).style.display="block";
 	$(appear).focus();
@@ -287,7 +287,7 @@ function show_edit_form(formname, visuname, formfocus) {
 }
 
 
-//fonction d'appel de page en fonction de la catégorie de client qui rempli les champs concernés par leur valeur par defaut
+//fonction d'appel de page en fonction de la catÃ©gorie de client qui rempli les champs concernÃ©s par leur valeur par defaut
 function annu_client_categ_preselect (id_client_categ) {
 		var AppelAjax = new Ajax.Request(
 									"annuaire_profil_client_preselect.php", 
@@ -325,7 +325,7 @@ function add_commercial (ref_contact, new_ref_contact) {
 									);
 }
 
-////pas utilisé mais pour mémoire
+////pas utilisÃ© mais pour mÃ©moire
 function change_ordre_caiu_down (ele, bt, ref_c, ord1, ord2, page2call){
 
 
@@ -377,7 +377,7 @@ var AppelAjax = new Ajax.Request(
 }
 
 
-// fin des " pas utilisés"
+// fin des " pas utilisÃ©s"
 
 
 //ajout d'un fonction de collab
@@ -518,9 +518,9 @@ function maj_suite_avant_echeance (suite_avant_echeance_checked, id_line, id_rel
 //qui permettent modification cadenas
 //********************************************************************
 
-//Pour l'id d'un flag passé, l'id d'un champ passé(liste), id des images a altérer et le style a appliquer sur la liste
-//switche les images, switche le style avec etatvoulu à 0 ( fermé ) ou 1 ( ouvert ) permet dans 
-//page_annuaire_nouvelle_fiche_profil4.inc.php de rendre les images de cadenas et flag associés coches ou non
+//Pour l'id d'un flag passÃ©, l'id d'un champ passÃ©(liste), id des images a altÃ©rer et le style a appliquer sur la liste
+//switche les images, switche le style avec etatvoulu Ã  0 ( fermÃ© ) ou 1 ( ouvert ) permet dans 
+//page_annuaire_nouvelle_fiche_profil4.inc.php de rendre les images de cadenas et flag associÃ©s coches ou non
 function get_select_numero_option_from_value(id_passe, valeur)
 {
 	var iretour = null;
@@ -540,7 +540,7 @@ function toggle_cadenas(id_flag_passe, id_passe, id_img_cadenas_ouvert, id_img_c
 {
 	switch (etatvoulu)
 	{
-		// etat cadenas fermes, flag decoches, listes grisees, style forcé sur les options
+		// etat cadenas fermes, flag decoches, listes grisees, style forcÃ© sur les options
 		case "ferme":
 			$(id_flag_passe).checked= false;
 			$(id_passe).addClassName(style_readonly);
@@ -579,10 +579,10 @@ function toggle_cadenas(id_flag_passe, id_passe, id_img_cadenas_ouvert, id_img_c
 	}
 }
 
-//fonction qui initialise la valeur d'un cadenas en fonction des valeurs associées
+//fonction qui initialise la valeur d'un cadenas en fonction des valeurs associÃ©es
 //une liste en <select> (id_passe)
-//un champ (def_id_passe) contenant la valeur par défault de l'élément de la liste à sélectionner 
-//un champ contenant la valeur qui sera retournée par le formulaire de saisie de client
+//un champ (def_id_passe) contenant la valeur par dÃ©fault de l'Ã©lÃ©ment de la liste Ã  sÃ©lectionner 
+//un champ contenant la valeur qui sera retournÃ©e par le formulaire de saisie de client
 function toggle_cadenas_et_valeurs(flag_id_passe, id_passe, id_img_cadenas_ouvert, id_img_cadenas_ferme, style_readonly, etatvoulu, def_id_passe, retour_value_id_passe)
 {
 	switch ($(id_passe).type)
@@ -591,7 +591,7 @@ function toggle_cadenas_et_valeurs(flag_id_passe, id_passe, id_img_cadenas_ouver
 			
 			switch (etatvoulu)
 			{	
-				case "ferme":	// on ferme les cadenas, listes, repositionne liste sur valeur par défaut, met la valeur de retour à null
+				case "ferme":	// on ferme les cadenas, listes, repositionne liste sur valeur par dÃ©faut, met la valeur de retour Ã  null
 					toggle_cadenas(flag_id_passe, id_passe, id_img_cadenas_ouvert, id_img_cadenas_ferme, style_readonly, etatvoulu);
 					var j = null;
 					j = get_select_numero_option_from_value ( id_passe, $(def_id_passe).value );
@@ -600,7 +600,7 @@ function toggle_cadenas_et_valeurs(flag_id_passe, id_passe, id_img_cadenas_ouver
 					$(retour_value_id_passe).value = "";
 					break;
 				
-				case "ouvert":	// on ouvre les cadenas, les listes, si une ligne est sélectionnée dans le select on la retourne sinon on retourne la ligne sélectionnée
+				case "ouvert":	// on ouvre les cadenas, les listes, si une ligne est sÃ©lectionnÃ©e dans le select on la retourne sinon on retourne la ligne sÃ©lectionnÃ©e
 					toggle_cadenas(flag_id_passe, id_passe, id_img_cadenas_ouvert, id_img_cadenas_ferme, style_readonly, etatvoulu);
 					if ( $(id_passe).selectedIndex > 0 )
 						$(retour_value_id_passe).value = $(id_passe).options[$(id_passe).selectedIndex].value;

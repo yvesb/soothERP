@@ -35,7 +35,7 @@ function maj_etat_tache (etat, id_tache) {
 									);
 }
 
-//add_collab à un tache
+//add_collab Ã  un tache
 function add_collab_tache (id_tache, id_increment_tache, id_contener, ref_contact, lib_contact) {
 	var AppelAjax = new Ajax.Request(
 									"planning_taches_add_collab.php", 
@@ -51,7 +51,7 @@ function add_collab_tache (id_tache, id_increment_tache, id_contener, ref_contac
 									}
 									);
 }
-//del_collab à un tache
+//del_collab Ã  un tache
 function del_collab_tache (id_tache, id_tag, ref_contact) {
 	var AppelAjax = new Ajax.Request(
 									"planning_taches_del_collab.php", 
@@ -69,7 +69,7 @@ function del_collab_tache (id_tache, id_tag, ref_contact) {
 }
 
 
-//add_fonction à un tache
+//add_fonction Ã  un tache
 function add_fonction_tache (id_tache, id_fonction) {
 	var AppelAjax = new Ajax.Request(
 									"planning_taches_add_fonction.php", 
@@ -84,7 +84,7 @@ function add_fonction_tache (id_tache, id_fonction) {
 									}
 									);
 }
-//del_fonction à un tache
+//del_fonction Ã  un tache
 function del_fonction_tache (id_tache, id_fonction) {
 	var AppelAjax = new Ajax.Request(
 									"planning_taches_del_fonction.php", 
@@ -176,7 +176,7 @@ function tache_reload_todo () {
 }
 
 
-//fonction d'ajout de contact dans la liste des collab assignés à une tache
+//fonction d'ajout de contact dans la liste des collab assignÃ©s Ã  une tache
 
 function tache_set_contact (id_increment_tache, id_contener, ref_contact, lib_contact) {
 	var increment_tache = parseInt($(id_increment_tache).value);
@@ -214,7 +214,7 @@ function pre_start_sup_collab_tache (id_bt, id_tag) {
 }
 
 
-//fonction d'ajout de contact dans la liste des collab assignés à une tache en mode EDITION
+//fonction d'ajout de contact dans la liste des collab assignÃ©s Ã  une tache en mode EDITION
 
 function tache_set_contact_edition (id_tache, id_increment_tache, id_contener, ref_contact, lib_contact) {
 	var increment_tache = parseInt($(id_increment_tache).value);

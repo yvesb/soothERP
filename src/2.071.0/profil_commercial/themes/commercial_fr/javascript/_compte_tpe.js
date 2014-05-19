@@ -1,4 +1,4 @@
-//mettre le compte tpe à actif
+//mettre le compte tpe Ã  actif
 function set_active_compte_tpe (id_compte_tpe) {
 	var AppelAjax = new Ajax.Request(
 									"compta_compte_tpes_active_compte.php", 
@@ -14,7 +14,7 @@ function set_active_compte_tpe (id_compte_tpe) {
 									);
 }
 
-//mettre le compte tpe à inactif
+//mettre le compte tpe Ã  inactif
 function set_desactive_compte_tpe (id_compte_tpe) {
 	var AppelAjax = new Ajax.Request(
 									"compta_compte_tpes_desactive_compte.php", 
@@ -49,7 +49,7 @@ function	etat_tp_result () {
 	}
 
 
-//fonction d'affichage de l'histyorique des télécollectes
+//fonction d'affichage de l'histyorique des tÃ©lÃ©collectes
 function	etat_telecollecte_result () {
 		var AppelAjax = new Ajax.Updater(
 									"etat_telecollecte_result", 
@@ -68,7 +68,7 @@ function	etat_telecollecte_result () {
 	}
 
 //*******************************
-//calcul des télécollecte TP
+//calcul des tÃ©lÃ©collecte TP
 //*******************************
 function calcul_telecollecte_tp () {
 	var montant_telecollecte = 0;
@@ -148,7 +148,7 @@ function insert_new_line_tp_cb () {
 }
 
 
-//cochage des lignes de resultat de recherche avancée de documents
+//cochage des lignes de resultat de recherche avancÃ©e de documents
 
 function coche_line_gest_tp (type_action, second_id , length_list) {
 	

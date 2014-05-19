@@ -23,14 +23,14 @@ function reset_moteur_s (id_form, init_request) {
 	 $(init_request).selectedIndex=0;
 	 
 }
-// moteur avancé recherche article
+// moteur avancÃ© recherche article
 function reset_moteur_a (id_form, init_request, init_categ) {
 	 $(id_form).reset();
 	 $(init_request).selectedIndex=0;
 	 
 }
 	
-//chargement des caracteristiques simple pour moteur de recherche article avancé
+//chargement des caracteristiques simple pour moteur de recherche article avancÃ©
 function charger_carac_simple (ref_art_categ, id_cible) {
 			var AppelAjax = new Ajax.Updater(
 									id_cible, 
@@ -46,7 +46,7 @@ function charger_carac_simple (ref_art_categ, id_cible) {
 									);
 
 }
-//chargement des caracteristiques avancee pour moteur de recherche article avancé
+//chargement des caracteristiques avancee pour moteur de recherche article avancÃ©
 function charger_carac_avancee (ref_art_categ, id_cible) {
 			var AppelAjax = new Ajax.Updater(
 									id_cible, 
@@ -131,27 +131,27 @@ function show_mini_moteur_contacts (fonction_retour, param_retour) {
 	$('nom_m').focus();
 }
 
-//fonction de mise à jour du contact depuis le mini moteur de recherche de contact
+//fonction de mise Ã  jour du contact depuis le mini moteur de recherche de contact
 function recherche_docu_set_contact (id_ref_contact, id_lib_contact, ref_contact, lib_contact) {
 	$(id_ref_contact).value = ref_contact;
 	$(id_lib_contact).innerHTML = lib_contact;
 	
 }
 
-//fonction de mise à jour de la ref_contact pour les comptes bancaire depuis le mini moteur de recherche de contact
+//fonction de mise Ã  jour de la ref_contact pour les comptes bancaire depuis le mini moteur de recherche de contact
 function recherche_compte_b_set_contact (id_ref_contact, id_lib_contact, ref_contact, lib_contact) {
 	$(id_ref_contact).value = ref_contact;
 	$(id_lib_contact).value = lib_contact;
 	
 }
-//fonction de mise à jour de la ref_commercial
+//fonction de mise Ã  jour de la ref_commercial
 function recherche_client_set_contact (id_ref_contact, id_lib_contact, ref_contact, lib_contact) {
 	$(id_ref_contact).value = ref_contact;
 	$(id_lib_contact).value = lib_contact;
 	
 }
 // function de raz du moteur  de recherche simple de documents
-// moteur avancé recherche article
+// moteur avancÃ© recherche article
 function reset_moteur_doc_s (id_form, init_request, init_categ, etat_select) {
 	 $(id_form).reset();
    $(etat_select).innerHTML = "";
@@ -179,7 +179,7 @@ function show_mini_moteur_documents (fonction_retour, param_retour) {
 	$('param_retour_doc_m').value	=	param_retour;
 }
 
-//fonction d'affichage pour création d'un nouveau document d'aprés les lignes d'articles
+//fonction d'affichage pour crÃ©ation d'un nouveau document d'aprÃ©s les lignes d'articles
 function show_mini_moteur_newdocuments (fonction_retour, param_retour) {
 	$('pop_up_newmini_moteur_doc').style.display='block'; 
 	$('pop_up_newmini_moteur_doc_iframe').style.display='block'; 
@@ -188,7 +188,7 @@ function show_mini_moteur_newdocuments (fonction_retour, param_retour) {
 }
 
 
-//résumé des stocks dans les recherches d'articles
+//rÃ©sumÃ© des stocks dans les recherches d'articles
 
 function show_resume_stock (ref_article, evt) {
 	if (	$('resume_stock').style.display == 'block'  ) {
@@ -258,7 +258,7 @@ function show_resume_stock2 (ref_article) {
 	}
 }
 
-//résumé des stocks dans articles à renouveller
+//rÃ©sumÃ© des stocks dans articles Ã  renouveller
 
 function show_resume_stock_all (ref_article, evt) {
 	if (	$('resume_stock').style.display == 'block'  ) {
@@ -292,7 +292,7 @@ function show_resume_stock_all (ref_article, evt) {
 								);
 	}
 }
-// fonction ferme résumé des stocks
+// fonction ferme rÃ©sumÃ© des stocks
 function close_resume_stock() {
 	$('resume_stock').hide(); 
 	$('resume_stock_iframe').hide(); 
@@ -319,7 +319,7 @@ function load_liste_categ (url_to_load, id_cible) {
 }
 
 
-//cochage des lignes de resultat de recherche avancée de documents
+//cochage des lignes de resultat de recherche avancÃ©e de documents
 
 function coche_line_search_docs (type_action, second_id , length_list) {
 	
@@ -347,7 +347,7 @@ function coche_line_search_docs (type_action, second_id , length_list) {
 		}
 	
 }
-//action sur les lignes de resultat de recherche avancée de documents
+//action sur les lignes de resultat de recherche avancÃ©e de documents
 function action_recherche(action_selection, second_id , length_list) {
 
 		var liste_doc = "";
@@ -366,7 +366,7 @@ function action_recherche(action_selection, second_id , length_list) {
 		if (action_selection == "annuler_docs") {
 			
 			$("titre_alert").innerHTML = "Confirmer l'action";
-			$("texte_alert").innerHTML = "Confirmer l'action sur la sélection.<br/>";
+			$("texte_alert").innerHTML = "Confirmer l'action sur la sÃ©lection.<br/>";
 			$("bouton_alert").innerHTML = '<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />';
 		
 			$("alert_pop_up_tab").style.display = "block";
@@ -439,7 +439,7 @@ function close_compta_verify() {
 	$('pop_up_compta_verify').style.display='none'; 
 }
 
-//chargement des caracteristiques avancee pour moteur de recherche article avancé
+//chargement des caracteristiques avancee pour moteur de recherche article avancÃ©
 function charger_compta_plan_mini_moteur (url_page_plan_recherche) {
 			var AppelAjax = new Ajax.Updater(
 									"aff_plan_mini", 

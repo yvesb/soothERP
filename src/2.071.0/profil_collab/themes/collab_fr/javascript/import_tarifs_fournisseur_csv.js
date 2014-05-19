@@ -55,14 +55,14 @@ function action_tarifs_fournisseur_import(action_selection, nom_champ , length_l
 	}
 	if (action_selection == "import") {
 		$("titre_alert").innerHTML = "Confirmer l'action";
-		$("texte_alert").innerHTML = "Confirmer l'import de la sélection.<br/>";
+		$("texte_alert").innerHTML = "Confirmer l'import de la sÃ©lection.<br/>";
 		$("bouton_alert").innerHTML = '<input type="submit" name="bouton1" id="bouton1" value="Confirmer" />';
 		$("bouton_alert").innerHTML += '<input type="submit" id="bouton0" name="bouton0" value="Annuler" />';
 	}
 	
 	if (action_selection == "supprimer") {
 		$("titre_alert").innerHTML = "Confirmer l'action";
-		$("texte_alert").innerHTML = "Confirmer la suppression de la sélection.<br/>";
+		$("texte_alert").innerHTML = "Confirmer la suppression de la sÃ©lection.<br/>";
 		$("bouton_alert").innerHTML = '<input type="submit" name="bouton1" id="bouton1" value="Confirmer" />';
 		$("bouton_alert").innerHTML += '<input type="submit" id="bouton0" name="bouton0" value="Annuler" />';
 	}

@@ -1,9 +1,9 @@
 // fonctiobn profil_admin
 
-//gestion des catégories d'articles
+//gestion des catÃ©gories d'articles
 
-//lancement de sauvegarde ou de suppréssion à la coche ou à la décoche des choix.
-//non utilisée
+//lancement de sauvegarde ou de supprÃ©ssion Ã  la coche ou Ã  la dÃ©coche des choix.
+//non utilisÃ©e
 function saveordeleteifcheck (id_coche, page2call, ref_coche, ref_globale) {
 		if ($(id_coche).checked) {
 			var AppelAjax = new Ajax.Request(

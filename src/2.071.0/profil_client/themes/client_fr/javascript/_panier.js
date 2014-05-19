@@ -10,11 +10,11 @@ function maj_line_qte(qte_article, ref_article, indentation) {
 }
 
 
-//masque de saisie numérique
+//masque de saisie numÃ©rique
 function nummask(evt, val_def, masque) {
 	// masque type:
 	// X.X nombre flotant
-	// X.XX nombre à deux desimales
+	// X.XX nombre Ã  deux desimales
 	// X nombre entier
 	// X;X masque de tableau 1;25;50
 	var to_return = false;

@@ -64,7 +64,7 @@ function taxes_dispo(taxes_globarray) {
 	que_ceuxdupays.clear();
 	pres=false;
 
-	//on récupère les taxes du pays puis les taxes non encore importés
+	//on rÃ©cupÃ¨re les taxes du pays puis les taxes non encore importÃ©s
 	que_ceuxdupays = taxes_globarray.reject(function(n){return parseInt(n[2])!=currentpays;});
 	que_ceuxabsent=que_ceuxdupays.reject(function(n){
 				i=0;

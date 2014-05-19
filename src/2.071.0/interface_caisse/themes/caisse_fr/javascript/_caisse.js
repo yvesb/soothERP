@@ -59,7 +59,7 @@ function caisse_heure(target) {
 	window.setTimeout("caisse_heure('"+target+"')",1000);
 }
 
-//appel les réponses pour le moteur de recherche articles pour un document
+//appel les rÃ©ponses pour le moteur de recherche articles pour un document
 function document_recherche_article() {
 	var AppelAjax = new Ajax.Updater(
 		"resultat_article",
@@ -90,7 +90,7 @@ function document_recherche_article() {
 		);
 }
 
-//appel les réponses pour le moteur simple recherche contact
+//appel les rÃ©ponses pour le moteur simple recherche contact
 function caisse_recherche_client_simple() {
 	var AppelAjax = new Ajax.Updater(
 		"resultat",
@@ -133,10 +133,10 @@ function caisse_maj_client(ref_doc, ref_contact) {
 		);
 }
 
-//fonction pour ajouter un article(et donc une ligne) à un document de type ticket dans la caisse
+//fonction pour ajouter un article(et donc une ligne) Ã  un document de type ticket dans la caisse
 //si ref_ticket existe
 //alors on charge le ticket
-//sinon, on créé un nouveau ticket
+//sinon, on crÃ©Ã© un nouveau ticket
 function caisse_ajouter_article(ref_ticket, ref_contact, ref_article) {
 
 	var AppelAjax = new Ajax.Request(
@@ -156,7 +156,7 @@ function caisse_ajouter_article(ref_ticket, ref_contact, ref_article) {
 		);
 }
 
-//fonction pour supprimer un article(et donc une ligne) à un document de type ticket dans la caisse
+//fonction pour supprimer un article(et donc une ligne) Ã  un document de type ticket dans la caisse
 function caisse_suppr_article(ref_ticket, ref_ligne) {
 	var AppelAjax = new Ajax.Request(
 		"caisse_suppr_article.php",
@@ -174,7 +174,7 @@ function caisse_suppr_article(ref_ticket, ref_ligne) {
 		);
 }
 
-//fonction pour mettre à jour une ligne d'un document d'un document de type ticket dans la caisse
+//fonction pour mettre Ã  jour une ligne d'un document d'un document de type ticket dans la caisse
 function caisse_maj_ligne_ticket(ref_ticket, ref_ligne, remise, puttc, qte ) {
 	var AppelAjax = new Ajax.Request(
 		"caisse_maj_ligne.php",
@@ -542,7 +542,7 @@ function caisse_reset(id_panneau_called){
 
 	$("print_s").value = "print_ticket";
 
-	$("client_ligne1").innerHTML = 'Client non identifié';
+	$("client_ligne1").innerHTML = 'Client non identifiÃ©';
 	$("client_ligne2").innerHTML = "";
 	$("client_ligne3").innerHTML = "";
 	$("client_grille_tarifaire").innerHTML = lib_grille_tarifaire;

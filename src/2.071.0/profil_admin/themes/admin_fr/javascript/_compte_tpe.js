@@ -1,4 +1,4 @@
-//mettre le compte tpe à actif
+//mettre le compte tpe Ã  actif
 function set_active_compte_tpe (id_compte_tpe) {
 	var AppelAjax = new Ajax.Request(
 									"compta_compte_tpes_active_compte.php", 
@@ -14,7 +14,7 @@ function set_active_compte_tpe (id_compte_tpe) {
 									);
 }
 
-//mettre le compte tpe à inactif
+//mettre le compte tpe Ã  inactif
 function set_desactive_compte_tpe (id_compte_tpe) {
 	var AppelAjax = new Ajax.Request(
 									"compta_compte_tpes_desactive_compte.php", 
@@ -30,7 +30,7 @@ function set_desactive_compte_tpe (id_compte_tpe) {
 									);
 }
 
-//mettre le compte tpv à actif
+//mettre le compte tpv Ã  actif
 function set_active_compte_tpv (id_compte_tpv) {
 	var AppelAjax = new Ajax.Request(
 									"compta_compte_tpv_active_compte.php", 
@@ -46,7 +46,7 @@ function set_active_compte_tpv (id_compte_tpv) {
 									);
 }
 
-//mettre le compte tpv à inactif
+//mettre le compte tpv Ã  inactif
 function set_desactive_compte_tpv (id_compte_tpv) {
 	var AppelAjax = new Ajax.Request(
 									"compta_compte_tpv_desactive_compte.php", 

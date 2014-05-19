@@ -45,8 +45,8 @@ function getCoordsOnGride(node){
 //###########################################################################
 //
 //return 
-//		ecart : Ècartement
-//		prof : profondeur pour laquelle l'Ècart est valable
+//		ecart : √©cartement
+//		prof : profondeur pour laquelle l'√©cart est valable
 function calculEcartementSAVE(heures, index){
 	if(!index)
 	{	index = 0;}
@@ -221,7 +221,7 @@ function mouseUpJour(ev){
 			enableContenu("panneau_event_edition");
 			var id = genIdGraphicEvent();
 			var coords = getCoordsOnGride($("ZEROjour").parentNode);
-			if(beginMousePos.x == mousePos.x && beginMousePos.y == mousePos.y){//c'est un clic sur la grille -> crÈation d'un event d'1h
+			if(beginMousePos.x == mousePos.x && beginMousePos.y == mousePos.y){//c'est un clic sur la grille -> cr√©ation d'un event d'1h
 				var new_y = Math.floor((mousePos.y - coords.y + $("sub_content").scrollTop +  $("grille_jour").scrollTop) / HAUTEUR_DEMIE_HEURE) * HAUTEUR_DEMIE_HEURE;
 				var eventNode = CreateDivEvenement("eventId_"+id, new_y, 0, evenementMaxWidthJour(), HAUTEUR_DEMIE_HEURE*2, "");
 				$("ZEROjour").appendChild(eventNode);
@@ -230,7 +230,7 @@ function mouseUpJour(ev){
 				evenements[id] = event;
 				event.addIntoMatrice();
 				event.showOnPanel(true, false);
-			}else{//c'est une sÈlection sur la grille -> crÈation d'un Èvenement de X h
+			}else{//c'est une s√©lection sur la grille -> cr√©ation d'un √©venement de X h
 				var y_deDeb = Math.floor((beginMousePos.y - coords.y + $("sub_content").scrollTop +  $("grille_jour").scrollTop) / HAUTEUR_DEMIE_HEURE) * HAUTEUR_DEMIE_HEURE;
 				var y_deFin = Math.floor((mousePos.y - coords.y + $("sub_content").scrollTop +  $("grille_jour").scrollTop) / HAUTEUR_DEMIE_HEURE) * HAUTEUR_DEMIE_HEURE;
 				
@@ -366,7 +366,7 @@ function mouseMoveSemaine(ev){
 		var type = target.id.substr(0,5);
 	    var coords = getCoordsOnGride($("ZEROsemaine").parentNode);
 	    
-	    if(iMouseDown && !gride_is_locked && (type == "event" || type == "gride") && action != "nouv" ){//modification d'un Èvenement dÈj‡ existant
+	    if(iMouseDown && !gride_is_locked && (type == "event" || type == "gride") && action != "nouv" ){//modification d'un √©venement d√©j√† existant
 	      if(typeof(h_old)=='undefined'){h_old = 0;}
 
 	    	if(h_old != h){
@@ -387,7 +387,7 @@ function mouseMoveSemaine(ev){
 				}
 		  	}
 	    }
-	    if(!gride_is_locked && iMouseDown && (type == "event" || type == "gride") &&action == "nouv"){//modification du nouvel Èvenement crÈÈ 
+	    if(!gride_is_locked && iMouseDown && (type == "event" || type == "gride") &&action == "nouv"){//modification du nouvel √©venement cr√©√© 
 
 	      eventNew = evenements[idNew];
 	      
@@ -401,14 +401,14 @@ function mouseMoveSemaine(ev){
 	    	  h_old = h;
 	    	  //$("event_moveG"+idNew).innerHTML = "test";
 	    	  //alert(y_deFin_old+" - "+y_deFin);
-		      if(y_deDeb < y_deFin){//dÈplacement vers le bas -> redimensionnement simple
+		      if(y_deDeb < y_deFin){//d√©placement vers le bas -> redimensionnement simple
 		        var h = Math.max(2*HAUTEUR_DEMIE_HEURE, y_deFin - y_deDeb + HAUTEUR_DEMIE_HEURE);
 		        $("grilleDemieHeure").style.cursor="n-resize";
 		        eventNew.edit(mousePos.x, mousePos.y);
 				//eventNew.showOnPanel();
 				ecarterEvenements(eventNew.cellJour);
 		      }
-		      if( y_deDeb > y_deFin){//dÈplacement vers le haut -> repositionnement de la div + redimensionnement
+		      if( y_deDeb > y_deFin){//d√©placement vers le haut -> repositionnement de la div + redimensionnement
 		        var h = Math.max(2*HAUTEUR_DEMIE_HEURE, y_deDeb - y_deFin + HAUTEUR_DEMIE_HEURE);
 		        eventNew.move(mousePos.x, mousePos.y)
 		        eventNew.edit(beginMousePos.x, beginMousePos.y);
@@ -452,7 +452,7 @@ function mouseUpSemaine(ev){
 				//ecarterEvenements(event.cellJour);
 				/*
 				var coords = getCoordsOnGride($("ZEROsemaine").parentNode);
-				if(beginMousePos.x == mousePos.x && beginMousePos.y == mousePos.y){//c'est un clic sur la grille -> crÈation d'un event d'1h
+				if(beginMousePos.x == mousePos.x && beginMousePos.y == mousePos.y){//c'est un clic sur la grille -> cr√©ation d'un event d'1h
 					var new_x = Math.floor((mousePos.x - coords.x) / largeurColonneSemaine()) * largeurColonneSemaine();
 					var new_y = Math.floor((mousePos.y - coords.y + $("sub_content").scrollTop +  $("grille_semaine").scrollTop) / HAUTEUR_DEMIE_HEURE) * HAUTEUR_DEMIE_HEURE;
 					var eventNode = CreateDivEvenement("eventId_"+id, new_y, new_x, evenementMaxWidthSemaine(), HAUTEUR_DEMIE_HEURE*2, "");
@@ -461,7 +461,7 @@ function mouseUpSemaine(ev){
 					evenements[id] = event;
 					event.addIntoMatrice();
 					event.showOnPanel(true, false);
-				}else{//c'est une sÈlection sur la grille -> crÈation d'un Èvenement de X h
+				}else{//c'est une s√©lection sur la grille -> cr√©ation d'un √©venement de X h
 					var x_deDeb = Math.floor((beginMousePos.x - coords.x) / largeurColonneSemaine()) * largeurColonneSemaine();
 					var y_deDeb = Math.floor((beginMousePos.y - coords.y + $("sub_content").scrollTop +  $("grille_semaine").scrollTop) / HAUTEUR_DEMIE_HEURE) * HAUTEUR_DEMIE_HEURE;
 					var y_deFin = Math.floor((mousePos.y - coords.y + $("sub_content").scrollTop +  $("grille_semaine").scrollTop) / HAUTEUR_DEMIE_HEURE) * HAUTEUR_DEMIE_HEURE;

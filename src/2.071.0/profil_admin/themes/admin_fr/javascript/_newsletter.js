@@ -1,11 +1,11 @@
 //------------------------------------------
 //------------------------------------------
-//fonctions destinées aux newsletters
+//fonctions destinÃ©es aux newsletters
 //------------------------------------------
 //------------------------------------------
 
 
-// affichage des formulaires de profil à la création d'une nouvelle newsletter
+// affichage des formulaires de profil Ã  la crÃ©ation d'une nouvelle newsletter
 function affiche_newsletter_profil_nvl (nprofil) {
 	if ($("profils"+nprofil).checked) {
 		var npzone=$("zoneprofils");
@@ -20,7 +20,7 @@ function affiche_newsletter_profil_nvl (nprofil) {
 	}
 }
 
-// affichage des formulaires de profil à l'édition d'une newsletter
+// affichage des formulaires de profil Ã  l'Ã©dition d'une newsletter
 function affiche_newsletter_profil_edition (nprofil,id_newsletter) {
 	if ($("profils"+nprofil).checked) {
 		var npzone=$("zoneprofils");

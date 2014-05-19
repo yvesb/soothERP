@@ -173,7 +173,7 @@ function add_new_line_livraison_mode (ref_doc, id_livraison_mode) {
 //
 //}
 
-//mise à jour des articles lors de changement dans la liste de resultats
+//mise Ã  jour des articles lors de changement dans la liste de resultats
 function article_maj_from_moteur (ref_article, type) {
 
 	switch (type)
@@ -240,7 +240,7 @@ function article_maj_from_moteur (ref_article, type) {
 }
 
 
-	//fonction de mise à jour du contact depuis lla création d'un contact
+	//fonction de mise Ã  jour du contact depuis lla crÃ©ation d'un contact
 
 function docu_maj_contact_request (ref_doc, ref_contact) {
 		var AppelAjax = new Ajax.Request(
@@ -255,7 +255,7 @@ function docu_maj_contact_request (ref_doc, ref_contact) {
 									}
 									);
 }
-//fonction de mise à jour du contact depuis le mini moteur de recherche de contact
+//fonction de mise Ã  jour du contact depuis le mini moteur de recherche de contact
 
 function docu_maj_contact (ref_doc, ref_contact, lib_contact) {
 		var AppelAjax = new Ajax.Updater(
@@ -273,7 +273,7 @@ function docu_maj_contact (ref_doc, ref_contact, lib_contact) {
 									);
 }
 
-//fonction de mise à jour des infos texte du contact
+//fonction de mise Ã  jour des infos texte du contact
 
 function docu_maj_contact_infos (ref_doc, id_info_content) {
 		var AppelAjax = new Ajax.Request(
@@ -290,7 +290,7 @@ function docu_maj_contact_infos (ref_doc, id_info_content) {
 }
 
 
-// affichage liste déroulante des adresses pour un contact sur un document
+// affichage liste dÃ©roulante des adresses pour un contact sur un document
 
 function pre_start_adresse_doc (survol, bt_survol, ref_contact, lib_adresse, user_adresse, choix_adresse, iframe_adresse, pagecible, ref_doc, type_adresse) {
 
@@ -305,7 +305,7 @@ function pre_start_adresse_doc (survol, bt_survol, ref_contact, lib_adresse, use
 
 }
 
-//affichage des adresses présentes dans la base de données pour un contact.
+//affichage des adresses prÃ©sentes dans la base de donnÃ©es pour un contact.
 function start_adresse_doc (ref_contact, idtextarea, idinput, cible, iframecible, targeturl, ref_doc, type_adresse) {
 
 if ($(cible).style.display=="none") {
@@ -329,7 +329,7 @@ if ($(cible).style.display=="none") {
 	}
 }
 
-//lance la mise à jour  d'une adresse de contact (selon le type d'adresse à changer
+//lance la mise Ã  jour  d'une adresse de contact (selon le type d'adresse Ã  changer
 
 function documents_maj_adresse (ref_adresse, type_adresse, ref_doc, ref_contact) {
 		var AppelAjax = new Ajax.Updater(
@@ -346,7 +346,7 @@ function documents_maj_adresse (ref_adresse, type_adresse, ref_doc, ref_contact)
 
 
 //***************************************************
-//Mise à jour des lignes d'articles d'un document
+//Mise Ã  jour des lignes d'articles d'un document
 //***************************************************
 
 //maj de la ref_externe
@@ -553,7 +553,7 @@ function doc_sup_line (ref_doc_line) {
 									);
 }
 
-//add d'un numéro de série
+//add d'un numÃ©ro de sÃ©rie
 function add_line_sn (ref_doc_line, sn, art_sn) {
 	var ref_doc = $("ref_doc").value;
 	var AppelAjax = new Ajax.Request(
@@ -569,7 +569,7 @@ function add_line_sn (ref_doc_line, sn, art_sn) {
 									}
 									);
 }
-//maj d'un numéro de série
+//maj d'un numÃ©ro de sÃ©rie
 function maj_line_sn (ref_doc_line, sn, new_sn, art_sn) {
 	var ref_doc = $("ref_doc").value;
 	var AppelAjax = new Ajax.Request(
@@ -585,7 +585,7 @@ function maj_line_sn (ref_doc_line, sn, new_sn, art_sn) {
 									}
 									);
 }
-//del d'un numéro de série
+//del d'un numÃ©ro de sÃ©rie
 function del_line_sn (ref_doc_line, sn) {
 	var ref_doc = $("ref_doc").value;
 	var AppelAjax = new Ajax.Request(
@@ -620,7 +620,7 @@ function observe_RETURN_for_doc_line_sn (event, name, indent_art, indent_sn) {
 	}
 }
 
-//double click sur champ sn incrémente les sn suivant si non déjà remplis
+//double click sur champ sn incrÃ©mente les sn suivant si non dÃ©jÃ  remplis
 function incremente_sn(indentation_art, indentation_sn) {
 	var ref_doc_line = $("ref_doc_line_"+indentation_art).value
 	var nombre_ligne_sn =  Math.abs($("qte_"+indentation_art).value);
@@ -755,15 +755,15 @@ function is_sn_filled () {
 }
 
 
-//alerte de qté depassant le stock
+//alerte de qtÃ© depassant le stock
 function depasse_stock () {
-	// pour eviter la surcharge la fonction a été intégrée à is_sn_filled
+	// pour eviter la surcharge la fonction a Ã©tÃ© intÃ©grÃ©e Ã  is_sn_filled
 	is_sn_filled ();
 }
 
 
 
-//fonction de lancement des observateur d'event pour ligne de sn insérées par javascript
+//fonction de lancement des observateur d'event pour ligne de sn insÃ©rÃ©es par javascript
 function pre_start_observer_sn (indentation_art, indentation_sn, ref_doc_line, art_sn, old_art_sn, sup_sn, more_sn, ref_article, choix_div, choix_iframe) {
 	Event.observe("art_sn_"+indentation_art+"_"+indentation_sn, "keypress", function(evt){
 								observe_RETURN_for_doc_line_sn (evt, "art_sn", indentation_art, parseInt(indentation_sn)+1);
@@ -850,7 +850,7 @@ function start_choix_sn (ref_article, idinput, cible, iframecible, targeturl) {
 
 //numeros de lots
 
-//del d'un numéro de lot
+//del d'un numÃ©ro de lot
 function del_line_nl (ref_doc_line, nl, qte_nl) {
 	var ref_doc = $("ref_doc").value;
 	var AppelAjax = new Ajax.Request(
@@ -914,7 +914,7 @@ function start_choix_nl (ref_article, idinput, cible, iframecible, targeturl) {
 
 
 
-//maj d'un numéro de série
+//maj d'un numÃ©ro de sÃ©rie
 function maj_line_nl (ref_doc_line, nl, new_nl, old_qte_nl, new_qte_nl, art_nl, qte_nl) {
 	var ref_doc = $("ref_doc").value;
 	var AppelAjax = new Ajax.Request(
@@ -931,7 +931,7 @@ function maj_line_nl (ref_doc_line, nl, new_nl, old_qte_nl, new_qte_nl, art_nl, 
 									);
 }
 
-//fonction de lancement des observateur d'event pour ligne de snlinsérées par javascript
+//fonction de lancement des observateur d'event pour ligne de snlinsÃ©rÃ©es par javascript
 function pre_start_observer_nl (indentation_art, indentation_nl, ref_doc_line, art_nl, old_art_nl, sup_nl, more_nl, ref_article, choix_div, choix_iframe, qte_nl, old_qte_nl) {
 	Event.observe("art_nl_"+indentation_art+"_"+indentation_nl, "keypress", function(evt){
 								observe_RETURN_for_doc_line_nl (evt, "qte_nl", indentation_art, parseInt(indentation_nl)+1, qte_nl);
@@ -1180,7 +1180,7 @@ function insert_line_sn (indentation_art, indentation_sn) {
 pre_start_observer_sn (indentation_art, indentation_sn, ref_doc_line, "art_sn_"+indentation_art+"_"+indentation_sn ,"old_art_sn_"+indentation_art+"_"+indentation_sn, "sup_sn_"+indentation_art+"_"+indentation_sn, "more_sn_"+indentation_art+"_"+indentation_sn, $("ref_article_"+indentation_art).value, "choix_liste_choix_sn_"+indentation_art+"_"+indentation_sn, "iframe_liste_choix_sn_"+indentation_art+"_"+indentation_sn );
 }
 
-//modifier le nombre de ligne de numéro de série en cas e changement de quantité
+//modifier le nombre de ligne de numÃ©ro de sÃ©rie en cas e changement de quantitÃ©
 function affichage_sn_update (indentation_art, new_qte, old_qte) {
 	var maj_qte = parseInt(Math.abs(new_qte));
 	var prev_qte = parseInt(Math.abs(old_qte));
@@ -1449,7 +1449,7 @@ function generer_document_doc (fonction_generer, ref_doc) {
 															 );
 }
 
-//chargement du contenu pour la création d'un modèle de contenu
+//chargement du contenu pour la crÃ©ation d'un modÃ¨le de contenu
 function charger_contenu_modeles(){
 	var ref_doc = $("ref_doc").value;
 	var AppelAjax = new Ajax.Updater(
@@ -1504,7 +1504,7 @@ function charger_contenu_options() {
 }
 
 
-//chargement du contenu des règlements pour un document
+//chargement du contenu des rÃ¨glements pour un document
 function charger_contenu_reglements() {
 	param_get= "";
 	if (montant_total_neg) {
@@ -1639,7 +1639,7 @@ function maj_id_niveau_relance (id_info_content) {
 									);
 }
 
-//fonction de mise à jour de la ref_contact pour les entete de document depuis le mini moteur de recherche de contact
+//fonction de mise Ã  jour de la ref_contact pour les entete de document depuis le mini moteur de recherche de contact
 
 function recherche_doc_transporteur_set_contact (id_ref_contact, id_lib_contact, ref_contact, lib_contact) {
 	$(id_ref_contact).value = ref_contact;
@@ -1662,7 +1662,7 @@ function maj_entete_ref_transporteur (ref_transporteur) {
 									);
 }
 
-// gestion de changement d'affichage dans un document si total négatif
+// gestion de changement d'affichage dans un document si total nÃ©gatif
 function total_negatif (bool) {
 	if (montant_total_neg != bool) {
 		montant_total_neg = bool;
@@ -1717,7 +1717,7 @@ function add_loaded_line_doc () {
 }
 
 //******************************************************
-//fonction de calcul des tarifs affichés
+//fonction de calcul des tarifs affichÃ©s
 //******************************************************
 
 function document_calcul_tarif (bool) {
@@ -1831,7 +1831,7 @@ function document_calcul_tarif (bool) {
 	$("toto_tva").innerHTML = parseFloat (toto_tva).toFixed(tarifs_nb_decimales) + " " + monnaie_html;
 	$("d_toto_tva").innerHTML = parseFloat (toto_tva).toFixed(tarifs_nb_decimales) + " " + monnaie_html;
 
-	//alert en cas de résultat négatif
+	//alert en cas de rÃ©sultat nÃ©gatif
 	if (pt_ht < 0) {
 		total_negatif (true);
 	} else {
@@ -1851,7 +1851,7 @@ function document_calcul_tarif (bool) {
 	}
 
 
-	// calcul du reste dûe si il existe
+	// calcul du reste dÃ»e si il existe
 	if ($("montant_acquite")) {
 			$("affichage_paiement_rapide").show();
 		montant_restant_due = ((parseFloat (pt_ttc).toFixed(tarifs_nb_decimales)) - (parseFloat ($("montant_acquite").innerHTML).toFixed(tarifs_nb_decimales))).toFixed(tarifs_nb_decimales);
@@ -1937,7 +1937,7 @@ function document_calcul_tarif (bool) {
 $("wait_calcul_content").style.display= "none";
 }
 
-//fonction de création de l'affichage du panier
+//fonction de crÃ©ation de l'affichage du panier
 function aff_panier (){
 	var panier_cc= $("panier_content");
 	$("panier_content").innerHTML = "";
@@ -1995,7 +1995,7 @@ function reglement_set_doc (ref_doc) {
 }
 
 //*****************************************************************
-//fonction pour les actions sur les lignes d'articles sélectionnées
+//fonction pour les actions sur les lignes d'articles sÃ©lectionnÃ©es
 //*****************************************************************
 // cocher / decocher / inverser selection des lignes
 
@@ -2032,7 +2032,7 @@ function all_line_coche (type_action) {
 
 
 
-// action sur les lignes selectionnées
+// action sur les lignes selectionnÃ©es
 function action_line_coche (proto_name) {
 	this.proto_name = proto_name;
 	this.type_action = "";
@@ -2043,7 +2043,7 @@ function action_line_coche (proto_name) {
 action_line_coche.prototype = {
 	initialize : function() {
 	},
-	//verification qu'un message d'alerte ne dois pas être déclenché
+	//verification qu'un message d'alerte ne dois pas Ãªtre dÃ©clenchÃ©
 	action : function(type_action) {
 		this.type_action = type_action;
 		this.lignes = new Array();
@@ -2061,12 +2061,12 @@ action_line_coche.prototype = {
 				if (this.type_action.match('set_pu_ht_to_id_tarif')) {
 					this.id_tarif = this.type_action.replace("set_pu_ht_to_id_tarif_", "");
 					this.type_action = 'set_pu_ht_to_id_tarif';
-					this.confirmer_action_selection ('Confirmer l\'action', "Changer le tarif pour la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+					this.confirmer_action_selection ('Confirmer l\'action', "Changer le tarif pour la sÃ©lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 				}
 
 				switch (this.type_action) {
 								case "delete_multiples_lines" :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sÃ©lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case "copie_line_to_doc" :
 									if ($("ref_contact") && $("ref_contact").value != "") {
@@ -2083,40 +2083,40 @@ action_line_coche.prototype = {
 									show_mini_moteur_newdocuments ('copie_lines_to_new_doc', $("ref_doc").value);
 									break;
 								case 'generer_commande_client' :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sÃ©lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case 'generer_bl_client'  :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sÃ©lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case 'generer_devis_client'  :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sÃ©lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case 'generer_retour_client'  :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sÃ©lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case 'generer_facture_avoir_client'  :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sÃ©lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case 'reset_pu_ht'  :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sÃ©lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case 'generer_fa_fournisseur'  :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sÃ©lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case 'generer_br_fournisseur'  :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sÃ©lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case 'generer_retour_fournisseur'  :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sÃ©lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case 'generer_commande_fournisseur'  :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sÃ©lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case 'generer_devis_fournisseur'  :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sÃ©lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case 'lines_maj_pa'  :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sÃ©lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case 'maj_tva_liste'  :
 									$('pop_up_lines_liste_tva_doc').style.display = "block";
@@ -2295,7 +2295,7 @@ function copie_lines_to_new_doc (ref_doc, id_type_doc, ref_contact, link_old_ref
 }
 
 
-//action sur un document (fonction d'appel indépendante
+//action sur un document (fonction d'appel indÃ©pendante
 function action_doc (action) {
 	var ref_doc = $("ref_doc").value;
 	var AppelAjax = new Ajax.Request(
@@ -2312,7 +2312,7 @@ function action_doc (action) {
 }
 
 //***********************************************************************************
-//fonctions concernant les nombres de lignes et de caractère pour des champ textarea
+//fonctions concernant les nombres de lignes et de caractÃ¨re pour des champ textarea
 //***********************************************************************************
 
 //observer le retour chariot lors de la saisie sur un textarea pour mettre le nombre de lignes correspondantes
@@ -2332,7 +2332,7 @@ function setToMaxRow_if_Key_RETURN (evt, mini_row, maxcol) {
 	break;
 	}
 }
-//fonction de mise à hauteur d'un textarea en fonction du nombre de lignes qui le compose
+//fonction de mise Ã  hauteur d'un textarea en fonction du nombre de lignes qui le compose
 
 function setToMaxRow (id_field, mini_row, maxcol) {
 	array_lignes = escape($(id_field).value).split("%0A");
@@ -2466,7 +2466,7 @@ function update_document_liaisons () {
 
 //interdiction de modification
 function alert_qte_locked () {
-	alerte.alerte_erreur ('Modification impossible', 'La modification de certains éléments de ce document est interdite. <br /> Vous ne pouvez modifier les quantités, prix  et les numéros de série de ces articles.','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+	alerte.alerte_erreur ('Modification impossible', 'La modification de certains Ã©lÃ©ments de ce document est interdite. <br /> Vous ne pouvez modifier les quantitÃ©s, prix  et les numÃ©ros de sÃ©rie de ces articles.','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 }
 
 function pre_start_ref_externe (ref_article, ref_doc_line, indentation) {
@@ -2490,7 +2490,7 @@ function pre_start_ref_externe (ref_article, ref_doc_line, indentation) {
 		}, false);
 }
 
-//lancement des observateurs d'évenement pour une ligne d'article
+//lancement des observateurs d'Ã©venement pour une ligne d'article
 
 function pre_start_article_line (ref_article, ref_doc_line, indentation) {
 
@@ -2498,7 +2498,7 @@ function pre_start_article_line (ref_article, ref_doc_line, indentation) {
 		Event.observe("link_to_art_"+indentation , "click",  function(evt){Event.stop(evt); page.verify('catalogue_articles_view','index.php#'+escape('catalogue_articles_view.php?ref_article='+ref_article),'true','_blank');}, false);
 
 
-		//on injecte si il existe, dans les résultats du moteur le numéro d'intendation afin de rendre valide la mise à jour de la qté depuis le moteur
+		//on injecte si il existe, dans les rÃ©sultats du moteur le numÃ©ro d'intendation afin de rendre valide la mise Ã  jour de la qtÃ© depuis le moteur
 		if ($("ref_doc_line_article_"+ref_article )) {
 			if ($("ref_doc_line_article_"+ref_article ).value == ""+ref_doc_line ) {
 				$("ref_doc_line_indentation_"+ref_article ).value = ""+indentation ;
@@ -2690,7 +2690,7 @@ function pre_start_article_line (ref_article, ref_doc_line, indentation) {
 
 }
 
-//lancement des observateurs d'évenement pour une ligne de taxes
+//lancement des observateurs d'Ã©venement pour une ligne de taxes
 
 function pre_start_taxes_line (ref_article, ref_doc_line, indentation) {
 // set_visible
@@ -2714,7 +2714,7 @@ function pre_start_taxes_line (ref_article, ref_doc_line, indentation) {
 
 }
 
-//lancement des observateurs d'évenement pour une ligne d'information
+//lancement des observateurs d'Ã©venement pour une ligne d'information
 
 function pre_start_information_line (ref_article, ref_doc_line, indentation) {
 // set_visible
@@ -2789,7 +2789,7 @@ setToMaxRow ("lib_article_"+indentation, 1, 70)	;
 setToMaxRow ("desc_article_"+indentation, 2, 70)	;
 }
 
-//lancement des observateurs d'évenement pour une ligne de sous-total
+//lancement des observateurs d'Ã©venement pour une ligne de sous-total
 
 function pre_start_sstotal_line (ref_article, ref_doc_line, indentation) {
 // set_visible
@@ -2827,7 +2827,7 @@ Event.observe("lib_article_"+indentation, "keypress", function(evt){
 
 }
 
-//ajout d'une compensation à un document
+//ajout d'une compensation Ã  un document
 
 function add_avoir (ref_doc_neg, ref_doc) {
 		var AppelAjax = new Ajax.Request(
@@ -2844,7 +2844,7 @@ function add_avoir (ref_doc_neg, ref_doc) {
 											}
 											);
 }
-//ajout d'un reglement non attribué
+//ajout d'un reglement non attribuÃ©
 
 function add_regmnt (ref_reglement, ref_doc) {
 		var AppelAjax = new Ajax.Request(
@@ -2862,7 +2862,7 @@ function add_regmnt (ref_reglement, ref_doc) {
 											);
 }
 
-//création d'une compensation à un document
+//crÃ©ation d'une compensation Ã  un document
 
 function cree_avoir (ref_doc) {
 		var AppelAjax = new Ajax.Request(
@@ -2881,7 +2881,7 @@ function cree_avoir (ref_doc) {
 }
 
 
-//spécifique au document inventaire
+//spÃ©cifique au document inventaire
 
 function add_all_art_categ_to_inv(nb_lignes) {
 	for (i=0; i < nb_lignes ; i++) {
@@ -2895,7 +2895,7 @@ function del_all_art_categ_to_inv(nb_lignes) {
 	}
 }
 
-//chargement de la liste des art_categ pour attribution à un inventaire
+//chargement de la liste des art_categ pour attribution Ã  un inventaire
 function load_content_inv_list_art_categ () {
 	var ref_doc = $("ref_doc").value;
 	var AppelAjax = new Ajax.Updater(
@@ -2989,7 +2989,7 @@ function set_ref_article_to_des (ref_doc, qte_des, ref_article, lib_article, val
 									);
 }
 
-//maj de la qté à fabriquer
+//maj de la qtÃ© Ã  fabriquer
 function set_qte_to_fab (ref_doc, qte_fab, fill_content) {
 	var AppelAjax = new Ajax.Updater(
 									"sub_content",
@@ -3006,7 +3006,7 @@ function set_qte_to_fab (ref_doc, qte_fab, fill_content) {
 									);
 }
 
-//maj de la qté à desassembler
+//maj de la qtÃ© Ã  desassembler
 function set_qte_to_des (ref_doc, qte_des, fill_content) {
 	var AppelAjax = new Ajax.Updater(
 									"sub_content",
@@ -3039,7 +3039,7 @@ function observe_RETURN_for_doc_fab_sn (event, name, indent_sn) {
 	}
 }
 
-//fonction de lancement des observateur d'event pour ligne de sn insérées par javascript
+//fonction de lancement des observateur d'event pour ligne de sn insÃ©rÃ©es par javascript
 function pre_start_observer_fab_sn ( indentation_sn, ref_doc, art_sn, old_art_sn, sup_sn) {
 	Event.observe("art_sn_"+indentation_sn, "keypress", function(evt){
 								observe_RETURN_for_doc_fab_sn (evt, "art_sn", parseInt(indentation_sn)+1);
@@ -3085,7 +3085,7 @@ function pre_start_observer_fab_sn ( indentation_sn, ref_doc, art_sn, old_art_sn
 }
 
 
-//add d'un numéro de série d'un article à fabriquer
+//add d'un numÃ©ro de sÃ©rie d'un article Ã  fabriquer
 function add_fab_sn (ref_doc, sn, art_sn) {
 	var AppelAjax = new Ajax.Request(
 									"documents_fab_add_sn.php",
@@ -3100,7 +3100,7 @@ function add_fab_sn (ref_doc, sn, art_sn) {
 									}
 									);
 }
-//maj d'un numéro de séried'un article à fabriquer
+//maj d'un numÃ©ro de sÃ©ried'un article Ã  fabriquer
 function maj_fab_sn (ref_doc, sn, new_sn, art_sn) {
 	var AppelAjax = new Ajax.Request(
 									"documents_fab_maj_sn.php",
@@ -3115,7 +3115,7 @@ function maj_fab_sn (ref_doc, sn, new_sn, art_sn) {
 									}
 									);
 }
-//del d'un numéro de série d'un article à fabriquer
+//del d'un numÃ©ro de sÃ©rie d'un article Ã  fabriquer
 function del_fab_sn (ref_doc, sn) {
 	var AppelAjax = new Ajax.Request(
 									"documents_fab_del_sn.php",
@@ -3132,7 +3132,7 @@ function del_fab_sn (ref_doc, sn) {
 }
 
 
-//double click sur champ sn incrémente les sn suivant si non déjà remplis
+//double click sur champ sn incrÃ©mente les sn suivant si non dÃ©jÃ  remplis
 function incremente_fab_sn(ref_doc, indentation_sn) {
 	var nombre_ligne_sn =  Math.abs($("qte_fab").value);
 
@@ -3307,7 +3307,7 @@ pre_start_observer_fab_nl (indentation_nl, ref_doc, "art_nl_"+indentation_nl ,"o
 }
 
 
-//fonction de lancement des observateur d'event pour ligne de sn insérées par javascript
+//fonction de lancement des observateur d'event pour ligne de sn insÃ©rÃ©es par javascript
 function pre_start_observer_fab_nl ( indentation_nl, ref_doc, art_nl, old_art_nl, sup_nl, qte_nl, old_qte_nl, more_nl, ref_article, choix_div, choix_iframe) {
 
 	Event.observe(sup_nl, "click", function(evt){Event.stop(evt);
@@ -3369,7 +3369,7 @@ function pre_start_observer_fab_nl ( indentation_nl, ref_doc, art_nl, old_art_nl
 
 }
 
-//maj d'un numéro de séried'un article à fabriquer
+//maj d'un numÃ©ro de sÃ©ried'un article Ã  fabriquer
 function maj_fab_nl (ref_doc, nl, new_nl, art_nl, qte, new_qte, qte_nl) {
 	var AppelAjax = new Ajax.Request(
 									"documents_fab_maj_nl.php",
@@ -3384,7 +3384,7 @@ function maj_fab_nl (ref_doc, nl, new_nl, art_nl, qte, new_qte, qte_nl) {
 									}
 									);
 }
-//del d'un numéro de série d'un article à fabriquer
+//del d'un numÃ©ro de sÃ©rie d'un article Ã  fabriquer
 function del_fab_nl (ref_doc, nl, qte) {
 	var AppelAjax = new Ajax.Request(
 									"documents_fab_del_nl.php",
@@ -3487,7 +3487,7 @@ function insert_line_des_nl (indentation_nl, ref_article, ref_doc) {
 pre_start_observer_des_nl (indentation_nl, ref_doc, "art_nl_"+indentation_nl ,"old_art_nl_"+indentation_nl, "sup_nl_"+indentation_nl, "qte_nl_"+indentation_nl ,"old_qte_nl_"+indentation_nl, "more_nl_"+indentation_nl, ref_article, "choix_liste_choix_nl_"+indentation_nl, "iframe_liste_choix_nl_"+indentation_nl );
 }
 
-//fonction de lancement des observateur d'event pour ligne de sn insérées par javascript
+//fonction de lancement des observateur d'event pour ligne de sn insÃ©rÃ©es par javascript
 function pre_start_observer_des_nl ( indentation_nl, ref_doc, art_nl, old_art_nl, sup_nl, qte_nl, old_qte_nl, more_nl, ref_article, choix_div, choix_iframe) {
 
 	Event.observe(sup_nl, "click", function(evt){Event.stop(evt);
@@ -3549,7 +3549,7 @@ function pre_start_observer_des_nl ( indentation_nl, ref_doc, art_nl, old_art_nl
 
 }
 
-//maj d'un numéro de séried'un article à désassembler
+//maj d'un numÃ©ro de sÃ©ried'un article Ã  dÃ©sassembler
 function maj_des_nl (ref_doc, nl, new_nl, art_nl, qte, new_qte, qte_nl) {
 	var AppelAjax = new Ajax.Request(
 									"documents_des_maj_nl.php",
@@ -3565,7 +3565,7 @@ function maj_des_nl (ref_doc, nl, new_nl, art_nl, qte, new_qte, qte_nl) {
 									);
 }
 
-//del d'un numéro de série d'un article à désassembler
+//del d'un numÃ©ro de sÃ©rie d'un article Ã  dÃ©sassembler
 function del_des_nl (ref_doc, nl, qte) {
 	var AppelAjax = new Ajax.Request(
 									"documents_des_del_nl.php",
@@ -3598,7 +3598,7 @@ function observe_RETURN_for_doc_des_sn (event, name, indent_sn) {
 	break;
 	}
 }
-//fonction de lancement des observateur d'event pour ligne de sn insérées par javascript
+//fonction de lancement des observateur d'event pour ligne de sn insÃ©rÃ©es par javascript
 function pre_start_observer_des_sn ( indentation_sn, ref_doc, art_sn, old_art_sn, sup_sn, more_sn, ref_article, choix_div, choix_iframe) {
 	Event.observe("art_sn_"+indentation_sn, "keypress", function(evt){
 								observe_RETURN_for_doc_des_sn (evt, "art_sn", parseInt(indentation_sn)+1);
@@ -3653,7 +3653,7 @@ function pre_start_observer_des_sn ( indentation_sn, ref_doc, art_sn, old_art_sn
 }
 
 
-//add d'un numéro de série d'un article à fabriquer
+//add d'un numÃ©ro de sÃ©rie d'un article Ã  fabriquer
 function add_des_sn (ref_doc, sn, art_sn) {
 	var AppelAjax = new Ajax.Request(
 									"documents_des_add_sn.php",
@@ -3668,7 +3668,7 @@ function add_des_sn (ref_doc, sn, art_sn) {
 									}
 									);
 }
-//maj d'un numéro de séried'un article à fabriquer
+//maj d'un numÃ©ro de sÃ©ried'un article Ã  fabriquer
 function maj_des_sn (ref_doc, sn, new_sn, art_sn) {
 	var AppelAjax = new Ajax.Request(
 									"documents_des_maj_sn.php",
@@ -3683,7 +3683,7 @@ function maj_des_sn (ref_doc, sn, new_sn, art_sn) {
 									}
 									);
 }
-//del d'un numéro de série d'un article à fabriquer
+//del d'un numÃ©ro de sÃ©rie d'un article Ã  fabriquer
 function del_des_sn (ref_doc, sn) {
 	var AppelAjax = new Ajax.Request(
 									"documents_des_del_sn.php",
@@ -3700,7 +3700,7 @@ function del_des_sn (ref_doc, sn) {
 }
 
 
-//double click sur champ sn incrémente les sn suivant si non déjà remplis
+//double click sur champ sn incrÃ©mente les sn suivant si non dÃ©jÃ  remplis
 function incremente_des_sn(ref_doc, indentation_sn) {
 	var nombre_ligne_sn =  Math.abs($("qte_des").value);
 
@@ -3806,7 +3806,7 @@ function doc_edition_fusion (ref_doc, second_ref_doc) {
 }
 
 
-//nouvelle quantité ajouté à la dernière ref_doc_line insérée dans le document
+//nouvelle quantitÃ© ajoutÃ© Ã  la derniÃ¨re ref_doc_line insÃ©rÃ©e dans le document
 
 function check_multiply_ref_doc_line_qte() {
 	var array_num=new Array;
@@ -3826,7 +3826,7 @@ function check_multiply_ref_doc_line_qte() {
 				multiply_numbers += array_num[i];
 				}
 			}
-			//on recherche le champ de quantité correspondant à la ref_doc_line
+			//on recherche le champ de quantitÃ© correspondant Ã  la ref_doc_line
 			for (var j = 0; j < parseFloat($("indentation_contenu").value); j++) {
 				if ($("ref_doc_line_"+j) && $("ref_doc_line_"+j).value == last_ssearch_ref_doc_line) {
 					$("qte_"+j).value = multiply_numbers;
@@ -3854,7 +3854,7 @@ function check_multiply_ref_doc_line_qte() {
 }
 
 
-//fonction de verification du total HT des lignes de comptabilité d'un document avec le montant HT du document
+//fonction de verification du total HT des lignes de comptabilitÃ© d'un document avec le montant HT du document
 function check_document_compta_lignes () {
 	var indent = parseInt($("indentation_compta_lignes").value);
 	var total_lines_ht = 0;
@@ -3938,7 +3938,7 @@ function check_document_commerciaux_attribution (nombre_lignes) {
 		}
 	}
 	if (parseInt(total_lines) > 100 ) {
-		alerte.alerte_erreur ('Erreur dans la répartition', 'La répartition entre les commerciaux doit être inférieure ou égale à 100%','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+		alerte.alerte_erreur ('Erreur dans la rÃ©partition', 'La rÃ©partition entre les commerciaux doit Ãªtre infÃ©rieure ou Ã©gale Ã  100%','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 		retour = false;
 	}
 	return retour;

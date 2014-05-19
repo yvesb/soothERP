@@ -32,7 +32,7 @@ $(iframecible).style.display="none";
 
 
 
-//rÈcupÈre la liste des civilitÈs en fonction d'une catÈgorie
+//r√©cup√©re la liste des civilit√©s en fonction d'une cat√©gorie
 function start_civilite(idcat, idcivi, cible) {
   civiliteUpdater = new SelectUpdater(idcivi, cible);
   ancienCat = "";
@@ -107,7 +107,7 @@ if (!window.XMLHttpRequest && window.ActiveXObject) {
 
 function SelectUpdater(idSelect, getOptionsUrl) {	
   this.select = document.getElementById(idSelect);
-  /** Url de la requÍte XMLHttpRequest mettant ‡ jour @type String */
+  /** Url de la requ√™te XMLHttpRequest mettant √† jour @type String */
   this.url = getOptionsUrl;
   this.request = null;
 }
@@ -145,7 +145,7 @@ SelectUpdater.prototype = {
     }
   },
   
-  /** Mettre ‡ jour la liste ‡ la rÈception de la rÈponse */
+  /** Mettre √† jour la liste √† la r√©ception de la r√©ponse */
   onload: function() {
     this.select.innerHTML = "";
     this.hide();
@@ -173,7 +173,7 @@ SelectUpdater.prototype = {
 
   },
   
-  /** Effacer la liste et le message, et annuler l'appel Èventuel */
+  /** Effacer la liste et le message, et annuler l'appel √©ventuel */
   reset: function() {
     this.select.innerHTML = "";
     try {
@@ -192,14 +192,14 @@ function changeclassname (id_cible, newclass) {
 	$(id_cible).className=newclass;
 }
 
-//mise ‡ jour du contact
+//mise √† jour du contact
 //public check_majinfos_contact()
 function check_majinfos_contact() {//livraison_ref_adresse
 	//check les informtions du formulaire "formulaire_maj_client" de la page "page_user_info.inc.php"
 	var listes_alertes = "";
 	var alertes = "";
 	
-	//champs au format normal avant vÈrification
+	//champs au format normal avant v√©rification
 	changeclassname ("nom", 			"classinput_xsize");
 	changeclassname ("pseudo", 			"classinput_xsize");
 	changeclassname ("emaila",			"classinput_xsize");
@@ -217,14 +217,14 @@ function check_majinfos_contact() {//livraison_ref_adresse
 	var pseudo = $("pseudo").value;
 	if (pseudo == "")	// Le champs pseudo est vide
 	{	alertes += "Veuillez indiquer un pseudonyme. \n"; changeclassname ("pseudo", "alerteform_xsize");}
-	else{	// On vÈrifie si le pseudo existe dÈj‡ 
+	else{	// On v√©rifie si le pseudo existe d√©j√† 
 		var AppelAjax2 = new Ajax.Request(
 				"_check_id_present.php",{
 				parameters	: {pseudo: pseudo},
 				evalScripts	: true, 
 				onComplete	: function(requester) {
 								if (requester.responseText!="") {
-									alertes += "Cette identifiant est dÈj‡ utilisÈ! \n";
+									alertes += "Cette identifiant est d√©j√† utilis√©! \n";
 									changeclassname ("pseudo", "alerteform_xsize");
 								}
 							}
@@ -237,17 +237,17 @@ function check_majinfos_contact() {//livraison_ref_adresse
 	var patrn_email = "^([a-zA-Z0-9]+(\.)?[\-\_]*[a-zA-Z0-9]+)+\@([a-zA-Z0-9]+(\.)?[\-\_]*[a-zA-Z0-9]+)+\.[a-zA-Z]{2,4}$";
 	var regex_email = new RegExp(patrn_email,"i");
 	
-	if(emaila == "" || !regex_email.test(emaila)){	// Le champs emaila est vide ou l'adresse est mal formÈe
+	if(emaila == "" || !regex_email.test(emaila)){	// Le champs emaila est vide ou l'adresse est mal form√©e
 		alertes += "Veuillez indiquer une adresse Email valide. \n"; 
 		changeclassname ("emaila", "alerteform_xsize");
-	}else{ // les 2 adresses mails sont bien formÈe et sont identiques
+	}else{ // les 2 adresses mails sont bien form√©e et sont identiques
 		var AppelAjax2 = new Ajax.Request(
 				"_check_email_present.php",{
 				parameters	: {email: emaila},
 				evalScripts	: true, 
 				onComplete	: function(requester) {
 								if (requester.responseText!="") {
-									alertes += "Cette adresse email est dÈj‡ utilisÈe! \n";
+									alertes += "Cette adresse email est d√©j√† utilis√©e! \n";
 									changeclassname ("emaila", "alerteform_xsize");
 									changeclassname ("emailb", "alerteform_xsize");
 								}
@@ -277,7 +277,7 @@ function check_majinfos_contact() {//livraison_ref_adresse
 			changeclassname ("passwordb", "alerteform_xsize");
 			alertMDP = true;
 		}else if(passworda.length < 4){
-			alertes += "Votre mot de passe fait au minimum 4 caractËres. ";
+			alertes += "Votre mot de passe fait au minimum 4 caract√®res. ";
 			changeclassname ("passworda", "alerteform_xsize");
 			changeclassname ("passwordb", "alerteform_xsize");
 			alertMDP = true;
@@ -289,7 +289,7 @@ function check_majinfos_contact() {//livraison_ref_adresse
 			changeclassname ("passwordb", "alerteform_xsize");
 			alertMDP = true;
 		}else if(passworda.length < 4){
-			alertes += "Votre mot de passe dois faire au minimum 4 caractËres. ";
+			alertes += "Votre mot de passe dois faire au minimum 4 caract√®res. ";
 			changeclassname ("passworda", "alerteform_xsize");
 			changeclassname ("passwordb", "alerteform_xsize");
 			alertMDP = true;
@@ -333,7 +333,7 @@ function check_infos_nouveau_client() {
 	var listes_alertes = "";
 	var alertes = "";
 
-	//champs au format normal avant vÈrification
+	//champs au format normal avant v√©rification
 	changeclassname ("nom", 			"classinput_xsize");
 	changeclassname ("pseudo",			"classinput_xsize");
 	changeclassname ("emaila",			"classinput_xsize");
@@ -351,14 +351,14 @@ function check_infos_nouveau_client() {
 	var pseudo = $("pseudo").value;
 	if (pseudo == "")	// Le champs pseudo est vide
 	{	alertes += "Veuillez indiquer un pseudonyme. \n"; changeclassname ("pseudo", "alerteform_xsize");}
-	else{	// On vÈrifie si le pseudo existe dÈj‡ 
+	else{	// On v√©rifie si le pseudo existe d√©j√† 
 		var AppelAjax2 = new Ajax.Request(
 				"_check_id_present.php",{
 				parameters	: {pseudo: pseudo},
 				evalScripts	: true, 
 				onComplete	: function(requester) {
 								if (requester.responseText!="") {
-									alertes += "Cette identifiant est dÈj‡ utilisÈ! \n";
+									alertes += "Cette identifiant est d√©j√† utilis√©! \n";
 									changeclassname ("pseudo", "alerteform_xsize");
 								}
 							}
@@ -372,20 +372,20 @@ function check_infos_nouveau_client() {
 	var patrn_email = "^([a-zA-Z0-9]+(([\.\-\_]?[a-zA-Z0-9]+)+)?)\@(([a-zA-Z0-9]+[\.\-\_])+[a-zA-Z]{2,4})$";
 	var regex_email = new RegExp(patrn_email,"i");
 
-	if(emaila == "" || !regex_email.test(emaila)){	// Le champs emaila est vide ou l'adresse est mal formÈe
+	if(emaila == "" || !regex_email.test(emaila)){	// Le champs emaila est vide ou l'adresse est mal form√©e
 		alertes += "Veuillez indiquer une adresse Email valide. \n"; 
 		changeclassname ("emaila", "alerteform_xsize");
 		changeclassname ("emailb", "alerteform_xsize");
 	}else if(emaila != emailb)	
 	{	alertes += "Veuillez confirmer votre adresse Email. \n"; changeclassname ("emailb", "alerteform_xsize");}
-	else{ // les 2 adresses mails sont bien formÈe et sont identiques
+	else{ // les 2 adresses mails sont bien form√©e et sont identiques
 		var AppelAjax2 = new Ajax.Request(
 				"_check_email_present.php",{
 				parameters	: {email: emaila},
 				evalScripts	: true, 
 				onComplete	: function(requester) {
 								if (requester.responseText!="") {
-									alertes += "Cette adresse email est dÈj‡ utilisÈe! \n";
+									alertes += "Cette adresse email est d√©j√† utilis√©e! \n";
 									changeclassname ("emaila", "alerteform_xsize");
 									changeclassname ("emailb", "alerteform_xsize");
 								}
@@ -406,7 +406,7 @@ function check_infos_nouveau_client() {
 		alertes += "Veuillez confirmer votre mot de passe. ";
 		changeclassname ("passwordb", "alerteform_xsize");
 	}else if(passworda.length < 4){
-		alertes += "Votre mot de passe dois faire au minimum 4 caractËres. ";
+		alertes += "Votre mot de passe dois faire au minimum 4 caract√®res. ";
 		changeclassname ("passworda", "alerteform_xsize");
 		changeclassname ("passwordb", "alerteform_xsize");
 	}

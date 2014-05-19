@@ -61,7 +61,7 @@ if (!window.XMLHttpRequest && window.ActiveXObject) {
 
 function SelectUpdater(idSelect, getOptionsUrl) {	
   this.select = document.getElementById(idSelect);
-  /** Url de la requête XMLHttpRequest mettant à jour @type String */
+  /** Url de la requÃªte XMLHttpRequest mettant Ã  jour @type String */
   this.url = getOptionsUrl;
   this.request = null;
 }
@@ -98,7 +98,7 @@ SelectUpdater.prototype = {
     }
   },
   
-  /** Mettre à jour la liste à la réception de la réponse */
+  /** Mettre Ã  jour la liste Ã  la rÃ©ception de la rÃ©ponse */
   onload: function() {
     this.select.innerHTML = "";
     this.hide();
@@ -126,7 +126,7 @@ SelectUpdater.prototype = {
 
   },
   
-  /** Effacer la liste et le message, et annuler l'appel éventuel */
+  /** Effacer la liste et le message, et annuler l'appel Ã©ventuel */
   reset: function() {
     this.select.innerHTML = "";
     try {
@@ -149,7 +149,7 @@ SelectUpdater.prototype = {
 function VilleUpdater(idSelect, getOptionsUrl) {	
 
   this.selected = document.getElementById(idSelect);
-  /** Url de la requête XMLHttpRequest mettant à jour @type String */
+  /** Url de la requÃªte XMLHttpRequest mettant Ã  jour @type String */
   this.url = getOptionsUrl;
   this.request = null;
 }
@@ -187,7 +187,7 @@ VilleUpdater.prototype = {
     }
   },
   
-  /* Mettre à jour la div et affichage à la réception de la réponse */
+  /* Mettre Ã  jour la div et affichage Ã  la rÃ©ception de la rÃ©ponse */
   onload: function(idselectval) {
     $(idselectval).innerHTML = "";
 		reponseville = "";
@@ -216,7 +216,7 @@ VilleUpdater.prototype = {
 
   },
   
-  /** Effacer la liste et le message, et annuler l'appel éventuel */
+  /** Effacer la liste et le message, et annuler l'appel Ã©ventuel */
   reset: function() {
     this.selected.innerHTML = "";
     try {

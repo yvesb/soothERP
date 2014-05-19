@@ -1,4 +1,4 @@
-//mettre le compte bancaire à actif
+//mettre le compte bancaire Ã  actif
 function set_active_compte_caisse (id_compte_caisse) {
 	var AppelAjax = new Ajax.Request(
 									"compta_compte_caisse_active_compte.php", 
@@ -14,7 +14,7 @@ function set_active_compte_caisse (id_compte_caisse) {
 									);
 }
 
-//mettre le compte bancaire à inactif
+//mettre le compte bancaire Ã  inactif
 function set_desactive_compte_caisse (id_compte_caisse) {
 	var AppelAjax = new Ajax.Request(
 									"compta_compte_caisse_desactive_compte.php", 

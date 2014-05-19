@@ -10,7 +10,7 @@ function supp_new_caiu (id_bt, id_li) {
 }
 
 
-// affichage liste déroulante des villes par saisie du code postal
+// affichage liste dÃ©roulante des villes par saisie du code postal
 function pre_start_commune(idcode, idcommune, cible, iframecible, targeturl, id_pays){
 
 	Event.observe(idcommune, 'focus',  function(){ start_commune(idcode, idcommune, cible, iframecible, targeturl); }, false);	
@@ -43,7 +43,7 @@ function start_commune(idcode, idcommune, cible, iframecible, targeturl) {
 }
 
 
-// affichage liste déroulante des coordonnees pour un utilisateur
+// affichage liste dÃ©roulante des coordonnees pour un utilisateur
 function pre_start_coordonnee (survol, bt_survol, ref_contatct, lib_coord, user_coord, choix_coord, iframe_coord, pagecible) {
 
 				//effet de survol sur le faux select
@@ -81,7 +81,7 @@ if ($(cible).style.display=="none") {
 }
 
 
-// affichage liste déroulante des adresses pour un profil client sur une fiche de contact en mode création
+// affichage liste dÃ©roulante des adresses pour un profil client sur une fiche de contact en mode crÃ©ation
 function pre_start_adresse_crea (survol, bt_survol, lib_adresse, user_adresse, choix_adresse, iframe_adresse) {
 
 				//effet de survol sur le faux select
@@ -95,7 +95,7 @@ function pre_start_adresse_crea (survol, bt_survol, lib_adresse, user_adresse, c
 					
 }
 
-//affichage des adresses présentes dans la liste des adresse pour un contact en mode création.
+//affichage des adresses prÃ©sentes dans la liste des adresse pour un contact en mode crÃ©ation.
 function start_adresse_crea ( iddiv, idinput, cible, iframecible, targeturl) {
 
 if ($(cible).style.display == "none") {
@@ -184,7 +184,7 @@ if ($("adressecontent_li_"+i)) {
 	}
 
 }
-//observateur d'événement pour liste des adresse à la création contact pour un profil client
+//observateur d'Ã©vÃ©nement pour liste des adresse Ã  la crÃ©ation contact pour un profil client
 function evenement_listechoix_adresse(texte_racourci, iddiv, iframecible, cible, idinput, i, ordre ) {
 	Event.observe("li_choix_adresse_"+idinput+"_"+i, "mouseout",  function(){Element.removeClassName($("li_choix_adresse_"+idinput+"_"+i), "complete_coordonnee_hover"); Element.addClassName($("li_choix_adresse_"+idinput+"_"+i), "complete_coordonnee");}, false);
 
@@ -194,7 +194,7 @@ Event.observe("li_choix_adresse_"+idinput+"_"+i, "click",  function(){$(idinput)
 }
 
 
-// affichage liste déroulante des adresses pour un profil client sur une fiche de contact en mode édition
+// affichage liste dÃ©roulante des adresses pour un profil client sur une fiche de contact en mode Ã©dition
 function pre_start_adresse (survol, bt_survol, ref_contatct, lib_adresse, user_adresse, choix_adresse, iframe_adresse, pagecible) {
 
 				//effet de survol sur le faux select
@@ -208,7 +208,7 @@ function pre_start_adresse (survol, bt_survol, ref_contatct, lib_adresse, user_a
 					
 }
 
-//affichage des adresses présentes dans la base de données pour un contact.
+//affichage des adresses prÃ©sentes dans la base de donnÃ©es pour un contact.
 function start_adresse (ref_contact, iddiv, idinput, cible, iframecible, targeturl) {
 
 if ($(cible).style.display=="none") {
@@ -240,7 +240,7 @@ $(iframecible).style.display="none";
 
 
 
-//récupére la liste des civilités en fonction d'une catégorie
+//rÃ©cupÃ©re la liste des civilitÃ©s en fonction d'une catÃ©gorie
 function start_civilite(idcat, idcivi, cible) {
   civiliteUpdater = new SelectUpdater(idcivi, cible);
   ancienCat = "";
@@ -395,11 +395,11 @@ var error=0;
 
 
 
-//masque de saisie numérique
+//masque de saisie numÃ©rique
 function nummask(evt, val_def, masque) {
 // masque type:
 // X.X (nombre flotant
-// X.XX nombre à deux desimales
+// X.XX nombre Ã  deux desimales
 // X nombre entier
 // X;X masque de tableau 1;25;50
 var array_num=new Array;

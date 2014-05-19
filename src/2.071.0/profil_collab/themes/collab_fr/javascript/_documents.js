@@ -49,7 +49,7 @@ function liaisons_insert_pack(ref_doc,debut_pack,pack_size){
 }
 
 
-//Maj da l'onglet "Article li�s" (DIV = link_content) de la pop_up Options
+//Maj da l'onglet "Article liés" (DIV = link_content) de la pop_up Options
 function maj_pop_up_link(id_article, ref_doc, qte_article){
 
 var AppelAjax = new Ajax.Updater(
@@ -65,7 +65,7 @@ var AppelAjax = new Ajax.Updater(
 }
 
 
-//Maj da l'onglet "Calcul de Qt�" (DIV = calcul_qte) de la pop_up Options
+//Maj da l'onglet "Calcul de Qté" (DIV = calcul_qte) de la pop_up Options
 function maj_pop_up_calcul_qte(id_article, id_doc_line, target){
 
 var AppelAjax = new Ajax.Updater(
@@ -82,7 +82,7 @@ var AppelAjax = new Ajax.Updater(
 
 //Maj da l'onglet "Calcul de Prix" (DIV = calcul_prix) de la pop_up Options
 function maj_pop_up_calcul_prix(){
-//@TODO FAIRE UN Ajax.Updater() pour mettre � jour l'onglet "Calcul de Prix" dans la popup Options d'une ligne dans un document
+//@TODO FAIRE UN Ajax.Updater() pour mettre à jour l'onglet "Calcul de Prix" dans la popup Options d'une ligne dans un document
 }
 
 //ajout d'un d'article
@@ -209,7 +209,7 @@ function add_new_line_livraison_mode (ref_doc, id_livraison_mode) {
 //
 //}
 
-//mise � jour des articles lors de changement dans la liste de resultats
+//mise à jour des articles lors de changement dans la liste de resultats
 function article_maj_from_moteur (ref_article, type) {
 
 	switch (type)
@@ -276,7 +276,7 @@ function article_maj_from_moteur (ref_article, type) {
 }
 
 
-	//fonction de mise � jour du contact depuis lla cr�ation d'un contact
+	//fonction de mise à jour du contact depuis lla création d'un contact
 
 function docu_maj_contact_request (ref_doc, ref_contact) {
 		var AppelAjax = new Ajax.Request(
@@ -291,7 +291,7 @@ function docu_maj_contact_request (ref_doc, ref_contact) {
 									}
 									);
 }
-//fonction de mise � jour du contact depuis le mini moteur de recherche de contact
+//fonction de mise à jour du contact depuis le mini moteur de recherche de contact
 
 function docu_maj_contact (ref_doc, ref_contact, lib_contact) {
 		var AppelAjax = new Ajax.Updater(
@@ -309,7 +309,7 @@ function docu_maj_contact (ref_doc, ref_contact, lib_contact) {
 									);
 }
 
-//fonction de mise � jour des infos texte du contact
+//fonction de mise à jour des infos texte du contact
 
 function docu_maj_contact_infos (ref_doc, id_info_content) {
 		var AppelAjax = new Ajax.Request(
@@ -326,7 +326,7 @@ function docu_maj_contact_infos (ref_doc, id_info_content) {
 }
 
 
-// affichage liste d�roulante des adresses pour un contact sur un document
+// affichage liste déroulante des adresses pour un contact sur un document
 
 function pre_start_adresse_doc (survol, bt_survol, ref_contact, lib_adresse, user_adresse, choix_adresse, iframe_adresse, pagecible, ref_doc, type_adresse) {
 
@@ -341,7 +341,7 @@ function pre_start_adresse_doc (survol, bt_survol, ref_contact, lib_adresse, use
 
 }
 
-//affichage des adresses pr�sentes dans la base de donn�es pour un contact.
+//affichage des adresses présentes dans la base de données pour un contact.
 function start_adresse_doc (ref_contact, idtextarea, idinput, cible, iframecible, targeturl, ref_doc, type_adresse) {
 
 if ($(cible).style.display=="none") {
@@ -365,7 +365,7 @@ if ($(cible).style.display=="none") {
 	}
 }
 
-//lance la mise � jour  d'une adresse de contact (selon le type d'adresse � changer
+//lance la mise à jour  d'une adresse de contact (selon le type d'adresse à changer
 
 function documents_maj_adresse (ref_adresse, type_adresse, ref_doc, ref_contact) {
 		var AppelAjax = new Ajax.Updater(
@@ -382,7 +382,7 @@ function documents_maj_adresse (ref_adresse, type_adresse, ref_doc, ref_contact)
 
 
 //***************************************************
-//Mise � jour des lignes d'articles d'un document
+//Mise à jour des lignes d'articles d'un document
 //***************************************************
 
 //maj de la ref_externe
@@ -593,7 +593,7 @@ function doc_sup_line (ref_doc_line) {
 									);
 }
 
-//add d'un num�ro de s�rie
+//add d'un numéro de série
 function add_line_sn (ref_doc_line, sn, art_sn) {
 	var ref_doc = $("ref_doc").value;
 	var AppelAjax = new Ajax.Request(
@@ -609,7 +609,7 @@ function add_line_sn (ref_doc_line, sn, art_sn) {
 									}
 									);
 }
-//maj d'un num�ro de s�rie
+//maj d'un numéro de série
 function maj_line_sn (ref_doc_line, sn, new_sn, art_sn) {
 	var ref_doc = $("ref_doc").value;
 	var AppelAjax = new Ajax.Request(
@@ -625,7 +625,7 @@ function maj_line_sn (ref_doc_line, sn, new_sn, art_sn) {
 									}
 									);
 }
-//del d'un num�ro de s�rie
+//del d'un numéro de série
 function del_line_sn (ref_doc_line, sn) {
 	var ref_doc = $("ref_doc").value;
 	var AppelAjax = new Ajax.Request(
@@ -660,7 +660,7 @@ function observe_RETURN_for_doc_line_sn (event, name, indent_art, indent_sn) {
 	}
 }
 
-//double click sur champ sn incr�mente les sn suivant si non d�j� remplis
+//double click sur champ sn incrémente les sn suivant si non déjà remplis
 function incremente_sn(indentation_art, indentation_sn) {
 	var ref_doc_line = $("ref_doc_line_"+indentation_art).value
 	var nombre_ligne_sn =  Math.abs($("qte_"+indentation_art).value);
@@ -795,15 +795,15 @@ function is_sn_filled () {
 }
 
 
-//alerte de qt� depassant le stock
+//alerte de qté depassant le stock
 function depasse_stock () {
-	// pour eviter la surcharge la fonction a �t� int�gr�e � is_sn_filled
+	// pour eviter la surcharge la fonction a été intégrée à is_sn_filled
 	is_sn_filled ();
 }
 
 
 
-//fonction de lancement des observateur d'event pour ligne de sn ins�r�es par javascript
+//fonction de lancement des observateur d'event pour ligne de sn insérées par javascript
 function pre_start_observer_sn (indentation_art, indentation_sn, ref_doc_line, art_sn, old_art_sn, sup_sn, more_sn, ref_article, choix_div, choix_iframe) {
 	Event.observe("art_sn_"+indentation_art+"_"+indentation_sn, "keypress", function(evt){
 								observe_RETURN_for_doc_line_sn (evt, "art_sn", indentation_art, parseInt(indentation_sn)+1);
@@ -890,7 +890,7 @@ function start_choix_sn (ref_article, idinput, cible, iframecible, targeturl) {
 
 //numeros de lots
 
-//del d'un num�ro de lot
+//del d'un numéro de lot
 function del_line_nl (ref_doc_line, nl, qte_nl) {
 	var ref_doc = $("ref_doc").value;
 	var AppelAjax = new Ajax.Request(
@@ -971,7 +971,7 @@ function document_calcul_sn_qte_total(indentation_art){
 	
 }
 
-//maj d'un num�ro de s�rie
+//maj d'un numï¿½ro de sï¿½rie
 function maj_line_nl (ref_doc_line, nl, new_nl, old_qte_nl, new_qte_nl, art_nl, qte_nl, indentation_art, indentation_nl) {
 	var ref_doc = $("ref_doc").value;
 	var AppelAjax = new Ajax.Request(
@@ -988,7 +988,7 @@ function maj_line_nl (ref_doc_line, nl, new_nl, old_qte_nl, new_qte_nl, art_nl, 
 									);
 }
 
-//fonction de lancement des observateur d'event pour ligne de snlins�r�es par javascript
+//fonction de lancement des observateur d'event pour ligne de snlinsï¿½rï¿½es par javascript
 function pre_start_observer_nl (indentation_art, indentation_nl, ref_doc_line, art_nl, old_art_nl, sup_nl, more_nl, ref_article, choix_div, choix_iframe, qte_nl, old_qte_nl) {
 	Event.observe("art_nl_"+indentation_art+"_"+indentation_nl, "keypress", function(evt){
 								observe_RETURN_for_doc_line_nl (evt, "qte_nl", indentation_art, parseInt(indentation_nl)+1, qte_nl);
@@ -1072,7 +1072,7 @@ function insert_line_nl (indentation_art, indentation_nl) {
 		addspan.setAttribute ("class", "more_sn_class");
 		addspan.setAttribute ("className", "more_sn_class");
 	$("num_nl_"+indentation_art+"_"+indentation_nl).appendChild(addspan);
-	$("more_nl_"+indentation_art+"_"+indentation_nl).innerHTML = "N� de Lot:";
+	$("more_nl_"+indentation_art+"_"+indentation_nl).innerHTML = "N° de Lot:";
 	new Insertion.Bottom ($("num_nl_"+indentation_art+"_"+indentation_nl), " ");
 
 	var inputtext= document.createElement("input");
@@ -1185,7 +1185,7 @@ function insert_line_sn (indentation_art, indentation_sn) {
 		addspan.setAttribute ("class", "more_sn_class");
 		addspan.setAttribute ("className", "more_sn_class");
 	$("num_sn_"+indentation_art+"_"+indentation_sn).appendChild(addspan);
-	$("more_sn_"+indentation_art+"_"+indentation_sn).innerHTML = "N� de s�rie: ";
+	$("more_sn_"+indentation_art+"_"+indentation_sn).innerHTML = "N° de série: ";
 
 	var inputtext= document.createElement("input");
 		inputtext.setAttribute ("id", "art_sn_"+indentation_art+"_"+indentation_sn);
@@ -1239,7 +1239,7 @@ function insert_line_sn (indentation_art, indentation_sn) {
 pre_start_observer_sn (indentation_art, indentation_sn, ref_doc_line, "art_sn_"+indentation_art+"_"+indentation_sn ,"old_art_sn_"+indentation_art+"_"+indentation_sn, "sup_sn_"+indentation_art+"_"+indentation_sn, "more_sn_"+indentation_art+"_"+indentation_sn, $("ref_article_"+indentation_art).value, "choix_liste_choix_sn_"+indentation_art+"_"+indentation_sn, "iframe_liste_choix_sn_"+indentation_art+"_"+indentation_sn );
 }
 
-//modifier le nombre de ligne de num�ro de s�rie en cas e changement de quantit�
+//modifier le nombre de ligne de numï¿½ro de sï¿½rie en cas e changement de quantitï¿½
 function affichage_sn_update (indentation_art, new_qte, old_qte) {
 	var maj_qte = parseInt(Math.abs(new_qte));
 	var prev_qte = parseInt(Math.abs(old_qte));
@@ -1420,7 +1420,7 @@ function maj_code_affaire (id_info_content) {
 									);
 }
 
-// G�n�ration d'un nouveau code affaire
+// Gï¿½nï¿½ration d'un nouveau code affaire
 function generer_code_affaire (id_info_content) {
 	var AppelAjax = new Ajax.Request(
 									"documents_entete_generer_code_affaire.php",
@@ -1573,7 +1573,7 @@ function generer_document_doc (fonction_generer, ref_doc) {
 															 );
 }
 
-//chargement du contenu pour la cr�ation d'un mod�le de contenu
+//chargement du contenu pour la crï¿½ation d'un modï¿½le de contenu
 function charger_contenu_modeles(){
 	var ref_doc = $("ref_doc").value;
 	var AppelAjax = new Ajax.Updater(
@@ -1628,7 +1628,7 @@ function charger_contenu_options() {
 }
 
 
-//chargement du contenu des r�glements pour un document
+//chargement du contenu des rï¿½glements pour un document
 function charger_contenu_reglements(bool) {
 	param_get= "";
 	if (montant_total_neg) {
@@ -1763,7 +1763,7 @@ function maj_id_niveau_relance (id_info_content) {
 									);
 }
 
-//fonction de mise � jour de la ref_contact pour les entete de document depuis le mini moteur de recherche de contact
+//fonction de mise ï¿½ jour de la ref_contact pour les entete de document depuis le mini moteur de recherche de contact
 
 function recherche_doc_transporteur_set_contact (id_ref_contact, id_lib_contact, ref_contact, lib_contact) {
 	$(id_ref_contact).value = ref_contact;
@@ -1786,7 +1786,7 @@ function maj_entete_ref_transporteur (ref_transporteur) {
 									);
 }
 
-// gestion de changement d'affichage dans un document si total n�gatif
+// gestion de changement d'affichage dans un document si total nï¿½gatif
 function total_negatif (bool) {
 	if (montant_total_neg != bool) {
 		montant_total_neg = bool;
@@ -1841,7 +1841,7 @@ function add_loaded_line_doc () {
 }
 
 //******************************************************
-//fonction de calcul des tarifs affich�s
+//fonction de calcul des tarifs affichï¿½s
 //******************************************************
 
 function document_calcul_tarif (bool) {
@@ -1959,7 +1959,7 @@ function document_calcul_tarif (bool) {
 	$("toto_tva").innerHTML = parseFloat (toto_tva).toFixed(tarifs_nb_decimales) + " " + monnaie_html;
 	$("d_toto_tva").innerHTML = parseFloat (toto_tva).toFixed(tarifs_nb_decimales) + " " + monnaie_html;
 
-	//alert en cas de r�sultat n�gatif
+	//alert en cas de rï¿½sultat nï¿½gatif
 	if (pt_ht < 0) {
 		total_negatif (true);
 	} else {
@@ -1979,7 +1979,7 @@ function document_calcul_tarif (bool) {
 	}
 
 
-	// calcul du reste d�e si il existe
+	// calcul du reste dï¿½e si il existe
 	if ($("montant_acquite")) {
 		$("affichage_paiement_rapide").show();
 		montant_restant_due = ((parseFloat (pt_ttc).toFixed(tarifs_nb_decimales)) - (parseFloat ($("montant_acquite").innerHTML).toFixed(tarifs_nb_decimales))).toFixed(tarifs_nb_decimales);
@@ -2066,7 +2066,7 @@ function document_calcul_tarif (bool) {
 	$("wait_calcul_content").style.display= "none";
 }
 
-//fonction de cr�ation de l'affichage du panier
+//fonction de crï¿½ation de l'affichage du panier
 function aff_panier (){
 	var panier_cc= $("panier_content");
 	$("panier_content").innerHTML = "";
@@ -2124,7 +2124,7 @@ function reglement_set_doc (ref_doc) {
 }
 
 //*****************************************************************
-//fonction pour les actions sur les lignes d'articles s�lectionn�es
+//fonction pour les actions sur les lignes d'articles sï¿½lectionnï¿½es
 //*****************************************************************
 // cocher / decocher / inverser selection des lignes
 
@@ -2161,7 +2161,7 @@ function all_line_coche (type_action) {
 
 
 
-// action sur les lignes selectionn�es
+// action sur les lignes selectionnï¿½es
 function action_line_coche (proto_name) {
 	this.proto_name = proto_name;
 	this.type_action = "";
@@ -2172,7 +2172,7 @@ function action_line_coche (proto_name) {
 action_line_coche.prototype = {
 	initialize : function() {
 	},
-	//verification qu'un message d'alerte ne dois pas �tre d�clench�
+	//verification qu'un message d'alerte ne dois pas ï¿½tre dï¿½clenchï¿½
 	action : function(type_action) {
 		this.type_action = type_action;
 		this.lignes = new Array();
@@ -2190,12 +2190,12 @@ action_line_coche.prototype = {
 				if (this.type_action.match('set_pu_ht_to_id_tarif')) {
 					this.id_tarif = this.type_action.replace("set_pu_ht_to_id_tarif_", "");
 					this.type_action = 'set_pu_ht_to_id_tarif';
-					this.confirmer_action_selection ('Confirmer l\'action', "Changer le tarif pour la s�lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+					this.confirmer_action_selection ('Confirmer l\'action', "Changer le tarif pour la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 				}
 
 				switch (this.type_action) {
 								case "delete_multiples_lines" :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la s�lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case "copie_line_to_doc" :
 									if ($("ref_contact") && $("ref_contact").value != "") {
@@ -2212,40 +2212,40 @@ action_line_coche.prototype = {
 									show_mini_moteur_newdocuments ('copie_lines_to_new_doc', $("ref_doc").value);
 									break;
 								case 'generer_commande_client' :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la s�lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case 'generer_bl_client'  :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la s�lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case 'generer_devis_client'  :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la s�lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case 'generer_retour_client'  :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la s�lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case 'generer_facture_avoir_client'  :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la s�lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case 'reset_pu_ht'  :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la s�lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case 'generer_fa_fournisseur'  :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la s�lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case 'generer_br_fournisseur'  :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la s�lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case 'generer_retour_fournisseur'  :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la s�lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case 'generer_commande_fournisseur'  :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la s�lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case 'generer_devis_fournisseur'  :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la s�lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case 'lines_maj_pa'  :
-									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la s�lection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
+									this.confirmer_action_selection ('Confirmer l\'action', "Confirmer l\'action sur la sélection.<br/>",'<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 									break;
 								case 'maj_tva_liste'  :
 									$('pop_up_lines_liste_tva_doc').style.display = "block";
@@ -2424,7 +2424,7 @@ function copie_lines_to_new_doc (ref_doc, id_type_doc, ref_contact, link_old_ref
 }
 
 
-//action sur un document (fonction d'appel ind�pendante
+//action sur un document (fonction d'appel indï¿½pendante
 function action_doc (action) {
 	var ref_doc = $("ref_doc").value;
 	var AppelAjax = new Ajax.Request(
@@ -2441,7 +2441,7 @@ function action_doc (action) {
 }
 
 //***********************************************************************************
-//fonctions concernant les nombres de lignes et de caract�re pour des champ textarea
+//fonctions concernant les nombres de lignes et de caractï¿½re pour des champ textarea
 //***********************************************************************************
 
 //observer le retour chariot lors de la saisie sur un textarea pour mettre le nombre de lignes correspondantes
@@ -2461,7 +2461,7 @@ function setToMaxRow_if_Key_RETURN (evt, mini_row, maxcol) {
 	break;
 	}
 }
-//fonction de mise � hauteur d'un textarea en fonction du nombre de lignes qui le compose
+//fonction de mise ï¿½ hauteur d'un textarea en fonction du nombre de lignes qui le compose
 
 function setToMaxRow (id_field, mini_row, maxcol) {
 	array_lignes = escape($(id_field).value).split("%0A");
@@ -2597,7 +2597,7 @@ function update_document_liaisons () {
 
 //interdiction de modification
 function alert_qte_locked () {
-	alerte.alerte_erreur ('Modification impossible', 'La modification de certains �l�ments de ce document est interdite. <br /> Vous ne pouvez modifier les quantit�s, prix  et les num�ros de s�rie de ces articles.','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+	alerte.alerte_erreur ('Modification impossible', 'La modification de certains éléments de ce document est interdite. <br /> Vous ne pouvez modifier les quantités, prix  et les numéros de série de ces articles.','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 }
 
 function pre_start_ref_externe (ref_article, ref_doc_line, indentation) {
@@ -2621,14 +2621,14 @@ function pre_start_ref_externe (ref_article, ref_doc_line, indentation) {
 		}, false);
 }
 
-//lancement des observateurs d'�venement pour une ligne d'article
+//lancement des observateurs d'ï¿½venement pour une ligne d'article
 
 function pre_start_article_line (ref_article, ref_doc_line, indentation) {
 
 
 		if($("link_to_art_"+indentation)){Event.observe("link_to_art_"+indentation , "click",  function(evt){Event.stop(evt);page.verify('catalogue_articles_view','index.php#'+escape('catalogue_articles_view.php?ref_article='+ref_article),'true','_blank');}, false);
                 }
-                //on injecte si il existe, dans les r�sultats du moteur le num�ro d'intendation afin de rendre valide la mise � jour de la qt� depuis le moteur
+                //on injecte si il existe, dans les rï¿½sultats du moteur le numï¿½ro d'intendation afin de rendre valide la mise ï¿½ jour de la qtï¿½ depuis le moteur
 		if ($("ref_doc_line_article_"+ref_article )) {
 			if ($("ref_doc_line_article_"+ref_article ).value == ""+ref_doc_line ) {
 				$("ref_doc_line_indentation_"+ref_article ).value = ""+indentation ;
@@ -2670,7 +2670,7 @@ function pre_start_article_line (ref_article, ref_doc_line, indentation) {
 						affichage_sn_update (""+indentation , $("qte_"+indentation ).value, $("qte_old_"+indentation ).value);
 
 					maj_line_qte ($("qte_"+indentation ).value, ""+ref_doc_line , ""+ref_article , ""+indentation );
-					// On modifie les quantit�s des lignes li�es
+					// On modifie les quantitï¿½s des lignes liï¿½es
 					maj_lignes_liees(indentation, true);
 					$("qte_old_"+indentation ).value = $("qte_"+indentation ).value;
 				//	document_calcul_tarif ();
@@ -2781,18 +2781,18 @@ function pre_start_article_line (ref_article, ref_doc_line, indentation) {
                                     doc_sup_line(""+ref_doc_line );
                                     var tableau = new Array;
                                     tableau = $$('#lignes input[value="'+ref_doc_line+'"]');
-                                    //Si on a un résultat
+                                    //Si on a un rÃ©sultat
                                     if(tableau.length >0){
                                         var compteur=0;
                                         var element =null;
                                         // tableau.each(function(element){
                                         for(compteur=tableau.length-1;compteur>=0;compteur --){
                                             element = tableau[compteur];
-                                            //tant que id ne commence pas par RDL et qu'on est pas à l'id ligne
+                                            //tant que id ne commence pas par RDL et qu'on est pas Ã  l'id ligne
                                              while(!element.id.startsWith('RDL-') && element.id !="lignes" ){
                                                  element = element.parentNode;
                                              }
-                                             //Si on est pas remonter jusqu'à l'id ligne on a trouvé quelque chose
+                                             //Si on est pas remonter jusqu'Ã  l'id ligne on a trouvÃ© quelque chose
                                              if(element.id !="lignes"){
                                                 remove_tag(element.id);
                                              }
@@ -2845,7 +2845,7 @@ function pre_start_article_line (ref_article, ref_doc_line, indentation) {
 
 }
 
-//lancement des observateurs d'�venement pour une ligne de taxes
+//lancement des observateurs d'ï¿½venement pour une ligne de taxes
 
 function pre_start_taxes_line (ref_article, ref_doc_line, indentation) {
 // set_visible
@@ -2869,7 +2869,7 @@ function pre_start_taxes_line (ref_article, ref_doc_line, indentation) {
 
 }
 
-//lancement des observateurs d'�venement pour une ligne d'information
+//lancement des observateurs d'ï¿½venement pour une ligne d'information
 
 function pre_start_information_line (ref_article, ref_doc_line, indentation) {
 // set_visible
@@ -2945,7 +2945,7 @@ setToMaxRow ("lib_article_"+indentation, 1, 70)	;
 setToMaxRow ("desc_article_"+indentation, 2, 70)	;
 }
 
-//lancement des observateurs d'�venement pour une ligne de sous-total
+//lancement des observateurs d'ï¿½venement pour une ligne de sous-total
 
 function pre_start_sstotal_line (ref_article, ref_doc_line, indentation) {
 // set_visible
@@ -2983,7 +2983,7 @@ Event.observe("lib_article_"+indentation, "keypress", function(evt){
 
 }
 
-//ajout d'une compensation � un document
+//ajout d'une compensation ï¿½ un document
 
 function add_avoir (ref_doc_neg, ref_doc) {
 		var AppelAjax = new Ajax.Request(
@@ -3000,7 +3000,7 @@ function add_avoir (ref_doc_neg, ref_doc) {
 											}
 											);
 }
-//ajout d'un reglement non attribu�
+//ajout d'un reglement non attribuï¿½
 
 function add_regmnt (ref_reglement, ref_doc) {
 		var AppelAjax = new Ajax.Request(
@@ -3018,7 +3018,7 @@ function add_regmnt (ref_reglement, ref_doc) {
 											);
 }
 
-//cr�ation d'une compensation � un document
+//crï¿½ation d'une compensation ï¿½ un document
 
 function cree_avoir (ref_doc) {
 		var AppelAjax = new Ajax.Request(
@@ -3037,7 +3037,7 @@ function cree_avoir (ref_doc) {
 }
 
 
-//sp�cifique au document inventaire
+//spï¿½cifique au document inventaire
 
 function add_all_art_categ_to_inv(nb_lignes) {
 	for (i=0; i < nb_lignes ; i++) {
@@ -3051,7 +3051,7 @@ function del_all_art_categ_to_inv(nb_lignes) {
 	}
 }
 
-//chargement de la liste des art_categ pour attribution � un inventaire
+//chargement de la liste des art_categ pour attribution ï¿½ un inventaire
 function load_content_inv_list_art_categ () {
 	var ref_doc = $("ref_doc").value;
 	var AppelAjax = new Ajax.Updater(
@@ -3145,7 +3145,7 @@ function set_ref_article_to_des (ref_doc, qte_des, ref_article, lib_article, val
 									);
 }
 
-//maj de la qt� � fabriquer
+//maj de la qtï¿½ ï¿½ fabriquer
 function set_qte_to_fab (ref_doc, qte_fab, fill_content) {
 	var AppelAjax = new Ajax.Updater(
 									"sub_content",
@@ -3162,7 +3162,7 @@ function set_qte_to_fab (ref_doc, qte_fab, fill_content) {
 									);
 }
 
-//maj de la qt� � desassembler
+//maj de la qté à desassembler
 function set_qte_to_des (ref_doc, qte_des, fill_content) {
 	var AppelAjax = new Ajax.Updater(
 									"sub_content",
@@ -3195,7 +3195,7 @@ function observe_RETURN_for_doc_fab_sn (event, name, indent_sn) {
 	}
 }
 
-//fonction de lancement des observateur d'event pour ligne de sn ins�r�es par javascript
+//fonction de lancement des observateur d'event pour ligne de sn insï¿½rï¿½es par javascript
 function pre_start_observer_fab_sn ( indentation_sn, ref_doc, art_sn, old_art_sn, sup_sn) {
 	Event.observe("art_sn_"+indentation_sn, "keypress", function(evt){
 								observe_RETURN_for_doc_fab_sn (evt, "art_sn", parseInt(indentation_sn)+1);
@@ -3241,7 +3241,7 @@ function pre_start_observer_fab_sn ( indentation_sn, ref_doc, art_sn, old_art_sn
 }
 
 
-//add d'un num�ro de s�rie d'un article � fabriquer
+//add d'un numï¿½ro de sï¿½rie d'un article ï¿½ fabriquer
 function add_fab_sn (ref_doc, sn, art_sn) {
 	var AppelAjax = new Ajax.Request(
 									"documents_fab_add_sn.php",
@@ -3256,7 +3256,7 @@ function add_fab_sn (ref_doc, sn, art_sn) {
 									}
 									);
 }
-//maj d'un num�ro de s�ried'un article � fabriquer
+//maj d'un numï¿½ro de sï¿½ried'un article ï¿½ fabriquer
 function maj_fab_sn (ref_doc, sn, new_sn, art_sn) {
 	var AppelAjax = new Ajax.Request(
 									"documents_fab_maj_sn.php",
@@ -3271,7 +3271,7 @@ function maj_fab_sn (ref_doc, sn, new_sn, art_sn) {
 									}
 									);
 }
-//del d'un num�ro de s�rie d'un article � fabriquer
+//del d'un numï¿½ro de sï¿½rie d'un article ï¿½ fabriquer
 function del_fab_sn (ref_doc, sn) {
 	var AppelAjax = new Ajax.Request(
 									"documents_fab_del_sn.php",
@@ -3288,7 +3288,7 @@ function del_fab_sn (ref_doc, sn) {
 }
 
 
-//double click sur champ sn incr�mente les sn suivant si non d�j� remplis
+//double click sur champ sn incrémente les sn suivant si non dï¿½jï¿½ remplis
 function incremente_fab_sn(ref_doc, indentation_sn) {
 	var nombre_ligne_sn =  Math.abs($("qte_fab").value);
 
@@ -3463,7 +3463,7 @@ pre_start_observer_fab_nl (indentation_nl, ref_doc, "art_nl_"+indentation_nl ,"o
 }
 
 
-//fonction de lancement des observateur d'event pour ligne de sn ins�r�es par javascript
+//fonction de lancement des observateur d'event pour ligne de sn insï¿½rï¿½es par javascript
 function pre_start_observer_fab_nl ( indentation_nl, ref_doc, art_nl, old_art_nl, sup_nl, qte_nl, old_qte_nl, more_nl, ref_article, choix_div, choix_iframe) {
 
 	Event.observe(sup_nl, "click", function(evt){Event.stop(evt);
@@ -3525,7 +3525,7 @@ function pre_start_observer_fab_nl ( indentation_nl, ref_doc, art_nl, old_art_nl
 
 }
 
-//maj d'un num�ro de s�ried'un article � fabriquer
+//maj d'un numï¿½ro de sï¿½ried'un article ï¿½ fabriquer
 function maj_fab_nl (ref_doc, nl, new_nl, art_nl, qte, new_qte, qte_nl) {
 	var AppelAjax = new Ajax.Request(
 									"documents_fab_maj_nl.php",
@@ -3540,7 +3540,7 @@ function maj_fab_nl (ref_doc, nl, new_nl, art_nl, qte, new_qte, qte_nl) {
 									}
 									);
 }
-//del d'un num�ro de s�rie d'un article � fabriquer
+//del d'un numï¿½ro de sï¿½rie d'un article ï¿½ fabriquer
 function del_fab_nl (ref_doc, nl, qte) {
 	var AppelAjax = new Ajax.Request(
 									"documents_fab_del_nl.php",
@@ -3643,7 +3643,7 @@ function insert_line_des_nl (indentation_nl, ref_article, ref_doc) {
 pre_start_observer_des_nl (indentation_nl, ref_doc, "art_nl_"+indentation_nl ,"old_art_nl_"+indentation_nl, "sup_nl_"+indentation_nl, "qte_nl_"+indentation_nl ,"old_qte_nl_"+indentation_nl, "more_nl_"+indentation_nl, ref_article, "choix_liste_choix_nl_"+indentation_nl, "iframe_liste_choix_nl_"+indentation_nl );
 }
 
-//fonction de lancement des observateur d'event pour ligne de sn ins�r�es par javascript
+//fonction de lancement des observateur d'event pour ligne de sn insï¿½rï¿½es par javascript
 function pre_start_observer_des_nl ( indentation_nl, ref_doc, art_nl, old_art_nl, sup_nl, qte_nl, old_qte_nl, more_nl, ref_article, choix_div, choix_iframe) {
 
 	Event.observe(sup_nl, "click", function(evt){Event.stop(evt);
@@ -3705,7 +3705,7 @@ function pre_start_observer_des_nl ( indentation_nl, ref_doc, art_nl, old_art_nl
 
 }
 
-//maj d'un num�ro de s�ried'un article � d�sassembler
+//maj d'un numï¿½ro de sï¿½ried'un article ï¿½ dï¿½sassembler
 function maj_des_nl (ref_doc, nl, new_nl, art_nl, qte, new_qte, qte_nl) {
 	var AppelAjax = new Ajax.Request(
 									"documents_des_maj_nl.php",
@@ -3721,7 +3721,7 @@ function maj_des_nl (ref_doc, nl, new_nl, art_nl, qte, new_qte, qte_nl) {
 									);
 }
 
-//del d'un num�ro de s�rie d'un article � d�sassembler
+//del d'un numï¿½ro de sï¿½rie d'un article ï¿½ dï¿½sassembler
 function del_des_nl (ref_doc, nl, qte) {
 	var AppelAjax = new Ajax.Request(
 									"documents_des_del_nl.php",
@@ -3754,7 +3754,7 @@ function observe_RETURN_for_doc_des_sn (event, name, indent_sn) {
 	break;
 	}
 }
-//fonction de lancement des observateur d'event pour ligne de sn ins�r�es par javascript
+//fonction de lancement des observateur d'event pour ligne de sn insï¿½rï¿½es par javascript
 function pre_start_observer_des_sn ( indentation_sn, ref_doc, art_sn, old_art_sn, sup_sn, more_sn, ref_article, choix_div, choix_iframe) {
 	Event.observe("art_sn_"+indentation_sn, "keypress", function(evt){
 								observe_RETURN_for_doc_des_sn (evt, "art_sn", parseInt(indentation_sn)+1);
@@ -3809,7 +3809,7 @@ function pre_start_observer_des_sn ( indentation_sn, ref_doc, art_sn, old_art_sn
 }
 
 
-//add d'un num�ro de s�rie d'un article � fabriquer
+//add d'un numï¿½ro de sï¿½rie d'un article ï¿½ fabriquer
 function add_des_sn (ref_doc, sn, art_sn) {
 	var AppelAjax = new Ajax.Request(
 									"documents_des_add_sn.php",
@@ -3824,7 +3824,7 @@ function add_des_sn (ref_doc, sn, art_sn) {
 									}
 									);
 }
-//maj d'un num�ro de s�ried'un article � fabriquer
+//maj d'un numï¿½ro de sï¿½ried'un article ï¿½ fabriquer
 function maj_des_sn (ref_doc, sn, new_sn, art_sn) {
 	var AppelAjax = new Ajax.Request(
 									"documents_des_maj_sn.php",
@@ -3839,7 +3839,7 @@ function maj_des_sn (ref_doc, sn, new_sn, art_sn) {
 									}
 									);
 }
-//del d'un num�ro de s�rie d'un article � fabriquer
+//del d'un numï¿½ro de sï¿½rie d'un article ï¿½ fabriquer
 function del_des_sn (ref_doc, sn) {
 	var AppelAjax = new Ajax.Request(
 									"documents_des_del_sn.php",
@@ -3856,7 +3856,7 @@ function del_des_sn (ref_doc, sn) {
 }
 
 
-//double click sur champ sn incr�mente les sn suivant si non d�j� remplis
+//double click sur champ sn incrï¿½mente les sn suivant si non dï¿½jï¿½ remplis
 function incremente_des_sn(ref_doc, indentation_sn) {
 	var nombre_ligne_sn =  Math.abs($("qte_des").value);
 
@@ -3962,7 +3962,7 @@ function doc_edition_fusion (ref_doc, second_ref_doc) {
 }
 
 
-//nouvelle quantit� ajout� � la derni�re ref_doc_line ins�r�e dans le document
+//nouvelle quantitï¿½ ajoutï¿½ ï¿½ la derniï¿½re ref_doc_line insï¿½rï¿½e dans le document
 
 function check_multiply_ref_doc_line_qte() {
 	var array_num=new Array;
@@ -3982,7 +3982,7 @@ function check_multiply_ref_doc_line_qte() {
 				multiply_numbers += array_num[i];
 				}
 			}
-			//on recherche le champ de quantit� correspondant � la ref_doc_line
+			//on recherche le champ de quantitï¿½ correspondant ï¿½ la ref_doc_line
 			for (var j = 0; j < parseFloat($("indentation_contenu").value); j++) {
 				if ($("ref_doc_line_"+j) && $("ref_doc_line_"+j).value == last_ssearch_ref_doc_line) {
 					$("qte_"+j).value = multiply_numbers;
@@ -4010,7 +4010,7 @@ function check_multiply_ref_doc_line_qte() {
 }
 
 
-//fonction de verification du total HT des lignes de comptabilit� d'un document avec le montant HT du document
+//fonction de verification du total HT des lignes de comptabilitï¿½ d'un document avec le montant HT du document
 function check_document_compta_lignes () {
 	var indent = parseInt($("indentation_compta_lignes").value);
 	var total_lines_ht = 0;
@@ -4094,7 +4094,7 @@ function check_document_commerciaux_attribution (nombre_lignes) {
 		}
 	}
 	if (parseInt(total_lines) > 100 ) {
-		//alerte.alerte_erreur ('Erreur dans la r�partition', 'La r�partition entre les commerciaux doit �tre inf�rieure ou �gale � 100%','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+		//alerte.alerte_erreur ('Erreur dans la rï¿½partition', 'La rï¿½partition entre les commerciaux doit ï¿½tre infï¿½rieure ou ï¿½gale ï¿½ 100%','<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 		//retour = false;
 		return retour;
 	}
@@ -4103,10 +4103,10 @@ function check_document_commerciaux_attribution (nombre_lignes) {
 
 
 /*
- * Fonction permettant de mettre � jour les lignes li�es � une ligne (composition, taxes, ...)
+ * Fonction permettant de mettre ï¿½ jour les lignes liï¿½es ï¿½ une ligne (composition, taxes, ...)
  */
 function maj_lignes_liees(indentation, maj_base){
-	// On MAJ les lignes li�es
+	// On MAJ les lignes liï¿½es
 	if($("lignesliees_" + indentation)){
 		var nb = parseInt($("lignesliees_" + indentation).value);
 		for(indice = 1; indice <= nb; indice++){

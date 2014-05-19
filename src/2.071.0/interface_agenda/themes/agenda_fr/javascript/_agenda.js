@@ -119,12 +119,12 @@ function buildStrTime(h, separateur, m){
 
 function panneau_edition_verifier_formulaire(){
 	text_alertes = {
-		lib: "Le titre de l'événement n'est pas spécifié.",
-		date_de_deb: "La date de début de l'événement est incorrecte",
-		date_de_fin: "La date de fin de l'événement est incorrecte",
-		heure_de_deb: "L'heure de début de l'événement est incorrecte",
-		heure_de_fin: "L'heure de fin de l'événement est incorrecte",
-		qte : "La quantité saisie est nulle"
+		lib: "Le titre de l'Ã©vÃ©nement n'est pas spÃ©cifiÃ©.",
+		date_de_deb: "La date de dÃ©but de l'Ã©vÃ©nement est incorrecte",
+		date_de_fin: "La date de fin de l'Ã©vÃ©nement est incorrecte",
+		heure_de_deb: "L'heure de dÃ©but de l'Ã©vÃ©nement est incorrecte",
+		heure_de_fin: "L'heure de fin de l'Ã©vÃ©nement est incorrecte",
+		qte : "La quantitÃ© saisie est nulle"
 	};
 	
 	alertes = new Array();
@@ -338,7 +338,7 @@ function CreateDivEvenement(id, top, left, width, height, cssClassName){
 	newDiv.style.top=top+"px";
 	newDiv.style.left=left+"px";
 	newDiv.style.width=width+"px";
-	newDiv.style.height=(height-7)+"px"; //7 = la taille de la dernière div nommée : "event_edit_"+id avec la css : event_div_edition_zone
+	newDiv.style.height=(height-7)+"px"; //7 = la taille de la derniÃ¨re div nommÃ©e : "event_edit_"+id avec la css : event_div_edition_zone
 	newDiv.style.borderColor = "#e0aeaf"; //COULEUR 3
 	newDiv.style.backgroundColor = "#995650";//COULEUR 2
 	agendaCouleur1 = read_cook("cook_agenda_selectedC1");

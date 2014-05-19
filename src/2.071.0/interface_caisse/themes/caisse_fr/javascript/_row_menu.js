@@ -6,7 +6,7 @@
 
 
 //
-//menu d'affichage menu horizontaux géré par tableau javascript
+//menu d'affichage menu horizontaux gÃ©rÃ© par tableau javascript
 //
 function view_menu_1(id_contenu, id_menu, array_id) {
 	array_id.each(function(j) {
@@ -40,7 +40,7 @@ function view_menu_accueil(id_contenu, id_menu, array_id, hide_class, show_class
 }
 
 //
-//menu d'affichage menu horizontaux par détection de la class
+//menu d'affichage menu horizontaux par dÃ©tection de la class
 //
 function view_menu(id_contenu, id_menu, menu, id_aff) {
 var menuselected = document.getElementsByClassName('menu_select', menu);

@@ -42,7 +42,7 @@
 			);
 	}
 	
-	//	appel ajax steps creation personnalisés
+	//	appel ajax steps creation personnalisÃ©s
 	function compta_export_modele_perso(step,substep)  { 
 		step = step+substep;
 		var AppelAjax = new Ajax.Updater(

@@ -1,4 +1,4 @@
-//mettre le compte bancaire à actif
+//mettre le compte bancaire Ã  actif
 function set_active_compte (id_compte_bancaire) {
     var AppelAjax = new Ajax.Request(
         "compta_compte_bancaire_active_compte.php",
@@ -19,7 +19,7 @@ function set_active_compte (id_compte_bancaire) {
         );
 }
 
-//mettre le compte bancaire à inactif
+//mettre le compte bancaire Ã  inactif
 function set_desactive_compte (id_compte_bancaire) {
     var AppelAjax = new Ajax.Request(
         "compta_compte_bancaire_desactive_compte.php",
@@ -41,7 +41,7 @@ function set_desactive_compte (id_compte_bancaire) {
 }
 
 
-//insertion d'une nouvelle ligne d'opération 
+//insertion d'une nouvelle ligne d'opÃ©ration 
 function insert_new_line_ope_cpt_bancaire () {
     indentation_add_ope = parseInt($("indentation_add_ope").value);
     new_indentation_add_ope = indentation_add_ope+1;
@@ -159,6 +159,6 @@ function verifErreurs(){
         } else $("message_err_1").innerHTML = "";
     }
     if(!checkIban($("iban").value)){
-        $("message_err_2").innerHTML = "Numéro IBAN Invalide";
+        $("message_err_2").innerHTML = "NumÃ©ro IBAN Invalide";
     } else $("message_err_2").innerHTML = "";
 }

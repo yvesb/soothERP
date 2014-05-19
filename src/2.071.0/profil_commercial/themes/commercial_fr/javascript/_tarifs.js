@@ -237,7 +237,7 @@ function check_qte_dbl_nan () {
 	
 }
 
-//récupération des information d'un formule tarifaire pour mise à jour des informations de l'assistant des tarifs
+//rÃ©cupÃ©ration des information d'un formule tarifaire pour mise Ã  jour des informations de l'assistant des tarifs
 
 function edition_formule_tarifaire (id_field_formule) {
 	var formule = $(id_field_formule).value;
@@ -329,7 +329,7 @@ function edition_formule_tarifaire (id_field_formule) {
 	
 }
 
-//fonction qui enlève de l'affichage les prix si aucune formule n'est définie
+//fonction qui enlÃ¨ve de l'affichage les prix si aucune formule n'est dÃ©finie
 function shoot_price_if_noformule (id_tofill, valeur_to_fill) {
 	//alert ($("formule_cree_"+id_tofill.replace("aff_tarif_","")).value);
 	if ($("formule_cree_"+id_tofill.replace("aff_tarif_","")) && $("formule_cree_"+id_tofill.replace("aff_tarif_","")).value != "0") {

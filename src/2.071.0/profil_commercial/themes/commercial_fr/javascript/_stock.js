@@ -21,7 +21,7 @@ function stock_etat_imprimer () {
 
 
 
-//résumé des numéros de serie dans les mouvements de stock
+//rÃ©sumÃ© des numÃ©ros de serie dans les mouvements de stock
 
 function show_resume_stock_sn (ref_article, evt) {
 	if (	$('resume_stock_move_sn').style.display == 'block'  ) {

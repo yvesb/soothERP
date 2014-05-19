@@ -14,7 +14,7 @@ function reset_moteur_s (id_form, init_request, init_categ) {
 	 $(init_categ).innerHTML="Toutes";
 	 
 }
-// moteur avancé recherche article
+// moteur avancÃ© recherche article
 function reset_moteur_a (id_form, init_request, init_categ) {
 	 $(id_form).reset();
 	 $(init_request).value="";
@@ -22,7 +22,7 @@ function reset_moteur_a (id_form, init_request, init_categ) {
 	 
 }
 	
-//chargement des caracteristiques simple pour moteur de recherche article avancé
+//chargement des caracteristiques simple pour moteur de recherche article avancÃ©
 function charger_carac_simple (ref_art_categ, id_cible) {
 			var AppelAjax = new Ajax.Updater(
 									id_cible, 
@@ -38,7 +38,7 @@ function charger_carac_simple (ref_art_categ, id_cible) {
 									);
 
 }
-//chargement des caracteristiques avancee pour moteur de recherche article avancé
+//chargement des caracteristiques avancee pour moteur de recherche article avancÃ©
 function charger_carac_avancee (ref_art_categ, id_cible) {
 			var AppelAjax = new Ajax.Updater(
 									id_cible, 
@@ -91,27 +91,27 @@ function show_mini_moteur_contacts (fonction_retour, param_retour) {
 	$('nom_m').focus();
 }
 
-//fonction de mise à jour du contact depuis le mini moteur de recherche de contact
+//fonction de mise Ã  jour du contact depuis le mini moteur de recherche de contact
 
 function recherche_docu_set_contact (id_ref_contact, id_lib_contact, ref_contact, lib_contact) {
 	$(id_ref_contact).value = ref_contact;
 	$(id_lib_contact).innerHTML = lib_contact;
 	
 }
-//fonction de mise à jour de la ref_contact pour les comptes bancaire depuis le mini moteur de recherche de contact
+//fonction de mise Ã  jour de la ref_contact pour les comptes bancaire depuis le mini moteur de recherche de contact
 
 function recherche_compte_b_set_contact (id_ref_contact, id_lib_contact, ref_contact, lib_contact) {
 	$(id_ref_contact).value = ref_contact;
 	$(id_lib_contact).value = lib_contact;
 	
 }
-//fonction de mise à jour de la ref_commercial
+//fonction de mise Ã  jour de la ref_commercial
 function recherche_client_set_contact (id_ref_contact, id_lib_contact, ref_contact, lib_contact) {
 	$(id_ref_contact).value = ref_contact;
 	$(id_lib_contact).value = lib_contact;
 	
 }
-//fonction de mise à jour de la transporteur pour livraiosns modes
+//fonction de mise Ã  jour de la transporteur pour livraiosns modes
 function recherche_livraison_set_contact (id_ref_contact, id_lib_contact, ref_contact, lib_contact) {
 	$(id_ref_contact).value = ref_contact;
 	$(id_lib_contact).value = lib_contact;
@@ -121,7 +121,7 @@ function recherche_livraison_set_contact (id_ref_contact, id_lib_contact, ref_co
 
 
 // function de raz du moteur  de recherche simple de documents
-// moteur avancé recherche article
+// moteur avancÃ© recherche article
 function reset_moteur_doc_s (id_form, init_request, init_categ, etat_select) {
 	 $(id_form).reset();
    $(etat_select).innerHTML = "";
@@ -148,7 +148,7 @@ function show_mini_moteur_documents (fonction_retour, param_retour) {
 	$('param_retour_doc_m').value	=	param_retour;
 }
 
-//résumé des stocks dans les recherches d'articles
+//rÃ©sumÃ© des stocks dans les recherches d'articles
 
 function show_resume_stock (ref_article, evt) {
 	if (	$('resume_stock').style.display == 'block'  ) {
@@ -218,7 +218,7 @@ function show_resume_stock2 (ref_article) {
 	}
 }
 
-// fonction ferme résumé des stocks
+// fonction ferme rÃ©sumÃ© des stocks
 function close_resume_stock() {
 	$('resume_stock').hide(); 
 	$('resume_stock_iframe').hide(); 
@@ -236,7 +236,7 @@ function close_compta_plan_mini_moteur() {
 	$('pop_up_compta_plan_mini_moteur').style.display='none'; 
 }
 
-//chargement des caracteristiques avancee pour moteur de recherche article avancé
+//chargement des caracteristiques avancee pour moteur de recherche article avancÃ©
 function charger_compta_plan_mini_moteur (url_page_plan_recherche) {
 			var AppelAjax = new Ajax.Updater(
 									"aff_plan_mini", 
@@ -252,12 +252,12 @@ function charger_compta_plan_mini_moteur (url_page_plan_recherche) {
 
 }
 
-// fonction ouvre pop-up paramètrage de pdf
+// fonction ouvre pop-up paramÃ¨trage de pdf
 function ouvre_mini_moteur_doc_type() {
 	$("aff_pop_up_mini_moteur_doc_type").innerHTML = "";
 	$('pop_up_mini_moteur_doc_type').style.display='block'; 
 }
-// fonction ferme e pop-up paramètrage de pdf
+// fonction ferme e pop-up paramÃ¨trage de pdf
 function close_mini_moteur_doc_type() {
 	$('pop_up_mini_moteur_doc_type').style.display='none'; 
 }
@@ -278,7 +278,7 @@ function close_compta_verify() {
 	$('pop_up_compta_verify').style.display='none'; 
 }
 
-//chargement paramètrage de pdf
+//chargement paramÃ¨trage de pdf
 function charger_param_pdf (url_page_param_pdf) {
 			var AppelAjax = new Ajax.Updater(
 									"aff_pop_up_mini_moteur_doc_type", 
@@ -311,13 +311,13 @@ function load_result_plan_compte_recherche(search_type, search_value, url_search
 									);
 	}
 	
-//fonction ouvre pop-up paramètrage de pdf
+//fonction ouvre pop-up paramÃ¨trage de pdf
 function ouvre_mini_moteur_courrier_type() {
 	$("aff_pop_up_mini_moteur_courrier_type").innerHTML = "";
 	$('pop_up_mini_moteur_courrier_type').style.display='block';
 }
 
-// fonction ferme e pop-up paramètrage de pdf
+// fonction ferme e pop-up paramÃ¨trage de pdf
 function close_mini_moteur_courrier_type() {
 	$('pop_up_mini_moteur_courrier_type').style.display='none';
 }

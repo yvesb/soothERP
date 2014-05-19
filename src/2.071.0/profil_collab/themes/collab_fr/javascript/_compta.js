@@ -1,8 +1,8 @@
 //***************************************************************
-//FONCTIONS LIEES à la compta
+//FONCTIONS LIEES Ã  la compta
 //***************************************************************
 
-//fonction de chargement des factures non reglées (compta)
+//fonction de chargement des factures non reglÃ©es (compta)
 function load_facture_nonreglees (id_client_categ, id_niveau_relance, id_mode_regmt, action) {
     var AppelAjax = new Ajax.Updater(
         "fac_liste_content",
@@ -52,7 +52,7 @@ function load_facture_nonreglees_page (id_client_categ, id_niveau_relance, id_mo
         );
 }
 
-//fonction de chargement des factures non reglées (compta)
+//fonction de chargement des factures non reglÃ©es (compta)
 function load_facture_nonreglees_fournisseur (id_fournisseur_categ) {
     var AppelAjax = new Ajax.Updater(
         "fac_liste_content",
@@ -73,7 +73,7 @@ function load_facture_nonreglees_fournisseur (id_fournisseur_categ) {
         );
 }
 
-//fonction de chargement des livraison non facturée (compta)
+//fonction de chargement des livraison non facturÃ©e (compta)
 function load_livraison_nonfacturees (id_stock, orderorder, orderby) {
     var AppelAjax = new Ajax.Updater(
         "lcnf",
@@ -95,7 +95,7 @@ function load_livraison_nonfacturees (id_stock, orderorder, orderby) {
         }
         );
 }
-//fonction de chargement des livraisons fournisseurs non facturée (compta)
+//fonction de chargement des livraisons fournisseurs non facturÃ©e (compta)
 function load_livraison_fournisseur_nonfacturees (id_stock, orderorder, orderby) {
     var AppelAjax = new Ajax.Updater(
         "lcnf",
@@ -179,7 +179,7 @@ function maj_niveau_relance (ref_doc, id_niveau_relance) {
         }
         );
 }
-//action sur lignes selectionnées dans la liste des BLC ou BLF non facturés
+//action sur lignes selectionnÃ©es dans la liste des BLC ou BLF non facturÃ©s
 function action_BLC(action_selection, second_id , ul_list) {
     if (!$(ul_list).empty()) {
         var tag = "li";
@@ -241,7 +241,7 @@ function action_BLC(action_selection, second_id , ul_list) {
     }
 }
 
-//action sur lignes selectionnées dans la liste des FAC  non réglées
+//action sur lignes selectionnÃ©es dans la liste des FAC  non rÃ©glÃ©es
 function action_FAC_np(action_selection, second_id , ul_list) {
     if (!$(ul_list).empty()) {
         var tag = "li";
@@ -278,7 +278,7 @@ function action_FAC_np(action_selection, second_id , ul_list) {
         }
     }
 }
-//action sur lignes selectionnées dans la liste des FAF non réglées
+//action sur lignes selectionnÃ©es dans la liste des FAF non rÃ©glÃ©es
 function action_FAF_np(action_selection, second_id , ul_list) {
     if (!$(ul_list).empty()) {
         var tag = "li";
@@ -453,7 +453,7 @@ function calcul_controle_caisse () {
     var toto_saisie = 0;
     var toto_diff = 0;
     var m_toto_theo = 0;
-    //correction du total théorique
+    //correction du total thÃ©orique
     indentation_controle_ope_spe = parseInt($("indentation_controle_ope_spe").value);
 	
     for (i=1; i<=indentation_controle_ope_spe ; i++) {
@@ -575,7 +575,7 @@ function calcul_controle_caisse () {
     $("montant_especes").value = toto_esp_saisie;
 	
     if (alerte_totaux) {
-        $("commentaire_add").innerHTML = "Une erreur de caisse est signalée, veuillez en préciser l'origine.";
+        $("commentaire_add").innerHTML = "Une erreur de caisse est signalÃ©e, veuillez en prÃ©ciser l'origine.";
     } else {
         $("commentaire_add").innerHTML = "";
     }
@@ -636,7 +636,7 @@ function step_menu_controle (id_contenu, id_menu, array_id) {
     calcul_controle_caisse ();
 }
 
-//calcul des totaux espèces
+//calcul des totaux espÃ¨ces
 function calcul_controle_caisse_esp (array_especes)  {
     var montant_tt_espece = 0;
     for (i=0; i<array_especes.length; i++) {
@@ -648,7 +648,7 @@ function calcul_controle_caisse_esp (array_especes)  {
     $("TT_ESP").innerHTML = montant_tt_espece.toFixed(tarifs_nb_decimales);
 }
 
-//insertion d'une nouvelle ligne d'opération 
+//insertion d'une nouvelle ligne d'opÃ©ration 
 function insert_new_line_ope_spe () {
     indentation_controle_ope_spe = parseInt($("indentation_controle_ope_spe").value);
     new_indentation_controle_ope_spe = indentation_controle_ope_spe+1;
@@ -675,7 +675,7 @@ function insert_new_line_ope_spe () {
     calcul_controle_caisse ();
     $("OPE_"+new_indentation_controle_ope_spe).focus();
 }
-//calcul des totaux chèques
+//calcul des totaux chÃ¨ques
 function calcul_controle_caisse_chq () {
     var montant_tt_cheque = 0;
     indentation_exist_cheques = parseInt($("indentation_exist_cheques").value);
@@ -693,7 +693,7 @@ function calcul_controle_caisse_chq () {
     $("TT_CHQ").innerHTML = montant_tt_cheque.toFixed(tarifs_nb_decimales);
 }
 
-//insertion d'une nouvelle ligne de chèques
+//insertion d'une nouvelle ligne de chÃ¨ques
 function insert_new_line_chq () {
     indentation_controle_chq = parseInt($("indentation_controle_cheques").value);
     new_indentation_controle_chq = indentation_controle_chq+1;
@@ -854,7 +854,7 @@ function step_menu_transfert (id_contenu, id_menu, array_id) {
     calcul_transfert_caisse ();
 }
 
-//calcul des totaux espèces
+//calcul des totaux espÃ¨ces
 function calcul_transfert_caisse_esp (array_especes)  {
     var montant_tt_espece = 0;
     for (i=0; i<array_especes.length; i++) {
@@ -866,7 +866,7 @@ function calcul_transfert_caisse_esp (array_especes)  {
     $("TT_ESP").innerHTML = montant_tt_espece.toFixed(tarifs_nb_decimales);
 }
 
-//calcul des totaux chèques
+//calcul des totaux chÃ¨ques
 function calcul_transfert_caisse_chq () {
     var montant_tt_cheque = 0;
     indentation_exist_cheques = parseInt($("indentation_exist_cheques").value);
@@ -883,7 +883,7 @@ function calcul_transfert_caisse_chq () {
     }
     $("TT_CHQ").innerHTML = montant_tt_cheque.toFixed(tarifs_nb_decimales);
 }
-//insertion d'une nouvelle ligne de chèques pour transferts
+//insertion d'une nouvelle ligne de chÃ¨ques pour transferts
 function insert_new_transfert_line_chq () {
     indentation_controle_chq = parseInt($("indentation_controle_cheques").value);
     new_indentation_controle_chq = indentation_controle_chq+1;
@@ -1073,7 +1073,7 @@ function step_menu_prelev (id_contenu, id_menu, array_id) {
     set_tomax_height(id_contenu , -32);
     //calcul_depot_banque ();
 }
-//calcul des totaux espèces
+//calcul des totaux espÃ¨ces
 function calcul_depot_caisse_esp (array_especes)  {
     var montant_tt_espece = 0;
     for (i=0; i<array_especes.length; i++) {
@@ -1085,7 +1085,7 @@ function calcul_depot_caisse_esp (array_especes)  {
     $("TT_ESP").innerHTML = montant_tt_espece.toFixed(tarifs_nb_decimales);
 }
 
-//calcul des totaux chèques
+//calcul des totaux chÃ¨ques
 function calcul_depot_banque_chq () {
     var montant_tt_cheque = 0;
     indentation_exist_cheques = parseInt($("indentation_exist_cheques").value);
@@ -1103,7 +1103,7 @@ function calcul_depot_banque_chq () {
     $("TT_CHQ").innerHTML = montant_tt_cheque.toFixed(tarifs_nb_decimales);
 }
 
-//insertion d'une nouvelle ligne de chèques pour depots
+//insertion d'une nouvelle ligne de chÃ¨ques pour depots
 function insert_new_depot_line_chq () {
     indentation_controle_chq = parseInt($("indentation_controle_cheques").value);
     new_indentation_controle_chq = indentation_controle_chq+1;
@@ -1323,7 +1323,7 @@ function step_menu_ar (id_contenu, id_menu, array_id) {
 }
 
 
-//cochage des lignes de resultat de recherche avancée de documents
+//cochage des lignes de resultat de recherche avancÃ©e de documents
 
 function coche_line_gest_caisse (type_action, second_id , length_list) {
 	

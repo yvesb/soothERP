@@ -10,7 +10,7 @@ function art_maj_liaison(id_article, id_liaison, ratio){
 			);
 }
 
-//ajout de liaison pour la création d'un articles
+//ajout de liaison pour la crÃ©ation d'un articles
 
 function art_add_liaison(id_liaison, id_article, lib_article) {
 
@@ -68,7 +68,7 @@ Event.observe( "ratio_"+num_serie , "blur", function(evt){
 }
 
 
-//ajout de liaison pour l'édition d'un articles
+//ajout de liaison pour l'Ã©dition d'un articles
 
 function art_edition_add_liaison(id_liaison, id_article, lib_article) {
 
@@ -130,7 +130,7 @@ var AppelAjax = new Ajax.Request(
 }
 
 //**********************************************************************
-//ajout de composants pour les articles en création
+//ajout de composants pour les articles en crÃ©ation
 
 function art_add_composant(niveau, serie_comp, id_article, lib_article, valo_indice) {
 
@@ -191,7 +191,7 @@ function appel_li_composant(niveau, serie_comp, id_article, lib_article, valo_in
 
 
 //******************************************************
-//ajout de composants pour les articles en édition
+//ajout de composants pour les articles en Ã©dition
 
 function art_edition_add_composant(niveau, serie_comp, id_article, lib_article, valo_indice) {
 
@@ -281,21 +281,21 @@ temp_result = array_num.toString().replace(/,/g,"");
 }
 
 //***********************************************************************
-//fonctions de gestion de l'affichage des fenetre de contenu de la création/modification d'un article
+//fonctions de gestion de l'affichage des fenetre de contenu de la crÃ©ation/modification d'un article
 //**************************************************************************
 
-//fonction de mise à hauteur des contenu pour la création d'un article
+//fonction de mise Ã  hauteur des contenu pour la crÃ©ation d'un article
 
 function setheight_article_create(){
 	for (key in chemin) {
 		if (chemin[key][6] && $(chemin[key][4])) {
 			set_tomax_height(chemin[key][4]+"_under", -52);
 			set_tomax_height(chemin[key][4], -46);
-			//on remet à la bonne largeur en même temps à y etre
+			//on remet Ã  la bonne largeur en mÃªme temps Ã  y etre
 			$(chemin[key][4]).style.width =	(return_width_element("titre_crea_art")-3)+"px";
 		}
 	}
-	// mise à la même largeur pour la liste que le select
+	// mise Ã  la mÃªme largeur pour la liste que le select
 	if ($("liste_de_categorie_selectable")) {
 	//$("liste_de_categorie_selectable").style.width=	return_width_element("lib_art_categ_link_select")+"px";
 	//$("iframe_liste_de_categorie_selectable").style.width=	return_width_element("lib_art_categ_link_select")+"px";
@@ -304,14 +304,14 @@ function setheight_article_create(){
 
 
 
-//fonction de mise à hauteur des contenu pourla modification d'un article
+//fonction de mise Ã  hauteur des contenu pourla modification d'un article
 
 function setheight_article_edit(){
 	for (key in chemin) {
 		if (chemin[key][6] && $(chemin[key][4])) {
 			set_tomax_height(chemin[key][4]+"_under", -52);
 			set_tomax_height(chemin[key][4], -46);
-			//on remet à la bonne largeur en même temps à y etre
+			//on remet Ã  la bonne largeur en mÃªme temps Ã  y etre
 			$(chemin[key][4]).style.width =	(return_width_element("titre_crea_art")-3)+"px";
 		}
 	}
@@ -319,7 +319,7 @@ function setheight_article_edit(){
 
 
 
-//fonction d'évolution de l'avancée étape par étape
+//fonction d'Ã©volution de l'avancÃ©e Ã©tape par Ã©tape
 function allow_chemin_etape (id_etape) {
 	if (chemin[id_etape][6]) {
 		$("chemin_etape_"+chemin[id_etape][0]).className="chemin_fleche_gris";
@@ -382,9 +382,9 @@ if (parseInt(id_etape)<=parseInt(chemin.length-1)) {
 }
 }
 
-// fin de gestion pour la création d'un article
+// fin de gestion pour la crÃ©ation d'un article
 
-//modification de la catégorie d'un article
+//modification de la catÃ©gorie d'un article
 // fonction ferme moteur
 function close_edition_art_categ() {
 	$('pop_up_edition_art_categ_iframe').hide();
@@ -413,7 +413,7 @@ function show_view_categ_carac () {
 }
 
 //
-//fonction de mise à jour da l'alerte stock d'un article
+//fonction de mise Ã  jour da l'alerte stock d'un article
 
 function maj_stock_alerte (ref_article, id_stock, new_stock) {
 		var AppelAjax = new Ajax.Request(
@@ -524,7 +524,7 @@ function art_edition_fusion_choix(second_ref_article, ref_article ) {
 
 
 		$("titre_alert").innerHTML = "Confirmer la fusion des articles";
-		$("texte_alert").innerHTML = "Confirmer la fusion des deux articles<br /> Les documents et quantités en stock de l'article en cours seront ré-attribués à l'article choisi";
+		$("texte_alert").innerHTML = "Confirmer la fusion des deux articles<br /> Les documents et quantitÃ©s en stock de l'article en cours seront rÃ©-attribuÃ©s Ã  l'article choisi";
 		$("bouton_alert").innerHTML = '<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />';
 
 		$("alert_pop_up_tab").style.display = "block";
@@ -579,7 +579,7 @@ function maj_pa_ht (ref_article, pa_ht, id_line) {
 }
 
 
-//insertion d'une ligne d'ajout d'image à la création d'un article
+//insertion d'une ligne d'ajout d'image Ã  la crÃ©ation d'un article
 function insert_new_line_image(id_zone) {
 
 	var num_serie	=	$('increment_images').value;
@@ -620,7 +620,7 @@ function insert_new_line_image(id_zone) {
 }
 
 
-//mise à jour de la description d'article seule.
+//mise Ã  jour de la description d'article seule.
 
 function maj_article_description  (id_info_content, ref_article) {
 	var AppelAjax = new Ajax.Request(
@@ -799,7 +799,7 @@ pre_start_observer_inventory_nl (indentation_nl,  "art_nl_"+indentation_nl ,"old
 
 
 
-//fonction de lancement des observateur d'event pour ligne de sn insérées par javascript
+//fonction de lancement des observateur d'event pour ligne de sn insÃ©rÃ©es par javascript
 function pre_start_observer_inventory_sn (indentation_sn,  art_sn, old_art_sn, sup_sn, more_sn, ref_article, choix_div, choix_iframe) {
 
 	Event.observe("art_sn_"+indentation_sn, "dblclick", function(evt){
@@ -822,7 +822,7 @@ function pre_start_observer_inventory_sn (indentation_sn,  art_sn, old_art_sn, s
 }
 
 
-//fonction de lancement des observateur d'event pour ligne de NL insérées par javascript
+//fonction de lancement des observateur d'event pour ligne de NL insÃ©rÃ©es par javascript
 function pre_start_observer_inventory_nl (indentation_nl,  art_nl, old_art_nl, sup_nl, more_nl, ref_article, choix_div, choix_iframe,  qte_nl, old_qte_nl) {
 
 	Event.observe(sup_nl, "click", function(evt){Event.stop(evt);
@@ -894,7 +894,7 @@ function start_choix_nl_inventory (ref_article, idinput, idinput2, cible, iframe
 
 
 
-//double click sur champ sn incrémente les sn suivant si non déjà remplis
+//double click sur champ sn incrÃ©mente les sn suivant si non dÃ©jÃ  remplis
 function incremente_sn_inventory(indentation_sn) {
 	var nombre_ligne_sn =  Math.abs($("qte_inventory").value);
 
@@ -950,7 +950,7 @@ function incremente_sn_inventory(indentation_sn) {
 	}
 }
 
-//modifier le nombre de ligne de numéro de série en cas e changement de quantité
+//modifier le nombre de ligne de numÃ©ro de sÃ©rie en cas e changement de quantitÃ©
 function affichage_inventory_sn_update ( new_qte, old_qte) {
 	var maj_qte = parseInt(Math.abs(new_qte));
 	var prev_qte = parseInt(Math.abs(old_qte));

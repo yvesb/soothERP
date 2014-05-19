@@ -75,7 +75,7 @@ function action_catalogue_import(action_selection, second_id , length_list) {
 		if (action_selection == "supprimer") {
 			
 			$("titre_alert").innerHTML = "Confirmer l'action";
-			$("texte_alert").innerHTML = "Confirmer l'action sur la sélection.<br/>";
+			$("texte_alert").innerHTML = "Confirmer l'action sur la sÃ©lection.<br/>";
 			$("bouton_alert").innerHTML = '<input type="submit" name="bouton1" id="bouton1" value="Confirmer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />';
 		
 			$("alert_pop_up_tab").style.display = "block";

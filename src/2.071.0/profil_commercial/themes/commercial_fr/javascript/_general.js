@@ -79,7 +79,7 @@ function alerte_message(){
 
 }
 alerte_message.prototype = {
-    //initialisation du système d'affichage des alertes
+    //initialisation du systÃ¨me d'affichage des alertes
     initialize : function() {
         $("framealert").style.display = "block";
         $("alert_pop_up").style.display = "none";
@@ -189,7 +189,7 @@ alerte_message.prototype = {
 		
 	
     },
-    //confirm supression d'une ligne de quantité d'un tarif
+    //confirm supression d'une ligne de quantitÃ© d'un tarif
     confirm_supprimer_tag: function(donnee_aff, id_tag_del) {
 	
         $("titre_alert").innerHTML = tab_alerte[donnee_aff][0];
@@ -334,7 +334,7 @@ alerte_message.prototype = {
 	
     },
 		
-    //alerte d'erreur de saisie avec texte d'erreur envoyé par la fonction (un seul bouton)
+    //alerte d'erreur de saisie avec texte d'erreur envoyÃ© par la fonction (un seul bouton)
     alerte_erreur: function(alerte_titre, alerte_texte, alerte_bouton, callBack) {
 	
         $("titre_alert").innerHTML = alerte_titre;
@@ -439,7 +439,7 @@ function refresh_cache () {
     }
 }
 //
-// fonction d'appel et d'affichage des contenu chargés par ajax
+// fonction d'appel et d'affichage des contenu chargÃ©s par ajax
 //
 function appelpage(div_cible) {
     this.div_cible_proto = div_cible;
@@ -448,7 +448,7 @@ function appelpage(div_cible) {
 appelpage.prototype = {
     initialize : function() {
     },
-    //verification qu'un message d'alerte ne dois pas être déclenché
+    //verification qu'un message d'alerte ne dois pas Ãªtre dÃ©clenchÃ©
     verify : function(identifiant,targeturl,div_refresh,div_target) {
         this.identifiant_proto = identifiant;
         this.targeturl_proto = targeturl;
@@ -474,7 +474,7 @@ appelpage.prototype = {
         if (div_target=="_blank" || div_target=="_self" || div_target=="_parent") {
             window.open(targeturl,div_target);
         }
-        //on réinitialise les formulaires comme étants vierges
+        //on rÃ©initialise les formulaires comme Ã©tants vierges
         changed	=	false;
 		
         //ouverture de page depuis un hash
@@ -494,9 +494,9 @@ appelpage.prototype = {
         default_show_refresh = div_refresh;
         default_show_target = div_target;
         if (targeturl != "") {
-            //on vérifi si le contenu dois être rechargé ou non
+            //on vÃ©rifi si le contenu dois Ãªtre rechargÃ© ou non
             if (div_refresh=="false") {
-                //si on ne l'a pas en mémoire
+                //si on ne l'a pas en mÃ©moire
                 if (global_tab[identifiant] == undefined || global_tab[identifiant] == "") {
                     default_show_id = identifiant;
                     //on le charge
@@ -527,7 +527,7 @@ appelpage.prototype = {
                 //requestHeaders: ["Content-type", "iso-8859-15"],
                 }
                 else {
-                    //sinon on le récupére et on eval les sripts contenus
+                    //sinon on le rÃ©cupÃ©re et on eval les sripts contenus
                     if (div_target=="sub_content") {
                         hashListener.setHash (encodeURI(targeturl));
                     }
@@ -563,7 +563,7 @@ appelpage.prototype = {
 		
 		
     },
-    //appel les réponses pour le moteur simple recherche contact
+    //appel les rÃ©ponses pour le moteur simple recherche contact
     annuaire_recherche_simple : function() {
         historique_request[0] = new Array(historique[0]);
         historique_request[0][1] = "simple";
@@ -597,7 +597,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur avancé recherche contact
+    //appel les rÃ©ponses pour le moteur avancÃ© recherche contact
     annuaire_recherche_avancee : function() {
         historique_request[0] = new Array(historique[0]);
         historique_request[0][1] = "avancee";
@@ -648,7 +648,7 @@ appelpage.prototype = {
             );
 									
     },
-    //appel les réponses pour le mini moteur recherche contact
+    //appel les rÃ©ponses pour le mini moteur recherche contact
     annuaire_recherche_mini : function() {
         var AppelAjax = new Ajax.Updater(
             "resultat_contact_mini",
@@ -676,7 +676,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur simple recherche services abo
+    //appel les rÃ©ponses pour le moteur simple recherche services abo
     article_recherche_abo : function() {
 		
         var AppelAjax = new Ajax.Updater(
@@ -709,12 +709,12 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour export csv recherche services abo
+    //appel les rÃ©ponses pour export csv recherche services abo
     article_recherche_abo_export_csv : function() {
         window.open("catalogue_articles_service_abo_recherche_export_csv.php?recherche=1&nom="+escape($F('nom_s'))+"&id_profil="+$F('id_profil_s')+"&page_to_show="+$F('page_to_show_s')+"&orderby="+$F('orderby_s')+"&orderorder="+$F('orderorder_s')+"&ref_article="+$F('ref_article')+"&id_client_categ="+$F('id_client_categ')+"&type_client="+$F('type_client')+"&type_recherche="+$F('type_recherche')+"&id_categorie="+$F('id_categorie')+"&code_postal="+$F('code_postal'),"_blank")
 	
     },
-    //appel les réponses pour le moteur simple recherche services conso
+    //appel les rÃ©ponses pour le moteur simple recherche services conso
     article_recherche_conso : function() {
 		
         var AppelAjax = new Ajax.Updater(
@@ -747,7 +747,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur simple recherche articles
+    //appel les rÃ©ponses pour le moteur simple recherche articles
     catalogue_recherche_simple : function() {
         var f_stock= "0";
         var f_nouv= "0";
@@ -808,7 +808,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur avancé recherche articles
+    //appel les rÃ©ponses pour le moteur avancÃ© recherche articles
     catalogue_recherche_avancee : function() {
 	
         historique_request[1] = new Array(historique[0]);
@@ -837,7 +837,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le mini moteur recherche articles
+    //appel les rÃ©ponses pour le mini moteur recherche articles
     catalogue_recherche_mini_simple : function() {
         var f_stock= "0";
         var f_nouv= "0";
@@ -874,7 +874,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour les articles n'ayant pas de PA définis
+    //appel les rÃ©ponses pour les articles n'ayant pas de PA dÃ©finis
     catalogue_recherche_non_pa : function() {
         var f_pa_zero= "0";
         if ($F("in_pa_zero_s")=="1") {
@@ -910,7 +910,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur de recherche articles pour un document
+    //appel les rÃ©ponses pour le moteur de recherche articles pour un document
     document_recherche_article : function() {
 	
         historique_request[3] = new Array(historique[0]);
@@ -954,7 +954,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur de recherche de documents
+    //appel les rÃ©ponses pour le moteur de recherche de documents
     documents_recherche_simple : function() {
 		
         historique_request[2] = new Array(historique[0]);
@@ -994,7 +994,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur de recherche de commandes clients en cours
+    //appel les rÃ©ponses pour le moteur de recherche de commandes clients en cours
     documents_recherche_cmde : function() {
 		
         var f_cmdecours = "0";
@@ -1074,7 +1074,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur de recherche de commandes fournisseur en cours
+    //appel les rÃ©ponses pour le moteur de recherche de commandes fournisseur en cours
     documents_recherche_cmde_fr : function() {
 		
         var f_cmdecours = "0";
@@ -1138,7 +1138,7 @@ appelpage.prototype = {
             );
     },
 	
-    //appel les réponses pour le moteur de recherche de devis clients en cours
+    //appel les rÃ©ponses pour le moteur de recherche de devis clients en cours
     documents_recherche_dev : function() {
 		
         var f_devcours = "0";
@@ -1214,7 +1214,7 @@ appelpage.prototype = {
             );
     },
 	
-    //appel les réponses pour le moteur de recherche avancé de documents
+    //appel les rÃ©ponses pour le moteur de recherche avancÃ© de documents
     documents_recherche_avancee : function() {
 		
         historique_request[2] = new Array(historique[0]);
@@ -1243,7 +1243,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le mini moteur de recherche de documents
+    //appel les rÃ©ponses pour le mini moteur de recherche de documents
     documents_recherche_mini : function() {
 
         var AppelAjax = new Ajax.Updater(
@@ -1274,7 +1274,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur d'etat des stocks
+    //appel les rÃ©ponses pour le moteur d'etat des stocks
     stock_etat_recherche_simple : function() {
         var f_aff_pa_s= "0";
         var id_stock_s = "";
@@ -1316,7 +1316,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur des minimum des stocks
+    //appel les rÃ©ponses pour le moteur des minimum des stocks
     stock_minimum_recherche_simple : function() {
         var f_aff_pa_s= "0";
         if ($F("aff_pa_s")=="1") {
@@ -1363,7 +1363,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur d'etat des stocks
+    //appel les rÃ©ponses pour le moteur d'etat des stocks
     stock_mouvements_result : function(id_stock) {
 		
         var AppelAjax = new Ajax.Updater(
@@ -1392,7 +1392,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur des documents des stocks
+    //appel les rÃ©ponses pour le moteur des documents des stocks
     stock_docs_result : function(id_stock) {
 		
         var AppelAjax = new Ajax.Updater(
@@ -1421,7 +1421,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur d'etat des stocks
+    //appel les rÃ©ponses pour le moteur d'etat des stocks
     article_stock_mouvements_result : function(id_stock) {
         var ref_article= $("ref_article_s").value;
         var AppelAjax = new Ajax.Updater(
@@ -1449,7 +1449,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur d'etat des stocks
+    //appel les rÃ©ponses pour le moteur d'etat des stocks
     grand_livre_result : function(ref_contact) {
         var AppelAjax = new Ajax.Updater(
             "grand_livre_liste",
@@ -1474,7 +1474,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur simple recherche utilisateur
+    //appel les rÃ©ponses pour le moteur simple recherche utilisateur
     utilisateur_recherche_simple : function() {
         var AppelAjax = new Ajax.Updater(
             "resultat",
@@ -1502,7 +1502,7 @@ appelpage.prototype = {
             }
             );
     },
-    //envois des infos pour la création d'un document inventaire
+    //envois des infos pour la crÃ©ation d'un document inventaire
     documents_inventaire : function() {
 	
         serie_recherche=  ($('creer_document_inventaire').serialize(true));
@@ -1528,7 +1528,7 @@ appelpage.prototype = {
             }
             );
     },
-    //Affichage des factures non réglées par pagination
+    //Affichage des factures non rÃ©glÃ©es par pagination
     fact_topay_result : function() {
         var AppelAjax = new Ajax.Updater(
             "fac_liste_content",
@@ -1554,7 +1554,7 @@ appelpage.prototype = {
             }
             );
     },
-    //Affichage des factures non réglées par pagination
+    //Affichage des factures non rÃ©glÃ©es par pagination
     fact_fourn_topay_result : function() {
         var AppelAjax = new Ajax.Updater(
             "fac_liste_content",
@@ -1579,7 +1579,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses les opérations d'un compte bancaire
+    //appel les rÃ©ponses les opÃ©rations d'un compte bancaire
     compte_bancaire_moves : function() {
         var AppelAjax = new Ajax.Updater(
             "liste_operations",
@@ -1603,7 +1603,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses les rapprochement d'un compte bancaire
+    //appel les rÃ©ponses les rapprochement d'un compte bancaire
     compte_bancaire_rapprochement : function() {
         var arapp= "0";
 		
@@ -1635,7 +1635,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses les rapprochement d'un compte bancaire
+    //appel les rÃ©ponses les rapprochement d'un compte bancaire
     compta_compte_bancaire_rapprochement_journal_result : function() {
         var AppelAjax = new Ajax.Updater(
             "compta_compte_bancaire_rapprochement_journal_result_content",
@@ -1666,7 +1666,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses sur la recherche d'un compte bancaire
+    //appel les rÃ©ponses sur la recherche d'un compte bancaire
     compte_bancaire_recherche : function() {
         var AppelAjax = new Ajax.Updater(
             "liste_operations",
@@ -1697,7 +1697,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses sur la recherche d'un cheque remisé
+    //appel les rÃ©ponses sur la recherche d'un cheque remisÃ©
     compte_bancaire_recherche_chq : function() {
         var AppelAjax = new Ajax.Updater(
             "liste_chq",
@@ -1729,7 +1729,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur recherche compte comptable clients
+    //appel les rÃ©ponses pour le moteur recherche compte comptable clients
     compta_client_comptes_plan : function() {
         var AppelAjax = new Ajax.Updater(
             "resultat",
@@ -1759,7 +1759,7 @@ appelpage.prototype = {
             );
 									
     },
-    //appel les réponses pour le moteur recherche compte comptable fournisseurs
+    //appel les rÃ©ponses pour le moteur recherche compte comptable fournisseurs
     compta_fournisseur_comptes_plan : function() {
         var AppelAjax = new Ajax.Updater(
             "resultat",
@@ -1788,7 +1788,7 @@ appelpage.prototype = {
             );
 									
     },
-    //appel les réponses pour le moteur simple recherche evenements
+    //appel les rÃ©ponses pour le moteur simple recherche evenements
     evenements_recherche : function() {
 		
         var AppelAjax = new Ajax.Updater(
@@ -1814,7 +1814,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur simple recherche evenements en rappel
+    //appel les rÃ©ponses pour le moteur simple recherche evenements en rappel
     evenements_rappels_recherche : function() {
 		
         var AppelAjax = new Ajax.Updater(
@@ -1843,7 +1843,7 @@ appelpage.prototype = {
 
 }
 
-//Enregistrement des données non rafraichies dans un tableau
+//Enregistrement des donnÃ©es non rafraichies dans un tableau
 function showResponse(originalRequest) {
     global_tab[default_show_id]= originalRequest.responseText;
     H_loading();
@@ -1856,7 +1856,7 @@ function S_loading () {
     }
 }
 
-//Chargement terminé...
+//Chargement terminÃ©...
 function H_loading () {
     $("load_show").style.visibility = "hidden";
 }
@@ -1875,7 +1875,7 @@ function history_reload() {
 }
 
 
-//chargement d'appel de feuilles de styles supplémentaires
+//chargement d'appel de feuilles de styles supplÃ©mentaires
 function ajoutcss (fichierCSS) {
     if (!fichierCSS) {
         return;
@@ -1942,7 +1942,7 @@ function getWindowWidth() {
 }
 
 
-// met les éléments à la hauteur
+// met les Ã©lÃ©ments Ã  la hauteur
 function setsize_to_element () {
     set_tomax_height("sub_content",0);
     set_tomax_height("right_content",0);
@@ -2001,7 +2001,7 @@ function centrage_h_element(id_element){
 }
 
 
-//blocage du retour chariot automatique à la saisie du code barre
+//blocage du retour chariot automatique Ã  la saisie du code barre
 function stopifcode_barre (event) {
 
     var key = event.which || event.keyCode;
@@ -2012,7 +2012,7 @@ function stopifcode_barre (event) {
     }
 }
 
-//fonction de sérialisation d'une liste sans passer par scriptaculous
+//fonction de sÃ©rialisation d'une liste sans passer par scriptaculous
 function serialisation(element, tag) {
     var items = $(element).childNodes;
     var queryComponents = new Array();
@@ -2030,7 +2030,7 @@ function serialisation(element, tag) {
 // fonction diverses
 //******************************************************
 
-//mise à la bonne largueur poursub_content
+//mise Ã  la bonne largueur poursub_content
 function set_size_to_sub_content () {
     if (getWindowWidth()>=1024) {
         $("sub_content").style.width= "1024px";
@@ -2041,7 +2041,7 @@ function set_size_to_sub_content () {
 }
 
 
-//force la sélection dans un champ select
+//force la sÃ©lection dans un champ select
 function preselect (value_index, id_select) {
     var selectBox = $(id_select);
     for (var i=0; i<selectBox.options.length; i++) {

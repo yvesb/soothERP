@@ -1,4 +1,4 @@
-//mettre le compte cb à actif
+//mettre le compte cb Ã  actif
 function set_active_compte_cb (id_compte_cb) {
 	var AppelAjax = new Ajax.Request(
 									"compta_compte_cbs_active_compte.php", 
@@ -14,7 +14,7 @@ function set_active_compte_cb (id_compte_cb) {
 									);
 }
 
-//mettre le compte cb à inactif
+//mettre le compte cb Ã  inactif
 function set_desactive_compte_cb (id_compte_cb) {
 	var AppelAjax = new Ajax.Request(
 									"compta_compte_cbs_desactive_compte.php", 

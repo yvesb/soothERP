@@ -84,7 +84,7 @@ function alerte_message(){
 
 }
 alerte_message.prototype = {
-    //initialisation du système d'affichage des alertes
+    //initialisation du systÃ¨me d'affichage des alertes
     initialize : function() {
         $("framealert").style.display = "block";
         $("alert_pop_up").style.display = "none";
@@ -206,7 +206,7 @@ alerte_message.prototype = {
         }
 		
     },
-    //confirm supression d'une ligne de quantité d'un tarif
+    //confirm supression d'une ligne de quantitÃ© d'un tarif
     confirm_supprimer_tag: function(donnee_aff, id_tag_del) {
 	
         $("titre_alert").innerHTML = tab_alerte[donnee_aff][0];
@@ -227,7 +227,7 @@ alerte_message.prototype = {
 	
     },
 		
-    //alerte d'erreur de saisie avec texte d'erreur envoyé par la fonction (un seul bouton)
+    //alerte d'erreur de saisie avec texte d'erreur envoyÃ© par la fonction (un seul bouton)
     alerte_erreur: function(alerte_titre, alerte_texte, alerte_bouton, callBack) {
 	
         $("titre_alert").innerHTML = alerte_titre;
@@ -325,7 +325,7 @@ function refresh_cache () {
     }
 }
 //
-// fonction d'appel et d'affichage des contenu chargés par ajax
+// fonction d'appel et d'affichage des contenu chargÃ©s par ajax
 //
 function appelpage(div_cible) {
     this.div_cible_proto = div_cible;
@@ -334,7 +334,7 @@ function appelpage(div_cible) {
 appelpage.prototype = {
     initialize : function() {
     },
-    //verification qu'un message d'alerte ne dois pas être déclenché
+    //verification qu'un message d'alerte ne dois pas Ãªtre dÃ©clenchÃ©
     verify : function(identifiant,targeturl,div_refresh,div_target) {
         this.identifiant_proto = identifiant;
         this.targeturl_proto = targeturl;
@@ -359,7 +359,7 @@ appelpage.prototype = {
         if (div_target=="_blank" || div_target=="_self" || div_target=="_parent") {
             window.open(targeturl,div_target);
         }
-        //on réinitialise les formulaires comme étants vierges
+        //on rÃ©initialise les formulaires comme Ã©tants vierges
         changed	=	false;
 		
         //ouverture de page depuis un hash
@@ -379,9 +379,9 @@ appelpage.prototype = {
         default_show_refresh = div_refresh;
         default_show_target = div_target;
         if (targeturl != "") {
-            //on vérifi si le contenu dois être rechargé ou non
+            //on vÃ©rifi si le contenu dois Ãªtre rechargÃ© ou non
             if (div_refresh=="false") {
-                //si on ne l'a pas en mémoire
+                //si on ne l'a pas en mÃ©moire
                 if (global_tab[identifiant] == undefined || global_tab[identifiant] == "") {
                     default_show_id = identifiant;
                     //on le charge
@@ -408,7 +408,7 @@ appelpage.prototype = {
                         );
                 }
                 else {
-                    //sinon on le récupére et on eval les sripts contenus
+                    //sinon on le rÃ©cupÃ©re et on eval les sripts contenus
                     if (div_target=="sub_content") {
                         hashListener.setHash (encodeURI(targeturl));
                     }
@@ -441,7 +441,7 @@ appelpage.prototype = {
             }
         }
     },
-    //appel les réponses pour le moteur simple recherche contact
+    //appel les rÃ©ponses pour le moteur simple recherche contact
     annuaire_recherche_simple : function() {
         var AppelAjax = new Ajax.Updater(
             "resultat",
@@ -467,7 +467,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur avancé recherche contact
+    //appel les rÃ©ponses pour le moteur avancÃ© recherche contact
     annuaire_recherche_avancee : function() {
         var AppelAjax = new Ajax.Updater(
             "resultat",
@@ -500,7 +500,7 @@ appelpage.prototype = {
             );
 									
     },
-    //appel les réponses pour le mini moteur recherche contact
+    //appel les rÃ©ponses pour le mini moteur recherche contact
     annuaire_recherche_mini : function() {
         var AppelAjax = new Ajax.Updater(
             "resultat_contact_mini",
@@ -528,7 +528,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur recherche collaborateurs
+    //appel les rÃ©ponses pour le moteur recherche collaborateurs
     annuaire_recherche_collabs : function() {
         var AppelAjax = new Ajax.Updater(
             "resultat",
@@ -555,7 +555,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur recherche administrateurs
+    //appel les rÃ©ponses pour le moteur recherche administrateurs
     annuaire_recherche_admin : function() {
         var AppelAjax = new Ajax.Updater(
             "resultat",
@@ -581,7 +581,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur simple recherche articles
+    //appel les rÃ©ponses pour le moteur simple recherche articles
     catalogue_recherche_simple : function() {
         var f_stock= "0";
         var f_nouv= "0";
@@ -627,7 +627,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur avancé recherche articles
+    //appel les rÃ©ponses pour le moteur avancÃ© recherche articles
     catalogue_recherche_avancee : function() {
         serie_recherche=  ($('form_recherche_a').serialize(true));
         for (key in serie_recherche) {
@@ -650,7 +650,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le mini moteur recherche articles
+    //appel les rÃ©ponses pour le mini moteur recherche articles
     catalogue_recherche_mini_simple : function() {
         var f_stock= "0";
         var f_nouv= "0";
@@ -687,7 +687,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur simple recherche utilisateur
+    //appel les rÃ©ponses pour le moteur simple recherche utilisateur
     utilisateur_recherche_simple : function() {
         var AppelAjax = new Ajax.Updater(
             "resultat",
@@ -713,7 +713,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur simple recherche utilisateur
+    //appel les rÃ©ponses pour le moteur simple recherche utilisateur
     utilisateur_recherche_histo : function() {
         var AppelAjax = new Ajax.Updater(
             "resultat",
@@ -742,7 +742,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses les opérations d'un compte bancaire
+    //appel les rÃ©ponses les opÃ©rations d'un compte bancaire
     compte_bancaire_moves : function() {
         var AppelAjax = new Ajax.Updater(
             "liste_operations",
@@ -766,7 +766,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses sur la recherche d'un compte bancaire
+    //appel les rÃ©ponses sur la recherche d'un compte bancaire
     compte_bancaire_recherche : function() {
         var AppelAjax = new Ajax.Updater(
             "liste_operations",
@@ -795,7 +795,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur simple recherche commissionnement par article
+    //appel les rÃ©ponses pour le moteur simple recherche commissionnement par article
     article_commission_recherche : function() {
         var f_stock= "0";
         var f_nouv= "0";
@@ -841,7 +841,7 @@ appelpage.prototype = {
             }
             );
     },
-    //appel les réponses pour le moteur simple recherche frais de transport par article
+    //appel les rÃ©ponses pour le moteur simple recherche frais de transport par article
     article_livraison_modes_cost_recherche : function() {
         var f_stock= "0";
         var f_nouv= "0";
@@ -892,7 +892,7 @@ appelpage.prototype = {
 }
 
 
-//Enregistrement des données non rafraichies dans un tableau
+//Enregistrement des donnÃ©es non rafraichies dans un tableau
 function showResponse(originalRequest) {
     global_tab[default_show_id]= originalRequest.responseText;
     H_loading();
@@ -905,7 +905,7 @@ function S_loading () {
     }
 }
 
-//Chargement terminé...
+//Chargement terminÃ©...
 function H_loading () {
     if ($("load_show").style.visibility == "visible") {
         $("load_show").style.visibility = "hidden";
@@ -926,7 +926,7 @@ function history_reload() {
 }
 
 
-//chargement d'appel de feuilles de styles supplémentaires
+//chargement d'appel de feuilles de styles supplÃ©mentaires
 function ajoutcss (fichierCSS) {
     if (!fichierCSS) {
         return;
@@ -993,7 +993,7 @@ function getWindowWidth() {
 }
 
 
-// met les éléments à la hauteur
+// met les Ã©lÃ©ments Ã  la hauteur
 function setsize_to_element () {
     set_tomax_height("sub_content",0);
     set_tomax_height("right_content",0);
@@ -1041,7 +1041,7 @@ function centrage_h_element(id_element){
     }
 }
 
-//blocage du retour chariot automatique à la saisie du code barre
+//blocage du retour chariot automatique Ã  la saisie du code barre
 function stopifcode_barre (event) {
 
     var key = event.which || event.keyCode;
@@ -1056,7 +1056,7 @@ function stopifcode_barre (event) {
 // fonction diverses
 //******************************************************
 
-//mise à la bonne largueur poursub_content
+//mise Ã  la bonne largueur poursub_content
 function set_size_to_sub_content () {
     if (getWindowWidth()>=1024) {
         $("sub_content").style.width= "1024px";
@@ -1066,7 +1066,7 @@ function set_size_to_sub_content () {
 	
 }
 
-//force la sélection dans un champ select
+//force la sÃ©lection dans un champ select
 function preselect (value_index, id_select) {
     var selectBox = $(id_select);
     for (var i=0; i<selectBox.options.length; i++) {
@@ -1089,7 +1089,7 @@ function refresh_sub_content () {
     page.verify("content_frame", unescape(document.location.hash.substr(1, document.location.hash.length)), "true", "sub_content");
 }
 
-//fonctions liés au maj du soft
+//fonctions liÃ©s au maj du soft
 
 var stp_prog_file = false;
 //barre de progression des fichiers

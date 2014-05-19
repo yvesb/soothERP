@@ -15,7 +15,7 @@ HTML_wysiwyg.prototype = {
 	initialize : function() {
 	},
 	
-	//démarage c'est ici qu'on parametre l'éditeur
+	//dÃ©marage c'est ici qu'on parametre l'Ã©diteur
 	HTML_editor : function(formbox, htmlbox, editfctname)	{
 			this.formbox	=	formbox;
 			this.htmlbox	=	htmlbox;
@@ -26,7 +26,7 @@ HTML_wysiwyg.prototype = {
 			try { 
 				$(this.htmlbox).contentWindow.document.execCommand("undo", false, null); 
 					}  catch (e) { 
-						alert("Cet éditeur de texte ne fonctionne pas sur ce navigateur"); 
+						alert("Cet Ã©diteur de texte ne fonctionne pas sur ce navigateur"); 
 					} 
 			$(this.htmlbox).contentWindow.document.open();
 			$(this.htmlbox).contentWindow.document.write('<html><body bgcolor="FFFFFF" leftmargin="1" topmargin="1" style="font-family:  Arial, Verdana; font-size: 0.8em; color: 000000; ">');
@@ -38,11 +38,11 @@ HTML_wysiwyg.prototype = {
 		
 	},
 	
-	//exécute les commandes de base
+	//exÃ©cute les commandes de base
 	HTML_exeCmd: function (cmd, param) {
 			$(this.htmlbox).contentWindow.document.execCommand(cmd, false, param); 
 	},
-	//récupére le texte sélectionné
+	//rÃ©cupÃ©re le texte sÃ©lectionnÃ©
 	HTML_getTexteselect: function () { 
    if (this.MOZ) { 
       var sel = $(this.htmlbox).contentWindow.getSelection(); 
@@ -54,7 +54,7 @@ HTML_wysiwyg.prototype = {
    return sel; 
 	},
 	
-	//vérifie que nous somme bien dans la fenêtre d'édition
+	//vÃ©rifie que nous somme bien dans la fenÃªtre d'Ã©dition
 	isSelected: function () {
 		if (this.target().focus){
 				if (($(this.htmlbox).contentWindow.document.selection.type == "Text") || ($(this.htmlbox).contentWindow.document.selection.type == "Control")) {
@@ -65,7 +65,7 @@ HTML_wysiwyg.prototype = {
 		 }
   },
 
-	//enregistre la sélection courante
+	//enregistre la sÃ©lection courante
 	recordRange : function(optional) {
 	if (!this.MOZ ) {
 		selection = $(this.htmlbox).contentWindow.document.selection;
@@ -92,7 +92,7 @@ HTML_wysiwyg.prototype = {
 
 	return rng;
 },
-	//restaure la sélection dans la fenetre
+	//restaure la sÃ©lection dans la fenetre
 	restoreRange: function () {
 		if (this.bookmark){
 			rng.moveToBookmark(this.bookmark);
@@ -103,7 +103,7 @@ HTML_wysiwyg.prototype = {
 			rng.setEnd(this.endContainer,this.endOffset);
 		}
 	},
-	//verify que le contenu est éditable
+	//verify que le contenu est Ã©ditable
 	isContentEditable : function(element) {		
 		if (!this.MOZ)
 			return element.isContentEditable;
@@ -126,7 +126,7 @@ HTML_wysiwyg.prototype = {
 			parent.command = "hilitecolor";
 		}
 	},
-	// récup des styles de la sélection  
+	// rÃ©cup des styles de la sÃ©lection  
 	//pas fini
 	HTML_getstyle : function () {
 		if (!this.MOZ) {
@@ -136,7 +136,7 @@ HTML_wysiwyg.prototype = {
 			A=this.HTML_getTexteselect().anchorNode;
 		}
 	},
-	// delai avant de lancer la récup de style en cas de saisie clavier
+	// delai avant de lancer la rÃ©cup de style en cas de saisie clavier
 		HTML_getstyle_delay : function (delay) {
 			if (this.LastOnChangeTimer) window.clearTimeout(this.LastOnChangeTimer);
 			this.LastOnChangeTimer=setTimeout(this.editfctname+".HTML_getstyle()",delay);
