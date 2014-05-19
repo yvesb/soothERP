@@ -42,7 +42,7 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], "pro
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 <head>
     <title>Caisse</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_common_style.css" rel="stylesheet" type="text/css" />
 		<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_caisse_style.css" rel="stylesheet" type="text/css" />
 		<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_small_wysiwyg.css" rel="stylesheet" type="text/css" />

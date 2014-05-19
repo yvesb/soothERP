@@ -227,7 +227,7 @@ function check_files () {
 function read_xml_file () {
 	
 	// Création du parseur XML
-	$this->parseurXML = xml_parser_create("ISO-8859-1");
+	$this->parseurXML = xml_parser_create("utf-8");
 
 	//This is the RIGHT WAY to set everything inside the object.
 	xml_set_object ( $this->parseurXML, $this );

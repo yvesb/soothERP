@@ -72,7 +72,7 @@ if (!$_SESSION['user']->check_permission ("14")) {
 	$mail_mime .= " boundary=\"----=$limite\"\n\n";
 	
 	$texte = "------=".$limite."\n";
-	$texte .= "Content-Type: text/html; charset=\"iso-8859-1\"\n";
+	$texte .= "Content-Type: text/html; charset=\"utf-8\"\n";
 	$texte .= "Content-Transfer-Encoding: 8bit\n\n";
 	
 	//url de desinscription et de comptage des lectures

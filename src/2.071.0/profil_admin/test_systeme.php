@@ -5,7 +5,7 @@
 ini_set ("session.cookie_lifetime", 86400) ;
 if(!session_id()) {session_start(); }
 
-header('Content-type: text/html; charset=iso-8859-15');
+header('Content-type: text/html; charset=utf-8');
 require ("_dir.inc.php");
 
 // neregistrement des erreurs dans un tableau 

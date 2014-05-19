@@ -39,7 +39,7 @@ if (!function_exists  ("__autoload")){
 // ***************************************************************************************************************
 setlocale(LC_TIME, "fr_FRA", "fr_FR", "fra", "France", "French");
 date_default_timezone_set($TIMEZONE);
-header('Content-type: text/html; charset=iso-8859-15');
+header('Content-type: text/html; charset=utf-8');
 
 
 // *************************************************************************************************************

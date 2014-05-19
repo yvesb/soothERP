@@ -5761,7 +5761,7 @@ function mail_html_message ($to , $sujet , $message , $reply , $from) {
 		$mail_mime .= "Bcc: $to \n";
 		$to = $from;
 	}
-	$mail_mime .= "Content-type: text/html; charset= iso-8859-1\n";
+	$mail_mime .= "Content-type: text/html; charset=utf-8\n";
 
 	//Le message en texte HTML
 	$texte .= $message;

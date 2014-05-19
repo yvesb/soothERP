@@ -81,7 +81,7 @@ $pied .= '
 	$mail_mime .= " boundary=\"----=$limite\"\n\n";
 	
 	$texte = "------=".$limite."\n";
-	$texte .= "Content-Type: text/html; charset=\"iso-8859-1\"\n";
+	$texte .= "Content-Type: text/html; charset=\"utf-8\"\n";
 	$texte .= "Content-Transfer-Encoding: 8bit\n\n";
 	
 	restore_error_handler();

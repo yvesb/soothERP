@@ -122,7 +122,7 @@ readfile($fichier);
     }
 
     // Création du parseur XML
-    $parseurXML = xml_parser_create("ISO-8859-1");
+    $parseurXML = xml_parser_create("utf-8");
 
     // Nom des fonctions à appeler
     // lorsque des balises ouvrantes ou fermantes sont rencontrées

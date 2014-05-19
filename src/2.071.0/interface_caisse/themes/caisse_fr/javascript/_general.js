@@ -510,9 +510,9 @@ appelpage.prototype = {
 																			}
 																			}
 																			);
-																			//overrideMimeType: 'text/html; charset=ISO-8859-15',
-																			//encoding: 'iso-8859-15',
-																			//requestHeaders: ["Content-type", "iso-8859-15"],
+																			//overrideMimeType: 'text/html; charset=utf-8',
+																			//encoding: 'utf-8',
+																			//requestHeaders: ["Content-type", "utf-8"],
 				}
 				else {	
 				//sinon on le récupére et on eval les sripts contenus

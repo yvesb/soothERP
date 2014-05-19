@@ -3,7 +3,7 @@
 // CONFIGURATION GENERALE DE L'APPLICATION
 // *************************************************************************************************************
 $TIMEZONE = "Europe/Paris";
-$INFO_LOCALE = array("fr_FRA", "fr_FR", "fra", "France", "French", "fr_FR.ISO8859-1");
+$INFO_LOCALE = array("fr_FRA", "fr_FR", "fra", "France", "French", "fr_FR.UTF-8");
 
 $USE_PA_HT_FORCED = 0;
 $TAXE_IN_PU = 1;

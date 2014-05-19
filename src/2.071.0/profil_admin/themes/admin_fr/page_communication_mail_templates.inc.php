@@ -57,7 +57,7 @@ update_menu_arbo();
 						<td style="text-align:right">
 							Jeu de caractères:<br />
 							<select name="mail_html_charset" id="mail_html_charset"  class="classinput_lsize" >
-								<option value="iso-8859-1">Europe</option>
+								<option value="utf-8">Europe</option>
 							</select>
 						</td>
 						<td>
@@ -159,7 +159,7 @@ update_menu_arbo();
 						<td style="text-align:right">
 							Jeu de caractères:<br />
 							<select name="mail_html_charset_<?php echo $mail_template->id_mail_template;?>" id="mail_html_charset_<?php echo $mail_template->id_mail_template;?>"  class="classinput_lsize" >
-								<option value="iso-8859-1">Europe</option>
+								<option value="utf-8">Europe</option>
 							</select>
 						</td>
 						<td>
