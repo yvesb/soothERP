@@ -29,7 +29,7 @@ function __construct ($ref_contact = "", $action = "open") {
 									 cr.lib_comm, cr.formule_comm,
 									 cc.lib_commercial_categ				
 					FROM  annu_commercial ac
-						LEFT JOIN commissions_regles cr ON cr.id_commission_regle = ac.id_commission_regle
+						LEFT JOIN commissions_regles cr ON cr.id_commission_regle = ac.id_commission_regle
 						LEFT JOIN commerciaux_categories cc ON cc.id_commercial_categ = ac.id_commercial_categ
 						WHERE ref_contact = '".$this->ref_contact."' ";	
 	$resultat = $bdd->query ($query);
@@ -217,7 +217,7 @@ static public function charger_commerciaux_categories  () {
 	$query = "SELECT id_commercial_categ , lib_commercial_categ, cc.id_commission_regle,
 									 cr.lib_comm, cr.formule_comm
 						FROM commerciaux_categories cc
-						LEFT JOIN commissions_regles cr ON cr.id_commission_regle = cc.id_commission_regle
+						LEFT JOIN commissions_regles cr ON cr.id_commission_regle = cc.id_commission_regle
 						ORDER BY lib_commercial_categ ";
 	$resultat = $bdd->query ($query);
 	while ($var = $resultat->fetchObject()) { $commerciaux_categories[] = $var; }
@@ -232,7 +232,7 @@ static public function charger_commissions_regles  () {
 	$query = "SELECT cr.id_commission_regle,
 									 cr.lib_comm, cr.formule_comm, defaut,
 									 (SELECT COUNT(ac.ref_contact) FROM annu_commercial ac WHERE ac.id_commission_regle = cr.id_commission_regle ) as nb_comm
-						FROM commissions_regles cr 
+						FROM commissions_regles cr 
 						ORDER BY lib_comm ";
 	$resultat = $bdd->query ($query);
 	while ($var = $resultat->fetchObject()) { $commerciaux_categories[] = $var; }

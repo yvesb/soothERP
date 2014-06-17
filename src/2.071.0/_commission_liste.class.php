@@ -331,8 +331,8 @@ function charger_liste_commerciaux () {
 									 cr.lib_comm, cr.formule_comm,
 									 cc.lib_commercial_categ,
 									 a.nom
-					FROM  annu_commercial ac
-					LEFT JOIN commissions_regles cr ON cr.id_commission_regle = ac.id_commission_regle
+					FROM annu_commercial ac
+					LEFT JOIN commissions_regles cr ON cr.id_commission_regle = ac.id_commission_regle
 					LEFT JOIN commerciaux_categories cc ON cc.id_commercial_categ = ac.id_commercial_categ
 					LEFT JOIN annuaire a ON a.ref_contact = ac.ref_contact
 					
