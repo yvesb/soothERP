@@ -181,7 +181,7 @@ if (!$_SERVER['ACTIF'] && !isset($_SERVER['MAJ_EN_COURS'])) {
 // *************************************************************************************************************
 // CONNEXION A LA BASE DE DONNEES
 // *************************************************************************************************************
-$bdd = new PDO_etendu("mysql:host=".$bdd_hote."; dbname=".$bdd_base."", $bdd_user, $bdd_pass);
+$bdd = new PDO_etendu("mysql:host=".$bdd_hote."; dbname=".$bdd_base."", $bdd_user, $bdd_pass,  array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 
 // Afficher les erreurs PDO (liées à la base de donnée)
 $bdd->setAttribute (PDO::ATTR_ERRMODE , PDO::ERRMODE_EXCEPTION);
