@@ -20,7 +20,7 @@ $solde = $totaux_theoriques;
 </script>
 <div class="emarge"><br />
 
-<div class="titre" style="width:60%; padding-left:140px"><?php echo htmlentities($compte_tp->getLib_tp()); ?> -  Tableau de bord
+<div class="titre" style="width:60%; padding-left:140px"><?php echo htmlentities($compte_tp->getLib_tp(), ENT_QUOTES, "UTF-8"); ?> -  Tableau de bord
 </div>
 <div class="emarge" style="text-align:right" >
 <div  id="corps_gestion_tps">
@@ -114,14 +114,14 @@ $solde = $totaux_theoriques;
 									<?php	if (isset($fiche->date_reglement)) { echo date_Us_to_Fr($fiche->date_reglement)." ".getTime_from_date($fiche->date_reglement); } ?>
 								</td>
 								<td>
-									<a  href="#" id="link_reg_ref_<?php echo htmlentities($fiche->ref_reglement)?>" style="display:block; width:100%">
+									<a  href="#" id="link_reg_ref_<?php echo htmlentities($fiche->ref_reglement, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">
 									<span style="font-weight:bolder"></span> 
 									<?php	if (isset($fiche->ref_reglement)) {?>
 									<?php echo nl2br(($fiche->ref_reglement))?>
 									<?php }	?>
 									</a>
 									<script type="text/javascript">
-									Event.observe("link_reg_ref_<?php echo htmlentities($fiche->ref_reglement)?>", "click",  function(evt){
+									Event.observe("link_reg_ref_<?php echo htmlentities($fiche->ref_reglement, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){
 										Event.stop(evt);
 										page.traitecontent('compta_reglements_edition','compta_reglements_edition.php?ref_reglement=<?php echo $fiche->ref_reglement;?>','true','edition_reglement');
 										$("edition_reglement").show();

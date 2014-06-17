@@ -50,7 +50,7 @@ $i = 0;
 foreach ($_SESSION['stocks'] as $stock) {
 	?>
 	<li id="doc_menu_<?php echo $i;?>">
-		<a href="#" id="menu_<?php echo $i;?>" class="menu_unselect"><?php echo htmlentities($stock->getLib_stock());?></a>
+		<a href="#" id="menu_<?php echo $i;?>" class="menu_unselect"><?php echo htmlentities($stock->getLib_stock(), ENT_QUOTES, "UTF-8");?></a>
 	</li>
 	<?php
 	$i++;

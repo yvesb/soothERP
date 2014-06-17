@@ -68,8 +68,8 @@
 				$id_client_categ = "";
 				foreach ($liste_categories_client as $liste_categorie_client){
 					?>
-					<option value="<?php echo $liste_categorie_client->id_client_categ;?>" <?php if ($profils[$id_profil]->getId_client_categ () == $liste_categorie_client->id_client_categ) {echo 'selected="selected"'; $id_client_categ =  htmlentities($liste_categorie_client->lib_client_categ);}?>>
-					<?php echo htmlentities($liste_categorie_client->lib_client_categ)?></option>
+					<option value="<?php echo $liste_categorie_client->id_client_categ;?>" <?php if ($profils[$id_profil]->getId_client_categ () == $liste_categorie_client->id_client_categ) {echo 'selected="selected"'; $id_client_categ =  htmlentities($liste_categorie_client->lib_client_categ, ENT_QUOTES, "UTF-8");}?>>
+					<?php echo htmlentities($liste_categorie_client->lib_client_categ, ENT_QUOTES, "UTF-8")?></option>
 					<?php 
 				}
 				?>
@@ -135,7 +135,7 @@
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif"/ style="float:right" id="bt_adresse_livraison_choisie">
 				<span id="lib_adresse_livraison_choisie"><?php echo getLib_adresse($profils[$id_profil]->getRef_adr_livraison ())?></span>
 			</div>
-			<input name="ref_adr_livraison" id="ref_adr_livraison" type="hidden" class="classinput_xsize" value="<?php echo htmlentities($profils[$id_profil]->getRef_adr_livraison ()); ?>" />
+			<input name="ref_adr_livraison" id="ref_adr_livraison" type="hidden" class="classinput_xsize" value="<?php echo htmlentities($profils[$id_profil]->getRef_adr_livraison (), ENT_QUOTES, "UTF-8"); ?>" />
 							
 			</td>
 		</tr>
@@ -150,7 +150,7 @@
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif"/ style="float:right" id="bt_adresse_facturation_choisie">
 				<span id="lib_adresse_facturation_choisie"><?php echo getLib_adresse($profils[$id_profil]->getRef_adr_facturation ())?></span>
 			</div>
-			<input name="ref_adr_facturation" id="ref_adr_facturation" type="hidden" class="classinput_xsize" value="<?php echo htmlentities($profils[$id_profil]->getRef_adr_facturation ()); ?>" />
+			<input name="ref_adr_facturation" id="ref_adr_facturation" type="hidden" class="classinput_xsize" value="<?php echo htmlentities($profils[$id_profil]->getRef_adr_facturation (), ENT_QUOTES, "UTF-8"); ?>" />
 			</td>
 		</tr>
 		</table>
@@ -734,7 +734,7 @@
 	 									<?php if ($ce_client['id_tarif'] == $tarif_liste->id_tarif){ ?>
 											selected="selected"
 										<?php }?>
-										value="<?php echo $tarif_liste->id_tarif; ?>"><?php echo htmlentities($tarif_liste->lib_tarif); ?>
+										value="<?php echo $tarif_liste->id_tarif; ?>"><?php echo htmlentities($tarif_liste->lib_tarif, ENT_QUOTES, "UTF-8"); ?>
 									</option>
 								<?php }?>
 						</select>
@@ -876,14 +876,14 @@
 			<td class="size_strict"><span class="labelled_ralonger">Adresse de Livraison:</span>
 			</td>
 			<td>
-			<a href="#" id="show4_adresse_livraison_choisie" class="modif_input1"><?php echo  htmlentities( getLib_adresse($profils[$id_profil]->getRef_adr_livraison ()))?></a>
+			<a href="#" id="show4_adresse_livraison_choisie" class="modif_input1"><?php echo  htmlentities( getLib_adresse($profils[$id_profil]->getRef_adr_livraison ()), ENT_QUOTES, "UTF-8")?></a>
 				</td>
 		</tr>
 		<tr>
 			<td class="size_strict"><span class="labelled_ralonger">Adresse de Facturation:</span>
 			</td>
 			<td>
-			<a href="#" id="show4_adresse_facturation_choisie" class="modif_input1"><?php echo  htmlentities( getLib_adresse($profils[$id_profil]->getRef_adr_facturation ()))?></a>
+			<a href="#" id="show4_adresse_facturation_choisie" class="modif_input1"><?php echo  htmlentities( getLib_adresse($profils[$id_profil]->getRef_adr_facturation ()), ENT_QUOTES, "UTF-8")?></a>
 			</td>
 		</tr>
 
@@ -929,7 +929,7 @@
 			<span class="labelled_ralonger">D&eacute;lai de r&egrave;glement:</span>
 			</td>
 			<td>
-				<a href="#" id="show4_delai_reglement" class="modif_input1"><?php if(substr($profils[$id_profil]->getDelai_reglement(),-3)=="FDM"){echo  htmlentities(substr($profils[$id_profil]->getDelai_reglement (),0,-3))." jour(s) Fin de mois"; }else{echo  htmlentities($profils[$id_profil]->getDelai_reglement ()). " jours(s)";}?></a>
+				<a href="#" id="show4_delai_reglement" class="modif_input1"><?php if(substr($profils[$id_profil]->getDelai_reglement(),-3)=="FDM"){echo  htmlentities(substr($profils[$id_profil]->getDelai_reglement (),0,-3), ENT_QUOTES, "UTF-8")." jour(s) Fin de mois"; }else{echo  htmlentities($profils[$id_profil]->getDelai_reglement ()). " jours(s, ENT_QUOTES, "UTF-8")";}?></a>
 			</td>
 		</tr>	
 
@@ -1013,7 +1013,7 @@
 						foreach ($tarifs_liste as $tarif_liste)
 						{
 							if ($ce_client['id_tarif'] == $tarif_liste->id_tarif)
-								$tarif_lib_txt = ltrim(htmlentities($tarif_liste->lib_tarif));
+								$tarif_lib_txt = ltrim(htmlentities($tarif_liste->lib_tarif, ENT_QUOTES, "UTF-8"));
 						}
 						echo $tarif_lib_txt; 
 					?>
@@ -1025,7 +1025,7 @@
 			<td class="size_strict"><span class="labelled_ralonger">Afficher Tarifs:</span>
 			</td>
 			<td>
-			<a href="#" id="show4_app_tarifs" class="modif_input1"><?php echo  ltrim(htmlentities($profils[$id_profil]->getApp_tarifs ()))?></a>
+			<a href="#" id="show4_app_tarifs" class="modif_input1"><?php echo  ltrim(htmlentities($profils[$id_profil]->getApp_tarifs ()), ENT_QUOTES, "UTF-8")?></a>
 			</td>
 		</tr>
 		

@@ -54,7 +54,7 @@ check_page_variables ($page_variables);
 				foreach ($select_art_categ  as $s_art_categ){
 			?>
 			<option value="<?php echo ($s_art_categ->ref_art_categ)?>">
-			<?php for ($i=0; $i<$s_art_categ->indentation; $i++) {?>&nbsp;&nbsp;&nbsp;<?php }?><?php echo htmlentities($s_art_categ->lib_art_categ)?>
+			<?php for ($i=0; $i<$s_art_categ->indentation; $i++) {?>&nbsp;&nbsp;&nbsp;<?php }?><?php echo htmlentities($s_art_categ->lib_art_categ, ENT_QUOTES, "UTF-8")?>
 			</option>
 			<?php
 				}

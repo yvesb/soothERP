@@ -110,7 +110,7 @@ Event.observe("link_close_pop_up_newmini_moteur_doc", "click",  function(evt){Ev
 				<optgroup label="Documents stock"></optgroup>
 				<?php $doc_stock = false;
 				} ?>
-                                <option value="<?php echo $type_liste->id_type_doc;?>" <?php if ($type_liste->id_type_doc == $id_type_doc) { ?>selected="selected"<?php } ?>><?php echo htmlentities($type_liste->lib_type_doc);?></option>
+                                <option value="<?php echo $type_liste->id_type_doc;?>" <?php if ($type_liste->id_type_doc == $id_type_doc) { ?>selected="selected"<?php } ?>><?php echo htmlentities($type_liste->lib_type_doc, ENT_QUOTES, "UTF-8");?></option>
                                 <?php
 			}
 			?>

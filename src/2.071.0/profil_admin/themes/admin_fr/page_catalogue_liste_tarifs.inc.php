@@ -154,16 +154,16 @@ check_page_variables ($page_variables);
 					</tr>	
 					<tr>
 						<td>
-						<input id="lib_tarif_<?php echo $tarif_liste->id_tarif; ?>" name="lib_tarif_<?php echo $tarif_liste->id_tarif; ?>" type="text" value="<?php echo htmlentities($tarif_liste->lib_tarif); ?>"  class="classinput_lsize"/>
+						<input id="lib_tarif_<?php echo $tarif_liste->id_tarif; ?>" name="lib_tarif_<?php echo $tarif_liste->id_tarif; ?>" type="text" value="<?php echo htmlentities($tarif_liste->lib_tarif, ENT_QUOTES, "UTF-8"); ?>"  class="classinput_lsize"/>
 			<input name="id_tarif" id="id_tarif" type="hidden" value="<?php echo $tarif_liste->id_tarif; ?>" />
 							
 						</td>
 						<td>
-							<textarea id="desc_tarif_<?php echo $tarif_liste->id_tarif; ?>" name="desc_tarif_<?php echo $tarif_liste->id_tarif; ?>" rows="2" class="classinput_lsize" ><?php echo htmlentities($tarif_liste->desc_tarif); ?></textarea>
+							<textarea id="desc_tarif_<?php echo $tarif_liste->id_tarif; ?>" name="desc_tarif_<?php echo $tarif_liste->id_tarif; ?>" rows="2" class="classinput_lsize" ><?php echo htmlentities($tarif_liste->desc_tarif, ENT_QUOTES, "UTF-8"); ?></textarea>
 						</td>
 						<td>
-						<input id="marge_moyenne_<?php echo $tarif_liste->id_tarif; ?>" name="marge_moyenne_<?php echo $tarif_liste->id_tarif; ?>" value="<?php echo htmlentities($tarif_liste->marge_moyenne); ?>" type="hidden"  class="classinput_hsize"/>
-						<div id="aff_formule_tarif_<?php echo $tarif_liste->id_tarif; ?>" style="cursor:pointer"><?php echo htmlentities($tarif_liste->marge_moyenne); ?></div>
+						<input id="marge_moyenne_<?php echo $tarif_liste->id_tarif; ?>" name="marge_moyenne_<?php echo $tarif_liste->id_tarif; ?>" value="<?php echo htmlentities($tarif_liste->marge_moyenne, ENT_QUOTES, "UTF-8"); ?>" type="hidden"  class="classinput_hsize"/>
+						<div id="aff_formule_tarif_<?php echo $tarif_liste->id_tarif; ?>" style="cursor:pointer"><?php echo htmlentities($tarif_liste->marge_moyenne, ENT_QUOTES, "UTF-8"); ?></div>
 						</td>
 						<td>
 							<p style="text-align:right">
@@ -185,7 +185,7 @@ check_page_variables ($page_variables);
 		Event.observe('liste_tarif_sup_<?php echo $tarif_liste->id_tarif; ?>', 'click',  function(evt){Event.stop(evt); alerte_sup_grille_tarif ('Suppression d\'un tarif', 'Confirmez la suppression d\'un tarif<br/>S&eacute;lectionnez une grille tarifaire de remplacement s.v.p.<br /><select id="id_tarif_sup" name="id_tarif_sup" class="classinput_lsize"><option value=""></option><?php 
 							foreach ($tarifs_liste as $tarif_liste_b) {
 								if ($tarif_liste->id_tarif != $tarif_liste_b->id_tarif) {
-								?><option value="<?php echo $tarif_liste_b->id_tarif; ?>"><?php echo addslashes(htmlentities($tarif_liste_b->lib_tarif)); ?></option><?php 
+								?><option value="<?php echo $tarif_liste_b->id_tarif; ?>"><?php echo addslashes(htmlentities($tarif_liste_b->lib_tarif, ENT_QUOTES, "UTF-8")); ?></option><?php 
 								}
 							}
 							?></select>', '<input type="submit" name="bouton1" id="bouton1" value="Confirmez la suppression" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />', 'catalogue_liste_tarifs_sup_<?php echo $tarif_liste->id_tarif; ?>', 'id_tarif_sup', 'id_tarif_remplacement_<?php echo $tarif_liste->id_tarif; ?>');		},false); 

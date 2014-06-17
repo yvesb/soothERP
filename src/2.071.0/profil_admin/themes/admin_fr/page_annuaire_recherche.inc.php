@@ -56,7 +56,7 @@ array_menu_r_contact[1] 	=	new Array('recherche_avancee', 'menu_2');
 					<input type="hidden" name="orderby_s" id="orderby_s" value="nom" />
 					<input type="hidden" name="orderorder_s" id="orderorder_s" value="ASC" />
 					<span class="labelled">Nom&nbsp;ou&nbsp;D&eacute;nomination:</span></td>
-					<td><input type="text" name="nom_s" id="nom_s" value="<?php if (isset($_REQUEST["acc_ref_contact"])) { echo htmlentities($_REQUEST["acc_ref_contact"]);}
+					<td><input type="text" name="nom_s" id="nom_s" value="<?php if (isset($_REQUEST["acc_ref_contact"])) { echo htmlentities($_REQUEST["acc_ref_contact"], ENT_QUOTES, "UTF-8");}
 	?>"   class="classinput_xsize"/></td>
 					<td></td>
 					<td></td>
@@ -135,7 +135,7 @@ array_menu_r_contact[1] 	=	new Array('recherche_avancee', 'menu_2');
 							<?php 
 							foreach ($ANNUAIRE_CATEGORIES as $categorie) {
 								?>
-								<option value="<?php echo $categorie->id_categorie?>"><?php echo htmlentities($categorie->lib_categorie)?></option>
+								<option value="<?php echo $categorie->id_categorie?>"><?php echo htmlentities($categorie->lib_categorie, ENT_QUOTES, "UTF-8")?></option>
 								<?php
 							}
 							?>

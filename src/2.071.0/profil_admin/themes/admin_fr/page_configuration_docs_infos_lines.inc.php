@@ -76,7 +76,7 @@ update_menu_arbo();
 				<optgroup label="Documents stock"></optgroup>
 				<?php $doc_stock = false;
 				} ?>
-				<option value="<?php echo $type_liste->id_type_doc;?>" ><?php echo htmlentities($type_liste->lib_type_doc);?></option>
+				<option value="<?php echo $type_liste->id_type_doc;?>" ><?php echo htmlentities($type_liste->lib_type_doc, ENT_QUOTES, "UTF-8");?></option>
 				<?php 
 			}
 			?>
@@ -135,7 +135,7 @@ foreach ($liste_modeles as $modele) { ?>
 				<optgroup label="Documents stock"></optgroup>
 				<?php $doc_stock = false;
 				} ?>
-                                <option value="<?php echo $type_liste->id_type_doc;?>" <?php if (in_array($type_liste->id_type_doc, $tmp_id_type)) {?>selected="selected"<?php } ?> ><?php echo htmlentities($type_liste->lib_type_doc);?></option>
+                                <option value="<?php echo $type_liste->id_type_doc;?>" <?php if (in_array($type_liste->id_type_doc, $tmp_id_type)) {?>selected="selected"<?php } ?> ><?php echo htmlentities($type_liste->lib_type_doc, ENT_QUOTES, "UTF-8");?></option>
 				<?php
 			}
 			?>

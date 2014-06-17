@@ -802,7 +802,7 @@ $i++;
 				} else {
 					echo   $DIR.$_SESSION['theme']->getDir_theme().'images/blank.gif';
 				}?>" width="15px" height="15px" id="img_option_info_magasin_<?php echo $magasin->getId_magasin ();?>"/>
-				<?php echo htmlentities($magasin->getLib_magasin ()) ?> </a>
+				<?php echo htmlentities($magasin->getLib_magasin (), ENT_QUOTES, "UTF-8") ?> </a>
 				</td></tr>			
 				<?php
 			}
@@ -945,9 +945,9 @@ swfobject.embedSWF("<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/w
 					<tr>
 						<td style="text-align: right"> Utilisateur : </td>
 						<td>
-						<?php echo  htmlentities($_SESSION['user']->getContactName ()); ?>
+						<?php echo  htmlentities($_SESSION['user']->getContactName (), ENT_QUOTES, "UTF-8"); ?>
 						<br />
-						<?php echo  htmlentities($_SESSION['user']->getPseudo ()); ?>
+						<?php echo  htmlentities($_SESSION['user']->getPseudo (), ENT_QUOTES, "UTF-8"); ?>
 						<input type="hidden" name='login' size=25 value="<?php echo $_SESSION['user']->getRef_user ()?>"/>
 						</td>
 					</tr>

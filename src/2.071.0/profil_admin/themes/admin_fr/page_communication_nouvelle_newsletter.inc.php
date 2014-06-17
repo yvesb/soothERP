@@ -206,7 +206,7 @@ update_menu_arbo();
 									foreach ($_SESSION['profils'] as $profil) {
 										if (!$profil->getId_profil()) { continue; }
 										?>
-										<span><input onclick="affiche_newsletter_profil_nvl('<?php echo $profil->getId_profil();?>');" type="checkbox" value="<?php echo $profil->getId_profil();?>" id="profils<?php echo $profil->getId_profil();?>" name="profils<?php echo $profil->getId_profil();?>" /><?php echo htmlentities($profil->getLib_profil());?></span><br />
+										<span><input onclick="affiche_newsletter_profil_nvl('<?php echo $profil->getId_profil();?>');" type="checkbox" value="<?php echo $profil->getId_profil();?>" id="profils<?php echo $profil->getId_profil();?>" name="profils<?php echo $profil->getId_profil();?>" /><?php echo htmlentities($profil->getLib_profil(), ENT_QUOTES, "UTF-8");?></span><br />
 										<?php
 									}
 									?>

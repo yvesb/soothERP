@@ -24,13 +24,13 @@ check_page_variables ($page_variables);
 <script type="text/javascript">
 Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); page.verify('compta_gestion2_caisse','compta_gestion2_caisse.php?id_caisse=<?php echo $compte_caisse_controle->id_compte_caisse;?>','true','sub_content');}, false);
 </script>
-<div class="titre">Contrôle <?php echo htmlentities($compte_caisse->getLib_caisse()); ?>
+<div class="titre">Contrôle <?php echo htmlentities($compte_caisse->getLib_caisse(), ENT_QUOTES, "UTF-8"); ?>
 </div>
 
 <div class="articletview_corps" id="controle_validation"  style="OVERFLOW-Y: auto; OVERFLOW-X: auto; width:100%;">
 <div class="emarge"><br />
 <span class="controle_sub_title">
-Contrôle effectué par <span style="font-weight:bolder"><?php echo htmlentities($compte_caisse_controle->pseudo);?></span> le 
+Contrôle effectué par <span style="font-weight:bolder"><?php echo htmlentities($compte_caisse_controle->pseudo, ENT_QUOTES, "UTF-8");?></span> le 
 <?php echo Date_Us_To_Fr($compte_caisse_controle->date_controle);?> à
  <?php echo getTime_from_date($compte_caisse_controle->date_controle);?>
 </span>

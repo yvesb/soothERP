@@ -151,9 +151,9 @@ check_page_variables ($page_variables);
 																		<OPTGROUP disabled="disabled" label="__________________________________" ></OPTGROUP>
 																	<?php }
 																	if($adresse_facturation->getId_pays() == $payslist->id_pays)
-																	{		echo htmlentities($payslist->pays);}
+																	{		echo htmlentities($payslist->pays, ENT_QUOTES, "UTF-8");}
 																	if(!$adresse_facturation->getId_pays() && $DEFAUT_ID_PAYS == $payslist->id_pays)
-																	{		echo htmlentities($payslist->pays);}
+																	{		echo htmlentities($payslist->pays, ENT_QUOTES, "UTF-8");}
 																} ?>
 															</td>
 														</tr>
@@ -201,9 +201,9 @@ check_page_variables ($page_variables);
 																		<OPTGROUP disabled="disabled" label="__________________________________" ></OPTGROUP>
 																	<?php }
 																	if($adresse_livraison->getId_pays() == $payslist->id_pays)
-																	{		echo htmlentities($payslist->pays);}
+																	{		echo htmlentities($payslist->pays, ENT_QUOTES, "UTF-8");}
 																	if(!$adresse_livraison->getId_pays() && $DEFAUT_ID_PAYS == $payslist->id_pays)
-																	{		echo htmlentities($payslist->pays);}
+																	{		echo htmlentities($payslist->pays, ENT_QUOTES, "UTF-8");}
 																} ?>
 															</td>
 														</tr>
@@ -329,7 +329,7 @@ check_page_variables ($page_variables);
 															<tr>
 																<td colspan="2" class="main_info_user" >
 																	Adresse de Facturation:
-																	<input name="facturation_ref_adresse" id="facturation_ref_adresse" type="hidden" value="<?php echo htmlentities($profil_client->getRef_adr_facturation ()); ?>" />
+																	<input name="facturation_ref_adresse" id="facturation_ref_adresse" type="hidden" value="<?php echo htmlentities($profil_client->getRef_adr_facturation (), ENT_QUOTES, "UTF-8"); ?>" />
 																</td>
 															</tr>
 															<tr>
@@ -379,7 +379,7 @@ check_page_variables ($page_variables);
 																		<option <?php echo 'value="'.$payslist->id_pays.'" ';
 																						if((!$adresse_facturation->getId_pays() && $DEFAUT_ID_PAYS == $payslist->id_pays) || $adresse_facturation->getId_pays() == $payslist->id_pays)
 																						{		echo 'selected="selected"';}?>>
-																			<?php echo htmlentities($payslist->pays)?>
+																			<?php echo htmlentities($payslist->pays, ENT_QUOTES, "UTF-8")?>
 																		</option>
 																	<?php } ?>
 																	</select>
@@ -401,7 +401,7 @@ check_page_variables ($page_variables);
 															<tr>
 																<td colspan="2" class="main_info_user">
 																	Adresse de Livraison: 
-																	<input name="livraison_ref_adresse" id="livraison_ref_adresse" type="hidden" class="classinput_xsize" value="<?php echo htmlentities($profil_client->getRef_adr_livraison ()); ?>" />
+																	<input name="livraison_ref_adresse" id="livraison_ref_adresse" type="hidden" class="classinput_xsize" value="<?php echo htmlentities($profil_client->getRef_adr_livraison (), ENT_QUOTES, "UTF-8"); ?>" />
 																</td>
 															</tr>
 															<tr>
@@ -451,7 +451,7 @@ check_page_variables ($page_variables);
 																			<option <?php echo 'value="'.$payslist->id_pays.'" ';
 																							if((!$adresse_facturation->getId_pays() && $DEFAUT_ID_PAYS == $payslist->id_pays) || $adresse_facturation->getId_pays() == $payslist->id_pays)
 																							{		echo 'selected="selected"';}?>>
-																				<?php echo htmlentities($payslist->pays)?>
+																				<?php echo htmlentities($payslist->pays, ENT_QUOTES, "UTF-8")?>
 																			</option>
 																			<?php } ?>
 																	</select>

@@ -65,13 +65,13 @@ check_page_variables ($page_variables);
 							?>
 							</td>
 							<td style="  padding-left:10px; font-size:11px; width:30%;border-bottom:1px solid #d2d2d2;">
-							<?php echo htmlentities($liste_reglement->lib_reglement_mode); ?>
+							<?php echo htmlentities($liste_reglement->lib_reglement_mode, ENT_QUOTES, "UTF-8"); ?>
 							</td>
 							<td style=" text-align:right; padding-right:0px; font-size:11px; border-bottom:1px solid #d2d2d2; width:15%;" >
-							<span class="doc_bold3"><?php echo htmlentities(number_format($liste_reglement->montant_on_doc, $TARIFS_NB_DECIMALES, ".", ""	))." ".$MONNAIE[1]; ?></span> / 
+							<span class="doc_bold3"><?php echo htmlentities(number_format($liste_reglement->montant_on_doc, $TARIFS_NB_DECIMALES, ".", ""	), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1]; ?></span> / 
 							</td>
 							<td style=" text-align:right; padding-right:10px; font-size:11px; border-bottom:1px solid #d2d2d2; width:12%;" >
-							<?php echo htmlentities(number_format($liste_reglement->montant_reglement, $TARIFS_NB_DECIMALES, ".", ""	)); ?> 
+							<?php echo htmlentities(number_format($liste_reglement->montant_reglement, $TARIFS_NB_DECIMALES, ".", ""	), ENT_QUOTES, "UTF-8"); ?> 
 							</td>
 							
 							
@@ -185,19 +185,19 @@ check_page_variables ($page_variables);
 							<span ><img width="8px" height="8px" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_<?php echo $echeance->etat; ?>.png"/></span>&nbsp;
 							<?php 
 							if ($echeance->date!= 0000-00-00) {
-								echo htmlentities ( date_Us_to_Fr ($echeance->date));
+								echo htmlentities ( date_Us_to_Fr ($echeance->date), ENT_QUOTES, "UTF-8");
 							}
                                                         else
                                                         {
                                                             if($echeance->jour == 0 || $echeance->jour == 1)
-                                                                echo htmlentities ( $echeance->jour." jour");
+                                                                echo htmlentities ( $echeance->jour." jour", ENT_QUOTES, "UTF-8");
                                                             else if($echeance->jour > 1)
-                                                                echo htmlentities ( $echeance->jour." jours");
+                                                                echo htmlentities ( $echeance->jour." jours", ENT_QUOTES, "UTF-8");
                                                         }
 							?>
 							</td>
 							<td style=" text-align:left; padding-left:10px; font-size:11px; width:25%;border-bottom:1px solid #d2d2d2;">
-							<?php echo htmlentities($echeance->type_reglement); ?>
+							<?php echo htmlentities($echeance->type_reglement, ENT_QUOTES, "UTF-8"); ?>
 							</td>
 							<td style=" text-align:left; padding-left:10px; font-size:11px; width:35%;border-bottom:1px solid #d2d2d2;">
 							<?php
@@ -260,7 +260,7 @@ check_page_variables ($page_variables);
                                                                 $retour = $bdd->query($query);
 
                                                                 if($res = $retour->fetchObject()){
-                                                                        echo htmlentities($res->lib_reglement_mode);
+                                                                        echo htmlentities($res->lib_reglement_mode, ENT_QUOTES, "UTF-8");
                                                                 }
 
                                                             }
@@ -274,11 +274,11 @@ check_page_variables ($page_variables);
                                                         $retour = $bdd->query($query);
 
                                                         if($res = $retour->fetchObject()){
-                                                                echo htmlentities($res->lib_reglement_mode);
+                                                                echo htmlentities($res->lib_reglement_mode, ENT_QUOTES, "UTF-8");
 							}} ?>
 							</td>
 							<td style=" text-align:right; padding-right:0px; font-size:11px; border-bottom:1px solid #d2d2d2; width:25%">
-							<?php echo htmlentities(number_format($echeance->montant, $TARIFS_NB_DECIMALES, ".", ""	))." ".$MONNAIE[1]; ?> 
+							<?php echo htmlentities(number_format($echeance->montant, $TARIFS_NB_DECIMALES, ".", ""	), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1]; ?> 
 							</td>
 							
 							<?php if($nb_echeances_aff<0){ ?>
@@ -310,7 +310,7 @@ check_page_variables ($page_variables);
 							<tr id="reglement_partiel2" >
 								<td colspan="3" style="text-align:left;  ">
 									<span style="font-size:11px; font-style:italic; padding-left:10px; color:#FF0000">Montant des &eacute;ch&eacute;ances arriv&eacute;es &agrave; terme :</span>
-									<span  class="doc_bold3" style="color:#FF0000;"> <?php echo htmlentities(number_format(($montant_terme-$montant_acquite)>=0 ? ($montant_terme-$montant_acquite):0, $TARIFS_NB_DECIMALES, ".", ""	)); ?>  <?php echo $MONNAIE[1]; ?></span>
+									<span  class="doc_bold3" style="color:#FF0000;"> <?php echo htmlentities(number_format(($montant_terme-$montant_acquite)>=0 ? ($montant_terme-$montant_acquite):0, $TARIFS_NB_DECIMALES, ".", ""	), ENT_QUOTES, "UTF-8"); ?>  <?php echo $MONNAIE[1]; ?></span>
                                                                 </td>
 								<td style=" text-align:right; font-size:11px; color:#FF0000;">
 									<input name="bt_modifier" id="bt_modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" style="padding-top:2px" />

@@ -38,7 +38,7 @@ check_page_variables ($page_variables);
 	<?php 
 	foreach ($magasins_liste as $magasin_liste) {
 		?>
-		<option value="<?php echo $magasin_liste->id_magasin; ?>" <?php if ($magasin_liste->id_magasin == $id_magasin) {echo 'selected="selected"';}?>><?php echo htmlentities($magasin_liste->lib_magasin); ?></option>
+		<option value="<?php echo $magasin_liste->id_magasin; ?>" <?php if ($magasin_liste->id_magasin == $id_magasin) {echo 'selected="selected"';}?>><?php echo htmlentities($magasin_liste->lib_magasin, ENT_QUOTES, "UTF-8"); ?></option>
 		<?php 
 	}
 	?>
@@ -104,7 +104,7 @@ if (isset($id_magasin)) {
 							<?php 
 							foreach ($magasins_liste as $magasin_liste) {
 								?>
-								<option value="<?php echo $magasin_liste->id_magasin; ?>" <?php if ($magasin_liste->id_magasin == $id_magasin) {echo 'selected="selected"';}?>><?php echo htmlentities($magasin_liste->lib_magasin); ?></option>
+								<option value="<?php echo $magasin_liste->id_magasin; ?>" <?php if ($magasin_liste->id_magasin == $id_magasin) {echo 'selected="selected"';}?>><?php echo htmlentities($magasin_liste->lib_magasin, ENT_QUOTES, "UTF-8"); ?></option>
 								<?php 
 							}
 							?>
@@ -178,7 +178,7 @@ if (isset($id_magasin)) {
 							</tr>	
 							<tr>
 								<td style="text-align:center">
-								<input name="lib_caisse_<?php echo $compte_caisse->id_compte_caisse;?>" id="lib_caisse_<?php echo $compte_caisse->id_compte_caisse;?>" type="text" value="<?php echo htmlentities($compte_caisse->lib_caisse);?>"  class="classinput_xsize"  />
+								<input name="lib_caisse_<?php echo $compte_caisse->id_compte_caisse;?>" id="lib_caisse_<?php echo $compte_caisse->id_compte_caisse;?>" type="text" value="<?php echo htmlentities($compte_caisse->lib_caisse, ENT_QUOTES, "UTF-8");?>"  class="classinput_xsize"  />
 								</td>
 								<td style="text-align:center">
 								<select id="id_magasin_<?php echo $compte_caisse->id_compte_caisse;?>" name="id_magasin_<?php echo $compte_caisse->id_compte_caisse;?>"  class="classinput_xsize" >
@@ -186,7 +186,7 @@ if (isset($id_magasin)) {
 									<?php 
 									foreach ($magasins_liste as $magasin_liste) {
 										?>
-										<option value="<?php echo $magasin_liste->id_magasin; ?>" <?php if ($magasin_liste->id_magasin == $compte_caisse->id_magasin) {echo 'selected="selected"';}?>><?php echo htmlentities($magasin_liste->lib_magasin); ?></option>
+										<option value="<?php echo $magasin_liste->id_magasin; ?>" <?php if ($magasin_liste->id_magasin == $compte_caisse->id_magasin) {echo 'selected="selected"';}?>><?php echo htmlentities($magasin_liste->lib_magasin, ENT_QUOTES, "UTF-8"); ?></option>
 										<?php 
 									}
 									?>

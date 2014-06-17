@@ -9,24 +9,24 @@ foreach ($adresses as $adresse) {
 	<?php
 	if ($adresse->getLib_adresse()!="") {
 		?>
-		<strong><?php echo  htmlentities($adresse->getLib_adresse())?></strong><br />
+		<strong><?php echo  htmlentities($adresse->getLib_adresse(), ENT_QUOTES, "UTF-8")?></strong><br />
 		<?php 
 	}
 	if ($adresse->getText_adresse()!="") {
 		?>
-		<span style="float: right;text-align:right"><?php echo  htmlentities(substr($adresse->getText_adresse(),0 ,25))?></span>
+		<span style="float: right;text-align:right"><?php echo  htmlentities(substr($adresse->getText_adresse(),0 ,25), ENT_QUOTES, "UTF-8")?></span>
 		Adresse: <br />
 		<?php 
 	}
 	if ($adresse->getCode_postal()!="") {
 		?>
-		<span style="float: right;text-align:right"> <?php echo  htmlentities($adresse->getCode_postal())?></span>
+		<span style="float: right;text-align:right"> <?php echo  htmlentities($adresse->getCode_postal(), ENT_QUOTES, "UTF-8")?></span>
 		Code Postal:<br />
 		<?php 
 	}
 	if ($adresse->getVille()!="") {
 		?>
-		<span style="float: right;text-align:right"> <?php echo  htmlentities(substr($adresse->getVille(),0 ,25))?></span>
+		<span style="float: right;text-align:right"> <?php echo  htmlentities(substr($adresse->getVille(),0 ,25), ENT_QUOTES, "UTF-8")?></span>
 		Ville:<br />
 		<?php
 	}

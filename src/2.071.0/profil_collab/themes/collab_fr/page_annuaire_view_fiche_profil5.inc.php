@@ -24,8 +24,8 @@
 				<?php
 				foreach ($liste_categories_fournisseur as $liste_categorie_fournisseur){
 					?>
-					<option value="<?php echo $liste_categorie_fournisseur->id_fournisseur_categ;?>" <?php if ($profils[$id_profil]->getId_fournisseur_categ () == $liste_categorie_fournisseur->id_fournisseur_categ) {echo 'selected="selected"'; $id_fournisseur_categ =  htmlentities($liste_categorie_fournisseur->id_fournisseur_categ);}?>>
-					<?php echo htmlentities($liste_categorie_fournisseur->lib_fournisseur_categ)?></option>
+					<option value="<?php echo $liste_categorie_fournisseur->id_fournisseur_categ;?>" <?php if ($profils[$id_profil]->getId_fournisseur_categ () == $liste_categorie_fournisseur->id_fournisseur_categ) {echo 'selected="selected"'; $id_fournisseur_categ =  htmlentities($liste_categorie_fournisseur->id_fournisseur_categ, ENT_QUOTES, "UTF-8");}?>>
+					<?php echo htmlentities($liste_categorie_fournisseur->lib_fournisseur_categ, ENT_QUOTES, "UTF-8")?></option>
 					<?php 
 				}?>
 				</select>
@@ -35,14 +35,14 @@
 			<td class="size_strict"><span class="labelled_ralonger">Identifiant client:</span>
 			</td>
 			<td>
-				<input name="code_client" id="code_client" type="text" class="classinput_xsize" value="<?php echo htmlentities($profils[$id_profil]->getCode_client ()) ?>" />
+				<input name="code_client" id="code_client" type="text" class="classinput_xsize" value="<?php echo htmlentities($profils[$id_profil]->getCode_client (), ENT_QUOTES, "UTF-8") ?>" />
 				</td>
 		</tr>
 		<tr>
 			<td class="size_strict"><span class="labelled_ralonger">Conditions commerciales:</span>
 			</td>
 			<td>
-				<textarea name="conditions_commerciales" id="conditions_commerciales" class="classinput_xsize"><?php echo htmlentities($profils[$id_profil]->getConditions_commerciales ()) ?></textarea>
+				<textarea name="conditions_commerciales" id="conditions_commerciales" class="classinput_xsize"><?php echo htmlentities($profils[$id_profil]->getConditions_commerciales (), ENT_QUOTES, "UTF-8") ?></textarea>
 			</td>
 		</tr>
 		<tr>
@@ -54,8 +54,8 @@
 				$lib_stock = "";
 				foreach ($stocks_liste as $stock_liste){
 					?>
-					<option value="<?php echo $stock_liste->getId_stock();?>" <?php if ($stock_liste->getId_stock() == $profils[$id_profil]->getId_stock_livraison ()) { echo 'selected="selected"'; $lib_stock = htmlentities($stock_liste->getLib_stock());}?>>
-					<?php echo htmlentities($stock_liste->getLib_stock()); ?></option>
+					<option value="<?php echo $stock_liste->getId_stock();?>" <?php if ($stock_liste->getId_stock() == $profils[$id_profil]->getId_stock_livraison ()) { echo 'selected="selected"'; $lib_stock = htmlentities($stock_liste->getLib_stock(), ENT_QUOTES, "UTF-8");}?>>
+					<?php echo htmlentities($stock_liste->getLib_stock(), ENT_QUOTES, "UTF-8"); ?></option>
 					<?php 
 				}
 				?>
@@ -76,7 +76,7 @@
 		<tr>
 			<td class="size_strict"><span class="labelled_ralonger">D&eacute;lai de livraison:</span>
 			</td><td>
-			<input name="delai_livraison" id="delai_livraison" type="text" class="classinput_xsize" value="<?php echo htmlentities($profils[$id_profil]->getDelai_livraison ()) ?>" />
+			<input name="delai_livraison" id="delai_livraison" type="text" class="classinput_xsize" value="<?php echo htmlentities($profils[$id_profil]->getDelai_livraison (), ENT_QUOTES, "UTF-8") ?>" />
 			</td>
 		</tr>
 	</table>
@@ -98,7 +98,7 @@
 			<?php
 			foreach ($liste_categories_fournisseur as $liste_categorie_fournisseur){
 				if ($profils[$id_profil]->getId_fournisseur_categ () == $liste_categorie_fournisseur->id_fournisseur_categ) {?>
-				<?php echo htmlentities($liste_categorie_fournisseur->lib_fournisseur_categ)?>
+				<?php echo htmlentities($liste_categorie_fournisseur->lib_fournisseur_categ, ENT_QUOTES, "UTF-8")?>
 				<?php 
 				}
 			}
@@ -111,14 +111,14 @@
 			</td>
 			<td>
 			<a href="#" id="show5_code_client" class="modif_input1">
-			<?php echo  htmlentities($profils[$id_profil]->getCode_client ())?></a>
+			<?php echo  htmlentities($profils[$id_profil]->getCode_client (), ENT_QUOTES, "UTF-8")?></a>
 			</td>
 		</tr>
 		<tr>
 			<td class="size_strict"><span class="labelled_ralonger">Conditions commerciales:</span>
 			</td>
 			<td>
-			<a href="#" id="show5_conditions_commerciales" class="modif_input1"><?php echo  nl2br(htmlentities($profils[$id_profil]->getConditions_commerciales ()))?></a>
+			<a href="#" id="show5_conditions_commerciales" class="modif_input1"><?php echo  nl2br(htmlentities($profils[$id_profil]->getConditions_commerciales ()), ENT_QUOTES, "UTF-8")?></a>
 			</td>
 		</tr>
 		<tr>
@@ -132,14 +132,14 @@
 			<td class="size_strict"><span class="labelled_ralonger">Tarifs:</span>
 			</td>
 			<td>
-			<a href="#" id="show5_app_tarifs" class="modif_input1"><?php echo  htmlentities($profils[$id_profil]->getApp_tarifs ())?></a>
+			<a href="#" id="show5_app_tarifs" class="modif_input1"><?php echo  htmlentities($profils[$id_profil]->getApp_tarifs (), ENT_QUOTES, "UTF-8")?></a>
 			</td>
 		</tr>
 		<tr>
 			<td class="size_strict"><span class="labelled_ralonger">D&eacute;lai de livraison:</span>
 			</td>
 			<td>
-			<a href="#" id="show5_delai_livraison" class="modif_input1"><?php echo  htmlentities($profils[$id_profil]->getDelai_livraison ())?></a>
+			<a href="#" id="show5_delai_livraison" class="modif_input1"><?php echo  htmlentities($profils[$id_profil]->getDelai_livraison (), ENT_QUOTES, "UTF-8")?></a>
 			</td>
 		</tr>
 		<tr>
@@ -252,13 +252,13 @@ Devis en cours:
 			<?php echo date_Us_to_Fr($contact_last_doc->date_creation);?>
 			</td>
 			<td style=" border-right:1px solid #93bad7; border-bottom:1px solid #93bad7; text-align:left; padding-left:5px" id="open_doc_en_cours_1_<?php echo ($contact_last_doc->ref_doc);?>">
-				<?php echo htmlentities($contact_last_doc->lib_type_doc);?> - <?php echo htmlentities($contact_last_doc->ref_doc);?>
+				<?php echo htmlentities($contact_last_doc->lib_type_doc, ENT_QUOTES, "UTF-8");?> - <?php echo htmlentities($contact_last_doc->ref_doc, ENT_QUOTES, "UTF-8");?>
 			</td>
 			<td style=" border-right:1px solid #93bad7; border-bottom:1px solid #93bad7; text-align:left; padding-left:5px" id="open_doc_en_cours_2_<?php echo ($contact_last_doc->ref_doc);?>">
-				<?php echo htmlentities($contact_last_doc->lib_etat_doc);?>
+				<?php echo htmlentities($contact_last_doc->lib_etat_doc, ENT_QUOTES, "UTF-8");?>
 			</td>
 			<td style=" border-right:1px solid #93bad7;  border-bottom:1px solid #93bad7; text-align:center; padding-left:5px" id="open_doc_en_cours_3_<?php echo ($contact_last_doc->ref_doc);?>">
-			<?php echo htmlentities(price_format($contact_last_doc->montant_ttc))." ".$MONNAIE[1];?>
+			<?php echo htmlentities(price_format($contact_last_doc->montant_ttc), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1];?>
 			</td>
 			<td style=" border-bottom:1px solid #93bad7; text-align:center; ">
 			<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
@@ -323,13 +323,13 @@ Commandes en cours:
 			<?php echo date_Us_to_Fr($contact_last_doc->date_creation);?>
 			</td>
 			<td style=" border-right:1px solid #93bad7; border-bottom:1px solid #93bad7; text-align:left; padding-left:5px" id="open_doc_en_cours_1_<?php echo ($contact_last_doc->ref_doc);?>">
-				<?php echo htmlentities($contact_last_doc->lib_type_doc);?> - <?php echo htmlentities($contact_last_doc->ref_doc);?>
+				<?php echo htmlentities($contact_last_doc->lib_type_doc, ENT_QUOTES, "UTF-8");?> - <?php echo htmlentities($contact_last_doc->ref_doc, ENT_QUOTES, "UTF-8");?>
 			</td>
 			<td style=" border-right:1px solid #93bad7; border-bottom:1px solid #93bad7; text-align:left; padding-left:5px" id="open_doc_en_cours_2_<?php echo ($contact_last_doc->ref_doc);?>">
-				<?php echo htmlentities($contact_last_doc->lib_etat_doc);?>
+				<?php echo htmlentities($contact_last_doc->lib_etat_doc, ENT_QUOTES, "UTF-8");?>
 			</td>
 			<td style=" border-right:1px solid #93bad7;  border-bottom:1px solid #93bad7; text-align:center; padding-left:5px" id="open_doc_en_cours_3_<?php echo ($contact_last_doc->ref_doc);?>">
-			<?php echo htmlentities(price_format($contact_last_doc->montant_ttc))." ".$MONNAIE[1];?>
+			<?php echo htmlentities(price_format($contact_last_doc->montant_ttc), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1];?>
 			</td>
 			<td style=" border-bottom:1px solid #93bad7; text-align:center; ">
 			<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
@@ -393,13 +393,13 @@ Bons de Livraisons en cours:
 			<?php echo date_Us_to_Fr($contact_last_doc->date_creation);?>
 			</td>
 			<td style=" border-right:1px solid #93bad7; border-bottom:1px solid #93bad7; text-align:left; padding-left:5px" id="open_doc_en_cours_1_<?php echo ($contact_last_doc->ref_doc);?>">
-				<?php echo htmlentities($contact_last_doc->lib_type_doc);?> - <?php echo htmlentities($contact_last_doc->ref_doc);?>
+				<?php echo htmlentities($contact_last_doc->lib_type_doc, ENT_QUOTES, "UTF-8");?> - <?php echo htmlentities($contact_last_doc->ref_doc, ENT_QUOTES, "UTF-8");?>
 			</td>
 			<td style=" border-right:1px solid #93bad7; border-bottom:1px solid #93bad7; text-align:left; padding-left:5px" id="open_doc_en_cours_2_<?php echo ($contact_last_doc->ref_doc);?>">
-				<?php echo htmlentities($contact_last_doc->lib_etat_doc);?>
+				<?php echo htmlentities($contact_last_doc->lib_etat_doc, ENT_QUOTES, "UTF-8");?>
 			</td>
 			<td style=" border-right:1px solid #93bad7;  border-bottom:1px solid #93bad7; text-align:center; padding-left:5px" id="open_doc_en_cours_3_<?php echo ($contact_last_doc->ref_doc);?>">
-			<?php echo htmlentities(price_format($contact_last_doc->montant_ttc))." ".$MONNAIE[1];?>
+			<?php echo htmlentities(price_format($contact_last_doc->montant_ttc), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1];?>
 			</td>
 			<td style=" border-bottom:1px solid #93bad7; text-align:center; ">
 			<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
@@ -464,13 +464,13 @@ Factures en cours:
 			<?php echo date_Us_to_Fr($contact_last_doc->date_creation);?>
 			</td>
 			<td style=" border-right:1px solid #93bad7; border-bottom:1px solid #93bad7; text-align:left; padding-left:5px" id="open_doc_en_cours_1_<?php echo ($contact_last_doc->ref_doc);?>">
-				<?php echo htmlentities($contact_last_doc->lib_type_doc);?> - <?php echo htmlentities($contact_last_doc->ref_doc);?>
+				<?php echo htmlentities($contact_last_doc->lib_type_doc, ENT_QUOTES, "UTF-8");?> - <?php echo htmlentities($contact_last_doc->ref_doc, ENT_QUOTES, "UTF-8");?>
 			</td>
 			<td style=" border-right:1px solid #93bad7; border-bottom:1px solid #93bad7; text-align:left; padding-left:5px" id="open_doc_en_cours_2_<?php echo ($contact_last_doc->ref_doc);?>">
-				<?php echo htmlentities($contact_last_doc->lib_etat_doc);?>
+				<?php echo htmlentities($contact_last_doc->lib_etat_doc, ENT_QUOTES, "UTF-8");?>
 			</td>
 			<td style=" border-right:1px solid #93bad7;  border-bottom:1px solid #93bad7; text-align:center; padding-left:5px" id="open_doc_en_cours_3_<?php echo ($contact_last_doc->ref_doc);?>">
-			<?php echo htmlentities(price_format($contact_last_doc->montant_ttc))." ".$MONNAIE[1];?>
+			<?php echo htmlentities(price_format($contact_last_doc->montant_ttc), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1];?>
 			</td>
 			<td style=" border-bottom:1px solid #93bad7; text-align:center; ">
 			<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
@@ -535,13 +535,13 @@ Devis en archive:
 			<?php echo date_Us_to_Fr($contact_last_doc->date_creation);?>
 			</td>
 			<td style=" border-right:1px solid #93bad7; border-bottom:1px solid #93bad7; text-align:left; padding-left:5px" id="open_doc_archive_1_<?php echo ($contact_last_doc->ref_doc);?>">
-				<?php echo htmlentities($contact_last_doc->lib_type_doc);?> - <?php echo htmlentities($contact_last_doc->ref_doc);?>
+				<?php echo htmlentities($contact_last_doc->lib_type_doc, ENT_QUOTES, "UTF-8");?> - <?php echo htmlentities($contact_last_doc->ref_doc, ENT_QUOTES, "UTF-8");?>
 			</td>
 			<td style=" border-right:1px solid #93bad7; border-bottom:1px solid #93bad7; text-align:left; padding-left:5px" id="open_doc_archive_2_<?php echo ($contact_last_doc->ref_doc);?>">
-				<?php echo htmlentities($contact_last_doc->lib_etat_doc);?>
+				<?php echo htmlentities($contact_last_doc->lib_etat_doc, ENT_QUOTES, "UTF-8");?>
 			</td>
 			<td style=" border-right:1px solid #93bad7;  border-bottom:1px solid #93bad7; text-align:center; padding-left:5px" id="open_doc_archive_3_<?php echo ($contact_last_doc->ref_doc);?>">
-			<?php echo htmlentities(price_format($contact_last_doc->montant_ttc))." ".$MONNAIE[1];?>
+			<?php echo htmlentities(price_format($contact_last_doc->montant_ttc), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1];?>
 			</td>
 			<td style=" border-bottom:1px solid #93bad7; text-align:center; ">
 			<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
@@ -605,13 +605,13 @@ Commandes en archive:
 			<?php echo date_Us_to_Fr($contact_last_doc->date_creation);?>
 			</td>
 			<td style=" border-right:1px solid #93bad7; border-bottom:1px solid #93bad7; text-align:left; padding-left:5px" id="open_doc_archive_1_<?php echo ($contact_last_doc->ref_doc);?>">
-				<?php echo htmlentities($contact_last_doc->lib_type_doc);?> - <?php echo htmlentities($contact_last_doc->ref_doc);?>
+				<?php echo htmlentities($contact_last_doc->lib_type_doc, ENT_QUOTES, "UTF-8");?> - <?php echo htmlentities($contact_last_doc->ref_doc, ENT_QUOTES, "UTF-8");?>
 			</td>
 			<td style=" border-right:1px solid #93bad7; border-bottom:1px solid #93bad7; text-align:left; padding-left:5px" id="open_doc_archive_2_<?php echo ($contact_last_doc->ref_doc);?>">
-				<?php echo htmlentities($contact_last_doc->lib_etat_doc);?>
+				<?php echo htmlentities($contact_last_doc->lib_etat_doc, ENT_QUOTES, "UTF-8");?>
 			</td>
 			<td style=" border-right:1px solid #93bad7;  border-bottom:1px solid #93bad7; text-align:center; padding-left:5px" id="open_doc_archive_3_<?php echo ($contact_last_doc->ref_doc);?>">
-			<?php echo htmlentities(price_format($contact_last_doc->montant_ttc))." ".$MONNAIE[1];?>
+			<?php echo htmlentities(price_format($contact_last_doc->montant_ttc), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1];?>
 			</td>
 			<td style=" border-bottom:1px solid #93bad7; text-align:center; ">
 			<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
@@ -675,13 +675,13 @@ Bons de commandes en archive:
 			<?php echo date_Us_to_Fr($contact_last_doc->date_creation);?>
 			</td>
 			<td style=" border-right:1px solid #93bad7; border-bottom:1px solid #93bad7; text-align:left; padding-left:5px" id="open_doc_archive_1_<?php echo ($contact_last_doc->ref_doc);?>">
-				<?php echo htmlentities($contact_last_doc->lib_type_doc);?> - <?php echo htmlentities($contact_last_doc->ref_doc);?>
+				<?php echo htmlentities($contact_last_doc->lib_type_doc, ENT_QUOTES, "UTF-8");?> - <?php echo htmlentities($contact_last_doc->ref_doc, ENT_QUOTES, "UTF-8");?>
 			</td>
 			<td style=" border-right:1px solid #93bad7; border-bottom:1px solid #93bad7; text-align:left; padding-left:5px" id="open_doc_archive_2_<?php echo ($contact_last_doc->ref_doc);?>">
-				<?php echo htmlentities($contact_last_doc->lib_etat_doc);?>
+				<?php echo htmlentities($contact_last_doc->lib_etat_doc, ENT_QUOTES, "UTF-8");?>
 			</td>
 			<td style=" border-right:1px solid #93bad7;  border-bottom:1px solid #93bad7; text-align:center; padding-left:5px" id="open_doc_archive_3_<?php echo ($contact_last_doc->ref_doc);?>">
-			<?php echo htmlentities(price_format($contact_last_doc->montant_ttc))." ".$MONNAIE[1];?>
+			<?php echo htmlentities(price_format($contact_last_doc->montant_ttc), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1];?>
 			</td>
 			<td style=" border-bottom:1px solid #93bad7; text-align:center; ">
 			<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
@@ -745,13 +745,13 @@ Factures en archive:
 			<?php echo date_Us_to_Fr($contact_last_doc->date_creation);?>
 			</td>
 			<td style=" border-right:1px solid #93bad7; border-bottom:1px solid #93bad7; text-align:left; padding-left:5px" id="open_doc_archive_1_<?php echo ($contact_last_doc->ref_doc);?>">
-				<?php echo htmlentities($contact_last_doc->lib_type_doc);?> - <?php echo htmlentities($contact_last_doc->ref_doc);?>
+				<?php echo htmlentities($contact_last_doc->lib_type_doc, ENT_QUOTES, "UTF-8");?> - <?php echo htmlentities($contact_last_doc->ref_doc, ENT_QUOTES, "UTF-8");?>
 			</td>
 			<td style=" border-right:1px solid #93bad7; border-bottom:1px solid #93bad7; text-align:left; padding-left:5px" id="open_doc_archive_2_<?php echo ($contact_last_doc->ref_doc);?>">
-				<?php echo htmlentities($contact_last_doc->lib_etat_doc);?>
+				<?php echo htmlentities($contact_last_doc->lib_etat_doc, ENT_QUOTES, "UTF-8");?>
 			</td>
 			<td style=" border-right:1px solid #93bad7;  border-bottom:1px solid #93bad7; text-align:center; padding-left:5px" id="open_doc_archive_3_<?php echo ($contact_last_doc->ref_doc);?>">
-			<?php echo htmlentities(price_format($contact_last_doc->montant_ttc))." ".$MONNAIE[1];?>
+			<?php echo htmlentities(price_format($contact_last_doc->montant_ttc), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1];?>
 			</td>
 			<td style=" border-bottom:1px solid #93bad7; text-align:center; ">
 			<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>

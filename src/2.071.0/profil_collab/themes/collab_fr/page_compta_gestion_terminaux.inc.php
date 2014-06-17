@@ -66,7 +66,7 @@ check_page_variables ($page_variables);
 				$solde_total += $solde;
 				?>
 				<tr id="choix_tpe_<?php echo $tpe->id_compte_tpe; ?>">
-					<td style="font-weight:bolder; text-align:left"><?php echo htmlentities($tpe->lib_tpe); ?></td>
+					<td style="font-weight:bolder; text-align:left"><?php echo htmlentities($tpe->lib_tpe, ENT_QUOTES, "UTF-8"); ?></td>
 					<td style="font-weight:bolder; text-align:right; color:#999999; padding-right:25px"><?php echo number_format($solde, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[1];?></td>
 					<td style="font-weight:bolder; text-align:center; color:#999999;"><?php echo date_Us_to_Fr($last_date_telecollecte);?></td>
 					<td style="width:15%; text-align:center"><span class="green_underlined" id="tb_<?php echo $tpe->id_compte_tpe; ?>" >Tableau de Bord</span></td>
@@ -93,7 +93,7 @@ check_page_variables ($page_variables);
 				$solde_total += $solde;
 				?>
 				<tr id="choix_tpv_<?php echo $tpv->id_compte_tpv; ?>">
-					<td style="font-weight:bolder; text-align:left"><?php echo htmlentities($tpv->lib_tpv); ?></td>
+					<td style="font-weight:bolder; text-align:left"><?php echo htmlentities($tpv->lib_tpv, ENT_QUOTES, "UTF-8"); ?></td>
 					<td style="font-weight:bolder; text-align:right; color:#999999; padding-right:25px"><?php echo number_format($solde, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[1];?></td>
 					<td style="font-weight:bolder; text-align:center; color:#999999;"><?php echo date_Us_to_Fr($last_date_telecollecte);?></td>
 					<td style="width:15%; text-align:center"><span class="green_underlined" id="tbv_<?php echo $tpv->id_compte_tpv; ?>" >Tableau de Bord</span></td>

@@ -68,7 +68,7 @@ check_page_variables ($page_variables);
 				$solde_total += $solde;
 				?>
 				<tr id="choix_caisse_<?php echo $caisse->id_compte_caisse; ?>">
-					<td style="font-weight:bolder; text-align:left"><?php echo htmlentities($caisse->lib_caisse); ?></td>
+					<td style="font-weight:bolder; text-align:left"><?php echo htmlentities($caisse->lib_caisse, ENT_QUOTES, "UTF-8"); ?></td>
 					<td style="font-weight:bolder; text-align:right; color:#999999; padding-right:25px"><?php echo number_format($solde, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[1];?></td>
 					<td style="font-weight:bolder; text-align:center; color:#999999;"><?php echo date_Us_to_Fr($last_date_controle);?></td>
 					<td style="width:15%; text-align:center"><span class="green_underlined" id="tb_<?php echo $caisse->id_compte_caisse; ?>" >Tableau de Bord</span></td>

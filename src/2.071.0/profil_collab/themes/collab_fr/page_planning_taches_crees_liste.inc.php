@@ -237,19 +237,19 @@ foreach ($liste_taches_crees as $tache_cree) {
 		<?php } ?>
 		</td>
 		<td style="border-bottom:1px solid #999999;">
-			<span style="font-weight:bolder;"><?php echo htmlentities($tache_cree->getLib_tache ());?></span>&nbsp;<br />
-			<span style="font-style:italic;"><?php echo nl2br(htmlentities($tache_cree->getText_tache ()));?></span>
+			<span style="font-weight:bolder;"><?php echo htmlentities($tache_cree->getLib_tache (), ENT_QUOTES, "UTF-8");?></span>&nbsp;<br />
+			<span style="font-style:italic;"><?php echo nl2br(htmlentities($tache_cree->getText_tache ()), ENT_QUOTES, "UTF-8");?></span>
 		</td>
 		<td style="border-bottom:1px solid #999999;">
 		<?php 
 		foreach ($tache_cree->getCollabs () as $collab) {
-			echo htmlentities($collab->nom)."<br/>";
+			echo htmlentities($collab->nom, ENT_QUOTES, "UTF-8")."<br/>";
 		}
 		?>
 		<div style="height:12px; line-height:12px; "></div>
 		<?php 
 		foreach ($tache_cree->getCollabs_fonctions () as $fonctions) {
-			echo htmlentities($fonctions->lib_fonction)."<br/>";
+			echo htmlentities($fonctions->lib_fonction, ENT_QUOTES, "UTF-8")."<br/>";
 		}
 		?>
 		</td>
@@ -261,8 +261,8 @@ foreach ($liste_taches_crees as $tache_cree) {
 			</div>
 		</td>
 		<td style="border-bottom:1px solid #999999;">
-			<textarea class="classinput_xsize" name="note_<?php echo $tache_cree->getId_tache();?>" id="note_<?php echo $tache_cree->getId_tache();?>"><?php echo htmlentities($tache_cree->getNote ());?></textarea>
-			<textarea style="display:none" name="note_old_<?php echo $tache_cree->getId_tache();?>" id="note_old_<?php echo $tache_cree->getId_tache();?>"><?php echo htmlentities($tache_cree->getNote());?></textarea>
+			<textarea class="classinput_xsize" name="note_<?php echo $tache_cree->getId_tache();?>" id="note_<?php echo $tache_cree->getId_tache();?>"><?php echo htmlentities($tache_cree->getNote (), ENT_QUOTES, "UTF-8");?></textarea>
+			<textarea style="display:none" name="note_old_<?php echo $tache_cree->getId_tache();?>" id="note_old_<?php echo $tache_cree->getId_tache();?>"><?php echo htmlentities($tache_cree->getNote(), ENT_QUOTES, "UTF-8");?></textarea>
 			<script type="text/javascript">
 				Event.observe("note_<?php echo $tache_cree->getId_tache();?>", "blur", function(evt){
 					if ($("note_<?php echo $tache_cree->getId_tache();?>").value != $("note_old_<?php echo $tache_cree->getId_tache();?>").value) { 

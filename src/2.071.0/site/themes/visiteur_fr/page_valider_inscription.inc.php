@@ -163,7 +163,7 @@
 						<select id="user_id_langage"  name="user_id_langage">
 							<?php foreach ($langages as $langage){ ?>
 								<option value="<?php echo $langage['id_langage']?>">
-								<?php echo htmlentities($langage['lib_langage'])?>
+								<?php echo htmlentities($langage['lib_langage'], ENT_QUOTES, "UTF-8")?>
 								</option>
 							<?php } ?>
 						</select>

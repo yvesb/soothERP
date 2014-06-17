@@ -33,7 +33,7 @@
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/droite_on.gif" border="0">
 			</div>
 			<div style="text-align:left;text-indent:10px;">
-				<?php echo htmlentities($code_barre->code_barre)?>
+				<?php echo htmlentities($code_barre->code_barre, ENT_QUOTES, "UTF-8")?>
 			</div>
 		</td>
 		<td style="width:10%; text-align:right;">

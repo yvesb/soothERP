@@ -277,7 +277,7 @@ check_page_variables ($page_variables);
 																<OPTGROUP disabled="disabled" label="__________________________________" ></OPTGROUP>
 															<?php } ?>
 																<option value="<?php echo $payslist->id_pays?>" <?php if ( $DEFAUT_ID_PAYS == $payslist->id_pays) {echo 'selected="selected"';}?>>
-																	<?php echo htmlentities($payslist->pays)?>
+																	<?php echo htmlentities($payslist->pays, ENT_QUOTES, "UTF-8")?>
 																</option>
 														<?php } ?>
 														</select>
@@ -369,7 +369,7 @@ check_page_variables ($page_variables);
 																<OPTGROUP disabled="disabled" label="__________________________________" ></OPTGROUP>
 															<?php } ?>
 															<option value="<?php echo $payslist->id_pays?>" <?php if ( $DEFAUT_ID_PAYS == $payslist->id_pays) {echo 'selected="selected"';}?>>
-																<?php echo htmlentities($payslist->pays)?>
+																<?php echo htmlentities($payslist->pays, ENT_QUOTES, "UTF-8")?>
 															</option>
 														<?php } ?>
 													</select>

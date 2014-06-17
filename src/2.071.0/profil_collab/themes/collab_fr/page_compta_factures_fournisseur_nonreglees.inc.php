@@ -44,7 +44,7 @@ $onglet_select = false;
 foreach ($liste_categories_fournisseur as $categorie_fournisseur) {
 	?>
 	<li id="doc_menu_<?php echo $i;?>">
-		<a href="#" id="menu_<?php echo $i;?>" class="menu_<?php if ($categorie_fournisseur->id_fournisseur_categ != $DEFAUT_ID_FOURNISSEUR_CATEG) {echo "un"; }else {$onglet_select = true;}?>select">Factures <?php echo htmlentities($categorie_fournisseur->lib_fournisseur_categ);?> (<?php echo htmlentities($categorie_fournisseur->count_fact);?>)</a>
+		<a href="#" id="menu_<?php echo $i;?>" class="menu_<?php if ($categorie_fournisseur->id_fournisseur_categ != $DEFAUT_ID_FOURNISSEUR_CATEG) {echo "un"; }else {$onglet_select = true;}?>select">Factures <?php echo htmlentities($categorie_fournisseur->lib_fournisseur_categ, ENT_QUOTES, "UTF-8");?> (<?php echo htmlentities($categorie_fournisseur->count_fact, ENT_QUOTES, "UTF-8");?>)</a>
 	</li>
 	<?php
 	$i++;

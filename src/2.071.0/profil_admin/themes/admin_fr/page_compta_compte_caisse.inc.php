@@ -41,7 +41,7 @@ update_menu_arbo();
 	<?php 
 	foreach ($magasins_liste as $magasin_liste) {
 		?>
-		<option value="<?php echo $magasin_liste->getId_magasin(); ?>" <?php if ($magasin_liste->getId_magasin() == $id_magasin) {echo 'selected="selected"';}?>><?php echo htmlentities($magasin_liste->getLib_magasin()); ?></option>
+		<option value="<?php echo $magasin_liste->getId_magasin(); ?>" <?php if ($magasin_liste->getId_magasin() == $id_magasin) {echo 'selected="selected"';}?>><?php echo htmlentities($magasin_liste->getLib_magasin(), ENT_QUOTES, "UTF-8"); ?></option>
 		<?php 
 	}
 	?>
@@ -110,7 +110,7 @@ if (isset($id_magasin)) {
 							<?php 
 							foreach ($magasins_liste as $magasin_liste) {
 								?>
-								<option value="<?php echo $magasin_liste->getId_magasin(); ?>" <?php if ($magasin_liste->getId_magasin() == $id_magasin) {echo 'selected="selected"';}?>><?php echo htmlentities($magasin_liste->getLib_magasin()); ?></option>
+								<option value="<?php echo $magasin_liste->getId_magasin(); ?>" <?php if ($magasin_liste->getId_magasin() == $id_magasin) {echo 'selected="selected"';}?>><?php echo htmlentities($magasin_liste->getLib_magasin(), ENT_QUOTES, "UTF-8"); ?></option>
 								<?php 
 							}
 							?>
@@ -122,7 +122,7 @@ if (isset($id_magasin)) {
 							<?php 
 							foreach ($comptes_tpes as $compte_tpe) {
 								?>
-								<option value="<?php echo $compte_tpe->id_compte_tpe; ?>" ><?php echo htmlentities($compte_tpe->lib_tpe); ?></option>
+								<option value="<?php echo $compte_tpe->id_compte_tpe; ?>" ><?php echo htmlentities($compte_tpe->lib_tpe, ENT_QUOTES, "UTF-8"); ?></option>
 								<?php 
 							}
 							?>
@@ -200,14 +200,14 @@ if (isset($id_magasin)) {
 							</tr>	
 							<tr>
 								<td style="text-align:center">
-								<input name="lib_caisse_<?php echo $compte_caisse->id_compte_caisse;?>" id="lib_caisse_<?php echo $compte_caisse->id_compte_caisse;?>" type="text" value="<?php echo htmlentities($compte_caisse->lib_caisse);?>"  class="classinput_xsize"  />
+								<input name="lib_caisse_<?php echo $compte_caisse->id_compte_caisse;?>" id="lib_caisse_<?php echo $compte_caisse->id_compte_caisse;?>" type="text" value="<?php echo htmlentities($compte_caisse->lib_caisse, ENT_QUOTES, "UTF-8");?>"  class="classinput_xsize"  />
 								</td>
 								<td style="text-align:center">
 								<select id="id_magasin_<?php echo $compte_caisse->id_compte_caisse;?>" name="id_magasin_<?php echo $compte_caisse->id_compte_caisse;?>"  class="classinput_xsize" >
 									<?php 
 									foreach ($magasins_liste as $magasin_liste) {
 										?>
-										<option value="<?php echo $magasin_liste->getId_magasin(); ?>" <?php if ($magasin_liste->getId_magasin() == $compte_caisse->id_magasin) {echo 'selected="selected"';}?>><?php echo htmlentities($magasin_liste->getLib_magasin()); ?></option>
+										<option value="<?php echo $magasin_liste->getId_magasin(); ?>" <?php if ($magasin_liste->getId_magasin() == $compte_caisse->id_magasin) {echo 'selected="selected"';}?>><?php echo htmlentities($magasin_liste->getLib_magasin(), ENT_QUOTES, "UTF-8"); ?></option>
 										<?php 
 									}
 									?>
@@ -219,7 +219,7 @@ if (isset($id_magasin)) {
 									<?php 
 									foreach ($comptes_tpes as $compte_tpe) {
 										?>
-										<option value="<?php echo $compte_tpe->id_compte_tpe; ?>" <?php if ($compte_tpe->id_compte_tpe == $compte_caisse->id_compte_tpe) {echo 'selected="selected"';}?>><?php echo htmlentities($compte_tpe->lib_tpe); ?></option>
+										<option value="<?php echo $compte_tpe->id_compte_tpe; ?>" <?php if ($compte_tpe->id_compte_tpe == $compte_caisse->id_compte_tpe) {echo 'selected="selected"';}?>><?php echo htmlentities($compte_tpe->lib_tpe, ENT_QUOTES, "UTF-8"); ?></option>
 										<?php 
 									}
 									?>

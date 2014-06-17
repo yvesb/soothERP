@@ -35,7 +35,7 @@ array_menu_v_controle[4] 	=	new Array('controle_validation', 'chemin_etape_3');
 <script type="text/javascript">
 Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); page.verify('compta_gestion2_caisse','compta_gestion2_caisse.php?id_caisse=<?php echo $_REQUEST["id_caisse"];?>','true','sub_content');}, false);
 </script>
-<div class="titre" style="width:60%; padding-left:140px">Contrôle <?php echo htmlentities($compte_caisse->getLib_caisse()); ?>
+<div class="titre" style="width:60%; padding-left:140px">Contrôle <?php echo htmlentities($compte_caisse->getLib_caisse(), ENT_QUOTES, "UTF-8"); ?>
 </div>
 
 

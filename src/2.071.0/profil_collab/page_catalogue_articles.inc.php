@@ -33,7 +33,7 @@ check_page_variables ($page_variables);
 	$list_art_categ =	get_articles_categories();
 	foreach ($list_art_categ  as $art_categ){
 ?>
-<option value="<?php echo ($art_categ->ref_art_categ)?>"><?php echo htmlentities($art_categ->lib_art_categ)?></option>
+<option value="<?php echo ($art_categ->ref_art_categ)?>"><?php echo htmlentities($art_categ->lib_art_categ, ENT_QUOTES, "UTF-8")?></option>
 <?php
 }
 ?>

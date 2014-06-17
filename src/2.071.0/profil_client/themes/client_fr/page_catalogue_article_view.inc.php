@@ -77,7 +77,7 @@
 									<tr>
 										<?php if ($GESTION_REF_INTERNE) { ?>
 										<td class="labelled_text">R&eacute;f&eacute;rence Interne: </td>
-										<td><?php echo htmlentities($article->getRef_interne ());?> </td>
+										<td><?php echo htmlentities($article->getRef_interne (), ENT_QUOTES, "UTF-8");?> </td>
 										<?php } else { ?>
 										<td>
 										</td>
@@ -90,7 +90,7 @@
 												<input name="qte_art" id="qte_art" type="text" size="4" value="" style="text-align:center" />
 												</td>
 												<td style=" width:30px; text-align:right">
-												<a  href="#" id="link_art_add_panier_<?php echo htmlentities($article->getRef_article())?>" style="display:block; width:35px; text-decoration:underline"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier.gif" title="Ajouter au panier" alt="Ajouter au panier" /></a>
+												<a  href="#" id="link_art_add_panier_<?php echo htmlentities($article->getRef_article(), ENT_QUOTES, "UTF-8")?>" style="display:block; width:35px; text-decoration:underline"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier.gif" title="Ajouter au panier" alt="Ajouter au panier" /></a>
 												</td>
 											</tr>
 										</table>
@@ -98,7 +98,7 @@
 										
 							
 										<script type="text/javascript">
-									Event.observe('link_art_add_panier_<?php echo htmlentities($article->getRef_article())?>', 'click',  function(evt){
+									Event.observe('link_art_add_panier_<?php echo htmlentities($article->getRef_article(), ENT_QUOTES, "UTF-8")?>', 'click',  function(evt){
 										Event.stop(evt);
 										if  (parseFloat($("qte_art").value) != "" || !isNaN(parseFloat($("qte_art").value))) {
 											$("qte_art").value = parseFloat($("qte_art").value)+1;
@@ -115,7 +115,7 @@
 															asynchronous: true,
 															contentType:  'application/x-www-form-urlencoded',
 															encoding:     'UTF-8',
-															parameters: { ref_article: '<?php echo htmlentities($article->getRef_article())?>', qte_article: $("qte_art").value },
+															parameters: { ref_article: '<?php echo htmlentities($article->getRef_article(), ENT_QUOTES, "UTF-8")?>', qte_article: $("qte_art").value },
 															evalScripts:true
 															}
 															);
@@ -138,7 +138,7 @@
 									<tr>
 										<?php if($GESTION_CONSTRUCTEUR){?>
 										<td class="labelled_text">R&eacute;f&eacute;rence constructeur:</td>
-										<td><?php echo htmlentities($article->getRef_eom ());?> </td>
+										<td><?php echo htmlentities($article->getRef_eom (), ENT_QUOTES, "UTF-8");?> </td>
 										<?php }else{ ?>
 										<td>&nbsp;</td>
 										<td>&nbsp;</td>
@@ -190,7 +190,7 @@
 						<table style="width:100%;" border="0" cellspacing="0" cellpadding="0">
 							<tr class="row_color_0">
 								<td colspan="2">
-								<?php echo htmlentities($carac->lib_carac_groupe); ?>						</td>
+								<?php echo htmlentities($carac->lib_carac_groupe, ENT_QUOTES, "UTF-8"); ?>						</td>
 							</tr>
 						</table>
 						<table style="width:100%;">
@@ -211,15 +211,15 @@
 							?>
 						<tr>
 						<td style="width:20%;">
-						<?php echo htmlentities($carac->lib_carac); ?>				</td>
+						<?php echo htmlentities($carac->lib_carac, ENT_QUOTES, "UTF-8"); ?>				</td>
 						
 								<td style="width:30%;" class="col_color_2">
 								<?php 
 								
 									foreach ($art_caracs as $art_carac) { 
-										if ($art_carac->ref_carac==$carac->ref_carac){echo htmlentities($art_carac->valeur);}
+										if ($art_carac->ref_carac==$carac->ref_carac){echo htmlentities($art_carac->valeur, ENT_QUOTES, "UTF-8");}
 									}
-								?> <?php echo htmlentities($carac->unite); ?>						</td>
+								?> <?php echo htmlentities($carac->unite, ENT_QUOTES, "UTF-8"); ?>						</td>
 							</tr>
 							<?php
 							$serialisation_carac	+=	1;

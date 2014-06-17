@@ -70,7 +70,7 @@
 								</tr>
 								</table>
 								</td><td>				
-									<?php echo htmlentities($compo_list->lib_article)?>
+									<?php echo htmlentities($compo_list->lib_article, ENT_QUOTES, "UTF-8")?>
 								</td>
 							</tr>
 						</table>

@@ -30,7 +30,7 @@ foreach ($liste_choix_ref_externe as $choix_ref_externe) {
 	Event.observe("li_choix_ref_externe_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>", "mouseover",  function(){changeclassname ("li_choix_ref_externe_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>", "complete_coordonnee_hover");}, false);
 	
 	Event.observe("li_choix_ref_externe_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>", "click",  function(){
-	$("<?php echo $_REQUEST["input"]?>").value = "<?php echo  htmlentities($choix_ref_externe->ref_article_externe)?>";
+	$("<?php echo $_REQUEST["input"]?>").value = "<?php echo  htmlentities($choix_ref_externe->ref_article_externe, ENT_QUOTES, "UTF-8")?>";
 	$("<?php echo $_REQUEST["input"]?>").focus();
 	delay_close ("<?php echo $_REQUEST["choix_ref_externe"]?>","<?php echo $_REQUEST["iframe_choix_ref_externe"]?>" );
 	}, false);

@@ -42,7 +42,7 @@ check_page_variables ($page_variables);
 						?>
 						<td style=" text-align:center; width:150px; <?php if(key($tarifs_liste)<$tarifs_count){?>border-right:1px solid #FFFFFF;<?php }?>" class="assist_labelled_bold"><br />
 						<div style="width:150px">
-						<?php echo htmlentities($tarif_liste->lib_tarif); ?>
+						<?php echo htmlentities($tarif_liste->lib_tarif, ENT_QUOTES, "UTF-8"); ?>
 						</div>
 &nbsp;</td>
 						<?php

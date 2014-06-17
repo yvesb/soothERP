@@ -50,7 +50,7 @@
 	$exist_carac_groupes	=	$art_categ-> getCarac_groupes ();
 	foreach ($exist_carac_groupes as $exist_carac_groupe) {
 	?>
-				<option value="<?php echo $exist_carac_groupe->ref_carac_groupe; ?>"><?php echo htmlentities($exist_carac_groupe->lib_carac_groupe)?></option>
+				<option value="<?php echo $exist_carac_groupe->ref_carac_groupe; ?>"><?php echo htmlentities($exist_carac_groupe->lib_carac_groupe, ENT_QUOTES, "UTF-8")?></option>
 				<?php
 
 	}
@@ -118,9 +118,9 @@ Event.observe($("variante_0"), "click", function(evt){
 				<td><span class="labelled_nowidth">Affichage:</span></td>
 			</tr>
 			<tr>
-				<td><input name="lib_carac_<?php echo $exist_carac->ref_carac; ?>" id="lib_carac_<?php echo $exist_carac->ref_carac; ?>" value="<?php echo htmlentities($exist_carac->lib_carac); ?>"  class="classinput_xsize"/></td>
+				<td><input name="lib_carac_<?php echo $exist_carac->ref_carac; ?>" id="lib_carac_<?php echo $exist_carac->ref_carac; ?>" value="<?php echo htmlentities($exist_carac->lib_carac, ENT_QUOTES, "UTF-8"); ?>"  class="classinput_xsize"/></td>
 				<td><span class="labelled_nowidth">
-					<input name="unite_<?php echo $exist_carac->ref_carac; ?>" id="unite_<?php echo $exist_carac->ref_carac; ?>" type="text" value="<?php echo htmlentities($exist_carac->unite); ?>" class="classinput_xsize" />
+					<input name="unite_<?php echo $exist_carac->ref_carac; ?>" id="unite_<?php echo $exist_carac->ref_carac; ?>" type="text" value="<?php echo htmlentities($exist_carac->unite, ENT_QUOTES, "UTF-8"); ?>" class="classinput_xsize" />
 				</span></td>
 				<td><select name="moteur_recherche_<?php echo $exist_carac->ref_carac; ?>" id="moteur_recherche_<?php echo $exist_carac->ref_carac; ?>"  class="classinput_xsize">
 						<option value="0" <?php if ($exist_carac->moteur_recherche==0) {echo 'selected="selected"';}?>>Non</option>
@@ -139,15 +139,15 @@ Event.observe($("variante_0"), "click", function(evt){
 				<td><span class="labelled_nowidth">Variante:</span></td>
 			</tr>
 			<tr>
-				<td><input name="default_value_<?php echo $exist_carac->ref_carac; ?>" id="default_value_<?php echo $exist_carac->ref_carac; ?>" type="text" value="<?php echo htmlentities($exist_carac->default_value); ?>" class="classinput_xsize" /></td>
-				<td><input name="allowed_values_<?php echo $exist_carac->ref_carac; ?>" type="text" class="classinput_xsize<?php if ($exist_carac->variante==1) {?>_disabled" disabled="disabled<?php }?>" id="allowed_values_<?php echo $exist_carac->ref_carac; ?>" value="<?php if ($exist_carac->variante !=1) {echo htmlentities($exist_carac->allowed_values);} ?>" /></td>
+				<td><input name="default_value_<?php echo $exist_carac->ref_carac; ?>" id="default_value_<?php echo $exist_carac->ref_carac; ?>" type="text" value="<?php echo htmlentities($exist_carac->default_value, ENT_QUOTES, "UTF-8"); ?>" class="classinput_xsize" /></td>
+				<td><input name="allowed_values_<?php echo $exist_carac->ref_carac; ?>" type="text" class="classinput_xsize<?php if ($exist_carac->variante==1) {?>_disabled" disabled="disabled<?php }?>" id="allowed_values_<?php echo $exist_carac->ref_carac; ?>" value="<?php if ($exist_carac->variante !=1) {echo htmlentities($exist_carac->allowed_values, ENT_QUOTES, "UTF-8");} ?>" /></td>
 				<td><select name="ref_carac_groupe_<?php echo $exist_carac->ref_carac; ?>" id="ref_carac_groupe_<?php echo $exist_carac->ref_carac; ?>"  class="classinput_xsize">
 						<option value="">Aucun</option>
 						<?php 
 	$exist_carac_groupes	=	$art_categ-> getCarac_groupes ();
 	foreach ($exist_carac_groupes as $exist_carac_groupe) {
 	?>
-						<option value="<?php echo $exist_carac_groupe->ref_carac_groupe; ?>" <?php if ($exist_carac_groupe->ref_carac_groupe==$exist_carac->ref_carac_groupe) {echo 'selected="selected"';}?>><?php echo htmlentities($exist_carac_groupe->lib_carac_groupe)?></option>
+						<option value="<?php echo $exist_carac_groupe->ref_carac_groupe; ?>" <?php if ($exist_carac_groupe->ref_carac_groupe==$exist_carac->ref_carac_groupe) {echo 'selected="selected"';}?>><?php echo htmlentities($exist_carac_groupe->lib_carac_groupe, ENT_QUOTES, "UTF-8")?></option>
 						<?php
 
 	}

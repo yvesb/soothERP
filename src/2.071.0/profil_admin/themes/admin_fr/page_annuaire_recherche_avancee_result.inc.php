@@ -234,34 +234,34 @@ foreach ($_ALERTES as $alerte => $value) {
 			?>
 			<tr class="<?php  echo  $class_colorise?>">
 				<td>
-					<a  href="#" id="nom_<?php echo htmlentities($fiche->ref_contact)?>" style="display:block; width:100%;"> <?php echo nl2br(htmlentities($fiche->nom))?> (<?php echo htmlentities($fiche->lib_civ_court)?>)
+					<a  href="#" id="nom_<?php echo htmlentities($fiche->ref_contact, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%;"> <?php echo nl2br(htmlentities($fiche->nom, ENT_QUOTES, "UTF-8"))?> (<?php echo htmlentities($fiche->lib_civ_court, ENT_QUOTES, "UTF-8")?>)
 					</a>
 					<script type="text/javascript">
-					Event.observe("nom_<?php echo htmlentities($fiche->ref_contact)?>", "click",  function(evt){Event.stop(evt);page.verify('affaires_affiche_fiche','annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($fiche->ref_contact)?>','true','sub_content');}, false);
+					Event.observe("nom_<?php echo htmlentities($fiche->ref_contact, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt);page.verify('affaires_affiche_fiche','annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($fiche->ref_contact, ENT_QUOTES, "UTF-8")?>','true','sub_content');}, false);
 					</script>
 				</td>
 				<td  style="width:25%; text-align:right">
-					<a  href="#" id="adresse_<?php echo htmlentities($fiche->ref_contact)?>" style="display:block; width:100%;" title="<?php	if ($fiche->text_adresse) { echo (htmlentities($fiche->text_adresse));}?>"> 
-					<?php	if ($fiche->text_adresse) { echo substr(nl2br(htmlentities($fiche->text_adresse)),0,80);}?>&nbsp;
+					<a  href="#" id="adresse_<?php echo htmlentities($fiche->ref_contact, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%;" title="<?php	if ($fiche->text_adresse) { echo (htmlentities($fiche->text_adresse, ENT_QUOTES, "UTF-8"));}?>"> 
+					<?php	if ($fiche->text_adresse) { echo substr(nl2br(htmlentities($fiche->text_adresse, ENT_QUOTES, "UTF-8")),0,80);}?>&nbsp;
 					</a>
 					<script type="text/javascript">
-					Event.observe("adresse_<?php echo htmlentities($fiche->ref_contact)?>", "click",  function(evt){Event.stop(evt); page.verify('affaires_affiche_fiche','annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($fiche->ref_contact)?>','true','sub_content');}, false);
+					Event.observe("adresse_<?php echo htmlentities($fiche->ref_contact, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt); page.verify('affaires_affiche_fiche','annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($fiche->ref_contact, ENT_QUOTES, "UTF-8")?>','true','sub_content');}, false);
 					</script>
 				</td>
 				<td style="width:20%; text-align:left">
-					<a  href="#" id="ville_<?php echo htmlentities($fiche->ref_contact)?>" style="display:block; width:100%;"> 
-					<?php	if ($fiche->ville) 				{ echo htmlentities($fiche->code_postal)." - ".htmlentities($fiche->ville); }?>&nbsp;
+					<a  href="#" id="ville_<?php echo htmlentities($fiche->ref_contact, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%;"> 
+					<?php	if ($fiche->ville) 				{ echo htmlentities($fiche->code_postal, ENT_QUOTES, "UTF-8")." - ".htmlentities($fiche->ville, ENT_QUOTES, "UTF-8"); }?>&nbsp;
 					</a>
 					<script type="text/javascript">
-					Event.observe("ville_<?php echo htmlentities($fiche->ref_contact)?>", "click",  function(evt){Event.stop(evt); page.verify('affaires_affiche_fiche','annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($fiche->ref_contact)?>','true','sub_content');}, false);
+					Event.observe("ville_<?php echo htmlentities($fiche->ref_contact, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt); page.verify('affaires_affiche_fiche','annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($fiche->ref_contact, ENT_QUOTES, "UTF-8")?>','true','sub_content');}, false);
 					</script>
 				</td>
 				<td>
-					<a  href="#" id="tel_<?php echo htmlentities($fiche->ref_contact)?>" style="display:block; width:100%;">
-					<?php	if ($fiche->tel1) 				{ echo htmlentities($fiche->tel1); }?>&nbsp;
+					<a  href="#" id="tel_<?php echo htmlentities($fiche->ref_contact, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%;">
+					<?php	if ($fiche->tel1) 				{ echo htmlentities($fiche->tel1, ENT_QUOTES, "UTF-8"); }?>&nbsp;
 					</a>
 					<script type="text/javascript">
-					Event.observe("tel_<?php echo htmlentities($fiche->ref_contact)?>", "click",  function(evt){Event.stop(evt); page.verify('affaires_affiche_fiche','annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($fiche->ref_contact)?>','true','sub_content');}, false);
+					Event.observe("tel_<?php echo htmlentities($fiche->ref_contact, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt); page.verify('affaires_affiche_fiche','annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($fiche->ref_contact, ENT_QUOTES, "UTF-8")?>','true','sub_content');}, false);
 					</script>
 				</td>
 				<td style="text-align:center; vertical-align:middle">
@@ -279,10 +279,10 @@ foreach ($_ALERTES as $alerte => $value) {
 				<?php } ?>
 				</td>
 				<td style="text-align:center; vertical-align:middle">
-					<a  href="#" id="look_<?php echo htmlentities($fiche->ref_contact)?>" style="display:block; width:100%; text-decoration:underline;">Voir
+					<a  href="#" id="look_<?php echo htmlentities($fiche->ref_contact, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%; text-decoration:underline;">Voir
 					</a>
 					<script type="text/javascript">
-					Event.observe("look_<?php echo htmlentities($fiche->ref_contact)?>", "click",  function(evt){Event.stop(evt); page.verify('affaires_affiche_fiche','annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($fiche->ref_contact)?>','true','sub_content');}, false);
+					Event.observe("look_<?php echo htmlentities($fiche->ref_contact, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt); page.verify('affaires_affiche_fiche','annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($fiche->ref_contact, ENT_QUOTES, "UTF-8")?>','true','sub_content');}, false);
 					</script>
 				</td>
 			</tr>

@@ -53,7 +53,7 @@ check_page_variables ($page_variables);
 							?>
 							<td width="180px">
 							<div style="display:block;width:180px; text-align: center; font-weight:bolder">
-								<?php echo htmlentities($catalogue_client->lib_catalogue_client);?>
+								<?php echo htmlentities($catalogue_client->lib_catalogue_client, ENT_QUOTES, "UTF-8");?>
 								</div>
 							</td>
 							<script type="text/javascript">
@@ -121,11 +121,11 @@ next($list_art_categ);
 	</td>
 	<td >
 	<div style="display:block;">
-		<?php echo str_replace(" ", "&nbsp;", htmlentities($art_categ->lib_art_categ));?>
+		<?php echo str_replace(" ", "&nbsp;", htmlentities($art_categ->lib_art_categ), ENT_QUOTES, "UTF-8");?>
 	</div>
 	</td>
 	<td width="15px">
-		<a href="#" class="insertion" id="ins_<?php echo ($art_categ->ref_art_categ)?>" title="Inserer une cat&eacute;gorie dans <?php echo htmlentities($art_categ->lib_art_categ)?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/insert.gif" />
+		<a href="#" class="insertion" id="ins_<?php echo ($art_categ->ref_art_categ)?>" title="Inserer une cat&eacute;gorie dans <?php echo htmlentities($art_categ->lib_art_categ, ENT_QUOTES, "UTF-8")?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/insert.gif" />
 			</a>
 		</td>
 		<?php 

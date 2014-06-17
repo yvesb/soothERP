@@ -167,7 +167,7 @@ check_page_variables ($page_variables);
 									</td>
 									<td>
 									<span id="mod_<?php echo ($liste_fonction->id_fonction)?>">
-									<?php echo htmlentities($liste_fonction->lib_fonction)?></span>
+									<?php echo htmlentities($liste_fonction->lib_fonction, ENT_QUOTES, "UTF-8")?></span>
 									</td>
 									<td width="5px">
 									<input type="checkbox" name="id_fonction_<?php echo $liste_fonction->id_fonction; ?>" id="id_fonction_<?php echo $liste_fonction->id_fonction; ?>" value="<?php echo $liste_fonction->id_fonction; ?>">

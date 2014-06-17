@@ -204,7 +204,7 @@ function image_html($img)
 					foreach ($list_catalogue_dir  as $s_art_categ){
 						?>
 						<option value="<?php echo ($s_art_categ->id_catalogue_client_dir)?>" <?php if (isset($_REQUEST['id_catalogue_client_dir']) && $_REQUEST['id_catalogue_client_dir'] == $s_art_categ->id_catalogue_client_dir) { echo'selected="selected"';}?>>
-						<?php for ($i=0; $i<$s_art_categ->indentation; $i++) {?>&nbsp;&nbsp;&nbsp;<?php }?><?php echo htmlentities($s_art_categ->lib_catalogue_client_dir)?>
+						<?php for ($i=0; $i<$s_art_categ->indentation; $i++) {?>&nbsp;&nbsp;&nbsp;<?php }?><?php echo htmlentities($s_art_categ->lib_catalogue_client_dir, ENT_QUOTES, "UTF-8")?>
 						</option>
 						<?php
 					}
@@ -251,7 +251,7 @@ next($list_catalogue_dir);
 		<li class="main_categ">
 		
 		<div class="main_categ2">&nbsp;</div>
-		<a href="catalogue_liste_articles.php?id_catalogue_client_dir=<?php echo $catalogue_dir->id_catalogue_client_dir;?>"><?php echo htmlentities($catalogue_dir->lib_catalogue_client_dir);?></a>
+		<a href="catalogue_liste_articles.php?id_catalogue_client_dir=<?php echo $catalogue_dir->id_catalogue_client_dir;?>"><?php echo htmlentities($catalogue_dir->lib_catalogue_client_dir, ENT_QUOTES, "UTF-8");?></a>
 		</li>
 		<?php
 		$main_categorie = 1;
@@ -265,7 +265,7 @@ next($list_catalogue_dir);
 			for ($i=1; $i < $catalogue_dir->indentation; $i++) { echo "&nbsp;";}
 			?>
 			<div>&nbsp;</div>
-			<a href="catalogue_liste_articles.php?id_catalogue_client_dir=<?php echo $catalogue_dir->id_catalogue_client_dir;?>"><?php echo htmlentities($catalogue_dir->lib_catalogue_client_dir);?></a>
+			<a href="catalogue_liste_articles.php?id_catalogue_client_dir=<?php echo $catalogue_dir->id_catalogue_client_dir;?>"><?php echo htmlentities($catalogue_dir->lib_catalogue_client_dir, ENT_QUOTES, "UTF-8");?></a>
 			</li>
 			<?php
 		} else {
@@ -273,7 +273,7 @@ next($list_catalogue_dir);
 			<li class="sub_categ"><?php
 			for ($i=1; $i < $catalogue_dir->indentation; $i++) { echo "&nbsp;";}
 			?>
-			<a href="catalogue_liste_articles.php?id_catalogue_client_dir=<?php echo $catalogue_dir->id_catalogue_client_dir;?>"><?php echo htmlentities($catalogue_dir->lib_catalogue_client_dir);?></a>
+			<a href="catalogue_liste_articles.php?id_catalogue_client_dir=<?php echo $catalogue_dir->id_catalogue_client_dir;?>"><?php echo htmlentities($catalogue_dir->lib_catalogue_client_dir, ENT_QUOTES, "UTF-8");?></a>
 			</li>
 		<?php
 		}
@@ -336,7 +336,7 @@ next($list_catalogue_dir);
 				foreach ($catalogue_client_dir_childs as $catalogue_client_dir_child) {
 					if ($sous_categorie) { echo ",";}
 					?>
-					<a href="catalogue_liste_articles.php?id_catalogue_client_dir=<?php echo $catalogue_client_dir_child->id_catalogue_client_dir;?>"><?php echo htmlentities($catalogue_client_dir_child->lib_catalogue_client_dir);?></a>
+					<a href="catalogue_liste_articles.php?id_catalogue_client_dir=<?php echo $catalogue_client_dir_child->id_catalogue_client_dir;?>"><?php echo htmlentities($catalogue_client_dir_child->lib_catalogue_client_dir, ENT_QUOTES, "UTF-8");?></a>
 					<?php
 					$sous_categorie ++;
 				}
@@ -413,14 +413,14 @@ next($list_catalogue_dir);
 					<!--</a>-->
 					</td>
 					<td class="colorise_td_deco">
-						<span class="lib_categorie"><?php	if ($fiche->lib_art_categ) 				{ echo htmlentities($fiche->lib_art_categ); }?></span> - <span class="lib_constructor"><?php	if ($fiche->nom_constructeur) { echo htmlentities($fiche->nom_constructeur)."&nbsp;";}?></span><br />
+						<span class="lib_categorie"><?php	if ($fiche->lib_art_categ) 				{ echo htmlentities($fiche->lib_art_categ, ENT_QUOTES, "UTF-8"); }?></span> - <span class="lib_constructor"><?php	if ($fiche->nom_constructeur) { echo htmlentities($fiche->nom_constructeur, ENT_QUOTES, "UTF-8")."&nbsp;";}?></span><br />
 						<span class="r_art_lib"><?php echo nl2br(($fiche->lib_article))?></span><br />
 
 						<span class="r_art_desc_courte"><?php echo nl2br(($fiche->desc_courte))?></span>
 						
 					</td>
 					<td class="colorise_td_deco">
-						<div class="reference"><?php	if ($fiche->ref_interne!="") { echo htmlentities($fiche->ref_interne)."&nbsp;";}else{ echo htmlentities($fiche->ref_article)."&nbsp;";}?>
+						<div class="reference"><?php	if ($fiche->ref_interne!="") { echo htmlentities($fiche->ref_interne, ENT_QUOTES, "UTF-8")."&nbsp;";}else{ echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")."&nbsp;";}?>
 						</div>
 					</td>
 					<td class="colorise_td_deco" style="text-align:center">
@@ -435,9 +435,9 @@ next($list_catalogue_dir);
 						<?php	
 						foreach ($fiche->tarifs as $tarif) {
 							if (count($fiche->tarifs) == 1) {
-									echo htmlentities(number_format($tarif->pu_ht, $TARIFS_NB_DECIMALES, ".", ""	))." ".$MONNAIE[1]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+									echo htmlentities(number_format($tarif->pu_ht, $TARIFS_NB_DECIMALES, ".", ""	), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 							} else {
-									echo htmlentities(number_format($tarif->pu_ht, $TARIFS_NB_DECIMALES, ".", ""	))." ".$MONNAIE[1]." par ".$tarif->indice_qte."<br/>";
+									echo htmlentities(number_format($tarif->pu_ht, $TARIFS_NB_DECIMALES, ".", ""	), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1]." par ".$tarif->indice_qte."<br/>";
 							} 
 						}
 						?>
@@ -446,9 +446,9 @@ next($list_catalogue_dir);
 						<?php	
 						foreach ($fiche->tarifs as $tarif) {
 							if (count($fiche->tarifs) == 1) {
-									echo htmlentities(number_format($tarif->pu_ht*(1+$fiche->tva/100), $TARIFS_NB_DECIMALES, ".", ""	))." ".$MONNAIE[1]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+									echo htmlentities(number_format($tarif->pu_ht*(1+$fiche->tva/100), $TARIFS_NB_DECIMALES, ".", ""	), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 							} else {
-									echo htmlentities(number_format($tarif->pu_ht*(1+$fiche->tva/100), $TARIFS_NB_DECIMALES, ".", ""	))." ".$MONNAIE[1]." par ".$tarif->indice_qte."<br/>";
+									echo htmlentities(number_format($tarif->pu_ht*(1+$fiche->tva/100), $TARIFS_NB_DECIMALES, ".", ""	), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1]." par ".$tarif->indice_qte."<br/>";
 							} 
 						}
 						?>
@@ -459,10 +459,10 @@ next($list_catalogue_dir);
 					<input name="qte_art_<?php echo $colorise;?>" id="qte_art_<?php echo $colorise;?>" type="text" size="3" value="" class="input_add_panier" />
 					</td>
 					<td class="colorise_td_deco" style="vertical-align:middle; text-align:center">
-					<a  href="#" id="link_art_add_panier_<?php echo htmlentities($fiche->ref_article)?>" style="display:block; width:100%; text-decoration:underline"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier.gif" title="Ajouter au panier" alt="Ajouter au panier" /></a>
+					<a  href="#" id="link_art_add_panier_<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%; text-decoration:underline"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier.gif" title="Ajouter au panier" alt="Ajouter au panier" /></a>
 					
 				<script type="text/javascript">
-			Event.observe('link_art_add_panier_<?php echo htmlentities($fiche->ref_article)?>', 'click',  function(evt){
+			Event.observe('link_art_add_panier_<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>', 'click',  function(evt){
 				Event.stop(evt);
 					if  (parseFloat($("qte_art_<?php echo $colorise;?>").value) != "" || !isNaN(parseFloat($("qte_art_<?php echo $colorise;?>").value))) {
 						$("qte_art_<?php echo $colorise;?>").value = parseFloat($("qte_art_<?php echo $colorise;?>").value)+1;
@@ -479,7 +479,7 @@ next($list_catalogue_dir);
 									asynchronous: true,
 									contentType:  'application/x-www-form-urlencoded',
 									encoding:     'UTF-8',
-									parameters: { ref_article: '<?php echo htmlentities($fiche->ref_article)?>', qte_article: $("qte_art_<?php echo $colorise;?>").value },
+									parameters: { ref_article: '<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>', qte_article: $("qte_art_<?php echo $colorise;?>").value },
 									evalScripts:true
 									}
 									);

@@ -32,7 +32,7 @@ if (count($_SESSION['stocks']) > 1) {
 ?>
 	
 </script>
-<div class="titre" id="titre_crea_art">Mouvements des stocks pour <?php echo htmlentities($article->getLib_article());?></div>
+<div class="titre" id="titre_crea_art">Mouvements des stocks pour <?php echo htmlentities($article->getLib_article(), ENT_QUOTES, "UTF-8");?></div>
 <div style=" float:right">
 <table border="0" cellspacing="0" cellpadding="0">
 	<tr>
@@ -55,7 +55,7 @@ $i = 0;
 foreach ($_SESSION['stocks'] as $stock) {
 	?>
 	<li id="stock_move_<?php echo $i;?>">
-		<a href="#" id="stock_move_menu_<?php echo $i;?>" class="menu_<?php if ($stock->getId_stock() != $_SESSION['magasin']->getId_stock()) {echo "un";}?>select"><?php echo htmlentities($stock->getLib_stock());?></a>
+		<a href="#" id="stock_move_menu_<?php echo $i;?>" class="menu_<?php if ($stock->getId_stock() != $_SESSION['magasin']->getId_stock()) {echo "un";}?>select"><?php echo htmlentities($stock->getLib_stock(), ENT_QUOTES, "UTF-8");?></a>
 	</li>
 	<?php
 	$i++;

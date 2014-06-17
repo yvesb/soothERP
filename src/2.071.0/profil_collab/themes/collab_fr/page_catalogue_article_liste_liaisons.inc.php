@@ -34,7 +34,7 @@ check_page_variables ($page_variables);
 			<!-- ------------------ -->
 			<div id="ligne_<?php echo $liaison_type->getId_liaison_type();?>_vers" style="width:100%; display:none;">
 				<div class="liaison_type_title">
-					<?php echo htmlentities(str_replace("%LIB_ARTICLE%", $Myarticle->getLib_article(), $liaison_type->getLib_liaison_type_vers())); ?>
+					<?php echo htmlentities(str_replace("%LIB_ARTICLE%", $Myarticle->getLib_article(), $liaison_type->getLib_liaison_type_vers()), ENT_QUOTES, "UTF-8"); ?>
 				</div>
 				<div style="width:100%;">
 					<ul id="liaison_ul_<?php echo $liaison_type->getId_liaison_type(); ?>_vers" class="liste_liaison">
@@ -190,7 +190,7 @@ check_page_variables ($page_variables);
 			<!-- ------------------ -->
 			<div id="ligne_<?php echo $liaison_type->getId_liaison_type(); ?>_depuis" style="width:100%; display:none;">
 				<div class="liaison_type_title">
-					<?php echo htmlentities(str_replace("%LIB_ARTICLE%", $Myarticle->getLib_article(), $liaison_type->getLib_liaison_type_depuis())); ?>
+					<?php echo htmlentities(str_replace("%LIB_ARTICLE%", $Myarticle->getLib_article(), $liaison_type->getLib_liaison_type_depuis()), ENT_QUOTES, "UTF-8"); ?>
 				</div>
 				<div style="width:100%;">
 					<ul id="liaison_ul_<?php echo $liaison_type->getId_liaison_type(); ?>_depuis" class="liste_liaison">

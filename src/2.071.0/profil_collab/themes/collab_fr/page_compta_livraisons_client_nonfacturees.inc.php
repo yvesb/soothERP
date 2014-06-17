@@ -47,7 +47,7 @@ $i = 0;
 foreach ($stocks_liste as $stocks) {
 	?>
 	<li id="doc_menu_<?php echo $i;?>">
-		<a href="#" id="menu_<?php echo $i;?>" class="menu_<?php if ($_SESSION['magasin']->getId_stock() != $stocks->getId_stock ()) {echo "un";}?>select" <?php if (!isset($_SESSION['stocks'][$stocks->getId_stock ()])) {echo 'style="color:#FF0000"';}?>><?php echo htmlentities($stocks->getLib_stock ());?></a>
+		<a href="#" id="menu_<?php echo $i;?>" class="menu_<?php if ($_SESSION['magasin']->getId_stock() != $stocks->getId_stock ()) {echo "un";}?>select" <?php if (!isset($_SESSION['stocks'][$stocks->getId_stock ()])) {echo 'style="color:#FF0000"';}?>><?php echo htmlentities($stocks->getLib_stock (), ENT_QUOTES, "UTF-8");?></a>
 	</li>
 	<?php
 	$i++;

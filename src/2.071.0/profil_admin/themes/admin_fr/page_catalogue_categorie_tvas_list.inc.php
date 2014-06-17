@@ -13,7 +13,7 @@
 		foreach ($checked_tvas as $checked_tva) {
 	 	if ($checked_tva->id_tva==$tva['id_tva']) {echo ' checked="checked"'; $tvacheck	= true;};
 	 	} ?>/>
-	<?php echo htmlentities($tva['tva']);?>%<br />
+	<?php echo htmlentities($tva['tva'], ENT_QUOTES, "UTF-8");?>%<br />
 	<?php 
 	}
 ?>

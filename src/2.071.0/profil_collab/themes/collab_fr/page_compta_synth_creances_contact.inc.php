@@ -32,7 +32,7 @@ array_menu_scc[1] 	=	new Array('scc_liste_content', 'menu_1');
 <script type="text/javascript">
 Event.observe("link_retour_contact", "click",  function(evt){Event.stop(evt); page.verify('annuaire_view_fiche','annuaire_view_fiche.php?ref_contact=<?php echo $contact->getRef_contact();?>','true','sub_content');}, false);
 </script>
-<p class="titre">Synthèse des créances de <?php echo htmlentities($contact->getNom())?></p>
+<p class="titre">Synthèse des créances de <?php echo htmlentities($contact->getNom(), ENT_QUOTES, "UTF-8")?></p>
 
 <ul id="menu_recherche" class="menu">
 	<li id="doc_menu_0">

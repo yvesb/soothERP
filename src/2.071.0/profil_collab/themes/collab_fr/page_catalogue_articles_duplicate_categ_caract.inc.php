@@ -26,7 +26,7 @@
 	<table style="width:100%;">
 	<tr class="row_color_0">
 	<td colspan="5">
-	<?php echo htmlentities($carac->lib_carac_groupe); ?>
+	<?php echo htmlentities($carac->lib_carac_groupe, ENT_QUOTES, "UTF-8"); ?>
 	</td>
 	</tr>
 	</table>
@@ -49,7 +49,7 @@
 		?>
 	<tr>
 	<td style="width:20%;" class="col_color_1">
-	<?php echo htmlentities($carac->lib_carac); ?>
+	<?php echo htmlentities($carac->lib_carac, ENT_QUOTES, "UTF-8"); ?>
 	</td>
 	<td style="width:30%;" class="col_color_2">
 	<input name="ref_carac_<?php echo $serialisation_carac; ?>" id="ref_carac_<?php echo $serialisation_carac; ?>" type="hidden" value="<?php echo $carac->ref_carac; ?>" class="classinput_xsize" />
@@ -61,11 +61,11 @@
 		$allowed_values= explode(";", $carac->allowed_values);
 		foreach ($allowed_values as $allowed_value){
 			?>
-			<option value="<?php echo htmlentities($allowed_value)?>" <?php 
+			<option value="<?php echo htmlentities($allowed_value, ENT_QUOTES, "UTF-8")?>" <?php 
 					 foreach ($art_caracs as $art_carac) { 
 						 if ($art_carac->valeur==$carac->default_value){echo 'selected="selected"';} 
 					 }
-					 ?>><?php echo htmlentities($allowed_value)?></option>
+					 ?>><?php echo htmlentities($allowed_value, ENT_QUOTES, "UTF-8")?></option>
 			<?php 
 		}
 		?>
@@ -75,7 +75,7 @@
 		?>
 		<input name="caract_value_<?php echo $serialisation_carac; ?>" id="caract_value_<?php echo $serialisation_carac; ?>" type="text" value="<?php 
 				foreach ($art_caracs as $art_carac) { 
-					if ($art_carac->ref_carac==$carac->ref_carac){echo htmlentities($art_carac->valeur);}
+					if ($art_carac->ref_carac==$carac->ref_carac){echo htmlentities($art_carac->valeur, ENT_QUOTES, "UTF-8");}
 				}
 				?>" class="classinput_xsize" />
 		<?php
@@ -83,7 +83,7 @@
 	?>
 	</td>
 
-	<td style="" class="col_color_2"><?php echo htmlentities($carac->unite); ?></td>
+	<td style="" class="col_color_2"><?php echo htmlentities($carac->unite, ENT_QUOTES, "UTF-8"); ?></td>
 	<td style="width:15px; text-align:center"  class="col_color_2">
 	<?php if ($carac->moteur_recherche==1){?>
 	RS

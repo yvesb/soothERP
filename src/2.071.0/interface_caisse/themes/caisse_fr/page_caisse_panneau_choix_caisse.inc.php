@@ -32,7 +32,7 @@ check_page_variables ($page_variables);
 				$i = 0;
 				foreach ($comptes_caisses as $compte_caisse) { ?>
 					<td id="caisse_<?php echo $compte_caisse->id_compte_caisse;?>" class="panneau_choix_caisse_cell" align="center">
-						<?php echo htmlentities($compte_caisse->lib_caisse); ?>
+						<?php echo htmlentities($compte_caisse->lib_caisse, ENT_QUOTES, "UTF-8"); ?>
 						<script type="text/javascript">
 							Event.observe("caisse_<?php echo $compte_caisse->id_compte_caisse;?>", "click", function(evt){
 								Event.stop(evt);

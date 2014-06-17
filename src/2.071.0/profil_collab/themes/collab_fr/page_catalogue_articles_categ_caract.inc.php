@@ -31,7 +31,7 @@
 	<table style="width:100%;">
 	<tr class="row_color_0">
 	<td colspan="5">
-	<?php echo htmlentities($carac->lib_carac_groupe); ?>
+	<?php echo htmlentities($carac->lib_carac_groupe, ENT_QUOTES, "UTF-8"); ?>
 	</td>
 	</tr>
 	</table>
@@ -54,7 +54,7 @@
 		?>
 	<tr>
 	<td style="width:20%;" class="col_color_1">
-	<?php echo htmlentities($carac->lib_carac); ?>
+	<?php echo htmlentities($carac->lib_carac, ENT_QUOTES, "UTF-8"); ?>
 	</td>
 	<td style="width:30%;" class="col_color_2">
 	<input name="ref_carac_<?php echo $serialisation_carac; ?>" id="ref_carac_<?php echo $serialisation_carac; ?>" type="hidden" value="<?php echo $carac->ref_carac; ?>" class="classinput_xsize" />
@@ -66,8 +66,8 @@
 		$allowed_values= explode(";", $carac->allowed_values);
 		foreach ($allowed_values as $allowed_value){
 			?>
-			<option value="<?php echo htmlentities($allowed_value)?>" <?php 
-			if ($allowed_value==$carac->default_value) {echo 'selected="selected"';} ?>><?php echo htmlentities($allowed_value)?></option>
+			<option value="<?php echo htmlentities($allowed_value, ENT_QUOTES, "UTF-8")?>" <?php 
+			if ($allowed_value==$carac->default_value) {echo 'selected="selected"';} ?>><?php echo htmlentities($allowed_value, ENT_QUOTES, "UTF-8")?></option>
 			<?php 
 		}
 		?>
@@ -75,16 +75,16 @@
 		<?php
 	} else{
 		?>
-		<input name="caract_value_<?php echo $serialisation_carac; ?>" id="caract_value_<?php echo $serialisation_carac; ?>" type="text" value="<?php echo htmlentities($carac->default_value); ?>" class="classinput_xsize" />
+		<input name="caract_value_<?php echo $serialisation_carac; ?>" id="caract_value_<?php echo $serialisation_carac; ?>" type="text" value="<?php echo htmlentities($carac->default_value, ENT_QUOTES, "UTF-8"); ?>" class="classinput_xsize" />
 		<?php
 		}
 	?>
 	</td>
 
-	<td style="" class="col_color_2"><?php echo htmlentities($carac->unite); ?></td>
+	<td style="" class="col_color_2"><?php echo htmlentities($carac->unite, ENT_QUOTES, "UTF-8"); ?></td>
 	<td style="width:55px; text-align:center"  class="col_color_2">
 	<span class="variante_info">
-		<input name="variante_<?php echo $serialisation_carac; ?>" id="variante_<?php echo $serialisation_carac; ?>" type="hidden" value="<?php echo htmlentities($carac->variante); ?>" />
+		<input name="variante_<?php echo $serialisation_carac; ?>" id="variante_<?php echo $serialisation_carac; ?>" type="hidden" value="<?php echo htmlentities($carac->variante, ENT_QUOTES, "UTF-8"); ?>" />
 
 		<?php if (isset ($carac->variante) && $carac->variante == 1){
 			$variante_carac	++;

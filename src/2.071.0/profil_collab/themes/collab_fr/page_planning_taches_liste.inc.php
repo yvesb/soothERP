@@ -236,19 +236,19 @@ foreach ($liste_taches as $tache) {
 		<?php } ?>
 		</td>
 		<td style="border-bottom:1px solid #999999;">
-			<span style="font-weight:bolder;"><?php echo htmlentities($tache->getLib_tache ());?></span>&nbsp;<br />
-			<span style="font-style:italic;"><?php echo nl2br(htmlentities($tache->getText_tache ()));?></span>
+			<span style="font-weight:bolder;"><?php echo htmlentities($tache->getLib_tache (), ENT_QUOTES, "UTF-8");?></span>&nbsp;<br />
+			<span style="font-style:italic;"><?php echo nl2br(htmlentities($tache->getText_tache ()), ENT_QUOTES, "UTF-8");?></span>
 		</td>
 		<td style="border-bottom:1px solid #999999;">
 		<?php 
 		foreach ($tache->getCollabs () as $collab) {
-			echo htmlentities($collab->nom)."<br/>";
+			echo htmlentities($collab->nom, ENT_QUOTES, "UTF-8")."<br/>";
 		}
 		?>
 		<div style="height:12px; line-height:12px; "></div>
 		<?php 
 		foreach ($tache->getCollabs_fonctions () as $fonctions) {
-			echo htmlentities($fonctions->lib_fonction)."<br/>";
+			echo htmlentities($fonctions->lib_fonction, ENT_QUOTES, "UTF-8")."<br/>";
 		}
 		?>
 		</td>
@@ -256,8 +256,8 @@ foreach ($liste_taches as $tache) {
 			<span style="font-weight:bolder;"><?php echo date_Us_to_Fr($tache->getDate_creation ());?></span>&nbsp;
 		</td>
 		<td style="border-bottom:1px solid #999999;">
-			<textarea class="classinput_xsize" name="note_<?php echo $tache->getId_tache();?>_l" id="note_<?php echo $tache->getId_tache();?>_l"><?php echo htmlentities($tache->getNote ());?></textarea>
-			<textarea style="display:none" name="note_old_<?php echo $tache->getId_tache();?>_l" id="note_old_<?php echo $tache->getId_tache();?>_l"><?php echo htmlentities($tache->getNote());?></textarea>
+			<textarea class="classinput_xsize" name="note_<?php echo $tache->getId_tache();?>_l" id="note_<?php echo $tache->getId_tache();?>_l"><?php echo htmlentities($tache->getNote (), ENT_QUOTES, "UTF-8");?></textarea>
+			<textarea style="display:none" name="note_old_<?php echo $tache->getId_tache();?>_l" id="note_old_<?php echo $tache->getId_tache();?>_l"><?php echo htmlentities($tache->getNote(), ENT_QUOTES, "UTF-8");?></textarea>
 			<script type="text/javascript">
 				Event.observe("note_<?php echo $tache->getId_tache();?>_l", "blur", function(evt){
 					if ($("note_<?php echo $tache->getId_tache();?>_l").value != $("note_old_<?php echo $tache->getId_tache();?>_l").value) { 

@@ -216,21 +216,21 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 		<div style="width:90px">
 			<?php
 			if ($stock_doc->abrev_stock) {
-			echo htmlentities($stock_doc->abrev_stock);
+			echo htmlentities($stock_doc->abrev_stock, ENT_QUOTES, "UTF-8");
 			} else {
-			echo htmlentities($stock_doc->lib_stock);
+			echo htmlentities($stock_doc->lib_stock, ENT_QUOTES, "UTF-8");
 			}
 			?>
 		</div>
 		</td>
 		<td style="text-align:left; width:120px;">
 		<div style="width:120px; text-align:left">
-		<a href="#" id="doc_stock_doc_<?php echo htmlentities($stock_doc->ref_doc);?>" style="color:#000000; text-decoration:none"><?php echo htmlentities($stock_doc->ref_doc);?></a>
+		<a href="#" id="doc_stock_doc_<?php echo htmlentities($stock_doc->ref_doc, ENT_QUOTES, "UTF-8");?>" style="color:#000000; text-decoration:none"><?php echo htmlentities($stock_doc->ref_doc, ENT_QUOTES, "UTF-8");?></a>
 		</div>
 		<script type="text/javascript">
-		Event.observe("doc_stock_doc_<?php echo htmlentities($stock_doc->ref_doc);?>", "click",  function(evt){
+		Event.observe("doc_stock_doc_<?php echo htmlentities($stock_doc->ref_doc, ENT_QUOTES, "UTF-8");?>", "click",  function(evt){
 			Event.stop(evt); 
-			page.verify('documents_edition','index.php#'+escape('documents_edition.php?ref_doc=<?php echo htmlentities($stock_doc->ref_doc)?>'),'true','_blank');
+			page.verify('documents_edition','index.php#'+escape('documents_edition.php?ref_doc=<?php echo htmlentities($stock_doc->ref_doc, ENT_QUOTES, "UTF-8")?>'),'true','_blank');
 		}, false);
 		</script>
 		</td>
@@ -238,13 +238,13 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 		<?php if (isset($stock_doc->nom)) { 
 			?>
 			<div style="width:170px">
-			<a href="#" id="contact_stock_doc_<?php echo htmlentities($stock_doc->ref_doc);?>" style="color:#000000; text-decoration:none">
-				<?php echo htmlentities($stock_doc->nom); ?></a>
+			<a href="#" id="contact_stock_doc_<?php echo htmlentities($stock_doc->ref_doc, ENT_QUOTES, "UTF-8");?>" style="color:#000000; text-decoration:none">
+				<?php echo htmlentities($stock_doc->nom, ENT_QUOTES, "UTF-8"); ?></a>
 			</div>
 			<script type="text/javascript">
-			Event.observe("contact_stock_doc_<?php echo htmlentities($stock_doc->ref_doc);?>", "click",  function(evt){
+			Event.observe("contact_stock_doc_<?php echo htmlentities($stock_doc->ref_doc, ENT_QUOTES, "UTF-8");?>", "click",  function(evt){
 				Event.stop(evt); 
-				page.verify('annuaire_view_fiche','index.php#'+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($stock_doc->ref_contact)?>'),'true','_blank');
+				page.verify('annuaire_view_fiche','index.php#'+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($stock_doc->ref_contact, ENT_QUOTES, "UTF-8")?>'),'true','_blank');
 			}, false);
 			</script>
 			<?php
@@ -253,7 +253,7 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 		</td>
 		<td style="text-align:left; width:120px">
 		<div style="width:120px">
-			<?php echo htmlentities($stock_doc->lib_etat_doc);?>
+			<?php echo htmlentities($stock_doc->lib_etat_doc, ENT_QUOTES, "UTF-8");?>
 		</div>
 		</td>
 		<td style="text-align:right; ">

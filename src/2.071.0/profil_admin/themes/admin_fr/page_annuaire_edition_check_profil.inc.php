@@ -16,7 +16,7 @@
 									?>
 									<span>
 									<input onclick="alerte.confirm_supprimer_profil('contact_profil<?php echo $exist_profil->getId_profil();?>_supprime', 'annu_edition_profil<?php echo $exist_profil->getId_profil();?>_suppression', 'profils<?php echo $exist_profil->getId_profil();?>');" type=checkbox value="<?php echo $exist_profil->getId_profil();?>" id="profils<?php echo $exist_profil->getId_profil();?>" name="profils[<?php echo $exist_profil->getId_profil();?>]" checked="checked" />
-									<?php echo htmlentities($exist_profil->getLib_profil());?></span><br />
+									<?php echo htmlentities($exist_profil->getLib_profil(), ENT_QUOTES, "UTF-8");?></span><br />
 									<?php
 								}
 							}
@@ -28,8 +28,8 @@
 								if(!isset($profils[$profil->getId_profil()]) ) {
 									?>
 									<span>
-									<input onclick=" array_menu_v_contact[<?php echo $profil->getId_profil()+1;?>] 	=	new Array( 'x_typeprofil<?php echo $profil->getId_profil();?>', 'typeprofil_menu_<?php echo $profil->getId_profil();?>'); affiche_annu_edif_profil('<?php echo $profil->getId_profil();?>', '<?php echo htmlentities($profil->getLib_profil());?>');" type="checkbox" value="<?php echo $profil->getId_profil();?>" id="profils<?php echo $profil->getId_profil();?>" name="profils[<?php echo $profil->getId_profil();?>]" />
-									<?php echo htmlentities($profil->getLib_profil());?></span><br />
+									<input onclick=" array_menu_v_contact[<?php echo $profil->getId_profil()+1;?>] 	=	new Array( 'x_typeprofil<?php echo $profil->getId_profil();?>', 'typeprofil_menu_<?php echo $profil->getId_profil();?>'); affiche_annu_edif_profil('<?php echo $profil->getId_profil();?>', '<?php echo htmlentities($profil->getLib_profil(), ENT_QUOTES, "UTF-8");?>');" type="checkbox" value="<?php echo $profil->getId_profil();?>" id="profils<?php echo $profil->getId_profil();?>" name="profils[<?php echo $profil->getId_profil();?>]" />
+									<?php echo htmlentities($profil->getLib_profil(), ENT_QUOTES, "UTF-8");?></span><br />
 									<?php
 								}
 							}
@@ -44,7 +44,7 @@
 								if(!isset($profils[$profil->getId_profil()]) ) {
 									$more_profil=1;
 									?>
-										<span><input onclick=" array_menu_v_contact[<?php echo $profil->getId_profil()+1;?>] 	=	new Array( 'x_typeprofil<?php echo $profil->getId_profil();?>', 'typeprofil_menu_<?php echo $profil->getId_profil();?>'); affiche_annu_edif_profil('<?php echo $profil->getId_profil();?>', '<?php echo htmlentities($profil->getLib_profil());?>');" type="checkbox" value="<?php echo $profil->getId_profil();?>" id="profils<?php echo $profil->getId_profil();?>" name="profils[<?php echo $profil->getId_profil();?>]"><?php echo htmlentities($profil->getLib_profil());?></span><br />
+										<span><input onclick=" array_menu_v_contact[<?php echo $profil->getId_profil()+1;?>] 	=	new Array( 'x_typeprofil<?php echo $profil->getId_profil();?>', 'typeprofil_menu_<?php echo $profil->getId_profil();?>'); affiche_annu_edif_profil('<?php echo $profil->getId_profil();?>', '<?php echo htmlentities($profil->getLib_profil(), ENT_QUOTES, "UTF-8");?>');" type="checkbox" value="<?php echo $profil->getId_profil();?>" id="profils<?php echo $profil->getId_profil();?>" name="profils[<?php echo $profil->getId_profil();?>]"><?php echo htmlentities($profil->getLib_profil(), ENT_QUOTES, "UTF-8");?></span><br />
 									<?php
 								}
 							}

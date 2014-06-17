@@ -203,7 +203,7 @@ function elegant_dump(&$var, $var_name='', $indent='', $reference='') {
        if (is_string($avar)){
        	  $avar = str_replace ($bdd_user, $sensibleDataSubstitute, $avar);
   				$avar = str_replace ($bdd_pass, $sensibleDataSubstitute, $avar);
-       	echo "<br />  $indent<b>$var_name</b> (<i>$type</i>) = \"".htmlentities($avar)."\"\n";
+       	echo "<br />  $indent<b>$var_name</b> (<i>$type</i>) = \"".htmlentities($avar, ENT_QUOTES, "UTF-8")."\"\n";
        }
        // any other?
        else echo "<br /> $indent<b>$var_name</b> (<i>$type</i>) = $avar\n";

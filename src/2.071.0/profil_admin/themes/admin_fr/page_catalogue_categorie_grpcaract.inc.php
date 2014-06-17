@@ -90,7 +90,7 @@
 					</tr>	
 					<tr>
 						<td>
-							<input name="lib_carac_groupe_<?php echo $exist_carac_groupe->ref_carac_groupe; ?>" id="lib_carac_groupe_<?php echo $exist_carac_groupe->ref_carac_groupe; ?>" value="<?php echo htmlentities($exist_carac_groupe->lib_carac_groupe)?>" class="classinput_xsize"/>
+							<input name="lib_carac_groupe_<?php echo $exist_carac_groupe->ref_carac_groupe; ?>" id="lib_carac_groupe_<?php echo $exist_carac_groupe->ref_carac_groupe; ?>" value="<?php echo htmlentities($exist_carac_groupe->lib_carac_groupe, ENT_QUOTES, "UTF-8")?>" class="classinput_xsize"/>
 							<input name="ref_carac_groupe" id="ref_carac_groupe" type="hidden" value="<?php echo $exist_carac_groupe->ref_carac_groupe; ?>" />
 							<input name="ref_art_categ" id="ref_art_categ" type="hidden" value="<?php echo $art_categ->getRef_art_categ(); ?>" />
 						</td>

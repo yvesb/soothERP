@@ -25,7 +25,7 @@ check_page_variables ($page_variables);
 <script type="text/javascript">
 Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); page.verify('compta_gestion2_caisse','compta_gestion2_caisse.php?id_caisse=<?php echo $_REQUEST["id_caisse"];?>','true','sub_content');}, false);
 </script>
-<div class="titre" id="titre_crea_art" style="width:60%; padding-left:140px">Historique des opérations <?php echo htmlentities($compte_caisse->getLib_caisse()); ?>
+<div class="titre" id="titre_crea_art" style="width:60%; padding-left:140px">Historique des opérations <?php echo htmlentities($compte_caisse->getLib_caisse(), ENT_QUOTES, "UTF-8"); ?>
 </div>
 <input id="choix_id_caisse" name="choix_id_caisse"  value="<?php echo $compte_caisse->getId_compte_caisse(); ?>"  type="hidden">
 <div class="emarge">

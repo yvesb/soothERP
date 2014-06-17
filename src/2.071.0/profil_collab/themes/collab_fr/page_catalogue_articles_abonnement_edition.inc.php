@@ -26,7 +26,7 @@ check_page_variables ($page_variables);
 <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="close_abonnement_edit" style="cursor:pointer; float:right" alt="Fermer" title="Fermer" />
 <span style="font-weight:bolder">Edition d'un abonnement</span><br />
 <br />
-<span class="bolder"><?php echo htmlentities($article->getLib_article ()); ?></span>
+<span class="bolder"><?php echo htmlentities($article->getLib_article (), ENT_QUOTES, "UTF-8"); ?></span>
 
 <table width="100%" border="0">
 	<tr>

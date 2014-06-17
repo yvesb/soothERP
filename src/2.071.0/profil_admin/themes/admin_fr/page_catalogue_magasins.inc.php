@@ -113,7 +113,7 @@ update_menu_arbo();
 							<?php 
 							foreach ($stocks_liste as $stock_liste) {
 							?>
-								<option value="<?php echo $stock_liste->getId_stock(); ?>"><?php echo htmlentities($stock_liste->getLib_stock()); ?>
+								<option value="<?php echo $stock_liste->getId_stock(); ?>"><?php echo htmlentities($stock_liste->getLib_stock(), ENT_QUOTES, "UTF-8"); ?>
 								</option>
 							<?php 
 							}
@@ -126,7 +126,7 @@ update_menu_arbo();
 							<?php 
 							foreach ($tarifs_liste as $tarif_liste) {
 								?>
-								<option value="<?php echo $tarif_liste->id_tarif; ?>"><?php echo htmlentities($tarif_liste->lib_tarif); ?>
+								<option value="<?php echo $tarif_liste->id_tarif; ?>"><?php echo htmlentities($tarif_liste->lib_tarif, ENT_QUOTES, "UTF-8"); ?>
 								</option>
 								<?php 
 							}
@@ -139,7 +139,7 @@ update_menu_arbo();
 							<?php 
 							foreach ($BDD_MODE_VENTE as $mode_vente) {
 							?>
-								<option value="<?php echo htmlentities($mode_vente); ?>" <?php if ($DEFAUT_MODE_VENTE==$mode_vente) {echo 'selected="selected"';}?>><?php echo htmlentities($mode_vente); ?>
+								<option value="<?php echo htmlentities($mode_vente, ENT_QUOTES, "UTF-8"); ?>" <?php if ($DEFAUT_MODE_VENTE==$mode_vente) {echo 'selected="selected"';}?>><?php echo htmlentities($mode_vente, ENT_QUOTES, "UTF-8"); ?>
 							<?php 
 							}
 							?>
@@ -234,11 +234,11 @@ update_menu_arbo();
 						<?php }?>
 						</td>
 						<td>
-						<input id="lib_magasin_<?php echo $magasin_liste->id_magasin; ?>" name="lib_magasin_<?php echo $magasin_liste->id_magasin; ?>" type="text" value="<?php echo htmlentities($magasin_liste->lib_magasin); ?>"  class="classinput_lsize"/>
+						<input id="lib_magasin_<?php echo $magasin_liste->id_magasin; ?>" name="lib_magasin_<?php echo $magasin_liste->id_magasin; ?>" type="text" value="<?php echo htmlentities($magasin_liste->lib_magasin, ENT_QUOTES, "UTF-8"); ?>"  class="classinput_lsize"/>
 			<input name="id_magasin" id="id_magasin" type="hidden" value="<?php echo $magasin_liste->id_magasin; ?>" />
 						<div style="width:84%; text-align:right">
 						Abrév: 
-						<input name="abrev_magasin_<?php echo $magasin_liste->id_magasin; ?>" id="abrev_magasin_<?php echo $magasin_liste->id_magasin; ?>" type="text" value="<?php echo htmlentities($magasin_liste->abrev_magasin); ?>"  class="classinput_nsize" size="4"/>
+						<input name="abrev_magasin_<?php echo $magasin_liste->id_magasin; ?>" id="abrev_magasin_<?php echo $magasin_liste->id_magasin; ?>" type="text" value="<?php echo htmlentities($magasin_liste->abrev_magasin, ENT_QUOTES, "UTF-8"); ?>"  class="classinput_nsize" size="4"/>
 						</div>
 							
 						</td>
@@ -261,7 +261,7 @@ update_menu_arbo();
 							<?php 
 							foreach ($stocks_liste as $stock_liste) {
 								?>
-								<option value="<?php echo $stock_liste->getId_stock(); ?>" <?php if ($stock_liste->getId_stock() == $magasin_liste->id_stock){echo 'selected="selected"';}?>><?php echo htmlentities($stock_liste->getLib_stock()); ?>
+								<option value="<?php echo $stock_liste->getId_stock(); ?>" <?php if ($stock_liste->getId_stock() == $magasin_liste->id_stock){echo 'selected="selected"';}?>><?php echo htmlentities($stock_liste->getLib_stock(), ENT_QUOTES, "UTF-8"); ?>
 								</option>
 								<?php 
 							}
@@ -274,7 +274,7 @@ update_menu_arbo();
 							<?php 
 							foreach ($tarifs_liste as $tarif_liste) {
 							?>
-								<option value="<?php echo $tarif_liste->id_tarif; ?>" <?php if ($tarif_liste->id_tarif==$magasin_liste->id_tarif){echo 'selected="selected"';}?>><?php echo htmlentities($tarif_liste->lib_tarif); ?>
+								<option value="<?php echo $tarif_liste->id_tarif; ?>" <?php if ($tarif_liste->id_tarif==$magasin_liste->id_tarif){echo 'selected="selected"';}?>><?php echo htmlentities($tarif_liste->lib_tarif, ENT_QUOTES, "UTF-8"); ?>
 								</option>
 							<?php 
 							}
@@ -287,7 +287,7 @@ update_menu_arbo();
 							<?php 
 							foreach ($BDD_MODE_VENTE as $mode_vente) {
 							?>
-								<option value="<?php echo htmlentities($mode_vente); ?>" <?php if ($mode_vente==$magasin_liste->mode_vente){echo 'selected="selected"';}?>><?php echo htmlentities($mode_vente); ?>
+								<option value="<?php echo htmlentities($mode_vente, ENT_QUOTES, "UTF-8"); ?>" <?php if ($mode_vente==$magasin_liste->mode_vente){echo 'selected="selected"';}?>><?php echo htmlentities($mode_vente, ENT_QUOTES, "UTF-8"); ?>
 							<?php 
 							}
 							?>
@@ -295,7 +295,7 @@ update_menu_arbo();
 							
 						</td>
 						<td style="text-align:center">
-						<input id="actif_<?php echo $magasin_liste->id_magasin; ?>" name="actif_<?php echo $magasin_liste->id_magasin; ?>" value="<?php echo htmlentities($magasin_liste->actif); ?>" type="checkbox"  <?php if($magasin_liste->actif==1){echo 'checked="checked"';}?>/>
+						<input id="actif_<?php echo $magasin_liste->id_magasin; ?>" name="actif_<?php echo $magasin_liste->id_magasin; ?>" value="<?php echo htmlentities($magasin_liste->actif, ENT_QUOTES, "UTF-8"); ?>" type="checkbox"  <?php if($magasin_liste->actif==1){echo 'checked="checked"';}?>/>
 						</td>
 						<td>
 							<p style="text-align:right">

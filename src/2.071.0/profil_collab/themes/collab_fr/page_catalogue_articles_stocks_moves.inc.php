@@ -273,12 +273,12 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 		echo 'font-weight:bolder;';
 	}
 	?>">
-		<a href="#" id="doc_stock_move_<?php echo htmlentities($stock_move->ref_stock_move);?>" style="color:#000000; text-decoration:none"><?php echo htmlentities($stock_move->ref_doc);?></a>
+		<a href="#" id="doc_stock_move_<?php echo htmlentities($stock_move->ref_stock_move, ENT_QUOTES, "UTF-8");?>" style="color:#000000; text-decoration:none"><?php echo htmlentities($stock_move->ref_doc, ENT_QUOTES, "UTF-8");?></a>
 		</div>
 		<script type="text/javascript">
-		Event.observe("doc_stock_move_<?php echo htmlentities($stock_move->ref_stock_move);?>", "click",  function(evt){
+		Event.observe("doc_stock_move_<?php echo htmlentities($stock_move->ref_stock_move, ENT_QUOTES, "UTF-8");?>", "click",  function(evt){
 			Event.stop(evt); 
-			page.verify('documents_edition','index.php#'+escape('documents_edition.php?ref_doc=<?php echo htmlentities($stock_move->ref_doc)?>'),'true','_blank');
+			page.verify('documents_edition','index.php#'+escape('documents_edition.php?ref_doc=<?php echo htmlentities($stock_move->ref_doc, ENT_QUOTES, "UTF-8")?>'),'true','_blank');
 		}, false);
 		</script>
 		</td>
@@ -288,7 +288,7 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 		echo 'font-weight:bolder;';
 	}
 	?>">
-			<?php echo htmlentities($stock_move->lib_etat_doc);?>
+			<?php echo htmlentities($stock_move->lib_etat_doc, ENT_QUOTES, "UTF-8");?>
 		</div>
 		</td>
 		<td style="text-align:left; width:170px;">
@@ -300,13 +300,13 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 		echo 'font-weight:bolder;';
 	}
 	?>">
-			<a href="#" id="contact_doc_stock_move_<?php echo htmlentities($stock_move->ref_stock_move);?>" style="color:#000000; text-decoration:none">
-				<?php echo htmlentities($stock_move->nom_contact_doc); ?></a>
+			<a href="#" id="contact_doc_stock_move_<?php echo htmlentities($stock_move->ref_stock_move, ENT_QUOTES, "UTF-8");?>" style="color:#000000; text-decoration:none">
+				<?php echo htmlentities($stock_move->nom_contact_doc, ENT_QUOTES, "UTF-8"); ?></a>
 			</div>
 			<script type="text/javascript">
-			Event.observe("contact_doc_stock_move_<?php echo htmlentities($stock_move->ref_stock_move);?>", "click",  function(evt){
+			Event.observe("contact_doc_stock_move_<?php echo htmlentities($stock_move->ref_stock_move, ENT_QUOTES, "UTF-8");?>", "click",  function(evt){
 				Event.stop(evt); 
-				page.verify('annuaire_view_fiche','index.php#'+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($stock_move->ref_contact_doc)?>'),'true','_blank');
+				page.verify('annuaire_view_fiche','index.php#'+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($stock_move->ref_contact_doc, ENT_QUOTES, "UTF-8")?>'),'true','_blank');
 			}, false);
 			</script>
 			<?php
@@ -322,13 +322,13 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 		echo 'font-weight:bolder;';
 	}
 	?>">
-			<a href="#" id="contact_stock_move_<?php echo htmlentities($stock_move->ref_stock_move);?>" style="color:#000000; text-decoration:none">
-				<?php echo htmlentities($stock_move->nom); ?></a>
+			<a href="#" id="contact_stock_move_<?php echo htmlentities($stock_move->ref_stock_move, ENT_QUOTES, "UTF-8");?>" style="color:#000000; text-decoration:none">
+				<?php echo htmlentities($stock_move->nom, ENT_QUOTES, "UTF-8"); ?></a>
 			</div>
 			<script type="text/javascript">
-			Event.observe("contact_stock_move_<?php echo htmlentities($stock_move->ref_stock_move);?>", "click",  function(evt){
+			Event.observe("contact_stock_move_<?php echo htmlentities($stock_move->ref_stock_move, ENT_QUOTES, "UTF-8");?>", "click",  function(evt){
 				Event.stop(evt); 
-				page.verify('annuaire_view_fiche','index.php#'+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($stock_move->ref_contact)?>'),'true','_blank');
+				page.verify('annuaire_view_fiche','index.php#'+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($stock_move->ref_contact, ENT_QUOTES, "UTF-8")?>'),'true','_blank');
 			}, false);
 			</script>
 			<?php
@@ -341,7 +341,7 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 		echo 'font-weight:bolder;';
 	}
 	?>" id="aff_resume_stock_sn_<?php echo qte_format($stock_move->ref_stock_move);?>">
-			<?php if ($stock_move->qte >=0 && $stock_move->id_type_doc != $INVENTAIRE_ID_TYPE_DOC) { echo htmlentities($stock_move->qte);}?>
+			<?php if ($stock_move->qte >=0 && $stock_move->id_type_doc != $INVENTAIRE_ID_TYPE_DOC) { echo htmlentities($stock_move->qte, ENT_QUOTES, "UTF-8");}?>
 			</div>
 			<script type="text/javascript">
 			//Event.observe("aff_resume_stock_sn_<?php echo $stock_move->ref_stock_move;?>", "click", function(evt){
@@ -356,7 +356,7 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 		echo 'font-weight:bolder;';
 	}
 	?>" id="aff_resume_stock_sn2_<?php echo qte_format($stock_move->ref_stock_move);?>">
-			<?php if ($stock_move->qte <0 && $stock_move->id_type_doc != $INVENTAIRE_ID_TYPE_DOC) { echo htmlentities($stock_move->qte);}?>
+			<?php if ($stock_move->qte <0 && $stock_move->id_type_doc != $INVENTAIRE_ID_TYPE_DOC) { echo htmlentities($stock_move->qte, ENT_QUOTES, "UTF-8");}?>
 			</div>
 			<script type="text/javascript">
 			//Event.observe("aff_resume_stock_sn2_<?php echo $stock_move->ref_stock_move;?>", "click", function(evt){
@@ -408,9 +408,9 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 	?>">
 			<?php
 			if ($stock_move->abrev_stock) {
-			echo htmlentities($stock_move->abrev_stock);
+			echo htmlentities($stock_move->abrev_stock, ENT_QUOTES, "UTF-8");
 			} else {
-			echo htmlentities($stock_move->lib_stock);
+			echo htmlentities($stock_move->lib_stock, ENT_QUOTES, "UTF-8");
 			}
 			?>
 		</div>

@@ -9,7 +9,7 @@ foreach ($choix_sns as  $choix_sn=>$cpt) {
 	<?php
 	if ($choix_sn != "") {
 		?>
-		<?php echo  htmlentities($choix_sn." (".$cpt.")")?><br />
+		<?php echo  htmlentities($choix_sn." (".$cpt.")", ENT_QUOTES, "UTF-8")?><br />
 		<?php 
 	}
 	?>
@@ -30,8 +30,8 @@ foreach ($choix_sns as $choix_sn=>$cpt) {
 	Event.observe("li_choix_sn_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>", "mouseover",  function(){changeclassname ("li_choix_sn_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>", "complete_coordonnee_hover");}, false);
 	
 	Event.observe("li_choix_sn_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>", "click",  function(){
-	$("<?php echo $_REQUEST["input"]?>").value = "<?php echo  htmlentities($choix_sn)?>";
-	$("<?php echo $_REQUEST["input2"]?>").value = "<?php echo  htmlentities($cpt)?>";
+	$("<?php echo $_REQUEST["input"]?>").value = "<?php echo  htmlentities($choix_sn, ENT_QUOTES, "UTF-8")?>";
+	$("<?php echo $_REQUEST["input2"]?>").value = "<?php echo  htmlentities($cpt, ENT_QUOTES, "UTF-8")?>";
 	$("<?php echo $_REQUEST["input"]?>").focus();
 	delay_close ("<?php echo $_REQUEST["choix_sn"]?>","<?php echo $_REQUEST["iframe_choix_sn"]?>" );
 	}, false);

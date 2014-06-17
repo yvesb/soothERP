@@ -43,9 +43,9 @@ if( ($id_type_doc == $FACTURE_CLIENT_ID_TYPE_DOC && $montant_positif == 1) || ($
 			?>
 						<tr>
 							<td style="font-size:10px; cursor:pointer" id="facture_<?php echo $facture->ref_doc;?>"><?php echo date_Us_to_Fr($facture->date_creation);?><br />
-									<span <?php if (round(strtotime($facture->date_echeance)-strtotime(date("c")))<0) {?>style=" color:#FF0000;"<?php }?>> <?php echo htmlentities(date_Us_to_Fr($facture->date_echeance));?> </span> </td>
+									<span <?php if (round(strtotime($facture->date_echeance)-strtotime(date("c")))<0) {?>style=" color:#FF0000;"<?php }?>> <?php echo htmlentities(date_Us_to_Fr($facture->date_echeance), ENT_QUOTES, "UTF-8");?> </span> </td>
 							<td style="font-size:10px; cursor:pointer" id="facture2_<?php echo $facture->ref_doc;?>"><?php echo $facture->ref_doc;?><br />
-									<span <?php if ($facture->id_etat_doc == 16) {?>style="color:#FF0000"<?php } ?>> <?php echo htmlentities(($facture->lib_etat_doc));?> </span> </td>
+									<span <?php if ($facture->id_etat_doc == 16) {?>style="color:#FF0000"<?php } ?>> <?php echo htmlentities($facture->lib_etat_doc, ENT_QUOTES, "UTF-8");?> </span> </td>
 							<td style="text-align:right; font-size:10px; padding-right:2px;  cursor:pointer" id="facture3_<?php echo $facture->ref_doc;?>"><?php
 				$montant_reglements = 0;
 				if ($facture->montant_reglements) { $montant_reglements = $facture->montant_reglements;}
@@ -121,9 +121,9 @@ if( $id_type_doc == $FACTURE_FOURNISSEUR_ID_TYPE_DOC && $montant_positif == 1) {
 			?>
 						<tr>
 							<td style="font-size:10px; cursor:pointer" id="facture_<?php echo $facture->ref_doc;?>"><?php echo date_Us_to_Fr($facture->date_creation);?><br />
-									<span <?php if (round(strtotime($facture->date_echeance)-strtotime(date("c")))<0) {?>style=" color:#FF0000;"<?php }?>> <?php echo htmlentities(date_Us_to_Fr($facture->date_echeance));?> </span> </td>
+									<span <?php if (round(strtotime($facture->date_echeance)-strtotime(date("c")))<0) {?>style=" color:#FF0000;"<?php }?>> <?php echo htmlentities(date_Us_to_Fr($facture->date_echeance), ENT_QUOTES, "UTF-8");?> </span> </td>
 							<td style="font-size:10px; cursor:pointer" id="facture2_<?php echo $facture->ref_doc;?>"><?php echo $facture->ref_doc;?><br />
-									<span <?php if ($facture->id_etat_doc == 32) {?>style="color:#FF0000"<?php } ?>> <?php echo htmlentities(($facture->lib_etat_doc));?> </span> </td>
+									<span <?php if ($facture->id_etat_doc == 32) {?>style="color:#FF0000"<?php } ?>> <?php echo htmlentities($facture->lib_etat_doc, ENT_QUOTES, "UTF-8");?> </span> </td>
 							<td style="text-align:right; font-size:10px; padding-right:2px;  cursor:pointer" id="facture3_<?php echo $facture->ref_doc;?>"><?php
 				$montant_reglements = 0;
 				if ($facture->montant_reglements) { $montant_reglements = $facture->montant_reglements;}
@@ -510,7 +510,7 @@ if( ($id_type_doc == $FACTURE_CLIENT_ID_TYPE_DOC && $montant_positif != 0) || ($
 						<tr>
 							<td style="font-size:10px; " id="regmnt_<?php echo $regmnt->ref_reglement;?>"><?php echo date_Us_to_Fr($regmnt->date_reglement);?><br />
 							</td>
-							<td style="font-size:10px; " id="regmnt2_<?php echo $regmnt->ref_reglement;?>"><?php echo htmlentities($regmnt->lib_reglement_mode);?><br />
+							<td style="font-size:10px; " id="regmnt2_<?php echo $regmnt->ref_reglement;?>"><?php echo htmlentities($regmnt->lib_reglement_mode, ENT_QUOTES, "UTF-8");?><br />
 							</td>
 							<td style="text-align:right; font-size:10px; padding-right:2px;  " id="regmnt3_<?php echo $regmnt->ref_reglement;?>"><?php
 				if ($regmnt->montant_reglement) { echo number_format($regmnt->montant_reglement- $montant_used, $TARIFS_NB_DECIMALES, ".", ""	)." "; $montant_total += number_format($regmnt->montant_reglement - $montant_used , $TARIFS_NB_DECIMALES, ".", ""	); }?>
@@ -568,7 +568,7 @@ if( $id_type_doc == $FACTURE_FOURNISSEUR_ID_TYPE_DOC && $montant_positif == 1) {
 						<tr>
 							<td style="font-size:10px; " id="regmnt_<?php echo $regmnt->ref_reglement;?>"><?php echo date_Us_to_Fr($regmnt->date_reglement);?><br />
 							</td>
-							<td style="font-size:10px; " id="regmnt2_<?php echo $regmnt->ref_reglement;?>"><?php echo htmlentities($regmnt->lib_reglement_mode);?><br />
+							<td style="font-size:10px; " id="regmnt2_<?php echo $regmnt->ref_reglement;?>"><?php echo htmlentities($regmnt->lib_reglement_mode, ENT_QUOTES, "UTF-8");?><br />
 							</td>
 							<td style="text-align:right; font-size:10px; padding-right:2px;  " id="regmnt3_<?php echo $regmnt->ref_reglement;?>"><?php
 				if ($regmnt->montant_reglement) { echo number_format($regmnt->montant_reglement- $montant_used, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[1]; $montant_total += number_format($regmnt->montant_reglement - $montant_used , $TARIFS_NB_DECIMALES, ".", ""	); }?>

@@ -126,8 +126,8 @@ foreach ($liste_open_docs as $open_doc) {
 											<td style="font-size:10px;">
 										<?php echo $open_doc->ref_doc; ?>					</td>
 											<td style="padding-left:10px">
-										<?php echo htmlentities($open_doc->lib_type_doc); ?><br />
-												<span style="font-style:italic"><?php echo htmlentities($open_doc->lib_etat_doc); ?></span>					</td>
+										<?php echo htmlentities($open_doc->lib_type_doc, ENT_QUOTES, "UTF-8"); ?><br />
+												<span style="font-style:italic"><?php echo htmlentities($open_doc->lib_etat_doc, ENT_QUOTES, "UTF-8"); ?></span>					</td>
 											<td style="text-align:right; padding-right:10px">
 												<?php if ($open_doc->montant_ttc) {
 													echo number_format($open_doc->montant_ttc, $TARIFS_NB_DECIMALES, ".", "") . " " . $MONNAIE[1];
@@ -186,7 +186,7 @@ foreach ($liste_taches as $tache) {
 											<td>
 												<div style="font-weight:bolder; cursor:pointer" id="go_tache_<?php echo $tache->getId_tache(); ?>_2"><?php echo date_Us_to_Fr($tache->getDate_creation()); ?></div>					</td>
 											<td>
-												<div style="font-weight:bolder; cursor:pointer" id="go_tache_<?php echo $tache->getId_tache(); ?>_3"><?php echo htmlentities($tache->getLib_tache()); ?></div>					</td>
+												<div style="font-weight:bolder; cursor:pointer" id="go_tache_<?php echo $tache->getId_tache(); ?>_3"><?php echo htmlentities($tache->getLib_tache(), ENT_QUOTES, "UTF-8"); ?></div>					</td>
 											<td style="text-align:right;">
 												<div id="etat_tache_<?php echo $tache->getId_tache(); ?>_l" style="cursor:pointer">
 	<?php

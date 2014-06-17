@@ -47,7 +47,7 @@ check_page_variables ($page_variables);
 			<option
 				value="<?php echo $liste_categorie_client->id_client_categ;?>"
 				<?php if ($liste_categorie_client->id_client_categ == $DEFAUT_ID_CLIENT_CATEG) {echo 'selected="selected"';}?>>
-				<?php echo htmlentities($liste_categorie_client->lib_client_categ); ?></option>
+				<?php echo htmlentities($liste_categorie_client->lib_client_categ, ENT_QUOTES, "UTF-8"); ?></option>
 				<?php
 			}
 			?>
@@ -620,7 +620,7 @@ check_page_variables ($page_variables);
 					foreach ($tarifs_liste as $tarif_liste)
 					{
 					?>
-				<option value="<?php echo $tarif_liste->id_tarif; ?>"><?php echo htmlentities($tarif_liste->lib_tarif); ?>
+				<option value="<?php echo $tarif_liste->id_tarif; ?>"><?php echo htmlentities($tarif_liste->lib_tarif, ENT_QUOTES, "UTF-8"); ?>
 				</option>
 				<?php
 				}

@@ -79,19 +79,19 @@ check_page_variables ($page_variables);
                                                                 <td style="text-align:right">Libell&eacute;:
                                                                 </td>
                                                                 <td>
-                                                                    <input type="text" disabled="disabled" value="<?php echo htmlentities($compte_bancaire->lib_compte);?>"  class="classinput_xsize"  />
-                                                                    <input name="lib_compte_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="lib_compte_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="hidden"  value="<?php echo htmlentities($compte_bancaire->lib_compte);?>"  class="classinput_xsize"  />
+                                                                    <input type="text" disabled="disabled" value="<?php echo htmlentities($compte_bancaire->lib_compte, ENT_QUOTES, "UTF-8");?>"  class="classinput_xsize"  />
+                                                                    <input name="lib_compte_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="lib_compte_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="hidden"  value="<?php echo htmlentities($compte_bancaire->lib_compte, ENT_QUOTES, "UTF-8");?>"  class="classinput_xsize"  />
                                                                 </td>
                                                                 <td style="text-align:right">Nom de la Banque:
                                                                 </td>
                                                                 <td>
-                                                                    <input name="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="hidden" value="<?php echo htmlentities($compte_bancaire->ref_contact);?>" />
-                                                                    <input name="ref_banque_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="ref_banque_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="hidden" value="<?php echo htmlentities($compte_bancaire->ref_banque);?>" />
+                                                                    <input name="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="hidden" value="<?php echo htmlentities($compte_bancaire->ref_contact, ENT_QUOTES, "UTF-8");?>" />
+                                                                    <input name="ref_banque_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="ref_banque_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="hidden" value="<?php echo htmlentities($compte_bancaire->ref_banque, ENT_QUOTES, "UTF-8");?>" />
                                                                     <input name="id_compte_bancaire" id="id_compte_bancaire" type="hidden" value="<?php echo $compte_bancaire->id_compte_bancaire;?>" />
                                                                     <table>
                                                                         <tr>
                                                                             <td>
-                                                                                <input name="nom_banque_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="nom_banque_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->nom_banque);?>"  class="classinput_xsize" readonly="readonly"/>
+                                                                                <input name="nom_banque_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="nom_banque_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->nom_banque, ENT_QUOTES, "UTF-8");?>"  class="classinput_xsize" readonly="readonly"/>
                                                                             </td>
                                                                         </tr>
                                                                     </table>
@@ -112,16 +112,16 @@ check_page_variables ($page_variables);
                                                                     <table style="width:100%" class="contactview_corps">
                                                                         <tr>
                                                                             <td style="width:25%; text-align:center"><span style="font-size:9px">Code banque</span><br />
-                                                                                <input name="code_banque_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="code_banque_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->code_banque);?>"  class="classinput_nsize" size="5" maxlength="5"/>
+                                                                                <input name="code_banque_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="code_banque_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->code_banque, ENT_QUOTES, "UTF-8");?>"  class="classinput_nsize" size="5" maxlength="5"/>
                                                                             </td>
                                                                             <td style="width:25%; text-align:center"><span style="font-size:9px">Code guichet</span><br />
-                                                                                <input name="code_guichet_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="code_guichet_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->code_guichet);?>"  class="classinput_nsize" size="5" maxlength="5"/>
+                                                                                <input name="code_guichet_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="code_guichet_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->code_guichet, ENT_QUOTES, "UTF-8");?>"  class="classinput_nsize" size="5" maxlength="5"/>
                                                                             </td>
                                                                             <td style="width:25%; text-align:center"><span style="font-size:9px">Num&eacute;ro de compte</span><br />
-                                                                                <input name="numero_compte_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="numero_compte_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->numero_compte);?>"  class="classinput_nsize" size="11" maxlength="11"/>
+                                                                                <input name="numero_compte_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="numero_compte_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->numero_compte, ENT_QUOTES, "UTF-8");?>"  class="classinput_nsize" size="11" maxlength="11"/>
                                                                             </td>
                                                                             <td style="width:25%; text-align:center"><span style="font-size:9px">Clef rib</span><br />
-                                                                                <input name="cle_rib_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="cle_rib_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->cle_rib);?>"  class="classinput_nsize" size="2" maxlength="2" />
+                                                                                <input name="cle_rib_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="cle_rib_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->cle_rib, ENT_QUOTES, "UTF-8");?>"  class="classinput_nsize" size="2" maxlength="2" />
                                                                             </td>
                                                                         </tr>
                                                                     </table>
@@ -133,12 +133,12 @@ check_page_variables ($page_variables);
                                                                 <td style="text-align:right">iban :
                                                                 </td>
                                                                 <td>
-                                                                    <input name="iban_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="iban_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->iban);?>"  class="classinput_nsize" size="28" />
+                                                                    <input name="iban_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="iban_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->iban, ENT_QUOTES, "UTF-8");?>"  class="classinput_nsize" size="28" />
                                                                 </td>
                                                                 <td style="text-align:right">swift:
                                                                 </td>
                                                                 <td>
-                                                                    <input name="swift_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="swift_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->swift);?>"  class="classinput_nsize" size="28" />
+                                                                    <input name="swift_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="swift_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->swift, ENT_QUOTES, "UTF-8");?>"  class="classinput_nsize" size="28" />
                                                                 </td>
                                                                 <td style="text-align:center">
                                                                     <input name="modifier_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="modifier_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />

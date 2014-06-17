@@ -108,7 +108,7 @@ if (count($_SESSION['stocks']) > 1) {
 					<tr>
 					<!-- libelle Stock principal -->
 						<td style="text-align:left;width:130px; padding-right:5px; " class="resume_stock_border_topright">
-						<?php echo htmlentities($stock_liste->getLib_stock()); ?>				</td>
+						<?php echo htmlentities($stock_liste->getLib_stock(), ENT_QUOTES, "UTF-8"); ?>				</td>
 						<!--		Haut de En stock				-->
 						<td style="text-align:center; width:80px;" class="resume_stock_border_topright">
 							<div style="text-align:center; display:block; position:relative; cursor:pointer" id="info_stock_qte_<?php echo $stock_liste->getId_stock ();?>"><?php	if ($article->getLot() == 2) {
@@ -162,7 +162,7 @@ if (count($_SESSION['stocks']) > 1) {
 									
 									<div style="text-align:left">
 									Détails des numéros de série en stock pour <?php echo $article->getLib_article();?><br />
-									<?php echo htmlentities($stock_liste->getLib_stock()); ?>: Quantité en stock: <?php if (isset($art_stocks[$stock_liste->getId_stock ()]->qte)) {
+									<?php echo htmlentities($stock_liste->getLib_stock(), ENT_QUOTES, "UTF-8"); ?>: Quantité en stock: <?php if (isset($art_stocks[$stock_liste->getId_stock ()]->qte)) {
 										echo qte_format($art_stocks[$stock_liste->getId_stock ()]->qte) ;
 										
 									} else {
@@ -221,7 +221,7 @@ if (count($_SESSION['stocks']) > 1) {
 									?>
 									<div style="text-align:left">
 									Détails des numéros de lots en stock pour <?php echo $article->getLib_article();?><br />
-									<?php echo htmlentities($stock_liste->getLib_stock()); ?>: <br>
+									<?php echo htmlentities($stock_liste->getLib_stock(), ENT_QUOTES, "UTF-8"); ?>: <br>
 									Quantité en stock: <?php if (isset($art_stocks[$stock_liste->getId_stock ()]->qte)) {
 								echo qte_format($art_stocks[$stock_liste->getId_stock ()]->qte) ;
 								
@@ -371,26 +371,26 @@ if (count($_SESSION['stocks']) > 1) {
 							$emplacement_article = "";
 							foreach ($article_stocks_alertes as $article_stock_alerte) {
 								if ($stock_liste->getId_stock() == $article_stock_alerte->id_stock) {
-									$emplacement_article = htmlentities($article_stock_alerte->emplacement);
+									$emplacement_article = htmlentities($article_stock_alerte->emplacement, ENT_QUOTES, "UTF-8");
 								} 
 							}
 							echo $emplacement_article;
 						 ?>"  class="classinput_xsize" size="5" style="text-align:center"/>
 						
-						<input type="hidden" name="emplacement_old_<?php echo htmlentities($stock_liste->getId_stock() );?>" id="emplacement_old_<?php echo htmlentities($stock_liste->getId_stock());?>" value="<?php
+						<input type="hidden" name="emplacement_old_<?php echo htmlentities($stock_liste->getId_stock() , ENT_QUOTES, "UTF-8");?>" id="emplacement_old_<?php echo htmlentities($stock_liste->getId_stock(), ENT_QUOTES, "UTF-8");?>" value="<?php
 							$emplacement_article = "";
 							foreach ($article_stocks_alertes as $article_stock_alerte) {
 								if ($stock_liste->getId_stock() == $article_stock_alerte->id_stock) {
-									$emplacement_article = htmlentities($article_stock_alerte->emplacement);
+									$emplacement_article = htmlentities($article_stock_alerte->emplacement, ENT_QUOTES, "UTF-8");
 								} 
 							}
 							echo $emplacement_article;
 						 ?>"  class="classinput_xsize"/> 
 							<SCRIPT type="text/javascript">
-								Event.observe("emplacement_stock_<?php echo htmlentities($stock_liste->getId_stock ());?>", "blur", function(evt){
-									if ($("emplacement_stock_<?php echo htmlentities($stock_liste->getId_stock ());?>").value != $("emplacement_old_<?php echo htmlentities($stock_liste->getId_stock ());?>").value) {
-									$("emplacement_old_<?php echo htmlentities($stock_liste->getId_stock ());?>").value = $("emplacement_stock_<?php echo htmlentities($stock_liste->getId_stock ());?>").value;
-									maj_emplacement_stock("<?php echo $article->getRef_article ();?>", "<?php echo $stock_liste->getId_stock ();?>", $("emplacement_stock_<?php echo htmlentities($stock_liste->getId_stock ());?>").value);
+								Event.observe("emplacement_stock_<?php echo htmlentities($stock_liste->getId_stock (), ENT_QUOTES, "UTF-8");?>", "blur", function(evt){
+									if ($("emplacement_stock_<?php echo htmlentities($stock_liste->getId_stock (), ENT_QUOTES, "UTF-8");?>").value != $("emplacement_old_<?php echo htmlentities($stock_liste->getId_stock (), ENT_QUOTES, "UTF-8");?>").value) {
+									$("emplacement_old_<?php echo htmlentities($stock_liste->getId_stock (), ENT_QUOTES, "UTF-8");?>").value = $("emplacement_stock_<?php echo htmlentities($stock_liste->getId_stock (), ENT_QUOTES, "UTF-8");?>").value;
+									maj_emplacement_stock("<?php echo $article->getRef_article ();?>", "<?php echo $stock_liste->getId_stock ();?>", $("emplacement_stock_<?php echo htmlentities($stock_liste->getId_stock (), ENT_QUOTES, "UTF-8");?>").value);
 									}
 								}, false);
 							</SCRIPT>
@@ -402,27 +402,27 @@ if (count($_SESSION['stocks']) > 1) {
 							?>
 							<!--	haut stock mini						-->
 							<td class="resume_stock_border_top">
-							<input type="text" name="stock_<?php echo htmlentities($stock_liste->getId_stock() );?>" id="stock_<?php echo htmlentities($stock_liste->getId_stock());?>" value="<?php
+							<input type="text" name="stock_<?php echo htmlentities($stock_liste->getId_stock() , ENT_QUOTES, "UTF-8");?>" id="stock_<?php echo htmlentities($stock_liste->getId_stock(), ENT_QUOTES, "UTF-8");?>" value="<?php
 							// Affichage du seuil d'alerte pour cet article dans ce stock
 							$seuil_exist = "0";
 							foreach ($article_stocks_alertes as $article_stock_alerte) {
-								if ($stock_liste->getId_stock() == $article_stock_alerte->id_stock) {$seuil_exist = htmlentities($article_stock_alerte->seuil_alerte);} 
+								if ($stock_liste->getId_stock() == $article_stock_alerte->id_stock) {$seuil_exist = htmlentities($article_stock_alerte->seuil_alerte, ENT_QUOTES, "UTF-8");} 
 							}
 							echo $seuil_exist;
 						 ?>"  class="classinput_nsize" size="5" style="text-align:center"/>
-							<input type="hidden" name="stock_old_<?php echo htmlentities($stock_liste->getId_stock() );?>" id="stock_old_<?php echo htmlentities($stock_liste->getId_stock());?>" value="<?php
+							<input type="hidden" name="stock_old_<?php echo htmlentities($stock_liste->getId_stock() , ENT_QUOTES, "UTF-8");?>" id="stock_old_<?php echo htmlentities($stock_liste->getId_stock(), ENT_QUOTES, "UTF-8");?>" value="<?php
 							$seuil_exist = "0";
 							foreach ($article_stocks_alertes as $article_stock_alerte) {
-								if ($stock_liste->getId_stock() == $article_stock_alerte->id_stock) {$seuil_exist = htmlentities($article_stock_alerte->seuil_alerte);} 
+								if ($stock_liste->getId_stock() == $article_stock_alerte->id_stock) {$seuil_exist = htmlentities($article_stock_alerte->seuil_alerte, ENT_QUOTES, "UTF-8");} 
 							}
 							echo $seuil_exist;
 						 ?>"  class="classinput_xsize"/>
 							<SCRIPT type="text/javascript">
-								Event.observe("stock_<?php echo htmlentities($stock_liste->getId_stock ());?>", "blur", function(evt){
+								Event.observe("stock_<?php echo htmlentities($stock_liste->getId_stock (), ENT_QUOTES, "UTF-8");?>", "blur", function(evt){
 									nummask(evt,"<?php echo $seuil_exist;?>", "X.X");
-									if ($("stock_<?php echo htmlentities($stock_liste->getId_stock ());?>").value != $("stock_old_<?php echo htmlentities($stock_liste->getId_stock ());?>").value) {
-									$("stock_old_<?php echo htmlentities($stock_liste->getId_stock ());?>").value = $("stock_<?php echo htmlentities($stock_liste->getId_stock ());?>").value;
-									maj_stock_alerte ("<?php echo $article->getRef_article ();?>", "<?php echo $stock_liste->getId_stock ();?>", $("stock_<?php echo htmlentities($stock_liste->getId_stock ());?>").value);
+									if ($("stock_<?php echo htmlentities($stock_liste->getId_stock (), ENT_QUOTES, "UTF-8");?>").value != $("stock_old_<?php echo htmlentities($stock_liste->getId_stock (), ENT_QUOTES, "UTF-8");?>").value) {
+									$("stock_old_<?php echo htmlentities($stock_liste->getId_stock (), ENT_QUOTES, "UTF-8");?>").value = $("stock_<?php echo htmlentities($stock_liste->getId_stock (), ENT_QUOTES, "UTF-8");?>").value;
+									maj_stock_alerte ("<?php echo $article->getRef_article ();?>", "<?php echo $stock_liste->getId_stock ();?>", $("stock_<?php echo htmlentities($stock_liste->getId_stock (), ENT_QUOTES, "UTF-8");?>").value);
 									}
 								}, false);
 							</SCRIPT>						 </td>
@@ -671,7 +671,7 @@ $i = 0;
 foreach ($_SESSION['stocks'] as $stock) {
 	?>
 	<li id="stock_move_<?php echo $i;?>">
-		<a href="#" id="stock_move_menu_<?php echo $i;?>" class="menu_<?php if ($stock->getId_stock() != $_SESSION['magasin']->getId_stock()) {echo "un";}?>select"><?php echo htmlentities($stock->getLib_stock());?></a>
+		<a href="#" id="stock_move_menu_<?php echo $i;?>" class="menu_<?php if ($stock->getId_stock() != $_SESSION['magasin']->getId_stock()) {echo "un";}?>select"><?php echo htmlentities($stock->getLib_stock(), ENT_QUOTES, "UTF-8");?></a>
 	</li>
 	<?php
 	$i++;

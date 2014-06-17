@@ -34,10 +34,10 @@ check_page_variables ($page_variables);
 					<td id="magasin_<?php echo $magasin->getId_magasin();?>" class="panneau_choix_pt_de_vente_cell" align="center">
 						<table cellpadding="0" cellspacing="0" border="0" width="100%" class="panneau_choix_pt_de_vente_cell_pt_de_vente">
 							<tr>
-								<td><?php echo htmlentities($magasin->getLib_enseigne()); ?></td>
+								<td><?php echo htmlentities($magasin->getLib_enseigne(), ENT_QUOTES, "UTF-8"); ?></td>
 							</tr>
 							<tr>
-								<td><?php echo htmlentities($magasin->getLib_magasin()); ?></td>
+								<td><?php echo htmlentities($magasin->getLib_magasin(), ENT_QUOTES, "UTF-8"); ?></td>
 							</tr>
 							<tr>
 								<td>&nbsp;</td>

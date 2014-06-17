@@ -43,7 +43,7 @@ Afficher prix:
 					if (isset($_REQUEST["id_tarif"])) {
 						if ($tarif_liste->id_tarif != $_REQUEST["id_tarif"]) { continue;}
 						if ($_REQUEST["id_tarif"] == $tarifs->id_tarif) {
-							echo htmlentities($tarif_liste->lib_tarif).": "; 
+							echo htmlentities($tarif_liste->lib_tarif, ENT_QUOTES, "UTF-8").": "; 
 							echo price_format($tarifs->pu_ht*$aff_taxation )."&nbsp;".$MONNAIE[2]." ".$mode_taxation;
 							$price_affi = true;
 							break;
@@ -51,7 +51,7 @@ Afficher prix:
 					} else {
 						if ($tarif_liste->id_tarif != $_SESSION['magasin']->getId_tarif()) { continue;}
 						if ($tarif_liste->id_tarif == $tarifs->id_tarif) {
-							echo htmlentities($tarif_liste->lib_tarif).": "; 
+							echo htmlentities($tarif_liste->lib_tarif, ENT_QUOTES, "UTF-8").": "; 
 							echo price_format($tarifs->pu_ht*$aff_taxation )."&nbsp;".$MONNAIE[2]." ".$mode_taxation;
 							$price_affi = true;
 							break;
@@ -79,7 +79,7 @@ foreach ($tarifs_liste as $tarif_liste) {
 	<a href="catalogue_articles_view_description.php?ref_article=<?php echo $article->getRef_article();?>&id_tarif=<?php echo $tarif_liste->id_tarif;?><?php 
 				if (isset($_REQUEST["aff_ht"])) { echo "&aff_ht=1"; }?><?php 
 				if (isset($_REQUEST["aff_qte"])) { echo "&aff_qte=".$_REQUEST["aff_qte"]; }?>" id="choix_grille_<?php echo $tarif_liste->id_tarif;?>" target="_top" style="cursor:pointer; width:99%">
-	<?php echo htmlentities($tarif_liste->lib_tarif); ?>
+	<?php echo htmlentities($tarif_liste->lib_tarif, ENT_QUOTES, "UTF-8"); ?>
 	<?php
 	foreach ($liste_tarifs as $tarifs) {
 		if ($tarif_liste->id_tarif == $tarifs->id_tarif) {

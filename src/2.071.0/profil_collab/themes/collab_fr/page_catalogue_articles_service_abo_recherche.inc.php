@@ -73,7 +73,7 @@ foreach ($_ALERTES as $alerte => $value) {
 								}
 								
 								?>
-								<option value="<?php echo $abonnement->ref_article;?>" <?php if ($article->getRef_article() == $abonnement->ref_article) { echo 'selected="selected"';}?>><?php echo htmlentities($abonnement->lib_article);?></option>
+								<option value="<?php echo $abonnement->ref_article;?>" <?php if ($article->getRef_article() == $abonnement->ref_article) { echo 'selected="selected"';}?>><?php echo htmlentities($abonnement->lib_article, ENT_QUOTES, "UTF-8");?></option>
 								<?php
 							}
 							?>
@@ -136,7 +136,7 @@ foreach ($_ALERTES as $alerte => $value) {
 							<option value="0">Toutes</option>
 							<?php 
 							foreach ($ANNUAIRE_CATEGORIES as $categorie) {?>
-							<option value="<?php echo $categorie->id_categorie?>"><?php echo htmlentities($categorie->lib_categorie)?></option>
+							<option value="<?php echo $categorie->id_categorie?>"><?php echo htmlentities($categorie->lib_categorie, ENT_QUOTES, "UTF-8")?></option>
 							<?php } ?>
 						</select>
 					</td>

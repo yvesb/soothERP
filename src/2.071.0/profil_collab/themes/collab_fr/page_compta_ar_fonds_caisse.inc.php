@@ -33,7 +33,7 @@ array_menu_v_ar[1] 	=	new Array('ar_validation', 'chemin_etape_1');
 <script type="text/javascript">
 Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); page.verify('compta_gestion2_caisse','compta_gestion2_caisse.php?id_caisse=<?php echo $_REQUEST["id_caisse"];?>','true','sub_content');}, false);
 </script>
-<div class="titre" style="padding-left:140px">Ajout / Retrait de fonds pour <?php echo htmlentities($compte_caisse->getLib_caisse()); ?>
+<div class="titre" style="padding-left:140px">Ajout / Retrait de fonds pour <?php echo htmlentities($compte_caisse->getLib_caisse(), ENT_QUOTES, "UTF-8"); ?>
 </div>
 
 
@@ -209,7 +209,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 			
 			</div>
 			<br />
-			<span id="type_ar_text"></span> de fonds pour <?php echo htmlentities($compte_caisse->getLib_caisse()); ?>
+			<span id="type_ar_text"></span> de fonds pour <?php echo htmlentities($compte_caisse->getLib_caisse(), ENT_QUOTES, "UTF-8"); ?>
 			<br />
 			<br />
 			<table width="780" border="0" cellspacing="0" cellpadding="0">

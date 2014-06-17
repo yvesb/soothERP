@@ -18,14 +18,14 @@
 			<td class="size_strict"><span class="labelled_ralonger">R&eacute;f&eacute;rence revendeur:</span>
 			</td>
 			<td>
-				<input name="identifiant_revendeur" id="identifiant_revendeur" type="text" class="classinput_xsize" value="<?php echo 		htmlentities($profils[$id_profil]->getIdentifiant_revendeur ()) ?>" />
+				<input name="identifiant_revendeur" id="identifiant_revendeur" type="text" class="classinput_xsize" value="<?php echo 		htmlentities($profils[$id_profil]->getIdentifiant_revendeur (), ENT_QUOTES, "UTF-8") ?>" />
 			</td>
 		</tr>
 		<tr>
 			<td class="size_strict"><span class="labelled_ralonger">Conditions de garantie:</span>
 			</td>
 			<td>
-				<textarea name="conditions_garantie" id="conditions_garantie" class="classinput_xsize"><?php echo htmlentities($profils[$id_profil]->getConditions_garantie ()) ?></textarea>
+				<textarea name="conditions_garantie" id="conditions_garantie" class="classinput_xsize"><?php echo htmlentities($profils[$id_profil]->getConditions_garantie (), ENT_QUOTES, "UTF-8") ?></textarea>
 			</td>
 		</tr>
 	</table>
@@ -43,14 +43,14 @@
 			<td class="size_strict"><span class="labelled_ralonger">R&eacute;f&eacute;rence revendeur:</span>
 			</td>
 			<td>
-			<a href="#" id="show6_identifiant_revendeur" class="modif_input1"><?php echo  htmlentities($profils[$id_profil]->getIdentifiant_revendeur ())?></a>
+			<a href="#" id="show6_identifiant_revendeur" class="modif_input1"><?php echo  htmlentities($profils[$id_profil]->getIdentifiant_revendeur (), ENT_QUOTES, "UTF-8")?></a>
 			</td>
 		</tr>
 		<tr>
 			<td class="size_strict"><span class="labelled_ralonger">Conditions de garantie:</span>
 			</td>
 			<td>
-			<a href="#" id="show6_conditions_garantie" class="modif_input1"><?php echo  nl2br(htmlentities($profils[$id_profil]->getConditions_garantie ()))?></a>
+			<a href="#" id="show6_conditions_garantie" class="modif_input1"><?php echo  nl2br(htmlentities($profils[$id_profil]->getConditions_garantie ()), ENT_QUOTES, "UTF-8")?></a>
 			</td>
 		</tr>
 		<tr>

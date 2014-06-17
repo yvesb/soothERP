@@ -110,11 +110,11 @@ update_menu_arbo();
 								</tr>	
 								<tr>
 									<td>
-									<input id="lib_comm_<?php echo $commission_regle->id_commission_regle; ?>" name="lib_comm_<?php echo $commission_regle->id_commission_regle; ?>" type="text" value="<?php echo htmlentities($commission_regle->lib_comm); ?>"  class="classinput_lsize"/>
+									<input id="lib_comm_<?php echo $commission_regle->id_commission_regle; ?>" name="lib_comm_<?php echo $commission_regle->id_commission_regle; ?>" type="text" value="<?php echo htmlentities($commission_regle->lib_comm, ENT_QUOTES, "UTF-8"); ?>"  class="classinput_lsize"/>
 									<input name="id_commission_regle" id="id_commission_regle" type="hidden" value="<?php echo $commission_regle->id_commission_regle; ?>" />
 									</td>
 									<td>
-									<input id="formule_comm_<?php echo $commission_regle->id_commission_regle; ?>" name="formule_comm_<?php echo $commission_regle->id_commission_regle; ?>" value="<?php echo htmlentities($commission_regle->formule_comm); ?>" type="hidden"  class="classinput_hsize"/>
+									<input id="formule_comm_<?php echo $commission_regle->id_commission_regle; ?>" name="formule_comm_<?php echo $commission_regle->id_commission_regle; ?>" value="<?php echo htmlentities($commission_regle->formule_comm, ENT_QUOTES, "UTF-8"); ?>" type="hidden"  class="classinput_hsize"/>
 									<div id="aff_formule_comm_<?php echo $commission_regle->id_commission_regle; ?>" style="cursor:pointer; text-decoration:underline;"><?php echo $commission_regle->formule_comm; ?></div>
 									</td>
 									<td>
@@ -140,7 +140,7 @@ update_menu_arbo();
 						Event.observe('liste_commission_sup_<?php echo $commission_regle->id_commission_regle; ?>', 'click',  function(evt){Event.stop(evt); alerte_sup_grille_tarif ('Suppression d\'une commission', 'Confirmez la suppression d\'une commission<br/>S&eacute;lectionnez une grille de commissionnement de remplacement s.v.p.<br /><select id="id_commission_regle_sup" name="id_commission_regle_sup" class="classinput_lsize"><option value=""></option><?php 
 											foreach ($liste_commissions_regles as $commission_regle_b) {
 												if ($commission_regle->id_commission_regle != $commission_regle_b->id_commission_regle) {
-												?><option value="<?php echo $commission_regle_b->id_commission_regle; ?>"><?php echo addslashes(htmlentities($commission_regle_b->lib_comm)); ?></option><?php 
+												?><option value="<?php echo $commission_regle_b->id_commission_regle; ?>"><?php echo addslashes(htmlentities($commission_regle_b->lib_comm, ENT_QUOTES, "UTF-8")); ?></option><?php 
 												}
 											}
 											?></select>', '<input type="submit" name="bouton1" id="bouton1" value="Confirmez la suppression" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />', 'commission_sup_<?php echo $commission_regle->id_commission_regle; ?>', 'id_commission_regle_sup', 'id_commission_regle_remplacement_<?php echo $commission_regle->id_commission_regle; ?>');		},false); 
@@ -336,7 +336,7 @@ update_menu_arbo();
 									<input name="defaut_commercial_categ_<?php echo $liste_categorie->id_commercial_categ; ?>"  type="checkbox" id="defaut_commercial_categ_<?php echo $liste_categorie->id_commercial_categ; ?>" value="1" <?php if ( $DEFAUT_ID_COMMERCIAL_CATEG == $liste_categorie->id_commercial_categ) { echo 'checked="checked"';} ?> alt="Catégorie par défaut" title="Catégorie par défaut" />
 									</td>
 									<td>
-									<input id="lib_commercial_categ_<?php echo $liste_categorie->id_commercial_categ; ?>" name="lib_commercial_categ_<?php echo $liste_categorie->id_commercial_categ; ?>" type="text" value="<?php echo htmlentities($liste_categorie->lib_commercial_categ); ?>"  class="classinput_lsize"/>
+									<input id="lib_commercial_categ_<?php echo $liste_categorie->id_commercial_categ; ?>" name="lib_commercial_categ_<?php echo $liste_categorie->id_commercial_categ; ?>" type="text" value="<?php echo htmlentities($liste_categorie->lib_commercial_categ, ENT_QUOTES, "UTF-8"); ?>"  class="classinput_lsize"/>
 						<input name="id_commercial_categ" id="id_commercial_categ" type="hidden" value="<?php echo $liste_categorie->id_commercial_categ; ?>" />
 									</td>
 									<td>
@@ -539,7 +539,7 @@ update_menu_arbo();
 									foreach ($liste_categories_commercial as $liste_categorie_commercial){
 										?>
 										<option value="<?php echo $liste_categorie_commercial->id_commercial_categ;?>" <?php if ($commerciaux->id_commercial_categ == $liste_categorie_commercial->id_commercial_categ) {echo 'selected="selected"'; }?>>
-										<?php echo htmlentities($liste_categorie_commercial->lib_commercial_categ)?></option>
+										<?php echo htmlentities($liste_categorie_commercial->lib_commercial_categ, ENT_QUOTES, "UTF-8")?></option>
 										<?php 
 									}?>
 									</select>

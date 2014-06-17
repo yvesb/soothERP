@@ -24,14 +24,14 @@ Event.observe("link_retour_contact", "click",  function(evt){Event.stop(evt); pa
 </script>
 <div class="titre" id="titre_crea_art">Extrait de compte de 
 <?php if (isset($profils[$CLIENT_ID_PROFIL] )){
-	echo htmlentities($_SESSION['profils'][$CLIENT_ID_PROFIL]->getLib_profil());
+	echo htmlentities($_SESSION['profils'][$CLIENT_ID_PROFIL]->getLib_profil(), ENT_QUOTES, "UTF-8");
 }
 ?>
 
 <?php if (isset($profils[$FOURNISSEUR_ID_PROFIL] )){
-	 echo htmlentities($_SESSION['profils'][$FOURNISSEUR_ID_PROFIL]->getLib_profil());
+	 echo htmlentities($_SESSION['profils'][$FOURNISSEUR_ID_PROFIL]->getLib_profil(), ENT_QUOTES, "UTF-8");
 }
-?> <?php echo htmlentities($contact->getNom())?>
+?> <?php echo htmlentities($contact->getNom(), ENT_QUOTES, "UTF-8")?>
 </div>
 <div >
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
@@ -47,7 +47,7 @@ Event.observe("link_retour_contact", "click",  function(evt){Event.stop(evt); pa
 				if ($exercice->date_fin < date("Y-m-d") && $exercice->etat_exercice) {
 					echo ' style="font-style:italic; color: #FF0000"';
 				}
-				?>><?php echo htmlentities($exercice->lib_exercice);?></option>
+				?>><?php echo htmlentities($exercice->lib_exercice, ENT_QUOTES, "UTF-8");?></option>
 				<?php
 			}
 			?>

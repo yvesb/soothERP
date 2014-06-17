@@ -230,24 +230,24 @@ foreach ($fiches as $fiche) {
 $colorise++;
 $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 ?>
-<tr class="<?php  echo  $class_colorise?>" id="result_renouv_stock_<?php echo htmlentities($fiche->ref_article)?>">
+<tr class="<?php  echo  $class_colorise?>" id="result_renouv_stock_<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>">
 	<td class="reference">
-		<a  href="#" id="link_art_ref_<?php echo htmlentities($fiche->ref_article)?>" style="display:block; width:100%">
-		<?php	if ($fiche->ref_interne!="") { echo htmlentities($fiche->ref_interne)."&nbsp;";}else{ echo htmlentities($fiche->ref_article)."&nbsp;";}?><br />
-		<?php	if ($fiche->ref_oem) { echo htmlentities($fiche->ref_oem)."&nbsp;";}?>		
+		<a  href="#" id="link_art_ref_<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">
+		<?php	if ($fiche->ref_interne!="") { echo htmlentities($fiche->ref_interne, ENT_QUOTES, "UTF-8")."&nbsp;";}else{ echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")."&nbsp;";}?><br />
+		<?php	if ($fiche->ref_oem) { echo htmlentities($fiche->ref_oem, ENT_QUOTES, "UTF-8")."&nbsp;";}?>		
 		</a>
 		<script type="text/javascript">
-		Event.observe("link_art_ref_<?php echo htmlentities($fiche->ref_article)?>", "click",  function(evt){Event.stop(evt); page.verify('catalogue_articles_view','index.php#'+escape('catalogue_articles_view.php?ref_article=<?php echo htmlentities($fiche->ref_article)?>'),'true','_blank');
+		Event.observe("link_art_ref_<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt); page.verify('catalogue_articles_view','index.php#'+escape('catalogue_articles_view.php?ref_article=<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>'),'true','_blank');
 		}, false);
 		</script>
 	</td>
 	<td>
-		<a  href="#" id="link_art_lib_<?php echo htmlentities($fiche->ref_article)?>" style="display:block; width:100%">
+		<a  href="#" id="link_art_lib_<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">
 		
-		<span class=""><?php echo nl2br(htmlentities($fiche->lib_article))?></span>
+		<span class=""><?php echo nl2br(htmlentities($fiche->lib_article, ENT_QUOTES, "UTF-8"))?></span>
 		</a>
 		<script type="text/javascript">
-		Event.observe("link_art_lib_<?php echo htmlentities($fiche->ref_article)?>", "click",  function(evt){Event.stop(evt); page.verify('catalogue_articles_view','index.php#'+escape('catalogue_articles_view.php?ref_article=<?php echo htmlentities($fiche->ref_article)?>'),'true','_blank');
+		Event.observe("link_art_lib_<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt); page.verify('catalogue_articles_view','index.php#'+escape('catalogue_articles_view.php?ref_article=<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>'),'true','_blank');
 		}, false);
 		</script>
 	</td>

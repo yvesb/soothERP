@@ -43,7 +43,7 @@ check_page_variables ($page_variables);
 				foreach ($liste_categories_fournisseur as $liste_categorie_fournisseur){
 					?>
 					<option value="<?php echo $liste_categorie_fournisseur->id_fournisseur_categ;?>" <?php if ($liste_categorie_fournisseur->id_fournisseur_categ == $DEFAUT_ID_FOURNISSEUR_CATEG) { echo 'selected="selected"';}?>>
-					<?php echo htmlentities($liste_categorie_fournisseur->lib_fournisseur_categ); ?></option>
+					<?php echo htmlentities($liste_categorie_fournisseur->lib_fournisseur_categ, ENT_QUOTES, "UTF-8"); ?></option>
 					<?php 
 				}
 				?>
@@ -72,7 +72,7 @@ check_page_variables ($page_variables);
 				foreach ($stocks_liste as $stock_liste){
 					?>
 					<option value="<?php echo $stock_liste->getId_stock();?>" <?php if ($stock_liste->getId_stock() == $DEFAUT_ID_STOCK_LIVRAISON) { echo 'selected="selected"';}?>>
-					<?php echo htmlentities($stock_liste->getLib_stock()); ?></option>
+					<?php echo htmlentities($stock_liste->getLib_stock(), ENT_QUOTES, "UTF-8"); ?></option>
 					<?php 
 				}
 				?>

@@ -58,7 +58,7 @@ update_menu_arbo();
 							<input name="id_type_groupe" id="id_type_groupe" type="hidden" value="<?php echo $document_type->id_type_groupe; ?>" />
 							</td>
 							<td>
-								<input type="text" id="lib_type_printed_<?php echo $document_type->id_type_doc; ?>" name="lib_type_printed_<?php echo $document_type->id_type_doc; ?>" class="classinput_lsize" value="<?php echo htmlentities($document_type->lib_type_printed); ?>" />
+								<input type="text" id="lib_type_printed_<?php echo $document_type->id_type_doc; ?>" name="lib_type_printed_<?php echo $document_type->id_type_doc; ?>" class="classinput_lsize" value="<?php echo htmlentities($document_type->lib_type_printed, ENT_QUOTES, "UTF-8"); ?>" />
 							</td>
 							<td>
 							<input type="checkbox" id="actif_<?php echo $document_type->id_type_doc; ?>" name="actif_<?php echo $document_type->id_type_doc; ?>" <?php if ($document_type->actif || $document_type->id_type_doc <= 8) { echo 'checked="checked"';}?> disabled="disabled" />

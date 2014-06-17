@@ -205,7 +205,7 @@ foreach ($histo_ventes as $histo_vente) {
 		<tr>
 			<td style="width:88px">
 			<div style="width:80px">
-				<?php echo htmlentities(date_Us_to_Fr($histo_vente->getDate_creation ()));?>
+				<?php echo htmlentities(date_Us_to_Fr($histo_vente->getDate_creation ()), ENT_QUOTES, "UTF-8");?>
 			</div>
 			</td>
 			<td >
@@ -221,7 +221,7 @@ foreach ($histo_ventes as $histo_vente) {
 			<a href="#" id ="<?php echo $histo_vente->getRef_doc();?>ctc" style="text-decoration:none; color:#000000"><?php echo $histo_vente->getNom_contact ();?>
 			</a>&nbsp;
 			<script type="text/javascript">
-				Event.observe('<?php echo $histo_vente->getRef_doc();?>ctc', 'click',  function(evt){ Event.stop(evt); window.open( "<?php echo $_ENV['CHEMIN_ABSOLU'].$_SESSION['profils'][$_SESSION['user']->getId_profil ()]->getDir_profil();?>#"+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($histo_vente->getRef_contact())?>'),'_blank');}, false);
+				Event.observe('<?php echo $histo_vente->getRef_doc();?>ctc', 'click',  function(evt){ Event.stop(evt); window.open( "<?php echo $_ENV['CHEMIN_ABSOLU'].$_SESSION['profils'][$_SESSION['user']->getId_profil ()]->getDir_profil();?>#"+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($histo_vente->getRef_contact(), ENT_QUOTES, "UTF-8")?>'),'_blank');}, false);
 			</script>
 			
 			</td>

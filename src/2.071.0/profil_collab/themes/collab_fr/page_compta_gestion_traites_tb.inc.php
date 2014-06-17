@@ -19,7 +19,7 @@ check_page_variables ($page_variables);
 </script>
 <div class="emarge"><br />
 
-<div class="titre" style=" padding-left:140px;"><?php echo htmlentities($compte_bancaire->getLib_compte()); ?> -  Tableau de bord
+<div class="titre" style=" padding-left:140px;"><?php echo htmlentities($compte_bancaire->getLib_compte(), ENT_QUOTES, "UTF-8"); ?> -  Tableau de bord
 </div>
 <div class="emarge" style="text-align:right" >
 <div  id="corps_gestion_compte_bancaire">

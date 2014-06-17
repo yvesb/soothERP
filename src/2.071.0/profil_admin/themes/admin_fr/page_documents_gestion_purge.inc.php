@@ -54,7 +54,7 @@ update_menu_arbo();
 							<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 						</tr>
 						<tr>
-							<td>Les <?php echo htmlentities($document_type->lib_type_doc); ?> annulé(e)s dont la date est antérieure au <?php echo date("d-m-Y" , mktime(0, 0, 0, date("m"), date("d")-(${"DUREE_AVANT_PURGE_ANNULE_".$document_type->code_doc}), date("Y")));?> vont être définitivement supprimé(e)s.
+							<td>Les <?php echo htmlentities($document_type->lib_type_doc, ENT_QUOTES, "UTF-8"); ?> annulé(e)s dont la date est antérieure au <?php echo date("d-m-Y" , mktime(0, 0, 0, date("m"), date("d")-(${"DUREE_AVANT_PURGE_ANNULE_".$document_type->code_doc}), date("Y")));?> vont être définitivement supprimé(e)s.
 							</td>
 							<td style="text-align:center">
 							

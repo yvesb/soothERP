@@ -55,7 +55,7 @@ check_page_variables ($page_variables);
 				<?php 
 				foreach ($types_liste as $type_liste) {
 					?>
-					<option value="<?php echo $type_liste->id_type_doc;?>" <?php if (isset($_REQUEST["id_type_doc"]) && $type_liste->id_type_doc == $_REQUEST["id_type_doc"]) { echo ' selected="selected"'; }?> ><?php echo htmlentities($type_liste->lib_type_doc);?></option>
+					<option value="<?php echo $type_liste->id_type_doc;?>" <?php if (isset($_REQUEST["id_type_doc"]) && $type_liste->id_type_doc == $_REQUEST["id_type_doc"]) { echo ' selected="selected"'; }?> ><?php echo htmlentities($type_liste->lib_type_doc, ENT_QUOTES, "UTF-8");?></option>
 					<?php 
 				}
 				?>
@@ -70,7 +70,7 @@ check_page_variables ($page_variables);
 				}
 					foreach ($stocks_liste as $stock_liste) {
 					?>
-				<option value="<?php echo $stock_liste->getId_stock (); ?>" <?php if (isset($_REQUEST["id_stock"]) && $_REQUEST["id_stock"] == $stock_liste->getId_stock ()) {?>selected="selected"<?php } ?>><?php echo htmlentities($stock_liste->getLib_stock()); ?></option>
+				<option value="<?php echo $stock_liste->getId_stock (); ?>" <?php if (isset($_REQUEST["id_stock"]) && $_REQUEST["id_stock"] == $stock_liste->getId_stock ()) {?>selected="selected"<?php } ?>><?php echo htmlentities($stock_liste->getLib_stock(), ENT_QUOTES, "UTF-8"); ?></option>
 				<?php }
 					?>
 			</select>			</td>

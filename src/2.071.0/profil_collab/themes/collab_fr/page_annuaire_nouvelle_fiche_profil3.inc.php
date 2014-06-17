@@ -101,7 +101,7 @@ check_page_variables ($page_variables);
 						</td><td>
 						<div id="sub_mod_<?php echo ($liste_fonction->id_fonction)?>">
 						<span id="mod_<?php echo ($liste_fonction->id_fonction)?>">
-						<?php echo htmlentities($liste_fonction->lib_fonction)?></span>
+						<?php echo htmlentities($liste_fonction->lib_fonction, ENT_QUOTES, "UTF-8")?></span>
 						</div>
 						</td> 
 						<td width="5px">
@@ -209,7 +209,7 @@ check_page_variables ($page_variables);
 				 	}
 					?>
 					<option value="<?php echo $payslist->id_pays?>" <?php if ($DEFAUT_ID_PAYS == $payslist->id_pays) {echo 'selected="selected"';}?>>
-					<?php echo htmlentities($payslist->pays)?></option>
+					<?php echo htmlentities($payslist->pays, ENT_QUOTES, "UTF-8")?></option>
 					<?php 
 				}
 				?>

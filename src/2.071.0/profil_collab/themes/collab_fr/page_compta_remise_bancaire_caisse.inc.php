@@ -35,7 +35,7 @@ array_menu_v_depot[3] 	=	new Array('depot_validation', 'chemin_etape_3');
 <script type="text/javascript">
 Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); page.verify('compta_gestion2_caisse','compta_gestion2_caisse.php?id_caisse=<?php echo $_REQUEST["id_caisse"];?>','true','sub_content');}, false);
 </script>
-<div class="titre" style="width:60%; padding-left:140px">Remise en banque depuis <?php echo htmlentities($compte_caisse->getLib_caisse()); ?>
+<div class="titre" style="width:60%; padding-left:140px">Remise en banque depuis <?php echo htmlentities($compte_caisse->getLib_caisse(), ENT_QUOTES, "UTF-8"); ?>
 </div>
 
 
@@ -572,7 +572,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 			
 			</div>
 			<br />
-			Remise en banque : <?php echo htmlentities($compte_caisse->getLib_caisse()); ?>  à destination de <span id="selected_bancaire_dest">
+			Remise en banque : <?php echo htmlentities($compte_caisse->getLib_caisse(), ENT_QUOTES, "UTF-8"); ?>  à destination de <span id="selected_bancaire_dest">
 			</span>
 			<br />
 			<br />

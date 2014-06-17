@@ -61,7 +61,7 @@ array_menu_r_contact[0] 	=	new Array('recherche_simple', 'menu_1');
 								}
 								
 								?>
-								<option value="<?php echo $consommation->ref_article;?>" <?php if ($article->getRef_article() == $consommation->ref_article) { echo 'selected="selected"';}?>><?php echo htmlentities($consommation->lib_article);?></option>
+								<option value="<?php echo $consommation->ref_article;?>" <?php if ($article->getRef_article() == $consommation->ref_article) { echo 'selected="selected"';}?>><?php echo htmlentities($consommation->lib_article, ENT_QUOTES, "UTF-8");?></option>
 								<?php
 							}
 							?>
@@ -80,7 +80,7 @@ array_menu_r_contact[0] 	=	new Array('recherche_simple', 'menu_1');
 					<input type="hidden" name="orderorder_s" id="orderorder_s" value="ASC" />
 					<input type="hidden" name="ref_article" id="ref_article" value="<?php echo $article->getRef_article();?>" />
 					<span class="labelled">Nom&nbsp;ou&nbsp;D&eacute;nomination:</span></td>
-					<td><input type="text" name="nom_s" id="nom_s" value="<?php if (isset($_REQUEST["acc_ref_contact"])) { echo htmlentities($_REQUEST["acc_ref_contact"]);}
+					<td><input type="text" name="nom_s" id="nom_s" value="<?php if (isset($_REQUEST["acc_ref_contact"])) { echo htmlentities($_REQUEST["acc_ref_contact"], ENT_QUOTES, "UTF-8");}
 	?>"   class="classinput_xsize"/></td>
 					<td></td>
 					<td></td>
@@ -94,7 +94,7 @@ array_menu_r_contact[0] 	=	new Array('recherche_simple', 'menu_1');
 							<?php 
 							foreach ($ANNUAIRE_CATEGORIES as $categorie) {
 								?>
-								<option value="<?php echo $categorie->id_categorie?>"><?php echo htmlentities($categorie->lib_categorie)?></option>
+								<option value="<?php echo $categorie->id_categorie?>"><?php echo htmlentities($categorie->lib_categorie, ENT_QUOTES, "UTF-8")?></option>
 								<?php
 							}
 							?>
@@ -133,7 +133,7 @@ array_menu_r_contact[0] 	=	new Array('recherche_simple', 'menu_1');
 						foreach ($liste_categories_client as $liste_categorie_client){
 							?>
 							<option value="<?php echo $liste_categorie_client->id_client_categ;?>" >
-							<?php echo htmlentities($liste_categorie_client->lib_client_categ); ?></option>
+							<?php echo htmlentities($liste_categorie_client->lib_client_categ, ENT_QUOTES, "UTF-8"); ?></option>
 							<?php 
 						}
 						?>

@@ -26,7 +26,7 @@ check_page_variables ($page_variables);
 	<table width="100%" border="0" cellspacing="0" cellpadding="0">
 		<tr>
 			<td style="vertical-align:top; padding-left:8px; padding-right:8px" width="650px">
-				<input type="text" name="nom_s" id="nom_s" class="input_rechercher_client" style="width: 98%" value="<?php if (isset($_REQUEST["acc_ref_contact"])) { echo htmlentities($_REQUEST["acc_ref_contact"]);}?>"/>
+				<input type="text" name="nom_s" id="nom_s" class="input_rechercher_client" style="width: 98%" value="<?php if (isset($_REQUEST["acc_ref_contact"])) { echo htmlentities($_REQUEST["acc_ref_contact"], ENT_QUOTES, "UTF-8");}?>"/>
 			</td>
 			<td>
 				<img  id="submit_s" name="submit_s" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_rechercher2.gif" alt="Rechercher" title="Rechercher" />

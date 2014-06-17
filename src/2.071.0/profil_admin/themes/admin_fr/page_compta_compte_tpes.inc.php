@@ -86,7 +86,7 @@ Event.observe("valider_cal", "click",  function(evt){
 	<?php 
 	foreach ($magasins_liste as $magasin_liste) {
 		?>
-		<option value="<?php echo $magasin_liste->getId_magasin(); ?>" <?php if ($magasin_liste->getId_magasin() == $id_magasin) {echo 'selected="selected"';}?>><?php echo htmlentities($magasin_liste->getLib_magasin()); ?></option>
+		<option value="<?php echo $magasin_liste->getId_magasin(); ?>" <?php if ($magasin_liste->getId_magasin() == $id_magasin) {echo 'selected="selected"';}?>><?php echo htmlentities($magasin_liste->getLib_magasin(), ENT_QUOTES, "UTF-8"); ?></option>
 		<?php 
 	}
 	?>
@@ -156,7 +156,7 @@ if (isset($id_magasin)) {
 						<?php 
 						foreach ($comptes_bancaires as $compte_bancaire) {
 							?>
-							<option value="<?php echo $compte_bancaire->id_compte_bancaire; ?>"><?php echo htmlentities($compte_bancaire->lib_compte); ?></option>
+							<option value="<?php echo $compte_bancaire->id_compte_bancaire; ?>"><?php echo htmlentities($compte_bancaire->lib_compte, ENT_QUOTES, "UTF-8"); ?></option>
 							<?php 
 						}
 						?>
@@ -168,7 +168,7 @@ if (isset($id_magasin)) {
 							<?php 
 							foreach ($magasins_liste as $magasin_liste) {
 								?>
-								<option value="<?php echo $magasin_liste->getId_magasin(); ?>" <?php if ($magasin_liste->getId_magasin() == $id_magasin) {echo 'selected="selected"';}?>><?php echo htmlentities($magasin_liste->getLib_magasin()); ?></option>
+								<option value="<?php echo $magasin_liste->getId_magasin(); ?>" <?php if ($magasin_liste->getId_magasin() == $id_magasin) {echo 'selected="selected"';}?>><?php echo htmlentities($magasin_liste->getLib_magasin(), ENT_QUOTES, "UTF-8"); ?></option>
 								<?php 
 							}
 							?>
@@ -271,14 +271,14 @@ if (isset($id_magasin)) {
 							</tr>	
 							<tr>
 								<td style="text-align:center">
-								<input name="lib_tpe_<?php echo $compte_tpes->id_compte_tpe;?>" id="lib_tpe_<?php echo $compte_tpes->id_compte_tpe;?>" type="text" value="<?php echo htmlentities($compte_tpes->lib_tpe);?>"  class="classinput_xsize"  />
+								<input name="lib_tpe_<?php echo $compte_tpes->id_compte_tpe;?>" id="lib_tpe_<?php echo $compte_tpes->id_compte_tpe;?>" type="text" value="<?php echo htmlentities($compte_tpes->lib_tpe, ENT_QUOTES, "UTF-8");?>"  class="classinput_xsize"  />
 								</td>
 								<td style="text-align:center">
 								<select id="id_compte_bancaire_<?php echo $compte_tpes->id_compte_tpe;?>" name="id_compte_bancaire_<?php echo $compte_tpes->id_compte_tpe;?>"  class="classinput_xsize" >
 								<?php 
 								foreach ($comptes_bancaires as $compte_bancaire) {
 									?>
-									<option value="<?php echo $compte_bancaire->id_compte_bancaire; ?>" <?php if ($compte_bancaire->id_compte_bancaire == $compte_tpes->id_compte_bancaire) {echo 'selected="selected"';}?>><?php echo htmlentities($compte_bancaire->lib_compte); ?></option>
+									<option value="<?php echo $compte_bancaire->id_compte_bancaire; ?>" <?php if ($compte_bancaire->id_compte_bancaire == $compte_tpes->id_compte_bancaire) {echo 'selected="selected"';}?>><?php echo htmlentities($compte_bancaire->lib_compte, ENT_QUOTES, "UTF-8"); ?></option>
 									<?php 
 								}
 								?>
@@ -290,7 +290,7 @@ if (isset($id_magasin)) {
 									<?php 
 									foreach ($magasins_liste as $magasin_liste) {
 										?>
-										<option value="<?php echo $magasin_liste->getId_magasin(); ?>" <?php if ($magasin_liste->getId_magasin() == $compte_tpes->id_magasin) {echo 'selected="selected"';}?>><?php echo htmlentities($magasin_liste->getLib_magasin()); ?></option>
+										<option value="<?php echo $magasin_liste->getId_magasin(); ?>" <?php if ($magasin_liste->getId_magasin() == $compte_tpes->id_magasin) {echo 'selected="selected"';}?>><?php echo htmlentities($magasin_liste->getLib_magasin(), ENT_QUOTES, "UTF-8"); ?></option>
 										<?php 
 									}
 									?>
@@ -301,7 +301,7 @@ if (isset($id_magasin)) {
 								foreach ($comptes_caisses as $compte_caisse) {
 									if ($compte_caisse->id_compte_tpe == $compte_tpes->id_compte_tpe) {
 									?>
-									<?php echo htmlentities($compte_caisse->lib_caisse);?><br />
+									<?php echo htmlentities($compte_caisse->lib_caisse, ENT_QUOTES, "UTF-8");?><br />
 									<?php
 									}
 								}

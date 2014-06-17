@@ -337,7 +337,7 @@ update_menu_arbo();
 					</tr>	
 					<tr>
 						<td>
-						<input id="lib_stock_<?php echo $stock_liste->id_stock; ?>" name="lib_stock_<?php echo $stock_liste->id_stock; ?>" type="text" value="<?php echo htmlentities($stock_liste->lib_stock); ?>"  class="classinput_lsize"/>
+						<input id="lib_stock_<?php echo $stock_liste->id_stock; ?>" name="lib_stock_<?php echo $stock_liste->id_stock; ?>" type="text" value="<?php echo htmlentities($stock_liste->lib_stock, ENT_QUOTES, "UTF-8"); ?>"  class="classinput_lsize"/>
 			<input name="id_stock" id="id_stock" type="hidden" value="<?php echo $stock_liste->id_stock; ?>" />
 							
 						</td>
@@ -352,9 +352,9 @@ update_menu_arbo();
 								?>
 								<option value="<?php echo $adresse_liste->ref_adresse?>" <?php if ($adresse_liste->ref_adresse	==	$stock_liste->ref_adr_stock) {echo 'selected="selected"';}?>>
 								<?php if ($adresse_liste->lib_adresse!=""){?>
-								<?php echo htmlentities($adresse_liste->lib_adresse);?>
+								<?php echo htmlentities($adresse_liste->lib_adresse, ENT_QUOTES, "UTF-8");?>
 								<?php } else {?>
-								<?php echo htmlentities($adresse_liste->text_adresse);?> - <?php echo $adresse_liste->code_postal;?> - <?php echo $adresse_liste->ville;?>
+								<?php echo htmlentities($adresse_liste->text_adresse, ENT_QUOTES, "UTF-8");?> - <?php echo $adresse_liste->code_postal;?> - <?php echo $adresse_liste->ville;?>
 								<?php }?>
 								</option>
 								<?php 
@@ -363,7 +363,7 @@ update_menu_arbo();
 							</select>
 						</td>
 						<td style="">
-						<input id="actif_<?php echo $stock_liste->id_stock; ?>" name="actif_<?php echo $stock_liste->id_stock; ?>" value="<?php echo htmlentities($stock_liste->actif); ?>" type="checkbox"  <?php if($stock_liste->actif==1){echo 'checked="checked"';}?>/>
+						<input id="actif_<?php echo $stock_liste->id_stock; ?>" name="actif_<?php echo $stock_liste->id_stock; ?>" value="<?php echo htmlentities($stock_liste->actif, ENT_QUOTES, "UTF-8"); ?>" type="checkbox"  <?php if($stock_liste->actif==1){echo 'checked="checked"';}?>/>
 						</td>
 						<td>
 							<p style="text-align:right">

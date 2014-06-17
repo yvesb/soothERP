@@ -121,7 +121,7 @@ switch($type_data) {
 											 echo number_format($CA, $TARIFS_NB_DECIMALES, ".", ""	)."&nbsp;".$MONNAIE[1];
 											 ?>
 											 </div>
-											<?php echo htmlentities($art_categ->lib_art_categ); if (!$art_categ->lib_art_categ) { echo "Pas de libellé";}?> 
+											<?php echo htmlentities($art_categ->lib_art_categ, ENT_QUOTES, "UTF-8"); if (!$art_categ->lib_art_categ) { echo "Pas de libellé";}?> 
 											</span>
 											</td>
 										</tr>

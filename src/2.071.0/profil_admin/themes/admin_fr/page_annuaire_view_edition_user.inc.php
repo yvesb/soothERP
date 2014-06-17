@@ -21,7 +21,7 @@
 			<tr>
 				<td class="size_strict">
 				<span class="labelled">Pseudo:</span></td><td>
-				<input id="user_pseudo<?php echo $caiu?>" name="user_pseudo<?php echo $caiu?>" type="text" class="classinput_xsize" value="<?php echo htmlentities($user->getPseudo())?>" />
+				<input id="user_pseudo<?php echo $caiu?>" name="user_pseudo<?php echo $caiu?>" type="text" class="classinput_xsize" value="<?php echo htmlentities($user->getPseudo(), ENT_QUOTES, "UTF-8")?>" />
 				</td>
 			</tr>
 			<tr>
@@ -49,7 +49,7 @@
 					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif"/ style="float:right" id="bt_coordonnee_choisie<?php echo $caiu?>">
 					<span id="lib_coordonnee_choisie<?php echo $caiu?>"><?php echo getLib_coordonnee($user->getRef_coord_user())?></span>
 				</div>
-				<input id="user_coord<?php echo $caiu?>" name="user_coord<?php echo $caiu?>" class="classinput_xsize" value="<?php echo htmlentities($user->getRef_coord_user());?>" type="hidden"/>
+				<input id="user_coord<?php echo $caiu?>" name="user_coord<?php echo $caiu?>" class="classinput_xsize" value="<?php echo htmlentities($user->getRef_coord_user(), ENT_QUOTES, "UTF-8");?>" type="hidden"/>
 				</td>
 			</tr>
 			<tr>
@@ -61,7 +61,7 @@
 					foreach ($langages as $langage){
 						?>
 						<option value="<?php echo $langage['id_langage']?>" <?php if ($user->getId_langage () == $langage['id_langage']) {echo 'selected="selected"';}?>>
-						<?php echo htmlentities($langage['lib_langage'])?></option>
+						<?php echo htmlentities($langage['lib_langage'], ENT_QUOTES, "UTF-8")?></option>
 						<?php 
 					}
 					?>
@@ -143,7 +143,7 @@
 				</table>
 				</div>
 				<?php if ($user->getPseudo()!="") {?>
-				<a href="#" id="link_user_pseudo<?php echo $caiu?>" class="modif_input2"><strong><?php echo  htmlentities($user->getPseudo())?></strong></a>
+				<a href="#" id="link_user_pseudo<?php echo $caiu?>" class="modif_input2"><strong><?php echo  htmlentities($user->getPseudo(), ENT_QUOTES, "UTF-8")?></strong></a>
 				<script type="text/javascript">
 				Event.observe("link_user_pseudo<?php echo $caiu?>", "click",  function(evt){Event.stop(evt); show_edit_form('annu_editon_user<?php echo $caiu?>', 'start_visible_<?php echo $caiu?>','user_pseudo<?php echo $caiu?>');}, false);
 				</script>
@@ -171,7 +171,7 @@
 				<div><a href="#" id="link2_annu_edition_user_suppression<?php echo $caiu?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
 				<script type="text/javascript">
 				Event.observe("link2_annu_edition_user_suppression<?php echo $caiu?>", "click",  function(evt){Event.stop(evt); alerte.confirm_supprimer('contact_user_supprime', 'annu_edition_user_suppression<?php echo $caiu?>');}, false);
-				Event.observe("more_det<?php echo $caiu?>", "click",  function(evt){Event.stop(evt); page.verify('utilisateur_detail','index.php#'+escape('utilisateur_details.php?ref_user=<?php echo htmlentities($user->getRef_user())?>'),'true','_blank')}, false);
+				Event.observe("more_det<?php echo $caiu?>", "click",  function(evt){Event.stop(evt); page.verify('utilisateur_detail','index.php#'+escape('utilisateur_details.php?ref_user=<?php echo htmlentities($user->getRef_user(), ENT_QUOTES, "UTF-8")?>'),'true','_blank')}, false);
 				</script>
 				</div>
 				</td>

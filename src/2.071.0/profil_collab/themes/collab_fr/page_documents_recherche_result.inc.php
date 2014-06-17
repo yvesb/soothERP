@@ -249,67 +249,67 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 	<input id="check_s_<?php echo $indentation;?>" name="check_s_<?php echo $indentation;?>" type="checkbox" value="<?php	if ($fiche->ref_doc) { echo ($fiche->ref_doc);}?>"/>
 	</td>
 	<td class="reference">
-		<a  href="#" id="link_ref_doc_<?php echo htmlentities($fiche->ref_doc)?>" style="display:block; width:100%">
-		<?php	if ($fiche->ref_doc) { echo htmlentities($fiche->ref_doc)."&nbsp;";}?>		
+		<a  href="#" id="link_ref_doc_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">
+		<?php	if ($fiche->ref_doc) { echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")."&nbsp;";}?>		
 		</a>
 	<script type="text/javascript">
-	Event.observe("link_ref_doc_<?php echo htmlentities($fiche->ref_doc)?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','documents_edition.php?ref_doc=<?php echo htmlentities($fiche->ref_doc)?>','true','sub_content');}, false);
+	Event.observe("link_ref_doc_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','documents_edition.php?ref_doc=<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>','true','sub_content');}, false);
 	</script>
 	</td>
 	<td>
-		<a  href="#" id="link_type_doc_<?php echo htmlentities($fiche->ref_doc)?>" style="display:block; width:100%">
-		<span class="r_doc_lib"><?php echo nl2br(htmlentities($fiche->lib_type_doc))?></span>
+		<a  href="#" id="link_type_doc_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">
+		<span class="r_doc_lib"><?php echo nl2br(htmlentities($fiche->lib_type_doc, ENT_QUOTES, "UTF-8"))?></span>
 		</a>
 	<script type="text/javascript">
-	Event.observe("link_type_doc_<?php echo htmlentities($fiche->ref_doc)?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','documents_edition.php?ref_doc=<?php echo htmlentities($fiche->ref_doc)?>','true','sub_content');}, false);
+	Event.observe("link_type_doc_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','documents_edition.php?ref_doc=<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>','true','sub_content');}, false);
 	</script>
 	</td>
 	<td style="text-align:center">
-		<a  href="#" id="link_etat_doc_<?php echo htmlentities($fiche->ref_doc)?>" style="display:block; width:100%">
-		<?php	if ($fiche->lib_etat_doc) { echo htmlentities($fiche->lib_etat_doc); }?>&nbsp;
+		<a  href="#" id="link_etat_doc_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">
+		<?php	if ($fiche->lib_etat_doc) { echo htmlentities($fiche->lib_etat_doc, ENT_QUOTES, "UTF-8"); }?>&nbsp;
 		</a>
 	<script type="text/javascript">
-	Event.observe("link_etat_doc_<?php echo htmlentities($fiche->ref_doc)?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','documents_edition.php?ref_doc=<?php echo htmlentities($fiche->ref_doc)?>','true','sub_content');}, false);
+	Event.observe("link_etat_doc_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','documents_edition.php?ref_doc=<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>','true','sub_content');}, false);
 	</script>
 	</td>
 	<td style="text-align:left">
-		<a  href="#" id="link_contact_doc_<?php echo htmlentities($fiche->ref_doc)?>" style="display:block; width:100%" alt="<?php	if ($fiche->nom_contact) { echo str_replace("€", "&euro;", $fiche->nom_contact); }?>" title="<?php	if ($fiche->nom_contact) { echo ($fiche->nom_contact); }?>">
+		<a  href="#" id="link_contact_doc_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%" alt="<?php	if ($fiche->nom_contact) { echo str_replace("€", "&euro;", $fiche->nom_contact); }?>" title="<?php	if ($fiche->nom_contact) { echo ($fiche->nom_contact); }?>">
 		<?php	if ($fiche->nom_contact) { echo str_replace("€", "&euro;", substr($fiche->nom_contact, 0, 38)); }?>&nbsp;
 		</a>
 	<script type="text/javascript">
-	Event.observe("link_contact_doc_<?php echo htmlentities($fiche->ref_doc)?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','documents_edition.php?ref_doc=<?php echo htmlentities($fiche->ref_doc)?>','true','sub_content');}, false);
+	Event.observe("link_contact_doc_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','documents_edition.php?ref_doc=<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>','true','sub_content');}, false);
 	</script>
 	</td>
 <!-- Ajout Référence Externe -->
 	<td style="text-align:left">
-		<a  href="#" id="link_ref_externe_doc_<?php echo htmlentities($fiche->ref_doc)?>" style="display:block; width:100%">
-		<?php	if (isset($fiche->ref_doc_externe)) { echo htmlentities($fiche->ref_doc_externe)."&nbsp;";}?>
+		<a  href="#" id="link_ref_externe_doc_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">
+		<?php	if (isset($fiche->ref_doc_externe)) { echo htmlentities($fiche->ref_doc_externe, ENT_QUOTES, "UTF-8")."&nbsp;";}?>
 		</a>
 	<script type="text/javascript">
-	Event.observe("link_ref_externe_doc_<?php echo htmlentities($fiche->ref_doc)?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','documents_edition.php?ref_doc=<?php echo htmlentities($fiche->ref_doc)?>','true','sub_content');}, false);
+	Event.observe("link_ref_externe_doc_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','documents_edition.php?ref_doc=<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>','true','sub_content');}, false);
 	</script>
 	</td>
 <!-- // Référence Externe -->
 	<td style="text-align:right; padding-right:5px">
-		<a  href="#" id="link_montant_doc_<?php echo htmlentities($fiche->ref_doc)?>" style="display:block; width:100%">
+		<a  href="#" id="link_montant_doc_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">
 		<?php	if ($fiche->montant_ttc) { echo number_format($fiche->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[1]; $montant_total_page +=$fiche->montant_ttc; }?>&nbsp;
 		</a>
 	<script type="text/javascript">
-	Event.observe("link_montant_doc_<?php echo htmlentities($fiche->ref_doc)?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','documents_edition.php?ref_doc=<?php echo htmlentities($fiche->ref_doc)?>','true','sub_content');}, false);
+	Event.observe("link_montant_doc_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','documents_edition.php?ref_doc=<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>','true','sub_content');}, false);
 	</script>
 	</td>
 	<td style="text-align:center">
-		<a  href="#" id="link_date_doc_<?php echo htmlentities($fiche->ref_doc)?>" style="display:block; width:100%">
-		<?php	if ($fiche->date_doc) { echo htmlentities(date_Us_to_Fr($fiche->date_doc)); }?>&nbsp;
+		<a  href="#" id="link_date_doc_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">
+		<?php	if ($fiche->date_doc) { echo htmlentities(date_Us_to_Fr($fiche->date_doc), ENT_QUOTES, "UTF-8"); }?>&nbsp;
 		</a>
 	<script type="text/javascript">
-	Event.observe("link_date_doc_<?php echo htmlentities($fiche->ref_doc)?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','documents_edition.php?ref_doc=<?php echo htmlentities($fiche->ref_doc)?>','true','sub_content');}, false);
+	Event.observe("link_date_doc_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','documents_edition.php?ref_doc=<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>','true','sub_content');}, false);
 	</script>
 	</td>
 	<td style="vertical-align:middle; text-align:center">
-	<a  href="#" id="link_edit_doc_<?php echo htmlentities($fiche->ref_doc)?>" style="display:block; width:100%; text-decoration:underline">Editer</a>
+	<a  href="#" id="link_edit_doc_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%; text-decoration:underline">Editer</a>
 	<script type="text/javascript">
-	Event.observe("link_edit_doc_<?php echo htmlentities($fiche->ref_doc)?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','index.php#'+escape('documents_edition.php?ref_doc=<?php echo htmlentities($fiche->ref_doc)?>'),'true','_blank');}, false);
+	Event.observe("link_edit_doc_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','index.php#'+escape('documents_edition.php?ref_doc=<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>'),'true','_blank');}, false);
 	</script>
 	</td>
 	<td style="vertical-align:middle; text-align:center">

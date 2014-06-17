@@ -35,7 +35,7 @@ check_page_variables ($page_variables);
 		?>
 		<tr> 
 			<td style="font-weight:bolder; text-align:left" colspan="2">Détail des résultats commerciaux - 
-				<a href="index.php#annuaire_view_fiche.php?ref_contact=<?php echo $commercial->ref_contact;?>" target="_blank" class="common_link" ><?php echo htmlentities($commercial->nom); ?></a>
+				<a href="index.php#annuaire_view_fiche.php?ref_contact=<?php echo $commercial->ref_contact;?>" target="_blank" class="common_link" ><?php echo htmlentities($commercial->nom, ENT_QUOTES, "UTF-8"); ?></a>
 				
 			</td>
 			<td style="font-weight:bolder; text-align:right; color:#999999; ">

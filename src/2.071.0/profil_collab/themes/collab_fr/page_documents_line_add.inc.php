@@ -64,14 +64,14 @@ if (isset($_INFOS['new_lines']) && !$document->getQuantite_locked ()) {
 													//	print_r ($doc_line);
 												foreach ($doc_line[$j] as $variable => $valeur) {
 													if (!is_array ($valeur)) {
-														echo $variable.': "'.addslashes(str_replace (CHR(13), "" ,str_replace (CHR(10), "" ,preg_replace ("#((\r\n)+)#", "", nl2br(htmlentities(str_replace ("€" ,"¤" , $valeur))))))).'",';
+														echo $variable.': "'.addslashes(str_replace (CHR(13), "" ,str_replace (CHR(10), "" ,preg_replace ("#((\r\n)+)#", "", nl2br(htmlentities(str_replace ("€" ,"¤" , $valeur)), ENT_QUOTES, "UTF-8"))))).'",';
 													} else {
 														echo $variable.':"';
 														foreach ($valeur as $sn_liste) {
 															if (is_string($sn_liste)) {
-																echo addslashes(str_replace (CHR(13), "" ,str_replace (CHR(10), "" ,preg_replace ("#((\r\n)+)#", "", nl2br(htmlentities($sn_liste)))))).';';
+																echo addslashes(str_replace (CHR(13), "" ,str_replace (CHR(10), "" ,preg_replace ("#((\r\n)+)#", "", nl2br(htmlentities($sn_liste, ENT_QUOTES, "UTF-8")))))).';';
 															} else {
-																echo addslashes(str_replace (CHR(13), "" ,str_replace (CHR(10), "" ,preg_replace ("#((\r\n)+)#", "", nl2br(htmlentities($sn_liste->numero_serie)))))).';';
+																echo addslashes(str_replace (CHR(13), "" ,str_replace (CHR(10), "" ,preg_replace ("#((\r\n)+)#", "", nl2br(htmlentities($sn_liste->numero_serie, ENT_QUOTES, "UTF-8")))))).';';
 															}
 														}
 														echo '",';
@@ -126,7 +126,7 @@ if (isset($_INFOS['new_lines']) && !$document->getQuantite_locked ()) {
 													parameters: {<?php
 													foreach ($doc_line[$k] as $variable => $valeur) {
 														if (!is_array ($valeur)) {
-															echo $variable.': "'.addslashes(str_replace (CHR(13), "" ,str_replace (CHR(10), "" ,preg_replace ("#((\r\n)+)#", "", nl2br(htmlentities($valeur)))))).'",';
+															echo $variable.': "'.addslashes(str_replace (CHR(13), "" ,str_replace (CHR(10), "" ,preg_replace ("#((\r\n)+)#", "", nl2br(htmlentities($valeur, ENT_QUOTES, "UTF-8")))))).'",';
 														}
 													}
 													?> indentation_contenu: indentation_contenu, id_type_doc: '<?php echo $document->getID_TYPE_DOC()?>', ref_doc: $("ref_doc").value },

@@ -28,7 +28,7 @@ $solde = $totaux_theoriques;
 <script type="text/javascript">
 Event.observe("link_retour_tp", "click",  function(evt){Event.stop(evt); page.verify('compta_gestion2_terminaux','compta_gestion2_terminaux.php?<?php echo $retour_var;?>','true','sub_content');}, false);
 </script>
-<div class="titre" style="width:60%; padding-left:140px"><?php echo htmlentities($compte_tp->getLib_tp()); ?> -  Remise à zéro
+<div class="titre" style="width:60%; padding-left:140px"><?php echo htmlentities($compte_tp->getLib_tp(), ENT_QUOTES, "UTF-8"); ?> -  Remise à zéro
 </div>
 <div class="emarge" style="text-align:right" >
 <div  id="corps_gestion_tps">

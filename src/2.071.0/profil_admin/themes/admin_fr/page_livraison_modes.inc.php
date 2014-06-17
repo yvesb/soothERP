@@ -163,9 +163,9 @@ if ($livraison_modes) {
 							</td>
 							<td>
 							<input name="ref_article_<?php echo $livraison_mode->id_livraison_mode;?>" id="ref_article_<?php echo $livraison_mode->id_livraison_mode;?>" type="hidden" value="<?php echo ($livraison_mode->ref_article);?>" />
-							<input name="ref_transporteur_<?php echo $livraison_mode->id_livraison_mode;?>" id="ref_transporteur_<?php echo $livraison_mode->id_livraison_mode;?>" type="hidden" value="<?php echo htmlentities($livraison_mode->article->getRef_constructeur ());?>" />
+							<input name="ref_transporteur_<?php echo $livraison_mode->id_livraison_mode;?>" id="ref_transporteur_<?php echo $livraison_mode->id_livraison_mode;?>" type="hidden" value="<?php echo htmlentities($livraison_mode->article->getRef_constructeur (), ENT_QUOTES, "UTF-8");?>" />
 							<input name="id_livraison_mode" id="id_livraison_mode" type="hidden" value="<?php echo $livraison_mode->id_livraison_mode;?>" />
-							<input name="abrev_livraison_mode_<?php echo $livraison_mode->id_livraison_mode;?>" id="abrev_livraison_mode_<?php echo $livraison_mode->id_livraison_mode;?>" type="text" value="<?php echo htmlentities($livraison_mode->article->getLib_ticket ());?>" class="classinput_xsize" />
+							<input name="abrev_livraison_mode_<?php echo $livraison_mode->id_livraison_mode;?>" id="abrev_livraison_mode_<?php echo $livraison_mode->id_livraison_mode;?>" type="text" value="<?php echo htmlentities($livraison_mode->article->getLib_ticket (), ENT_QUOTES, "UTF-8");?>" class="classinput_xsize" />
 							</td>
 							<td>
 							<table cellpadding="0" cellspacing="0" border="0">

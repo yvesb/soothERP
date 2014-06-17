@@ -31,7 +31,7 @@ array_menu_v_traitena[2] 	=	new Array('traitena_validation', 'chemin_etape_2');
 <script type="text/javascript">
 Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); page.verify('compta_gestion_traites_prelev_tb','compta_gestion_traites_prelev_tb.php?id_compte_bancaire=<?php echo $id_compte_bancaire;?>','true','sub_content');}, false);
 </script>
-<div class="titre" style="width:60%; padding-left:140px">Traites vers <?php echo htmlentities($compte_bancaire->getLib_compte()); ?>
+<div class="titre" style="width:60%; padding-left:140px">Traites vers <?php echo htmlentities($compte_bancaire->getLib_compte(), ENT_QUOTES, "UTF-8"); ?>
 </div>
 
 
@@ -341,8 +341,8 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 
 			<span style="width:250px; float:left">
 			Compte bancaire de destination:</span>
-			<?php echo htmlentities($compte_bancaire->getLib_compte()); ?>
-                        <input type="hidden" id="id_compte_bancaire_destination" name="id_compte_bancaire_destination" value="<?php echo htmlentities($compte_bancaire->getId_compte_bancaire()); ?>"/>
+			<?php echo htmlentities($compte_bancaire->getLib_compte(), ENT_QUOTES, "UTF-8"); ?>
+                        <input type="hidden" id="id_compte_bancaire_destination" name="id_compte_bancaire_destination" value="<?php echo htmlentities($compte_bancaire->getId_compte_bancaire(), ENT_QUOTES, "UTF-8"); ?>"/>
 			</div>
 
 
@@ -376,7 +376,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 
 			</div>
 			<br />
-			Traites vers <?php echo htmlentities($compte_bancaire->getLib_compte()); ?>
+			Traites vers <?php echo htmlentities($compte_bancaire->getLib_compte(), ENT_QUOTES, "UTF-8"); ?>
 			</span>
 			<br />
 			<br />

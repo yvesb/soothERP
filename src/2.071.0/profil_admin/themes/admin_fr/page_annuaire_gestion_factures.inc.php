@@ -43,7 +43,7 @@ if ($liste_relance_modele) {
 	<?php 
 	foreach ($liste_relance_modele as $modele) {
 		?>
-		<option value="<?php echo $modele->id_relance_modele; ?>" <?php if ($modele->id_relance_modele == $id_relance_modele) {echo 'selected="selected"'; $choix_select = true; }?>><?php echo htmlentities($modele->lib_relance_modele); ?></option>
+		<option value="<?php echo $modele->id_relance_modele; ?>" <?php if ($modele->id_relance_modele == $id_relance_modele) {echo 'selected="selected"'; $choix_select = true; }?>><?php echo htmlentities($modele->lib_relance_modele, ENT_QUOTES, "UTF-8"); ?></option>
 		<?php 
 	}
 	?>
@@ -104,7 +104,7 @@ if ($liste_relance_modele) {
 										<div class="caract_table" style="padding-bottom:6px;padding-top:6px;padding-left:2px;padding-left:2px;padding-right:3px;border-right:hidden;">
 										<input name="id_niveau_relance" id="id_niveau_relance" type="hidden" value="<?php echo $niveau_relance->id_niveau_relance;?>"/>
 										<input name="id_client_categ_<?php echo $niveau_relance->id_niveau_relance;?>" id="id_client_categ_<?php echo $niveau_relance->id_niveau_relance;?>" type="hidden" value="<?php echo $id_relance_modele ;?>" />
-										<input name="lib_niveau_relance_<?php echo $niveau_relance->id_niveau_relance;?>" id="lib_niveau_relance_<?php echo $niveau_relance->id_niveau_relance;?>" type="text" value="<?php echo htmlentities($niveau_relance->lib_niveau_relance);?>"  class="classinput_lsize" readonly="readonly" style="background-color: #DDDEEE" />
+										<input name="lib_niveau_relance_<?php echo $niveau_relance->id_niveau_relance;?>" id="lib_niveau_relance_<?php echo $niveau_relance->id_niveau_relance;?>" type="text" value="<?php echo htmlentities($niveau_relance->lib_niveau_relance, ENT_QUOTES, "UTF-8");?>"  class="classinput_lsize" readonly="readonly" style="background-color: #DDDEEE" />
 										</div>
 										</td>
 										<td>
@@ -112,7 +112,7 @@ if ($liste_relance_modele) {
 										<table cellpadding="0" cellspacing="0" border="0">
 											<tr>
 												<td style="width:70px">
-												<input name="delai_before_next_<?php echo $niveau_relance->id_niveau_relance;?>" id="delai_before_next_<?php echo $niveau_relance->id_niveau_relance;?>" type="text" value="<?php echo htmlentities($niveau_relance->delai_before_next);?>"  class="classinput_nsize" size="5" />
+												<input name="delai_before_next_<?php echo $niveau_relance->id_niveau_relance;?>" id="delai_before_next_<?php echo $niveau_relance->id_niveau_relance;?>" type="text" value="<?php echo htmlentities($niveau_relance->delai_before_next, ENT_QUOTES, "UTF-8");?>"  class="classinput_nsize" size="5" />
 												<script type="text/javascript">
 												Event.observe("delai_before_next_<?php echo $niveau_relance->id_niveau_relance;?>" , "change", function(evt){
 															maj_delai_before_next ($("delai_before_next_<?php echo $niveau_relance->id_niveau_relance;?>").value, <?php echo $niveau_relance->id_niveau_relance;?>, <?php echo $niveau_relance->id_relance_modele;?>);
@@ -132,7 +132,7 @@ if ($liste_relance_modele) {
 											<?php 
 											 foreach ($editions_modes as $edition_mode) {
 												?>
-												<option value="<?php echo $edition_mode->id_edition_mode;?>" <?php if ($edition_mode->id_edition_mode == $niveau_relance->id_edition_mode) {echo 'selected="selected"';}?>><?php echo  htmlentities($edition_mode->lib_edition_mode);?></option>
+												<option value="<?php echo $edition_mode->id_edition_mode;?>" <?php if ($edition_mode->id_edition_mode == $niveau_relance->id_edition_mode) {echo 'selected="selected"';}?>><?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?></option>
 												<?php
 												}
 											?>
@@ -149,7 +149,7 @@ if ($liste_relance_modele) {
 										<table cellpadding="0" cellspacing="0" border="0">
 											<tr>
 												<td style="width:50px">
-												<input name="montant_min_<?php echo $niveau_relance->id_niveau_relance;?>" id="montant_min_<?php echo $niveau_relance->id_niveau_relance;?>" type="text" value="<?php echo htmlentities($niveau_relance->montant_mini);?>"  class="classinput_nsize" size="3" />
+												<input name="montant_min_<?php echo $niveau_relance->id_niveau_relance;?>" id="montant_min_<?php echo $niveau_relance->id_niveau_relance;?>" type="text" value="<?php echo htmlentities($niveau_relance->montant_mini, ENT_QUOTES, "UTF-8");?>"  class="classinput_nsize" size="3" />
 												&nbsp;&euro;
 												</td>
 												<script type="text/javascript">

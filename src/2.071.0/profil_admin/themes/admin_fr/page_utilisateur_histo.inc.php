@@ -47,7 +47,7 @@ update_menu_arbo();
 					<input type="hidden" name="orderby_s" id="orderby_s" value="date" />
 					<input type="hidden" name="orderorder_s" id="orderorder_s" value="DESC" />
 					<span class="labelled">Nom&nbsp;ou&nbsp;D&eacute;nomination:</span></td>
-					<td><input type="text" name="nom_s" id="nom_s" value="<?php if (isset($_REQUEST["acc_ref_contact"])) { echo htmlentities($_REQUEST["acc_ref_contact"]);}
+					<td><input type="text" name="nom_s" id="nom_s" value="<?php if (isset($_REQUEST["acc_ref_contact"])) { echo htmlentities($_REQUEST["acc_ref_contact"], ENT_QUOTES, "UTF-8");}
 	?>"   class="classinput_xsize"/></td>
 					<td></td>
 					<td></td>

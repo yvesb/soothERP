@@ -11,24 +11,24 @@ foreach ($coordonnees as $coordonnee) {
 		<?php 
 		if ($coordonnee->getLib_coord()!="") {
 			?>
-			<strong><?php echo  htmlentities($coordonnee->getLib_coord())?></strong><br />
+			<strong><?php echo  htmlentities($coordonnee->getLib_coord(), ENT_QUOTES, "UTF-8")?></strong><br />
 			<?php 
 		}
 		if ($coordonnee->getTel1()!="") {
 			?>
-			<span style="float: right;text-align:right"><?php echo  htmlentities($coordonnee->getTel1())?></span>
+			<span style="float: right;text-align:right"><?php echo  htmlentities($coordonnee->getTel1(), ENT_QUOTES, "UTF-8")?></span>
 			T&eacute;l&nbsp;1: <br />
 			<?php 
 		}
 		if ($coordonnee->getTel2()!="") {
 			?>
-			<span style="float: right;text-align:right"> <?php echo  htmlentities($coordonnee->getTel2())?></span>
+			<span style="float: right;text-align:right"> <?php echo  htmlentities($coordonnee->getTel2(), ENT_QUOTES, "UTF-8")?></span>
 			T&eacute;l&nbsp;2:<br />
 			<?php 
 		}
 		if ($coordonnee->getEmail()!="") {
 			?>
-			<span style="float: right;text-align:right"> <?php echo  htmlentities(substr($coordonnee->getEmail(),0 ,15))?></span>
+			<span style="float: right;text-align:right"> <?php echo  htmlentities(substr($coordonnee->getEmail(),0 ,15), ENT_QUOTES, "UTF-8")?></span>
 			Email:<br />
 			<?php 
 		}
@@ -36,7 +36,7 @@ foreach ($coordonnees as $coordonnee) {
 		<?php 
 		if ($coordonnee->getFax()!="") {
 			?>
-			<span style="float: right;text-align:right"> <?php echo  htmlentities($coordonnee->getFax())?></span>
+			<span style="float: right;text-align:right"> <?php echo  htmlentities($coordonnee->getFax(), ENT_QUOTES, "UTF-8")?></span>
 			Fax:<br />
 			<?php
 		}
@@ -59,7 +59,7 @@ foreach ($coordonnees as $coordonnee) {
 		
 		Event.observe("li_choix_coord_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>", "mouseover",  function(){changeclassname ("li_choix_coord_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>", "complete_coordonnee_hover");}, false);
 		
-		Event.observe("li_choix_coord_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>", "click",  function(){$("<?php echo $_REQUEST["input"]?>").value="<?php echo htmlentities($coordonnee->getRef_coord ())?>"; $("<?php echo $_REQUEST["choix_coord"]?>").style.display="none"; $("<?php echo $_REQUEST["iframe_choix_coord"]?>").style.display="none"; $("<?php echo $_REQUEST["div"]?>").innerHTML="<?php if ($coordonnee->getLib_coord()!="") {echo substr($coordonnee->getLib_coord(),0,20);} else { echo substr( $coordonnee->getTel1() ."- " . $coordonnee->getTel2() ."- " . $coordonnee->getFax() ."- " . $coordonnee->getEmail(),0,20);}?>.."; }, false);
+		Event.observe("li_choix_coord_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>", "click",  function(){$("<?php echo $_REQUEST["input"]?>").value="<?php echo htmlentities($coordonnee->getRef_coord (), ENT_QUOTES, "UTF-8")?>"; $("<?php echo $_REQUEST["choix_coord"]?>").style.display="none"; $("<?php echo $_REQUEST["iframe_choix_coord"]?>").style.display="none"; $("<?php echo $_REQUEST["div"]?>").innerHTML="<?php if ($coordonnee->getLib_coord()!="") {echo substr($coordonnee->getLib_coord(),0,20);} else { echo substr( $coordonnee->getTel1() ."- " . $coordonnee->getTel2() ."- " . $coordonnee->getFax() ."- " . $coordonnee->getEmail(),0,20);}?>.."; }, false);
 		
 		<?php 
 		$i++;

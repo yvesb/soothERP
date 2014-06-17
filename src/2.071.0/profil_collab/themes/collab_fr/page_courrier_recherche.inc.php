@@ -67,7 +67,7 @@ array_menu_r_contact[1] 	=	new Array('recherche_avancee', 'menu_2');
 						<td></td>
 						<td><span class="labelled">Contact : </span></td>
 						<td><input type="text" name="contact_s" id="contact_s"
-							value="<?php if (isset($_REQUEST["acc_contact_courrier"])) { echo htmlentities($_REQUEST["acc_contact_courrier"]);}?>" 
+							value="<?php if (isset($_REQUEST["acc_contact_courrier"])) { echo htmlentities($_REQUEST["acc_contact_courrier"], ENT_QUOTES, "UTF-8");}?>" 
 							class="classinput_xsize"/>
 						</td>
 						<td>&nbsp;</td>

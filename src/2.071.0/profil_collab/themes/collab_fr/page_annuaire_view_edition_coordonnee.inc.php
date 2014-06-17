@@ -24,7 +24,7 @@
 			<tr>
 				<td class="size_strict">
 				<span class="labelled">Titre:</span></td><td>
-				<input id="coordonnee_lib<?php echo $caiu?>" name="coordonnee_lib<?php echo $caiu?>" type="text" class="classinput_xsize" value="<?php echo htmlentities($coordonnee->getLib_coord())?>" />
+				<input id="coordonnee_lib<?php echo $caiu?>" name="coordonnee_lib<?php echo $caiu?>" type="text" class="classinput_xsize" value="<?php echo htmlentities($coordonnee->getLib_coord(), ENT_QUOTES, "UTF-8")?>" />
 				</td>
 			</tr>
 			<?php if(!empty($GEST_TYPE_COORD)){ ?><tr>
@@ -51,31 +51,31 @@
 				<td>
 				<span class="labelled">T&eacute;l&eacute;phone&nbsp;1:</span></td>
 				<td>
-				<input id="coordonnee_tel1<?php echo $caiu?>" name="coordonnee_tel1<?php echo $caiu?>" class="classinput_xsize" value="<?php echo htmlentities($coordonnee->getTel1())?>" />
+				<input id="coordonnee_tel1<?php echo $caiu?>" name="coordonnee_tel1<?php echo $caiu?>" class="classinput_xsize" value="<?php echo htmlentities($coordonnee->getTel1(), ENT_QUOTES, "UTF-8")?>" />
 				</td>
 			</tr>
 			<tr>
 				<td>
 				<span class="labelled">T&eacute;l&eacute;phone&nbsp;2:</span></td><td>
-				<input id="coordonnee_tel2<?php echo $caiu?>" name="coordonnee_tel2<?php echo $caiu?>" class="classinput_xsize" value="<?php echo htmlentities($coordonnee->getTel2())?>" />
+				<input id="coordonnee_tel2<?php echo $caiu?>" name="coordonnee_tel2<?php echo $caiu?>" class="classinput_xsize" value="<?php echo htmlentities($coordonnee->getTel2(), ENT_QUOTES, "UTF-8")?>" />
 				</td>
 			</tr>
 			<tr>
 				<td>
 				<span class="labelled">Email:</span></td><td><a href="mailto:<?php echo $coordonnee->getEmail();?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/mail.gif" width="15" border="0" style="float:right" vspace="5"/></a>
-				<input id="coordonnee_email<?php echo $caiu?>" name="coordonnee_email<?php echo $caiu?>" class="classinput_lsize" value="<?php echo htmlentities($coordonnee->getEmail())?>" />
+				<input id="coordonnee_email<?php echo $caiu?>" name="coordonnee_email<?php echo $caiu?>" class="classinput_lsize" value="<?php echo htmlentities($coordonnee->getEmail(), ENT_QUOTES, "UTF-8")?>" />
 				</td>
 			</tr>
 			<tr>
 				<td>
 				<span class="labelled">Fax:</span></td><td>
-				<input id="coordonnee_fax<?php echo $caiu?>" name="coordonnee_fax<?php echo $caiu?>" class="classinput_xsize" value="<?php echo htmlentities($coordonnee->getFax())?>" />
+				<input id="coordonnee_fax<?php echo $caiu?>" name="coordonnee_fax<?php echo $caiu?>" class="classinput_xsize" value="<?php echo htmlentities($coordonnee->getFax(), ENT_QUOTES, "UTF-8")?>" />
 				</td>
 			</tr>
 			<tr>
 				<td>
 				<span class="labelled">Note:</span></td><td>
-				<textarea id="coordonnee_note<?php echo $caiu?>" name="coordonnee_note<?php echo $caiu?>" rows="2"  class="classinput_xsize"/><?php echo  htmlentities($coordonnee->getNote())?></textarea>
+				<textarea id="coordonnee_note<?php echo $caiu?>" name="coordonnee_note<?php echo $caiu?>" rows="2"  class="classinput_xsize"/><?php echo  htmlentities($coordonnee->getNote(), ENT_QUOTES, "UTF-8")?></textarea>
 				</td>
 			</tr>
 			<tr>
@@ -143,7 +143,7 @@
 				<?php 
 				if ($coordonnee->getLib_coord()!="" || $coordonnee->getTypeLib()!="") {
 				?>
-				<a href="#" id="link_show_coordonnee_lib<?php echo $caiu?>" class="modif_input2"><strong><?php echo  htmlentities($coordonnee->getLib_coord())?></strong><?php if($coordonnee->getTypeLib()!= ""){?>&nbsp;(<?php echo  htmlentities($coordonnee->getTypeLib())?>)<?php }?></a>
+				<a href="#" id="link_show_coordonnee_lib<?php echo $caiu?>" class="modif_input2"><strong><?php echo  htmlentities($coordonnee->getLib_coord(), ENT_QUOTES, "UTF-8")?></strong><?php if($coordonnee->getTypeLib()!= ""){?>&nbsp;(<?php echo  htmlentities($coordonnee->getTypeLib(), ENT_QUOTES, "UTF-8")?>)<?php }?></a>
 				<script type="text/javascript">
 				Event.observe("link_show_coordonnee_lib<?php echo $caiu?>", "click",  function(evt){Event.stop(evt);show_edit_form('annu_editon_coordonnee<?php echo $caiu?>', 'start_visible_<?php echo $caiu?>','coordonnee_lib<?php echo $caiu?>');}, false);
 				</script>
@@ -157,7 +157,7 @@
 				<td>
 				<span class="labelled">T&eacute;l&eacute;phone&nbsp;1:</span></td>
 				<td>
-				<a href="#" id="link_show_coordonnee_tel1<?php echo $caiu?>" class="modif_input1"><?php echo  htmlentities($coordonnee->getTel1())?></a>
+				<a href="#" id="link_show_coordonnee_tel1<?php echo $caiu?>" class="modif_input1"><?php echo  htmlentities($coordonnee->getTel1(), ENT_QUOTES, "UTF-8")?></a>
 				<script type="text/javascript">
 				Event.observe("link_show_coordonnee_tel1<?php echo $caiu?>", "click",  function(evt){Event.stop(evt);show_edit_form('annu_editon_coordonnee<?php echo $caiu?>', 'start_visible_<?php echo $caiu?>','coordonnee_tel1<?php echo $caiu?>');}, false);
 				</script>
@@ -168,7 +168,7 @@
 			<tr>
 				<td>
 				<span class="labelled">T&eacute;l&eacute;phone&nbsp;2:</span></td><td>
-				<a href="#" id="link_show_coordonnee_tel2<?php echo $caiu?>" class="modif_input1"><?php echo  htmlentities($coordonnee->getTel2())?></a>
+				<a href="#" id="link_show_coordonnee_tel2<?php echo $caiu?>" class="modif_input1"><?php echo  htmlentities($coordonnee->getTel2(), ENT_QUOTES, "UTF-8")?></a>
 				<script type="text/javascript">
 				Event.observe("link_show_coordonnee_tel2<?php echo $caiu?>", "click",  function(evt){Event.stop(evt);show_edit_form('annu_editon_coordonnee<?php echo $caiu?>', 'start_visible_<?php echo $caiu?>','coordonnee_tel2<?php echo $caiu?>');}, false);
 				</script>
@@ -179,7 +179,7 @@
 			<tr>
 				<td>
 				<span class="labelled">Email:</span></td><td><a href="mailto:<?php echo $coordonnee->getEmail();?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/mail.gif" width="15" border="0" style="float:right" vspace="5"/></a>
-				<a href="#" id="link_show_coordonnee_email<?php echo $caiu?>" class="modif_input2"><?php echo  htmlentities(substr($coordonnee->getEmail(),0,20))?></a>
+				<a href="#" id="link_show_coordonnee_email<?php echo $caiu?>" class="modif_input2"><?php echo  htmlentities(substr($coordonnee->getEmail(),0,20), ENT_QUOTES, "UTF-8")?></a>
 				<script type="text/javascript">
 				Event.observe("link_show_coordonnee_email<?php echo $caiu?>", "click",  function(evt){Event.stop(evt);show_edit_form('annu_editon_coordonnee<?php echo $caiu?>', 'start_visible_<?php echo $caiu?>','coordonnee_email<?php echo $caiu?>');}, false);
 				</script>
@@ -190,7 +190,7 @@
 			<tr>
 				<td>
 				<span class="labelled">Fax:</span></td><td>
-				<a href="#" id="link_show_coordonnee_fax<?php echo $caiu?>" class="modif_input1"><?php echo  htmlentities($coordonnee->getFax())?></a>
+				<a href="#" id="link_show_coordonnee_fax<?php echo $caiu?>" class="modif_input1"><?php echo  htmlentities($coordonnee->getFax(), ENT_QUOTES, "UTF-8")?></a>
 				<script type="text/javascript">
 				Event.observe("link_show_coordonnee_fax<?php echo $caiu?>", "click",  function(evt){Event.stop(evt);show_edit_form('annu_editon_coordonnee<?php echo $caiu?>', 'start_visible_<?php echo $caiu?>','coordonnee_fax<?php echo $caiu?>');}, false);
 				</script>
@@ -201,7 +201,7 @@
 			<tr>
 				<td>
 				<span class="labelled">Note:</span></td><td>
-				<a href="#" id="link_show_coordonnee_note<?php echo $caiu?>" class="modif_input1"><?php echo  nl2br(htmlentities($coordonnee->getNote()))?></a>
+				<a href="#" id="link_show_coordonnee_note<?php echo $caiu?>" class="modif_input1"><?php echo  nl2br(htmlentities($coordonnee->getNote()), ENT_QUOTES, "UTF-8")?></a>
 				<script type="text/javascript">
 				Event.observe("link_show_coordonnee_note<?php echo $caiu?>", "click",  function(evt){Event.stop(evt);show_edit_form('annu_editon_coordonnee<?php echo $caiu?>', 'start_visible_<?php echo $caiu?>', 'coordonnee_note<?php echo $caiu?>');}, false);
 				</script>

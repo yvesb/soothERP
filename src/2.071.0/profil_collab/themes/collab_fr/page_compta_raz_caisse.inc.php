@@ -30,7 +30,7 @@ foreach ($totaux_theoriques as $s_total) {
 <script type="text/javascript">
 Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); page.verify('compta_gestion2_caisse','compta_gestion2_caisse.php?id_caisse=<?php echo $_REQUEST["id_caisse"];?>','true','sub_content');}, false);
 </script>
-<div class="titre" style="width:60%; padding-left:140px"><?php echo htmlentities($compte_caisse->getLib_caisse()); ?> -  Remise à zéro
+<div class="titre" style="width:60%; padding-left:140px"><?php echo htmlentities($compte_caisse->getLib_caisse(), ENT_QUOTES, "UTF-8"); ?> -  Remise à zéro
 </div>
 <div class="emarge" style="text-align:right" >
 <div  id="corps_gestion_caisses">

@@ -224,15 +224,15 @@ foreach ($_ALERTES as $alerte => $value) {
 		?>
 		<tr class="<?php  echo  $class_colorise?>">
 			<td>
-				<a  href="#" id="nom_<?php echo ($fiche->ref_contact)?>" style="display:block; width:100%;"> <?php echo nl2br(htmlentities($fiche->nom))?> (<?php echo htmlentities($fiche->lib_civ_court)?>)
+				<a  href="#" id="nom_<?php echo ($fiche->ref_contact)?>" style="display:block; width:100%;"> <?php echo nl2br(htmlentities($fiche->nom, ENT_QUOTES, "UTF-8"))?> (<?php echo htmlentities($fiche->lib_civ_court, ENT_QUOTES, "UTF-8")?>)
 				</a>
 				<script type="text/javascript">
 				Event.observe("nom_<?php echo ($fiche->ref_contact)?>", "click",  function(evt){Event.stop(evt);<?php echo $_REQUEST['fonction_retour']?>(<?php echo $_REQUEST['param_retour']?>, '<?php echo ($fiche->ref_contact)?>',  '<?php echo nl2br((addslashes(substr (str_replace (CHR(13), "" ,str_replace (CHR(10), "" ,preg_replace ("#((\r\n)+)#", "", $fiche->nom))),0, 26))))?>...' ); close_mini_moteur_contacts();}, false);
 				</script>
 			</td>
 			<td  style="width:25%; text-align:right">
-				<a  href="#" id="adresse_<?php echo ($fiche->ref_contact)?>" style="display:block; width:100%;" title="<?php	if ($fiche->text_adresse) { echo (htmlentities($fiche->text_adresse));}?>"> 
-				<?php	if ($fiche->text_adresse) { echo substr(nl2br(htmlentities($fiche->text_adresse)),0,80);}?>&nbsp;
+				<a  href="#" id="adresse_<?php echo ($fiche->ref_contact)?>" style="display:block; width:100%;" title="<?php	if ($fiche->text_adresse) { echo (htmlentities($fiche->text_adresse, ENT_QUOTES, "UTF-8"));}?>"> 
+				<?php	if ($fiche->text_adresse) { echo substr(nl2br(htmlentities($fiche->text_adresse, ENT_QUOTES, "UTF-8")),0,80);}?>&nbsp;
 				</a>
 				<script type="text/javascript">
 				Event.observe("adresse_<?php echo ($fiche->ref_contact)?>", "click",  function(evt){Event.stop(evt);<?php echo $_REQUEST['fonction_retour']?>(<?php echo $_REQUEST['param_retour']?>, '<?php echo ($fiche->ref_contact)?>',  '<?php echo nl2br((addslashes(substr (str_replace (CHR(13), "" ,str_replace (CHR(10), "" ,preg_replace ("#((\r\n)+)#", "", $fiche->nom))),0, 26))))?>...' ); close_mini_moteur_contacts();}, false);
@@ -240,7 +240,7 @@ foreach ($_ALERTES as $alerte => $value) {
 			</td>
 			<td style="width:20%; text-align:left">
 				<a  href="#" id="ville_<?php echo ($fiche->ref_contact)?>" style="display:block; width:100%;"> 
-				<?php	if ($fiche->ville) 				{ echo htmlentities($fiche->code_postal)." - ".htmlentities($fiche->ville); }?>&nbsp;
+				<?php	if ($fiche->ville) 				{ echo htmlentities($fiche->code_postal, ENT_QUOTES, "UTF-8")." - ".htmlentities($fiche->ville, ENT_QUOTES, "UTF-8"); }?>&nbsp;
 				</a>
 				<script type="text/javascript">
 				Event.observe("ville_<?php echo ($fiche->ref_contact)?>", "click",  function(evt){Event.stop(evt);<?php echo $_REQUEST['fonction_retour']?>(<?php echo $_REQUEST['param_retour']?>, '<?php echo ($fiche->ref_contact)?>',  '<?php echo nl2br((addslashes(substr (str_replace (CHR(13), "" ,str_replace (CHR(10), "" ,preg_replace ("#((\r\n)+)#", "", $fiche->nom))),0, 26))))?>...' ); close_mini_moteur_contacts();}, false);
@@ -248,7 +248,7 @@ foreach ($_ALERTES as $alerte => $value) {
 			</td>
 			<td>
 				<a  href="#" id="tel_<?php echo ($fiche->ref_contact)?>" style="display:block; width:100%;">
-				<?php	if ($fiche->tel1) 				{ echo htmlentities($fiche->tel1); }?>&nbsp;
+				<?php	if ($fiche->tel1) 				{ echo htmlentities($fiche->tel1, ENT_QUOTES, "UTF-8"); }?>&nbsp;
 				</a>
 				<script type="text/javascript">
 				Event.observe("tel_<?php echo ($fiche->ref_contact)?>", "click",  function(evt){Event.stop(evt);<?php echo $_REQUEST['fonction_retour']?>(<?php echo $_REQUEST['param_retour']?>, '<?php echo ($fiche->ref_contact)?>',  '<?php echo nl2br((addslashes(substr (str_replace (CHR(13), "" ,str_replace (CHR(10), "" ,preg_replace ("#((\r\n)+)#", "", $fiche->nom))),0, 26))))?>...' ); close_mini_moteur_contacts();}, false);

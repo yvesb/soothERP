@@ -225,7 +225,7 @@ $class_colorise= ($colorise % 2)? 'colorise3' : 'colorise1';
 		<?php	if (isset($fiche->date_telecollecte)) { echo date_Us_to_Fr($fiche->date_telecollecte)." ".getTime_from_date($fiche->date_telecollecte); } ?>
 	</td>
 	<td style="text-align: right">
-		<a  href="#" id="link_reg_ref_<?php echo htmlentities($fiche->id_compte_tp_telecollecte)?>" style="display:block; width:100%">
+		<a  href="#" id="link_reg_ref_<?php echo htmlentities($fiche->id_compte_tp_telecollecte, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">
 		<span style="font-weight:bolder"></span> 
 		<?php	if (isset($fiche->montant_telecollecte)) {?>
 		<?php echo (($fiche->montant_telecollecte))?> 
@@ -233,7 +233,7 @@ $class_colorise= ($colorise % 2)? 'colorise3' : 'colorise1';
 		<?php }	?>
 		</a>
 		<script type="text/javascript">
-			Event.observe("link_reg_ref_<?php echo htmlentities($fiche->id_compte_tp_telecollecte)?>", "click", function(evt){
+			Event.observe("link_reg_ref_<?php echo htmlentities($fiche->id_compte_tp_telecollecte, ENT_QUOTES, "UTF-8")?>", "click", function(evt){
 				Event.stop(evt);
 				page.verify("compta_tp_telecollecte_imprimer", "compta_tp_telecollecte_imprimer.php?id_compte_tp=<?php echo $_REQUEST["id_compte_tp"]; ?>&tp_type=<?php echo $_REQUEST["tp_type"];?>&id_compte_tp_telecollecte=<?php echo $fiche->id_compte_tp_telecollecte; ?>", "true", "_blank");
 			}, false);
@@ -241,12 +241,12 @@ $class_colorise= ($colorise % 2)? 'colorise3' : 'colorise1';
 	</td>
 	<td style="text-align: right">
 		<?php	if (isset($fiche->pseudo)) {?>
-			<a  href="#" id="link_reg_ctc_<?php echo htmlentities($fiche->id_compte_tp_telecollecte)?>" style="display:block; width:100%">
+			<a  href="#" id="link_reg_ctc_<?php echo htmlentities($fiche->id_compte_tp_telecollecte, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">
 			
 			<?php echo nl2br(($fiche->pseudo))?>
 			</a>
 			<script type="text/javascript">
-			Event.observe("link_reg_ctc_<?php echo htmlentities($fiche->id_compte_tp_telecollecte)?>", "click",  function(evt){
+			Event.observe("link_reg_ctc_<?php echo htmlentities($fiche->id_compte_tp_telecollecte, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){
 				Event.stop(evt);
 				page.verify("compta_tp_telecollecte_imprimer", "compta_tp_telecollecte_imprimer.php?id_compte_tp=<?php echo $_REQUEST["id_compte_tp"]; ?>&tp_type=<?php echo $_REQUEST["tp_type"];?>&id_compte_tp_telecollecte=<?php echo $fiche->id_compte_tp_telecollecte; ?>", "true", "_blank");
 				}, false);
@@ -255,13 +255,13 @@ $class_colorise= ($colorise % 2)? 'colorise3' : 'colorise1';
 	</td>
 	<td style="text-align: right">
 		<?php	if (isset($fiche->montant_commission)) {?>
-			<a  href="#" id="link_reg_doc_<?php echo htmlentities($fiche->id_compte_tp_telecollecte)?>" style="display:block; width:100%">
+			<a  href="#" id="link_reg_doc_<?php echo htmlentities($fiche->id_compte_tp_telecollecte, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">
 			
 			<?php echo (($fiche->montant_commission))?> 
 			<?php echo $MONNAIE[1];?>
 			</a>
 			<script type="text/javascript">
-			Event.observe("link_reg_doc_<?php echo htmlentities($fiche->id_compte_tp_telecollecte)?>", "click",  function(evt){
+			Event.observe("link_reg_doc_<?php echo htmlentities($fiche->id_compte_tp_telecollecte, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){
 				Event.stop(evt);
 				page.verify("compta_tp_telecollecte_imprimer", "compta_tp_telecollecte_imprimer.php?id_compte_tp=<?php echo $_REQUEST["id_compte_tp"]; ?>&tp_type=<?php echo $_REQUEST["tp_type"];?>&id_compte_tp_telecollecte=<?php echo $fiche->id_compte_tp_telecollecte; ?>", "true", "_blank");
 				}, false);

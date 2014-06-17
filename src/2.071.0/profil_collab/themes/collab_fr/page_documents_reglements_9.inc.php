@@ -45,7 +45,7 @@ if (count($comptes_cbs)) {
 			<?php 
 			foreach ($comptes_cbs as $compte_cb) {
 				?>
-				<option value="<?php echo htmlentities($compte_cb->id_compte_cb); ?>" <?php if (isset($_COOKIE["last_id_compte_cb_source"]) && ($compte_cb->id_compte_cb == $_COOKIE["last_id_compte_cb_source"])) {echo 'selected="selected"';}?>><?php echo htmlentities(substr($compte_cb->numero_carte, 0, strlen($compte_cb->numero_carte)-4)). "XXXX - ".htmlentities($compte_cb->nom_porteur); ?></option>
+				<option value="<?php echo htmlentities($compte_cb->id_compte_cb, ENT_QUOTES, "UTF-8"); ?>" <?php if (isset($_COOKIE["last_id_compte_cb_source"]) && ($compte_cb->id_compte_cb == $_COOKIE["last_id_compte_cb_source"])) {echo 'selected="selected"';}?>><?php echo htmlentities(substr($compte_cb->numero_carte, 0, strlen($compte_cb->numero_carte)-4), ENT_QUOTES, "UTF-8"). "XXXX - ".htmlentities($compte_cb->nom_porteur, ENT_QUOTES, "UTF-8"); ?></option>
 				<?php
 			}
 			?>

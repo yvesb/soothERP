@@ -126,15 +126,15 @@ if (count($liste_serveurs_import)) {
 						<td>
 						
 						</td>
-						<td><?php echo htmlentities($serveur_import->ref_serveur_import);?>
-						<input name="ref_serveur_import" id="ref_serveur_import" type="hidden" value="<?php echo htmlentities($serveur_import->ref_serveur_import);?>"  class="classinput_xsize"/>
-						<input name="old_ref_serveur" id="old_ref_serveur" type="hidden" value="<?php echo htmlentities($serveur_import->ref_serveur_import);?>"  class="classinput_xsize"/>
+						<td><?php echo htmlentities($serveur_import->ref_serveur_import, ENT_QUOTES, "UTF-8");?>
+						<input name="ref_serveur_import" id="ref_serveur_import" type="hidden" value="<?php echo htmlentities($serveur_import->ref_serveur_import, ENT_QUOTES, "UTF-8");?>"  class="classinput_xsize"/>
+						<input name="old_ref_serveur" id="old_ref_serveur" type="hidden" value="<?php echo htmlentities($serveur_import->ref_serveur_import, ENT_QUOTES, "UTF-8");?>"  class="classinput_xsize"/>
 						</td>
 						<td><?php echo ($serveur_import->lib_serveur_import);?>
 						<input name="lib_serveur_import" id="lib_serveur_import" type="hidden" value="<?php echo ($serveur_import->lib_serveur_import);?>"  class="classinput_xsize"/>
 						</td>
-						<td><?php echo htmlentities($serveur_import->url_serveur_import);?>
-						<input name="url_serveur" id="url_serveur" type="hidden" value="<?php echo htmlentities($serveur_import->url_serveur_import);?>"  class="classinput_xsize"/>
+						<td><?php echo htmlentities($serveur_import->url_serveur_import, ENT_QUOTES, "UTF-8");?>
+						<input name="url_serveur" id="url_serveur" type="hidden" value="<?php echo htmlentities($serveur_import->url_serveur_import, ENT_QUOTES, "UTF-8");?>"  class="classinput_xsize"/>
 						</td>
 						<td style="width:1px">
 							<div style="text-align:right; display:none">
@@ -181,7 +181,7 @@ if (count($liste_serveurs_import)) {
 				
 					Event.observe("choix_serveur_<?php echo $serveur_import->ref_serveur_import;?>_<?php echo $import_type->id_impex_type ;?>", "click", function(evt){
 						Event.stop(evt);
-						page.traitecontent('serveur_import_data_<?php echo $import_type->id_impex_type ;?>','serveur_import_data_<?php echo $import_type->id_impex_type ;?>.php?ref_serveur=<?php echo htmlentities($serveur_import->ref_serveur_import);?>','true','sub_content');
+						page.traitecontent('serveur_import_data_<?php echo $import_type->id_impex_type ;?>','serveur_import_data_<?php echo $import_type->id_impex_type ;?>.php?ref_serveur=<?php echo htmlentities($serveur_import->ref_serveur_import, ENT_QUOTES, "UTF-8");?>','true','sub_content');
 					}, false);	
 				</SCRIPT>
 				<?php }?>
@@ -196,7 +196,7 @@ if (count($liste_serveurs_import)) {
 			<td>
 				<div style="text-align:left; width:35px">
 				<form action="serveur_import_sup.php" method="post" id="import_serveur_sup_<?php echo $serveur_import->ref_serveur_import;?>" name="import_serveur_sup_<?php echo $serveur_import->ref_serveur_import;?>" target="formFrame" >
-						<input name="ref_serveur" id="ref_serveur" type="hidden" value="<?php echo htmlentities($serveur_import->ref_serveur_import);?>"/>
+						<input name="ref_serveur" id="ref_serveur" type="hidden" value="<?php echo htmlentities($serveur_import->ref_serveur_import, ENT_QUOTES, "UTF-8");?>"/>
 							<input name="supprimer_<?php echo $serveur_import->ref_serveur_import;?>" id="supprimer_<?php echo $serveur_import->ref_serveur_import;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" />
 				</form>
 				<SCRIPT type="text/javascript">

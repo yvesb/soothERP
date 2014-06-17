@@ -12,7 +12,7 @@
 		foreach ($checked_taxes as $checked_taxe) {
 	 	if ($checked_taxe->id_taxe==$taxe['id_taxe']) {echo ' checked="checked"'; };
 	 	} ?>/>
-	 		<?php echo htmlentities($taxe['lib_taxe']);?> (<?php echo htmlentities($taxe['info_calcul']);?>)<br />
+	 		<?php echo htmlentities($taxe['lib_taxe'], ENT_QUOTES, "UTF-8");?> (<?php echo htmlentities($taxe['info_calcul'], ENT_QUOTES, "UTF-8");?>)<br />
 <?php 
 
 	}

@@ -79,7 +79,7 @@ array_menu_r_article[0] 	=	new Array('recherche_cmde', 'menu_1');
 				$liste_mag = charger_all_magasins ();
 				foreach ($liste_mag as $mag) {
 					$i = 1;?>
-					<option value="<?php echo $mag->id_magasin;?>" <?php if ( $mag->id_magasin == $_SESSION['magasin']->getId_magasin ()) { echo ' selected="selected"'; } ?> ><?php echo htmlentities($mag->lib_magasin);?></option>
+					<option value="<?php echo $mag->id_magasin;?>" <?php if ( $mag->id_magasin == $_SESSION['magasin']->getId_magasin ()) { echo ' selected="selected"'; } ?> ><?php echo htmlentities($mag->lib_magasin, ENT_QUOTES, "UTF-8");?></option>
 					<?php 
 					$i++;
 				}
@@ -107,7 +107,7 @@ array_menu_r_article[0] 	=	new Array('recherche_cmde', 'menu_1');
 				$liste_stock = fetch_all_stocks ();
 				foreach ($liste_stock as $stock) {
 					?>
-					<option value="<?php echo $stock->id_stock;?>" <?php if (isset($_REQUEST["id_stock"]) && $stock->id_stock == $_REQUEST["id_stock"]) { echo ' selected="selected"'; }?> ><?php echo htmlentities($stock->lib_stock);?></option>
+					<option value="<?php echo $stock->id_stock;?>" <?php if (isset($_REQUEST["id_stock"]) && $stock->id_stock == $_REQUEST["id_stock"]) { echo ' selected="selected"'; }?> ><?php echo htmlentities($stock->lib_stock, ENT_QUOTES, "UTF-8");?></option>
 					<?php 
 				}
 				?>
@@ -152,7 +152,7 @@ array_menu_r_article[0] 	=	new Array('recherche_cmde', 'menu_1');
 					foreach ($select_art_categ  as $s_art_categ){
 			?>
 			<option value="<?php echo ($s_art_categ->ref_art_categ)?>">
-			<?php for ($i=0; $i<$s_art_categ->indentation; $i++) {?>&nbsp;&nbsp;&nbsp;<?php }?><?php echo htmlentities($s_art_categ->lib_art_categ)?>
+			<?php for ($i=0; $i<$s_art_categ->indentation; $i++) {?>&nbsp;&nbsp;&nbsp;<?php }?><?php echo htmlentities($s_art_categ->lib_art_categ, ENT_QUOTES, "UTF-8")?>
 			</option>
 			<?php
 				}

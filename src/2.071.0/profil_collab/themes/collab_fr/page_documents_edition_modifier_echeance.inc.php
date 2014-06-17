@@ -153,11 +153,11 @@ $echeances = $facture->getEcheancier();
                         
                              if(!empty($id_reglement_mode_favori))
                             {?>
-                                str_mode_regl_select = '<option value="">Au choix du client</option><?php foreach ($reglements_modes as $reglement_mode) {?><option value="<?php echo $reglement_mode->id_reglement_mode; ?>" <?php if($reglement_mode->id_reglement_mode == $id_reglement_mode_favori){?>selected="selected"<?php }?> ><?php echo htmlentities($reglement_mode->lib_reglement_mode); ?></option><?php } ?>';
+                                str_mode_regl_select = '<option value="">Au choix du client</option><?php foreach ($reglements_modes as $reglement_mode) {?><option value="<?php echo $reglement_mode->id_reglement_mode; ?>" <?php if($reglement_mode->id_reglement_mode == $id_reglement_mode_favori){?>selected="selected"<?php }?> ><?php echo htmlentities($reglement_mode->lib_reglement_mode, ENT_QUOTES, "UTF-8"); ?></option><?php } ?>';
                            <?php  
                            }else
                            {?>
-                               str_mode_regl_select = '<option value="">Au choix du client</option><?php foreach ($reglements_modes as $reglement_mode) {?><option value="<?php echo $reglement_mode->id_reglement_mode; ?>"><?php echo htmlentities($reglement_mode->lib_reglement_mode); ?></option><?php } ?>';
+                               str_mode_regl_select = '<option value="">Au choix du client</option><?php foreach ($reglements_modes as $reglement_mode) {?><option value="<?php echo $reglement_mode->id_reglement_mode; ?>"><?php echo htmlentities($reglement_mode->lib_reglement_mode, ENT_QUOTES, "UTF-8"); ?></option><?php } ?>';
                         <?php    }?>
                         nbregl = parseInt(this.value);
                         this.value = parseInt(this.value);
@@ -304,14 +304,14 @@ $echeances = $facture->getEcheancier();
                                                         {
                                                             foreach ($reglements_modes as $reglement_mode) {?>
                                                             <option value="<?php echo $reglement_mode->id_reglement_mode; ?>" <?php if($id_reglement_mode_favori == $reglement_mode->id_reglement_mode){echo "selected='selected'";}?> >
-                                                            <?php echo htmlentities($reglement_mode->lib_reglement_mode); ?></option>
+                                                            <?php echo htmlentities($reglement_mode->lib_reglement_mode, ENT_QUOTES, "UTF-8"); ?></option>
                                                             <?php } 
                                                         }
                                                         else
                                                         {
                                                             foreach ($reglements_modes as $reglement_mode) {?>
                                                             <option value="<?php echo $reglement_mode->id_reglement_mode; ?>" <?php if($echeance->mode_reglement == $reglement_mode->id_reglement_mode){echo "selected='selected'";}?> >
-                                                            <?php echo htmlentities($reglement_mode->lib_reglement_mode); ?></option>
+                                                            <?php echo htmlentities($reglement_mode->lib_reglement_mode, ENT_QUOTES, "UTF-8"); ?></option>
                                                             <?php }
                                                         }?></select></td>
                                                         <td style="text-align:center" name="inp_delai"><input name="inp_delai_<?php echo $i;?>" id="inp_delai_<?php echo $i;?>" type="text" value="<?php echo $echeance->jour;?>" onchange="maj_date(this.value,'<?php echo $date_creation ?>','inp_date_<?php echo $i;?>');" class="classinput_xsize" style="width:30px;text-align:right;" MAXLENGTH="3"/> jours</td>
@@ -410,7 +410,7 @@ $echeances = $facture->getEcheancier();
                                                         <option value="">Au choix du client</option>
 							<?php foreach ($reglements_modes as $reglement_mode) {?>
 							<option value="<?php echo $reglement_mode->id_reglement_mode; ?>" <?php if($echeance['id_mode_reglement'] == $reglement_mode->id_reglement_mode){echo "selected='selected'";}?> >
-							<?php echo htmlentities($reglement_mode->lib_reglement_mode); ?></option>
+							<?php echo htmlentities($reglement_mode->lib_reglement_mode, ENT_QUOTES, "UTF-8"); ?></option>
 							<?php } ?></select></td>
 							<td style="text-align:center"><input name="inp_delai_<?php echo $i;?>" id="inp_delai_<?php echo $i;?>" type="text" value="<?php echo $echeance['jour'];?>" class="classinput_xsize" style="width:30px;text-align:right;" MAXLENGTH="3"/> jours</td>
 							<?php if($i!=$echTot){?>

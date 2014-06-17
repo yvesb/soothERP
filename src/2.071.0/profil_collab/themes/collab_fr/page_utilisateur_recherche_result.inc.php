@@ -233,40 +233,40 @@ foreach ($_ALERTES as $alerte => $value) {
 		?>
 		<tr class="<?php  echo  $class_colorise?>">
 			<td>
-				<a  href="#" id="nom_<?php echo htmlentities($fiche->id_log)?>" style="display:block; width:100%;"> <?php echo nl2br(htmlentities($fiche->nom))?> (<?php echo htmlentities($fiche->lib_civ_court)?>)
+				<a  href="#" id="nom_<?php echo htmlentities($fiche->id_log, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%;"> <?php echo nl2br(htmlentities($fiche->nom, ENT_QUOTES, "UTF-8"))?> (<?php echo htmlentities($fiche->lib_civ_court, ENT_QUOTES, "UTF-8")?>)
 				</a>
 				<script type="text/javascript">
-				Event.observe("nom_<?php echo htmlentities($fiche->id_log)?>", "click",  function(evt){Event.stop(evt);page.verify('affaires_affiche_fiche','index.php#'+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($fiche->ref_contact)?>'),'true','_blank');}, false);
+				Event.observe("nom_<?php echo htmlentities($fiche->id_log, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt);page.verify('affaires_affiche_fiche','index.php#'+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($fiche->ref_contact, ENT_QUOTES, "UTF-8")?>'),'true','_blank');}, false);
 				</script>
 			</td>
 			<td>
-				<a  href="#" id="pseudo_<?php echo htmlentities($fiche->id_log)?>" style="display:block; width:100%;"> <?php echo nl2br(htmlentities($fiche->pseudo))?> 
+				<a  href="#" id="pseudo_<?php echo htmlentities($fiche->id_log, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%;"> <?php echo nl2br(htmlentities($fiche->pseudo, ENT_QUOTES, "UTF-8"))?> 
 				</a>
 				<script type="text/javascript">
-				Event.observe("pseudo_<?php echo htmlentities($fiche->id_log)?>", "click",  function(evt){Event.stop(evt);page.verify('affaires_affiche_fiche','index.php#'+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($fiche->ref_contact)?>'),'true','_blank');}, false);
+				Event.observe("pseudo_<?php echo htmlentities($fiche->id_log, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt);page.verify('affaires_affiche_fiche','index.php#'+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($fiche->ref_contact, ENT_QUOTES, "UTF-8")?>'),'true','_blank');}, false);
 				</script>
 			</td>
 			<td style="text-align:center">
-				<a  href="#" id="date_<?php echo htmlentities($fiche->id_log)?>" style="display:block; width:100%;"> <?php echo (date_US_to_Fr($fiche->date))?> <?php echo (getTime_from_date($fiche->date))?>
+				<a  href="#" id="date_<?php echo htmlentities($fiche->id_log, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%;"> <?php echo (date_US_to_Fr($fiche->date))?> <?php echo (getTime_from_date($fiche->date))?>
 				</a>
 				<script type="text/javascript">
-				Event.observe("date_<?php echo htmlentities($fiche->id_log)?>", "click",  function(evt){Event.stop(evt);page.verify('affaires_affiche_fiche','index.php#'+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($fiche->ref_contact)?>'),'true','_blank');}, false);
+				Event.observe("date_<?php echo htmlentities($fiche->id_log, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt);page.verify('affaires_affiche_fiche','index.php#'+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($fiche->ref_contact, ENT_QUOTES, "UTF-8")?>'),'true','_blank');}, false);
 				</script>
 			</td>
 			<td  style=" text-align:center">
-				<a  href="#" id="ip_<?php echo htmlentities($fiche->id_log)?>" style="display:block; width:100%;"> <?php echo $fiche->ip?>
+				<a  href="#" id="ip_<?php echo htmlentities($fiche->id_log, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%;"> <?php echo $fiche->ip?>
 				</a>
 				<script type="text/javascript">
-				Event.observe("ip_<?php echo htmlentities($fiche->id_log)?>", "click",  function(evt){Event.stop(evt);page.verify('affaires_affiche_fiche','index.php#'+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($fiche->ref_contact)?>'),'true','_blank');}, false);
+				Event.observe("ip_<?php echo htmlentities($fiche->id_log, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt);page.verify('affaires_affiche_fiche','index.php#'+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($fiche->ref_contact, ENT_QUOTES, "UTF-8")?>'),'true','_blank');}, false);
 				</script>
 			</td>
 			<td>
 			</td>
 			<td style="text-align:center; vertical-align:middle">
-				<a  href="#" id="voir_<?php echo htmlentities($fiche->id_log)?>" style="display:block; width:100%; text-decoration:underline">Voir la fiche du contact
+				<a  href="#" id="voir_<?php echo htmlentities($fiche->id_log, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%; text-decoration:underline">Voir la fiche du contact
 				</a>
 				<script type="text/javascript">
-				Event.observe("voir_<?php echo htmlentities($fiche->id_log)?>", "click",  function(evt){Event.stop(evt);page.verify('affaires_affiche_fiche','index.php#'+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($fiche->ref_contact)?>'),'true','_blank');}, false);
+				Event.observe("voir_<?php echo htmlentities($fiche->id_log, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt);page.verify('affaires_affiche_fiche','index.php#'+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($fiche->ref_contact, ENT_QUOTES, "UTF-8")?>'),'true','_blank');}, false);
 				</script>
 			</td>
 		</tr>

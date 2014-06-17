@@ -45,10 +45,10 @@ check_page_variables ($page_variables);
 				if (isset($line_insert)) {
 					echo (str_replace("<br />","\n",$contenu->lib_article));
 				} else {
-					echo htmlentities(str_replace("<br />","\n",$contenu->lib_article));
+					echo htmlentities(str_replace("<br />","\n",$contenu->lib_article), ENT_QUOTES, "UTF-8");
 				}
 				?></textarea>
-				<div id="lib_article_old_<?php echo $indentation_contenu?>" style="display:none"><?php echo htmlentities(str_replace("<br />","\n",$contenu->lib_article));?></div>
+				<div id="lib_article_old_<?php echo $indentation_contenu?>" style="display:none"><?php echo htmlentities(str_replace("<br />","\n",$contenu->lib_article), ENT_QUOTES, "UTF-8");?></div>
 				<?php 
 				} else { 
 				?>
@@ -56,10 +56,10 @@ check_page_variables ($page_variables);
 				if (isset($line_insert)) {
 					echo ($contenu->lib_article);
 				} else {
-					echo htmlentities($contenu->lib_article);
+					echo htmlentities($contenu->lib_article, ENT_QUOTES, "UTF-8");
 				}
 				?>" />
-				<div id="lib_article_old_<?php echo $indentation_contenu?>" style="display:none"><?php echo htmlentities($contenu->lib_article);?></div>
+				<div id="lib_article_old_<?php echo $indentation_contenu?>" style="display:none"><?php echo htmlentities($contenu->lib_article, ENT_QUOTES, "UTF-8");?></div>
 				<?php
 			}
 			?>
@@ -149,5 +149,5 @@ check_page_variables ($page_variables);
 	</tr>
 </table>
 <script type="text/javascript">
-pre_start_sstotal_line ("<?php echo htmlentities($contenu->ref_article)?>", "<?php echo $contenu->ref_doc_line?>", "<?php echo $indentation_contenu?>");
+pre_start_sstotal_line ("<?php echo htmlentities($contenu->ref_article, ENT_QUOTES, "UTF-8")?>", "<?php echo $contenu->ref_doc_line?>", "<?php echo $indentation_contenu?>");
 </script>

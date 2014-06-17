@@ -29,35 +29,35 @@ foreach ($commandes as $commande) {
 	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="document_box_head">
 		<tr>
 			<td style="width:188px">
-			<a href="#" id ="<?php echo htmlentities($commande->ref_doc);?>" style="text-decoration:none; color:#000000">
-			<?php echo htmlentities($commande->ref_doc);?>
+			<a href="#" id ="<?php echo htmlentities($commande->ref_doc, ENT_QUOTES, "UTF-8");?>" style="text-decoration:none; color:#000000">
+			<?php echo htmlentities($commande->ref_doc, ENT_QUOTES, "UTF-8");?>
 			</a>
 			<script type="text/javascript">
-				Event.observe('<?php echo htmlentities($commande->ref_doc);?>', 'click',  function(evt){ Event.stop(evt); window.open( "<?php echo $_ENV['CHEMIN_ABSOLU'].$_SESSION['profils'][$_SESSION['user']->getId_profil ()]->getDir_profil();?>#"+escape('documents_edition.php?ref_doc=<?php echo htmlentities($commande->ref_doc)?>'),'_blank');}, false);
+				Event.observe('<?php echo htmlentities($commande->ref_doc, ENT_QUOTES, "UTF-8");?>', 'click',  function(evt){ Event.stop(evt); window.open( "<?php echo $_ENV['CHEMIN_ABSOLU'].$_SESSION['profils'][$_SESSION['user']->getId_profil ()]->getDir_profil();?>#"+escape('documents_edition.php?ref_doc=<?php echo htmlentities($commande->ref_doc, ENT_QUOTES, "UTF-8")?>'),'_blank');}, false);
 			</script>
 			</td>
 			<td style="font-weight:bolder">
-			<a href="#" id ="<?php echo htmlentities($commande->ref_doc);?>ctc" style="text-decoration:none; color:#000000"><?php echo ($commande->nom_contact);?>&nbsp;
+			<a href="#" id ="<?php echo htmlentities($commande->ref_doc, ENT_QUOTES, "UTF-8");?>ctc" style="text-decoration:none; color:#000000"><?php echo ($commande->nom_contact);?>&nbsp;
 			</a>
 			<script type="text/javascript">
-				Event.observe('<?php echo htmlentities($commande->ref_doc);?>ctc', 'click',  function(evt){ Event.stop(evt); window.open( "<?php echo $_ENV['CHEMIN_ABSOLU'].$_SESSION['profils'][$_SESSION['user']->getId_profil ()]->getDir_profil();?>#"+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($commande->ref_contact)?>'),'_blank');}, false);
+				Event.observe('<?php echo htmlentities($commande->ref_doc, ENT_QUOTES, "UTF-8");?>ctc', 'click',  function(evt){ Event.stop(evt); window.open( "<?php echo $_ENV['CHEMIN_ABSOLU'].$_SESSION['profils'][$_SESSION['user']->getId_profil ()]->getDir_profil();?>#"+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($commande->ref_contact, ENT_QUOTES, "UTF-8")?>'),'_blank');}, false);
 			</script>
 			
 			</td>
 			<td style="width:145px;  text-align:right">
 			<?php 
-			if (isset($_REQUEST["id_stock"]) && !$_REQUEST["id_stock"]) {echo htmlentities($commande->lib_stock);}
+			if (isset($_REQUEST["id_stock"]) && !$_REQUEST["id_stock"]) {echo htmlentities($commande->lib_stock, ENT_QUOTES, "UTF-8");}
 			?>
 			</td>
-			<td style="width:85px; text-align:right"><?php echo htmlentities(date_Us_to_Fr($commande->date_doc));?></td>
+			<td style="width:85px; text-align:right"><?php echo htmlentities(date_Us_to_Fr($commande->date_doc), ENT_QUOTES, "UTF-8");?></td>
 			<td style="width:145px;  text-align:right">
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bts_blf_reception.gif" id="commande_genere_reception_<?php echo htmlentities($stock_vu."_".$commande->ref_doc);?>" alt="Reception de la commande" style="cursor:pointer; display:" />
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bts_blf_reception.gif" id="commande_genere_reception_<?php echo htmlentities($stock_vu."_".$commande->ref_doc, ENT_QUOTES, "UTF-8");?>" alt="Reception de la commande" style="cursor:pointer; display:" />
 			<script type="text/javascript">
 				//generer_document_doc ("generer_bl_client", ref_doc)
-				Event.observe("commande_genere_reception_<?php echo htmlentities($stock_vu."_".$commande->ref_doc);?>", "click", function(evt){
+				Event.observe("commande_genere_reception_<?php echo htmlentities($stock_vu."_".$commande->ref_doc, ENT_QUOTES, "UTF-8");?>", "click", function(evt){
 				Event.stop(evt); 
 				generer_document_doc ("generer_br_fournisseur", "<?php echo $commande->ref_doc;?>");
-				$("commande_genere_reception_<?php echo htmlentities($stock_vu."_".$commande->ref_doc);?>").hide();
+				$("commande_genere_reception_<?php echo htmlentities($stock_vu."_".$commande->ref_doc, ENT_QUOTES, "UTF-8");?>").hide();
 				}, false);
 			</script>
 			</td>
@@ -85,12 +85,12 @@ foreach ($commandes as $commande) {
 					</td>
 					<td style="width:110px" class="document_border_right">
 						<div style="width:107px;">
-						<a href="#" id="<?php echo htmlentities($commande->ref_doc);?><?php echo htmlentities($contenu->ref_article)?>" style="text-decoration:none; color:#000000">
+						<a href="#" id="<?php echo htmlentities($commande->ref_doc, ENT_QUOTES, "UTF-8");?><?php echo htmlentities($contenu->ref_article, ENT_QUOTES, "UTF-8")?>" style="text-decoration:none; color:#000000">
 						<?php if ($contenu->ref_interne != "") { echo $contenu->ref_interne;} else { echo $contenu->ref_article;} ?></a><br />
 						<?php echo $contenu->ref_oem;?>
 						</div>
 						<script type="text/javascript">
-							Event.observe('<?php echo htmlentities($commande->ref_doc);?><?php echo htmlentities($contenu->ref_article)?>', 'click',  function(evt){ Event.stop(evt); window.open( "<?php echo $_ENV['CHEMIN_ABSOLU'].$_SESSION['profils'][$_SESSION['user']->getId_profil ()]->getDir_profil();?>#"+escape('catalogue_articles_view.php?ref_article=<?php echo htmlentities($contenu->ref_article)?>'),'_blank');}, false);
+							Event.observe('<?php echo htmlentities($commande->ref_doc, ENT_QUOTES, "UTF-8");?><?php echo htmlentities($contenu->ref_article, ENT_QUOTES, "UTF-8")?>', 'click',  function(evt){ Event.stop(evt); window.open( "<?php echo $_ENV['CHEMIN_ABSOLU'].$_SESSION['profils'][$_SESSION['user']->getId_profil ()]->getDir_profil();?>#"+escape('catalogue_articles_view.php?ref_article=<?php echo htmlentities($contenu->ref_article, ENT_QUOTES, "UTF-8")?>'),'_blank');}, false);
 						</script>
 					</td>
 					<td style="width:480px; padding-left:3px">

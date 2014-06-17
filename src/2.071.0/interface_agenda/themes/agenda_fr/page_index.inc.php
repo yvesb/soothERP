@@ -320,9 +320,9 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], "pro
 											Utilisateur :
 										</td>
 										<td>
-											<?php echo  htmlentities($_SESSION['user']->getContactName ()); ?>
+											<?php echo  htmlentities($_SESSION['user']->getContactName (), ENT_QUOTES, "UTF-8"); ?>
 											<br />
-											<?php echo  htmlentities($_SESSION['user']->getPseudo ()); ?>
+											<?php echo  htmlentities($_SESSION['user']->getPseudo (), ENT_QUOTES, "UTF-8"); ?>
 											<input type="hidden" name='login' size=25 value="<?php echo $_SESSION['user']->getRef_user ()?>"/>
 										</td>
 									</tr>

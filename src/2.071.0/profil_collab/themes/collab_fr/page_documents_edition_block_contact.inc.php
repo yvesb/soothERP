@@ -38,8 +38,8 @@ check_page_variables ($page_variables);
 			Nom: 
 		</td>
 		<td style="width:250px;">
-			<textarea type="text" name="nom_contact"  id="nom_contact" class="classinput_xsize" rows="2"><?php echo htmlentities($document->getNom_contact());?></textarea>
-			<div id="nom_contact_old" style="display:none"><?php echo htmlentities($document->getNom_contact());?></div>
+			<textarea type="text" name="nom_contact"  id="nom_contact" class="classinput_xsize" rows="2"><?php echo htmlentities($document->getNom_contact(), ENT_QUOTES, "UTF-8");?></textarea>
+			<div id="nom_contact_old" style="display:none"><?php echo htmlentities($document->getNom_contact(), ENT_QUOTES, "UTF-8");?></div>
 		</td>
 		<td>
 			&nbsp;<a href="#" id="" class="doc_link_standard">choisir un contact</a>
@@ -70,8 +70,8 @@ check_page_variables ($page_variables);
 			<table cellpadding="0" cellspacing="0" border="0" style="width:268px;">
 				<tr>
 					<td style="width:250px;">
-						<textarea name="adresse_contact" id="adresse_contact" class="classinput_xsize" rows="2"><?php echo  htmlentities($document->getAdresse_contact());?></textarea>
-						<div id="adresse_contact_old" style="display:none"><?php echo htmlentities($document->getAdresse_contact());?></div>
+						<textarea name="adresse_contact" id="adresse_contact" class="classinput_xsize" rows="2"><?php echo  htmlentities($document->getAdresse_contact(), ENT_QUOTES, "UTF-8");?></textarea>
+						<div id="adresse_contact_old" style="display:none"><?php echo htmlentities($document->getAdresse_contact(), ENT_QUOTES, "UTF-8");?></div>
 					</td>
 					<td style="width:18px; vertical-align:bottom">
 					<div id="adresse_contact_choisie" class="simule_champs" style="width:15px;cursor: default;">
@@ -105,8 +105,8 @@ check_page_variables ($page_variables);
 			<table cellpadding="0" cellspacing="0" border="0" style="width:268px;">
 				<tr>
 					<td style="width:250px;">
-						<textarea name="adresse_livraison" id="adresse_livraison" class="classinput_xsize" rows="2"><?php echo  htmlentities($document->getAdresse_livraison());?></textarea>
-						<div id="adresse_livraison_old" style="display:none"><?php echo htmlentities($document->getAdresse_livraison());?></div>
+						<textarea name="adresse_livraison" id="adresse_livraison" class="classinput_xsize" rows="2"><?php echo  htmlentities($document->getAdresse_livraison(), ENT_QUOTES, "UTF-8");?></textarea>
+						<div id="adresse_livraison_old" style="display:none"><?php echo htmlentities($document->getAdresse_livraison(), ENT_QUOTES, "UTF-8");?></div>
 					</td>
 					<td style="width:18px; vertical-align:bottom">
 					<div id="adresse_livraison_choisie" class="simule_champs" style="width:15px;cursor: default;">
@@ -180,7 +180,7 @@ Event.observe("adresse_livraison", "blur", function(evt){
 // on met juste à jour l'app_tarifs par rapport au contact mis à jour
 if ($document->getApp_tarifs()) {
 	?>
-	$("app_tarifs").value				= "<?php echo htmlentities($document->getApp_tarifs());?>";
+	$("app_tarifs").value				= "<?php echo htmlentities($document->getApp_tarifs(), ENT_QUOTES, "UTF-8");?>";
 	if ($("app_tarifs").value	== "HT") {
 	$("prix_afficher_ht").checked = "checked";
 	} else {

@@ -208,7 +208,7 @@ update_menu_arbo();
 										?>
 										<span>
 										<input type="checkbox" value="<?php echo $profil->getId_profil();?>" id="profils<?php echo $profil->getId_profil();?>" name="profils<?php echo $profil->getId_profil();?>"  <?php if(array_search($profil->getId_profil(),$newsletter_profils)!== false) {?> checked="checked" <?php } ?> />
-										<?php echo htmlentities($profil->getLib_profil());?>
+										<?php echo htmlentities($profil->getLib_profil(), ENT_QUOTES, "UTF-8");?>
 										</span>
 										<script type="text/javascript">
 											Event.observe('profils<?php echo $profil->getId_profil();?>', "click" , function(evt){ 

@@ -56,7 +56,7 @@ id_index_contentcoord=0;
 							<?php 
 							foreach ($ANNUAIRE_CATEGORIES as $categorie) {
 								?>
-								<option value="<?php echo $categorie->id_categorie?>"><?php echo htmlentities($categorie->lib_categorie)?></option>
+								<option value="<?php echo $categorie->id_categorie?>"><?php echo htmlentities($categorie->lib_categorie, ENT_QUOTES, "UTF-8")?></option>
 								<?php
 							}
 							?>
@@ -74,7 +74,7 @@ id_index_contentcoord=0;
 							<?php 
 							foreach ($civilites as $civ) {
 								?>
-								<option value="<?php echo $civ->id_civilite ?>"><?php echo htmlentities($civ->lib_civ_court)?></option>
+								<option value="<?php echo $civ->id_civilite ?>"><?php echo htmlentities($civ->lib_civ_court, ENT_QUOTES, "UTF-8")?></option>
 								<?php 
 							}
 							?>
@@ -118,7 +118,7 @@ id_index_contentcoord=0;
 											if (!$profil->getId_profil()) { continue; }
 											if ($profil->getActif() != 1) { continue; }
 											?>
-											<span><input onclick="affiche_annu_nvlf_profil('<?php echo $profil->getId_profil();?>');" type=checkbox value="<?php echo $profil->getId_profil();?>" id="profils<?php echo $profil->getId_profil();?>" name="profils[<?php echo $profil->getId_profil();?>]"><?php echo htmlentities($profil->getLib_profil());?></span><br />
+											<span><input onclick="affiche_annu_nvlf_profil('<?php echo $profil->getId_profil();?>');" type=checkbox value="<?php echo $profil->getId_profil();?>" id="profils<?php echo $profil->getId_profil();?>" name="profils[<?php echo $profil->getId_profil();?>]"><?php echo htmlentities($profil->getLib_profil(), ENT_QUOTES, "UTF-8");?></span><br />
 
 								
 											<?php
@@ -130,7 +130,7 @@ id_index_contentcoord=0;
 											if (!$profil->getId_profil()) { continue; }
 											if ($profil->getActif() != 2) { continue; }
 											?>
-											<span><input onclick="affiche_annu_nvlf_profil('<?php echo $profil->getId_profil();?>');" type=checkbox value="<?php echo $profil->getId_profil();?>" id="profils<?php echo $profil->getId_profil();?>" name="profils[<?php echo $profil->getId_profil();?>]"><?php echo htmlentities($profil->getLib_profil());?></span><br />
+											<span><input onclick="affiche_annu_nvlf_profil('<?php echo $profil->getId_profil();?>');" type=checkbox value="<?php echo $profil->getId_profil();?>" id="profils<?php echo $profil->getId_profil();?>" name="profils[<?php echo $profil->getId_profil();?>]"><?php echo htmlentities($profil->getLib_profil(), ENT_QUOTES, "UTF-8");?></span><br />
 											<?php
 										}
 										?>	

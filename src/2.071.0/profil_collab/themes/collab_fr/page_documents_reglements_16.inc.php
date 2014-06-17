@@ -46,7 +46,7 @@ if (count($comptes_caisses)) {
 			<?php 
 			foreach ($comptes_caisses as $compte_caisse) {
 				?>
-				<option value="<?php echo htmlentities($compte_caisse->id_compte_caisse); ?>"   <?php if (isset($_COOKIE["last_id_compte_caisse_dest"]) && ($compte_caisse->id_compte_caisse == $_COOKIE["last_id_compte_caisse_dest"])) {echo 'selected="selected"';}?>><?php echo htmlentities($compte_caisse->lib_caisse); ?></option>
+				<option value="<?php echo htmlentities($compte_caisse->id_compte_caisse, ENT_QUOTES, "UTF-8"); ?>"   <?php if (isset($_COOKIE["last_id_compte_caisse_dest"]) && ($compte_caisse->id_compte_caisse == $_COOKIE["last_id_compte_caisse_dest"])) {echo 'selected="selected"';}?>><?php echo htmlentities($compte_caisse->lib_caisse, ENT_QUOTES, "UTF-8"); ?></option>
 				<?php
 			}
 			?>

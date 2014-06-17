@@ -49,7 +49,7 @@ window.focus();
 	?>		
 	<tr class="colorise0">
 	<td>
-	<?php echo htmlentities($carac->lib_carac_groupe); ?>
+	<?php echo htmlentities($carac->lib_carac_groupe, ENT_QUOTES, "UTF-8"); ?>
 	</td>
 	</tr>
 	<?php
@@ -58,7 +58,7 @@ window.focus();
 	?>
 	<tr class="<?php  echo  $class_colorise?>">
 	<td>
-	<?php echo htmlentities($carac->lib_carac); ?>
+	<?php echo htmlentities($carac->lib_carac, ENT_QUOTES, "UTF-8"); ?>
 	</td>
 	</tr>
 	<?php }

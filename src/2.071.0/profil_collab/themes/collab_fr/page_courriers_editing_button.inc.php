@@ -34,7 +34,7 @@
 					?>
 					<td style="padding-right:10px">
 						<a href="courriers_editing_print.php<?php echo $params_p ?>" target="mainediting" >
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-imprimer.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode);?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode);?>" />
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-imprimer.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" />
 						</a>
 					</td>
 					<?php break;}
@@ -43,7 +43,7 @@
 					?>
 					<td style="padding-right:10px">
 						<a href='javascript:PopupCentrer("courriers_editing_email.php<?php echo $params_p; ?>",800,450,"menubar=no,statusbar=no,scrollbars=yes,resizable=yes")'>
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-email.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode);?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode);?>" />
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-email.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" />
 						</a>
 					</td>
 				<?php break;}
@@ -53,7 +53,7 @@
 					?>
 					<td style="padding-right:10px">
 						<a href='javascript:PopupCentrer("courriers_editing_fax.php<?php echo $params_p; ?>",500,350,"menubar=no,statusbar=no,scrollbars=auto")'>
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-fax.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode);?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode);?>" />
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-fax.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" />
 						</a>
 					</td>
 				<?php	break; }

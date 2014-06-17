@@ -142,7 +142,7 @@ if (isset($liste_modules_tpv) && count($liste_modules_tpv)) {
 						<?php 
 						foreach ($comptes_bancaires as $compte_bancaire) {
 							?>
-							<option value="<?php echo $compte_bancaire->id_compte_bancaire; ?>"><?php echo htmlentities($compte_bancaire->lib_compte); ?></option>
+							<option value="<?php echo $compte_bancaire->id_compte_bancaire; ?>"><?php echo htmlentities($compte_bancaire->lib_compte, ENT_QUOTES, "UTF-8"); ?></option>
 							<?php 
 						}
 						?>
@@ -153,7 +153,7 @@ if (isset($liste_modules_tpv) && count($liste_modules_tpv)) {
 							<?php 
 							foreach ($liste_modules_tpv as $module_tpv) {
 								?>
-								<option value="<?php echo $module_tpv; ?>" ><?php echo htmlentities($module_tpv); ?></option>
+								<option value="<?php echo $module_tpv; ?>" ><?php echo htmlentities($module_tpv, ENT_QUOTES, "UTF-8"); ?></option>
 								<?php 
 							}
 							?>
@@ -250,14 +250,14 @@ if (isset($liste_modules_tpv) && count($liste_modules_tpv)) {
 							</tr>	
 							<tr>
 								<td style="text-align:center">
-								<input name="lib_tpv_<?php echo $compte_tpv->id_compte_tpv;?>" id="lib_tpv_<?php echo $compte_tpv->id_compte_tpv;?>" type="text" value="<?php echo htmlentities($compte_tpv->lib_tpv);?>"  class="classinput_xsize"  />
+								<input name="lib_tpv_<?php echo $compte_tpv->id_compte_tpv;?>" id="lib_tpv_<?php echo $compte_tpv->id_compte_tpv;?>" type="text" value="<?php echo htmlentities($compte_tpv->lib_tpv, ENT_QUOTES, "UTF-8");?>"  class="classinput_xsize"  />
 								</td>
 								<td style="text-align:center">
 								<select id="id_compte_bancaire_<?php echo $compte_tpv->id_compte_tpv;?>" name="id_compte_bancaire_<?php echo $compte_tpv->id_compte_tpv;?>"  class="classinput_xsize" >
 								<?php 
 								foreach ($comptes_bancaires as $compte_bancaire) {
 									?>
-									<option value="<?php echo $compte_bancaire->id_compte_bancaire; ?>" <?php if ($compte_bancaire->id_compte_bancaire == $compte_tpv->id_compte_bancaire) {echo 'selected="selected"';}?>><?php echo htmlentities($compte_bancaire->lib_compte); ?></option>
+									<option value="<?php echo $compte_bancaire->id_compte_bancaire; ?>" <?php if ($compte_bancaire->id_compte_bancaire == $compte_tpv->id_compte_bancaire) {echo 'selected="selected"';}?>><?php echo htmlentities($compte_bancaire->lib_compte, ENT_QUOTES, "UTF-8"); ?></option>
 									<?php 
 								}
 								?>
@@ -268,7 +268,7 @@ if (isset($liste_modules_tpv) && count($liste_modules_tpv)) {
 									<?php 
 									foreach ($liste_modules_tpv as $module_tpv) {
 										?>
-								<option value="<?php echo $module_tpv; ?>"  <?php if ($module_tpv == $compte_tpv->module_name) {echo 'selected="selected"';}?>><?php echo htmlentities($module_tpv); ?></option>
+								<option value="<?php echo $module_tpv; ?>"  <?php if ($module_tpv == $compte_tpv->module_name) {echo 'selected="selected"';}?>><?php echo htmlentities($module_tpv, ENT_QUOTES, "UTF-8"); ?></option>
 										<?php 
 									}
 									?>

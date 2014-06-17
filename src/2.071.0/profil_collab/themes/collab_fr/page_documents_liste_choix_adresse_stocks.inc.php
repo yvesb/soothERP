@@ -6,7 +6,7 @@ $i=0;
 foreach ($_SESSION['stocks'] as $stocks) {
 	?>
 	<li class="complete_coordonnee" id="li_choix_adresse_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>">
-	<?php echo htmlentities($stocks->getLib_stock ()) ?>
+	<?php echo htmlentities($stocks->getLib_stock (), ENT_QUOTES, "UTF-8") ?>
 	</li>
 	<?php 
 $i++;

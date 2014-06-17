@@ -207,35 +207,35 @@ foreach ($histo_achats as $histo_achat) {
 	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="document_box_head">
 		<tr>
 			<td style="width:188px">
-			<a href="#" id ="<?php echo htmlentities($stock_vu."_".$histo_achat->ref_doc);?>" style="text-decoration:none; color:#000000">
-			<?php echo htmlentities($histo_achat->ref_doc);?>
+			<a href="#" id ="<?php echo htmlentities($stock_vu."_".$histo_achat->ref_doc, ENT_QUOTES, "UTF-8");?>" style="text-decoration:none; color:#000000">
+			<?php echo htmlentities($histo_achat->ref_doc, ENT_QUOTES, "UTF-8");?>
 			</a>
 			<script type="text/javascript">
-				Event.observe('<?php echo htmlentities($stock_vu."_".$histo_achat->ref_doc);?>', 'click',  function(evt){ Event.stop(evt); window.open( "<?php echo $_ENV['CHEMIN_ABSOLU'].$_SESSION['profils'][$_SESSION['user']->getId_profil ()]->getDir_profil();?>#"+escape('documents_edition.php?ref_doc=<?php echo htmlentities($histo_achat->ref_doc)?>'),'_blank');}, false);
+				Event.observe('<?php echo htmlentities($stock_vu."_".$histo_achat->ref_doc, ENT_QUOTES, "UTF-8");?>', 'click',  function(evt){ Event.stop(evt); window.open( "<?php echo $_ENV['CHEMIN_ABSOLU'].$_SESSION['profils'][$_SESSION['user']->getId_profil ()]->getDir_profil();?>#"+escape('documents_edition.php?ref_doc=<?php echo htmlentities($histo_achat->ref_doc, ENT_QUOTES, "UTF-8")?>'),'_blank');}, false);
 			</script>
 			</td>
 			<td style="font-weight:bolder">
-			<a href="#" id ="<?php echo htmlentities($stock_vu."_".$histo_achat->ref_doc);?>ctc" style="text-decoration:none; color:#000000"><?php echo htmlentities($histo_achat->nom_contact);?>
+			<a href="#" id ="<?php echo htmlentities($stock_vu."_".$histo_achat->ref_doc, ENT_QUOTES, "UTF-8");?>ctc" style="text-decoration:none; color:#000000"><?php echo htmlentities($histo_achat->nom_contact, ENT_QUOTES, "UTF-8");?>
 			</a>&nbsp;
 			<script type="text/javascript">
-				Event.observe('<?php echo htmlentities($stock_vu."_".$histo_achat->ref_doc);?>ctc', 'click',  function(evt){ Event.stop(evt); window.open( "<?php echo $_ENV['CHEMIN_ABSOLU'].$_SESSION['profils'][$_SESSION['user']->getId_profil ()]->getDir_profil();?>#"+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($histo_achat->ref_contact)?>'),'_blank');}, false);
+				Event.observe('<?php echo htmlentities($stock_vu."_".$histo_achat->ref_doc, ENT_QUOTES, "UTF-8");?>ctc', 'click',  function(evt){ Event.stop(evt); window.open( "<?php echo $_ENV['CHEMIN_ABSOLU'].$_SESSION['profils'][$_SESSION['user']->getId_profil ()]->getDir_profil();?>#"+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($histo_achat->ref_contact, ENT_QUOTES, "UTF-8")?>'),'_blank');}, false);
 			</script>
 			
 			</td>
 			<td style="font-weight:bolder; width:140px">
 			<div style="width:140px; <?php if ($histo_achat->id_etat_doc == 11 || $histo_achat->id_etat_doc == 13 || $histo_achat->id_etat_doc == 14) {echo "color:#FF0000";}?>">
-				<?php echo htmlentities($histo_achat->lib_etat_doc);?>
+				<?php echo htmlentities($histo_achat->lib_etat_doc, ENT_QUOTES, "UTF-8");?>
 			</div>
 			</td>
 			<td style="width:145px;  text-align:right">
 			<?php 
-			if (isset($_REQUEST["id_stock"]) && !$_REQUEST["id_stock"]) {echo htmlentities($histo_achat->lib_stock);}
+			if (isset($_REQUEST["id_stock"]) && !$_REQUEST["id_stock"]) {echo htmlentities($histo_achat->lib_stock, ENT_QUOTES, "UTF-8");}
 			?>
 			</td>
 
 			<td style=" text-align:right; width:80px">
 			<div style="width:80px">
-				<?php echo htmlentities(date_Us_to_Fr($histo_achat->date_doc));?>
+				<?php echo htmlentities(date_Us_to_Fr($histo_achat->date_doc), ENT_QUOTES, "UTF-8");?>
 			</div>
 			</td>
 			<td class="document_border_right" style="width:35px; text-align:right">
@@ -261,24 +261,24 @@ foreach ($histo_achats as $histo_achat) {
 					</td>
 					<td style="width:110px" class="document_border_right">
 						<div style="width:107px;">
-						<a href="#" id="<?php echo htmlentities($stock_vu."_".$histo_achat->ref_doc);?><?php echo htmlentities($contenu->ref_article)?>" style="text-decoration:none; color:#000000">
+						<a href="#" id="<?php echo htmlentities($stock_vu."_".$histo_achat->ref_doc, ENT_QUOTES, "UTF-8");?><?php echo htmlentities($contenu->ref_article, ENT_QUOTES, "UTF-8")?>" style="text-decoration:none; color:#000000">
 						<?php if ($contenu->ref_interne != "") { echo $contenu->ref_interne;} else { echo $contenu->ref_article;} ?></a><br />
 						<?php echo $contenu->ref_oem;?>
 						</div>
 						<script type="text/javascript">
-							Event.observe('<?php echo htmlentities($stock_vu."_".$histo_achat->ref_doc);?><?php echo htmlentities($contenu->ref_article)?>', 'click',  function(evt){ Event.stop(evt); window.open( "<?php echo $_ENV['CHEMIN_ABSOLU'].$_SESSION['profils'][$_SESSION['user']->getId_profil ()]->getDir_profil();?>#"+escape('catalogue_articles_view.php?ref_article=<?php echo htmlentities($contenu->ref_article)?>'),'_blank');}, false);
+							Event.observe('<?php echo htmlentities($stock_vu."_".$histo_achat->ref_doc, ENT_QUOTES, "UTF-8");?><?php echo htmlentities($contenu->ref_article, ENT_QUOTES, "UTF-8")?>', 'click',  function(evt){ Event.stop(evt); window.open( "<?php echo $_ENV['CHEMIN_ABSOLU'].$_SESSION['profils'][$_SESSION['user']->getId_profil ()]->getDir_profil();?>#"+escape('catalogue_articles_view.php?ref_article=<?php echo htmlentities($contenu->ref_article, ENT_QUOTES, "UTF-8")?>'),'_blank');}, false);
 						</script>
 					</td>
 					<td style=" padding-left:3px">
 						<div style="">&nbsp;
 							<?php
-								echo htmlentities(str_replace("<br />","\n",$contenu->lib_article));
+								echo htmlentities(str_replace("<br />","\n",$contenu->lib_article), ENT_QUOTES, "UTF-8");
 							?>
 						</div>
 						<div style="height:3px; line-height:3px;"></div>
 						<div style=" font-style:italic">
 						<?php
-								echo htmlentities(str_replace("<br />","\n",$contenu->desc_article));
+								echo htmlentities(str_replace("<br />","\n",$contenu->desc_article), ENT_QUOTES, "UTF-8");
 							?>
 						</div>
 					</td>
@@ -332,11 +332,11 @@ foreach ($histo_achats as $histo_achat) {
 					</td>
 					<td style="width:140px; text-align:left;" >
 						<div style="width:140px; cursor:pointer">
-							<a href="#" id ="<?php echo htmlentities($stock_vu."_".$indentation_fac."_".$fac->ref_doc_destination);?>" style="text-decoration:none; <?php if ($fac->id_etat_doc == 16 || $fac->id_etat_doc == 17 || $fac->id_etat_doc == 18) {echo "color:#FF0000;";} else {echo "color:#000000;";}?>" title="<?php echo $fac->lib_etat_doc;?>">
+							<a href="#" id ="<?php echo htmlentities($stock_vu."_".$indentation_fac."_".$fac->ref_doc_destination, ENT_QUOTES, "UTF-8");?>" style="text-decoration:none; <?php if ($fac->id_etat_doc == 16 || $fac->id_etat_doc == 17 || $fac->id_etat_doc == 18) {echo "color:#FF0000;";} else {echo "color:#000000;";}?>" title="<?php echo $fac->lib_etat_doc;?>">
 							<?php echo $fac->ref_doc_destination;?>
 							</a>
 							<script type="text/javascript">
-								Event.observe('<?php echo htmlentities($stock_vu."_".$indentation_fac."_".$fac->ref_doc_destination);?>', 'click',  function(evt){ Event.stop(evt); window.open( "<?php echo $_ENV['CHEMIN_ABSOLU'].$_SESSION['profils'][$_SESSION['user']->getId_profil ()]->getDir_profil();?>#"+escape('documents_edition.php?ref_doc=<?php echo htmlentities($fac->ref_doc_destination)?>'),'_blank');}, false);
+								Event.observe('<?php echo htmlentities($stock_vu."_".$indentation_fac."_".$fac->ref_doc_destination, ENT_QUOTES, "UTF-8");?>', 'click',  function(evt){ Event.stop(evt); window.open( "<?php echo $_ENV['CHEMIN_ABSOLU'].$_SESSION['profils'][$_SESSION['user']->getId_profil ()]->getDir_profil();?>#"+escape('documents_edition.php?ref_doc=<?php echo htmlentities($fac->ref_doc_destination, ENT_QUOTES, "UTF-8")?>'),'_blank');}, false);
 							</script>
 						</div>
 					</td>

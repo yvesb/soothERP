@@ -104,11 +104,11 @@ next($list_art_categ);
 	</td>
 	<td width="350px">
 	<div style="display:block;">
-		<?php echo str_replace(" ", "&nbsp;", htmlentities($art_categ->lib_art_categ));?>
+		<?php echo str_replace(" ", "&nbsp;", htmlentities($art_categ->lib_art_categ), ENT_QUOTES, "UTF-8");?>
 	</div>
 	</td>
 	<td width="1px">
-		<a href="#" class="insertion" id="ins_inv_<?php echo ($art_categ->ref_art_categ)?>" title="Inserer une cat&eacute;gorie dans <?php echo htmlentities($art_categ->lib_art_categ)?>"></a>
+		<a href="#" class="insertion" id="ins_inv_<?php echo ($art_categ->ref_art_categ)?>" title="Inserer une cat&eacute;gorie dans <?php echo htmlentities($art_categ->lib_art_categ, ENT_QUOTES, "UTF-8")?>"></a>
 		</td>
 			<td width="180px">
 			<div style="width:180px; text-align: center">

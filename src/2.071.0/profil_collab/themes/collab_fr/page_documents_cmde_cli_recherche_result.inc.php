@@ -230,28 +230,28 @@ $montant_total_page_ttc = 0;
 				
 				<td style="width:12% ; text-align:center ; color:#868486">
 					<?php if ($fiche->id_etat_doc == 9) { ?>
-					<a  href="#" id="link_etat_doc_<?php echo htmlentities($fiche->ref_doc)?>" style="display:block; width:100%">[
-					<?php	echo htmlentities($fiche->lib_etat_doc); } ?>
+					<a  href="#" id="link_etat_doc_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">[
+					<?php	echo htmlentities($fiche->lib_etat_doc, ENT_QUOTES, "UTF-8"); } ?>
 				
 					<?php if ($fiche->id_etat_doc == 6) { ?>
-					<a  href="#" id="link_etat_doc_<?php echo htmlentities($fiche->ref_doc)?>" style="color:red;display:block; width:100%">[
-					<?php	echo htmlentities($fiche->lib_etat_doc); } ?>
+					<a  href="#" id="link_etat_doc_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>" style="color:red;display:block; width:100%">[
+					<?php	echo htmlentities($fiche->lib_etat_doc, ENT_QUOTES, "UTF-8"); } ?>
 
                                          <?php if ($fiche->id_etat_doc == 11) { ?>
-					<a  href="#" id="link_etat_doc_<?php echo htmlentities($fiche->ref_doc)?>" style="color:red;display:block; width:100%">[
-					<?php	echo htmlentities($fiche->lib_etat_doc); } ?>
+					<a  href="#" id="link_etat_doc_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>" style="color:red;display:block; width:100%">[
+					<?php	echo htmlentities($fiche->lib_etat_doc, ENT_QUOTES, "UTF-8"); } ?>
                                             
                                         <?php if ($fiche->id_etat_doc == 13) { ?>
-					<a  href="#" id="link_etat_doc_<?php echo htmlentities($fiche->ref_doc)?>" style="display:block; width:100%">[
-					<?php	echo htmlentities($fiche->lib_etat_doc); } ?>
+					<a  href="#" id="link_etat_doc_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">[
+					<?php	echo htmlentities($fiche->lib_etat_doc, ENT_QUOTES, "UTF-8"); } ?>
 
 					<?php if ($fiche->id_etat_doc == 8) { ?>
-					<a  href="#" id="link_etat_doc_<?php echo htmlentities($fiche->ref_doc)?>" style="display:block; width:100%">[
-					<?php	echo htmlentities($fiche->lib_etat_doc); } ?>
+					<a  href="#" id="link_etat_doc_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">[
+					<?php	echo htmlentities($fiche->lib_etat_doc, ENT_QUOTES, "UTF-8"); } ?>
 					]
 					</a>
 					<script type="text/javascript">
-					Event.observe("link_etat_doc_<?php echo htmlentities($fiche->ref_doc)?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','index.php#'+escape('documents_edition.php?ref_doc=<?php echo htmlentities($fiche->ref_doc)?>'),'true','_blank');}, false);
+					Event.observe("link_etat_doc_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','index.php#'+escape('documents_edition.php?ref_doc=<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>'),'true','_blank');}, false);
 					</script>
 				</td>
 				<?php
@@ -259,14 +259,14 @@ $montant_total_page_ttc = 0;
                                 
                                  if(empty($search['cmdeaprep'])){?>
                                     <td style="width:35%; text-align:center">
-                                            <span id="commande_genere_livraison_<?php echo htmlentities($fiche->id_stock."_".$fiche->ref_doc);?>" style="color:green; cursor:pointer; display:"> <?php if ($cmd_doc->getDate_livraison ()!= 0000-00-00) {echo  ( date_Us_to_Fr ($cmd_doc->getDate_livraison()))."   ";}?>[ LIVRAISON >>]<span/>
+                                            <span id="commande_genere_livraison_<?php echo htmlentities($fiche->id_stock."_".$fiche->ref_doc, ENT_QUOTES, "UTF-8");?>" style="color:green; cursor:pointer; display:"> <?php if ($cmd_doc->getDate_livraison ()!= 0000-00-00) {echo  ( date_Us_to_Fr ($cmd_doc->getDate_livraison()))."   ";}?>[ LIVRAISON >>]<span/>
                                             <script type="text/javascript">
                                             //generer_document_doc ("generer_bl_client", ref_doc)
-                                            Event.observe("commande_genere_livraison_<?php echo htmlentities($fiche->id_stock."_".$fiche->ref_doc);?>", "click", function(evt){
+                                            Event.observe("commande_genere_livraison_<?php echo htmlentities($fiche->id_stock."_".$fiche->ref_doc, ENT_QUOTES, "UTF-8");?>", "click", function(evt){
                                             Event.stop(evt); 
                                             //generer_document_doc ("generer_bl_client", "<?php echo $fiche->ref_doc;?>");
                                             page.verify('documents_edition_generer_blank', 'index.php#'+escape('documents_edition_generer_blank.php?fonction_generer=generer_bl_client&ref_doc=<?php echo $fiche->ref_doc;?>'),'true','_blank');
-                                            $("commande_genere_livraison_<?php echo htmlentities($fiche->id_stock."_".$fiche->ref_doc);?>").hide();
+                                            $("commande_genere_livraison_<?php echo htmlentities($fiche->id_stock."_".$fiche->ref_doc, ENT_QUOTES, "UTF-8");?>").hide();
                                             }, false);
                                             </script>
                                     </td>

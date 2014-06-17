@@ -30,7 +30,7 @@
 				<option value="<?php echo ($catalogue_dir->id_catalogue_client_dir)?>" <?php if ($catalogue_dir->id_catalogue_client_dir== $_REQUEST["id_catalogue_client_dir_parent"]) {echo 'selected="seleted"';}?>>
 				<?php for ($i=0; $i<$catalogue_dir->indentation; $i++) {?>
 					--
-				<?php }?><?php echo htmlentities($catalogue_dir->lib_catalogue_client_dir)?>
+				<?php }?><?php echo htmlentities($catalogue_dir->lib_catalogue_client_dir, ENT_QUOTES, "UTF-8")?>
 				</option>
 				<?php
 			}
@@ -50,7 +50,7 @@
 					<option value="<?php echo ($s_art_categ->ref_art_categ)?>" >
 					<?php for ($i=0; $i<$s_art_categ->indentation; $i++) {?>
 						--
-					<?php }?><?php  echo htmlentities($s_art_categ->lib_art_categ);?>
+					<?php }?><?php  echo htmlentities($s_art_categ->lib_art_categ, ENT_QUOTES, "UTF-8");?>
 					</option>
 					<?php
 				}

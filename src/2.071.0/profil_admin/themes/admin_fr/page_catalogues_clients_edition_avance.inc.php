@@ -31,8 +31,8 @@ check_page_variables ($page_variables);
 	<?php 
 	foreach ($catalogues_clients as $catalogue_client) {
 		?>
-		<option value="<?php echo htmlentities($catalogue_client->id_catalogue_client);?>">
-		<?php echo htmlentities($catalogue_client->lib_catalogue_client);?>
+		<option value="<?php echo htmlentities($catalogue_client->id_catalogue_client, ENT_QUOTES, "UTF-8");?>">
+		<?php echo htmlentities($catalogue_client->lib_catalogue_client, ENT_QUOTES, "UTF-8");?>
 		</option>
 		<?php
 	}

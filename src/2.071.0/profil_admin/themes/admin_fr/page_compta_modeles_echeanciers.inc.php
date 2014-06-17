@@ -75,7 +75,7 @@ update_menu_arbo();
 						'<td style="width:20%;text-align:center"><strong>Délai</strong></td>'+
 						'<td style="width:15%;text-align:center"><strong>Montant</strong></td>'+
 						'</tr>';
-						str_mode_regl_select = '<option value="">Au choix du client</option><?php foreach ($reglements_modes as $reglement_mode) {?><option value="<?php echo $reglement_mode->id_reglement_mode; ?>"><?php echo htmlentities($reglement_mode->lib_reglement_mode); ?></option><?php } ?>';
+						str_mode_regl_select = '<option value="">Au choix du client</option><?php foreach ($reglements_modes as $reglement_mode) {?><option value="<?php echo $reglement_mode->id_reglement_mode; ?>"><?php echo htmlentities($reglement_mode->lib_reglement_mode, ENT_QUOTES, "UTF-8"); ?></option><?php } ?>';
 						nbregl = parseInt(this.value);
 						this.value = parseInt(this.value);
 						if(nbregl>0){
@@ -197,7 +197,7 @@ update_menu_arbo();
 						'<td style="width:15%;text-align:center"><strong>Montant</strong></td>'+
 						'</tr>';
 						str_type_select = '<option value="0">Solde</option><option value="1">Acompte</option></select>';							
-						str_mode_regl_select = '<option value="">Au choix du client</option><?php foreach ($reglements_modes as $reglement_mode) {?><option value="<?php echo $reglement_mode->id_reglement_mode; ?>"><?php echo htmlentities($reglement_mode->lib_reglement_mode); ?></option><?php } ?>';
+						str_mode_regl_select = '<option value="">Au choix du client</option><?php foreach ($reglements_modes as $reglement_mode) {?><option value="<?php echo $reglement_mode->id_reglement_mode; ?>"><?php echo htmlentities($reglement_mode->lib_reglement_mode, ENT_QUOTES, "UTF-8"); ?></option><?php } ?>';
 						nbregl = parseInt(this.value);
 						this.value = parseInt(this.value);
 						if(nbregl>0){
@@ -297,7 +297,7 @@ update_menu_arbo();
                                                         <option value="">Au choix du client</option>
 							<?php foreach ($reglements_modes as $reglement_mode) {?>
 							<option value="<?php echo $reglement_mode->id_reglement_mode; ?>" <?php if($echeance['id_mode_reglement'] == $reglement_mode->id_reglement_mode){echo "selected='selected'";}?> >
-							<?php echo htmlentities($reglement_mode->lib_reglement_mode); ?></option>
+							<?php echo htmlentities($reglement_mode->lib_reglement_mode, ENT_QUOTES, "UTF-8"); ?></option>
 							<?php } ?></select></td>
 							<td style="text-align:center"><input name="inp_delai_<?php echo $i;?>" id="inp_delai_<?php echo $i;?>" type="text" value="<?php echo $echeance['jour'];?>" class="classinput_xsize" style="width:30px" MAXLENGTH="3"/> jours</td>
 							<?php if($i!=$echTot){?>

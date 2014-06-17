@@ -58,7 +58,7 @@ check_page_variables ($page_variables);
                                 foreach ($comptes_bancaires as $compte_bancaire) {
                                     ?>
                                 <tr id="choix_compte_bancaire_<?php echo $compte_bancaire->id_compte_bancaire ?>">
-                                    <td style="font-weight:bolder; text-align:left"><?php echo htmlentities($compte_bancaire->lib_compte); ?></td>
+                                    <td style="font-weight:bolder; text-align:left"><?php echo htmlentities($compte_bancaire->lib_compte, ENT_QUOTES, "UTF-8"); ?></td>
                                     <td style="font-weight:bolder; text-align:right; color:#999999; padding-right:25px"><?php echo $compte_bancaire->numero_compte; ?></td>
                                     <td style="font-weight:bolder; text-align:center; color:#999999;"><?php
                                     $mnt = 0;

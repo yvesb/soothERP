@@ -23,7 +23,7 @@ foreach ($totaux_theoriques as $s_total) {
 </script>
 <div class="emarge"><br />
 
-<div class="titre" style="width:60%; padding-left:140px"><?php echo htmlentities($compte_caisse->getLib_caisse()); ?> -  Tableau de bord
+<div class="titre" style="width:60%; padding-left:140px"><?php echo htmlentities($compte_caisse->getLib_caisse(), ENT_QUOTES, "UTF-8"); ?> -  Tableau de bord
 </div>
 <div class="emarge" style="text-align:right" >
 <div  id="corps_gestion_caisses">
@@ -151,25 +151,25 @@ foreach ($totaux_theoriques as $s_total) {
 								<?php	if (isset($fiche->date_move)) { echo date_Us_to_Fr($fiche->date_move)." ".getTime_from_date($fiche->date_move); } ?>
 								</td>
 								<td>
-								<a  href="#" id="link_reg_ref_<?php echo htmlentities($fiche->id_compte_caisse_move)?>" style="display:block; width:100%">
-								<span style="font-weight:bolder"><?php	 echo htmlentities($fiche->lib_move_type);?></span> 
+								<a  href="#" id="link_reg_ref_<?php echo htmlentities($fiche->id_compte_caisse_move, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">
+								<span style="font-weight:bolder"><?php	 echo htmlentities($fiche->lib_move_type, ENT_QUOTES, "UTF-8");?></span> 
 								<?php	
 								if (isset($fiche->lib_reglement_mode)) {
-									echo nl2br(htmlentities($fiche->lib_reglement_mode));
+									echo nl2br(htmlentities($fiche->lib_reglement_mode, ENT_QUOTES, "UTF-8"));
 								}	
 								?>
 								</a>
 								<?php 
 								if (isset($fiche->id_move_type) && $fiche->id_move_type == "7") {
 								?>
-								<div id="info_7_<?php echo htmlentities($fiche->id_compte_caisse_move)?>" style="display:none">
+								<div id="info_7_<?php echo htmlentities($fiche->id_compte_caisse_move, ENT_QUOTES, "UTF-8")?>" style="display:none">
 								</div>
 								<?php
 								}
 								?>
 								<script type="text/javascript">
 								<!--
-								Event.observe("link_reg_ref_<?php echo htmlentities($fiche->id_compte_caisse_move) ?>", "click", function(evt){ 
+								Event.observe("link_reg_ref_<?php echo htmlentities($fiche->id_compte_caisse_move, ENT_QUOTES, "UTF-8") ?>", "click", function(evt){ 
 									Event.stop(evt);
 									<?php 
 									if (isset($fiche->id_reglement_mode) && ($fiche->id_reglement_mode == 1 || $fiche->id_reglement_mode == 7 || $fiche->id_reglement_mode == 2 || $fiche->id_reglement_mode == 3)) {

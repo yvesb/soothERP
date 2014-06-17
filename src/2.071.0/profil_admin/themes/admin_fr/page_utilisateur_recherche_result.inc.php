@@ -227,14 +227,14 @@ foreach ($_ALERTES as $alerte => $value) {
 		} 
 		?>
 		</td>
-		<td><a  href="#" id="nom_<?php echo htmlentities($fiche->ref_user)?>" style="display:block; width:100%;"> <?php echo nl2br(htmlentities($fiche->nom))?> (<?php echo htmlentities($fiche->lib_civ_court)?>) </a>
+		<td><a  href="#" id="nom_<?php echo htmlentities($fiche->ref_user, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%;"> <?php echo nl2br(htmlentities($fiche->nom, ENT_QUOTES, "UTF-8"))?> (<?php echo htmlentities($fiche->lib_civ_court, ENT_QUOTES, "UTF-8")?>) </a>
 				<script type="text/javascript">
-				Event.observe("nom_<?php echo htmlentities($fiche->ref_user)?>", "click",  function(evt){Event.stop(evt);page.verify('affaires_affiche_fiche','index.php#'+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($fiche->ref_contact)?>'),'true','_blank');}, false);
+				Event.observe("nom_<?php echo htmlentities($fiche->ref_user, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt);page.verify('affaires_affiche_fiche','index.php#'+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($fiche->ref_contact, ENT_QUOTES, "UTF-8")?>'),'true','_blank');}, false);
 				</script>
 		</td>
-		<td><a  href="#" id="pseudo_<?php echo htmlentities($fiche->ref_user)?>" style="display:block; width:100%;"> <?php echo nl2br(htmlentities($fiche->pseudo))?> </a>
+		<td><a  href="#" id="pseudo_<?php echo htmlentities($fiche->ref_user, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%;"> <?php echo nl2br(htmlentities($fiche->pseudo, ENT_QUOTES, "UTF-8"))?> </a>
 				<script type="text/javascript">
-				Event.observe("pseudo_<?php echo htmlentities($fiche->ref_user)?>", "click",  function(evt){Event.stop(evt);page.verify('utilisateur_details','index.php#utilisateur_details.php?ref_user=<?php echo htmlentities($fiche->ref_user)?>','true','_blank');}, false);
+				Event.observe("pseudo_<?php echo htmlentities($fiche->ref_user, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt);page.verify('utilisateur_details','index.php#utilisateur_details.php?ref_user=<?php echo htmlentities($fiche->ref_user, ENT_QUOTES, "UTF-8")?>','true','_blank');}, false);
 				</script>
 		</td>
 		<td style="text-align:left">
@@ -247,9 +247,9 @@ foreach ($_ALERTES as $alerte => $value) {
 		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>/images/ico_star.gif" alt="Utilisateur principal" title="Utilisateur principal"  />
 		<?php } ?>
 		</td>
-		<td style="text-align:center; vertical-align:middle"><a  href="#" id="edit_<?php echo htmlentities($fiche->ref_user)?>" style="display:block; width:100%; text-decoration:underline">Editer </a>
+		<td style="text-align:center; vertical-align:middle"><a  href="#" id="edit_<?php echo htmlentities($fiche->ref_user, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%; text-decoration:underline">Editer </a>
 				<script type="text/javascript">
-					Event.observe("edit_<?php echo htmlentities($fiche->ref_user)?>", "click",  function(evt){Event.stop(evt);page.verify('utilisateur_details','index.php#utilisateur_details.php?ref_user=<?php echo htmlentities($fiche->ref_user)?>','true','_blank');}, false);
+					Event.observe("edit_<?php echo htmlentities($fiche->ref_user, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt);page.verify('utilisateur_details','index.php#utilisateur_details.php?ref_user=<?php echo htmlentities($fiche->ref_user, ENT_QUOTES, "UTF-8")?>','true','_blank');}, false);
 					</script>
 		</td>
 	</tr>

@@ -24,7 +24,7 @@
 				<span class="labelled">Titre:</span>
 				</td>
 				<td>
-				<input id="adresse_lib<?php echo $caiu?>" name="adresse_lib<?php echo $caiu?>" type="text" class="classinput_xsize" value="<?php echo  htmlentities($adresse->getLib_adresse())?>" />
+				<input id="adresse_lib<?php echo $caiu?>" name="adresse_lib<?php echo $caiu?>" type="text" class="classinput_xsize" value="<?php echo  htmlentities($adresse->getLib_adresse(), ENT_QUOTES, "UTF-8")?>" />
 				</td>
 			</tr>
 			<?php if(!empty($GEST_TYPE_COORD)){ ?><tr>
@@ -50,13 +50,13 @@
 			<tr>
 				<td>
 				<span class="labelled">Adresse:</span></td><td>
-				<textarea id="adresse_adresse<?php echo $caiu?>" name="adresse_adresse<?php echo $caiu?>" rows="2" class="classinput_xsize"/><?php echo htmlentities($adresse->getText_adresse())?></textarea>
+				<textarea id="adresse_adresse<?php echo $caiu?>" name="adresse_adresse<?php echo $caiu?>" rows="2" class="classinput_xsize"/><?php echo htmlentities($adresse->getText_adresse(), ENT_QUOTES, "UTF-8")?></textarea>
 				</td>
 			</tr>
 			<tr>
 				<td>
 				<span class="labelled">Code Postal:</span></td><td>
-				<input id="adresse_code<?php echo $caiu?>" name="adresse_code<?php echo $caiu?>" class="classinput_xsize" value="<?php echo  htmlentities($adresse->getCode_postal ())?>"/>
+				<input id="adresse_code<?php echo $caiu?>" name="adresse_code<?php echo $caiu?>" class="classinput_xsize" value="<?php echo  htmlentities($adresse->getCode_postal (), ENT_QUOTES, "UTF-8")?>"/>
 				</td>
 			</tr>
 			<tr>
@@ -67,7 +67,7 @@
 				<div style="position:relative; top:0px; left:0px; width:100%; height:0px;">
 				<iframe id="iframe_choix_adresse_ville<?php echo $caiu?>" frameborder="0" scrolling="no" src="about:_blank"  class="choix_complete_ville"></iframe>
 				<div id="choix_adresse_ville<?php echo $caiu?>"  class="choix_complete_ville"></div></div>
-				<input name="adresse_ville<?php echo $caiu?>" id="adresse_ville<?php echo $caiu?>" class="classinput_xsize" value="<?php echo htmlentities($adresse->getVille())?>"/>
+				<input name="adresse_ville<?php echo $caiu?>" id="adresse_ville<?php echo $caiu?>" class="classinput_xsize" value="<?php echo htmlentities($adresse->getVille(), ENT_QUOTES, "UTF-8")?>"/>
 				</td>
 			</tr>
 			<tr>
@@ -84,8 +84,8 @@
 							<?php 		 
 						}
 						?>
-						<option value="<?php echo $payslist->id_pays?>" <?php if ($adresse ->getId_pays() == $payslist->id_pays) {echo 'selected="selected"'; $lepays = htmlentities($payslist->pays);}?>>
-						<?php echo htmlentities($payslist->pays)?></option>
+						<option value="<?php echo $payslist->id_pays?>" <?php if ($adresse ->getId_pays() == $payslist->id_pays) {echo 'selected="selected"'; $lepays = htmlentities($payslist->pays, ENT_QUOTES, "UTF-8");}?>>
+						<?php echo htmlentities($payslist->pays, ENT_QUOTES, "UTF-8")?></option>
 						<?php 
 					}
 					?>
@@ -95,7 +95,7 @@
 			<tr>
 				<td>
 				<span class="labelled">Note:</span></td><td>
-				<textarea id="adresse_note<?php echo $caiu?>" name="adresse_note<?php echo $caiu?>" rows="2"  class="classinput_xsize"/><?php echo htmlentities($adresse->getNote())?></textarea>
+				<textarea id="adresse_note<?php echo $caiu?>" name="adresse_note<?php echo $caiu?>" rows="2"  class="classinput_xsize"/><?php echo htmlentities($adresse->getNote(), ENT_QUOTES, "UTF-8")?></textarea>
 				</td>
 			</tr>
 			<tr>
@@ -161,7 +161,7 @@
 			</tr>
 		</table>
 		</div>
-		<?php if ($adresse->getLib_adresse()!="" || $adresse->getTypeLib()!="") {?><a href="#" id="link_show_lib_adresse_<?php echo $caiu?>" class="modif_input2"><strong><?php echo  htmlentities($adresse->getLib_adresse())?></strong><?php if($adresse->getTypeLib() != ""){ ?>&nbsp;(<?php echo  htmlentities($adresse->getTypeLib())?>)<?php }?></a>
+		<?php if ($adresse->getLib_adresse()!="" || $adresse->getTypeLib()!="") {?><a href="#" id="link_show_lib_adresse_<?php echo $caiu?>" class="modif_input2"><strong><?php echo  htmlentities($adresse->getLib_adresse(), ENT_QUOTES, "UTF-8")?></strong><?php if($adresse->getTypeLib() != ""){ ?>&nbsp;(<?php echo  htmlentities($adresse->getTypeLib(), ENT_QUOTES, "UTF-8")?>)<?php }?></a>
 		<script type="text/javascript">
 		Event.observe("link_show_lib_adresse_<?php echo $caiu?>", "click",  function(evt){Event.stop(evt);show_edit_form('annu_editon_adresse<?php echo $caiu?>', 'start_visible_<?php echo $caiu?>','adresse_lib<?php echo $caiu?>');}, false);
 		</script>
@@ -172,7 +172,7 @@
 	<tr>
 		<td>
 		<span class="labelled">Adresse:</span></td><td>
-		<a href="#" id="link_show_adr_adresse_<?php echo $caiu?>" class="modif_input1"><?php echo  nl2br(htmlentities($adresse->getText_adresse()))?></a>
+		<a href="#" id="link_show_adr_adresse_<?php echo $caiu?>" class="modif_input1"><?php echo  nl2br(htmlentities($adresse->getText_adresse()), ENT_QUOTES, "UTF-8")?></a>
 		<script type="text/javascript">
 		Event.observe("link_show_adr_adresse_<?php echo $caiu?>", "click",  function(evt){Event.stop(evt);show_edit_form('annu_editon_adresse<?php echo $caiu?>', 'start_visible_<?php echo $caiu?>','adresse_adresse<?php echo $caiu?>');}, false);
 		</script>
@@ -183,7 +183,7 @@
 	<tr>
 		<td>
 		<span class="labelled">Code Postal:</span></td><td>
-		<a href="#" id="link_show_code_adresse_<?php echo $caiu?>" class="modif_input1"><?php echo  htmlentities($adresse->getCode_postal())?></a>
+		<a href="#" id="link_show_code_adresse_<?php echo $caiu?>" class="modif_input1"><?php echo  htmlentities($adresse->getCode_postal(), ENT_QUOTES, "UTF-8")?></a>
 		<script type="text/javascript">
 		Event.observe("link_show_code_adresse_<?php echo $caiu?>", "click",  function(evt){Event.stop(evt);show_edit_form('annu_editon_adresse<?php echo $caiu?>', 'start_visible_<?php echo $caiu?>','adresse_code<?php echo $caiu?>');}, false);
 		</script>
@@ -194,7 +194,7 @@
 	<tr>
 		<td>
 		<span class="labelled">Ville:</span></td><td>
-		<a href="#" id="link_show_ville_adresse_<?php echo $caiu?>" class="modif_select1"><?php echo  htmlentities($adresse->getVille())?></a>
+		<a href="#" id="link_show_ville_adresse_<?php echo $caiu?>" class="modif_select1"><?php echo  htmlentities($adresse->getVille(), ENT_QUOTES, "UTF-8")?></a>
 		<script type="text/javascript">
 		Event.observe("link_show_ville_adresse_<?php echo $caiu?>", "click",  function(evt){Event.stop(evt);show_edit_form('annu_editon_adresse<?php echo $caiu?>', 'start_visible_<?php echo $caiu?>','adresse_ville<?php echo $caiu?>');}, false);
 		</script>
@@ -218,7 +218,7 @@
 		<span class="labelled">Note:</span>
 		</td>
 		<td>
-		<a href="#" id="link_show_note_adresse_<?php echo $caiu?>" class="modif_textarea3"><?php echo  nl2br(htmlentities($adresse->getNote()))?></a>
+		<a href="#" id="link_show_note_adresse_<?php echo $caiu?>" class="modif_textarea3"><?php echo  nl2br(htmlentities($adresse->getNote()), ENT_QUOTES, "UTF-8")?></a>
 		<script type="text/javascript">
 		Event.observe("link_show_note_adresse_<?php echo $caiu?>", "click",  function(evt){Event.stop(evt);show_edit_form('annu_editon_adresse<?php echo $caiu?>', 'start_visible_<?php echo $caiu?>','adresse_note<?php echo $caiu?>');}, false);
 		</script>

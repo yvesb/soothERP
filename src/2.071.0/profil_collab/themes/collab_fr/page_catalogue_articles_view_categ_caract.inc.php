@@ -49,7 +49,7 @@ if ($article->getVariante() == 1 && is_object($article_master)) {
 	<table style="width:100%;">
 	<tr class="row_color_0">
 	<td colspan="5">
-	<?php echo htmlentities($carac->lib_carac_groupe); ?>
+	<?php echo htmlentities($carac->lib_carac_groupe, ENT_QUOTES, "UTF-8"); ?>
 	</td>
 	</tr>
 	</table>
@@ -72,7 +72,7 @@ if ($article->getVariante() == 1 && is_object($article_master)) {
 		?>
 	<tr>
 	<td style="width:20%;" class="col_color_1">
-	<?php echo htmlentities($carac->lib_carac); ?>
+	<?php echo htmlentities($carac->lib_carac, ENT_QUOTES, "UTF-8"); ?>
 	</td>
 	
 			<td style="width:30%;" class="col_color_2">
@@ -83,15 +83,15 @@ if ($article->getVariante() == 1 && is_object($article_master)) {
 			if ($carac->variante == 0) {
 				?>
 				<input type="hidden" name="old_caract_value_<?php echo $serialisation_carac; ?>" id="old_caract_value_<?php echo $serialisation_carac; ?>" 
-					value="<?php echo htmlentities($carac->valeur); ?>" />
+					value="<?php echo htmlentities($carac->valeur, ENT_QUOTES, "UTF-8"); ?>" />
 				<?php if(count(explode(";", $carac->allowed_values)) > 1){ ?>
 				<select name="caract_value_<?php echo $serialisation_carac; ?>" id="caract_value_<?php echo $serialisation_carac; ?>"  class="classinput_xsize">
 				<?php
 				$allowed_values= explode(";", $carac->allowed_values);
 				foreach ($allowed_values as $allowed_value){
 					?>
-					<option value="<?php echo htmlentities($allowed_value)?>" <?php if ($allowed_value==$carac->valeur){echo 'selected="selected"';} ?>>
-					<?php echo htmlentities($allowed_value)?></option>
+					<option value="<?php echo htmlentities($allowed_value, ENT_QUOTES, "UTF-8")?>" <?php if ($allowed_value==$carac->valeur){echo 'selected="selected"';} ?>>
+					<?php echo htmlentities($allowed_value, ENT_QUOTES, "UTF-8")?></option>
 					<?php 
 				}
 				?>
@@ -100,7 +100,7 @@ if ($article->getVariante() == 1 && is_object($article_master)) {
 				}else{
 					?>
 					<input name="caract_value_<?php echo $serialisation_carac; ?>" id="caract_value_<?php echo $serialisation_carac; ?>" 
-					 	type="text" value="<?php echo htmlentities($carac->valeur); ?>" class="classinput_xsize" />
+					 	type="text" value="<?php echo htmlentities($carac->valeur, ENT_QUOTES, "UTF-8"); ?>" class="classinput_xsize" />
 					<?php 
 				}
 			// Si variante
@@ -110,24 +110,24 @@ if ($article->getVariante() == 1 && is_object($article_master)) {
 					<?php if(!$article_fils){ ?>name="caract_value_<?php echo $serialisation_carac; ?>" id="caract_value_<?php echo $serialisation_carac; ?>" 
 					<?php } ?> type="text" value="<?php 
 				foreach ($art_caracs as $art_carac) { 
-					if ($art_carac->ref_carac==$carac->ref_carac){echo htmlentities($art_carac->valeur);}
+					if ($art_carac->ref_carac==$carac->ref_carac){echo htmlentities($art_carac->valeur, ENT_QUOTES, "UTF-8");}
 				}
 				?>" class="classinput_xsize" <?php if($article_fils) {?>readonly="readonly" style="background-color: #DDD;" <?php }?>/>
 				<?php if($article_fils){ ?>
 				<input type="hidden" name="caract_value_<?php echo $serialisation_carac; ?>" id="caract_value_<?php echo $serialisation_carac; ?>" value="<?php 
 				foreach ($article->getCaracs() as $art_carac) { 
-					if ($art_carac->ref_carac==$carac->ref_carac){echo htmlentities($art_carac->valeur);}
+					if ($art_carac->ref_carac==$carac->ref_carac){echo htmlentities($art_carac->valeur, ENT_QUOTES, "UTF-8");}
 				}
 				?>" />
 				<input name="old_caract_value_<?php echo $serialisation_carac; ?>" id="old_caract_value_<?php echo $serialisation_carac; ?>" type="hidden" value="<?php 
 				foreach ($article->getCaracs() as $art_carac) { 
-					if ($art_carac->ref_carac==$carac->ref_carac){echo htmlentities($art_carac->valeur);}
+					if ($art_carac->ref_carac==$carac->ref_carac){echo htmlentities($art_carac->valeur, ENT_QUOTES, "UTF-8");}
 				}
 				?>" class="classinput_xsize" />
 				<?php } else { ?>
 				<input name="old_caract_value_<?php echo $serialisation_carac; ?>" id="old_caract_value_<?php echo $serialisation_carac; ?>" type="hidden" value="<?php 
 				foreach ($art_caracs as $art_carac) { 
-					if ($art_carac->ref_carac==$carac->ref_carac){echo htmlentities($art_carac->valeur);}
+					if ($art_carac->ref_carac==$carac->ref_carac){echo htmlentities($art_carac->valeur, ENT_QUOTES, "UTF-8");}
 				}
 				?>" class="classinput_xsize" />
 				<?php }
@@ -135,10 +135,10 @@ if ($article->getVariante() == 1 && is_object($article_master)) {
 			?>
 			</td>
 
-			<td style="" class="col_color_2"><?php echo htmlentities($carac->unite); ?></td>
+			<td style="" class="col_color_2"><?php echo htmlentities($carac->unite, ENT_QUOTES, "UTF-8"); ?></td>
 			<td style="width:55px; text-align:center"  class="col_color_2">
 			<span class="variante_info">
-				<input name="variante_<?php echo $serialisation_carac; ?>" id="variante_<?php echo $serialisation_carac; ?>" type="hidden" value="<?php echo htmlentities($carac->variante); ?>" />
+				<input name="variante_<?php echo $serialisation_carac; ?>" id="variante_<?php echo $serialisation_carac; ?>" type="hidden" value="<?php echo htmlentities($carac->variante, ENT_QUOTES, "UTF-8"); ?>" />
 		
 				<?php if ($article->getVariante() != 0 && $carac->variante == 1){
 					$variante_carac	++;

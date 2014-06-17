@@ -23,7 +23,7 @@
 			<option value="<?php echo ($s_art_categ->ref_art_categ)?>" <?php if ($s_art_categ->ref_art_categ==$_REQUEST["ref_art_categ_parent"]) {echo 'selected="seleted"';}?>>
 			<?php for ($i=0; $i<$s_art_categ->indentation; $i++) {?>
 				--
-			<?php }?><?php echo htmlentities($s_art_categ->lib_art_categ)?>
+			<?php }?><?php echo htmlentities($s_art_categ->lib_art_categ, ENT_QUOTES, "UTF-8")?>
 			</option>
 			<?php
 				}
@@ -45,7 +45,7 @@
 			<select name="modele" id="modele" class="classinput_xsize">
 			<?php
 				foreach ($BDD_MODELES as $cle_list_modele=>$list_modele) {?>
-				<option value="<?php echo htmlentities($cle_list_modele)?>"><?php echo htmlentities($list_modele)?></option>
+				<option value="<?php echo htmlentities($cle_list_modele)?>"><?php echo htmlentities($list_modele, ENT_QUOTES, "UTF-8")?></option>
 				<?php 
 				}
 			?>
@@ -72,7 +72,7 @@
 						<option value="<?php echo $tva['id_tva'];?>" <?php
 								if ($DEFAUT_ID_TVA == $tva['id_tva']) {echo ' selected="selected"';};
 						?>>
-						<?php echo htmlentities($tva['tva']);?>%</option>
+						<?php echo htmlentities($tva['tva'], ENT_QUOTES, "UTF-8");?>%</option>
 						<?php 
 					}
 					?>

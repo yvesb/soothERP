@@ -62,21 +62,21 @@ check_page_variables ($page_variables);
 		$emplacement_article = "";
 	 	foreach ($article_stocks_alertes as $article_stock_alerte) {
 	 		if ($stock_liste->getId_stock() == $article_stock_alerte->id_stock) {
-	 			$seuil_exist = htmlentities($article_stock_alerte->seuil_alerte);
-	 			$emplacement_article = htmlentities($article_stock_alerte->emplacement);
+	 			$seuil_exist = htmlentities($article_stock_alerte->seuil_alerte, ENT_QUOTES, "UTF-8");
+	 			$emplacement_article = htmlentities($article_stock_alerte->emplacement, ENT_QUOTES, "UTF-8");
 	 		} 
 	 	}
 		?>
 		<tr>
-			<td class="labelled_text"><?php echo htmlentities($stock_liste->getLib_stock());?>: </td>
+			<td class="labelled_text"><?php echo htmlentities($stock_liste->getLib_stock(), ENT_QUOTES, "UTF-8");?>: </td>
 			<td>
-				<input type="text" name="stock_<?php echo htmlentities($stock_liste->getId_stock() );?>" 
-					id="stock_<?php echo htmlentities($stock_liste->getId_stock());?>" 
+				<input type="text" name="stock_<?php echo htmlentities($stock_liste->getId_stock() , ENT_QUOTES, "UTF-8");?>" 
+					id="stock_<?php echo htmlentities($stock_liste->getId_stock(), ENT_QUOTES, "UTF-8");?>" 
 					value="<?php echo $seuil_exist; ?>"  class="classinput_xsize"/>
 			</td>
 			<td>
-				<input type="text" name="emplacement_stock_<?php echo htmlentities($stock_liste->getId_stock() );?>" 
-					id="emplacement_stock_<?php echo htmlentities($stock_liste->getId_stock());?>" 
+				<input type="text" name="emplacement_stock_<?php echo htmlentities($stock_liste->getId_stock() , ENT_QUOTES, "UTF-8");?>" 
+					id="emplacement_stock_<?php echo htmlentities($stock_liste->getId_stock(), ENT_QUOTES, "UTF-8");?>" 
 					value="<?php echo $emplacement_article; ?>"  class="classinput_xsize"/>
 			</td>
 		</tr>
@@ -94,7 +94,7 @@ check_page_variables ($page_variables);
 if ($GESTION_STOCK) {
 	foreach ($stocks_liste as $stock_liste) {
 		?>
-		Event.observe("stock_<?php echo htmlentities($stock_liste->getId_stock ());?>", "blur", function(evt){nummask(evt,"0", "X.X");}, false);
+		Event.observe("stock_<?php echo htmlentities($stock_liste->getId_stock (), ENT_QUOTES, "UTF-8");?>", "blur", function(evt){nummask(evt,"0", "X.X");}, false);
 		<?php 
 	} 
 }

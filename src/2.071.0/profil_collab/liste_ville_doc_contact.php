@@ -37,7 +37,7 @@ function get_communes($cp) {
 			echo '<ul class="complete_ville" style="width:250px">'; 
 			foreach ($citys as $city) {
 				if ($i < $NB_VILLES_AFFICHEES) {
-				echo ' <li class="complete_ville" id="'.$_REQUEST["choix_ville"].'_'.$i.'">'.htmlentities($city->ville).'</li>'; 
+				echo ' <li class="complete_ville" id="'.$_REQUEST["choix_ville"].'_'.$i.'">'.htmlentities($city->ville, ENT_QUOTES, "UTF-8").'</li>'; 
 				} elseif ($i == $NB_VILLES_AFFICHEES)  {echo('<li>...</li>'); }
 			$i++;
 		} 
@@ -49,7 +49,7 @@ function get_communes($cp) {
 		foreach ($citys as $city) {
 			echo 'Event.observe("'.$_REQUEST["choix_ville"].'_'.$i.'", "mouseout",  function(){changeclassname ("'.$_REQUEST["choix_ville"].'_'.$i.'", "complete_ville");}, false);
 						Event.observe("'.$_REQUEST["choix_ville"].'_'.$i.'", "mouseover",  function(){changeclassname ("'.$_REQUEST["choix_ville"].'_'.$i.'", "complete_ville_hover");}, false);
-						Event.observe("'.$_REQUEST["choix_ville"].'_'.$i.'", "click",  function(){$("'.$_REQUEST["ville"].'").value="'.htmlentities($city->ville).'"; $("'.$_REQUEST["choix_ville"].'").style.display="none"; $("'.$_REQUEST["iframe_choix_ville"].'").style.display="none";docu_maj_contact_infos ($("ref_doc").value, "'.$_REQUEST["ville"].'");}, false);';
+						Event.observe("'.$_REQUEST["choix_ville"].'_'.$i.'", "click",  function(){$("'.$_REQUEST["ville"].'").value="'.htmlentities($city->ville, ENT_QUOTES, "UTF-8").'"; $("'.$_REQUEST["choix_ville"].'").style.display="none"; $("'.$_REQUEST["iframe_choix_ville"].'").style.display="none";docu_maj_contact_infos ($("ref_doc").value, "'.$_REQUEST["ville"].'");}, false);';
 				$i++;
 			if ($i >= $NB_VILLES_AFFICHEES)  exit('</script>'); 
 		} 

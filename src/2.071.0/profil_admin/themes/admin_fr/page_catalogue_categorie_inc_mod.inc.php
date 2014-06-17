@@ -1,4 +1,4 @@
-<span class="sous_titre2">Modification la cat&eacute;gorie d'articles <strong><?php echo htmlentities($art_categ->getLib_art_categ()); ?></strong>
+<span class="sous_titre2">Modification la cat&eacute;gorie d'articles <strong><?php echo htmlentities($art_categ->getLib_art_categ(), ENT_QUOTES, "UTF-8"); ?></strong>
 </span>
 
 <script type="text/javascript" language="javascript">
@@ -66,7 +66,7 @@ Event.observe("menu_art_categ_2", "click",  function(evt){Event.stop(evt); view_
 			<option value="<?php echo ($s_art_categ->ref_art_categ)?>" <?php if ($s_art_categ->ref_art_categ==$art_categ->getRef_art_categ_parent()) {echo 'selected="seleted"'; $lib_art_categ_select = $s_art_categ->lib_art_categ;}?>>
 			<?php for ($i=0; $i<$s_art_categ->indentation; $i++) {?>
 				--
-			<?php }?><?php echo htmlentities($s_art_categ->lib_art_categ)?>
+			<?php }?><?php echo htmlentities($s_art_categ->lib_art_categ, ENT_QUOTES, "UTF-8")?>
 			</option>
 			<?php
 				}
@@ -84,7 +84,7 @@ Event.observe("menu_art_categ_2", "click",  function(evt){Event.stop(evt); view_
 			<td class="size_strict"><span class="labelled">Libell&eacute;:</span>
 			</td>
 			<td>
-			<input name="lib_art_categ" id="lib_art_categ" type="text" class="classinput_xsize" value="<?php echo htmlentities($art_categ->getLib_art_categ()); ?>" />
+			<input name="lib_art_categ" id="lib_art_categ" type="text" class="classinput_xsize" value="<?php echo htmlentities($art_categ->getLib_art_categ(), ENT_QUOTES, "UTF-8"); ?>" />
 			</td>
 		</tr>
 		<tr>
@@ -95,8 +95,8 @@ Event.observe("menu_art_categ_2", "click",  function(evt){Event.stop(evt); view_
 			<?php
 			$modele_select = "";
 			foreach ($BDD_MODELES as $cle_list_modele=>$list_modele) {?>
-			<option value="<?php echo htmlentities($cle_list_modele)?>" <?php 
-			if ($art_categ->getModele ()==$cle_list_modele) {echo 'selected="selected"'; $modele_select = $list_modele;} ?>><?php echo htmlentities($list_modele)?></option>
+			<option value="<?php echo htmlentities($cle_list_modele, ENT_QUOTES, "UTF-8")?>" <?php 
+			if ($art_categ->getModele ()==$cle_list_modele) {echo 'selected="selected"'; $modele_select = $list_modele;} ?>><?php echo htmlentities($list_modele, ENT_QUOTES, "UTF-8")?></option>
 			<?php }?>
 			</select>
 			<?php if ($art_categ->getId_modele_spe ()) {echo $modele_select;} ?>
@@ -130,7 +130,7 @@ Event.observe("menu_art_categ_2", "click",  function(evt){Event.stop(evt); view_
 			<option value="<?php echo $tva['id_tva'];?>" <?php
 					if ($art_categ->getDefaut_id_tva()==$tva['id_tva']) {echo ' selected="selected"';};
 			?>>
-			<?php echo htmlentities($tva['tva']);?>%</option>
+			<?php echo htmlentities($tva['tva'], ENT_QUOTES, "UTF-8");?>%</option>
 			<?php 
 		}
 		?>
@@ -221,7 +221,7 @@ Event.observe("menu_art_categ_2", "click",  function(evt){Event.stop(evt); view_
 			<td ><span class="labelled_extend">Catégorie de remplacement: </span>
 			</td>
 			<td>
-			<input name="ref_art_categ" id="ref_art_categ" type="hidden" value="<?php echo htmlentities($art_categ->getRef_art_categ()); ?>" />
+			<input name="ref_art_categ" id="ref_art_categ" type="hidden" value="<?php echo htmlentities($art_categ->getRef_art_categ(), ENT_QUOTES, "UTF-8"); ?>" />
 			<select name="ref_art_categ_parent" id="ref_art_categ_parent" class="classinput_lsize">
 			
 			
@@ -235,7 +235,7 @@ Event.observe("menu_art_categ_2", "click",  function(evt){Event.stop(evt); view_
 						--
 						<?php 
 						}
-					?><?php echo htmlentities($s_art_categ->lib_art_categ)?>
+					?><?php echo htmlentities($s_art_categ->lib_art_categ, ENT_QUOTES, "UTF-8")?>
 					</option>
 					<?php
 				}
@@ -275,7 +275,7 @@ Event.observe("menu_art_categ_2", "click",  function(evt){Event.stop(evt); view_
 <?php // liste des pays ayant des tva
 //		foreach ($tvas_pays  as $tva_pays){
 ?>
-	<option value="<?php // echo $tva_pays["id_pays"];?>" <?php // if ($tva_pays["id_pays"]==$DEFAUT_ID_PAYS){echo 'selected="selected"';}?>><?php // echo htmlentities($tva_pays["pays"]);?></option>
+	<option value="<?php // echo $tva_pays["id_pays"];?>" <?php // if ($tva_pays["id_pays"]==$DEFAUT_ID_PAYS){echo 'selected="selected"';}?>><?php // echo htmlentities($tva_pays["pays"], ENT_QUOTES, "UTF-8");?></option>
 <?php 
 //		}
 ?>
@@ -303,14 +303,14 @@ Event.observe("menu_art_categ_2", "click",  function(evt){Event.stop(evt); view_
 // liste des pays ayant des tva
 //		foreach ($taxes_pays  as $taxe_pays){
 ?>
-	<option value="<?php //echo $taxe_pays["id_pays"];?>" <?php //if ($taxe_pays["id_pays"]==$DEFAUT_ID_PAYS){echo 'selected="selected"';}?>><?php //echo htmlentities($taxe_pays["pays"]);?></option>
+	<option value="<?php //echo $taxe_pays["id_pays"];?>" <?php //if ($taxe_pays["id_pays"]==$DEFAUT_ID_PAYS){echo 'selected="selected"';}?>><?php //echo htmlentities($taxe_pays["pays"], ENT_QUOTES, "UTF-8");?></option>
 <?php 
 //		}
 ?>
 </select>-->
 <br />
-<input type="hidden" name="taxe_id_pays" id="taxe_id_pays" value="<?php if (isset($taxes['0']["id_pays"])) {echo htmlentities($taxes['0']["id_pays"]);} ?>" />
-<p style="font-weight:bolder"><?php if (isset($taxes['0']["pays"])) {echo htmlentities($taxes['0']["pays"]);} ?></p>
+<input type="hidden" name="taxe_id_pays" id="taxe_id_pays" value="<?php if (isset($taxes['0']["id_pays"])) {echo htmlentities($taxes['0']["id_pays"], ENT_QUOTES, "UTF-8");} ?>" />
+<p style="font-weight:bolder"><?php if (isset($taxes['0']["pays"])) {echo htmlentities($taxes['0']["pays"], ENT_QUOTES, "UTF-8");} ?></p>
 <div id="taxes_list_content">
 <?php 
 if (isset($taxes['0']["id_pays"])) {

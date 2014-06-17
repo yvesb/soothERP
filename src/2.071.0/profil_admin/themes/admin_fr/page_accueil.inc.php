@@ -90,7 +90,7 @@ Vous trouverez la liste des tâches d'administration sur la page d'accueil.<br /
 						<td>
 							<div style="font-weight:bolder; cursor:pointer" id="go_tache_<?php echo $tache->id_tache_admin;?>_2"><?php echo date_Us_to_Fr($tache->date_creation);?></div>					</td>
 						<td>
-							<div style="font-weight:bolder; cursor:pointer" id="go_tache_<?php echo $tache->id_tache_admin;?>_3"><?php echo htmlentities($tache->lib_tache_admin);?><br />
+							<div style="font-weight:bolder; cursor:pointer" id="go_tache_<?php echo $tache->id_tache_admin;?>_3"><?php echo htmlentities($tache->lib_tache_admin, ENT_QUOTES, "UTF-8");?><br />
 							<span class="sbold_ita_text" style="color: #999999" id="go_tache_<?php echo $tache->id_tache_admin;?>_4"><?php echo ($tache->description );?></span>						</div>					</td>
 						<td style="text-align:right;">
 						<div id="etat_tache_<?php echo $tache->id_tache_admin;?>_l" style="cursor:pointer; width:10px; display:block ">
@@ -136,7 +136,7 @@ Vous trouverez la liste des tâches d'administration sur la page d'accueil.<br /
 						<td>
 							<div style="font-weight:bolder; cursor:pointer;color: #CCCCCC" id="go_tache_<?php echo $tache->id_tache_admin;?>_2"><?php echo date_Us_to_Fr($tache->date_creation);?></div>					</td>
 						<td>
-							<div style="font-weight:bolder; cursor:pointer;color: #CCCCCC" id="go_tache_<?php echo $tache->id_tache_admin;?>_3"><?php echo htmlentities($tache->lib_tache_admin);?><br />
+							<div style="font-weight:bolder; cursor:pointer;color: #CCCCCC" id="go_tache_<?php echo $tache->id_tache_admin;?>_3"><?php echo htmlentities($tache->lib_tache_admin, ENT_QUOTES, "UTF-8");?><br />
 							<span class="sbold_ita_text" style="color: #CCCCCC"><?php echo ($tache->description );?></span>						</div>					</td>
 						<td style="text-align:right;">&nbsp;
 					<script type="text/javascript">

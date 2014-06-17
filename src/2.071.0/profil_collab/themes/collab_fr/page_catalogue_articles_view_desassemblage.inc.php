@@ -35,7 +35,7 @@ Event.observe("link_close_pop_up_inventory", "click",  function(evt){Event.stop(
 				<?php 
 					foreach ($_SESSION['stocks'] as $stock) {
 					?>
-					<option value="<?php echo $stock->getId_stock (); ?>" <?php if ($stock->getId_stock () == $_SESSION['magasin']->getId_Stock ()){echo 'selected="selected"';}?>><?php echo htmlentities($stock->getLib_stock()); ?>					</option>
+					<option value="<?php echo $stock->getId_stock (); ?>" <?php if ($stock->getId_stock () == $_SESSION['magasin']->getId_Stock ()){echo 'selected="selected"';}?>><?php echo htmlentities($stock->getLib_stock(), ENT_QUOTES, "UTF-8"); ?>					</option>
 					<?php 
 				}
 				?>

@@ -59,9 +59,9 @@ check_page_variables ($page_variables);
 	foreach ($stocks_liste as $stock_liste) {
 		?>
 		<tr>
-			<td class="labelled_text"><?php echo htmlentities($stock_liste->getLib_stock());?>: </td>
-			<td><input type="text" name="stock_<?php echo htmlentities($stock_liste->getId_stock());?>" id="stock_<?php echo htmlentities($stock_liste->getId_stock());?>" value="0"  class="classinput_xsize"/></td>
-			<td><input type="text" name="emplacement_stock_<?php echo htmlentities($stock_liste->getId_stock());?>" id="emplacement_stock_<?php echo htmlentities($stock_liste->getId_stock());?>" value=""  class="classinput_xsize"/></td>
+			<td class="labelled_text"><?php echo htmlentities($stock_liste->getLib_stock(), ENT_QUOTES, "UTF-8");?>: </td>
+			<td><input type="text" name="stock_<?php echo htmlentities($stock_liste->getId_stock(), ENT_QUOTES, "UTF-8");?>" id="stock_<?php echo htmlentities($stock_liste->getId_stock(), ENT_QUOTES, "UTF-8");?>" value="0"  class="classinput_xsize"/></td>
+			<td><input type="text" name="emplacement_stock_<?php echo htmlentities($stock_liste->getId_stock(), ENT_QUOTES, "UTF-8");?>" id="emplacement_stock_<?php echo htmlentities($stock_liste->getId_stock(), ENT_QUOTES, "UTF-8");?>" value=""  class="classinput_xsize"/></td>
 		</tr>
 		<?php 
 	} 
@@ -82,7 +82,7 @@ $("modele").value="<?php echo $id_modele;?>";
 if ($GESTION_STOCK) {
 	foreach ($stocks_liste as $stock_liste) {
 		?>
-		Event.observe("stock_<?php echo htmlentities($stock_liste->getId_stock ());?>", "blur", function(evt){nummask(evt,"0", "X.X");}, false);
+		Event.observe("stock_<?php echo htmlentities($stock_liste->getId_stock (), ENT_QUOTES, "UTF-8");?>", "blur", function(evt){nummask(evt,"0", "X.X");}, false);
 		<?php 
 	} 
 }

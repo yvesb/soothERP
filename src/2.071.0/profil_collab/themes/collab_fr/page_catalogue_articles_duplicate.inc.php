@@ -364,7 +364,7 @@ check_page_variables ($page_variables);
 </div>
 	<iframe name="desc_longue_html" id="desc_longue_html" class="classinput_xsize" style="height:220px; display:block; width:100%" frameborder="0"></iframe><br />
 	<iframe width="161" height="113" id="colorpalette" src="colors.php?proto=editeur&ifr=desc_longue_html" style="display:none; position:absolute; border:1px solid #000000; OVERFLOW: hidden;" frameborder="0" scrolling="no"></iframe><br />
-	<textarea name="desc_longue" rows="6" style="display:none;" id="desc_longue"><?php echo htmlentities($article->getDesc_longue ());?></textarea>
+	<textarea name="desc_longue" rows="6" style="display:none;" id="desc_longue"><?php echo htmlentities($article->getDesc_longue (), ENT_QUOTES, "UTF-8");?></textarea>
 	</div>
 			</td>
 			<td>&nbsp;</td>
@@ -461,7 +461,7 @@ check_page_variables ($page_variables);
 			</td>
 			<td>&nbsp;</td>
 			<td class="labelled_text">Indice de valorisation: </td>
-			<td><input type="text" name="valo_indice" id="valo_indice" value="<?php echo htmlentities($article->getValo_indice ());?>"  class="classinput_nsize"/></td>
+			<td><input type="text" name="valo_indice" id="valo_indice" value="<?php echo htmlentities($article->getValo_indice (), ENT_QUOTES, "UTF-8");?>"  class="classinput_nsize"/></td>
 			<td>&nbsp;</td>
 		</tr>
                 <tr id="tr_is_achetable">
@@ -634,7 +634,7 @@ check_page_variables ($page_variables);
 			?>
 			<div id="ligne_<?php echo $liaison_type->getId_liaison_type(); ?>_vers" style="width:100%; display:none;">
 				<div class="liaison_type_title">
-					<?php echo htmlentities(str_replace("%LIB_ARTICLE%", "Ce nouvel article", $liaison_type->getLib_liaison_type_vers())); ?>
+					<?php echo htmlentities(str_replace("%LIB_ARTICLE%", "Ce nouvel article", $liaison_type->getLib_liaison_type_vers()), ENT_QUOTES, "UTF-8"); ?>
 				</div>
 				<div style="width:100%;">
 					<ul id="liaison_ul_<?php echo $liaison_type->getId_liaison_type(); ?>_vers" class="liste_liaison"></ul>
@@ -651,7 +651,7 @@ check_page_variables ($page_variables);
 			</script>
 			<div id="ligne_<?php echo $liaison_type->getId_liaison_type(); ?>_depuis" style="width:100%; display:none;">
 				<div class="liaison_type_title">
-					<?php echo htmlentities(str_replace("%LIB_ARTICLE%", "Ce nouvel article", $liaison_type->getLib_liaison_type_depuis())); ?>
+					<?php echo htmlentities(str_replace("%LIB_ARTICLE%", "Ce nouvel article", $liaison_type->getLib_liaison_type_depuis()), ENT_QUOTES, "UTF-8"); ?>
 				</div>
 				<div style="width:100%;">
 					<ul id="liaison_ul_<?php echo $liaison_type->getId_liaison_type(); ?>_depuis" class="liste_liaison"></ul>
@@ -1056,7 +1056,7 @@ Event.observe($("bt_etape_b_0"), "click", function(evt){Event.stop(evt); goto_et
 					
 					Event.observe('tr_<?php echo ($art_categ->ref_art_categ)?>', 'mouseout',  function(){changeclassname ('tr_<?php echo ($art_categ->ref_art_categ)?>', 'list_art_categs');}, false);
 					
-					Event.observe('mod_<?php echo ($art_categ->ref_art_categ)?>', 'click',  function(evt){Event.stop(evt);  $("ref_art_categ").value="<?php echo ($art_categ->ref_art_categ)?>"; changeref_art_categ(); Element.toggle('liste_de_categorie_selectable'); Element.toggle('iframe_liste_de_categorie_selectable'); $("lib_art_categ").innerHTML="<?php echo htmlentities($art_categ->lib_art_categ)?>";
+					Event.observe('mod_<?php echo ($art_categ->ref_art_categ)?>', 'click',  function(evt){Event.stop(evt);  $("ref_art_categ").value="<?php echo ($art_categ->ref_art_categ)?>"; changeref_art_categ(); Element.toggle('liste_de_categorie_selectable'); Element.toggle('iframe_liste_de_categorie_selectable'); $("lib_art_categ").innerHTML="<?php echo htmlentities($art_categ->lib_art_categ, ENT_QUOTES, "UTF-8")?>";
 					$("date_fin_dispo").value = <?php
 					if ($art_categ->duree_dispo) {
 						echo '"'.date("d-m-Y", mktime (date("m"),date("i"),date("s")+$art_categ->duree_dispo, date("m"), date("d"), date("Y"))).'";'  ;

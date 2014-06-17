@@ -80,8 +80,8 @@ Liste des catalogues
 						
 						</td>
 						<td>
-						<input name="lib_catalogue_client" id="lib_catalogue_client" type="text" value="<?php echo htmlentities($catalogue_client->lib_catalogue_client);?>"  class="classinput_xsize"/>
-						<input name="id_catalogue_client" id="id_catalogue_client" type="hidden" value="<?php echo htmlentities($catalogue_client->id_catalogue_client);?>"/>
+						<input name="lib_catalogue_client" id="lib_catalogue_client" type="text" value="<?php echo htmlentities($catalogue_client->lib_catalogue_client, ENT_QUOTES, "UTF-8");?>"  class="classinput_xsize"/>
+						<input name="id_catalogue_client" id="id_catalogue_client" type="hidden" value="<?php echo htmlentities($catalogue_client->id_catalogue_client, ENT_QUOTES, "UTF-8");?>"/>
 						</td>
 						<td>
 							<div style="text-align:right">
@@ -95,7 +95,7 @@ Liste des catalogues
 			<td>
 				<div style="text-align:left; width:35px">
 				<form action="catalogues_clients_sup.php" method="post" id="catalogues_clients_sup_<?php echo $catalogue_client->id_catalogue_client;?>" name="catalogues_clients_sup_<?php echo $catalogue_client->id_catalogue_client;?>" target="formFrame" >
-						<input name="id_catalogue_client" id="id_catalogue_client" type="hidden" value="<?php echo htmlentities($catalogue_client->id_catalogue_client);?>"/>
+						<input name="id_catalogue_client" id="id_catalogue_client" type="hidden" value="<?php echo htmlentities($catalogue_client->id_catalogue_client, ENT_QUOTES, "UTF-8");?>"/>
 							<input name="supprimer_<?php echo $catalogue_client->id_catalogue_client;?>" id="supprimer_<?php echo $catalogue_client->id_catalogue_client;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" />
 				</form>
 				<SCRIPT type="text/javascript">

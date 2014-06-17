@@ -4,7 +4,7 @@
 		foreach ($listepays as $payslist){
 		?>
 		<option value="<?php echo $payslist->id_pays?>" <?php if ($payslist->id_pays==$DEFAUT_ID_PAYS){echo 'selected="selected"';}?>>
-		<?php echo htmlentities($payslist->pays)?></option>
+		<?php echo htmlentities($payslist->pays, ENT_QUOTES, "UTF-8")?></option>
 		<?php 
 		}?>
 				</select>

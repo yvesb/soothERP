@@ -131,7 +131,7 @@ update_menu_arbo();
 					</tr>	
 					<tr>
 						<td>
-						<input id="lib_enseigne_<?php echo $liste_enseigne->id_mag_enseigne; ?>" name="lib_enseigne_<?php echo $liste_enseigne->id_mag_enseigne; ?>" type="text" value="<?php echo htmlentities($liste_enseigne->lib_enseigne); ?>"  class="classinput_lsize"/>
+						<input id="lib_enseigne_<?php echo $liste_enseigne->id_mag_enseigne; ?>" name="lib_enseigne_<?php echo $liste_enseigne->id_mag_enseigne; ?>" type="text" value="<?php echo htmlentities($liste_enseigne->lib_enseigne, ENT_QUOTES, "UTF-8"); ?>"  class="classinput_lsize"/>
 			<input name="id_mag_enseigne" id="id_mag_enseigne" type="hidden" value="<?php echo $liste_enseigne->id_mag_enseigne; ?>" />
 						
 						</td>

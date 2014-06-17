@@ -216,7 +216,7 @@ update_menu_arbo();
 					<option value="<?php echo $tva['id_tva'];?>" <?php
 							if ($DEFAUT_ID_TVA==$tva['id_tva']) {echo ' selected="selected"'; };
 					?>>
-					<?php echo htmlentities($tva['tva']);?>%</option>
+					<?php echo htmlentities($tva['tva'], ENT_QUOTES, "UTF-8");?>%</option>
 					<?php 
 				}
 				?>
@@ -334,12 +334,12 @@ update_menu_arbo();
 								<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 							</tr>	
 							<tr>
-								<td><?php echo htmlentities($liaison_liste->lib_liaison_type); ?>
+								<td><?php echo htmlentities($liaison_liste->lib_liaison_type, ENT_QUOTES, "UTF-8"); ?>
 					<input name="id_liaison_type" id="id_liaison_type" type="hidden" value="<?php echo $liaison_liste->id_liaison_type; ?>" />
 					<input name="systeme_<?php echo $liaison_liste->id_liaison_type; ?>" id="systeme_<?php echo $liaison_liste->id_liaison_type; ?>" type="hidden" value="<?php echo $liaison_liste->systeme; ?>" />
 								</td>
 								<td>
-								<input id="actif_<?php echo $liaison_liste->id_liaison_type; ?>" name="actif_<?php echo $liaison_liste->id_liaison_type; ?>" value="<?php echo htmlentities($liaison_liste->actif); ?>" type="checkbox"  <?php if($liaison_liste->actif==1){echo 'checked="checked"';}?>  <?php if($liaison_liste->systeme==1){echo 'disabled="disabled"';}?>/>
+								<input id="actif_<?php echo $liaison_liste->id_liaison_type; ?>" name="actif_<?php echo $liaison_liste->id_liaison_type; ?>" value="<?php echo htmlentities($liaison_liste->actif, ENT_QUOTES, "UTF-8"); ?>" type="checkbox"  <?php if($liaison_liste->actif==1){echo 'checked="checked"';}?>  <?php if($liaison_liste->systeme==1){echo 'disabled="disabled"';}?>/>
 								</td>
 								<td>
 									<p style="text-align:right">

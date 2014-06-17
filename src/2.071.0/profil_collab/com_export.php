@@ -54,7 +54,7 @@ $liste = charger_liste_commerciaux ();
 			echo '<ul class="complete_commercial" style="width:250px">'; 
 			foreach ($liste as $commercial) {
 			$ref = $commercial->ref_contact;
-				echo ' <li class="complete_commercial" id="choix_commercial'.'_'.$i.'"><input type="checkbox" name="com[]" id="c'.$i.'" value="'.$ref.'"checked/>'. htmlentities( substr($commercial->nom,0,30)).'</li>'; 
+				echo ' <li class="complete_commercial" id="choix_commercial'.'_'.$i.'"><input type="checkbox" name="com[]" id="c'.$i.'" value="'.$ref.'"checked/>'. htmlentities( substr($commercial->nom,0,30), ENT_QUOTES, "UTF-8").'</li>'; 
 			$i++;
 		} 
 		echo '</ul>';

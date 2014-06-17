@@ -31,7 +31,7 @@ foreach ($editions_modes as $edition_mode) {
 	<?php 	if (isset($_REQUEST["date_fin"])) {echo "&date_fin=".$_REQUEST["date_fin"];}else{echo "&date_fin=1";}?>
 	<?php 	if (isset($_REQUEST["date_exercice"])) {echo "&date_exercice=".$_REQUEST["date_exercice"];}else{echo "&date_exercice=".date('Y');}?>
 	<?php 	if (isset($_REQUEST["impress"])) {echo "&impress=".$_REQUEST["impress"];}else{echo "&impress=1";}?>" target="mainediting" >
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-imprimer.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode);?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode);?>" />	</a>
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-imprimer.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" />	</a>
 	</td>
 	<?php
 	break;
@@ -46,7 +46,7 @@ case "2":?>
 <?php if (isset($_REQUEST["date_exercice"])) {echo "&date_exercice=".$_REQUEST["date_exercice"];}else{echo "&date_exercice=".date('Y');}?>
 <?php 	if (isset($_REQUEST["print"])) {echo "&print=".$_REQUEST["print"];}else{echo "&print=2";}?>
 ",580,450,"menubar=no,statusbar=no,scrollbars=yes,resizable=yes")' >
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-email.gif" alt="<?php echo htmlentities($edition_mode->lib_edition_mode);?>" title="<?php echo htmlentities($edition_mode->lib_edition_mode);?>" /> </a>
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-email.gif" alt="<?php echo htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" title="<?php echo htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" /> </a>
 </td>
 <?php
 break;
@@ -103,7 +103,7 @@ $liste = charger_liste_commerciaux ();
 			echo '<ul class="complete_commercial" style="width:250px">'; 
 			foreach ($liste as $commercial) {
 			$ref = $commercial->ref_contact;
-				echo ' <li class="complete_commercial" id="choix_commercial'.'_'.$i.'"><input type="checkbox" name="com[]" id="c'.$i.'" value="'.$ref.'"/>'. htmlentities( substr($commercial->nom,0,30)).'</li>'; 
+				echo ' <li class="complete_commercial" id="choix_commercial'.'_'.$i.'"><input type="checkbox" name="com[]" id="c'.$i.'" value="'.$ref.'"/>'. htmlentities( substr($commercial->nom,0,30), ENT_QUOTES, "UTF-8").'</li>'; 
 			$i++;
 		} 
 		echo '</ul>';

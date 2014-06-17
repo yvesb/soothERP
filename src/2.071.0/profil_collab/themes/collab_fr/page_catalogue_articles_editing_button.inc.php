@@ -35,7 +35,7 @@ foreach ($editions_modes as $edition_mode) {
 	case "1":?>
 	<td style="padding-right:10px">
 	<a href="catalogue_articles_editing_print.php?ref_article=<?php echo $_REQUEST['ref_article']; ?>&mode_edition=<?php echo $edition_mode->id_edition_mode;?>&print=1<?php 	if (isset($_REQUEST["code_pdf_modele"])) {echo "&code_pdf_modele=".$_REQUEST["code_pdf_modele"];}?><?php 	if (isset($_REQUEST["filigrane"])) {echo "&filigrane=".$_REQUEST["filigrane"];}?>" target="mainediting" >
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-imprimer.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode);?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode);?>" />	</a>
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-imprimer.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" />	</a>
 	</td>
 	<?php
 	break;
@@ -45,7 +45,7 @@ foreach ($editions_modes as $edition_mode) {
 	case "2":?>
 	<td style="padding-right:10px">
 	<a href='javascript:PopupCentrer("catalogue_articles_editing_email.php?ref_article=<?php echo $_REQUEST['ref_article']; ?>&mode_edition=<?php echo $edition_mode->id_edition_mode;?><?php 	if (isset($_REQUEST["code_pdf_modele"])) {echo "&code_pdf_modele=".$_REQUEST["code_pdf_modele"];}?><?php 	if (isset($_REQUEST["filigrane"])) {echo "&filigrane=".$_REQUEST["filigrane"];}?>",580,450,"menubar=no,statusbar=no,scrollbars=yes,resizable=yes")'  >
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-email.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode);?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode);?>" />	</a>
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-email.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" />	</a>
 	</td>
 	<?php
 	break;
@@ -55,7 +55,7 @@ foreach ($editions_modes as $edition_mode) {
 	case "3":?>
 	<td style="padding-right:10px">
 	<a href='javascript:PopupCentrer("catalogue_articles_editing_fax.php?ref_article=<?php echo $_REQUEST['ref_article']; ?>&mode_edition=<?php echo $edition_mode->id_edition_mode;?><?php 	if (isset($_REQUEST["code_pdf_modele"])) {echo "&code_pdf_modele=".$_REQUEST["code_pdf_modele"];}?><?php 	if (isset($_REQUEST["filigrane"])) {echo "&filigrane=".$_REQUEST["filigrane"];}?>",500,350,"menubar=no,statusbar=no,scrollbars=auto")'  >
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-fax.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode);?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode);?>" />	</a>
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-fax.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" />	</a>
 	</td>
 	<?php
 	break;
@@ -63,14 +63,14 @@ foreach ($editions_modes as $edition_mode) {
 	//envois par courrier
 //	case "4":?>
 <!--	<a href="catalogue_articles_editing_courrier.php?ref_article=<?php echo $_REQUEST['ref_article']; ?>&mode_edition=<?php echo $edition_mode->id_edition_mode;?>" target="_blank" >
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-courrier.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode);?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode);?>" />	</a>-->
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-courrier.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" />	</a>-->
 	<?php
 //	break;
 	
 	//envois par fax
 //	case "5":?>
 <!--	<a href="catalogue_articles_editing_courrierar.php?ref_article=<?php echo $_REQUEST['ref_article']; ?>&mode_edition=<?php echo $edition_mode->id_edition_mode;?>" target="_blank" >
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-courrier_ar.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode);?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode);?>" />	</a>-->
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-courrier_ar.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" />	</a>-->
 	<?php
 //	break;
 	*/

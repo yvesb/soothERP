@@ -48,16 +48,16 @@ if (count($liste_cotations_contact)>0){
 			$article = new article($cotation->ref_article);
 	?>
 	<tr>
-		<td><?php echo htmlentities(date_Us_to_Fr($cotation->date_creation_doc));?></td>
+		<td><?php echo htmlentities(date_Us_to_Fr($cotation->date_creation_doc), ENT_QUOTES, "UTF-8");?></td>
 		<td><A href="#" class="common_link" id="link_article_<?php echo $indentation?>"><?php echo $cotation->ref_article?> - <?php echo $article->getLib_article()?></A></td>
 		<script type="text/javascript">
 		Event.observe("link_article_<?php echo $indentation?>", "click",  function(evt){Event.stop(evt);page.verify('affaires_affiche_fiche','index.php#catalogue_articles_view.php?ref_article=<?php echo ($cotation->ref_article)?>','true','_blank');}, false);
 		</script>
 		<td style="text-align: center;"><?php echo $cotation->qte?></td>
-		<td style="text-align: center;"><?php echo htmlentities(date_Us_to_Fr($cotation->date_echeance));?></td>
+		<td style="text-align: center;"><?php echo htmlentities(date_Us_to_Fr($cotation->date_echeance), ENT_QUOTES, "UTF-8");?></td>
 		<td><a href="#"  class="common_link" id="open_cot_<?php echo $indentation?>">Modifier</a></td>
 		<SCRIPT type="text/javascript">
-		Event.observe("open_cot_<?php echo $indentation?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','<?php echo $DIR.$_SESSION['profils'][3]->getDir_profil ();?>index.php#'+escape('documents_edition.php?ref_doc=<?php echo htmlentities($cotation->ref_doc)?>'),'true','_blank');}, false);
+		Event.observe("open_cot_<?php echo $indentation?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','<?php echo $DIR.$_SESSION['profils'][3]->getDir_profil ();?>index.php#'+escape('documents_edition.php?ref_doc=<?php echo htmlentities($cotation->ref_doc, ENT_QUOTES, "UTF-8")?>'),'true','_blank');}, false);
 		</script>
 	</tr>
 	<?php 

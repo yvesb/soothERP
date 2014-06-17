@@ -266,21 +266,21 @@ foreach ($fiches as $fiche) {
 $colorise++;
 $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 ?>
-<tr class="<?php  echo  $class_colorise?>" id="result_etat_stock_<?php echo htmlentities($fiche->ref_article)?>">
+<tr class="<?php  echo  $class_colorise?>" id="result_etat_stock_<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>">
 	<td class="reference">
-		<a  href="#" id="link_art_ref_<?php echo htmlentities($fiche->ref_article)?>" style="display:block; width:100%">
-		<?php	if ($fiche->ref_interne!="") { echo htmlentities($fiche->ref_interne)."&nbsp;";}else{ echo htmlentities($fiche->ref_article)."&nbsp;";}?><br />
-		<?php	if ($fiche->ref_oem) { echo htmlentities($fiche->ref_oem)."&nbsp;";}?>		
+		<a  href="#" id="link_art_ref_<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">
+		<?php	if ($fiche->ref_interne!="") { echo htmlentities($fiche->ref_interne, ENT_QUOTES, "UTF-8")."&nbsp;";}else{ echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")."&nbsp;";}?><br />
+		<?php	if ($fiche->ref_oem) { echo htmlentities($fiche->ref_oem, ENT_QUOTES, "UTF-8")."&nbsp;";}?>		
 		</a>
 		<script type="text/javascript">
-		Event.observe("link_art_ref_<?php echo htmlentities($fiche->ref_article)?>", "click",  function(evt){Event.stop(evt); page.verify('catalogue_articles_view','index.php#'+escape('catalogue_articles_view.php?ref_article=<?php echo htmlentities($fiche->ref_article)?>'),'true','_blank');
+		Event.observe("link_art_ref_<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt); page.verify('catalogue_articles_view','index.php#'+escape('catalogue_articles_view.php?ref_article=<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>'),'true','_blank');
 		}, false);
 		</script>
 	</td>
 	<td>
-		<a  href="#" id="link_art_lib_<?php echo htmlentities($fiche->ref_article)?>" style="display:block; width:100%">
-		<span class="lib_categorie"><?php	if ($fiche->lib_art_categ) 				{ echo htmlentities($fiche->lib_art_categ); }?></span> - <span class="lib_constructor"><?php	if ($fiche->nom_constructeur) { echo htmlentities($fiche->nom_constructeur)."&nbsp;";}?></span><br />
-		<span class="r_art_lib"><?php echo nl2br(htmlentities($fiche->lib_article))?></span>
+		<a  href="#" id="link_art_lib_<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">
+		<span class="lib_categorie"><?php	if ($fiche->lib_art_categ) 				{ echo htmlentities($fiche->lib_art_categ, ENT_QUOTES, "UTF-8"); }?></span> - <span class="lib_constructor"><?php	if ($fiche->nom_constructeur) { echo htmlentities($fiche->nom_constructeur, ENT_QUOTES, "UTF-8")."&nbsp;";}?></span><br />
+		<span class="r_art_lib"><?php echo nl2br(htmlentities($fiche->lib_article, ENT_QUOTES, "UTF-8"))?></span>
 		</a>
 		<div style="position:relative">
 		<div id="line_aff_img_<?php echo ($fiche->ref_article)?>" style="display:none; position:absolute">
@@ -288,7 +288,7 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 		</div>
 		</div>
 		<script type="text/javascript">
-		Event.observe("link_art_lib_<?php echo htmlentities($fiche->ref_article)?>", "click",  function(evt){Event.stop(evt); page.verify('catalogue_articles_view','index.php#'+escape('catalogue_articles_view.php?ref_article=<?php echo htmlentities($fiche->ref_article)?>'),'true','_blank');
+		Event.observe("link_art_lib_<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt); page.verify('catalogue_articles_view','index.php#'+escape('catalogue_articles_view.php?ref_article=<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>'),'true','_blank');
 		}, false);
 		<?php 
 		if (isset($fiche->lib_file) && $fiche->lib_file != "") {
@@ -318,9 +318,9 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 if (!$_SESSION['user']->check_permission ("6")) {?>display:none;<?php } ?>">
 			<?php	
 			if (isset($fiche->prix_achat_ht) && $fiche->prix_achat_ht) {
-				echo htmlentities(number_format($fiche->prix_achat_ht, $TARIFS_NB_DECIMALES, ".", ""	))." ".$MONNAIE[1]."";
+				echo htmlentities(number_format($fiche->prix_achat_ht, $TARIFS_NB_DECIMALES, ".", ""	), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1]."";
 			} else if (isset($fiche->paa_ht)) {
-				echo htmlentities(number_format($fiche->paa_ht, $TARIFS_NB_DECIMALES, ".", ""	))." ".$MONNAIE[1]."";
+				echo htmlentities(number_format($fiche->paa_ht, $TARIFS_NB_DECIMALES, ".", ""	), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1]."";
 			}
 			?>
 		</div>
@@ -356,7 +356,7 @@ if (!$_SESSION['user']->check_permission ("6")) {?>display:none;<?php } ?>">
 				>
 				<?php
 				if (isset($fiche->stocks[$stock]->qte)) {
-					echo htmlentities(qte_format($fiche->stocks[$stock]->qte)); 
+					echo htmlentities(qte_format($fiche->stocks[$stock]->qte), ENT_QUOTES, "UTF-8"); 
 				} else { 
 					echo "0";
 				}
@@ -383,7 +383,7 @@ if (!$_SESSION['user']->check_permission ("6")) {?>display:none;<?php } ?>">
 			>
 			<?php
 			if (isset($fiche->stocks[$stock->getId_stock()]->qte)) {
-				echo htmlentities($fiche->stocks[$stock->getId_stock()]->qte); 
+				echo htmlentities($fiche->stocks[$stock->getId_stock()]->qte, ENT_QUOTES, "UTF-8"); 
 			} else { 
 				echo "0";
 			}

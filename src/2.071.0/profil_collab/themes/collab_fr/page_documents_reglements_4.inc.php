@@ -45,7 +45,7 @@ if (count($comptes_bancaires_societe)) {
 	<?php 
 	foreach ($comptes_bancaires_societe as $compte_bancaire_societe) {
 		?>
-		<option value="<?php echo htmlentities($compte_bancaire_societe->id_compte_bancaire); ?>" ><?php echo htmlentities($compte_bancaire_societe->lib_compte); ?></option>
+		<option value="<?php echo htmlentities($compte_bancaire_societe->id_compte_bancaire, ENT_QUOTES, "UTF-8"); ?>" ><?php echo htmlentities($compte_bancaire_societe->lib_compte, ENT_QUOTES, "UTF-8"); ?></option>
 		<?php
 	}
 	?>

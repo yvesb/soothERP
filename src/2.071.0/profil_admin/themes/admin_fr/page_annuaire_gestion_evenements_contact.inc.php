@@ -106,7 +106,7 @@ update_menu_arbo();
 									<input name="id_comm_event_type"  type="hidden" value="<?php echo $type_event->id_comm_event_type; ?>" />
 								</td>
 								<td style="vertical-align:middle">
-									<input id="lib_comm_event_type_<?php echo $type_event->id_comm_event_type; ?>" name="lib_comm_event_type_<?php echo $type_event->id_comm_event_type; ?>" type="text" value="<?php echo htmlentities($type_event->lib_comm_event_type); ?>"  class="classinput_lsize"/>
+									<input id="lib_comm_event_type_<?php echo $type_event->id_comm_event_type; ?>" name="lib_comm_event_type_<?php echo $type_event->id_comm_event_type; ?>" type="text" value="<?php echo htmlentities($type_event->lib_comm_event_type, ENT_QUOTES, "UTF-8"); ?>"  class="classinput_lsize"/>
 								</td>
 								<td style="vertical-align:middle; text-align:center;">
 									<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />

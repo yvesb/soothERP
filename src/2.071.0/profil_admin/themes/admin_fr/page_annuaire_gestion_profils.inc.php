@@ -65,7 +65,7 @@ update_menu_arbo();
 					<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 				</tr>
 				<tr>
-					<td><?php echo htmlentities($profil_liste->lib_profil); ?>:
+					<td><?php echo htmlentities($profil_liste->lib_profil, ENT_QUOTES, "UTF-8"); ?>:
 							<input name="id_profil" id="id_profil" type="hidden" value="<?php echo $profil_liste->id_profil; ?>" />
 					</td>
 					<td>

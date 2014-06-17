@@ -45,7 +45,7 @@ check_page_variables ($page_variables);
 					<td style="width:150px; padding-left:3px;">
 						&Eacute;tat:					</td>
 					<td style="width:250px;">
-						<?php echo htmlentities($document->getLib_etat_doc());?>					</td>
+						<?php echo htmlentities($document->getLib_etat_doc(), ENT_QUOTES, "UTF-8");?>					</td>
 					<td>					</td>
 				</tr>
 			</table>
@@ -174,9 +174,9 @@ check_page_variables ($page_variables);
 						R&eacute;f&eacute;rence externe : 
 						</td>
 						<td>
-							<input type="text" value="<?php echo htmlentities($document->getRef_doc_externe ());?>" id="ref_doc_externe" name="ref_doc_externe"/>
+							<input type="text" value="<?php echo htmlentities($document->getRef_doc_externe (), ENT_QUOTES, "UTF-8");?>" id="ref_doc_externe" name="ref_doc_externe"/>
 								
-							<input type="hidden" value="<?php echo htmlentities($document->getRef_doc_externe ());?>" id="ref_doc_externe_old" name="ref_doc_externe_old"/>
+							<input type="hidden" value="<?php echo htmlentities($document->getRef_doc_externe (), ENT_QUOTES, "UTF-8");?>" id="ref_doc_externe_old" name="ref_doc_externe_old"/>
 						</td>
 					</tr>
 				</table>

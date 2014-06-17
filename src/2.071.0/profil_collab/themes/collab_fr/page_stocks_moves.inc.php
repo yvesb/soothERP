@@ -216,16 +216,16 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 		<div style="width:90px">
 			<?php
 			if ($stock_move->abrev_stock) {
-			echo htmlentities($stock_move->abrev_stock);
+			echo htmlentities($stock_move->abrev_stock, ENT_QUOTES, "UTF-8");
 			} else {
-			echo htmlentities($stock_move->lib_stock);
+			echo htmlentities($stock_move->lib_stock, ENT_QUOTES, "UTF-8");
 			}
 			?>
 		</div>
 		</td>
 		<td style="font-size:10px; padding-right:20px; text-align:right; width:45px">
 			<div style="width:45px;" id="aff_resume_stock_sn_<?php echo $stock_move->ref_stock_move;?>">
-			<?php echo htmlentities(qte_format($stock_move->qte));?>
+			<?php echo htmlentities(qte_format($stock_move->qte), ENT_QUOTES, "UTF-8");?>
 			</div>
 			<script type="text/javascript">
 			//Event.observe("aff_resume_stock_sn_<?php echo $stock_move->ref_stock_move;?>", "click", function(evt){
@@ -236,23 +236,23 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 		</td>
 		<td style="text-align:left;  width:120px;">
 		<div style="width:120px">
-		<a href="#" id="art_stock_move_<?php echo htmlentities($stock_move->ref_stock_move);?>" style="color:#000000; text-decoration:none"><?php echo htmlentities($stock_move->ref_article);?></a>
+		<a href="#" id="art_stock_move_<?php echo htmlentities($stock_move->ref_stock_move, ENT_QUOTES, "UTF-8");?>" style="color:#000000; text-decoration:none"><?php echo htmlentities($stock_move->ref_article, ENT_QUOTES, "UTF-8");?></a>
 		</div>
 		<script type="text/javascript">
-		Event.observe("art_stock_move_<?php echo htmlentities($stock_move->ref_stock_move);?>", "click",  function(evt){
+		Event.observe("art_stock_move_<?php echo htmlentities($stock_move->ref_stock_move, ENT_QUOTES, "UTF-8");?>", "click",  function(evt){
 			Event.stop(evt); 
-			page.verify('article_view','index.php#'+escape('catalogue_articles_view.php?ref_article=<?php echo htmlentities($stock_move->ref_article)?>'),'true','_blank');
+			page.verify('article_view','index.php#'+escape('catalogue_articles_view.php?ref_article=<?php echo htmlentities($stock_move->ref_article, ENT_QUOTES, "UTF-8")?>'),'true','_blank');
 		}, false);
 		</script>
 		</td>
 		<td style="text-align:left; ">
 		<div>
-		<a href="#" id="art_stock_move2_<?php echo htmlentities($stock_move->ref_stock_move);?>" style="color:#000000; text-decoration:none"><?php echo ($stock_move->lib_article);?></a>
+		<a href="#" id="art_stock_move2_<?php echo htmlentities($stock_move->ref_stock_move, ENT_QUOTES, "UTF-8");?>" style="color:#000000; text-decoration:none"><?php echo ($stock_move->lib_article);?></a>
 		</div>
 		<script type="text/javascript">
-		Event.observe("art_stock_move2_<?php echo htmlentities($stock_move->ref_stock_move);?>", "click",  function(evt){
+		Event.observe("art_stock_move2_<?php echo htmlentities($stock_move->ref_stock_move, ENT_QUOTES, "UTF-8");?>", "click",  function(evt){
 			Event.stop(evt); 
-			page.verify('article_view','index.php#'+escape('catalogue_articles_view.php?ref_article=<?php echo htmlentities($stock_move->ref_article)?>'),'true','_blank');
+			page.verify('article_view','index.php#'+escape('catalogue_articles_view.php?ref_article=<?php echo htmlentities($stock_move->ref_article, ENT_QUOTES, "UTF-8")?>'),'true','_blank');
 		}, false);
 		</script>
 		</td>
@@ -260,13 +260,13 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 		<?php if (isset($stock_move->nom)) { 
 			?>
 			<div style="width:170px">
-			<a href="#" id="contact_stock_move_<?php echo htmlentities($stock_move->ref_stock_move);?>" style="color:#000000; text-decoration:none">
-				<?php echo htmlentities($stock_move->nom); ?></a>
+			<a href="#" id="contact_stock_move_<?php echo htmlentities($stock_move->ref_stock_move, ENT_QUOTES, "UTF-8");?>" style="color:#000000; text-decoration:none">
+				<?php echo htmlentities($stock_move->nom, ENT_QUOTES, "UTF-8"); ?></a>
 			</div>
 			<script type="text/javascript">
-			Event.observe("contact_stock_move_<?php echo htmlentities($stock_move->ref_stock_move);?>", "click",  function(evt){
+			Event.observe("contact_stock_move_<?php echo htmlentities($stock_move->ref_stock_move, ENT_QUOTES, "UTF-8");?>", "click",  function(evt){
 				Event.stop(evt); 
-				page.verify('annuaire_view_fiche','index.php#'+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($stock_move->ref_contact)?>'),'true','_blank');
+				page.verify('annuaire_view_fiche','index.php#'+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($stock_move->ref_contact, ENT_QUOTES, "UTF-8")?>'),'true','_blank');
 			}, false);
 			</script>
 			<?php
@@ -275,18 +275,18 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 		</td>
 		<td style="text-align:left; width:120px;">
 		<div style="width:120px; text-align:left">
-		<a href="#" id="doc_stock_move_<?php echo htmlentities($stock_move->ref_stock_move);?>" style="color:#000000; text-decoration:none"><?php echo htmlentities($stock_move->ref_doc);?></a>
+		<a href="#" id="doc_stock_move_<?php echo htmlentities($stock_move->ref_stock_move, ENT_QUOTES, "UTF-8");?>" style="color:#000000; text-decoration:none"><?php echo htmlentities($stock_move->ref_doc, ENT_QUOTES, "UTF-8");?></a>
 		</div>
 		<script type="text/javascript">
-		Event.observe("doc_stock_move_<?php echo htmlentities($stock_move->ref_stock_move);?>", "click",  function(evt){
+		Event.observe("doc_stock_move_<?php echo htmlentities($stock_move->ref_stock_move, ENT_QUOTES, "UTF-8");?>", "click",  function(evt){
 			Event.stop(evt); 
-			page.verify('documents_edition','index.php#'+escape('documents_edition.php?ref_doc=<?php echo htmlentities($stock_move->ref_doc)?>'),'true','_blank');
+			page.verify('documents_edition','index.php#'+escape('documents_edition.php?ref_doc=<?php echo htmlentities($stock_move->ref_doc, ENT_QUOTES, "UTF-8")?>'),'true','_blank');
 		}, false);
 		</script>
 		</td>
 		<td style="text-align:left; width:120px">
 		<div style="width:120px">
-			<?php echo htmlentities($stock_move->lib_etat_doc);?>
+			<?php echo htmlentities($stock_move->lib_etat_doc, ENT_QUOTES, "UTF-8");?>
 		</div>
 		</td>
 	</tr>

@@ -1,4 +1,4 @@
-<span class="sous_titre2">Modification la cat&eacute;gorie <strong><?php echo htmlentities($catalogue_client_dir->lib_catalogue_client_dir); ?></strong>
+<span class="sous_titre2">Modification la cat&eacute;gorie <strong><?php echo htmlentities($catalogue_client_dir->lib_catalogue_client_dir, ENT_QUOTES, "UTF-8"); ?></strong>
 </span>
 
 
@@ -36,7 +36,7 @@
 				<option value="<?php echo ($catalogue_dir->id_catalogue_client_dir)?>" <?php if ($catalogue_dir->id_catalogue_client_dir==$catalogue_client_dir->id_catalogue_dir_parent) {echo 'selected="seleted"';}?>>
 				<?php for ($i=0; $i<$catalogue_dir->indentation; $i++) {?>
 					--
-				<?php }?><?php echo htmlentities($catalogue_dir->lib_catalogue_client_dir)?>
+				<?php }?><?php echo htmlentities($catalogue_dir->lib_catalogue_client_dir, ENT_QUOTES, "UTF-8")?>
 				</option>
 				<?php
 			}
@@ -61,7 +61,7 @@
 					<option value="<?php echo ($s_art_categ->ref_art_categ)?>" <?php if ($s_art_categ->ref_art_categ == $catalogue_client_dir->ref_art_categ) {echo 'selected="seleted"';}?>>
 					<?php for ($i=0; $i<$s_art_categ->indentation; $i++) {?>
 						--
-					<?php }?><?php  echo htmlentities($s_art_categ->lib_art_categ);?>
+					<?php }?><?php  echo htmlentities($s_art_categ->lib_art_categ, ENT_QUOTES, "UTF-8");?>
 					</option>
 					<?php
 				}
@@ -74,7 +74,7 @@
 			<td class="size_strict"><span class="labelled">Libell&eacute;:</span>
 			</td>
 			<td>
-			<input name="lib_catalogue_client_dir" id="lib_catalogue_client_dir" type="text" class="classinput_xsize" value="<?php echo htmlentities($catalogue_client_dir->lib_catalogue_client_dir); ?>" />
+			<input name="lib_catalogue_client_dir" id="lib_catalogue_client_dir" type="text" class="classinput_xsize" value="<?php echo htmlentities($catalogue_client_dir->lib_catalogue_client_dir, ENT_QUOTES, "UTF-8"); ?>" />
 			</td>
 		</tr>
 	</table>
@@ -89,10 +89,10 @@
 	<form method="post" action="catalogues_clients_edition_avance_dir_sup.php" id="catalogues_clients_edition_avance_dir_sup" name="catalogues_clients_edition_avance_dir_sup" target="formFrame" onsubmit="alerte.confirm_supprimer('catalogues_clients_edition_avance_dir_sup', 'catalogues_clients_edition_avance_dir_sup'); return false;">
 	<table>
 			<td colspan="2">
-				<p style="text-align:center">Vous vous appr&eacute;tez &agrave; <strong>supprimer la cat&eacute;gorie d'articles <?php echo htmlentities($catalogue_client_dir->lib_catalogue_client_dir); ?></strong>
+				<p style="text-align:center">Vous vous appr&eacute;tez &agrave; <strong>supprimer la cat&eacute;gorie d'articles <?php echo htmlentities($catalogue_client_dir->lib_catalogue_client_dir, ENT_QUOTES, "UTF-8"); ?></strong>
 						<br />
-				Avant de confirmer la suppression veuillez indiquer la cat&eacute;gorie qui recevra les sous-cat&eacute;gories de <?php echo htmlentities($catalogue_client_dir->lib_catalogue_client_dir); ?> lors de la supression de cette derni&egrave;re. </p>
-				<p>D&eacute;placer les sous cat&eacute;gories de <?php echo htmlentities($catalogue_client_dir->lib_catalogue_client_dir); ?></p>
+				Avant de confirmer la suppression veuillez indiquer la cat&eacute;gorie qui recevra les sous-cat&eacute;gories de <?php echo htmlentities($catalogue_client_dir->lib_catalogue_client_dir, ENT_QUOTES, "UTF-8"); ?> lors de la supression de cette derni&egrave;re. </p>
+				<p>D&eacute;placer les sous cat&eacute;gories de <?php echo htmlentities($catalogue_client_dir->lib_catalogue_client_dir, ENT_QUOTES, "UTF-8"); ?></p>
 				</td>
 		</tr>
 	</table>
@@ -107,7 +107,7 @@
 			</td>
 			<td>
 			<input name="id_catalogue_client" id="id_catalogue_client" type="hidden" value="<?php echo $catalogue_client_dir->id_catalogue_client; ?>" />
-			<input name="id_catalogue_client_dir" id="id_catalogue_client_dir" type="hidden" value="<?php echo htmlentities($catalogue_client_dir->id_catalogue_client_dir); ?>" />
+			<input name="id_catalogue_client_dir" id="id_catalogue_client_dir" type="hidden" value="<?php echo htmlentities($catalogue_client_dir->id_catalogue_client_dir, ENT_QUOTES, "UTF-8"); ?>" />
 			<select name="id_catalogue_dir_parent" id="id_catalogue_dir_parent" class="classinput_lsize">
 			<option value="">Racine</option>
 			<?php
@@ -116,7 +116,7 @@
 			<option value="<?php echo ($catalogue_dir->id_catalogue_client_dir)?>" <?php if ($catalogue_dir->ref_art_categ==$catalogue_client_dir->id_catalogue_client_dir) {echo 'selected="seleted"';}?>>
 			<?php for ($i=0; $i<$catalogue_dir->indentation; $i++) {?>
 				--
-			<?php }?><?php echo htmlentities($catalogue_dir->lib_catalogue_client_dir)?>
+			<?php }?><?php echo htmlentities($catalogue_dir->lib_catalogue_client_dir, ENT_QUOTES, "UTF-8")?>
 			</option>
 			<?php
 				}

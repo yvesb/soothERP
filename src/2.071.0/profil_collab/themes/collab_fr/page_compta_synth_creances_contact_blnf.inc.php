@@ -111,37 +111,37 @@ page.verify ('compta_livraisons_client_nonfacturees_liste','compta_livraisons_cl
 				<td style="width:25px; height:24px; line-height:24px;" valign="middle">
 					<div style="width:25px;">
 						<input id="check<?php echo$contact->getRef_contact();?>_<?php echo $indentation;?>" name="check_<?php echo$contact->getRef_contact();?>_<?php echo $indentation;?>" type="checkbox" value="check_line"/>
-						<input id="refdoc_<?php echo$contact->getRef_contact();?>_<?php echo $indentation;?>" name="refdoc_<?php echo$contact->getRef_contact();?>_<?php echo $indentation;?>" type="hidden" value="<?php echo htmlentities($livraison->ref_doc);?>"/>
+						<input id="refdoc_<?php echo$contact->getRef_contact();?>_<?php echo $indentation;?>" name="refdoc_<?php echo$contact->getRef_contact();?>_<?php echo $indentation;?>" type="hidden" value="<?php echo htmlentities($livraison->ref_doc, ENT_QUOTES, "UTF-8");?>"/>
 					</div>
 				</td>
 				<td style=" text-align:left; width:70px; font-size:10px" valign="middle">
 					<div style="width:70px; height:24px; line-height:24px;">
-						<?php echo htmlentities(date_Us_to_Fr($livraison->date_creation));?>
+						<?php echo htmlentities(date_Us_to_Fr($livraison->date_creation), ENT_QUOTES, "UTF-8");?>
 					</div>
 				</td>
 				<td style="width:108px; font-size:10px; font-weight:bolder" valign="middle">
 					<div style="width:108px; height:24px; line-height:24px;">
-						<a href="#" id ="<?php echo htmlentities($livraison->ref_doc);?>" style="text-decoration:none; color:#000000">
-						<?php echo htmlentities($livraison->ref_doc);?>
+						<a href="#" id ="<?php echo htmlentities($livraison->ref_doc, ENT_QUOTES, "UTF-8");?>" style="text-decoration:none; color:#000000">
+						<?php echo htmlentities($livraison->ref_doc, ENT_QUOTES, "UTF-8");?>
 						</a>
 						<script type="text/javascript">
-							Event.observe('<?php echo htmlentities($livraison->ref_doc);?>', 'click',  function(evt){ Event.stop(evt); window.open( "<?php echo $_ENV['CHEMIN_ABSOLU'].$_SESSION['profils'][$_SESSION['user']->getId_profil ()]->getDir_profil();?>#"+escape('documents_edition.php?ref_doc=<?php echo htmlentities($livraison->ref_doc)?>'),'_blank');}, false);
+							Event.observe('<?php echo htmlentities($livraison->ref_doc, ENT_QUOTES, "UTF-8");?>', 'click',  function(evt){ Event.stop(evt); window.open( "<?php echo $_ENV['CHEMIN_ABSOLU'].$_SESSION['profils'][$_SESSION['user']->getId_profil ()]->getDir_profil();?>#"+escape('documents_edition.php?ref_doc=<?php echo htmlentities($livraison->ref_doc, ENT_QUOTES, "UTF-8")?>'),'_blank');}, false);
 						</script>
 					</div>
 				</td>
 				<td style="text-align:left;" valign="middle">
 					<div >&nbsp;
-					<a href="#" id ="<?php echo htmlentities($livraison->ref_doc);?>ctc" style="text-decoration:none; color:#000000"><?php  echo htmlentities(substr($livraison->nom_contact, 0 , 38));?>
+					<a href="#" id ="<?php echo htmlentities($livraison->ref_doc, ENT_QUOTES, "UTF-8");?>ctc" style="text-decoration:none; color:#000000"><?php  echo htmlentities(substr($livraison->nom_contact, 0 , 38), ENT_QUOTES, "UTF-8");?>
 					</a>
 					<script type="text/javascript">
-						Event.observe('<?php echo htmlentities($livraison->ref_doc);?>ctc', 'click',  function(evt){ Event.stop(evt); window.open( "<?php echo $_ENV['CHEMIN_ABSOLU'].$_SESSION['profils'][$_SESSION['user']->getId_profil ()]->getDir_profil();?>#"+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($livraison->ref_contact)?>'),'_blank');}, false);
+						Event.observe('<?php echo htmlentities($livraison->ref_doc, ENT_QUOTES, "UTF-8");?>ctc', 'click',  function(evt){ Event.stop(evt); window.open( "<?php echo $_ENV['CHEMIN_ABSOLU'].$_SESSION['profils'][$_SESSION['user']->getId_profil ()]->getDir_profil();?>#"+escape('annuaire_view_fiche.php?ref_contact=<?php echo htmlentities($livraison->ref_contact, ENT_QUOTES, "UTF-8")?>'),'_blank');}, false);
 					</script>
 					</div>
 				</td>
 				<td style="text-align:left; width:100px;" valign="middle">
 					<div style="width:100px; height:24px; line-height:24px;">
 					<span <?php if ($livraison->id_etat_doc == 11) {?>style="color:#FF0000"<?php } ?>>
-					<?php echo htmlentities(($livraison->lib_etat_doc));?>
+					<?php echo htmlentities(($livraison->lib_etat_doc), ENT_QUOTES, "UTF-8");?>
 					</span>
 					</div>
 				</td>
@@ -152,18 +152,18 @@ page.verify ('compta_livraisons_client_nonfacturees_liste','compta_livraisons_cl
 				</td>
 				<td style="width:100px;text-align:right" valign="middle">
 					<div style="width:100px; height:24px; line-height:24px; padding-right:20px">
-						<?php echo htmlentities($livraison->lib_stock);?>
+						<?php echo htmlentities($livraison->lib_stock, ENT_QUOTES, "UTF-8");?>
 					</div>
 				</td>
 				<td style="width:80px; text-align:center" valign="middle">
 					<div style="width:80px; height:24px; line-height:24px;">
-						<a href="#" id ="<?php echo htmlentities($livraison->ref_doc);?>fac" style="text-decoration:underline; color:#000000">
+						<a href="#" id ="<?php echo htmlentities($livraison->ref_doc, ENT_QUOTES, "UTF-8");?>fac" style="text-decoration:underline; color:#000000">
 						Facturer
 						</a>
 						<script type="text/javascript">
-						Event.observe('<?php echo htmlentities($livraison->ref_doc);?>fac', 'click',  function(evt){ 
+						Event.observe('<?php echo htmlentities($livraison->ref_doc, ENT_QUOTES, "UTF-8");?>fac', 'click',  function(evt){ 
 							Event.stop(evt); 
-							generer_document_doc ("generer_fa_client", "<?php echo htmlentities($livraison->ref_doc);?>");
+							generer_document_doc ("generer_fa_client", "<?php echo htmlentities($livraison->ref_doc, ENT_QUOTES, "UTF-8");?>");
 							remove_tag ("licommande_<?php echo $indentation;?>");
 						}, false);
 						</script>
@@ -171,11 +171,11 @@ page.verify ('compta_livraisons_client_nonfacturees_liste','compta_livraisons_cl
 				</td>
 				<td style="width:80px;text-align:center" valign="middle">
 					<div style="width:80px; height:24px; line-height:24px;">
-						<a href="#" id ="<?php echo htmlentities($livraison->ref_doc);?>edt" style="text-decoration:underline; color:#000000">
+						<a href="#" id ="<?php echo htmlentities($livraison->ref_doc, ENT_QUOTES, "UTF-8");?>edt" style="text-decoration:underline; color:#000000">
 						Editer
 						</a>
 						<script type="text/javascript">
-							Event.observe('<?php echo htmlentities($livraison->ref_doc);?>edt', 'click',  function(evt){ Event.stop(evt); window.open( "<?php echo $_ENV['CHEMIN_ABSOLU'].$_SESSION['profils'][$_SESSION['user']->getId_profil ()]->getDir_profil();?>#"+escape('documents_edition.php?ref_doc=<?php echo htmlentities($livraison->ref_doc)?>'),'_blank');}, false);
+							Event.observe('<?php echo htmlentities($livraison->ref_doc, ENT_QUOTES, "UTF-8");?>edt', 'click',  function(evt){ Event.stop(evt); window.open( "<?php echo $_ENV['CHEMIN_ABSOLU'].$_SESSION['profils'][$_SESSION['user']->getId_profil ()]->getDir_profil();?>#"+escape('documents_edition.php?ref_doc=<?php echo htmlentities($livraison->ref_doc, ENT_QUOTES, "UTF-8")?>'),'_blank');}, false);
 						</script>
 					</div>
 				</td>

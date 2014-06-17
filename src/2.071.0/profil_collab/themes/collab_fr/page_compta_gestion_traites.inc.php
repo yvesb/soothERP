@@ -44,7 +44,7 @@ check_page_variables ($page_variables);
                                 foreach ($infos_prelev as $prelev) {
                                     ?>
                                 <tr id="choix_compte_bancaire_<?php echo $prelev->id_compte_bancaire ?>">
-                                    <td style="font-weight:bolder; text-align:left"><?php echo htmlentities($prelev->lib_compte); ?></td>
+                                    <td style="font-weight:bolder; text-align:left"><?php echo htmlentities($prelev->lib_compte, ENT_QUOTES, "UTF-8"); ?></td>
                                     <td style="font-weight:bolder; text-align:right; color:#999999; padding-right:25px"><?php echo number_format($prelev->a_payer, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[1];?></td>
                                     <td style="font-weight:bolder; text-align:center; color:#999999;"><?php echo $laste_date!="" ? date_Us_to_Fr($laste_date):"N/A";?></td>
                                     <td style="width:15%; text-align:center"><span class="green_underlined" id="tableau_compte_<?php echo $prelev->id_compte_bancaire;?>" >Tableau de Bord</span></td>

@@ -423,7 +423,7 @@ $solde_total_final = 0;
 
 <?php 
 foreach ($fiches as $ctact) {
-	?> <div id="infos_contact_<?php echo htmlentities($ctact->ref_contact )?>" >
+	?> <div id="infos_contact_<?php echo htmlentities($ctact->ref_contact , ENT_QUOTES, "UTF-8")?>" >
 	<?php
  if (count($ctact->compteextrait) >20) {?>
 <div style="page-break-before:always; margin-top:2cm;"></div> 
@@ -435,7 +435,7 @@ foreach ($fiches as $ctact) {
 	}
 	?>
 <hr/>
-	Solde du compte <?php echo $_REQUEST['id_profil'];?> <span style="font-weight:bolder; color:#FF0000"><?php echo htmlentities($ctact->nom_contact )?></span> du <?php echo date_Us_to_Fr($search['date_debut']);?> au  <?php echo date_Us_to_Fr($search['date_fin']);?><br />
+	Solde du compte <?php echo $_REQUEST['id_profil'];?> <span style="font-weight:bolder; color:#FF0000"><?php echo htmlentities($ctact->nom_contact , ENT_QUOTES, "UTF-8")?></span> du <?php echo date_Us_to_Fr($search['date_debut']);?> au  <?php echo date_Us_to_Fr($search['date_fin']);?><br />
 
 <table width="99%" border="0" cellspacing="0" cellpadding="0" style="background-color:#EEEEEE">
 	<tr>
@@ -492,12 +492,12 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 	?>
 	
 	<tr  class="<?php echo $class_colorise;?>" id="ligne_<?php echo $colorise;?>">
-		<td style="font-size:10px; text-align:left;" class="<?php echo htmlentities($line->lettrage);?>">
+		<td style="font-size:10px; text-align:left;" class="<?php echo htmlentities($line->lettrage, ENT_QUOTES, "UTF-8");?>">
 		<div >
 		<?php echo date_Us_to_Fr($line->date);?>
 		</div>
 		</td>
-		<td style="text-align:left;" class="<?php echo htmlentities($line->lettrage);?>">
+		<td style="text-align:left;" class="<?php echo htmlentities($line->lettrage, ENT_QUOTES, "UTF-8");?>">
 		<div>
 		<?php if (isset($line->id_exercice_ran)) {?>
 		Report
@@ -506,42 +506,42 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 		
 		<?php if (isset($line->ref_doc) && !is_array($line->ref_doc) ) {?>
 		<a href="#" id="grand_livre_line_<?php echo $colorise;?>" style="color:#000000; text-decoration:none">
-		<span style="font-weight:bolder"><?php echo htmlentities($line->lib_type_doc);?></span> <span style="font-size:10px"><?php echo htmlentities($line->ref_doc);?></span>
+		<span style="font-weight:bolder"><?php echo htmlentities($line->lib_type_doc, ENT_QUOTES, "UTF-8");?></span> <span style="font-size:10px"><?php echo htmlentities($line->ref_doc, ENT_QUOTES, "UTF-8");?></span>
 		</a>
 		</div>
 		<?php } 
 		if (isset($line->ref_reglement)) { ?>
 		<a href="#" id="grand_livre_line_<?php echo $colorise;?>" style="color:#000000; text-decoration:none">
-		<span style="font-weight:bolder">Règlement</span>  <span style="font-size:10px">(<?php echo htmlentities($line->lib_reglement_mode);?> <?php if (isset($line->nchq_s) && $line->nchq_s != "") {echo " n°".$line->nchq_s;}?><?php if (isset($line->nchq_e) && $line->nchq_e != "") {echo " n°".$line->nchq_e;}?>)</span>
+		<span style="font-weight:bolder">Règlement</span>  <span style="font-size:10px">(<?php echo htmlentities($line->lib_reglement_mode, ENT_QUOTES, "UTF-8");?> <?php if (isset($line->nchq_s) && $line->nchq_s != "") {echo " n°".$line->nchq_s;}?><?php if (isset($line->nchq_e) && $line->nchq_e != "") {echo " n°".$line->nchq_e;}?>)</span>
 		</a><br />
 		<?php //  print_r($line->ref_doc);?>
 		</div>
 		
 		<?php } ?>
 		</td>
-		<td style="text-align:right; " class="<?php echo htmlentities($line->lettrage);?>">
+		<td style="text-align:right; " class="<?php echo htmlentities($line->lettrage, ENT_QUOTES, "UTF-8");?>">
 		<div style="text-align:right; ">
 		<?php 
 		if (isset($line->ref_doc) && !is_array($line->ref_doc) ) {
 			?>
-			 <span style="font-size:10px; <?php if ($line->id_etat_doc == "16") { ?>color: #FF0000;<?php }?>"><?php echo htmlentities($line->lib_etat_doc);?></span><br />
+			 <span style="font-size:10px; <?php if ($line->id_etat_doc == "16") { ?>color: #FF0000;<?php }?>"><?php echo htmlentities($line->lib_etat_doc, ENT_QUOTES, "UTF-8");?></span><br />
 			<?php 
 		} 
 		?>
 		</div>
 		</td>
-		<td style="text-align:right; font-weight:bolder" class="<?php echo htmlentities($line->lettrage);?>">
+		<td style="text-align:right; font-weight:bolder" class="<?php echo htmlentities($line->lettrage, ENT_QUOTES, "UTF-8");?>">
 		<div>
 		<?php 
 		if (isset($line->lib_niveau_relance) ) {
 			?>
-			 <span style="font-size:10px"><?php echo htmlentities($line->lib_niveau_relance);?></span>
+			 <span style="font-size:10px"><?php echo htmlentities($line->lib_niveau_relance, ENT_QUOTES, "UTF-8");?></span>
 			<?php 
 		} 
 		?>
 		</div>
 		</td>
-		<td style="text-align:right;" class="<?php echo htmlentities($line->lettrage);?>">
+		<td style="text-align:right;" class="<?php echo htmlentities($line->lettrage, ENT_QUOTES, "UTF-8");?>">
 		<div style="text-align:right;">
 		<?php 
 		if (isset($line->ref_doc) && !is_array($line->ref_doc) && (($line->id_type_doc == 4 && $line->montant_ttc >= 0) || ($line->id_type_doc == 8 && $line->montant_ttc < 0))) {
@@ -560,15 +560,15 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 		?>
 		</div>
 		</td>
-		<td style="font-size:10px; padding-right:10px; text-align:right;" class="<?php echo htmlentities($line->lettrage);?>">
+		<td style="font-size:10px; padding-right:10px; text-align:right;" class="<?php echo htmlentities($line->lettrage, ENT_QUOTES, "UTF-8");?>">
 			<div style="width:55px;" id="grand_livre_line_lt_<?php echo $colorise;?>">
 				<div style="cursor:pointer">
-					<?php echo htmlentities($line->lettrage);?>
+					<?php echo htmlentities($line->lettrage, ENT_QUOTES, "UTF-8");?>
 				</div>
 			</div>
 			
 		</td>
-		<td style="text-align:right;" class="<?php echo htmlentities($line->lettrage);?>">
+		<td style="text-align:right;" class="<?php echo htmlentities($line->lettrage, ENT_QUOTES, "UTF-8");?>">
 		<div style="">
 		<?php 
 		if (isset($line->ref_doc) && !is_array($line->ref_doc) && (($line->id_type_doc == 4 && $line->montant_ttc < 0) || ($line->id_type_doc == 8 && $line->montant_ttc >= 0)) ) { 
@@ -589,7 +589,7 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 		
 		</div>
 		</td>
-		<td style="text-align:right;" class="<?php echo htmlentities($line->lettrage);?>">
+		<td style="text-align:right;" class="<?php echo htmlentities($line->lettrage, ENT_QUOTES, "UTF-8");?>">
 		<div style="">
 		<?php
 		$montant_total_solde = $montant_total_solde + $montant_en_credit - $montant_en_debit;
@@ -611,7 +611,7 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 		</td>
 		<td style="text-align:right;font-weight:bolder">
 		<div style="">
-		<?php echo htmlentities(price_format($montant_total_debit));?>
+		<?php echo htmlentities(price_format($montant_total_debit), ENT_QUOTES, "UTF-8");?>
 		</div>
 		</td>
 		<td style="padding-right:10px; font-weight:bolder">
@@ -621,18 +621,18 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 		</td>
 		<td style="text-align:right; font-weight:bolder">
 		<div style="">
-		<?php echo htmlentities(price_format($montant_total_credit));?>
+		<?php echo htmlentities(price_format($montant_total_credit), ENT_QUOTES, "UTF-8");?>
 		</div>
 		</td>
 		<td style="text-align:right; font-weight:bolder">
 		<div style="">
 		<?php 
-		echo htmlentities(price_format($montant_total_solde)); 
+		echo htmlentities(price_format($montant_total_solde), ENT_QUOTES, "UTF-8"); 
 		$solde_total_final += $montant_total_solde;
 		if (round($montant_total_solde,2) == "0" && isset($_REQUEST["equi"]) && $_REQUEST["equi"]) {
 			?>
 			<script type="text/javascript">
-			document.getElementById("infos_contact_<?php echo htmlentities($ctact->ref_contact )?>").style.display = "none";
+			document.getElementById("infos_contact_<?php echo htmlentities($ctact->ref_contact , ENT_QUOTES, "UTF-8")?>").style.display = "none";
 			</script>
 			<?php
 			}

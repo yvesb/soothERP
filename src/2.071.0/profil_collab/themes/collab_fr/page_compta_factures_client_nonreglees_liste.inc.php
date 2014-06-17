@@ -317,7 +317,7 @@ Event.observe('print_factures', "click", function(evt){
 							<?php 
 							foreach ($liste_niveaux_relance as $niveau_relance) {
 								?>
-								<option value="<?php echo $niveau_relance->id_niveau_relance;?>"><?php echo htmlentities($niveau_relance->lib_niveau_relance);?></option>
+								<option value="<?php echo $niveau_relance->id_niveau_relance;?>"><?php echo htmlentities($niveau_relance->lib_niveau_relance, ENT_QUOTES, "UTF-8");?></option>
 								<?php
 							}
 							?>
@@ -350,27 +350,27 @@ Event.observe("coche_action_<?php echo $groupe_by_relance?>", "change", function
 				<td style="width:25px; height:24px; line-height:24px;" valign="middle">
 					<div style="width:25px;">
 						<input id="check_<?php echo $indentation;?>" name="check_<?php echo $indentation;?>" type="checkbox" value="check_line"/>
-						<input id="refdoc_<?php echo $indentation;?>" name="refdoc_<?php echo $indentation;?>" type="hidden" value="<?php echo htmlentities($facture->ref_doc);?>"/>
+						<input id="refdoc_<?php echo $indentation;?>" name="refdoc_<?php echo $indentation;?>" type="hidden" value="<?php echo htmlentities($facture->ref_doc, ENT_QUOTES, "UTF-8");?>"/>
 					</div>				</td>
 				<td style="width:118px">
-				<a href="#" id ="<?php echo htmlentities($facture->ref_doc);?>" style="text-decoration:none; color:#000000; font-size:10px">
-				<?php echo htmlentities($facture->ref_doc);?><br />
+				<a href="#" id ="<?php echo htmlentities($facture->ref_doc, ENT_QUOTES, "UTF-8");?>" style="text-decoration:none; color:#000000; font-size:10px">
+				<?php echo htmlentities($facture->ref_doc, ENT_QUOTES, "UTF-8");?><br />
 				<span <?php if ($facture->id_etat_doc == 16) {?>style="color:#FF0000"<?php } ?>>
-				<?php echo htmlentities(($facture->lib_etat_doc));?>				</span>				</a>
+				<?php echo htmlentities($facture->lib_etat_doc, ENT_QUOTES, "UTF-8");?>				</span>				</a>
 				</td>
 				<td style="font-weight:bolder;text-align:left;">
-				<a href="#" id ="<?php echo htmlentities($facture->ref_doc);?>ctc" style="text-decoration:none; color:#000000;<?php if($facture->ref_contact == "") {?> cursor:default<?php } ?>"><?php  echo htmlentities(substr($facture->nom_contact, 0 , 42));?>...
+				<a href="#" id ="<?php echo htmlentities($facture->ref_doc, ENT_QUOTES, "UTF-8");?>ctc" style="text-decoration:none; color:#000000;<?php if($facture->ref_contact == "") {?> cursor:default<?php } ?>"><?php  echo htmlentities(substr($facture->nom_contact, 0 , 42), ENT_QUOTES, "UTF-8");?>...
 				</a>&nbsp;
 				</td>
 				<td style=" text-align:center; width:90px;">
-				<?php echo htmlentities(date_Us_to_Fr($facture->date_creation));?>
+				<?php echo htmlentities(date_Us_to_Fr($facture->date_creation), ENT_QUOTES, "UTF-8");?>
 				</td>
 				<td style=" text-align:center; width:130px;">
 				<div id="niveau_relance_<?php echo $indentation;?>" style="cursor:pointer">
 				<?php 
 				if ($facture->id_niveau_relance != NULL) {
 					?>
-				<?php echo htmlentities(($facture->lib_niveau_relance));?>
+				<?php echo htmlentities($facture->lib_niveau_relance, ENT_QUOTES, "UTF-8");?>
 					<?php } else { ?>
 					Non defini
 					<?php 
@@ -384,7 +384,7 @@ Event.observe("coche_action_<?php echo $groupe_by_relance?>", "change", function
 				<?php 
 				foreach ($liste_niveaux_relance as $niveau_relance) {
 					?>
-					<a class="choix_etat" id="choix_niveau_relance_<?php echo $niveau_relance->id_niveau_relance;?>_<?php echo $indentation;?>"><?php echo htmlentities($niveau_relance->lib_niveau_relance);?></a>
+					<a class="choix_etat" id="choix_niveau_relance_<?php echo $niveau_relance->id_niveau_relance;?>_<?php echo $indentation;?>"><?php echo htmlentities($niveau_relance->lib_niveau_relance, ENT_QUOTES, "UTF-8");?></a>
 					<?php
 				}
 				?>
@@ -392,16 +392,16 @@ Event.observe("coche_action_<?php echo $groupe_by_relance?>", "change", function
 				</div>
 				</div>
 				<script type="text/javascript">
-					//prestart_ligne_fac_np (dir_profil_fac_np+"#","<?php //echo htmlentities($facture->ref_doc);?>",  "<?php //echo ($facture->ref_contact)?>", "<?php //echo $indentation;?>");
+					//prestart_ligne_fac_np (dir_profil_fac_np+"#","<?php //echo htmlentities($facture->ref_doc, ENT_QUOTES, "UTF-8");?>",  "<?php //echo ($facture->ref_contact)?>", "<?php //echo $indentation;?>");
 				</script>
 				</td>
 				<td style=" text-align:center; width:110px;">
 				<span style="<?php
 														if (round(strtotime($facture->date_echeance)-strtotime(date("c")))<0) {?> color:#FF0000;<?php }
 														 ?>">
-				<?php echo htmlentities(date_Us_to_Fr($facture->date_echeance));?>				</span><br />
+				<?php echo htmlentities(date_Us_to_Fr($facture->date_echeance), ENT_QUOTES, "UTF-8");?>				</span><br />
 
-				<?php echo htmlentities(date_Us_to_Fr($facture->date_next_relance));?></td>
+				<?php echo htmlentities(date_Us_to_Fr($facture->date_next_relance), ENT_QUOTES, "UTF-8");?></td>
 				<td style="width:100px; text-align:right">&nbsp;
 				
 				<?php echo (number_format($facture->montant_ttc, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[1]);?><br/>
@@ -409,7 +409,7 @@ Event.observe("coche_action_<?php echo $groupe_by_relance?>", "change", function
                                 </td>
 				<td style="width:60px; text-align:right; padding-right:10px">&nbsp;
 				
-				<?php echo  htmlentities(($facture->abrev_magasin));?>				</td>
+				<?php echo  htmlentities($facture->abrev_magasin, ENT_QUOTES, "UTF-8");?>				</td>
 				<td class="document_border_right" style="width:95px; text-align:right">
 				
 					 <a href="#" id="mail_doc_<?php echo $facture->ref_doc?>" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-email-doc.gif"/></a> 
@@ -464,7 +464,7 @@ Event.observe("coche_action_<?php echo $groupe_by_relance?>", "change", function
 							<?php 
 							foreach ($liste_niveaux_relance as $niveau_relance) {
 								?>
-								<option value="<?php echo $niveau_relance->id_niveau_relance;?>"><?php echo htmlentities($niveau_relance->lib_niveau_relance);?></option>
+								<option value="<?php echo $niveau_relance->id_niveau_relance;?>"><?php echo htmlentities($niveau_relance->lib_niveau_relance, ENT_QUOTES, "UTF-8");?></option>
 								<?php
 							}
 							?>

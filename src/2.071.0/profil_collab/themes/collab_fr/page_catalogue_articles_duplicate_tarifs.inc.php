@@ -35,7 +35,7 @@ check_page_variables ($page_variables);
 	<tr>
 		<td>&nbsp;</td>
 		<td class="labelled_text">Prix public: </td>
-		<td><input type="text" name="prix_public_ht" id="prix_public_ht" value="<?php echo htmlentities($article->getPrix_public_ht ());?>"  class="classinput_hsize"/>&nbsp;<input  name="taxation_pp" type="radio" id="taxation_pp_ht" value="HT" checked="checked">HT&nbsp;<input  name="taxation_pp" id="taxation_pp_ttc" type="radio" value="TTC">TTC			</td>
+		<td><input type="text" name="prix_public_ht" id="prix_public_ht" value="<?php echo htmlentities($article->getPrix_public_ht (), ENT_QUOTES, "UTF-8");?>"  class="classinput_hsize"/>&nbsp;<input  name="taxation_pp" type="radio" id="taxation_pp_ht" value="HT" checked="checked">HT&nbsp;<input  name="taxation_pp" id="taxation_pp_ttc" type="radio" value="TTC">TTC			</td>
 		<td>&nbsp;</td>
 		<td class="labelled_text"></td>
 		<td></td>
@@ -55,7 +55,7 @@ check_page_variables ($page_variables);
 					<option value="<?php echo $tva['id_tva'];?>" <?php
 							if ($article->getId_tva()==$tva['id_tva']) {echo ' selected="selected"'; $tva_presente=$tva['tva'];};
 					?>>
-					<?php echo htmlentities($tva['tva']);?>%</option>
+					<?php echo htmlentities($tva['tva'], ENT_QUOTES, "UTF-8");?>%</option>
 					<?php 
 				}
 				?>
@@ -65,14 +65,14 @@ check_page_variables ($page_variables);
 				//liste des valeurs de tva pour calcul tarif à la volée
 				foreach ($tvas  as $tva){
 					?>
-					<input value="<?php echo htmlentities($tva['tva']);?>" type="hidden" id="tva_value_<?php echo $tva['id_tva'];?>"  name="tva_value_<?php echo $tva['id_tva'];?>"/>
+					<input value="<?php echo htmlentities($tva['tva'], ENT_QUOTES, "UTF-8");?>" type="hidden" id="tva_value_<?php echo $tva['id_tva'];?>"  name="tva_value_<?php echo $tva['id_tva'];?>"/>
 					<?php 
 				}
 				?>
 		</td>
 		<td>&nbsp;</td>
 		<td>
-		<input type="hidden" name="tarif_tva" id="tarif_tva" value="<?php echo htmlentities($tva_presente);?>" />
+		<input type="hidden" name="tarif_tva" id="tarif_tva" value="<?php echo htmlentities($tva_presente, ENT_QUOTES, "UTF-8");?>" />
 		</td>
 		<td>&nbsp;</td>
 	</tr>
@@ -81,7 +81,7 @@ check_page_variables ($page_variables);
 		<td class="labelled_text"><span  <?php //permission (6) Accès Consulter les prix d’achat
 if (!$_SESSION['user']->check_permission ("6")) {?>style="display:none;"<?php } ?> >Prix d'achat actuel:</span> </td>
 		<td><span <?php //permission (6) Accès Consulter les prix d’achat
-if (!$_SESSION['user']->check_permission ("6")) {?>style="display:none;"<?php } ?>><input type="text" name="paa_ht" id="paa_ht" value="<?php echo htmlentities($article->getPaa_ht ());?>"  class="classinput_hsize" />&nbsp;<input  name="taxation_paa" id="taxation_paa_ht" type="radio" value="HT" checked="checked" >HT&nbsp;<input  name="taxation_paa" id="taxation_paa_ttc" type="radio" value="TTC" >TTC			</span>
+if (!$_SESSION['user']->check_permission ("6")) {?>style="display:none;"<?php } ?>><input type="text" name="paa_ht" id="paa_ht" value="<?php echo htmlentities($article->getPaa_ht (), ENT_QUOTES, "UTF-8");?>"  class="classinput_hsize" />&nbsp;<input  name="taxation_paa" id="taxation_paa_ht" type="radio" value="HT" checked="checked" >HT&nbsp;<input  name="taxation_paa" id="taxation_paa_ttc" type="radio" value="TTC" >TTC			</span>
 		</td>
 		<td>&nbsp;</td>
 		<td>
@@ -121,7 +121,7 @@ if (!$_SESSION['user']->check_permission ("6")) {?>style="display:none;"<?php } 
 						?>
 						<td style=" text-align:center;  width:180px;<?php if(key($tarifs_liste)<$tarifs_count){?>border-right:1px solid #FFFFFF;<?php }?>" class="assist_labelled_bold"><br />
 					<div style="width:180px;">
-						<?php echo htmlentities($tarif_liste->lib_tarif); ?></div>
+						<?php echo htmlentities($tarif_liste->lib_tarif, ENT_QUOTES, "UTF-8"); ?></div>
 						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
 						</td>
 						<?php
@@ -399,11 +399,11 @@ $nb_ligne_prix++;
 			foreach ($taxes  as $taxe){
 				if ($taxe->id_taxe == $taxep['id_taxe']) {
 					?>
-					<span style="width:120px; float:left;">	<input name="taxe_chk_<?php echo $taxe->id_taxe;?>" id="taxe_chk_<?php echo $taxe->id_taxe;?>" type="checkbox" value="<?php echo htmlentities($taxe->code_taxe);?>" checked="checked" /> <?php echo htmlentities($taxe->lib_taxe);?></span> 
+					<span style="width:120px; float:left;">	<input name="taxe_chk_<?php echo $taxe->id_taxe;?>" id="taxe_chk_<?php echo $taxe->id_taxe;?>" type="checkbox" value="<?php echo htmlentities($taxe->code_taxe, ENT_QUOTES, "UTF-8");?>" checked="checked" /> <?php echo htmlentities($taxe->lib_taxe, ENT_QUOTES, "UTF-8");?></span> 
 					<input name="taxe_<?php echo $taxe->id_taxe;?>" id="taxe_<?php echo $taxe->id_taxe;?>" type="text" value="<?php echo $taxe->montant_taxe;?>" class="classinput_nsize"/>
-					<?php echo htmlentities($taxe->code_taxe);?> (<?php echo htmlentities($taxep['info_calcul']);?>)<br />
+					<?php echo htmlentities($taxe->code_taxe, ENT_QUOTES, "UTF-8");?> (<?php echo htmlentities($taxep['info_calcul'], ENT_QUOTES, "UTF-8");?>)<br />
 					
-				<input name="taxe_info_calcul_<?php echo $taxe->id_taxe;?>" id="taxe_info_calcul_<?php echo $taxe->id_taxe;?>" type="hidden" value="<?php echo htmlentities($taxep['info_calcul']);?>" />
+				<input name="taxe_info_calcul_<?php echo $taxe->id_taxe;?>" id="taxe_info_calcul_<?php echo $taxe->id_taxe;?>" type="hidden" value="<?php echo htmlentities($taxep['info_calcul'], ENT_QUOTES, "UTF-8");?>" />
 				<script type="text/javascript">
 					Event.observe($('taxe_<?php echo $taxe->id_taxe;?>'), 'blur',  function(evt){
 						Event.stop(evt); 
@@ -437,10 +437,10 @@ $nb_ligne_prix++;
 			}
 			if (!$stop) {
 				?>
-				<span style="width:120px; float:left;">	<input name="taxe_chk_<?php echo $taxep_art->id_taxe;?>" id="taxe_chk_<?php echo $taxep_art->id_taxe;?>" type="checkbox" value="<?php echo htmlentities($taxep_art->code_taxe);?>" /> <?php echo $taxep_art->lib_taxe;?></span>
+				<span style="width:120px; float:left;">	<input name="taxe_chk_<?php echo $taxep_art->id_taxe;?>" id="taxe_chk_<?php echo $taxep_art->id_taxe;?>" type="checkbox" value="<?php echo htmlentities($taxep_art->code_taxe, ENT_QUOTES, "UTF-8");?>" /> <?php echo $taxep_art->lib_taxe;?></span>
 				<input name="taxe_<?php echo $taxep_art->id_taxe;?>" id="taxe_<?php echo $taxep_art->id_taxe;?>" type="text" value="" class="classinput_nsize"/>
-				<input name="taxe_info_calcul_<?php echo $taxep_art->id_taxe;?>" id="taxe_info_calcul_<?php echo $taxep_art->id_taxe;?>" type="hidden" value="<?php echo htmlentities($taxep_art->info_calcul);?>" />
-				<?php echo htmlentities($taxep_art->code_taxe);?> (<?php echo htmlentities($taxep_art->info_calcul);?>)<br />
+				<input name="taxe_info_calcul_<?php echo $taxep_art->id_taxe;?>" id="taxe_info_calcul_<?php echo $taxep_art->id_taxe;?>" type="hidden" value="<?php echo htmlentities($taxep_art->info_calcul, ENT_QUOTES, "UTF-8");?>" />
+				<?php echo htmlentities($taxep_art->code_taxe, ENT_QUOTES, "UTF-8");?> (<?php echo htmlentities($taxep_art->info_calcul, ENT_QUOTES, "UTF-8");?>)<br />
 				
 				<script type="text/javascript">
 					Event.observe($('taxe_<?php echo $taxep_art->id_taxe;?>'), 'blur',  function(evt){
@@ -486,10 +486,10 @@ $nb_ligne_prix++;
 			if (!$stop) {
 				?>
 				<span style="width:120px; float:left;">
-				<input name="taxe_chk_<?php echo $taxep['id_taxe'];?>" id="taxe_chk_<?php echo $taxep['id_taxe'];?>" type="checkbox" value="<?php echo htmlentities($taxep['code_taxe']);?>"  /> <?php echo $taxep['lib_taxe'];?></span>
+				<input name="taxe_chk_<?php echo $taxep['id_taxe'];?>" id="taxe_chk_<?php echo $taxep['id_taxe'];?>" type="checkbox" value="<?php echo htmlentities($taxep['code_taxe'], ENT_QUOTES, "UTF-8");?>"  /> <?php echo $taxep['lib_taxe'];?></span>
 				<input name="taxe_<?php echo $taxep['id_taxe'];?>" id="taxe_<?php echo $taxep['id_taxe'];?>" type="text" value="" class="classinput_nsize"/>
-				<?php echo htmlentities($taxep['code_taxe']);?> (<?php echo htmlentities($taxep['info_calcul']);?>)<br />
-				<input name="taxe_info_calcul_<?php echo $taxep['id_taxe'];?>" id="taxe_info_calcul_<?php echo $taxep['id_taxe'];?>" type="hidden" value="<?php echo htmlentities($taxep['info_calcul']);?>" />
+				<?php echo htmlentities($taxep['code_taxe'], ENT_QUOTES, "UTF-8");?> (<?php echo htmlentities($taxep['info_calcul'], ENT_QUOTES, "UTF-8");?>)<br />
+				<input name="taxe_info_calcul_<?php echo $taxep['id_taxe'];?>" id="taxe_info_calcul_<?php echo $taxep['id_taxe'];?>" type="hidden" value="<?php echo htmlentities($taxep['info_calcul'], ENT_QUOTES, "UTF-8");?>" />
 				
 				<script type="text/javascript">
 					Event.observe($('taxe_<?php echo $taxep['id_taxe'];?>'), 'blur',  function(evt){

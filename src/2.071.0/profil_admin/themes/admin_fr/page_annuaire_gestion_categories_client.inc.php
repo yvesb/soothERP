@@ -96,7 +96,7 @@ update_menu_arbo();
 								<?php 
 								foreach ($tarifs_liste as $tarif_liste) {
 									?>
-									<option value="<?php echo $tarif_liste->id_tarif; ?>"><?php echo htmlentities($tarif_liste->lib_tarif); ?>
+									<option value="<?php echo $tarif_liste->id_tarif; ?>"><?php echo htmlentities($tarif_liste->lib_tarif, ENT_QUOTES, "UTF-8"); ?>
 									</option>
 									<?php 
 								}
@@ -308,7 +308,7 @@ update_menu_arbo();
 							
 						</td>
 						<td>
-						<input id="lib_client_categ_<?php echo $liste_categorie->id_client_categ; ?>" name="lib_client_categ_<?php echo $liste_categorie->id_client_categ; ?>" type="text" value="<?php echo htmlentities($liste_categorie->lib_client_categ); ?>"  class="classinput_lsize"/>
+						<input id="lib_client_categ_<?php echo $liste_categorie->id_client_categ; ?>" name="lib_client_categ_<?php echo $liste_categorie->id_client_categ; ?>" type="text" value="<?php echo htmlentities($liste_categorie->lib_client_categ, ENT_QUOTES, "UTF-8"); ?>"  class="classinput_lsize"/>
 			<input name="id_client_categ" id="id_client_categ" type="hidden" value="<?php echo $liste_categorie->id_client_categ; ?>" />
 						</td>
 						<td>
@@ -317,7 +317,7 @@ update_menu_arbo();
 							<?php 
 							foreach ($tarifs_liste as $tarif_liste) {
 								?>
-								<option value="<?php echo $tarif_liste->id_tarif; ?>" <?php if ($tarif_liste->id_tarif==$liste_categorie->id_tarif){echo 'selected="selected"';}?>><?php echo htmlentities($tarif_liste->lib_tarif); ?>
+								<option value="<?php echo $tarif_liste->id_tarif; ?>" <?php if ($tarif_liste->id_tarif==$liste_categorie->id_tarif){echo 'selected="selected"';}?>><?php echo htmlentities($tarif_liste->lib_tarif, ENT_QUOTES, "UTF-8"); ?>
 								</option>
 								<?php 
 							}
@@ -354,7 +354,7 @@ update_menu_arbo();
 						<table cellpadding="0" cellspacing="0" border="0">
 							<tr>
 								<td>
-								<input name="delai_reglement_<?php echo $liste_categorie->id_client_categ; ?>" id="delai_reglement_<?php echo $liste_categorie->id_client_categ; ?>" type="text" value="<?php echo strpos($liste_categorie->delai_reglement,'FDM') === false ? htmlentities($liste_categorie->delai_reglement) : htmlentities(substr($liste_categorie->delai_reglement,0,strpos($liste_categorie->delai_reglement,'FDM'))); ?>"  class="classinput_nsize" size="4"/>
+								<input name="delai_reglement_<?php echo $liste_categorie->id_client_categ; ?>" id="delai_reglement_<?php echo $liste_categorie->id_client_categ; ?>" type="text" value="<?php echo strpos($liste_categorie->delai_reglement,'FDM') === false ? htmlentities($liste_categorie->delai_reglement, ENT_QUOTES, "UTF-8") : htmlentities(substr($liste_categorie->delai_reglement,0,strpos($liste_categorie->delai_reglement,'FDM')), ENT_QUOTES, "UTF-8"); ?>"  class="classinput_nsize" size="4"/>
 								 jour(s)
 								 <br/>
 								 <input id="delai_reglement_fdm_<?php echo $liste_categorie->id_client_categ; ?>" name="delai_reglement_fdm_<?php echo $liste_categorie->id_client_categ; ?>" type="checkbox" <?php echo strpos($liste_categorie->delai_reglement,'FDM') === false ? "" : "CHECKED"; ?>>Fin de mois</input>
@@ -450,7 +450,7 @@ update_menu_arbo();
 
 						</td>
 						<td>
-						<textarea id="note_<?php echo $liste_categorie->id_client_categ; ?>" name="note_<?php echo $liste_categorie->id_client_categ; ?>" class="classinput_xsize"><?php echo htmlentities($liste_categorie->note); ?></textarea>
+						<textarea id="note_<?php echo $liste_categorie->id_client_categ; ?>" name="note_<?php echo $liste_categorie->id_client_categ; ?>" class="classinput_xsize"><?php echo htmlentities($liste_categorie->note, ENT_QUOTES, "UTF-8"); ?></textarea>
 							<p style="text-align: right">
 								<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
 							</p>

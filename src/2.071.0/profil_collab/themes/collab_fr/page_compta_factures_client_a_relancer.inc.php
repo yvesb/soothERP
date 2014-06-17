@@ -30,7 +30,7 @@ foreach ($liste_niveaux_relance as $niveau_relance) {
         $relances_menu = get_Factures_pour_niveau_relance($i+1);
             if (count($relances_menu) !=0 ){
             ?>
-            infos_niveau_relance[<?php echo $niveau_relance->id_niveau_relance;?>] = "<?php echo htmlentities($niveau_relance->lib_niveau_relance);?>";
+            infos_niveau_relance[<?php echo $niveau_relance->id_niveau_relance;?>] = "<?php echo htmlentities($niveau_relance->lib_niveau_relance, ENT_QUOTES, "UTF-8");?>";
             array_menu_fnr_niveau[<?php echo $i;?>] 	=	new Array('menu_recherche_niv', 'menu_niv_<?php echo $i;?>');
 <?php }}
 $i++;
@@ -59,7 +59,7 @@ $onglet_select = false;
                 //_vardump($relances_menu);
                 ?>
                 <li id="doc_menu_niv_<?php echo $i;?>">
-                        <a href="#" id="menu_niv_<?php echo $i;?>" class="menu_<?php if ($i+1 != $niveau_relance_var) {echo "un"; }else {$onglet_select = true;}?>select"> <?php echo htmlentities($niveau_relance->lib_niveau_relance);?> (<?php echo $compteur_factures;?>)</a>
+                        <a href="#" id="menu_niv_<?php echo $i;?>" class="menu_<?php if ($i+1 != $niveau_relance_var) {echo "un"; }else {$onglet_select = true;}?>select"> <?php echo htmlentities($niveau_relance->lib_niveau_relance, ENT_QUOTES, "UTF-8");?> (<?php echo $compteur_factures;?>)</a>
                 </li>
                 <script type="text/javascript">
                     Event.observe('menu_niv_<?php echo $i;?>', "click", function(evt){

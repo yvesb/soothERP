@@ -255,19 +255,19 @@ foreach ($fiches as $fiche) {
 $colorise++;
 $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 ?>
-<tr class="<?php  echo  $class_colorise?>" id="result_minimum_stock_<?php echo htmlentities($fiche->ref_article)?>">
+<tr class="<?php  echo  $class_colorise?>" id="result_minimum_stock_<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>">
 	<td class="reference">
-		<a  href="#" id="link_art_ref_<?php echo htmlentities($fiche->ref_article)?>" style="display:block; width:100%">
-		<?php	if ($fiche->ref_interne!="") { echo htmlentities($fiche->ref_interne)."&nbsp;";}else{ echo htmlentities($fiche->ref_article)."&nbsp;";}?><br />
-		<?php	if ($fiche->ref_oem) { echo htmlentities($fiche->ref_oem)."&nbsp;";}?>		
+		<a  href="#" id="link_art_ref_<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">
+		<?php	if ($fiche->ref_interne!="") { echo htmlentities($fiche->ref_interne, ENT_QUOTES, "UTF-8")."&nbsp;";}else{ echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")."&nbsp;";}?><br />
+		<?php	if ($fiche->ref_oem) { echo htmlentities($fiche->ref_oem, ENT_QUOTES, "UTF-8")."&nbsp;";}?>		
 		</a>
 		<script type="text/javascript">
-		Event.observe("link_art_ref_<?php echo htmlentities($fiche->ref_article)?>", "click",  function(evt){Event.stop(evt); page.verify('catalogue_articles_view','index.php#'+escape('catalogue_articles_view.php?ref_article=<?php echo htmlentities($fiche->ref_article)?>'),'true','_blank');}, false);
+		Event.observe("link_art_ref_<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt); page.verify('catalogue_articles_view','index.php#'+escape('catalogue_articles_view.php?ref_article=<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>'),'true','_blank');}, false);
 		</script>
 	</td>
 	<td>
-		<a  href="#" id="link_art_lib_<?php echo htmlentities($fiche->ref_article)?>" style="display:block; width:100%">
-		<span class="lib_categorie"><?php	if ($fiche->lib_art_categ) 				{ echo htmlentities($fiche->lib_art_categ); }?></span> - <span class="lib_constructor"><?php	if ($fiche->nom_constructeur) { echo htmlentities($fiche->nom_constructeur)."&nbsp;";}?></span><br />
+		<a  href="#" id="link_art_lib_<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">
+		<span class="lib_categorie"><?php	if ($fiche->lib_art_categ) 				{ echo htmlentities($fiche->lib_art_categ, ENT_QUOTES, "UTF-8"); }?></span> - <span class="lib_constructor"><?php	if ($fiche->nom_constructeur) { echo htmlentities($fiche->nom_constructeur, ENT_QUOTES, "UTF-8")."&nbsp;";}?></span><br />
 		<span class="r_art_lib"><?php echo nl2br(($fiche->lib_article))?></span>
 		</a>
 		<div style="position:relative">
@@ -276,7 +276,7 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 		</div>
 		</div>
 		<script type="text/javascript">
-		Event.observe("link_art_lib_<?php echo htmlentities($fiche->ref_article)?>", "click",  function(evt){Event.stop(evt); page.verify('catalogue_articles_view','index.php#'+escape('catalogue_articles_view.php?ref_article=<?php echo htmlentities($fiche->ref_article)?>'),'true','_blank');}, false);
+		Event.observe("link_art_lib_<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt); page.verify('catalogue_articles_view','index.php#'+escape('catalogue_articles_view.php?ref_article=<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>'),'true','_blank');}, false);
 		<?php 
 		if (isset($fiche->lib_file) && $fiche->lib_file != "") {
 			?>
@@ -305,7 +305,7 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 if (!$_SESSION['user']->check_permission ("6")) {?>display:none;<?php } ?>">
 			<?php	
 			if (isset($fiche->prix_achat_ht)) {
-				echo htmlentities(number_format($fiche->prix_achat_ht, $TARIFS_NB_DECIMALES, ".", ""	))." ".$MONNAIE[1]."";
+				echo htmlentities(number_format($fiche->prix_achat_ht, $TARIFS_NB_DECIMALES, ".", ""	), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1]."";
 			}
 			?>
 		</div>
@@ -318,19 +318,19 @@ if (!$_SESSION['user']->check_permission ("6")) {?>display:none;<?php } ?>">
 		foreach ($search['id_stock'] as $stock) {
 		?>
 		<td style="text-align:center">
-			<input type="text" name="stock_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock );?>" id="stock_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock);?>" value="<?php
+			<input type="text" name="stock_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock, ENT_QUOTES, "UTF-8" );?>" id="stock_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock, ENT_QUOTES, "UTF-8");?>" value="<?php
 			$seuil_exist = "0";
 			if (isset($fiche->stocks[$stock]->seuil_alerte)) {
-				$seuil_exist = htmlentities($fiche->stocks[$stock]->seuil_alerte);
+				$seuil_exist = htmlentities($fiche->stocks[$stock]->seuil_alerte, ENT_QUOTES, "UTF-8");
 			}
 			echo $seuil_exist;?>"  class="classinput_nsize" style="text-align:center" size="5"/>
-				<input type="hidden" name="stock_old_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock );?>" id="stock_old_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock);?>" value="<?php echo $seuil_exist;?>"  class="classinput_xsize"/>
+				<input type="hidden" name="stock_old_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock, ENT_QUOTES, "UTF-8" );?>" id="stock_old_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock, ENT_QUOTES, "UTF-8");?>" value="<?php echo $seuil_exist;?>"  class="classinput_xsize"/>
 					<SCRIPT type="text/javascript">
-						Event.observe("stock_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock);?>", "blur", function(evt){
+						Event.observe("stock_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock, ENT_QUOTES, "UTF-8");?>", "blur", function(evt){
 							nummask(evt,"<?php echo $seuil_exist;?>", "X.X");
-							if ($("stock_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock);?>").value != $("stock_old_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock);?>").value) {
-							$("stock_old_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock);?>").value = $("stock_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock);?>").value;
-							maj_stock_alerte ("<?php echo $fiche->ref_article;?>", "<?php echo $stock;?>", $("stock_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock);?>").value);
+							if ($("stock_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock, ENT_QUOTES, "UTF-8");?>").value != $("stock_old_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock, ENT_QUOTES, "UTF-8");?>").value) {
+							$("stock_old_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock, ENT_QUOTES, "UTF-8");?>").value = $("stock_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock, ENT_QUOTES, "UTF-8");?>").value;
+							maj_stock_alerte ("<?php echo $fiche->ref_article;?>", "<?php echo $stock;?>", $("stock_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock, ENT_QUOTES, "UTF-8");?>").value);
 							}
 						}, false);
 					</SCRIPT>
@@ -341,19 +341,19 @@ if (!$_SESSION['user']->check_permission ("6")) {?>display:none;<?php } ?>">
 		foreach ($_SESSION['stocks'] as $stock) {
 			?>
 			<td style="text-align:center">
-			<input type="text" name="stock_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock->getId_stock() );?>" id="stock_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock->getId_stock());?>" value="<?php
+			<input type="text" name="stock_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock->getId_stock() , ENT_QUOTES, "UTF-8");?>" id="stock_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock->getId_stock(), ENT_QUOTES, "UTF-8");?>" value="<?php
 			$seuil_exist = "0";
 			if (isset($fiche->stocks[$stock->getId_stock()]->seuil_alerte)) {
-				$seuil_exist = htmlentities($fiche->stocks[$stock->getId_stock()]->seuil_alerte);
+				$seuil_exist = htmlentities($fiche->stocks[$stock->getId_stock()]->seuil_alerte, ENT_QUOTES, "UTF-8");
 			}
 			echo $seuil_exist;?>"  class="classinput_nsize" style="text-align:center" size="5"/>
-				<input type="hidden" name="stock_old_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock->getId_stock() );?>" id="stock_old_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock->getId_stock());?>" value="<?php echo $seuil_exist;?>"  class="classinput_xsize"/>
+				<input type="hidden" name="stock_old_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock->getId_stock() , ENT_QUOTES, "UTF-8");?>" id="stock_old_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock->getId_stock(), ENT_QUOTES, "UTF-8");?>" value="<?php echo $seuil_exist;?>"  class="classinput_xsize"/>
 					<SCRIPT type="text/javascript">
-						Event.observe("stock_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock->getId_stock ());?>", "blur", function(evt){
+						Event.observe("stock_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock->getId_stock (), ENT_QUOTES, "UTF-8");?>", "blur", function(evt){
 							nummask(evt,"<?php echo $seuil_exist;?>", "X.X");
-							if ($("stock_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock->getId_stock ());?>").value != $("stock_old_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock->getId_stock ());?>").value) {
-							$("stock_old_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock->getId_stock ());?>").value = $("stock_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock->getId_stock ());?>").value;
-							maj_stock_alerte ("<?php echo $fiche->ref_article;?>", "<?php echo $stock->getId_stock ();?>", $("stock_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock->getId_stock ());?>").value);
+							if ($("stock_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock->getId_stock (), ENT_QUOTES, "UTF-8");?>").value != $("stock_old_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock->getId_stock (), ENT_QUOTES, "UTF-8");?>").value) {
+							$("stock_old_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock->getId_stock (), ENT_QUOTES, "UTF-8");?>").value = $("stock_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock->getId_stock (), ENT_QUOTES, "UTF-8");?>").value;
+							maj_stock_alerte ("<?php echo $fiche->ref_article;?>", "<?php echo $stock->getId_stock ();?>", $("stock_<?php echo $fiche->ref_article;?>_<?php echo htmlentities($stock->getId_stock (), ENT_QUOTES, "UTF-8");?>").value);
 							}
 						}, false);
 					</SCRIPT>

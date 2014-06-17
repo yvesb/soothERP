@@ -57,7 +57,7 @@ check_page_variables ($page_variables);
 				if (isset($line_insert)) {
 					echo (str_replace("<br />","\n",$contenu->desc_article));
 				} else {
-					echo htmlentities(str_replace("<br />","\n",$contenu->desc_article));
+					echo htmlentities(str_replace("<br />","\n",$contenu->desc_article), ENT_QUOTES, "UTF-8");
 				}
 				?>
 				

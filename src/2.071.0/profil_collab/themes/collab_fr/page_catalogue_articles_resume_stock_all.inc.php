@@ -57,7 +57,7 @@ $article_sns = $article->getStocks_arti_sn ();
 			?>
 			<tr>
 				<td style="text-align:left; padding-right:5px; " class="resume_stock_border_topright">
-				<?php echo htmlentities($stock_liste->getLib_stock()); ?>				</td>
+				<?php echo htmlentities($stock_liste->getLib_stock(), ENT_QUOTES, "UTF-8"); ?>				</td>
 				<td style="text-align:center; width:80px;" class="resume_stock_border_topright">
 					<div style="text-align:center; display:block">
 					<?php	

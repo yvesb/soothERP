@@ -24,8 +24,8 @@
 				<?php
 				foreach ($liste_categories_commercial as $liste_categorie_commercial){
 					?>
-					<option value="<?php echo $liste_categorie_commercial->id_commercial_categ;?>" <?php if ($profils[$id_profil]->getId_commercial_categ () == $liste_categorie_commercial->id_commercial_categ) {echo 'selected="selected"'; $id_commercial_categ =  htmlentities($liste_categorie_commercial->id_commercial_categ);}?>>
-					<?php echo htmlentities($liste_categorie_commercial->lib_commercial_categ)?></option>
+					<option value="<?php echo $liste_categorie_commercial->id_commercial_categ;?>" <?php if ($profils[$id_profil]->getId_commercial_categ () == $liste_categorie_commercial->id_commercial_categ) {echo 'selected="selected"'; $id_commercial_categ =  htmlentities($liste_categorie_commercial->id_commercial_categ, ENT_QUOTES, "UTF-8");}?>>
+					<?php echo htmlentities($liste_categorie_commercial->lib_commercial_categ, ENT_QUOTES, "UTF-8")?></option>
 					<?php 
 				}?>
 				</select>
@@ -51,7 +51,7 @@
 			<?php
 			foreach ($liste_categories_commercial as $liste_categorie_commercial){
 				if ($profils[$id_profil]->getId_commercial_categ () == $liste_categorie_commercial->id_commercial_categ) {?>
-				<?php echo htmlentities($liste_categorie_commercial->lib_commercial_categ)?>
+				<?php echo htmlentities($liste_categorie_commercial->lib_commercial_categ, ENT_QUOTES, "UTF-8")?>
 				<?php 
 				}
 			}

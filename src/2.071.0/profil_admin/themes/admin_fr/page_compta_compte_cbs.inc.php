@@ -59,7 +59,7 @@ update_menu_arbo();
 						<?php 
 						foreach ($comptes_bancaires as $compte_bancaire) {
 							?>
-							<option value="<?php echo $compte_bancaire->id_compte_bancaire; ?>"><?php echo htmlentities($compte_bancaire->lib_compte); ?></option>
+							<option value="<?php echo $compte_bancaire->id_compte_bancaire; ?>"><?php echo htmlentities($compte_bancaire->lib_compte, ENT_QUOTES, "UTF-8"); ?></option>
 							<?php 
 						}
 						?>
@@ -104,7 +104,7 @@ update_menu_arbo();
 							<?php 
 							foreach ($types_cbs as $type_cb) {
 								?>
-								<option value="<?php echo $type_cb->id_cb_type; ?>"><?php echo htmlentities($type_cb->lib_cb_type); ?></option>
+								<option value="<?php echo $type_cb->id_cb_type; ?>"><?php echo htmlentities($type_cb->lib_cb_type, ENT_QUOTES, "UTF-8"); ?></option>
 								<?php 
 							}
 							?>
@@ -124,7 +124,7 @@ update_menu_arbo();
 							<?php 
 							for ($i = 0; $i <= 31; $i++) {
 								?>
-								<option value="<?php echo $i; ?>"><?php echo htmlentities($i); ?></option>
+								<option value="<?php echo $i; ?>"><?php echo htmlentities($i, ENT_QUOTES, "UTF-8"); ?></option>
 								<?php
 							}
 							?>
@@ -176,7 +176,7 @@ if ($comptes_cbs) {
 						<?php 
 						foreach ($comptes_bancaires as $compte_bancaire) {
 							?>
-							<option value="<?php echo $compte_bancaire->id_compte_bancaire; ?>" <?php if ($compte_bancaire->id_compte_bancaire == $compte_cb->id_compte_bancaire) {echo 'selected="selected"';}?>><?php echo htmlentities($compte_bancaire->lib_compte); ?></option>
+							<option value="<?php echo $compte_bancaire->id_compte_bancaire; ?>" <?php if ($compte_bancaire->id_compte_bancaire == $compte_cb->id_compte_bancaire) {echo 'selected="selected"';}?>><?php echo htmlentities($compte_bancaire->lib_compte, ENT_QUOTES, "UTF-8"); ?></option>
 							<?php 
 						}
 						?>
@@ -185,12 +185,12 @@ if ($comptes_cbs) {
 							<td style="text-align:right">Nom du porteur: 
 							</td>
 							<td>
-							<input name="ref_porteur_<?php echo $compte_cb->id_compte_cb;?>" id="ref_porteur_<?php echo $compte_cb->id_compte_cb;?>" type="hidden" value="<?php echo htmlentities($compte_cb->ref_porteur);?>" />
+							<input name="ref_porteur_<?php echo $compte_cb->id_compte_cb;?>" id="ref_porteur_<?php echo $compte_cb->id_compte_cb;?>" type="hidden" value="<?php echo htmlentities($compte_cb->ref_porteur, ENT_QUOTES, "UTF-8");?>" />
 							<input name="id_compte_cb" id="id_compte_cb" type="hidden" value="<?php echo $compte_cb->id_compte_cb;?>" />
 							<table>
 								<tr>
 									<td>
-									<input name="nom_porteur_<?php echo $compte_cb->id_compte_cb;?>" id="nom_porteur_<?php echo $compte_cb->id_compte_cb;?>" type="text" value="<?php echo htmlentities($compte_cb->nom_porteur);?>"  class="classinput_xsize" readonly=""/>
+									<input name="nom_porteur_<?php echo $compte_cb->id_compte_cb;?>" id="nom_porteur_<?php echo $compte_cb->id_compte_cb;?>" type="text" value="<?php echo htmlentities($compte_cb->nom_porteur, ENT_QUOTES, "UTF-8");?>"  class="classinput_xsize" readonly=""/>
 									</td>
 									<td style="width:20px">
 									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif"/ style="float:right" id="ref_porteur_select_img_<?php echo $compte_cb->id_compte_cb;?>">
@@ -223,27 +223,27 @@ if ($comptes_cbs) {
 							<?php 
 							foreach ($types_cbs as $type_cb) {
 								?>
-								<option value="<?php echo $type_cb->id_cb_type; ?>" <?php if ($type_cb->id_cb_type == $compte_cb->id_cb_type) {echo 'selected="selected"';}?>><?php echo htmlentities($type_cb->lib_cb_type); ?></option>
+								<option value="<?php echo $type_cb->id_cb_type; ?>" <?php if ($type_cb->id_cb_type == $compte_cb->id_cb_type) {echo 'selected="selected"';}?>><?php echo htmlentities($type_cb->lib_cb_type, ENT_QUOTES, "UTF-8"); ?></option>
 								<?php 
 							}
 							?>
 							</select>
 							</td>
 							<td style="width:25%; text-align:center"><span>Num&eacute;ro de carte:</span><br />
-							<input name="numero_carte_<?php echo $compte_cb->id_compte_cb;?>" id="numero_carte_<?php echo $compte_cb->id_compte_cb;?>" type="text" value="<?php echo htmlentities($compte_cb->numero_carte);?>"  class="classinput_nsize"/>
+							<input name="numero_carte_<?php echo $compte_cb->id_compte_cb;?>" id="numero_carte_<?php echo $compte_cb->id_compte_cb;?>" type="text" value="<?php echo htmlentities($compte_cb->numero_carte, ENT_QUOTES, "UTF-8");?>"  class="classinput_nsize"/>
 							</td>
 							<td style="width:25%; text-align:center"><span>Expiration (mm-aa):</span><br />
 							<input name="date_expiration_<?php echo $compte_cb->id_compte_cb;?>" id="date_expiration_<?php echo $compte_cb->id_compte_cb;?>" type="text" value="<?php echo (date("m", strtotime($compte_cb->date_expiration)));?>-<?php echo (date("y", strtotime($compte_cb->date_expiration)));?>"  class="classinput_nsize" maxlength="5"/>
 							</td>
 							<td style="width:25%; text-align:center"><span style="display:none">Contr&ocirc;le</span><br />
-							<input name="controle_<?php echo $compte_cb->id_compte_cb;?>" id="controle_<?php echo $compte_cb->id_compte_cb;?>" type="text" value="<?php echo htmlentities($compte_cb->controle);?>" class="classinput_nsize" style="display:none"/>
+							<input name="controle_<?php echo $compte_cb->id_compte_cb;?>" id="controle_<?php echo $compte_cb->id_compte_cb;?>" type="text" value="<?php echo htmlentities($compte_cb->controle, ENT_QUOTES, "UTF-8");?>" class="classinput_nsize" style="display:none"/>
 							</td>
 							<td style="width:25%; text-align:center"><span>Diff&eacute;r&eacute;</span><br />
 							<select name="differe_<?php echo $compte_cb->id_compte_cb;?>" id="differe_<?php echo $compte_cb->id_compte_cb;?>" class="classinput_nsize" >
 							<?php 
 							for ($i = 0; $i <= 31; $i++) {
 								?>
-								<option value="<?php echo $i; ?>" <?php if ($i == $compte_cb->differe) {echo 'selected="selected"';}?>><?php echo htmlentities($i); ?></option>
+								<option value="<?php echo $i; ?>" <?php if ($i == $compte_cb->differe) {echo 'selected="selected"';}?>><?php echo htmlentities($i, ENT_QUOTES, "UTF-8"); ?></option>
 								<?php
 							}
 							?>

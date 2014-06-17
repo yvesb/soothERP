@@ -41,7 +41,7 @@
 				?>
 				<td>
 				<div style="font-weight:bolder; display:block; width:100%">
-				<a href="#"><?php echo htmlentities($catalogue_dir->lib_catalogue_client_dir);?></a>
+				<a href="#"><?php echo htmlentities($catalogue_dir->lib_catalogue_client_dir, ENT_QUOTES, "UTF-8");?></a>
 				</div>
 				<?php
 				$main_categorie = 1;
@@ -49,7 +49,7 @@
 			if ($catalogue_dir->indentation == 1) {
 				if ($main_categorie != 1) { echo ",";} else {echo "<div>";}
 				
-				?> <a href="#"><?php echo htmlentities($catalogue_dir->lib_catalogue_client_dir);?></a><?php
+				?> <a href="#"><?php echo htmlentities($catalogue_dir->lib_catalogue_client_dir, ENT_QUOTES, "UTF-8");?></a><?php
 				
 				$main_categorie = 2;
 			}

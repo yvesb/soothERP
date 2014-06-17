@@ -277,25 +277,25 @@ Event.observe('print_factures', "click", function(evt){
 				<td style="width:25px; height:24px; line-height:24px;" valign="middle">
 					<div style="width:25px;">
 						<input id="check_<?php echo $indentation;?>" name="check_<?php echo $indentation;?>" type="checkbox" value="check_line"/>
-						<input id="refdoc_<?php echo $indentation;?>" name="refdoc_<?php echo $indentation;?>" type="hidden" value="<?php echo htmlentities($facture->ref_doc);?>"/>
+						<input id="refdoc_<?php echo $indentation;?>" name="refdoc_<?php echo $indentation;?>" type="hidden" value="<?php echo htmlentities($facture->ref_doc, ENT_QUOTES, "UTF-8");?>"/>
 					</div>				</td>
 				<td style="width:118px">
-				<a href="#" id ="<?php echo htmlentities($facture->ref_doc);?>" style="text-decoration:none; color:#000000; font-size:10px">
-				<?php echo htmlentities($facture->ref_doc);?><br />
+				<a href="#" id ="<?php echo htmlentities($facture->ref_doc, ENT_QUOTES, "UTF-8");?>" style="text-decoration:none; color:#000000; font-size:10px">
+				<?php echo htmlentities($facture->ref_doc, ENT_QUOTES, "UTF-8");?><br />
 				<span <?php if ($facture->id_etat_doc == 16) {?>style="color:#FF0000"<?php } ?>>
-				<?php echo htmlentities(($facture->lib_etat_doc));?>				</span>				</a>
+				<?php echo htmlentities($facture->lib_etat_doc, ENT_QUOTES, "UTF-8");?>				</span>				</a>
 				</td>
 				<td style="font-weight:bolder;text-align:left;">
-				<a href="#" id ="<?php echo htmlentities($facture->ref_doc);?>ctc" style="text-decoration:none; color:#000000;<?php if($facture->ref_contact == "") {?> cursor:default<?php } ?>"><?php  echo htmlentities(substr($facture->nom_contact, 0 , 42));?>...
+				<a href="#" id ="<?php echo htmlentities($facture->ref_doc, ENT_QUOTES, "UTF-8");?>ctc" style="text-decoration:none; color:#000000;<?php if($facture->ref_contact == "") {?> cursor:default<?php } ?>"><?php  echo htmlentities(substr($facture->nom_contact, 0 , 42), ENT_QUOTES, "UTF-8");?>...
 				</a>&nbsp;
 				</td>
 				<td style=" text-align:center; width:90px;">
-				<?php echo htmlentities(date_Us_to_Fr($facture->date_creation));?>
+				<?php echo htmlentities(date_Us_to_Fr($facture->date_creation), ENT_QUOTES, "UTF-8");?>
 				</td>
 				
 				<td style=" text-align:center; width:110px;">
 				<span style=" <?php if (round(strtotime($facture->date_echeance)-strtotime(date("c")))<0) {?> color:#FF0000;<?php } ?>">
-				<?php echo htmlentities(date_Us_to_Fr($facture->date_echeance));?>				</span>
+				<?php echo htmlentities(date_Us_to_Fr($facture->date_echeance), ENT_QUOTES, "UTF-8");?>				</span>
 				</td>
 				<td style="width:100px; text-align:right">&nbsp;
 				
@@ -319,7 +319,7 @@ Event.observe('print_factures', "click", function(evt){
 			</tr>
 		</table>
 				<script type="text/javascript">
-					prestart_ligne_fac_fourn_np (dir_profil_fac_np+"#","<?php echo htmlentities($facture->ref_doc);?>",  "<?php echo htmlentities($facture->ref_contact)?>", "<?php echo $indentation;?>");
+					prestart_ligne_fac_fourn_np (dir_profil_fac_np+"#","<?php echo htmlentities($facture->ref_doc, ENT_QUOTES, "UTF-8");?>",  "<?php echo htmlentities($facture->ref_contact, ENT_QUOTES, "UTF-8")?>", "<?php echo $indentation;?>");
 				</script>
 		<br />
 		</li>

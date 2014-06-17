@@ -93,10 +93,10 @@ check_page_variables ($page_variables);
 				</td><td>
 				<a href="#" id="mod_<?php echo ($catalogue_dir->id_catalogue_client_dir)?>" style="display:block; width:100%">
 						
-					<?php echo htmlentities($catalogue_dir->lib_catalogue_client_dir)?>
+					<?php echo htmlentities($catalogue_dir->lib_catalogue_client_dir, ENT_QUOTES, "UTF-8")?>
 				</a>
 				</td><td width="15px">
-					<a href="#" class="insertion" id="ins_<?php echo ($catalogue_dir->id_catalogue_client_dir)?>" title="Inserer une cat&eacute;gorie dans <?php echo htmlentities($catalogue_dir->lib_catalogue_client_dir)?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/insert.gif" />
+					<a href="#" class="insertion" id="ins_<?php echo ($catalogue_dir->id_catalogue_client_dir)?>" title="Inserer une cat&eacute;gorie dans <?php echo htmlentities($catalogue_dir->lib_catalogue_client_dir, ENT_QUOTES, "UTF-8")?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/insert.gif" />
 						</a>
 					</td></tr></table>
 		<?php 

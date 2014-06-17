@@ -12,7 +12,7 @@
 		<script type="text/javascript">
 		Event.observe("link_catalogue_taxes_sup_<?php echo $taxe['id_taxe']; ?>", "click",  function(evt){Event.stop(evt); alerte.confirm_supprimer('catalogue_taxes_sup', 'catalogue_taxes_sup_<?php echo $taxe['id_taxe']; ?>');}, false);
 		</script>
-	 		<?php echo htmlentities($taxe['lib_taxe']);?> (<?php echo htmlentities($taxe['info_calcul']);?>)<br />
+	 		<?php echo htmlentities($taxe['lib_taxe']);?> (<?php echo htmlentities($taxe['info_calcul'], ENT_QUOTES, "UTF-8");?>)<br />
 <?php 
 
 	}

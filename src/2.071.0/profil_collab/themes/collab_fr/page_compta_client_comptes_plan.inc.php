@@ -73,7 +73,7 @@ page.verify('compta_automatique','compta_automatique.php','true','sub_content');
 							<?php 
 							foreach ($ANNUAIRE_CATEGORIES as $categorie) {
 								?>
-								<option value="<?php echo $categorie->id_categorie?>"><?php echo htmlentities($categorie->lib_categorie)?></option>
+								<option value="<?php echo $categorie->id_categorie?>"><?php echo htmlentities($categorie->lib_categorie, ENT_QUOTES, "UTF-8")?></option>
 								<?php
 							}
 							?>
@@ -95,7 +95,7 @@ page.verify('compta_automatique','compta_automatique.php','true','sub_content');
 						foreach ($liste_categories_client as $liste_categorie_client){
 							?>
 							<option value="<?php echo $liste_categorie_client->id_client_categ;?>" >
-							<?php echo htmlentities($liste_categorie_client->lib_client_categ); ?></option>
+							<?php echo htmlentities($liste_categorie_client->lib_client_categ, ENT_QUOTES, "UTF-8"); ?></option>
 							<?php 
 						}
 						?>

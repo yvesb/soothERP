@@ -63,7 +63,7 @@ page.verify('compta_automatique','compta_automatique.php','true','sub_content');
 		<td>&nbsp;</td>
 		<td><span class="labelled_text">R&eacute;f&eacute;rence, libell&eacute; ou code barre:</span></td>
 		<td>
-		<input type="text" name="lib_article_s" id="lib_article_s" value="<?php if (isset($_REQUEST["acc_ref_article"])) { echo htmlentities($_REQUEST["acc_ref_article"]);}
+		<input type="text" name="lib_article_s" id="lib_article_s" value="<?php if (isset($_REQUEST["acc_ref_article"])) { echo htmlentities($_REQUEST["acc_ref_article"], ENT_QUOTES, "UTF-8");}
 	?>"   class="classinput_xsize"/>
 		</td>
 		<td style="padding-left:35px">
@@ -97,7 +97,7 @@ page.verify('compta_automatique','compta_automatique.php','true','sub_content');
 				foreach ($select_art_categ  as $s_art_categ){
 			?>
 			<option value="<?php echo ($s_art_categ->ref_art_categ)?>">
-			<?php for ($i=0; $i<$s_art_categ->indentation; $i++) {?>&nbsp;&nbsp;&nbsp;<?php }?><?php echo htmlentities($s_art_categ->lib_art_categ)?>
+			<?php for ($i=0; $i<$s_art_categ->indentation; $i++) {?>&nbsp;&nbsp;&nbsp;<?php }?><?php echo htmlentities($s_art_categ->lib_art_categ, ENT_QUOTES, "UTF-8")?>
 			</option>
 			<?php
 				}
@@ -196,7 +196,7 @@ page.verify('compta_automatique','compta_automatique.php','true','sub_content');
 				foreach ($select_art_categ  as $s_art_categ){
 			?>
 			<option value="<?php echo ($s_art_categ->ref_art_categ)?>">
-			<?php for ($i=0; $i<$s_art_categ->indentation; $i++) {?>&nbsp;&nbsp;&nbsp;<?php }?><?php echo htmlentities($s_art_categ->lib_art_categ)?>
+			<?php for ($i=0; $i<$s_art_categ->indentation; $i++) {?>&nbsp;&nbsp;&nbsp;<?php }?><?php echo htmlentities($s_art_categ->lib_art_categ, ENT_QUOTES, "UTF-8")?>
 			</option>
 			<?php
 				}

@@ -52,7 +52,7 @@ array_menu_v_contact[<?php echo $profil->getId_profil()+1?>] =	new Array( 'x_typ
 <div style="display:none;">
 <?php include $DIR.$_SESSION['theme']->getDir_theme()."page_annuaire_nouvelle_fiche_caiu_vide.inc.php" ?>
 </div>
-<p class="titre"><?php echo htmlentities($contact->getNom())?></p>
+<p class="titre"><?php echo htmlentities($contact->getNom(), ENT_QUOTES, "UTF-8")?></p>
 
 <div id="contactview_menu" class="menu">
 <ul id="menu_ul">
@@ -73,7 +73,7 @@ Event.observe("contactview_menu_a", "click",  function(evt){Event.stop(evt); vie
 		if (!$profil->getId_profil()) { continue; }
 		if(isset($profils[$profil->getId_profil()]) ) {
 		?>
-			<li id="exist_profil_<?php echo $profil->getId_profil();?>"><a href="#" id="typeprofil_menu_<?php echo $profil->getId_profil();?>" class="menu_unselect"><?php echo htmlentities($profil->getLib_profil());?></a>
+			<li id="exist_profil_<?php echo $profil->getId_profil();?>"><a href="#" id="typeprofil_menu_<?php echo $profil->getId_profil();?>" class="menu_unselect"><?php echo htmlentities($profil->getLib_profil(), ENT_QUOTES, "UTF-8");?></a>
 			<script type="text/javascript">
 			Event.observe("typeprofil_menu_<?php echo $profil->getId_profil();?>", "click",  function(evt){Event.stop(evt); view_menu_1( 'x_typeprofil<?php echo $profil->getId_profil();?>', 'typeprofil_menu_<?php echo $profil->getId_profil();?>', array_menu_v_contact);  set_tomax_height('typeprofil<?php echo $profil->getId_profil()?>' , -46); set_tomax_height('x_typeprofil<?php echo $profil->getId_profil()?>' , -46);}, false);
 			</script>
@@ -112,7 +112,7 @@ Event.observe("contactview_menu_a", "click",  function(evt){Event.stop(evt); vie
 		</tr>	
 		<tr>
 			<td><span class="labelled" style="width:85px">Nom:</span></td>
-			<td><a href="#" id="link_show_nom" class="modif_textarea3"><?php echo nl2br(htmlentities($contact->getNom())); ?></a>
+			<td><a href="#" id="link_show_nom" class="modif_textarea3"><?php echo nl2br(htmlentities($contact->getNom(), ENT_QUOTES, "UTF-8")); ?></a>
 	<script type="text/javascript">
 	Event.observe("link_show_nom", "click",  function(evt){Event.stop(evt); show_edit_form('nom_mask', 'nom_lib','nom');}, false);
 	</script>
@@ -128,14 +128,14 @@ Event.observe("contactview_menu_a", "click",  function(evt){Event.stop(evt); vie
 		<tr>
 			<td><span class="labelled" style="width:85px">Cat&eacute;gorie:</span></td>
 			<td>
-				<a href="#" id="link_show_id_categ" class="modif_select1"><?php echo htmlentities($contact->getLib_Categorie()); ?></a>
+				<a href="#" id="link_show_id_categ" class="modif_select1"><?php echo htmlentities($contact->getLib_Categorie(), ENT_QUOTES, "UTF-8"); ?></a>
 			<script type="text/javascript">
 			Event.observe("link_show_id_categ", "click",  function(evt){Event.stop(evt); show_edit_form('nom_mask', 'nom_lib','id_categorie');}, false);
 			</script>
 				</td>
 			<td><span class="labelled" style="margin-left:50px">Civilit&eacute;:</span></td>
 			<td>
-				<a href="#" id="link_show_civili" class="modif_select1"><?php echo htmlentities($contact->getLib_civ_court()); ?></a>
+				<a href="#" id="link_show_civili" class="modif_select1"><?php echo htmlentities($contact->getLib_civ_court(), ENT_QUOTES, "UTF-8"); ?></a>
 				<script type="text/javascript">
 				Event.observe("link_show_civili", "click",  function(evt){Event.stop(evt); show_edit_form('nom_mask', 'nom_lib','civilite');}, false);
 				</script>
@@ -151,7 +151,7 @@ Event.observe("contactview_menu_a", "click",  function(evt){Event.stop(evt); vie
 		</tr>	
 		<tr>
 			<td><span class="labelled" style="width:85px">Nom:</span></td>
-			<td ><textarea id="nom" name="nom"  rows="<?php if (stristr($_SERVER["HTTP_USER_AGENT"], "firefox")) { echo "1"; } else { echo "2"; } ?>" class="classinput_xsize"><?php echo htmlentities($contact->getNom())?></textarea></td>
+			<td ><textarea id="nom" name="nom"  rows="<?php if (stristr($_SERVER["HTTP_USER_AGENT"], "firefox")) { echo "1"; } else { echo "2"; } ?>" class="classinput_xsize"><?php echo htmlentities($contact->getNom(), ENT_QUOTES, "UTF-8")?></textarea></td>
 			
 			<td><span class="labelled" id="line_siret"  style="margin-left:50px; display:none;" title="Numéro de Siret">Siret:</span></td>
 			<td><span id="line_siret2" style="display:none;">
@@ -166,7 +166,7 @@ Event.observe("contactview_menu_a", "click",  function(evt){Event.stop(evt); vie
 					?>
 					<option value="<?php echo  $categorie->id_categorie?>" <?php
 	if ( $categorie->id_categorie == $contact->getId_Categorie()) { echo 'selected="selected"'; }
-	?>><?php echo htmlentities($categorie->lib_categorie)?></option>
+	?>><?php echo htmlentities($categorie->lib_categorie, ENT_QUOTES, "UTF-8")?></option>
 					<?php
 				}
 				?>
@@ -179,7 +179,7 @@ Event.observe("contactview_menu_a", "click",  function(evt){Event.stop(evt); vie
 					?>
 					<option value="<?php echo  urlencode($civ->id_civilite) ?>"<?php
 		if ($civ->id_civilite == $contact->getId_civilite ()) { echo 'selected="selected"'; }
-		?>><?php echo htmlentities($civ->lib_civ_court)?></option>
+		?>><?php echo htmlentities($civ->lib_civ_court, ENT_QUOTES, "UTF-8")?></option>
 					<?php 
 				}
 				?>
@@ -196,7 +196,7 @@ Event.observe("contactview_menu_a", "click",  function(evt){Event.stop(evt); vie
 		</tr>	
 		<tr>
 			<td colspan="4">
-			<textarea id="note" name="note" rows="5"  class="classinput_xsize"><?php echo  htmlentities($contact->getNote())?></textarea></td>
+			<textarea id="note" name="note" rows="5"  class="classinput_xsize"><?php echo  htmlentities($contact->getNote(), ENT_QUOTES, "UTF-8")?></textarea></td>
 		</tr>
 	</table>
 	</td>
@@ -241,13 +241,13 @@ Event.observe("contactview_menu_a", "click",  function(evt){Event.stop(evt); vie
 						<?php echo date_Us_to_Fr($contact_last_doc->date_creation);?>
 						</td>
 						<td style=" border-right:1px solid #cccccc; border-bottom:1px solid #cccccc; text-align:left; padding-left:5px">
-							<?php echo htmlentities($contact_last_doc->lib_type_doc);?> - <?php echo htmlentities($contact_last_doc->ref_doc);?>
+							<?php echo htmlentities($contact_last_doc->lib_type_doc, ENT_QUOTES, "UTF-8");?> - <?php echo htmlentities($contact_last_doc->ref_doc, ENT_QUOTES, "UTF-8");?>
 						</td>
 						<td style=" border-right:1px solid #cccccc; border-bottom:1px solid #cccccc; text-align:left; padding-left:5px">
-							<?php echo htmlentities($contact_last_doc->lib_etat_doc);?>
+							<?php echo htmlentities($contact_last_doc->lib_etat_doc, ENT_QUOTES, "UTF-8");?>
 						</td>
 						<td style=" border-bottom:1px solid #cccccc; text-align:center; padding-left:5px">
-						<?php echo htmlentities(price_format($contact_last_doc->montant_ttc))." ".$MONNAIE[1];?>
+						<?php echo htmlentities(price_format($contact_last_doc->montant_ttc), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1];?>
 						</td>
 					</tr>
 					</table>

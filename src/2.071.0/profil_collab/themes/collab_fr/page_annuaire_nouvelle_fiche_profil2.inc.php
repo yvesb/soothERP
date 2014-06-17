@@ -43,7 +43,7 @@ check_page_variables ($page_variables);
 				<select name="type_admin" id="type_admin" class="classinput_xsize">
 					<?php foreach ($BDD_TYPE_ADMIN as $type_adm) {
 						?>
-						<option value="<?php echo $type_adm?>"><?php echo htmlentities($type_adm)?></option>
+						<option value="<?php echo $type_adm?>"><?php echo htmlentities($type_adm, ENT_QUOTES, "UTF-8")?></option>
 						<?php 
 					}
 					?>

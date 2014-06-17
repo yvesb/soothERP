@@ -140,10 +140,10 @@ next($liste_fonctions);
 		</td><td>
 		<a href="#" id="mod_<?php echo ($liste_fonction->id_fonction)?>" style="display:block; width:100%">
 				
-			<?php echo htmlentities($liste_fonction->lib_fonction)?>
+			<?php echo htmlentities($liste_fonction->lib_fonction, ENT_QUOTES, "UTF-8")?>
 		</a>
 		</td><td width="15px">
-			<a href="#" class="insertion" id="ins_<?php echo ($liste_fonction->id_fonction)?>" title="Inserer une fonction dans <?php echo htmlentities($liste_fonction->lib_fonction)?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/insert.gif" />
+			<a href="#" class="insertion" id="ins_<?php echo ($liste_fonction->id_fonction)?>" title="Inserer une fonction dans <?php echo htmlentities($liste_fonction->lib_fonction, ENT_QUOTES, "UTF-8")?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/insert.gif" />
 				</a>
 			</td></tr></table>
 <?php 
@@ -304,7 +304,7 @@ H_loading();
 							<?php 
 							foreach ($liste_fonctions as $liste_fonction_parent) {
 								?>
-								<option value="<?php echo $liste_fonction_parent->id_fonction; ?>"><?php echo htmlentities($liste_fonction_parent->lib_fonction); ?>
+								<option value="<?php echo $liste_fonction_parent->id_fonction; ?>"><?php echo htmlentities($liste_fonction_parent->lib_fonction, ENT_QUOTES, "UTF-8"); ?>
 								</option>
 								<?php 
 							}
@@ -349,11 +349,11 @@ H_loading();
 					<tr>
 						<td>
 						<input id="id_profil_<?php echo $liste_fonction->id_fonction; ?>" name="id_profil_<?php echo $liste_fonction->id_fonction; ?>" type="hidden" value="<?php echo $liste_fonction->id_profil;?>"/>
-						<input id="lib_fonction_<?php echo $liste_fonction->id_fonction; ?>" name="lib_fonction_<?php echo $liste_fonction->id_fonction; ?>" type="text" value="<?php echo htmlentities($liste_fonction->lib_fonction); ?>"  class="classinput_lsize"/>
+						<input id="lib_fonction_<?php echo $liste_fonction->id_fonction; ?>" name="lib_fonction_<?php echo $liste_fonction->id_fonction; ?>" type="text" value="<?php echo htmlentities($liste_fonction->lib_fonction, ENT_QUOTES, "UTF-8"); ?>"  class="classinput_lsize"/>
 			<input name="id_fonction" id="id_fonction" type="hidden" value="<?php echo $liste_fonction->id_fonction; ?>" />
 						</td>
 						<td>
-						<textarea id="desc_fonction_<?php echo $liste_fonction->id_fonction; ?>" name="desc_fonction_<?php echo $liste_fonction->id_fonction; ?>" class="classinput_xsize"><?php echo htmlentities($liste_fonction->desc_fonction); ?></textarea>
+						<textarea id="desc_fonction_<?php echo $liste_fonction->id_fonction; ?>" name="desc_fonction_<?php echo $liste_fonction->id_fonction; ?>" class="classinput_xsize"><?php echo htmlentities($liste_fonction->desc_fonction, ENT_QUOTES, "UTF-8"); ?></textarea>
 						</td>
 						<td>
 							<select id="id_fonction_parent_<?php echo $liste_fonction->id_fonction; ?>" name="id_fonction_parent_<?php echo $liste_fonction->id_fonction; ?>" class="classinput_lsize">
@@ -362,7 +362,7 @@ H_loading();
 							foreach ($liste_fonctions as $liste_fonction_parent) {
 								if ($liste_fonction->id_fonction != $liste_fonction_parent->id_fonction) {
 								?>
-								<option value="<?php echo $liste_fonction_parent->id_fonction; ?>" <?php if ($liste_fonction_parent->id_fonction==$liste_fonction->id_fonction_parent){echo 'selected="selected"';}?>><?php echo htmlentities($liste_fonction_parent->lib_fonction); ?>
+								<option value="<?php echo $liste_fonction_parent->id_fonction; ?>" <?php if ($liste_fonction_parent->id_fonction==$liste_fonction->id_fonction_parent){echo 'selected="selected"';}?>><?php echo htmlentities($liste_fonction_parent->lib_fonction, ENT_QUOTES, "UTF-8"); ?>
 								</option>
 								<?php 
 								}

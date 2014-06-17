@@ -32,12 +32,12 @@ check_page_variables ($page_variables);
 			<table width="100%" border="0">
 				<tr>
 					<td style=" text-align:left; padding-left:10px; font-size:10px; width:20%;; border-left:1px solid #d2d2d2; border-bottom:1px solid #d2d2d2; border-top:1px solid #d2d2d2;">
-					<?php echo htmlentities($reglement->getLib_reglement_mode ()); ?>
+					<?php echo htmlentities($reglement->getLib_reglement_mode (), ENT_QUOTES, "UTF-8"); ?>
 					</td>
 					<td style=" text-align:center; font-size:10px; border-bottom:1px solid #d2d2d2; border-top:1px solid #d2d2d2;"> le :
 					<?php 
 					if ($reglement->getDate_reglement ()!= 0000-00-00) {
-						echo htmlentities ( date_Us_to_Fr ($reglement->getDate_reglement ()));
+						echo htmlentities ( date_Us_to_Fr ($reglement->getDate_reglement ()), ENT_QUOTES, "UTF-8");
 					}
 					?>
 					</td>

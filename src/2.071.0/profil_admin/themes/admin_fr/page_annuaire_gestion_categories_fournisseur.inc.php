@@ -146,11 +146,11 @@ update_menu_arbo();
 							
 						</td>
 						<td>
-						<input id="lib_fournisseur_categ_<?php echo $liste_categorie->id_fournisseur_categ; ?>" name="lib_fournisseur_categ_<?php echo $liste_categorie->id_fournisseur_categ; ?>" type="text" value="<?php echo htmlentities($liste_categorie->lib_fournisseur_categ); ?>"  class="classinput_lsize"/>
+						<input id="lib_fournisseur_categ_<?php echo $liste_categorie->id_fournisseur_categ; ?>" name="lib_fournisseur_categ_<?php echo $liste_categorie->id_fournisseur_categ; ?>" type="text" value="<?php echo htmlentities($liste_categorie->lib_fournisseur_categ, ENT_QUOTES, "UTF-8"); ?>"  class="classinput_lsize"/>
 			<input name="id_fournisseur_categ" id="id_fournisseur_categ" type="hidden" value="<?php echo $liste_categorie->id_fournisseur_categ; ?>" />
 						</td>
 						<td>
-						<textarea id="note_<?php echo $liste_categorie->id_fournisseur_categ; ?>" name="note_<?php echo $liste_categorie->id_fournisseur_categ; ?>" class="classinput_xsize"><?php echo htmlentities($liste_categorie->note); ?></textarea>
+						<textarea id="note_<?php echo $liste_categorie->id_fournisseur_categ; ?>" name="note_<?php echo $liste_categorie->id_fournisseur_categ; ?>" class="classinput_xsize"><?php echo htmlentities($liste_categorie->note, ENT_QUOTES, "UTF-8"); ?></textarea>
 						</td>
 						<td>
 							<p style="text-align:center">

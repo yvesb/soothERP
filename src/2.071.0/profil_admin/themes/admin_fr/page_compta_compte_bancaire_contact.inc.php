@@ -24,7 +24,7 @@ check_page_variables ($page_variables);
 </script>
 <div class="emarge">
 
-<p class="titre">Gestion comptes bancaire de <?php echo htmlentities($contact->getNom())?></p>
+<p class="titre">Gestion comptes bancaire de <?php echo htmlentities($contact->getNom(), ENT_QUOTES, "UTF-8")?></p>
 <div style="height:50px">
 <?php include $DIR.$_SESSION['theme']->getDir_theme()."page_annuaire_recherche_mini.inc.php" ?>
 <table class="minimizetable">
@@ -156,18 +156,18 @@ if ($comptes_bancaires) {
 							<td style="text-align:right">Libell&eacute;: 
 							</td>
 							<td>
-							<input name="lib_compte_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="lib_compte_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->lib_compte);?>"  class="classinput_xsize"  />
+							<input name="lib_compte_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="lib_compte_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->lib_compte, ENT_QUOTES, "UTF-8");?>"  class="classinput_xsize"  />
 							</td>
 							<td style="text-align:right">Nom de la Banque: 
 							</td>
 							<td>
-							<input name="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="hidden" value="<?php echo htmlentities($compte_bancaire->ref_contact);?>" />
-							<input name="ref_banque_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="ref_banque_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="hidden" value="<?php echo htmlentities($compte_bancaire->ref_banque);?>" />
+							<input name="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="hidden" value="<?php echo htmlentities($compte_bancaire->ref_contact, ENT_QUOTES, "UTF-8");?>" />
+							<input name="ref_banque_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="ref_banque_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="hidden" value="<?php echo htmlentities($compte_bancaire->ref_banque, ENT_QUOTES, "UTF-8");?>" />
 							<input name="id_compte_bancaire" id="id_compte_bancaire" type="hidden" value="<?php echo $compte_bancaire->id_compte_bancaire;?>" />
 							<table>
 								<tr>
 									<td>
-									<input name="nom_banque_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="nom_banque_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->nom_banque);?>"  class="classinput_xsize" readonly=""/>
+									<input name="nom_banque_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="nom_banque_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->nom_banque, ENT_QUOTES, "UTF-8");?>"  class="classinput_xsize" readonly=""/>
 									</td>
 									<td style="width:20px">
 									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif"/ style="float:right" id="ref_banque_select_img_<?php echo $compte_bancaire->id_compte_bancaire;?>">
@@ -196,16 +196,16 @@ if ($comptes_bancaires) {
 							<table style="width:100%" class="contactview_corps">
 								<tr>
 									<td style="width:25%; text-align:center"><span style="font-size:9px">Code banque</span><br />
-									<input name="code_banque_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="code_banque_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->code_banque);?>"  class="classinput_nsize" size="5" maxlength="5"/>
+									<input name="code_banque_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="code_banque_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->code_banque, ENT_QUOTES, "UTF-8");?>"  class="classinput_nsize" size="5" maxlength="5"/>
 									</td>
 									<td style="width:25%; text-align:center"><span style="font-size:9px">Code guichet</span><br />
-									<input name="code_guichet_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="code_guichet_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->code_guichet);?>"  class="classinput_nsize" size="5" maxlength="5"/>
+									<input name="code_guichet_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="code_guichet_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->code_guichet, ENT_QUOTES, "UTF-8");?>"  class="classinput_nsize" size="5" maxlength="5"/>
 									</td>
 									<td style="width:25%; text-align:center"><span style="font-size:9px">Num&eacute;ro de compte</span><br />
-									<input name="numero_compte_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="numero_compte_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->numero_compte);?>"  class="classinput_nsize" size="11" maxlength="11"/>
+									<input name="numero_compte_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="numero_compte_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->numero_compte, ENT_QUOTES, "UTF-8");?>"  class="classinput_nsize" size="11" maxlength="11"/>
 									</td>
 									<td style="width:25%; text-align:center"><span style="font-size:9px">Clef rib</span><br />
-									<input name="cle_rib_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="cle_rib_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->cle_rib);?>"  class="classinput_nsize" size="2" maxlength="2" />
+									<input name="cle_rib_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="cle_rib_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->cle_rib, ENT_QUOTES, "UTF-8");?>"  class="classinput_nsize" size="2" maxlength="2" />
 									</td>
 								</tr>
 							</table>
@@ -217,12 +217,12 @@ if ($comptes_bancaires) {
 							<td style="text-align:right">iban :
 							</td>
 							<td>
-							<input name="iban_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="iban_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->iban);?>"  class="classinput_nsize" size="28" />
+							<input name="iban_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="iban_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->iban, ENT_QUOTES, "UTF-8");?>"  class="classinput_nsize" size="28" />
 							</td>
 							<td style="text-align:right">swift: 
 							</td>
 							<td>
-							<input name="swift_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="swift_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->swift);?>"  class="classinput_nsize" size="28" />
+							<input name="swift_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="swift_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->swift, ENT_QUOTES, "UTF-8");?>"  class="classinput_nsize" size="28" />
 							</td>
 					<td style="text-align:center">
 					<input name="modifier_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="modifier_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
@@ -233,7 +233,7 @@ if ($comptes_bancaires) {
 				</td>
 				<td style="width:55px; text-align:center">
 				<form method="post" action="compta_compte_bancaire_contact_sup.php" id="compta_compte_bancaire_contact_sup_<?php echo $compte_bancaire->id_compte_bancaire; ?>" name="compta_compte_bancaire_contact_sup_<?php echo $compte_bancaire->id_compte_bancaire; ?>" target="formFrame">
-				<input name="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="hidden" value="<?php echo htmlentities($compte_bancaire->ref_contact);?>" />
+				<input name="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="hidden" value="<?php echo htmlentities($compte_bancaire->ref_contact, ENT_QUOTES, "UTF-8");?>" />
 					<input name="id_compte_bancaire" id="id_compte_bancaire" type="hidden" value="<?php echo $compte_bancaire->id_compte_bancaire; ?>" />
 				</form>
 				<a href="#" id="link_compta_compte_bancaire_contact_sup_<?php echo $compte_bancaire->id_compte_bancaire; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
@@ -250,7 +250,7 @@ if ($comptes_bancaires) {
 							<form action="compta_compte_bancaire_contact_ordre.php" method="post" id="compta_compte_bancaire_contact_ordre_<?php echo $compte_bancaire->id_compte_bancaire; ?>" name="compta_compte_bancaire_contact_ordre_<?php echo $compte_bancaire->id_compte_bancaire; ?>" target="formFrame">
 								<input name="new_ordre" id="new_ordre" type="hidden" value="<?php echo ($compte_bancaire->ordre)-1?>" />
 								<input name="id_compte_bancaire" id="id_compte_bancaire" type="hidden" value="<?php echo $compte_bancaire->id_compte_bancaire; ?>" />	
-								<input name="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="hidden" value="<?php echo htmlentities($compte_bancaire->ref_contact);?>" />
+								<input name="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="hidden" value="<?php echo htmlentities($compte_bancaire->ref_contact, ENT_QUOTES, "UTF-8");?>" />
 								<input name="modifier_ordre_<?php echo $compte_bancaire->id_compte_bancaire; ?>" id="modifier_ordre_<?php echo $compte_bancaire->id_compte_bancaire; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/up.gif">
 							</form>
 							<?php
@@ -272,7 +272,7 @@ if ($comptes_bancaires) {
 						<form action="compta_compte_bancaire_contact_ordre.php" method="post" id="compta_compte_bancaire_contact_ordre_<?php echo $compte_bancaire->id_compte_bancaire; ?>" name="compta_compte_bancaire_contact_ordre_<?php echo $compte_bancaire->id_compte_bancaire; ?>" target="formFrame">
 								<input name="new_ordre" id="new_ordre" type="hidden" value="<?php echo ($compte_bancaire->ordre)+1?>" />
 								<input name="id_compte_bancaire" id="id_compte_bancaire" type="hidden" value="<?php echo $compte_bancaire->id_compte_bancaire; ?>" />
-								<input name="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="hidden" value="<?php echo htmlentities($compte_bancaire->ref_contact);?>" />
+								<input name="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="hidden" value="<?php echo htmlentities($compte_bancaire->ref_contact, ENT_QUOTES, "UTF-8");?>" />
 								<input name="modifier_ordre_<?php echo $compte_bancaire->id_compte_bancaire; ?>" id="modifier_ordre_<?php echo $compte_bancaire->id_compte_bancaire; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/down.gif">
 							</form>
 							<?php

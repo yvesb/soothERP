@@ -209,7 +209,7 @@ check_page_variables ($page_variables);
 											<?php 		 
 										}
 										?>
-										<?php if ($adresse_facturation->getId_pays() == $payslist->id_pays) {echo htmlentities($payslist->pays);}?> <?php if (!$adresse_facturation->getId_pays() && $DEFAUT_ID_PAYS == $payslist->id_pays) {echo htmlentities($payslist->pays);}?>
+										<?php if ($adresse_facturation->getId_pays() == $payslist->id_pays) {echo htmlentities($payslist->pays, ENT_QUOTES, "UTF-8");}?> <?php if (!$adresse_facturation->getId_pays() && $DEFAUT_ID_PAYS == $payslist->id_pays) {echo htmlentities($payslist->pays, ENT_QUOTES, "UTF-8");}?>
 										<?php 
 									}
 									?>
@@ -263,7 +263,7 @@ check_page_variables ($page_variables);
 											<?php 		 
 										}
 										?>
-										<?php if ($adresse_livraison->getId_pays() == $payslist->id_pays) {echo htmlentities($payslist->pays);}?> <?php if (!$adresse_livraison->getId_pays() && $DEFAUT_ID_PAYS == $payslist->id_pays) {echo htmlentities($payslist->pays);}?>
+										<?php if ($adresse_livraison->getId_pays() == $payslist->id_pays) {echo htmlentities($payslist->pays, ENT_QUOTES, "UTF-8");}?> <?php if (!$adresse_livraison->getId_pays() && $DEFAUT_ID_PAYS == $payslist->id_pays) {echo htmlentities($payslist->pays, ENT_QUOTES, "UTF-8");}?>
 										<?php 
 									}
 									?>

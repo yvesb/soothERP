@@ -159,7 +159,7 @@ border:0px;
 </div>
 	<iframe name="desc_longue_html" id="desc_longue_html" class="classinput_xsize" style="height:220px; display:block; width:100%" frameborder="0"></iframe><br />
 	<iframe width="161" height="113" id="colorpalette" src="colors.php?proto=editeur&ifr=desc_longue_html" style="display:none; position:absolute; border:1px solid #000000; OVERFLOW: hidden;" frameborder="0" scrolling="no"></iframe><br />
-	<textarea name="desc_longue" rows="6" style="display:none;" id="desc_longue"><?php echo str_replace("&curren;", "&euro;", htmlentities($article->getDesc_longue ()));?></textarea>
+	<textarea name="desc_longue" rows="6" style="display:none;" id="desc_longue"><?php echo str_replace("&curren;", "&euro;", htmlentities($article->getDesc_longue ()), ENT_QUOTES, "UTF-8");?></textarea>
 	<a href="#" id="article_description"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" /></a>
 	</div>
 			</td>

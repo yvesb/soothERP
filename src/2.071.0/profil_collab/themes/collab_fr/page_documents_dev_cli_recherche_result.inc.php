@@ -232,16 +232,16 @@ $montant_total_page_ttc = 0;
 				
 				<td style="width:17% ; text-align:center ; color:#868486">
 					<?php if ($fiche->id_etat_doc == 1) { ?>
-					<a  href="#" id="link_etat_doc_<?php echo htmlentities($fiche->ref_doc)?>" style="color:red;display:block; width:100%">[
-					<?php	echo htmlentities($fiche->lib_etat_doc); } ?>
+					<a  href="#" id="link_etat_doc_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>" style="color:red;display:block; width:100%">[
+					<?php	echo htmlentities($fiche->lib_etat_doc, ENT_QUOTES, "UTF-8"); } ?>
 				
 					<?php if ($fiche->id_etat_doc == 3) { ?>
-					<a  href="#" id="link_etat_doc_<?php echo htmlentities($fiche->ref_doc)?>" style="display:block; width:100%">[
-					<?php	echo htmlentities($fiche->lib_etat_doc); } ?>
+					<a  href="#" id="link_etat_doc_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">[
+					<?php	echo htmlentities($fiche->lib_etat_doc, ENT_QUOTES, "UTF-8"); } ?>
 					]
 					</a>
 					<script type="text/javascript">
-					Event.observe("link_etat_doc_<?php echo htmlentities($fiche->ref_doc)?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','documents_edition.php?ref_doc=<?php echo htmlentities($fiche->ref_doc)?>','true','sub_content');}, false);
+					Event.observe("link_etat_doc_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt); page.verify('documents_edition','documents_edition.php?ref_doc=<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8")?>','true','sub_content');}, false);
 					</script>
 				</td>
 				<td style="width:6%"> &nbsp; </td>
@@ -252,23 +252,23 @@ $montant_total_page_ttc = 0;
 				</td>
 				<?php } else { ?>
 				<td style="width:12%;  text-align:right">
-					<span id="devis_accepte_<?php echo htmlentities($fiche->ref_doc);?>" style="color:green; cursor:pointer; display:">[ ACCEPTE >>]<span/>&nbsp;
+					<span id="devis_accepte_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8");?>" style="color:green; cursor:pointer; display:">[ ACCEPTE >>]<span/>&nbsp;
 					<script type="text/javascript">
-						Event.observe("devis_accepte_<?php echo htmlentities($fiche->ref_doc);?>", "click", function(evt){
+						Event.observe("devis_accepte_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8");?>", "click", function(evt){
 						
-						window.open("index.php#documents_edition_maj_etat_doc.php?ref_doc=<?php echo htmlentities($fiche->ref_doc);?>&maj_etat=4","_blank");
-						$("devis_accepte_<?php echo htmlentities($fiche->ref_doc);?>").hide();
+						window.open("index.php#documents_edition_maj_etat_doc.php?ref_doc=<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8");?>&maj_etat=4","_blank");
+						$("devis_accepte_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8");?>").hide();
 						}, false);
 					</script>
 				</td>
 				
 				<td style="width:12%; text-align:left">
-					&nbsp;<span id="devis_refuse_<?php echo htmlentities($fiche->ref_doc);?>" style="color:red; cursor:pointer; display:">[ REFUSE >>]<span/>
+					&nbsp;<span id="devis_refuse_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8");?>" style="color:red; cursor:pointer; display:">[ REFUSE >>]<span/>
 					<script type="text/javascript">
-						Event.observe("devis_refuse_<?php echo htmlentities($fiche->ref_doc);?>", "click", function(evt){
+						Event.observe("devis_refuse_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8");?>", "click", function(evt){
 						
-						window.open("index.php#documents_edition_maj_etat_doc.php?ref_doc=<?php echo htmlentities($fiche->ref_doc);?>&maj_etat=5","_blank");
-						$("devis_refuse_<?php echo htmlentities($fiche->ref_doc);?>").hide();
+						window.open("index.php#documents_edition_maj_etat_doc.php?ref_doc=<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8");?>&maj_etat=5","_blank");
+						$("devis_refuse_<?php echo htmlentities($fiche->ref_doc, ENT_QUOTES, "UTF-8");?>").hide();
 						}, false);
 					</script>
 				</td>

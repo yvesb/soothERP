@@ -74,7 +74,7 @@ foreach ($_ALERTES as $alerte => $value) {
 						</tr>
 						</table>
 						</td><td>
-						<a href="#" id="mod_<?php echo ($art_categ->ref_art_categ)?>_s" style="display:block; width:100%"><?php echo htmlentities($art_categ->lib_art_categ)?>						</a>
+						<a href="#" id="mod_<?php echo ($art_categ->ref_art_categ)?>_s" style="display:block; width:100%"><?php echo htmlentities($art_categ->lib_art_categ, ENT_QUOTES, "UTF-8")?>						</a>
 						</td>
 					</tr>
 				</table>
@@ -112,7 +112,7 @@ Event.observe('mod_tous_s', 'click',  function(evt){
 <?php
 foreach ($list_art_categ  as $art_categ){
 	?>
-	pre_start_art_categ ("<?php echo ($art_categ->ref_art_categ)?>", "<?php echo htmlentities($art_categ->lib_art_categ)?>", "_s");
+	pre_start_art_categ ("<?php echo ($art_categ->ref_art_categ)?>", "<?php echo htmlentities($art_categ->lib_art_categ, ENT_QUOTES, "UTF-8")?>", "_s");
 	<?php 
 }
 ?>

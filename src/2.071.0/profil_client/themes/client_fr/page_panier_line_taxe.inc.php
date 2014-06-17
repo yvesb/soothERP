@@ -42,7 +42,7 @@ check_page_variables ($page_variables);
 		</td>
 		<td style="width:280px; padding-left:3px">
 			<div style="width:277px;" class="doc_small_ita">
-			dont Taxes <?php echo htmlentities($contenu->lib_article);?>
+			dont Taxes <?php echo htmlentities($contenu->lib_article, ENT_QUOTES, "UTF-8");?>
 			</div>
 		</td>
 		<td style="width:27px" class="document_border_right">
@@ -114,5 +114,5 @@ check_page_variables ($page_variables);
 	</tr>
 </table>
 <script type="text/javascript">
-pre_start_taxes_line ("<?php echo htmlentities($contenu->ref_article)?>", "<?php echo $contenu->ref_doc_line?>", "<?php echo $indentation_contenu?>");
+pre_start_taxes_line ("<?php echo htmlentities($contenu->ref_article, ENT_QUOTES, "UTF-8")?>", "<?php echo $contenu->ref_doc_line?>", "<?php echo $indentation_contenu?>");
 </script>

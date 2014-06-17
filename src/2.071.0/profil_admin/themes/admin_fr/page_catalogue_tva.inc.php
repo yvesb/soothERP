@@ -36,11 +36,11 @@ check_page_variables ($page_variables);
 				?>
 				</p>
 				<p>
-				<?php echo htmlentities($tva['pays'])?><br />
+				<?php echo htmlentities($tva['pays'], ENT_QUOTES, "UTF-8")?><br />
 				<?php $pays	=	 $tva['id_pays'];
 			}
 				?>
-				<?php echo htmlentities($tva['tva']);?>%<br />
+				<?php echo htmlentities($tva['tva'], ENT_QUOTES, "UTF-8");?>%<br />
 <?php 
 	}
 ?>

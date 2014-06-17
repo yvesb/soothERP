@@ -103,7 +103,7 @@ array_menu_r_article[2] 	=	new Array('recherche_perso', 'menu_3');
 				<?php 
 				foreach ($types_liste as $type_liste) {
 					?>
-					<option value="<?php echo $type_liste->id_type_doc;?>" <?php if (isset($_REQUEST["id_type_doc"]) && $type_liste->id_type_doc == $_REQUEST["id_type_doc"]) { echo ' selected="selected"'; }?> ><?php echo htmlentities($type_liste->lib_type_doc);?></option>
+					<option value="<?php echo $type_liste->id_type_doc;?>" <?php if (isset($_REQUEST["id_type_doc"]) && $type_liste->id_type_doc == $_REQUEST["id_type_doc"]) { echo ' selected="selected"'; }?> ><?php echo htmlentities($type_liste->lib_type_doc, ENT_QUOTES, "UTF-8");?></option>
 					<?php 
 				}
 				?>
@@ -264,7 +264,7 @@ array_menu_r_article[2] 	=	new Array('recherche_perso', 'menu_3');
 				<?php 
 				foreach ($types_liste as $type_liste) {
 					?>
-					<option value="<?php echo $type_liste->id_type_doc;?>" <?php if (isset($_REQUEST["id_type_doc"]) && $type_liste->id_type_doc == $_REQUEST["id_type_doc"]) { echo ' selected="selected"'; }?> ><?php echo htmlentities($type_liste->lib_type_doc);?></option>
+					<option value="<?php echo $type_liste->id_type_doc;?>" <?php if (isset($_REQUEST["id_type_doc"]) && $type_liste->id_type_doc == $_REQUEST["id_type_doc"]) { echo ' selected="selected"'; }?> ><?php echo htmlentities($type_liste->lib_type_doc, ENT_QUOTES, "UTF-8");?></option>
 					<?php 
 				}
 				?>
@@ -307,7 +307,7 @@ array_menu_r_article[2] 	=	new Array('recherche_perso', 'menu_3');
 				<?php 
 				foreach ($listes_magasin as $magasin) {
 					?>
-					<option value="<?php echo $magasin->id_magasin;?>" name="id_magasin" <?php if (isset($_REQUEST["id_magasin"]) && $magasin->id_magasin == $_REQUEST["id_magasin"]) { echo ' selected="selected"'; }?> ><?php echo htmlentities($magasin->lib_magasin);?></option>
+					<option value="<?php echo $magasin->id_magasin;?>" name="id_magasin" <?php if (isset($_REQUEST["id_magasin"]) && $magasin->id_magasin == $_REQUEST["id_magasin"]) { echo ' selected="selected"'; }?> ><?php echo htmlentities($magasin->lib_magasin, ENT_QUOTES, "UTF-8");?></option>
 					<?php 
 				}
 				?>

@@ -20,14 +20,14 @@
 			<td class="size_strict"><span class="labelled_ralonger">R&eacute;f&eacute;rence revendeur:</span>
 			</td>
 			<td>
-				<input name="identifiant_revendeur" id="identifiant_revendeur" type="text" class="classinput_xsize" value="<?php echo 		htmlentities($profils[$id_profil]->getIdentifiant_revendeur ()) ?>" />
+				<input name="identifiant_revendeur" id="identifiant_revendeur" type="text" class="classinput_xsize" value="<?php echo 		htmlentities($profils[$id_profil]->getIdentifiant_revendeur (), ENT_QUOTES, "UTF-8") ?>" />
 			</td>
 		</tr>
 		<tr>
 			<td class="size_strict"><span class="labelled_ralonger">Conditions de garantie:</span>
 			</td>
 			<td>
-				<textarea name="conditions_garantie" id="conditions_garantie" class="classinput_xsize"><?php echo htmlentities($profils[$id_profil]->getConditions_garantie ()) ?></textarea>
+				<textarea name="conditions_garantie" id="conditions_garantie" class="classinput_xsize"><?php echo htmlentities($profils[$id_profil]->getConditions_garantie (), ENT_QUOTES, "UTF-8") ?></textarea>
 			</td>
 		</tr>
 	</table>
@@ -45,14 +45,14 @@
 			<td class="size_strict"><span class="labelled_ralonger">R&eacute;f&eacute;rence revendeur:</span>
 			</td>
 			<td>
-			<a href="#" id="show6_identifiant_revendeur" class="modif_input1"><?php echo  htmlentities($profils[$id_profil]->getIdentifiant_revendeur ())?></a>
+			<a href="#" id="show6_identifiant_revendeur" class="modif_input1"><?php echo  htmlentities($profils[$id_profil]->getIdentifiant_revendeur (), ENT_QUOTES, "UTF-8")?></a>
 			</td>
 		</tr>
 		<tr>
 			<td class="size_strict"><span class="labelled_ralonger">Conditions de garantie:</span>
 			</td>
 			<td>
-			<a href="#" id="show6_conditions_garantie" class="modif_input1"><?php echo  nl2br(htmlentities($profils[$id_profil]->getConditions_garantie ()))?></a>
+			<a href="#" id="show6_conditions_garantie" class="modif_input1"><?php echo  nl2br(htmlentities($profils[$id_profil]->getConditions_garantie ()), ENT_QUOTES, "UTF-8")?></a>
 			</td>
 		</tr>
 		<tr>
@@ -111,21 +111,21 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 ?>
 <tr class="<?php  echo  $class_colorise?>" id="line_art_<?php echo ($last_article->ref_article)?>">
 	<td class="reference">
-		<a  href="#" id="link_art_ref_<?php echo htmlentities($last_article->ref_article)?>" style="display:block; width:100%">
-		<?php	if ($last_article->ref_interne!="") { echo htmlentities($last_article->ref_interne)."&nbsp;";}else{ echo htmlentities($last_article->ref_article)."&nbsp;";}?><br />
-		<?php	if ($last_article->ref_oem) { echo htmlentities($last_article->ref_oem)."&nbsp;";}?>		
+		<a  href="#" id="link_art_ref_<?php echo htmlentities($last_article->ref_article, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">
+		<?php	if ($last_article->ref_interne!="") { echo htmlentities($last_article->ref_interne, ENT_QUOTES, "UTF-8")."&nbsp;";}else{ echo htmlentities($last_article->ref_article, ENT_QUOTES, "UTF-8")."&nbsp;";}?><br />
+		<?php	if ($last_article->ref_oem) { echo htmlentities($last_article->ref_oem, ENT_QUOTES, "UTF-8")."&nbsp;";}?>		
 		</a>
 		<script type="text/javascript">
-		Event.observe("link_art_ref_<?php echo htmlentities($last_article->ref_article)?>", "click",  function(evt){Event.stop(evt); page.verify('catalogue_articles_view','catalogue_articles_view.php?ref_article=<?php echo htmlentities($last_article->ref_article)?>','true','sub_content');}, false);
+		Event.observe("link_art_ref_<?php echo htmlentities($last_article->ref_article, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt); page.verify('catalogue_articles_view','catalogue_articles_view.php?ref_article=<?php echo htmlentities($last_article->ref_article, ENT_QUOTES, "UTF-8")?>','true','sub_content');}, false);
 		</script>
 	</td>
 	<td>
-		<a  href="#" id="link_art_lib_<?php echo htmlentities($last_article->ref_article)?>" style="display:block; width:100%">
-		<span class="lib_categorie"><?php	if ($last_article->lib_art_categ) 				{ echo htmlentities($last_article->lib_art_categ); }?></span> - <span class="lib_constructor"><?php	if ($last_article->nom_constructeur) { echo htmlentities($last_article->nom_constructeur)."&nbsp;";}?></span><br />
-		<span class="r_art_lib"><?php echo nl2br(htmlentities($last_article->lib_article))?></span>
+		<a  href="#" id="link_art_lib_<?php echo htmlentities($last_article->ref_article, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">
+		<span class="lib_categorie"><?php	if ($last_article->lib_art_categ) 				{ echo htmlentities($last_article->lib_art_categ, ENT_QUOTES, "UTF-8"); }?></span> - <span class="lib_constructor"><?php	if ($last_article->nom_constructeur) { echo htmlentities($last_article->nom_constructeur, ENT_QUOTES, "UTF-8")."&nbsp;";}?></span><br />
+		<span class="r_art_lib"><?php echo nl2br(htmlentities($last_article->lib_article, ENT_QUOTES, "UTF-8"))?></span>
 		</a>
 		<script type="text/javascript">
-		Event.observe("link_art_lib_<?php echo htmlentities($last_article->ref_article)?>", "click",  function(evt){Event.stop(evt); page.verify('catalogue_articles_view','catalogue_articles_view.php?ref_article=<?php echo htmlentities($last_article->ref_article)?>','true','sub_content');}, false);
+		Event.observe("link_art_lib_<?php echo htmlentities($last_article->ref_article, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt); page.verify('catalogue_articles_view','catalogue_articles_view.php?ref_article=<?php echo htmlentities($last_article->ref_article, ENT_QUOTES, "UTF-8")?>','true','sub_content');}, false);
 		</script>
 		<div style="position:relative">
 		<div id="line_aff_img_<?php echo ($last_article->ref_article)?>" style="display:none; position:absolute">
@@ -135,16 +135,16 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 	</td>
 	<td style="text-align:center">
 		<a href="#" id="aff_resume_stock_<?php echo ($last_article->ref_article);?>">
-		<?php	if (isset($last_article->stock)) { echo htmlentities($last_article->stock); } else { echo "0";}?>
+		<?php	if (isset($last_article->stock)) { echo htmlentities($last_article->stock, ENT_QUOTES, "UTF-8"); } else { echo "0";}?>
 		</a>
 		<script type="text/javascript">
 		Event.observe("aff_resume_stock_<?php echo ($last_article->ref_article);?>", "click", function(evt){show_resume_stock("<?php echo $last_article->ref_article;?>", evt); Event.stop(evt);}, false);
 		</script>
 	</td>
 	<td style="vertical-align:middle; text-align:center">
-	<a  href="#" id="link_art_voir_<?php echo htmlentities($last_article->ref_article)?>" style="display:block; width:100%; text-decoration:underline">Voir</a>
+	<a  href="#" id="link_art_voir_<?php echo htmlentities($last_article->ref_article, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%; text-decoration:underline">Voir</a>
 		<script type="text/javascript">
-		Event.observe("link_art_voir_<?php echo htmlentities($last_article->ref_article)?>", "click",  function(evt){Event.stop(evt); page.verify('catalogue_articles_view','index.php#'+escape('catalogue_articles_view.php?ref_article=<?php echo htmlentities($last_article->ref_article)?>'),'true','_blank');}, false);
+		Event.observe("link_art_voir_<?php echo htmlentities($last_article->ref_article, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){Event.stop(evt); page.verify('catalogue_articles_view','index.php#'+escape('catalogue_articles_view.php?ref_article=<?php echo htmlentities($last_article->ref_article, ENT_QUOTES, "UTF-8")?>'),'true','_blank');}, false);
 		
 		<?php 
 		if (isset($last_article->lib_file) && $last_article->lib_file != "") {

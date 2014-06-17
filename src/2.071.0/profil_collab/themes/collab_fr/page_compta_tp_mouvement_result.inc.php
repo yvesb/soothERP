@@ -225,14 +225,14 @@ $class_colorise= ($colorise % 2)? 'colorise3' : 'colorise1';
 		<?php	if (isset($fiche->date_reglement)) { echo date_Us_to_Fr($fiche->date_reglement)." ".getTime_from_date($fiche->date_reglement); } ?>
 	</td>
 	<td>
-		<a  href="#" id="link_reg_ref_<?php echo htmlentities($fiche->ref_reglement)?>" style="display:block; width:100%">
+		<a  href="#" id="link_reg_ref_<?php echo htmlentities($fiche->ref_reglement, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">
 		<span style="font-weight:bolder"></span> 
 		<?php	if (isset($fiche->ref_reglement)) {?>
 		<?php echo nl2br(($fiche->ref_reglement))?>
 		<?php }	?>
 		</a>
 		<script type="text/javascript">
-		Event.observe("link_reg_ref_<?php echo htmlentities($fiche->ref_reglement)?>", "click",  function(evt){
+		Event.observe("link_reg_ref_<?php echo htmlentities($fiche->ref_reglement, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){
 			Event.stop(evt);
 			page.traitecontent('compta_reglements_edition','compta_reglements_edition.php?ref_reglement=<?php echo $fiche->ref_reglement;?>','true','edition_reglement');
 			$("edition_reglement").show();
@@ -243,12 +243,12 @@ $class_colorise= ($colorise % 2)? 'colorise3' : 'colorise1';
 	</td>
 	<td>
 		<?php	if (isset($fiche->ref_contact)) {?>
-			<a  href="#" id="link_reg_ctc_<?php echo htmlentities($fiche->ref_reglement)?>" style="display:block; width:100%">
+			<a  href="#" id="link_reg_ctc_<?php echo htmlentities($fiche->ref_reglement, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">
 			
 			<?php echo nl2br(($fiche->nom))?>
 			</a>
 			<script type="text/javascript">
-			Event.observe("link_reg_ctc_<?php echo htmlentities($fiche->ref_reglement)?>", "click",  function(evt){
+			Event.observe("link_reg_ctc_<?php echo htmlentities($fiche->ref_reglement, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){
 				Event.stop(evt);
 				page.traitecontent('affaires_affiche_fiche','index.php#annuaire_view_fiche.php?ref_contact=<?php echo $fiche->ref_contact;?>','true','_blank');
 					
@@ -258,12 +258,12 @@ $class_colorise= ($colorise % 2)? 'colorise3' : 'colorise1';
 	</td>
 	<td>
 		<?php	if (isset($fiche->ref_doc)) {?>
-			<a  href="#" id="link_reg_doc_<?php echo htmlentities($fiche->ref_reglement)?>" style="display:block; width:100%">
+			<a  href="#" id="link_reg_doc_<?php echo htmlentities($fiche->ref_reglement, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%">
 			
 			<?php echo (($fiche->ref_doc))?>
 			</a>
 			<script type="text/javascript">
-			Event.observe("link_reg_doc_<?php echo htmlentities($fiche->ref_reglement)?>", "click",  function(evt){
+			Event.observe("link_reg_doc_<?php echo htmlentities($fiche->ref_reglement, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){
 				Event.stop(evt);
 				page.traitecontent('documents_edition','index.php#'+escape('documents_edition.php?ref_doc=<?php echo $fiche->ref_doc;?>'),'true','_blank');
 					

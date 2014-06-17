@@ -21,10 +21,10 @@
 			<td>
 			<select name="type_admin" id="type_admin" class="classinput_xsize">
 			<?php
-			$admin_type =  htmlentities($BDD_TYPE_ADMIN[0]);
+			$admin_type =  htmlentities($BDD_TYPE_ADMIN[0], ENT_QUOTES, "UTF-8");
 			foreach ($BDD_TYPE_ADMIN as $type_adm) {
 				?>
-				<option value="<?php echo htmlentities($type_adm)?>" <?php if ($profils[$id_profil]->getType_admin ()== $type_adm) {echo 'selected="selected"'; $admin_type =  htmlentities($type_adm);}?>><?php echo htmlentities($type_adm)?></option>
+				<option value="<?php echo htmlentities($type_adm, ENT_QUOTES, "UTF-8")?>" <?php if ($profils[$id_profil]->getType_admin ()== $type_adm) {echo 'selected="selected"'; $admin_type =  htmlentities($type_adm, ENT_QUOTES, "UTF-8");}?>><?php echo htmlentities($type_adm, ENT_QUOTES, "UTF-8")?></option>
 				<?php 
 			}
 			?>
@@ -45,7 +45,7 @@
 			<td class="size_strict"><span class="labelled">Type:</span>
 			</td>
 			<td>
-<a href="#" id="show_type_admin" class="modif_select1"><?php echo  htmlentities($admin_type)?></a>
+<a href="#" id="show_type_admin" class="modif_select1"><?php echo  htmlentities($admin_type, ENT_QUOTES, "UTF-8")?></a>
 				</td>
 		</tr>
 		<tr>

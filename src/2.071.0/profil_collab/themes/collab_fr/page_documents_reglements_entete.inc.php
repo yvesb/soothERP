@@ -98,7 +98,7 @@ check_page_variables ($page_variables);
                 echo htmlentities(number_format($liste_reglement_valide[$i]->montant_on_doc, $TARIFS_NB_DECIMALES, ".", ""	))." ".$MONNAIE[1];
                 ?>	</td>
                                     <td style=" text-align:center; font-size:10px;  border-right:1px solid #d2d2d2; border-bottom:1px solid #d2d2d2;">
-                                                <?php echo htmlentities($liste_reglement_valide[$i]->lib_reglement_mode); ?>
+                                                <?php echo htmlentities($liste_reglement_valide[$i]->lib_reglement_mode, ENT_QUOTES, "UTF-8"); ?>
                                     </td>
                                 </tr>
                                                 <?php

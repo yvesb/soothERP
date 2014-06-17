@@ -24,7 +24,7 @@
 									
 									
 									?> type=checkbox value="<?php echo $exist_profil->getId_profil();?>" id="profils<?php echo $exist_profil->getId_profil();?>" name="profils[<?php echo $exist_profil->getId_profil();?>]" checked="checked" />
-									<?php echo htmlentities($exist_profil->getLib_profil());?></span><br />
+									<?php echo htmlentities($exist_profil->getLib_profil(), ENT_QUOTES, "UTF-8");?></span><br />
 									<?php
 								}
 							}
@@ -44,8 +44,8 @@
 									if (!$_SESSION['user']->check_permission ("8") && $profil->getId_profil() == $ADMIN_ID_PROFIL) { echo 'disabled="disabled"'; }
 									
 									
-									?> onclick=" array_menu_v_contact[<?php echo $profil->getId_profil()+2;?>] 	=	new Array( 'x_typeprofil<?php echo $profil->getId_profil();?>', 'typeprofil_menu_<?php echo $profil->getId_profil();?>'); affiche_annu_edif_profil('<?php echo $profil->getId_profil();?>', '<?php echo htmlentities($profil->getLib_profil());?>');" type="checkbox" value="<?php echo $profil->getId_profil();?>" id="profils<?php echo $profil->getId_profil();?>" name="profils[<?php echo $profil->getId_profil();?>]" />
-									<?php echo htmlentities($profil->getLib_profil());?></span><br />
+									?> onclick=" array_menu_v_contact[<?php echo $profil->getId_profil()+2;?>] 	=	new Array( 'x_typeprofil<?php echo $profil->getId_profil();?>', 'typeprofil_menu_<?php echo $profil->getId_profil();?>'); affiche_annu_edif_profil('<?php echo $profil->getId_profil();?>', '<?php echo htmlentities($profil->getLib_profil(), ENT_QUOTES, "UTF-8");?>');" type="checkbox" value="<?php echo $profil->getId_profil();?>" id="profils<?php echo $profil->getId_profil();?>" name="profils[<?php echo $profil->getId_profil();?>]" />
+									<?php echo htmlentities($profil->getLib_profil(), ENT_QUOTES, "UTF-8");?></span><br />
 									<?php
 								}
 							}
@@ -60,7 +60,7 @@
 								if(!isset($profils[$profil->getId_profil()]) ) {
 									$more_profil=1;
 									?>
-										<span><input onclick=" array_menu_v_contact[<?php echo $profil->getId_profil()+2;?>] 	=	new Array( 'x_typeprofil<?php echo $profil->getId_profil();?>', 'typeprofil_menu_<?php echo $profil->getId_profil();?>'); affiche_annu_edif_profil('<?php echo $profil->getId_profil();?>', '<?php echo htmlentities($profil->getLib_profil());?>');" type="checkbox" value="<?php echo $profil->getId_profil();?>" id="profils<?php echo $profil->getId_profil();?>" <?php 
+										<span><input onclick=" array_menu_v_contact[<?php echo $profil->getId_profil()+2;?>] 	=	new Array( 'x_typeprofil<?php echo $profil->getId_profil();?>', 'typeprofil_menu_<?php echo $profil->getId_profil();?>'); affiche_annu_edif_profil('<?php echo $profil->getId_profil();?>', '<?php echo htmlentities($profil->getLib_profil(), ENT_QUOTES, "UTF-8");?>');" type="checkbox" value="<?php echo $profil->getId_profil();?>" id="profils<?php echo $profil->getId_profil();?>" <?php 
 									
 									//permission (7) Gestion des collaborateurs
 									if (!$_SESSION['user']->check_permission ("7") && $profil->getId_profil() == $COLLAB_ID_PROFIL) { echo 'disabled="disabled"'; }
@@ -68,7 +68,7 @@
 									if (!$_SESSION['user']->check_permission ("8") && $profil->getId_profil() == $ADMIN_ID_PROFIL) { echo 'disabled="disabled"'; }
 									
 									
-									?> name="profils[<?php echo $profil->getId_profil();?>]"><?php echo htmlentities($profil->getLib_profil());?></span><br />
+									?> name="profils[<?php echo $profil->getId_profil();?>]"><?php echo htmlentities($profil->getLib_profil(), ENT_QUOTES, "UTF-8");?></span><br />
 									<?php
 								}
 							}

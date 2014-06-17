@@ -248,19 +248,19 @@ Relevé du <?php echo date_Us_to_Fr(date("Y-m-d H:i:s", mktime(0, 0, 0, date ("m
 				}
 				?>
 				</td>
-				<td id="date_move<?php echo htmlentities($fiche->id_compte_bancaire_move)?>" >
+				<td id="date_move<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>" >
 					<?php echo date_Us_to_Fr($fiche->date_move)?>
 				</td>
 				<td id="lib_<?php echo $fiche->id_compte_bancaire_move;?>" >
-					<div><?php	if ($fiche->lib_move) { echo substr(nl2br(htmlentities($fiche->lib_move)),0,80);}?></div>
+					<div><?php	if ($fiche->lib_move) { echo substr(nl2br(htmlentities($fiche->lib_move, ENT_QUOTES, "UTF-8")),0,80);}?></div>
 					<?php	if ($fiche->commentaire_move) { echo '<div style="font-style: italic">'.nl2br($fiche->commentaire_move).'</div>';}?>
 				</td>
-				<td style=" text-align:right;" id="debit_<?php echo htmlentities($fiche->id_compte_bancaire_move)?>">
+				<td style=" text-align:right;" id="debit_<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>">
 				<?php	if ($fiche->montant_move < 0) 				{ ?>
 					<?php	 echo price_format(abs($fiche->montant_move))."&nbsp;".$MONNAIE[1]; ?>
 				<?php } ?>
 				</td>
-				<td style="text-align:right;" id="credit_<?php echo htmlentities($fiche->id_compte_bancaire_move)?>" >
+				<td style="text-align:right;" id="credit_<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>" >
 				<?php	if ($fiche->montant_move >= 0) 				{ ?>
 					<?php	echo price_format($fiche->montant_move)."&nbsp;".$MONNAIE[1]; ?>
 				<?php } ?>
@@ -269,13 +269,13 @@ Relevé du <?php echo date_Us_to_Fr(date("Y-m-d H:i:s", mktime(0, 0, 0, date ("m
 					<?php
 					if ($fiche->id_operation) {
 						?>
-						<span id="link_view__<?php echo htmlentities($fiche->id_compte_bancaire_move)?>" style="cursor:pointer">
+						<span id="link_view__<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>" style="cursor:pointer">
 						<?php 
 						echo $fiche->libelle;
 						?>
 						</span>
 						<script type="text/javascript">
-						Event.observe("link_view__<?php echo htmlentities($fiche->id_compte_bancaire_move)?>", "click",  function(evt){
+						Event.observe("link_view__<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){
 						Event.stop(evt);
 						
 						<?php 
@@ -314,9 +314,9 @@ Relevé du <?php echo date_Us_to_Fr(date("Y-m-d H:i:s", mktime(0, 0, 0, date ("m
 				<?php
 				if ($fiche->id_operation) {
 					?>
-				<span id="del_<?php echo htmlentities($fiche->id_compte_bancaire_move)?>" style="cursor:pointer; float:right">Supprimer</span>
+				<span id="del_<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>" style="cursor:pointer; float:right">Supprimer</span>
 				<script type="text/javascript">
-				Event.observe('del_<?php echo htmlentities($fiche->id_compte_bancaire_move)?>', 'click',  function(evt){
+				Event.observe('del_<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>', 'click',  function(evt){
 					Event.stop(evt); 
 					$("titre_alert").innerHTML = 'Confirmation de la suppression';
 					$("texte_alert").innerHTML = 'Suppression du rapprochement';
@@ -333,7 +333,7 @@ Relevé du <?php echo date_Us_to_Fr(date("Y-m-d H:i:s", mktime(0, 0, 0, date ("m
 					var AppelAjax = new Ajax.Request(
 										"compta_compte_bancaire_rapprochement_del.php", 
 										{
-										parameters: {id_compte_bancaire_move: '<?php echo htmlentities($fiche->id_compte_bancaire_move)?>', id_compte_bancaire: '<?php echo $compte_bancaire->getId_compte_bancaire()?>', date_move: '<?php echo $fiche->date_move?>'},
+										parameters: {id_compte_bancaire_move: '<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>', id_compte_bancaire: '<?php echo $compte_bancaire->getId_compte_bancaire()?>', date_move: '<?php echo $fiche->date_move?>'},
 										evalScripts:true, 
 										onLoading:S_loading, onException: function () {S_failure();},
 										onSuccess: function (requester){
@@ -347,10 +347,10 @@ Relevé du <?php echo date_Us_to_Fr(date("Y-m-d H:i:s", mktime(0, 0, 0, date ("m
 				}, false);
 				</script>
 				<?php } else { ?>
-				<span id="rap_<?php echo htmlentities($fiche->id_compte_bancaire_move)?>" style="cursor:pointer; float:right">Rapprocher</span>
+				<span id="rap_<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>" style="cursor:pointer; float:right">Rapprocher</span>
 				
 					<script type="text/javascript">
-					Event.observe("rap_<?php echo htmlentities($fiche->id_compte_bancaire_move)?>", "click",  function(evt){
+					Event.observe("rap_<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){
 						Event.stop(evt);
 						page.verify('compta_compte_bancaire_rapprochement_edit','compta_compte_bancaire_rapprochement_edit.php?id_compte_bancaire_move=<?php echo ($fiche->id_compte_bancaire_move)?>&id_compte_bancaire=<?php echo $compte_bancaire->getId_compte_bancaire()?>','true','edition_rapprochement');
 						$("edition_rapprochement").show();

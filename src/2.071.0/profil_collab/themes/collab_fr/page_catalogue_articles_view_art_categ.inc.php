@@ -13,7 +13,7 @@ Event.observe("link_close_pop_up_art_categ", "click",  function(evt){Event.stop(
 <input type="hidden" name="old_ref_art_categ" id="old_ref_art_categ" value="<?php echo $article->getRef_art_categ ();?>" />
 <input type="hidden" name="mod_ref_article" id="mod_ref_article" value="<?php echo $article->getRef_article ();?>" />
 <input type="hidden" name="mod_modele" id="mod_modele" value="<?php echo $art_categs->getModele();?>" />
-<input type="hidden" name="old_lib_art_categ" id="old_lib_art_categ" value="<?php echo htmlentities($article->getLib_art_categ ());?>" />
+<input type="hidden" name="old_lib_art_categ" id="old_lib_art_categ" value="<?php echo htmlentities($article->getLib_art_categ (), ENT_QUOTES, "UTF-8");?>" />
 	<table style="width:100%">
 		<tr >
 			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
@@ -31,7 +31,7 @@ Event.observe("link_close_pop_up_art_categ", "click",  function(evt){Event.stop(
 				foreach ($select_art_categ  as $s_art_categ){
 			?>
 			<option value="<?php echo ($s_art_categ->ref_art_categ)?>" <?php if ($s_art_categ->ref_art_categ == $article->getRef_art_categ ()) {?> selected="selected"<?php }?>>
-			<?php for ($i=0; $i<$s_art_categ->indentation; $i++) {?>&nbsp;&nbsp;&nbsp;<?php }?><?php echo htmlentities($s_art_categ->lib_art_categ)?>
+			<?php for ($i=0; $i<$s_art_categ->indentation; $i++) {?>&nbsp;&nbsp;&nbsp;<?php }?><?php echo htmlentities($s_art_categ->lib_art_categ, ENT_QUOTES, "UTF-8")?>
 			</option>
 			<?php
 				}

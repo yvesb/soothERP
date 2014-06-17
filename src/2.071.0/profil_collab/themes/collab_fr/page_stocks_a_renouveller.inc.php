@@ -69,7 +69,7 @@ check_page_variables ($page_variables);
 				foreach ($select_art_categ  as $s_art_categ){
 			?>
 			<option value="<?php echo ($s_art_categ->ref_art_categ)?>">
-			<?php for ($i=0; $i<$s_art_categ->indentation; $i++) {?>&nbsp;&nbsp;&nbsp;<?php }?><?php echo htmlentities($s_art_categ->lib_art_categ)?>
+			<?php for ($i=0; $i<$s_art_categ->indentation; $i++) {?>&nbsp;&nbsp;&nbsp;<?php }?><?php echo htmlentities($s_art_categ->lib_art_categ, ENT_QUOTES, "UTF-8")?>
 			</option>
 			<?php
 				}
@@ -84,7 +84,7 @@ check_page_variables ($page_variables);
 				}
 					foreach ($stocks_liste as $stock_liste) {
 					?>
-				<option value="<?php echo $stock_liste->getId_stock (); ?>" <?php if (isset($_REQUEST["id_stock"]) && $_REQUEST["id_stock"] == $stock_liste->getId_stock ()) {?>selected="selected"<?php } ?>><?php echo htmlentities($stock_liste->getLib_stock()); ?></option>
+				<option value="<?php echo $stock_liste->getId_stock (); ?>" <?php if (isset($_REQUEST["id_stock"]) && $_REQUEST["id_stock"] == $stock_liste->getId_stock ()) {?>selected="selected"<?php } ?>><?php echo htmlentities($stock_liste->getLib_stock(), ENT_QUOTES, "UTF-8"); ?></option>
 				<?php }
 					?>
 			</select>			</td>

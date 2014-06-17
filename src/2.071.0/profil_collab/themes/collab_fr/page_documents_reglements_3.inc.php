@@ -58,14 +58,14 @@ if (count($comptes_tpes) || count($comptes_tpv)) {
 			foreach ($comptes_caisses as $compte_caisse) {
 				if (!$compte_caisse->id_compte_tpe) {continue;}
 				?>
-				<option value="<?php echo htmlentities($compte_caisse->id_compte_caisse); ?>,<?php echo htmlentities($compte_caisse->id_compte_tpe); ?>"   <?php 
+				<option value="<?php echo htmlentities($compte_caisse->id_compte_caisse, ENT_QUOTES, "UTF-8"); ?>,<?php echo htmlentities($compte_caisse->id_compte_tpe, ENT_QUOTES, "UTF-8"); ?>"   <?php 
 				if (isset($_COOKIE["last_id_compte_caisse_cb_dest"]) && ($compte_caisse->id_compte_caisse == $_COOKIE["last_id_compte_caisse_cb_dest"])) {
 				$no_display_tpv_yet = 1;
 				echo 'selected="selected"'; 
 				$id_caisse = $compte_caisse->id_compte_caisse;
 				$id_tpe = $compte_caisse->id_compte_tpe;
 				
-				}?>><?php echo htmlentities($compte_caisse->lib_caisse); ?> (<?php echo htmlentities($compte_caisse->lib_tpe); ?>)</option>
+				}?>><?php echo htmlentities($compte_caisse->lib_caisse, ENT_QUOTES, "UTF-8"); ?> (<?php echo htmlentities($compte_caisse->lib_tpe, ENT_QUOTES, "UTF-8"); ?>)</option>
 				<?php
 			}
 			
@@ -89,14 +89,14 @@ if (count($comptes_tpes) || count($comptes_tpv)) {
 				}
 				if ($valid_tpe) {
 				?>
-				<option value=",<?php echo htmlentities($compte_tpe->id_compte_tpe); ?>" <?php 
+				<option value=",<?php echo htmlentities($compte_tpe->id_compte_tpe, ENT_QUOTES, "UTF-8"); ?>" <?php 
 				if (!$id_caisse && isset($_COOKIE["last_id_compte_tpe_dest"]) && ($compte_tpe->id_compte_tpe == $_COOKIE["last_id_compte_tpe_dest"])) {
 				$no_display_tpv_yet = 1;
 				echo 'selected="selected"'; 
 				$id_caisse = 0;
 				$id_tpe = $compte_tpe->id_compte_tpe;
 				
-				}?>><?php echo htmlentities($compte_tpe->lib_tpe); ?></option>
+				}?>><?php echo htmlentities($compte_tpe->lib_tpe, ENT_QUOTES, "UTF-8"); ?></option>
 				<?php
 				}
 			}

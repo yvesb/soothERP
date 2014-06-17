@@ -78,7 +78,7 @@ foreach ($_ALERTES as $alerte => $value) {
 						</table>
 						</td><td>
 						<a href="#" id="mod_<?php echo ($art_categ->ref_art_categ)?>" style="display:block; width:100%">
-						<?php echo htmlentities($art_categ->lib_art_categ)?>
+						<?php echo htmlentities($art_categ->lib_art_categ, ENT_QUOTES, "UTF-8")?>
 						</a>
 						</td>
 					</tr>
@@ -103,7 +103,7 @@ foreach ($_ALERTES as $alerte => $value) {
 <?php
 foreach ($list_art_categ  as $art_categ){
 	?>
-	pre_start_art_categ3 ("<?php echo ($art_categ->ref_art_categ)?>", "<?php echo htmlentities($art_categ->lib_art_categ)?>", "");
+	pre_start_art_categ3 ("<?php echo ($art_categ->ref_art_categ)?>", "<?php echo htmlentities($art_categ->lib_art_categ, ENT_QUOTES, "UTF-8")?>", "");
 	<?php 
 }
 ?>

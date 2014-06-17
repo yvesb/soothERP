@@ -61,7 +61,7 @@ array_menu_d_user_contact[3] 	=	new Array('droits', 'menu_4');
 			<tr>
 				<td class="size_strict">
 				<span class="labelled">Pseudo:</span></td><td>
-				<input id="user_pseudo<?php echo $caiu?>" name="user_pseudo<?php echo $caiu?>" type="text" class="classinput_xsize" value="<?php echo htmlentities($utilisateur->getPseudo())?>" />
+				<input id="user_pseudo<?php echo $caiu?>" name="user_pseudo<?php echo $caiu?>" type="text" class="classinput_xsize" value="<?php echo htmlentities($utilisateur->getPseudo(), ENT_QUOTES, "UTF-8")?>" />
 				</td>
 			</tr>
 			<tr>
@@ -89,7 +89,7 @@ array_menu_d_user_contact[3] 	=	new Array('droits', 'menu_4');
 					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif"/ style="float:right" id="bt_coordonnee_choisie<?php echo $caiu?>">
 					<span id="lib_coordonnee_choisie<?php echo $caiu?>"><?php echo getLib_coordonnee($utilisateur->getRef_coord_user())?></span>
 				</div>
-				<input id="user_coord<?php echo $caiu?>" name="user_coord<?php echo $caiu?>" class="classinput_xsize" value="<?php echo htmlentities($utilisateur->getRef_coord_user());?>" type="hidden"/>
+				<input id="user_coord<?php echo $caiu?>" name="user_coord<?php echo $caiu?>" class="classinput_xsize" value="<?php echo htmlentities($utilisateur->getRef_coord_user(), ENT_QUOTES, "UTF-8");?>" type="hidden"/>
 				</td>
 			</tr>
 			<tr>
@@ -101,7 +101,7 @@ array_menu_d_user_contact[3] 	=	new Array('droits', 'menu_4');
 					foreach ($langages as $langage){
 						?>
 						<option value="<?php echo $langage['id_langage']?>" <?php if ($utilisateur->getId_langage () == $langage['id_langage']) {echo 'selected="selected"';}?>>
-						<?php echo htmlentities($langage['lib_langage'])?></option>
+						<?php echo htmlentities($langage['lib_langage'], ENT_QUOTES, "UTF-8")?></option>
 						<?php 
 					}
 					?>

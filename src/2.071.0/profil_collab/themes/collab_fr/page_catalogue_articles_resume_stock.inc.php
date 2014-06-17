@@ -63,7 +63,7 @@ $article_sns = $article->getStocks_arti_sn ();
 					?>
 					<tr>
 						<td style="text-align:left; padding-right:5px; " class="resume_stock_border_topright">
-						<?php echo htmlentities($stock_liste->getLib_stock()); ?>				</td>
+						<?php echo htmlentities($stock_liste->getLib_stock(), ENT_QUOTES, "UTF-8"); ?>				</td>
 						<td style="text-align:center; width:80px;" class="resume_stock_border_topright">
 							<div style="text-align:center; display:block; position:relative; cursor:pointer" id="info_stock_qte_<?php echo $stock_liste->getId_stock ();?>"><?php	if ($article->getLot() == 2) {
 							$max_tofab = 0;
@@ -114,7 +114,7 @@ $article_sns = $article->getStocks_arti_sn ();
 									?>
 									<div style="text-align:left">
 									Détails des numéros de série en stock pour <?php echo $article->getLib_article();?><br />
-									<?php echo htmlentities($stock_liste->getLib_stock()); ?>: Quantité en stock: <?php if (isset($art_stocks[$stock_liste->getId_stock ()]->qte)) {
+									<?php echo htmlentities($stock_liste->getLib_stock(), ENT_QUOTES, "UTF-8"); ?>: Quantité en stock: <?php if (isset($art_stocks[$stock_liste->getId_stock ()]->qte)) {
 										echo $art_stocks[$stock_liste->getId_stock ()]->qte ;
 										
 									} else {
@@ -172,7 +172,7 @@ $article_sns = $article->getStocks_arti_sn ();
 									?>
 									<div style="text-align:left">
 									Détails des numéros de lots en stock pour <?php echo $article->getLib_article();?><br />
-									<?php echo htmlentities($stock_liste->getLib_stock()); ?>: Quantité en stock: <?php if (isset($art_stocks[$stock_liste->getId_stock ()]->qte)) {
+									<?php echo htmlentities($stock_liste->getLib_stock(), ENT_QUOTES, "UTF-8"); ?>: Quantité en stock: <?php if (isset($art_stocks[$stock_liste->getId_stock ()]->qte)) {
 								echo $art_stocks[$stock_liste->getId_stock ()]->qte ;
 								
 							} else {

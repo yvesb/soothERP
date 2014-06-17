@@ -201,7 +201,7 @@ if (count($fiches)==1 && (isset($_REQUEST["from_rapide_search"]) && ($_REQUEST["
 	$("lib_article_r").focus();
 	}
 	$("lib_article_r").value = "";
-	add_new_line_article ($("ref_doc").value, "<?php echo ($fiches[0]->ref_article);?>", "1", "<?php	if (isset($fiches[0]->numero_serie)) { echo htmlentities($fiches[0]->numero_serie);}?>");
+	add_new_line_article ($("ref_doc").value, "<?php echo ($fiches[0]->ref_article);?>", "1", "<?php	if (isset($fiches[0]->numero_serie)) { echo htmlentities($fiches[0]->numero_serie, ENT_QUOTES, "UTF-8");}?>");
 	<?php
 }
 
@@ -228,7 +228,7 @@ if (count($fiches)>>1) {
 			<span class="labelled_text" <?php if ($GESTION_STOCK) {?>style="display:none"<?php } ?>>Lieux de stockage:
 			<?php
 			foreach ($stocks_liste as $stock_liste) {
-			 if($form['id_stock']==$stock_liste->getId_stock ()) {echo htmlentities($stock_liste->getLib_stock());}
+			 if($form['id_stock']==$stock_liste->getId_stock ()) {echo htmlentities($stock_liste->getLib_stock(), ENT_QUOTES, "UTF-8");}
 			}
 			?>
 			</span>
@@ -238,7 +238,7 @@ if (count($fiches)>>1) {
 			<span class="labelled_text">Tarifs:
 			<?php
 			foreach ($tarifs_liste as $tarif_liste) {
-				if($form['id_tarif']==$tarif_liste->id_tarif) {echo htmlentities($tarif_liste->lib_tarif);}
+				if($form['id_tarif']==$tarif_liste->id_tarif) {echo htmlentities($tarif_liste->lib_tarif, ENT_QUOTES, "UTF-8");}
 			}
 			?>
 			</span>
@@ -322,7 +322,7 @@ foreach ($fiches as $fiche) {
 					<input type="hidden" id="new_moteur_article_<?php echo ($fiche->ref_article);?>" name="new_moteur_article_<?php echo ($fiche->ref_article);?>" value="1"/>
 					<input type="hidden" id="ref_doc_line_article_<?php echo ($fiche->ref_article);?>" name="ref_doc_line_article_<?php echo ($fiche->ref_article);?>" value=""/>
 					<input type="hidden" id="ref_doc_line_indentation_<?php echo ($fiche->ref_article);?>" name="ref_doc_line_indentation_<?php echo ($fiche->ref_article);?>" value=""/>
-					<input type="hidden" id="numero_serie_<?php echo ($fiche->ref_article);?>" name="numero_serie_<?php echo ($fiche->ref_article);?>" value="<?php	if (isset($fiche->numero_serie)) { echo htmlentities($fiche->numero_serie);}?>"/>
+					<input type="hidden" id="numero_serie_<?php echo ($fiche->ref_article);?>" name="numero_serie_<?php echo ($fiche->ref_article);?>" value="<?php	if (isset($fiche->numero_serie)) { echo htmlentities($fiche->numero_serie, ENT_QUOTES, "UTF-8");}?>"/>
 					</td>
 					<td style="text-align:center; width:15px;"><a href="#" id="qte_add_one_<?php echo $fiche->ref_article;?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" /></a></td>
 				</tr><tr>
@@ -424,15 +424,15 @@ if (!$_SESSION['user']->check_permission ("6")) {?>display:none;<?php } ?>">
 	if ($aff_pa) {
 		if ($document->getApp_tarifs() == "HT") {
 			if (isset($fiche->pa_unitaire)) {
-				echo htmlentities(" ".number_format($fiche->pa_unitaire,$TARIFS_NB_DECIMALES, ".", ""	))." ".$MONNAIE[1]." <br/>";
+				echo htmlentities(" ".number_format($fiche->pa_unitaire,$TARIFS_NB_DECIMALES, ".", ""	), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1]." <br/>";
 			} else {
-				echo htmlentities(" ".number_format($fiche->paa_ht,$TARIFS_NB_DECIMALES, ".", ""	))." ".$MONNAIE[1]." <br/>";
+				echo htmlentities(" ".number_format($fiche->paa_ht,$TARIFS_NB_DECIMALES, ".", ""	), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1]." <br/>";
 			}
 		} else {
 			if (isset($fiche->pa_unitaire)) {
-				echo htmlentities(" ".number_format($fiche->pa_unitaire*(1+$fiche->tva/100),$TARIFS_NB_DECIMALES, ".", ""	))." ".$MONNAIE[1]." <br/>";
+				echo htmlentities(" ".number_format($fiche->pa_unitaire*(1+$fiche->tva/100),$TARIFS_NB_DECIMALES, ".", ""	), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1]." <br/>";
 			} else {
-				echo htmlentities(" ".number_format($fiche->paa_ht*(1+$fiche->tva/100),$TARIFS_NB_DECIMALES, ".", ""	))." ".$MONNAIE[1]." <br/>";
+				echo htmlentities(" ".number_format($fiche->paa_ht*(1+$fiche->tva/100),$TARIFS_NB_DECIMALES, ".", ""	), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1]." <br/>";
 			}
 		
 		}
@@ -440,15 +440,15 @@ if (!$_SESSION['user']->check_permission ("6")) {?>display:none;<?php } ?>">
 		foreach ($fiche->tarifs as $tarif) {
 			if (count($fiche->tarifs) == 1) {
 				if ($document->getApp_tarifs() == "HT") {
-		 			echo htmlentities(number_format($tarif->pu_ht, $TARIFS_NB_DECIMALES, ".", ""	))." ".$MONNAIE[1]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+		 			echo htmlentities(number_format($tarif->pu_ht, $TARIFS_NB_DECIMALES, ".", ""	), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 				} else {
-		 			echo htmlentities(number_format($tarif->pu_ht*(1+$fiche->tva/100),$TARIFS_NB_DECIMALES, ".", ""	))." ".$MONNAIE[1]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+		 			echo htmlentities(number_format($tarif->pu_ht*(1+$fiche->tva/100),$TARIFS_NB_DECIMALES, ".", ""	), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 				}
 		 	} else {
 				if ($document->getApp_tarifs() == "HT") {
-			 		echo htmlentities(" ".number_format($tarif->pu_ht,$TARIFS_NB_DECIMALES, ".", ""	))." ".$MONNAIE[1]."  par ".$tarif->indice_qte."<br/>";
+			 		echo htmlentities(" ".number_format($tarif->pu_ht,$TARIFS_NB_DECIMALES, ".", ""	), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1]."  par ".$tarif->indice_qte."<br/>";
 				} else {
-		 			echo htmlentities(" ".number_format($tarif->pu_ht*(1+$fiche->tva/100),$TARIFS_NB_DECIMALES, ".", ""	))." ".$MONNAIE[1]."  par ".$tarif->indice_qte."<br/>";
+		 			echo htmlentities(" ".number_format($tarif->pu_ht*(1+$fiche->tva/100),$TARIFS_NB_DECIMALES, ".", ""	), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1]."  par ".$tarif->indice_qte."<br/>";
 				}
 			} 
 		 }
@@ -459,7 +459,7 @@ if (!$_SESSION['user']->check_permission ("6")) {?>display:none;<?php } ?>">
 		<td style="vertical-align:middle; text-align:center">
 		<a  href="#" id="link_view_art_<?php echo $fiche->ref_article;?>" style="display:block; width:100%; text-decoration:underline">Voir</a>	
 		<script type="text/javascript">
-	Event.observe("link_view_art_<?php echo $fiche->ref_article;?>", "click",  function(evt){Event.stop(evt); page.verify('catalogue_articles_view','index.php#'+escape('catalogue_articles_view.php?ref_article=<?php echo htmlentities($fiche->ref_article)?>'),'true','_blank');}, false);
+	Event.observe("link_view_art_<?php echo $fiche->ref_article;?>", "click",  function(evt){Event.stop(evt); page.verify('catalogue_articles_view','index.php#'+escape('catalogue_articles_view.php?ref_article=<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>'),'true','_blank');}, false);
 		<?php 
 		if (isset($fiche->lib_file) && $fiche->lib_file != "") {
 			?>

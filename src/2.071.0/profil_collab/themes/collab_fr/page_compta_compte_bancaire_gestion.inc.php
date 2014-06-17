@@ -73,10 +73,10 @@ check_page_variables ($page_variables);
 				<tr><td colspan="7" style="">&nbsp;</td></tr>
 					<tr style=" border-bottom:1px solid #999999">
 						<td style="text-align:left; font-weight:bolder;">
-						<?php echo htmlentities($compte_bancaire->lib_compte);?>
+						<?php echo htmlentities($compte_bancaire->lib_compte, ENT_QUOTES, "UTF-8");?>
 						</td>
 						<td style=" color:#999999; font-weight:bolder;">
-						<?php echo htmlentities($compte_bancaire->numero_compte);?>
+						<?php echo htmlentities($compte_bancaire->numero_compte, ENT_QUOTES, "UTF-8");?>
 						</td>
 						<td style=" color:#999999; font-weight:bolder;">
 						<?php echo date_Us_to_Fr($compte_bancaire->last_date_move);?>

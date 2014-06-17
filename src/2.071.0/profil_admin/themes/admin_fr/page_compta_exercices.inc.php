@@ -101,7 +101,7 @@ if ($liste_exercices) {
 							</td>
 							<td>
 							<input name="id_exercice" id="id_exercice" type="hidden" value="<?php echo $exercice->id_exercice; ?>" />
-							<input name="lib_exercice_<?php echo $exercice->id_exercice;?>" id="lib_exercice_<?php echo $exercice->id_exercice;?>" type="text" value="<?php echo htmlentities($exercice->lib_exercice);?>"  class="classinput_xsize" <?php 
+							<input name="lib_exercice_<?php echo $exercice->id_exercice;?>" id="lib_exercice_<?php echo $exercice->id_exercice;?>" type="text" value="<?php echo htmlentities($exercice->lib_exercice, ENT_QUOTES, "UTF-8");?>"  class="classinput_xsize" <?php 
 							if (!$exercice->etat_exercice) {
 							?> disabled="disabled" <?php }?>/>
 							</td>

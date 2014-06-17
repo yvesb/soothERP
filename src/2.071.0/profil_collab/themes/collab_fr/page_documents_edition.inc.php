@@ -27,9 +27,9 @@ check_page_variables ($page_variables);
 if (isset($_REQUEST['id_type_doc']) || isset($_REQUEST["fonction_generer"])) {
     ?>
             //on réinjecte dans l'historique la version édition si c'est un nouveau document qui a été créé
-            historique.unshift("documents_edition.php?ref_doc=<?php echo htmlentities($document->getRef_doc())?>");
-            default_show_url = "documents_edition.php?ref_doc=<?php echo htmlentities($document->getRef_doc())?>";
-            document.location.hash = "documents_edition.php?ref_doc=<?php echo htmlentities($document->getRef_doc())?>";
+            historique.unshift("documents_edition.php?ref_doc=<?php echo htmlentities($document->getRef_doc(), ENT_QUOTES, "UTF-8")?>");
+            default_show_url = "documents_edition.php?ref_doc=<?php echo htmlentities($document->getRef_doc(), ENT_QUOTES, "UTF-8")?>";
+            document.location.hash = "documents_edition.php?ref_doc=<?php echo htmlentities($document->getRef_doc(), ENT_QUOTES, "UTF-8")?>";
     <?php
 }
 ?>
@@ -149,7 +149,7 @@ if (isset($_REQUEST['id_type_doc']) || isset($_REQUEST["fonction_generer"])) {
                     }, false);
                 </script>
                 <li id="doc_menu_1">
-                    <a href="#" id="menu_1" class="menu_select"><?php echo htmlentities($document->getLib_type_doc());?>  <?php echo htmlentities($document->getRef_doc());?></a>
+                    <a href="#" id="menu_1" class="menu_select"><?php echo htmlentities($document->getLib_type_doc(), ENT_QUOTES, "UTF-8");?>  <?php echo htmlentities($document->getRef_doc(), ENT_QUOTES, "UTF-8");?></a>
                 </li>
                 <li id="doc_menu_2">
                     <a href="#" id="menu_2" class="menu_unselect">Ajouter un article</a>
@@ -460,7 +460,7 @@ if ($document->getID_TYPE_DOC () == $DEVIS_CLIENT_ID_TYPE_DOC) {
                                             <option value="reset_pu_ht">R&eacute;g&eacute;n&eacute;rer le tarif par d&eacute;faut</option>
                                                 <?php foreach ($tarifs_liste as $tar_list) {
                                                     ?>
-                                            <option value="set_pu_ht_to_id_tarif_<?php echo ($tar_list->id_tarif);?>"><?php echo htmlentities($tar_list->lib_tarif);?></option>
+                                            <option value="set_pu_ht_to_id_tarif_<?php echo ($tar_list->id_tarif);?>"><?php echo htmlentities($tar_list->lib_tarif, ENT_QUOTES, "UTF-8");?></option>
                                                     <?php
     }?>
                                             <OPTGROUP disabled="disabled" label="_____________________________" ></OPTGROUP>
@@ -483,7 +483,7 @@ if ($document->getID_TYPE_DOC () == $COMMANDE_CLIENT_ID_TYPE_DOC) {
                                             <option value="reset_pu_ht">R&eacute;g&eacute;n&eacute;rer le tarif par d&eacute;faut</option>
                                                 <?php foreach ($tarifs_liste as $tar_list) {
                                                     ?>
-                                            <option value="set_pu_ht_to_id_tarif_<?php echo ($tar_list->id_tarif);?>"><?php echo htmlentities($tar_list->lib_tarif);?></option>
+                                            <option value="set_pu_ht_to_id_tarif_<?php echo ($tar_list->id_tarif);?>"><?php echo htmlentities($tar_list->lib_tarif, ENT_QUOTES, "UTF-8");?></option>
                                                     <?php
                                                 }?>
                                             <OPTGROUP disabled="disabled" label="_____________________________" ></OPTGROUP>
@@ -505,7 +505,7 @@ if ($document->getID_TYPE_DOC () == $COMMANDE_CLIENT_ID_TYPE_DOC) {
                                             <option value="reset_pu_ht">R&eacute;g&eacute;n&eacute;rer le tarif par d&eacute;faut</option>
                                                 <?php foreach ($tarifs_liste as $tar_list) {
                                                     ?>
-                                            <option value="set_pu_ht_to_id_tarif_<?php echo ($tar_list->id_tarif);?>"><?php echo htmlentities($tar_list->lib_tarif);?></option>
+                                            <option value="set_pu_ht_to_id_tarif_<?php echo ($tar_list->id_tarif);?>"><?php echo htmlentities($tar_list->lib_tarif, ENT_QUOTES, "UTF-8");?></option>
                                                     <?php
     }?>
                                             <OPTGROUP disabled="disabled" label="_____________________________" ></OPTGROUP>
@@ -521,7 +521,7 @@ if ($document->getID_TYPE_DOC () == $FACTURE_CLIENT_ID_TYPE_DOC) {
                                             <option value="reset_pu_ht">R&eacute;g&eacute;n&eacute;rer le tarif par d&eacute;faut</option>
                                                 <?php foreach ($tarifs_liste as $tar_list) {
                                                     ?>
-                                            <option value="set_pu_ht_to_id_tarif_<?php echo ($tar_list->id_tarif);?>"><?php echo htmlentities($tar_list->lib_tarif);?></option>
+                                            <option value="set_pu_ht_to_id_tarif_<?php echo ($tar_list->id_tarif);?>"><?php echo htmlentities($tar_list->lib_tarif, ENT_QUOTES, "UTF-8");?></option>
                                                     <?php
                                                 }?>
                                             <OPTGROUP disabled="disabled" label="_____________________________" ></OPTGROUP>
@@ -937,7 +937,7 @@ if (!$ASSUJETTI_TVA && ($id_type_doc == $DEVIS_CLIENT_ID_TYPE_DOC || $id_type_do
                                                     foreach ($select_art_categ  as $s_art_categ) {
                                                         ?>
                                                     <option value="<?php echo ($s_art_categ->ref_art_categ)?>">
-    <?php for ($i=0; $i<$s_art_categ->indentation; $i++) {?>&nbsp;&nbsp;&nbsp;<?php }?><?php echo htmlentities($s_art_categ->lib_art_categ)?>
+    <?php for ($i=0; $i<$s_art_categ->indentation; $i++) {?>&nbsp;&nbsp;&nbsp;<?php }?><?php echo htmlentities($s_art_categ->lib_art_categ, ENT_QUOTES, "UTF-8")?>
                                                     </option>
     <?php
 }
@@ -1110,7 +1110,7 @@ if ($document->getACCEPT_REGMT() != 0) {
                             </div>
                             <iframe name="description_html" id="description_html" class="classinput_xsize" style="height:150px; display:block; width:100%" frameborder="0"></iframe><br />
                             <iframe width="161" height="113" id="colorpalette" src="colors.php?proto=editeur&ifr=description_html" style="display:none; position:absolute; border:1px solid #000000; OVERFLOW: hidden;" frameborder="0" scrolling="no"></iframe><br />
-                            <textarea name="description" rows="6" style="display:none;" id="description"><?php echo htmlentities($document->getDescription ());?></textarea>
+                            <textarea name="description" rows="6" style="display:none;" id="description"><?php echo htmlentities($document->getDescription (), ENT_QUOTES, "UTF-8");?></textarea>
                             <a href="#" id="doc_description"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" /></a>
                         </div>
                     </td>

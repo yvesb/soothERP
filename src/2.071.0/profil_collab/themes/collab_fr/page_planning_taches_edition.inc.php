@@ -47,12 +47,12 @@ check_page_variables ($page_variables);
 				<tr>
 					<td>Libell&eacute;: </td>
 					<td>
-						<input name="lib_tache" id="lib_tache" type="text" value="<?php echo htmlentities($tache_cree->getLib_tache());?>"  class="classinput_xsize"  />		</td>
+						<input name="lib_tache" id="lib_tache" type="text" value="<?php echo htmlentities($tache_cree->getLib_tache(), ENT_QUOTES, "UTF-8");?>"  class="classinput_xsize"  />		</td>
 					</tr>
 				<tr>
 					<td>Description: </td>
 					<td>
-						<textarea name="text_tache" id="text_tache" class="classinput_xsize" ><?php echo htmlentities($tache_cree->getText_tache());?></textarea>		</td>
+						<textarea name="text_tache" id="text_tache" class="classinput_xsize" ><?php echo htmlentities($tache_cree->getText_tache(), ENT_QUOTES, "UTF-8");?></textarea>		</td>
 					</tr>
 				<tr>
 					<td>Date d'&eacute;cheance: </td>
@@ -103,9 +103,9 @@ check_page_variables ($page_variables);
 							<div class="height_div" id="contact_collab_<?php echo $increment_collab;?>" >
 								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="sup_collab_<?php echo $increment_collab;?>" class="img_float_r"/>
 								<span id="nom_collab_<?php echo $increment_collab;?>">
-								<?php echo nl2br(htmlentities(addslashes(substr (str_replace (CHR(13), "" ,str_replace (CHR(10), "" ,preg_replace ("#((\r\n)+)#", "", $collab->nom))),0, 26))))?>...
+								<?php echo nl2br(htmlentities(addslashes(substr (str_replace (CHR(13), "" ,str_replace (CHR(10), "" ,preg_replace ("#((\r\n)+)#", "", $collab->nom))),0, 26)), ENT_QUOTES, "UTF-8"))?>...
 								</span>
-								<input name="ref_contact_collab_<?php echo $increment_collab;?>" id="ref_contact_collab_<?php echo $increment_collab;?>" value="<?php echo htmlentities($collab->ref_contact);?>" type="hidden" />
+								<input name="ref_contact_collab_<?php echo $increment_collab;?>" id="ref_contact_collab_<?php echo $increment_collab;?>" value="<?php echo htmlentities($collab->ref_contact, ENT_QUOTES, "UTF-8");?>" type="hidden" />
 							</div>
 							<script type="text/javascript">
 							pre_start_sup_collab_tache_edition ("<?php echo $tache_cree->getId_tache();?>", "sup_collab_<?php echo $increment_collab;?>", "contact_collab_<?php echo $increment_collab;?>", "<?php echo $collab->ref_contact;?>");
@@ -187,7 +187,7 @@ check_page_variables ($page_variables);
 									</td>
 									<td>
 									<span id="mod_<?php echo ($liste_fonction->id_fonction)?>">
-									<?php echo htmlentities($liste_fonction->lib_fonction)?></span>
+									<?php echo htmlentities($liste_fonction->lib_fonction, ENT_QUOTES, "UTF-8")?></span>
 									</td>
 									<td width="5px">
 									<input type="checkbox" name="id_fonction_<?php echo $liste_fonction->id_fonction; ?>" id="id_fonction_<?php echo $liste_fonction->id_fonction; ?>" value="<?php echo $liste_fonction->id_fonction; ?>" <?php 

@@ -62,7 +62,7 @@ update_menu_arbo();
 	<tr>
 		<td class="lib_config">Bas de page, première ligne gauche:		</td>
 		<td>
-		<input id="pied_de_page_gauche_0" name="pied_de_page_gauche_0" value="<?php echo  str_replace("€", "&euro;", htmlentities($PIED_DE_PAGE_GAUCHE_0)); ?>" type="text" class="classinput_xsize" maxlength="70" />		</td>
+		<input id="pied_de_page_gauche_0" name="pied_de_page_gauche_0" value="<?php echo  str_replace("€", "&euro;", htmlentities($PIED_DE_PAGE_GAUCHE_0, ENT_QUOTES, "UTF-8")); ?>" type="text" class="classinput_xsize" maxlength="70" />		</td>
 		<td class="infos_config">Indiquez le nom de l'entreprise, son capital et son adresse.		</td>
 	</tr>
 	<tr>
@@ -71,7 +71,7 @@ update_menu_arbo();
 	<tr>
 		<td class="lib_config">Bas de page, deuxième ligne gauche:		</td>
 		<td>
-		<input id="pied_de_page_gauche_1" name="pied_de_page_gauche_1" value="<?php echo str_replace("€", "&euro;", htmlentities($PIED_DE_PAGE_GAUCHE_1)); ?>" type="text" class="classinput_xsize" maxlength="70" />		</td>
+		<input id="pied_de_page_gauche_1" name="pied_de_page_gauche_1" value="<?php echo str_replace("€", "&euro;", htmlentities($PIED_DE_PAGE_GAUCHE_1, ENT_QUOTES, "UTF-8")); ?>" type="text" class="classinput_xsize" maxlength="70" />		</td>
 		<td class="infos_config">Indiquez le numéro de Siret, de TVA intracommunautaire et le code APE de l'entreprise.		</td>
 	</tr>
 		<td colspan="3"> </td>
@@ -79,7 +79,7 @@ update_menu_arbo();
 	<tr>
 		<td class="lib_config">Bas de page, première ligne droite:		</td>
 		<td>
-		<input id="pied_de_page_droit_0" name="pied_de_page_droit_0" value="<?php echo str_replace("€", "&euro;", htmlentities($PIED_DE_PAGE_DROIT_0)); ?>" type="text" class="classinput_xsize" maxlength="70" />		</td>
+		<input id="pied_de_page_droit_0" name="pied_de_page_droit_0" value="<?php echo str_replace("€", "&euro;", htmlentities($PIED_DE_PAGE_DROIT_0, ENT_QUOTES, "UTF-8")); ?>" type="text" class="classinput_xsize" maxlength="70" />		</td>
 		<td class="infos_config">Indiquez l'adresse Internet ou autres informations.		</td>
 	</tr>
 	<tr>
@@ -89,7 +89,7 @@ update_menu_arbo();
 	<tr>
 		<td class="lib_config">Bas de page, deuxième ligne droite:		</td>
 		<td>
-		<input id="pied_de_page_droit_1" name="pied_de_page_droit_1" value="<?php echo str_replace("€", "&euro;", htmlentities($PIED_DE_PAGE_DROIT_1)); ?>" type="text" class="classinput_xsize" maxlength="70" />		</td>
+		<input id="pied_de_page_droit_1" name="pied_de_page_droit_1" value="<?php echo str_replace("€", "&euro;", htmlentities($PIED_DE_PAGE_DROIT_1, ENT_QUOTES, "UTF-8")); ?>" type="text" class="classinput_xsize" maxlength="70" />		</td>
 		<td class="infos_config">Indiquez l'adresse Email ou autres informations.		</td>
 	</tr>
 	<tr>

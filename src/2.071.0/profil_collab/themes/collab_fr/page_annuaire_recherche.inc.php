@@ -61,7 +61,7 @@ array_menu_r_contact[2] 	=	new Array('recherche_perso', 'menu_3');
 					<input type="hidden" name="orderby_s" id="orderby_s" value="nom" />
 					<input type="hidden" name="orderorder_s" id="orderorder_s" value="ASC" />
 					<span class="labelled">Nom&nbsp;ou&nbsp;D&eacute;nomination:</span></td>
-					<td><input type="text" name="nom_s" id="nom_s" value="<?php if (isset($_REQUEST["acc_ref_contact"])) { echo htmlentities($_REQUEST["acc_ref_contact"]);}
+					<td><input type="text" name="nom_s" id="nom_s" value="<?php if (isset($_REQUEST["acc_ref_contact"])) { echo htmlentities($_REQUEST["acc_ref_contact"], ENT_QUOTES, "UTF-8");}
 	?>"   class="classinput_xsize"/></td>
 					<td></td>
 					<td></td>
@@ -142,7 +142,7 @@ array_menu_r_contact[2] 	=	new Array('recherche_perso', 'menu_3');
 							<?php 
 							foreach ($ANNUAIRE_CATEGORIES as $categorie) {
 								?>
-								<option value="<?php echo $categorie->id_categorie?>"><?php echo htmlentities($categorie->lib_categorie)?></option>
+								<option value="<?php echo $categorie->id_categorie?>"><?php echo htmlentities($categorie->lib_categorie, ENT_QUOTES, "UTF-8")?></option>
 								<?php
 							}
 							?>
@@ -192,7 +192,7 @@ array_menu_r_contact[2] 	=	new Array('recherche_perso', 'menu_3');
 						foreach ($liste_categories_client as $liste_categorie_client){
 							?>
 							<option value="<?php echo $liste_categorie_client->id_client_categ;?>" >
-							<?php echo htmlentities($liste_categorie_client->lib_client_categ); ?></option>
+							<?php echo htmlentities($liste_categorie_client->lib_client_categ, ENT_QUOTES, "UTF-8"); ?></option>
 							<?php 
 						}
 						?>
@@ -272,7 +272,7 @@ array_menu_r_contact[2] 	=	new Array('recherche_perso', 'menu_3');
 							<OPTGROUP disabled="disabled" label="__________________________________" ></OPTGROUP>
 							<?php 		 
 						}
-					?> <option value="<?php echo $les_pays->pays;?>" name="pays" <?php if ($DEFAUT_ID_PAYS == $les_pays->id_pays) {echo 'selected="selected"';} ?> ><?php echo htmlentities($les_pays->pays);?>
+					?> <option value="<?php echo $les_pays->pays;?>" name="pays" <?php if ($DEFAUT_ID_PAYS == $les_pays->id_pays) {echo 'selected="selected"';} ?> ><?php echo htmlentities($les_pays->pays, ENT_QUOTES, "UTF-8");?>
 					</option>
 				<?php } 
 				 ?>

@@ -284,10 +284,10 @@ if (isset($id_compte_bancaire_releve)) {
 			$class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 			?>
 			<tr class="<?php  echo  $class_colorise?>">
-				<td id="date_move<?php echo htmlentities($fiche->id_compte_bancaire_move)?>" style="cursor:pointer" >
+				<td id="date_move<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>" style="cursor:pointer" >
 					<?php echo date_Us_to_Fr($fiche->date_move)?>
 					<script type="text/javascript">
-					Event.observe("date_move<?php echo htmlentities($fiche->id_compte_bancaire_move)?>", "click",  function(evt){
+					Event.observe("date_move<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){
 						Event.stop(evt);
 						page.verify('mody_mouvement_compte','compta_compte_bancaire_operations_edit.php?id_compte_bancaire_move=<?php echo ($fiche->id_compte_bancaire_move)?>&id_compte_bancaire=<?php echo $compte_bancaire->getId_compte_bancaire()?>','true','edition_operation');
 						$("edition_operation").show();
@@ -295,34 +295,34 @@ if (isset($id_compte_bancaire_releve)) {
 					</script>
 				</td>
 				<td  style=" cursor:pointer" id="lib_<?php echo $fiche->id_compte_bancaire_move;?>" >
-					<div><?php	if ($fiche->lib_move) { echo substr(nl2br(htmlentities($fiche->lib_move)),0,80);}?></div>
+					<div><?php	if ($fiche->lib_move) { echo substr(nl2br(htmlentities($fiche->lib_move, ENT_QUOTES, "UTF-8")),0,80);}?></div>
 					<?php	if ($fiche->commentaire_move) { echo '<div style="font-style: italic">'.nl2br($fiche->commentaire_move).'</div>';}?>
 					<script type="text/javascript">
-					Event.observe("lib_<?php echo htmlentities($fiche->id_compte_bancaire_move)?>", "click",  function(evt){
+					Event.observe("lib_<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){
 						Event.stop(evt);
 						page.verify('mody_mouvement_compte','compta_compte_bancaire_operations_edit.php?id_compte_bancaire_move=<?php echo ($fiche->id_compte_bancaire_move)?>&id_compte_bancaire=<?php echo $compte_bancaire->getId_compte_bancaire()?>','true','edition_operation');
 						$("edition_operation").show();
 					}, false);
 					</script>
 				</td>
-				<td style="width:15%; text-align:right; cursor:pointer" id="debit_<?php echo htmlentities($fiche->id_compte_bancaire_move)?>">
+				<td style="width:15%; text-align:right; cursor:pointer" id="debit_<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>">
 				<?php	if ($fiche->montant_move < 0) 				{ ?>
 					<?php	 echo price_format(abs($fiche->montant_move))." ".$MONNAIE[1]; ?>&nbsp;
 				<?php } ?>
 				<script type="text/javascript">
-				Event.observe("debit_<?php echo htmlentities($fiche->id_compte_bancaire_move)?>", "click",  function(evt){
+				Event.observe("debit_<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){
 					Event.stop(evt);
 					page.verify('mody_mouvement_compte','compta_compte_bancaire_operations_edit.php?id_compte_bancaire_move=<?php echo ($fiche->id_compte_bancaire_move)?>&id_compte_bancaire=<?php echo $compte_bancaire->getId_compte_bancaire()?>','true','edition_operation');
 					$("edition_operation").show();
 				}, false);
 				</script>
 				</td>
-				<td style="width:15%; text-align:right; cursor:pointer" id="credit_<?php echo htmlentities($fiche->id_compte_bancaire_move)?>" >
+				<td style="width:15%; text-align:right; cursor:pointer" id="credit_<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>" >
 				<?php	if ($fiche->montant_move >= 0) 				{ ?>
 					<?php	echo price_format($fiche->montant_move)." ".$MONNAIE[1]; ?>&nbsp;
 				<?php } ?>
 				<script type="text/javascript">
-				Event.observe("credit_<?php echo htmlentities($fiche->id_compte_bancaire_move)?>", "click",  function(evt){
+				Event.observe("credit_<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){
 					Event.stop(evt);
 					page.verify('mody_mouvement_compte','compta_compte_bancaire_operations_edit.php?id_compte_bancaire_move=<?php echo ($fiche->id_compte_bancaire_move)?>&id_compte_bancaire=<?php echo $compte_bancaire->getId_compte_bancaire()?>','true','edition_operation');
 					$("edition_operation").show();
@@ -341,12 +341,12 @@ if (isset($id_compte_bancaire_releve)) {
 					<?php
 					if (isset($fiche->id_operation) && $fiche->id_operation) {
 						?>
-						<span id="link_view_ope_<?php echo htmlentities($fiche->id_compte_bancaire_move)?>" style="cursor:pointer; width:65px; padding-left:5px; text-align:left">
+						<span id="link_view_ope_<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>" style="cursor:pointer; width:65px; padding-left:5px; text-align:left">
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/info_marge.gif"/>
 						
 						</span>
 						<script type="text/javascript">
-						Event.observe("link_view_ope_<?php echo htmlentities($fiche->id_compte_bancaire_move)?>", "click",  function(evt){
+						Event.observe("link_view_ope_<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>", "click",  function(evt){
 						Event.stop(evt);
 						
 						<?php 
@@ -384,9 +384,9 @@ if (isset($id_compte_bancaire_releve)) {
 				
 				</td>
 				<td style="text-align:center; vertical-align:middle">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="del_<?php echo htmlentities($fiche->id_compte_bancaire_move)?>" style="cursor:pointer; float:right"/>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="del_<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>" style="cursor:pointer; float:right"/>
 				<script type="text/javascript">
-				Event.observe('del_<?php echo htmlentities($fiche->id_compte_bancaire_move)?>', 'click',  function(evt){
+				Event.observe('del_<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>', 'click',  function(evt){
 					Event.stop(evt); 
 					$("titre_alert").innerHTML = 'Confirmation de la suppression';
 					$("texte_alert").innerHTML = 'Suppression d\'une opération';
@@ -403,7 +403,7 @@ if (isset($id_compte_bancaire_releve)) {
 					var AppelAjax = new Ajax.Request(
 										"compta_compte_bancaire_operations_del.php", 
 										{
-										parameters: {id_compte_bancaire_move: '<?php echo htmlentities($fiche->id_compte_bancaire_move)?>', id_compte_bancaire: '<?php echo $compte_bancaire->getId_compte_bancaire()?>', date_move: '<?php echo $fiche->date_move?>'},
+										parameters: {id_compte_bancaire_move: '<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>', id_compte_bancaire: '<?php echo $compte_bancaire->getId_compte_bancaire()?>', date_move: '<?php echo $fiche->date_move?>'},
 										evalScripts:true, 
 										onLoading:S_loading, onException: function () {S_failure();},
 										onSuccess: function (requester){

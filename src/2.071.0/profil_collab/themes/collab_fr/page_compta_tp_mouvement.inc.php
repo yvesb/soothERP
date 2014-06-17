@@ -25,7 +25,7 @@ check_page_variables ($page_variables);
 <script type="text/javascript">
 Event.observe("link_retour_tp", "click",  function(evt){Event.stop(evt); page.verify('compta_gestion2_terminaux','compta_gestion2_terminaux.php?<?php echo $retour_var;?>','true','sub_content');}, false);
 </script>
-<div class="titre" id="titre_crea_art" style="width:60%; padding-left:140px">Historique des opérations <?php echo htmlentities($compte_tp->getLib_tp()); ?>
+<div class="titre" id="titre_crea_art" style="width:60%; padding-left:140px">Historique des opérations <?php echo htmlentities($compte_tp->getLib_tp(), ENT_QUOTES, "UTF-8"); ?>
 </div>
 <input id="choix_id_tp" name="choix_id_tp"  value="<?php echo $compte_tp->getId_compte_tp(); ?>"  type="hidden">
 <input id="tp_type" name="tp_type"  value="<?php echo $compte_tp->getTp_type(); ?>"  type="hidden">

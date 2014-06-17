@@ -66,7 +66,7 @@ window.parent.$("table_echeanciers").innerHTML = '<tr>'+
 
 
                                                         '<td style=" text-align:left; padding-left:10px; font-size:11px; width:25%;border-bottom:1px solid #d2d2d2;">'+
-                                                        '<?php echo htmlentities($echeance->type_reglement); ?>'+
+                                                        '<?php echo htmlentities($echeance->type_reglement, ENT_QUOTES, "UTF-8"); ?>'+
                                                         '</td>'+
                                                         '<td style=" text-align:left; padding-left:10px; font-size:11px; width:35%;border-bottom:1px solid #d2d2d2;">'+
                                                         '<?php
@@ -78,7 +78,7 @@ window.parent.$("table_echeanciers").innerHTML = '<tr>'+
                                                             $retour = $bdd->query($query);
 
                                                             if($res = $retour->fetchObject()){
-                                                                    echo htmlentities($res->lib_reglement_mode);
+                                                                    echo htmlentities($res->lib_reglement_mode, ENT_QUOTES, "UTF-8");
                                                         }} ?>'+
                                                         '</td>'+
 
@@ -86,7 +86,7 @@ window.parent.$("table_echeanciers").innerHTML = '<tr>'+
 
 
                                                         '<td style=" text-align:right; padding-right:0px; font-size:11px; border-bottom:1px solid #d2d2d2; width:25%">'+
-                                                        '<?php echo htmlentities(number_format($echeance->montant, $TARIFS_NB_DECIMALES, ".", ""	))." ".$MONNAIE[1]; ?>'+
+                                                        '<?php echo htmlentities(number_format($echeance->montant, $TARIFS_NB_DECIMALES, ".", ""	), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1]; ?>'+
                                                         '</td>'+
 
                                                         <?php if($i<0){ ?>
@@ -114,7 +114,7 @@ window.parent.$("table_echeanciers").innerHTML = '<tr>'+
                                                 '<tr id="reglement_partiel2" >'+
                                                         '<td colspan="3" style="text-align:left;  ">'+
                                                                 '<span style="font-size:11px; font-style:italic; padding-left:10px; color:#FF0000">Montant des &eacute;ch&eacute;ances arriv&eacute;es &agrave; terme :</span>'+
-                                                                '<span  class="doc_bold3" style="color:#FF0000;"> <?php echo htmlentities(number_format(($montant_terme-$montant_acquite)>=0 ? ($montant_terme-$montant_acquite):0, $TARIFS_NB_DECIMALES, ".", ""	)); ?>  <?php echo $MONNAIE[1]; ?></span>'+
+                                                                '<span  class="doc_bold3" style="color:#FF0000;"> <?php echo htmlentities(number_format(($montant_terme-$montant_acquite)>=0 ? ($montant_terme-$montant_acquite):0, $TARIFS_NB_DECIMALES, ".", ""	), ENT_QUOTES, "UTF-8"); ?>  <?php echo $MONNAIE[1]; ?></span>'+
                                                                 '</td>'+
                                                         '<td style=" text-align:right; font-size:11px; color:#FF0000;">'+
                                                                 

@@ -103,7 +103,7 @@
 					<?php
 					$composants_article = composant_order_by_lot ($composants_article, get_article_composants ($article_composant->ref_article_composant), "ref_article_lot", "lot", "ref_article_composant");
 					if (count($composants_article)>0) {?>
-					<a href="#" id="link_sous__composant_<?php echo $serialisation_composant;?>"><?php echo htmlentities($article_composant->lib_article)?></a>
+					<a href="#" id="link_sous__composant_<?php echo $serialisation_composant;?>"><?php echo htmlentities($article_composant->lib_article, ENT_QUOTES, "UTF-8")?></a>
 					<script type="text/javascript">
 Event.observe("link_sous__composant_<?php echo $serialisation_composant;?>", "click",  function(evt){Event.stop(evt); Element.toggle('liste_de_sous_compo_<?php echo $serialisation_composant;?>');}, false);
 </script>
@@ -156,7 +156,7 @@ Event.observe("link_sous__composant_<?php echo $serialisation_composant;?>", "cl
 								</tr>
 								</table>
 								</td><td>				
-									<?php echo htmlentities($compo_list->lib_article)?>
+									<?php echo htmlentities($compo_list->lib_article, ENT_QUOTES, "UTF-8")?>
 								</td>
 							</tr>
 						</table>
@@ -176,7 +176,7 @@ Event.observe("link_sous__composant_<?php echo $serialisation_composant;?>", "cl
 					</div>
 					<?php 
 				} else {
-				echo htmlentities($article_composant->lib_article);
+				echo htmlentities($article_composant->lib_article, ENT_QUOTES, "UTF-8");
 				}
 				?>
 				

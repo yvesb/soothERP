@@ -93,7 +93,7 @@ Event.observe("link_close_pop_up_mini_moteur_doc", "click",  function(evt){Event
 				<?php 
 				foreach ($types_liste as $type_liste) {
 					?>
-					<option value="<?php echo $type_liste->id_type_doc;?>"><?php echo htmlentities($type_liste->lib_type_doc);?></option>
+					<option value="<?php echo $type_liste->id_type_doc;?>"><?php echo htmlentities($type_liste->lib_type_doc, ENT_QUOTES, "UTF-8");?></option>
 					<?php 
 				}
 				?>

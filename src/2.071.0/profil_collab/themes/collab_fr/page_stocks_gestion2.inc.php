@@ -119,7 +119,7 @@ check_page_variables ($page_variables);
 												}	
 											 ?>
 											 </div>
-											<?php echo htmlentities($art_categ->lib_art_categ); if (!$art_categ->lib_art_categ) { echo "Pas de libellé";}?> 
+											<?php echo htmlentities($art_categ->lib_art_categ, ENT_QUOTES, "UTF-8"); if (!$art_categ->lib_art_categ) { echo "Pas de libellé";}?> 
 											</span>
 											</td>
 										</tr>

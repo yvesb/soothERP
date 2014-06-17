@@ -22,7 +22,7 @@
 			<td class="size_strict"><span class="labelled_ralonger">N&deg; de s&eacute;curit&eacute; sociale:</span>
 			</td>
 			<td>
-				<input name="collab_numero_secu" id="collab_numero_secu" type="text" class="classinput_xsize" value="<?php echo 		htmlentities($profils[$id_profil]->getNumero_secu ()) ?>" />
+				<input name="collab_numero_secu" id="collab_numero_secu" type="text" class="classinput_xsize" value="<?php echo 		htmlentities($profils[$id_profil]->getNumero_secu (), ENT_QUOTES, "UTF-8") ?>" />
 			</td>
 		</tr>
 		<tr>
@@ -37,7 +37,7 @@
 					$j = substr($profils[$id_profil]->getDate_naissance (), 8, 2);     // au format FR
 					$date = $j.'/'.$m.'/'.$a;
 				
-					echo  htmlentities($date);
+					echo  htmlentities($date, ENT_QUOTES, "UTF-8");
 				}?>" />
 			</td>
 		</tr>
@@ -45,7 +45,7 @@
 			<td class="size_strict"><span class="labelled_ralonger">Lieu de naissance:</span>
 			</td>
 			<td>
-				<input name="collab_lieu_naissance" id="collab_lieu_naissance" type="text" class="classinput_xsize" value="<?php echo 		htmlentities($profils[$id_profil]->getLieu_naissance ()) ?>" />
+				<input name="collab_lieu_naissance" id="collab_lieu_naissance" type="text" class="classinput_xsize" value="<?php echo 		htmlentities($profils[$id_profil]->getLieu_naissance (), ENT_QUOTES, "UTF-8") ?>" />
 			</td>
 		</tr>
 		<tr>
@@ -64,8 +64,8 @@
 						<?php 		 
 						}
 						?>
-						<option value="<?php echo $payslist->id_pays?>" <?php if ($profils[$id_profil]->getId_pays_nationalite () == $payslist->id_pays) {echo 'selected="selected"'; $pays_collab =  htmlentities($payslist->pays);}?>>
-						<?php echo htmlentities($payslist->pays)?></option>
+						<option value="<?php echo $payslist->id_pays?>" <?php if ($profils[$id_profil]->getId_pays_nationalite () == $payslist->id_pays) {echo 'selected="selected"'; $pays_collab =  htmlentities($payslist->pays, ENT_QUOTES, "UTF-8");}?>>
+						<?php echo htmlentities($payslist->pays, ENT_QUOTES, "UTF-8")?></option>
 						<?php 
 					}
 					?>
@@ -76,7 +76,7 @@
 			<td class="size_strict"><span class="labelled_ralonger">Situation de famille:</span>
 			</td>
 			<td>
-				<input name="collab_situation_famille" id="collab_situation_famille" type="text" class="classinput_xsize" value="<?php echo 		htmlentities($profils[$id_profil]->getSituation_famille ()) ?>" />
+				<input name="collab_situation_famille" id="collab_situation_famille" type="text" class="classinput_xsize" value="<?php echo 		htmlentities($profils[$id_profil]->getSituation_famille (), ENT_QUOTES, "UTF-8") ?>" />
 				</td>
 		</tr>
 		<tr>
@@ -88,7 +88,7 @@
 			<span>
 			<p class="infotext">Indiquez une valeur num&eacute;rique</p>
 			</span></span>
-				<input name="collab_nbre_enfants" id="collab_nbre_enfants" type="text" class="classinput_xsize" value="<?php echo 		htmlentities($profils[$id_profil]->getNbre_enfants ()) ?>" />
+				<input name="collab_nbre_enfants" id="collab_nbre_enfants" type="text" class="classinput_xsize" value="<?php echo 		htmlentities($profils[$id_profil]->getNbre_enfants (), ENT_QUOTES, "UTF-8") ?>" />
 				
 			</td>
 		</tr>
@@ -107,42 +107,42 @@
 			<td class="size_strict"><span class="labelled_ralonger">N&deg; de s&eacute;curit&eacute; sociale:</span>
 			</td>
 			<td>
-			<a href="#" id="show_collab_numero_secu" class="modif_input1"><?php echo  htmlentities($profils[$id_profil]->getNumero_secu ())?></a>
+			<a href="#" id="show_collab_numero_secu" class="modif_input1"><?php echo  htmlentities($profils[$id_profil]->getNumero_secu (), ENT_QUOTES, "UTF-8")?></a>
 			</td>
 		</tr>
 		<tr>
 			<td class="size_strict"><span class="labelled_ralonger">Date de naissance:</span>
 			</td>
 			<td>
-			<a href="#" id="show_collab_date_naissance" class="modif_input1"><?php if ($profils[$id_profil]->getDate_naissance ()!=0000-00-00) {echo  htmlentities($date);}?></a>
+			<a href="#" id="show_collab_date_naissance" class="modif_input1"><?php if ($profils[$id_profil]->getDate_naissance ()!=0000-00-00) {echo  htmlentities($date, ENT_QUOTES, "UTF-8");}?></a>
 			</td>
 		</tr>
 		<tr>
 			<td class="size_strict"><span class="labelled_ralonger">Lieu de naissance:</span>
 			</td>
 			<td>
-			<a href="#" id="show_collab_lieu_naissance" class="modif_input1"><?php echo  htmlentities($profils[$id_profil]->getLieu_naissance ())?></a>
+			<a href="#" id="show_collab_lieu_naissance" class="modif_input1"><?php echo  htmlentities($profils[$id_profil]->getLieu_naissance (), ENT_QUOTES, "UTF-8")?></a>
 			</td>
 		</tr>
 		<tr>
 			<td class="size_strict"><span class="labelled_ralonger">Nationalit&eacute;:</span>
 			</td>
 			<td>
-			<a href="#" id="show_collab_id_pays" class="modif_select1"><?php echo  htmlentities($pays_collab)?></a>
+			<a href="#" id="show_collab_id_pays" class="modif_select1"><?php echo  htmlentities($pays_collab, ENT_QUOTES, "UTF-8")?></a>
 			</td>
 		</tr>
 		<tr>
 			<td class="size_strict"><span class="labelled_ralonger">Situation de famille:</span>
 			</td>
 			<td>
-			<a href="#" id="show_collab_situation_famille" class="modif_input1"><?php echo  htmlentities($profils[$id_profil]->getSituation_famille ())?></a>
+			<a href="#" id="show_collab_situation_famille" class="modif_input1"><?php echo  htmlentities($profils[$id_profil]->getSituation_famille (), ENT_QUOTES, "UTF-8")?></a>
 			</td>
 		</tr>
 		<tr>
 			<td class="size_strict"><span class="labelled_ralonger">Nombre d'enfants:</span>
 			</td>
 			<td>
-			<a href="#" id="show_collab_nbre_enfants" class="modif_input1"><?php echo  htmlentities($profils[$id_profil]->getNbre_enfants ())?></a>
+			<a href="#" id="show_collab_nbre_enfants" class="modif_input1"><?php echo  htmlentities($profils[$id_profil]->getNbre_enfants (), ENT_QUOTES, "UTF-8")?></a>
 			</td>
 		</tr>
 		<tr>
@@ -213,7 +213,7 @@
 						<td>
 						<div id="sub_mod_<?php echo ($liste_fonction->id_fonction)?>">
 						<span id="mod_<?php echo ($liste_fonction->id_fonction)?>">
-						<?php echo htmlentities($liste_fonction->lib_fonction)?></span>
+						<?php echo htmlentities($liste_fonction->lib_fonction, ENT_QUOTES, "UTF-8")?></span>
 						</div>
 						</td>
 						<td width="5px">
