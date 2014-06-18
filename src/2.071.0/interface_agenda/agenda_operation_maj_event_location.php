@@ -95,7 +95,7 @@ $duree = round( ($Udate_fin - $Udate_deb) / 60 ); //durée en minutes
 
 
 if(isset($_REQUEST["note"]))
-{			$note = htmlspecialchars(utf8_decode($_REQUEST["note"]));}
+{			$note = htmlspecialchars(utf8_decode($_REQUEST["note"]), ENT_QUOTES, "UTF-8");}
 else{	$note = "";}
 
 if(!isset($_REQUEST["id_stock"])){

@@ -64,7 +64,7 @@ if(!isset($_REQUEST["sheure_fin"])){
 $sheure_fin = $_REQUEST["sheure_fin"];
 
 if(isset($_REQUEST["note"]))
-{		$note = htmlspecialchars(utf8_decode($_REQUEST["note"]));}
+{		$note = htmlspecialchars(utf8_decode($_REQUEST["note"]), ENT_QUOTES, "UTF-8");}
 else{		$note = "";}
 
 if(!isset($_REQUEST["id_stock"])){

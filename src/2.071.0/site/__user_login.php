@@ -15,7 +15,7 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], "__u
 // Modifications par Yves Bourvon le 11/09/2011
 
 // On commence par échapper les caractères spéciaux par précaution
-	$page_from = htmlspecialchars($_REQUEST['page_from']);
+	$page_from = htmlspecialchars($_REQUEST['page_from'], ENT_QUOTES, "UTF-8");
 
 // On vérifie que la donnée fournie correspond bien à un nom de page du dossier ou des sous-dossiers LMB (ce que l'on considère comme une "white list")
 	$dir_iterator = new RecursiveDirectoryIterator("../");

@@ -55,7 +55,7 @@ if(!isset($_REQUEST["event_lib"])){
 	echo "le libélé de l'évènement n'est pas spécifié";
 	exit;
 }
-$event_lib = htmlspecialchars(utf8_decode($_REQUEST["event_lib"]));
+$event_lib = htmlspecialchars(utf8_decode($_REQUEST["event_lib"]), ENT_QUOTES, "UTF-8");
 
 if(!isset($_REQUEST["sdate_deb"])){
 	echo "la date de commencement de l'évènement n'est pas spécifiée";
@@ -95,7 +95,7 @@ $duree = round( ($Udate_fin - $Udate_deb) / 60 ); //durée en minutes
 
 
 if(isset($_REQUEST["note"]))
-{			$note = htmlspecialchars(utf8_decode($_REQUEST["note"]));}
+{			$note = htmlspecialchars(utf8_decode($_REQUEST["note"]), ENT_QUOTES, "UTF-8");}
 else{	$note = "";}
 // ************************************************************************************
 

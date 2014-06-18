@@ -292,20 +292,20 @@ final class compta_export {
 		$script =
 				"<b>ETAT APPLICATION : ".$ETAT_APPLICATION." - DEBUG AUTORISE</b>"
 				."<ul id='debug_string_dev_state_03' class='infotable_form'><li>"
-				."Etat de l'objet: ".htmlspecialchars($this->etat).";"
-				."&nbsp;Date debut : ".htmlspecialchars($this->date_debut).";"
-				."&nbsp;Date fin : ".htmlspecialchars($this->date_fin).";"
-				."&nbsp;ID Logiciel : ".strval($this->id_export_logiciel).";"
-				."&nbsp;ID Modèle : ".htmlspecialchars(serialize($this->id_modele)).";"
-				."&nbsp;ID(s) journaux: ".htmlspecialchars(serialize($this->id_journaux)).";"
+				."Etat de l'objet: ".htmlspecialchars($this->etat, ENT_QUOTES, "UTF-8").";"
+				."&nbsp;Date debut : ".htmlspecialchars($this->date_debut, ENT_QUOTES, "UTF-8").";"
+				."&nbsp;Date fin : ".htmlspecialchars($this->date_fin, ENT_QUOTES, "UTF-8").";"
+				."&nbsp;ID Logiciel : ".strval($this->id_export_logiciel, ENT_QUOTES, "UTF-8").";"
+				."&nbsp;ID Modèle : ".htmlspecialchars(serialize($this->id_modele), ENT_QUOTES, "UTF-8").";"
+				."&nbsp;ID(s) journaux: ".htmlspecialchars(serialize($this->id_journaux), ENT_QUOTES, "UTF-8").";"
 				."</li><li>"
-				."Nb contents : ".htmlspecialchars($this->nb_traitements).";"
-				."&nbsp;Nb contents done : ".htmlspecialchars($this->nb_traitements_effectues).";"
-				."&nbsp;Last DebugState = ".htmlspecialchars($this->debugstate).";"
+				."Nb contents : ".htmlspecialchars($this->nb_traitements, ENT_QUOTES, "UTF-8").";"
+				."&nbsp;Nb contents done : ".htmlspecialchars($this->nb_traitements_effectues, ENT_QUOTES, "UTF-8").";"
+				."&nbsp;Last DebugState = ".htmlspecialchars($this->debugstate, ENT_QUOTES, "UTF-8").";"
 				."</li><li>"
-				."Nb exports : ".htmlspecialchars($this->process_nbexports).";"
+				."Nb exports : ".htmlspecialchars($this->process_nbexports, ENT_QUOTES, "UTF-8").";"
 				."</li><li>"
-				."querydebug : ".htmlspecialchars($this->querydebug).";"
+				."querydebug : ".htmlspecialchars($this->querydebug, ENT_QUOTES, "UTF-8").";"
 				."</li></ul>";
 				
 		print "<script type='text/javascript'>"
@@ -350,7 +350,7 @@ final class compta_export {
 		$links = array();
 		foreach ($this->fichiers_url as $url){
 			$link = new stdClass();
-			$link->href =  htmlspecialchars($url);
+			$link->href =  htmlspecialchars($url, ENT_QUOTES, "UTF-8");
 			$links[] = $link;
 		}
 		return $links;
@@ -1439,7 +1439,7 @@ final class compta_export {
  				$option = new stdClass();
 				$option->id = $champ->idcompta_export_champs;
 				$string_type = ($champ->champ_typestring != "")?$champ->champ_typestring:'global';
-				$option->value = htmlspecialchars ($champ->lib_champ.' ('.$string_type.')');
+				$option->value = htmlspecialchars($champ->lib_champ.' ('.$string_type.')', ENT_QUOTES, "UTF-8");
 				$option->selected = false;
 				$options[] = $option; 
 			}
