@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `adresses` (
   KEY `id_pays` (`id_pays`),
   KEY `ref_contact` (`ref_contact`),
   KEY `id_type_adresse` (`id_type_adresse`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des adresses';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des adresses';
 
 --
 -- Contenu de la table `adresses`
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `adresses_types` (
   `adresse_type` varchar(64) NOT NULL,
   `defaut` smallint(5) NOT NULL,
   PRIMARY KEY  (`id_adresse_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des type d''adresses';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des type d''adresses';
 
 --
 -- Contenu de la table `adresses_types`
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `agendas` (
   PRIMARY KEY  (`ref_agenda`),
   KEY `id_type_agenda` (`id_type_agenda`),
   KEY `id_agenda_couleurs` (`id_agenda_couleurs`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des agendas';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des agendas';
 
 --
 -- Contenu de la table `agendas`
@@ -100,7 +100,7 @@ CREATE TABLE IF NOT EXISTS `agendas_couleurs` (
   `agenda_couleur_rule_2` varchar(7) default '#ffffff',
   `agenda_couleur_rule_3` varchar(7) default '#000000',
   PRIMARY KEY  (`id_agenda_couleurs`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Style d''un type d''agenda' AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Style d''un type d''agenda' AUTO_INCREMENT=6 ;
 
 --
 -- Contenu de la table `agendas_couleurs`
@@ -133,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `agendas_events` (
   KEY `ref_agenda` (`ref_agenda`),
   KEY `ref_agenda_event_parent` (`ref_agenda_event_parent`),
   KEY `id_type_event` (`id_type_event`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des évènements d''un agenda';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des évènements d''un agenda';
 
 --
 -- Contenu de la table `agendas_events`
@@ -151,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `agendas_events_location` (
   `id_stock` smallint(5) unsigned NOT NULL,
   `quantite` double default NULL,
   PRIMARY KEY  (`ref_agenda_event`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Quantité des événements location dans l''agenda';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Quantité des événements location dans l''agenda';
 
 --
 -- Contenu de la table `agendas_events_location`
@@ -170,7 +170,7 @@ CREATE TABLE IF NOT EXISTS `agendas_events_types` (
   `lib_type_event` varchar(64) NOT NULL,
   PRIMARY KEY  (`id_type_event`),
   KEY `id_type_agenda` (`id_type_agenda`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste d''event';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste d''event';
 
 --
 -- Contenu de la table `agendas_events_types`
@@ -191,7 +191,7 @@ CREATE TABLE IF NOT EXISTS `agendas_listes` (
   `id_liste` smallint(5) unsigned NOT NULL auto_increment,
   `lib_liste` varchar(64) NOT NULL,
   PRIMARY KEY  (`id_liste`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `agendas_listes`
@@ -209,7 +209,7 @@ CREATE TABLE IF NOT EXISTS `agendas_listes_contenus` (
   `ref_agenda` varchar(32) NOT NULL,
   KEY `id_liste` (`id_liste`),
   KEY `ref_agenda` (`ref_agenda`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `agendas_listes_contenus`
@@ -229,7 +229,7 @@ CREATE TABLE IF NOT EXISTS `agendas_listes_events_types_permissions` (
   KEY `id_liste` (`id_liste`),
   KEY `id_type_event` (`id_type_event`),
   KEY `id_permission` (`id_permission`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `agendas_listes_events_types_permissions`
@@ -252,7 +252,7 @@ CREATE TABLE IF NOT EXISTS `agendas_permissions` (
   KEY `id_permission_parent` (`id_permission_parent`),
   KEY `lib_permission` (`lib_permission`),
   KEY `ordre` (`ordre`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des permissions d''utilisateur pour l''agenda';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des permissions d''utilisateur pour l''agenda';
 
 --
 -- Contenu de la table `agendas_permissions`
@@ -283,7 +283,7 @@ CREATE TABLE IF NOT EXISTS `agendas_types` (
   `id_type_agenda` smallint(5) unsigned NOT NULL,
   `lib_type_agenda` varchar(64) NOT NULL,
   PRIMARY KEY  (`id_type_agenda`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des agendas';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des agendas';
 
 --
 -- Contenu de la table `agendas_types`
@@ -306,7 +306,7 @@ CREATE TABLE IF NOT EXISTS `agendas_types_contacts` (
   `type_event_defaut` smallint(5) unsigned NOT NULL default '2',
   KEY `ref_agenda` (`ref_agenda`),
   KEY `ref_contact` (`ref_contact`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des agendas ratachés à un contact';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des agendas ratachés à un contact';
 
 --
 -- Contenu de la table `agendas_types_contacts`
@@ -325,7 +325,7 @@ CREATE TABLE IF NOT EXISTS `agendas_types_location` (
   `type_event_defaut` smallint(5) unsigned NOT NULL default '1',
   KEY `ref_agenda` (`ref_agenda`),
   KEY `ref_article` (`ref_article`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des agendas ratachés à un article';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des agendas ratachés à un article';
 
 --
 -- Contenu de la table `agendas_types_location`
@@ -344,7 +344,7 @@ CREATE TABLE IF NOT EXISTS `agendas_types_ressources` (
   `type_event_defaut` smallint(5) unsigned NOT NULL default '3',
   KEY `ref_agenda` (`ref_agenda`),
   KEY `ref_ressource` (`ref_ressource`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des agendas ratachés à une ressource';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des agendas ratachés à une ressource';
 
 --
 -- Contenu de la table `agendas_types_ressources`
@@ -363,7 +363,7 @@ CREATE TABLE IF NOT EXISTS `agendas_users_agendas_affichage` (
   `affiche` tinyint(1) NOT NULL default '1',
   KEY `ref_user` (`ref_user`),
   KEY `ref_agenda` (`ref_agenda`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des agendas sélectionné par un user';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des agendas sélectionné par un user';
 
 --
 -- Contenu de la table `agendas_users_agendas_affichage`
@@ -385,7 +385,7 @@ CREATE TABLE IF NOT EXISTS `agendas_users_events_type_affiche_permissions` (
   KEY `ref_user` (`ref_user`),
   KEY `id_type_event` (`id_type_event`),
   KEY `id_permission` (`id_permission`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT=' ';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT=' ';
 
 --
 -- Contenu de la table `agendas_users_events_type_affiche_permissions`
@@ -409,7 +409,7 @@ CREATE TABLE IF NOT EXISTS `agendas_users_listes_agendas_permissions` (
   PRIMARY KEY  (`ref_user`,`id_liste`),
   KEY `id_permission` (`id_permission`),
   KEY `id_liste` (`id_liste`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='permission qu''un user a sur un agenda';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='permission qu''un user a sur un agenda';
 
 --
 -- Contenu de la table `agendas_users_listes_agendas_permissions`
@@ -437,7 +437,7 @@ CREATE TABLE IF NOT EXISTS `annuaire` (
   KEY `nom` (`nom`),
   KEY `id_civilite` (`id_civilite`),
   KEY `id_categorie` (`id_categorie`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Annuaire de l''entreprise';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Annuaire de l''entreprise';
 
 --
 -- Contenu de la table `annuaire`
@@ -458,7 +458,7 @@ CREATE TABLE IF NOT EXISTS `annuaire_categories` (
   `ordre` tinyint(3) unsigned NOT NULL,
   `app_tarifs` enum('HT','TTC') NOT NULL default 'HT',
   PRIMARY KEY  (`id_categorie`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des catégories de contacts' AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des catégories de contacts' AUTO_INCREMENT=6 ;
 
 --
 -- Contenu de la table `annuaire_categories`
@@ -484,7 +484,7 @@ CREATE TABLE IF NOT EXISTS `annuaire_liaisons` (
   KEY `ref_contact` (`ref_contact`),
   KEY `ref_contact_lie` (`ref_contact_lie`),
   KEY `id_liaison_type` (`id_liaison_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liaisons entre les articles';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liaisons entre les articles';
 
 --
 -- Contenu de la table `annuaire_liaisons`
@@ -507,7 +507,7 @@ CREATE TABLE IF NOT EXISTS `annuaire_liaisons_types` (
   `systeme` tinyint(3) unsigned NOT NULL default '0',
   PRIMARY KEY  (`id_liaison_type`),
   KEY `ordre` (`ordre`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Types de liaisons possibles entre articles' AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Types de liaisons possibles entre articles' AUTO_INCREMENT=5 ;
 
 --
 -- Contenu de la table `annuaire_liaisons_types`
@@ -531,7 +531,7 @@ CREATE TABLE IF NOT EXISTS `annuaire_modeles_pdf` (
   `usage` enum('defaut','actif','inactif') NOT NULL,
   KEY `id_pdf_modele` (`id_pdf_modele`),
   KEY `id_profil` (`id_profil`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `annuaire_modeles_pdf`
@@ -549,7 +549,7 @@ CREATE TABLE IF NOT EXISTS `annuaire_profils` (
   `id_profil` smallint(5) unsigned NOT NULL,
   PRIMARY KEY  (`ref_contact`,`id_profil`),
   KEY `id_profil` (`id_profil`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Association des contacts de l''annuaire aux profils';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Association des contacts de l''annuaire aux profils';
 
 --
 -- Contenu de la table `annuaire_profils`
@@ -575,7 +575,7 @@ CREATE TABLE IF NOT EXISTS `annuaire_tmp` (
   `mode` enum('inscription','modification') NOT NULL,
   PRIMARY KEY  (`id_contact_tmp`),
   KEY `id_interface` (`id_interface`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `annuaire_tmp`
@@ -592,7 +592,7 @@ CREATE TABLE IF NOT EXISTS `annu_admin` (
   `ref_contact` varchar(32) NOT NULL,
   `type_admin` enum('Interne','Externe') NOT NULL default 'Interne',
   PRIMARY KEY  (`ref_contact`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les contacts administrateur';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur les contacts administrateur';
 
 --
 -- Contenu de la table `annu_admin`
@@ -632,7 +632,7 @@ CREATE TABLE IF NOT EXISTS `annu_client` (
   KEY `ref_commercial` (`ref_commercial`),
   KEY `id_edition_mode_favori` (`id_edition_mode_favori`),
   KEY `id_reglement_mode_favori` (`id_reglement_mode_favori`,`id_edition_mode_favori`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les contacts clients';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur les contacts clients';
 
 --
 -- Contenu de la table `annu_client`
@@ -654,7 +654,7 @@ CREATE TABLE IF NOT EXISTS `annu_collab` (
   `situation_famille` varchar(128) NOT NULL,
   `nbre_enfants` tinyint(3) unsigned default NULL,
   PRIMARY KEY  (`ref_contact`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les contacts collaborateurs';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur les contacts collaborateurs';
 
 --
 -- Contenu de la table `annu_collab`
@@ -674,7 +674,7 @@ CREATE TABLE IF NOT EXISTS `annu_collab_fonctions` (
   `id_fonction` mediumint(8) unsigned NOT NULL,
   KEY `ref_contact` (`ref_contact`),
   KEY `id_fonction` (`id_fonction`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `annu_collab_fonctions`
@@ -696,7 +696,7 @@ CREATE TABLE IF NOT EXISTS `annu_commercial` (
   PRIMARY KEY  (`ref_contact`),
   KEY `id_commercial_categ` (`id_commercial_categ`),
   KEY `id_commission_regle` (`id_commission_regle`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `annu_commercial`
@@ -714,7 +714,7 @@ CREATE TABLE IF NOT EXISTS `annu_constructeur` (
   `identifiant_revendeur` varchar(32) NOT NULL,
   `conditions_garantie` mediumtext NOT NULL,
   PRIMARY KEY  (`ref_contact`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les contacts constructeurs';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur les contacts constructeurs';
 
 --
 -- Contenu de la table `annu_constructeur`
@@ -741,7 +741,7 @@ CREATE TABLE IF NOT EXISTS `annu_fournisseur` (
   KEY `id_fournisseur_categ` (`id_fournisseur_categ`),
   KEY `ref_acheteur` (`ref_acheteur`),
   KEY `id_stock_livraison` (`id_stock_livraison`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les contacts fournisseurs';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur les contacts fournisseurs';
 
 --
 -- Contenu de la table `annu_fournisseur`
@@ -797,7 +797,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
   KEY `id_tva` (`id_tva`),
   KEY `id_valo` (`id_valo`),
   KEY `id_modele_spe` (`id_modele_spe`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des articles composants le catalogue';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des articles composants le catalogue';
 
 --
 -- Contenu de la table `articles`
@@ -825,7 +825,7 @@ CREATE TABLE IF NOT EXISTS `articles_abonnes` (
   PRIMARY KEY  (`id_abo`),
   KEY `ref_contact` (`ref_contact`),
   KEY `ref_article` (`ref_article`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `articles_abonnes`
@@ -846,7 +846,7 @@ CREATE TABLE IF NOT EXISTS `articles_abonnes_livraisons` (
   `date_echeance` datetime NOT NULL,
   KEY `id_abo` (`id_abo`),
   KEY `ref_doc` (`ref_doc`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `articles_abonnes_livraisons`
@@ -866,7 +866,7 @@ CREATE TABLE IF NOT EXISTS `articles_caracs` (
   KEY `ref_article` (`ref_article`),
   KEY `ref_carac` (`ref_carac`),
   KEY `valeur` (`valeur`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Caractéristiques des articles du catalogue';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Caractéristiques des articles du catalogue';
 
 --
 -- Contenu de la table `articles_caracs`
@@ -884,7 +884,7 @@ CREATE TABLE IF NOT EXISTS `articles_codes_barres` (
   `code_barre` varchar(32) NOT NULL,
   UNIQUE KEY `code_barre` (`code_barre`),
   KEY `ref_article` (`ref_article`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des codes barres associés aux articles';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des codes barres associés aux articles';
 
 --
 -- Contenu de la table `articles_codes_barres`
@@ -908,7 +908,7 @@ CREATE TABLE IF NOT EXISTS `articles_composants` (
   KEY `ref_article` (`ref_article_lot`),
   KEY `ref_article_composant` (`ref_article_composant`),
   KEY `ordre` (`ordre`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Articles composants de lots';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Articles composants de lots';
 
 --
 -- Contenu de la table `articles_composants`
@@ -931,7 +931,7 @@ CREATE TABLE IF NOT EXISTS `articles_comptes_credits` (
   PRIMARY KEY  (`id_compte_credit`),
   KEY `ref_contact` (`ref_contact`),
   KEY `ref_article` (`ref_article`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `articles_comptes_credits`
@@ -949,7 +949,7 @@ CREATE TABLE IF NOT EXISTS `articles_comptes_credits_consos` (
   `date_conso` datetime NOT NULL,
   `credit_used` double NOT NULL,
   KEY `id_compte_credit` (`id_compte_credit`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `articles_comptes_credits_consos`
@@ -970,7 +970,7 @@ CREATE TABLE IF NOT EXISTS `articles_formules_tarifs` (
   UNIQUE KEY `ref_article` (`ref_article`,`id_tarif`,`indice_qte`),
   KEY `id_tarif` (`id_tarif`),
   KEY `indice_qte` (`indice_qte`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Formules de tarifs des catégories d''articles';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Formules de tarifs des catégories d''articles';
 
 --
 -- Contenu de la table `articles_formules_tarifs`
@@ -989,7 +989,7 @@ CREATE TABLE IF NOT EXISTS `articles_images` (
   `ordre` tinyint(3) NOT NULL,
   KEY `ref_article` (`ref_article`),
   KEY `id_image` (`id_image`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `articles_images`
@@ -1010,7 +1010,7 @@ CREATE TABLE IF NOT EXISTS `articles_liaisons` (
   KEY `ref_article` (`ref_article`),
   KEY `ref_article_lie` (`ref_article_lie`),
   KEY `id_liaison_type` (`id_liaison_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liaisons entre les articles';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liaisons entre les articles';
 
 --
 -- Contenu de la table `articles_liaisons`
@@ -1029,7 +1029,7 @@ CREATE TABLE IF NOT EXISTS `articles_modele_materiel` (
   `colisage` varchar(32) NOT NULL,
   `duree_garantie` smallint(5) unsigned NOT NULL,
   PRIMARY KEY  (`ref_article`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les articles matériels';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur les articles matériels';
 
 --
 -- Contenu de la table `articles_modele_materiel`
@@ -1046,7 +1046,7 @@ INSERT INTO `articles_modele_materiel` (`ref_article`, `poids`, `colisage`, `dur
 
 CREATE TABLE IF NOT EXISTS `articles_modele_service` (
   `ref_article` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `articles_modele_service`
@@ -1068,7 +1068,7 @@ CREATE TABLE IF NOT EXISTS `articles_modele_service_abo` (
   `reconduction` smallint(5) NOT NULL,
   `preavis` bigint(20) NOT NULL,
   PRIMARY KEY  (`ref_article`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `articles_modele_service_abo`
@@ -1086,7 +1086,7 @@ CREATE TABLE IF NOT EXISTS `articles_modele_service_conso` (
   `duree_validite` bigint(20) NOT NULL,
   `nb_credits` double NOT NULL default '1',
   PRIMARY KEY  (`ref_article`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `articles_modele_service_conso`
@@ -1104,7 +1104,7 @@ CREATE TABLE IF NOT EXISTS `articles_mots_cles` (
   `ref_article` varchar(32) NOT NULL,
   `mot_cle` varchar(64) NOT NULL,
   PRIMARY KEY  (`id_mot_cle`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `articles_mots_cles`
@@ -1122,7 +1122,7 @@ CREATE TABLE IF NOT EXISTS `articles_paa_archive` (
   `date_maj` datetime NOT NULL,
   `prix_achat_actuel_ht` double default NULL,
   KEY `ref_article` (`ref_article`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `articles_paa_archive`
@@ -1142,7 +1142,7 @@ CREATE TABLE IF NOT EXISTS `articles_paf_archive` (
   `pa_ht` decimal(10,4) default NULL,
   KEY `ref_article` (`ref_article`),
   KEY `ref_fournisseur` (`ref_fournisseur`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `articles_paf_archive`
@@ -1160,7 +1160,7 @@ CREATE TABLE IF NOT EXISTS `articles_pa_archive` (
   `date_maj` datetime NOT NULL,
   `prix_achat_ht` double default NULL,
   KEY `ref_article` (`ref_article`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `articles_pa_archive`
@@ -1179,7 +1179,7 @@ CREATE TABLE IF NOT EXISTS `articles_pv_archive` (
   `id_tarif` smallint(5) NOT NULL,
   `pu_ht` double NOT NULL,
   KEY `ref_article` (`ref_article`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `articles_pv_archive`
@@ -1201,7 +1201,7 @@ CREATE TABLE IF NOT EXISTS `articles_ref_fournisseur` (
   `date_pa` date NOT NULL,
   KEY `ref_article` (`ref_article`),
   KEY `ref_fournisseur` (`ref_fournisseur`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des références des articles chez les fournisseurs';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des références des articles chez les fournisseurs';
 
 --
 -- Contenu de la table `articles_ref_fournisseur`
@@ -1221,7 +1221,7 @@ CREATE TABLE IF NOT EXISTS `articles_stocks_alertes` (
   `emplacement` varchar(64) default NULL,
   UNIQUE KEY `ref_article` (`ref_article`,`id_stock`),
   KEY `id_stock` (`id_stock`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Seuil d''alerte de stock minimum';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Seuil d''alerte de stock minimum';
 
 --
 -- Contenu de la table `articles_stocks_alertes`
@@ -1241,7 +1241,7 @@ CREATE TABLE IF NOT EXISTS `articles_tarifs` (
   `pu_ht` double NOT NULL,
   UNIQUE KEY `ref_article` (`ref_article`,`id_tarif`,`indice_qte`),
   KEY `id_tarif` (`id_tarif`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Prix de vente en cours des différents articles';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Prix de vente en cours des différents articles';
 
 --
 -- Contenu de la table `articles_tarifs`
@@ -1260,7 +1260,7 @@ CREATE TABLE IF NOT EXISTS `articles_tarifs_maj` (
   `date_demande` datetime NOT NULL,
   UNIQUE KEY `ref_article` (`ref_article`,`id_tarif`),
   KEY `id_tarif` (`id_tarif`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des articles dont le tarif doit etre mis à jour';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des articles dont le tarif doit etre mis à jour';
 
 --
 -- Contenu de la table `articles_tarifs_maj`
@@ -1279,7 +1279,7 @@ CREATE TABLE IF NOT EXISTS `articles_taxes` (
   `montant_taxe` double unsigned NOT NULL,
   PRIMARY KEY  (`ref_article`,`id_taxe`),
   KEY `id_taxe` (`id_taxe`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Taxes associées aux articles';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Taxes associées aux articles';
 
 --
 -- Contenu de la table `articles_taxes`
@@ -1299,7 +1299,7 @@ CREATE TABLE IF NOT EXISTS `articles_valorisations` (
   `abrev_valo` varchar(6) NOT NULL,
   `popup` tinyint(4) NOT NULL,
   PRIMARY KEY  (`id_valo`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Contenu de la table `articles_valorisations`
@@ -1329,7 +1329,7 @@ CREATE TABLE IF NOT EXISTS `articles_variantes` (
   `ref_article_variante` varchar(32) NOT NULL,
   KEY `ref_article_modele` (`ref_article_modele`),
   KEY `ref_article_variante` (`ref_article_variante`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste associant les variantes à leur modèle';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste associant les variantes à leur modèle';
 
 --
 -- Contenu de la table `articles_variantes`
@@ -1360,7 +1360,7 @@ CREATE TABLE IF NOT EXISTS `art_categs` (
   KEY `id_article_modele` (`modele`),
   KEY `defaut_id_tva` (`defaut_id_tva`),
   KEY `id_modele_spe` (`id_modele_spe`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des catégories d''articles';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des catégories d''articles';
 
 --
 -- Contenu de la table `art_categs`
@@ -1394,7 +1394,7 @@ CREATE TABLE IF NOT EXISTS `art_categs_caracs` (
   KEY `affichage` (`affichage`),
   KEY `ordre` (`ordre`),
   KEY `ref_carac_groupe` (`ref_carac_groupe`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des caractéristiques';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des caractéristiques';
 
 --
 -- Contenu de la table `art_categs_caracs`
@@ -1415,7 +1415,7 @@ CREATE TABLE IF NOT EXISTS `art_categs_caracs_groupes` (
   PRIMARY KEY  (`ref_carac_groupe`),
   KEY `ref_art_categ` (`ref_art_categ`),
   KEY `ordre` (`ordre`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Groupes de caractéristiques des catégories d''articles';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Groupes de caractéristiques des catégories d''articles';
 
 --
 -- Contenu de la table `art_categs_caracs_groupes`
@@ -1434,7 +1434,7 @@ CREATE TABLE IF NOT EXISTS `art_categs_formules_tarifs` (
   `formule_tarif` varchar(32) NOT NULL,
   UNIQUE KEY `ref_art_categ` (`ref_art_categ`,`id_tarif`),
   KEY `id_tarif` (`id_tarif`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Formules de tarifs des catégories d''articles';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Formules de tarifs des catégories d''articles';
 
 --
 -- Contenu de la table `art_categs_formules_tarifs`
@@ -1453,7 +1453,7 @@ CREATE TABLE IF NOT EXISTS `art_categs_modeles_pdf` (
   `usage` enum('defaut','actif','inactif') NOT NULL,
   KEY `id_pdf_modele` (`id_pdf_modele`),
   KEY `ref_art_categ` (`ref_art_categ`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `art_categs_modeles_pdf`
@@ -1470,7 +1470,7 @@ CREATE TABLE IF NOT EXISTS `art_categs_specificites` (
   `id_modele_spe` smallint(5) unsigned NOT NULL auto_increment,
   `lib_modele_spe` varchar(255) NOT NULL,
   PRIMARY KEY  (`id_modele_spe`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Contenu de la table `art_categs_specificites`
@@ -1495,7 +1495,7 @@ CREATE TABLE IF NOT EXISTS `art_categs_taxes` (
   `id_taxe` smallint(5) unsigned NOT NULL,
   PRIMARY KEY  (`ref_art_categ`,`id_taxe`),
   KEY `id_taxe` (`id_taxe`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des taxes applicables aux articles de cette catégorie';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des taxes applicables aux articles de cette catégorie';
 
 --
 -- Contenu de la table `art_categs_taxes`
@@ -1518,7 +1518,7 @@ CREATE TABLE IF NOT EXISTS `art_liaisons_types` (
   `systeme` tinyint(3) unsigned NOT NULL default '0',
   PRIMARY KEY  (`id_liaison_type`),
   KEY `ordre` (`ordre`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Types de liaisons possibles entre articles' AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Types de liaisons possibles entre articles' AUTO_INCREMENT=8 ;
 
 --
 -- Contenu de la table `art_liaisons_types`
@@ -1543,7 +1543,7 @@ CREATE TABLE IF NOT EXISTS `cartes_bancaires_types` (
   `id_cb_type` smallint(5) unsigned NOT NULL auto_increment,
   `lib_cb_type` varchar(32) NOT NULL,
   PRIMARY KEY  (`id_cb_type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Différents types de cartes bancaires' AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Différents types de cartes bancaires' AUTO_INCREMENT=4 ;
 
 --
 -- Contenu de la table `cartes_bancaires_types`
@@ -1564,7 +1564,7 @@ CREATE TABLE IF NOT EXISTS `catalogues_clients` (
   `id_catalogue_client` smallint(5) unsigned NOT NULL auto_increment,
   `lib_catalogue_client` varchar(64) NOT NULL,
   PRIMARY KEY  (`id_catalogue_client`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des catalogues clients' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des catalogues clients' AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `catalogues_clients`
@@ -1587,7 +1587,7 @@ CREATE TABLE IF NOT EXISTS `catalogues_clients_dirs` (
   KEY `id_catalogue_client` (`id_catalogue_client`),
   KEY `id_catalogue_dir_parent` (`id_catalogue_dir_parent`),
   KEY `ref_art_categ` (`ref_art_categ`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des répertoires \r\ndes catalogues clients' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des répertoires \r\ndes catalogues clients' AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `catalogues_clients_dirs`
@@ -1608,7 +1608,7 @@ CREATE TABLE IF NOT EXISTS `civilites` (
   PRIMARY KEY  (`id_civilite`),
   KEY `lib_civ_court` (`lib_civ_court`),
   KEY `lib_civ_long` (`lib_civ_long`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des civilites possibles pour les contacts' AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des civilites possibles pour les contacts' AUTO_INCREMENT=21 ;
 
 --
 -- Contenu de la table `civilites`
@@ -1647,7 +1647,7 @@ CREATE TABLE IF NOT EXISTS `civilites_categories` (
   `id_civilite` smallint(5) unsigned NOT NULL,
   KEY `id_categorie` (`id_categorie`),
   KEY `id_civilite` (`id_civilite`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des civilités possible en fonction de la catégorie de ';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des civilités possible en fonction de la catégorie de ';
 
 --
 -- Contenu de la table `civilites_categories`
@@ -1703,7 +1703,7 @@ CREATE TABLE IF NOT EXISTS `clients_categories` (
   PRIMARY KEY  (`id_client_categ`),
   KEY `ref_commercial` (`ref_commercial`),
   KEY `id_tarif` (`id_tarif`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des catégories de clients' AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des catégories de clients' AUTO_INCREMENT=2 ;
 
 --
 -- Contenu de la table `clients_categories`
@@ -1726,7 +1726,7 @@ CREATE TABLE IF NOT EXISTS `codes_promo` (
   `actif` tinyint(1) NOT NULL default '1',
   PRIMARY KEY  (`id_code_promo`),
   KEY `ref_article` (`ref_article`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `codes_promo`
@@ -1745,7 +1745,7 @@ CREATE TABLE IF NOT EXISTS `commerciaux_categories` (
   `id_commission_regle` smallint(5) unsigned default NULL,
   PRIMARY KEY  (`id_commercial_categ`),
   KEY `id_commission_regle` (`id_commission_regle`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Contenu de la table `commerciaux_categories`
@@ -1766,7 +1766,7 @@ CREATE TABLE IF NOT EXISTS `commissions_articles` (
   `formule_comm` varchar(32) NOT NULL,
   KEY `id_commission_regle` (`id_commission_regle`),
   KEY `ref_article` (`ref_article`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `commissions_articles`
@@ -1785,7 +1785,7 @@ CREATE TABLE IF NOT EXISTS `commissions_art_categ` (
   `formule_comm` varchar(32) NOT NULL,
   KEY `id_commission_regle` (`id_commission_regle`),
   KEY `ref_art_categ` (`ref_art_categ`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `commissions_art_categ`
@@ -1807,7 +1807,7 @@ CREATE TABLE IF NOT EXISTS `commissions_bonus` (
   `montant` double NOT NULL,
   PRIMARY KEY  (`id_commission_bonus`),
   KEY `ref_commercial_fk` (`ref_commercial`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `commissions_bonus`
@@ -1826,7 +1826,7 @@ CREATE TABLE IF NOT EXISTS `commissions_regles` (
   `formule_comm` varchar(32) NOT NULL,
   `defaut` tinyint(3) NOT NULL default '0',
   PRIMARY KEY  (`id_commission_regle`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Contenu de la table `commissions_regles`
@@ -1854,7 +1854,7 @@ CREATE TABLE IF NOT EXISTS `comm_events` (
   KEY `ref_user` (`ref_user`),
   KEY `ref_contact` (`ref_contact`),
   KEY `id_comm_event_type` (`id_comm_event_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `comm_events`
@@ -1872,7 +1872,7 @@ CREATE TABLE IF NOT EXISTS `comm_events_types` (
   `lib_comm_event_type` varchar(64) NOT NULL,
   `systeme` tinyint(3) NOT NULL default '0',
   PRIMARY KEY  (`id_comm_event_type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Contenu de la table `comm_events_types`
@@ -1903,7 +1903,7 @@ CREATE TABLE IF NOT EXISTS `compta_docs` (
   `id_journal` smallint(5) unsigned NOT NULL,
   KEY `ref_doc` (`ref_doc`),
   KEY `id_journal` (`id_journal`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `compta_docs`
@@ -1922,7 +1922,7 @@ CREATE TABLE IF NOT EXISTS `compta_exercices` (
   `date_fin` datetime NOT NULL,
   `etat_exercice` tinyint(3) NOT NULL default '1',
   KEY `id_exercice` (`id_exercice`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `compta_exercices`
@@ -1941,7 +1941,7 @@ CREATE TABLE IF NOT EXISTS `compta_exercices_reports` (
   `date_ran` datetime NOT NULL,
   `montant_ran` double NOT NULL,
   KEY `id_exercice_ran` (`id_exercice_ran`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `compta_exercices_reports`
@@ -2111,7 +2111,7 @@ CREATE TABLE IF NOT EXISTS `compta_journaux` (
   PRIMARY KEY  (`id_journal`),
   KEY `id_journal_parent` (`id_journal_parent`),
   KEY `id_journal_type` (`id_journal_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `compta_journaux`
@@ -2148,7 +2148,7 @@ CREATE TABLE IF NOT EXISTS `compta_journaux_opes` (
   PRIMARY KEY  (`id_operation`),
   KEY `id_journal` (`id_journal`),
   KEY `id_operation_type` (`id_operation_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `compta_journaux_opes`
@@ -2167,7 +2167,7 @@ CREATE TABLE IF NOT EXISTS `compta_journaux_opes_types` (
   `abrev_ope_type` varchar(32) NOT NULL,
   `table_liee` varchar(128) NOT NULL,
   PRIMARY KEY  (`id_operation_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `compta_journaux_opes_types`
@@ -2196,7 +2196,7 @@ CREATE TABLE IF NOT EXISTS `compta_journaux_types` (
   `lib_journal` varchar(128) NOT NULL,
   `code_journal` varchar(32) NOT NULL,
   PRIMARY KEY  (`id_journal_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `compta_journaux_types`
@@ -2235,7 +2235,7 @@ CREATE TABLE IF NOT EXISTS `comptes_bancaires` (
   KEY `actif` (`actif`),
   KEY `ref_contact` (`ref_contact`),
   KEY `ref_contact_2` (`ref_contact`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des comptes bancaires de la société' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des comptes bancaires de la société' AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `comptes_bancaires`
@@ -2256,7 +2256,7 @@ CREATE TABLE IF NOT EXISTS `comptes_bancaires_autorisations` (
   `id_piece_jointe_autorisation` int(11) default NULL,
   `ordre` int(11) NOT NULL default '0',
   PRIMARY KEY  (`id_compte_bancaire_autorisation`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `comptes_bancaires_autorisations`
@@ -2283,7 +2283,7 @@ CREATE TABLE IF NOT EXISTS `comptes_bancaires_moves` (
   PRIMARY KEY  (`id_compte_bancaire_move`),
   KEY `id_compte_bancaire` (`id_compte_bancaire`),
   KEY `id_operation` (`id_operation`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `comptes_bancaires_moves`
@@ -2301,7 +2301,7 @@ CREATE TABLE IF NOT EXISTS `comptes_bancaires_ope_rapp` (
   `montant_rapproche` double NOT NULL,
   `complet` tinyint(1) NOT NULL default '0',
   KEY `id_operation` (`id_operation`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `comptes_bancaires_ope_rapp`
@@ -2323,7 +2323,7 @@ CREATE TABLE IF NOT EXISTS `comptes_bancaires_prelevements` (
   `numero_ordre` varchar(32) default NULL,
   `commentaire` varchar(255) default NULL,
   PRIMARY KEY  (`id_compte_bancaire_prelevement`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `comptes_bancaires_prelevements`
@@ -2344,7 +2344,7 @@ CREATE TABLE IF NOT EXISTS `comptes_bancaires_prelevements_montants` (
   `montant_prelevement` double NOT NULL,
   `infos_prelevement` varchar(255) default NULL,
   KEY `id_compte_bancaire_prelevement` (`id_compte_bancaire_prelevement`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `comptes_bancaires_prelevements_montants`
@@ -2365,7 +2365,7 @@ CREATE TABLE IF NOT EXISTS `comptes_bancaires_releves` (
   `solde_reel` double NOT NULL,
   PRIMARY KEY  (`id_compte_bancaire_releve`),
   KEY `id_compte_bancaire` (`id_compte_bancaire`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `comptes_bancaires_releves`
@@ -2390,7 +2390,7 @@ CREATE TABLE IF NOT EXISTS `comptes_caisses` (
   KEY `id_magasin` (`id_magasin`),
   KEY `ordre` (`ordre`),
   KEY `id_compte_tpe` (`id_compte_tpe`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des caisses ' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des caisses ' AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `comptes_caisses`
@@ -2411,7 +2411,7 @@ CREATE TABLE IF NOT EXISTS `comptes_caisses_ar_fonds` (
   `montant_ar` double NOT NULL,
   `commentaire` mediumtext NOT NULL,
   KEY `id_compte_caisse_ar` (`id_compte_caisse_ar`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `comptes_caisses_ar_fonds`
@@ -2432,7 +2432,7 @@ CREATE TABLE IF NOT EXISTS `comptes_caisses_contenu` (
   `controle` tinyint(1) NOT NULL default '0',
   KEY `id_compte_caisse` (`id_compte_caisse`),
   KEY `id_reglement_mode` (`id_reglement_mode`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `comptes_caisses_contenu`
@@ -2456,7 +2456,7 @@ CREATE TABLE IF NOT EXISTS `comptes_caisses_controles` (
   PRIMARY KEY  (`id_compte_caisse_controle`),
   KEY `date_controle` (`date_controle`),
   KEY `id_compte_caisse` (`id_compte_caisse`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `comptes_caisses_controles`
@@ -2479,7 +2479,7 @@ CREATE TABLE IF NOT EXISTS `comptes_caisses_controles_montants` (
   `infos_controle` mediumtext NOT NULL,
   KEY `id_compte_caisse_controle` (`id_compte_caisse_controle`),
   KEY `id_reglement_mode` (`id_reglement_mode`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `comptes_caisses_controles_montants`
@@ -2502,7 +2502,7 @@ CREATE TABLE IF NOT EXISTS `comptes_caisses_depots` (
   `num_remise` varchar(128) NOT NULL,
   `commentaire` mediumtext NOT NULL,
   KEY `id_compte_caisse_depot` (`id_compte_caisse_depot`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `comptes_caisses_depots`
@@ -2521,7 +2521,7 @@ CREATE TABLE IF NOT EXISTS `comptes_caisses_depots_montants` (
   `montant_depot` double NOT NULL,
   `infos_depot` mediumtext NOT NULL,
   KEY `id_compte_caisse_depot` (`id_compte_caisse_depot`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `comptes_caisses_depots_montants`
@@ -2549,7 +2549,7 @@ CREATE TABLE IF NOT EXISTS `comptes_caisses_moves` (
   KEY `date_move` (`date_move`),
   KEY `ref_user` (`ref_user`),
   KEY `id_compte_caisse` (`id_compte_caisse`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `comptes_caisses_moves`
@@ -2571,7 +2571,7 @@ CREATE TABLE IF NOT EXISTS `comptes_caisses_retraits` (
   `montant_retrait` double NOT NULL,
   `commentaire` mediumtext NOT NULL,
   KEY `id_compte_caisse_retrait` (`id_compte_caisse_retrait`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `comptes_caisses_retraits`
@@ -2590,7 +2590,7 @@ CREATE TABLE IF NOT EXISTS `comptes_caisses_retraits_montants` (
   `montant_retrait` double NOT NULL,
   `infos_retrait` mediumtext NOT NULL,
   KEY `id_compte_caisse_retrait` (`id_compte_caisse_retrait`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `comptes_caisses_retraits_montants`
@@ -2613,7 +2613,7 @@ CREATE TABLE IF NOT EXISTS `comptes_caisses_transferts` (
   `montant_transfert` double NOT NULL,
   `commentaire` mediumtext NOT NULL,
   KEY `id_compte_caisse_transfert` (`id_compte_caisse_transfert`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `comptes_caisses_transferts`
@@ -2633,7 +2633,7 @@ CREATE TABLE IF NOT EXISTS `comptes_caisses_transferts_montants` (
   `montant_transfert` double NOT NULL,
   `infos_transfert` mediumtext NOT NULL,
   KEY `id_compte_caisse_transfert` (`id_compte_caisse_transfert`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `comptes_caisses_transferts_montants`
@@ -2661,7 +2661,7 @@ CREATE TABLE IF NOT EXISTS `comptes_cbs` (
   KEY `id_compte_bancaire` (`id_compte_bancaire`),
   KEY `ref_porteur` (`ref_porteur`),
   KEY `id_cb_type` (`id_cb_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des cartes bancaires de la société' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des cartes bancaires de la société' AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `comptes_cbs`
@@ -2678,7 +2678,7 @@ CREATE TABLE IF NOT EXISTS `comptes_moves_types` (
   `id_move_type` smallint(3) unsigned NOT NULL auto_increment,
   `lib_move_type` varchar(32) NOT NULL,
   PRIMARY KEY  (`id_move_type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Contenu de la table `comptes_moves_types`
@@ -2712,7 +2712,7 @@ CREATE TABLE IF NOT EXISTS `comptes_tpes` (
   PRIMARY KEY  (`id_compte_tpe`),
   KEY `id_compte_bancaire` (`id_compte_bancaire`),
   KEY `id_magasin` (`id_magasin`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des Terminaux de Paiement Electronique' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des Terminaux de Paiement Electronique' AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `comptes_tpes`
@@ -2737,7 +2737,7 @@ CREATE TABLE IF NOT EXISTS `comptes_tpv` (
   `defaut_numero_compte` varchar(10) NOT NULL,
   PRIMARY KEY  (`id_compte_tpv`),
   KEY `id_compte_bancaire` (`id_compte_bancaire`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des Terminaux de Paiement Virtuels' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des Terminaux de Paiement Virtuels' AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `comptes_tpv`
@@ -2758,7 +2758,7 @@ CREATE TABLE IF NOT EXISTS `comptes_tp_contenu` (
   `infos_supp` mediumtext NOT NULL,
   `controle` tinyint(1) NOT NULL default '0',
   KEY `id_compte_caisse` (`id_compte_caisse`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `comptes_tp_contenu`
@@ -2782,7 +2782,7 @@ CREATE TABLE IF NOT EXISTS `comptes_tp_telecollecte` (
   `montant_transfere` double NOT NULL,
   `commentaire` mediumtext NOT NULL,
   PRIMARY KEY  (`id_compte_tp_telecollecte`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `comptes_tp_telecollecte`
@@ -2801,7 +2801,7 @@ CREATE TABLE IF NOT EXISTS `comptes_tp_telecollecte_montant` (
   `date_reglement` datetime NOT NULL,
   `infos_supp` mediumtext NOT NULL,
   KEY `id_compte_tp_telecollecte` (`id_compte_tp_telecollecte`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `comptes_tp_telecollecte_montant`
@@ -2831,7 +2831,7 @@ CREATE TABLE IF NOT EXISTS `coordonnees` (
   KEY `ref_contact` (`ref_contact`),
   KEY `ref_coord_parent` (`ref_coord_parent`),
   KEY `id_type_coordonnee` (`id_type_coordonnee`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des coordonnées des contacts de l''annuaire';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des coordonnées des contacts de l''annuaire';
 
 --
 -- Contenu de la table `coordonnees`
@@ -2852,7 +2852,7 @@ CREATE TABLE IF NOT EXISTS `coordonnees_types` (
   `coord_type` varchar(64) NOT NULL,
   `defaut` smallint(5) NOT NULL,
   PRIMARY KEY  (`id_coord_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des type de coordonees';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des type de coordonees';
 
 --
 -- Contenu de la table `coordonnees_types`
@@ -2881,7 +2881,7 @@ CREATE TABLE IF NOT EXISTS `courriers` (
   KEY `id_etat_courrier` (`id_etat_courrier`),
   KEY `id_type_courrier` (`id_type_courrier`),
   KEY `id_pdf_modele` (`id_pdf_modele`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Courrier' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Courrier' AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `courriers`
@@ -2899,7 +2899,7 @@ CREATE TABLE IF NOT EXISTS `courriers_destinataires` (
   `ref_destinataire` varchar(32) NOT NULL,
   KEY `id_courrier` (`id_courrier`),
   KEY `ref_contact` (`ref_destinataire`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liaison entre un courrier et son destinataire';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liaison entre un courrier et son destinataire';
 
 --
 -- Contenu de la table `courriers_destinataires`
@@ -2922,7 +2922,7 @@ CREATE TABLE IF NOT EXISTS `courriers_editions` (
   KEY `id_courrier` (`id_courrier`),
   KEY `id_edition_mode` (`id_edition_mode`),
   KEY `ref_user` (`ref_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Historique des éditions de courriers' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Historique des éditions de courriers' AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `courriers_editions`
@@ -2941,7 +2941,7 @@ CREATE TABLE IF NOT EXISTS `courriers_etats` (
   `ordre` tinyint(3) unsigned NOT NULL,
   PRIMARY KEY  (`id_etat_courrier`),
   KEY `ordre` (`ordre`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Etats des courriers' AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Etats des courriers' AUTO_INCREMENT=4 ;
 
 --
 -- Contenu de la table `courriers_etats`
@@ -2969,7 +2969,7 @@ CREATE TABLE IF NOT EXISTS `courriers_events` (
   KEY `id_courrier` (`id_courrier`),
   KEY `id_courrier_event_type` (`id_courrier_event_type`),
   KEY `ref_user` (`ref_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des évennements concernant un courrier' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des évennements concernant un courrier' AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `courriers_events`
@@ -2986,7 +2986,7 @@ CREATE TABLE IF NOT EXISTS `courriers_events_types` (
   `id_courrier_event_type` smallint(5) unsigned NOT NULL auto_increment,
   `lib_courrier_event_type` varchar(64) NOT NULL,
   PRIMARY KEY  (`id_courrier_event_type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Création, Modification, Changement d état' AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Création, Modification, Changement d état' AUTO_INCREMENT=4 ;
 
 --
 -- Contenu de la table `courriers_events_types`
@@ -3009,7 +3009,7 @@ CREATE TABLE IF NOT EXISTS `courriers_modeles_pdf` (
   `usage` enum('defaut','actif','inactif') NOT NULL,
   KEY `id_type_courrier` (`id_type_courrier`),
   KEY `id_pdf_modele` (`id_pdf_modele`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Table de liaison entre les types de courriers et les modeles' AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Table de liaison entre les types de courriers et les modeles' AUTO_INCREMENT=3 ;
 
 --
 -- Contenu de la table `courriers_modeles_pdf`
@@ -3032,7 +3032,7 @@ CREATE TABLE IF NOT EXISTS `courriers_types` (
   `code_courrier` varchar(32) NOT NULL,
   `actif` tinyint(3) unsigned NOT NULL,
   PRIMARY KEY  (`id_type_courrier`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des types de courriers utilisés' AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des types de courriers utilisés' AUTO_INCREMENT=2 ;
 
 --
 -- Contenu de la table `courriers_types`
@@ -3052,7 +3052,7 @@ CREATE TABLE IF NOT EXISTS `csv_import_annu_cols` (
   `lib_colonne` varchar(64) default NULL,
   `champ_equivalent` varchar(64) default NULL,
   PRIMARY KEY  (`id_colonne`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `csv_import_annu_cols`
@@ -3069,7 +3069,7 @@ CREATE TABLE IF NOT EXISTS `csv_import_annu_etape` (
   `id_profil` smallint(5) default NULL,
   `etape` smallint(5) default NULL,
   `limite` smallint(5) default NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `csv_import_annu_etape`
@@ -3089,7 +3089,7 @@ CREATE TABLE IF NOT EXISTS `csv_import_annu_lines` (
   `valeur_equivalente` varchar(255) default NULL,
   PRIMARY KEY  (`id_ligne`),
   KEY `id_colonne` (`id_colonne`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `csv_import_annu_lines`
@@ -3107,7 +3107,7 @@ CREATE TABLE IF NOT EXISTS `csv_import_catalogue_cols` (
   `lib_colonne` varchar(64) default NULL,
   `champ_equivalent` varchar(64) default NULL,
   PRIMARY KEY  (`id_colonne`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `csv_import_catalogue_cols`
@@ -3124,7 +3124,7 @@ CREATE TABLE IF NOT EXISTS `csv_import_catalogue_etape` (
   `ref_art_categ` varchar(32) default NULL,
   `etape` smallint(5) default NULL,
   `limite` smallint(5) default NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `csv_import_catalogue_etape`
@@ -3144,7 +3144,7 @@ CREATE TABLE IF NOT EXISTS `csv_import_catalogue_lines` (
   `valeur_equivalente` varchar(255) default NULL,
   PRIMARY KEY  (`id_ligne`),
   KEY `id_colonne` (`id_colonne`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `csv_import_catalogue_lines`
@@ -3164,7 +3164,7 @@ CREATE TABLE IF NOT EXISTS `csv_import_cdc` (
   `date` date NOT NULL COMMENT 'Date de l''import',
   `etape` smallint(5) default NULL COMMENT 'Étape à laquelle se trouve l''import',
   PRIMARY KEY  (`id_import_cdc`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `csv_import_cdc`
@@ -3195,7 +3195,7 @@ CREATE TABLE IF NOT EXISTS `csv_import_cdc_infos_doc` (
   `date` date NOT NULL,
   PRIMARY KEY  (`id_import_cdc_infos_doc`),
   KEY `id_import` (`id_import`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `csv_import_cdc_infos_doc`
@@ -3222,7 +3222,7 @@ CREATE TABLE IF NOT EXISTS `csv_import_cdc_infos_lines` (
   `desc_courte` mediumblob NOT NULL,
   PRIMARY KEY  (`id_import_cdc_infos_lines`),
   KEY `id_import_cdc_infos_doc` (`id_import_cdc_infos_doc`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `csv_import_cdc_infos_lines`
@@ -3242,7 +3242,7 @@ CREATE TABLE IF NOT EXISTS `csv_import_tarifs_fournisseur` (
   `etape` smallint(5) default NULL COMMENT 'Étape à laquelle se trouve l''import',
   `id_colonne_ref_article_existant` varchar(32) NOT NULL COMMENT 'Identifiant de la colonne permettant de stocker la référence LMB de l''article existant (trouvé par correspondance)',
   PRIMARY KEY  (`id_import_tarifs_fournisseur`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `csv_import_tarifs_fournisseur`
@@ -3260,7 +3260,7 @@ CREATE TABLE IF NOT EXISTS `csv_import_tarifs_fournisseur_cols` (
   `lib_colonne` varchar(64) default NULL,
   `champ_equivalent` varchar(64) default NULL,
   PRIMARY KEY  (`id_colonne`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `csv_import_tarifs_fournisseur_cols`
@@ -3280,7 +3280,7 @@ CREATE TABLE IF NOT EXISTS `csv_import_tarifs_fournisseur_donnees` (
   `valeur` varchar(255) default NULL,
   PRIMARY KEY  (`id`),
   KEY `id_colonne` (`id_colonne`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `csv_import_tarifs_fournisseur_donnees`
@@ -3300,7 +3300,7 @@ CREATE TABLE IF NOT EXISTS `docs_infos_lines` (
   `desc_line` mediumtext NOT NULL,
   `desc_line_interne` mediumtext NOT NULL,
   PRIMARY KEY  (`id_doc_info_line`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `docs_infos_lines`
@@ -3332,7 +3332,7 @@ CREATE TABLE IF NOT EXISTS `docs_lines` (
   KEY `ref_doc` (`ref_doc`),
   KEY `ref_article` (`ref_article`),
   KEY `ref_doc_line_parent` (`ref_doc_line_parent`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des lignes contenues dans un document';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des lignes contenues dans un document';
 
 --
 -- Contenu de la table `docs_lines`
@@ -3351,7 +3351,7 @@ CREATE TABLE IF NOT EXISTS `docs_lines_sn` (
   `sn_qte` double NOT NULL default '1',
   KEY `ref_doc_line` (`ref_doc_line`),
   KEY `numero_serie` (`numero_serie`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Numéros de séries des éléments contenus dans les documents';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Numéros de séries des éléments contenus dans les documents';
 
 --
 -- Contenu de la table `docs_lines_sn`
@@ -3387,7 +3387,7 @@ CREATE TABLE IF NOT EXISTS `documents` (
   KEY `ref_adr_contact` (`ref_adr_contact`),
   KEY `id_pays_contact` (`id_pays_contact`),
   KEY `code_affaire` (`code_affaire`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des documents commerciaux';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des documents commerciaux';
 
 --
 -- Contenu de la table `documents`
@@ -3409,7 +3409,7 @@ CREATE TABLE IF NOT EXISTS `documents_editions` (
   KEY `ref_doc` (`ref_doc`),
   KEY `id_edition_mode` (`id_edition_mode`),
   KEY `date_edition` (`date_edition`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Historique des éditions de documents';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Historique des éditions de documents';
 
 --
 -- Contenu de la table `documents_editions`
@@ -3431,7 +3431,7 @@ CREATE TABLE IF NOT EXISTS `documents_etats` (
   PRIMARY KEY  (`id_etat_doc`),
   KEY `ordre` (`ordre`),
   KEY `id_type_doc` (`id_type_doc`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des états possibles pour un document' AUTO_INCREMENT=67 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des états possibles pour un document' AUTO_INCREMENT=67 ;
 
 --
 -- Contenu de la table `documents_etats`
@@ -3523,7 +3523,7 @@ CREATE TABLE IF NOT EXISTS `documents_events` (
   KEY `date_event` (`date_event`),
   KEY `ref_user` (`ref_user`),
   KEY `id_event_type` (`id_event_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des évennements concernant un document';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des évennements concernant un document';
 
 --
 -- Contenu de la table `documents_events`
@@ -3540,7 +3540,7 @@ CREATE TABLE IF NOT EXISTS `documents_events_types` (
   `id_event_type` smallint(5) unsigned NOT NULL auto_increment,
   `lib_event_type` varchar(64) NOT NULL,
   PRIMARY KEY  (`id_event_type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Types d''évennements pour les documents' AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Types d''évennements pour les documents' AUTO_INCREMENT=7 ;
 
 --
 -- Contenu de la table `documents_events_types`
@@ -3565,7 +3565,7 @@ CREATE TABLE IF NOT EXISTS `documents_filigranes` (
   `lib_filigrane` varchar(64) NOT NULL,
   `ordre` tinyint(3) NOT NULL,
   PRIMARY KEY  (`id_filigrane`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Contenu de la table `documents_filigranes`
@@ -3588,7 +3588,7 @@ CREATE TABLE IF NOT EXISTS `documents_liaisons` (
   `active` tinyint(3) unsigned NOT NULL default '1',
   KEY `ref_doc_source` (`ref_doc_source`),
   KEY `ref_doc_destination` (`ref_doc_destination`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liaisons entre les documents';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liaisons entre les documents';
 
 --
 -- Contenu de la table `documents_liaisons`
@@ -3613,7 +3613,7 @@ CREATE TABLE IF NOT EXISTS `documents_types` (
   KEY `actif` (`actif`),
   KEY `id_pdf_modele` (`id_pdf_modele`),
   KEY `id_type_groupe` (`id_type_groupe`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des types de documents utilisés' AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des types de documents utilisés' AUTO_INCREMENT=17 ;
 
 --
 -- Contenu de la table `documents_types`
@@ -3648,7 +3648,7 @@ CREATE TABLE IF NOT EXISTS `documents_types_groupes` (
   `lib_type_groupe` varchar(64) NOT NULL,
   `ordre` tinyint(4) NOT NULL,
   PRIMARY KEY  (`id_type_groupe`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Contenu de la table `documents_types_groupes`
@@ -3675,7 +3675,7 @@ CREATE TABLE IF NOT EXISTS `doc_blc` (
   KEY `id_stock` (`id_stock`),
   KEY `id_magasin` (`id_magasin`),
   KEY `id_livraison_mode` (`id_livraison_mode`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des informations complémentaires concernant les docume';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des informations complémentaires concernant les docume';
 
 --
 -- Contenu de la table `doc_blc`
@@ -3694,7 +3694,7 @@ CREATE TABLE IF NOT EXISTS `doc_blf` (
   `id_stock` smallint(5) unsigned default NULL,
   PRIMARY KEY  (`ref_doc`),
   KEY `id_stock` (`id_stock`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des informations complémentaires concernant les docume';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des informations complémentaires concernant les docume';
 
 --
 -- Contenu de la table `doc_blf`
@@ -3725,7 +3725,7 @@ CREATE TABLE IF NOT EXISTS `doc_cdc` (
   KEY `id_magasin` (`id_magasin`),
   KEY `id_pays_livraison` (`id_pays_livraison`),
   KEY `id_livraison_mode` (`id_livraison_mode`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les documents Devis Client';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur les documents Devis Client';
 
 --
 -- Contenu de la table `doc_cdc`
@@ -3745,7 +3745,7 @@ CREATE TABLE IF NOT EXISTS `doc_cdf` (
   `id_stock` smallint(5) unsigned NOT NULL,
   PRIMARY KEY  (`ref_doc`),
   KEY `id_stock` (`id_stock`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des informations complémentaires concernant les docume';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des informations complémentaires concernant les docume';
 
 --
 -- Contenu de la table `doc_cdf`
@@ -3774,7 +3774,7 @@ CREATE TABLE IF NOT EXISTS `doc_cot` (
   KEY `ref_adr_livraison` (`ref_adr_livraison`),
   KEY `id_pays_livraison` (`id_pays_livraison`),
   KEY `id_livraison_mode` (`id_livraison_mode`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les documents Cotation Clie';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur les documents Cotation Clie';
 
 --
 -- Contenu de la table `doc_cot`
@@ -3794,7 +3794,7 @@ CREATE TABLE IF NOT EXISTS `doc_def` (
   `id_stock` smallint(5) unsigned NOT NULL default '1',
   PRIMARY KEY  (`ref_doc`),
   KEY `id_stock` (`id_stock`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des informations complémentaires concernant les docume';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des informations complémentaires concernant les docume';
 
 --
 -- Contenu de la table `doc_def`
@@ -3815,7 +3815,7 @@ CREATE TABLE IF NOT EXISTS `doc_des` (
   PRIMARY KEY  (`ref_doc`),
   KEY `id_stock` (`id_stock`),
   KEY `ref_article` (`ref_article`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `doc_des`
@@ -3833,7 +3833,7 @@ CREATE TABLE IF NOT EXISTS `doc_des_sn` (
   `numero_serie` varchar(32) NOT NULL,
   `sn_qte` double NOT NULL default '1',
   KEY `ref_doc` (`ref_doc`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `doc_des_sn`
@@ -3862,7 +3862,7 @@ CREATE TABLE IF NOT EXISTS `doc_dev` (
   KEY `ref_adr_livraison` (`ref_adr_livraison`),
   KEY `id_pays_livraison` (`id_pays_livraison`),
   KEY `id_livraison_mode` (`id_livraison_mode`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les documents Devis Client';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur les documents Devis Client';
 
 --
 -- Contenu de la table `doc_dev`
@@ -3887,7 +3887,7 @@ CREATE TABLE IF NOT EXISTS `doc_echeanciers` (
   PRIMARY KEY  (`id_doc_echeance`),
   KEY `ref_doc` (`ref_doc`),
   KEY `id_mode_reglement` (`id_mode_reglement`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `doc_echeanciers`
@@ -3908,7 +3908,7 @@ CREATE TABLE IF NOT EXISTS `doc_fab` (
   PRIMARY KEY  (`ref_doc`),
   KEY `id_stock` (`id_stock`),
   KEY `ref_article` (`ref_article`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `doc_fab`
@@ -3926,7 +3926,7 @@ CREATE TABLE IF NOT EXISTS `doc_fab_sn` (
   `numero_serie` varchar(32) NOT NULL,
   `sn_qte` double NOT NULL default '1',
   KEY `ref_doc` (`ref_doc`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `doc_fab_sn`
@@ -3950,7 +3950,7 @@ CREATE TABLE IF NOT EXISTS `doc_fac` (
   PRIMARY KEY  (`ref_doc`),
   KEY `id_niveau_relance` (`id_niveau_relance`),
   KEY `id_magasin` (`id_magasin`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les documents Devis Client';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur les documents Devis Client';
 
 --
 -- Contenu de la table `doc_fac`
@@ -3968,7 +3968,7 @@ CREATE TABLE IF NOT EXISTS `doc_faf` (
   `ref_doc_externe` varchar(32) NOT NULL,
   `date_echeance` date NOT NULL,
   PRIMARY KEY  (`ref_doc`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les documents Devis Client';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur les documents Devis Client';
 
 --
 -- Contenu de la table `doc_faf`
@@ -3987,7 +3987,7 @@ CREATE TABLE IF NOT EXISTS `doc_inv` (
   `art_categs` mediumblob NOT NULL COMMENT 'liste des art_categ de l''inventaire',
   PRIMARY KEY  (`ref_doc`),
   KEY `id_stock` (`id_stock`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `doc_inv`
@@ -4005,7 +4005,7 @@ CREATE TABLE IF NOT EXISTS `doc_lines_blc` (
   `ref_doc_line_cdc` varchar(32) default NULL,
   PRIMARY KEY  (`ref_doc_line`),
   KEY `ref_doc_line_cdc` (`ref_doc_line_cdc`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur le contenu des commandes cl';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur le contenu des commandes cl';
 
 --
 -- Contenu de la table `doc_lines_blc`
@@ -4024,7 +4024,7 @@ CREATE TABLE IF NOT EXISTS `doc_lines_blf` (
   `ref_article_externe` varchar(32) NOT NULL,
   PRIMARY KEY  (`ref_doc_line`),
   KEY `ref_doc_line_cdf` (`ref_doc_line_cdf`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur le \r\n\r\ncontenu des commande';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur le \r\n\r\ncontenu des commande';
 
 --
 -- Contenu de la table `doc_lines_blf`
@@ -4041,7 +4041,7 @@ CREATE TABLE IF NOT EXISTS `doc_lines_cdc` (
   `ref_doc_line` varchar(32) NOT NULL,
   `qte_livree` double NOT NULL,
   PRIMARY KEY  (`ref_doc_line`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur le contenu des commandes cl';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur le contenu des commandes cl';
 
 --
 -- Contenu de la table `doc_lines_cdc`
@@ -4059,7 +4059,7 @@ CREATE TABLE IF NOT EXISTS `doc_lines_cdf` (
   `qte_recue` double NOT NULL,
   `ref_article_externe` varchar(32) NOT NULL,
   PRIMARY KEY  (`ref_doc_line`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur le contenu des commandes cl';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur le contenu des commandes cl';
 
 --
 -- Contenu de la table `doc_lines_cdf`
@@ -4076,7 +4076,7 @@ CREATE TABLE IF NOT EXISTS `doc_lines_def` (
   `ref_doc_line` varchar(32) NOT NULL,
   `ref_article_externe` varchar(32) NOT NULL,
   PRIMARY KEY  (`ref_doc_line`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur le \r\n\r\ncontenu des devis';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur le \r\n\r\ncontenu des devis';
 
 --
 -- Contenu de la table `doc_lines_def`
@@ -4093,7 +4093,7 @@ CREATE TABLE IF NOT EXISTS `doc_lines_faf` (
   `ref_doc_line` varchar(32) NOT NULL,
   `ref_article_externe` varchar(32) NOT NULL,
   PRIMARY KEY  (`ref_doc_line`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur le \r\n\r\ncontenu des faf';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur le \r\n\r\ncontenu des faf';
 
 --
 -- Contenu de la table `doc_lines_faf`
@@ -4111,7 +4111,7 @@ CREATE TABLE IF NOT EXISTS `doc_line_duree` (
   `date_debut` date default NULL,
   `duree` varchar(32) default NULL,
   PRIMARY KEY  (`ref_doc_line`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Durées pour les articles de type bonnements';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Durées pour les articles de type bonnements';
 
 --
 -- Contenu de la table `doc_line_duree`
@@ -4129,7 +4129,7 @@ CREATE TABLE IF NOT EXISTS `doc_mod` (
   `types_docs` varchar(200) NOT NULL,
   `lib_modele` varchar(64) NOT NULL,
   `desc_modele` mediumblob NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `doc_mod`
@@ -4148,7 +4148,7 @@ CREATE TABLE IF NOT EXISTS `doc_modeles_pdf` (
   `usage` enum('defaut','actif','inactif') NOT NULL,
   KEY `id_pdf_modele` (`id_pdf_modele`),
   KEY `id_type_doc` (`id_type_doc`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `doc_modeles_pdf`
@@ -4205,7 +4205,7 @@ CREATE TABLE IF NOT EXISTS `doc_pac` (
   KEY `ref_adr_livraison` (`ref_adr_livraison`),
   KEY `id_pays_livraison` (`id_pays_livraison`),
   KEY `id_livraison_mode` (`id_livraison_mode`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les documents Panier Client';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur les documents Panier Client';
 
 --
 -- Contenu de la table `doc_pac`
@@ -4226,7 +4226,7 @@ CREATE TABLE IF NOT EXISTS `doc_tic` (
   PRIMARY KEY  (`ref_doc`),
   KEY `id_stock` (`id_stock`),
   KEY `id_magasin` (`id_magasin`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des informations complémentaires concernant les docume';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des informations complémentaires concernant les docume';
 
 --
 -- Contenu de la table `doc_tic`
@@ -4250,7 +4250,7 @@ CREATE TABLE IF NOT EXISTS `doc_trm` (
   KEY `id_stock_cible` (`id_stock_cible`),
   KEY `ref_transporteur` (`ref_transporteur`),
   KEY `id_livraison_mode` (`id_livraison_mode`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les Transferts de Marchandi';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur les Transferts de Marchandi';
 
 --
 -- Contenu de la table `doc_trm`
@@ -4269,7 +4269,7 @@ CREATE TABLE IF NOT EXISTS `doc_ventes_commerciaux` (
   `part` double unsigned NOT NULL,
   KEY `ref_doc` (`ref_doc`),
   KEY `ref_contact` (`ref_contact`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `doc_ventes_commerciaux`
@@ -4287,7 +4287,7 @@ CREATE TABLE IF NOT EXISTS `echeanciers_modeles` (
   `lib_echeancier_modele` varchar(128) NOT NULL,
   PRIMARY KEY  (`id_echeancier_modele`),
   KEY `id_echeancier_modele` (`id_echeancier_modele`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `echeanciers_modeles`
@@ -4307,7 +4307,7 @@ CREATE TABLE IF NOT EXISTS `echeanciers_modeles_echeances` (
   `pourcentage` smallint(3) NOT NULL,
   `jour` smallint(3) NOT NULL,
   KEY `id_echeancier_modele` (`id_echeancier_modele`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `echeanciers_modeles_echeances`
@@ -4326,7 +4326,7 @@ CREATE TABLE IF NOT EXISTS `editions_modes` (
   `code_edition_mode` varchar(32) NOT NULL,
   `actif` tinyint(3) unsigned NOT NULL,
   PRIMARY KEY  (`id_edition_mode`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des modes d''édition possibles pour les documents' AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des modes d''édition possibles pour les documents' AUTO_INCREMENT=6 ;
 
 --
 -- Contenu de la table `editions_modes`
@@ -4353,7 +4353,7 @@ CREATE TABLE IF NOT EXISTS `exports_modeles` (
   `code_export_modele` varchar(32) NOT NULL,
   `extension` varchar(8) NOT NULL,
   PRIMARY KEY  (`id_export_modele`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=101 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=101 ;
 
 --
 -- Contenu de la table `exports_modeles`
@@ -4380,7 +4380,7 @@ CREATE TABLE IF NOT EXISTS `exports_modeles_usage` (
   PRIMARY KEY  (`id_export_usage`),
   KEY `exports_modeles_usage_ibfk_1` (`id_export_modele`),
   KEY `exports_modeles_usage_ibfk_2` (`id_objet`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Contenu de la table `exports_modeles_usage`
@@ -4403,7 +4403,7 @@ CREATE TABLE IF NOT EXISTS `exports_type` (
   `id_export_type` tinyint(3) unsigned NOT NULL,
   `lib_export_type` varchar(64) NOT NULL,
   PRIMARY KEY  (`id_export_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `exports_type`
@@ -4437,7 +4437,7 @@ CREATE TABLE IF NOT EXISTS `factures_niveaux_relances` (
   KEY `id_edition_mode` (`id_edition_mode`),
   KEY `id_client_categ` (`id_client_categ`),
   KEY `niveau_relance` (`niveau_relance`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des niveaux de relance des factures' AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des niveaux de relance des factures' AUTO_INCREMENT=7 ;
 
 --
 -- Contenu de la table `factures_niveaux_relances`
@@ -4461,7 +4461,7 @@ CREATE TABLE IF NOT EXISTS `factures_relances_modeles` (
   `id_relance_modele` smallint(5) NOT NULL auto_increment,
   `lib_relance_modele` varchar(64) NOT NULL,
   PRIMARY KEY  (`id_relance_modele`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des libellés des modèles de relance' AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des libellés des modèles de relance' AUTO_INCREMENT=2 ;
 
 --
 -- Contenu de la table `factures_relances_modeles`
@@ -4491,7 +4491,7 @@ CREATE TABLE IF NOT EXISTS `factures_relances_niveaux` (
   KEY `id_edition_mode` (`id_edition_mode`),
   KEY `niveau_relance` (`niveau_relance`),
   KEY `id_relance_modele` (`id_relance_modele`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des niveaux de relance des factures' AUTO_INCREMENT=33 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des niveaux de relance des factures' AUTO_INCREMENT=33 ;
 
 --
 -- Contenu de la table `factures_relances_niveaux`
@@ -4546,7 +4546,7 @@ CREATE TABLE IF NOT EXISTS `fonctions` (
   PRIMARY KEY  (`id_fonction`),
   KEY `id_fonction_parent` (`id_fonction_parent`),
   KEY `id_profil` (`id_profil`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Contenu de la table `fonctions`
@@ -4573,7 +4573,7 @@ CREATE TABLE IF NOT EXISTS `fonctions_permissions` (
   `value` varchar(64) NOT NULL,
   KEY `id_fonction` (`id_fonction`),
   KEY `id_permission` (`id_permission`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `fonctions_permissions`
@@ -4668,7 +4668,7 @@ CREATE TABLE IF NOT EXISTS `fournisseurs_categories` (
   `note` mediumtext NOT NULL,
   PRIMARY KEY  (`id_fournisseur_categ`),
   KEY `ref_acheteur` (`ref_acheteur`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des catégories de fournisseurs' AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des catégories de fournisseurs' AUTO_INCREMENT=3 ;
 
 --
 -- Contenu de la table `fournisseurs_categories`
@@ -4691,7 +4691,7 @@ CREATE TABLE IF NOT EXISTS `fournisseurs_import_tarifs` (
   `id_ref_fournisseur` varchar(32) NOT NULL,
   `id_lib_fournisseur` varchar(32) NOT NULL,
   `id_pua_ht` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Stocker les parametres de correspondance pour l''import de ta';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Stocker les parametres de correspondance pour l''import de ta';
 
 --
 -- Contenu de la table `fournisseurs_import_tarifs`
@@ -4708,7 +4708,7 @@ CREATE TABLE IF NOT EXISTS `images_articles` (
   `id_image` int(10) unsigned NOT NULL auto_increment,
   `lib_file` varchar(64) NOT NULL,
   PRIMARY KEY  (`id_image`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `images_articles`
@@ -4725,7 +4725,7 @@ CREATE TABLE IF NOT EXISTS `import_export_types` (
   `id_impex_type` smallint(3) NOT NULL auto_increment,
   `lib_impex_type` varchar(64) NOT NULL,
   PRIMARY KEY  (`id_impex_type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Contenu de la table `import_export_types`
@@ -4747,7 +4747,7 @@ CREATE TABLE IF NOT EXISTS `import_serveurs` (
   `lib_serveur_import` varchar(64) NOT NULL,
   `url_serveur_import` varchar(255) NOT NULL,
   PRIMARY KEY  (`ref_serveur_import`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `import_serveurs`
@@ -4766,7 +4766,7 @@ CREATE TABLE IF NOT EXISTS `import_types` (
   `import_infos` blob NOT NULL,
   KEY `ref_serveur_import` (`ref_serveur_import`),
   KEY `id_impex_type` (`id_impex_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `import_types`
@@ -4790,7 +4790,7 @@ CREATE TABLE IF NOT EXISTS `interfaces` (
   PRIMARY KEY  (`id_interface`),
   KEY `id_profil` (`id_profil`),
   KEY `defaut_id_theme` (`defaut_id_theme`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des interfaces disponibles' AUTO_INCREMENT=53 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des interfaces disponibles' AUTO_INCREMENT=53 ;
 
 --
 -- Contenu de la table `interfaces`
@@ -4823,7 +4823,7 @@ CREATE TABLE IF NOT EXISTS `interfaces_themes` (
   PRIMARY KEY  (`id_theme`),
   KEY `actif` (`actif`),
   KEY `id_langage` (`id_langage`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des thèmes d''affichage' AUTO_INCREMENT=53 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des thèmes d''affichage' AUTO_INCREMENT=53 ;
 
 --
 -- Contenu de la table `interfaces_themes`
@@ -4850,7 +4850,7 @@ CREATE TABLE IF NOT EXISTS `interface_panier` (
   `date` datetime NOT NULL,
   PRIMARY KEY  (`id_panier`),
   KEY `id_interface` (`id_interface`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `interface_panier`
@@ -4869,7 +4869,7 @@ CREATE TABLE IF NOT EXISTS `interface_panier_contenu` (
   `qte` double NOT NULL,
   KEY `id_panier` (`id_panier`),
   KEY `ref_article` (`ref_article`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `interface_panier_contenu`
@@ -4888,7 +4888,7 @@ CREATE TABLE IF NOT EXISTS `langages` (
   `code_langage` varchar(5) NOT NULL,
   PRIMARY KEY  (`id_langage`),
   UNIQUE KEY `code_langage` (`code_langage`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des langages' AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des langages' AUTO_INCREMENT=6 ;
 
 --
 -- Contenu de la table `langages`
@@ -4912,7 +4912,7 @@ CREATE TABLE IF NOT EXISTS `listes` (
   `lib_liste` varchar(64) NOT NULL,
   `type_liste` varchar(64) NOT NULL,
   PRIMARY KEY  (`id_liste`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `listes`
@@ -4934,7 +4934,7 @@ CREATE TABLE IF NOT EXISTS `listes_contenus` (
   `view_name` varchar(64) NOT NULL,
   PRIMARY KEY  (`id_liste_contenu`),
   KEY `id_liste` (`id_liste`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `listes_contenus`
@@ -4954,7 +4954,7 @@ CREATE TABLE IF NOT EXISTS `listes_contenus_exceptions` (
   `ref` varchar(64) NOT NULL,
   PRIMARY KEY  (`id_liste_exception`),
   KEY `sens` (`sens`,`id_liste_contenu`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `listes_contenus_exceptions`
@@ -4972,7 +4972,7 @@ CREATE TABLE IF NOT EXISTS `livraisons_modes` (
   `ref_article` varchar(32) NOT NULL,
   PRIMARY KEY  (`id_livraison_mode`),
   KEY `ref_article` (`ref_article`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `livraisons_modes`
@@ -4991,7 +4991,7 @@ CREATE TABLE IF NOT EXISTS `livraisons_modes_tarifs` (
   `indice_min` double NOT NULL,
   `formule` varchar(32) NOT NULL,
   KEY `id_livraison_mode` (`id_livraison_mode`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `livraisons_modes_tarifs`
@@ -5012,7 +5012,7 @@ CREATE TABLE IF NOT EXISTS `livraisons_modes_zones` (
   PRIMARY KEY  (`id_livraison_zone`),
   KEY `id_livraison_mode` (`id_livraison_mode`),
   KEY `id_pays` (`id_pays`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `livraisons_modes_zones`
@@ -5033,7 +5033,7 @@ CREATE TABLE IF NOT EXISTS `livraisons_tarifs_articles` (
   `formule` varchar(32) NOT NULL,
   KEY `ref_article` (`ref_article`),
   KEY `id_livraison_mode` (`id_livraison_mode`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `livraisons_tarifs_articles`
@@ -5054,7 +5054,7 @@ CREATE TABLE IF NOT EXISTS `livraisons_tarifs_art_categ` (
   `formule` varchar(32) NOT NULL,
   KEY `ref_art_categ` (`ref_art_categ`),
   KEY `id_livraison_mode` (`id_livraison_mode`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `livraisons_tarifs_art_categ`
@@ -5069,7 +5069,7 @@ CREATE TABLE IF NOT EXISTS `livraisons_tarifs_art_categ` (
 
 CREATE TABLE IF NOT EXISTS `lmb_version` (
   `version` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Version actuelle de la BDD';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Version actuelle de la BDD';
 
 --
 -- Contenu de la table `lmb_version`
@@ -5096,7 +5096,7 @@ CREATE TABLE IF NOT EXISTS `magasins` (
   KEY `id_tarif` (`id_tarif`),
   KEY `actif` (`actif`),
   KEY `id_mag_enseigne` (`id_mag_enseigne`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des magasins de la société' AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des magasins de la société' AUTO_INCREMENT=2 ;
 
 --
 -- Contenu de la table `magasins`
@@ -5115,7 +5115,7 @@ CREATE TABLE IF NOT EXISTS `magasins_enseignes` (
   `id_mag_enseigne` smallint(5) unsigned NOT NULL auto_increment,
   `lib_enseigne` varchar(255) NOT NULL,
   PRIMARY KEY  (`id_mag_enseigne`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des enseignes de l''entreprise' AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des enseignes de l''entreprise' AUTO_INCREMENT=2 ;
 
 --
 -- Contenu de la table `magasins_enseignes`
@@ -5140,7 +5140,7 @@ CREATE TABLE IF NOT EXISTS `mail_templates` (
   `mail_html_charset` varchar(32) NOT NULL,
   `mail_css_template` varchar(255) NOT NULL,
   PRIMARY KEY  (`id_mail_template`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Contenu de la table `mail_templates`
@@ -5161,7 +5161,7 @@ CREATE TABLE IF NOT EXISTS `mod_vehicules` (
   `marque` varchar(128) default NULL,
   `attribution` varchar(128) default NULL,
   PRIMARY KEY  (`id_vehicule`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des véhicules' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des véhicules' AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `mod_vehicules`
@@ -5182,7 +5182,7 @@ CREATE TABLE IF NOT EXISTS `mod_vehicules_evenements` (
   `cout` double NOT NULL,
   PRIMARY KEY  (`id_evenement`),
   KEY `mod_vehicules_evenements_ibfk_1` (`id_vehicule`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des évenements concernant un véhicule' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des évenements concernant un véhicule' AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `mod_vehicules_evenements`
@@ -5203,7 +5203,7 @@ CREATE TABLE IF NOT EXISTS `msg_modeles` (
   `code_msg_modele` varchar(64) NOT NULL,
   PRIMARY KEY  (`id_msg_modele`),
   KEY `id_msg_type` (`id_msg_type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Contenu de la table `msg_modeles`
@@ -5226,7 +5226,7 @@ CREATE TABLE IF NOT EXISTS `msg_modeles_usage` (
   `usage` enum('Actif','Inactif','Principal') NOT NULL default 'Actif',
   PRIMARY KEY  (`id_msg_modele_usage`),
   KEY `id_msg_modele` (`id_msg_modele`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Contenu de la table `msg_modeles_usage`
@@ -5247,7 +5247,7 @@ CREATE TABLE IF NOT EXISTS `msg_types` (
   `lib_msg_type` varchar(128) default NULL,
   PRIMARY KEY  (`id_msg_type`),
   KEY `id_msg_type_groupe` (`id_msg_type_groupe`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Contenu de la table `msg_types`
@@ -5268,7 +5268,7 @@ CREATE TABLE IF NOT EXISTS `msg_types_groupe` (
   `id_msg_type_groupe` smallint(6) NOT NULL auto_increment,
   `lib_msg_type_groupe` varchar(64) NOT NULL,
   PRIMARY KEY  (`id_msg_type_groupe`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Contenu de la table `msg_types_groupe`
@@ -5302,7 +5302,7 @@ CREATE TABLE IF NOT EXISTS `newsletters` (
   `brouillon` longtext NOT NULL,
   PRIMARY KEY  (`id_newsletter`),
   KEY `newsletters_ibfk_1` (`id_mail_template`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `newsletters`
@@ -5321,7 +5321,7 @@ CREATE TABLE IF NOT EXISTS `newsletters_destinataires` (
   `email` varchar(255) NOT NULL,
   `lecture` tinyint(3) unsigned NOT NULL,
   KEY `id_envoi` (`id_envoi`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `newsletters_destinataires`
@@ -5345,7 +5345,7 @@ CREATE TABLE IF NOT EXISTS `newsletters_envois` (
   `fin_envoi` datetime NOT NULL COMMENT 'en secondes',
   PRIMARY KEY  (`id_envoi`),
   KEY `newsletters_envois_ibfk_1` (`id_newsletter`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `newsletters_envois`
@@ -5364,7 +5364,7 @@ CREATE TABLE IF NOT EXISTS `newsletters_inscriptions` (
   `code_secret` varchar(64) NOT NULL,
   `date_demande` datetime NOT NULL,
   KEY `id_newsletter` (`id_newsletter`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `newsletters_inscriptions`
@@ -5383,7 +5383,7 @@ CREATE TABLE IF NOT EXISTS `newsletters_inscrits` (
   `email` varchar(255) NOT NULL,
   `inscrit` tinyint(3) unsigned NOT NULL COMMENT 'Oui=inscrit supplémentaire indépendamment des profils et critères  Non=désinscrit donc non destinataire sur',
   KEY `id_newsletter` (`id_newsletter`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `newsletters_inscrits`
@@ -5402,7 +5402,7 @@ CREATE TABLE IF NOT EXISTS `newsletters_profils` (
   `criteres` mediumtext NOT NULL,
   KEY `newsletters_profils_ibfk_1` (`id_newsletter`),
   KEY `newsletters_profils_ibfk_2` (`id_profil`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `newsletters_profils`
@@ -5424,7 +5424,7 @@ CREATE TABLE IF NOT EXISTS `pays` (
   `affichage` tinyint(4) NOT NULL,
   PRIMARY KEY  (`id_pays`),
   UNIQUE KEY `pays` (`pays`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des pays' AUTO_INCREMENT=241 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des pays' AUTO_INCREMENT=241 ;
 
 --
 -- Contenu de la table `pays`
@@ -5683,7 +5683,7 @@ CREATE TABLE IF NOT EXISTS `pays_etats` (
   `lib_etat` varchar(128) NOT NULL,
   PRIMARY KEY  (`id_etat`),
   KEY `id_pays` (`id_pays`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `pays_etats`
@@ -5704,7 +5704,7 @@ CREATE TABLE IF NOT EXISTS `pdf_modeles` (
   `code_pdf_modele` varchar(32) NOT NULL,
   PRIMARY KEY  (`id_pdf_modele`),
   KEY `id_pdf_type` (`id_pdf_type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Modeles de documents PDF' AUTO_INCREMENT=30 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Modeles de documents PDF' AUTO_INCREMENT=30 ;
 
 --
 -- Contenu de la table `pdf_modeles`
@@ -5752,7 +5752,7 @@ CREATE TABLE IF NOT EXISTS `pdf_modeles_usage` (
   PRIMARY KEY  (`id_pdf_usage`),
   KEY `pdf_modeles_usage_ibfk_1` (`id_pdf_modele`),
   KEY `pdf_modeles_usage_ibfk_2` (`id_objet`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Contenu de la table `pdf_modeles_usage`
@@ -5772,7 +5772,7 @@ CREATE TABLE IF NOT EXISTS `pdf_types` (
   `id_pdf_type` tinyint(3) unsigned NOT NULL auto_increment,
   `lib_pdf_type` varchar(64) NOT NULL,
   PRIMARY KEY  (`id_pdf_type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Types de PDF à générer' AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Types de PDF à générer' AUTO_INCREMENT=9 ;
 
 --
 -- Contenu de la table `pdf_types`
@@ -5807,7 +5807,7 @@ CREATE TABLE IF NOT EXISTS `permissions` (
   KEY `id_permission_parent` (`id_permission_parent`),
   KEY `lib_permission` (`lib_permission`),
   KEY `ordre` (`ordre`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des permissions d''utilisateur' AUTO_INCREMENT=106 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des permissions d''utilisateur' AUTO_INCREMENT=106 ;
 
 --
 -- Contenu de la table `permissions`
@@ -5873,7 +5873,7 @@ INSERT INTO `permissions` (`id_permission`, `id_profil`, `lib_permission`, `desc
 CREATE TABLE IF NOT EXISTS `permissions_dependances` (
   `id_permission` smallint(5) default NULL,
   `id_permission_necessaire` smallint(5) default NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `permissions_dependances`
@@ -5902,7 +5902,7 @@ CREATE TABLE IF NOT EXISTS `pieces` (
   `nom` varchar(64) NOT NULL,
   `note` mediumtext NOT NULL,
   PRIMARY KEY  (`id_piece`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `pieces`
@@ -5920,7 +5920,7 @@ CREATE TABLE IF NOT EXISTS `pieces_associations` (
   `type_objet` enum('contact','article','document') NOT NULL,
   `ref_objet` varchar(64) NOT NULL,
   KEY `id_piece` (`id_piece`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `pieces_associations`
@@ -5940,7 +5940,7 @@ CREATE TABLE IF NOT EXISTS `pieces_types` (
   `systeme` tinyint(1) NOT NULL default '0',
   `actif` tinyint(3) unsigned NOT NULL default '1',
   PRIMARY KEY  (`id_piece_type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Contenu de la table `pieces_types`
@@ -5966,7 +5966,7 @@ CREATE TABLE IF NOT EXISTS `plan_comptable` (
   `numero_compte` varchar(10) NOT NULL,
   `lib_compte` varchar(254) NOT NULL,
   `favori` tinyint(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `plan_comptable`
@@ -6995,7 +6995,7 @@ CREATE TABLE IF NOT EXISTS `profils` (
   UNIQUE KEY `code_profil` (`code_profil`),
   KEY `ordre` (`ordre`),
   KEY `actif` (`actif`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des profils de contact' AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des profils de contact' AUTO_INCREMENT=8 ;
 
 --
 -- Contenu de la table `profils`
@@ -7025,7 +7025,7 @@ CREATE TABLE IF NOT EXISTS `recherches_persos` (
   `requete` mediumtext NOT NULL,
   PRIMARY KEY  (`id_recherche_perso`),
   KEY `id_type_recherche` (`id_type_recherche`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `recherches_persos`
@@ -7042,7 +7042,7 @@ CREATE TABLE IF NOT EXISTS `recherches_persos_types` (
   `id_type_recherche_perso` smallint(5) NOT NULL auto_increment,
   `lib_type_recherche_perso` varchar(250) NOT NULL,
   PRIMARY KEY  (`id_type_recherche_perso`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Contenu de la table `recherches_persos_types`
@@ -7070,7 +7070,7 @@ CREATE TABLE IF NOT EXISTS `references_tags` (
   `ref_rules` varchar(32) NOT NULL default '',
   `last_id` bigint(20) unsigned NOT NULL default '0',
   PRIMARY KEY  (`id_reference`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Regles de génération des références uniques' AUTO_INCREMENT=38 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Regles de génération des références uniques' AUTO_INCREMENT=38 ;
 
 --
 -- Contenu de la table `references_tags`
@@ -7134,7 +7134,7 @@ CREATE TABLE IF NOT EXISTS `reglements` (
   KEY `ref_contact` (`ref_contact`),
   KEY `date_reglement` (`date_reglement`),
   KEY `id_reglement_mode` (`id_reglement_mode`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des règlements perçus';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des règlements perçus';
 
 --
 -- Contenu de la table `reglements`
@@ -7155,7 +7155,7 @@ CREATE TABLE IF NOT EXISTS `reglements_docs` (
   KEY `ref_reglement` (`ref_reglement`),
   KEY `ref_doc` (`ref_doc`),
   KEY `liaison_valide` (`liaison_valide`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Association des règlements aux documents';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Association des règlements aux documents';
 
 --
 -- Contenu de la table `reglements_docs`
@@ -7178,7 +7178,7 @@ CREATE TABLE IF NOT EXISTS `reglements_modes` (
   `allow_date_echeance` tinyint(4) NOT NULL,
   `actif` tinyint(4) NOT NULL,
   PRIMARY KEY  (`id_reglement_mode`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des modes de règlement disponibles' AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des modes de règlement disponibles' AUTO_INCREMENT=20 ;
 
 --
 -- Contenu de la table `reglements_modes`
@@ -7216,7 +7216,7 @@ CREATE TABLE IF NOT EXISTS `regmt_avc` (
   `ref_reglement_comp` varchar(32) NOT NULL,
   KEY `ref_reglement_avc` (`ref_reglement_avc`),
   KEY `ref_reglement_comp` (`ref_reglement_comp`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations sur les \r\nAvoirs Client et Compensation';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations sur les \r\nAvoirs Client et Compensation';
 
 --
 -- Contenu de la table `regmt_avc`
@@ -7234,7 +7234,7 @@ CREATE TABLE IF NOT EXISTS `regmt_avf` (
   `ref_reglement_comp` varchar(32) NOT NULL,
   KEY `ref_reglement_avf` (`ref_reglement_avf`),
   KEY `ref_reglement_comp` (`ref_reglement_comp`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations sur les \r\nAvoirs Fournisseur et Compensation';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations sur les \r\nAvoirs Fournisseur et Compensation';
 
 --
 -- Contenu de la table `regmt_avf`
@@ -7254,7 +7254,7 @@ CREATE TABLE IF NOT EXISTS `regmt_e_cb` (
   PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_tpe_dest` (`id_compte_tpe_dest`),
   KEY `id_compte_caisse_move` (`id_compte_caisse_move`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les paiements entrant en ca';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur les paiements entrant en ca';
 
 --
 -- Contenu de la table `regmt_e_cb`
@@ -7275,7 +7275,7 @@ CREATE TABLE IF NOT EXISTS `regmt_e_chq` (
   `info_compte` varchar(64) NOT NULL,
   PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_caisse_move` (`id_compte_caisse_move`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les paiements entrant en es';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur les paiements entrant en es';
 
 --
 -- Contenu de la table `regmt_e_chq`
@@ -7293,7 +7293,7 @@ CREATE TABLE IF NOT EXISTS `regmt_e_esp` (
   `id_compte_caisse_move` smallint(5) unsigned default NULL,
   PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_caisse_move` (`id_compte_caisse_move`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les paiements entrant en es';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur les paiements entrant en es';
 
 --
 -- Contenu de la table `regmt_e_esp`
@@ -7314,7 +7314,7 @@ CREATE TABLE IF NOT EXISTS `regmt_e_lcr` (
   PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_bancaire_source` (`id_compte_bancaire_source`),
   KEY `id_compte_bancaire_dest` (`id_compte_bancaire_dest`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les paiements par virement';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur les paiements par virement';
 
 --
 -- Contenu de la table `regmt_e_lcr`
@@ -7335,7 +7335,7 @@ CREATE TABLE IF NOT EXISTS `regmt_e_prb` (
   PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_bancaire_source` (`id_compte_bancaire_source`),
   KEY `id_compte_bancaire_dest` (`id_compte_bancaire_dest`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les paiements par virement';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur les paiements par virement';
 
 --
 -- Contenu de la table `regmt_e_prb`
@@ -7353,7 +7353,7 @@ CREATE TABLE IF NOT EXISTS `regmt_e_tpv` (
   `id_compte_tpv_dest` smallint(5) unsigned NOT NULL,
   PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_tpv_dest` (`id_compte_tpv_dest`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `regmt_e_tpv`
@@ -7371,7 +7371,7 @@ CREATE TABLE IF NOT EXISTS `regmt_e_vir` (
   `id_compte_bancaire_dest` smallint(5) unsigned default NULL,
   PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_bancaire_dest` (`id_compte_bancaire_dest`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les paiements par virement';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur les paiements par virement';
 
 --
 -- Contenu de la table `regmt_e_vir`
@@ -7389,7 +7389,7 @@ CREATE TABLE IF NOT EXISTS `regmt_s_cb` (
   `id_compte_cb` smallint(5) unsigned NOT NULL,
   PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_cb` (`id_compte_cb`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les paiements par CB';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur les paiements par CB';
 
 --
 -- Contenu de la table `regmt_s_cb`
@@ -7408,7 +7408,7 @@ CREATE TABLE IF NOT EXISTS `regmt_s_chq` (
   `numero_cheque` varchar(32) NOT NULL,
   PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_caisse_dest` (`id_compte_bancaire_source`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les paiements entrant en es';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur les paiements entrant en es';
 
 --
 -- Contenu de la table `regmt_s_chq`
@@ -7426,7 +7426,7 @@ CREATE TABLE IF NOT EXISTS `regmt_s_esp` (
   `id_compte_caisse_move` smallint(5) unsigned default NULL,
   PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_caisse_move` (`id_compte_caisse_move`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les paiements sortant en es';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur les paiements sortant en es';
 
 --
 -- Contenu de la table `regmt_s_esp`
@@ -7444,7 +7444,7 @@ CREATE TABLE IF NOT EXISTS `regmt_s_lcr` (
   `id_compte_bancaire_source` smallint(5) unsigned NOT NULL default '0',
   PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_bancaire_source` (`id_compte_bancaire_source`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les paiements par virement';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur les paiements par virement';
 
 --
 -- Contenu de la table `regmt_s_lcr`
@@ -7462,7 +7462,7 @@ CREATE TABLE IF NOT EXISTS `regmt_s_prb` (
   `id_compte_bancaire_source` smallint(5) unsigned NOT NULL default '0',
   PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_bancaire_source` (`id_compte_bancaire_source`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les paiements par virement';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur les paiements par virement';
 
 --
 -- Contenu de la table `regmt_s_prb`
@@ -7482,7 +7482,7 @@ CREATE TABLE IF NOT EXISTS `regmt_s_vir` (
   PRIMARY KEY  (`ref_reglement`),
   KEY `id_compte_bancaire_source` (`id_compte_bancaire_source`),
   KEY `id_compte_bancaire_dest` (`id_compte_bancaire_dest`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Informations complémentaires sur les paiements par virement';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Informations complémentaires sur les paiements par virement';
 
 --
 -- Contenu de la table `regmt_s_vir`
@@ -7499,7 +7499,7 @@ CREATE TABLE IF NOT EXISTS `ressources` (
   `ref_ressource` varchar(32) NOT NULL,
   `lib_ressource` varchar(64) NOT NULL,
   PRIMARY KEY  (`ref_ressource`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des ressources';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des ressources';
 
 --
 -- Contenu de la table `ressources`
@@ -7527,7 +7527,7 @@ CREATE TABLE IF NOT EXISTS `sites_web` (
   PRIMARY KEY  (`ref_site`),
   KEY `ref_contact` (`ref_contact`),
   KEY `id_type_site_web` (`id_type_site_web`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des sites internet d''un contact';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des sites internet d''un contact';
 
 --
 -- Contenu de la table `sites_web`
@@ -7547,7 +7547,7 @@ CREATE TABLE IF NOT EXISTS `sites_web_types` (
   `web_type` varchar(64) NOT NULL,
   `defaut` smallint(5) NOT NULL,
   PRIMARY KEY  (`id_web_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des type de sites web';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des type de sites web';
 
 --
 -- Contenu de la table `sites_web_types`
@@ -7570,7 +7570,7 @@ CREATE TABLE IF NOT EXISTS `site_web_referencement` (
   `meta_desc` varchar(255) NOT NULL,
   `meta_motscles` text NOT NULL,
   PRIMARY KEY  (`nom_fichier`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `site_web_referencement`
@@ -7589,7 +7589,7 @@ CREATE TABLE IF NOT EXISTS `stats_modeles_pdf` (
   `usage` enum('defaut','actif','inactif') NOT NULL,
   KEY `id_pdf_modele` (`id_pdf_modele`),
   KEY `id_stat` (`id_stat`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `stats_modeles_pdf`
@@ -7614,7 +7614,7 @@ CREATE TABLE IF NOT EXISTS `stocks` (
   PRIMARY KEY  (`id_stock`),
   KEY `actif` (`actif`),
   KEY `ref_adr_stock` (`ref_adr_stock`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des lieux de stockage de l''entreprise' AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des lieux de stockage de l''entreprise' AUTO_INCREMENT=2 ;
 
 --
 -- Contenu de la table `stocks`
@@ -7637,7 +7637,7 @@ CREATE TABLE IF NOT EXISTS `stocks_articles` (
   PRIMARY KEY  (`ref_stock_article`),
   KEY `id_stock` (`id_stock`),
   KEY `ref_article` (`ref_article`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des articles en stock';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des articles en stock';
 
 --
 -- Contenu de la table `stocks_articles`
@@ -7656,7 +7656,7 @@ CREATE TABLE IF NOT EXISTS `stocks_articles_sn` (
   `sn_qte` double NOT NULL default '1',
   KEY `numero_serie` (`numero_serie`),
   KEY `ref_stock_article` (`ref_stock_article`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des numéros de série des articles en stock';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des numéros de série des articles en stock';
 
 --
 -- Contenu de la table `stocks_articles_sn`
@@ -7673,7 +7673,7 @@ CREATE TABLE IF NOT EXISTS `stocks_modeles_pdf` (
   `id_pdf_modele` smallint(6) NOT NULL,
   `usage` enum('defaut','actif','inactif') NOT NULL,
   PRIMARY KEY  (`id_pdf_modele`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `stocks_modeles_pdf`
@@ -7700,7 +7700,7 @@ CREATE TABLE IF NOT EXISTS `stocks_moves` (
   KEY `id_stock` (`id_stock`),
   KEY `ref_article` (`ref_article`),
   KEY `ref_doc` (`ref_doc`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des mouvements de stock';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des mouvements de stock';
 
 --
 -- Contenu de la table `stocks_moves`
@@ -7726,7 +7726,7 @@ CREATE TABLE IF NOT EXISTS `taches` (
   `note` mediumblob NOT NULL,
   PRIMARY KEY  (`id_tache`),
   KEY `ref_user_createur` (`ref_user_createur`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des taches allouées aux collaborateurs' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des taches allouées aux collaborateurs' AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `taches`
@@ -7747,7 +7747,7 @@ CREATE TABLE IF NOT EXISTS `taches_admin` (
   `date_creation` datetime NOT NULL,
   `date_execution` datetime NOT NULL,
   PRIMARY KEY  (`id_tache_admin`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=44 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=44 ;
 
 --
 -- Contenu de la table `taches_admin`
@@ -7780,7 +7780,7 @@ CREATE TABLE IF NOT EXISTS `taches_collabs` (
   `id_tache` bigint(20) unsigned NOT NULL,
   UNIQUE KEY `id_tache` (`id_tache`,`ref_contact`),
   KEY `ref_contact` (`ref_contact`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Collaborateurs assignés aux taches';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Collaborateurs assignés aux taches';
 
 --
 -- Contenu de la table `taches_collabs`
@@ -7798,7 +7798,7 @@ CREATE TABLE IF NOT EXISTS `taches_collabs_fonctions` (
   `id_fonction` mediumint(8) unsigned NOT NULL,
   KEY `id_tache` (`id_tache`),
   KEY `id_fonction` (`id_fonction`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `taches_collabs_fonctions`
@@ -7818,7 +7818,7 @@ CREATE TABLE IF NOT EXISTS `tarifs_listes` (
   `marge_moyenne` varchar(32) NOT NULL,
   `ordre` smallint(5) unsigned NOT NULL,
   PRIMARY KEY  (`id_tarif`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des grilles de tarifs appliquées au sein de l''entrepri' AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des grilles de tarifs appliquées au sein de l''entrepri' AUTO_INCREMENT=2 ;
 
 --
 -- Contenu de la table `tarifs_listes`
@@ -7843,7 +7843,7 @@ CREATE TABLE IF NOT EXISTS `taxes` (
   PRIMARY KEY  (`id_taxe`),
   KEY `id_pays` (`id_pays`),
   KEY `lib_taxe` (`lib_taxe`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des taxes' AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des taxes' AUTO_INCREMENT=6 ;
 
 --
 -- Contenu de la table `taxes`
@@ -7870,7 +7870,7 @@ CREATE TABLE IF NOT EXISTS `tvas` (
   `num_compte_vente` varchar(10) NOT NULL,
   PRIMARY KEY  (`id_tva`),
   KEY `id_pays` (`id_pays`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des taux de TVA' AUTO_INCREMENT=69 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des taux de TVA' AUTO_INCREMENT=69 ;
 
 --
 -- Contenu de la table `tvas`
@@ -7969,7 +7969,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   KEY `ordre` (`ordre`),
   KEY `ref_contact` (`ref_contact`),
   KEY `last_id_interface` (`last_id_interface`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des utilisateurs';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des utilisateurs';
 
 --
 -- Contenu de la table `users`
@@ -7991,7 +7991,7 @@ CREATE TABLE IF NOT EXISTS `users_creations_invitations` (
   `code` varchar(255) NOT NULL,
   PRIMARY KEY  (`id_creation_invitation`),
   KEY `ref_coord` (`ref_coord`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des invitations envoyées en vue de la création d''un co' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des invitations envoyées en vue de la création d''un co' AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `users_creations_invitations`
@@ -8011,7 +8011,7 @@ CREATE TABLE IF NOT EXISTS `users_logs` (
   `ip` char(19) NOT NULL,
   PRIMARY KEY  (`id_log`),
   KEY `ref_user` (`ref_user`,`date`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Logs des utilisateurs' AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Logs des utilisateurs' AUTO_INCREMENT=7 ;
 
 --
 -- Contenu de la table `users_logs`
@@ -8040,7 +8040,7 @@ CREATE TABLE IF NOT EXISTS `users_logs_errors` (
   `code` varchar(32) NOT NULL,
   PRIMARY KEY  (`id_error`),
   KEY `login` (`login`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Erreurs de connexion des utilisateurs' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Erreurs de connexion des utilisateurs' AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `users_logs_errors`
@@ -8059,7 +8059,7 @@ CREATE TABLE IF NOT EXISTS `users_permissions` (
   `value` varchar(1024) NOT NULL,
   PRIMARY KEY  (`ref_user`,`id_permission`),
   KEY `id_perm` (`id_permission`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des permissions associées aux utilisateurs';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des permissions associées aux utilisateurs';
 
 --
 -- Contenu de la table `users_permissions`
@@ -8127,7 +8127,7 @@ CREATE TABLE IF NOT EXISTS `users_themes` (
   PRIMARY KEY  (`ref_user`,`id_interface`),
   KEY `id_theme` (`id_theme`),
   KEY `id_interface` (`id_interface`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `users_themes`
@@ -8153,7 +8153,7 @@ CREATE TABLE IF NOT EXISTS `users_web_link` (
   `ordre` tinyint(3) unsigned NOT NULL,
   PRIMARY KEY  (`id_web_link`),
   KEY `ref_user` (`ref_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Liste des favoris internet des utilisateurs' AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Liste des favoris internet des utilisateurs' AUTO_INCREMENT=1 ;
 
 --
 -- Contenu de la table `users_web_link`
@@ -8176,7 +8176,7 @@ CREATE TABLE IF NOT EXISTS `villes` (
   KEY `code_postal` (`code_postal`),
   KEY `id_pays` (`id_pays`),
   KEY `id_etat` (`id_etat`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Liste des villes' AUTO_INCREMENT=57381 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des villes' AUTO_INCREMENT=57381 ;
 
 --
 -- Contenu de la table `villes`
