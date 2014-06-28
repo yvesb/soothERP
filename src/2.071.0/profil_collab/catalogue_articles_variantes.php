@@ -53,7 +53,7 @@ function combine_all($tab_values, $result = array()){
 $tab_stock = array();
 foreach ($_REQUEST as $variable => $valeur) {
 	if (substr ($variable, 0, 3) != "ACC") { continue; }
-	$tab_stock[$variable] = explode(";", utf8_decode($valeur));
+	$tab_stock[$variable] = explode(";", $valeur);
 }
 $resultat_var = array();
 combine_all($tab_stock);

@@ -58,7 +58,7 @@
 			<td class="size_strict"><span class="labelled">Description:</span>
 			</td>
 			<td>
-			<textarea name="desc_art_categ" rows="5" class="classinput_xsize" id="desc_art_categ" type="text"><?php echo utf8_decode($_REQUEST["desc_art_categ"]);?></textarea>
+			<textarea name="desc_art_categ" rows="5" class="classinput_xsize" id="desc_art_categ" type="text"><?php echo $_REQUEST["desc_art_categ"];?></textarea>
 			</td>
 		</tr>
 		<tr>

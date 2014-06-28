@@ -25,7 +25,7 @@ if(!isset($_REQUEST["event_lib"])){
 	echo "le libélé de l'évènement n'est pas spécifié";
 	exit;
 }
-$event_lib = utf8_decode($_REQUEST["event_lib"]);
+$event_lib = $_REQUEST["event_lib"];
 
 if(!isset($_REQUEST["ref_agenda"])){
 	echo "la référence de l'agenda n'est pas spécifiée";
@@ -64,7 +64,7 @@ if(!isset($_REQUEST["sheure_fin"])){
 $sheure_fin = $_REQUEST["sheure_fin"];
 
 if(isset($_REQUEST["note"]))
-{		$note = htmlspecialchars(utf8_decode($_REQUEST["note"]), ENT_QUOTES, "UTF-8");}
+{		$note = htmlspecialchars($_REQUEST["note"], ENT_QUOTES, "UTF-8");}
 else{		$note = "";}
 
 if(!isset($_REQUEST["id_stock"])){

@@ -70,7 +70,7 @@ foreach ($_REQUEST as $variable => $valeur) {
 	if (substr ($variable, 0, 3) != "ACC") { continue; }
 	foreach($article->getCaracs() as $carac){
 		if($carac->ref_carac == $variable && $carac->variante){
-			$tab_stock[$variable] = explode(";", utf8_decode($valeur));
+			$tab_stock[$variable] = explode(";", $valeur);
 		}
 	}
 }

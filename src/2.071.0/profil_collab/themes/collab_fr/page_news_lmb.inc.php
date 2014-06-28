@@ -26,7 +26,7 @@ check_page_variables ($page_variables);
 		echo '<div class="titre_accueil_news">
 		News Sooth ERP
 		</div>';
-		echo utf8_decode(Universal_Display(15, false, true, false));
+		echo Universal_Display(15, false, true, false);
 	}
 	?>
 </div>
