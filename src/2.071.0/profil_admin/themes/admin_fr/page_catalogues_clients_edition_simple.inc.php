@@ -121,7 +121,7 @@ next($list_art_categ);
 	</td>
 	<td >
 	<div style="display:block;">
-		<?php echo str_replace(" ", "&nbsp;", htmlentities($art_categ->lib_art_categ), ENT_QUOTES, "UTF-8");?>
+		<?php echo str_replace(" ", "&nbsp;", htmlentities($art_categ->lib_art_categ, ENT_QUOTES, "UTF-8"));?>
 	</div>
 	</td>
 	<td width="15px">

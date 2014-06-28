@@ -104,7 +104,7 @@ next($list_art_categ);
 	</td>
 	<td width="350px">
 	<div style="display:block;">
-		<?php echo str_replace(" ", "&nbsp;", htmlentities($art_categ->lib_art_categ), ENT_QUOTES, "UTF-8");?>
+		<?php echo str_replace(" ", "&nbsp;", htmlentities($art_categ->lib_art_categ, ENT_QUOTES, "UTF-8"));?>
 	</div>
 	</td>
 	<td width="1px">

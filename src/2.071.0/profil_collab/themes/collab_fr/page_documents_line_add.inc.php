@@ -64,7 +64,7 @@ if (isset($_INFOS['new_lines']) && !$document->getQuantite_locked ()) {
 													//	print_r ($doc_line);
 												foreach ($doc_line[$j] as $variable => $valeur) {
 													if (!is_array ($valeur)) {
-														echo $variable.': "'.addslashes(str_replace (CHR(13), "" ,str_replace (CHR(10), "" ,preg_replace ("#((\r\n)+)#", "", nl2br(htmlentities(str_replace ("€" ,"¤" , $valeur)), ENT_QUOTES, "UTF-8"))))).'",';
+														echo $variable.': "'.addslashes(str_replace (CHR(13), "" ,str_replace (CHR(10), "" ,preg_replace ("#((\r\n)+)#", "", nl2br(htmlentities(str_replace ("€" ,"¤" , $valeur), ENT_QUOTES, "UTF-8")))))).'",';
 													} else {
 														echo $variable.':"';
 														foreach ($valeur as $sn_liste) {

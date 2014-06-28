@@ -1135,7 +1135,7 @@
 			<td class="size_strict"><span class="labelled_ralonger">Afficher Tarifs:</span>
 			</td>
 			<td>
-			<a href="#" id="show4_app_tarifs" class="modif_input1"><?php echo  ltrim(htmlentities($profils[$id_profil]->getApp_tarifs ()), ENT_QUOTES, "UTF-8")?></a>
+			<a href="#" id="show4_app_tarifs" class="modif_input1"><?php echo  ltrim(htmlentities($profils[$id_profil]->getApp_tarifs (), ENT_QUOTES, "UTF-8"))?></a>
 			</td>
 		</tr>
 		

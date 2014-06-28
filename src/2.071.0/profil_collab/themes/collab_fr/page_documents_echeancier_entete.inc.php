@@ -117,7 +117,7 @@ check_page_variables ($page_variables);
 							<tr id="reglement_partiel2" >
 								<td colspan="3" style="text-align:left;  ">
 									<span style="font-size:11px; font-style:italic; padding-left:10px; color:#FF0000">Montant des &eacute;ch&eacute;ances arriv&eacute;es &agrave; terme :</span>
-									<span  class="doc_bold3" style="color:#FF0000;"> <?php echo htmlentities(number_format(($montant_terme-$montant_acquite, ENT_QUOTES, "UTF-8")>=0 ? ($montant_terme-$montant_acquite):0, $TARIFS_NB_DECIMALES, ".", ""	)); ?>  <?php echo $MONNAIE[1]; ?></span>
+									<span  class="doc_bold3" style="color:#FF0000;"> <?php echo htmlentities(number_format(($montant_terme-$montant_acquite)>=0 ? ($montant_terme-$montant_acquite):0, $TARIFS_NB_DECIMALES, ".", ""	), ENT_QUOTES, "UTF-8"); ?>  <?php echo $MONNAIE[1]; ?></span>
                                                                 </td>
 								<td style=" text-align:right; font-size:11px; color:#FF0000;">
 									<input name="bt_modifier" id="bt_modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" style="padding-top:2px" />

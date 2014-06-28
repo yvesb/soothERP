@@ -238,7 +238,7 @@ foreach ($liste_taches_crees as $tache_cree) {
 		</td>
 		<td style="border-bottom:1px solid #999999;">
 			<span style="font-weight:bolder;"><?php echo htmlentities($tache_cree->getLib_tache (), ENT_QUOTES, "UTF-8");?></span>&nbsp;<br />
-			<span style="font-style:italic;"><?php echo nl2br(htmlentities($tache_cree->getText_tache ()), ENT_QUOTES, "UTF-8");?></span>
+			<span style="font-style:italic;"><?php echo nl2br(htmlentities($tache_cree->getText_tache (), ENT_QUOTES, "UTF-8"));?></span>
 		</td>
 		<td style="border-bottom:1px solid #999999;">
 		<?php 

@@ -172,7 +172,7 @@
 	<tr>
 		<td>
 		<span class="labelled">Adresse:</span></td><td>
-		<a href="#" id="link_show_adr_adresse_<?php echo $caiu?>" class="modif_input1"><?php echo  nl2br(htmlentities($adresse->getText_adresse()), ENT_QUOTES, "UTF-8")?></a>
+		<a href="#" id="link_show_adr_adresse_<?php echo $caiu?>" class="modif_input1"><?php echo  nl2br(htmlentities($adresse->getText_adresse(), ENT_QUOTES, "UTF-8"))?></a>
 		<script type="text/javascript">
 		Event.observe("link_show_adr_adresse_<?php echo $caiu?>", "click",  function(evt){Event.stop(evt);show_edit_form('annu_editon_adresse<?php echo $caiu?>', 'start_visible_<?php echo $caiu?>','adresse_adresse<?php echo $caiu?>');}, false);
 		</script>
