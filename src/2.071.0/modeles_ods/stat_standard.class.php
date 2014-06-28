@@ -43,7 +43,7 @@ class ods_stat_standard {
 		
 		// Titre
 		$row = new odsTableRow();
-		$cell = new odsTableCellString(utf8_encode("Chiffre d'affaires par catégories d'articles"), $titre);
+		$cell = new odsTableCellString("Chiffre d'affaires par catégories d'articles", $titre);
 		$cell->setNumberColumnsSpanned(4);
 		$row->addCell( $cell );
 		$this->table->addRow($row);
@@ -68,47 +68,47 @@ class ods_stat_standard {
 		
     	//affichage des mois
        	for($m=$mois_deb; $m<=$mois_max ; ++$m ){
-			$row->addCell( new odsTableCellString(utf8_encode($this->getLib_mois($m)."-".substr($y, -2)), $fond_gris));
+			$row->addCell( new odsTableCellString($this->getLib_mois($m."-".substr($y, -2)), $fond_gris));
 	}
 	}
-	$row->addCell( new odsTableCellString(utf8_encode('Total'), $fond_gris));
+	$row->addCell( new odsTableCellString('Total', $fond_gris));
 	}
 	
 	public function create_cell($contenu, $row){
-		$cell=$row->addCell( new odsTableCellString(utf8_encode($contenu)));
+		$cell=$row->addCell( new odsTableCellString($contenu));
 		return $cell;
 	}
 	
 	public function create_celleuro($contenu, $row){
-		$cell=$row->addCell( new odsTableCellCurrency(utf8_encode($contenu), 'EUR'));
+		$cell=$row->addCell( new odsTableCellCurrency($contenu, 'EUR'));
 		return $cell;
 	}
 	
 	public function create_celleuroblue($contenu, $row){
 		$fond_bleu = new odsStyleTableCell();
 		$fond_bleu->setBackgroundColor('#CCFFFF');
-		$cell=$row->addCell( new odsTableCellCurrency(utf8_encode($contenu), 'EUR', $fond_bleu));
+		$cell=$row->addCell( new odsTableCellCurrency($contenu, 'EUR', $fond_bleu));
 		return $cell;
 	}
 	
 	public function create_celleurogrey($contenu, $row){
 		$fond_bleu = new odsStyleTableCell();
 		$fond_bleu->setBackgroundColor('#999999');
-		$cell=$row->addCell( new odsTableCellCurrency(utf8_encode($contenu), 'EUR', $fond_bleu));
+		$cell=$row->addCell( new odsTableCellCurrency($contenu, 'EUR', $fond_bleu));
 		return $cell;
 	}
 	
 	public function create_cellgrey($contenu, $row){
 		$fond_gris = new odsStyleTableCell();
 		$fond_gris->setBackgroundColor('#999999');
-		$cell=$row->addCell( new odsTableCellString(utf8_encode($contenu), $fond_gris));
+		$cell=$row->addCell( new odsTableCellString($contenu, $fond_gris));
 		return $cell;
 	}
 	
 	public function create_cellblue($contenu, $row){
 		$fond_bleu = new odsStyleTableCell();
 		$fond_bleu->setBackgroundColor('#CCFFFF');
-		$cell=$row->addCell( new odsTableCellString(utf8_encode($contenu), $fond_bleu));
+		$cell=$row->addCell( new odsTableCellString($contenu, $fond_bleu));
 		return $cell;
 	}
 	

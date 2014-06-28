@@ -30,7 +30,7 @@ class ods_stat_cmd {
 
 	// Titre
 	$row = new odsTableRow();
-	$cell = new odsTableCellString(utf8_encode('Quantité commandée par article'), $titre);
+	$cell = new odsTableCellString('Quantité commandée par article', $titre);
 	$cell->setNumberColumnsSpanned(4);
 	$row->addCell( $cell );
 	$table->addRow($row);
@@ -61,10 +61,10 @@ class ods_stat_cmd {
 		
 			//affichage des mois
 			for($m=$mois_deb; $m<=$mois_max ; ++$m ){
-				$row->addCell( new odsTableCellString(utf8_encode($this->getLib_mois($m)."-".substr($y, -2)), $fond_gris));
+				$row->addCell( new odsTableCellString($this->getLib_mois($m."-".substr($y, -2)), $fond_gris));
 			}
 		}
-	$row->addCell( new odsTableCellString(utf8_encode('Total'), $fond_gris));
+	$row->addCell( new odsTableCellString('Total', $fond_gris));
    //}
 
 	//Creation liste article
@@ -81,7 +81,7 @@ class ods_stat_cmd {
 	//pour chaque article
 	foreach ($article as $ref_art => $lib_art) {
 	//encodage utf8
-		$result=utf8_encode($lib_art);
+		$result=$lib_art;
 	
 		$row   = new odsTableRow();
 		$row->addCell( new odsTableCellString($result) );
@@ -105,7 +105,7 @@ class ods_stat_cmd {
 	$table->addRow($row);
 	}
 	$row   = new odsTableRow();
-	$row->addCell( new odsTableCellString(utf8_encode('Total général'), $fond_gris));
+	$row->addCell( new odsTableCellString('Total général', $fond_gris));
 
 	for($y=$_REQUEST['annee_date_deb']; $y<=$_REQUEST['annee_date_fin'] ; ++$y ){
     	

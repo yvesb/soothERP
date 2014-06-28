@@ -75,7 +75,7 @@ foreach ($tarifs_liste as $tarif_liste) {
 	${"line".$tarif_liste->id_tarif}->set_default_dot_style(${"d".$tarif_liste->id_tarif});
 	${"line".$tarif_liste->id_tarif}->set_width( 1 );
 	${"line".$tarif_liste->id_tarif}->set_colour( $couleurs[$h] );
-	${"line".$tarif_liste->id_tarif}->set_text(utf8_encode($tarif_liste->lib_tarif));
+	${"line".$tarif_liste->id_tarif}->set_text($tarif_liste->lib_tarif);
 	$resultat_ca = array();
 	$resultats2 = array();
 	$nb2=0;
@@ -124,7 +124,7 @@ $chart->add_element(${"line".$tarif_liste->id_tarif});
 }
 
 for ($i = 0; $i < count($resultats2); $i++) {
-	$liste_label[] = utf8_encode($resultats2[$i][0]);
+	$liste_label[] = $resultats2[$i][0];
 }
 
 

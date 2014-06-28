@@ -66,7 +66,7 @@ public function ods_resultats_commerciaux () {
 //	return $this;
 	$this->ods  = new ods();
 	
-	$this->table = new odsTable(utf8_encode('Commerciaux'));
+	$this->table = new odsTable('Commerciaux');
 	$this->create_titre();
 	
 	$row=$this->create_row();
@@ -86,7 +86,7 @@ public function ods_resultats_commerciaux () {
 	foreach ($this->commerciaux as $commercial) {
 	$valeur=$commercial->nom;
 	// Create table
-	$this->table = new odsTable(utf8_encode($valeur));
+	$this->table = new odsTable($valeur);
 
 	$this->create_titre();
 	//taille des colonnes
@@ -160,7 +160,7 @@ public function create_titre() {
 	
 	// Titre
 	$row = new odsTableRow();
-	$cell = new odsTableCellString(utf8_encode("Résultat commerciaux"), $titre);
+	$cell = new odsTableCellString("Résultat commerciaux", $titre);
 	$cell->setNumberColumnsSpanned(4);
 	$row->addCell( $cell );
 	$this->table->addRow($row);
@@ -186,12 +186,12 @@ public function create_entete() {
 }
 	
 	public function create_cell($contenu, $row){
-		$cell=$row->addCell( new odsTableCellString(utf8_encode($contenu)));
+		$cell=$row->addCell( new odsTableCellString($contenu));
 		return $cell;
 	}
 	
 	public function create_cellspan($contenu, $row, $nb){
-		$cell = new odsTableCellString(utf8_encode($contenu));
+		$cell = new odsTableCellString($contenu);
 		$cell->setNumberColumnsSpanned($nb);
 		$row->addCell( $cell );
 		return $cell;
@@ -203,14 +203,14 @@ public function create_entete() {
 	}
 	
 	public function create_celleuro($contenu, $row){
-		$cell=$row->addCell( new odsTableCellCurrency(utf8_encode($contenu), 'EUR'));
+		$cell=$row->addCell( new odsTableCellCurrency($contenu, 'EUR'));
 		return $cell;
 	}
 	
 		public function create_cellgrey($contenu, $row){
 		$fond_gris = new odsStyleTableCell();
 		$fond_gris->setBackgroundColor('#999999');
-		$cell=$row->addCell( new odsTableCellString(utf8_encode($contenu), $fond_gris));
+		$cell=$row->addCell( new odsTableCellString($contenu, $fond_gris));
 		return $cell;
 	}
 	

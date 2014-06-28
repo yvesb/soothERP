@@ -30,7 +30,7 @@ switch ($_REQUEST["type_data"]) {
 		$resultat = $bdd->query ($query);
 		while ($contact_client = $resultat->fetchObject()) { $liste_type_clients[$key]["nb"] ++; }
 		
-		$tmp[] = new pie_value($liste_type_clients[$key]["nb"], utf8_encode($liste_type_clients[$key]["lib"]));
+		$tmp[] = new pie_value($liste_type_clients[$key]["nb"], $liste_type_clients[$key]["lib"]);
 	}
 	
 	$title = new title("");
@@ -45,7 +45,7 @@ switch ($_REQUEST["type_data"]) {
 		}
 		foreach($liste_categories_client as $lib ){
 			if ($_REQUEST["id_client_categ"] != $lib->id_client_categ) { continue;}
-			$title = new title(utf8_encode($lib->lib_client_categ));
+			$title = new title($lib->lib_client_categ);
 		}
 		
 		foreach ($liste_type_clients as $key=>$client_type) {
@@ -57,7 +57,7 @@ switch ($_REQUEST["type_data"]) {
 								WHERE ac.type_client = '".$key."' && ac.id_client_categ = '".$_REQUEST["id_client_categ"]."' && ISNULL(a.date_archivage)  ";	
 			$resultat = $bdd->query ($query);
 			while ($contact_client = $resultat->fetchObject()) { $liste_type_clients[$key]["nb"] ++; }
-			$tmp[] = new pie_value($liste_type_clients[$key]["nb"], utf8_encode($liste_type_clients[$key]["lib"]));
+			$tmp[] = new pie_value($liste_type_clients[$key]["nb"], $liste_type_clients[$key]["lib"]);
 		}
 	break;
 }

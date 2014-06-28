@@ -52,7 +52,7 @@ public function ods_etat_stocks () {
 	$this->ods  = new ods();
 	
 	// Create table
-	$this->table = new odsTable(utf8_encode('Etat stocks'));
+	$this->table = new odsTable('Etat stocks');
 	
 	//taille des colonnes
 	$this->create_stylecol('3 cm');
@@ -84,19 +84,19 @@ public function create_titre() {
 	
 	// Titre
 	$row = new odsTableRow();
-	$cell = new odsTableCellString(utf8_encode("Etat du stock"), $titre);
+	$cell = new odsTableCellString("Etat du stock", $titre);
 	$cell->setNumberColumnsSpanned(4);
 	$row->addCell( $cell );
 	$this->table->addRow($row);
 	$row = new odsTableRow();
 	
-	$cell = new odsTableCellString(utf8_encode("Stock : ".$this->lib_stock));
+	$cell = new odsTableCellString("Stock : ".$this->lib_stock);
 	$cell->setNumberColumnsSpanned(4);
 	$row->addCell( $cell );
 	$this->table->addRow($row);
 	$row = new odsTableRow();
 	
-	$cell = new odsTableCellString(utf8_encode("Date : ".date("d/m/Y")));
+	$cell = new odsTableCellString("Date : ".date("d/m/Y"));
 	$cell->setNumberColumnsSpanned(4);
 	$row->addCell( $cell );
 	$this->table->addRow($row);
@@ -164,7 +164,7 @@ public function create_corps() {
 		if ($lib_art_categ != $this->contenu[$i]->lib_art_categ && $lib_art_categ !='') {
 			$row=$this->create_row();
 			$this->create_cellbold('Sous total : ',$row);
-			$cell = new odsTableCellString(utf8_encode($lib_art_categ));
+			$cell = new odsTableCellString($lib_art_categ);
 			$cell->setNumberColumnsSpanned(2);
 			$row->addCell( $cell );
 			$this->create_cell('Quantité total :',$row);
@@ -183,7 +183,7 @@ public function create_corps() {
 		if ($lib_art_categ != $this->contenu[$i]->lib_art_categ) {
 			$lib_art_categ=$this->contenu[$i]->lib_art_categ;
 			$row=$this->create_row();
-			$cell = new odsTableCellString(utf8_encode($this->contenu[$i]->lib_art_categ));
+			$cell = new odsTableCellString($this->contenu[$i]->lib_art_categ);
 			$cell->setNumberColumnsSpanned(6);
 			$row->addCell( $cell );
 		}
@@ -253,7 +253,7 @@ public function create_corps() {
 	if($i==count($this->contenu)-1){
 		$row=$this->create_row();
 		$this->create_cellbold('Sous total : ',$row);
-		$cell = new odsTableCellString(utf8_encode($lib_art_categ));
+		$cell = new odsTableCellString($lib_art_categ);
 		$cell->setNumberColumnsSpanned(2);
 		$row->addCell( $cell );
 		$this->create_cell('Quantité total :',$row);
@@ -266,28 +266,28 @@ public function create_corps() {
 	}
 }
 	public function create_cell($contenu, $row){
-		$cell=$row->addCell( new odsTableCellString(utf8_encode($contenu)));
+		$cell=$row->addCell( new odsTableCellString($contenu));
 		return $cell;
 	}
 	public function create_cellbold($contenu, $row){
 		$style = new odsStyleTableCell();
 		$style->setFontWeight('bold');
-		$cell=$row->addCell( new odsTableCellString(utf8_encode($contenu), $style));
+		$cell=$row->addCell( new odsTableCellString($contenu, $style));
 		return $cell;
 	}
 	public function create_cellfloat($contenu, $row){
-		$cell=$row->addCell( new odsTableCellFloat(utf8_encode($contenu)));
+		$cell=$row->addCell( new odsTableCellFloat($contenu));
 		return $cell;
 	}
 	public function create_cellfloatRed($contenu, $row){
 		$style = new odsStyleTableCell();
 		$style->setColor('#ff0000');
-		$cell=$row->addCell( new odsTableCellFloat(utf8_encode($contenu),$style));
+		$cell=$row->addCell( new odsTableCellFloat($contenu,$style));
 		return $cell;
 	}
 	
 	public function create_cellspan($contenu, $row, $nb){
-		$cell = new odsTableCellString(utf8_encode($contenu));
+		$cell = new odsTableCellString($contenu);
 		$cell->setNumberColumnsSpanned($nb);
 		$row->addCell( $cell );
 		return $cell;
@@ -299,14 +299,14 @@ public function create_corps() {
 	}
 	
 	public function create_celleuro($contenu, $row){
-		$cell=$row->addCell( new odsTableCellCurrency(utf8_encode($contenu), 'EUR'));
+		$cell=$row->addCell( new odsTableCellCurrency($contenu, 'EUR'));
 		return $cell;
 	}
 	
 	public function create_cellgrey($contenu, $row){
 		$fond_gris = new odsStyleTableCell();
 		$fond_gris->setBackgroundColor('#999999');
-		$cell=$row->addCell( new odsTableCellString(utf8_encode($contenu), $fond_gris));
+		$cell=$row->addCell( new odsTableCellString($contenu, $fond_gris));
 		return $cell;
 	}
 	

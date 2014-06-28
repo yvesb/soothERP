@@ -27,7 +27,7 @@ switch ($_REQUEST["type_data"]) {
 		$CA_mod = charger_doc_CA (array($date_debut." 00:00:00" , $date_fin." 23:59:59" ), array("magasin"=>$lib->getId_magasin()));
 		$lib->CA = $CA_mod;
 		$CA_global -= $CA_mod;
-		$tmp[] = new pie_value($CA_mod, utf8_encode($lib->getLib_magasin()));
+		$tmp[] = new pie_value($CA_mod, $lib->getLib_magasin());
 	}
 	break;
 
@@ -41,7 +41,7 @@ switch ($_REQUEST["type_data"]) {
 			 $CA_mod= charger_doc_CA (array($date_debut." 00:00:00" , $date_fin." 23:59:59" ), array("categ_client"=>$lib->id_client_categ));
 		$lib->CA = $CA_mod;
 		$CA_global -= $CA_mod;
-		$tmp[] = new pie_value($CA_mod, utf8_encode($lib->lib_client_categ));
+		$tmp[] = new pie_value($CA_mod, $lib->lib_client_categ);
 		}
 	break;
 	case "categ_comm":
@@ -54,7 +54,7 @@ switch ($_REQUEST["type_data"]) {
 			 $CA_mod= charger_doc_CA (array($date_debut." 00:00:00" , $date_fin." 23:59:59" ), array("categ_comm"=>$lib->id_commercial_categ));
 			$lib->CA = $CA_mod;
 			$CA_global -= $CA_mod;
-			$tmp[] = new pie_value($CA_mod, utf8_encode($lib->lib_commercial_categ));
+			$tmp[] = new pie_value($CA_mod, $lib->lib_commercial_categ);
 		}
 	break;
 	case "art_categ":
@@ -78,7 +78,7 @@ switch ($_REQUEST["type_data"]) {
 		}
 		foreach($list_art_categ as $lib ){
 			if (!$lib->indentation) {
-			$tmp[] = new pie_value($lib->CA, utf8_encode($lib->lib_art_categ));
+			$tmp[] = new pie_value($lib->CA, $lib->lib_art_categ);
 			}
 		}
 		
@@ -86,7 +86,7 @@ switch ($_REQUEST["type_data"]) {
 }
 
 if ($CA_global) {
-	$tmp[] = new pie_value($CA_global, utf8_encode("Non attribué"));
+	$tmp[] = new pie_value($CA_global, "Non attribué");
 }
 
 $title = new title("");

@@ -64,7 +64,7 @@ switch ($_REQUEST["data"]) {
 		
 	break;
 	case "7_less":
-		$title = new title(utf8_encode("Evolution du chiffre d'affaire sur les 7 jours précédents "));
+		$title = new title("Evolution du chiffre d'affaire sur les 7 jours précédents ");
 		$resultats = array();
 		for ($j = 6; $j >= 0; $j--) {
 			$resultats[] = array(
@@ -90,7 +90,7 @@ switch ($_REQUEST["data"]) {
 		
 	break;
 	case "7_equi":
-		$title = new title(utf8_encode("Evolution du chiffre d'affaire sur la période équivalente l'an passé"));
+		$title = new title("Evolution du chiffre d'affaire sur la période équivalente l'an passé");
 		$resultats = array();
 		$lasemaine = get_semaine(date("W"), date("Y")-1);
 		$lejour = $lasemaine[date("N")-1];
@@ -146,7 +146,7 @@ switch ($_REQUEST["data"]) {
 		
 	break;
 	case "30_less":
-		$title = new title(utf8_encode("Evolution du chiffre d'affaire sur les 30 jours précédents "));
+		$title = new title("Evolution du chiffre d'affaire sur les 30 jours précédents ");
 		$resultats = array();
 		for ($j = 29; $j >= 0; $j--) {
 			$resultats[] = array(
@@ -172,7 +172,7 @@ switch ($_REQUEST["data"]) {
 		
 	break;
 	case "30_equi":
-		$title = new title(utf8_encode("Evolution du chiffre d'affaire sur la période équivalente l'an passé"));
+		$title = new title("Evolution du chiffre d'affaire sur la période équivalente l'an passé");
 		$resultats = array();
 		$lasemaine = get_semaine(date("W"), date("Y")-1);
 		
@@ -219,7 +219,7 @@ switch ($_REQUEST["data"]) {
 		$liste_label = array();
 		$max = 0;
 		for ($i = 0; $i < count($resultats); $i++) {
-			$liste_label[] = utf8_encode($mois_liste[$resultats[$i][0]-1]);
+			$liste_label[] = $mois_liste[$resultats[$i][0]-1];
 			$resultat_ca[] = $resultats[$i][1];
 			if ($resultats[$i][1] > $max) {$max = $resultats[$i][1];}
 		}
@@ -227,7 +227,7 @@ switch ($_REQUEST["data"]) {
 		
 	break;
 	case "12_less":
-		$title = new title(utf8_encode("Evolution du chiffre d'affaire sur les 12 mois précédents "));
+		$title = new title("Evolution du chiffre d'affaire sur les 12 mois précédents ");
 		$resultats = array();
 		for ($j = 11; $j >= 0; $j--) {
 			$resultats[] = array(
@@ -243,7 +243,7 @@ switch ($_REQUEST["data"]) {
 		$liste_label = array();
 		$max = 0;
 		for ($i = 0; $i < count($resultats); $i++) {
-			$liste_label[] = utf8_encode($mois_liste[$resultats[$i][0]-1]);
+			$liste_label[] = $mois_liste[$resultats[$i][0]-1];
 			$resultat_ca[] = $resultats[$i][1];
 			if ($resultats[$i][1] > $max) {$max = $resultats[$i][1];}
 		}
@@ -255,7 +255,7 @@ switch ($_REQUEST["data"]) {
 	//periode 3 ans
 	
 	case "3":
-		$title = new title(utf8_encode("Evolution du chiffre d'affaire sur les 3 dernières années"));
+		$title = new title("Evolution du chiffre d'affaire sur les 3 dernières années");
 		$resultats = array();
 		for ($j = 2; $j >= 0; $j--) {
 			$resultats[] = array(

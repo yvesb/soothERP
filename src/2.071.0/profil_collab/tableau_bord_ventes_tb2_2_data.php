@@ -16,7 +16,7 @@ require_once ($RESSOURCE_DIR."/php-ofc-library/open-flash-chart.php");
 $tmp = array();
 foreach($BDD_MODELES as $mod=>$lib ){
 	$CA_mod = charger_doc_CA (array($_REQUEST["date_debut"]." 00:00:00" , $_REQUEST["date_fin"]." 23:59:59" ), array("modele"=>$mod));
-  $tmp[] = new pie_value($CA_mod, utf8_encode($lib));
+  $tmp[] = new pie_value($CA_mod, $lib);
 }
 $title = new title("");
 

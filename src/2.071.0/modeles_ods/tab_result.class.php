@@ -37,7 +37,7 @@ class tab_result {
 		
 		// Titre
 		$row = new odsTableRow();
-		$cell = new odsTableCellString(utf8_encode($info->lib_recherche_perso.' - '.$info->desc_recherche), $titre);
+		$cell = new odsTableCellString($info->lib_recherche_perso.' - '.$info->desc_recherche, $titre);
 		$cell->setNumberColumnsSpanned(4);
 		$row->addCell( $cell );
 		$this->table->addRow($row);
@@ -67,10 +67,10 @@ class tab_result {
 		$entete=$result_recherche[0];
 		else{
 		$this->create_stylecol("3cm");
-		$row->addCell( new odsTableCellString(utf8_encode("Pas de résultat"), $fond_gris));
+		$row->addCell( new odsTableCellString("Pas de résultat", $fond_gris));
 		}
 		foreach ($entete as $cle => $valeur) {
-			$row->addCell( new odsTableCellString(utf8_encode($cle), $fond_gris));
+			$row->addCell( new odsTableCellString($cle, $fond_gris));
 		}
 	}
 	
@@ -81,27 +81,27 @@ class tab_result {
 			$this->table->addRow($row = new odsTableRow());	
 			//Affichage des champs
 			foreach ($objet as $champ) {
-			$row->addCell( new odsTableCellString(utf8_encode($champ)));
+			$row->addCell( new odsTableCellString($champ));
 			}
 		}
 	}
 	
 	public function create_cell($contenu, $row){
-		$cell=$row->addCell( new odsTableCellString(utf8_encode($contenu)));
+		$cell=$row->addCell( new odsTableCellString($contenu));
 		return $cell;
 	}
 	
 	public function create_cellgrey($contenu, $row){
 		$fond_gris = new odsStyleTableCell();
 		$fond_gris->setBackgroundColor('#999999');
-		$cell=$row->addCell( new odsTableCellString(utf8_encode($contenu), $fond_gris));
+		$cell=$row->addCell( new odsTableCellString($contenu, $fond_gris));
 		return $cell;
 	}
 	
 	public function create_cellblue($contenu, $row){
 		$fond_bleu = new odsStyleTableCell();
 		$fond_bleu->setBackgroundColor('#CCFFFF');
-		$cell=$row->addCell( new odsTableCellString(utf8_encode($contenu), $fond_bleu));
+		$cell=$row->addCell( new odsTableCellString($contenu, $fond_bleu));
 		return $cell;
 	}
 	

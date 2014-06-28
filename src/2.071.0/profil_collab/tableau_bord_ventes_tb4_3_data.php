@@ -63,7 +63,7 @@ switch ($_REQUEST["type"]) {
 		}
 		$liste_label = array();
 		for ($i = 0; $i < count($resultats); $i++) {
-			$liste_label[] = utf8_encode($mois_liste[$resultats[$i][0]-1]);
+			$liste_label[] = $mois_liste[$resultats[$i][0]-1];
 			$resultat_ca[] = $resultats[$i][1];
 			if ($resultats[$i][1] > $max) {$max = $resultats[$i][1];}
 		}
@@ -74,7 +74,7 @@ switch ($_REQUEST["type"]) {
 		
 		
 		case "2":
-		$title = new title(utf8_encode("Evolution du nombre de création clients sur les 12 derniers mois"));
+		$title = new title("Evolution du nombre de création clients sur les 12 derniers mois");
 		$line = new line();
 		$line->set_default_dot_style($d2);
 		$line->set_width( 1 );
@@ -99,7 +99,7 @@ switch ($_REQUEST["type"]) {
 		}
 		$liste_label = array();
 		for ($i = 0; $i < count($resultats2); $i++) {
-			$liste_label[] = utf8_encode($mois_liste[$resultats2[$i][0]-1]);
+			$liste_label[] = $mois_liste[$resultats2[$i][0]-1];
 			$resultat_ca[] = $resultats2[$i][1];
 			if ($resultats2[$i][1] > $max) {$max = $resultats2[$i][1];}
 		}

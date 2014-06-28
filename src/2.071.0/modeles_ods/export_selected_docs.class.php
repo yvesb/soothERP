@@ -38,9 +38,9 @@ class ods_export_selected_docs {
             // Create the first row
             $row   = new odsTableRow();
 
-            $row->addCell( new odsTableCellString(utf8_encode("Référence"), $bold) );
+            $row->addCell( new odsTableCellString("Référence", $bold) );
             $row->addCell( new odsTableCellString("Type de document", $bold) );
-            $row->addCell( new odsTableCellString(utf8_encode("État"), $bold) );
+            $row->addCell( new odsTableCellString("État", $bold) );
             $row->addCell( new odsTableCellString("Contact", $bold) );
             $row->addCell( new odsTableCellString("Montant TTC", $bold) );
             $row->addCell( new odsTableCellString("Date", $bold) );
@@ -49,14 +49,14 @@ class ods_export_selected_docs {
             $docs = $this->get_docs_infos($_POST['liste_doc']);
             foreach($docs as $d) {
                 $row   = new odsTableRow();
-                $row->addCell( new odsTableCellString(utf8_encode($d['ref_doc'])) );
-                $row->addCell( new odsTableCellString(utf8_encode($d['lib_type_doc'])) );
-                $row->addCell( new odsTableCellString(utf8_encode($d['lib_etat_doc'])) );
-                $row->addCell( new odsTableCellString(utf8_encode($d['nom_contact'])) );
+                $row->addCell( new odsTableCellString($d['ref_doc']) );
+                $row->addCell( new odsTableCellString($d['lib_type_doc']) );
+                $row->addCell( new odsTableCellString($d['lib_etat_doc']) );
+                $row->addCell( new odsTableCellString($d['nom_contact']) );
                 if(empty($d['montant_ttc']) && $d['montant_ttc']!=='0')
                     $row->addCell( new odsTableCellString("NaN") );
                 else $row->addCell( new odsTableCellCurrency($d['montant_ttc'], 'EUR', $grey_bg) );
-                $row->addCell( new odsTableCellString(utf8_encode('Le '.date('d/m/Y à H:i:s', strtotime($d['date_doc'])))) );
+                $row->addCell( new odsTableCellString('Le '.date('d/m/Y à H:i:s', strtotime($d['date_doc']))) );
                 $this->table->addRow($row);
             }
 
@@ -75,7 +75,7 @@ class ods_export_selected_docs {
 		
 		// Titre
 		$row = new odsTableRow();
-		$cell = new odsTableCellString(utf8_encode("Liste des documents exportés"), $titre);
+		$cell = new odsTableCellString("Liste des documents exportés", $titre);
 		$cell->setNumberColumnsSpanned(4);
 		$row->addCell( $cell );
 		$this->table->addRow($row);
