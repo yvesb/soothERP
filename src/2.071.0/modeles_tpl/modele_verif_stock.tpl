@@ -1,13 +1,13 @@
 <h2>{TITLE:}</h2>
-<h3>Nous avons relevés <span style="color:red">{NBARTICLES:}</span> article(s) {LIBMESSAGE:} </h3>
+<h3>Nous avons relevÃ©s <span style="color:red">{NBARTICLES:}</span> article(s) {LIBMESSAGE:} </h3>
 <BR/>
 <table border='1'>
 	<tr>
-		<td>Reférence de l'article</td>
-		<td>Libellé de l'article</td>
+		<td>RefÃ©rence de l'article</td>
+		<td>LibellÃ© de l'article</td>
 		<td>Stock de l'article</td>
 		<td>Sorties en cours</td>
-		<td>Minimum renseigné</td>
+		<td>Minimum renseignÃ©</td>
 	</tr>
 {BLOCK:articles}
 	<tr>

@@ -4,7 +4,7 @@ Sauf erreur ou omission de notre part, nous constatons que votre compte client p
 <BR/>
 Ce montant correspond &agrave; nos factures suivantes rest&eacute;es impay&eacute;es :<BR/><BR/>
 {BLOCK:factures_relance}
-- Facture n° {DATA:factures_relance.ref_doc} du {DATA:factures_relance.date} : {DATA:factures_relance.type_echeance} de {DATA:factures_relance.montant_echeance} d&ucirc; au {DATA:factures_relance.date_echeance}<BR/>
+- Facture nÂ° {DATA:factures_relance.ref_doc} du {DATA:factures_relance.date} : {DATA:factures_relance.type_echeance} de {DATA:factures_relance.montant_echeance} d&ucirc; au {DATA:factures_relance.date_echeance}<BR/>
 {BLOCKEND:factures_relance}
 <BR/>
 <BR/>
