@@ -585,7 +585,7 @@ appelpage.prototype = {
 									asynchronous: true,
 									contentType:  'application/x-www-form-urlencoded',
 									encoding:     'UTF-8',
-									parameters: { recherche: '1', nom : escape($F('nom')), id_categorie: $F('id_categorie'), id_profil: $F('id_profil'), id_client_categ: $F('id_client_categ'), type_client: $F('type_client'), page_to_show: $F('page_to_show'), tel: escape($F('tel')), email: escape($F('email')), url: escape($F('url')), code_postal: escape($F('code_postal')), ville: escape($F('ville')), orderby: $F('orderby'), orderorder: $F('orderorder')},
+									parameters: { recherche: '1', nom : encodeURIComponent($F('nom')), id_categorie: $F('id_categorie'), id_profil: $F('id_profil'), id_client_categ: $F('id_client_categ'), type_client: $F('type_client'), page_to_show: $F('page_to_show'), tel: encodeURIComponent($F('tel')), email: encodeURIComponent($F('email')), url: encodeURIComponent($F('url')), code_postal: encodeURIComponent($F('code_postal')), ville: encodeURIComponent($F('ville')), orderby: $F('orderby'), orderorder: $F('orderorder')},
 									evalScripts:true, 
 									onLoading:S_loading, onException: function () {S_failure();}, 
 									onComplete:H_loading}
@@ -601,7 +601,7 @@ appelpage.prototype = {
 									asynchronous: true,
 									contentType:  'application/x-www-form-urlencoded',
 									encoding:     'UTF-8',
-									parameters: { recherche: '1', nom : escape($F('nom_m')), id_profil: $F('id_profil_m'), page_to_show: $F('page_to_show_m'), orderby: $F('orderby_m'), orderorder: $F('orderorder_m'), fonction_retour: $F('fonction_retour_m'), param_retour: $F('param_retour_m')},
+									parameters: { recherche: '1', nom : encodeURIComponent($F('nom_m')), id_profil: $F('id_profil_m'), page_to_show: $F('page_to_show_m'), orderby: $F('orderby_m'), orderorder: $F('orderorder_m'), fonction_retour: $F('fonction_retour_m'), param_retour: $F('param_retour_m')},
 									evalScripts:true, 
 									onLoading:S_loading, onException: function () {S_failure();}, 
 									onComplete:H_loading}
@@ -631,7 +631,7 @@ appelpage.prototype = {
 	},
 	//appel les réponses pour export csv recherche services abo
 	article_recherche_abo_export_csv : function() {
-		window.open("catalogue_articles_service_abo_recherche_export_csv.php?recherche=1&nom="+escape($F('nom_s'))+"&id_profil="+$F('id_profil_s')+"&page_to_show="+$F('page_to_show_s')+"&orderby="+$F('orderby_s')+"&orderorder="+$F('orderorder_s')+"&ref_article="+$F('ref_article')+"&id_client_categ="+$F('id_client_categ')+"&type_client="+$F('type_client')+"&type_recherche="+$F('type_recherche')+"&id_categorie="+$F('id_categorie')+"&code_postal="+$F('code_postal'),"_blank")
+		window.open("catalogue_articles_service_abo_recherche_export_csv.php?recherche=1&nom="+encodeURIComponent($F('nom_s'))+"&id_profil="+$F('id_profil_s')+"&page_to_show="+$F('page_to_show_s')+"&orderby="+$F('orderby_s')+"&orderorder="+$F('orderorder_s')+"&ref_article="+$F('ref_article')+"&id_client_categ="+$F('id_client_categ')+"&type_client="+$F('type_client')+"&type_recherche="+$F('type_recherche')+"&id_categorie="+$F('id_categorie')+"&code_postal="+$F('code_postal'),"_blank")
 	
 	},
 	//appel les réponses pour le moteur simple recherche services conso
@@ -644,7 +644,7 @@ appelpage.prototype = {
 									asynchronous: true,
 									contentType:  'application/x-www-form-urlencoded',
 									encoding:     'UTF-8',
-									parameters: { recherche: '1', nom : escape($F('nom_s')), id_profil: $F('id_profil_s'), page_to_show: $F('page_to_show_s'), orderby: $F('orderby_s'), orderorder: $F('orderorder_s'), ref_article: $F('ref_article'), id_client_categ: $F('id_client_categ'), type_client: $F('type_client'), type_recherche: $F('type_recherche'), id_categorie: $F('id_categorie'), code_postal: $F('code_postal')},
+									parameters: { recherche: '1', nom : encodeURIComponent($F('nom_s')), id_profil: $F('id_profil_s'), page_to_show: $F('page_to_show_s'), orderby: $F('orderby_s'), orderorder: $F('orderorder_s'), ref_article: $F('ref_article'), id_client_categ: $F('id_client_categ'), type_client: $F('type_client'), type_recherche: $F('type_recherche'), id_categorie: $F('id_categorie'), code_postal: $F('code_postal')},
 									evalScripts:true, 
 									onLoading:S_loading, onException: function () {S_failure();}, 
 									onComplete:H_loading}
@@ -681,7 +681,7 @@ appelpage.prototype = {
 									asynchronous: true,
 									contentType:  'application/x-www-form-urlencoded',
 									encoding:     'UTF-8',
-									parameters: { recherche: '1', ref_art_categ : $F('ref_art_categ_s'), lib_article: escape($F('lib_article_s')), page_to_show: $F('page_to_show_s'), ref_constructeur: $F('ref_constructeur_s'), in_stock: f_stock , is_nouveau: f_nouv , in_promotion: f_promo, orderby: $F('orderby_s'), orderorder: $F('orderorder_s'), id_tarif: $F('id_tarif_s'), id_stock: $F('id_stock_s'), app_tarifs_s: $F('app_tarifs_s')},
+									parameters: { recherche: '1', ref_art_categ : $F('ref_art_categ_s'), lib_article: encodeURIComponent($F('lib_article_s')), page_to_show: $F('page_to_show_s'), ref_constructeur: $F('ref_constructeur_s'), in_stock: f_stock , is_nouveau: f_nouv , in_promotion: f_promo, orderby: $F('orderby_s'), orderorder: $F('orderorder_s'), id_tarif: $F('id_tarif_s'), id_stock: $F('id_stock_s'), app_tarifs_s: $F('app_tarifs_s')},
 									evalScripts:true, 
 									onLoading:S_loading, onException: function () {S_failure();}, 
 									onComplete:H_loading}
@@ -697,7 +697,7 @@ appelpage.prototype = {
 	serie_recherche=  ($('form_recherche_a').serialize(true));
 	for (key in serie_recherche) {
 		historique_request[1][key] = serie_recherche[key];
-		serie_recherche[key] = escape(serie_recherche[key]);
+		serie_recherche[key] = encodeURIComponent(serie_recherche[key]);
 	}
 		var AppelAjax = new Ajax.Updater(
 									"resultat", 
@@ -724,7 +724,7 @@ appelpage.prototype = {
 									asynchronous: true,
 									contentType:  'application/x-www-form-urlencoded',
 									encoding:     'UTF-8',
-									parameters: { recherche: '1', ref_art_categ : $F('ref_art_categ_cata_m'), lib_article: escape($F('lib_article_cata_m')), page_to_show: $F('page_to_show_cata_m'), ref_constructeur: $F('ref_constructeur_cata_m'),  in_stock: f_stock , is_nouveau: f_nouv , in_promotion: f_promo, id_tarif: "", id_stock: $F('id_stock_cata_m'), orderby: $F('orderby_cata_m'), orderorder: $F('orderorder_cata_m'), fonction_retour: $F('fonction_retour_cata_m'), param_retour: $F('param_retour_cata_m')},
+									parameters: { recherche: '1', ref_art_categ : $F('ref_art_categ_cata_m'), lib_article: encodeURIComponent($F('lib_article_cata_m')), page_to_show: $F('page_to_show_cata_m'), ref_constructeur: $F('ref_constructeur_cata_m'),  in_stock: f_stock , is_nouveau: f_nouv , in_promotion: f_promo, id_tarif: "", id_stock: $F('id_stock_cata_m'), orderby: $F('orderby_cata_m'), orderorder: $F('orderorder_cata_m'), fonction_retour: $F('fonction_retour_cata_m'), param_retour: $F('param_retour_cata_m')},
 									evalScripts:true, 
 									onLoading:S_loading, onException: function () {S_failure();}, 
 									onComplete:H_loading}
@@ -742,7 +742,7 @@ appelpage.prototype = {
 									asynchronous: true,
 									contentType:  'application/x-www-form-urlencoded',
 									encoding:     'UTF-8',
-									parameters: { recherche: '1', ref_art_categ : $F('ref_art_categ_s'), lib_article: escape($F('lib_article_s')), page_to_show: $F('page_to_show_s'), ref_constructeur: $F('ref_constructeur_s'), in_pa_zero: f_pa_zero ,  orderby: $F('orderby_s'), orderorder: $F('orderorder_s'), id_tarif: $F('id_tarif_s'), id_stock: $F('id_stock_s'), app_tarifs_s: $F('app_tarifs_s')},
+									parameters: { recherche: '1', ref_art_categ : $F('ref_art_categ_s'), lib_article: encodeURIComponent($F('lib_article_s')), page_to_show: $F('page_to_show_s'), ref_constructeur: $F('ref_constructeur_s'), in_pa_zero: f_pa_zero ,  orderby: $F('orderby_s'), orderorder: $F('orderorder_s'), id_tarif: $F('id_tarif_s'), id_stock: $F('id_stock_s'), app_tarifs_s: $F('app_tarifs_s')},
 									evalScripts:true, 
 									onLoading:S_loading, onException: function () {S_failure();}, 
 									onComplete:H_loading}
@@ -919,7 +919,7 @@ appelpage.prototype = {
 	serie_recherche=  ($('form_recherche_a').serialize(true));
 	for (key in serie_recherche) {
 		historique_request[2][key] = serie_recherche[key];
-		serie_recherche[key] = escape(serie_recherche[key]);
+		serie_recherche[key] = encodeURIComponent(serie_recherche[key]);
 	}
 		
 		var AppelAjax = new Ajax.Updater(
@@ -1091,7 +1091,7 @@ appelpage.prototype = {
 									asynchronous: true,
 									contentType:  'application/x-www-form-urlencoded',
 									encoding:     'UTF-8',
-									parameters: { recherche: '1', nom : escape($F('nom_s')), id_profil: $F('id_profil_s'), page_to_show: $F('page_to_show_s'), orderby: $F('orderby_s'), orderorder: $F('orderorder_s') , date_debut: $("date_debut").value, date_fin: $("date_fin").value},
+									parameters: { recherche: '1', nom : encodeURIComponent($F('nom_s')), id_profil: $F('id_profil_s'), page_to_show: $F('page_to_show_s'), orderby: $F('orderby_s'), orderorder: $F('orderorder_s') , date_debut: $("date_debut").value, date_fin: $("date_fin").value},
 									evalScripts:true, 
 									onLoading:S_loading, onException: function (){S_failure();}, 
 									onComplete:H_loading}
@@ -1102,7 +1102,7 @@ appelpage.prototype = {
 	
 	serie_recherche=  ($('creer_document_inventaire').serialize(true));
 	for (key in serie_recherche) {
-		serie_recherche[key] = escape(serie_recherche[key]);
+		serie_recherche[key] = encodeURIComponent(serie_recherche[key]);
 	}
 	//alert (serie_recherche);
 		
@@ -1207,7 +1207,7 @@ appelpage.prototype = {
 									asynchronous: true,
 									contentType:  'application/x-www-form-urlencoded',
 									encoding:     'UTF-8',
-									parameters: { recherche: '1', id_compte_bancaire: $F('id_compte_bancaire'), page_to_show: $F('page_to_show'), date_fin: $("date_fin").value, date_debut: $("date_debut").value, libelle: escape($("libelle").value), montant: $("montant").value, delta_montant: $("delta_montant").value, ope_type: $("ope_type").value, orderby: $F('orderby'), orderorder: $F('orderorder')},
+									parameters: { recherche: '1', id_compte_bancaire: $F('id_compte_bancaire'), page_to_show: $F('page_to_show'), date_fin: $("date_fin").value, date_debut: $("date_debut").value, libelle: encodeURIComponent($("libelle").value), montant: $("montant").value, delta_montant: $("delta_montant").value, ope_type: $("ope_type").value, orderby: $F('orderby'), orderorder: $F('orderorder')},
 									evalScripts:true, 
 									onLoading:S_loading, onException: function (){S_failure();}, 
 									onComplete:H_loading}
@@ -1222,7 +1222,7 @@ appelpage.prototype = {
 									asynchronous: true,
 									contentType:  'application/x-www-form-urlencoded',
 									encoding:     'UTF-8',
-									parameters: { recherche: '1', id_compte_bancaire: $F('id_compte_bancaire'), page_to_show: $F('page_to_show'), date_fin: $("date_fin").value, date_debut: $("date_debut").value, nom_porteur: escape($("nom_porteur").value), montant: $("montant").value, delta_montant: $("delta_montant").value, banque: $("banque").value, num_cheque: $("num_cheque").value, orderby: $F('orderby'), orderorder: $F('orderorder')},
+									parameters: { recherche: '1', id_compte_bancaire: $F('id_compte_bancaire'), page_to_show: $F('page_to_show'), date_fin: $("date_fin").value, date_debut: $("date_debut").value, nom_porteur: encodeURIComponent($("nom_porteur").value), montant: $("montant").value, delta_montant: $("delta_montant").value, banque: $("banque").value, num_cheque: $("num_cheque").value, orderby: $F('orderby'), orderorder: $F('orderorder')},
 									evalScripts:true, 
 									onLoading:S_loading, onException: function (){S_failure();}, 
 									onComplete:H_loading}
@@ -1237,7 +1237,7 @@ appelpage.prototype = {
 									asynchronous: true,
 									contentType:  'application/x-www-form-urlencoded',
 									encoding:     'UTF-8',
-									parameters: { recherche: '1', nom : escape($F('nom')), id_categorie: $F('id_categorie'), id_profil: $F('id_profil'), id_client_categ: $F('id_client_categ'), type_client: $F('type_client'), page_to_show: $F('page_to_show'), orderby: $F('orderby'), orderorder: $F('orderorder')},
+									parameters: { recherche: '1', nom : encodeURIComponent($F('nom')), id_categorie: $F('id_categorie'), id_profil: $F('id_profil'), id_client_categ: $F('id_client_categ'), type_client: $F('type_client'), page_to_show: $F('page_to_show'), orderby: $F('orderby'), orderorder: $F('orderorder')},
 									evalScripts:true, 
 									onLoading:S_loading, onException: function () {S_failure();}, 
 									onComplete:H_loading}
@@ -1253,7 +1253,7 @@ appelpage.prototype = {
 									asynchronous: true,
 									contentType:  'application/x-www-form-urlencoded',
 									encoding:     'UTF-8',
-									parameters: { recherche: '1', nom : escape($F('nom')), id_categorie: $F('id_categorie'), id_profil: $F('id_profil'), id_fournisseur_categ: $F('id_fournisseur_categ'), page_to_show: $F('page_to_show'), orderby: $F('orderby'), orderorder: $F('orderorder')},
+									parameters: { recherche: '1', nom : encodeURIComponent($F('nom')), id_categorie: $F('id_categorie'), id_profil: $F('id_profil'), id_fournisseur_categ: $F('id_fournisseur_categ'), page_to_show: $F('page_to_show'), orderby: $F('orderby'), orderorder: $F('orderorder')},
 									evalScripts:true, 
 									onLoading:S_loading, onException: function () {S_failure();}, 
 									onComplete:H_loading}
@@ -1270,7 +1270,7 @@ appelpage.prototype = {
 									asynchronous: true,
 									contentType:  'application/x-www-form-urlencoded',
 									encoding:     'UTF-8',
-									parameters: { recherche: '1', id_comm_event_type: escape($F('id_comm_event_type')), page_to_show: $F('page_to_show_s'), orderby: $F('orderby_s'), orderorder: $F('orderorder_s')},
+									parameters: { recherche: '1', id_comm_event_type: encodeURIComponent($F('id_comm_event_type')), page_to_show: $F('page_to_show_s'), orderby: $F('orderby_s'), orderorder: $F('orderorder_s')},
 									evalScripts:true, 
 									onLoading:S_loading, onException: function () {S_failure();}, 
 									onComplete:H_loading}
@@ -1286,7 +1286,7 @@ appelpage.prototype = {
 									asynchronous: true,
 									contentType:  'application/x-www-form-urlencoded',
 									encoding:     'UTF-8',
-									parameters: { recherche: '1', id_comm_event_type: escape($F('id_comm_event_type')), page_to_show: $F('page_to_show_s'), orderby: $F('orderby_s'), orderorder: $F('orderorder_s')},
+									parameters: { recherche: '1', id_comm_event_type: encodeURIComponent($F('id_comm_event_type')), page_to_show: $F('page_to_show_s'), orderby: $F('orderby_s'), orderorder: $F('orderorder_s')},
 									evalScripts:true, 
 									onLoading:S_loading, onException: function () {S_failure();}, 
 									onComplete:H_loading}
@@ -1519,7 +1519,7 @@ function rise_height (id_element, max_height) {
 //ouverture d'un document
 
 function open_doc (ref_doc) {
-	page.verify("document_edition","index.php#"+escape("documents_edition.php?ref_doc="+ref_doc), "true", "_blank");
+	page.verify("document_edition","index.php#"+encodeURIComponent("documents_edition.php?ref_doc="+ref_doc), "true", "_blank");
 }
 
 //rafraichir le contenu en cours (bouton dans barre de menu)

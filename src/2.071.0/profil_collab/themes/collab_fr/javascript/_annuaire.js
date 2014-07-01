@@ -580,7 +580,7 @@ function construire_ligne_liaison_contact_view(num_serie, direction_liaison, ref
 	
 	Event.observe("link_to_contact_"+num_serie, "click",  function(evt){
 		Event.stop(evt);
-		page.verify("annuaire_contact_view","index.php#"+escape("annuaire_view_fiche.php?ref_contact="+ref_contact_B),"true","_blank");
+		page.verify("annuaire_contact_view","index.php#"+encodeURIComponent("annuaire_view_fiche.php?ref_contact="+ref_contact_B),"true","_blank");
 	}, false);
 	
 	Event.observe("liaison_img_del_"+num_serie, "click", function(){

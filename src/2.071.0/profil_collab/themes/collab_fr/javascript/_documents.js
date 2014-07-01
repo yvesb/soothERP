@@ -315,7 +315,7 @@ function docu_maj_contact_infos (ref_doc, id_info_content) {
 		var AppelAjax = new Ajax.Request(
 									"documents_contact_maj_infos.php",
 									{
-									parameters: {ref_doc: ref_doc, id_info_content: id_info_content, info_content : escape($(id_info_content).value) },
+									parameters: {ref_doc: ref_doc, id_info_content: id_info_content, info_content : encodeURIComponent($(id_info_content).value) },
 									evalScripts:true,
 									onLoading:S_loading, onException: function () {S_failure();},
 									onComplete: function() {
@@ -513,7 +513,7 @@ function maj_line_desc_article (id_desc_article, ref_doc_line) {
 	var AppelAjax = new Ajax.Request(
 									"documents_line_maj_desc_article.php",
 									{
-									parameters: {ref_doc: ref_doc, ref_doc_line: ref_doc_line, desc_article: escape($(id_desc_article).value) },
+									parameters: {ref_doc: ref_doc, ref_doc_line: ref_doc_line, desc_article: encodeURIComponent($(id_desc_article).value) },
 									evalScripts:true,
 									onLoading:S_loading, onException: function () {S_failure();},
 									onSuccess: function (requester){
@@ -1313,7 +1313,7 @@ function maj_date_livraison  (id_info_content) {
 	var AppelAjax = new Ajax.Request(
 									"documents_entete_maj_date_livraison.php",
 									{
-									parameters: {ref_doc: ref_doc, id_info_content: id_info_content, info_content : escape($(id_info_content).value) },
+									parameters: {ref_doc: ref_doc, id_info_content: id_info_content, info_content : encodeURIComponent($(id_info_content).value) },
 									evalScripts:true,
 									onLoading:S_loading, onException: function () {S_failure();},
 									onComplete: function() {
@@ -1329,7 +1329,7 @@ function maj_date_validite  (id_info_content) {
 									"block_head",
 									"documents_entete_maj_date_validite.php",
 									{
-									parameters: {ref_doc: ref_doc, id_info_content: id_info_content, info_content : escape($(id_info_content).value) },
+									parameters: {ref_doc: ref_doc, id_info_content: id_info_content, info_content : encodeURIComponent($(id_info_content).value) },
 									evalScripts:true,
 									onLoading:S_loading, onException: function () {S_failure();},
 									onComplete: function (requester){
@@ -1345,7 +1345,7 @@ function maj_date_creation  (id_info_content) {
 	var AppelAjax = new Ajax.Request(
 									"documents_entete_maj_date_creation.php",
 									{
-									parameters: {ref_doc: ref_doc, id_info_content: id_info_content, info_content : escape($(id_info_content).value) },
+									parameters: {ref_doc: ref_doc, id_info_content: id_info_content, info_content : encodeURIComponent($(id_info_content).value) },
 									evalScripts:true,
 									onLoading:S_loading, onException: function () {S_failure();},
 									onComplete: function (requester){
@@ -1361,7 +1361,7 @@ function maj_date_echeance  (id_info_content) {
 	var AppelAjax = new Ajax.Request(
 									"documents_entete_maj_date_echeance.php",
 									{
-									parameters: {ref_doc: ref_doc, id_info_content: id_info_content, info_content : escape($(id_info_content).value) },
+									parameters: {ref_doc: ref_doc, id_info_content: id_info_content, info_content : encodeURIComponent($(id_info_content).value) },
 									evalScripts:true,
 									onLoading:S_loading, onException: function () {S_failure();},
 									onComplete: function (requester){
@@ -1394,7 +1394,7 @@ function maj_ref_doc_externe  (id_info_content) {
 	var AppelAjax = new Ajax.Request(
 									"documents_entete_maj_ref_doc_externe.php",
 									{
-									parameters: {ref_doc: ref_doc, info_content : escape($F(id_info_content)) },
+									parameters: {ref_doc: ref_doc, info_content : encodeURIComponent($F(id_info_content)) },
 									evalScripts:true,
 									onLoading:S_loading, onException: function () {S_failure();},
 									onComplete: function() {
@@ -1410,7 +1410,7 @@ function maj_code_affaire (id_info_content) {
 	var AppelAjax = new Ajax.Request(
 									"documents_entete_maj_code_affaire.php",
 									{
-									parameters: {ref_doc: ref_doc, info_content : escape($F(id_info_content)) },
+									parameters: {ref_doc: ref_doc, info_content : encodeURIComponent($F(id_info_content)) },
 									evalScripts:true,
 									onLoading:S_loading, onException: function () {S_failure();},
 									onComplete: function() {
@@ -1425,7 +1425,7 @@ function generer_code_affaire (id_info_content) {
 	var AppelAjax = new Ajax.Request(
 									"documents_entete_generer_code_affaire.php",
 									{
-									parameters: {code_affaire: escape($F(id_info_content))}, 
+									parameters: {code_affaire: encodeURIComponent($F(id_info_content))}, 
 									evalScripts: true, 
 									onLoading:S_loading, onException: function(){ S_failure();}, 
 									onComplete: function(requester){
@@ -1442,7 +1442,7 @@ function maj_doc_description  (id_info_content) {
 	var AppelAjax = new Ajax.Request(
 									"documents_maj_doc_description.php",
 									{
-									parameters: {ref_doc: ref_doc, info_content : escape($(id_info_content).value) },
+									parameters: {ref_doc: ref_doc, info_content : encodeURIComponent($(id_info_content).value) },
 									evalScripts:true,
 									onLoading:S_loading, onException: function () {S_failure();},
 									onComplete: function() {
@@ -1737,7 +1737,7 @@ function maj_date_next_relance  (id_info_content) {
 	var AppelAjax = new Ajax.Request(
 									"documents_entete_maj_date_next_relance.php",
 									{
-									parameters: {ref_doc: ref_doc, id_info_content: id_info_content, info_content : escape($(id_info_content).value) },
+									parameters: {ref_doc: ref_doc, id_info_content: id_info_content, info_content : encodeURIComponent($(id_info_content).value) },
 									evalScripts:true,
 									onLoading:S_loading, onException: function () {S_failure();},
 									onComplete: function() {
@@ -2464,7 +2464,7 @@ function setToMaxRow_if_Key_RETURN (evt, mini_row, maxcol) {
 //fonction de mise ï¿½ hauteur d'un textarea en fonction du nombre de lignes qui le compose
 
 function setToMaxRow (id_field, mini_row, maxcol) {
-	array_lignes = escape($(id_field).value).split("%0A");
+	array_lignes = encodeURIComponent($(id_field).value).split("%0A");
   nbrlignes = array_lignes.length;
 	for (i=0; i<array_lignes.length ; i++) {
 		if (unescape(array_lignes[i]).length > maxcol) {
@@ -2626,7 +2626,7 @@ function pre_start_ref_externe (ref_article, ref_doc_line, indentation) {
 function pre_start_article_line (ref_article, ref_doc_line, indentation) {
 
 
-		if($("link_to_art_"+indentation)){Event.observe("link_to_art_"+indentation , "click",  function(evt){Event.stop(evt);page.verify('catalogue_articles_view','index.php#'+escape('catalogue_articles_view.php?ref_article='+ref_article),'true','_blank');}, false);
+		if($("link_to_art_"+indentation)){Event.observe("link_to_art_"+indentation , "click",  function(evt){Event.stop(evt);page.verify('catalogue_articles_view','index.php#'+encodeURIComponent('catalogue_articles_view.php?ref_article='+ref_article),'true','_blank');}, false);
                 }
                 //on injecte si il existe, dans les rï¿½sultats du moteur le numï¿½ro d'intendation afin de rendre valide la mise ï¿½ jour de la qtï¿½ depuis le moteur
 		if ($("ref_doc_line_article_"+ref_article )) {

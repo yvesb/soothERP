@@ -109,7 +109,7 @@ function grille_calcul_tarif (num_ligne_qte) {
 						var AppelAjax = new Ajax.Request(
 																			"catalogue_articles_tarifs_calcul.php", 
 																			{
-																			parameters: {req:escape(requete), prix_a: pa, prix_p: pp, tva:tarif_tva },
+																			parameters: {req:encodeURIComponent(requete), prix_a: pa, prix_p: pp, tva:tarif_tva },
 																			evalScripts:true, 
 																			onLoading:S_loading,
 																			onSuccess: function (requester){

@@ -452,7 +452,7 @@ appelpage.prototype = {
                 encoding:     'UTF-8',
                 parameters: {
                     recherche: '1',
-                    nom : escape($F('nom_s')),
+                    nom : encodeURIComponent($F('nom_s')),
                     id_profil: $F('id_profil_s'),
                     page_to_show: $F('page_to_show_s'),
                     orderby: $F('orderby_s'),
@@ -478,15 +478,15 @@ appelpage.prototype = {
                 encoding:     'UTF-8',
                 parameters: {
                     recherche: '1',
-                    nom : escape($F('nom')),
+                    nom : encodeURIComponent($F('nom')),
                     id_categorie: $F('id_categorie'),
                     id_profil: $F('id_profil'),
                     page_to_show: $F('page_to_show'),
-                    tel: escape($F('tel')),
-                    email: escape($F('email')),
-                    url: escape($F('url')),
-                    code_postal: escape($F('code_postal')),
-                    ville: escape($F('ville')),
+                    tel: encodeURIComponent($F('tel')),
+                    email: encodeURIComponent($F('email')),
+                    url: encodeURIComponent($F('url')),
+                    code_postal: encodeURIComponent($F('code_postal')),
+                    ville: encodeURIComponent($F('ville')),
                     orderby: $F('orderby'),
                     orderorder: $F('orderorder')
                     },
@@ -511,7 +511,7 @@ appelpage.prototype = {
                 encoding:     'UTF-8',
                 parameters: {
                     recherche: '1',
-                    nom : escape($F('nom_m')),
+                    nom : encodeURIComponent($F('nom_m')),
                     id_profil: $F('id_profil_m'),
                     page_to_show: $F('page_to_show_m'),
                     orderby: $F('orderby_m'),
@@ -539,7 +539,7 @@ appelpage.prototype = {
                 encoding:     'UTF-8',
                 parameters: {
                     recherche: '1',
-                    nom : escape($F('nom_s')),
+                    nom : encodeURIComponent($F('nom_s')),
                     id_profil: $F('id_profil_s'),
                     id_fonction: $F('id_fonction_s'),
                     page_to_show: $F('page_to_show_s'),
@@ -566,7 +566,7 @@ appelpage.prototype = {
                 encoding:     'UTF-8',
                 parameters: {
                     recherche: '1',
-                    nom : escape($F('nom_s')),
+                    nom : encodeURIComponent($F('nom_s')),
                     id_profil: $F('id_profil_s'),
                     page_to_show: $F('page_to_show_s'),
                     orderby: $F('orderby_s'),
@@ -607,7 +607,7 @@ appelpage.prototype = {
                 parameters: {
                     recherche: '1',
                     ref_art_categ : $F('ref_art_categ_s'),
-                    lib_article: escape($F('lib_article_s')),
+                    lib_article: encodeURIComponent($F('lib_article_s')),
                     page_to_show: $F('page_to_show_s'),
                     ref_constructeur: $F('ref_constructeur_s'),
                     in_stock: f_stock ,
@@ -631,7 +631,7 @@ appelpage.prototype = {
     catalogue_recherche_avancee : function() {
         serie_recherche=  ($('form_recherche_a').serialize(true));
         for (key in serie_recherche) {
-            serie_recherche[key] = escape(serie_recherche[key]);
+            serie_recherche[key] = encodeURIComponent(serie_recherche[key]);
         }
         var AppelAjax = new Ajax.Updater(
             "resultat",
@@ -665,7 +665,7 @@ appelpage.prototype = {
                 parameters: {
                     recherche: '1',
                     ref_art_categ : $F('ref_art_categ_s'),
-                    lib_article: escape($F('lib_article_s')),
+                    lib_article: encodeURIComponent($F('lib_article_s')),
                     page_to_show: $F('page_to_show_s'),
                     ref_constructeur: $F('ref_constructeur_s'),
                     in_stock: f_stock ,
@@ -698,7 +698,7 @@ appelpage.prototype = {
                 encoding:     'UTF-8',
                 parameters: {
                     recherche: '1',
-                    nom : escape($F('nom_s')),
+                    nom : encodeURIComponent($F('nom_s')),
                     id_profil: $F('id_profil_s'),
                     page_to_show: $F('page_to_show_s'),
                     orderby: $F('orderby_s'),
@@ -724,7 +724,7 @@ appelpage.prototype = {
                 encoding:     'UTF-8',
                 parameters: {
                     recherche: '1',
-                    nom : escape($F('nom_s')),
+                    nom : encodeURIComponent($F('nom_s')),
                     id_profil: $F('id_profil_s'),
                     page_to_show: $F('page_to_show_s'),
                     orderby: $F('orderby_s'),
@@ -781,7 +781,7 @@ appelpage.prototype = {
                     page_to_show: $F('page_to_show'),
                     date_fin: $("date_fin").value,
                     date_debut: $("date_debut").value,
-                    libelle: escape($("libelle").value),
+                    libelle: encodeURIComponent($("libelle").value),
                     montant: $("montant").value,
                     orderby: $F('orderby'),
                     orderorder: $F('orderorder')
@@ -821,7 +821,7 @@ appelpage.prototype = {
                 parameters: {
                     recherche: '1',
                     ref_art_categ : $F('ref_art_categ_s'),
-                    lib_article: escape($F('lib_article_s')),
+                    lib_article: encodeURIComponent($F('lib_article_s')),
                     page_to_show: $F('page_to_show_s'),
                     ref_constructeur: $F('ref_constructeur_s'),
                     in_stock: f_stock ,
@@ -867,7 +867,7 @@ appelpage.prototype = {
                 parameters: {
                     recherche: '1',
                     ref_art_categ : $F('ref_art_categ_s'),
-                    lib_article: escape($F('lib_article_s')),
+                    lib_article: encodeURIComponent($F('lib_article_s')),
                     page_to_show: $F('page_to_show_s'),
                     ref_constructeur: $F('ref_constructeur_s'),
                     in_stock: f_stock ,

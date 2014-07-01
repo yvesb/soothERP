@@ -66,7 +66,7 @@ function construire_ligne_liaison_article_creation(num_serie, direction_liaison,
 	
 	Event.observe("link_to_article_"+num_serie, "click",  function(evt){
 		Event.stop(evt);
-		page.verify("catalogue_articles_view","index.php#"+escape("catalogue_articles_view.php?ref_article="+ref_article_B),"true","_blank");
+		page.verify("catalogue_articles_view","index.php#"+encodeURIComponent("catalogue_articles_view.php?ref_article="+ref_article_B),"true","_blank");
 	}, false);
 	
 	Event.observe($("liaison_img_del_"+num_serie) , "click", function(){
@@ -107,7 +107,7 @@ function construire_ligne_liaison_article_view(num_serie, direction_liaison, ref
 	
 	Event.observe("link_to_article_"+num_serie, "click",  function(evt){
 		Event.stop(evt);
-		page.verify("catalogue_articles_view","index.php#"+escape("catalogue_articles_view.php?ref_article="+ref_article_B),"true","_blank");
+		page.verify("catalogue_articles_view","index.php#"+encodeURIComponent("catalogue_articles_view.php?ref_article="+ref_article_B),"true","_blank");
 	}, false);
 	
 	Event.observe($("liaison_img_del_"+num_serie) , "click", function(){
@@ -125,7 +125,7 @@ function construire_ligne_liaison_article_duplication(num_serie, direction_liais
 	
 	Event.observe("link_to_article_"+num_serie, "click",  function(evt){
 		Event.stop(evt);
-		page.verify("catalogue_articles_view","index.php#"+escape("catalogue_articles_view.php?ref_article="+ref_article_B),"true","_blank");
+		page.verify("catalogue_articles_view","index.php#"+encodeURIComponent("catalogue_articles_view.php?ref_article="+ref_article_B),"true","_blank");
 	}, false);
 	
 	Event.observe($("liaison_img_del_"+num_serie) , "click", function(){
@@ -586,7 +586,7 @@ function calcul_tarif_cell_marge(num_ligne_tarif, num_ligne_qte){
 						var AppelAjax = new Ajax.Request(
 																			"catalogue_articles_tarifs_marges.php",
 																			{
-																			parameters: {formule:escape($("formule_tarif_"+num_ligne_tarif+"_"+num_ligne_qte).value), qte:escape($("qte_tarif_"+num_ligne_qte).value), div_cible :"show_info_marge_"+num_ligne_tarif+"_"+num_ligne_qte , prix_a: pa, prix_p: pp, tva:tarif_tva },
+																			parameters: {formule:encodeURIComponent($("formule_tarif_"+num_ligne_tarif+"_"+num_ligne_qte).value), qte:encodeURIComponent($("qte_tarif_"+num_ligne_qte).value), div_cible :"show_info_marge_"+num_ligne_tarif+"_"+num_ligne_qte , prix_a: pa, prix_p: pp, tva:tarif_tva },
 																			evalScripts:true,
 																			onLoading:S_loading,
 																			onSuccess: function (requester){
@@ -707,7 +707,7 @@ function maj_article_description  (id_info_content, ref_article) {
 	var AppelAjax = new Ajax.Request(
 									"catalogue_articles_view_description_edit_valid.php",
 									{
-									parameters: {ref_article: ref_article, info_content : escape($(id_info_content).value) },
+									parameters: {ref_article: ref_article, info_content : encodeURIComponent($(id_info_content).value) },
 									evalScripts:true,
 									onLoading:S_loading,
 									onComplete: function(requester){

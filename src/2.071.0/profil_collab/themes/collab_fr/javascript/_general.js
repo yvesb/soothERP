@@ -639,7 +639,7 @@ appelpage.prototype = {
                 encoding:     'UTF-8',
                 parameters: {
                     recherche: '1',
-                    nom : escape($F('nom_s')),
+                    nom : encodeURIComponent($F('nom_s')),
                     id_profil: $F('id_profil_s'),
                     page_to_show: $F('page_to_show_s'),
                     orderby: $F('orderby_s'),
@@ -730,18 +730,18 @@ appelpage.prototype = {
                 encoding:     'UTF-8',
                 parameters: {
                     recherche: '1',
-                    nom : escape($F('nom')),
+                    nom : encodeURIComponent($F('nom')),
                     id_categorie: $F('id_categorie'),
                     id_profil: $F('id_profil'),
                     id_client_categ: $F('id_client_categ'),
                     type_client: $F('type_client'),
                     page_to_show: $F('page_to_show'),
-                    tel: escape($F('tel')),
-                    email: escape($F('email')),
-                    url: escape($F('url')),
-                    code_postal: escape($F('code_postal')),
-                    ville: escape($F('ville')),
-                    pays: escape($F('pays')),
+                    tel: encodeURIComponent($F('tel')),
+                    email: encodeURIComponent($F('email')),
+                    url: encodeURIComponent($F('url')),
+                    code_postal: encodeURIComponent($F('code_postal')),
+                    ville: encodeURIComponent($F('ville')),
+                    pays: encodeURIComponent($F('pays')),
                     orderby: $F('orderby'),
                     orderorder: $F('orderorder'),
                     archive:$F('archive')
@@ -767,7 +767,7 @@ appelpage.prototype = {
                 encoding:     'UTF-8',
                 parameters: {
                     recherche: '1',
-                    nom : escape($F('nom_m')),
+                    nom : encodeURIComponent($F('nom_m')),
                     id_profil: $F('id_profil_m'),
                     page_to_show: $F('page_to_show_m'),
                     orderby: $F('orderby_m'),
@@ -886,7 +886,7 @@ appelpage.prototype = {
                 encoding:     'UTF-8',
                 parameters: {
                     recherche: '1',
-                    nom : escape($F('nom_s')),
+                    nom : encodeURIComponent($F('nom_s')),
                     id_profil: $F('id_profil_s'),
                     page_to_show: $F('page_to_show_s'),
                     orderby: $F('orderby_s'),
@@ -947,7 +947,7 @@ appelpage.prototype = {
                 parameters: {
                     recherche: '1',
                     ref_art_categ : $F('ref_art_categ_s'),
-                    lib_article: escape($F('lib_article_s')),
+                    lib_article: encodeURIComponent($F('lib_article_s')),
                     page_to_show: $F('page_to_show_s'),
                     ref_constructeur: $F('ref_constructeur_s'),
                     in_stock: f_stock ,
@@ -993,7 +993,7 @@ appelpage.prototype = {
                 parameters:	{
                     recherche: '1',
                     ref_art_categ : $F('ref_art_categ_s'),
-                    lib_article: escape($F('lib_article_s')),
+                    lib_article: encodeURIComponent($F('lib_article_s')),
                     page_to_show: $F('page_to_show_s'),
                     ref_constructeur: $F('ref_constructeur_s'),
                     orderby: $F('orderby_s'),
@@ -1019,7 +1019,7 @@ appelpage.prototype = {
         serie_recherche=  ($('form_recherche_a').serialize(true));
         for (key in serie_recherche) {
             historique_request[1][key] = serie_recherche[key];
-            serie_recherche[key] = escape(serie_recherche[key]);
+            serie_recherche[key] = encodeURIComponent(serie_recherche[key]);
         }
         var AppelAjax = new Ajax.Updater(
             "resultat",
@@ -1053,7 +1053,7 @@ appelpage.prototype = {
                 parameters: {
                     recherche: '1',
                     ref_art_categ : $F('ref_art_categ_cata_m'),
-                    lib_article: escape($F('lib_article_cata_m')),
+                    lib_article: encodeURIComponent($F('lib_article_cata_m')),
                     page_to_show: $F('page_to_show_cata_m'),
                     ref_constructeur: $F('ref_constructeur_cata_m'),
                     in_stock: f_stock ,
@@ -1092,7 +1092,7 @@ appelpage.prototype = {
                 parameters: {
                     recherche: '1',
                     ref_art_categ : $F('ref_art_categ_s'),
-                    lib_article: escape($F('lib_article_s')),
+                    lib_article: encodeURIComponent($F('lib_article_s')),
                     page_to_show: $F('page_to_show_s'),
                     ref_constructeur: $F('ref_constructeur_s'),
                     in_pa_zero: f_pa_zero ,
@@ -1153,7 +1153,7 @@ appelpage.prototype = {
                     type: $F('type_s'),
                     recherche: '1',
                     ref_art_categ : $F('ref_art_categ_s'),
-                    lib_article: escape($F('lib_article_s')),
+                    lib_article: encodeURIComponent($F('lib_article_s')),
                     page_to_show: $F('page_to_show_s'),
                     ref_constructeur: $F('ref_constructeur_s'),
                     in_stock: f_stock ,
@@ -1183,7 +1183,7 @@ appelpage.prototype = {
         serie_recherche=  ($('form_recherche_a').serialize(true));
         for (key in serie_recherche) {
             historique_request[1][key] = serie_recherche[key];
-            serie_recherche[key] = escape(serie_recherche[key]);
+            serie_recherche[key] = encodeURIComponent(serie_recherche[key]);
         }
         serie_recherche['type'] = $F('type_s');
         var AppelAjax = new Ajax.Updater(
@@ -1229,7 +1229,7 @@ appelpage.prototype = {
                 parameters: {
                     recherche: '1',
                     ref_art_categ : $F('ref_art_categ_s'),
-                    lib_article: escape($F('lib_article_s')),
+                    lib_article: encodeURIComponent($F('lib_article_s')),
                     page_to_show: $F('page_to_show_s'),
                     ref_constructeur: $F('ref_constructeur_s'),
                     orderby: $F('orderby_s'),
@@ -1542,7 +1542,7 @@ appelpage.prototype = {
         serie_recherche=  ($('form_recherche_a').serialize(true));
         for (key in serie_recherche) {
             historique_request[2][key] = serie_recherche[key];
-            serie_recherche[key] = escape(serie_recherche[key]);
+            serie_recherche[key] = encodeURIComponent(serie_recherche[key]);
         }
 		
         var AppelAjax = new Ajax.Updater(
@@ -1805,7 +1805,7 @@ appelpage.prototype = {
                 encoding:     'UTF-8',
                 parameters: {
                     recherche: '1',
-                    nom : escape($F('nom_s')),
+                    nom : encodeURIComponent($F('nom_s')),
                     id_profil: $F('id_profil_s'),
                     page_to_show: $F('page_to_show_s'),
                     orderby: $F('orderby_s'),
@@ -1827,7 +1827,7 @@ appelpage.prototype = {
 	
         serie_recherche=  ($('creer_document_inventaire').serialize(true));
         for (key in serie_recherche) {
-            serie_recherche[key] = escape(serie_recherche[key]);
+            serie_recherche[key] = encodeURIComponent(serie_recherche[key]);
         }
         //alert (serie_recherche);
 		
@@ -2001,7 +2001,7 @@ appelpage.prototype = {
                     page_to_show: $F('page_to_show'),
                     date_fin: $("date_fin").value,
                     date_debut: $("date_debut").value,
-                    libelle: escape($("libelle").value),
+                    libelle: encodeURIComponent($("libelle").value),
                     montant: $("montant").value,
                     delta_montant: $("delta_montant").value,
                     ope_type: $("ope_type").value,
@@ -2032,7 +2032,7 @@ appelpage.prototype = {
                     page_to_show: $F('page_to_show'),
                     date_fin: $("date_fin").value,
                     date_debut: $("date_debut").value,
-                    nom_porteur: escape($("nom_porteur").value),
+                    nom_porteur: encodeURIComponent($("nom_porteur").value),
                     montant: $("montant").value,
                     delta_montant: $("delta_montant").value,
                     banque: $("banque").value,
@@ -2060,7 +2060,7 @@ appelpage.prototype = {
                 encoding:     'UTF-8',
                 parameters: {
                     recherche: '1',
-                    nom : escape($F('nom')),
+                    nom : encodeURIComponent($F('nom')),
                     id_categorie: $F('id_categorie'),
                     id_profil: $F('id_profil'),
                     id_client_categ: $F('id_client_categ'),
@@ -2090,7 +2090,7 @@ appelpage.prototype = {
                 encoding:     'UTF-8',
                 parameters: {
                     recherche: '1',
-                    nom : escape($F('nom')),
+                    nom : encodeURIComponent($F('nom')),
                     id_categorie: $F('id_categorie'),
                     id_profil: $F('id_profil'),
                     id_fournisseur_categ: $F('id_fournisseur_categ'),
@@ -2120,7 +2120,7 @@ appelpage.prototype = {
                 encoding:     'UTF-8',
                 parameters: {
                     recherche: '1',
-                    id_comm_event_type: escape($F('id_comm_event_type')),
+                    id_comm_event_type: encodeURIComponent($F('id_comm_event_type')),
                     page_to_show: $F('page_to_show_s'),
                     orderby: $F('orderby_s'),
                     orderorder: $F('orderorder_s')
@@ -2146,7 +2146,7 @@ appelpage.prototype = {
                 encoding:     'UTF-8',
                 parameters: {
                     recherche: '1',
-                    id_comm_event_type: escape($F('id_comm_event_type')),
+                    id_comm_event_type: encodeURIComponent($F('id_comm_event_type')),
                     page_to_show: $F('page_to_show_s'),
                     orderby: $F('orderby_s'),
                     orderorder: $F('orderorder_s')
@@ -2462,7 +2462,7 @@ function rise_height (id_element, max_height) {
 //ouverture d'un document
 
 function open_doc (ref_doc) {
-    page.verify("document_edition","index.php#"+escape("documents_edition.php?ref_doc="+ref_doc), "true", "_blank");
+    page.verify("document_edition","index.php#"+encodeURIComponent("documents_edition.php?ref_doc="+ref_doc), "true", "_blank");
 }
 
 //rafraichir le contenu en cours (bouton dans barre de menu)

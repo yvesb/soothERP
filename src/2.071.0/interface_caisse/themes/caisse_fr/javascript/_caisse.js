@@ -71,7 +71,7 @@ function document_recherche_article() {
 			parameters: {
 				recherche: '1',
 				ref_art_categ : $F('ref_art_categ_s'),
-				lib_article: escape($F('lib_article_s')),
+				lib_article: encodeURIComponent($F('lib_article_s')),
 				page_to_show: $F('article_page_to_show_s'),
 				ref_constructeur: $F('ref_constructeur_s'),
 				orderby: $F('article_orderby_s'),
@@ -101,7 +101,7 @@ function caisse_recherche_client_simple() {
 			encoding:     'UTF-8',
 			parameters: {
 				recherche: '1',
-				nom : escape($F('nom_s')),
+				nom : encodeURIComponent($F('nom_s')),
 				page_to_show: $F('page_to_show_s'),
 				orderby: $F('orderby_s'),
 				orderorder: $F('orderorder_s')
@@ -639,7 +639,7 @@ function addLineInfo(ref_ticket, options){
 			method: 'post',
 			evalScripts:true,
 			onLoading:S_loading,
-			parameters : {ref_ticket : ref_ticket, infos : escape($F('infosAddLinePopup'))},
+			parameters : {ref_ticket : ref_ticket, infos : encodeURIComponent($F('infosAddLinePopup'))},
 			onComplete : function(xhr){
 				xhr.responseText.evalScripts();
 				if(options.afterFinish(xhr.responseText) === false)

@@ -356,13 +356,13 @@ function prestart_choix_niveau_relance (identifiant, indentation, ref_doc, lib_n
 function prestart_ligne_fac_np (dir_profil, ref_doc, ref_contact, indentation) {
     Event.observe(ref_doc, 'click',  function(evt){
         Event.stop(evt);
-        window.open( dir_profil+escape("documents_edition.php?ref_doc="+ref_doc),'_blank');
+        window.open( dir_profil+encodeURIComponent("documents_edition.php?ref_doc="+ref_doc),'_blank');
     }, false);
 
     Event.observe(ref_doc+'ctc', 'click',  function(evt){
         Event.stop(evt);
         if (ref_contact != "") {
-            window.open( dir_profil+escape("annuaire_view_fiche.php?ref_contact="+ref_contact),'_blank');
+            window.open( dir_profil+encodeURIComponent("annuaire_view_fiche.php?ref_contact="+ref_contact),'_blank');
         }
     }, false);
 
@@ -381,13 +381,13 @@ function prestart_ligne_fac_np (dir_profil, ref_doc, ref_contact, indentation) {
 function prestart_ligne_fac_fourn_np (dir_profil, ref_doc, ref_contact, indentation) {
     Event.observe(ref_doc, 'click',  function(evt){
         Event.stop(evt);
-        window.open( dir_profil+escape("documents_edition.php?ref_doc="+ref_doc),'_blank');
+        window.open( dir_profil+encodeURIComponent("documents_edition.php?ref_doc="+ref_doc),'_blank');
     }, false);
 
     Event.observe(ref_doc+'ctc', 'click',  function(evt){
         Event.stop(evt);
         if (ref_contact != "") {
-            window.open( dir_profil+escape("annuaire_view_fiche.php?ref_contact="+ref_contact),'_blank');
+            window.open( dir_profil+encodeURIComponent("annuaire_view_fiche.php?ref_contact="+ref_contact),'_blank');
         }
     }, false);
 

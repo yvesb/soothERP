@@ -7,7 +7,7 @@ function maj_tache_note (id_note, id_tache) {
 	var AppelAjax = new Ajax.Request(
 									"planning_taches_maj_note.php", 
 									{
-									parameters: {id_tache: id_tache, note: escape($(id_note).value)},
+									parameters: {id_tache: id_tache, note: encodeURIComponent($(id_note).value)},
 									evalScripts:true, 
 									onLoading:S_loading, onException: function () {S_failure();},
 									onSuccess: function (requester){

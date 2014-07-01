@@ -89,7 +89,7 @@ function taxes_dispo(taxes_globarray) {
 	var divli= document.createElement("div");
 		divli.setAttribute ("id", "taxe_imp"+n);										
 	var link_import= document.createElement("a");
-		link_import.setAttribute ("href", "catalogue_taxes_import.php?id_taxe="+escape(n[0])+"&lib_taxe="+escape(n[1])+"&id_pays="+escape(n[2])+"&code_taxe="+escape(n[3])+"&info_calcul="+escape(n[4]));
+		link_import.setAttribute ("href", "catalogue_taxes_import.php?id_taxe="+encodeURIComponent(n[0])+"&lib_taxe="+encodeURIComponent(n[1])+"&id_pays="+encodeURIComponent(n[2])+"&code_taxe="+encodeURIComponent(n[3])+"&info_calcul="+encodeURIComponent(n[4]));
 		link_import.setAttribute ("id", "link_import"+n);				
 		link_import.setAttribute ("target", "formFrame");				
 	var img_import= document.createElement("img");
