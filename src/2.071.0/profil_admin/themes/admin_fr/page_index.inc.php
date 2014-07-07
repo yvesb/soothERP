@@ -605,13 +605,9 @@ if ($AFFICHE_DEBUG) {
 	
 	<script type="text/javascript">
 		// <![CDATA[
-		var so = new SWFObject("<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/waiting.swf", "Lundi_Matin", "142", "15", "7", "#ffffff" );
-		so.addVariable("flashVarText", "Lundi_Matin");
-		so.addParam("wmode", "transparent");
-		so.addParam("quality", "high");
-		so.addParam("id", "swf_waiting");
-		so.addParam("allowScriptAccess", "always");
-		so.write("boxcontent");
+
+swfobject.embedSWF("<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/waiting.swf", "boxcontent", "142", "15", "9.0.0", "expressInstall.swf", false,{wmode: "transparent", quality: "high", allowScriptAccess: "always"}, {id: "swf_waiting"});
+
 		// ]]>
 	</script>
 </div>
