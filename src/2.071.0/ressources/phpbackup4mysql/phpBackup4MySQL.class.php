@@ -450,7 +450,7 @@ class phpBackup4MySQL
 		$dsn = 'mysql:host='.$host.';dbname='.$dbName;
 		try
 		{
-			$dbh = new PDO ($dsn, $user, $pass);
+			$dbh = new PDO ($dsn, $user, $pass, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
 		}
 		catch (PDOException $e)
 		{
@@ -565,8 +565,8 @@ class phpBackup4MySQL
 
 
 
-		//Encode the file to utf8
-		if(fwrite ( $file , utf8_encode($sql_dump) ))
+		//Write file
+		if(fwrite ( $file , $sql_dump ))
 
 			{
 			//S3 credentials and bucket defined ?
@@ -741,7 +741,7 @@ class phpBackup4MySQL
 			{
 
 				$linebuffer .=$line;
-				$sqlQuery = $dbh -> exec(utf8_decode($linebuffer));
+				$sqlQuery = $dbh -> exec($linebuffer);
 				$queryCount++;
 
 				$linebuffer='';
