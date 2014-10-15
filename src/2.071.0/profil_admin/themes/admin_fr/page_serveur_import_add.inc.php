@@ -64,7 +64,7 @@ if (erreur) {
 else
 {
 window.parent.changed = false;
-window.open("<?php echo $_REQUEST["url_serveur_import"].$ECHANGE_LMB_DIR;?>export_serveur_add.php?impex=<?php echo implode(";",$liste_impex );?>&ref_serveur_import=<?php echo $_SERVER['REF_SERVEUR'];?>&code_serveur_import=<?php echo $CODE_SECU;?>&url_serveur_import="+document.URL.replace("/profil_admin/serveur_import_add.php", ""), "_self");
+window.open("<?php echo $_REQUEST["url_serveur_import"].$ECHANGE_DIR;?>export_serveur_add.php?impex=<?php echo implode(";",$liste_impex );?>&ref_serveur_import=<?php echo $_SERVER['REF_SERVEUR'];?>&code_serveur_import=<?php echo $CODE_SECU;?>&url_serveur_import="+document.URL.replace("/profil_admin/serveur_import_add.php", ""), "_self");
 
 }
 </script>

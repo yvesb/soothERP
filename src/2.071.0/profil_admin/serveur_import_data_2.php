@@ -39,7 +39,7 @@ if ($import_infos == "") {
 	fwrite($new_file, $import_infos);
 	fclose($new_file);
 	
-$fichier = $import_serveur->getUrl_serveur_import().$ECHANGE_LMB_DIR."export_articles_count_data.php?ref_serveur=".$_SERVER['REF_SERVEUR'];
+$fichier = $import_serveur->getUrl_serveur_import().$ECHANGE_DIR."export_articles_count_data.php?ref_serveur=".$_SERVER['REF_SERVEUR'];
 
 
 $fp = fopen ($fichier, "r");

@@ -13,7 +13,7 @@ require ($DIR."_session.inc.php");
 $import_annuaire_data_dispo = array();
 $import_serveur = new import_serveur ($_REQUEST["ref_serveur"]);
 
-$fichier = $import_serveur->getUrl_serveur_import().$ECHANGE_LMB_DIR."export_annuaire_dispo_data.php?ref_serveur=".$_SERVER['REF_SERVEUR'];
+$fichier = $import_serveur->getUrl_serveur_import().$ECHANGE_DIR."export_annuaire_dispo_data.php?ref_serveur=".$_SERVER['REF_SERVEUR'];
 //readfile($fichier);
     // Ma propre fonction de traitement des balises ouvrantes
     function fonctionBaliseOuvrante($parseur, $nomBalise, $tableauAttributs)

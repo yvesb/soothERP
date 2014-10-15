@@ -18,7 +18,7 @@ $import_annuaire_site = array();
 $import_annuaire_profil = array();
 $import_serveur = new import_serveur ($_REQUEST["ref_serveur"]);
 
-$fichier = $import_serveur->getUrl_serveur_import().$ECHANGE_LMB_DIR."export_annuaire_send_data.php?ref_serveur=".$_SERVER['REF_SERVEUR']."&id_annuaire_data=".$_REQUEST["id_annuaire_data"];
+$fichier = $import_serveur->getUrl_serveur_import().$ECHANGE_DIR."export_annuaire_send_data.php?ref_serveur=".$_SERVER['REF_SERVEUR']."&id_annuaire_data=".$_REQUEST["id_annuaire_data"];
 
 //readfile($fichier);
     // Ma propre fonction de traitement des balises ouvrantes

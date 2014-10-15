@@ -49,7 +49,7 @@ else
 {
 window.parent.changed = false;
 
-	window.open( "<?php echo $url.$ECHANGE_LMB_DIR;?>export_serveur_sup.php?ref_serveur_import=<?php echo $_SERVER['REF_SERVEUR'];?>&code_serveur_import=<?php echo $CODE_SECU;?>", "formFrame");
+	window.open( "<?php echo $url.$ECHANGE_DIR;?>export_serveur_sup.php?ref_serveur_import=<?php echo $_SERVER['REF_SERVEUR'];?>&code_serveur_import=<?php echo $CODE_SECU;?>", "formFrame");
 
 
 

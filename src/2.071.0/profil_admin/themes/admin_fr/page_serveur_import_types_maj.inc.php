@@ -47,7 +47,7 @@ window.parent.changed = false;
 <?php
 if ($_REQUEST["autorise"]) {
 	?>
-	window.open( "<?php echo $import_serveur->getUrl_serveur_import().$ECHANGE_LMB_DIR;?>export_serveur_impex_add.php?ref_serveur_import=<?php echo $_SERVER['REF_SERVEUR'];?>&code_serveur_import=<?php echo $CODE_SECU;?>&id_impex=<?php echo $_REQUEST["id_impex_type"]?>", "formFrame");
+	window.open( "<?php echo $import_serveur->getUrl_serveur_import().$ECHANGE_DIR;?>export_serveur_impex_add.php?ref_serveur_import=<?php echo $_SERVER['REF_SERVEUR'];?>&code_serveur_import=<?php echo $CODE_SECU;?>&id_impex=<?php echo $_REQUEST["id_impex_type"]?>", "formFrame");
 	<?php
 } else {
 	?>

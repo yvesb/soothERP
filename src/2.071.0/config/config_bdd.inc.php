@@ -6,8 +6,8 @@
 
 // Base TRAVAIL
 $bdd_hote = "localhost"; 
-$bdd_user = "root";  
-$bdd_pass = ""; 
-$bdd_base = "SoothERP2_063_0";
+$bdd_user = "serp";  
+$bdd_pass = "serp"; 
+$bdd_base = "serp";
 
 ?>

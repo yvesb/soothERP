@@ -1,4 +1,0 @@
-<?php 
-$CONFIGURATION=0;
-$STAT_STANDARD['X'] = 0;
-?>

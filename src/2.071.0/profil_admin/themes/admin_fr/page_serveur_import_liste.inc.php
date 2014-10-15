@@ -59,11 +59,11 @@ update_menu_arbo();
 						<SCRIPT type="text/javascript">
 				Event.observe("verifier_serveur", "click",  function(evt){
 					Event.stop(evt); 
-					url_to_send = $("url_serveur_import").value+"<?php echo $ECHANGE_LMB_DIR;?>/serveur_export_partage_liste.php?url="+document.URL.replace("/profil_admin/serveur_import_liste.php", "");
+					url_to_send = $("url_serveur_import").value+"<?php echo $ECHANGE_DIR;?>/serveur_export_partage_liste.php?url="+document.URL.replace("/profil_admin/serveur_import_liste.php", "");
 					
-					//window.open($("url_serveur_import").value+"<?php echo $ECHANGE_LMB_DIR;?>/serveur_export_partage_liste.php?url="+document.URL.replace("/profil_admin/serveur_import_liste.php"), "formFrame");
+					//window.open($("url_serveur_import").value+"<?php echo $ECHANGE_DIR;?>/serveur_export_partage_liste.php?url="+document.URL.replace("/profil_admin/serveur_import_liste.php"), "formFrame");
 					//var AppelAjax = new Ajax.Request(
-//									$("url_serveur_import").value+"<?php echo $ECHANGE_LMB_DIR;?>serveur_export_partage_liste.php",
+//									$("url_serveur_import").value+"<?php echo $ECHANGE_DIR;?>serveur_export_partage_liste.php",
 //									{
 //									method: 'post',
 //									asynchronous: true,

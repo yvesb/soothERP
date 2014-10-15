@@ -51,7 +51,7 @@ foreach ($tmp_import_art_categ_liste as $tmp) {
 
 	
 	
-$fichier = $import_serveur->getUrl_serveur_import().$ECHANGE_LMB_DIR."export_articles_send_data.php?ref_serveur=".$_SERVER['REF_SERVEUR']."&debut=".$_REQUEST["debut"]."&fin=".$_REQUEST["fin"]."&load_info=".$_REQUEST["load_info"];
+$fichier = $import_serveur->getUrl_serveur_import().$ECHANGE_DIR."export_articles_send_data.php?ref_serveur=".$_SERVER['REF_SERVEUR']."&debut=".$_REQUEST["debut"]."&fin=".$_REQUEST["fin"]."&load_info=".$_REQUEST["load_info"];
 
 
 

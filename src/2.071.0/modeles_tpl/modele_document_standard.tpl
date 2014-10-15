@@ -1,1 +1,0 @@
-{TPLINCLUDE:texte_pieces_jointes.tpl}

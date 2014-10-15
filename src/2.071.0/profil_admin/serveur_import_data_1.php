@@ -14,7 +14,7 @@ $import_art_categs_carac_groupe = array();
 $import_art_categs_carac = array();
 $import_serveur = new import_serveur ($_REQUEST["ref_serveur"]);
 
-$fichier = $import_serveur->getUrl_serveur_import().$ECHANGE_LMB_DIR."export_catalogue_send_data.php?ref_serveur=".$_SERVER['REF_SERVEUR'];
+$fichier = $import_serveur->getUrl_serveur_import().$ECHANGE_DIR."export_catalogue_send_data.php?ref_serveur=".$_SERVER['REF_SERVEUR'];
 //readfile($fichier);
     // Ma propre fonction de traitement des balises ouvrantes
     function fonctionBaliseOuvrante($parseur, $nomBalise, $tableauAttributs)

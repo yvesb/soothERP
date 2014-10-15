@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 
 // utilisation du @ pour ne pas avoir de message d'erreur 
-@ $fichier_dist	= fopen($_REQUEST["url_serveur_import"].$ECHANGE_LMB_DIR."export_serveur_add.php","r" );
+@ $fichier_dist	= fopen($_REQUEST["url_serveur_import"].$ECHANGE_DIR."export_serveur_add.php","r" );
 @ $info_fichier = fgets($fichier_dist, 4096);
 @ fclose($fichier_dist);
 

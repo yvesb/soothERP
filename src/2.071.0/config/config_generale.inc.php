@@ -2,26 +2,27 @@
 // *************************************************************************************************************
 // CONFIGURATION GENERALE DE L'APPLICATION
 // *************************************************************************************************************
-$TIMEZONE = "Europe/Paris";
-$INFO_LOCALE = array("fr_FRA", "fr_FR", "fra", "France", "French", "fr_FR.UTF-8");
+$TIMEZONE           = "Europe/Paris";
+$INFO_LOCALE        = array("fr_FRA", "fr_FR", "fra", "France", "French", "fr_FR.UTF-8");
 
-$USE_PA_HT_FORCED = 0;
-$TAXE_IN_PU = 1;
-$GEST_TYPE_COORD = 0;
-$AFFICHER_AIDE = 1;						// Affichage des infos-bulles.
-
+$USE_PA_HT_FORCED   = 0;
+$TAXE_IN_PU         = 1;
+$GEST_TYPE_COORD    = 0;
+$AFFICHER_AIDE      = 1;                        // Affichage des infos-bulles.
+$CHOIX_THEME        = "default";                // Choix du theme des interfaces
 
 // *************************************************************************************************************
 // VALEURS PAR DEFAUT
 // *************************************************************************************************************
 $DEFAUT_PROFILS 	= array(1);		// Visiteur = 1 (au minimum). Client = 4 sera souvent utilisé.
-$DEFAUT_INTERFACE = "site/"; // Interface par défaut de l'utilisateur
-$DEFAUT_ID_THEME 		= 1;			// Thème utilisé pour les utilisateurs non profilés 
-$DEFAUT_ID_PAYS 		= 77;			// Pays utilisé par défaut 
-$DEFAUT_ID_LANG 		= 1;			// Langage utilisé par défaut 
-$DEFAUT_MODE_VENTE	= "VAC";	// Mode de vente par défaut
+$DEFAUT_INTERFACE       = "profil_collab/";     // Interface par défaut de l'utilisateur
+$DEFAUT_ID_THEME 	= 1;			// Interface utilisé pour les utilisateurs non profilés 
+$DEFAUT_ID_PAYS 	= 77;			// Pays utilisé par défaut 
+$DEFAUT_ID_LANG 	= 1;			// Langage utilisé par défaut 
+$DEFAUT_MODE_VENTE	= "VAC";                // Mode de vente par défaut
 $DEFAUT_ID_MAGASIN	= 1;			// Magasin par défaut
-$DEFAUT_ID_STOCK_EXPE = 0;		// Stock pour les livraisons en VPC (sinon, livraison depuis le magasin réalisant la vente)
+$DEFAUT_ID_STOCK_EXPE   = 0;                    // Stock pour les livraisons en VPC (sinon, livraison depuis le magasin réalisant la vente)
+
 
 
 // *************************************************************************************************************
@@ -34,10 +35,10 @@ $FALSE_LOGIN_TIME_WINDOW = 86400;  // Durée pendant laquelle l'ip est bannie (e
 
 // Identification
 $MODE_IDENTIFICATION 	= "TEXTE";		// Défini si les utilisateurs s'identifient par un champs SELECT ou un champs TEXTE
-$COOKIE_LOGIN_LT			= 7776000;		// Durée de vie du cookie enregistrant le LOGIN de connexion (90j)
+$COOKIE_LOGIN_LT	= 7776000;		// Durée de vie du cookie enregistrant le LOGIN de connexion (90j)
 $COOKIE_INTERFACE_LT	= 31536000;		// Durée de vie des cookies d'interfaces
-$TMP_PANIER_LT				= 7776000;		// Durée de vie des infos tmp d'un panier d'interfaces
-$COOKIE_SYSTEME_LT		= 31536000;		// Durée de vie des cookies systèmes
+$TMP_PANIER_LT		= 7776000;		// Durée de vie des infos tmp d'un panier d'interfaces
+$COOKIE_SYSTEME_LT	= 31536000;		// Durée de vie des cookies systèmes
 
 
 // *************************************************************************************************************
