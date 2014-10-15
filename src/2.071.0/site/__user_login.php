@@ -71,7 +71,7 @@ if (isset ($_REQUEST['login']) && isset ($_REQUEST['code'])) {
 // BACKUP DE LA BASE DE DONNEES
 // *************************************************************************************************************
 if ($SESSION_START_BACKUP) 
-	include($DIR."taches_auto/session_backup.php");
+	include($CORE_DIR."taches_auto/session_backup.php");
 
   	header ("Location: ".urldecode($_INFOS['redirection']).$hash);
   	exit();
@@ -122,7 +122,6 @@ $message = "";
 // AFFICHAGE
 // *************************************************************************************************************
 include ($DIR.$_SESSION['theme']->getDir_theme()."page_user_login.inc.php");
-
 
 ?>
 

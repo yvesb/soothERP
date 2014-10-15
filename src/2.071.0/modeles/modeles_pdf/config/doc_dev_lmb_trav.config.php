@@ -1,0 +1,88 @@
+<?PHP 
+$CONFIGURATION=1;
+
+// CODE NON PARAMETRABLE
+global $DOCUMENTS_IMG_LOGO;
+$DOC_STANDARD['IMG_LOGO']	= $DOCUMENTS_IMG_LOGO;
+
+$DOC_STANDARD['FORMULAIRE_TVA_1']	= "1.jpg"; // nom du fichier image du formulaire tva
+// à placer dans ..\htdocs\LMB\fichiers\images
+
+$DOC_STANDARD['AFF_REMISES']	= $AFF_REMISES;
+
+$DOC_STANDARD['HAUTEUR_LINE_ARTICLE']			= 5;
+$DOC_STANDARD['HAUTEUR_LINE_TAXE']				= 5;
+$DOC_STANDARD['HAUTEUR_LINE_INFORMATION']	= 5;
+$DOC_STANDARD['HAUTEUR_LINE_SOUSTOTAL']		= 5;
+$DOC_STANDARD['HAUTEUR_LINE_DESCRIPTION']	= 5;
+$DOC_STANDARD['HAUTEUR_LINE_VIDE']				= 1;
+
+$DOC_STANDARD['HAUTEUR_AFTER_LINE_ARTICLE']			= 0;
+$DOC_STANDARD['HAUTEUR_AFTER_LINE_TAXE']				= 0;
+$DOC_STANDARD['HAUTEUR_AFTER_LINE_INFORMATION']	= 0;
+$DOC_STANDARD['HAUTEUR_AFTER_LINE_SOUSTOTAL']		= 0;
+$DOC_STANDARD['HAUTEUR_AFTER_LINE_DESCRIPTION']	= 0;
+
+$DOC_STANDARD['ENTETE_COL_REF'] = "Référence";
+$DOC_STANDARD['ENTETE_COL_DES'] = "Désignation";
+$DOC_STANDARD['ENTETE_COL_QTE'] = "Qté";
+$DOC_STANDARD['ENTETE_COL_PU']  = "PU ".$this->app_tarifs;
+$DOC_STANDARD['ENTETE_COL_REM'] = "Rem.";
+$DOC_STANDARD['ENTETE_COL_PT']  = "Montant";
+$DOC_STANDARD['ENTETE_COL_TVA'] = "TVA";
+
+$DOC_STANDARD['LARGEUR_COL_REF'] = 0;
+$DOC_STANDARD['LARGEUR_COL_LIB'] = 130;//75
+$DOC_STANDARD['LARGEUR_COL_QTE'] = 10;
+$DOC_STANDARD['LARGEUR_COL_PRI'] = 20;
+$DOC_STANDARD['LARGEUR_COL_REM'] = 0;
+$DOC_STANDARD['LARGEUR_COL_TVA'] = 0;
+
+$DOC_STANDARD['NB_LIGNES_DESC'] = 5;
+
+// ***************************************************
+// POSITION DES BLOCS
+$DOC_STANDARD['MARGE_GAUCHE'] = 15;
+$DOC_STANDARD['MARGE_HAUT']		= 15;
+
+$DOC_STANDARD['NOTE_HAUTEUR_DEPART']		= 90;
+$DOC_STANDARD['NOTE_HAUTEUR_MAX']		= 33;
+
+// CORPS DU DOCUMENT
+$DOC_STANDARD['CORPS_HAUTEUR_DEPART']	= 130;//100
+$DOC_STANDARD['CORPS_HAUTEUR_MAX']		= 100;//130
+
+// PIEDS DE PAGE
+$DOC_STANDARD['PIEDS_HAUTEUR_DEPART']	= 240;
+$DOC_STANDARD['PIEDS_HAUTEUR_MAX']		= 32;
+
+// ***************************************************
+// TEXTES DE PIEDS DE PAGE
+global $PIED_DE_PAGE_GAUCHE_0;
+global $PIED_DE_PAGE_GAUCHE_1;
+global $PIED_DE_PAGE_DROIT_0;
+global $PIED_DE_PAGE_DROIT_1;
+$DOC_STANDARD['PIEDS_GAUCHE'][0]	= $PIED_DE_PAGE_GAUCHE_0;
+$DOC_STANDARD['PIEDS_GAUCHE'][1]	= $PIED_DE_PAGE_GAUCHE_1;
+$DOC_STANDARD['PIEDS_DROIT'][0]	=  $PIED_DE_PAGE_DROIT_0;
+$DOC_STANDARD['PIEDS_DROIT'][1]	= $PIED_DE_PAGE_DROIT_1;
+
+
+//variable//type de champ(parametre)//libéllé//commentaire
+// PARAMETRES MODIFIABLES
+$DOC_STANDARD['TEXTE_CORPS_PIEDS'][0]="";//TXTE()// Texte entre corps et pied de page//ligne n°1   
+$DOC_STANDARD['TEXTE_CORPS_PIEDS'][1]="";//TXTE()// Texte entre corps et pied de page//ligne n°2 
+$DOC_STANDARD['TEXTE_CORPS_PIEDS'][2]="";//TXTE()// Texte entre corps et pied de page//ligne n°3
+// FIN PARAMETRES MODIFIABLES
+// CONFIGURATION PAR DEFAUT
+// Portion de code recopiée dans la partie « paramètres modifiables » en cas de remise à 0 des paramètres.
+/*
+$DOC_STANDARD['TEXTE_CORPS_PIEDS'][0]="Devis établi gratuitement";//TXTE()// Texte entre corps et pied de page//ligne n°1
+$DOC_STANDARD['TEXTE_CORPS_PIEDS'][1]="Les prix indiqués sur ce devis sont valables: 30 jours.";//TXTE()// Texte entre corps et pied de page//ligne n°2
+$DOC_STANDARD['TEXTE_CORPS_PIEDS'][2]="";//TXTE()// Texte entre corps et pied de page//ligne n°3
+*/
+// FIN CONFIGURATION PAR DEFAUT
+// INFORMATIONS SUR L’AUTEUR
+/* 
+*/
+?>
