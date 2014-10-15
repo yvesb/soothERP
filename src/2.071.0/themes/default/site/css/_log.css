@@ -1,0 +1,370 @@
+/* CSS Document */
+html,body {
+padding:0px;
+border:0px;
+height:100%;
+background-color: #aec388;
+margin: 0px;
+}
+
+body, td, th, p {
+font: 12px Arial, Helvetica, sans-serif;
+}
+
+form {
+padding:0;
+margin:0;
+}
+
+table {
+margin:0;
+padding:0;
+}
+td {
+vertical-align:top;
+}
+
+
+dl, dt, dd, ul, li {
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+img {
+border:0px;
+vertical-align:middle
+}
+.top_log {
+color:#0000FF;
+font:24px Arial, Helvetica, sans-serif;
+
+}
+
+.title_install {
+	padding-left:35px;
+	padding-top:10px;
+	color: #FFFFFF;
+	font-family: Arial ,Helvetica,sans-serif;
+	font-weight:bolder;
+	font-size: 30px;
+}
+.compl_title {
+	color: #d1e4b6;
+	font-family: Arial ,Helvetica,sans-serif;
+	font-style:italic;
+	font-size: 14px;
+}
+.sub_t_install {
+	color: #000000;
+	font-family: arial,Helvetica,sans-serif;
+	font-size: 18px;
+	text-decoration:underline;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.radius_main {
+border:1px solid #aaaaaa ;
+padding:15px;
+background-color:#FFFFFF;
+-moz-border-radius:15px;
+border-radius:15px;
+display:block;
+}
+/* menu principal*/
+
+.bgmain_menu {
+font: 12px Arial, Helvetica, sans-serif;
+padding:15px;
+
+}
+
+table.conteneir {
+padding-left:10px;
+padding-right:25px;
+padding-top:0px;
+color: #000000;
+font:1em Arial, Helvetica, sans-serif; 
+width:100%;
+}
+
+.title_content {
+font: 40px Arial, Helvetica, sans-serif;
+color:#7d7d7d;
+font-weight:bolder;
+padding-left:70px;
+line-height:59px;
+background-image:url(../images/tool_install.gif); background-repeat:no-repeat
+}
+.bt_connex {
+border:1px solid #999999;
+width:165px;
+height:32px;
+font:19px Arial, Helvetica, sans-serif;
+text-align:left;
+padding-left:15px;
+-moz-border-radius:9px;
+border-radius:9px;
+background-color:#FFFFFF;
+background-image:url(../images/bt_next.gif);
+background-position:right;
+background-repeat:no-repeat;
+}
+.bt_suite {
+border:1px solid #999999;
+width:130px;
+height:32px;
+font:19px Arial, Helvetica, sans-serif;
+text-align:left;
+padding-left:15px;
+-moz-border-radius:9px;
+border-radius:9px;
+background-color:#FFFFFF;
+background-image:url(../images/bt_next.gif);
+background-position:right;
+background-repeat:no-repeat;
+}
+.bt {
+border:1px solid #999999;
+height:32px;
+font:17px Arial, Helvetica, sans-serif;
+-moz-border-radius:9px;
+border-radius:9px;
+background-color:#FFFFFF;
+background-image:url(../images/bt_std.gif);
+background-repeat: repeat-x;
+}
+
+.grey_text {
+color: #707070;
+font:12px Arial, Helvetica, sans-serif;
+}
+.grey_bold_text {
+color: #707070;
+font:12px Arial, Helvetica, sans-serif;
+font-weight:bolder;
+}
+.bold_text {
+color:#000000;
+font:12px Arial, Helvetica, sans-serif;
+font-weight:bolder;
+}
+.sbold_ita_text {
+color:#000000;
+font:10px Arial, Helvetica, sans-serif;
+font-weight:bolder;
+vertical-align:middle;
+}
+.green_text {
+color:#557f01;
+}
+.content {
+padding-left: 10px;
+width:455px;
+}
+
+.grey_rounded{
+border:1px solid #eeeeee;
+padding:5px;
+background-color:#eeeeee;
+-moz-border-radius:9px;
+border-radius:9px;
+
+}
+.white_rounded_top{
+border:1px solid #eeeeee;
+padding:5px;
+background-color:#FFFFFF;
+-moz-border-radius:9px 9px 0px 0px;
+border-radius:9px 9px 0px 0px;
+
+}
+
+.head_download{
+background-image: url(../images/installation.gif);
+background-position:right;
+background-repeat:no-repeat;
+height:65px;
+text-align:left;
+font:11px Arial, Helvetica, sans-serif;
+}
+
+
+.grey_rounded_bottom{
+border:1px solid #eeeeee;
+padding:5px;
+background-color:#eeeeee;
+-moz-border-radius:0px 0px 9px 9px;
+border-radius:0px 0px 9px 9px;
+
+}
+.common_link {
+color:#000000;
+text-decoration:underline;
+}
+
+.system {
+font-style:italic;
+font-size:12px;
+width:280px;
+float:left;
+line-height:28px;
+}
+.require {
+font-style: normal;
+font-size:12px;
+width:280px;
+float:left;
+line-height:28px;
+}
+.result {
+font-style:italic;
+font-size:12px;
+width:90px;
+float:left;
+line-height:28px;
+}
+.result_ligne {
+font-style:italic;
+font-size:12px;
+width:90px;
+color:#FF0000;
+float:left;
+line-height:28px;
+}
+.red_info {
+font-size:12px;
+color:#FF0000;
+line-height:19px;
+}
+
+.labelled_ralonger {
+text-align: left;
+color:#000000;
+font:12px Arial, Helvetica, sans-serif;
+font-weight:bolder;
+width: 180px;
+display:block;
+padding: 0px;
+margin-top:0px;
+}
+
+
+.focusinput_xsize:focus {
+background-color: #FFFFCC;
+border:1px solid #707070;
+color:#707070;
+font: 12px Arial, Helvetica, sans-serif;
+width:165px;
+}
+select.focusform_xsize {
+background-color:#FFFFCC;
+border:1px solid #707070;
+color:#707070;
+font: 12px Arial, Helvetica, sans-serif;
+width:165px;
+}
+
+.focusinput_xsize {
+margin:0;
+font: 12px Arial, Helvetica, sans-serif;
+border:1px solid #707070;
+color:#707070;
+background-color:#FFFFFF;
+width:165px;
+}
+input.focusinput_xsize {
+margin:0;
+border:1px solid #707070;
+background-color:#FFFFFF;
+color:#707070;
+font: 12px Arial, Helvetica, sans-serif;
+width:165px;
+}
+
+select.focusinput_xsize {
+margin:0;
+border:1px solid #707070;
+color:#707070;
+background-color:#FFFFFF;
+font: 12px Arial, Helvetica, sans-serif;
+width:165px;
+}
+
+
+.sous_titre1 {
+font: 18px Arial, Helvetica, sans-serif ;
+color: #2f482b;
+height:24px;
+line-height: 24px;
+border-bottom:1px solid #557f01;
+}
+
+.minimizetable {
+width: 500px;
+}
+.minimizetable table {
+width:100%;
+}
+.minimizetable td {
+vertical-align:top;
+}
+.max96pc {
+width:96%;
+}
+td.ctpc {
+width:50%;
+}
+td.xxxpc {
+width:30%;
+}
+
+table.size_strict {
+width:100%;
+}
+
+#imgsizeform {
+float:left;
+height:1px;
+width:100%;
+vertical-align: top;
+}
+
+td.size_strict {
+width:120px;
+}
+
+.smallheight {
+font-size:1px;
+line-height:1px;
+height:1px;
+}
+
+
+
+hr {
+color: #557f01;
+border-top:1px solid;
+border-bottom:0px solid;
+border-left:0px solid;
+border-right:0px solid;
+height:1px;
+width:100%;
+}
+/*/*/a{}
+body,
+body td,
+body th,
+body p {
+  font-size: x-small;
+  voice-family: "\"}\"";
+  voice-family: inherit;
+  font-size: small;
+}
+html>body,
+html>body td,
+html>body th
+html>body p {
+  font-size: small;
+}  
+/* */
