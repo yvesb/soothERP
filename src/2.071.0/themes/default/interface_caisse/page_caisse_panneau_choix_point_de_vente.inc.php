@@ -47,7 +47,7 @@ check_page_variables ($page_variables);
 							Event.observe("magasin_<?php echo $magasin->getId_magasin();?>", "click", function(evt){
 								Event.stop(evt);
 								var AppelAjax = new Ajax.Request(
-											"<?php echo $DIR."site/__session_change_magasin.php?id_magasin=".$magasin->getId_magasin();?>",
+											"<?php echo $CORE_DIR."site/__session_change_magasin.php?id_magasin=".$magasin->getId_magasin();?>",
 											{
 												evalScripts:true, 
 												onSuccess: function (requester){

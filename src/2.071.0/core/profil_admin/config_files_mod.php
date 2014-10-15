@@ -23,6 +23,6 @@ rename($DIR."config/tmp_".$file_name, $DIR."config/".$file_name);
 // AFFICHAGE
 // *************************************************************************************************************
 
-/*include ($DIR."profil_admin/smenu_configuration_config_files.php");*/
+include ($CORE_DIR."profil_admin/smenu_configuration_config_files.php");
 
 ?>

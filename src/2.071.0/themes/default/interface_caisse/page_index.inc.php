@@ -29,7 +29,7 @@ if (isset($modules)) {
 // recherche de la page retour (si existe) ou affichage page default [0]
 $default_page = array('default_content','accueil.php','true','sub_content','Caisse');
 
-if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], "profil_admin/") && $_REQUEST['page_from'] != "interface_caisse/" ) {
+if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $CORE_DIR."profil_admin/") && $_REQUEST['page_from'] != "interface_caisse/" ) {
 	$default_page= array('page_depart', str_replace("&page_from=","", str_replace("&uncache=1","", str_replace("?","",str_replace ( $_SESSION['user']->getProfil_dir() , "" , $_REQUEST['page_from']  )))),'true','sub_content');
 }
 
@@ -153,7 +153,7 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], "pro
 		//changement de magasin
 		function session_change_magasin (id_magasin) {
 			var AppelAjax = new Ajax.Request(
-										"<?php echo $DIR;?>site/__session_change_magasin.php?id_magasin="+id_magasin,
+										"<?php echo $CORE_DIR;?>site/__session_change_magasin.php?id_magasin="+id_magasin,
 										{
 											evalScripts:true, 
 											onSuccess: function (requester){}
@@ -301,7 +301,7 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], "pro
 		</div>
 		<div id="right_content" style="display:none">
 			<div id="user"><?php echo $_SESSION['user']->getRef_user() ?></div>
-			<div id="deco"><a href="<?php echo $DIR?>site/__session_stop.php">D&eacute;connexion</a></div>
+			<div id="deco"><a href="<?php echo $CORE_DIR?>site/__session_stop.php">D&eacute;connexion</a></div>
 			<div></div>
 		</div>
 
@@ -415,7 +415,7 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], "pro
 									</tr>
 									<tr>
 										<td colspan=2 align="right">	
-											<a href="#" onclick="window.open ('../<?php echo $DIR;?>site/__session_stop.php', '_top');" style="text-decoration:none">Quitter</a>
+											<a href="#" onclick="window.open ('../<?php echo $CORE_DIR;?>site/__session_stop.php', '_top');" style="text-decoration:none">Quitter</a>
 											<script type="text/javascript">
 												Event.observe("close_ask_login", "click",  function(evt){
 													Event.stop(evt);

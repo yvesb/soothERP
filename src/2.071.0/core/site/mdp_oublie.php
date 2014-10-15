@@ -38,7 +38,7 @@ if (!empty($_REQUEST['email'])) {
 		$message = "<br /><br />Bonjour, <br />
 						Votre demande de mot de passe oublié sur le site " . $lib_civ . " " . $nom_entreprise . " a été prise en compte. <br />
 						Veuillez cliquer sur le lien suivant pour en définir un nouveau : <br />
-						<a href=\"" . url_site() . "/site/_change_mdp.php?sid=$code\">" . url_site() . "</a><br /><br />
+						<a href=\"" . url_site() .$CORE_REP. "/site/_change_mdp.php?sid=$code\">" . url_site() . "</a><br /><br />
 						";
 		if (!$mail->envoi_email_templated($destinataire, $sujet, $message)) {
 			echo "Une erreur est survenue lors de l'envoi à " . $_POST['email'] . "<br />";

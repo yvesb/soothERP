@@ -11,7 +11,7 @@ require ($DIR."_session.inc.php");
 // AFFICHAGE
 // *************************************************************************************************************
 
-	header ("Location: ".$_ENV['CHEMIN_ABSOLU']."profil_admin/accueil.php");
+	header ("Location: ".$_ENV['CHEMIN_ABSOLU'].$CORE_DIR."profil_admin/accueil.php");
 	exit(); 
 
 ?>

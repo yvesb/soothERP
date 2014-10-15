@@ -1,4 +1,4 @@
-// fonctiobn profil_admin
+// fonction profil_admin
 
 //gestion des catégories d'articles
 

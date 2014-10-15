@@ -190,7 +190,7 @@ if (isset($modules)) {
 // recherche de la page retour (si existe) ou affichage page default [0]
 $default_page = $menu1[0];
 
-if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], "profil_admin/") && $_REQUEST['page_from'] != "profil_collab/" ) {
+if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $CORE_DIR."profil_admin/") && $_REQUEST['page_from'] != "profil_collab/" ) {
 				
 			$default_page= array('page_depart', str_replace("&page_from=","", str_replace("&uncache=1","", str_replace("?","",str_replace ( $_SESSION['user']->getProfil_dir() , "" , $_REQUEST['page_from']  )))),'true','sub_content');
 
@@ -418,7 +418,7 @@ function restart_session() {
 function session_change_magasin (id_magasin) {	
 
 	var AppelAjax = new Ajax.Request(
-								"<?php echo $DIR;?>site/__session_change_magasin.php?id_magasin="+id_magasin,
+								"<?php echo $CORE_DIR;?>site/__session_change_magasin.php?id_magasin="+id_magasin,
 								{
 								evalScripts:true, 
 								onSuccess: function (requester){
@@ -716,7 +716,7 @@ $i++;
 </div>
 <div id="right_content"  style="display:none">
 <div id="user"><?php echo $_SESSION['user']->getRef_user() ?></div>
-<div id="deco"><a href="<?php echo $DIR?>site/__session_stop.php">Déconnexion</a></div>
+<div id="deco"><a href="<?php echo $CORE_DIR?>site/__session_stop.php">Déconnexion</a></div>
 <div></div>
 </div>
 
@@ -863,7 +863,7 @@ $i++;
 	?>
 		Event.observe('option_info_licence', 'click',  function(evt){Event.stop(evt);  window.open ("<?php echo $DIR;?>__licence.rtf", "_blank");}, false);
 		Event.observe('option_info_assistance', 'click',  function(evt){Event.stop(evt);  window.open ("http://community.sootherp.fr/", "_blank");}, false);
-		Event.observe('option_info_deconnexion', 'click',  function(evt){Event.stop(evt);  window.open ("<?php echo $DIR;?>site/__session_stop.php", "_top");}, false);
+		Event.observe('option_info_deconnexion', 'click',  function(evt){Event.stop(evt);  window.open ("<?php echo $CORE_DIR;?>site/__session_stop.php", "_top");}, false);
 
 </script>
 </div>
@@ -960,7 +960,7 @@ swfobject.embedSWF("<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/w
 					</tr>
 					<tr>
 						<td colspan=2 align="right">	
-					<a href="#" onclick="window.open ('../<?php echo $DIR;?>site/__session_stop.php', '_top');" style="text-decoration:none">Quitter</a>
+					<a href="#" onclick="window.open ('../<?php echo $CORE_DIR;?>site/__session_stop.php', '_top');" style="text-decoration:none">Quitter</a>
 					<script type="text/javascript">
 					Event.observe("close_ask_login", "click",  function(evt){Event.stop(evt); close_ask_login();}, false);
 					</script>

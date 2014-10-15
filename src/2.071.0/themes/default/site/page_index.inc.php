@@ -16,7 +16,7 @@ check_page_variables ($page_variables);
 ?>
 
 <br><br><br>
-Ceci est la page d'accueil du site Internet de la société.
+Ceci est la page d'accueil.
 <br><br><br><br><br>
 
 <?php
@@ -25,11 +25,11 @@ if ($_SESSION['user']->getLogin()) {
 }
 else {
 	echo "Vous n'etes pas identifié: 
-	<a href = 'user_login.php' target='_self'>IDENTIFICATION</a>";
+	<a href = 'http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."../site/__user_login.php' target='_self'>IDENTIFICATION</a>";
 }
 ?>
 
 <br>
 <br>
 <br>
-<a href = '_session_stop.php' target='_self'>FIN DE SESSION</a>
+<a href = '<?php echo"http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."../site/"; ?>__session_stop.php' target='_self'>FIN DE SESSION</a>

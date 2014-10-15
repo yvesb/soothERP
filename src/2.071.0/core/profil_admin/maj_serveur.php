@@ -124,7 +124,7 @@ if ($last_version != $new_version) {
 	stp_prog_file = true;
 	$("files_progress").style.width = "100%";
 	$("maj_etat").innerHTML = "Mise à jour effectuée avec succès";
-	setTimeout('	window.open("<?php echo $_ENV['CHEMIN_ABSOLU']."site/__user_login.php?page_from=profil_admin/#import_maj_serveur.php";?>", "_self")', 5000);
+	setTimeout('	window.open("<?php echo $_ENV['CHEMIN_ABSOLU'].$CORE_REP."site/__user_login.php?page_from=profil_admin/#import_maj_serveur.php";?>", "_self")', 5000);
 	<?php
 	if (isset($_SESSION['NEW_MAJ_DISPO'])) {
 		if ($_SESSION['NEW_MAJ_DISPO'] != $new_version) {

@@ -47,7 +47,7 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], "__u
 // Fin de modifications par Yves Bourvon le 11/09/2011
 }
 
-else {                                 $page_from = "";  }
+else {$page_from = "";}
 
 //verification d'un rafraichissement de cache à faire
 if (isset($_REQUEST["uncache"]) ) {		$uncache = "uncache=".$_REQUEST['uncache'];  }

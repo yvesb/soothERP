@@ -77,8 +77,8 @@ if (!$_SESSION['user']->check_permission ("14")) {
 	
 	//url de desinscription et de comptage des lectures
 	$url_site	= "http://".$_SERVER['HTTP_HOST'].str_replace("profil_collab/communication_newsletters_gestion_envoi_progress.php", "", $_SERVER['PHP_SELF']);
-	$url_desinsciption = $url_site."site/newsletters/desinscription.php?id_newsletter=".$envoi->id_newsletter;
-	$url_comptage = $url_site."site/newsletters/lecture.php?id_envoi=".$id_envoi;
+	$url_desinsciption = $url_site.$CORE_DIR."site/newsletters/desinscription.php?id_newsletter=".$envoi->id_newsletter;
+	$url_comptage = $url_site.$CORE_DIR."site/newsletters/lecture.php?id_envoi=".$id_envoi;
 	
 	$mail = new email();
 	$mail->prepare_envoi(1, 0);

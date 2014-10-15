@@ -334,7 +334,7 @@ function envoi_mail_invitation(){
 	// Envoi d'un email de proposition d'inscription au client
 	// Url d'inscription
 	$url_site = url_site();
-	$url_inscription = $url_site."site/_valider_inscription.php?coord=" . $this->ref_coord . "&code=" . $code;
+	$url_inscription = $url_site.$CORE_DIR."site/_valider_inscription.php?coord=" . $this->ref_coord . "&code=" . $code;
 	$lien_inscription = "<a href=\"" . $url_inscription . "\">" . $url_inscription . "</a>";
 	$mail = new email();
 	$mail->prepare_envoi(1, 0);

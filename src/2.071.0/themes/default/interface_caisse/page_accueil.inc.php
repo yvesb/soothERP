@@ -141,7 +141,7 @@ check_page_variables ($page_variables);
 								<?php foreach ($profils_allowed as $id_profil => $profil) { ?>
 								Event.observe('option_info_profil_<?php echo $id_profil;?>', 'click',  function(evt){
 									Event.stop(evt);
-									window.open ("<?php echo $DIR;?>site/__user_choix_profil.php?id_profil=<?php echo $id_profil;?>", "_top");
+									window.open ("<?php echo $CORE_DIR;?>site/__user_choix_profil.php?id_profil=<?php echo $id_profil;?>", "_top");
 								}, false);
 								<?php } ?>
 
@@ -778,7 +778,7 @@ Event.observe('art_lib_s', "keypress", function(evt){
 <script type="text/javascript">
 Event.observe('log_out', 'click',  function(evt){
 	Event.stop(evt);
-	window.open ("<?php echo $DIR;?>site/__session_stop.php", "_top");
+	window.open ("<?php echo $CORE_DIR;?>site/__session_stop.php", "_top");
 }, false);
 </script>
 

@@ -30,9 +30,9 @@ $matches = array();
   <input id="file_path" name="file_path" type="hidden" value="profil_client/_interface.config.php" /> 
   <table width="100%">
     <tr class="smallheight">
-      <td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-      <td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-      <td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+      <td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+      <td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+      <td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
     </tr>          
     <tr>
       <td class="lib_config">
@@ -145,7 +145,7 @@ $matches = array();
     </tr>
     <tr>
       <td class="lib_config">
-        DurÃ©e d'affichage des devis clients : 
+        Durée d'affichage des devis clients : 
       </td>
       <td>
         <input id="duree_aff_doc_dev" name="duree_aff_doc_dev" type="text" class="classinput_xsize" value="<?php preg_match("/.*?DUREE_AFF_DOC_DEV = \"(.*?)\";.*?/", $string_config_file, $matches); if(count($matches)>0) echo intval($matches[1])/3600/24; ?>"/>
@@ -154,7 +154,7 @@ $matches = array();
     </tr>
     <tr>
       <td class="lib_config">
-        DurÃ©e d'affichage des commandes clients : 
+        Durée d'affichage des commandes clients : 
       </td>
       <td>
         <input id="duree_aff_doc_cdc" name="duree_aff_doc_cdc" type="text" class="classinput_xsize"  value="<?php preg_match("/.*?DUREE_AFF_DOC_CDC = \"(.*?)\";.*?/", $string_config_file, $matches); if(count($matches)>0) echo intval($matches[1])/3600/24; ?>"/>
@@ -163,7 +163,7 @@ $matches = array();
     </tr>
     <tr>
       <td class="lib_config">
-        DurÃ©e d'affichage des factures clients : 
+        Durée d'affichage des factures clients : 
       </td>
       <td>
         <input id="duree_aff_doc_fac" name="duree_aff_doc_fac" type="text" class="classinput_xsize"  value="<?php preg_match("/.*?DUREE_AFF_DOC_FAC = \"(.*?)\";.*?/", $string_config_file, $matches); if(count($matches)>0) echo intval($matches[1])/3600/24; ?>"/>
@@ -172,7 +172,7 @@ $matches = array();
     </tr>
     <tr>
       <td class="lib_config">
-        Choix du modÃ¨le de pdf pour les devis : 
+        Choix du modèle de pdf pour les devis : 
       </td>
       <td>
         <select id="code_pdf_modele_dev" name="code_pdf_modele_dev" class="classinput_xsize" >
@@ -185,7 +185,7 @@ $matches = array();
     </tr>
     <tr>
       <td class="lib_config">
-        Choix du modÃ¨le de pdf pour les commandes : 
+        Choix du modèle de pdf pour les commandes : 
       </td>
       <td>
         <select id="code_pdf_modele_cdc" name="code_pdf_modele_cdc" class="classinput_xsize" >
@@ -198,7 +198,7 @@ $matches = array();
     </tr>
     <tr>
       <td class="lib_config">
-        Choix du modÃ¨le de pdf pour les factures : 
+        Choix du modèle de pdf pour les factures : 
       </td>
       <td>
         <select id="code_pdf_modele_fac" name="code_pdf_modele_fac" class="classinput_xsize" >
@@ -301,7 +301,7 @@ $matches = array();
       <td>
         <textarea id="mail_envoi_inscriptions" name="mail_envoi_inscriptions" class="classinput_xsize" ><?php preg_match("/.*?MAIL_ENVOI_INSCRIPTIONS = \"(.*?)\";.*?/", $string_config_file, $matches); if(count($matches)>0) echo stripslashes($matches[1]); ?></textarea>
       </td>
-      <td class="infos_config"><img id="search_contact" style="cursor:pointer;" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-rechercher.gif" /></td>
+      <td class="infos_config"><img id="search_contact" style="cursor:pointer;" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-rechercher.gif" /></td>
     </tr>
     <tr>
       <td class="lib_config">
@@ -314,7 +314,7 @@ $matches = array();
     </tr>
     <tr>
       <td class="lib_config">
-        Mentions lÃ©gales : 
+        Mentions légales : 
       </td>
       <td>
         <textarea id="mentionslegales" name="mentionslegales" class="classinput_xsize" ><?php preg_match("/.*?MENTIONSLEGALES = \"(.*?)\";/sm", $string_config_file, $matches); if(count($matches)>0) echo stripslashes($matches[1]); ?></textarea>
@@ -323,7 +323,7 @@ $matches = array();
     </tr>
     <tr>
       <td class="lib_config">
-        Conditions gÃ©nÃ©rales de ventes : 
+        Conditions générales de ventes : 
       </td>
       <td>
         <textarea id="conditionsgeneralesdeventes" name="conditionsgeneralesdeventes" class="classinput_xsize" ><?php preg_match("/.*?CONDITIONSDEVENTES = \"(.*?)\";/sm", $string_config_file, $matches); if(count($matches)>0) echo stripslashes($matches[1]); ?></textarea>
@@ -342,7 +342,7 @@ $matches = array();
     <tr>
       <td class="lib_config">&nbsp;</td>
       <td>
-        <input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />
+        <input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" />
       </td>
       <td class="infos_config">&nbsp;</td>
     </tr>

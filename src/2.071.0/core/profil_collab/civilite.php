@@ -15,7 +15,7 @@ else {
 }
 
 function print_plain() {
-  header("Content-type: text/html; charset=windows-1252");
+  header("Content-type: text/html; charset=utf-8");
   get_civil(urldecode ($_REQUEST["cat"]));
   
 }

@@ -1,4 +1,4 @@
 <?php
-$DIR = "../";
-$THIS_DIR = $DIR."profil_commercial/";
+$DIR = "../../";
+$THIS_DIR = "../".$CORE_REP."profil_commercial/";
 ?>

@@ -18,7 +18,7 @@ if (!function_exists  ("__autoload")){
 		
 		if(class_exists($classname)){return true;} // La classe est déjà chargée.
 		
-		//On la chreche en tant que vrai calsse.
+		//On la cherche en tant que vrai classe.
 		if(file_exists($DIR_PLUS."_".$classname.".class.php")){
                         require_once($DIR_PLUS."_".$classname.".class.php");
                     }elseif(file_exists($DIR."_".$classname.".class.php")){
@@ -54,7 +54,7 @@ $_ENV['CHEMIN_ABSOLU'] = $prefix.$_SERVER['HTTP_HOST'].rtrim(dirname($_SERVER['P
 
 // Tableau des alertes & erreurs
 $GLOBALS['_ALERTES'] 	= array();
-$GLOBALS['_INFOS'] 		= array();
+$GLOBALS['_INFOS'] 	= array();
 
 
 
@@ -174,7 +174,7 @@ foreach (glob($MSG_MODELES_DIR."_msg_modele_*.class.php") as $file){
 }
 
 if (!$_SERVER['ACTIF'] && !isset($_SERVER['MAJ_EN_COURS'])) {
-	header ("Location: ".$_ENV['CHEMIN_ABSOLU']."site/__serveur_stopped.php");
+	header ("Location: ".$_ENV['CHEMIN_ABSOLU'].$CORE_REP."site/__serveur_stopped.php");
 	exit(); 
 }
 
@@ -282,7 +282,7 @@ if (!isset($_SESSION['magasins'])) {
 	}
 
 	if (isset($_COOKIE['last_id_magasin'])) { $id_magasin = $_COOKIE['last_id_magasin']; }
-	else 									{ $id_magasin = $DEFAUT_ID_MAGASIN; }
+	else { $id_magasin = $DEFAUT_ID_MAGASIN; }
 
 	if (isset($_SESSION['magasins'][$id_magasin])) {
 		$_SESSION['magasin'] = $_SESSION['magasins'][$id_magasin];
@@ -373,23 +373,24 @@ if (isset($THIS_DIR) && is_file($THIS_DIR."_interface.config.php")) {
 	require_once ($THIS_DIR."_interface.config.php");
 }
 else {
-	require_once ($DIR."site/_interface.config.php");
+	require_once ($CORE_REP."site/_interface.config.php");
 }
 
 // La page que consulte l'utilisateur est elle accessible à tous ?
 function page_accessible_a_tous(){
 	global $_INTERFACE;
 	global $THIS_DIR;
+	global $CORE_REP;
 	
 	if (!$_SESSION['user']->getLogin()) {
 		if ($_INTERFACE['ID_PROFIL'] == 4 && isset($THIS_DIR)) {
 			$page_from = str_replace($THIS_DIR, "", substr($_SERVER['REQUEST_URI'], 1));
-			header ("Location: ".$_ENV['CHEMIN_ABSOLU']."site/".$THIS_DIR."_user_login.php");
+			header ("Location: ".$_ENV['CHEMIN_ABSOLU'].$CORE_REP."site/".$THIS_DIR."_user_login.php");
 		} else {
 			// L'utilisateur n'est pas loggué et devrait l'etre => Direction page de login
 			$page_from = substr($_SERVER['REQUEST_URI'], 1);
-			if ($page_from == "site/__user_login.php") { $page_from = "";}
-			header ("Location: ".$_ENV['CHEMIN_ABSOLU']."site/__user_login.php");
+			if ($page_from == $CORE_REP."site/__user_login.php") { $page_from = "";}
+			header ("Location: ".$_ENV['CHEMIN_ABSOLU'].$CORE_REP."site/__user_login.php");
 		}
 		exit();
 	}
@@ -429,15 +430,15 @@ if ($_INTERFACE['ID_INTERFACE'] != $_SESSION['user']->getId_interface()) {
 		// Si il n'est pas identifié, renvoi vers la page de login
 		if (!$_SESSION['user']->getLogin()) {
 			$page_from = substr($_SERVER['REQUEST_URI'], 1);
-			header ("Location: ".$_ENV['CHEMIN_ABSOLU']."site/__user_login.php?page_from=".$page_from);
+			header ("Location: ".$_ENV['CHEMIN_ABSOLU'].$CORE_REP."site/__user_login.php?page_from=".$page_from);
 			exit();
 		}
 		// Si il est identifié, il n'a tout simplement pas le droit
 		if (isset($_SESSION['profils'][$DEFAUT_PROFILS[0]]) && isset($_SESSION['interfaces'][$_SESSION['profils'][$DEFAUT_PROFILS[0]]->getDefaut_id_interface()]) ) {
-			header("Location: ".$_ENV['CHEMIN_ABSOLU'].$_SESSION['interfaces'][$_SESSION['profils'][$DEFAUT_PROFILS[0]]->getDefaut_id_interface()]->getDossier()."__user_choix_profil.php");
+			header("Location: ".$_ENV['CHEMIN_ABSOLU'].$CORE_REP.$_SESSION['interfaces'][$_SESSION['profils'][$DEFAUT_PROFILS[0]]->getDefaut_id_interface()]->getDossier()."__user_choix_profil.php");
 		} else {
 		//raffraichissement forcé de la session
-			header ("Location: ".$_ENV['CHEMIN_ABSOLU']."site/__session_stop.php");
+			header ("Location: ".$_ENV['CHEMIN_ABSOLU'].$CORE_REP."site/__session_stop.php");
 		}
 		exit();
 	}
@@ -553,7 +554,7 @@ if ($_SESSION['user']->getLogin() && ($_INTERFACE['ID_INTERFACE'] == 2 || $_INTE
 		if (!isset($_REQUEST["page_from"])) {
 			$page_from = substr($_SERVER['REQUEST_URI'], 1);
 		}
-		header ("Location: ".$_ENV['CHEMIN_ABSOLU']."site/__user_login.php?uncache=1&page_from=".$page_from);
+		header ("Location: ".$_ENV['CHEMIN_ABSOLU'].$CORE_REP."site/__user_login.php?uncache=1&page_from=".$page_from);
 		exit();
 	}
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<?php //include ($DIR."site/referencement/referencement.php"); ?>
+		<?php //include ($CORE_DIR."site/referencement/referencement.php"); ?>
 		<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_common_style.css" rel="stylesheet" type="text/css" />
 		<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_content.css" rel="stylesheet" type="text/css" />
 		<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_formulaire.css" rel="stylesheet" type="text/css" />

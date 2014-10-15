@@ -12,7 +12,8 @@ require ($DIR."_session.inc.php");
 // Choix du profil de l'utilisateur
 if (isset ($_REQUEST['id_profil'])) {   
   // Redirection vers la page d'accueil de ce profil
-  header("Location: ".$_ENV['CHEMIN_ABSOLU'].$_SESSION['interfaces'][$_SESSION['profils'][$_REQUEST['id_profil']]->getDefaut_id_interface()]->getDossier());
+  global $CORE_REP;
+  header("Location: ".$_ENV['CHEMIN_ABSOLU'].$CORE_REP.$_SESSION['interfaces'][$_SESSION['profils'][$_REQUEST['id_profil']]->getDefaut_id_interface()]->getDossier());
   exit();
 }
 

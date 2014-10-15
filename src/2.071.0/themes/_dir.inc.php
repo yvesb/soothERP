@@ -1,3 +1,4 @@
 <?php
-$DIR = "../../";
+$DIR = "../";
+$THIS_DIR = $DIR."theme/";
 ?>

@@ -1,16 +1,19 @@
 <?php
 /* **************************************************************************************************
-************    TEST DE LA COMPATIBILITE DU SYSTEME AVEC LMB   **************************************
+************    TEST DE LA COMPATIBILITE DU SYSTEME AVEC SoothERP   *********************************
 ****************************************************************************************************/
 ini_set ("session.cookie_lifetime", 86400) ;
 if(!session_id()) {session_start(); }
 
 header('Content-type: text/html; charset=utf-8');
 require ("_dir.inc.php");
-
-// neregistrement des erreurs dans un tableau 
+require ("_profil.inc.php");
+require ($DIR."_session.inc.php");
+// enregistrement des erreurs dans un tableau 
 $GLOBALS['_INFOS']['test_systeme'] = array();
 $GLOBALS['_INFOS']['test_systeme_non_bloquant'] = array();
+
+global $CONFIG_DIR;
 
 if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 	// ETAPE 1: VERIFICATION DE LA CONFIGURATION DE PHP
@@ -105,7 +108,7 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 			$GLOBALS['_INFOS']['test_systeme'][] = "MySQL n'est pas installé sur votre serveur.<br>";
 			break;
 		}
-		include ($DIR."config/config_bdd.inc.php");
+		include ($CONFIG_DIR."config_bdd.inc.php");
 		mysql_connect($bdd_hote, $bdd_user, $bdd_pass);
 		if (version_compare(mysql_get_server_info(), '5.0') < 0) {
 			$retour_texte .= "	Votre version de MySQL est insuffisante. <br>
@@ -127,7 +130,7 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 	
 	
 		// Test de la configuration de MySQL
-		include ($DIR."config/config_bdd.inc.php");
+		include ($CONFIG_DIR."config_bdd.inc.php");
 		try {
 			$bdd = new PDO("mysql:host=".$bdd_hote."; dbname=".$bdd_base."", $bdd_user, $bdd_pass, NULL);
 		} catch (Exception $e) {
@@ -165,7 +168,7 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 	TEST DU FONCTIONNEMENT DES MAILS<br><br>";
 	
 	// Initialisation de la variable $EMAIL_DEV pour test de mail
-	$CONFIG_DIR = $DIR."config/";
+
 	require_once ($CONFIG_DIR."config_serveur.inc.php");
 	global $EMAIL_DEV;
 
@@ -188,16 +191,16 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 	$retour_texte .= "<br><br><hr>
 	PRESENCE DES FICHIERS D'INSTALLATION<br><br>";
 	
-		if (is_file($DIR."install_lmb.php")) {
-			$retour_texte .= "Le fichier d'installation install_lmb.php est toujours présent. (Non bloquant)";
-			$GLOBALS['_INFOS']['test_systeme_non_bloquant'][] = "Le fichier d'installation install_lmb.php est toujours présent. (Non bloquant)
+		if (is_file($DIR."install/install.php")) {
+			$retour_texte .= "Le fichier d'installation install.php est toujours présent. (Non bloquant)";
+			$GLOBALS['_INFOS']['test_systeme_non_bloquant'][] = "Le fichier d'installation install.php est toujours présent. (Non bloquant)
 	";
 		}
-		if (is_file($DIR."install_lmb.config.php")) {
-			$retour_texte .= "Le fichier d'installation install_lmb.config.php est toujours présent. (Non bloquant)";
-			$GLOBALS['_INFOS']['test_systeme_non_bloquant'][] = "Le fichier d'installation install_lmb.config.php est toujours présent. (Non bloquant)";
+		if (is_file($DIR."install/process.php")) {
+			$retour_texte .= "Le fichier d'installation process.php est toujours présent. (Non bloquant)";
+			$GLOBALS['_INFOS']['test_systeme_non_bloquant'][] = "Le fichier d'installation process.php est toujours présent. (Non bloquant)";
 		}
-		if (!is_file($DIR."install_lmb.config.php") && !is_file($DIR."install_lmb.php")) {
+		if (!is_file($DIR."install/index.php") && !is_file($DIR."install/process.php")) {
 			$retour_texte .= "Les fichiers d'installation ont bien été supprimés.";
 		} 
 	
@@ -221,7 +224,7 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 			$retour_texte .= "Les fichiers systèmes sont tous présents.<br />";
 		}
 		
-		$tab_dirs = array("config", "documents", "fichiers", "modeles_pdf", "modules", "profil_admin", "profil_client", "profil_collab", "profil_fournisseur");
+		$tab_dirs = array("config", "documents", "fichiers", "modeles", "modules", "core", "log", "themes", "backup");
 		$compteur = 0;
 		foreach ($tab_dirs as $dir) {
 			if (!is_dir($DIR.$dir)) {
@@ -343,31 +346,31 @@ if (!count($GLOBALS['_INFOS']['test_systeme']) && !count($GLOBALS['_INFOS']['tes
 
 if (!count($GLOBALS['_INFOS']['test_systeme'])) {
 	?>
-	<span style="float:left; padding-right:20px"><img src="themes/admin_fr/images/ico_valide.png" /></span>Votre syst&egrave;me est compatible avec l'application.<br />
+	<span style="float:left; padding-right:20px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_valide.png" /></span>Votre syst&egrave;me est compatible avec l'application.<br />
 <br />
 	<?php
 	foreach ($GLOBALS['_INFOS']['test_systeme_non_bloquant'] as $erreur_test_non_bloquant) {
 		?>
-		<span style="float:left; padding-right:20px"><img src="themes/admin_fr/images/blank.gif" width="22px" /></span><em style="color:#FF0000"><?php echo ($erreur_test_non_bloquant)?></em><br />
+		<span style="float:left; padding-right:20px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="22px" /></span><em style="color:#FF0000"><?php echo ($erreur_test_non_bloquant)?></em><br />
 		<?php
 	}
 } else {
 	?>
-	<span style="float:left; padding-right:20px"><img src="themes/admin_fr/images/ico_unvalide.png" /></span>Votre syst&egrave;me est incompatible avec l'application.<br /><br />
+	<span style="float:left; padding-right:20px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_unvalide.png" /></span>Votre syst&egrave;me est incompatible avec l'application.<br /><br />
 	<?php
 	foreach ($GLOBALS['_INFOS']['test_systeme'] as $erreur_test) {
 		?>
-		<span style="float:left; padding-right:20px"><img src="themes/admin_fr/images/blank.gif" width="22px" /></span><em style="color:#FF0000"><?php echo ($erreur_test);?></em><br />
+		<span style="float:left; padding-right:20px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="22px" /></span><em style="color:#FF0000"><?php echo ($erreur_test);?></em><br />
 		<?php
 	}
 	
 	foreach ($GLOBALS['_INFOS']['test_systeme_non_bloquant'] as $erreur_test_non_bloquant) {
 		?>
-		<span style="float:left; padding-right:20px"><img src="themes/admin_fr/images/blank.gif" width="22px" /></span><em style="color:#FF0000"><?php echo ($erreur_test_non_bloquant)?></em><br />
+		<span style="float:left; padding-right:20px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="22px" /></span><em style="color:#FF0000"><?php echo ($erreur_test_non_bloquant)?></em><br />
 		<?php
 	}
 	?>
-	<span style="float:left; padding-right:20px"><img src="themes/admin_fr/images/blank.gif" width="22px" /></span><span id="aff_rapport" style="cursor:pointer; text-decoration:underline;" >Voir le rapport de test</span><br />
+	<span style="float:left; padding-right:20px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="22px" /></span><span id="aff_rapport" style="cursor:pointer; text-decoration:underline;" >Voir le rapport de test</span><br />
 	<div style="display:none; padding-left:42px; font-weight:bolder" id="rapport_text"><?php echo $retour_texte;?></div>
 	<script type="text/javascript">
 		Event.observe("aff_rapport", "click", function() {$("rapport_text").show();}, false);

@@ -34,6 +34,6 @@ else
 {
 	texte_erreur += "Votre demande a bien été prise en compte par le serveur.<br/>";
 	window.parent.alerte.alerte_erreur ('Confirmation', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
-	window.parent.page.verify('liste_serveur_import','<?php echo $DIR."profil_admin/";?>serveur_import_liste.php','true','sub_content');
+	window.parent.page.verify('liste_serveur_import','<?php echo $CORE_DIR."profil_admin/";?>serveur_import_liste.php','true','sub_content');
 }
 </script>

@@ -199,7 +199,7 @@ Vous trouverez la liste des tâches d'administration sur la page d'accueil.<br /
 			?>
 			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_access_profil_collab.jpg" id="go_profil_collab" style="cursor:pointer" />
 			<script type="text/javascript">
-				Event.observe('go_profil_collab', 'click',  function(evt){Event.stop(evt); window.open ("<?php echo $DIR;?>site/__user_choix_profil.php?id_profil=<?php echo $COLLAB_ID_PROFIL;?>", "_top");}, false);
+				Event.observe('go_profil_collab', 'click',  function(evt){Event.stop(evt); window.open ("<?php echo $CORE_DIR;?>site/__user_choix_profil.php?id_profil=<?php echo $COLLAB_ID_PROFIL;?>", "_top");}, false);
 			</script>
 			<?php 
 		}

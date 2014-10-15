@@ -20,6 +20,6 @@ $civilites = get_civilites(1);// Par défaut id_categorie = 1 => Particulier
 // AFFICHAGE
 // *************************************************************************************************************
 if (!$INSCRIPTION_ALLOWED)
-{			include ($DIR.$_SESSION['theme']->getDir_theme()."page_index.inc.php");}
-else{	include ($DIR.$_SESSION['theme']->getDir_theme()."page_inscription.inc.php");}
+{include ($DIR.$_SESSION['theme']->getDir_theme()."page_index.inc.php");}
+else{include ($DIR.$_SESSION['theme']->getDir_theme()."page_inscription.inc.php");}
 ?>

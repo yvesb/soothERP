@@ -1,4 +1,4 @@
 <?php
-$DIR = "../";
+$DIR = "../../";
 $THIS_DIR = $DIR."site/";
 ?>

@@ -38,14 +38,14 @@ function __construct($ref_user = "") {
 	if (!$utilisateur = $resultat->fetchObject()) { return false; }
 
 	// Attribution des informations à l'objet
-	$this->ref_user 			= $ref_user;
+	$this->ref_user 		= $ref_user;
 	$this->ref_coord_user	= $utilisateur->ref_coord_user;
 	$this->ref_contact 		= $utilisateur->ref_contact;
-	$this->master					= $utilisateur->master;
+	$this->master			= $utilisateur->master;
 	$this->pseudo			= $utilisateur->pseudo;
 	$this->actif			= $utilisateur->actif;
 	$this->ordre			= $utilisateur->ordre;
-	$this->id_langage	= $utilisateur->id_langage;
+	$this->id_langage		= $utilisateur->id_langage;
 
 	return true;
 }
@@ -265,7 +265,7 @@ final public function modification ($ref_coord_user, $pseudo, $actif, $id_langag
 	}
 	$this->ref_coord_user = $ref_coord_user;
 	$this->pseudo 		= $pseudo;
-	$this->actif 			= $actif;
+	$this->actif 		= $actif;
 	$this->id_langage	= $id_langage;
 
 	// *************************************************

@@ -86,9 +86,9 @@ if (isset($_REQUEST["email"]) && $_REQUEST["email"] && email::verifier_syntaxe_e
 	// Préinscription
 	if ($url_inscription = $newsletter->add_newsletter_newsletters_inscriptions ($_REQUEST["email"])) {
 		$texte = "<br />Merci de cliquez sur le lien suivant pour confirmer votre inscription : <br />";
-		$lien	= "<a href='http://".$_SERVER['HTTP_HOST'].str_replace("site/newsletters/inscription.php", "", $_SERVER['PHP_SELF']).
+		$lien	= "<a href='http://".$_SERVER['HTTP_HOST'].$CORE_DIR.str_replace("site/newsletters/inscription.php", "", $_SERVER['PHP_SELF']).
 							$url_inscription."' target='_blank'> http://".
-							$_SERVER['HTTP_HOST'].str_replace("site/newsletters/inscription.php", "", $_SERVER['PHP_SELF']).$url_inscription."</a>";
+							$_SERVER['HTTP_HOST'].$CORE_DIR.str_replace("site/newsletters/inscription.php", "", $_SERVER['PHP_SELF']).$url_inscription."</a>";
 		
 		// Entête du mail
 		$limite = "_parties_".md5(uniqid(rand()));

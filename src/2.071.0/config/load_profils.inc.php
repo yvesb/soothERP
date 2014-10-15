@@ -9,10 +9,10 @@ $profils = array ("visiteur", "admin", "collab", "client", "commercial");
 
 foreach ($profils as $code_profil) {
 	if ($code_profil == "visiteur") { 
-		require_once ($DIR."site/_user_".$code_profil.".class.php");
+		require_once ($CORE_DIR."site/_user_".$code_profil.".class.php");
 		continue; 
 	}
-	require_once ($DIR."profil_".$code_profil."/_user_".$code_profil.".class.php");
+	require_once ($CORE_DIR."profil_".$code_profil."/_user_".$code_profil.".class.php");
 }
 
 

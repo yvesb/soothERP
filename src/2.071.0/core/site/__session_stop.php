@@ -1,5 +1,5 @@
 <?php
-$DIR = "../";
+$DIR = "../../";
 if(!session_id()) {session_start(); }
 
 session_unset();

@@ -50,7 +50,7 @@
 					<script type="text/javascript">
 						Event.observe('sedeconnecter', 'click',  function(evt){
 							Event.stop(evt);
-							window.open ("<?php echo $DIR;?>site/__session_stop.php", "_top");
+							window.open ("<?php echo $CORE_DIR;?>site/__session_stop.php", "_top");
 						}, false);
 					</script>
 					<?php }else{ ?>

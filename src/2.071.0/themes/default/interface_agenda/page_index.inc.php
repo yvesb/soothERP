@@ -15,7 +15,7 @@ check_page_variables ($page_variables);
 
 $default_page = array('default_content','accueil.php','true','sub_content','Agenda');
 
-if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], "profil_admin/") && $_REQUEST['page_from'] != "interface_agenda/" ) {
+if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $CORE_DIR."profil_admin/") && $_REQUEST['page_from'] != "interface_agenda/" ) {
 	$default_page= array('page_depart', str_replace("&page_from=","", str_replace("&uncache=1","", str_replace("?","",str_replace ( $_SESSION['user']->getProfil_dir() , "" , $_REQUEST['page_from']  )))),'true','sub_content');
 }
 
@@ -342,7 +342,7 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], "pro
 									</tr>
 									<tr>
 										<td colspan=2 align="right">	
-											<a href="#" onclick="window.open ('../<?php echo $DIR;?>site/__session_stop.php', '_top');" style="text-decoration:none">Quitter</a>
+											<a href="#" onclick="window.open ('../<?php echo $CORE_DIR.;?>site/__session_stop.php', '_top');" style="text-decoration:none">Quitter</a>
 											<script type="text/javascript">
 												Event.observe("close_ask_login", "click",  function(evt){
 													Event.stop(evt);

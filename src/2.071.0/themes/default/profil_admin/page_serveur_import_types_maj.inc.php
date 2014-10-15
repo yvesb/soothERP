@@ -51,7 +51,7 @@ if ($_REQUEST["autorise"]) {
 	<?php
 } else {
 	?>
-	window.parent.page.verify('liste_serveur_import','<?php echo $DIR."profil_admin/";?>serveur_import_liste.php','true','sub_content');
+	window.parent.page.verify('liste_serveur_import','<?php echo $CORE_DIR."profil_admin/";?>serveur_import_liste.php','true','sub_content');
 	<?php
 } 
 ?>
