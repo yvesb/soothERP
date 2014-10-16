@@ -76,22 +76,22 @@ check_page_variables ($page_variables);
 							</script>
 						</td>
 						<td style="text-align:right;">
-							<img id="courrier_apercu"  style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_apercu.gif" />
-							<img id="courrier_valider" style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_valider2.gif" />
-							<img id="courrier_envoyer" style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_envoyer.gif" />
+							<img id="courrier_apercu"  style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_apercu.gif" />
+							<img id="courrier_valider" style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_valider2.gif" />
+							<img id="courrier_envoyer" style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_envoyer.gif" />
 							<div id="choix_send_courrier"  class="choix_send_courrier" style="display:none;text-align:left;background-color:transparent;">
 								<table>
 								  <tr>
-								    <td><img id="courrier_print" style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-imprimer.gif" /></td>
+								    <td><img id="courrier_print" style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-imprimer.gif" /></td>
 								  </tr>
 								  <tr style="display:none"> 
 								  <?php 
 									  //@TODO COURRIER : Gestion du FAX : emplacement du bouton FAX
 								  ?>
-								    <td><img id="courrier_fax" style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-fax.gif" /></td>
+								    <td><img id="courrier_fax" style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-fax.gif" /></td>
 								  </tr>
 								  <tr>
-								  	<td><img id="courrier_email" style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-email.gif" /></td>
+								  	<td><img id="courrier_email" style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-email.gif" /></td>
 								  </tr>
 								</table>
 							</div>			
@@ -174,7 +174,7 @@ check_page_variables ($page_variables);
 						<td></td>
 					</tr>
 					<tr height="15px">
-						<td colspan="6"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+						<td colspan="6"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 					</tr>
 					<tr>
 						<td></td>
@@ -207,77 +207,77 @@ check_page_variables ($page_variables);
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_bold" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/bold.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/bold.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_italic" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/italic.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/italic.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_souligner" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/underline.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/underline.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_align_left" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/justifyleft.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/justifyleft.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_align_center" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/justifycenter.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/justifycenter.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_align_right" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/justifyright.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/justifyright.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_align_justify" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/justifyfull.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/justifyfull.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_outdent" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/outdent.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/outdent.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_indent" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/indent.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/indent.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_insertorderedlist" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/insertorderedlist.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/insertorderedlist.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_insertunorderedlist" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/insertunorderedlist.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/insertunorderedlist.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_forecolor" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/forecolor.gif" />	
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/forecolor.gif" />	
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_hilitecolor" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/hilitecolor.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/hilitecolor.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_link" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/createlink.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/createlink.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_unlink" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/unlink.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/unlink.gif" />
 												</a>
 											</td>
 										</tr>

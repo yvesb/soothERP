@@ -35,7 +35,7 @@ update_menu_arbo();
 		<table id="table_export" width="100%" border="0" cellspacing="0" cellpadding="0" >
 			<tr>
 				<td colspan="4" class="titre_config" >Choix de la période à exporter :</td>
-				<td style="text-align:center" width="20px" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="reset_all" style="cursor:pointer;"/></td>
+				<td style="text-align:center" width="20px" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="reset_all" style="cursor:pointer;"/></td>
 			</tr>
 			<tr>
 				<td colspan="4" class="spacer">&nbsp;</td>
@@ -98,7 +98,7 @@ update_menu_arbo();
 		<table id="table_export" style="height:100%; width:100%"  border="0" cellspacing="0" cellpadding="0">
 		<tr>
 			<td colspan="4" class="titre_config"  >Choix des journaux à exporter :</td>
-			<td style="text-align:center" width="20px" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="cancel_step_2" style="cursor:pointer;"/></td>
+			<td style="text-align:center" width="20px" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="cancel_step_2" style="cursor:pointer;"/></td>
 		</tr>
 		<tr>
 			<td colspan="4">&nbsp;</td><td>&nbsp;</td>
@@ -131,7 +131,7 @@ update_menu_arbo();
 			<tr>
 				<td colspan="2" class="titre_config" style="height:100%; width:100%" >Resume de l'exportation</td>
 				<td style="text-align:center" width="20px">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="cancel_step_4" style="cursor:pointer;"/>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="cancel_step_4" style="cursor:pointer;"/>
 				</td>
 			</tr>
 			<tr>
@@ -153,9 +153,9 @@ update_menu_arbo();
 			<tr>
 				<td style="padding:8px;"><div id="export_etat"></div></td>
 				<td style="text-align:right">
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-continuer.gif" id="continuer" style="cursor:pointer;display:none;"/>
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif"  id="lancer"  style="cursor:pointer;display:none;" />
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-annuler.gif" id="cancel" style="cursor:pointer;display:none;"/>
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-continuer.gif" id="continuer" style="cursor:pointer;display:none;"/>
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif"  id="lancer"  style="cursor:pointer;display:none;" />
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-annuler.gif" id="cancel" style="cursor:pointer;display:none;"/>
 				</td>
 				<td>&nbsp;</td>
 			</tr>

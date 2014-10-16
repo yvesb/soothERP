@@ -41,8 +41,8 @@ update_menu_arbo();
 			<td>
 		<table>
 			<tr class="smallheight">
-						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 						<td></td>
 			</tr>	
 			<tr>
@@ -62,8 +62,8 @@ update_menu_arbo();
 				<form action="catalogue_enseignes_add.php" method="post" id="catalogue_enseignes_add" name="catalogue_enseignes_add" target="formFrame" >
 				<table>
 					<tr class="smallheight">
-						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 					<tr>
 						<td>
@@ -73,7 +73,7 @@ update_menu_arbo();
 						
 						<td>
 							<p style="text-align:right">
-							<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" />
+							<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" />
 							</p>
 						</td>
 
@@ -97,8 +97,8 @@ update_menu_arbo();
 			<td>
 		<table>
 			<tr class="smallheight">
-						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 						<td></td>
 			</tr>	
 			<tr>
@@ -125,9 +125,9 @@ update_menu_arbo();
 				<table>
 					
 					<tr class="smallheight">
-						<td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 					<tr>
 						<td>
@@ -137,7 +137,7 @@ update_menu_arbo();
 						</td>
 						<td>
 							<p style="text-align:right">
-								<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+								<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
 							</p>
 						</td>
 					</tr>
@@ -152,7 +152,7 @@ update_menu_arbo();
 				<form action="catalogue_enseignes_sup.php" method="post" id="catalogue_enseignes_sup_<?php echo $liste_enseigne->id_mag_enseigne; ?>" name="catalogue_enseignes_sup_<?php echo $liste_enseigne->id_mag_enseigne; ?>" target="formFrame" >
 				<input name="id_mag_enseigne" id="id_mag_enseigne" type="hidden" value="<?php echo $liste_enseigne->id_mag_enseigne; ?>" />
 				</form>
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="supprimer_<?php echo $liste_enseigne->id_mag_enseigne; ?>" style="cursor:pointer" title="supprimer"/>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="supprimer_<?php echo $liste_enseigne->id_mag_enseigne; ?>" style="cursor:pointer" title="supprimer"/>
 				<script type="text/javascript">
 				Event.observe("supprimer_<?php echo $liste_enseigne->id_mag_enseigne;?>", "click",  function(evt){
 					Event.stop(evt); 

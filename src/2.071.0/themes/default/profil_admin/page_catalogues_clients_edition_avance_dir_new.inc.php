@@ -14,8 +14,8 @@
 	<form method="post" action="catalogues_clients_edition_avance_dir_add.php" id="catalogues_clients_edition_avance_dir_add" name="catalogues_clients_edition_avance_dir_add" target="formFrame">
 	<table class="minimizetable">
 				<tr class="smallheight">
-					<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 				</tr>	
 		<tr>
 			<td class="size_strict"><span class="labelled">Cat&eacute;gorie parent: </span>
@@ -68,7 +68,7 @@
 		</tr>
 	</table>
 		<p style="text-align:center">
-			<input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" name="bt_add_art_categs" id="bt_add_art_categs"/>
+			<input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" name="bt_add_art_categs" id="bt_add_art_categs"/>
 		</p>
 	</form>
 </div>

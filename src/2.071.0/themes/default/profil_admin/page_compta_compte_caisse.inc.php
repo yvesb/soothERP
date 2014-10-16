@@ -60,11 +60,11 @@ if (isset($id_magasin)) {
 					<td style="width:95%">
 						<table>
 							<tr class="smallheight">
-								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 							</tr>	
 							<tr>
 								<td style="text-align:center">
@@ -95,11 +95,11 @@ if (isset($id_magasin)) {
 				<form action="compta_compte_caisse_add.php" method="post" id="compta_compte_caisse_add" name="compta_compte_caisse_add" target="formFrame" >
 				<table>
 					<tr class="smallheight">
-								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 					<tr>
 						<td style="text-align:center">
@@ -131,7 +131,7 @@ if (isset($id_magasin)) {
 						<td>
 						</td>
 						<td style="text-align:center">
-						<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" />
+						<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" />
 						</td>
 					</tr>
 				</table>
@@ -153,11 +153,11 @@ if (isset($id_magasin)) {
 					<td style="width:95%">
 						<table>
 							<tr class="smallheight">
-								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 							</tr>	
 							<tr>
 								<td style="text-align:center">
@@ -192,11 +192,11 @@ if (isset($id_magasin)) {
 						<form action="compta_compte_caisse_mod.php" method="post" id="compta_compte_caisse_mod_<?php echo $compte_caisse->id_compte_caisse;?>" name="compta_compte_caisse_mod_<?php echo $compte_caisse->id_compte_caisse;?>" target="formFrame" >
 						<table>
 							<tr class="smallheight">
-								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 							</tr>	
 							<tr>
 								<td style="text-align:center">
@@ -230,7 +230,7 @@ if (isset($id_magasin)) {
 								<input id="id_compte_caisse" name="id_compte_caisse" value="<?php echo $compte_caisse->id_compte_caisse?>" type="hidden"/>
 								</td>
 								<td style="text-align:center">
-						<input name="modifier_<?php echo $compte_caisse->id_compte_caisse;?>" id="modifier_<?php echo $compte_caisse->id_compte_caisse;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+						<input name="modifier_<?php echo $compte_caisse->id_compte_caisse;?>" id="modifier_<?php echo $compte_caisse->id_compte_caisse;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
 								</td>
 							</tr>
 						</table>
@@ -241,7 +241,7 @@ if (isset($id_magasin)) {
 						<input id="id_magasin_<?php echo $compte_caisse->id_compte_caisse;?>" name="id_magasin_<?php echo $compte_caisse->id_compte_caisse;?>" value="<?php echo $compte_caisse->id_magasin?>" type="hidden"/>
 						<input name="id_compte_caisse" id="id_compte_caisse" type="hidden" value="<?php echo $compte_caisse->id_compte_caisse; ?>" />
 					</form>
-					<a href="#" id="link_compta_compte_caisse_sup_<?php echo $compte_caisse->id_compte_caisse; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+					<a href="#" id="link_compta_compte_caisse_sup_<?php echo $compte_caisse->id_compte_caisse; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 					<script type="text/javascript">
 					Event.observe("link_compta_compte_caisse_sup_<?php echo $compte_caisse->id_compte_caisse; ?>", "click",  function(evt){Event.stop(evt); alerte.confirm_supprimer('compta_compte_caisse_sup', 'compta_compte_caisse_sup_<?php echo $compte_caisse->id_compte_caisse; ?>');}, false);
 					</script>
@@ -258,12 +258,12 @@ if (isset($id_magasin)) {
 									
 									<input id="id_magasin_<?php echo $compte_caisse->id_compte_caisse;?>" name="id_magasin_<?php echo $compte_caisse->id_compte_caisse;?>" value="<?php echo $compte_caisse->id_magasin?>" type="hidden"/>
 									
-									<input name="modifier_ordre_<?php echo $compte_caisse->id_compte_caisse; ?>" id="modifier_ordre_<?php echo $compte_caisse->id_compte_caisse; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/up.gif">
+									<input name="modifier_ordre_<?php echo $compte_caisse->id_compte_caisse; ?>" id="modifier_ordre_<?php echo $compte_caisse->id_compte_caisse; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/up.gif">
 								</form>
 								<?php
 								} else {
 								?>
-								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="1" height="1"/>
+								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="1" height="1"/>
 								<?php
 								}
 								?>
@@ -282,12 +282,12 @@ if (isset($id_magasin)) {
 									
 									<input id="id_magasin_<?php echo $compte_caisse->id_compte_caisse;?>" name="id_magasin_<?php echo $compte_caisse->id_compte_caisse;?>" value="<?php echo $compte_caisse->id_magasin?>" type="hidden"/>
 									
-									<input name="modifier_ordre_<?php echo $compte_caisse->id_compte_caisse; ?>" id="modifier_ordre_<?php echo $compte_caisse->id_compte_caisse; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/down.gif">
+									<input name="modifier_ordre_<?php echo $compte_caisse->id_compte_caisse; ?>" id="modifier_ordre_<?php echo $compte_caisse->id_compte_caisse; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/down.gif">
 								</form>
 								<?php
 								} else {
 								?>
-								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="1" height="1"/>							
+								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="1" height="1"/>							
 								<?php
 								}
 								?>

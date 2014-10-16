@@ -290,7 +290,7 @@ check_page_variables ($page_variables);
 											<?php 
 											if ($document->getId_etat_doc () == 6 ) {
 												?>
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_cdc_valider.gif" id="commande_a_valider" style="cursor:pointer"/>
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_cdc_valider.gif" id="commande_a_valider" style="cursor:pointer"/>
 											<div style="height:3px;line-height:3px;" ></div>
 											<?php 
 											}
@@ -298,7 +298,7 @@ check_page_variables ($page_variables);
 											<?php 
 											if ($document->getId_etat_doc () == 6 || $document->getId_etat_doc () == 8) {
 												?>
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_cdc_lancer.gif" id="commande_pret" style="cursor:pointer"/>
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_cdc_lancer.gif" id="commande_pret" style="cursor:pointer"/>
 											<div style="height:3px;line-height:3px;" ></div>
 											<?php 
 											}
@@ -307,13 +307,13 @@ check_page_variables ($page_variables);
 											if ($document->getId_etat_doc () == 9) {
 												if ($COMMANDE_CLIENT_AUTO_GENERE	== "BLC") {
 												?>
-												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_cdc_livraison.gif" id="commande_genere_livraison" style="cursor:pointer"/>
+												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_cdc_livraison.gif" id="commande_genere_livraison" style="cursor:pointer"/>
 												<div style="height:3px; line-height:3px;"></div>
 												<?php 
 												}
 												if ($COMMANDE_CLIENT_AUTO_GENERE	== "FAC") {
 												?>
-												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_blc_facturer.gif" id="commande_genere_facture" style="cursor:pointer"/>
+												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_blc_facturer.gif" id="commande_genere_facture" style="cursor:pointer"/>
 												<div style="height:3px; line-height:3px;"></div>
 												<?php 
 												}
@@ -466,9 +466,9 @@ check_page_variables ($page_variables);
 		</td>
 	</tr>
 	<tr>
-		<td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1px"/></td>
-		<td style="width:4%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1px"/></td>
-		<td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1px"/></td>
+		<td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1px"/></td>
+		<td style="width:4%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1px"/></td>
+		<td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1px"/></td>
 	</tr>
 	<tr>
 		<td>
@@ -481,14 +481,14 @@ check_page_variables ($page_variables);
 					<input type="hidden" name="ref_contact"  id="ref_contact" value="<?php echo $document->getRef_contact();?>"/>
 				</td>
 				<td colspan="2" style="text-align:right">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/doc_view_contact.gif" style="cursor:pointer;<?php if (!$document->getRef_contact()) { echo 'display:none;';}?>" id="doc_view_contact_img" alt="Voir la fiche du contact" title="Voir la fiche du contact"/>&nbsp;
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/doc_set_contact.gif" style="cursor:pointer" id="doc_ref_contact_img" alt="Choisir un contact" title="Choisir un contact"/>&nbsp;&nbsp;
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" style="cursor:pointer" id="doc_sup_contact_img" alt="Supprimer le  contact" title="Supprimer le  contact"/>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/doc_view_contact.gif" style="cursor:pointer;<?php if (!$document->getRef_contact()) { echo 'display:none;';}?>" id="doc_view_contact_img" alt="Voir la fiche du contact" title="Voir la fiche du contact"/>&nbsp;
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/doc_set_contact.gif" style="cursor:pointer" id="doc_ref_contact_img" alt="Choisir un contact" title="Choisir un contact"/>&nbsp;&nbsp;
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" style="cursor:pointer" id="doc_sup_contact_img" alt="Supprimer le  contact" title="Supprimer le  contact"/>
 				<script type="text/javascript">
-				//Event.observe('doc_ref_contact_img', 'mouseover',  function(){$("doc_ref_contact_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_hover.gif";}, false);
-				//Event.observe('doc_ref_contact_img', 'mousedown',  function(){$("doc_ref_contact_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_down.gif";}, false);
-				//Event.observe('doc_ref_contact_img', 'mouseup',  function(){$("doc_ref_contact_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";}, false);
-				//Event.observe('doc_ref_contact_img', 'mouseout',  function(){$("doc_ref_contact_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";}, false);
+				//Event.observe('doc_ref_contact_img', 'mouseover',  function(){$("doc_ref_contact_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_hover.gif";}, false);
+				//Event.observe('doc_ref_contact_img', 'mousedown',  function(){$("doc_ref_contact_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_down.gif";}, false);
+				//Event.observe('doc_ref_contact_img', 'mouseup',  function(){$("doc_ref_contact_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";}, false);
+				//Event.observe('doc_ref_contact_img', 'mouseout',  function(){$("doc_ref_contact_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";}, false);
 				
 				Event.observe('doc_view_contact_img', 'click',  function(){ if ($("ref_contact").value!="" && $("ref_contact").value!="NULL") { page.verify('affaires_affiche_fiche','annuaire_view_fiche.php?ref_contact=<?php echo $document->getRef_contact();?>','true','sub_content');} }, false);
 				Event.observe('doc_ref_contact_img', 'click',  function(){ show_mini_moteur_contacts ('docu_maj_contact', '\'<?php echo $document->getRef_doc();?>\''); preselect ('<?php echo $CLIENT_ID_PROFIL;?>', 'id_profil_m');}, false);
@@ -585,7 +585,7 @@ check_page_variables ($page_variables);
 							</td>
 							<td style="width:18px; vertical-align:bottom">
 							<div id="adresse_contact_choisie"  style="width:20px; cursor: default; text-align:right">
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_doc_choix_adresses.gif" style="float:right" id="bt_adresse_contact_choisie"/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_doc_choix_adresses.gif" style="float:right" id="bt_adresse_contact_choisie"/>
 							</div>
 							</td>
 							</tr>
@@ -664,7 +664,7 @@ check_page_variables ($page_variables);
 							</td>
 							<td style="width:18px; vertical-align:bottom">
 							<div id="adresse_livraison_choisie" style="width:20px; cursor: default; text-align:right">
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_doc_choix_adresses.gif"/ style="float:right" id="bt_adresse_livraison_choisie">
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_doc_choix_adresses.gif"/ style="float:right" id="bt_adresse_livraison_choisie">
 							</div>
 							</td>
 							</tr>

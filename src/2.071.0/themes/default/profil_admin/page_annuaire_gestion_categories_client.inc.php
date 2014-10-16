@@ -43,12 +43,12 @@ update_menu_arbo();
 			<td style="width:95%">
 					<table>
 					<tr class="smallheight">
-						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 					<tr>
 						<td ><span class="labelled" style="text-align:center">Libell&eacute;:</span>
@@ -79,12 +79,12 @@ update_menu_arbo();
 				<form action="annuaire_gestion_categories_client_add.php" method="post" id="annuaire_gestion_categories_client_add" name="annuaire_gestion_categories_client_add" target="formFrame" >
 				<table>
 					<tr class="smallheight">
-						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:19%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:19%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 					<tr>
 						<td>
@@ -185,10 +185,10 @@ update_menu_arbo();
 									 </select>
 									</td>
 									<td style="width:20px">
-									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif"/ style="float:right; cursor:pointer" id="ref_commercial_select_img">
+									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif"/ style="float:right; cursor:pointer" id="ref_commercial_select_img">
 									</td>
 									<td style="width:20px">
-									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif"/ style=" cursor:pointer" id="ref_commercial_empty_s">
+									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif"/ style=" cursor:pointer" id="ref_commercial_empty_s">
 									
 									<script type="text/javascript">
 									Event.observe('ref_commercial_empty_s', 'click',  function(evt){Event.stop(evt); 
@@ -203,17 +203,17 @@ update_menu_arbo();
 						<script type="text/javascript">
 						//effet de survol sur le faux select
 							Event.observe('ref_commercial_select_img', 'mouseover',  function(){
-							$("ref_commercial_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_hover.gif";
+							$("ref_commercial_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_hover.gif";
 							}, false);
 							Event.observe('ref_commercial_select_img', 'mousedown',  function(){
-							$("ref_commercial_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_down.gif";
+							$("ref_commercial_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_down.gif";
 							}, false);
 							Event.observe('ref_commercial_select_img', 'mouseup',  function(){
-							$("ref_commercial_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";
+							$("ref_commercial_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";
 							}, false);
 							
 							Event.observe('ref_commercial_select_img', 'mouseout',  function(){
-							$("ref_commercial_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";
+							$("ref_commercial_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";
 							}, false);
 							
 							Event.observe('ref_commercial_select_img', 'click',  function(evt){
@@ -230,7 +230,7 @@ update_menu_arbo();
 						<td>
 						<textarea name="note" id="note" class="classinput_xsize"></textarea>
 							<p style="text-align: right">
-							<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" />
+							<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" />
 							</p>
 						</td>
 					</tr>
@@ -253,12 +253,12 @@ update_menu_arbo();
 			<td style="width:95%">
 					<table>
 					<tr class="smallheight">
-						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 					<tr>
 						<td ><span class="labelled">Libell&eacute;:</span>
@@ -294,13 +294,13 @@ update_menu_arbo();
 				<form action="annuaire_gestion_categories_client_mod.php" method="post" id="annuaire_gestion_categories_client_mod_<?php echo $liste_categorie->id_client_categ; ?>" name="annuaire_gestion_categories_client_mod_<?php echo $liste_categorie->id_client_categ; ?>" target="formFrame" >
 				<table>
 					<tr class="smallheight">
-						<td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 					<tr>
 						<td style="text-align:center">
@@ -406,10 +406,10 @@ update_menu_arbo();
 								 </select>
 								 	</td>
 									<td style="width:20px">
-									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif"/ style="float:right; cursor:pointer" id="ref_commercial_select_img_<?php echo $liste_categorie->id_client_categ; ?>">
+									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif"/ style="float:right; cursor:pointer" id="ref_commercial_select_img_<?php echo $liste_categorie->id_client_categ; ?>">
 									</td>
 									<td style="width:20px">
-									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif"/ style=" cursor:pointer" id="ref_commercial_empty_s_<?php echo $liste_categorie->id_client_categ; ?>">
+									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif"/ style=" cursor:pointer" id="ref_commercial_empty_s_<?php echo $liste_categorie->id_client_categ; ?>">
 									
 									<script type="text/javascript">
 									Event.observe('ref_commercial_empty_s_<?php echo $liste_categorie->id_client_categ; ?>', 'click',  function(evt){Event.stop(evt); 
@@ -424,17 +424,17 @@ update_menu_arbo();
 						<script type="text/javascript">
 						//effet de survol sur le faux select
 							Event.observe('ref_commercial_select_img_<?php echo $liste_categorie->id_client_categ; ?>', 'mouseover',  function(){
-							$("ref_commercial_select_img_<?php echo $liste_categorie->id_client_categ; ?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_hover.gif";
+							$("ref_commercial_select_img_<?php echo $liste_categorie->id_client_categ; ?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_hover.gif";
 							}, false);
 							Event.observe('ref_commercial_select_img_<?php echo $liste_categorie->id_client_categ; ?>', 'mousedown',  function(){
-							$("ref_commercial_select_img_<?php echo $liste_categorie->id_client_categ; ?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_down.gif";
+							$("ref_commercial_select_img_<?php echo $liste_categorie->id_client_categ; ?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_down.gif";
 							}, false);
 							Event.observe('ref_commercial_select_img_<?php echo $liste_categorie->id_client_categ; ?>', 'mouseup',  function(){
-							$("ref_commercial_select_img_<?php echo $liste_categorie->id_client_categ; ?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";
+							$("ref_commercial_select_img_<?php echo $liste_categorie->id_client_categ; ?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";
 							}, false);
 							
 							Event.observe('ref_commercial_select_img_<?php echo $liste_categorie->id_client_categ; ?>', 'mouseout',  function(){
-							$("ref_commercial_select_img_<?php echo $liste_categorie->id_client_categ; ?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";
+							$("ref_commercial_select_img_<?php echo $liste_categorie->id_client_categ; ?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";
 							}, false);
 							
 							Event.observe('ref_commercial_select_img_<?php echo $liste_categorie->id_client_categ; ?>', 'click',  function(evt){
@@ -452,7 +452,7 @@ update_menu_arbo();
 						<td>
 						<textarea id="note_<?php echo $liste_categorie->id_client_categ; ?>" name="note_<?php echo $liste_categorie->id_client_categ; ?>" class="classinput_xsize"><?php echo htmlentities($liste_categorie->note, ENT_QUOTES, "UTF-8"); ?></textarea>
 							<p style="text-align: right">
-								<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+								<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
 							</p>
 						</td>
 					</tr>
@@ -463,7 +463,7 @@ update_menu_arbo();
 			<form method="post" action="annuaire_gestion_categories_client_sup.php" id="annuaire_gestion_categories_client_sup_<?php echo $liste_categorie->id_client_categ; ?>" name="annuaire_gestion_categories_client_sup_<?php echo $liste_categorie->id_client_categ; ?>" target="formFrame">
 			<input name="id_client_categ" id="id_client_categ" type="hidden" value="<?php echo $liste_categorie->id_client_categ; ?>" />
 		</form>
-		<a href="#" id="link_annuaire_gestion_categories_client_sup_<?php echo $liste_categorie->id_client_categ; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+		<a href="#" id="link_annuaire_gestion_categories_client_sup_<?php echo $liste_categorie->id_client_categ; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 		<script type="text/javascript">
 		Event.observe("link_annuaire_gestion_categories_client_sup_<?php echo $liste_categorie->id_client_categ; ?>", "click",  function(evt){Event.stop(evt); alerte.confirm_supprimer('categories_client_sup', 'annuaire_gestion_categories_client_sup_<?php echo $liste_categorie->id_client_categ; ?>');}, false);
 		</script>

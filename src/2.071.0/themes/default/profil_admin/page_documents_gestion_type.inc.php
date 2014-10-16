@@ -47,9 +47,9 @@ update_menu_arbo();
 				<form action="documents_gestion_type_<?php echo $document_type->id_type_doc; ?>_mod.php" method="post" id="documents_gestion_type_mod_<?php echo $document_type->id_type_doc; ?>" name="documents_gestion_type_mod_<?php echo $document_type->id_type_doc; ?>" target="formFrame" >
 					<table width="450px">
 						<tr class="smallheight">
-							<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-							<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-							<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 						</tr>
 						<tr>
 							<td>
@@ -85,7 +85,7 @@ update_menu_arbo();
 							<td style="text-align:center">
 							</td>
 							<td style="text-align:center">
-								<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />
+								<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" />
 							</td>
 							<td>
 							</td>

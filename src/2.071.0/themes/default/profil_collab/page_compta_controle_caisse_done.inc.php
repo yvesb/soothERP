@@ -32,9 +32,9 @@ check_page_variables ($page_variables);
 	<tr>
 	<td rowspan="2" style="width:50px; height:50px; background-color:#FFFFFF">
 		<div style="position:relative; top:-35px; left:-35px; width:105px; border:1px solid #999999; background-color:#FFFFFF; text-align:center">
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_caisse.jpg" />				</div>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_caisse.jpg" />				</div>
 		<span style="width:35px">
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="50px" height="20px" id="imgsizeform"/>				</span>			
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="50px" height="20px" id="imgsizeform"/>				</span>			
 	</td>
 	<td colspan="2" style="width:85%; background-color:#FFFFFF" >
 	
@@ -46,17 +46,17 @@ check_page_variables ($page_variables);
 	
 	<div  ><br />
 
-	<span id="link_retour_caisse" class="grey_caisse" style="cursor:pointer" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Retour au Tableau de bord</span><br /><br />
+	<span id="link_retour_caisse" class="grey_caisse" style="cursor:pointer" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Retour au Tableau de bord</span><br /><br />
 
 
-	<span id="print_rapport" class="grey_caisse" style="cursor:pointer" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />Impression du rapport de contrôle</span><br />
+	<span id="print_rapport" class="grey_caisse" style="cursor:pointer" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />Impression du rapport de contrôle</span><br />
 <br />
 
 
-						<span id="transfert_fonds" class="grey_caisse" style="cursor:pointer" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Transfert entre caisses</span><br /><br />
+						<span id="transfert_fonds" class="grey_caisse" style="cursor:pointer" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Transfert entre caisses</span><br /><br />
 
 
-						<span id="remise_bancaire" class="grey_caisse" style="cursor:pointer" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Remise en banque</span><br />
+						<span id="remise_bancaire" class="grey_caisse" style="cursor:pointer" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Remise en banque</span><br />
 
 
 						<script type="text/javascript">

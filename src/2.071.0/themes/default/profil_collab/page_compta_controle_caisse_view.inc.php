@@ -41,13 +41,13 @@ Contrôle effectué par <span style="font-weight:bolder"><?php echo htmlentities
 	<tr>
 		<td style="width:135px" class="line_compta_bottom_rigth"><div style="width:135px; height:50px"></div></td>
 		<td colspan="2" align="center" valign="middle" class="line_compta_bottom">
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-espece.gif"/>		</td>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-espece.gif"/>		</td>
 		<td align="center" valign="middle" class="line_compta_bottom_rigth">&nbsp;</td>
 		<td colspan="2" align="center" valign="middle" class="line_compta_bottom">
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-cheque.gif"/>		</td>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-cheque.gif"/>		</td>
 		<td align="center" valign="middle" class="line_compta_bottom_rigth">&nbsp;</td>
 		<td colspan="2" align="center" valign="middle" class="line_compta_bottom_rigth">
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-carte_bancaire.gif"/>		</td>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-carte_bancaire.gif"/>		</td>
 		<td valign="middle" class="line_compta_bottom" align="center"
 		<div style="width:85px; height:35px; line-height:35px;">TOTAL</div>		</td>
 		<td valign="middle">&nbsp;</td>
@@ -163,7 +163,7 @@ Contrôle effectué par <span style="font-weight:bolder"><?php echo htmlentities
 		<td valign="middle" class="">
 		<div style="text-align:right">
 		<!--<a href="compta_controle_caisse_editing.php?id_compte_caisse_controle=<?php echo $_REQUEST["id_compte_caisse_controle"];?>&print=1" target="edition" >-->
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-imprimer.gif" style="cursor:pointer" />
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-imprimer.gif" style="cursor:pointer" />
 		<!--</a>-->
 		</div></td>
 	</tr>

@@ -51,7 +51,7 @@ if (!$_SESSION['user']->check_permission ("6")) {?>style="display:none;"<?php } 
 			</td>
 			<td >
 			
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="link_art_sup_ref_externe_<?php echo $i;?>"/>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="link_art_sup_ref_externe_<?php echo $i;?>"/>
 				<script type="text/javascript">
 				Event.observe("link_art_sup_ref_externe_<?php echo $i;?>", "click",  function(evt){Event.stop(evt); 
 				window.open("catalogue_articles_view_ref_externes_sup.php?ref_article=<?php echo $article->getRef_article ();?>&ref_fournisseur=<?php echo $ref_ext->ref_fournisseur;?>&ref_article_externe=<?php echo $ref_ext->ref_article_externe;?>", "formFrame");

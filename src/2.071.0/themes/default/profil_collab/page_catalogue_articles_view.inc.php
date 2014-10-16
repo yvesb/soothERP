@@ -50,7 +50,7 @@ array_menu_v_article[5] 	=	new Array('gest_composition', 'menu_5');
 
 <iframe frameborder="0" scrolling="no" src="about:_blank" id="pop_up_view_categ_carac_iframe" class="edition_art_iframe"></iframe>
 <div id="pop_up_view_categ_carac" class="edition_art_table" style="OVERFLOW-Y: auto; OVERFLOW-X: auto;">
-<a href="#" id="link_close_pop_up_categ_carac" style="float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+<a href="#" id="link_close_pop_up_categ_carac" style="float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 <script type="text/javascript">
 Event.observe("link_close_pop_up_categ_carac", "click",  function(evt){Event.stop(evt); stop_view_categ_carac();}, false);
 </script>
@@ -252,15 +252,15 @@ Event.observe("tool_item_menu", "click",  function(evt){
 					<td>
 						<input id="nouvelle_liaison_lib_article_lie" name="nouvelle_liaison_lib_article_lie" type="text" value="" class="classinput_lsize" style="width:200px;" disabled="disabled"/>
 						<input id="nouvelle_liaison_ref_article_lie" name="nouvelle_liaison_ref_article_lie" type="hidden" value="" class=""/>
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/doc_set_contact.gif" id="nouvelle_liaison_vers_show_mini_moteur_articles" alt="Choisir l&acute;article" title="Choisir l&acute;article" style="cursor:pointer"/>
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="nouvelle_liaison_vers_reset" alt="Effacer" title="Effacer" style="cursor:pointer"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/doc_set_contact.gif" id="nouvelle_liaison_vers_show_mini_moteur_articles" alt="Choisir l&acute;article" title="Choisir l&acute;article" style="cursor:pointer"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="nouvelle_liaison_vers_reset" alt="Effacer" title="Effacer" style="cursor:pointer"/>
 					</td>
 					<td>
 						<input id="nouvelle_liaison_ratio_vers" name="nouvelle_liaison_ratio_vers" type="text" value="1" class="classinput_lsize" style="width:40px;"/>
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="nouvelle_liaison_vers_reset_ratio" alt="Effacer" title="Effacer" style="cursor:pointer"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="nouvelle_liaison_vers_reset_ratio" alt="Effacer" title="Effacer" style="cursor:pointer"/>
 					</td>
 					<td width="100px" align="right">
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" id="nouvelle_liaison_vers_valider" alt="Ajouter" title="Ajouter" style="cursor:pointer"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" id="nouvelle_liaison_vers_valider" alt="Ajouter" title="Ajouter" style="cursor:pointer"/>
 	
 						<script type="text/javascript">
 	
@@ -317,15 +317,15 @@ Event.observe("tool_item_menu", "click",  function(evt){
 					<td>
 						<input id="nouvelle_liaison_lib_article" name="nouvelle_liaison_lib_article" type="text" value="" class="classinput_lsize" style="width:200px;" disabled="disabled"/>
 						<input id="nouvelle_liaison_ref_article" name="nouvelle_liaison_ref_article" type="hidden" value="" class=""/>
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/doc_set_contact.gif" id="nouvelle_liaison_depuis_show_mini_moteur_articles" alt="Choisir l&acute;article" title="Choisir l&acute;article" style="cursor:pointer"/>
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="nouvelle_liaison_depuis_reset" alt="Effacer" title="Effacer" style="cursor:pointer"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/doc_set_contact.gif" id="nouvelle_liaison_depuis_show_mini_moteur_articles" alt="Choisir l&acute;article" title="Choisir l&acute;article" style="cursor:pointer"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="nouvelle_liaison_depuis_reset" alt="Effacer" title="Effacer" style="cursor:pointer"/>
 					</td>
 					<td>
 						<input id="nouvelle_liaison_ratio_depuis" name="nouvelle_liaison_ratio_depuis" type="text" value="1" class="classinput_lsize" style="width:40px;"/>
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="nouvelle_liaison_depuis_reset_ratio" alt="Effacer" title="Effacer" style="cursor:pointer"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="nouvelle_liaison_depuis_reset_ratio" alt="Effacer" title="Effacer" style="cursor:pointer"/>
 					</td>
 					<td width="100px" align="right">
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" id="nouvelle_liaison_depuis_valider" alt="Ajouter" title="Ajouter" style="cursor:pointer"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" id="nouvelle_liaison_depuis_valider" alt="Ajouter" title="Ajouter" style="cursor:pointer"/>
 	
 						<script type="text/javascript">
 	

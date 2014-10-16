@@ -37,25 +37,25 @@ update_menu_arbo();
 		<tr>
 			<td rowspan="2" style="width:280px; height:50px">
 				<div style="position:relative; top:-35px; left:-35px; width:230px; border:1px solid #999999; background-color:#FFFFFF; text-align:center">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_affichage.jpg" />				</div>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_affichage.jpg" />				</div>
 				<span style="width:35px">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="280px" height="20px" id="imgsizeform"/>				</span>			</td>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="280px" height="20px" id="imgsizeform"/>				</span>			</td>
 			<td colspan="2" style="width:80%" valign="top"><span style="width:47%; height:20px"><br />
 				<br />
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/titre_affichage.jpg" style="padding-left:25px" /><br />
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/titre_affichage.jpg" style="padding-left:25px" /><br />
 			<br />
 			</span></td>
 			</tr>
 		<tr>
 			<td style="text-align:left;" valign="top">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="20px" /><br />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="20px" /><br />
 
-				<span class="titre_smenu_page" id="affichage_smenu_profil_collab"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Affichage des résultats de recherche</span><br /><br />
-				<span class="titre_smenu_page" id="recherche_perso"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Recherches personnalisées</span><br /><br />
+				<span class="titre_smenu_page" id="affichage_smenu_profil_collab"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Affichage des résultats de recherche</span><br /><br />
+				<span class="titre_smenu_page" id="recherche_perso"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Recherches personnalisées</span><br /><br />
 				
 			</td>
 			<td style="text-align:left;">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="20px"/><br />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="20px"/><br />
 
 
 			</td>

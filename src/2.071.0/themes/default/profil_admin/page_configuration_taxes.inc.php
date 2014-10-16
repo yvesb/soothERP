@@ -59,7 +59,7 @@ foreach ($taxes_liste as $taxe_liste) {
 					<input name="code_taxe_<?php echo $taxe_liste['id_taxe'];?>" id="code_taxe_<?php echo $taxe_liste['id_taxe'];?>" type="text" value="<?php echo $taxe_liste['info_calcul'];?>" disabled="disabled" class="classinput_xsize"/>
 				</td>
 				<td>
-					<img id="eye_<?php echo $taxe_liste['id_taxe'];?>" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme().'images/'.((intval($taxe_liste['visible']) == 1)? "":"un");?>visible.gif" style="cursor: pointer;" />
+					<img id="eye_<?php echo $taxe_liste['id_taxe'];?>" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme().'images/'.((intval($taxe_liste['visible']) == 1)? "":"un");?>visible.gif" style="cursor: pointer;" />
 				</td>
 				<td>
 					<input name="valider" id="valider" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/bt-valider.gif" />
@@ -73,10 +73,10 @@ foreach ($taxes_liste as $taxe_liste) {
 <SCRIPT type="text/javascript">
 	Event.observe('eye_<?php echo $taxe_liste['id_taxe'];?>', 'click', function(evt){
 			if ($('visible_<?php echo $taxe_liste['id_taxe'];?>').value == 1) {
-				$("eye_<?php echo $taxe_liste['id_taxe'];?>").src = '<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/unvisible.gif';
+				$("eye_<?php echo $taxe_liste['id_taxe'];?>").src = '<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/unvisible.gif';
 				$('visible_<?php echo $taxe_liste['id_taxe'];?>').value = '0';
 			} else {
-				$("eye_<?php echo $taxe_liste['id_taxe'];?>").src = '<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/visible.gif';
+				$("eye_<?php echo $taxe_liste['id_taxe'];?>").src = '<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/visible.gif';
 				$('visible_<?php echo $taxe_liste['id_taxe'];?>').value = '1';
 			}
 	});

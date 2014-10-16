@@ -46,10 +46,10 @@ if (!isset($resultat_var[0]) || !count($resultat_var[0])){
 <div id="liste_variantes_article">
 <table style="width:100%" cellpadding="0" cellspacing="0" border="0">
 	<tr class="smallheight">
-		<td style="width:65%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:65%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 	</tr>
 <?php 
 $indentations_variantes = 0;
@@ -134,11 +134,11 @@ foreach ($resultat_var as $variante) {
 	<table style="width:100%">
 		<tr class="smallheight">
 			<td style="width:95%"></td>
-			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 		</tr>
 		<tr>
 			<td style="text-align:right">
-			<a href="#" id="bt_etape_1b"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-continuer.gif" /></a>
+			<a href="#" id="bt_etape_1b"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-continuer.gif" /></a>
 			</td>
 			<td></td>
 		</tr>

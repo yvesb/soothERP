@@ -27,10 +27,10 @@ check_page_variables ($page_variables);
             <tr class="smallheight">
                 <td style="width:2%">&nbsp;</td>
                 <td style="width:15%">&nbsp;</td>
-                <td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-                <td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                <td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                <td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
                 <td style="width:20%">&nbsp;</td>
-                <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
                 <td style="width:3%">&nbsp;</td>
             </tr>
             <tr>
@@ -45,10 +45,10 @@ check_page_variables ($page_variables);
             <tr class="smallheight">
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
-                <td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-                <td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                <td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                <td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
                 <td>&nbsp;</td>
-                <td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                <td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
@@ -101,7 +101,7 @@ check_page_variables ($page_variables);
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>
-                    <input id="search_prelevs" name="search_prelevs" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-rechercher.gif" style="float:left" />
+                    <input id="search_prelevs" name="search_prelevs" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-rechercher.gif" style="float:left" />
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>

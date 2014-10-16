@@ -61,8 +61,8 @@
 		
 	</table>
 				<div style="text-align:right; padding-right:5px">
-				<a href="#" id="bt_etape_3b" style="display:none"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" /></a>
-				<a href="#" id="edit_etape_3" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" /></a>
+				<a href="#" id="bt_etape_3b" style="display:none"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" /></a>
+				<a href="#" id="edit_etape_3" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" /></a>
 				</div>
 					<script type="text/javascript">
 					Event.observe("edit_etape_3", "focus",  function(evt){Event.stop(evt); showform('edit_info_step3', 'view_info_step3'); $("edit_etape_3").hide(); $("bt_etape_3b").show();}, false);

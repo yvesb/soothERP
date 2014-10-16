@@ -17,7 +17,7 @@ $page_cible = "page_cible.php";
 ?>
 
 <!-- Bouton pour fermer la page sans sauvegarder -->
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-fermer.gif" id="close_selectionner_types_events" class="bt_fermer_popup" alt="Fermer" title="Fermer" />
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-fermer.gif" id="close_selectionner_types_events" class="bt_fermer_popup" alt="Fermer" title="Fermer" />
 <SCRIPT type="text/javascript">
 	Event.observe("close_selectionner_types_events", "click", function(evt){
 		$("pop_up_selection_types_events").innerHTML="";

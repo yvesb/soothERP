@@ -23,7 +23,7 @@ check_page_variables ($page_variables);
 ?>
 <script type="text/javascript">
 </script>
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="close_abonnement_edit" style="cursor:pointer; float:right" alt="Fermer" title="Fermer" />
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="close_abonnement_edit" style="cursor:pointer; float:right" alt="Fermer" title="Fermer" />
 <span style="font-weight:bolder">Edition d'un abonnement</span><br />
 <br />
 <span class="bolder"><?php echo htmlentities($article->getLib_article (), ENT_QUOTES, "UTF-8"); ?></span>
@@ -97,7 +97,7 @@ check_page_variables ($page_variables);
 		</table><br />
 
 		<div style="text-align:right">
-		<input name="abonnement_mod_valid" id="abonnement_mod_valid" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+		<input name="abonnement_mod_valid" id="abonnement_mod_valid" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
 		</div>
 		</form>
 		
@@ -109,7 +109,7 @@ check_page_variables ($page_variables);
 			<input type="hidden" name="id_abo" value="<?php echo $abonnement->id_abo;?>"/>
 			
 			<div style="text-align:right">
-			<input name="abonnement_renouvellement" id="abonnement_renouvellement" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_renouveller.gif" />
+			<input name="abonnement_renouvellement" id="abonnement_renouvellement" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_renouveller.gif" />
 			</div>
 		</form>
 		
@@ -224,10 +224,10 @@ check_page_variables ($page_variables);
 		?>
 		<table width="100%" border="0"  cellspacing="0" id="view_doc_<?php echo $indentation_doc;?>_<?php echo $doc->ref_doc;?>">
 			<tr>
-				<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td style="width:45%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td style="width:45%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			</tr>
 			<tr>
 				<td style="font-size:10px; cursor:pointer" id="doc1_<?php echo $indentation_doc;?>_<?php echo $doc->ref_doc;?>">

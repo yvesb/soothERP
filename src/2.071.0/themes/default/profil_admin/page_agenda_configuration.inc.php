@@ -40,11 +40,11 @@ check_page_variables ($page_variables);
 								<td>
 									<table border="0">
 										<tr class="smallheight">
-											<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-											<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-											<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-											<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-											<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+											<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+											<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+											<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+											<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+											<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 										</tr>	
 										<tr>
 											<td>
@@ -66,11 +66,11 @@ check_page_variables ($page_variables);
 						<div class="caract_table">
 							<table border="0">
 								<tr class="smallheight">
-									<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-									<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-									<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-									<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-									<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+									<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+									<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+									<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+									<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+									<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 								</tr>	
 								<tr>
 									<td>
@@ -216,11 +216,11 @@ check_page_variables ($page_variables);
 							<div id="agenda_AgendaLoacationMateriel" style="display:none;">
 								<table>
 									<tr class="smallheight">
-										<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-										<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-										<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-										<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-										<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+										<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+										<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+										<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+										<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+										<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 									</tr>
 									<tr>
 										<td>Ref article : </td>
@@ -230,7 +230,7 @@ check_page_variables ($page_variables);
 										<td></td>
 										<td></td>
 										<td style="text-align:right">
-											<img name="add_agenda_AgendaLoacationMateriel" id="add_agenda_AgendaLoacationMateriel" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" style="cursor:pointer"/>
+											<img name="add_agenda_AgendaLoacationMateriel" id="add_agenda_AgendaLoacationMateriel" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" style="cursor:pointer"/>
 											<script type="text/javascript">
 												Event.observe("add_agenda_AgendaLoacationMateriel", "click", function(ev) {
 													Event.stop(ev);
@@ -258,11 +258,11 @@ check_page_variables ($page_variables);
 							<div id="agenda_AgendaContact" style="display:none;">
 								<table border="0">
 									<tr class="smallheight">
-										<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-										<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-										<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-										<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-										<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+										<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+										<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+										<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+										<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+										<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 									</tr>
 									<tr>
 										<td>Ref_Contact : </td>
@@ -274,10 +274,10 @@ check_page_variables ($page_variables);
 														<input name="ref_contact_AgendaContact" id="ref_contact_AgendaContact" type="hidden" value="" />
 													</td>
 													<td width="10%" align="right">
-														<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif"/ style="float:right; cursor:pointer" id="rechercher_contact">
+														<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif"/ style="float:right; cursor:pointer" id="rechercher_contact">
 													</td>
 													<td  width="10%" align="right">
-														<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif"/ style=" cursor:pointer" id="supprimer_contact">
+														<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif"/ style=" cursor:pointer" id="supprimer_contact">
 													</td>
 													<td width="10%"></td>
 												</tr>
@@ -299,7 +299,7 @@ check_page_variables ($page_variables);
 										<td></td>
 										<td></td>
 										<td style="text-align:right">
-											<img name="add_agenda_AgendaContact" id="add_agenda_AgendaContact" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" style="cursor:pointer" />
+											<img name="add_agenda_AgendaContact" id="add_agenda_AgendaContact" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" style="cursor:pointer" />
 											<script type="text/javascript">
 												Event.observe("add_agenda_AgendaContact", "click", function(ev) {
 													Event.stop(ev);
@@ -327,11 +327,11 @@ check_page_variables ($page_variables);
 							<div id="agenda_AgendaReservationRessource" style="display:none;">
 								<table border="0">
 									<tr class="smallheight">
-										<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-										<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-										<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-										<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-										<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+										<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+										<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+										<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+										<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+										<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 									</tr>
 									<tr>
 										<td>Ressource associée à cet agenda : </td>
@@ -351,7 +351,7 @@ check_page_variables ($page_variables);
 										<td></td>
 										<td></td>
 										<td style="text-align:right">
-											<img name="add_agenda_AgendaReservationRessource" id="add_agenda_AgendaReservationRessource" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" style="cursor:pointer" />
+											<img name="add_agenda_AgendaReservationRessource" id="add_agenda_AgendaReservationRessource" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" style="cursor:pointer" />
 											<script type="text/javascript">
 												Event.observe("add_agenda_AgendaReservationRessource", "click", function(ev) {
 													Event.stop(ev);
@@ -395,11 +395,11 @@ check_page_variables ($page_variables);
 						<div class="caract_table" id="agenda_table_<?php echo $index; ?>">
 								<table border="0">
 									<tr class="smallheight">
-										<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-										<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-										<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-										<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-										<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+										<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+										<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+										<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+										<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+										<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 									</tr>
 									<tr>
 										<td>
@@ -482,7 +482,7 @@ check_page_variables ($page_variables);
 											<form action="agenda_configuration_supp.php" method="post" id="suppr_<?php echo $index; ?>" name="suppr_<?php echo $index; ?>" target="formFrame" >
 												<input name="ref_agenda" id="ref_agenda" type="hidden" value="<?php echo $index; ?>" />
 											</form>
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="supprimer_<?php echo $index; ?>" style="cursor:pointer" title="supprimer"/>
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="supprimer_<?php echo $index; ?>" style="cursor:pointer" title="supprimer"/>
 											<script type="text/javascript">
 												Event.observe("supprimer_<?php echo $index; ?>", "click",  function(evt){
 													Event.stop(evt);
@@ -542,10 +542,10 @@ check_page_variables ($page_variables);
 														<input name="ref_contact_<?php echo $index; ?>" id="ref_contact_<?php echo $index; ?>" type="hidden" value="<?php echo $contact->getRef_contact();?>" >
 													</td>
 													<td width="10%" align="right">
-														<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif"/ style="float:right; cursor:pointer" id="rechercher_contact_<?php echo $index; ?>">
+														<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif"/ style="float:right; cursor:pointer" id="rechercher_contact_<?php echo $index; ?>">
 													</td>
 													<td width="10%" align="right">
-														<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif"/ style=" cursor:pointer" id="supprimer_contact_<?php echo $index; ?>">
+														<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif"/ style=" cursor:pointer" id="supprimer_contact_<?php echo $index; ?>">
 													</td>
 													<td width="10%"></td>
 												</tr>
@@ -602,7 +602,7 @@ check_page_variables ($page_variables);
 															<input name="ref_article_<?php echo $index; ?>" id="ref_article_<?php echo $index; ?>" type="text" value="<?php echo $all_agendas[$index]->getRef_article(); ?>"  class="classinput_lsize" style="width:100%"/>
 														</td>
 														<td width="10%" align="right">
-															<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif"/ style=" cursor:pointer" id="supprimer_article_<?php echo $index; ?>">
+															<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif"/ style=" cursor:pointer" id="supprimer_article_<?php echo $index; ?>">
 														</td>
 														<td width="10%"></td>
 													</tr>
@@ -642,7 +642,7 @@ check_page_variables ($page_variables);
 											<td></td>
 											<td></td>
 											<td align="center" valign="middle">
-												<input name="modifier_<?php echo $index; ?>" id="modifier_<?php echo $index; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+												<input name="modifier_<?php echo $index; ?>" id="modifier_<?php echo $index; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
 											</td>
 										</tr>
 										<tr>

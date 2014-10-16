@@ -74,8 +74,8 @@ check_page_variables ($page_variables);
 		</td>
 		<td style="width:27px" class="document_border_right">
 			<div style="width:27px;">
-			<a href="#" id="show_desc_<?php echo $indentation_contenu?>" style="display:<?php if ($contenu->desc_article == "") {echo "block";} else { echo"none";}?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" /></a>
-			<a href="#" id="unshow_desc_<?php echo $indentation_contenu?>" style="display:<?php if ($contenu->desc_article == "") { echo"none";} else {echo "block";}?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/moins.gif" /></a>
+			<a href="#" id="show_desc_<?php echo $indentation_contenu?>" style="display:<?php if ($contenu->desc_article == "") {echo "block";} else { echo"none";}?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" /></a>
+			<a href="#" id="unshow_desc_<?php echo $indentation_contenu?>" style="display:<?php if ($contenu->desc_article == "") { echo"none";} else {echo "block";}?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/moins.gif" /></a>
 			</div>
 		</td>
 		<td style="width:70px; text-align:center;" class="document_border_right">
@@ -128,13 +128,13 @@ check_page_variables ($page_variables);
 			<tr>
 				<td>
 					<div style="width:25px; text-align:right;">
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/visible.gif" id="visible_<?php echo $indentation_contenu?>" style=" cursor:pointer; float:right; display: <?php if ( $contenu->visible) {echo "block";} else { echo "none";}?>" alt="Visible"/>
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/unvisible.gif" id="unvisible_<?php echo $indentation_contenu?>" style="cursor:pointer; float:right; display: <?php if (!$contenu->visible) {echo "block";} else { echo "none";}?>" alt="Invisible"/>
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/visible.gif" id="visible_<?php echo $indentation_contenu?>" style=" cursor:pointer; float:right; display: <?php if ( $contenu->visible) {echo "block";} else { echo "none";}?>" alt="Visible"/>
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/unvisible.gif" id="unvisible_<?php echo $indentation_contenu?>" style="cursor:pointer; float:right; display: <?php if (!$contenu->visible) {echo "block";} else { echo "none";}?>" alt="Invisible"/>
 					</div>
 				</td>
 				<td style="text-align:right;">
 					<div style="width:25px;text-align:right" class="documents_li_handle" >
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/main.gif" id="move_doc_line_<?php echo $indentation_contenu?>"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/main.gif" id="move_doc_line_<?php echo $indentation_contenu?>"/>
 					</div>
 				</td>
 				<td style="text-align:right;">
@@ -143,7 +143,7 @@ check_page_variables ($page_variables);
 				</td>
 				<td style="text-align:right;">
 					<div style="width:25px;">
-					<a href="#" id="sup_<?php echo $indentation_contenu?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+					<a href="#" id="sup_<?php echo $indentation_contenu?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
 					</a>
 					</div>
 				</td>

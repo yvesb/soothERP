@@ -30,9 +30,9 @@ check_page_variables ($page_variables);
 	<div class="contactview_corps">
 		<table width="100%">
 			<tr class="smallheight">
-				<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			</tr>
 			<tr>
 				<td class="titre_config" colspan="3">Types de liaisons entre contacts : </td>
@@ -52,9 +52,9 @@ check_page_variables ($page_variables);
 								<td>
 									<table>
 										<tr class="smallheight">
-											<td style="width:53%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-											<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-											<td style="width:13%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+											<td style="width:53%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+											<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+											<td style="width:13%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 										</tr>	
 										<tr>
 											<td>
@@ -81,9 +81,9 @@ check_page_variables ($page_variables);
 										<form action="annuaire_gestion_liaisons_contact_mod.php" method="post" id="annuaire_gestion_liaisons_contact_mod_<?php echo $liaison_liste->id_liaison_type; ?>" name="annuaire_gestion_liaisons_contact_mod_<?php echo $liaison_liste->id_liaison_type; ?>" target="formFrame" >
 											<table>
 												<tr class="smallheight">
-													<td style="width:55%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-													<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-													<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+													<td style="width:55%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+													<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+													<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 												</tr>	
 												<tr>
 													<td><?php echo htmlentities($liaison_liste->lib_liaison_type, ENT_QUOTES, "UTF-8"); ?>
@@ -114,10 +114,10 @@ check_page_variables ($page_variables);
 																	name="annuaire_gestion_liaisons_contact_ordre_<?php echo $liaison_liste->id_liaison_type; ?>" >
 															<input name="ordre" 			id="ordre" 				type="hidden" value="<?php echo ($liaisons_liste[$fleches_ascenseur-1]->ordre)?>" />
 															<input name="ordre_other" id="ordre_other" 	type="hidden" value="<?php echo ($liaison_liste->ordre)?>" />
-															<input name="modifier_ordre_<?php echo $liaison_liste->id_liaison_type; ?>" id="modifier_ordre_<?php echo $liaison_liste->id_liaison_type; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/up.gif">
+															<input name="modifier_ordre_<?php echo $liaison_liste->id_liaison_type; ?>" id="modifier_ordre_<?php echo $liaison_liste->id_liaison_type; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/up.gif">
 														</form>
 														<?php } else { ?>
-														<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="1" height="1"/>
+														<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="1" height="1"/>
 														<?php } ?>
 													</div>
 												</td>
@@ -131,10 +131,10 @@ check_page_variables ($page_variables);
 																	name="annuaire_gestion_liaisons_contact_ordre_<?php echo $liaison_liste->id_liaison_type; ?>" >
 															<input name="ordre" 			id="ordre" 			 type="hidden" value="<?php echo ($liaisons_liste[$fleches_ascenseur+1]->ordre)?>" />
 															<input name="ordre_other" id="ordre_other" type="hidden" value="<?php echo ($liaison_liste->ordre)?>" />								
-															<input name="modifier_ordre_<?php echo $liaison_liste->id_liaison_type; ?>" id="modifier_ordre_<?php echo $liaison_liste->id_liaison_type; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/down.gif">
+															<input name="modifier_ordre_<?php echo $liaison_liste->id_liaison_type; ?>" id="modifier_ordre_<?php echo $liaison_liste->id_liaison_type; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/down.gif">
 														</form>
 														<?php } else { ?>
-														<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="1" height="1"/>							
+														<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="1" height="1"/>							
 														<?php } ?>
 													</div>
 												</td>

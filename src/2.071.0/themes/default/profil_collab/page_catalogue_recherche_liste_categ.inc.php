@@ -42,8 +42,8 @@ foreach ($_ALERTES as $alerte => $value) {
 									if ($art_categ->indentation < current($list_art_categ)->indentation) {
 										?>
 										<a href="#" id="link_art_categ_show_0<?php echo $art_categ->ref_art_categ;?>">
-										<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/<?php if ($DEFAUT_LEVEL_CATEG_AFFICHED > $i) {echo "collapse";} else {echo "extend";}?>.gif" width="14px" id="extend_<?php echo $art_categ->ref_art_categ?>_s"/>
-										<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/<?php if ($DEFAUT_LEVEL_CATEG_AFFICHED > $i) {echo "extend";} else {echo "collapse";}?>.gif" width="14px" id="collapse_<?php echo $art_categ->ref_art_categ?>_s" style="display:none"/></a>
+										<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/<?php if ($DEFAUT_LEVEL_CATEG_AFFICHED > $i) {echo "collapse";} else {echo "extend";}?>.gif" width="14px" id="extend_<?php echo $art_categ->ref_art_categ?>_s"/>
+										<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/<?php if ($DEFAUT_LEVEL_CATEG_AFFICHED > $i) {echo "extend";} else {echo "collapse";}?>.gif" width="14px" id="collapse_<?php echo $art_categ->ref_art_categ?>_s" style="display:none"/></a>
 										<script type="text/javascript">
 										Event.observe("link_art_categ_show_0<?php echo $art_categ->ref_art_categ;?>", "click",  function(evt){Event.stop(evt); Element.toggle('div_<?php echo $art_categ->ref_art_categ?>_s') ; Element.toggle('extend_<?php echo $art_categ->ref_art_categ?>_s'); Element.toggle('collapse_<?php echo $art_categ->ref_art_categ?>_s');}, false);
 										</script>
@@ -52,21 +52,21 @@ foreach ($_ALERTES as $alerte => $value) {
 									else 
 									{
 										?>
-										<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="14px"/>
+										<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="14px"/>
 										<?php
 									}
 								}
 								else 
 								{
 									?>
-									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="14px"/>
+									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="14px"/>
 									<?php
 								}
 							}
 							else
 							{
 								?>
-								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="14px"/></td><td>
+								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="14px"/></td><td>
 								<?php 
 							}
 						}

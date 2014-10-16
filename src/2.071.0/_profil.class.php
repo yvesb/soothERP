@@ -30,21 +30,21 @@ function __construct ($profil) {
 	if (get_class($profil) == "stdClass") {
 		// Il s'agit d'un objet issue d'une requete.
 		$this->id_profil 			= $profil->id_profil;
-		$this->lib_profil 		= $profil->lib_profil;
-		$this->code_profil 		= $profil->code_profil;
-		$this->ordre 					= $profil->ordre;
-		$this->actif 					= $profil->actif;
-		$this->niveau_secu 		= $profil->niveau_secu;
+		$this->lib_profil 			= $profil->lib_profil;
+		$this->code_profil 			= $profil->code_profil;
+		$this->ordre 				= $profil->ordre;
+		$this->actif 				= $profil->actif;
+		$this->niveau_secu 			= $profil->niveau_secu;
 		$this->defaut_id_interface 	= $profil->defaut_id_interface;
 	}
 	else {
 		// Il s'agit déjà d'un objet de classe "profil"
 		$this->id_profil 			= $profil->getId_profil();
-		$this->lib_profil 		= $profil->getLib_profil();
-		$this->code_profil 		= $profil->getCode_profil();
-		$this->ordre			 		= $profil->getOrdre();
-		$this->actif 					= $profil->getActif();
-		$this->niveau_secu		= $profil->getNiveau_secu();
+		$this->lib_profil 			= $profil->getLib_profil();
+		$this->code_profil 			= $profil->getCode_profil();
+		$this->ordre				= $profil->getOrdre();
+		$this->actif 				= $profil->getActif();
+		$this->niveau_secu			= $profil->getNiveau_secu();
 		$this->defaut_id_interface 	= $profil->getDefaut_id_interface();
 	}
 

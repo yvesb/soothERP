@@ -45,11 +45,11 @@ update_menu_arbo();
 			<form action="compta_compte_cbs_add.php" method="post" id="compta_compte_cbs_add" name="compta_compte_cbs_add" target="formFrame" >
 			<table>
 				<tr class="smallheight">
-					<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 				</tr>	
 				<tr>
 					<td style="text-align:right">Nom de la Banque: 
@@ -75,18 +75,18 @@ update_menu_arbo();
 							<input name="nom_porteur" id="nom_porteur" type="text" value=""  class="classinput_xsize" readonly=""/>
 							</td>
 							<td style="width:20px">
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif"/ style="float:right; cursor:pointer" id="ref_porteur_select_img">
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif"/ style="float:right; cursor:pointer" id="ref_porteur_select_img">
 							</td>
 						</tr>
 					</table>
 					
 				<script type="text/javascript">
 		//effet de survol sur le faux select
-			Event.observe('ref_porteur_select_img', 'mouseover',  function(){$("ref_porteur_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_hover.gif";}, false);
-			Event.observe('ref_porteur_select_img', 'mousedown',  function(){$("ref_porteur_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_down.gif";}, false);
-			Event.observe('ref_porteur_select_img', 'mouseup',  function(){$("ref_porteur_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";}, false);
+			Event.observe('ref_porteur_select_img', 'mouseover',  function(){$("ref_porteur_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_hover.gif";}, false);
+			Event.observe('ref_porteur_select_img', 'mousedown',  function(){$("ref_porteur_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_down.gif";}, false);
+			Event.observe('ref_porteur_select_img', 'mouseup',  function(){$("ref_porteur_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";}, false);
 			
-			Event.observe('ref_porteur_select_img', 'mouseout',  function(){$("ref_porteur_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";}, false);
+			Event.observe('ref_porteur_select_img', 'mouseout',  function(){$("ref_porteur_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";}, false);
 			Event.observe('ref_porteur_select_img', 'click',  function(evt){Event.stop(evt); show_mini_moteur_contacts ("recherche_compte_b_set_contact", "\'ref_porteur\', \'nom_porteur\' "); preselect ('<?php echo $COLLAB_ID_PROFIL; ?>', 'id_profil_m'); page.annuaire_recherche_mini();}, false);
 				</script>
 					</td>
@@ -134,7 +134,7 @@ update_menu_arbo();
 					</table>
 					</td>
 					<td style="text-align:center">
-					<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" />
+					<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" />
 					</td>
 				</tr>
 
@@ -162,11 +162,11 @@ if ($comptes_cbs) {
 					<form action="compta_compte_cbs_mod.php" method="post" id="compta_compte_cbs_mod_<?php echo $compte_cb->id_compte_cb;?>" name="compta_compte_cbs_mod_<?php echo $compte_cb->id_compte_cb;?>" target="formFrame" >
 					<table>
 						<tr class="smallheight">
-							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 						</tr>	
 						<tr>
 							<td style="text-align:right">Banque: 
@@ -193,18 +193,18 @@ if ($comptes_cbs) {
 									<input name="nom_porteur_<?php echo $compte_cb->id_compte_cb;?>" id="nom_porteur_<?php echo $compte_cb->id_compte_cb;?>" type="text" value="<?php echo htmlentities($compte_cb->nom_porteur, ENT_QUOTES, "UTF-8");?>"  class="classinput_xsize" readonly=""/>
 									</td>
 									<td style="width:20px">
-									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif"/ style="float:right" id="ref_porteur_select_img_<?php echo $compte_cb->id_compte_cb;?>">
+									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif"/ style="float:right" id="ref_porteur_select_img_<?php echo $compte_cb->id_compte_cb;?>">
 									</td>
 								</tr>
 							</table>
 							
 						<script type="text/javascript">
 				//effet de survol sur le faux select
-					Event.observe('ref_porteur_select_img_<?php echo $compte_cb->id_compte_cb;?>', 'mouseover',  function(){$("ref_porteur_select_img_<?php echo $compte_cb->id_compte_cb;?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_hover.gif";}, false);
-					Event.observe('ref_porteur_select_img_<?php echo $compte_cb->id_compte_cb;?>', 'mousedown',  function(){$("ref_porteur_select_img_<?php echo $compte_cb->id_compte_cb;?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_down.gif";}, false);
-					Event.observe('ref_porteur_select_img_<?php echo $compte_cb->id_compte_cb;?>', 'mouseup',  function(){$("ref_porteur_select_img_<?php echo $compte_cb->id_compte_cb;?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif";}, false);
+					Event.observe('ref_porteur_select_img_<?php echo $compte_cb->id_compte_cb;?>', 'mouseover',  function(){$("ref_porteur_select_img_<?php echo $compte_cb->id_compte_cb;?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_hover.gif";}, false);
+					Event.observe('ref_porteur_select_img_<?php echo $compte_cb->id_compte_cb;?>', 'mousedown',  function(){$("ref_porteur_select_img_<?php echo $compte_cb->id_compte_cb;?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_down.gif";}, false);
+					Event.observe('ref_porteur_select_img_<?php echo $compte_cb->id_compte_cb;?>', 'mouseup',  function(){$("ref_porteur_select_img_<?php echo $compte_cb->id_compte_cb;?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select.gif";}, false);
 					
-					Event.observe('ref_porteur_select_img_<?php echo $compte_cb->id_compte_cb;?>', 'mouseout',  function(){$("ref_porteur_select_img_<?php echo $compte_cb->id_compte_cb;?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";}, false);
+					Event.observe('ref_porteur_select_img_<?php echo $compte_cb->id_compte_cb;?>', 'mouseout',  function(){$("ref_porteur_select_img_<?php echo $compte_cb->id_compte_cb;?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";}, false);
 					Event.observe('ref_porteur_select_img_<?php echo $compte_cb->id_compte_cb;?>', 'click',  function(evt){Event.stop(evt);  show_mini_moteur_contacts ("recherche_compte_b_set_contact", "\'ref_porteur_<?php echo $compte_cb->id_compte_cb;?>\', \'nom_porteur_<?php echo $compte_cb->id_compte_cb;?>\' "); preselect ('<?php echo $COLLAB_ID_PROFIL; ?>', 'id_profil_m');}, false);
 						</script>
 							</td>
@@ -253,7 +253,7 @@ if ($comptes_cbs) {
 					</table>
 							</td>
 							<td style="text-align:center">
-					<input name="modifier_<?php echo $compte_cb->id_compte_cb;?>" id="modifier_<?php echo $compte_cb->id_compte_cb;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+					<input name="modifier_<?php echo $compte_cb->id_compte_cb;?>" id="modifier_<?php echo $compte_cb->id_compte_cb;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
 							</td>
 						</tr>
 	
@@ -264,7 +264,7 @@ if ($comptes_cbs) {
 				<form method="post" action="compta_compte_cbs_sup.php" id="compta_compte_cbs_sup_<?php echo $compte_cb->id_compte_cb; ?>" name="compta_compte_cbs_sup_<?php echo $compte_cb->id_compte_cb; ?>" target="formFrame">
 					<input name="id_compte_cb" id="id_compte_cbs" type="hidden" value="<?php echo $compte_cb->id_compte_cb; ?>" />
 				</form>
-				<a href="#" id="link_compta_compte_cbs_sup_<?php echo $compte_cb->id_compte_cb; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+				<a href="#" id="link_compta_compte_cbs_sup_<?php echo $compte_cb->id_compte_cb; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 				<script type="text/javascript">
 				Event.observe("link_compta_compte_cbs_sup_<?php echo $compte_cb->id_compte_cb; ?>", "click",  function(evt){Event.stop(evt); alerte.confirm_supprimer('compta_compte_cbs_sup', 'compta_compte_cbs_sup_<?php echo $compte_cb->id_compte_cb; ?>');}, false);
 				</script>
@@ -278,12 +278,12 @@ if ($comptes_cbs) {
 							<form action="compta_compte_cbs_ordre.php" method="post" id="compta_compte_cbs_ordre_<?php echo $compte_cb->id_compte_cb; ?>" name="compta_compte_cbs_ordre_<?php echo $compte_cb->id_compte_cb; ?>" target="formFrame">
 								<input name="new_ordre" id="new_ordre" type="hidden" value="<?php echo ($compte_cb->ordre)-1?>" />
 								<input name="id_compte_cb" id="id_compte_cb" type="hidden" value="<?php echo $compte_cb->id_compte_cb; ?>" />	
-								<input name="modifier_ordre_<?php echo $compte_cb->id_compte_cb; ?>" id="modifier_ordre_<?php echo $compte_cb->id_compte_cb; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/up.gif">
+								<input name="modifier_ordre_<?php echo $compte_cb->id_compte_cb; ?>" id="modifier_ordre_<?php echo $compte_cb->id_compte_cb; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/up.gif">
 							</form>
 							<?php
 							} else {
 							?>
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="1" height="1"/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="1" height="1"/>
 							<?php
 							}
 							?>
@@ -299,12 +299,12 @@ if ($comptes_cbs) {
 						<form action="compta_compte_cbs_ordre.php" method="post" id="compta_compte_cbs_ordre_<?php echo $compte_cb->id_compte_cb; ?>" name="compta_compte_cbs_ordre_<?php echo $compte_cb->id_compte_cb; ?>" target="formFrame">
 								<input name="new_ordre" id="new_ordre" type="hidden" value="<?php echo ($compte_cb->ordre)+1?>" />
 								<input name="id_compte_cb" id="id_compte_cb" type="hidden" value="<?php echo $compte_cb->id_compte_cb; ?>" />
-								<input name="modifier_ordre_<?php echo $compte_cb->id_compte_cb; ?>" id="modifier_ordre_<?php echo $compte_cb->id_compte_cb; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/down.gif">
+								<input name="modifier_ordre_<?php echo $compte_cb->id_compte_cb; ?>" id="modifier_ordre_<?php echo $compte_cb->id_compte_cb; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/down.gif">
 							</form>
 							<?php
 							} else {
 							?>
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="1" height="1"/>							
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="1" height="1"/>							
 							<?php
 							}
 							?>

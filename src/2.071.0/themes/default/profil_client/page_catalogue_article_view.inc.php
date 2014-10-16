@@ -53,9 +53,9 @@
 				<div class="catalogue" style=" width: 780px;">
 				<table width="100%"  border="0" cellspacing="3" cellpadding="0" class="catalogue">
 					<tr>
-						<td width="5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td width=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td width="5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td width="5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td width=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td width="5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>
 					<tr>
 						<td colspan="3">
@@ -70,9 +70,9 @@
 								<input type="hidden" name="ref_art_categ" id="ref_art_categ" value="<?php echo $article->getRef_art_categ ();?>" />
 								<table style="width:100%" border="0" cellspacing="0" cellpadding="0">
 									<tr class="smallheight">
-										<td style="width:45%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-										<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-										<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+										<td style="width:45%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+										<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+										<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 									</tr>
 									<tr>
 										<?php if ($GESTION_REF_INTERNE) { ?>
@@ -90,7 +90,7 @@
 												<input name="qte_art" id="qte_art" type="text" size="4" value="" style="text-align:center" />
 												</td>
 												<td style=" width:30px; text-align:right">
-												<a  href="#" id="link_art_add_panier_<?php echo htmlentities($article->getRef_article(), ENT_QUOTES, "UTF-8")?>" style="display:block; width:35px; text-decoration:underline"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier.gif" title="Ajouter au panier" alt="Ajouter au panier" /></a>
+												<a  href="#" id="link_art_add_panier_<?php echo htmlentities($article->getRef_article(), ENT_QUOTES, "UTF-8")?>" style="display:block; width:35px; text-decoration:underline"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/panier.gif" title="Ajouter au panier" alt="Ajouter au panier" /></a>
 												</td>
 											</tr>
 										</table>
@@ -165,9 +165,9 @@
 								<br />
 								<table style="width:100%" border="0" cellspacing="0" cellpadding="0">
 									<tr class="smallheight" >
-										<td style="width:45%; border-top:1px dashed #002673;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-										<td style="width:50%; border-top:1px dashed #002673;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-										<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+										<td style="width:45%; border-top:1px dashed #002673;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+										<td style="width:50%; border-top:1px dashed #002673;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+										<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 									</tr>
 									<tr>
 										<td class="labelled_bold">Caract&eacute;ristiques:</td>

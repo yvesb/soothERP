@@ -43,9 +43,9 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 	<tr>
 	<td rowspan="2" style="width:50px; height:50px; background-color:#FFFFFF">
 		<div style="position:relative; top:-35px; left:-35px; width:105px; border:1px solid #999999; background-color:#FFFFFF; text-align:center">
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_caisse.jpg" />				</div>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_caisse.jpg" />				</div>
 		<span style="width:35px">
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="50px" height="20px" id="imgsizeform"/>				</span>			
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="50px" height="20px" id="imgsizeform"/>				</span>			
 	</td>
 	<td colspan="2" style="width:85%; background-color:#FFFFFF" >
 	
@@ -216,7 +216,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 				<tr>
 					<td style="width:135px" class="line_compta_bottom_rigth"><div style="width:135px; height:50px"></div></td>
 					<td colspan="2" align="center" valign="middle" class="line_compta_bottom">
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-espece.gif"/>		</td>
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-espece.gif"/>		</td>
 					<td align="center" valign="middle" class="line_compta_bottom_rigth">&nbsp;</td>
 					<td valign="middle" class="line_compta_bottom" align="center">
 					<div style="width:75px; height:35px; line-height:35px;">TOTAL</div>
@@ -280,7 +280,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 			<textarea name="commentaire" rows="6" class="classinput_xsize" id="commentaire" style=" width:800px"></textarea>
 
 			<div style="text-align:right">
-			<img id="bt_etape_1" style=" cursor:pointer; font-weight:bolder; color:#97bf0d; " src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />
+			<img id="bt_etape_1" style=" cursor:pointer; font-weight:bolder; color:#97bf0d; " src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" />
 			</div>
 			</div>
 			<br />

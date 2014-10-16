@@ -41,7 +41,7 @@ foreach ($editions_modes as $edition_mode) {
 	<?php 	if (isset($_REQUEST["cmderec"])) {echo "&cmderec=".$_REQUEST["cmderec"];}else{echo "&cmderec='0'";}?>
 	<?php 	if (isset($_REQUEST["cmdecours"])) {echo "&cmdecours=".$_REQUEST["cmdecours"];}else{echo "&cmdecours='0'";}?>
 	<?php 	if (isset($_REQUEST["impress"])) {echo "&impress=".$_REQUEST["impress"];}else{echo "&impress=1";}?>" target="mainediting" >
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-imprimer.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" />	</a>
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-imprimer.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" />	</a>
 	</td>
 	<?php
 	break;
@@ -65,7 +65,7 @@ case "2":?>
 	<?php 	if (isset($_REQUEST["cmderec"])) {echo "&cmderec=".$_REQUEST["cmderec"];}else{echo "&cmderec='0'";}?>
 	<?php 	if (isset($_REQUEST["cmdecours"])) {echo "&cmdecours=".$_REQUEST["cmdecours"];}else{echo "&cmdecours='0'";}?>
 ",580,450,"menubar=no,statusbar=no,scrollbars=yes,resizable=yes")' >
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-email.gif" alt="<?php echo htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" title="<?php echo htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" /> </a>
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-email.gif" alt="<?php echo htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" title="<?php echo htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" /> </a>
 </td>
 <?php
 break;

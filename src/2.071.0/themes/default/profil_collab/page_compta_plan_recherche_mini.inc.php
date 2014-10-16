@@ -19,7 +19,7 @@ check_page_variables ($page_variables);
 ?>
 <div id="pop_up_compta_plan_mini_moteur" class="mini_moteur_compte_compta" style="display:none">
 	<a href="#" id="close_compta_plan_mini_moteur" style="float:right">
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
 	</a>
 	
 	<div id="aff_plan_mini" style="overflow:auto; height:430px"></div>
@@ -42,7 +42,7 @@ check_page_variables ($page_variables);
 <div id="pop_up_compta_plan_add_frame" class="mini_moteur_add_iframe" style="display:none"></div>
 <div id="pop_up_compta_plan_add_mini_moteur" class="mini_moteur_add_compte_compta" style="display:none">
 	<a href="#" id="close_compta_plan_add_mini_moteur" style="float:right">
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
 	</a>
 	
 	<div id="aff_add_plan_mini" style="overflow:auto; height:430px"></div>

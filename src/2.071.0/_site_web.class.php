@@ -36,15 +36,15 @@ function __construct($ref_site = "") {
 	if (!$site = $resultat->fetchObject()) { return false; }
 
 	// Attribution des informations à l'objet
-	$this->ref_site 		= $ref_site;
+	$this->ref_site 	= $ref_site;
 	$this->ref_contact 	= $site->ref_contact;
 	$this->lib_site_web	= $site->lib_site_web;
-	$this->url					= $site->url;
-	$this->login	= $site->login;
-	$this->pass		= $site->pass;
-	$this->note		= $site->note;
-	$this->ordre	= $site->ordre;
-	$this->type		= $site->id_type_site_web;
+	$this->url			= $site->url;
+	$this->login		= $site->login;
+	$this->pass			= $site->pass;
+	$this->note			= $site->note;
+	$this->ordre		= $site->ordre;
+	$this->type			= $site->id_type_site_web;
 
 	return true;
 }

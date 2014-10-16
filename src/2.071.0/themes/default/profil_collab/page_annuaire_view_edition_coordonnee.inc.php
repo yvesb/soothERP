@@ -18,8 +18,8 @@
 			<input id="coordonnee_ref<?php echo $caiu?>" name="coordonnee_ref<?php echo $caiu?>"  type="hidden" value="<?php echo $coordonnee->getRef_coord ()?>" />
 		<table class="infotable">
 			<tr>
-				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			</tr>
 			<tr>
 				<td class="size_strict">
@@ -62,7 +62,7 @@
 			</tr>
 			<tr>
 				<td>
-				<span class="labelled">Email:</span></td><td><a href="mailto:<?php echo $coordonnee->getEmail();?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/mail.gif" width="15" border="0" style="float:right" vspace="5"/></a>
+				<span class="labelled">Email:</span></td><td><a href="mailto:<?php echo $coordonnee->getEmail();?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/mail.gif" width="15" border="0" style="float:right" vspace="5"/></a>
 				<input id="coordonnee_email<?php echo $caiu?>" name="coordonnee_email<?php echo $caiu?>" class="classinput_lsize" value="<?php echo htmlentities($coordonnee->getEmail(), ENT_QUOTES, "UTF-8")?>" />
 				</td>
 			</tr>
@@ -81,14 +81,14 @@
 			<tr>
 				<td>
 				<div style="text-align:left"> <a href="#" id="link_coord_confirm_supp_<?php echo $caiu?>">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 				<script type="text/javascript">
 				Event.observe("link_coord_confirm_supp_<?php echo $caiu?>", "click",  function(evt){Event.stop(evt); alerte.confirm_supprimer('contact_coordonnee_supprime', 'annu_edition_coordonnee_suppression<?php echo $caiu?>');}, false);
 				</script>
 				</div>
 				</td>
 				<td style="text-align:right;">
-				<input type="image" name="modifier<?php echo $caiu?>" id="modifier<?php echo $caiu?>" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif"/>
+				<input type="image" name="modifier<?php echo $caiu?>" id="modifier<?php echo $caiu?>" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif"/>
 				</td>
 			</tr>
 		</table>
@@ -97,8 +97,8 @@
 
 		<table class="infotable" id="start_visible_<?php echo $caiu?>">
 			<tr>
-				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			</tr>
 			<tr>
 				<td colspan="2">
@@ -110,11 +110,11 @@
 							<?php
 							if ($coordonnee->getOrdre()!=1) {
 								?>
-								<a href="annuaire_edition_coordonnee_ordre.php?ref_contact=<?php echo $contact->getRef_contact()?>&ordre=<?php echo ($coordonnee->getOrdre())-1 ?>&ordre_other=<?php echo ($coordonnee->getOrdre()) ?>" target="formFrame" name="modifier_coord_ordre_up_<?php echo $coordonnee->getOrdre()?>" id="modifier_coord_ordre_up_<?php echo $coordonnee->getOrdre()?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/up.gif"/></a>
+								<a href="annuaire_edition_coordonnee_ordre.php?ref_contact=<?php echo $contact->getRef_contact()?>&ordre=<?php echo ($coordonnee->getOrdre())-1 ?>&ordre_other=<?php echo ($coordonnee->getOrdre()) ?>" target="formFrame" name="modifier_coord_ordre_up_<?php echo $coordonnee->getOrdre()?>" id="modifier_coord_ordre_up_<?php echo $coordonnee->getOrdre()?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/up.gif"/></a>
 								<?php
 							} else {
 								?>
-								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="1" height="1"/>
+								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="1" height="1"/>
 								<?php
 							}
 							?>
@@ -127,11 +127,11 @@
 							<?php
 							if ( getMax_ordre("coordonnees", $contact->getRef_contact())!=$coordonnee->getOrdre()) {
 								?>
-								<a href="annuaire_edition_coordonnee_ordre.php?ref_contact=<?php echo $contact->getRef_contact()?>&ordre=<?php echo ($coordonnee->getOrdre())+1 ?>&ordre_other=<?php echo ($coordonnee->getOrdre()) ?>" target="formFrame" name="modifier_coord_ordre_down_<?php echo $coordonnee->getOrdre()?>" id="modifier_coord_ordre_down_<?php echo $coordonnee->getOrdre()?>" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/down.gif"/></a>
+								<a href="annuaire_edition_coordonnee_ordre.php?ref_contact=<?php echo $contact->getRef_contact()?>&ordre=<?php echo ($coordonnee->getOrdre())+1 ?>&ordre_other=<?php echo ($coordonnee->getOrdre()) ?>" target="formFrame" name="modifier_coord_ordre_down_<?php echo $coordonnee->getOrdre()?>" id="modifier_coord_ordre_down_<?php echo $coordonnee->getOrdre()?>" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/down.gif"/></a>
 								<?php
 							} else {
 								?>
-								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="1" height="1"/>							
+								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="1" height="1"/>							
 								<?php
 							}
 							?>
@@ -178,7 +178,7 @@
 			<?php if ($coordonnee->getEmail()!="") {?>
 			<tr>
 				<td>
-				<span class="labelled">Email:</span></td><td><a href="mailto:<?php echo $coordonnee->getEmail();?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/mail.gif" width="15" border="0" style="float:right" vspace="5"/></a>
+				<span class="labelled">Email:</span></td><td><a href="mailto:<?php echo $coordonnee->getEmail();?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/mail.gif" width="15" border="0" style="float:right" vspace="5"/></a>
 				<a href="#" id="link_show_coordonnee_email<?php echo $caiu?>" class="modif_input2"><?php echo  htmlentities(substr($coordonnee->getEmail(),0,20), ENT_QUOTES, "UTF-8")?></a>
 				<script type="text/javascript">
 				Event.observe("link_show_coordonnee_email<?php echo $caiu?>", "click",  function(evt){Event.stop(evt);show_edit_form('annu_editon_coordonnee<?php echo $caiu?>', 'start_visible_<?php echo $caiu?>','coordonnee_email<?php echo $caiu?>');}, false);
@@ -210,14 +210,14 @@
 			<?php }?>
 			<tr>
 				<td style="text-align:left;">
-				<div><a href="#" id="link_annu_edition_coordonnee_suppression<?php echo $caiu?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+				<div><a href="#" id="link_annu_edition_coordonnee_suppression<?php echo $caiu?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 				<script type="text/javascript">
 				Event.observe("link_annu_edition_coordonnee_suppression<?php echo $caiu?>", "click",  function(evt){Event.stop(evt);alerte.confirm_supprimer('contact_coordonnee_supprime', 'annu_edition_coordonnee_suppression<?php echo $caiu?>');}, false);
 				</script>
 				</div>
 				</td>
 				<td style="text-align:right;">
-				<a href="#" id="link_show_annu_edition_coordonnee<?php echo $caiu?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" /></a>
+				<a href="#" id="link_show_annu_edition_coordonnee<?php echo $caiu?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" /></a>
 				<script type="text/javascript">
 				Event.observe("link_show_annu_edition_coordonnee<?php echo $caiu?>", "click",  function(evt){Event.stop(evt);show_edit_form('annu_editon_coordonnee<?php echo $caiu?>', 'start_visible_<?php echo $caiu?>','coordonnee_lib<?php echo $caiu?>');}, false);
 				</script>

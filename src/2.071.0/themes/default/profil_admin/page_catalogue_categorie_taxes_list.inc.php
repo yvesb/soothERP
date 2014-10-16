@@ -19,6 +19,6 @@
 ?>
 
 <p style="text-align:center">
-	<input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" name="bt_valide_tvalist" id="bt_valide_tvalist"/>
+	<input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" name="bt_valide_tvalist" id="bt_valide_tvalist"/>
 </p>
 

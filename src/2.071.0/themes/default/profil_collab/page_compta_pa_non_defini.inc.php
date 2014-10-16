@@ -34,10 +34,10 @@ foreach ($_ALERTES as $alerte => $value) {
 		<tr class="smallheight">
 			<td style="width:2%">&nbsp;</td>
 			<td style="width:25%">&nbsp;</td>
-			<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			<td style="width:10%">&nbsp;</td>
-			<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			<td style="width:3%">&nbsp;</td>
 		</tr>
 		<tr>
@@ -99,8 +99,8 @@ foreach ($_ALERTES as $alerte => $value) {
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
 		<td style="text-align:right"><span style="text-align:right">
-			<input name="submit2" type="image" onclick="$('page_to_show_s').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-rechercher.gif"  style="float:left" />
-			<input type="image" name="annuler_recherche_s" id="annuler_recherche_s" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-annuler.gif"/>
+			<input name="submit2" type="image" onclick="$('page_to_show_s').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-rechercher.gif"  style="float:left" />
+			<input type="image" name="annuler_recherche_s" id="annuler_recherche_s" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-annuler.gif"/>
 		</span></td>
 		<td style="padding-left:35px">&nbsp;</td>
 		<td>&nbsp;</td>

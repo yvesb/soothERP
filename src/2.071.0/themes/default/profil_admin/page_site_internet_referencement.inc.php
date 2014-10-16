@@ -79,11 +79,11 @@ if (count($tmp_defaut)) {
 		<td style="width:95%">
 			<table style="width:100%">
 				<tr class="smallheight">
-					<td style="width:100%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:100%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 				</tr>	
 				<tr>
 					<td style="text-align:left">
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_unvalide.png" class="ico_bt"/><span class="common_link" id="edit_referencement_defaut">Valeurs par défaut</span>
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_unvalide.png" class="ico_bt"/><span class="common_link" id="edit_referencement_defaut">Valeurs par défaut</span>
 					<script type="text/javascript">
 					
 					Event.observe('edit_referencement_defaut', "click", function(evt){
@@ -131,11 +131,11 @@ if (isset($pages_referencees)) {
 				<td style="width:95%">
 					<table style="width:100%">
 						<tr class="smallheight">
-							<td style="width:100%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:100%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 						</tr>	
 						<tr>
 							<td style="text-align:left">
-								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_<?php if ($page->titre == "") { echo "un";}?>valide.png" class="ico_bt"/>
+								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_<?php if ($page->titre == "") { echo "un";}?>valide.png" class="ico_bt"/>
 								<span class="common_link" id="edit_referencement_<?php echo $indent;?>"><?php echo ($page->nom_fichier);?></span>
 								<script type="text/javascript">
 								
@@ -161,7 +161,7 @@ if (isset($pages_referencees)) {
 							</td>
 							<td>
 							
-							<a href="#" id="link_del_referencement_<?php echo $indent;?>" style="float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0" title="Supprimer cette page du référencement"></a>
+							<a href="#" id="link_del_referencement_<?php echo $indent;?>" style="float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0" title="Supprimer cette page du référencement"></a>
 							
 							<form action="site_internet_referencement_del.php" method="post" id="site_internet_referencement_del_<?php echo $indent;?>" name="site_internet_referencement_del_<?php echo $indent;?>" target="formFrame" >
 							<input name="nom_fichier" id="nom_fichier" type="hidden" value="<?php echo ($page->nom_fichier);?>"/>

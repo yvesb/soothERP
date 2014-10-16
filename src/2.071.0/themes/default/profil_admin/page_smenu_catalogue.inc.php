@@ -37,49 +37,49 @@ update_menu_arbo();
 		<tr>
 			<td rowspan="2" style="width:280px; height:50px">
 				<div style="position:relative; top:-35px; left:-35px; width:230px; border:1px solid #999999; background-color:#FFFFFF; text-align:center">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_catalogue.jpg" />				</div>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_catalogue.jpg" />				</div>
 				<span style="width:35px">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="280px" height="20px" id="imgsizeform"/>				</span>			</td>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="280px" height="20px" id="imgsizeform"/>				</span>			</td>
 			<td colspan="2" style="width:80%"><span style="width:47%; height:50px"><br />
 				<br />
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/titre_catalogue.jpg" style="padding-left:25px" /><br />
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/titre_catalogue.jpg" style="padding-left:25px" /><br />
 			<br />
 				<br />
 			</span></td>
 			</tr>
 		<tr>
 			<td style="text-align:left;" valign="top">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="20px" /><br />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="20px" /><br />
 
-				<span class="titre_smenu_page" id="catalogue_smenu_param_gene"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Paramètres généraux</span><br /><br />
+				<span class="titre_smenu_page" id="catalogue_smenu_param_gene"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Paramètres généraux</span><br /><br />
 
-				<span class="titre_smenu_page" id="catalogue_smenu_param_tarifs"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Paramètres tarifaires</span><br /><br />
+				<span class="titre_smenu_page" id="catalogue_smenu_param_tarifs"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Paramètres tarifaires</span><br /><br />
 				
-				<span class="titre_smenu_page" id="catalogue_smenu_param_taxes"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Paramètres taxes</span><br /><br />
+				<span class="titre_smenu_page" id="catalogue_smenu_param_taxes"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Paramètres taxes</span><br /><br />
 
-				<span class="titre_smenu_page" id="catalogue_smenu_livraison"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Modes de livraison</span><br /><br />
+				<span class="titre_smenu_page" id="catalogue_smenu_livraison"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Modes de livraison</span><br /><br />
 
-				<span class="titre_smenu_page" id="catalogue_smenu_code_promo"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Codes promo</span><br /><br />
+				<span class="titre_smenu_page" id="catalogue_smenu_code_promo"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Codes promo</span><br /><br />
 
 <br /><br />
-				<span class="titre_smenu_page" id="catalogue_smenu_archiver_perimer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Archiver les articles périmés</span><br /><br />
+				<span class="titre_smenu_page" id="catalogue_smenu_archiver_perimer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Archiver les articles périmés</span><br /><br />
 
 			</td>
 			<td style="text-align:left;" valign="top">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="20px"/><br />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="20px"/><br />
 
-				<span class="titre_smenu_page" id="catalogue_smenu_art_categ"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Catégories d'articles</span><br /><br />
+				<span class="titre_smenu_page" id="catalogue_smenu_art_categ"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Catégories d'articles</span><br /><br />
 
-				<span class="titre_smenu_page" id="catalogue_smenu_catalogue_client"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Catalogues clients</span><br /><br />
+				<span class="titre_smenu_page" id="catalogue_smenu_catalogue_client"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Catalogues clients</span><br /><br />
 
-                                				<span class="titre_smenu_page" id="catalogue_smenu_articles_favoris"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des articles favoris</span><br /><br />
+                                				<span class="titre_smenu_page" id="catalogue_smenu_articles_favoris"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des articles favoris</span><br /><br />
 <?php if (isset($import_catalogue_csv['folder_name'])) {?><br /><br />
 
-				<span class="titre_smenu_page" id="import_catalogue_csv"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Import d'articles depuis un fichier CSV</span><br /><br />
+				<span class="titre_smenu_page" id="import_catalogue_csv"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Import d'articles depuis un fichier CSV</span><br /><br />
 <?php } ?>
 <?php if (isset($import_catalogue_csv_var['folder_name'])) {?>
 
-				<span class="titre_smenu_page" id="import_catalogue_csv_var"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Import d'articles avec variantes depuis un fichier CSV</span><br /><br />
+				<span class="titre_smenu_page" id="import_catalogue_csv_var"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Import d'articles avec variantes depuis un fichier CSV</span><br /><br />
 <?php } ?>
 			</td>
 		</tr>

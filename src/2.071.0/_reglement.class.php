@@ -64,15 +64,15 @@ public function __construct ($ref_reglement = "") {
 	
 	$this->ref_reglement 				= $ref_reglement;
 	$this->ref_contact 					= $reglement->ref_contact;
-	$this->date_reglement 			= $reglement->date_reglement;
+	$this->date_reglement 				= $reglement->date_reglement;
 	$this->date_saisie 					= $reglement->date_saisie;
 	$this->date_echeance 				= $reglement->date_echeance;
-	$this->id_reglement_mode		= $reglement->id_reglement_mode;
-	$this->lib_reglement_mode		= $reglement->lib_reglement_mode;
-	$this->abrev_reglement_mode	= $reglement->abrev_reglement_mode;
+	$this->id_reglement_mode			= $reglement->id_reglement_mode;
+	$this->lib_reglement_mode			= $reglement->lib_reglement_mode;
+	$this->abrev_reglement_mode			= $reglement->abrev_reglement_mode;
 	$this->type_reglement				= $reglement->type_reglement;
-	$this->montant_reglement		= $reglement->montant_reglement;
-	$this->valide 							= $reglement->valide;
+	$this->montant_reglement			= $reglement->montant_reglement;
+	$this->valide 						= $reglement->valide;
 	
 	return true;
 }
@@ -159,12 +159,12 @@ public function create_reglement ($infos) {
 		break;
 
 		case $CB_E_ID_REGMT_MODE:
-			$this->id_compte_caisse_dest 	= $infos['id_compte_caisse_dest'];
-			$this->id_compte_tpe_dest 		= $infos['id_compte_tpe_dest'];
+			$this->id_compte_caisse_dest 		= $infos['id_compte_caisse_dest'];
+			$this->id_compte_tpe_dest 			= $infos['id_compte_tpe_dest'];
 		break;
 
 		case $VIR_E_ID_REGMT_MODE: 
-			$this->id_compte_bancaire_dest = $infos['id_compte_bancaire_dest'];
+			$this->id_compte_bancaire_dest 		= $infos['id_compte_bancaire_dest'];
 		break;
 
 		case $LCR_E_ID_REGMT_MODE: 
@@ -179,16 +179,16 @@ public function create_reglement ($infos) {
 
 
 		case $ESP_S_ID_REGMT_MODE: 
-			$this->id_compte_caisse_source = $infos['id_compte_caisse_source'];
+			$this->id_compte_caisse_source 		= $infos['id_compte_caisse_source'];
 		break;
 
 		case $CHQ_S_ID_REGMT_MODE: 
-			$this->id_compte_bancaire_source = $infos['id_compte_bancaire_source'];
+			$this->id_compte_bancaire_source 	= $infos['id_compte_bancaire_source'];
 			$this->numero_cheque = $infos['numero_cheque'];
 		break;
 
 		case $CB_S_ID_REGMT_MODE: 
-			$this->id_compte_cb_source	= $infos['id_compte_cb_source'];
+			$this->id_compte_cb_source			= $infos['id_compte_cb_source'];
 		break;
 
 		case $VIR_S_ID_REGMT_MODE: 
@@ -211,11 +211,11 @@ public function create_reglement ($infos) {
 
 		case $AVC_E_ID_REGMT_MODE:
 		case $AVF_S_ID_REGMT_MODE:
-			$this->ref_reglement_comp = $infos['ref_reglement_comp'];
+			$this->ref_reglement_comp 			= $infos['ref_reglement_comp'];
 		break;
 		
 		case $TPV_E_ID_REGMT_MODE:
-			$this->id_compte_tpv_dest 		= $infos['id_compte_tpv_dest'];
+			$this->id_compte_tpv_dest 			= $infos['id_compte_tpv_dest'];
 		break;
 		
 		case $LC_E_ID_REGMT_MODE:

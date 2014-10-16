@@ -33,9 +33,9 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 		<tr>
 			<td rowspan="2" style="width:120px; height:50px">
 				<div style="position:relative; top:-35px; left:-35px; width:105px; border:1px solid #999999; background-color:#FFFFFF; text-align:center">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_caisse.jpg" />				</div>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_caisse.jpg" />				</div>
 				<span style="width:35px">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="120px" height="20px" id="imgsizeform"/>				</span>			</td>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="120px" height="20px" id="imgsizeform"/>				</span>			</td>
 			<td colspan="2" style="width:90%">
 				<div >
 				<table width="75%" border="0" cellspacing="0" cellpadding="0">
@@ -59,11 +59,11 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 							<option value="OP"  >Autres opérations</option>
 						</select>		</td>
 						<td rowspan="2" style="text-align:right"><br />		</td>
-						<td rowspan="3" style="text-align:center"><span id="moves_of_day" style="cursor:pointer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_compta_moves_of_day.gif" style="cursor:pointer;"/></span>
+						<td rowspan="3" style="text-align:center"><span id="moves_of_day" style="cursor:pointer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_compta_moves_of_day.gif" style="cursor:pointer;"/></span>
 						<div style="height:5px"></div>
-							<span id="moves_of_week" style="cursor:pointer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_compta_moves_of_week.gif" style="cursor:pointer;"/></span>
+							<span id="moves_of_week" style="cursor:pointer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_compta_moves_of_week.gif" style="cursor:pointer;"/></span>
 						<div style="height:5px"></div>
-							<span id="moves_of_month" style="cursor:pointer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_compta_moves_of_month.gif" style="cursor:pointer;"/></span>
+							<span id="moves_of_month" style="cursor:pointer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_compta_moves_of_month.gif" style="cursor:pointer;"/></span>
 						<div style="height:5px"></div>
 							<span id="print_mouvement_caisse" style="display:none;text-decoration:underline;cursor:pointer;text-align:center">
 							Imprimer
@@ -82,7 +82,7 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 						<td>&nbsp;</td>
 						<td>au&nbsp; </td>
 						<td><input type="text" id="date_fin" name="date_fin" value="" class="classinput_nsize" /></td>
-						<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_ok.gif" id="reload_etat_caisse" style="cursor:pointer;"/></td>
+						<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_ok.gif" id="reload_etat_caisse" style="cursor:pointer;"/></td>
 						</tr>
 				</table>
 				</div>

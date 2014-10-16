@@ -34,9 +34,9 @@ update_menu_arbo();
 
 <table width="100%">
 	<tr class="smallheight">
-		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr>
 		<td class="titre_config" colspan="3">Ajouter un v&eacute;hicule :</td>
@@ -72,7 +72,7 @@ update_menu_arbo();
 					<input name="attribution" id="attribution" type="text" value="<?php if(isset($_REQUEST['attribution'])){echo $_REQUEST['attribution'];} else {echo '';}?>"  class="classinput_lsize"/>
 				</td>
 				<td>
-					<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" />
+					<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" />
 				</td>
 			</tr>
 			<tr>
@@ -83,9 +83,9 @@ update_menu_arbo();
 		</td>
 	</tr>
 	<tr class="smallheight">
-		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr>
 		<td class="titre_config" colspan="3">Liste des v&eacute;hicules :</td>
@@ -159,12 +159,12 @@ update_menu_arbo();
 						<span style="text-decoration:underline; cursor:pointer" id="smenu_gestion_vehicules_histo_<?php echo $vehicule->id_vehicule; ?>" name="smenu_gestion_vehicules_histo_<?php echo $vehicule->id_vehicule; ?>">Consulter l'historique</span>
 						</td>
 						<td width="80px">
-								<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+								<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
 
 							&nbsp;
 						</td>
 						<td width="40px" align="right">
-								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="supp_img_<?php echo $vehicule->id_vehicule; ?>" style="cursor:pointer"/>
+								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="supp_img_<?php echo $vehicule->id_vehicule; ?>" style="cursor:pointer"/>
 							&nbsp;
 						</td>
 					</tr>

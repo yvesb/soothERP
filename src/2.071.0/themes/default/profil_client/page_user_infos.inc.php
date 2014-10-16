@@ -41,7 +41,7 @@ check_page_variables ($page_variables);
 						<td class="lightbg_liste">&nbsp;</td>
 						<td class="lightbg_liste">
 							<div class="title_content">
-								<img  src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/icone_contact.gif" style="vertical-align:text-bottom"/>
+								<img  src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/icone_contact.gif" style="vertical-align:text-bottom"/>
 								MES DONNEES PERSONNELLES
 							</div>
 					
@@ -561,7 +561,7 @@ check_page_variables ($page_variables);
 														</table>
 														
 														<div style="text-align:right">
-															<input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_valider.gif" />
+															<input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_valider.gif" />
 														</div>
 													</form>
 												</div>
@@ -586,7 +586,7 @@ check_page_variables ($page_variables);
 												</script>
 														
 												<div style="text-align:right" >
-													<img  src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_modifier.gif" id="view_edit_infos" style="cursor:pointer"/>
+													<img  src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_modifier.gif" id="view_edit_infos" style="cursor:pointer"/>
 													<script type="text/javascript">		
 														Event.observe('view_edit_infos', 'click',  function(evt){
 															$("view_edit_infos").hide();
@@ -674,7 +674,7 @@ check_page_variables ($page_variables);
 										</td>
 										<td class="doc_infos_colors">
 											<a href="documents_editing_print.php?ref_doc=<?php echo $doc_dev->getRef_doc();?>&code_pdf_modele=<?php echo $CODE_PDF_MODELE_DEV;?>" target="_blank" >
-												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif"/>
+												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-pdf.gif"/>
 											</a>
 										</td>
 									</tr>
@@ -763,7 +763,7 @@ check_page_variables ($page_variables);
 									<td class="doc_infos_colors">&nbsp;</td>
 									<td class="doc_infos_colors">
 										<a href="documents_editing_print.php?ref_doc=<?php echo $doc_cmm->getRef_doc();?>&code_pdf_modele=<?php echo $CODE_PDF_MODELE_DEV;?>" target="_blank" >
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif"/>
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-pdf.gif"/>
 										</a>
 									</td>
 								</tr>
@@ -852,7 +852,7 @@ check_page_variables ($page_variables);
 									<td class="doc_infos_colors">&nbsp;</td>
 									<td class="doc_infos_colors">
 										<a href="documents_editing_print.php?ref_doc=<?php echo $liste_fac->getRef_doc();?>&code_pdf_modele=<?php echo $CODE_PDF_MODELE_DEV;?>" target="_blank" >
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif"/>
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-pdf.gif"/>
 										</a>
 									</td>
 								</tr>

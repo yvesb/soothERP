@@ -105,10 +105,10 @@ Event.observe("contactview_menu_a", "click",  function(evt){Event.stop(evt); vie
 	<td>
 <table class="minimizetable" id="nom_lib" cellpadding="0" cellspacing="0" border="0">
 		<tr class="smallheight">
-				<td class="size_strict" style="width:85px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-				<td style="width:215px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-				<td style="85px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td class="size_strict" style="width:85px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+				<td style="width:215px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+				<td style="85px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 		</tr>	
 		<tr>
 			<td><span class="labelled" style="width:85px">Nom:</span></td>
@@ -144,10 +144,10 @@ Event.observe("contactview_menu_a", "click",  function(evt){Event.stop(evt); vie
 	</table>
 	<table class="minimizetable" id="nom_mask" style="display:none;" cellpadding="0" cellspacing="0" border="0">
 		<tr class="smallheight">
-				<td class="size_strict" style="width:85px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-				<td  style="width:215px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td class="size_strict" style="width:85px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+				<td  style="width:215px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 		</tr>	
 		<tr>
 			<td><span class="labelled" style="width:85px">Nom:</span></td>
@@ -189,10 +189,10 @@ Event.observe("contactview_menu_a", "click",  function(evt){Event.stop(evt); vie
 	</table>
 	<table class="minimizetable">
 		<tr class="smallheight">
-				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-				<td class="ctpc"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-				<td class="ctpc"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+				<td class="ctpc"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+				<td class="ctpc"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 		</tr>	
 		<tr>
 			<td colspan="4">
@@ -204,7 +204,7 @@ Event.observe("contactview_menu_a", "click",  function(evt){Event.stop(evt); vie
 	</table>
 	  
 	<p style="text-align:right; margin-right:10px">
-		<input type="image" name="submit" id="submit" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" style="visibility: hidden;"/>
+		<input type="image" name="submit" id="submit" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" style="visibility: hidden;"/>
 	</p>
 	</form>
 
@@ -214,10 +214,10 @@ Event.observe("contactview_menu_a", "click",  function(evt){Event.stop(evt); vie
 				?>
 			<table width="100%" border="0" cellspacing="0" cellpadding="0" style=" border-left:1px solid #cccccc; border-top:1px solid #cccccc; border-right:1px solid #cccccc;">
 				<tr class="smallheight" style="background-color:#cccccc;">
-					<td style="width:85px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-					<td style=" border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-					<td style="width:120px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-					<td style="width:100px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+					<td style="width:85px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+					<td style=" border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+					<td style="width:120px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+					<td style="width:100px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 				</tr>
 				<tr style="background-color:#cccccc;">
 					<td style=" border-right:1px solid #FFFFFF; text-align:left; padding-left:5px">Date</td>
@@ -231,10 +231,10 @@ Event.observe("contactview_menu_a", "click",  function(evt){Event.stop(evt); vie
 					?>
 					<table width="100%" border="0" cellspacing="0" cellpadding="0" style=" border-left:1px solid #cccccc; border-right:1px solid #cccccc;">
 					<tr class="smallheight" style="background-color:#FFFFFF;">
-						<td style="width:85px; border-right:1px solid #cccccc;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-						<td style=" border-right:1px solid #cccccc;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-						<td style="width:120px; border-right:1px solid #cccccc;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-						<td style="width:100px; border-right:1px solid #cccccc;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+						<td style="width:85px; border-right:1px solid #cccccc;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+						<td style=" border-right:1px solid #cccccc;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+						<td style="width:120px; border-right:1px solid #cccccc;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+						<td style="width:100px; border-right:1px solid #cccccc;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 					</tr>
 					<tr id="open_doc_<?php echo ($contact_last_doc->ref_doc);?>" style=" background-color:#FFFFFF; color:#000000">
 						<td style=" border-right:1px solid #cccccc; border-bottom:1px solid #cccccc; text-align:left; padding-left:5px">

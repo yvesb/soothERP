@@ -44,7 +44,7 @@ check_page_variables ($page_variables);
 	<tr>
 		<td style="text-align:left">
 
-		<span  class="grey_caisse" id="compta_automatique_art_categ_vente"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />
+		<span  class="grey_caisse" id="compta_automatique_art_categ_vente"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />
 		Numéros de compte associés aux catégories d'articles</span>
 		<script type="text/javascript">
 		
@@ -56,7 +56,7 @@ check_page_variables ($page_variables);
 		<td>&nbsp;</td>
 		<td style="text-align:left">
 		
-		<span  class="grey_caisse" id="compta_automatique_art_categ_achat"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />
+		<span  class="grey_caisse" id="compta_automatique_art_categ_achat"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />
 		Numéros de compte associés aux catégories d'articles</span>
 		<script type="text/javascript">
 		
@@ -74,7 +74,7 @@ check_page_variables ($page_variables);
 	<tr>
 		<td style="text-align:left">
 
-		<span  class="grey_caisse" id="compta_automatique_art_vente"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />
+		<span  class="grey_caisse" id="compta_automatique_art_vente"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />
 		Numéros de compte associés aux articles</span>
 		<script type="text/javascript">
 		
@@ -86,7 +86,7 @@ check_page_variables ($page_variables);
 		<td>&nbsp;</td>
 		<td style="text-align:left">
 		
-		<span  class="grey_caisse" id="compta_automatique_art_achat"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />
+		<span  class="grey_caisse" id="compta_automatique_art_achat"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />
 		Numéros de compte associés aux articles</span>
 		<script type="text/javascript">
 		
@@ -103,7 +103,7 @@ check_page_variables ($page_variables);
 	</tr>
 	<tr>
 		<td style="text-align:left">
-		<span  class="grey_caisse" id="compta_automatique_tva_vente"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />Numéros de compte associés aux taux de TVA collectés</span>
+		<span  class="grey_caisse" id="compta_automatique_tva_vente"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />Numéros de compte associés aux taux de TVA collectés</span>
 		<script type="text/javascript">
 		
 		new Event.observe("compta_automatique_tva_vente", "click", function(evt){
@@ -114,7 +114,7 @@ check_page_variables ($page_variables);
 		<td>&nbsp;</td>
 		<td style="text-align:left">
 		
-		<span  class="grey_caisse" id="compta_automatique_tva_achat"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />
+		<span  class="grey_caisse" id="compta_automatique_tva_achat"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />
 		Numéros de compte associés aux taux de TVA décaissés</span>
 		<script type="text/javascript">
 		
@@ -132,7 +132,7 @@ check_page_variables ($page_variables);
 	<tr>
 		<td style="text-align:left">
 		
-		<span  class="grey_caisse" id="compta_automatique_tiers_vente"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />
+		<span  class="grey_caisse" id="compta_automatique_tiers_vente"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />
 		Numéros de compte associés aux catégories de clients</span>
 		<script type="text/javascript">
 		
@@ -145,7 +145,7 @@ check_page_variables ($page_variables);
 		<td>&nbsp;</td>
 		<td style="text-align:left">
 		
-		<span  class="grey_caisse" id="compta_automatique_tiers_achat"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />
+		<span  class="grey_caisse" id="compta_automatique_tiers_achat"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />
 		Numéros de compte associés aux catégories de fournisseurs</span>
 		<script type="text/javascript">
 		
@@ -162,7 +162,7 @@ check_page_variables ($page_variables);
 	</tr>
 	<tr>
 		<td style="text-align:left">
-		<span  class="grey_caisse" id="compta_client_comptes_plan"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />
+		<span  class="grey_caisse" id="compta_client_comptes_plan"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />
 		Numéros de compte associés aux contacts de clients
 		</span>
 		<script type="text/javascript">
@@ -174,7 +174,7 @@ check_page_variables ($page_variables);
 		</td>
 		<td>&nbsp;</td>
 		<td style="text-align: left">
-		<span  class="grey_caisse" id="compta_fournisseur_comptes_plan"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />
+		<span  class="grey_caisse" id="compta_fournisseur_comptes_plan"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />
 		Numéros de compte associés aux contacts de fournisseurs
 		</span>
 		<script type="text/javascript">
@@ -219,7 +219,7 @@ check_page_variables ($page_variables);
 	<tr>
 		<td style="text-align:left">
 
-		<span  class="grey_caisse" id="compta_automatique_caisses"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />
+		<span  class="grey_caisse" id="compta_automatique_caisses"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />
 		Numéros de compte associés aux caisses</span>
 		<script type="text/javascript">
 		
@@ -231,7 +231,7 @@ check_page_variables ($page_variables);
 		<td>&nbsp;</td>
 		<td style="text-align:left">
 		
-		<span  class="grey_caisse" id="compta_automatique_comptes_bancaires"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />
+		<span  class="grey_caisse" id="compta_automatique_comptes_bancaires"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />
 		Numéros de compte associés aux comptes bancaires</span>
 		<script type="text/javascript">
 		
@@ -249,7 +249,7 @@ check_page_variables ($page_variables);
 	<tr>
 		<td style="text-align:left">
 
-		<span  class="grey_caisse" id="compta_automatique_tps"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />
+		<span  class="grey_caisse" id="compta_automatique_tps"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />
 		Numéros de compte associés aux TPE et TPV</span>
 		<script type="text/javascript">
 		

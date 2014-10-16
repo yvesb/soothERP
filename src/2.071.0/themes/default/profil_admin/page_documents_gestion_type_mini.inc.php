@@ -19,7 +19,7 @@ check_page_variables ($page_variables);
 ?>
 <div id="pop_up_mini_moteur_doc_type" class="mini_moteur_doc_type_lsize" style="display:none">
 	<a href="#" id="close_mini_moteur_doc_type" style="float:right">
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
 	</a>
 	
 	<div id="aff_pop_up_mini_moteur_doc_type" style="overflow:auto; height:400px"></div>

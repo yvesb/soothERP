@@ -30,7 +30,7 @@ function nb_mois($date1, $date2) {
 
 <div class="articletview_corps" id="compta_situation_commerciaux_conteneur" >
 	<div style="padding:8px">
-<!--	<input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-imprimer.gif"  onclick="javascript:window.print()"/>-->
+<!--	<input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-imprimer.gif"  onclick="javascript:window.print()"/>-->
 	<table width="100%" border="0" cellspacing="0" cellpadding="0">
 		<tr>
 			<td></td>
@@ -141,7 +141,7 @@ function nb_mois($date1, $date2) {
 			<td>&nbsp;</td>
 			<td>au&nbsp; </td>
 			<td><input type="text" id="date_fin" name="date_fin" value="" class="classinput_nsize" /></td>
-			<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_recherche.gif" id="reload_comm_recap" style="cursor:pointer;"/></td>
+			<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_recherche.gif" id="reload_comm_recap" style="cursor:pointer;"/></td>
 			<td>&nbsp; </td>
 			<td>&nbsp; </td>
 		</tr>

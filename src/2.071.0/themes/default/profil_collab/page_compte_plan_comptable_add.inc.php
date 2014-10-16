@@ -45,10 +45,10 @@ if(count($check_erreurs)>0){
 	<form id="ajouter_compte_comptable" name="ajouter_compte_comptable" action="compte_plan_comptable_add.php" target="formFrame">
 	<table style="width:99%">
 		<tr class="smallheight">
-			<td style="width:45%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:45%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:45%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:45%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 		</tr>
 		<tr>
 			<td>
@@ -95,7 +95,7 @@ if(count($check_erreurs)>0){
 				<input type="hidden" id="cible_id_lib" name="cible_id_lib" value="<?php echo $_REQUEST['cible_id_lib'];?>" />	
 				<input type="hidden" id="favori" name="favori" value="0" />	
 				<span id="span_valider" style="display:<?php echo $span_valider;?>;">
-					<img alt="Valider" name="add_compte_comptable" id="add_compte_comptable" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" align="left" />
+					<img alt="Valider" name="add_compte_comptable" id="add_compte_comptable" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" align="left" />
 					<script type="text/javascript">
 					Event.observe('add_compte_comptable', 'click',  function(evt){
 						Event.stop(evt);

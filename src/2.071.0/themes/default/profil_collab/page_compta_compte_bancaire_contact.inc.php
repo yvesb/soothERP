@@ -40,11 +40,11 @@ check_page_variables ($page_variables);
                                         <form action="compta_compte_bancaire_contact_add.php" method="post" id="compta_compte_bancaire_contact_add" name="compta_compte_bancaire_contact_add" target="formFrame" >
                                             <table>
                                                 <tr class="smallheight">
-                                                    <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-                                                    <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-                                                    <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-                                                    <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-                                                    <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                                                    <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                                                    <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                                                    <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                                                    <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                                                    <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align:right">Libell&eacute;:
@@ -99,7 +99,7 @@ check_page_variables ($page_variables);
                                                         <input name="swift" id="swift" type="text" value=""  class="classinput_nsize" size="28" />
                                                     </td>
                                                     <td style="text-align:center">
-                                                        <input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" />
+                                                        <input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" />
                                                     </td>
                                                 </tr>
                                                 <script type="text/javascript">
@@ -139,11 +139,11 @@ check_page_variables ($page_variables);
                                         <form action="compta_compte_bancaire_contact_mod.php?id_compte_bancaire=<?php echo $compte_bancaire->id_compte_bancaire;?>" method="post" id="compta_compte_bancaire_contact_mod_<?php echo $compte_bancaire->id_compte_bancaire;?>" name="compta_compte_bancaire_contact_mod_<?php echo $compte_bancaire->id_compte_bancaire;?>" target="formFrame" >
                                             <table>
                                                 <tr class="smallheight">
-                                                    <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-                                                    <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-                                                    <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-                                                    <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-                                                    <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                                                    <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                                                    <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                                                    <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                                                    <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                                                    <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align:right">Libell&eacute;:
@@ -203,7 +203,7 @@ check_page_variables ($page_variables);
                                                         <input name="swift_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="swift_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->swift, ENT_QUOTES, "UTF-8");?>"  class="classinput_nsize" size="28" />
                                                     </td>
                                                     <td style="text-align:center">
-                                                        <input name="modifier_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="modifier_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+                                                        <input name="modifier_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="modifier_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
                                                     </td>
                                                 </tr>
                                             </table>
@@ -214,7 +214,7 @@ check_page_variables ($page_variables);
                                             <input name="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="hidden" value="<?php echo htmlentities($compte_bancaire->ref_contact, ENT_QUOTES, "UTF-8");?>" />
                                             <input name="id_compte_bancaire" id="id_compte_bancaire" type="hidden" value="<?php echo $compte_bancaire->id_compte_bancaire; ?>" />
                                         </form>
-                                        <a href="#" id="link_compta_compte_bancaire_contact_sup_<?php echo $compte_bancaire->id_compte_bancaire; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+                                        <a href="#" id="link_compta_compte_bancaire_contact_sup_<?php echo $compte_bancaire->id_compte_bancaire; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
                                         <script type="text/javascript">
                                             Event.observe("link_compta_compte_bancaire_contact_sup_<?php echo $compte_bancaire->id_compte_bancaire; ?>", "click",  function(evt){Event.stop(evt); alerte.confirm_supprimer('compta_compte_bancaire_sup', 'compta_compte_bancaire_contact_sup_<?php echo $compte_bancaire->id_compte_bancaire; ?>');}, false);
                                         </script>
@@ -229,12 +229,12 @@ check_page_variables ($page_variables);
                                                             <input name="new_ordre" id="new_ordre" type="hidden" value="<?php echo ($compte_bancaire->ordre)-1?>" />
                                                             <input name="id_compte_bancaire" id="id_compte_bancaire" type="hidden" value="<?php echo $compte_bancaire->id_compte_bancaire; ?>" />
                                                             <input name="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="hidden" value="<?php echo htmlentities($compte_bancaire->ref_contact, ENT_QUOTES, "UTF-8");?>" />
-                                                            <input name="modifier_ordre_<?php echo $compte_bancaire->id_compte_bancaire; ?>" id="modifier_ordre_<?php echo $compte_bancaire->id_compte_bancaire; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/up.gif">
+                                                            <input name="modifier_ordre_<?php echo $compte_bancaire->id_compte_bancaire; ?>" id="modifier_ordre_<?php echo $compte_bancaire->id_compte_bancaire; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/up.gif">
                                                         </form>
                                                                     <?php
                                                                 } else {
                                                                     ?>
-                                                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="1" height="1"/>
+                                                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="1" height="1"/>
                                                                     <?php
                                                                 }
                                                                 ?>
@@ -251,12 +251,12 @@ check_page_variables ($page_variables);
                                                             <input name="new_ordre" id="new_ordre" type="hidden" value="<?php echo ($compte_bancaire->ordre)+1?>" />
                                                             <input name="id_compte_bancaire" id="id_compte_bancaire" type="hidden" value="<?php echo $compte_bancaire->id_compte_bancaire; ?>" />
                                                             <input name="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="ref_contact_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="hidden" value="<?php echo htmlentities($compte_bancaire->ref_contact, ENT_QUOTES, "UTF-8");?>" />
-                                                            <input name="modifier_ordre_<?php echo $compte_bancaire->id_compte_bancaire; ?>" id="modifier_ordre_<?php echo $compte_bancaire->id_compte_bancaire; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/down.gif">
+                                                            <input name="modifier_ordre_<?php echo $compte_bancaire->id_compte_bancaire; ?>" id="modifier_ordre_<?php echo $compte_bancaire->id_compte_bancaire; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/down.gif">
                                                         </form>
                                                                     <?php
                                                                 } else {
                                                                     ?>
-                                                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="1" height="1"/>
+                                                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="1" height="1"/>
                                                                     <?php
                                                                 }
                                                                 ?>

@@ -366,7 +366,7 @@ check_page_variables ($page_variables);
 			
 			<?php } ?><br />
 
-				<input name="valider_compta" id="valider_compta" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" style="float:right" />
+				<input name="valider_compta" id="valider_compta" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" style="float:right" />
 			</form>
 			</td>
 		</tr>

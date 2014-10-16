@@ -22,9 +22,9 @@ check_page_variables ($page_variables);
 
 <table style="width:100%">
 	<tr class="smallheight">
-		<td style="width:57%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:3%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:57%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:3%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr>
 		<td class="art_new_info" style="padding:10px">
@@ -57,7 +57,7 @@ check_page_variables ($page_variables);
 					<td class="labelled_text"></td>
 					<td >
 					<div style="text-align:right; padding-right:5px">
-					<a href="#" id="bt_etape_3b" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" /></a>
+					<a href="#" id="bt_etape_3b" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" /></a>
 					</div>
 					</td>
 				</tr>

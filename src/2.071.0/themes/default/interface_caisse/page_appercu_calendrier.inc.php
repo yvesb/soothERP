@@ -36,7 +36,7 @@ function extract_time($time) {
 
              <?php if(date("Y-m", $Udate_fdm) != date("Y-m", $date_min)): ?>
                 <div id="mini_calendrier_mois_precedent" class="clic">
-                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/gauche_on.gif" alt="mois précédent" title="mois précédent" />
+                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/gauche_on.gif" alt="mois précédent" title="mois précédent" />
                 </div>
                 <script type="text/javascript">
                     /**********************Mois Precedent*********************/

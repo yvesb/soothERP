@@ -19,7 +19,7 @@ check_page_variables ($page_variables);
 ?>
 <div id="pop_up_compta_facture_mini_moteur" class="mini_moteur_compte_compta" style="display:none; width:750px">
 	<a href="#" id="close_compta_facture_mini_moteur" style="float:right">
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
 	</a>
 	
 	<div id="compta_facture" style="overflow:auto; height:430px"></div>

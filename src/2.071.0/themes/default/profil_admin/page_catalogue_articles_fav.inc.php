@@ -33,7 +33,7 @@ id_index_contentcoord=0;
             <p>&nbsp; Indiquez la r&eacute;f&eacute;rence de l'article &agrave; ajouter aux favoris : <input type="text" value="" id="ref_art_fav" name="ref_art_fav"/></p>
             <br />
             <p style="text-align:center">
-                <input name="valider" id="valider" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />
+                <input name="valider" id="valider" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" />
             </p>
         </form>
     </div>

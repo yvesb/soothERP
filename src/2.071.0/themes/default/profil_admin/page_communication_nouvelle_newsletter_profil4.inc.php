@@ -30,7 +30,7 @@ check_page_variables ($page_variables);
 		<table class="minimizetable">
 			<tr>
 				<td style="width:180px"></td>
-				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			</tr>
 			<tr>
 				<td>Catégorie: </span>

@@ -37,9 +37,9 @@ Event.observe("link_retour_tp", "click",  function(evt){Event.stop(evt); page.ve
 		<tr>
 			<td rowspan="2" style="width:50px; height:50px; background-color:#FFFFFF">
 				<div style="position:relative; top:-35px; left:-35px; width:105px; border:1px solid #999999; background-color:#FFFFFF; text-align:center">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_carte.gif" />				</div>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_carte.gif" />				</div>
 				<span style="width:35px">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="50px" height="20px" id="imgsizeform"/>				</span>			</td>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="50px" height="20px" id="imgsizeform"/>				</span>			</td>
 			<td colspan="2" style=" background-color:#FFFFFF" >
 			<br />
 			<br />
@@ -63,7 +63,7 @@ Vous devriez plutôt utiliser la télécollecte (pour transférer tout ou partie
 					<div style="text-align:center">
 						<div style="width:450px; padding-left:20%; padding-right:20%">
 						
-						<span id="telecollecte_tp" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; " vspace="3" /> Télécollecte</span>
+						<span id="telecollecte_tp" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; " vspace="3" /> Télécollecte</span>
 						
 						<br /><br /><br /><br />
 
@@ -74,7 +74,7 @@ Vous devriez plutôt utiliser la télécollecte (pour transférer tout ou partie
 					
 					<div style="text-align:center">
 					<br /><br />
-						<input type="image" name="annuler" id="annuler" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-annuler.gif"/>
+						<input type="image" name="annuler" id="annuler" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-annuler.gif"/>
 					</div>
 					<script type="text/javascript">
 					Event.observe("annuler", "click",  function(evt){Event.stop(evt); page.verify('compta_gestion2_terminaux','compta_gestion2_terminaux.php?<?php echo $retour_var;?>','true','sub_content');}, false);

@@ -36,7 +36,7 @@ update_menu_arbo();
 				<td>
 				
 					<!-- AJOUT RECHERCHE PERSO -->
-					<div id="add_recherche" style="float:right; cursor:pointer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" /> <span style="font-weight:bolder">Nouvelle recherche</span> </div>
+					<div id="add_recherche" style="float:right; cursor:pointer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" /> <span style="font-weight:bolder">Nouvelle recherche</span> </div>
 					<br />
 				
 					<div class="caract_table" id="view_add_new" style="display:none">
@@ -97,10 +97,10 @@ if ($liste_recherche) {
 							<textarea name="requete" id="requete" rows=3 COLS=60><?php echo $recherche->requete;?></textarea>
 						</td>
 						<td style="text-align:right">
-							<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+							<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
 						</td>
 						<td  style="width:4%; text-align:right">
-							<a href="#" id="link_recherche_sup_<?php echo $recherche->id_recherche_perso; ?>" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+							<a href="#" id="link_recherche_sup_<?php echo $recherche->id_recherche_perso; ?>" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 						</td>
 					</tr>
 				</table>

@@ -32,9 +32,9 @@ check_page_variables ($page_variables);
     </td>
   </tr>
   <tr>
-    <td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1px"/></td>
-    <td style="width:4%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1px"/></td>
-    <td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1px"/></td>
+    <td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1px"/></td>
+    <td style="width:4%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1px"/></td>
+    <td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1px"/></td>
   </tr>
   <tr>
     <td>
@@ -46,7 +46,7 @@ check_page_variables ($page_variables);
     <table cellpadding="0" cellspacing="0" border="0" style="width:550px" id="document_reglement_entete" class="document_box">
       <tr style=" line-height:20px; height:20px;" class="document_head_list">
         <td  style=" padding-left:3px;" class="doc_bold" >
-        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/doc_extend.gif" border="0" id="extend_click" style="float:right; cursor:pointer" title="Agrandir">
+        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/doc_extend.gif" border="0" id="extend_click" style="float:right; cursor:pointer" title="Agrandir">
           Modification d'un modèle de contenu
 
           
@@ -66,12 +66,12 @@ check_page_variables ($page_variables);
           <script type="text/javascript">
         Event.observe("extend_click", "click", function(evt){Event.stop(evt);
           if ($("extend_liste").style.height == "135px") {
-          $("extend_click").src = "<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/doc_reduire.gif";
+          $("extend_click").src = "<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/doc_reduire.gif";
           $("extend_click").title = "Réduire";
           $("extend_liste").style.width = "550px";
           $("extend_liste").style.height = "450px";
           } else {
-          $("extend_click").src = "<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/doc_extend.gif";
+          $("extend_click").src = "<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/doc_extend.gif";
           $("extend_click").title = "Agrandir";
           $("extend_liste").style.width = "100%";
           $("extend_liste").style.height = "135px";

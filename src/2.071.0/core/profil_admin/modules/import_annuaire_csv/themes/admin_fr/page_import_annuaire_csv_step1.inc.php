@@ -75,8 +75,8 @@ if (isset($entete_corresp['id_profil']) && $entete_corresp['id_profil'] != $impo
 				</select>
 				
 			<?php if (isset($champs_val['id_type'])) {?>
-			<img src="../<?php echo $_SESSION['theme']->getDir_theme()?>images/ajouter.gif" id="v_correspondances_<?php echo $champs_val['id'];?>" style="cursor:pointer; display:<?php if (!$preselect) {?>none<?php } ?>" />
-			<img src="../<?php echo $_SESSION['theme']->getDir_theme()?>images/moins.gif" id="unv_correspondances_<?php echo $champs_val['id'];?>" style="display:none; cursor:pointer" />
+			<img src="../<?php echo $_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" id="v_correspondances_<?php echo $champs_val['id'];?>" style="cursor:pointer; display:<?php if (!$preselect) {?>none<?php } ?>" />
+			<img src="../<?php echo $_SESSION['theme']->getDir_gtheme()?>images/moins.gif" id="unv_correspondances_<?php echo $champs_val['id'];?>" style="display:none; cursor:pointer" />
 			<script type="text/javascript">
 			<?php if ($preselect) {?>
 					page.verify('import_annuaire_csv_correspondances','modules/import_annuaire_csv/import_annuaire_csv_correspondances.php?lmb_col=<?php echo $champs_val['id'];?>&csv_col='+$("<?php echo $champs_val['id'];?>").options[$("<?php echo $champs_val['id'];?>").selectedIndex].value,'true','correspondances_<?php echo $champs_val['id'];?>');

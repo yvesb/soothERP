@@ -113,7 +113,7 @@ function alerte_dev ($erreur, $libelle_supp = "", $errno = "", $errstr = "", $er
 
 			// Envoyer un email au développeur
 			if($EMAIL_DEV!=null) {
-				@mail ($EMAIL_DEV, "ERREUR LMB - ".affiche_version ($_SERVER['VERSION'])." - ".$_SERVER['SERVER_NAME'].(empty($libelle_supp) ? "" : "/".$libelle_supp), $rapport, $headers);
+				@mail ($EMAIL_DEV, "ERREUR SoothERP - ".affiche_version ($_SERVER['VERSION'])." - ".$_SERVER['SERVER_NAME'].(empty($libelle_supp) ? "" : "/".$libelle_supp), $rapport, $headers);
 				$mailStatus = "Une alerte a été envoyée à votre administrateur.<br />";
 			}
 			else {

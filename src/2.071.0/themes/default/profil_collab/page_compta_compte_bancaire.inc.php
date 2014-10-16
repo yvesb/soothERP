@@ -41,9 +41,9 @@ check_page_variables ($page_variables);
             <tr>
                 <td rowspan="2" style="width:120px; height:50px">
                     <div style="position:relative; top:-35px; left:-35px; width:105px; border:1px solid #999999; background-color:#FFFFFF; text-align:center">
-                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_banque.jpg" />				</div>
+                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_banque.jpg" />				</div>
                     <span style="width:35px">
-                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="120px" height="20px" id="imgsizeform"/>				</span>			</td>
+                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="120px" height="20px" id="imgsizeform"/>				</span>			</td>
                 <td colspan="2" style="width:90%">
                     <table class="minimizetable">
                         <tr>
@@ -69,11 +69,11 @@ check_page_variables ($page_variables);
                                                     <form action="compta_compte_bancaire_mod.php" method="post" id="compta_compte_bancaire_mod_<?php echo $compte_bancaire->id_compte_bancaire;?>" name="compta_compte_bancaire_mod_<?php echo $compte_bancaire->id_compte_bancaire;?>" target="formFrame" >
                                                         <table>
                                                             <tr class="smallheight">
-                                                                <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-                                                                <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-                                                                <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-                                                                <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-                                                                <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                                                                <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                                                                <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                                                                <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                                                                <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                                                                <td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
                                                             </tr>
                                                             <tr>
                                                                 <td style="text-align:right">Libell&eacute;:
@@ -141,7 +141,7 @@ check_page_variables ($page_variables);
                                                                     <input name="swift_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="swift_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="text" value="<?php echo htmlentities($compte_bancaire->swift, ENT_QUOTES, "UTF-8");?>"  class="classinput_nsize" size="28" />
                                                                 </td>
                                                                 <td style="text-align:center">
-                                                                    <input name="modifier_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="modifier_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+                                                                    <input name="modifier_<?php echo $compte_bancaire->id_compte_bancaire;?>" id="modifier_<?php echo $compte_bancaire->id_compte_bancaire;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
                                                                 </td>
                                                             </tr>
                                                         </table>

@@ -101,7 +101,7 @@ check_page_variables ($page_variables);
 						<tr>
 							<?php if(count($joursMois[$s][$j]) > $_SESSION["agenda"]["vision_mois"]["NB_ENVENTS_BY_DAY"]){?>
 							<td colspan="2" align="right" >
-								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_case_plus_gris.png" id="view_all_events_<?php echo $s.'_'.$j;?>" style="cursor:pointer;" title="Voir tous les agendas" alt="Plus" />
+								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_case_plus_gris.png" id="view_all_events_<?php echo $s.'_'.$j;?>" style="cursor:pointer;" title="Voir tous les agendas" alt="Plus" />
 							</td>
 							<?php }else{ ?>
 							<td colspan="2" align="right" id="view_all_events_<?php echo $s.'_'.$j;?>" >

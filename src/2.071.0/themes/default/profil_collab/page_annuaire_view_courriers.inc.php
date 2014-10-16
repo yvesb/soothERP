@@ -41,7 +41,7 @@ global $DIR;
 	if ($debut >= $cfg_nbres_ppage)
 	{
 		$cible = 1;
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/gauche_on.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/gauche_on.gif');
 		$lien = str_replace('{lien}', $image.$image, $lien_on);
 		$lien = str_replace('{cible}', $cible-1, $lien);
 		$lien = str_replace('{cibleb}', $cible, $lien);
@@ -50,7 +50,7 @@ global $DIR;
 	}
 	else
 	{
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/gauche_off.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/gauche_off.gif');
 		$lien = str_replace('{lien}', $image.$image, $lien_off);
 	}
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
@@ -61,7 +61,7 @@ global $DIR;
 	if ($debut >= $cfg_nbres_ppage)
 	{
 		$cible = ($nbenr-1);
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/gauche_on.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/gauche_on.gif');
 		$lien = str_replace('{lien}', $image, $lien_on);
 		$lien = str_replace('{cible}', $cible, $lien);
 		$lien = str_replace('{cibleb}', $cible, $lien);
@@ -70,7 +70,7 @@ global $DIR;
 	}
 	else
 	{
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/gauche_off.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/gauche_off.gif');
 		$lien = str_replace('{lien}', $image, $lien_off);
 	}
 	$barre .= $lien."&nbsp;<B>&middot;</B>";
@@ -115,7 +115,7 @@ global $DIR;
 	if ($debut + $cfg_nbres_ppage < $nbtotal)
 	{
 		$cible = ($nbenr+1);
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/droite_on.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/droite_on.gif');
 		$lien = str_replace('{lien}', $image, $lien_on);
 		$lien = str_replace('{cible}', $cible, $lien);
 		$lien = str_replace('{cibleb}', $cible, $lien);
@@ -124,7 +124,7 @@ global $DIR;
 	}
 	else
 	{
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/droite_off.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/droite_off.gif');
 		$lien = str_replace('{lien}', $image, $lien_off);
 	}
 	$barre .= "&nbsp;<B>&middot;</B>".$lien;
@@ -137,7 +137,7 @@ global $DIR;
 	if ($fin != $debut)
 	{
 		$cible = (int)($nbtotal/$cfg_nbres_ppage)+1;
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/droite_on.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/droite_on.gif');
 		$lien = str_replace('{lien}', $image.$image, $lien_on);
 		$lien = str_replace('{cible}', $cible+1, $lien);
 		$lien = str_replace('{cibleb}', $cible, $lien);
@@ -146,7 +146,7 @@ global $DIR;
 	}
 	else
 	{
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/droite_off.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/droite_off.gif');
 		$lien = str_replace('{lien}', $image.$image, $lien_off);
 	}
 	$barre .= "<B>&middot;</B>&nbsp;".$lien;
@@ -214,7 +214,7 @@ foreach ($_ALERTES as $alerte => $value) {
 	<?php 
 		//@TODO COURRIER : changer l'image du bouton test en [Rédaction d'un nouveau message]
 	?> 
-	<a  href="#" id="nouveau_message"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-redac_nouv_msg.gif" /></a>
+	<a  href="#" id="nouveau_message"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-redac_nouv_msg.gif" /></a>
 	<?php // integration gmail 
 if(count($coordonnees)>0) {
 		$href = "https://mail.google.com/mail/?shva=1#search/";
@@ -256,13 +256,13 @@ else {
 				<div class="art_new_info" >
 					<table width="100%" border="0" cellspacing="0" cellpadding="0" height="5px">
 						<tr class="smallheight">
-							<td  style="width:4%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
-							<td  style="width:38%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
-							<td  style="width:15%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
-							<td  style="width:2%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
-							<td  style="width:15%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
-							<td  style="width:2%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
-							<td colspan="4" style="width:24%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
+							<td  style="width:4%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
+							<td  style="width:38%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
+							<td  style="width:15%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
+							<td  style="width:2%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
+							<td  style="width:15%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
+							<td  style="width:2%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
+							<td colspan="4" style="width:24%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
 						</tr>
 						<tr style="color:#002673" height="25px">
 							<td style="text-align:center;" >
@@ -285,13 +285,13 @@ else {
 							</td>
 						</tr>
 						<tr class="smallheight">
-							<td  style="width:4%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
-							<td  style="width:38%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
-							<td  style="width:15%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
-							<td  style="width:2%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
-							<td  style="width:15%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
-							<td  style="width:2%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
-							<td colspan="4" style="width:24%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
+							<td  style="width:4%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
+							<td  style="width:38%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
+							<td  style="width:15%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
+							<td  style="width:2%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
+							<td  style="width:15%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
+							<td  style="width:2%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
+							<td colspan="4" style="width:24%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1px" id="imgsizeform"/></td>
 						</tr>
 					</table>
 				</div>
@@ -310,13 +310,13 @@ else {
 					?>
 					<table width="100%" border="0" cellspacing="0" cellpadding="0" style="">
 						<tr class="smallheight" style="">
-							<td  style="width:4%; "><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" /></td>
-							<td  style="width:38%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" /></td>
-							<td  style="width:15%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" /></td>
-							<td  style="width:2%; "><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" /></td>
-							<td  style="width:15%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" /></td>
-							<td  style="width:2%; "><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" /></td>
-							<td colspan="4" style="width:24%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" /></td>
+							<td  style="width:4%; "><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" /></td>
+							<td  style="width:38%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" /></td>
+							<td  style="width:15%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" /></td>
+							<td  style="width:2%; "><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" /></td>
+							<td  style="width:15%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" /></td>
+							<td  style="width:2%; "><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" /></td>
+							<td colspan="4" style="width:24%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" /></td>
 						</tr>
 						<tr id="ligne_courrier_<?php echo $courrier->getId_courrier(); ?>" >
 						<?php 
@@ -365,23 +365,23 @@ else {
 								<div id="choix_send_courrier_<?php echo $courrier->getId_courrier();?>"  class="choix_send_courrier" style="display:none;text-align:left;background-color:#e5eef5;">
 									<table>
 									  <tr>
-									    <td><img id="courrier_print_<?php echo $courrier->getId_courrier();?>" style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-imprimer.gif" /></td>
+									    <td><img id="courrier_print_<?php echo $courrier->getId_courrier();?>" style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-imprimer.gif" /></td>
 									  </tr>
 									  <tr style="display:none"> 
 									  <?php 
 									  	//@TODO COURRIER : Gestion du FAX : emplacement du bouton
 									  ?>
-									    <td><img id="courrier_fax_<?php echo $courrier->getId_courrier();?>" style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-fax.gif" /></td>
+									    <td><img id="courrier_fax_<?php echo $courrier->getId_courrier();?>" style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-fax.gif" /></td>
 									  </tr>
 									  <tr>
-									  	<td><img id="courrier_email_<?php echo $courrier->getId_courrier();?>" style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-email.gif" /></td>
+									  	<td><img id="courrier_email_<?php echo $courrier->getId_courrier();?>" style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-email.gif" /></td>
 									  </tr>
 									</table>
 								</div>
 							</td>
 							<td style="text-align:center; "><span style="cursor:pointer;font-size:8pt;color:#707072;" id="options_courrier_<?php echo $courrier->getId_courrier();?>">Options</span>
 								<?php /*
-									<a href="courriers_editing.php?id_courrier=<?php echo $courrier->getId_courrier()?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
+									<a href="courriers_editing.php?id_courrier=<?php echo $courrier->getId_courrier()?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
 								*/ ?>
 								<script type="text/javascript">
 									Event.observe("visualiser_courrier_<?php echo $courrier->getId_courrier();?>", "click", function(evt){

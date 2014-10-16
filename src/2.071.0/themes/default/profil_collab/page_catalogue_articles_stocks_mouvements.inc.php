@@ -41,7 +41,7 @@ if (count($_SESSION['stocks']) > 1) {
 		<td>&nbsp;</td>
 		<td>au&nbsp; </td>
 		<td><input type="text" id="date_fin" name="date_fin" value="" class="classinput_nsize" /></td>
-		<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_ok.gif" id="reload_stock_move" style="cursor:pointer;"/></td>
+		<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_ok.gif" id="reload_stock_move" style="cursor:pointer;"/></td>
 	</tr>
 </table>
 </div>

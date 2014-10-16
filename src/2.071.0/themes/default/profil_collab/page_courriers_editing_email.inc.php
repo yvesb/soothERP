@@ -15,7 +15,7 @@
 				addiv.setAttribute ("id", "dest_"+line_num);
 			var image= document.createElement("img");
 				image.setAttribute ("id", "sup_list_dest_"+line_num);
-				image.setAttribute ("src", "<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif");
+				image.setAttribute ("src", "<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif");
 			zone.appendChild(addiv);
 			$("dest_"+line_num).innerHTML=mail_insert;
 			$("dest_"+line_num).appendChild(image);
@@ -59,7 +59,7 @@
 								foreach ($liste_email as $e) { ?>
 									<div id="dest_<?php echo $i;?>">
 										<?php echo $e->email; ?>
-										<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" alt="Vider la liste des destinataires" id="sup_list_dest_<?php echo $i;?>" title="Vider la liste des destinataires" style="cursor:pointer; float:right" />
+										<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" alt="Vider la liste des destinataires" id="sup_list_dest_<?php echo $i;?>" title="Vider la liste des destinataires" style="cursor:pointer; float:right" />
 									</div>
 									<script type="text/javascript">
 										Event.observe('sup_list_dest_<?php echo $i;?>', 'click',  function(evt){

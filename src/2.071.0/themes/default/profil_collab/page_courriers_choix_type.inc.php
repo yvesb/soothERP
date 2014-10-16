@@ -19,7 +19,7 @@ check_page_variables ($page_variables);
 
 ?>
 <!-- Bouton pour fermer la page sans sauvegarder -->
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-fermer.gif" id="close_courrier_choix_type" class="bt_fermer_popup" alt="Fermer" title="Fermer" />
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-fermer.gif" id="close_courrier_choix_type" class="bt_fermer_popup" alt="Fermer" title="Fermer" />
 <SCRIPT type="text/javascript">
 	Event.observe("close_courrier_choix_type", "click", function(evt){
 		$("courrier_choix_type").innerHTML="";

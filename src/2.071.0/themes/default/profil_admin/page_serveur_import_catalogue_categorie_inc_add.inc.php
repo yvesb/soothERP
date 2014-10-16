@@ -5,8 +5,8 @@
 	<form method="post" action="serveur_import_catalogue_categorie_add.php" id="import_catalogue_ajout_categs" name="import_catalogue_ajout_categs" target="formFrame">
 	<table class="minimizetable">
 				<tr class="smallheight">
-					<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 				</tr>	
 		<tr>
 			<td class="size_strict"><span class="labelled">Cat&eacute;gorie parent: </span>
@@ -125,7 +125,7 @@
 		</tr>
 	</table>
 	<p style="text-align:center">
-	<input type="image" name="bt_add_art_categs_1" id="bt_add_art_categs_1" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif"/>
+	<input type="image" name="bt_add_art_categs_1" id="bt_add_art_categs_1" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif"/>
 	</p>
 <?php 
 if ($exist_carac_groupes) {
@@ -134,7 +134,7 @@ if ($exist_carac_groupes) {
 	
 	<table>
 		<tr class="smallheight">
-			<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
+			<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
 			</td>
 		</tr>	
 		<tr>
@@ -148,7 +148,7 @@ if ($exist_carac_groupes) {
 		?>
 		<table>
 		<tr class="smallheight">
-			<td style="width:90%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:90%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			<td></td>
 			<td></td>
 		</tr>	
@@ -156,7 +156,7 @@ if ($exist_carac_groupes) {
 			<td>
 				<table>
 					<tr class="smallheight">
-						<td style="width:90%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
+						<td style="width:90%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
 						</td>
 						<td style="width:10%"></td>
 					</tr>	
@@ -176,7 +176,7 @@ if ($exist_carac_groupes) {
 	}
 	?>
 	<p style="text-align:center">
-	<input type="image" name="bt_add_art_categs_2" id="bt_add_art_categs_2" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif"/>
+	<input type="image" name="bt_add_art_categs_2" id="bt_add_art_categs_2" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif"/>
 	</p>
 	<?php
 }
@@ -196,10 +196,10 @@ if ($exist_caracs) {
 		<td>
 			<table>
 				<tr class="smallheight">
-					<td style="width:25%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:25%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:25%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:25%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:25%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:25%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:25%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:25%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 				</tr>
 				<tr>
 					<td><span class="labelled_nowidth">Libell&eacute;:</span>
@@ -259,7 +259,7 @@ if ($exist_caracs) {
 	}
 	?>
 	<p style="text-align:center">
-	<input type="image" name="bt_add_art_categs_3" id="bt_add_art_categs_3" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif"/>
+	<input type="image" name="bt_add_art_categs_3" id="bt_add_art_categs_3" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif"/>
 	</p>
 	<?php
 }

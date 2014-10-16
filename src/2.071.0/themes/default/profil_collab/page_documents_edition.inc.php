@@ -79,7 +79,7 @@ if (isset($_REQUEST['id_type_doc']) || isset($_REQUEST["fonction_generer"])) {
             <div id="pop_up_lines_liste_tva_doc" class="lines_liste_tva_doc" style="display:none;">
 
                 <a href="#" id="link_close_pop_up_lines_liste_tva_doc" style="float:right">
-                    <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+                    <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
                 </a>
                 <script type="text/javascript">
                     Event.observe("link_close_pop_up_lines_liste_tva_doc", "click",  function(evt){Event.stop(evt); $("pop_up_lines_liste_tva_doc").style.display = "none";}, false);
@@ -91,7 +91,7 @@ if (isset($_REQUEST['id_type_doc']) || isset($_REQUEST["fonction_generer"])) {
                 <br /><br />
                 <div style="text-align:center">
 
-                    <input name="modifier_tva_taux_lines" id="modifier_tva_taux_lines" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />
+                    <input name="modifier_tva_taux_lines" id="modifier_tva_taux_lines" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" />
                 </div>
                 <SCRIPT type="text/javascript">
                     //centrage de la pop up
@@ -216,17 +216,17 @@ include $DIR.$_SESSION['theme']->getDir_theme()."page_documents_edition_block_he
                                 </td>
                                 <!-- Afficher , Imprimer, E-mail -->
                                 <td style="text-align:right">
-                                    <a href="documents_editing.php?ref_doc=<?php echo $document->getRef_doc()?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-afficher.gif" alt="Afficher" title="Afficher"/></a>
+                                    <a href="documents_editing.php?ref_doc=<?php echo $document->getRef_doc()?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-afficher.gif" alt="Afficher" title="Afficher"/></a>
                                     <div style="height:5px; line-height:5px"></div>
 
-                                    <a href="documents_editing.php?ref_doc=<?php echo $document->getRef_doc()?>&print=1" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-imprimer.gif" alt="Imprimer" title="Imprimer"/></a>
+                                    <a href="documents_editing.php?ref_doc=<?php echo $document->getRef_doc()?>&print=1" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-imprimer.gif" alt="Imprimer" title="Imprimer"/></a>
                                     <div style="height:5px; line-height:5px"></div>
 
 
                                     <div style="position:relative; top:3px; left:5px;  height:0px;">
                                         <iframe id="iframe_choix_send_mail" frameborder="0" scrolling="no" src="about:_blank"  class="choix_complete_ville"></iframe>
                                         <div id="choix_send_mail"  class="choix_complete_ville" style="display:none; left:-185px; width:311px; height:85px"></div></div>
-                                    <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-email.gif" alt="Envoyer par email" title="Envoyer par email" style="cursor:pointer" id="send_mail_to_client"/>
+                                    <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-email.gif" alt="Envoyer par email" title="Envoyer par email" style="cursor:pointer" id="send_mail_to_client"/>
                                     <script type="text/javascript">
 
                                         Event.observe("send_mail_to_client", "click",  function(evt){
@@ -261,7 +261,7 @@ if ($SEND_FAX2MAIL) {
                                     <div style="position:relative; top:3px; left:5px;  height:0px;">
                                         <iframe id="iframe_choix_send_fax" frameborder="0" scrolling="no" src="about:_blank"  class="choix_complete_ville"></iframe>
                                         <div id="choix_send_fax"  class="choix_complete_ville" style="display:none; left:-185px; width:311px; height:85px"></div></div>
-                                    <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-fax.gif" alt="Envoyer par fax" title="Envoyer par fax" style="cursor:pointer" id="send_fax_to_client"/>
+                                    <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-fax.gif" alt="Envoyer par fax" title="Envoyer par fax" style="cursor:pointer" id="send_fax_to_client"/>
                                     <script type="text/javascript">
 
                                         Event.observe("send_fax_to_client", "click",  function(evt){
@@ -432,13 +432,13 @@ if ($SEND_FAX2MAIL) {
                             <table width="100%" border="0" cellspacing="0" cellpadding="0" class="">
                                 <tr>
                                     <td rowspan="2" style="width:33px">
-                                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/arrow_ltr.png" />
+                                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/arrow_ltr.png" />
                                     </td>
                                     <td style="height:4px; line-height:4px">
-                                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="4px" width="100%"/>
+                                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="4px" width="100%"/>
                                     </td>
                                     <td style="height:4px; line-height:4px">
-                                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="4px" width="100%"/>
+                                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="4px" width="100%"/>
                                     </td>
                                 </tr>
                                 <tr>
@@ -599,14 +599,14 @@ if ($document->getID_TYPE_DOC () == $FACTURE_FOURNISSEUR_ID_TYPE_DOC) {
                                         <table style="width:230px; float:right;" class="">
                                             <tr id="ins_info" style="cursor:pointer">
                                                 <td style="width:20px; text-align:center; font-weight:bolder;">
-                                                    <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/line_info_add.gif" />
+                                                    <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/line_info_add.gif" />
                                                 </td>
                                                 <td class="doc_link_standard" style="text-align:left"> Ins&eacute;rer une ligne d'information
                                                 </td>
                                             </tr>
                                             <tr id="ins_ss_total" style="cursor:pointer">
                                                 <td style="width:20px; text-align:center; font-weight:bolder;">
-                                                    <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/line_subtoto_add.gif" />
+                                                    <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/line_subtoto_add.gif" />
                                                 </td>
                                                 <td class="doc_link_standard" style="text-align:left"> Ins&eacute;rer une ligne de sous-total
                                                 </td>
@@ -614,7 +614,7 @@ if ($document->getID_TYPE_DOC () == $FACTURE_FOURNISSEUR_ID_TYPE_DOC) {
 <?php if(method_exists($document,'getId_livraison_mode')) { ?>
                                             <tr id="ins_livraison_mode" style="cursor:pointer">
                                                 <td style="width:20px; text-align: center; font-weight:bolder;">
-                                                    <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/line_calivraison_add.gif" />
+                                                    <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/line_calivraison_add.gif" />
                                                 </td>
                                                 <td class="doc_link_standard" style="text-align:left">Calculer les frais de transport
                                                 </td>
@@ -642,7 +642,7 @@ if ($document->getID_TYPE_DOC () == $FACTURE_FOURNISSEUR_ID_TYPE_DOC) {
                                 </tr>
                                 <tr>
                                     <td style="height:4px; line-height:4px;" colspan="4">
-                                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="4px" width="100%"/>
+                                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="4px" width="100%"/>
                                     </td>
                                 </tr>
                             </table>
@@ -914,10 +914,10 @@ if (!$ASSUJETTI_TVA && ($id_type_doc == $DEVIS_CLIENT_ID_TYPE_DOC || $id_type_do
                                         <tr class="smallheight">
                                             <td style="width:2%">&nbsp;</td>
                                             <td style="width:14%">&nbsp;</td>
-                                            <td style="width:34%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                                            <td style="width:34%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
                                             <td style="width:3%">&nbsp;</td>
                                             <td style="width:20%">&nbsp;</td>
-                                            <td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                                            <td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
                                             <td style="width:3%">&nbsp;</td>
                                         </tr>
                                         <tr>
@@ -973,8 +973,8 @@ if (!$ASSUJETTI_TVA && ($id_type_doc == $DEVIS_CLIENT_ID_TYPE_DOC || $id_type_do
                                             </td>
                                             <td></td>
                                             <td style="text-align:right">
-                                                <input name="submit" type="image" onclick="$('page_to_show_s').value=1; $('recherche_auto').value='';" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-rechercher.gif"  style="float:left" />
-                                                <input type="image" name="annuler_recherche_s" id="annuler_recherche_s" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-annuler.gif"/>
+                                                <input name="submit" type="image" onclick="$('page_to_show_s').value=1; $('recherche_auto').value='';" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-rechercher.gif"  style="float:left" />
+                                                <input type="image" name="annuler_recherche_s" id="annuler_recherche_s" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-annuler.gif"/>
                                             </td>
                                             <td>&nbsp;</td>
                                         </tr>
@@ -1007,7 +1007,7 @@ if (!$ASSUJETTI_TVA && ($id_type_doc == $DEVIS_CLIENT_ID_TYPE_DOC || $id_type_do
                                         </tr>
                                     </table>
                                     <span style=" height:1px; line-height:1px;">
-                                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="250px" height="1px"/>
+                                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="250px" height="1px"/>
                                     </span>
                                 </td>
                             </tr>
@@ -1062,56 +1062,56 @@ if ($document->getACCEPT_REGMT() != 0) {
                                             </select>		</td>
                                         <td align="center">
                                             <a href="#" id="editeur_bold" class="bt_wysiwyg">
-                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/bold.gif" />			</a>		</td>
+                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/bold.gif" />			</a>		</td>
                                         <td align="center">
                                             <a href="#" id="editeur_italic" class="bt_wysiwyg">
-                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/italic.gif" />			</a>		</td>
+                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/italic.gif" />			</a>		</td>
                                         <td align="center">
                                             <a href="#" id="editeur_souligner" class="bt_wysiwyg">
-                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/underline.gif" />			</a>		</td>
+                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/underline.gif" />			</a>		</td>
                                         <td align="center">
                                             <a href="#" id="editeur_align_left" class="bt_wysiwyg">
-                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/justifyleft.gif" />			</a>		</td>
+                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/justifyleft.gif" />			</a>		</td>
                                         <td align="center">
                                             <a href="#" id="editeur_align_center" class="bt_wysiwyg">
-                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/justifycenter.gif" />			</a>		</td>
+                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/justifycenter.gif" />			</a>		</td>
                                         <td align="center">
                                             <a href="#" id="editeur_align_right" class="bt_wysiwyg">
-                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/justifyright.gif" />			</a>		</td>
+                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/justifyright.gif" />			</a>		</td>
                                         <td align="center">
                                             <a href="#" id="editeur_align_justify" class="bt_wysiwyg">
-                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/justifyfull.gif" />			</a>		</td>
+                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/justifyfull.gif" />			</a>		</td>
                                         <td align="center">
                                             <a href="#" id="editeur_outdent" class="bt_wysiwyg">
-                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/outdent.gif" />			</a>		</td>
+                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/outdent.gif" />			</a>		</td>
                                         <td align="center">
                                             <a href="#" id="editeur_indent" class="bt_wysiwyg">
-                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/indent.gif" />			</a>		</td>
+                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/indent.gif" />			</a>		</td>
                                         <td align="center">
                                             <a href="#" id="editeur_insertorderedlist" class="bt_wysiwyg">
-                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/insertorderedlist.gif" />			</a>		</td>
+                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/insertorderedlist.gif" />			</a>		</td>
                                         <td align="center">
                                             <a href="#" id="editeur_insertunorderedlist" class="bt_wysiwyg">
-                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/insertunorderedlist.gif" />			</a>		</td>
+                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/insertunorderedlist.gif" />			</a>		</td>
                                         <td align="center">
                                             <a href="#" id="editeur_forecolor" class="bt_wysiwyg">
-                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/forecolor.gif" />			</a>		</td>
+                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/forecolor.gif" />			</a>		</td>
                                         <td align="center">
                                             <a href="#" id="editeur_hilitecolor" class="bt_wysiwyg">
-                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/hilitecolor.gif" />			</a>		</td>
+                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/hilitecolor.gif" />			</a>		</td>
                                         <td align="center">
                                             <a href="#" id="editeur_link" class="bt_wysiwyg">
-                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/createlink.gif" />			</a>		</td>
+                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/createlink.gif" />			</a>		</td>
                                         <td align="center">
                                             <a href="#" id="editeur_unlink" class="bt_wysiwyg">
-                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/unlink.gif" />			</a>		</td>
+                                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/unlink.gif" />			</a>		</td>
                                     </tr>
                                 </table>
                             </div>
                             <iframe name="description_html" id="description_html" class="classinput_xsize" style="height:150px; display:block; width:100%" frameborder="0"></iframe><br />
                             <iframe width="161" height="113" id="colorpalette" src="colors.php?proto=editeur&ifr=description_html" style="display:none; position:absolute; border:1px solid #000000; OVERFLOW: hidden;" frameborder="0" scrolling="no"></iframe><br />
                             <textarea name="description" rows="6" style="display:none;" id="description"><?php echo htmlentities($document->getDescription (), ENT_QUOTES, "UTF-8");?></textarea>
-                            <a href="#" id="doc_description"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" /></a>
+                            <a href="#" id="doc_description"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" /></a>
                         </div>
                     </td>
                     <td style=" width:5%;">

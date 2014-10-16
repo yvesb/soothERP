@@ -20,5 +20,5 @@
 	<input name="tva_<?php echo $tvas['0']["id_pays"];?>" type="radio" value="tva_non_applicable" <?php if (!$tvacheck) {echo 'checked="checked"'; }?>/>
 	TVA Non applicable.<br />
 <p style="text-align:center">
-	<input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" name="bt_valide_tvalist" id="bt_valide_tvalist"/>
+	<input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" name="bt_valide_tvalist" id="bt_valide_tvalist"/>
 </p>

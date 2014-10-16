@@ -54,14 +54,14 @@ foreach ($caracs as $carac) {
 
 <table style="width:100%" id="plus_de_carac_table">
 <tr><td style="width:25%">
-<a href="#" id="plus_de_carac" style="display:block" class="carac_plus_moins"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" /> Plus de caract&eacute;ristiques</a>
+<a href="#" id="plus_de_carac" style="display:block" class="carac_plus_moins"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" /> Plus de caract&eacute;ristiques</a>
 </td>
 <td><div style=" height:18px;"></div>
 </td></tr></table>
 
 <table style="width:100%;display:none" id="moins_de_carac_table">
 <tr><td style="width:25%">
-<a href="#" id="moins_de_carac" class="carac_plus_moins"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/moins.gif" />&nbsp;Moins&nbsp;de&nbsp;caract&eacute;ristiques</a>
+<a href="#" id="moins_de_carac" class="carac_plus_moins"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/moins.gif" />&nbsp;Moins&nbsp;de&nbsp;caract&eacute;ristiques</a>
 </td>
 <td></td></tr></table>
 <div id="caract_avancee" class="caract_recherche"></div>
@@ -71,8 +71,8 @@ foreach ($caracs as $carac) {
 		<td style="width:2%;">&nbsp;</td>
 		<td style="width:25%;">&nbsp;</td>
 		<td style="text-align:right; width:25%"><span style="text-align:right">
-			<input name="submit2" type="image" onclick="$('page_to_show').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-rechercher.gif"  style="float:left" />
-			<input type="image" name="annuler_recherche2" id="annuler_recherche2" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-annuler.gif"/>
+			<input name="submit2" type="image" onclick="$('page_to_show').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-rechercher.gif"  style="float:left" />
+			<input type="image" name="annuler_recherche2" id="annuler_recherche2" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-annuler.gif"/>
 		</span></td>
 		<td style="padding-left:35px"></td>
 		<td></td>

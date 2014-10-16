@@ -80,7 +80,7 @@ if (isset($liste_permissions_collab)) {
 		<?php 
 		foreach($user_fonctions as $fonction){
 			?>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="15px" HEIGHT="15px"/>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="15px" HEIGHT="15px"/>
 			<I><?php echo $fonction->lib_fonction?></I> 
 			<?php 
 		}
@@ -103,7 +103,7 @@ if (isset($liste_permissions_collab)) {
 	<?php
 	foreach ($liste_permissions_collab as $perm_collab) {
 		?>
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="<?php echo 15*$perm_collab->indentation;?>px" HEIGHT="15px"/>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="<?php echo 15*$perm_collab->indentation;?>px" HEIGHT="15px"/>
 		<?php 
 		switch (type_input($perm_collab->values)) {
 			/****************************************
@@ -202,10 +202,10 @@ if (isset($liste_permissions_collab)) {
 					echo ($perm_collab->lib_permission);
 					?>
 					(<span id="num_choix_<?php echo $perm_collab->id_permission;?>"><?php echo count($permissions_values)?></span>/<?php echo count($tmp) ?>)
-					<span id="affiche_choix_<?php echo $perm_collab->id_permission;?>_box"><a href="#" id="affiche_choix_<?php echo $perm_collab->id_permission;?>_link" style="text-decoration: none; font-size: larger ;"><img src='<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/extend.gif' width='15px'/></a></span>
+					<span id="affiche_choix_<?php echo $perm_collab->id_permission;?>_box"><a href="#" id="affiche_choix_<?php echo $perm_collab->id_permission;?>_link" style="text-decoration: none; font-size: larger ;"><img src='<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/extend.gif' width='15px'/></a></span>
 					<br>
 					<div id="choix_permission_<?php echo $perm_collab->id_permission;?>" style="display:none;">
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="<?php echo 15*$perm_collab->indentation;?>px"/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="<?php echo 15*$perm_collab->indentation;?>px"/>
 							<SELECT name="select_permission_<?php echo $perm_collab->id_permission;?>" id="select_permission_<?php echo $perm_collab->id_permission;?>" SIZE="5" WIDTH="300" STYLE="width: 300px" MULTIPLE>
 							<?php 
 							foreach ($tmp as $value){?>
@@ -224,10 +224,10 @@ if (isset($liste_permissions_collab)) {
 						Event.stop(evt);
 						if(!$("choix_permission_<?php echo $perm_collab->id_permission;?>").visible()){
 							$("choix_permission_<?php echo $perm_collab->id_permission;?>").show();
-							$("affiche_choix_<?php echo $perm_collab->id_permission;?>_link").innerHTML="<img src='<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/collapse.gif' width='15px'/>";
+							$("affiche_choix_<?php echo $perm_collab->id_permission;?>_link").innerHTML="<img src='<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/collapse.gif' width='15px'/>";
 						}else{
 							$("choix_permission_<?php echo $perm_collab->id_permission;?>").hide();
-							$("affiche_choix_<?php echo $perm_collab->id_permission;?>_link").innerHTML="<img src='<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/extend.gif' width='15px'/>";
+							$("affiche_choix_<?php echo $perm_collab->id_permission;?>_link").innerHTML="<img src='<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/extend.gif' width='15px'/>";
 						}
 					});
 					Event.observe($("select_permission_<?php echo $perm_collab->id_permission;?>"), "change", function(evt){
@@ -314,7 +314,7 @@ if (isset($liste_permissions_collab)) {
 					//_vardump($droits);
 					?>
 					
-					<span id="affiche_choix_<?php echo $perm_collab->id_permission;?>_box"><a href="#" id="affiche_choix_<?php echo $perm_collab->id_permission;?>_link" style="text-decoration: none; font-size: larger ;"><img src='<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/extend.gif' width='15px'/></a></span>
+					<span id="affiche_choix_<?php echo $perm_collab->id_permission;?>_box"><a href="#" id="affiche_choix_<?php echo $perm_collab->id_permission;?>_link" style="text-decoration: none; font-size: larger ;"><img src='<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/extend.gif' width='15px'/></a></span>
 
 					<div id="choix_permission_<?php echo $perm_collab->id_permission;?>" style="display:none;" >
 						<form action="utilisateur_droits_maj_<?php echo $perm_collab->id_permission;?>.php" method="post" id="utilisateur_droits_maj<?php echo $perm_collab->id_permission;?>" name="utilisateur_droits_maj<?php echo $perm_collab->id_permission;?>" target="formFrame" >
@@ -386,10 +386,10 @@ if (isset($liste_permissions_collab)) {
 						Event.stop(evt);
 						if(!$("choix_permission_<?php echo $perm_collab->id_permission;?>").visible()){
 							$("choix_permission_<?php echo $perm_collab->id_permission;?>").show();
-							$("affiche_choix_<?php echo $perm_collab->id_permission;?>_link").innerHTML="<img src='<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/collapse.gif' width='15px'/>";
+							$("affiche_choix_<?php echo $perm_collab->id_permission;?>_link").innerHTML="<img src='<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/collapse.gif' width='15px'/>";
 						}else{
 							$("choix_permission_<?php echo $perm_collab->id_permission;?>").hide();
-							$("affiche_choix_<?php echo $perm_collab->id_permission;?>_link").innerHTML="<img src='<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/extend.gif' width='15px'/>";
+							$("affiche_choix_<?php echo $perm_collab->id_permission;?>_link").innerHTML="<img src='<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/extend.gif' width='15px'/>";
 						}
 					});
 					Event.observe($("permission_<?php echo $perm_collab->id_permission;?>_valide"), "click", function(evt){

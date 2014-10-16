@@ -28,7 +28,7 @@ global $app_tarifs_s;
 	if ($debut >= $cfg_nbres_ppage)
 	{
 		$cible = 1;
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/gauche_on.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/gauche_on.gif');
 		$lien = str_replace('{lien}', $image.$image, $lien_on);
 		$lien = str_replace('{cible}', $cible-1, $lien);
 		$lien = str_replace('{cibleb}', $cible, $lien);
@@ -37,7 +37,7 @@ global $app_tarifs_s;
 	}
 	else
 	{
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/gauche_off.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/gauche_off.gif');
 		$lien = str_replace('{lien}', $image.$image, $lien_off);
 	}
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
@@ -48,7 +48,7 @@ global $app_tarifs_s;
 	if ($debut >= $cfg_nbres_ppage)
 	{
 		$cible = ($nbenr-1);
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/gauche_on.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/gauche_on.gif');
 		$lien = str_replace('{lien}', $image, $lien_on);
 		$lien = str_replace('{cible}', $cible, $lien);
 		$lien = str_replace('{cibleb}', $cible, $lien);
@@ -57,7 +57,7 @@ global $app_tarifs_s;
 	}
 	else
 	{
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/gauche_off.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/gauche_off.gif');
 		$lien = str_replace('{lien}', $image, $lien_off);
 	}
 	$barre .= $lien."&nbsp;<B>&middot;</B>";
@@ -99,7 +99,7 @@ global $app_tarifs_s;
 	if ($debut + $cfg_nbres_ppage < $nbtotal)
 	{
 		$cible = ($nbenr+1);
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/droite_on.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/droite_on.gif');
 		$lien = str_replace('{lien}', $image, $lien_on);
 		$lien = str_replace('{cible}', $cible, $lien);
 		$lien = str_replace('{cibleb}', $cible, $lien);
@@ -108,7 +108,7 @@ global $app_tarifs_s;
 	}
 	else
 	{
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/droite_off.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/droite_off.gif');
 		$lien = str_replace('{lien}', $image, $lien_off);
 	}
 	$barre .= "&nbsp;<B>&middot;</B>".$lien;
@@ -121,7 +121,7 @@ global $app_tarifs_s;
 	if ($fin != $debut)
 	{
 		$cible = (int)($nbtotal/$cfg_nbres_ppage)+1;
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/droite_on.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/droite_on.gif');
 		$lien = str_replace('{lien}', $image.$image, $lien_on);
 		$lien = str_replace('{cible}', $cible+1, $lien);
 		$lien = str_replace('{cibleb}', $cible, $lien);
@@ -130,7 +130,7 @@ global $app_tarifs_s;
 	}
 	else
 	{
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/droite_off.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/droite_off.gif');
 		$lien = str_replace('{lien}', $image.$image, $lien_off);
 	}
 	$barre .= "<B>&middot;</B>&nbsp;".$lien;
@@ -321,9 +321,9 @@ next($list_catalogue_dir);
 		<div class="catalogue">
 		<table width="100%"  border="0" cellspacing="3" cellpadding="0" class="catalogue">
 			<tr>
-				<td width="49%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td width="2%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td width="49%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td width="49%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td width="2%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td width="49%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			</tr>
 			<tr>
 				<td colspan="3">
@@ -397,7 +397,7 @@ next($list_catalogue_dir);
 									<?php
 								} else {
 									?>
-									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" id="" width="55" height="55" border="0" />
+									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" id="" width="55" height="55" border="0" />
 									<?php 
 								}
 								?>
@@ -425,7 +425,7 @@ next($list_catalogue_dir);
 					</td>
 					<td class="colorise_td_deco" style="text-align:center">
 						<a href="#" id="aff_resume_stock_<?php echo ($fiche->ref_article);?>">
-						<?php	if (isset($fiche->stock)) { ?><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/stock_dispo.gif" /><?php } else { ?><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/stock_vide.gif" /><?php }?>
+						<?php	if (isset($fiche->stock)) { ?><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/stock_dispo.gif" /><?php } else { ?><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/stock_vide.gif" /><?php }?>
 						</a>
 					</td>
 					<td class="colorise_td_deco">
@@ -459,7 +459,7 @@ next($list_catalogue_dir);
 					<input name="qte_art_<?php echo $colorise;?>" id="qte_art_<?php echo $colorise;?>" type="text" size="3" value="" class="input_add_panier" />
 					</td>
 					<td class="colorise_td_deco" style="vertical-align:middle; text-align:center">
-					<a  href="#" id="link_art_add_panier_<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%; text-decoration:underline"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier.gif" title="Ajouter au panier" alt="Ajouter au panier" /></a>
+					<a  href="#" id="link_art_add_panier_<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%; text-decoration:underline"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/panier.gif" title="Ajouter au panier" alt="Ajouter au panier" /></a>
 					
 				<script type="text/javascript">
 			Event.observe('link_art_add_panier_<?php echo htmlentities($fiche->ref_article, ENT_QUOTES, "UTF-8")?>', 'click',  function(evt){

@@ -50,7 +50,7 @@ if (count($_SESSION['stocks']) > 1) {
 		<td>&nbsp;</td>
 		<td>au&nbsp; </td>
 		<td><input type="text" id="date_fin" name="date_fin" value="<?php echo date("d-m-Y");?>" class="classinput_nsize" /></td>
-                <td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_recherche.gif" id="reload_historique_achat" style="cursor:pointer;"/></td>
+                <td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_recherche.gif" id="reload_historique_achat" style="cursor:pointer;"/></td>
 		<td></td>
 	</tr>
 </table>

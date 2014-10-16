@@ -23,7 +23,7 @@ check_page_variables ($page_variables);
 ?>
 <script type="text/javascript">
 </script>
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="close_consommation_edit" style="cursor:pointer; float:right" alt="Fermer" title="Fermer" />
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="close_consommation_edit" style="cursor:pointer; float:right" alt="Fermer" title="Fermer" />
 <span style="font-weight:bolder">Utilisation de crédits</span><br />
 <br />
 <span class="bolder"><?php echo htmlentities($article->getLib_article (), ENT_QUOTES, "UTF-8"); ?></span>
@@ -78,7 +78,7 @@ check_page_variables ($page_variables);
 				</tr>
 		</table><br />
 		<div style="text-align:right">
-		<input name="consommation_use_valid" id="consommation_use_valid" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />
+		<input name="consommation_use_valid" id="consommation_use_valid" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" />
 		</div>
 	</form>
 	<script type="text/javascript">
@@ -94,10 +94,10 @@ check_page_variables ($page_variables);
 				?>
 		<table width="100%" border="0"  cellspacing="0" id="view_conso_<?php echo $indentation_conso;?>">
 			<tr>
-				<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td style="width:45%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td style="width:45%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			</tr>
 				<tr>
 					<td style="font-size:10px; cursor:pointer" id="conso1_<?php echo $indentation_conso;?>">

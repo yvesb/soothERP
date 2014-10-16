@@ -77,7 +77,7 @@ foreach ($fiches as $fiche){
 			<span id="aff_formule_comm_<?php echo $fiche->ref_art_categ;?>_<?php echo $comm_regle->id_commission_regle;?>" style="cursor:pointer; text-decoration:underline;" class="classinput_lsize"><?php 
 			if (!isset($fiche->id_commission_regle[$comm_regle->id_commission_regle]) || !isset($fiche->id_commission_regle[$comm_regle->id_commission_regle]->formule_comm)) {?>non définie<?php } else { echo $fiche->id_commission_regle[$comm_regle->id_commission_regle]->formule_comm; } ?></span>
 			
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="del_formule_comm_<?php echo $fiche->ref_art_categ;?>_<?php echo $comm_regle->id_commission_regle; ?>" style="cursor:pointer"/>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="del_formule_comm_<?php echo $fiche->ref_art_categ;?>_<?php echo $comm_regle->id_commission_regle; ?>" style="cursor:pointer"/>
 			
 			<script type="text/javascript">
 			

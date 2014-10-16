@@ -76,7 +76,7 @@
 							<?php 
 							if ($more_profil==1) {
 								?>	
-								<div id="moins_profil"><a href="#" id="moins_profil_link"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/moins.gif" />Moins de profils</a></div>
+								<div id="moins_profil"><a href="#" id="moins_profil_link"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/moins.gif" />Moins de profils</a></div>
 								</div>
 								<script type="text/javascript">
 								Event.observe("moins_profil_link", "click",  function(evt){Event.stop(evt); showform ('plus_profil', 'divprofil_sec');}, false);
@@ -85,7 +85,7 @@
 							}
 							?>	
 					
-							<div id="plus_profil"><a href="#" id="plus_profil_link"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" />Plus de profils</a></div>
+							<div id="plus_profil"><a href="#" id="plus_profil_link"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" />Plus de profils</a></div>
 								<script type="text/javascript">
 								Event.observe("plus_profil_link", "click",  function(evt){Event.stop(evt); showform ('divprofil_sec', 'plus_profil');}, false);
 								</script>

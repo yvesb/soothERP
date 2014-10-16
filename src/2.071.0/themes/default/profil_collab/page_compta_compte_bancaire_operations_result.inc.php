@@ -43,7 +43,7 @@ global $DIR;
 	if ($debut >= $cfg_nbres_ppage)
 	{
 		$cible = 1;
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/gauche_on.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/gauche_on.gif');
 		$lien = str_replace('{lien}', $image.$image, $lien_on);
 		$lien = str_replace('{cible}', $cible-1, $lien);
 		$lien = str_replace('{cibleb}', $cible, $lien);
@@ -52,7 +52,7 @@ global $DIR;
 	}
 	else
 	{
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/gauche_off.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/gauche_off.gif');
 		$lien = str_replace('{lien}', $image.$image, $lien_off);
 	}
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
@@ -63,7 +63,7 @@ global $DIR;
 	if ($debut >= $cfg_nbres_ppage)
 	{
 		$cible = ($nbenr-1);
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/gauche_on.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/gauche_on.gif');
 		$lien = str_replace('{lien}', $image, $lien_on);
 		$lien = str_replace('{cible}', $cible, $lien);
 		$lien = str_replace('{cibleb}', $cible, $lien);
@@ -72,7 +72,7 @@ global $DIR;
 	}
 	else
 	{
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/gauche_off.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/gauche_off.gif');
 		$lien = str_replace('{lien}', $image, $lien_off);
 	}
 	$barre .= $lien."&nbsp;<B>&middot;</B>";
@@ -118,7 +118,7 @@ global $DIR;
 	if ($debut + $cfg_nbres_ppage < $nbtotal)
 	{
 		$cible = ($nbenr+1);
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/droite_on.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/droite_on.gif');
 		$lien = str_replace('{lien}', $image, $lien_on);
 		$lien = str_replace('{cible}', $cible, $lien);
 		$lien = str_replace('{cibleb}', $cible, $lien);
@@ -127,7 +127,7 @@ global $DIR;
 	}
 	else
 	{
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/droite_off.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/droite_off.gif');
 		$lien = str_replace('{lien}', $image, $lien_off);
 	}
 	$barre .= "&nbsp;<B>&middot;</B>".$lien;
@@ -140,7 +140,7 @@ global $DIR;
 	if ($fin != $debut)
 	{
 		$cible = (int)($nbtotal/$cfg_nbres_ppage)+1;
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/droite_on.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/droite_on.gif');
 		$lien = str_replace('{lien}', $image.$image, $lien_on);
 		$lien = str_replace('{cible}', $cible+1, $lien);
 		$lien = str_replace('{cibleb}', $cible, $lien);
@@ -149,7 +149,7 @@ global $DIR;
 	}
 	else
 	{
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/droite_off.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/droite_off.gif');
 		$lien = str_replace('{lien}', $image.$image, $lien_off);
 	}
 	$barre .= "<B>&middot;</B>&nbsp;".$lien;
@@ -207,7 +207,7 @@ if (isset($id_compte_bancaire_releve)) {
 
 	</div>
 	<script type="text/javascript">
-	$("more_releve_infos").innerHTML = '<span id="maj_releve" class="grey_caisse" style="float:right; width:250px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Modifier le relevé</span>';
+	$("more_releve_infos").innerHTML = '<span id="maj_releve" class="grey_caisse" style="float:right; width:250px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Modifier le relevé</span>';
 	
 	Event.observe("maj_releve", "click",  function(evt){ Event.stop(evt);S_loading();  page.verify("edit_releve_compte","compta_compte_bancaire_releves_edit.php?id_compte_bancaire=<?php echo $compte_bancaire->getId_compte_bancaire()?>&id_compte_bancaire_releve=<?php echo $id_compte_bancaire_releve;?>","true","edition_operation");	 $("edition_operation").show();	} ); 
 	</script>
@@ -342,7 +342,7 @@ if (isset($id_compte_bancaire_releve)) {
 					if (isset($fiche->id_operation) && $fiche->id_operation) {
 						?>
 						<span id="link_view_ope_<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>" style="cursor:pointer; width:65px; padding-left:5px; text-align:left">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/info_marge.gif"/>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/info_marge.gif"/>
 						
 						</span>
 						<script type="text/javascript">
@@ -384,7 +384,7 @@ if (isset($id_compte_bancaire_releve)) {
 				
 				</td>
 				<td style="text-align:center; vertical-align:middle">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="del_<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>" style="cursor:pointer; float:right"/>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="del_<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>" style="cursor:pointer; float:right"/>
 				<script type="text/javascript">
 				Event.observe('del_<?php echo htmlentities($fiche->id_compte_bancaire_move, ENT_QUOTES, "UTF-8")?>', 'click',  function(evt){
 					Event.stop(evt); 

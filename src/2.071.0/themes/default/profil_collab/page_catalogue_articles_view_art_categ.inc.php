@@ -2,7 +2,7 @@
 <iframe frameborder="0" scrolling="no" src="about:_blank" id="pop_up_edition_art_categ_iframe" class="edition_art_iframe"></iframe>
 <div id="pop_up_edition_art_categ" class="edition_art_table" style="OVERFLOW-Y: auto; OVERFLOW-X: auto;">
 <div style="display:block">
-<a href="#" id="link_close_pop_up_art_categ" style="float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+<a href="#" id="link_close_pop_up_art_categ" style="float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 <script type="text/javascript">
 Event.observe("link_close_pop_up_art_categ", "click",  function(evt){Event.stop(evt); close_edition_art_categ('pop_up_edition_art', 'pop_up_edition_art_iframe', 'form_edition_art');}, false);
 </script>
@@ -16,10 +16,10 @@ Event.observe("link_close_pop_up_art_categ", "click",  function(evt){Event.stop(
 <input type="hidden" name="old_lib_art_categ" id="old_lib_art_categ" value="<?php echo htmlentities($article->getLib_art_categ (), ENT_QUOTES, "UTF-8");?>" />
 	<table style="width:100%">
 		<tr >
-			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:45%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:45%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:45%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:45%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
@@ -50,7 +50,7 @@ Event.observe("link_close_pop_up_art_categ", "click",  function(evt){Event.stop(
 		<p>Cette action n'est pas r&eacute;versible. </p>
 	</div>
 	<div style="text-align:center">
-		<input type="image" name="modifier_categ" id="modifier_categ" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />
+		<input type="image" name="modifier_categ" id="modifier_categ" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" />
 	</div>
 </form>
 </div>

@@ -17,7 +17,7 @@
 			<td><input name="pourcentage" id="pourcentage"  type="text" value=""  class="classinput_xsize"  /></td>
 					
 			<td style="text-align:center">
-				<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" />
+				<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" />
 			</td>
 		</tr>
 	</table>

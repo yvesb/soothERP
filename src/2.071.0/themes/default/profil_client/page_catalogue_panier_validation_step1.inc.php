@@ -30,7 +30,7 @@ check_page_variables ($page_variables);
 		<div class="catalogue" style="padding-left:45px; padding-right:45px">
 		<div style="background-color:#FFFFFF; padding:15px">
 		<div class="bg_ico_panier">
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/icone_panier.gif" />
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/icone_panier.gif" />
 		<div class="colorise0">
 		</div>
 		</div><br />
@@ -55,19 +55,19 @@ check_page_variables ($page_variables);
 				</tr>
 				<tr >
 					<td class="panier_line_etape">
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier_grey_dot.gif" />
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/panier_grey_dot.gif" />
 					</td>
 					<td class="panier_line_etape">
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier_white_dot.gif" />
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/panier_white_dot.gif" />
 					</td>
 					<td class="panier_line_etape">
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier_grey_dot.gif" />
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/panier_grey_dot.gif" />
 					</td>
 					<td class="panier_line_etape">
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier_grey_dot.gif" />
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/panier_grey_dot.gif" />
 					</td>
 					<td class="panier_line_etape">
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier_grey_dot.gif" />
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/panier_grey_dot.gif" />
 					</td>
 				</tr>
 			</table>

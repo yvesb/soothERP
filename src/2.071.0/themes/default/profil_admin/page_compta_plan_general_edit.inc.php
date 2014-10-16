@@ -32,8 +32,8 @@ check_page_variables ($page_variables);
 			<form action="compta_plan_general_mod.php" method="post" id="compta_plan_general_mod" name="compta_plan_general_mod" target="formFrame" >
 			<table style="width:100%">
 				<tr class="smallheight">
-					<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 				<tr>
 					<td style="text-align:left">Numéro du compte					</td>
@@ -66,7 +66,7 @@ check_page_variables ($page_variables);
 				<tr>
 					<td style="text-align:left">					</td>
 					<td style="text-align:left"><span style="text-align:center">
-						<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+						<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
 					</span> </td>
 					</tr>
 			</table>

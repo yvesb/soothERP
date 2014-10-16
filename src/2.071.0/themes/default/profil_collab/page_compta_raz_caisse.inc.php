@@ -39,9 +39,9 @@ Event.observe("link_retour_caisse", "click",  function(evt){Event.stop(evt); pag
 		<tr>
 			<td rowspan="2" style="width:50px; height:50px; background-color:#FFFFFF">
 				<div style="position:relative; top:-35px; left:-35px; width:105px; border:1px solid #999999; background-color:#FFFFFF; text-align:center">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_caisse.jpg" />				</div>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_caisse.jpg" />				</div>
 				<span style="width:35px">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="50px" height="20px" id="imgsizeform"/>				</span>			</td>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="50px" height="20px" id="imgsizeform"/>				</span>			</td>
 			<td colspan="2" style=" background-color:#FFFFFF" >
 			<br />
 			<br />
@@ -65,8 +65,8 @@ Vous devriez plutôt utiliser le transfert de fonds (pour transférer tout ou pa
 					<div style="text-align:center">
 						<div style="width:450px; padding-left:20%; padding-right:20%">
 						
-						<span id="transfert_fonds" class="grey_caisse" style="float:left"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Transfert entre caisses</span>
-						<span id="remise_bancaire" class="grey_caisse" style="float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Remise en banque</span>
+						<span id="transfert_fonds" class="grey_caisse" style="float:left"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Transfert entre caisses</span>
+						<span id="remise_bancaire" class="grey_caisse" style="float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Remise en banque</span>
 						
 						<br /><br /><br /><br />
 
@@ -77,7 +77,7 @@ Vous devriez plutôt utiliser le transfert de fonds (pour transférer tout ou pa
 					
 					<div style="text-align:center">
 					<br /><br />
-						<input type="image" name="annuler" id="annuler" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-annuler.gif"/>
+						<input type="image" name="annuler" id="annuler" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-annuler.gif"/>
 					</div>
 					<script type="text/javascript">
 					Event.observe("annuler", "click",  function(evt){Event.stop(evt); page.verify('compta_gestion2_caisse','compta_gestion2_caisse.php?id_caisse=<?php echo $_REQUEST["id_caisse"];?>','true','sub_content');}, false);

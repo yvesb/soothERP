@@ -15,7 +15,7 @@ check_page_variables ($page_variables);
 // *************************************************************************************************************
 if (!$reglement->getRef_reglement()) {
 	?>
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="close_reglement_edit" style="cursor:pointer; float:right" alt="Fermer" title="Fermer" />
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="close_reglement_edit" style="cursor:pointer; float:right" alt="Fermer" title="Fermer" />
 	<span style="font-weight:bolder">Ce règlement n'existe pas ou a été supprimé</span>
 
 	<SCRIPT type="text/javascript">
@@ -35,7 +35,7 @@ if (!$reglement->getRef_reglement()) {
 
 ?>
 
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="close_reglement_edit" style="cursor:pointer; float:right" alt="Fermer" title="Fermer" />
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="close_reglement_edit" style="cursor:pointer; float:right" alt="Fermer" title="Fermer" />
 <form method="post" action="compta_reglements_sup.php" id="documents_reglements_sup_<?php echo $reglement->getRef_reglement(); ?>" name="documents_reglements_sup_<?php echo $reglement->getRef_reglement(); ?>" target="formFrame">
     <input name="ref_reglement" id="ref_reglement" type="hidden" value="<?php echo $reglement->getRef_reglement(); ?>" />
 </form>
@@ -101,11 +101,11 @@ if (!$reglement->getRef_reglement()) {
 				?>
 				<table width="100%" border="0"  cellspacing="0" id="view_doc_<?php echo $indentation_lettrage;?>_<?php echo $lettrage->ref_doc;?>">
 					<tr>
-						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>
 					<tr>
 						<td style="font-size:10px; cursor:pointer; padding-left:10px;" id="doc1_<?php echo $indentation_lettrage;?>_<?php echo $lettrage->ref_doc;?>">
@@ -121,7 +121,7 @@ if (!$reglement->getRef_reglement()) {
                                                     <?php	if ($lettrage->montant) { echo number_format($lettrage->montant, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[1]; }?>
 						</td>
 						<td style="padding-left:11px">
-                                                    <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/unlink.gif" border="0" style="cursor:pointer" id="unlink_doc1_<?php echo $indentation_lettrage;?>_<?php echo $lettrage->ref_doc;?>">
+                                                    <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/unlink.gif" border="0" style="cursor:pointer" id="unlink_doc1_<?php echo $indentation_lettrage;?>_<?php echo $lettrage->ref_doc;?>">
 						</td>
 					</tr>
 

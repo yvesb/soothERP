@@ -284,10 +284,10 @@ Event.observe("contactview_menu_a", "click",  function(evt){
 	<td>
 <table class="minimizetable" id="nom_lib" cellpadding="0" cellspacing="0" border="0">
 		<tr class="smallheight">
-				<td class="size_strict" style="width:85px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-				<td  style="width:215px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td class="size_strict" style="width:85px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+				<td  style="width:215px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 		</tr>	
 		<tr>
 			<td><span class="labelled" style="width:85px">Nom:</span></td>
@@ -323,10 +323,10 @@ Event.observe("contactview_menu_a", "click",  function(evt){
 	</table>
 	<table class="minimizetable" id="nom_mask" style="display:none;" cellpadding="0" cellspacing="0" border="0">
 		<tr class="smallheight">
-				<td class="size_strict" style="width:85px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-				<td  style="width:215px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td class="size_strict" style="width:85px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+				<td  style="width:215px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 		</tr>	
 		<tr>
 			<td><span class="labelled" style="width:85px">Nom:</span></td>
@@ -370,7 +370,7 @@ Event.observe("contactview_menu_a", "click",  function(evt){
 	</tr>
 	</table><br />
 	<div style="text-align:right; margin-right:10px;visibility: hidden;" id="submit">
-		<input type="image" name="submit"  src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" style=""/>
+		<input type="image" name="submit"  src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" style=""/>
 	</div>
 	</form>
 
@@ -388,13 +388,13 @@ Event.observe("contactview_menu_a", "click",  function(evt){
   
 
 	
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/contact_new_devis.gif" style="padding-left:5%; cursor:pointer;" onclick="page.verify('document_nouveau_dev','documents_nouveau.php?id_type_doc=<?php echo $DEVIS_CLIENT_ID_TYPE_DOC;?>&ref_contact=<?php echo $contact->getRef_contact();?>','true','sub_content');" />
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/contact_new_devis.gif" style="padding-left:5%; cursor:pointer;" onclick="page.verify('document_nouveau_dev','documents_nouveau.php?id_type_doc=<?php echo $DEVIS_CLIENT_ID_TYPE_DOC;?>&ref_contact=<?php echo $contact->getRef_contact();?>','true','sub_content');" />
 	
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/contact_new_commande.gif" style="padding-left:5%; cursor:pointer;" onclick="page.verify('document_nouveau_cdc','documents_nouveau.php?id_type_doc=<?php echo $COMMANDE_CLIENT_ID_TYPE_DOC;?>&ref_contact=<?php echo $contact->getRef_contact();?>','true','sub_content');" />
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/contact_new_commande.gif" style="padding-left:5%; cursor:pointer;" onclick="page.verify('document_nouveau_cdc','documents_nouveau.php?id_type_doc=<?php echo $COMMANDE_CLIENT_ID_TYPE_DOC;?>&ref_contact=<?php echo $contact->getRef_contact();?>','true','sub_content');" />
 	
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/contact_new_livraison.gif" style="padding-left:5%; cursor:pointer;" onclick="page.verify('document_nouveau_blc','documents_nouveau.php?id_type_doc=<?php echo $LIVRAISON_CLIENT_ID_TYPE_DOC;?>&ref_contact=<?php echo $contact->getRef_contact();?>','true','sub_content');" />
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/contact_new_livraison.gif" style="padding-left:5%; cursor:pointer;" onclick="page.verify('document_nouveau_blc','documents_nouveau.php?id_type_doc=<?php echo $LIVRAISON_CLIENT_ID_TYPE_DOC;?>&ref_contact=<?php echo $contact->getRef_contact();?>','true','sub_content');" />
 	
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/contact_new_facture.gif" style="padding-left:5%; cursor:pointer;" onclick="page.verify('document_nouveau_fac','documents_nouveau.php?id_type_doc=<?php echo $FACTURE_CLIENT_ID_TYPE_DOC;?>&ref_contact=<?php echo $contact->getRef_contact();?>','true','sub_content');" />
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/contact_new_facture.gif" style="padding-left:5%; cursor:pointer;" onclick="page.verify('document_nouveau_fac','documents_nouveau.php?id_type_doc=<?php echo $FACTURE_CLIENT_ID_TYPE_DOC;?>&ref_contact=<?php echo $contact->getRef_contact();?>','true','sub_content');" />
 	
 	</div><br />
 
@@ -410,13 +410,13 @@ Event.observe("contactview_menu_a", "click",  function(evt){
 			</table>
 	<?php }?> 
 	
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/contact_new_devis.gif" style="padding-left:5%; cursor:pointer;" onclick="page.verify('document_nouveau_def','documents_nouveau.php?id_type_doc=<?php echo $DEVIS_FOURNISSEUR_ID_TYPE_DOC;?>&ref_contact=<?php echo $contact->getRef_contact();?>','true','sub_content');" />
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/contact_new_devis.gif" style="padding-left:5%; cursor:pointer;" onclick="page.verify('document_nouveau_def','documents_nouveau.php?id_type_doc=<?php echo $DEVIS_FOURNISSEUR_ID_TYPE_DOC;?>&ref_contact=<?php echo $contact->getRef_contact();?>','true','sub_content');" />
 	
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/contact_new_commande.gif" style="padding-left:5%; cursor:pointer;" onclick="page.verify('document_nouveau_cdf','documents_nouveau.php?id_type_doc=<?php echo $COMMANDE_FOURNISSEUR_ID_TYPE_DOC;?>&ref_contact=<?php echo $contact->getRef_contact();?>','true','sub_content');" />
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/contact_new_commande.gif" style="padding-left:5%; cursor:pointer;" onclick="page.verify('document_nouveau_cdf','documents_nouveau.php?id_type_doc=<?php echo $COMMANDE_FOURNISSEUR_ID_TYPE_DOC;?>&ref_contact=<?php echo $contact->getRef_contact();?>','true','sub_content');" />
 	
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/contact_new_reception.gif" style="padding-left:5%; cursor:pointer;" onclick="page.verify('document_nouveau_blf','documents_nouveau.php?id_type_doc=<?php echo $LIVRAISON_FOURNISSEUR_ID_TYPE_DOC;?>&ref_contact=<?php echo $contact->getRef_contact();?>','true','sub_content');" />
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/contact_new_reception.gif" style="padding-left:5%; cursor:pointer;" onclick="page.verify('document_nouveau_blf','documents_nouveau.php?id_type_doc=<?php echo $LIVRAISON_FOURNISSEUR_ID_TYPE_DOC;?>&ref_contact=<?php echo $contact->getRef_contact();?>','true','sub_content');" />
 	
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/contact_new_facture.gif" style="padding-left:5%; cursor:pointer;" onclick="page.verify('document_nouveau_faf','documents_nouveau.php?id_type_doc=<?php echo $FACTURE_FOURNISSEUR_ID_TYPE_DOC;?>&ref_contact=<?php echo $contact->getRef_contact();?>','true','sub_content');" />
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/contact_new_facture.gif" style="padding-left:5%; cursor:pointer;" onclick="page.verify('document_nouveau_faf','documents_nouveau.php?id_type_doc=<?php echo $FACTURE_FOURNISSEUR_ID_TYPE_DOC;?>&ref_contact=<?php echo $contact->getRef_contact();?>','true','sub_content');" />
 	
 	</div>
 <br />
@@ -434,18 +434,18 @@ Event.observe("contactview_menu_a", "click",  function(evt){
 			</table>
 			<table width="100%" border="0" cellspacing="0" cellpadding="0" style="">
 				<tr class="smallheight" style="">
-					<td style="width:85px; "><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-					<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-					<td style="width:120px; "><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-					<td style="width:100px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-					<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+					<td style="width:85px; "><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+					<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+					<td style="width:120px; "><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+					<td style="width:100px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+					<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 				</tr>
 				<tr style="text-align:left; vertical-align:top; color:#00336c; font-weight:bolder">
 					<td style="  text-align:left; padding-left:5px; font-weight:bolder">Date</td>
 					<td style=" text-align:left; padding-left:5px; font-weight:bolder">Document</td>
 					<td style="  text-align:left; padding-left:5px; font-weight:bolder">Etat</td>
 					<td style=" text-align:center; padding-left:5px; font-weight:bolder">Prix</td>
-					<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" width="25px"/></td>
+					<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" width="25px"/></td>
 				</tr>
 				</table>
 				<div class="art_new_info" >
@@ -454,11 +454,11 @@ Event.observe("contactview_menu_a", "click",  function(evt){
 					?>
 					<table width="100%" border="0" cellspacing="0" cellpadding="0" style="">
 					<tr class="smallheight" style="">
-						<td style="width:85px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-						<td ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-						<td style="width:120px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-						<td style="width:100px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-						<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+						<td style="width:85px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+						<td ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+						<td style="width:120px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+						<td style="width:100px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+						<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 					</tr>
 					<tr style="cursor:pointer; color:#002673">
 						<td style=" border-bottom:1px solid #FFFFFF; text-align:left; padding-left:5px" id="open_doc_<?php echo ($contact_last_doc->ref_doc);?>">
@@ -474,7 +474,7 @@ Event.observe("contactview_menu_a", "click",  function(evt){
 						<?php echo (price_format($contact_last_doc->montant_ttc))." ".$MONNAIE[1];?>
 						</td>
 						<td style=" border-bottom:1px solid #FFFFFF; text-align:center; ">
-						<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
+						<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
 						</td>
 					</tr>
 					</table>
@@ -495,17 +495,17 @@ Event.observe("contactview_menu_a", "click",  function(evt){
 			}
 			?>
 	</div><br />
-        <img id="print_contact" src ="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" style="cursor:pointer" />
+        <img id="print_contact" src ="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-pdf.gif" style="cursor:pointer" />
 		<form id="annu_editon_fiche_form2" style="padding:0; margin:0;" method="post" action="annuaire_edition_fiche.php" target="formFrame">
 		<input name="compte_info"  id="compte_info" type="hidden" value="0" />
 		<input name="modif_contact"  id="modif_contact" type="hidden" value="" />
 		<input type="hidden" name="ref_contact" id="ref_contact" value="<?php echo $contact->getRef_contact()?>">
 	<table class="minimizetable">
 		<tr class="smallheight">
-				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-				<td class="ctpc"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-				<td class="ctpc"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+				<td class="ctpc"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+				<td class="ctpc"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 		</tr>	
 		<tr>
 			<td colspan="4">
@@ -513,7 +513,7 @@ Event.observe("contactview_menu_a", "click",  function(evt){
 		</tr>
 	</table>
 	<div style="text-align:right; margin-right:10px;visibility: hidden;" id="submit2">
-		<input type="image" name="submit2"  src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" style=""/>
+		<input type="image" name="submit2"  src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" style=""/>
 	</div>
 	</form>
 	

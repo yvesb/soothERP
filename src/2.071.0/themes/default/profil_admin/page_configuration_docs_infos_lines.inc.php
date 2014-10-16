@@ -33,10 +33,10 @@ update_menu_arbo();
 
 <table width="100%" class="titre_config">
 	<tr class="smallheight">
-		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr>
 		<td style="font-weight:bolder">Libellé de la ligne </td>
@@ -82,7 +82,7 @@ update_menu_arbo();
 			?>
 			</select>
 		<p style="text-align:center">
-			<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" />
+			<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" />
 		</p>
 		</td>
 	</tr>
@@ -97,10 +97,10 @@ foreach ($liste_modeles as $modele) { ?>
 <input type="hidden" value="<?php echo $modele->id_doc_info_line;?>" id="id_doc_info_line" name="id_doc_info_line"/>
 <table width="100%" class="titre_config">
 	<tr class="smallheight">
-		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr>
 		<td>
@@ -141,8 +141,8 @@ foreach ($liste_modeles as $modele) { ?>
 			?>
 			</select>
 		<div style="text-align:right; vertical-align: top; line-height:18px; height:18px; padding-top: 10px">
-			<img id="supprimer_<?php echo $modele->id_doc_info_line;?>"  src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-supprimer.gif" style="float:right" />
-			<input name="modifier_<?php echo $modele->id_doc_info_line;?>" id="modifier_<?php echo $modele->id_doc_info_line;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif"  />&nbsp;&nbsp;&nbsp;
+			<img id="supprimer_<?php echo $modele->id_doc_info_line;?>"  src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-supprimer.gif" style="float:right" />
+			<input name="modifier_<?php echo $modele->id_doc_info_line;?>" id="modifier_<?php echo $modele->id_doc_info_line;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif"  />&nbsp;&nbsp;&nbsp;
 		</div>
 		</td>
 	</tr>

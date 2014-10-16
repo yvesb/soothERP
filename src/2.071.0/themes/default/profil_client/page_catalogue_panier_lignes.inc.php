@@ -30,7 +30,7 @@ $panier_vide = !count($liste_contenu);
 
 <!-- LOGO -->
 <div class="bg_ico_panier">
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/icone_panier.gif" />
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/icone_panier.gif" />
 	<div class="colorise0"></div>
 </div>
 
@@ -67,37 +67,37 @@ $panier_vide = !count($liste_contenu);
 	<tr >
 		<td class="panier_line_etape">
 			<?php if($step == 0){?>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier_white_dot.gif" />
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/panier_white_dot.gif" />
 			<?php }else{ ?>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier_grey_dot.gif" />
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/panier_grey_dot.gif" />
 			<?php } ?>
 		</td>
 		<td class="panier_line_etape">
 			<?php if($step == 1){?>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier_white_dot.gif" />
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/panier_white_dot.gif" />
 			<?php }else{ ?>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier_grey_dot.gif" />
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/panier_grey_dot.gif" />
 			<?php } ?>
 		</td>
 		<td class="panier_line_etape">
 			<?php if($step == 2){?>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier_white_dot.gif" />
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/panier_white_dot.gif" />
 			<?php }else{ ?>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier_grey_dot.gif" />
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/panier_grey_dot.gif" />
 			<?php } ?>
 		</td>
 		<td class="panier_line_etape">
 			<?php if($step == 3){?>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier_white_dot.gif" />
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/panier_white_dot.gif" />
 			<?php }else{ ?>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier_grey_dot.gif" />
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/panier_grey_dot.gif" />
 			<?php } ?>
 		</td>
 		<td class="panier_line_etape">
 			<?php if($step == 4){?>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier_white_dot.gif" />
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/panier_white_dot.gif" />
 			<?php }else{ ?>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier_grey_dot.gif" />
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/panier_grey_dot.gif" />
 			<?php } ?>
 		</td>
 	</tr>

@@ -14,7 +14,7 @@ check_page_variables ($page_variables);
 // *************************************************************************************************************
 
 ?>
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="close_edit_ope" style="cursor:pointer; float:right"/>
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="close_edit_ope" style="cursor:pointer; float:right"/>
 <script type="text/javascript">
 Event.observe('close_edit_ope', 'click',  function(evt){
 Event.stop(evt); 
@@ -49,7 +49,7 @@ $("edition_operation").hide();
 					<td><br />
 
 						<div style="text-align:right">
-						<input name="add_releve_add_valid" id="add_releve_add_valid" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-enregistrer.gif" />
+						<input name="add_releve_add_valid" id="add_releve_add_valid" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-enregistrer.gif" />
 						</div>
 					</td>
 				</tr>

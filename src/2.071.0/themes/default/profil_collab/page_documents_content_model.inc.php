@@ -20,7 +20,7 @@ $modeles_lignes = charge_docs_content_model ($id_type_doc);
 <div id="pop_up_content_model" class="lines_info_modeles_doc">
 
   <a href="#" id="link_close_pop_up_content_model" style="float:right">
-  <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+  <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
   </a>
 <script type="text/javascript">
 Event.observe("link_close_pop_up_content_model", "click",  function(evt){Event.stop(evt); $("pop_up_content_model").style.display = "none";}, false);
@@ -32,10 +32,10 @@ Event.observe("link_close_pop_up_content_model", "click",  function(evt){Event.s
      foreach($modeles_lignes as $modeles_ligne) {?>
   <table style="width:100%" class="roundedtable_over">
     <tr class="smallheight">
-      <td style="width:2%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-      <td style="width:80%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-      <td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-      <td style="width:3%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+      <td style="width:2%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+      <td style="width:80%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+      <td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+      <td style="width:3%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
     </tr>
     <tr>
       <td>&nbsp;</td>

@@ -22,18 +22,18 @@ check_page_variables ($page_variables);
 
 <table style="width:100%">
 	<tr class="smallheight">
-		<td style="width:80%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:80%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr>
 		<td>
 <form action="catalogue_articles_view_valide.php?ref_article=<?php echo $article->getRef_article();?>&step=0" target="formFrame" method="post" name="article_view_0" id="article_view_0">
 <table style="width:100%">
 	<tr class="smallheight">
-		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 	</tr><tr>
 			<td class="labelled_text">Cat&eacute;gorie:</td>
 			<td class="labelled_text"><?php echo ($article->getLib_art_categ ());?>			</td>
@@ -73,7 +73,7 @@ check_page_variables ($page_variables);
 			<td class="labelled_text">&nbsp;</td>
 		</tr>
 		<tr>
-			<td class="labelled_text">Date de fin de disponibilit&eacute;: <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/infinite.gif" style="cursor:pointer" id="infinite"/></td>
+			<td class="labelled_text">Date de fin de disponibilit&eacute;: <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/infinite.gif" style="cursor:pointer" id="infinite"/></td>
 			<td>
 			
 			<input type="text" name="date_fin_dispo" id="date_fin_dispo" value="<?php 
@@ -197,7 +197,7 @@ check_page_variables ($page_variables);
 		<tr>
 			<td class="labelled_text"></td>
 			<td style="text-align:right">
-<a href="#" id="bt_etape_0"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" /></a></td>
+<a href="#" id="bt_etape_0"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" /></a></td>
 			<td>&nbsp;</td>
 			<td class="labelled_text"></td>
 		</tr>

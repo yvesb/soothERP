@@ -5,10 +5,9 @@
 // Certaines fonctions sont redéfinies afin de permettre le comptage des requetes.
 
 class PDO_etendu extends PDO {
-	private $transac_encours = 0;
-	private $nb_requetes 	= 0;
-	private $requetes 		= array();
-
+	private $transac_encours 	= 0;
+	private $nb_requetes 		= 0;
+	private $requetes 			= array();
 	private $debug				= 0;
 
 

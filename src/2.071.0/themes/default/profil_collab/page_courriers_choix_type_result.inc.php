@@ -58,7 +58,7 @@ $case_selected = "";
 							<?php
 							//@TODO COURRIER : modele pdf : une fois que les modeles seront définis et terminés, mettre une miniature du modele pdf ici en image
 							?>
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/courrier_pdf.jpg" height="132" width="94" style="margin-top:8px;"/><br/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/courrier_pdf.jpg" height="132" width="94" style="margin-top:8px;"/><br/>
 							<div style="margin-bottom:5px; font-size:8pt; color:#671584;">
 								<?php
 								//On tronque lib_modele s'il est trop long
@@ -115,7 +115,7 @@ $case_selected = "";
 							<?php
 							//@TODO COURRIER : modele pdf : une fois que les modeles seront définis et terminés, mettre une miniature du modele pdf ici en image
 							?>
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/courrier_pdf.jpg" height="132" width="94" style="margin-top:8px;"/><br/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/courrier_pdf.jpg" height="132" width="94" style="margin-top:8px;"/><br/>
 							<div style="margin-bottom: 5px;font-size:8pt; color:#671584;">
 								<?php
 								//On tronque lib_modele s'il est trop long
@@ -185,7 +185,7 @@ $case_selected = "";
 </form>
 
 <br/>
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" id="valider_courrier_choix_type" style="cursor:pointer; float:right; padding-right: 20px" alt="Valider" title="Valider" />
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" id="valider_courrier_choix_type" style="cursor:pointer; float:right; padding-right: 20px" alt="Valider" title="Valider" />
 <SCRIPT type="text/javascript">
 	Event.observe("valider_courrier_choix_type", "click", function(evt){
 		Event.stop(evt);

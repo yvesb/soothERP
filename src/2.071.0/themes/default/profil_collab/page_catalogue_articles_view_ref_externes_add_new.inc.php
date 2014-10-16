@@ -27,18 +27,18 @@
 							<input name="nom_ref_fournisseur" id="nom_ref_fournisseur" type="text" value=""  class="classinput_xsize" readonly=""/>
 							</td>
 							<td style="width:20px">
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif"/ style="float:right; cursor:pointer" id="ref_fourn_select_img">
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif"/ style="float:right; cursor:pointer" id="ref_fourn_select_img">
 							</td>
 						</tr>
 					</table>
 					
 				<script type="text/javascript">
 		//effet de survol sur le faux select
-			Event.observe('ref_fourn_select_img', 'mouseover',  function(){$("ref_fourn_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_hover.gif";}, false);
-			Event.observe('ref_fourn_select_img', 'mousedown',  function(){$("ref_fourn_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_down.gif";}, false);
-			Event.observe('ref_fourn_select_img', 'mouseup',  function(){$("ref_fourn_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";}, false);
+			Event.observe('ref_fourn_select_img', 'mouseover',  function(){$("ref_fourn_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_hover.gif";}, false);
+			Event.observe('ref_fourn_select_img', 'mousedown',  function(){$("ref_fourn_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_down.gif";}, false);
+			Event.observe('ref_fourn_select_img', 'mouseup',  function(){$("ref_fourn_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";}, false);
 			
-			Event.observe('ref_fourn_select_img', 'mouseout',  function(){$("ref_fourn_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";}, false);
+			Event.observe('ref_fourn_select_img', 'mouseout',  function(){$("ref_fourn_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";}, false);
 			Event.observe('ref_fourn_select_img', 'click',  function(evt){Event.stop(evt); show_mini_moteur_contacts ("recherche_compte_b_set_contact", "\'ref_fournisseur\', \'nom_ref_fournisseur\' "); preselect ('<?php echo $FOURNISSEUR_ID_PROFIL; ?>', 'id_profil_m'); page.annuaire_recherche_mini();}, false);
 				</script>
 		</td>
@@ -60,7 +60,7 @@ if (!$_SESSION['user']->check_permission ("6")) {?>style="display:none;"<?php } 
 	</tr>
 	<tr>
 		<td colspan="7" style="text-align:right">
-		<input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif"  />
+		<input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif"  />
 		</td>
 	</tr>
 </table>

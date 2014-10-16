@@ -29,8 +29,8 @@ check_page_variables ($page_variables);
 	<div class="reduce_in_edit_mode">
 	<table class="minimizetable">
 		<tr>
-			<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 		</tr>
 		<tr>
 			<td class="size_strict"><span class="labelled_ralonger">Fonctions :</span>	
@@ -43,7 +43,7 @@ check_page_variables ($page_variables);
 				<td>
 				<span id="lib_art_categ_s" style=" float:left; height:18px; margin-left:3px; line-height:18px;">Définir la ou les fonctions</span>				</td>
 				<td>
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif"/ style="float:right" id="lib_art_categ_bt_select_s">				</td>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select.gif"/ style="float:right" id="lib_art_categ_bt_select_s">				</td>
 				</tr>
 				</table>
 				</a>
@@ -68,8 +68,8 @@ check_page_variables ($page_variables);
 									if ($liste_fonction->indentation < current($liste_fonctions_collab)->indentation) {
 										
 									?><a href="#" id="link_div_art_categ_<?php echo $liste_fonction->id_fonction?>">
-									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/collapse.gif" width="14px" id="extend_<?php echo $liste_fonction->id_fonction?>"/>
-									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/extend.gif" width="14px" id="collapse_<?php echo $liste_fonction->id_fonction?>" style="display:none"/></a>
+									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/collapse.gif" width="14px" id="extend_<?php echo $liste_fonction->id_fonction?>"/>
+									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/extend.gif" width="14px" id="collapse_<?php echo $liste_fonction->id_fonction?>" style="display:none"/></a>
 									<script type="text/javascript">
 									Event.observe("link_div_art_categ_<?php echo $liste_fonction->id_fonction?>", "click",  function(evt){Event.stop(evt); Element.toggle('div_<?php echo $liste_fonction->id_fonction?>') ; Element.toggle('extend_<?php echo $liste_fonction->id_fonction?>'); Element.toggle('collapse_<?php echo $liste_fonction->id_fonction?>');}, false);
 									</script>
@@ -78,21 +78,21 @@ check_page_variables ($page_variables);
 									else 
 									{
 									?>
-									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="14px"/>
+									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="14px"/>
 									<?php
 									}
 								}
 								else 
 								{
 								?>
-								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="14px"/>
+								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="14px"/>
 								<?php
 								}
 							}
 							else
 							{
 						?>
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="14px"/></td><td>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="14px"/></td><td>
 						<?php 
 							}
 						}
@@ -163,11 +163,11 @@ check_page_variables ($page_variables);
 				?>
 				
 			//effet de survol sur le faux select
-				Event.observe('lib_art_categ_link_select_s', 'mouseover',  function(){$("lib_art_categ_bt_select_s").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select_hover.gif";}, false);
-				Event.observe('lib_art_categ_link_select_s', 'mousedown',  function(){$("lib_art_categ_bt_select_s").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select_down.gif";}, false);
-				Event.observe('lib_art_categ_link_select_s', 'mouseup',  function(){$("lib_art_categ_bt_select_s").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif";}, false);
+				Event.observe('lib_art_categ_link_select_s', 'mouseover',  function(){$("lib_art_categ_bt_select_s").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select_hover.gif";}, false);
+				Event.observe('lib_art_categ_link_select_s', 'mousedown',  function(){$("lib_art_categ_bt_select_s").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select_down.gif";}, false);
+				Event.observe('lib_art_categ_link_select_s', 'mouseup',  function(){$("lib_art_categ_bt_select_s").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select.gif";}, false);
 				
-				Event.observe('lib_art_categ_link_select_s', 'mouseout',  function(){$("lib_art_categ_bt_select_s").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif";}, false);
+				Event.observe('lib_art_categ_link_select_s', 'mouseout',  function(){$("lib_art_categ_bt_select_s").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select.gif";}, false);
 				Event.observe('lib_art_categ_link_select_s', 'click',  function(evt){Event.stop(evt);
 					Element.toggle('liste_de_categorie_selectable_s'); 
 					Element.toggle('iframe_liste_de_categorie_selectable_s');

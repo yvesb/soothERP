@@ -37,59 +37,59 @@ update_menu_arbo();
 		<tr>
 			<td rowspan="2" style="width:280px; height:50px">
 				<div style="position:relative; top:-35px; left:-35px; width:230px; border:1px solid #999999; background-color:#FFFFFF; text-align:center">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_entreprise.jpg" />				</div>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_entreprise.jpg" />				</div>
 				<span style="width:35px">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="280px" height="20px" id="imgsizeform"/>				</span>			</td>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="280px" height="20px" id="imgsizeform"/>				</span>			</td>
 			<td colspan="2" style="width:80%"><span style="width:47%; height:50px"><br />
 				<br />
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/titre_info_entreprise.jpg" width="324" height="30" style="padding-left:25px" /><br />
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/titre_info_entreprise.jpg" width="324" height="30" style="padding-left:25px" /><br />
 			<br />
 				<br />
 			</span></td>
 			</tr>
 		<tr>
 			<td style="text-align:left;">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="20px" /><br />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="20px" /><br />
 
-				<span class="titre_smenu_page" id="entreprise_rg"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Renseignements généraux</span><br /><br />
+				<span class="titre_smenu_page" id="entreprise_rg"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Renseignements généraux</span><br /><br />
 
-				<span class="titre_smenu_page" id="entreprise_activite"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Renseignements sur l'activité</span><br /><br />				
+				<span class="titre_smenu_page" id="entreprise_activite"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Renseignements sur l'activité</span><br /><br />				
 				
-				<span class="titre_smenu_page_unvalid"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Visuels de l'entreprise</span><br /><br />
+				<span class="titre_smenu_page_unvalid"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Visuels de l'entreprise</span><br /><br />
 
-				<span class="titre_smenu_page" id="entreprise_lieux_stock"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Lieux de stockage</span><br /><br />
+				<span class="titre_smenu_page" id="entreprise_lieux_stock"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Lieux de stockage</span><br /><br />
 
-				<span class="titre_smenu_page" id="entreprise_enseigne"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Enseignes</span><br /><br />
+				<span class="titre_smenu_page" id="entreprise_enseigne"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Enseignes</span><br /><br />
 
-				<span class="titre_smenu_page" id="entreprise_point_vente"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Points de vente </span><br /><br />
-				
-				<br /><br />
-				<span class="titre_smenu_page" id="entreprise_agenda"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Agenda </span><br /><br />
+				<span class="titre_smenu_page" id="entreprise_point_vente"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Points de vente </span><br /><br />
 				
 				<br /><br />
-				<span class="titre_smenu_page" id="entreprise_ged"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des pi&egrave;ces jointes </span><br /><br />
-				<span class="titre_smenu_page" id="entreprise_options"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Options </span><br /><br />
+				<span class="titre_smenu_page" id="entreprise_agenda"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Agenda </span><br /><br />
+				
+				<br /><br />
+				<span class="titre_smenu_page" id="entreprise_ged"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des pi&egrave;ces jointes </span><br /><br />
+				<span class="titre_smenu_page" id="entreprise_options"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Options </span><br /><br />
 
 			</td>
 			<td style="text-align:left;">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="20px"/><br />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="20px"/><br />
 
 
-				<span class="titre_smenu_page" id="entreprise_doc_pdf"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Documents commerciaux - Paramètres généraux </span><br /><br />
+				<span class="titre_smenu_page" id="entreprise_doc_pdf"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Documents commerciaux - Paramètres généraux </span><br /><br />
 
 			<?php 
 			foreach ($docs_types_groupes  as $groupe) {
 				?>
-				<span class="titre_smenu_page" id="entreprise_doc_gestion_type_<?php echo $groupe->id_type_groupe;?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" /><?php echo $groupe->lib_type_groupe;?></span><br /><br />
+				<span class="titre_smenu_page" id="entreprise_doc_gestion_type_<?php echo $groupe->id_type_groupe;?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" /><?php echo $groupe->lib_type_groupe;?></span><br /><br />
 				<?php
 			}
 			?>
 			<br /><br />
-			<span class="titre_smenu_page" id="entreprise_docs_infos_lines"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Lignes d'informations prédéfinies</span><br /><br />
+			<span class="titre_smenu_page" id="entreprise_docs_infos_lines"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Lignes d'informations prédéfinies</span><br /><br />
 			
 			
 			<br /><br />
-			<span class="titre_smenu_page" id="entreprise_commi_commerciaux"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Commissionnement des commerciaux</span><br /><br />
+			<span class="titre_smenu_page" id="entreprise_commi_commerciaux"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Commissionnement des commerciaux</span><br /><br />
 			
 			</td>
 		</tr>

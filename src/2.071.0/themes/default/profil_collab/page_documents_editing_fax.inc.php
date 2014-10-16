@@ -31,7 +31,7 @@ border:0px;
 			<td>
 				<input name="destinataires" id="destinataires" type="hidden" value="<?php if (isset($_REQUEST["destinataires"])) {echo $_REQUEST["destinataires"];}?>" />	
 				<input name="ref_doc" id="ref_doc" type="hidden" value="<?php echo $document->getRef_doc ();?>" />	
-			<a href="#" id="sup_list_dest"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0" alt="Vider la liste des destinataires" title="Vider la liste des destinataires"></a>
+			<a href="#" id="sup_list_dest"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0" alt="Vider la liste des destinataires" title="Vider la liste des destinataires"></a>
 			</td>
 		</tr>
 		<tr>

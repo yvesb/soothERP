@@ -19,7 +19,7 @@ check_page_variables ($page_variables);
 
 ?>	
 	<a href="#" id="link_close_pop_up_export_det" style="float:right">
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
 	</a>
 	<script type="text/javascript">
 	Event.observe("link_close_pop_up_export_det", "click",  function(evt){Event.stop(evt); $("pop_up_export_det").hide();}, false);

@@ -255,7 +255,7 @@ foreach ($_ALERTES as $alerte => $value) {
 			 <?php if (isset($array_retour[$i]["alerte"])) {?><img src="modules/<?php echo $import_catalogue_csv['folder_name'];?>themes/<?php echo $_SESSION['theme']->getCode_theme();?>/images/alerte.gif" title="Cette ligne ne sera pas importée"/><?php } ?>
 			</td>
 			<td style="text-align:left" >
-			<img src="../<?php echo $_SESSION['theme']->getDir_theme()?>images/supprime.gif" style="cursor:pointer" id="del_ligne_<?php echo $i;?>"/>
+			<img src="../<?php echo $_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" style="cursor:pointer" id="del_ligne_<?php echo $i;?>"/>
 			
 <script type="text/javascript">
 
@@ -287,13 +287,13 @@ Event.observe("del_ligne_<?php echo $i;?>", "click", function(evt){
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="">
 	<tr>
 		<td rowspan="2" style="width:33px">
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/arrow_ltr.png" />
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/arrow_ltr.png" />
 		</td>
 		<td style="height:4px; line-height:4px">
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="4px" width="100%"/>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="4px" width="100%"/>
 		</td>
 		<td style="height:4px; line-height:4px">
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="4px" width="100%"/>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="4px" width="100%"/>
 		</td>
 	</tr>
 	<tr>

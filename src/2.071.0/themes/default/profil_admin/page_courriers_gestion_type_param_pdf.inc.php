@@ -69,7 +69,7 @@ check_page_variables ($page_variables);
 	?>
 </table><br />
 
-		<input name="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />
+		<input name="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" />
 </form>
 <br />
 <br />

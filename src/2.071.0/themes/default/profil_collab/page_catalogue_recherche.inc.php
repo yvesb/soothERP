@@ -45,10 +45,10 @@ array_menu_r_article[2] 	=	new Array('recherche_perso', 'menu_3');
 		<tr class="smallheight">
 			<td style="width:2%">&nbsp;</td>
 			<td style="width:25%">&nbsp;</td>
-			<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			<td style="width:10%">&nbsp;</td>
-			<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			<td style="width:3%">&nbsp;</td>
 		</tr>
 	<tr>
@@ -122,12 +122,12 @@ array_menu_r_article[2] 	=	new Array('recherche_perso', 'menu_3');
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
 		<td style="text-align:right"><span style="text-align:right">
-			<input name="submit2" type="image" onclick="$('page_to_show_s').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-rechercher.gif"  style="float:left" />
-			<input type="image" name="annuler_recherche_s" id="annuler_recherche_s" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-annuler.gif"/>
+			<input name="submit2" type="image" onclick="$('page_to_show_s').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-rechercher.gif"  style="float:left" />
+			<input type="image" name="annuler_recherche_s" id="annuler_recherche_s" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-annuler.gif"/>
 		</span></td>
 		<td style="padding-left:35px">&nbsp;</td>
 		<td>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_new_article.gif" id="create_new_article" style="cursor:pointer" />
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_new_article.gif" id="create_new_article" style="cursor:pointer" />
 		</td>
 		<td style="text-align:right">&nbsp;</td>
 		<td>&nbsp;</td>
@@ -150,10 +150,10 @@ array_menu_r_article[2] 	=	new Array('recherche_perso', 'menu_3');
 		<tr class="smallheight">
 			<td style="width:2%">&nbsp;</td>
 			<td style="width:25%">&nbsp;</td>
-			<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			<td style="width:10%">&nbsp;</td>
-			<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			<td style="width:3%">&nbsp;</td>
 		</tr>
 		<tr>
@@ -217,13 +217,13 @@ array_menu_r_article[2] 	=	new Array('recherche_perso', 'menu_3');
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
 		<td style="text-align:right"><span style="text-align:right">
-			<input name="submit" type="image" onclick="$('page_to_show').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-rechercher.gif"  style="float:left" />
-			<input type="image" name="annuler_recherche" id="annuler_recherche" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-annuler.gif"/>
+			<input name="submit" type="image" onclick="$('page_to_show').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-rechercher.gif"  style="float:left" />
+			<input type="image" name="annuler_recherche" id="annuler_recherche" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-annuler.gif"/>
 		</span></td>
 		<td style="padding-left:35px"><input type="checkbox" name="in_archive" id="in_archive" value="1" />
 			<span class="labelled_text">Archives</span></td>
 		<td>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_new_article.gif" id="create_new_article_a" style="cursor:pointer" /></td>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_new_article.gif" id="create_new_article_a" style="cursor:pointer" /></td>
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
 	</tr>
@@ -240,11 +240,11 @@ array_menu_r_article[2] 	=	new Array('recherche_perso', 'menu_3');
 			<form action="ods_gen_req.php" id="form_recherche_perso" name="form_recherche_perso" method="POST">
 			<table style="width:97%">
 				<tr class="smallheight">
-					<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 				</tr>
 				<tr>
 					<td></td>

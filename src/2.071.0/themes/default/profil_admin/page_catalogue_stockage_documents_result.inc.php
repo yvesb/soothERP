@@ -114,7 +114,7 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 	</script>
 	</td>
 	<td style="vertical-align:middle; text-align:center">
-	<a href="<?php echo $DIR.$_SESSION['profils'][3]->getDir_profil ();?>documents_editing.php?ref_doc=<?php echo $fiche->ref_doc?>&print=1" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/icone_imprime.gif" alt="Imprimer" title="Imprimer"/></a>
+	<a href="<?php echo $DIR.$_SESSION['profils'][3]->getDir_profil ();?>documents_editing.php?ref_doc=<?php echo $fiche->ref_doc?>&print=1" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/icone_imprime.gif" alt="Imprimer" title="Imprimer"/></a>
 	</td>
 	
 	</tr>

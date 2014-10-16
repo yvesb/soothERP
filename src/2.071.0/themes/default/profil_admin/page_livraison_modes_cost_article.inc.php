@@ -44,10 +44,10 @@ page.verify('livraison_modes','livraison_modes.php' ,"true" ,"sub_content");
 		<tr class="smallheight">
 			<td style="width:2%">&nbsp;</td>
 			<td style="width:25%">&nbsp;</td>
-			<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			<td style="width:10%">&nbsp;</td>
-			<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			<td style="width:3%">&nbsp;</td>
 		</tr>
 	<tr>
@@ -122,11 +122,11 @@ page.verify('livraison_modes','livraison_modes.php' ,"true" ,"sub_content");
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
 		<td style="text-align:right"><span style="text-align:right">
-			<input name="submit2" type="image" onclick="$('page_to_show_s').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-rechercher.gif"  style="float:left" />
+			<input name="submit2" type="image" onclick="$('page_to_show_s').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-rechercher.gif"  style="float:left" />
 		</span></td>
 		<td style="padding-left:35px">&nbsp;</td>
 		<td>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_new_article.gif" id="create_new_article" style="cursor:pointer" />
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_new_article.gif" id="create_new_article" style="cursor:pointer" />
 		</td>
 		<td style="text-align:right">&nbsp;</td>
 		<td>&nbsp;</td>

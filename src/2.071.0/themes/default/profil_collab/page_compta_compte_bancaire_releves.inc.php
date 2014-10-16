@@ -41,9 +41,9 @@ page.verify('compte_bancaire_gestion2','compta_compte_bancaire_gestion2.php?id_c
 	<tr>
 		<td rowspan="2" style="width:50px; height:50px; background-color:#FFFFFF">
 			<div style="position:relative; top:-35px; left:-35px; width:105px; border:1px solid #999999; background-color:#FFFFFF; text-align:center">
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_banque.jpg" />				</div>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_banque.jpg" />				</div>
 			<span style="width:35px">
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="50px" height="20px" id="imgsizeform"/>				</span>			</td>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="50px" height="20px" id="imgsizeform"/>				</span>			</td>
 		<td colspan="2" style="width:90%; background-color:#FFFFFF" >
 
 			<SCRIPT type="text/javascript">
@@ -55,7 +55,7 @@ page.verify('compte_bancaire_gestion2','compta_compte_bancaire_gestion2.php?id_c
 					<td style="width:10%">
 					<div style="text-align:left">
 					
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_compta_left_arrow.gif" id="bt_view_releve_0" style="cursor:pointer"/>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_compta_left_arrow.gif" id="bt_view_releve_0" style="cursor:pointer"/>
 					</div>
 					</td>
 					<td>
@@ -97,7 +97,7 @@ page.verify('compte_bancaire_gestion2','compta_compte_bancaire_gestion2.php?id_c
 						<td style="width:10%" title="Afficher les opérations">
 						<div style="text-align:left; cursor:pointer" id="releve_<?php echo $releve->id_compte_bancaire_releve;?>">
 						
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_compta_left_arrow.gif" id="bt_view_releve_<?php echo $releve->id_compte_bancaire_releve;?>" style="cursor:pointer"/>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_compta_left_arrow.gif" id="bt_view_releve_<?php echo $releve->id_compte_bancaire_releve;?>" style="cursor:pointer"/>
 						</div>
 						</td>
 						<td id="mod_releve_1_<?php echo $releve->id_compte_bancaire_releve;?>" style="cursor:pointer" title="modifier">
@@ -112,7 +112,7 @@ page.verify('compte_bancaire_gestion2','compta_compte_bancaire_gestion2.php?id_c
 						</td>
 						<td id="mod_releve_3_<?php echo $releve->id_compte_bancaire_releve;?>" style="cursor:pointer; width:25px" >
 						<div style="text-align:right;">
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/edit_releve.gif" id="bt_edit_releve_<?php echo $releve->id_compte_bancaire_releve;?>" style="cursor:pointer" title="Editer"/>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/edit_releve.gif" id="bt_edit_releve_<?php echo $releve->id_compte_bancaire_releve;?>" style="cursor:pointer" title="Editer"/>
 						</div>
 						</td>
 					</tr>

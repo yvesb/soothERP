@@ -36,7 +36,7 @@ array_menu_accueil[2] 	=	new Array('histo_liste', 'menu_accueil_2');
 <?php if (isset($_REQUEST["fc_ad"])) { ?>
 <div style="position:absolute; width:580px; height:280px; display:none" id="acc_welcome" class="accueil_block_round4corner">
 	<a href="#" id="close_acc_wecome" style="float:right">
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
 	</a>
 <span class="titre_second">Bienvenue dans l'interface d'administration de SoothERP, un fork du logiciel Lundi Matin Business®.</span><br />
 <br />
@@ -45,7 +45,7 @@ Pour votre confort, nous avons pré-paramétré votre solution, mais il est impo
 <br />
 Vous trouverez la liste des tâches d'administration sur la page d'accueil.<br />
 <br />
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/acc_welcome.jpg" border="0"><br />
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/acc_welcome.jpg" border="0"><br />
 <br />
 
 </div>
@@ -56,10 +56,10 @@ Vous trouverez la liste des tâches d'administration sur la page d'accueil.<br /
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 	<tr>
-		<td style="width:420px; height:50px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/titre_tableau_de_bord.gif"/><br />
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="420px" height="50px" id="imgsizeform"/></td>
-		<td style="width:40px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="40px" height="20px" id="imgsizeform"/></td>
-		<td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="20px" id="imgsizeform"/></td>
+		<td style="width:420px; height:50px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/titre_tableau_de_bord.gif"/><br />
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="420px" height="50px" id="imgsizeform"/></td>
+		<td style="width:40px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="40px" height="20px" id="imgsizeform"/></td>
+		<td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="20px" id="imgsizeform"/></td>
 	</tr>
 	<tr>
 		<td style="">
@@ -77,9 +77,9 @@ Vous trouverez la liste des tâches d'administration sur la page d'accueil.<br /
 				
 				<table width="100%" border="0"  cellspacing="0">
 					<tr>
-						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:35px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:35px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>
 				<?php
 				foreach ($taches_todo as $tache) {
@@ -94,7 +94,7 @@ Vous trouverez la liste des tâches d'administration sur la page d'accueil.<br /
 							<span class="sbold_ita_text" style="color: #999999" id="go_tache_<?php echo $tache->id_tache_admin;?>_4"><?php echo ($tache->description );?></span>						</div>					</td>
 						<td style="text-align:right;">
 						<div id="etat_tache_<?php echo $tache->id_tache_admin;?>_l" style="cursor:pointer; width:10px; display:block ">
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/actcoch.jpg" alt="Considérer cette tâche comme accomplie" title="Considérer cette tâche comme accomplie" id="etat_tache_<?php echo $tache->id_tache_admin;?>_2" />					</div>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/actcoch.jpg" alt="Considérer cette tâche comme accomplie" title="Considérer cette tâche comme accomplie" id="etat_tache_<?php echo $tache->id_tache_admin;?>_2" />					</div>
 					<script type="text/javascript">
 					
 						//observateurs pour afficher les taches de l'utilisateur
@@ -197,7 +197,7 @@ Vous trouverez la liste des tâches d'administration sur la page d'accueil.<br /
 		<?php 
 		if (isset($profils_allowed[$COLLAB_ID_PROFIL])) { 
 			?>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_access_profil_collab.jpg" id="go_profil_collab" style="cursor:pointer" />
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_access_profil_collab.jpg" id="go_profil_collab" style="cursor:pointer" />
 			<script type="text/javascript">
 				Event.observe('go_profil_collab', 'click',  function(evt){Event.stop(evt); window.open ("<?php echo $CORE_DIR;?>site/__user_choix_profil.php?id_profil=<?php echo $COLLAB_ID_PROFIL;?>", "_top");}, false);
 			</script>
@@ -210,30 +210,30 @@ Vous trouverez la liste des tâches d'administration sur la page d'accueil.<br /
 		<td>&nbsp;</td>
 		<td style="">
 			<div>
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/titre_tbdb_parametrage.gif"/><br /><br />
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_entreprise_small.jpg" id="osmenu_entreprise" style="cursor:pointer" />
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_annuaire_small.jpg" id="osmenu_annuaire" style="cursor:pointer"  />
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_catalogue_small.jpg" id="osmenu_catalogue" style="cursor:pointer" />
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_comptabilite_small.jpg" id="osmenu_comptabilite" style="cursor:pointer"  />
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_affichage_small.jpg" id="osmenu_affichage" style="cursor:pointer" />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/titre_tbdb_parametrage.gif"/><br /><br />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_entreprise_small.jpg" id="osmenu_entreprise" style="cursor:pointer" />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_annuaire_small.jpg" id="osmenu_annuaire" style="cursor:pointer"  />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_catalogue_small.jpg" id="osmenu_catalogue" style="cursor:pointer" />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_comptabilite_small.jpg" id="osmenu_comptabilite" style="cursor:pointer"  />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_affichage_small.jpg" id="osmenu_affichage" style="cursor:pointer" />
 				<br /><br />
 			</div>
 			<div>
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/titre_tbdb_gestion.gif"/><br />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/titre_tbdb_gestion.gif"/><br />
 				<br />
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_utilisateurs_small.jpg"  id="osmenu_utilisateurs" style="cursor:pointer"/>
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_site_internet_small.jpg" id="osmenu_site_internet" style="cursor:pointer"/>
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_communication_small.jpg" id="osmenu_communication" style="cursor:pointer" />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_utilisateurs_small.jpg"  id="osmenu_utilisateurs" style="cursor:pointer"/>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_site_internet_small.jpg" id="osmenu_site_internet" style="cursor:pointer"/>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_communication_small.jpg" id="osmenu_communication" style="cursor:pointer" />
 				<br /><br />
 			</div>
 			<div>
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/titre_tbdb_systeme.gif"/><br />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/titre_tbdb_systeme.gif"/><br />
 				<br />
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_secusys_small.jpg" id="osmenu_secusys" style="cursor:pointer"/>
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_maintenance_small.jpg" id="osmenu_maintenance" style="cursor:pointer" />
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_transfert_donnees_small.jpg" id="osmenu_transfert_donnees" style="cursor:pointer" />
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_gestion_modules_small.jpg" id="osmenu_gestion_modules" style="cursor:pointer" />
-				<!-- Mise à jour incompatible SoothERP, ligne  commentée <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_maj_small.jpg" id="osmenu_maj" style="cursor:pointer" /><br />-->
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_secusys_small.jpg" id="osmenu_secusys" style="cursor:pointer"/>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_maintenance_small.jpg" id="osmenu_maintenance" style="cursor:pointer" />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_transfert_donnees_small.jpg" id="osmenu_transfert_donnees" style="cursor:pointer" />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_gestion_modules_small.jpg" id="osmenu_gestion_modules" style="cursor:pointer" />
+				<!-- Mise à jour incompatible SoothERP, ligne  commentée <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_maj_small.jpg" id="osmenu_maj" style="cursor:pointer" /><br />-->
 				<br />
 			</div>
 		</td>

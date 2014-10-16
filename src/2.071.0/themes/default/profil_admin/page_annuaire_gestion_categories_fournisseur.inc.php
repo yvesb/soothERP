@@ -42,9 +42,9 @@ update_menu_arbo();
 			<td style="width:90%">
 					<table>
 					<tr class="smallheight">
-						<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 					<tr>
 						<td ><span class="labelled">Libell&eacute;:</span>
@@ -69,9 +69,9 @@ update_menu_arbo();
 				<form action="annuaire_gestion_categories_fournisseur_add.php" method="post" id="annuaire_gestion_categories_fournisseur_add" name="annuaire_gestion_categories_fournisseur_add" target="formFrame" >
 				<table>
 					<tr class="smallheight">
-						<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 					<tr>
 						<td>
@@ -82,7 +82,7 @@ update_menu_arbo();
 						</td>
 						<td>
 							<p style="text-align:center">
-							<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" />
+							<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" />
 							</p>
 						</td>
 					</tr>
@@ -105,9 +105,9 @@ update_menu_arbo();
 			<td style="width:90%">
 					<table>
 					<tr class="smallheight">
-						<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 					<tr>
 						<td ><span class="labelled">Libell&eacute;:</span>
@@ -135,10 +135,10 @@ update_menu_arbo();
 				<form action="annuaire_gestion_categories_fournisseur_mod.php" method="post" id="annuaire_gestion_categories_fournisseur_mod_<?php echo $liste_categorie->id_fournisseur_categ; ?>" name="annuaire_gestion_categories_fournisseur_mod_<?php echo $liste_categorie->id_fournisseur_categ; ?>" target="formFrame" >
 				<table>
 					<tr class="smallheight">
-						<td style="0"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="0"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 					<tr>
 						<td style="text-align:center">
@@ -154,7 +154,7 @@ update_menu_arbo();
 						</td>
 						<td>
 							<p style="text-align:center">
-								<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+								<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
 							</p>
 						</td>
 					</tr>
@@ -165,7 +165,7 @@ update_menu_arbo();
 			<form method="post" action="annuaire_gestion_categories_fournisseur_sup.php" id="annuaire_gestion_categories_fournisseur_sup_<?php echo $liste_categorie->id_fournisseur_categ; ?>" name="annuaire_gestion_categories_fournisseur_sup_<?php echo $liste_categorie->id_fournisseur_categ; ?>" target="formFrame">
 			<input name="id_fournisseur_categ" id="id_fournisseur_categ" type="hidden" value="<?php echo $liste_categorie->id_fournisseur_categ; ?>" />
 		</form>
-		<a href="#" id="link_annuaire_gestion_categories_fournisseur_sup_<?php echo $liste_categorie->id_fournisseur_categ; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+		<a href="#" id="link_annuaire_gestion_categories_fournisseur_sup_<?php echo $liste_categorie->id_fournisseur_categ; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 		<script type="text/javascript">
 		Event.observe("link_annuaire_gestion_categories_fournisseur_sup_<?php echo $liste_categorie->id_fournisseur_categ; ?>", "click",  function(evt){Event.stop(evt); alerte.confirm_supprimer('categories_fournisseur_sup', 'annuaire_gestion_categories_fournisseur_sup_<?php echo $liste_categorie->id_fournisseur_categ; ?>');}, false);
 		</script>

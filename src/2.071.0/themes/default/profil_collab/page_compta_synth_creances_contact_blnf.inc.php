@@ -181,7 +181,7 @@ page.verify ('compta_livraisons_client_nonfacturees_liste','compta_livraisons_cl
 				</td>
 				<td style="width:25px; text-align:right" valign="middle">
 					<div style="width:25px; height:24px; line-height:24px;">
-						<a href="documents_editing.php?ref_doc=<?php echo $livraison->ref_doc?>&print=1" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/icone_imprime.gif" alt="Imprimer" title="Imprimer"/></a>
+						<a href="documents_editing.php?ref_doc=<?php echo $livraison->ref_doc?>&print=1" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/icone_imprime.gif" alt="Imprimer" title="Imprimer"/></a>
 					</div>
 				</td>
 			</tr>
@@ -197,13 +197,13 @@ page.verify ('compta_livraisons_client_nonfacturees_liste','compta_livraisons_cl
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="">
 	<tr>
 		<td rowspan="2" style="width:33px">
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/arrow_ltr.png" />
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/arrow_ltr.png" />
 		</td>
 		<td style="height:4px; line-height:4px">
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="4px" width="100%"/>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="4px" width="100%"/>
 		</td>
 		<td style="height:4px; line-height:4px">
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="4px" width="100%"/>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="4px" width="100%"/>
 		</td>
 	</tr>
 	<tr>

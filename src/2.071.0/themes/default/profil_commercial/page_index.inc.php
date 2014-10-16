@@ -509,9 +509,9 @@ $i++;
 					<a class="subitem"  id="option_info_profil_<?php echo $id_profil;?>"  href="#">
 					<img src="<?php 
 					if ($id_profil == $_SESSION['user']->getId_profil ()) {
-						echo   $DIR.$_SESSION['theme']->getDir_theme().'images/actuel.gif';
+						echo   $DIR.$_SESSION['theme']->getDir_gtheme().'images/actuel.gif';
 					} else {
-						echo   $DIR.$_SESSION['theme']->getDir_theme().'images/blank.gif';
+						echo   $DIR.$_SESSION['theme']->getDir_gtheme().'images/blank.gif';
 					}
 					?>" width="15px" height="15px"/>
 					<?php echo $_SESSION['profils'][$profil]->getLib_profil() ?>
@@ -538,9 +538,9 @@ $i++;
 				<tr><td>
 				<a class="subitem"  id="option_info_magasin_<?php echo $magasin->getId_magasin ();?>"  href="#">
 				<img src="<?php if ($magasin->getId_magasin () == $_SESSION['magasin']->getId_magasin ()) {
-					echo   $DIR.$_SESSION['theme']->getDir_theme().'images/actuel.gif';
+					echo   $DIR.$_SESSION['theme']->getDir_gtheme().'images/actuel.gif';
 				} else {
-					echo   $DIR.$_SESSION['theme']->getDir_theme().'images/blank.gif';
+					echo   $DIR.$_SESSION['theme']->getDir_gtheme().'images/blank.gif';
 				}?>" width="15px" height="15px" id="img_option_info_magasin_<?php echo $magasin->getId_magasin ();?>"/>
 				<?php echo htmlentities($magasin->getLib_magasin (), ENT_QUOTES, "UTF-8") ?> </a>
 				</td></tr>			

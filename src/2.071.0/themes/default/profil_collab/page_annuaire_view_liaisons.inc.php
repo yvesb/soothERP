@@ -79,11 +79,11 @@ check_page_variables ($page_variables);
 					<td>
 						<input id="nouvelle_liaison_nom_contact_lie" name="nouvelle_liaison_nom_contact_lie" type="text" value="" class="classinput_lsize" style="width:200px;" disabled="disabled"/>
 						<input id="nouvelle_liaison_ref_contact_lie" name="nouvelle_liaison_ref_contact_lie" type="hidden" value="" class=""/>
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/doc_set_contact.gif" id="nouvelle_liaison_vers_show_mini_moteur_contacts" alt="Choisir le contact" title="Choisir le contact" style="cursor:pointer"/>
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="nouvelle_liaison_vers_reset" alt="Effacer" title="Effacer" style="cursor:pointer"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/doc_set_contact.gif" id="nouvelle_liaison_vers_show_mini_moteur_contacts" alt="Choisir le contact" title="Choisir le contact" style="cursor:pointer"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="nouvelle_liaison_vers_reset" alt="Effacer" title="Effacer" style="cursor:pointer"/>
 					</td>
 					<td width="100px" align="right">
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" id="nouvelle_liaison_vers_valider" alt="Ajouter" title="Ajouter" style="cursor:pointer"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" id="nouvelle_liaison_vers_valider" alt="Ajouter" title="Ajouter" style="cursor:pointer"/>
 						<script type="text/javascript">
 							Event.observe("nouvelle_liaison_vers_reset", "click",  function(evt){
 								Event.stop(evt);
@@ -133,11 +133,11 @@ check_page_variables ($page_variables);
 					<td>
 						<input id="nouvelle_liaison_nom_contact" name="nouvelle_liaison_nom_contact" type="text" value="" class="classinput_lsize" style="width:200px;" disabled="disabled"/>
 						<input id="nouvelle_liaison_ref_contact" name="nouvelle_liaison_ref_contact" type="hidden" value="" class=""/>
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/doc_set_contact.gif" id="nouvelle_liaison_depuis_show_mini_moteur_contacts" alt="Choisir le contact" title="Choisir le contact" style="cursor:pointer"/>
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="nouvelle_liaison_depuis_reset" alt="Effacer" title="Effacer" style="cursor:pointer"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/doc_set_contact.gif" id="nouvelle_liaison_depuis_show_mini_moteur_contacts" alt="Choisir le contact" title="Choisir le contact" style="cursor:pointer"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="nouvelle_liaison_depuis_reset" alt="Effacer" title="Effacer" style="cursor:pointer"/>
 					</td>
 					<td width="100px" align="right">
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" id="nouvelle_liaison_depuis_valider" alt="Ajouter" title="Ajouter" style="cursor:pointer"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" id="nouvelle_liaison_depuis_valider" alt="Ajouter" title="Ajouter" style="cursor:pointer"/>
 						<script type="text/javascript">
 							Event.observe("nouvelle_liaison_depuis_reset", "click",  function(evt){
 								Event.stop(evt);

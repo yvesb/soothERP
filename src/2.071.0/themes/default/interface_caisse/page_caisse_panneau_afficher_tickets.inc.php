@@ -45,7 +45,7 @@ check_page_variables ($page_variables);
 								<td colspan="3" class="liste_ticket_date_last_edit"><?php echo date_format(new DateTime($ev->date_event), "d/m/Y");?></td>
 								<td align="right" rowspan="2">
 									<img alt="Supprimer" title="Supprimer" id="ticket_a_charger_suppr_<?php echo $ticket->getRef_doc();?>" name="ticket_a_charger_suppr_<?php echo $ticket->getRef_doc();?>"
-									src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-fermer_geant.png">
+									src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-fermer_geant.png">
 								</td>
 							</tr>
 							<tr>

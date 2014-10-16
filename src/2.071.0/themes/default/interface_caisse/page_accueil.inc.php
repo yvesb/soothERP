@@ -45,9 +45,9 @@ check_page_variables ($page_variables);
 				  <div class="panneau_options_grand_conteneur" id="panneau_options_grand_conteneur">
 				 		<div class="panneau_options_conteneur" id="panneau_options_conteneur" align="right">
 				  		<div id="panneau_options_conteneur0" style="height:36px;">
-					  		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_log_out.gif"	style="margin-bottom:-20px; z-index:300; cursor:pointer;" id="log_out" 	alt="Deconnexion" title="Deconnexion" />
-						  	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_lock.gif" 		style="margin-bottom:-20px; z-index:300; cursor:pointer;" id="lock" 		alt="Vérouiller" 	title="Vérouiller" />
-						  	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_right.gif"		style="margin-bottom:-20px; margin-right:2px; z-index:300; cursor:pointer;" id="options" 	alt="Options" 		title="Options" />
+					  		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_log_out.gif"	style="margin-bottom:-20px; z-index:300; cursor:pointer;" id="log_out" 	alt="Deconnexion" title="Deconnexion" />
+						  	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_lock.gif" 		style="margin-bottom:-20px; z-index:300; cursor:pointer;" id="lock" 		alt="Vérouiller" 	title="Vérouiller" />
+						  	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_right.gif"		style="margin-bottom:-20px; margin-right:2px; z-index:300; cursor:pointer;" id="options" 	alt="Options" 		title="Options" />
 				  		</div>
 				  		<div id="panneau_options_conteneur1">
 								<table class="panneau_options_options" style="display:none; margin-top:10px; margin-right:2px; margin-bottom:10px;" id="panneau_options_options" align="center" border="0" cellpadding="0" cellspacing="0" id="option_info_stable" width="188px" >
@@ -70,8 +70,8 @@ check_page_variables ($page_variables);
 													<td>
 														<a class="subitem" id="option_info_profil_<?php echo $id_profil;?>"  href="#">
 															<img src="<?php if ($id_profil == $_SESSION['user']->getId_profil ())
-																							{			echo   $DIR.$_SESSION['theme']->getDir_theme().'images/puce_valider.png'; }
-																							else {echo   $DIR.$_SESSION['theme']->getDir_theme().'images/blank.gif'; } ?>" />
+																							{			echo   $DIR.$_SESSION['theme']->getDir_gtheme().'images/puce_valider.png'; }
+																							else {echo   $DIR.$_SESSION['theme']->getDir_gtheme().'images/blank.gif'; } ?>" />
 															<?php echo $_SESSION['profils'][$profil]->getLib_profil() ?>
 														</a>
 													</td>
@@ -79,7 +79,7 @@ check_page_variables ($page_variables);
 												<?php } //puce_valider.png ?>
 											</table>
 											
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/separateur_black.gif" width="100%" height="1px" />
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/separateur_black.gif" width="100%" height="1px" />
 									
 											<table border="0" cellpadding="0" cellspacing="0" width="100%"  style="color:white;">
 												<tr>
@@ -89,7 +89,7 @@ check_page_variables ($page_variables);
 												</tr>
 											</table>
 											
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/separateur_black.gif" width="100%" height="1px" />
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/separateur_black.gif" width="100%" height="1px" />
 									
 											<table border="0" cellpadding="0" cellspacing="0" width="100%"  style="color:white;">
 												<tr>
@@ -200,7 +200,7 @@ check_page_variables ($page_variables);
 								</table>
 							</td>
 							<td>
-								<img id="bt_recherche_client" style="cursor:pointer;" onmousedown="event.preventDefault();" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_show_panel_right.gif" alt="Rechercher un Client" title="Rechercher un Client" height="125" />
+								<img id="bt_recherche_client" style="cursor:pointer;" onmousedown="event.preventDefault();" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_show_panel_right.gif" alt="Rechercher un Client" title="Rechercher un Client" height="125" />
 							</td>
 						</tr>
 					</table>
@@ -210,28 +210,28 @@ check_page_variables ($page_variables);
   	    	</div>
       		<table width="100%" border="0" cellspacing="1" cellpadding="2" style="-moz-user-select:none;">
       			<tr onmousedown="event.preventDefault();">
-      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_7.gif" style="cursor:pointer;" id="calculette_7" /></td>
-      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_8.gif" style="cursor:pointer;" id="calculette_8" /></td>
-      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_9.gif" style="cursor:pointer;" id="calculette_9" /></td>
-      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_plus_moins.gif" style="cursor:pointer;" id="calculette_PLUS_MOINS" /></td>
+      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_7.gif" style="cursor:pointer;" id="calculette_7" /></td>
+      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_8.gif" style="cursor:pointer;" id="calculette_8" /></td>
+      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_9.gif" style="cursor:pointer;" id="calculette_9" /></td>
+      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_plus_moins.gif" style="cursor:pointer;" id="calculette_PLUS_MOINS" /></td>
       			</tr>
       			<tr onmousedown="event.preventDefault();">
-      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_4.gif" style="cursor:pointer;" id="calculette_4" /></td>
-      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_5.gif" style="cursor:pointer;" id="calculette_5" /></td>
-      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_6.gif" style="cursor:pointer;" id="calculette_6" /></td>
-      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_remise.gif" style="cursor:pointer;" id="calculette_REMISE" /></td>
+      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_4.gif" style="cursor:pointer;" id="calculette_4" /></td>
+      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_5.gif" style="cursor:pointer;" id="calculette_5" /></td>
+      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_6.gif" style="cursor:pointer;" id="calculette_6" /></td>
+      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_remise.gif" style="cursor:pointer;" id="calculette_REMISE" /></td>
       			</tr>
       			<tr onmousedown="event.preventDefault();">
-      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_1.gif" style="cursor:pointer;" id="calculette_1" /></td>
-      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_2.gif" style="cursor:pointer;" id="calculette_2" /></td>
-      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_3.gif" style="cursor:pointer;" id="calculette_3" /></td>
-      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_prix.gif" style="cursor:pointer;" id="calculette_PRIX" /></td>
+      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_1.gif" style="cursor:pointer;" id="calculette_1" /></td>
+      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_2.gif" style="cursor:pointer;" id="calculette_2" /></td>
+      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_3.gif" style="cursor:pointer;" id="calculette_3" /></td>
+      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_prix.gif" style="cursor:pointer;" id="calculette_PRIX" /></td>
       			</tr>
       			<tr onmousedown="event.preventDefault();">
-      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_c.gif" style="cursor:pointer;" id="calculette_C" /></td>
-      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_0.gif" style="cursor:pointer;" id="calculette_0" name="calculette_0" /></td>
-      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_virgule.gif" style="cursor:pointer;" id="calculette_VIRGULE" /></td>
-      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_qte.gif" style="cursor:pointer;" id="calculette_QTE" /></td>
+      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_c.gif" style="cursor:pointer;" id="calculette_C" /></td>
+      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_0.gif" style="cursor:pointer;" id="calculette_0" name="calculette_0" /></td>
+      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_virgule.gif" style="cursor:pointer;" id="calculette_VIRGULE" /></td>
+      				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_qte.gif" style="cursor:pointer;" id="calculette_QTE" /></td>
       			</tr>
       			<tr>
       				<td width="23%"></td>
@@ -243,7 +243,7 @@ check_page_variables ($page_variables);
       				<td colspan="3">
       					<input id="calculette_RESULTAT" style="background-color:black; color:white; font-weight:bold; text-align:right; width:98%; height:25px; font-size:17pt; -moz-border-radius:7px" value="0.0s0">
       				</td>
-      				<td  onmousedown="event.preventDefault();"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_ok2.gif" style="cursor:pointer;" id="calculette_OK" /></td>
+      				<td  onmousedown="event.preventDefault();"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_ok2.gif" style="cursor:pointer;" id="calculette_OK" /></td>
       			</tr>
       		</table>
   	    </td>
@@ -265,7 +265,7 @@ check_page_variables ($page_variables);
 			    <div style="margin-top:8px;">
 		    			<table width="100%" border="0" cellpadding="3" cellspacing="0" class="ticket_titre">
 		    				<tr>
-		    					<td width="  4px" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/fond_entete_rouge_left.png');background-repeat: no-repeat;"></td>
+		    					<td width="  4px" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/fond_entete_rouge_left.png');background-repeat: no-repeat;"></td>
 		    					<td style="text-align:center; border-right: 1px solid;">
 		    						Libellé
 		    					</td>
@@ -281,7 +281,7 @@ check_page_variables ($page_variables);
 		    					<td width=" 96px" style="text-align:center;">
 		    						Prix TTC
 		    					</td>
-		    					<td width=" 24px" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/fond_entete_rouge_right.png');background-repeat: no-repeat;"></td>
+		    					<td width=" 24px" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/fond_entete_rouge_right.png');background-repeat: no-repeat;"></td>
 		    				</tr>
 		    			</table>
 		    		
@@ -309,7 +309,7 @@ check_page_variables ($page_variables);
 					    		<input id="art_lib_s" name="art_lib_s" class="input_rechercher_article" style="width:96%;" />
 					    	</td>
 					    	<td width="72px" style="text-align:right;">
-					    	 <img id="bt_ajouter" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_ajouter.gif" style="cursor: pointer;" />
+					    	 <img id="bt_ajouter" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_ajouter.gif" style="cursor: pointer;" />
 					    	</td>
 				    	</tr>
 				    </table>
@@ -444,14 +444,14 @@ check_page_variables ($page_variables);
 		  		    		
   		    			</td>
   	    				<td width="51px" rowspan="3" style="vertical-align:bottom; text-align:right;" align="right">
-  	    					<img id="fonctions_avancees" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_fonct_avancees.png" style="cursor:pointer"/>
+  	    					<img id="fonctions_avancees" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_fonct_avancees.png" style="cursor:pointer"/>
   	    				</td>
   	    			</tr>
   	    			<tr height="8px">
   	    				<td></td>
   	    			</tr>		
   		    		<tr>
-  	    				<td id="bt_encaisser" height="57px" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_vide_rouge.gif'); background-repeat: no-repeat; cursor: pointer; text-align:center; vertical-align:middle;">
+  	    				<td id="bt_encaisser" height="57px" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_vide_rouge.gif'); background-repeat: no-repeat; cursor: pointer; text-align:center; vertical-align:middle;">
   	    					<span id="bt_encaisser_lib" style="font-size:24px; font-weight:bold; color:white;" >ENCAISSER</span>
   	    				</td>
   	    			</tr>
@@ -622,14 +622,14 @@ function afficher_fonctions_avancees(){
 	fonctionnalites_courantes = false;
 	$("panneau_fonctionnalites_courantes").hide();
 	$("panneau_fonctionnalites_avancees").show();
-	$("fonctions_avancees").src = "<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_fonct_basiques.png";
+	$("fonctions_avancees").src = "<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_fonct_basiques.png";
 }
 
 function afficher_fonctions_courantes(){
 	fonctionnalites_courantes = true;
 	$("panneau_fonctionnalites_avancees").hide();
 	$("panneau_fonctionnalites_courantes").show();
-	$("fonctions_avancees").src = "<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_fonct_avancees.png";
+	$("fonctions_avancees").src = "<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_fonct_avancees.png";
 }
 
 Event.observe("fonctions_avancees", "click", function(evt){

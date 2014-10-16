@@ -39,9 +39,9 @@ update_menu_arbo();
 		<form action="compta_modeles_echeanciers_add.php" method="post" id="compta_compte_cbs_add" name="compta_compte_cbs_add" target="formFrame" >
 			<table>
 				<tr class="smallheight">
-					<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:62%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:62%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 				</tr>
 				<tr>
 				<td style="text-align:right">Libellé du modèle d'échéancier :
@@ -56,7 +56,7 @@ update_menu_arbo();
 				</td>
 				<td>
                                     <input name="nb_reglements" id="nb_reglements" type="text" value="" onfocus="$('valider_nb_reg').style.display = '';" class="classinput_xsize" style="width:20px" MAXLENGTH="2"/>
-                                        &nbsp;&nbsp;&nbsp; <img id="valider_nb_reg" name="valider_nb_reg" style="cursor:pointer" onclick="this.style.display='none';" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-continuer.gif" />
+                                        &nbsp;&nbsp;&nbsp; <img id="valider_nb_reg" name="valider_nb_reg" style="cursor:pointer" onclick="this.style.display='none';" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-continuer.gif" />
                                         <script type="text/javascript">
 					Event.observe('nb_reglements', 'keypress',  function(evt){
 						if (evt.keyCode == 13){
@@ -141,7 +141,7 @@ update_menu_arbo();
 					<div id="div_lignes_reglement"></div>
 				</td>
 				<td style="height: 100%;">
-					<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" />
+					<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" />
 				</td>
 				</tr>
 			</table>
@@ -162,9 +162,9 @@ update_menu_arbo();
 					<form action="compta_modeles_echeanciers_mod.php" method="post" id="compta_modeles_echeanciers_mod_<?php echo $modele_echeancier->getId_echeancier_modele();?>" name="compta_modeles_echeanciers_mod_<?php echo $modele_echeancier->getId_echeancier_modele();?>" target="formFrame" >
 					<table>
 					<tr class="smallheight">
-					<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:60%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:60%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>					
 				<tr>
 				<td style="text-align:right">Modèle d'échéancier :
@@ -311,7 +311,7 @@ update_menu_arbo();
 					</div>	
 				</td>
 				<td style="height: 100%;">
-					<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+					<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
 				</td>
 				</tr>
 				</table>
@@ -321,7 +321,7 @@ update_menu_arbo();
 				<form action="compta_modeles_echeanciers_sup.php" method="post" id="compta_modeles_echeanciers_sup_<?php echo $modele_echeancier->getId_echeancier_modele();?>" name="compta_modeles_echeanciers_sup_<?php echo $modele_echeancier->getId_echeancier_modele();?>" target="formFrame">
 					<input name="id_mod_ech" id="id_mod_ech" type="hidden" value="<?php echo $modele_echeancier->getId_echeancier_modele();?>" />
 				</form>
-				<a href="#" id="link_compta_modeles_echeanciers_sup_<?php echo $modele_echeancier->getId_echeancier_modele();?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+				<a href="#" id="link_compta_modeles_echeanciers_sup_<?php echo $modele_echeancier->getId_echeancier_modele();?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 				</td>
 				<script type="text/javascript">
 				Event.observe("link_compta_modeles_echeanciers_sup_<?php echo $modele_echeancier->getId_echeancier_modele();?>", "click",  function(evt){Event.stop(evt); alerte.confirm_supprimer('compta_modeles_echeanciers_sup', "compta_modeles_echeanciers_sup_<?php echo $modele_echeancier->getId_echeancier_modele();?>");}, false);
@@ -329,7 +329,7 @@ update_menu_arbo();
 			</tr>
 			</table>					
 	</div>
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="1" height="1"/>	
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="1" height="1"/>	
 	<?php } ?>
 <?php } ?>					
 

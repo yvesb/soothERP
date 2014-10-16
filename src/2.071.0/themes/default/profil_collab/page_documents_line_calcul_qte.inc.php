@@ -96,7 +96,7 @@ check_page_variables ($page_variables);
 		<td>&nbsp;</td>
 		<td></td>
 		<td style="text-align:right;">
-			<img id="calcul_qte_valider" style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />
+			<img id="calcul_qte_valider" style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" />
 		</td>
 		<td></td>
 	</tr>
@@ -214,7 +214,7 @@ check_page_variables ($page_variables);
 		<td style="width:15"></td>
 		<td style="width:64%"></td>
 		<td style="width:15%; text-align:right;">
-			<img id="calcul_valider" style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />
+			<img id="calcul_valider" style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" />
 			<script type="text/javascript">
 				Event.observe("calcul_valider", "click", function(evt){
 					Event.stop(evt);

@@ -127,7 +127,7 @@
         </tr>
         <tr>
             <td>
-                <input name="submit_a" id="submit_a" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" />
+                <input name="submit_a" id="submit_a" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" />
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>

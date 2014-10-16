@@ -40,8 +40,8 @@ next($list_art_categ);
 					if ($art_categ["indentation"] < $current_list_art_categ["indentation"]) {
 						
 					?><a href="#" id="link_div_art_categ_<?php echo $art_categ["REF_ART_CATEG"]?>">
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/collapse.gif" width="14px" id="extend_<?php echo $art_categ["REF_ART_CATEG"]?>"/>
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/extend.gif" width="14px" id="collapse_<?php echo $art_categ["REF_ART_CATEG"]?>" style="display:none"/></a>
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/collapse.gif" width="14px" id="extend_<?php echo $art_categ["REF_ART_CATEG"]?>"/>
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/extend.gif" width="14px" id="collapse_<?php echo $art_categ["REF_ART_CATEG"]?>" style="display:none"/></a>
 					<script type="text/javascript">
 					Event.observe("link_div_art_categ_<?php echo $art_categ["REF_ART_CATEG"]?>", "click",  function(evt){Event.stop(evt); Element.toggle('div_<?php echo $art_categ["REF_ART_CATEG"]?>') ; Element.toggle('extend_<?php echo $art_categ["REF_ART_CATEG"]?>'); Element.toggle('collapse_<?php echo $art_categ["REF_ART_CATEG"]?>');}, false);
 					</script>
@@ -50,21 +50,21 @@ next($list_art_categ);
 					else 
 					{
 					?>
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="14px"/>
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="14px"/>
 					<?php
 					}
 				}
 				else 
 				{
 				?>
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="14px"/>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="14px"/>
 				<?php
 				}
 			}
 			else
 			{
 		?>
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="14px"/></td><td>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="14px"/></td><td>
 		<?php 
 			}
 		}
@@ -76,7 +76,7 @@ next($list_art_categ);
 			<?php echo urldecode($art_categ["LIB_ART_CATEG"])?>
 		</span>
 		</td><td width="15px">
-			<a href="#" class="insertion" id="ins_<?php echo ($art_categ["REF_ART_CATEG"])?>" title="Importer cette cat&eacute;gorie "><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/insert.gif" />
+			<a href="#" class="insertion" id="ins_<?php echo ($art_categ["REF_ART_CATEG"])?>" title="Importer cette cat&eacute;gorie "><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/insert.gif" />
 				</a>
 			</td></tr></table>
 <?php 

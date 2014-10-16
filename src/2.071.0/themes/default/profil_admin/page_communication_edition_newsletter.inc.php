@@ -37,11 +37,11 @@ update_menu_arbo();
 		<td>
 			<table class="minimizetable">
 				<tr class="smallheight">
-					<td style=" width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style=" width:27%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style=" width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style=" width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style=" width:28%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style=" width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style=" width:27%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style=" width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style=" width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style=" width:28%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 				</tr>	
 				<tr>
 					<td >
@@ -110,7 +110,7 @@ update_menu_arbo();
 							<span >D&eacute;tail du mod&egrave;le:</span>
 					</td>
 					<td>
-					<img name="preview" id="preview" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/preview.gif" style="cursor:pointer" />
+					<img name="preview" id="preview" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/preview.gif" style="cursor:pointer" />
 					
 					<script type="text/javascript">
 					Event.observe("preview", "click",  function(evt){
@@ -253,7 +253,7 @@ update_menu_arbo();
 										<input type="text" name="envoyer_a_email" id="envoyer_a_email" value="" class="classinput_xsize" />
 										</td>
 										<td><br />
-										<img id="ajouter_inscrit" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" border="0" style="cursor:pointer">
+										<img id="ajouter_inscrit" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" border="0" style="cursor:pointer">
 										</td>
 									</tr>
 								</table>
@@ -273,7 +273,7 @@ update_menu_arbo();
 										</td>
 										<td style="width:5%; text-align:right;">
 											<a href="#" id="envoyer_a_del_<?php echo $serialisation_envoyer_a; ?>">
-												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
 											</a>
 										</td>
 										</tr>
@@ -353,7 +353,7 @@ update_menu_arbo();
 										<input type="text" name="refuser_a_email" id="refuser_a_email" value="" class="classinput_xsize" />
 										</td>
 										<td><br />
-										<img id="ajouter_inscrit_r" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" border="0" style="cursor:pointer">
+										<img id="ajouter_inscrit_r" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" border="0" style="cursor:pointer">
 										</td>
 									</tr>
 								</table>
@@ -372,7 +372,7 @@ update_menu_arbo();
 										</td>
 										<td style="width:5%; text-align:right;">
 											<a href="#" id="refuser_a_del_<?php echo $serialisation_refuser_a?>">
-												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
 											</a>
 										</td>
 										</tr>
@@ -432,8 +432,8 @@ update_menu_arbo();
 			<p style="text-align:right">
 			<table align="right">
 				 <tr>
-						<td><input type="image" name="Submit" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif"/></td>
-						<td><a href="#communication_newsletters.php"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-annuler.gif"/></a></td>
+						<td><input type="image" name="Submit" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif"/></td>
+						<td><a href="#communication_newsletters.php"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-annuler.gif"/></a></td>
 				 </tr>
 			</table>
 			</p>
@@ -441,7 +441,7 @@ update_menu_arbo();
 	</tr>
 </table>
 </form>
-    <a href="javascript:void()" style="text-decoration:none;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" border="0" alt="ajouter" id ="importnews_csv"/></a><a class="common_link" href="javascript:void()" id="import_news_csv">Importer liste d'inscrits au format csv</a>
+    <a href="javascript:void()" style="text-decoration:none;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" border="0" alt="ajouter" id ="importnews_csv"/></a><a class="common_link" href="javascript:void()" id="import_news_csv">Importer liste d'inscrits au format csv</a>
 								<div id="upld_news_csv" style="display:none">
 								<form method="POST" action="communication_newsletter_import_inscrit_csv.php" name="form_import_news" enctype="multipart/form-data" target="formFrame">
 								   <table>

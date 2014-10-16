@@ -27,7 +27,7 @@ function nb_mois($date1, $date2) {
 
 <div class="articletview_corps" id="grand_livre_conteneur" >
 	<div style="padding:8px">
-<!--	<input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-imprimer.gif"  onclick="javascript:window.print()"/>-->
+<!--	<input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-imprimer.gif"  onclick="javascript:window.print()"/>-->
 	
 	<table width="100%" border="0" cellspacing="0" cellpadding="0">
 		<tr>
@@ -129,7 +129,7 @@ function nb_mois($date1, $date2) {
 			<td>&nbsp; </td>
 			<td>&nbsp; </td>
 			<td style="text-align:right; width:590px">
-		 <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-imprimer.gif" alt="Imprimer" title="Imprimer" style="cursor:pointer" id="print_grand_livre"/></td>
+		 <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-imprimer.gif" alt="Imprimer" title="Imprimer" style="cursor:pointer" id="print_grand_livre"/></td>
 		</tr>
 		
 	</table>

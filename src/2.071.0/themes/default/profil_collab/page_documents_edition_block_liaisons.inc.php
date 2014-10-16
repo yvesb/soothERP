@@ -74,7 +74,7 @@ lets_open = "<?php if (!isset($_REQUEST["lets_open"])) {?>&lets_open=1<?php } ?>
 			// affichage des liaisons possibles
 			if ($doc_liaisons_possibles) {
 				?>
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ding.gif" /><span style="text-decoration:underline; color:#000000">Attention des documents peuvent &ecirc;tre associ&eacute;s &agrave; ce document.</span>		
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ding.gif" /><span style="text-decoration:underline; color:#000000">Attention des documents peuvent &ecirc;tre associ&eacute;s &agrave; ce document.</span>		
 				<?php 
 			}
 			?>
@@ -100,7 +100,7 @@ lets_open = "<?php if (!isset($_REQUEST["lets_open"])) {?>&lets_open=1<?php } ?>
 							<td style=" padding-left:3px; width:20%;" id="liaison_pos_3_<?php echo $increment_liaisons_pos; ?>"><?php echo htmlentities($doc_liaison_possible->lib_etat_doc, ENT_QUOTES, "UTF-8");?></td>
 							<td style=" padding-left:3px; width:20%;" id="liaison_pos_4_<?php echo $increment_liaisons_pos; ?>"><?php echo date_Us_to_Fr ($doc_liaison_possible->date_creation);?> <?php echo getTime_from_date($doc_liaison_possible->date_creation);?></td>
 							<td style="text-align:right">
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-link.gif" id="lier_liaison_pos_<?php echo $increment_liaisons_pos; ?>" alt="associer les documents" title="associer les documents" />				
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-link.gif" id="lier_liaison_pos_<?php echo $increment_liaisons_pos; ?>" alt="associer les documents" title="associer les documents" />				
 							</td>
 						</tr>
 						<?php
@@ -162,7 +162,7 @@ lets_open = "<?php if (!isset($_REQUEST["lets_open"])) {?>&lets_open=1<?php } ?>
 					<td style=" padding-left:3px; width:20%;" id="liaison_3_<?php echo $increment_liaisons; ?>"><?php echo htmlentities($doc_liaison_dest->lib_etat_doc, ENT_QUOTES, "UTF-8");?></td>
 					<td style=" padding-left:3px; width:20%;" id="liaison_4_<?php echo $increment_liaisons; ?>"><?php echo date_Us_to_Fr ($doc_liaison_dest->date_creation);?> <?php echo getTime_from_date($doc_liaison_dest->date_creation);?></td>
 					<td style="text-align:right">
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="delier_liaison_<?php echo $increment_liaisons; ?>"  alt="Rompre la liaison" title="Rompre la liaison" />				
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="delier_liaison_<?php echo $increment_liaisons; ?>"  alt="Rompre la liaison" title="Rompre la liaison" />				
 					</td>
 				</tr>
 				<?php
@@ -187,7 +187,7 @@ lets_open = "<?php if (!isset($_REQUEST["lets_open"])) {?>&lets_open=1<?php } ?>
 					<td style=" padding-left:3px; width:20%;" id="liaison_3_<?php echo $increment_liaisons; ?>"><?php echo htmlentities($doc_liaison_source->lib_etat_doc, ENT_QUOTES, "UTF-8");?></td>
 					<td style=" padding-left:3px; width:20%;" id="liaison_4_<?php echo $increment_liaisons; ?>"><?php echo date_Us_to_Fr ($doc_liaison_source->date_creation);?> <?php echo getTime_from_date($doc_liaison_source->date_creation);?></td>
 					<td style="text-align:right">
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="delier_liaison_<?php echo $increment_liaisons; ?>" alt="Rompre la liaison" title="Rompre la liaison" />				
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="delier_liaison_<?php echo $increment_liaisons; ?>" alt="Rompre la liaison" title="Rompre la liaison" />				
 					</td>
 				</tr>
 				<?php

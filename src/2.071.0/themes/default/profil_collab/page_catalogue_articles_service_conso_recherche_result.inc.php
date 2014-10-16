@@ -40,7 +40,7 @@ global $DIR;
 	if ($debut >= $cfg_nbres_ppage)
 	{
 		$cible = 1;
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/gauche_on.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/gauche_on.gif');
 		$lien = str_replace('{lien}', $image.$image, $lien_on);
 		$lien = str_replace('{cible}', $cible-1, $lien);
 		$lien = str_replace('{cibleb}', $cible, $lien);
@@ -49,7 +49,7 @@ global $DIR;
 	}
 	else
 	{
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/gauche_off.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/gauche_off.gif');
 		$lien = str_replace('{lien}', $image.$image, $lien_off);
 	}
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
@@ -60,7 +60,7 @@ global $DIR;
 	if ($debut >= $cfg_nbres_ppage)
 	{
 		$cible = ($nbenr-1);
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/gauche_on.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/gauche_on.gif');
 		$lien = str_replace('{lien}', $image, $lien_on);
 		$lien = str_replace('{cible}', $cible, $lien);
 		$lien = str_replace('{cibleb}', $cible, $lien);
@@ -69,7 +69,7 @@ global $DIR;
 	}
 	else
 	{
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/gauche_off.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/gauche_off.gif');
 		$lien = str_replace('{lien}', $image, $lien_off);
 	}
 	$barre .= $lien."&nbsp;<B>&middot;</B>";
@@ -114,7 +114,7 @@ global $DIR;
 	if ($debut + $cfg_nbres_ppage < $nbtotal)
 	{
 		$cible = ($nbenr+1);
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/droite_on.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/droite_on.gif');
 		$lien = str_replace('{lien}', $image, $lien_on);
 		$lien = str_replace('{cible}', $cible, $lien);
 		$lien = str_replace('{cibleb}', $cible, $lien);
@@ -123,7 +123,7 @@ global $DIR;
 	}
 	else
 	{
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/droite_off.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/droite_off.gif');
 		$lien = str_replace('{lien}', $image, $lien_off);
 	}
 	$barre .= "&nbsp;<B>&middot;</B>".$lien;
@@ -136,7 +136,7 @@ global $DIR;
 	if ($fin != $debut)
 	{
 		$cible = (int)($nbtotal/$cfg_nbres_ppage)+1;
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/droite_on.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/droite_on.gif');
 		$lien = str_replace('{lien}', $image.$image, $lien_on);
 		$lien = str_replace('{cible}', $cible+1, $lien);
 		$lien = str_replace('{cibleb}', $cible, $lien);
@@ -145,7 +145,7 @@ global $DIR;
 	}
 	else
 	{
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/droite_off.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/droite_off.gif');
 		$lien = str_replace('{lien}', $image.$image, $lien_off);
 	}
 	$barre .= "<B>&middot;</B>&nbsp;".$lien;
@@ -280,7 +280,7 @@ foreach ($_ALERTES as $alerte => $value) {
 			</td>
 		
 			<td style="text-align:right; vertical-align:middle; padding-left:8px">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_consommer.gif"  border="0"  vspace="5" id="consommer_<?php echo $fiche->id_compte_credit;?>" <?php if (!$fiche->credits_restants) {?> style="display:none"<?php } ?>/>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_consommer.gif"  border="0"  vspace="5" id="consommer_<?php echo $fiche->id_compte_credit;?>" <?php if (!$fiche->credits_restants) {?> style="display:none"<?php } ?>/>
 				<form method="post" action="catalogue_articles_service_conso_renouveller.php" id="service_renouveller_<?php echo $fiche->id_compte_credit;?>" name="service_renouveller_<?php echo $fiche->id_compte_credit;?>" target="formFrame">
 				<input type="hidden" name="ref_article_service_renouveller_<?php echo $fiche->id_compte_credit;?>" value="<?php echo $article->getRef_article();?>"/>
 				<input type="hidden" name="ref_contact_service_renouveller_<?php echo $fiche->id_compte_credit;?>" value="<?php echo $fiche->ref_contact;?>"/>

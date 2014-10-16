@@ -123,13 +123,13 @@ check_page_variables ($page_variables);
 			<tr>
 				<td>
 					<div style="width:25px; text-align:right;">
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/visible.gif" id="visible_<?php echo $indentation_contenu?>" style=" cursor:pointer; float:right; display: <?php if ( $contenu->visible) {echo "block";} else { echo "none";}?>" alt="Visible"/>
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/unvisible.gif" id="unvisible_<?php echo $indentation_contenu?>" style="cursor:pointer; float:right; display: <?php if (!$contenu->visible) {echo "block";} else { echo "none";}?>" alt="Invisible"/>
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/visible.gif" id="visible_<?php echo $indentation_contenu?>" style=" cursor:pointer; float:right; display: <?php if ( $contenu->visible) {echo "block";} else { echo "none";}?>" alt="Visible"/>
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/unvisible.gif" id="unvisible_<?php echo $indentation_contenu?>" style="cursor:pointer; float:right; display: <?php if (!$contenu->visible) {echo "block";} else { echo "none";}?>" alt="Invisible"/>
 					</div>
 				</td>
 				<td style="text-align:right;">
 					<div style="width:25px;text-align:right" class="documents_li_handle" >
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/main.gif" id="move_doc_line_<?php echo $indentation_contenu?>"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/main.gif" id="move_doc_line_<?php echo $indentation_contenu?>"/>
 					</div>
 				</td>
 				<td style="text-align:right;">
@@ -138,7 +138,7 @@ check_page_variables ($page_variables);
 				</td>
 				<td style="text-align:right;">
 					<div style="width:25px;">
-					<a href="#" id="sup_<?php echo $indentation_contenu?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">		
+					<a href="#" id="sup_<?php echo $indentation_contenu?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">		
 					</a>
 					</div>
 				</td>

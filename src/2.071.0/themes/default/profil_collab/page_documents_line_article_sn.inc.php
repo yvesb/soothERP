@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
 <div id="pop_up_mini_article_sn" class="mini_pop_up_article_sn">
 	<div id="" class="corps_mini_pop_up_article_sn">
 		<a href="#" id="link_close_mini_pop_up_article_sn" style="float:right">
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
 		</a>
 		<script type="text/javascript">
 		Event.observe("link_close_mini_pop_up_article_sn", "click",  function(evt){Event.stop(evt); close_mini_pop_up_article_sn();}, false);

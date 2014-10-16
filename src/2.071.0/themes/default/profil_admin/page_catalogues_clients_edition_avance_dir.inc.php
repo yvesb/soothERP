@@ -13,14 +13,14 @@
 <div id="info_gene" style="overflow:auto; width:100%; height:100%;"  class="menu_link_affichage">
 <div id="modifier_art_categ" style="padding-left:10px; padding-right:10px; height:100%">
 	<form method="post" action="catalogues_clients_edition_avance_dir_mod.php" id="catalogues_clients_edition_avance_dir_mod" name="catalogues_clients_edition_avance_dir_mod" target="formFrame">
-	<a href="#" style="float:right;" id="link_modifier_art_categ"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+	<a href="#" style="float:right;" id="link_modifier_art_categ"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 	<script type="text/javascript">
 	Event.observe("link_modifier_art_categ", "click",  function(evt){Event.stop(evt); Element.toggle('modifier_art_categ');	Element.toggle('sup_art_categ');}, false);
 	</script>
 	<table class="minimizetable">
 				<tr class="smallheight">
-					<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 				</tr>	
 		<tr>
 			<td class="size_strict"><span class="labelled">Cat&eacute;gorie parent: </span>
@@ -43,7 +43,7 @@
 			?>
 			</select>
 			<a href="#" class="infobulle" onclick="return false;">
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/quest.gif" width="13" height="13" />
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/quest.gif" width="13" height="13" />
 			<iframe frameborder="0" scrolling="no" src="about:_blank"></iframe>
 			<span>
 			<p class="infotext">Pour d&eacute;placer une cat&eacute;gorie et ses sous-cat&eacute;gories s&eacute;lectionnez la cat&eacute;gorie parent cible </p>
@@ -79,7 +79,7 @@
 		</tr>
 	</table>
 		<p style="text-align:center">
-			<input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" name="bt_mob_art_categs" id="bt_mob_art_categs"/>
+			<input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" name="bt_mob_art_categs" id="bt_mob_art_categs"/>
 		</p>
 	</form>
 </div>
@@ -98,8 +98,8 @@
 	</table>
 	<table>
 		<tr class="smallheight">
-			<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 		</tr>	
 		<tr>
 		<tr>
@@ -123,7 +123,7 @@
 			?>
 			</select>
 			<a href="#" class="infobulle" onclick="return false;">
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/quest.gif" width="13" height="13" />
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/quest.gif" width="13" height="13" />
 			<iframe frameborder="0" scrolling="no" src="about:_blank"></iframe>
 			<span>
 			<p class="infotext">Pour d&eacute;placer les ses sous-cat&eacute;gories s&eacute;lectionnez la cat&eacute;gorie cible </p>

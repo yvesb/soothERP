@@ -91,7 +91,7 @@ check_page_variables ($page_variables);
 							<input type="hidden" name="ref_art_categ_<?php echo $nb_liste_tarif?>_0" id="ref_art_categ_<?php echo $nb_liste_tarif?>_0" value="<?php echo $art_categ->getRef_art_categ(); ?>" />
 							</form>
 							<a href="#" style="float:right; <?php if ($tarif_liste->formule_tarif=="")	{?>display:none;<?php }?>" id="tarif_del_<?php echo $nb_liste_tarif?>_0" title="Supprimer la formule cr&eacute;&eacute;e pour cette cat&eacute;gorie dans cette grille tarifaire">
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
 							</a>
 							<br />
 

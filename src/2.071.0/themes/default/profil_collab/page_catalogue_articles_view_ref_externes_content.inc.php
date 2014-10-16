@@ -1,7 +1,7 @@
 
 <div id="pop_up_article_ref_externe_content" class="mini_moteur_article_ref_externe" style="display:none">
 	<a href="#" id="close_article_ref_externe" style="float:right">
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
 	</a>
 	
 	<div id="aff_ref_externe_content" style="overflow:auto; "></div>

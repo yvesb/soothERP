@@ -33,9 +33,9 @@ Ajouter un nouveau catalogue
 				<form action="catalogues_clients_add.php" method="post" id="catalogues_clients_add" name="catalogues_clients_add" target="formFrame" >
 				<table>
 					<tr class="smallheight">
-						<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 						<td style="">Libellé du catalogue: </td>
-						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 					<tr>
 						<td>
@@ -45,7 +45,7 @@ Ajouter un nouveau catalogue
 						</td>
 						<td>
 							<div style="text-align:right">
-							<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" />
+							<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" />
 							</div>
 						</td>
 
@@ -71,9 +71,9 @@ Liste des catalogues
 				<form action="catalogues_clients_mod.php" method="post" id="catalogues_clients_mod_<?php echo $catalogue_client->id_catalogue_client;?>" name="catalogues_clients_mod_<?php echo $catalogue_client->id_catalogue_client;?>" target="formFrame" >
 				<table>
 					<tr class="smallheight">
-						<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 					<tr>
 						<td>
@@ -85,7 +85,7 @@ Liste des catalogues
 						</td>
 						<td>
 							<div style="text-align:right">
-							<input name="modifier_<?php echo $catalogue_client->id_catalogue_client;?>" id="modifier_<?php echo $catalogue_client->id_catalogue_client;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+							<input name="modifier_<?php echo $catalogue_client->id_catalogue_client;?>" id="modifier_<?php echo $catalogue_client->id_catalogue_client;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
 							</div>
 						</td>
 					</tr>
@@ -96,7 +96,7 @@ Liste des catalogues
 				<div style="text-align:left; width:35px">
 				<form action="catalogues_clients_sup.php" method="post" id="catalogues_clients_sup_<?php echo $catalogue_client->id_catalogue_client;?>" name="catalogues_clients_sup_<?php echo $catalogue_client->id_catalogue_client;?>" target="formFrame" >
 						<input name="id_catalogue_client" id="id_catalogue_client" type="hidden" value="<?php echo htmlentities($catalogue_client->id_catalogue_client, ENT_QUOTES, "UTF-8");?>"/>
-							<input name="supprimer_<?php echo $catalogue_client->id_catalogue_client;?>" id="supprimer_<?php echo $catalogue_client->id_catalogue_client;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" />
+							<input name="supprimer_<?php echo $catalogue_client->id_catalogue_client;?>" id="supprimer_<?php echo $catalogue_client->id_catalogue_client;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" />
 				</form>
 				<SCRIPT type="text/javascript">
 				Event.observe("supprimer_<?php echo $catalogue_client->id_catalogue_client;?>", "click",  function(evt){

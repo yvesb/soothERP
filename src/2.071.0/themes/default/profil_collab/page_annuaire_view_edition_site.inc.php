@@ -16,8 +16,8 @@
 			<input id="site_ref<?php echo $caiu?>" name="site_ref<?php echo $caiu?>"  type="hidden" value="<?php echo $site_web->getRef_site ()?>" />
 			<table class="infotable">
 				<tr>
-					<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 				</tr>
 				<tr>
 					<td class="size_strict">
@@ -71,7 +71,7 @@
 				</tr>
 				<tr>
 					<td style="text-align:left;">
-					<div><a href="#" id="link_annu_edition_site_suppression<?php echo $caiu?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+					<div><a href="#" id="link_annu_edition_site_suppression<?php echo $caiu?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
 					</a>
 						<script type="text/javascript">
 						Event.observe("link_annu_edition_site_suppression<?php echo $caiu?>", "click",  function(evt){Event.stop(evt);alerte.confirm_supprimer('contact_site_supprime', 'annu_edition_site_suppression<?php echo $caiu?>');}, false);
@@ -79,7 +79,7 @@
 					</div>
 					</td>
 					<td style="text-align:right;">
-					<input type="image" name="modifier<?php echo $caiu?>" id="modifier<?php echo $caiu?>" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />
+					<input type="image" name="modifier<?php echo $caiu?>" id="modifier<?php echo $caiu?>" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" />
 					</td>
 				</tr>
 			</table>
@@ -89,8 +89,8 @@
 		
 			<table class="infotable" id="start_visible_<?php echo $caiu?>">
 				<tr>
-					<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 				</tr>
 				<tr>
 					<td colspan="2">
@@ -103,11 +103,11 @@
 								if ($site_web->getOrdre()!=1) {
 									?>
 	
-									<a href="annuaire_edition_site_ordre.php?ref_contact=<?php echo $contact->getRef_contact()?>&ordre=<?php echo ($site_web->getOrdre())-1 ?>&ordre_other=<?php echo ($site_web->getOrdre()) ?>" target="formFrame" name="modifier_site_ordre_up_<?php echo $site_web->getOrdre()?>" id="modifier_site_ordre_up_<?php echo $site_web->getOrdre()?>"  ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/up.gif"/></a>
+									<a href="annuaire_edition_site_ordre.php?ref_contact=<?php echo $contact->getRef_contact()?>&ordre=<?php echo ($site_web->getOrdre())-1 ?>&ordre_other=<?php echo ($site_web->getOrdre()) ?>" target="formFrame" name="modifier_site_ordre_up_<?php echo $site_web->getOrdre()?>" id="modifier_site_ordre_up_<?php echo $site_web->getOrdre()?>"  ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/up.gif"/></a>
 									<?php
 								} else {
 									?>
-									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="1" height="1"/>
+									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="1" height="1"/>
 									<?php
 								}
 								?>
@@ -120,12 +120,12 @@
 								<?php
 								if ( getMax_ordre("sites_web", $contact->getRef_contact())!=$site_web->getOrdre()) {
 									?>
-									<a href="annuaire_edition_site_ordre.php?ref_contact=<?php echo $contact->getRef_contact()?>&ordre=<?php echo ($site_web->getOrdre())+1 ?>&ordre_other=<?php echo ($site_web->getOrdre()) ?>" target="formFrame" name="modifier_site_ordre_down_<?php echo $site_web->getOrdre()?>" id="modifier_site_ordre_down_<?php echo $site_web->getOrdre()?>" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/down.gif"/></a>
+									<a href="annuaire_edition_site_ordre.php?ref_contact=<?php echo $contact->getRef_contact()?>&ordre=<?php echo ($site_web->getOrdre())+1 ?>&ordre_other=<?php echo ($site_web->getOrdre()) ?>" target="formFrame" name="modifier_site_ordre_down_<?php echo $site_web->getOrdre()?>" id="modifier_site_ordre_down_<?php echo $site_web->getOrdre()?>" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/down.gif"/></a>
 								
 									<?php
 								} else {
 									?>
-									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="1" height="1"/>							
+									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="1" height="1"/>							
 									<?php
 								}
 								?>
@@ -187,14 +187,14 @@
 				<?php } ?>
 				<tr>
 					<td style="text-align:left;">
-					<div> <a href="#" id="link_confirm_annu_edition_site_suppression<?php echo $caiu?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+					<div> <a href="#" id="link_confirm_annu_edition_site_suppression<?php echo $caiu?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 					<script type="text/javascript">
 					Event.observe("link_confirm_annu_edition_site_suppression<?php echo $caiu?>", "click",  function(evt){Event.stop(evt);alerte.confirm_supprimer('contact_site_supprime', 'annu_edition_site_suppression<?php echo $caiu?>');}, false);
 					</script>
 					</div>
 					</td>
 					<td style="text-align:right;">
-					<a href="#" id="link_show_edition_site<?php echo $caiu?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" /></a>
+					<a href="#" id="link_show_edition_site<?php echo $caiu?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" /></a>
 					<script type="text/javascript">
 					Event.observe("link_show_edition_site<?php echo $caiu?>", "click",  function(evt){Event.stop(evt);show_edit_form('annu_editon_site<?php echo $caiu?>', 'start_visible_<?php echo $caiu?>','site_lib<?php echo $caiu?>');}, false);
 					</script>

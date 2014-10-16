@@ -55,8 +55,8 @@ array_menu_d_user_contact[3] 	=	new Array('droits', 'menu_4');
 		<input id="user_ref<?php echo $caiu?>" name="user_ref<?php echo $caiu?>"  type="hidden" value="<?php echo $utilisateur->getRef_user ()?>" />
 		<table class="infotable">
 			<tr>
-				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			</tr>
 			<tr>
 				<td class="size_strict">
@@ -86,7 +86,7 @@ array_menu_d_user_contact[3] 	=	new Array('droits', 'menu_4');
 				<iframe id="iframe_liste_choix_coordonnee<?php echo $caiu?>" frameborder="0" scrolling="no" src="about:_blank"  class="choix_liste_choix_coordonnee" style="display:none"></iframe>
 				<div id="choix_liste_choix_coordonnee<?php echo $caiu?>"  class="choix_liste_choix_coordonnee" style="display:none"></div></div>
 				<div id="coordonnee_choisie<?php echo $caiu?>" class="simule_champs" style="width:99%;cursor: default;">
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif"/ style="float:right" id="bt_coordonnee_choisie<?php echo $caiu?>">
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select.gif"/ style="float:right" id="bt_coordonnee_choisie<?php echo $caiu?>">
 					<span id="lib_coordonnee_choisie<?php echo $caiu?>"><?php echo getLib_coordonnee($utilisateur->getRef_coord_user())?></span>
 				</div>
 				<input id="user_coord<?php echo $caiu?>" name="user_coord<?php echo $caiu?>" class="classinput_xsize" value="<?php echo htmlentities($utilisateur->getRef_coord_user(), ENT_QUOTES, "UTF-8");?>" type="hidden"/>
@@ -127,7 +127,7 @@ array_menu_d_user_contact[3] 	=	new Array('droits', 'menu_4');
 				<td>
 				</td>
 				<td style="text-align:right;">
-				<input type="image" name="modifier<?php echo $caiu?>" id="modifier<?php echo $caiu?>" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif"/>
+				<input type="image" name="modifier<?php echo $caiu?>" id="modifier<?php echo $caiu?>" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif"/>
 				</td>
 			</tr>
 		</table>
@@ -141,10 +141,10 @@ array_menu_d_user_contact[3] 	=	new Array('droits', 'menu_4');
 		//fonction de choix de coordonnees
 		
 		//effet de survol sur le faux select
-		Event.observe('coordonnee_choisie<?php echo $caiu?>', 'mouseover',  function(){$("bt_coordonnee_choisie<?php echo $caiu?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select_hover.gif";}, false);
-		Event.observe('coordonnee_choisie<?php echo $caiu?>', 'mousedown',  function(){$("bt_coordonnee_choisie<?php echo $caiu?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select_down.gif";}, false);
-		Event.observe('coordonnee_choisie<?php echo $caiu?>', 'mouseup',  function(){$("bt_coordonnee_choisie<?php echo $caiu?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif";}, false);
-		Event.observe('coordonnee_choisie<?php echo $caiu?>', 'mouseout',  function(){$("bt_coordonnee_choisie<?php echo $caiu?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif";}, false);
+		Event.observe('coordonnee_choisie<?php echo $caiu?>', 'mouseover',  function(){$("bt_coordonnee_choisie<?php echo $caiu?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select_hover.gif";}, false);
+		Event.observe('coordonnee_choisie<?php echo $caiu?>', 'mousedown',  function(){$("bt_coordonnee_choisie<?php echo $caiu?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select_down.gif";}, false);
+		Event.observe('coordonnee_choisie<?php echo $caiu?>', 'mouseup',  function(){$("bt_coordonnee_choisie<?php echo $caiu?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select.gif";}, false);
+		Event.observe('coordonnee_choisie<?php echo $caiu?>', 'mouseout',  function(){$("bt_coordonnee_choisie<?php echo $caiu?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select.gif";}, false);
 							
 		//affichage des choix
 		Event.observe('coordonnee_choisie<?php echo $caiu?>', 'click',  function(evt){Event.stop(evt); start_coordonnee ("<?php echo $contact->getRef_contact()?>", "lib_coordonnee_choisie<?php echo $caiu?>", "user_coord<?php echo $caiu?>", "choix_liste_choix_coordonnee<?php echo $caiu?>", "iframe_liste_choix_coordonnee<?php echo $caiu?>", "annuaire_liste_choix_coordonnee.php");}, false);
@@ -157,11 +157,11 @@ array_menu_d_user_contact[3] 	=	new Array('droits', 'menu_4');
 		<form action="#" id="form_recherche_simple" name="form_recherche_simple" method="GET" onsubmit="page.utilisateur_recherche_histo(); return false;">
 			<table style="width:97%">
 				<tr class="smallheight">
-					<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 				</tr>
 				<tr>
 					<td></td>
@@ -192,8 +192,8 @@ array_menu_d_user_contact[3] 	=	new Array('droits', 'menu_4');
 				<tr>
 					<td></td>
 					<td>&nbsp;</td>
-					<td><input name="submit_s" type="image" onclick="$('page_to_show_s').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-rechercher.gif" style="float:left" /></td>
-					<td><!--<input type="image" name="res_s" id="res_s" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-annuler.gif"/>-->	</td>
+					<td><input name="submit_s" type="image" onclick="$('page_to_show_s').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-rechercher.gif" style="float:left" /></td>
+					<td><!--<input type="image" name="res_s" id="res_s" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-annuler.gif"/>-->	</td>
 					<td>&nbsp;</td>
 				</tr>
 				<tr>

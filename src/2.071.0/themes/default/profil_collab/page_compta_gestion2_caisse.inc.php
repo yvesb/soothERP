@@ -32,9 +32,9 @@ foreach ($totaux_theoriques as $s_total) {
 		<tr>
 			<td rowspan="2" style="width:50px; height:50px; background-color:#FFFFFF">
 				<div style="position:relative; top:-35px; left:-35px; width:105px; border:1px solid #999999; background-color:#FFFFFF; text-align:center">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_caisse.jpg" />				</div>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_caisse.jpg" />				</div>
 				<span style="width:35px">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="50px" height="20px" id="imgsizeform"/>				</span>			</td>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="50px" height="20px" id="imgsizeform"/>				</span>			</td>
 			<td colspan="2" style="width:60%; background-color:#FFFFFF" >
 			<br />
 			<br />
@@ -104,7 +104,7 @@ foreach ($totaux_theoriques as $s_total) {
 								<div style="float:left; color:#999999">Dernier contrôle: <?php echo date_Us_to_Fr($last_date_controle)." ".getTime_from_date ($last_date_controle);?></div>
 								<?php } ?>
 								<span style="color:#97bf0d; float:right">
-								<span id="controle_caisse_<?php echo $compte_caisse->getId_compte_caisse(); ?>"  class="green_underlined"  ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_controler.gif" />
+								<span id="controle_caisse_<?php echo $compte_caisse->getId_compte_caisse(); ?>"  class="green_underlined"  ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_controler.gif" />
 								</span>
 								</span>
 								</td>
@@ -289,16 +289,16 @@ foreach ($totaux_theoriques as $s_total) {
 					<?php $comptes_caisses	= compte_caisse::charger_comptes_caisses("", "1");
 					$nbrecaisses = sizeof($comptes_caisses);
 					if ($nbrecaisses > 1) {?>
-					<span id="transfert_fonds" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Transfert entre caisses</span><br /><br />
+					<span id="transfert_fonds" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Transfert entre caisses</span><br /><br />
 					<?php } ?>
-					<span id="remise_bancaire" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Remise en banque</span><br /><br />
+					<span id="remise_bancaire" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Remise en banque</span><br /><br />
 
-					<span id="retrait_bancaire" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Retrait bancaire</span><br /><br />
+					<span id="retrait_bancaire" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Retrait bancaire</span><br /><br />
 
 						<br />
-					<span id="ajout_retrait_fonds" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Enregistrer une opération</span><br /><br />
+					<span id="ajout_retrait_fonds" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Enregistrer une opération</span><br /><br />
 
-						<span id="controle_caisse_historique_<?php echo $compte_caisse->getId_compte_caisse(); ?>" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />  Historique des op&eacute;rations de gestion
+						<span id="controle_caisse_historique_<?php echo $compte_caisse->getId_compte_caisse(); ?>" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />  Historique des op&eacute;rations de gestion
 						</span>
 					<br />
 					<br />

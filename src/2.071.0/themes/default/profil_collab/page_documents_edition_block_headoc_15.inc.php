@@ -123,7 +123,7 @@ if(false){$document = new doc_tic();}
 									<div style="height:5px; line-height:5px;"></div>
 									<?php if ($document->getId_etat_doc () == 59) {
 										//[59]En saisie => [62]Encaissé ?>
-									<?php /*<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_fac_aregler.gif" id="facture_a_regler" style="cursor:pointer"/>*/ ?>
+									<?php /*<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_fac_aregler.gif" id="facture_a_regler" style="cursor:pointer"/>*/ ?>
 									<span id="ticket_a_encaisser" style="cursor:pointer">Encaisser</span>
 									<div style="height:3px; line-height:3px;"></div>
 									<?php }elseif($document->getId_etat_doc () == 61) {
@@ -212,9 +212,9 @@ if(false){$document = new doc_tic();}
 		</td>
 	</tr>
 	<tr>
-		<td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1px"/></td>
-		<td style="width:4%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1px"/></td>
-		<td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1px"/></td>
+		<td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1px"/></td>
+		<td style="width:4%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1px"/></td>
+		<td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1px"/></td>
 	</tr>
 	<tr>
 		<td>
@@ -227,9 +227,9 @@ if(false){$document = new doc_tic();}
 					<input type="hidden" name="ref_contact"  id="ref_contact" value="<?php echo $document->getRef_contact();?>"/>
 				</td>
 				<td colspan="2" style="text-align:right">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/doc_view_contact.gif" style="cursor:pointer;<?php if (!$document->getRef_contact()) { echo 'display:none;';}?>" id="doc_view_contact_img" alt="Voir la fiche du contact" title="Voir la fiche du contact" />&nbsp;
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/doc_set_contact.gif" style="cursor:pointer" id="doc_ref_contact_img" alt="Choisir un contact" title="Choisir un contact"/>&nbsp;&nbsp;
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" style="cursor:pointer" id="doc_sup_contact_img" alt="Supprimer le  contact" title="Supprimer le  contact"/>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/doc_view_contact.gif" style="cursor:pointer;<?php if (!$document->getRef_contact()) { echo 'display:none;';}?>" id="doc_view_contact_img" alt="Voir la fiche du contact" title="Voir la fiche du contact" />&nbsp;
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/doc_set_contact.gif" style="cursor:pointer" id="doc_ref_contact_img" alt="Choisir un contact" title="Choisir un contact"/>&nbsp;&nbsp;
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" style="cursor:pointer" id="doc_sup_contact_img" alt="Supprimer le  contact" title="Supprimer le  contact"/>
 				<script type="text/javascript">
 				
 					Event.observe('doc_view_contact_img', 'click',  function(){
@@ -349,7 +349,7 @@ if(false){$document = new doc_tic();}
 							</td>
 							<td style="width:18px; vertical-align:bottom">
 								<div id="adresse_contact_choisie"  style="width:20px; cursor: default; text-align:right">
-									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_doc_choix_adresses.gif" style="float:right" id="bt_adresse_contact_choisie"/>
+									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_doc_choix_adresses.gif" style="float:right" id="bt_adresse_contact_choisie"/>
 								</div>
 							</td>
 						</tr>

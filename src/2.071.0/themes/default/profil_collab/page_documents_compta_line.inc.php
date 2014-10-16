@@ -58,7 +58,7 @@ $defaut_num_compte[8] = $DEFAUT_COMPTE_TIERS_ACHAT;
 		</td>
 		<td>
 <?php if ($line_ventil->id_journal != 5 && $line_ventil->id_journal != 8) {?>
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0" id="sup_line_compta_<?php echo $i ;?>">
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0" id="sup_line_compta_<?php echo $i ;?>">
 <?php } ?>
 		</td>
 	</tr>

@@ -19,7 +19,7 @@ check_page_variables ($page_variables);
 <div id="lines_livraison_modes_doc">
 <div id="lines_livraison_modes_doc_simple" class="menu_link_affichage">
 	<a href="#" id="link_close_pop_up_lines_livraison_modes_doc" style="float:right">
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
 	</a>
 <script type="text/javascript">
 Event.observe("link_close_pop_up_lines_livraison_modes_doc", "click",  function(evt){Event.stop(evt); $("pop_up_lines_livraison_modes_doc").style.display = "none";}, false);
@@ -31,9 +31,9 @@ Event.observe("link_close_pop_up_lines_livraison_modes_doc", "click",  function(
 <div style="height:330px; OVERFLOW-Y: auto; OVERFLOW-X: auto;">
 <table style="width:100%">
 	<tr class="smallheight">
-		<td style="width:2%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:95%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:3%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:2%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:95%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:3%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr>
 		<td>&nbsp;</td>

@@ -106,7 +106,7 @@ update_menu_arbo();
 <p style="text-align:center">
 	
 	
-	<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" style="display:none" />
+	<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" style="display:none" />
 </p>
 </form>
 				

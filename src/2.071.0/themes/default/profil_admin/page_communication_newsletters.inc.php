@@ -33,7 +33,7 @@ update_menu_arbo();
 <tr>
 <td class="contactview_corps">
 <div id="cat_client" style="padding-left:10px; padding-right:10px">
-			<span class="titre_smenu_page" id="smenu_nouvelle_newsletter"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" align="absmiddle" />Ajouter une newsletter</span><br /><br />
+			<span class="titre_smenu_page" id="smenu_nouvelle_newsletter"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" align="absmiddle" />Ajouter une newsletter</span><br /><br />
 
 <SCRIPT type="text/javascript">
 Event.observe('smenu_nouvelle_newsletter', "click", function(evt){
@@ -50,16 +50,16 @@ if (!$newsletters) {
 			<td style="width:95%">
 				<table>
 					<tr class="smallheight">
-						<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 					<tr>
 						<td>Aucune newsletter n&apos;a été créée
 						</td>
 						<td>
-						<a href="#" id="link_communication_newsletter_add"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif"/></a>
+						<a href="#" id="link_communication_newsletter_add"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif"/></a>
 						<script type="text/javascript">
 						Event.observe("link_communication_newsletter_add", "click",  function(evt){
 							Event.stop(evt);
@@ -87,10 +87,10 @@ if (!$newsletters) {
 				<td style="width:95%">
 					<table>
 						<tr class="smallheight">
-							<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-							<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-							<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-							<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 						</tr>	
 						<tr>
 							<td>Libell&eacute;:
@@ -117,10 +117,10 @@ if (!$newsletters) {
 				<td style="width:95%">
 				<table>
 						<tr class="smallheight">
-							<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-							<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-							<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-							<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 						</tr>	
 						<tr>
 							<td>
@@ -130,7 +130,7 @@ if (!$newsletters) {
 								<?php echo ($newsletter->description_interne);?>
 							</td>
 							<td style="text-align:right">
-								<a href="#" id="link_communication_newsletter_mod_<?php echo $newsletter->id_newsletter; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif"/></a>
+								<a href="#" id="link_communication_newsletter_mod_<?php echo $newsletter->id_newsletter; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif"/></a>
 								<script type="text/javascript">
 								Event.observe("link_communication_newsletter_mod_<?php echo $newsletter->id_newsletter; ?>", "click",  function(evt){
 								Event.stop(evt);
@@ -140,7 +140,7 @@ if (!$newsletters) {
 								</script>
 							</td>
 							<td style="text-align:right">
-								<a href="#" id="link_communication_newsletter_sup_<?php echo $newsletter->id_newsletter; ?>" style="display:none"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-supprimer.gif"/></a>
+								<a href="#" id="link_communication_newsletter_sup_<?php echo $newsletter->id_newsletter; ?>" style="display:none"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-supprimer.gif"/></a>
 							</td>
 						</tr>
 					</table>

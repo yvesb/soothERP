@@ -17,7 +17,7 @@ check_page_variables ($page_variables);
 ?>
 <div>
 	<a href="#" id="link_close_pop_up_commerciaux_det" style="float:right">
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
 	</a>
 	<script type="text/javascript">
 	Event.observe("link_close_pop_up_commerciaux_det", "click",  function(evt){Event.stop(evt); $("pop_up_commerciaux_det").hide();}, false);
@@ -111,7 +111,7 @@ check_page_variables ($page_variables);
 										<td style="text-align:center"><span class="green_underlined" id="tb_<?php echo $commercial->ref_contact; ?>_<?php echo $docu->ref_doc; ?>" >Détails</span></td>
 										<td style="width:5%; text-align:center; color:#97bf0d">-</td>
 										<td style=" text-align:center"><span class="green_underlined" id="rc_<?php echo $commercial->ref_contact; ?>_<?php echo $docu->ref_doc; ?>">
-			<a href="documents_editing.php?ref_doc=<?php echo $docu->ref_doc?>" target="_blank" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif"/></a> </span>
+			<a href="documents_editing.php?ref_doc=<?php echo $docu->ref_doc?>" target="_blank" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-pdf.gif"/></a> </span>
 										</td>
 									</tr>
 								</table>

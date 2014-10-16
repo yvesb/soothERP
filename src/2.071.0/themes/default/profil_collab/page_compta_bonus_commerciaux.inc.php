@@ -46,7 +46,7 @@
                         <input type="text" name="date_fin" id="date_fin" value="<?php echo date("d-m-Y");?>" class="classinput_xsize"/>
                     </td>
                     <td >&nbsp;</td>
-                    <td ><img id="add_bonus_commercial" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-bonus-malus.jpg"/></td>
+                    <td ><img id="add_bonus_commercial" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-bonus-malus.jpg"/></td>
                 </tr>
                 <tr>
                     <td>
@@ -95,7 +95,7 @@
 
                     </td>
                     <td>
-                        <input name="submit_s" id="submit_s" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-rechercher.gif" style="float:left" />
+                        <input name="submit_s" id="submit_s" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-rechercher.gif" style="float:left" />
                     </td>
                     <td >&nbsp;</td>
                     <td >&nbsp;</td>

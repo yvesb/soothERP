@@ -33,7 +33,7 @@ if (isset($erreur)) {
 				</td>
 				<td style="width:5%; text-align:right;">
 					<a href="#" id="envoyer_a_del_<?php echo $serialisation_envoyer_a?>">
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
 					</a>
 				</td>
 			</tr>

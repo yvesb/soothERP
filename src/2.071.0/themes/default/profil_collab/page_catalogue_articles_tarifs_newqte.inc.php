@@ -29,7 +29,7 @@ check_page_variables ($page_variables);
 					<tr>
 						<td class="assist_labelled_bold" style="border-right:1px solid #FFFFFF; border-top:1px solid #FFFFFF;  width:180px;">
 						<a href="#" style="float:left" id="tarif_newqte_bt_del_<?php echo $nb_ligne_prix?>">
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">						</a>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">						</a>
 					<div style="width:180px;">
 
 						<div style=" text-align:center;">
@@ -38,7 +38,7 @@ check_page_variables ($page_variables);
 						<input type="hidden" name="qte_tarif_old_<?php echo $nb_ligne_prix?>" id="qte_tarif_old_<?php echo $nb_ligne_prix?>" value="newqte" class="assistant_input"/>
 						</div>
 						</div>
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
 						</td>
 						<?php 
 						reset($tarifs_liste);
@@ -47,7 +47,7 @@ check_page_variables ($page_variables);
 						?>
 						<td style="  width:180px; text-align:center; border-top:1px solid #FFFFFF;<?php if(key($tarifs_liste)<$tarifs_count){?> border-right:1px solid #FFFFFF; <?php }?>">
 							<a href="#" style="float:right; display:none;" id="tarif_del_<?php echo $nb_liste_tarif?>_<?php echo $nb_ligne_prix?>" title="Supprimer la formule">
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
 							</a>
 					<div style="width:180px;">
 							<input type="hidden" name="formule_cree_<?php echo $nb_liste_tarif?>_<?php echo $nb_ligne_prix?>" id="formule_cree_<?php echo $nb_liste_tarif?>_<?php echo $nb_ligne_prix?>" value="0" />
@@ -82,7 +82,7 @@ check_page_variables ($page_variables);
 if (!$_SESSION['user']->check_permission ("6")) {?>display:none;<?php } ?>">D&eacute;finir un nouveau tarif
 							</a>
 							</div>
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
 							</td>
 						<?php
 						$nb_liste_tarif= $nb_liste_tarif+1;

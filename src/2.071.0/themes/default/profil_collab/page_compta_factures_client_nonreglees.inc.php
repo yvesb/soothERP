@@ -30,9 +30,9 @@ check_page_variables ($page_variables);
 			<td style="width:30%">&nbsp;</td>
                         <td style="width:2%">&nbsp;</td>
 			<td style="width:30%">&nbsp;</td>
-			<!--<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:27%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<!--<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:27%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			--><td style="width:3%; text-align: right"></td>
 		</tr>
 		<tr>
@@ -117,10 +117,10 @@ check_page_variables ($page_variables);
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
 		<td style="text-align:right"><span style="text-align:right">
-		<input name="bt-recherche" id="bt-recherche" type="image" onclick="$('page_to_show_s').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-rechercher.gif"  style="float:left" />
+		<input name="bt-recherche" id="bt-recherche" type="image" onclick="$('page_to_show_s').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-rechercher.gif"  style="float:left" />
 	</span></td>
-		<!--<td style="text-align:right"><span><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-imprimer.gif" id="stock_etat_imprimer" style="cursor:pointer" /></span></td>
-		<td>&nbsp;</td><td style="text-align:right"><span><img id="export_stock" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ods.gif" alt="ODS" title="ODS" style="cursor:pointer;"/></span></td>
+		<!--<td style="text-align:right"><span><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-imprimer.gif" id="stock_etat_imprimer" style="cursor:pointer" /></span></td>
+		<td>&nbsp;</td><td style="text-align:right"><span><img id="export_stock" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ods.gif" alt="ODS" title="ODS" style="cursor:pointer;"/></span></td>
 -->
 		<td>&nbsp;</td>
 	</tr>

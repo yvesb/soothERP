@@ -205,9 +205,9 @@ function session_change_magasin (id_magasin) {
 	foreach ($_SESSION['magasins'] as $magasin) {
 		?>
 		if (id_magasin == <?php echo $magasin->getId_magasin ();?>) {
-			$("img_option_info_magasin_<?php echo $magasin->getId_magasin ();?>").src = "<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/actuel.gif";
+			$("img_option_info_magasin_<?php echo $magasin->getId_magasin ();?>").src = "<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/actuel.gif";
 		} else {
-			$("img_option_info_magasin_<?php echo $magasin->getId_magasin ();?>").src = "<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif";
+			$("img_option_info_magasin_<?php echo $magasin->getId_magasin ();?>").src = "<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif";
 		}
 		<?php 
 	}
@@ -351,7 +351,7 @@ Event.observe(window, "load", initEventHandlers, false);
 </script>
 </head>
 
-<body style="background-image: url(<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/main_content_bg.gif); background-repeat:repeat-x; background-attachment:fixed">
+<body style="background-image: url(<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/main_content_bg.gif); background-repeat:repeat-x; background-attachment:fixed">
 <div id="grand_contener">
 <div id="bgmain_menu"></div>
 
@@ -408,7 +408,7 @@ foreach ($menu1 as $smenu) {
 				if ($ssmenu[4] == "") {
 					?>
 						<td style="line-height:3px; height:3px">
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/separateur.gif" width="100%" height="3px" />
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/separateur.gif" width="100%" height="3px" />
 						<span class="subitem"  id="<?php echo $ssmenu[0]?>"></span>
 					<?php
 					} else {
@@ -497,9 +497,9 @@ $i++;
 					</script>
 					<img src="<?php 
 					if ($id_interface == $_SESSION['user']->getId_interface ()) {
-						echo  $DIR.$_SESSION['theme']->getDir_theme().'images/actuel.gif';
+						echo  $DIR.$_SESSION['theme']->getDir_gtheme().'images/actuel.gif';
 				} else {
-						echo  $DIR.$_SESSION['theme']->getDir_theme().'images/blank.gif';
+						echo  $DIR.$_SESSION['theme']->getDir_gtheme().'images/blank.gif';
 					}
 					?>" width="15px" height="15px"/>
 					<?php echo $_SESSION['interfaces'][$id_interface]->getLib_interface() ?>
@@ -513,7 +513,7 @@ $i++;
 			</table>
 			<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
 				<tr><td style="line-height:3px; height:3px">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/separateur.gif" width="100%" height="3px" />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/separateur.gif" width="100%" height="3px" />
 				</td></tr>
 			</table>
 			<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
@@ -528,9 +528,9 @@ $i++;
 				<tr><td>
 				<a class="subitem"  id="option_info_magasin_<?php echo $magasin->getId_magasin ();?>"  href="#">
 				<img src="<?php if ($magasin->getId_magasin () == $_SESSION['magasin']->getId_magasin ()) {
-					echo  $DIR.$_SESSION['theme']->getDir_theme().'images/actuel.gif';
+					echo  $DIR.$_SESSION['theme']->getDir_gtheme().'images/actuel.gif';
 				} else {
-					echo  $DIR.$_SESSION['theme']->getDir_theme().'images/blank.gif';
+					echo  $DIR.$_SESSION['theme']->getDir_gtheme().'images/blank.gif';
 				}?>" width="15px" height="15px" id="img_option_info_magasin_<?php echo $magasin->getId_magasin ();?>"/>
 				<?php echo  htmlentities($magasin->getLib_magasin (), ENT_QUOTES, "UTF-8"); ?> </a>
 				</td></tr>			
@@ -540,7 +540,7 @@ $i++;
 			</table>
 			<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
 				<tr><td style="line-height:3px; height:3px">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/separateur.gif" width="100%" height="3px" />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/separateur.gif" width="100%" height="3px" />
 				</td></tr>
 			</table>
 			<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
@@ -596,7 +596,7 @@ if ($AFFICHE_DEBUG) {
 ?>
 
 <div id="refresh_content">
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/actualiser.gif" align="top" />
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/actualiser.gif" align="top" />
 </div>
 <div id="load_show" style="visibility:hidden; line-height:22px; height:22px;">
 	<div id="boxcontent">
@@ -606,7 +606,7 @@ if ($AFFICHE_DEBUG) {
 	<script type="text/javascript">
 		// <![CDATA[
 
-swfobject.embedSWF("<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/waiting.swf", "boxcontent", "142", "15", "9.0.0", "expressInstall.swf", false,{wmode: "transparent", quality: "high", allowScriptAccess: "always"}, {id: "swf_waiting"});
+swfobject.embedSWF("<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/waiting.swf", "boxcontent", "142", "15", "9.0.0", "expressInstall.swf", false,{wmode: "transparent", quality: "high", allowScriptAccess: "always"}, {id: "swf_waiting"});
 
 		// ]]>
 	</script>
@@ -638,7 +638,7 @@ swfobject.embedSWF("<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/w
 					<tr>
 						<td colspan="2" style="text-align:center; font-weight:bolder; line-height:20px; height:20px; border-bottom:1px solid #000000;">
 						
-							<a href="#" id="close_ask_login"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0" style="float:right"></a>
+							<a href="#" id="close_ask_login"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0" style="float:right"></a>
 							 Veuillez vous r&eacute;identifier
 							</td>
 						</tr>

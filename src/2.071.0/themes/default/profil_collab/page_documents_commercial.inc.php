@@ -87,7 +87,7 @@ $o = 0;
 			</span>
 			</span>
 		<span class="marge_pc">
-				<input name="modifier_comm_attrib" id="modifier_comm_attrib" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />
+				<input name="modifier_comm_attrib" id="modifier_comm_attrib" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" />
 				
 			<script type="text/javascript">
 			<?php 

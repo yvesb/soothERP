@@ -4,17 +4,17 @@
 
 
 <a href='javascript:PopupCentrer("catalogue_articles_view_description_email.php?ref_article=<?php echo $article->getRef_article();?>",500,350,"menubar=no,statusbar=no,scrollbars=yes,resizable=yes")'  >
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-email.gif"/>	</a>
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-email.gif"/>	</a>
 
 
 
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-imprimer.gif" onClick="javascript:window.print()" style="cursor:pointer"/>
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-imprimer.gif" onClick="javascript:window.print()" style="cursor:pointer"/>
 <a href="catalogue_articles_view_description_edition.php?ref_article=<?php echo $article->getRef_article();?><?php 
 				if (isset($_REQUEST["aff_ht"])) { echo "&aff_ht=1"; }?><?php 
 				if (isset($_REQUEST["aff_qte"])) { echo "&aff_qte=".$_REQUEST["aff_qte"]; }?><?php 
 				if (isset($_REQUEST["id_tarif"])) { echo "&id_tarif=".$_REQUEST["id_tarif"]; }?><?php 
 				if (isset($_REQUEST["autre_prix"])) { echo "&autre_prix=".$_REQUEST["autre_prix"]; }?>" target="_top">
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-editer.gif"  style="cursor:pointer"/>
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-editer.gif"  style="cursor:pointer"/>
 </a>
 </span>
 
@@ -65,7 +65,7 @@ Afficher prix:
 	</div>
 	</td>
 	<td>
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif"/ style="float:right" id="lib_art_categ_bt_select">
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select.gif"/ style="float:right" id="lib_art_categ_bt_select">
 	</td>
 	</tr>
 	</table>

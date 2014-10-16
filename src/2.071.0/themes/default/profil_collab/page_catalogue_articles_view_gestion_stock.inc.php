@@ -40,8 +40,8 @@ if (count($_SESSION['stocks']) > 1) {
 
 <table style="width:100%" border="0">
 	<tr>
-		<td style="width:70%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:70%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr>
 		<td>
@@ -464,7 +464,7 @@ if (count($_SESSION['stocks']) > 1) {
 			<?php 
 			if ($article->getLot() != 2 && $article->getVariante() != 2 && $_SESSION['user']->check_permission ("21")) {
 				?>
-				<div style="padding:3px 50px 0 30px;width:150px;float:left;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_article_inventory.gif" id="inventory_art" style="cursor:pointer" />
+				<div style="padding:3px 50px 0 30px;width:150px;float:left;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_article_inventory.gif" id="inventory_art" style="cursor:pointer" />
 				<script type="text/javascript">
 				
 					Event.observe('inventory_art', "click", function(evt){
@@ -497,15 +497,15 @@ if (count($_SESSION['stocks']) > 1) {
 				<table>
 					<tr>
 						<td>
-							<img style="padding-right:50px;" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_fab_afabriquer.gif" id="fabriquer" style="cursor:pointer" />
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_des_adesassembler.gif" id="desassembler" style="cursor:pointer" />
+							<img style="padding-right:50px;" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_fab_afabriquer.gif" id="fabriquer" style="cursor:pointer" />
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_des_adesassembler.gif" id="desassembler" style="cursor:pointer" />
 						</td>
 					</tr>
 				</table> 
 				
 				<!-- Pop up pour assembler ou desassembler -->
 				<div id="pop_up_fab_des" class="pop_up_fab_des">
-					<a href="#" id="link_close_pop_up_fab_des" style="float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+					<a href="#" id="link_close_pop_up_fab_des" style="float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 					<script type="text/javascript">
 						
 					</script>
@@ -516,7 +516,7 @@ if (count($_SESSION['stocks']) > 1) {
 						<br />
 						<input id="traitement_article" style="display:none;" value=""></input>
 						<input type="text" id="qte_fab_des" style="width:180px;text-align:center;" value="0"/>
-						<img id="valider_pop_up_fab_des" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" style="padding-left:30px;" border="0"/>
+						<img id="valider_pop_up_fab_des" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" style="padding-left:30px;" border="0"/>
 					</div>
 				</div>
 				
@@ -563,7 +563,7 @@ if (count($_SESSION['stocks']) > 1) {
 			if ($article->getLot() == 3 && $article->getVariante() != 2) {
 				?>
 				<div style="text-align:center;padding-top:3px;">   
-				 <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_des_adesassembler.gif" id="go_des" style="cursor:pointer" />
+				 <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_des_adesassembler.gif" id="go_des" style="cursor:pointer" />
 				</div>
 				
 				<SCRIPT type="text/javascript">
@@ -610,7 +610,7 @@ if (count($_SESSION['stocks']) > 1) {
 				<tr>
 					<td>&nbsp;</td>
 					<td style="width:70%;padding-left:5px;"><input type="text" name="code_barre" id="code_barre" value="" class="classinput_xsize" <?php if  ($article->getVariante () == 2) {?> style="display:none;"<?php } ?>/></td>
-					<td style="padding-left:10px;"> <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bouton-ok.jpg" id="valider_code_barre" style="cursor:pointer" <?php if  ($article->getVariante () == 2) {?> style="display:none;"<?php } ?>/></td>
+					<td style="padding-left:10px;"> <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bouton-ok.jpg" id="valider_code_barre" style="cursor:pointer" <?php if  ($article->getVariante () == 2) {?> style="display:none;"<?php } ?>/></td>
 					<!--  <td>&nbsp;</td>-->
 				</tr>
 				<tr>

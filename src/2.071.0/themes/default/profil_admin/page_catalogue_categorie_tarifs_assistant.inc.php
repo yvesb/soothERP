@@ -1,7 +1,7 @@
 
 <iframe frameborder="0" scrolling="no" src="about:_blank" id="pop_up_assistant_tarif_iframe" class="assistant_tarif_iframe"></iframe>
 <div id="pop_up_assistant_tarif" class="assistant_tarif_table">
-<a href="#" id="link_close_pop_up_assistant_tarif" style="float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+<a href="#" id="link_close_pop_up_assistant_tarif" style="float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 <script type="text/javascript">
 Event.observe("link_close_pop_up_assistant_tarif", "click",  function(evt){Event.stop(evt); reset_assistant_tarif('pop_up_assistant_tarif', 'pop_up_assistant_tarif_iframe', 'form_assistant_tarif', 'assistant_form_step2', 'assistant_form_step3', 'assistant_form_step4');}, false);
 </script>
@@ -113,7 +113,7 @@ Event.observe("link_close_pop_up_assistant_tarif", "click",  function(evt){Event
 
 
 	<p style="text-align:right">
-		<input name="valider_assistant" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />	
+		<input name="valider_assistant" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" />	
 	</p>
 	
 <SCRIPT type="text/javascript">
@@ -181,7 +181,7 @@ Event.observe('form_assistant_tarif', "submit", function(evt){stopif_assistant_u
 		</tr>
 	</table>
 	<p style="text-align:right">
-		<input name="valider_assistant" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />	
+		<input name="valider_assistant" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" />	
 	</p>
 	
 <div id="assistant_form_step4" style="display:none">

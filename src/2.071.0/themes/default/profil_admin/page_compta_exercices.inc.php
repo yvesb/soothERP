@@ -58,12 +58,12 @@ if ($liste_exercices) {
 					<form action="compta_exercices_mod.php" method="post" id="compta_exercice_mod_<?php echo $exercice->id_exercice;?>" name="compta_exercice_mod_<?php echo $exercice->id_exercice;?>" target="formFrame" >
 					<table>
 						<tr class="smallheight">
-							<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-							<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-							<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 						</tr>	
 						<tr>
 							<td style="text-align:left">
@@ -83,7 +83,7 @@ if ($liste_exercices) {
 									<?php
 									if ((isset($liste_exercices[$i+1]) && !$liste_exercices[$i+1]->etat_exercice) || !isset($liste_exercices[$i+1])) {
 										?>
-										<!--<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_compta_cloturer.gif"  id="cloturer" style="cursor:pointer"/>
+										<!--<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_compta_cloturer.gif"  id="cloturer" style="cursor:pointer"/>
 										<script type="text/javascript">
 										Event.observe("cloturer", "click",  function(evt){
 											Event.stop(evt);
@@ -113,7 +113,7 @@ if ($liste_exercices) {
 							if (!$exercice->etat_exercice) {
 							?> disabled="disabled" <?php }?>/>	</td>
 							<td style="text-align:center">
-							<input name="modifier_<?php echo $exercice->id_exercice;?>" id="modifier_<?php echo $exercice->id_exercice;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif"<?php 
+							<input name="modifier_<?php echo $exercice->id_exercice;?>" id="modifier_<?php echo $exercice->id_exercice;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif"<?php 
 							if (!$exercice->etat_exercice) {
 							?> disabled="disabled" style="display:none"<?php }?>/>
 							</td>
@@ -127,7 +127,7 @@ if ($liste_exercices) {
 				</form>
 				<a href="#" id="link_compta_exercice_sup_<?php echo  $exercice->id_exercice; ?>" <?php 
 							if (!$exercice->etat_exercice) {
-							?> style="display:none" <?php }?>><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+							?> style="display:none" <?php }?>><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 				<script type="text/javascript">
 				Event.observe("link_compta_exercice_sup_<?php echo $exercice->id_exercice; ?>", "click",  function(evt){
 					Event.stop(evt);

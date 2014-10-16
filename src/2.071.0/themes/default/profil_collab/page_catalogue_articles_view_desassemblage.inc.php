@@ -1,5 +1,5 @@
 
-<a href="#" id="link_close_pop_up_inventory" style="float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+<a href="#" id="link_close_pop_up_inventory" style="float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 <script type="text/javascript">
 Event.observe("link_close_pop_up_inventory", "click",  function(evt){Event.stop(evt); 
 		$("pop_up_invetory_article").style.display = "none";}, false);
@@ -13,12 +13,12 @@ Event.observe("link_close_pop_up_inventory", "click",  function(evt){Event.stop(
 	
 	<table style="width:100%">
 		<tr class="smallheight">
-			<td height="13" style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:65%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td height="13" style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:65%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 		</tr>
 		<tr>
 			<td style="text-align:left">&nbsp;</td>
@@ -62,7 +62,7 @@ Event.observe("link_close_pop_up_inventory", "click",  function(evt){Event.stop(
 			</td>
 			<td style="text-align:left">&nbsp;</td>
 			<td style="text-align:center">&nbsp;</td>
-			<td style="text-align:left"><span style="text-align:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_des_valider.gif" id="valid_des" style="cursor:pointer" /></span></td>
+			<td style="text-align:left"><span style="text-align:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_des_valider.gif" id="valid_des" style="cursor:pointer" /></span></td>
 			<td></td>
 		</tr>
 		<?php 

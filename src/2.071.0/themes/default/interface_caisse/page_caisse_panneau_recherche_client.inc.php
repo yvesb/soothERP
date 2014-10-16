@@ -29,7 +29,7 @@ check_page_variables ($page_variables);
 				<input type="text" name="nom_s" id="nom_s" class="input_rechercher_client" style="width: 98%" value="<?php if (isset($_REQUEST["acc_ref_contact"])) { echo htmlentities($_REQUEST["acc_ref_contact"], ENT_QUOTES, "UTF-8");}?>"/>
 			</td>
 			<td>
-				<img  id="submit_s" name="submit_s" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_rechercher2.gif" alt="Rechercher" title="Rechercher" />
+				<img  id="submit_s" name="submit_s" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_rechercher2.gif" alt="Rechercher" title="Rechercher" />
 				<script type="text/javascript">
 					Event.observe('submit_s', 'click',  function(evt){
 						Event.stop(evt);

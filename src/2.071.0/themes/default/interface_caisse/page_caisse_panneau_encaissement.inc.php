@@ -30,7 +30,7 @@ check_page_variables ($page_variables);
 				<td style="width: 8px"></td>
 				<td style="width:290px">
 					<table border="0" cellpadding="0" cellspacing="0" width="100%">
-						<tr style="color: white; text-align: left; background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/fond_entete_rouge.gif');background-repeat: no-repeat repeat-x;height:23px">
+						<tr style="color: white; text-align: left; background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/fond_entete_rouge.gif');background-repeat: no-repeat repeat-x;height:23px">
 							<td style="width:5px"></td>
 							<td style="vertical-align:middle;font-weight:bold;">Moyens de Paiement</td>
 							<td style="width:5px"></td>
@@ -129,13 +129,13 @@ check_page_variables ($page_variables);
 				<td style="width:360px">
 					<div>
 						<table width="100%" border="0" cellpadding="0" cellspacing="0">
-							<tr style="color: white; text-align: left; background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/fond_entete_rouge.gif');background-repeat: no-repeat repeat-x;height:23px">
+							<tr style="color: white; text-align: left; background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/fond_entete_rouge.gif');background-repeat: no-repeat repeat-x;height:23px">
 								<td width="5px"></td>
 								<td style="vertical-align:middle; font-weight:bold;">
 									Règlements effectués
 								</td>
 								<td style="vertical-align:middle; font-weight:bold; text-align:right;">
-									<img id="reset_reglement" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-supprimer-gris.png"/>
+									<img id="reset_reglement" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-supprimer-gris.png"/>
 								</td>
 								<td width="5px">
 									<script type="text/javascript">
@@ -203,7 +203,7 @@ check_page_variables ($page_variables);
 				<td style="width:280px">
 					<table border="0" cellpadding="0" cellspacing="0" width="100%" >
 						<tr id="print_ticket">
-							<td width="47px"><img id="cb_print_ticket" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/check_box_checked.png"/></td>
+							<td width="47px"><img id="cb_print_ticket" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/check_box_checked.png"/></td>
 							<td width="5px"></td>
 							<td style="vertical-align:middle; font-weight:bold; text-align:left;">
 								Imprimer un Ticket
@@ -213,7 +213,7 @@ check_page_variables ($page_variables);
 							<td colspan="3"></td>
 						</tr>
 						<tr id="print_factrure">
-							<td><img id="cb_print_factrure" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/check_box.png"/></td>
+							<td><img id="cb_print_factrure" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/check_box.png"/></td>
 							<td></td>
 							<td style="vertical-align:middle; font-weight:bold; text-align:left;">
 								Imprimer une Facture
@@ -223,7 +223,7 @@ check_page_variables ($page_variables);
 							<td colspan="3"></td>
 						</tr>
 						<tr id="no_print">
-							<td><img id="cb_no_print" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/check_box.png"/></td>
+							<td><img id="cb_no_print" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/check_box.png"/></td>
 							<td></td>
 							<td style="vertical-align:middle; font-weight:bold; text-align:left;">
 								Aucune Impression
@@ -233,32 +233,32 @@ check_page_variables ($page_variables);
 					<script type="text/javascript">
 						Event.observe("print_ticket", "click", function(evt){
 							Event.stop(evt);
-							document.images["cb_print_ticket"].src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/check_box_checked.png";
-							document.images["cb_print_factrure"].src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/check_box.png";
-							document.images["cb_no_print"].src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/check_box.png";
+							document.images["cb_print_ticket"].src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/check_box_checked.png";
+							document.images["cb_print_factrure"].src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/check_box.png";
+							document.images["cb_no_print"].src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/check_box.png";
 							$("print_s").value = "print_ticket";
 						}, false);
 
 						Event.observe("print_factrure", "click", function(evt){
 							Event.stop(evt);
-							document.images["cb_print_ticket"].src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/check_box.png";
-							document.images["cb_print_factrure"].src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/check_box_checked.png";
-							document.images["cb_no_print"].src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/check_box.png";
+							document.images["cb_print_ticket"].src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/check_box.png";
+							document.images["cb_print_factrure"].src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/check_box_checked.png";
+							document.images["cb_no_print"].src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/check_box.png";
 							$("print_s").value = "print_factrure";
 						}, false);
 
 						Event.observe("no_print", "click", function(evt){
 							Event.stop(evt);
-							document.images["cb_print_ticket"].src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/check_box.png";
-							document.images["cb_print_factrure"].src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/check_box.png";
-							document.images["cb_no_print"].src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/check_box_checked.png";
+							document.images["cb_print_ticket"].src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/check_box.png";
+							document.images["cb_print_factrure"].src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/check_box.png";
+							document.images["cb_no_print"].src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/check_box_checked.png";
 							$("print_s").value = "no_print";
 						}, false);
 					</script>
 				</td>
 				<td></td>
 				<td width="200px" style="vertical-align:middle; text-align:center;">
-					<img id="print_valider" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_valider_geant.gif" style="opacity:0.7;" />
+					<img id="print_valider" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_valider_geant.gif" style="opacity:0.7;" />
 					<script type="text/javascript">
 						Event.observe("print_valider", "click", function(evt){
 							Event.stop(evt);

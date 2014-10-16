@@ -36,7 +36,7 @@ check_page_variables ($page_variables);
 			<td>
 				<a href="#" class="" id="racine" title="Inserer une cat&eacute;gorie &agrave; la racine" style="display:block; width:100%">Racine</a>
 				</td><td width="15px">
-				<a href="#" class="" id="ins_racine" title="Inserer une cat&eacute;gorie &agrave; la racine"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/insert.gif" />
+				<a href="#" class="" id="ins_racine" title="Inserer une cat&eacute;gorie &agrave; la racine"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/insert.gif" />
 				</a> 
 					</td></tr></table>
 		</div>
@@ -60,8 +60,8 @@ check_page_variables ($page_variables);
 							if ($catalogue_dir->indentation < current($list_catalogue_dir)->indentation) {
 								
 							?><a href="#" id="link_div_art_categ_<?php echo $catalogue_dir->id_catalogue_client_dir?>">
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/collapse.gif" width="14px" id="extend_<?php echo $catalogue_dir->id_catalogue_client_dir?>"/>
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/extend.gif" width="14px" id="collapse_<?php echo $catalogue_dir->id_catalogue_client_dir?>" style="display:none"/></a>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/collapse.gif" width="14px" id="extend_<?php echo $catalogue_dir->id_catalogue_client_dir?>"/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/extend.gif" width="14px" id="collapse_<?php echo $catalogue_dir->id_catalogue_client_dir?>" style="display:none"/></a>
 							<script type="text/javascript">
 							Event.observe("link_div_art_categ_<?php echo $catalogue_dir->id_catalogue_client_dir?>", "click",  function(evt){Event.stop(evt); Element.toggle('div_<?php echo $catalogue_dir->id_catalogue_client_dir?>') ; Element.toggle('extend_<?php echo $catalogue_dir->id_catalogue_client_dir?>'); Element.toggle('collapse_<?php echo $catalogue_dir->id_catalogue_client_dir?>');}, false);
 							</script>
@@ -70,21 +70,21 @@ check_page_variables ($page_variables);
 							else 
 							{
 							?>
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="14px"/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="14px"/>
 							<?php
 							}
 						}
 						else 
 						{
 						?>
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="14px"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="14px"/>
 						<?php
 						}
 					}
 					else
 					{
 				?>
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="14px"/></td><td>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="14px"/></td><td>
 				<?php 
 					}
 				}
@@ -96,7 +96,7 @@ check_page_variables ($page_variables);
 					<?php echo htmlentities($catalogue_dir->lib_catalogue_client_dir, ENT_QUOTES, "UTF-8")?>
 				</a>
 				</td><td width="15px">
-					<a href="#" class="insertion" id="ins_<?php echo ($catalogue_dir->id_catalogue_client_dir)?>" title="Inserer une cat&eacute;gorie dans <?php echo htmlentities($catalogue_dir->lib_catalogue_client_dir, ENT_QUOTES, "UTF-8")?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/insert.gif" />
+					<a href="#" class="insertion" id="ins_<?php echo ($catalogue_dir->id_catalogue_client_dir)?>" title="Inserer une cat&eacute;gorie dans <?php echo htmlentities($catalogue_dir->lib_catalogue_client_dir, ENT_QUOTES, "UTF-8")?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/insert.gif" />
 						</a>
 					</td></tr></table>
 		<?php 

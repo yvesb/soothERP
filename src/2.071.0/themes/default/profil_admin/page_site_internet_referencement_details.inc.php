@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
 ?>
 <script type="text/javascript">
 </script>
-<a href="#" id="link_close_pop_up_referencement" style="float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+<a href="#" id="link_close_pop_up_referencement" style="float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 <script type="text/javascript">
 Event.observe("link_close_pop_up_referencement", "click",  function(evt){Event.stop(evt); 
 		$("pop_up_referencement").style.display = "none";}, false);
@@ -38,7 +38,7 @@ Event.observe("link_close_pop_up_referencement", "click",  function(evt){Event.s
 		?>
 		Page selectionnée<br />
 		<br />
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_recherche.gif" class="ico_bt" style="padding-left:35px"/> <?php echo $pages_referencees[0]->nom_fichier;?>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_recherche.gif" class="ico_bt" style="padding-left:35px"/> <?php echo $pages_referencees[0]->nom_fichier;?>
 		<?php
 	}
 	?>
@@ -69,7 +69,7 @@ Event.observe("link_close_pop_up_referencement", "click",  function(evt){Event.s
 
 <br />
 
-		<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />
+		<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" />
 		
 		
 		</form> 

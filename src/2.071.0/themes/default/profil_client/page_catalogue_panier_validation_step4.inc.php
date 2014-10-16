@@ -40,19 +40,19 @@ $Montant_ht = $Montant_ttc = 0;
 			</tr>
 			<tr >
 				<td class="panier_line_etape">
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier_grey_dot.gif" />
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/panier_grey_dot.gif" />
 				</td>
 				<td class="panier_line_etape">
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier_grey_dot.gif" />
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/panier_grey_dot.gif" />
 				</td>
 				<td class="panier_line_etape">
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier_grey_dot.gif" />
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/panier_grey_dot.gif" />
 				</td>
 				<td class="panier_line_etape">
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier_grey_dot.gif" />
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/panier_grey_dot.gif" />
 				</td>
 				<td class="panier_line_etape">
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/panier_purple_dot.gif" />
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/panier_purple_dot.gif" />
 				</td>
 			</tr>
 			<tr>
@@ -150,7 +150,7 @@ $Montant_ht = $Montant_ttc = 0;
 		<div class="valid_login" style="display:none;">
 			<table width="680px" cellpadding="0" cellspacing="0">
 			<tr>
-				<td><a href="catalogue_panier_validation_step4.php">Valider</a>&nbsp;&nbsp;<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/fleche_verte.png" border="0" /></td>
+				<td><a href="catalogue_panier_validation_step4.php">Valider</a>&nbsp;&nbsp;<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/fleche_verte.png" border="0" /></td>
 			</tr>
 			</table>
 		</div>

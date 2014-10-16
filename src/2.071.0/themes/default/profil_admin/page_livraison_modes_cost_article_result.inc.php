@@ -40,7 +40,7 @@ global $DIR;
 	if ($debut >= $cfg_nbres_ppage)
 	{
 		$cible = 1;
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/gauche_on.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/gauche_on.gif');
 		$lien = str_replace('{lien}', $image.$image, $lien_on);
 		$lien = str_replace('{cible}', $cible-1, $lien);
 		$lien = str_replace('{cibleb}', $cible, $lien);
@@ -49,7 +49,7 @@ global $DIR;
 	}
 	else
 	{
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/gauche_off.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/gauche_off.gif');
 		$lien = str_replace('{lien}', $image.$image, $lien_off);
 	}
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
@@ -60,7 +60,7 @@ global $DIR;
 	if ($debut >= $cfg_nbres_ppage)
 	{
 		$cible = ($nbenr-1);
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/gauche_on.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/gauche_on.gif');
 		$lien = str_replace('{lien}', $image, $lien_on);
 		$lien = str_replace('{cible}', $cible, $lien);
 		$lien = str_replace('{cibleb}', $cible, $lien);
@@ -69,7 +69,7 @@ global $DIR;
 	}
 	else
 	{
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/gauche_off.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/gauche_off.gif');
 		$lien = str_replace('{lien}', $image, $lien_off);
 	}
 	$barre .= $lien."&nbsp;<B>&middot;</B>";
@@ -114,7 +114,7 @@ global $DIR;
 	if ($debut + $cfg_nbres_ppage < $nbtotal)
 	{
 		$cible = ($nbenr+1);
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/droite_on.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/droite_on.gif');
 		$lien = str_replace('{lien}', $image, $lien_on);
 		$lien = str_replace('{cible}', $cible, $lien);
 		$lien = str_replace('{cibleb}', $cible, $lien);
@@ -123,7 +123,7 @@ global $DIR;
 	}
 	else
 	{
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/droite_off.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/droite_off.gif');
 		$lien = str_replace('{lien}', $image, $lien_off);
 	}
 	$barre .= "&nbsp;<B>&middot;</B>".$lien;
@@ -136,7 +136,7 @@ global $DIR;
 	if ($fin != $debut)
 	{
 		$cible = (int)($nbtotal/$cfg_nbres_ppage)+1;
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/droite_on.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/droite_on.gif');
 		$lien = str_replace('{lien}', $image.$image, $lien_on);
 		$lien = str_replace('{cible}', $cible+1, $lien);
 		$lien = str_replace('{cibleb}', $cible, $lien);
@@ -145,7 +145,7 @@ global $DIR;
 	}
 	else
 	{
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/droite_off.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/droite_off.gif');
 		$lien = str_replace('{lien}', $image.$image, $lien_off);
 	}
 	$barre .= "<B>&middot;</B>&nbsp;".$lien;
@@ -253,7 +253,7 @@ function image_html($img)
 				<td style="text-align:center; border-bottom:1px solid #FFFFFF;">
 					<div id="mode_liv_cost_<?php echo $fiche->ref_article;?>">
 						<?php if (!count($fiche->livraisons_tarifs)) { ?>
-							<div id="more_mode_liv_<?php echo $fiche->ref_article;?>" style="cursor:pointer; display:inherit"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" /> Définir </div>
+							<div id="more_mode_liv_<?php echo $fiche->ref_article;?>" style="cursor:pointer; display:inherit"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" /> Définir </div>
 							
 							<script type="text/javascript">
 							Event.observe('more_mode_liv_<?php echo $fiche->ref_article;?>', 'click',  function(){

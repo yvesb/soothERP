@@ -36,11 +36,11 @@ update_menu_arbo();
 		<td>
 			<table class="minimizetable">
 				<tr class="smallheight">
-					<td style=" width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style=" width:27%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style=" width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style=" width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style=" width:28%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style=" width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style=" width:27%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style=" width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style=" width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style=" width:28%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 				</tr>	
 				<tr>
 					<td  >
@@ -114,7 +114,7 @@ update_menu_arbo();
 					</td>
 					<td>
 						
-					<img name="preview" id="preview" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/preview.gif" style="display:none; cursor:pointer" />
+					<img name="preview" id="preview" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/preview.gif" style="display:none; cursor:pointer" />
 					
 					<script type="text/javascript">
 					Event.observe("preview", "click",  function(evt){
@@ -224,7 +224,7 @@ update_menu_arbo();
 				</tr>
 			</table>
 			<p style="text-align:right">
-				<input type="image" name="Submit" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif"/>&nbsp;&nbsp;
+				<input type="image" name="Submit" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif"/>&nbsp;&nbsp;
 			</p>
 		</td>
 	</tr>

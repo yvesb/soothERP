@@ -153,7 +153,7 @@ check_page_variables ($page_variables);
 											<?php 
 											if ($document->getId_etat_doc () == 44 && $_SESSION['user']->check_permission ("35")) {
 												?>
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_inv_valider.gif" id="inventaire_valider" style="cursor:pointer"/>
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_inv_valider.gif" id="inventaire_valider" style="cursor:pointer"/>
 											<div style="height:3px;line-height:3px;" ></div>
 											<?php 
 											}
@@ -248,9 +248,9 @@ check_page_variables ($page_variables);
 		</td>
 	</tr>
 	<tr>
-		<td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1px"/></td>
-		<td style="width:4%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1px"/></td>
-		<td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1px"/></td>
+		<td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1px"/></td>
+		<td style="width:4%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1px"/></td>
+		<td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1px"/></td>
 	</tr>
 	<tr>
 		<td>
@@ -262,17 +262,17 @@ check_page_variables ($page_variables);
 		<table cellpadding="0" cellspacing="0" border="0" style="width:550px" id="document_reglement_entete" class="document_box">
 			<tr style=" line-height:20px; height:20px;" class="document_head_list">
 				<td  style=" padding-left:3px;" class="doc_bold" >
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/doc_extend.gif" border="0" id="extend_click" style="float:right; cursor:pointer" title="Agrandir">
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/doc_extend.gif" border="0" id="extend_click" style="float:right; cursor:pointer" title="Agrandir">
 					Liste des catégories
 				<script type="text/javascript">
 				Event.observe("extend_click", "click", function(evt){Event.stop(evt);
 					if ($("extend_liste").style.height == "135px") {
-					$("extend_click").src = "<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/doc_reduire.gif";
+					$("extend_click").src = "<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/doc_reduire.gif";
 					$("extend_click").title = "Réduire";
 					$("extend_liste").style.width = "550px";
 					$("extend_liste").style.height = "450px";
 					} else {
-					$("extend_click").src = "<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/doc_extend.gif";
+					$("extend_click").src = "<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/doc_extend.gif";
 					$("extend_click").title = "Agrandir";
 					$("extend_liste").style.width = "100%";
 					$("extend_liste").style.height = "135px";
@@ -296,8 +296,8 @@ check_page_variables ($page_variables);
 					foreach ($art_categs as $art_categ) {
 						if (isset($liste_art_categ[$art_categ])) {
 							?>
-							<span id="edit_stock_art_categ_<?php echo $liste_art_categ[$art_categ]->ref_art_categ;?>" style="cursor:pointer; float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" alt="Etat du stock" title="Etat du stock"/></span>
-							<span id="supp_art_categ_<?php echo $liste_art_categ[$art_categ]->ref_art_categ;?>" style="cursor:pointer; float:right <?php if ($document->getId_etat_doc () == 46) { echo ';display: none';}	?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0" title="supprimer"></span>
+							<span id="edit_stock_art_categ_<?php echo $liste_art_categ[$art_categ]->ref_art_categ;?>" style="cursor:pointer; float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-pdf.gif" alt="Etat du stock" title="Etat du stock"/></span>
+							<span id="supp_art_categ_<?php echo $liste_art_categ[$art_categ]->ref_art_categ;?>" style="cursor:pointer; float:right <?php if ($document->getId_etat_doc () == 46) { echo ';display: none';}	?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0" title="supprimer"></span>
 							<?php echo $liste_art_categ[$art_categ]->lib_art_categ;?><br />
 					<SCRIPT type="text/javascript">
 					
@@ -329,7 +329,7 @@ check_page_variables ($page_variables);
 									<span id="lib_art_categ_inv" style=" float:left; height:18px; margin-left:3px; line-height:18px;">Ajouter une catégorie</span>	
 									</td>
 									<td>
-									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif"/ style="float:right" id="lib_art_categ_bt_select_inv">
+									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select.gif"/ style="float:right" id="lib_art_categ_bt_select_inv">
 									</td>
 									</tr>
 									</table>
@@ -339,15 +339,15 @@ check_page_variables ($page_variables);
 								</span>
 								<script type="text/javascript">
 							//effet de survol sur le faux select
-								Event.observe('lib_art_categ_link_select_inv', 'mouseover',  function(){$("lib_art_categ_bt_select_inv").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select_hover.gif";}, false);
-								Event.observe('lib_art_categ_link_select_inv', 'mousedown',  function(){$("lib_art_categ_bt_select_inv").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select_down.gif";}, false);
-								Event.observe('lib_art_categ_link_select_inv', 'mouseup',  function(){$("lib_art_categ_bt_select_inv").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif";}, false);
-								Event.observe('lib_art_categ_link_select_inv', 'mouseout',  function(){$("lib_art_categ_bt_select_inv").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif";}, false);
+								Event.observe('lib_art_categ_link_select_inv', 'mouseover',  function(){$("lib_art_categ_bt_select_inv").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select_hover.gif";}, false);
+								Event.observe('lib_art_categ_link_select_inv', 'mousedown',  function(){$("lib_art_categ_bt_select_inv").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select_down.gif";}, false);
+								Event.observe('lib_art_categ_link_select_inv', 'mouseup',  function(){$("lib_art_categ_bt_select_inv").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select.gif";}, false);
+								Event.observe('lib_art_categ_link_select_inv', 'mouseout',  function(){$("lib_art_categ_bt_select_inv").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select.gif";}, false);
 								Event.observe('lib_art_categ_link_select_inv', 'click',  function(evt){Event.stop(evt); Element.toggle('liste_de_categorie_selectable_inv'); Element.toggle('iframe_liste_de_categorie_selectable_inv');	
 									if ($("liste_de_categorie_selectable_inv").innerHTML == "") {
 									load_liste_categ ("documents_inventaire_liste_categ.php", "liste_de_categorie_selectable_inv");
 									}
-									$("extend_click").src = "<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/doc_reduire.gif";
+									$("extend_click").src = "<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/doc_reduire.gif";
 									$("extend_click").title = "Réduire";
 									$("extend_liste").style.width = "550px";
 									$("extend_liste").style.height = "450px";
@@ -360,7 +360,7 @@ check_page_variables ($page_variables);
 								<input type="hidden" name="new_inv_ref_art_categ_inv" id="new_inv_ref_art_categ_inv" value=""/>
 								<input type="checkbox" name="add_art_categ_pre_remplir" id="add_art_categ_pre_remplir" value="1"/> pré-remplir</td>
 							<td>
-								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" name="add_new_art_categ_inv" id="add_new_art_categ_inv"/>
+								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" name="add_new_art_categ_inv" id="add_new_art_categ_inv"/>
 								<SCRIPT type="text/javascript">
 								
 								Event.observe('add_new_art_categ_inv', "click", function(evt){

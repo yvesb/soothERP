@@ -75,7 +75,7 @@ check_page_variables ($page_variables);
 					</td>
 					<td style="width:18px; vertical-align:bottom">
 					<div id="adresse_contact_choisie" class="simule_champs" style="width:15px;cursor: default;">
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif"/ style="float:right" id="bt_adresse_contact_choisie">
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select.gif"/ style="float:right" id="bt_adresse_contact_choisie">
 					</div>
 					</td>
 					</tr>
@@ -110,7 +110,7 @@ check_page_variables ($page_variables);
 					</td>
 					<td style="width:18px; vertical-align:bottom">
 					<div id="adresse_livraison_choisie" class="simule_champs" style="width:15px;cursor: default;">
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif"/ style="float:right" id="bt_adresse_livraison_choisie">
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select.gif"/ style="float:right" id="bt_adresse_livraison_choisie">
 					</div>
 					</td>
 					</tr>

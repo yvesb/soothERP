@@ -114,7 +114,7 @@ if (!$_SESSION['user']->check_permission ("6")) {?>style="display:none;"<?php } 
 					<td style=" text-align:center; border-right:1px solid #FFFFFF;  width:180px" class="labelled_bold"><br />
 					<div style="width:180px;">
 					<strong>GRILLE DE TARIFS</strong></div>
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
 					</td>
 					<?php 
 					foreach ($tarifs_liste as $tarif_liste) {
@@ -122,7 +122,7 @@ if (!$_SESSION['user']->check_permission ("6")) {?>style="display:none;"<?php } 
 						<td style=" text-align:center;  width:180px;<?php if(key($tarifs_liste)<$tarifs_count){?>border-right:1px solid #FFFFFF;<?php }?>" class="assist_labelled_bold"><br />
 					<div style="width:180px;">
 						<?php echo htmlentities($tarif_liste->lib_tarif, ENT_QUOTES, "UTF-8"); ?></div>
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
 						</td>
 						<?php
 						next($tarifs_liste);
@@ -138,7 +138,7 @@ if (!$_SESSION['user']->check_permission ("6")) {?>style="display:none;"<?php } 
 					<span style="color:#7391a9">De la cat&eacute;gorie </span>
 					<input type="hidden" name="qte_tarif_0" id="qte_tarif_0" value="1" />
 					</div>
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
 					</td>
 					<?php 
 					reset($tarifs_liste);
@@ -174,7 +174,7 @@ if (!$_SESSION['user']->check_permission ("6")) {?> display:none;<?php } ?>">
 							?>
 							</div>
 						</div>
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
 						</td>
 						<?php
 						$nb_liste_tarif= $nb_liste_tarif+1;
@@ -203,7 +203,7 @@ foreach ($liste_formules_tarifs_ByQte as $formule_qte=>$formule_tarif) {
 					<tr>
 						<td class="assist_labelled_bold" style="border-right:1px solid #FFFFFF; border-top:1px solid #FFFFFF;  width:180px;">
 							<a href="#" style="float:left" id="tarif_newqte_bt_del_<?php echo $nb_ligne_prix?>">
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 					<div style="width:180px;">
 	
 							<div style=" text-align:center;">
@@ -212,7 +212,7 @@ foreach ($liste_formules_tarifs_ByQte as $formule_qte=>$formule_tarif) {
 							<input type="hidden" name="qte_tarif_old_<?php echo $nb_ligne_prix?>" id="qte_tarif_old_<?php echo $nb_ligne_prix?>" value="<?php echo $formule_qte;?>" class="assistant_input"/>
 							</div>
 						</div>
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
 						</td>
 						<?php 
 						reset($tarifs_liste);
@@ -221,7 +221,7 @@ foreach ($liste_formules_tarifs_ByQte as $formule_qte=>$formule_tarif) {
 							?>
 							<td style="  width:180px; text-align:center; border-top:1px solid #FFFFFF;<?php if(key($tarifs_liste)<$tarifs_count){?> border-right:1px solid #FFFFFF; <?php }?>">
 							<a href="#" style="float:right; <?php if (!isset ($formule_tarif[$tarif_liste->id_tarif]))	{?>display:none;<?php }?>" id="tarif_del_<?php echo $nb_liste_tarif?>_<?php echo $nb_ligne_prix?>" title="Supprimer la formule">
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
 							</a>
 					<div style="width:180px;">
 							
@@ -302,7 +302,7 @@ if (!$_SESSION['user']->check_permission ("6")) {?> display:none;<?php } ?>">
 								?>
 								</a>	
 							</div>			
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>		
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>		
 							</td>
 							<?php
 							$nb_liste_tarif= $nb_liste_tarif+1;
@@ -361,21 +361,21 @@ $nb_ligne_prix++;
 		</tr>
 	</table>
 
-	<a href="#" id="newqte" style="color:#000000; text-decoration:none"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" />  Ajouter une quantit&eacute;</a>
+	<a href="#" id="newqte" style="color:#000000; text-decoration:none"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" />  Ajouter une quantit&eacute;</a>
 	
 <table style="width:100%">
 	<tr class="smallheight">
-		<td style="width:2%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:3%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:2%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:3%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr>
 		<td colspan="6" style="text-align:right">
-			<a href="#" id="bt_etape_3"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-continuer.gif" /></a>
+			<a href="#" id="bt_etape_3"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-continuer.gif" /></a>
 		</td>
 		<td></td>
 	</tr>
@@ -427,7 +427,7 @@ $nb_ligne_prix++;
 		
 		if (count($taxes_art_categ) > count ($taxes)) {
 		?>
-		<span id="aff_more_categ_taxes" style=" cursor:pointer; display:"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" /> <span style="text-decoration:underline">Taxes de catégorie</span></span>
+		<span id="aff_more_categ_taxes" style=" cursor:pointer; display:"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" /> <span style="text-decoration:underline">Taxes de catégorie</span></span>
 		<div id="more_categ_taxes" style="display:none">
 		<?php
 		foreach ($taxes_art_categ  as $taxep_art){
@@ -472,7 +472,7 @@ $nb_ligne_prix++;
 		
 		if (count($liste_taxes) > count ($taxes) && count($liste_taxes) > count ($taxes_art_categ)) {
 		?>
-		<span id="aff_more_taxes" style=" cursor:pointer; display:"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" /> <span style="text-decoration:underline">Ajouter des taxes</span></span>
+		<span id="aff_more_taxes" style=" cursor:pointer; display:"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" /> <span style="text-decoration:underline">Ajouter des taxes</span></span>
 		<div id="more_taxes" style="display:none">
 		<?php
 		foreach ($liste_taxes  as $taxep){

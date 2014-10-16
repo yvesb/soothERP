@@ -37,7 +37,7 @@ update_menu_arbo();
 				<form action="serveur_import_add.php" method="post" id="import_serveur_add" name="import_serveur_add" target="formFrame" >
 				<table>
 					<tr class="smallheight">
-						<td style="width:4%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:4%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 						<td style="width:190px">Référence du serveur: </td>
 						<td style="width:190px">Libellé du serveur: </td>
 						<td colspan="2">URL du serveur: (http://www.site.com/)</td>
@@ -116,11 +116,11 @@ if (count($liste_serveurs_import)) {
 				<form action="serveur_import_mod.php" method="post" id="import_serveur_mod_<?php echo $serveur_import->ref_serveur_import;?>" name="import_serveur_mod_<?php echo $serveur_import->ref_serveur_import;?>" target="formFrame" >
 				<table>
 					<tr class="smallheight">
-						<td style="width:6%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:190px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:190px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:190px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:6%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:190px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:190px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:190px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 					<tr>
 						<td>
@@ -138,7 +138,7 @@ if (count($liste_serveurs_import)) {
 						</td>
 						<td style="width:1px">
 							<div style="text-align:right; display:none">
-							<input name="modifier_<?php echo $serveur_import->ref_serveur_import;?>" id="modifier_<?php echo $serveur_import->ref_serveur_import;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+							<input name="modifier_<?php echo $serveur_import->ref_serveur_import;?>" id="modifier_<?php echo $serveur_import->ref_serveur_import;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
 							</div>
 						</td>
 					</tr>
@@ -197,7 +197,7 @@ if (count($liste_serveurs_import)) {
 				<div style="text-align:left; width:35px">
 				<form action="serveur_import_sup.php" method="post" id="import_serveur_sup_<?php echo $serveur_import->ref_serveur_import;?>" name="import_serveur_sup_<?php echo $serveur_import->ref_serveur_import;?>" target="formFrame" >
 						<input name="ref_serveur" id="ref_serveur" type="hidden" value="<?php echo htmlentities($serveur_import->ref_serveur_import, ENT_QUOTES, "UTF-8");?>"/>
-							<input name="supprimer_<?php echo $serveur_import->ref_serveur_import;?>" id="supprimer_<?php echo $serveur_import->ref_serveur_import;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" />
+							<input name="supprimer_<?php echo $serveur_import->ref_serveur_import;?>" id="supprimer_<?php echo $serveur_import->ref_serveur_import;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" />
 				</form>
 				<SCRIPT type="text/javascript">
 				Event.observe("supprimer_<?php echo $serveur_import->ref_serveur_import;?>", "click",  function(evt){

@@ -13,7 +13,7 @@ class theme {
 	private $dir_theme;
  	private $dir_css;
  	private $dir_js;
-        private $dir_img;
+    private $dir_img;
 
 function __construct ($id_theme) {
 	global $DIR;
@@ -37,12 +37,12 @@ function __construct ($id_theme) {
 		alerte_dev ($erreur);
 	}
 	
-	$this->id_theme 	= $theme->id_theme;
+	$this->id_theme 		= $theme->id_theme;
 	$this->id_interface 	= $theme->id_interface;
-	$this->lib_theme 	= $theme->lib_theme;
+	$this->lib_theme 		= $theme->lib_theme;
 	$this->code_theme       = $theme->code_theme;
 	$this->id_langage       = $theme->id_langage;
-	$this->actif 		= $theme->actif;
+	$this->actif 			= $theme->actif;
 	
 	return true;
 }

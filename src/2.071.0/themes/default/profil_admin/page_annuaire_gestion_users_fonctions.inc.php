@@ -83,7 +83,7 @@ array_visu_edit_grp[0] 	=	new Array('user_fonction_table');
 	<td>
 		<a href="#" class="" id="racine" title="Inserer une nouvelle fonction" style="display:block; width:100%">Inserer une nouvelle fonction</a>
 		</td><td width="15px">
-		<a href="#" class="" id="ins_racine" title="Inserer une nouvelle fonction"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/insert.gif" />
+		<a href="#" class="" id="ins_racine" title="Inserer une nouvelle fonction"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/insert.gif" />
 		</a> 
 			</td></tr></table></div>
 <div id="liste_de_categorie" class="contactview_corps" style="OVERFLOW-Y: auto; OVERFLOW-X: auto; ">
@@ -107,8 +107,8 @@ next($liste_fonctions);
 					if ($liste_fonction->indentation < current($liste_fonctions)->indentation) {
 						
 					?><a href="#" id="link_div_art_categ_<?php echo $liste_fonction->id_fonction?>">
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/collapse.gif" width="14px" id="extend_<?php echo $liste_fonction->id_fonction?>"/>
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/extend.gif" width="14px" id="collapse_<?php echo $liste_fonction->id_fonction?>" style="display:none"/></a>
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/collapse.gif" width="14px" id="extend_<?php echo $liste_fonction->id_fonction?>"/>
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/extend.gif" width="14px" id="collapse_<?php echo $liste_fonction->id_fonction?>" style="display:none"/></a>
 					<script type="text/javascript">
 					Event.observe("link_div_art_categ_<?php echo $liste_fonction->id_fonction?>", "click",  function(evt){Event.stop(evt); Element.toggle('div_<?php echo $liste_fonction->id_fonction?>') ; Element.toggle('extend_<?php echo $liste_fonction->id_fonction?>'); Element.toggle('collapse_<?php echo $liste_fonction->id_fonction?>');}, false);
 					</script>
@@ -117,21 +117,21 @@ next($liste_fonctions);
 					else 
 					{
 					?>
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="14px"/>
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="14px"/>
 					<?php
 					}
 				}
 				else 
 				{
 				?>
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="14px"/>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="14px"/>
 				<?php
 				}
 			}
 			else
 			{
 		?>
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="14px"/></td><td>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="14px"/></td><td>
 		<?php 
 			}
 		}
@@ -143,7 +143,7 @@ next($liste_fonctions);
 			<?php echo htmlentities($liste_fonction->lib_fonction, ENT_QUOTES, "UTF-8")?>
 		</a>
 		</td><td width="15px">
-			<a href="#" class="insertion" id="ins_<?php echo ($liste_fonction->id_fonction)?>" title="Inserer une fonction dans <?php echo htmlentities($liste_fonction->lib_fonction, ENT_QUOTES, "UTF-8")?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/insert.gif" />
+			<a href="#" class="insertion" id="ins_<?php echo ($liste_fonction->id_fonction)?>" title="Inserer une fonction dans <?php echo htmlentities($liste_fonction->lib_fonction, ENT_QUOTES, "UTF-8")?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/insert.gif" />
 				</a>
 			</td></tr></table>
 <?php 
@@ -256,10 +256,10 @@ H_loading();
 			<td style="width:95%">
 				<table>
 					<tr class="smallheight">
-						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 					<tr>
 						<td ><span class="labelled">Libell&eacute;:</span>
@@ -285,10 +285,10 @@ H_loading();
 				<form action="annuaire_gestion_users_fonctions_add.php" method="post" id="annuaire_gestion_users_fonctions_add" name="annuaire_gestion_users_fonctions_add" target="formFrame" >
 				<table>
 					<tr class="smallheight">
-						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 					<tr>
 						<td>
@@ -313,7 +313,7 @@ H_loading();
 						</td>
 						<td>
 							<p style="text-align:center">
-							<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" />
+							<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" />
 							</p>
 						</td>
 					</tr>
@@ -341,10 +341,10 @@ H_loading();
 				<form action="annuaire_gestion_users_fonctions_mod.php" method="post" id="annuaire_gestion_users_fonctions_mod_<?php echo $liste_fonction->id_fonction; ?>" name="annuaire_gestion_users_fonctions_mod_<?php echo $liste_fonction->id_fonction; ?>" target="formFrame" >
 				<table>
 					<tr class="smallheight">
-						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 					<tr>
 						<td>
@@ -373,7 +373,7 @@ H_loading();
 						<td>
 							<input type="hidden" name="maj_user_perms_<?php echo $liste_fonction->id_fonction;?>" id="maj_user_perms_<?php echo $liste_fonction->id_fonction;?>" value="0" /> 
 							<p style="text-align:center">
-								<input name="modifier_<?php echo $liste_fonction->id_fonction;?>" id="modifier_<?php echo $liste_fonction->id_fonction;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+								<input name="modifier_<?php echo $liste_fonction->id_fonction;?>" id="modifier_<?php echo $liste_fonction->id_fonction;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
 							</p>
 							<script type="text/javascript">
 							
@@ -396,7 +396,7 @@ H_loading();
 						$y = 0;
 						foreach ($liste_permissions as $perms) {
 		?>
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="<?php echo 15*$perms->indentation;?>px" HEIGHT="15px"/>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="<?php echo 15*$perms->indentation;?>px" HEIGHT="15px"/>
 		<?php 
 		switch (type_input($perms->values)) {
 			/****************************************
@@ -495,10 +495,10 @@ H_loading();
 					echo ($perms->lib_permission);
 					?>
 					(<span id="num_choix_<?php echo $liste_fonction->id_fonction;?>_<?php echo $perms->id_permission;?>"><?php echo count($permissions_values)?></span>/<?php echo count($tmp) ?>)
-					<span id="affiche_choix_<?php echo $liste_fonction->id_fonction;?>_<?php echo $perms->id_permission;?>_box"><a href="#" id="affiche_choix_<?php echo $liste_fonction->id_fonction;?>_<?php echo $perms->id_permission;?>_link" style="text-decoration: none; font-size: larger ;" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/extend.gif" width="15px"/></a></span>
+					<span id="affiche_choix_<?php echo $liste_fonction->id_fonction;?>_<?php echo $perms->id_permission;?>_box"><a href="#" id="affiche_choix_<?php echo $liste_fonction->id_fonction;?>_<?php echo $perms->id_permission;?>_link" style="text-decoration: none; font-size: larger ;" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/extend.gif" width="15px"/></a></span>
 					<br>
 					<div id="choix_permission_<?php echo $liste_fonction->id_fonction;?>_<?php echo $perms->id_permission;?>" style="display:none;">
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="<?php echo 15*$perms->indentation;?>px"/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="<?php echo 15*$perms->indentation;?>px"/>
 							<SELECT name="select_permission_<?php echo $liste_fonction->id_fonction;?>_<?php echo $perms->id_permission;?>" id="select_permission_<?php echo $liste_fonction->id_fonction;?>_<?php echo $perms->id_permission;?>" SIZE="5" WIDTH="300" STYLE="width: 300px" MULTIPLE>
 							<?php 
 							foreach ($tmp as $value){?>
@@ -517,10 +517,10 @@ H_loading();
 						Event.stop(evt);
 						if(!$("choix_permission_<?php echo $liste_fonction->id_fonction;?>_<?php echo $perms->id_permission;?>").visible()){
 							$("choix_permission_<?php echo $liste_fonction->id_fonction;?>_<?php echo $perms->id_permission;?>").show();
-							$("affiche_choix_<?php echo $liste_fonction->id_fonction;?>_<?php echo $perms->id_permission;?>_link").innerHTML="<img src='<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/collapse.gif' width='15px'/>";
+							$("affiche_choix_<?php echo $liste_fonction->id_fonction;?>_<?php echo $perms->id_permission;?>_link").innerHTML="<img src='<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/collapse.gif' width='15px'/>";
 						}else{
 							$("choix_permission_<?php echo $liste_fonction->id_fonction;?>_<?php echo $perms->id_permission;?>").hide();
-							$("affiche_choix_<?php echo $liste_fonction->id_fonction;?>_<?php echo $perms->id_permission;?>_link").innerHTML="<img src='<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/extend.gif' width='15px'/>";
+							$("affiche_choix_<?php echo $liste_fonction->id_fonction;?>_<?php echo $perms->id_permission;?>_link").innerHTML="<img src='<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/extend.gif' width='15px'/>";
 						}
 					});
 					Event.observe($("select_permission_<?php echo $liste_fonction->id_fonction;?>_<?php echo $perms->id_permission;?>"), "change", function(evt){
@@ -620,7 +620,7 @@ H_loading();
 							<?php 
 							foreach($mes_membres as $membre){
 									?>
-									<tr><td colspan="3"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="15px" HEIGHT="15px"/>
+									<tr><td colspan="3"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="15px" HEIGHT="15px"/>
 									<a href="#utilisateur_details.php?ref_user=<?php echo $membre["datas"]->ref_user; ?>"><?php echo $membre["string"]; ?></a></td><td>
 									<A id="maj_droits_membre_<?php echo $liste_fonction->id_fonction ?>_<?php echo $membre["datas"]->ref_user ?>" HREF="#" class="common_link">Réinitialiser les droits</A>
 									<script type="text/javascript">
@@ -641,7 +641,7 @@ H_loading();
 			<form method="post" action="annuaire_gestion_users_fonctions_sup.php" id="annuaire_gestion_users_fonctions_sup_<?php echo $liste_fonction->id_fonction; ?>" name="annuaire_gestion_users_fonctions_sup_<?php echo $liste_fonction->id_fonction; ?>" target="formFrame">
 			<input name="id_fonction" id="id_fonction" type="hidden" value="<?php echo $liste_fonction->id_fonction; ?>" />
 		</form>
-		<a href="#" id="link_annuaire_gestion_users_fonctions_sup_<?php echo $liste_fonction->id_fonction; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+		<a href="#" id="link_annuaire_gestion_users_fonctions_sup_<?php echo $liste_fonction->id_fonction; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 		<script type="text/javascript">
 		Event.observe("link_annuaire_gestion_users_fonctions_sup_<?php echo $liste_fonction->id_fonction; ?>", "click",  function(evt){Event.stop(evt); alerte.confirm_supprimer('user_fonction_supprime', 'annuaire_gestion_users_fonctions_sup_<?php echo $liste_fonction->id_fonction; ?>');}, false);
 		</script>

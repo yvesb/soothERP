@@ -24,10 +24,10 @@ check_page_variables ($page_variables);
 <div>
 	<table style="width:97%">
 		<tr class="smallheight">
-			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 		</tr>
 		<tr>
 			<td></td>
@@ -40,7 +40,7 @@ check_page_variables ($page_variables);
 			<td>
 			<strong>Recherche par mot clef:</strong>			</td>
 			<td>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_recherche.gif" id="search_compte_kw" style="cursor:pointer; float:right"/>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_recherche.gif" id="search_compte_kw" style="cursor:pointer; float:right"/>
 			<input type="text" name="cpe_search_lib" id="cpe_search_lib" value=""   class="classinput_lsize"/>
 			<script type="text/javascript">
 			Event.observe("search_compte_kw", "click",  function(evt){
@@ -62,7 +62,7 @@ check_page_variables ($page_variables);
 			<td>
 			<strong>Recherche par num&eacute;ro de compte:</strong>			</td>
 			<td>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_recherche.gif" id="search_compte_num" style="cursor:pointer; float:right"/>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_recherche.gif" id="search_compte_num" style="cursor:pointer; float:right"/>
 			<input type="text" name="cpe_search_num" id="cpe_search_num" value="<?php if (isset($_REQUEST["num_search"])) { echo $_REQUEST["num_search"];}?>"   class="classinput_lsize"/>
 			<script type="text/javascript">
 			Event.observe("search_compte_num", "click",  function(evt){
@@ -82,7 +82,7 @@ check_page_variables ($page_variables);
 		<tr>
 			<td>&nbsp;			</td>
 			<td colspan="2">
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_recherche.gif" id="search_compte_fav" style="cursor:pointer; float:right"/>
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_recherche.gif" id="search_compte_fav" style="cursor:pointer; float:right"/>
 					<strong>Recherche à partir de la liste de Favoris</strong>
 					<script type="text/javascript">
 			Event.observe("search_compte_fav", "click",  function(evt){
@@ -114,7 +114,7 @@ check_page_variables ($page_variables);
 		<tr>
 			<td>			</td>
 			<td colspan="2">
-				<input name="valider" id="valider" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />
+				<input name="valider" id="valider" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" />
 					<?php //@FIXME target = _blank ?>	
 				<form method="post" action="compta_plan_compte_defaut_mod.php" id="compta_plan_compte_defaut_mod" name="compta_plan_compte_defaut_mod" target="formFrame">
 				<input type="hidden" name="retour_value" id="retour_value" value=""  />

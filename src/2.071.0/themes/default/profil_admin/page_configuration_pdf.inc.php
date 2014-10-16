@@ -33,9 +33,9 @@ update_menu_arbo();
 
 <table width="100%">
 	<tr class="smallheight">
-		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:26%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:39%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:26%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:39%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 	</tr>	
 	<tr>
 		<td class="titre_config" colspan="3">Image affich&eacute;e en ent&ecirc;te des documents:		</td>
@@ -115,9 +115,9 @@ update_menu_arbo();
 	
 <!--style="width:35%" style="width:30%"-->
 	<tr class="smallheight">
-		<td ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 	</tr>	
 	<tr>
 		<td class="titre_config" colspan="3">Définition de délais :	</td>
@@ -181,16 +181,16 @@ update_menu_arbo();
 
 </table>
 <p style="text-align:center">
-	<input name="valider" id="valider" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />
+	<input name="valider" id="valider" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" />
 </p>
 </form>
 
 
 <table width="100%">
 	<tr class="smallheight">
-		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:26%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:39%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:26%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:39%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 	</tr>	
 	<tr>
 		<td class="titre_config" colspan="3">Filigranes d'arrière plan des documents:	</td>
@@ -210,7 +210,7 @@ foreach ($liste_filigranes as $fili) {
 				<input id="id_filigrane" name="id_filigrane" value="<?php echo $fili->id_filigrane;?>" type="hidden"/>
 				<input id="lib_filigrane_<?php echo addslashes($fili->id_filigrane);?>" name="lib_filigrane_<?php echo addslashes($fili->id_filigrane);?>" value="<?php echo $fili->lib_filigrane;?>" type="text" class="classinput_hsize" maxlength="70" style="width:310px"/>
 				
-				<input name="modifier_<?php echo addslashes($fili->id_filigrane);?>" id="modifier_<?php echo addslashes($fili->id_filigrane);?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+				<input name="modifier_<?php echo addslashes($fili->id_filigrane);?>" id="modifier_<?php echo addslashes($fili->id_filigrane);?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
 				</form>
 				</td>
 				<td style="width:5%">
@@ -218,7 +218,7 @@ foreach ($liste_filigranes as $fili) {
 				<input name="id_filigrane"  type="hidden" value="<?php echo $fili->id_filigrane; ?>" />
 				<input name="ordre"  type="hidden" value="<?php echo $fili->ordre; ?>" />
 				</form>
-				<a href="#" id="configuration_pdf_fili_bt_sup_<?php echo $fili->id_filigrane; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+				<a href="#" id="configuration_pdf_fili_bt_sup_<?php echo $fili->id_filigrane; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 				<script type="text/javascript">
 				Event.observe("configuration_pdf_fili_bt_sup_<?php echo $fili->id_filigrane; ?>", "click",  function(evt){Event.stop(evt); $("configuration_pdf_fili_sup_<?php echo $fili->id_filigrane; ?>").submit();
 				}, false);
@@ -238,12 +238,12 @@ foreach ($liste_filigranes as $fili) {
 							<input name="new_ordre" type="hidden" value="<?php echo ($fili->ordre)-1?>" />
 							<input name="old_ordre" type="hidden" value="<?php echo ($fili->ordre)?>" />
 							<input name="id_filigrane" type="hidden" value="<?php echo $fili->id_filigrane; ?>" />	
-							<input name="modifier_ordre_<?php echo $fili->id_filigrane; ?>" id="modifier_ordre_<?php echo $fili->id_filigrane; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/up.gif">
+							<input name="modifier_ordre_<?php echo $fili->id_filigrane; ?>" id="modifier_ordre_<?php echo $fili->id_filigrane; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/up.gif">
 						</form>
 						<?php
 						} else {
 						?>
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="1" height="1"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="1" height="1"/>
 						<?php
 						}
 						?>
@@ -261,12 +261,12 @@ foreach ($liste_filigranes as $fili) {
 							<input name="new_ordre" type="hidden" value="<?php echo ($fili->ordre)+1?>" />
 							<input name="old_ordre" type="hidden" value="<?php echo ($fili->ordre)?>" />
 							<input name="id_filigrane" type="hidden" value="<?php echo $fili->id_filigrane; ?>" />	
-							<input name="modifier_ordre_<?php echo $fili->id_filigrane; ?>" id="modifier_ordre_<?php echo $fili->id_filigrane; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/down.gif">
+							<input name="modifier_ordre_<?php echo $fili->id_filigrane; ?>" id="modifier_ordre_<?php echo $fili->id_filigrane; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/down.gif">
 						</form>
 						<?php
 						} else {
 						?>
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="1" height="1"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="1" height="1"/>
 						<?php
 						}
 						?>
@@ -293,7 +293,7 @@ foreach ($liste_filigranes as $fili) {
 		<input id="lib_filigrane" name="lib_filigrane" value="" type="text" class="classinput_hsize" maxlength="70"/>
 		<input type="hidden" name="ordre_fili" value="<?php echo $ordre+1;?>"/>
 		
-		<input name="ajouter_fili" id="ajouter_fili" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" />
+		<input name="ajouter_fili" id="ajouter_fili" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" />
 		</form>
 		</td>
 	</tr>
@@ -305,9 +305,9 @@ foreach ($liste_filigranes as $fili) {
 	
 <table width="100%">
 	<tr class="smallheight">
-		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:26%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:39%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:26%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:39%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 	</tr>	
 	<tr>
 		<td class="titre_config" colspan="3">Ajout d'un nouveau modèle d'impression PDF:	</td>
@@ -404,7 +404,7 @@ foreach ($liste_filigranes as $fili) {
 		</table>
 
 <p style="text-align:center">
-	<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" style="display:none" />
+	<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" style="display:none" />
 </p>
 </form>
 		</td>

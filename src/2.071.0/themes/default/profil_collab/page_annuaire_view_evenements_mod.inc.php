@@ -14,7 +14,7 @@ check_page_variables ($page_variables);
 // *************************************************************************************************************
 
 ?>
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="close_edit_evt" style="cursor:pointer; float:right"/>
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="close_edit_evt" style="cursor:pointer; float:right"/>
 <script type="text/javascript">
 Event.observe('close_edit_evt', 'click',  function(evt){
 Event.stop(evt); 
@@ -117,7 +117,7 @@ Aucun événement correspondant.
 					</td>
 					<td>
 						<div style="text-align:right">
-						<input name="mod_evenements_mod_valid" id="mod_evenements_mod_valid" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+						<input name="mod_evenements_mod_valid" id="mod_evenements_mod_valid" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
 						</div>
 					</td>
 				</tr>

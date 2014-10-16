@@ -83,7 +83,7 @@ check_page_variables ($page_variables);
 			</tr>
 			<tr>
 				<td></td>
-				<td style="text-align:center;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/carre.png" height="100px" /></td>
+				<td style="text-align:center;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/carre.png" height="100px" /></td>
 				<td></td>
 				<td>
 					<table width="100%" border="0">
@@ -108,7 +108,7 @@ check_page_variables ($page_variables);
 			</tr>
 			<tr>
 				<td></td>
-				<td style="text-align:center;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/rectangle.png" height="100px" /></td>
+				<td style="text-align:center;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/rectangle.png" height="100px" /></td>
 				<td></td>
 				<td>
 					<table width="100%" border="0">
@@ -137,7 +137,7 @@ check_page_variables ($page_variables);
 			</tr>
 			<tr>
 				<td></td>
-				<td style="text-align:center;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/cercle.png" height="100px" /></td>
+				<td style="text-align:center;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/cercle.png" height="100px" /></td>
 				<td></td>
 				<td>
 					<table width="100%" border="0">
@@ -163,7 +163,7 @@ check_page_variables ($page_variables);
 			</tr>
 			<tr>
 				<td></td>
-				<td style="text-align:center;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/triangle.png" height="100px" /></td>
+				<td style="text-align:center;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/triangle.png" height="100px" /></td>
 				<td></td>
 				<td>
 					<table width="100%" border="0">
@@ -227,7 +227,7 @@ check_page_variables ($page_variables);
 				<td></td>
 				<td></td>
 				<td style="text-align:right;">
-					<img id="calcul_geo_valider" style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />
+					<img id="calcul_geo_valider" style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" />
 				</td>
 				<td></td>
 			</tr>

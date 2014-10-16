@@ -20,7 +20,7 @@ check_page_variables ($page_variables);
 // *************************************************************************************************************
 
 ?>
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="close_edit_ope" style="cursor:pointer; float:right"/>
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="close_edit_ope" style="cursor:pointer; float:right"/>
 <script type="text/javascript">
 Event.observe('close_edit_ope', 'click',  function(evt){
 Event.stop(evt); 
@@ -89,7 +89,7 @@ $("edition_operation").hide();
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
 		<td style=" text-align:right">
-							<input name="modifier_releves_edit_valid" id="modifier_releves_edit_valid" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-enregistrer.gif" /></td>
+							<input name="modifier_releves_edit_valid" id="modifier_releves_edit_valid" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-enregistrer.gif" /></td>
 		<td>&nbsp;</td>
 	</tr>
 </table>
@@ -107,7 +107,7 @@ $("edition_operation").hide();
 			
 			<input type="hidden" name="id_compte_bancaire_releve" id="id_compte_bancaire_releve" value="<?php echo $infos_releve->id_compte_bancaire_releve;?>"/>
 			
-			<input name="supprimer_releves_edit_valid" id="supprimer_releves_edit_valid" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-supprimer.gif" style="padding-right:11px" />
+			<input name="supprimer_releves_edit_valid" id="supprimer_releves_edit_valid" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-supprimer.gif" style="padding-right:11px" />
 			</form>
 			</div>
 			<SCRIPT type="text/javascript">

@@ -37,45 +37,45 @@ update_menu_arbo();
 		<tr>
 			<td rowspan="2" style="width:280px; height:50px">
 				<div style="position:relative; top:-35px; left:-35px; width:230px; border:1px solid #999999; background-color:#FFFFFF; text-align:center">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_annuaire.jpg" />				</div>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_annuaire.jpg" />				</div>
 				<span style="width:35px">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="280px" height="20px" id="imgsizeform"/>				</span>			</td>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="280px" height="20px" id="imgsizeform"/>				</span>			</td>
 			<td colspan="2" style="width:80%"><span style="width:47%; height:50px"><br />
 				<br />
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/titre_annuaire.jpg" style="padding-left:25px" /><br />
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/titre_annuaire.jpg" style="padding-left:25px" /><br />
 			<br />
 				<br />
 			</span></td>
 			</tr>
 		<tr>
 			<td style="text-align:left;" valign="top">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="20px" /><br />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="20px" /><br />
 
-				<span class="titre_smenu_page" id="annuaire_smenu_gestion_profils"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des Profils</span><br /><br />
+				<span class="titre_smenu_page" id="annuaire_smenu_gestion_profils"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des Profils</span><br /><br />
 
-				<span class="titre_smenu_page" id="annuaire_gestion_clients_categ"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des catégories de Clients</span><br /><br />
+				<span class="titre_smenu_page" id="annuaire_gestion_clients_categ"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des catégories de Clients</span><br /><br />
 
-				<span class="titre_smenu_page" id="annuaire_gestion_fournisseurs_categ"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des catégories de Fournisseurs</span><br /><br />
+				<span class="titre_smenu_page" id="annuaire_gestion_fournisseurs_categ"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des catégories de Fournisseurs</span><br /><br />
 
-			<!--	<span class="titre_smenu_page" id="annuaire_gestion_commerciaux_categ"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des catégories de Commerciaux</span><br /><br />-->
+			<!--	<span class="titre_smenu_page" id="annuaire_gestion_commerciaux_categ"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des catégories de Commerciaux</span><br /><br />-->
 				
-				<span class="titre_smenu_page" id="annuaire_gestion_evenements_contact"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des événements</span><br /><br />
+				<span class="titre_smenu_page" id="annuaire_gestion_evenements_contact"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des événements</span><br /><br />
 
-				<span class="titre_smenu_page" id="annuaire_gestion_liaisons_contact"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des relations</span><br /><br />
+				<span class="titre_smenu_page" id="annuaire_gestion_liaisons_contact"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Gestion des relations</span><br /><br />
 
 			</td>
 			<td style="text-align:left;" valign="top">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="20px"/><br />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="20px"/><br />
 
-                                <span class="titre_smenu_page" id="annuaire_config_nouvelle_fiche"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Configuration des nouvelles fiches contact</span><br /><br />
+                                <span class="titre_smenu_page" id="annuaire_config_nouvelle_fiche"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Configuration des nouvelles fiches contact</span><br /><br />
 
-				<span class="titre_smenu_page" id="annuaire_ajouter"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Ajouter un contact</span><br /><br />
+				<span class="titre_smenu_page" id="annuaire_ajouter"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Ajouter un contact</span><br /><br />
 
-				<span class="titre_smenu_page" id="annuaire_smenu_recherche"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Rechercher un contact</span><br /><br />
+				<span class="titre_smenu_page" id="annuaire_smenu_recherche"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Rechercher un contact</span><br /><br />
 
 <?php if (isset($import_annuaire_csv['folder_name'])) {?><br /><br />
 
-				<span class="titre_smenu_page" id="import_annuaire_csv"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_grey.jpg" align="absmiddle" />Import de contacts depuis un fichier CSV</span><br /><br />
+				<span class="titre_smenu_page" id="import_annuaire_csv"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_grey.jpg" align="absmiddle" />Import de contacts depuis un fichier CSV</span><br /><br />
 <?php } ?>
 			</td>
 		</tr>

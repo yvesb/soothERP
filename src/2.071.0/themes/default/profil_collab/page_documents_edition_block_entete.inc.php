@@ -103,7 +103,7 @@ check_page_variables ($page_variables);
 						<td style="text-align:right; padding-right:3px;">
 						<?php 
 						if ($document->getId_etat_doc () != 2) {
-							?><a href="#" id="annuler_devis" class="doc_link_standard"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" alt="Annuler Le Devis" title="Annuler Le Devis" style="float:right"/>Annuler 
+							?><a href="#" id="annuler_devis" class="doc_link_standard"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" alt="Annuler Le Devis" title="Annuler Le Devis" style="float:right"/>Annuler 
 							</a>
 						<?php 
 						} else {
@@ -116,7 +116,7 @@ check_page_variables ($page_variables);
 						<?php 
 						if ($document->getId_etat_doc () == 1) {
 							?>
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_pret.gif" id="devis_pret" style="cursor:pointer"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_pret.gif" id="devis_pret" style="cursor:pointer"/>
 						<div style="height:3px; line-height:3px;"></div>
 						<?php 
 						}
@@ -124,7 +124,7 @@ check_page_variables ($page_variables);
 						<?php 
 						if ($document->getId_etat_doc () == 1 || $document->getId_etat_doc () == 3) {
 							?>
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_accepte.gif" id="devis_accepte" style="cursor:pointer"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_accepte.gif" id="devis_accepte" style="cursor:pointer"/>
 						<div style="height:3px; line-height:3px;"></div>
 						<?php 
 						}
@@ -132,7 +132,7 @@ check_page_variables ($page_variables);
 						<?php 
 						if ($document->getId_etat_doc () == 1 || $document->getId_etat_doc () == 3) {
 							?>
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_refuse.gif" id="devis_refuse" style="cursor:pointer"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_refuse.gif" id="devis_refuse" style="cursor:pointer"/>
 						<div style="height:3px; line-height:3px;"></div>
 						<?php 
 						}
@@ -187,7 +187,7 @@ check_page_variables ($page_variables);
 						<td style="text-align:right; padding-right:3px">
 						<?php 
 						if ($document->getId_etat_doc () != 7) {
-							?><a href="#" id="annuler_commande" class="doc_link_standard"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" alt="Annuler la commande" title="Annuler la commande" style="float:right"/> Annuler</a>
+							?><a href="#" id="annuler_commande" class="doc_link_standard"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" alt="Annuler la commande" title="Annuler la commande" style="float:right"/> Annuler</a>
 						<?php 
 						} else {
 							?><a href="#" id="reactiver_commande" class="doc_link_standard"> R&eacute;activer&nbsp;&nbsp;</a>
@@ -198,7 +198,7 @@ check_page_variables ($page_variables);
 						<?php 
 						if ($document->getId_etat_doc () == 6) {
 							?>
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_pret.gif" id="commande_pret" style="cursor:pointer"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_pret.gif" id="commande_pret" style="cursor:pointer"/>
 						<div style="height:3px;line-height:3px;" ></div>
 						<?php 
 						}
@@ -206,7 +206,7 @@ check_page_variables ($page_variables);
 						<?php 
 						if ($document->getId_etat_doc () == 6 || $document->getId_etat_doc () == 9) {
 							?>
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_traite.gif" id="commande_traite" style="cursor:pointer"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_traite.gif" id="commande_traite" style="cursor:pointer"/>
 						<div style="height:3px; line-height:3px;"></div>
 						<?php 
 						}

@@ -43,9 +43,9 @@ check_page_variables ($page_variables);
 								<form action="courriers_gestion_type_<?php echo $courrier_type->id_type_courrier; ?>_mod.php" method="post" id="courriers_gestion_type_<?php echo $courrier_type->id_type_courrier; ?>" name="courriers_gestion_type_<?php echo $courrier_type->id_type_courrier; ?>" target="formFrame" >
 									<table width="450px">
 										<tr class="smallheight">
-											<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-											<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-											<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+											<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+											<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+											<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 										</tr>
 										<tr>
 											<td>
@@ -63,7 +63,7 @@ check_page_variables ($page_variables);
 											<td style="text-align:center">
 											</td>
 											<td style="text-align:center">
-												<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />
+												<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" />
 											</td>
 											<td>
 											</td>

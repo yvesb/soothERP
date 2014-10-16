@@ -19,7 +19,7 @@
 			<td style="width:45%;" ><textarea name="requete" id="requete" rows=3 COLS=50></textarea></td>
 					
 			<td style="text-align:center">
-				<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" />
+				<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" />
 			</td>
 		</tr>
 	</table>

@@ -31,8 +31,8 @@ check_page_variables ($page_variables);
 			<form action="compta_plan_general_add.php" method="post" id="compta_plan_general_add" name="compta_plan_general_add" target="formFrame" >
 			<table style="width:100%">
 				<tr class="smallheight">
-					<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 				<tr>
 					<td style="text-align:left">Numéro du compte					</td>
@@ -64,7 +64,7 @@ check_page_variables ($page_variables);
 				<tr>
 					<td style="text-align:left">					</td>
 					<td style="text-align:left"><span style="text-align:center">
-						<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" />
+						<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" />
 					</span> </td>
 					</tr>
 			</table>

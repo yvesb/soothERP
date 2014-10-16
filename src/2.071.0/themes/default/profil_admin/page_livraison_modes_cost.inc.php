@@ -58,7 +58,7 @@ foreach ($livraison_costs as $cost) {
 	<div style="border-top:1px solid #999999" id="add_cost_mode_liv_aff_<?php echo $i;?>_<?php echo $livraison_mode->getId_livraison_mode();?>">
 	
 	
-	<a href="#" id="link_livraison_modes_cost_sup_<?php echo $i;?>_<?php echo $livraison_mode->getId_livraison_mode(); ?>" style="float:right; <?php if ($i == 1) {?>display:none;<?php }?>" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+	<a href="#" id="link_livraison_modes_cost_sup_<?php echo $i;?>_<?php echo $livraison_mode->getId_livraison_mode(); ?>" style="float:right; <?php if ($i == 1) {?>display:none;<?php }?>" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 	<script type="text/javascript">
 	Event.observe("link_livraison_modes_cost_sup_<?php echo $i;?>_<?php echo $livraison_mode->getId_livraison_mode(); ?>", "click",  function(evt){
 		Event.stop(evt); 
@@ -68,8 +68,8 @@ foreach ($livraison_costs as $cost) {
 	</script>
 	<table style="width:100%">
 		<tr class="smallheight">
-			<td style="width:80%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:80%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 		</tr>
 		<tr>
 			<td><?php echo $BASE_CALCUL_LIVRAISON[$selected_base][0];?> >= <input name="indice_min_<?php echo $i;?>_<?php echo $livraison_mode->getId_livraison_mode();?>"  id="indice_min_<?php echo $i;?>_<?php echo $livraison_mode->getId_livraison_mode();?>" type="text" value="<?php echo $cost->indice_min;?>" <?php if (!$cost->indice_min) { ?>READONLY<?php } ?> size="5" style="text-align:right" />  <?php echo $BASE_CALCUL_LIVRAISON[$selected_base][1];?>
@@ -122,8 +122,8 @@ foreach ($livraison_costs as $cost) {
 
 	<table style="width:100%">
 		<tr class="smallheight">
-			<td style="width:80%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:80%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 		</tr>
 		<tr>
 			<td><?php echo $BASE_CALCUL_LIVRAISON[$selected_base][0];?> >= <input name="indice_min_0_<?php echo $livraison_mode->getId_livraison_mode();?>" id="indice_min_0_<?php echo $livraison_mode->getId_livraison_mode();?>"  type="text" value="<?php if (!count($livraison_costs)) { ?>0<?php } ?>"   size="5" style="text-align:right" <?php if (!count($livraison_costs)) { ?>READONLY<?php } ?> /> <?php echo $BASE_CALCUL_LIVRAISON[$selected_base][1];?>
@@ -146,11 +146,11 @@ foreach ($livraison_costs as $cost) {
 </div>
 
 <div style=" border-top:1px solid #999999"></div>
-<div id="add_cost_liv_mode_liv_<?php echo $livraison_mode->getId_livraison_mode();?>" style="cursor:pointer;<?php if (!count($livraison_costs)) { ?>display:none<?php } ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" /> <span style="font-weight:bolder">Ajouter un palier</span></div>
+<div id="add_cost_liv_mode_liv_<?php echo $livraison_mode->getId_livraison_mode();?>" style="cursor:pointer;<?php if (!count($livraison_costs)) { ?>display:none<?php } ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" /> <span style="font-weight:bolder">Ajouter un palier</span></div>
 					
 <div style="text-align:center; "><br />
 
-				<input name="valider_cost_<?php echo $livraison_mode->getId_livraison_mode();?>" id="valider_cost_<?php echo $livraison_mode->getId_livraison_mode();?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />
+				<input name="valider_cost_<?php echo $livraison_mode->getId_livraison_mode();?>" id="valider_cost_<?php echo $livraison_mode->getId_livraison_mode();?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" />
 				</div>
 </form>
 

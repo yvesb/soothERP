@@ -20,9 +20,9 @@ check_page_variables ($page_variables);
 <div style=" text-align:left; padding:20px">
 <table style="width:100%" border="0">
 	<tr class="smallheight">
-		<td style="width:60%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:2%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:38%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:60%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:2%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:38%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr>
 		<td>
@@ -38,7 +38,7 @@ check_page_variables ($page_variables);
 			</a>
 			</td>
 			<td>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="supp_img_<?php echo $image->id_image;?>" style="cursor:pointer"/>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="supp_img_<?php echo $image->id_image;?>" style="cursor:pointer"/>
 			</td>
 			<td>
 				<table>
@@ -47,7 +47,7 @@ check_page_variables ($page_variables);
 				<?php
 				if ($image->ordre!=1) {
 					?>
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/up.gif" style="cursor:pointer" id="up_<?php echo $image->id_image;?>"/>
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/up.gif" style="cursor:pointer" id="up_<?php echo $image->id_image;?>"/>
 					<script type="text/javascript">
 					Event.observe('up_<?php echo $image->id_image;?>', "click", function(evt){
 							page.verify("articles_view_ingo_images","catalogue_articles_view_images_ordre.php?ref_article=<?php echo $article->getRef_article ();?>&id_image=<?php echo $image->id_image;?>&ordre=<?php echo $image->ordre-1;?>", "true", "info_images");
@@ -63,7 +63,7 @@ check_page_variables ($page_variables);
 				<?php
 				if ($image->ordre != count($images)) {
 					?>
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/down.gif" style="cursor:pointer" id="down_<?php echo $image->id_image;?>"/>
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/down.gif" style="cursor:pointer" id="down_<?php echo $image->id_image;?>"/>
 					<script type="text/javascript">
 					Event.observe('down_<?php echo $image->id_image;?>', "click", function(evt){
 							page.verify("articles_view_ingo_images","catalogue_articles_view_images_ordre.php?ref_article=<?php echo $article->getRef_article ();?>&id_image=<?php echo $image->id_image;?>&ordre=<?php echo $image->ordre+1;?>", "true", "info_images");
@@ -110,7 +110,7 @@ check_page_variables ($page_variables);
 		<td>
 		</td>
 		<td>
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_add_image.gif" id="add_img_form_bt" style="cursor:pointer"/>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_add_image.gif" id="add_img_form_bt" style="cursor:pointer"/>
 		<div id="add_img_form" style="display:none">
 		<div class="roundedtable">
 		<form name="upload" enctype="multipart/form-data" method="POST" action="catalogue_articles_view_images_upload.php" target="formFrame">

@@ -33,7 +33,7 @@ id_index_contentcoord=0;
             <p>&nbsp;Activer les types d'adresses et de coordonn&eacute;es<input type="checkbox" value="1" id="gest_type" name="gest_type" <?php if($GEST_TYPE_COORD) echo "checked=\"checked\""; ?> /></p>
             <br />
             <p style="text-align:center">
-                <input name="valider" id="valider" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />
+                <input name="valider" id="valider" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" />
             </p>
         </form>
     </div>

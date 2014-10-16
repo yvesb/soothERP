@@ -44,9 +44,9 @@ function __construct ($id_stock = 0, $infos_stock = NULL) {
 	// Attribution des informations à l'objet
 	$this->id_stock 			= $id_stock;
 	$this->lib_stock			= $stock->lib_stock;
-	$this->abrev_stock		= $stock->abrev_stock;
-	$this->ref_adr_stock	= $stock->ref_adr_stock;
-	$this->actif					= $stock->actif;
+	$this->abrev_stock			= $stock->abrev_stock;
+	$this->ref_adr_stock		= $stock->ref_adr_stock;
+	$this->actif				= $stock->actif;
 
 	stock::charge_defaut_modele_pdf();
 	return true;
@@ -57,9 +57,9 @@ function charger_from_object($stock) {
 	// Attribution des informations 
 	$this->id_stock				= $stock->id_stock;
 	$this->lib_stock			= $stock->lib_stock;
-	$this->abrev_stock		= $stock->abrev_stock;
-	$this->ref_adr_stock	= $stock->ref_adr_stock;
-	$this->actif					= $stock->actif;
+	$this->abrev_stock			= $stock->abrev_stock;
+	$this->ref_adr_stock		= $stock->ref_adr_stock;
+	$this->actif				= $stock->actif;
 
 	return true;
 }

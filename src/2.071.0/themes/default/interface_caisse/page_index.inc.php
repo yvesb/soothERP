@@ -162,8 +162,8 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $COR
 			
 			<?php foreach ($_SESSION['magasins'] as $magasin) { ?>
 				if (id_magasin == <?php echo $magasin->getId_magasin ();?>)
-				{		$("img_option_info_magasin_<?php echo $magasin->getId_magasin ();?>").src = "<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/actuel.gif"; } 
-				else { $("img_option_info_magasin_<?php echo $magasin->getId_magasin ();?>").src = "<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif"; }
+				{		$("img_option_info_magasin_<?php echo $magasin->getId_magasin ();?>").src = "<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/actuel.gif"; } 
+				else { $("img_option_info_magasin_<?php echo $magasin->getId_magasin ();?>").src = "<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif"; }
 				<?php } ?>
 		}
 		
@@ -289,7 +289,7 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $COR
 		Event.observe(window, "load", initEventHandlers, false);
 	</script>
 </head>
-<!-- IMAGE DE FOND ICI <?php /*<body style="background-image: url(<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/main_content_bg.gif); background-repeat:repeat-x; background-attachment:fixed"> */?>-->
+<!-- IMAGE DE FOND ICI <?php /*<body style="background-image: url(<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/main_content_bg.gif); background-repeat:repeat-x; background-attachment:fixed"> */?>-->
 <body style="background-repeat:repeat-x; background-attachment:fixed">
 	<div id="grand_contener">
 		<iframe id="framealert" frameborder="0" scrolling="no" src="about:blank"></iframe>
@@ -338,7 +338,7 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $COR
 				<strong>Chargement en cours</strong>
 			</div>
 			<script type="text/javascript">
-				swfobject.embedSWF("<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/waiting.swf", "boxcontent", "142", "15", "9.0.0", "expressInstall.swf", false,{wmode: "transparent", quality: "high", allowScriptAccess: "always"}, {id: "swf_waiting"});
+				swfobject.embedSWF("<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/waiting.swf", "boxcontent", "142", "15", "9.0.0", "expressInstall.swf", false,{wmode: "transparent", quality: "high", allowScriptAccess: "always"}, {id: "swf_waiting"});
 			</script>
 		</div>
 
@@ -346,7 +346,7 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $COR
 
 		<div id="wait_calcul_content" style="display:none" class="alert_wait_calcul">
 			<div style="text-align:center; font:16px bolder Arial, Helvetica, sans-serif">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/wait_calcul.gif" alt="" />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/wait_calcul.gif" alt="" />
 			</div>
 		</div>
 		
@@ -379,7 +379,7 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $COR
 								<table width="100%" cellpadding=0 cellspacing=0 border=0 align="center">
 									<tr>
 										<td colspan="2" style="text-align:center; font-weight:bolder; line-height:20px; height:20px; border-bottom:1px solid #000000;">
-											<a href="#" id="close_ask_login"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0" style="float:right"></a>
+											<a href="#" id="close_ask_login"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0" style="float:right"></a>
 											Veuillez vous r&eacute;identifier
 										</td>
 									</tr>

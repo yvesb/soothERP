@@ -85,8 +85,8 @@ Sélectionnez les correspondances entre les informations de LMB et les différen
 					<option value="" <?php if (!$preselect) {echo 'selected="selected"';}?>>Non d&eacute;termin&eacute;e</option>
 				</select>
 				
-			<img src="../<?php echo $_SESSION['theme']->getDir_theme()?>images/ajouter.gif" id="v_correspondances_ref_art_categ" style="cursor:pointer; display:<?php if (!$preselect) {?>none<?php } ?>" />
-			<img src="../<?php echo $_SESSION['theme']->getDir_theme()?>images/moins.gif" id="unv_correspondances_ref_art_categ" style="display:none; cursor:pointer" />
+			<img src="../<?php echo $_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" id="v_correspondances_ref_art_categ" style="cursor:pointer; display:<?php if (!$preselect) {?>none<?php } ?>" />
+			<img src="../<?php echo $_SESSION['theme']->getDir_gtheme()?>images/moins.gif" id="unv_correspondances_ref_art_categ" style="display:none; cursor:pointer" />
 			<script type="text/javascript">
 			<?php if ($preselect) {?>
 					page.verify('import_catalogue_csv_correspondances','modules/import_catalogue_csv/import_catalogue_csv_correspondances.php?lmb_col=ref_art_categ&csv_col='+$("ref_art_categ").options[$("ref_art_categ").selectedIndex].value,'true','correspondances_ref_art_categ');
@@ -162,8 +162,8 @@ foreach ($import_catalogue_csv['liste_entete'] as $entete_corresp) {
 				</select>
 				
 			<?php if (isset($champs_val['id_type'])) {?>
-			<img src="../<?php echo $_SESSION['theme']->getDir_theme()?>images/ajouter.gif" id="v_correspondances_<?php echo $champs_val['id'];?>" style="cursor:pointer; display:<?php if (!$preselect) {?>none<?php } ?>" />
-			<img src="../<?php echo $_SESSION['theme']->getDir_theme()?>images/moins.gif" id="unv_correspondances_<?php echo $champs_val['id'];?>" style="display:none; cursor:pointer" />
+			<img src="../<?php echo $_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" id="v_correspondances_<?php echo $champs_val['id'];?>" style="cursor:pointer; display:<?php if (!$preselect) {?>none<?php } ?>" />
+			<img src="../<?php echo $_SESSION['theme']->getDir_gtheme()?>images/moins.gif" id="unv_correspondances_<?php echo $champs_val['id'];?>" style="display:none; cursor:pointer" />
 			<script type="text/javascript">
 			<?php if ($preselect) {?>
 					page.verify('import_catalogue_csv_correspondances','modules/import_catalogue_csv/import_catalogue_csv_correspondances.php?lmb_col=<?php echo $champs_val['id'];?>&csv_col='+$("<?php echo $champs_val['id'];?>").options[$("<?php echo $champs_val['id'];?>").selectedIndex].value,'true','correspondances_<?php echo $champs_val['id'];?>');
@@ -238,8 +238,8 @@ foreach ($tarifs_liste as $tarif) {
 					<option value="" <?php if (!$preselect) {echo 'selected="selected"';}?>>Non d&eacute;termin&eacute;e</option>
 				</select>
 				
-			<img src="../<?php echo $_SESSION['theme']->getDir_theme()?>images/ajouter.gif" id="v_correspondances_id_tarif_<?php echo $tarif->id_tarif;?>" style="cursor:pointer; display:<?php if (!$preselect) {?>none<?php } ?>" />
-			<img src="../<?php echo $_SESSION['theme']->getDir_theme()?>images/moins.gif" id="unv_correspondances_id_tarif_<?php echo $tarif->id_tarif;?>" style="display:none; cursor:pointer" />
+			<img src="../<?php echo $_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" id="v_correspondances_id_tarif_<?php echo $tarif->id_tarif;?>" style="cursor:pointer; display:<?php if (!$preselect) {?>none<?php } ?>" />
+			<img src="../<?php echo $_SESSION['theme']->getDir_gtheme()?>images/moins.gif" id="unv_correspondances_id_tarif_<?php echo $tarif->id_tarif;?>" style="display:none; cursor:pointer" />
 			<script type="text/javascript">
 			
 			

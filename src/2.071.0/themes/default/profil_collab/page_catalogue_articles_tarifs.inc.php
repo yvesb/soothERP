@@ -114,7 +114,7 @@ if (!$_SESSION['user']->check_permission ("6")) {?>style="display:none;"<?php } 
 					<td style=" text-align:center; border-right:1px solid #FFFFFF;  width:180px" class="labelled_bold"><br />
 					<div style="width:180px;">
 					<strong>GRILLE DE TARIFS</strong></div>
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
 					</td>
 					<?php 
 					foreach ($tarifs_liste as $tarif_liste) {
@@ -123,7 +123,7 @@ if (!$_SESSION['user']->check_permission ("6")) {?>style="display:none;"<?php } 
 					<div style="width:180px;">
 						<?php echo htmlentities($tarif_liste->lib_tarif, ENT_QUOTES, "UTF-8"); ?>
 					</div>
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
 							</td>
 						<?php
 						next($tarifs_liste);
@@ -139,7 +139,7 @@ if (!$_SESSION['user']->check_permission ("6")) {?>style="display:none;"<?php } 
 					<span style="color:#7391a9">De la cat&eacute;gorie </span>
 					<input type="hidden" name="qte_tarif_0" id="qte_tarif_0" value="1" />
 					</div>
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
 					</td>
 					<?php 
 					reset($tarifs_liste);
@@ -174,7 +174,7 @@ if (!$_SESSION['user']->check_permission ("6")) {?>style="display:none;"<?php } 
 							?>
 							</div>
 						</div>
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
 						</td>
 						<?php
 						$nb_liste_tarif= $nb_liste_tarif+1;
@@ -192,21 +192,21 @@ if (!$_SESSION['user']->check_permission ("6")) {?>style="display:none;"<?php } 
 		</tr>
 	</table>
 
-	<a href="#" id="newqte" style="color:#000000; text-decoration:none"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" />  Ajouter une quantit&eacute;</a>
+	<a href="#" id="newqte" style="color:#000000; text-decoration:none"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" />  Ajouter une quantit&eacute;</a>
 	
 <table style="width:100%">
 	<tr class="smallheight">
-		<td style="width:2%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:3%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:2%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:3%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr>
 		<td colspan="6" style="text-align:right">
-			<a href="#" id="bt_etape_3"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-continuer.gif" /></a>
+			<a href="#" id="bt_etape_3"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-continuer.gif" /></a>
 		</td>
 		<td></td>
 	</tr>
@@ -252,7 +252,7 @@ if (!$_SESSION['user']->check_permission ("6")) {?>style="display:none;"<?php } 
 		
 		if ( count($liste_taxes) > count ($taxes_art_categ)) {
 		?>
-		<span id="aff_more_taxes" style=" cursor:pointer; display:"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" /> <span style="text-decoration:underline">Ajouter des taxes</span></span>
+		<span id="aff_more_taxes" style=" cursor:pointer; display:"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" /> <span style="text-decoration:underline">Ajouter des taxes</span></span>
 		<div id="more_taxes" style="display:none">
 		<?php
 		foreach ($liste_taxes  as $taxep){

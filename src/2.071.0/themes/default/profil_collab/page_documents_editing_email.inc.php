@@ -22,7 +22,7 @@ function add_destline (mail_insert) {
                 addiv.setAttribute ("class", "dest_entitie");
 	var image= document.createElement("img");
 		image.setAttribute ("id", "sup_list_dest_"+line_num);
-		image.setAttribute ("src", "<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif");
+		image.setAttribute ("src", "<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif");
 	zone.appendChild(addiv);
 	$("dest_"+line_num).innerHTML=mail_insert;
 	$("dest_"+line_num).appendChild(image);
@@ -128,7 +128,7 @@ div.dest_entitie img {
              foreach ($tmp as $linedest) {
         ?>
             <div id="dest_<?php echo $i;?>" class="dest_entitie"><?php echo $linedest;?>
-                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" alt="Vider la liste des destinataires" id="sup_list_dest_<?php echo $i;?>" title="Vider la liste des destinataires" style="cursor:pointer; float:right">
+                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" alt="Vider la liste des destinataires" id="sup_list_dest_<?php echo $i;?>" title="Vider la liste des destinataires" style="cursor:pointer; float:right">
             </div>
 
             <script type="text/javascript">
@@ -196,77 +196,77 @@ div.dest_entitie img {
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_bold" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/bold.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/bold.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_italic" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/italic.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/italic.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_souligner" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/underline.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/underline.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_align_left" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/justifyleft.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/justifyleft.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_align_center" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/justifycenter.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/justifycenter.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_align_right" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/justifyright.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/justifyright.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_align_justify" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/justifyfull.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/justifyfull.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_outdent" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/outdent.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/outdent.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_indent" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/indent.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/indent.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_insertorderedlist" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/insertorderedlist.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/insertorderedlist.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_insertunorderedlist" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/insertunorderedlist.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/insertunorderedlist.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_forecolor" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/forecolor.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/forecolor.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_hilitecolor" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/hilitecolor.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/hilitecolor.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_link" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/createlink.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/createlink.gif" />
 												</a>
 											</td>
 											<td align="center">
 												<a href="#" id="editeur_unlink" class="bt_wysiwyg">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/_small_wysiwyg/unlink.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/unlink.gif" />
 												</a>
 											</td>
 										</tr>

@@ -24,7 +24,7 @@ check_page_variables ($page_variables);
 <div id="recherche" class="corps_mini_moteur">
 <div id="recherche_simple" >
 	<a href="#" id="link_close_pop_up_mini_moteur_cata" style="float:right">
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
 	</a>
 	<script type="text/javascript">
 	Event.observe("link_close_pop_up_mini_moteur_cata", "click",  function(evt){Event.stop(evt); close_mini_moteur_cata();}, false);
@@ -42,7 +42,7 @@ check_page_variables ($page_variables);
 			<input type="hidden" name="fonction_retour_cata_m" id="fonction_retour_cata_m" value="" />
 			<input type="hidden" name="param_retour_cata_m" id="param_retour_cata_m" value="" />
 				<span class="labelled_text">Cat&eacute;gorie:</span></td>
-			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			<td style="width:50%"><span class="labelled_text">R&eacute;f&eacute;rence, libell&eacute; ou code barre:</span></td>
 		</tr>
 		<tr>
@@ -76,8 +76,8 @@ check_page_variables ($page_variables);
 			</td>
 			<td style="text-align:right">
 			
-				<input name="submit" type="image" onclick="$('page_to_show_cata_m').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-rechercher.gif" style="float:left"/>
-				<input type="image" name="annuler_mini_moteur" id="annuler_mini_moteur_cata_m" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-annuler.gif"/>
+				<input name="submit" type="image" onclick="$('page_to_show_cata_m').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-rechercher.gif" style="float:left"/>
+				<input type="image" name="annuler_mini_moteur" id="annuler_mini_moteur_cata_m" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-annuler.gif"/>
 			</td>
 		</tr>
 	</table>

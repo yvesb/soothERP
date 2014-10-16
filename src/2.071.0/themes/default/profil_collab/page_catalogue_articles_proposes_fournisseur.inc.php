@@ -56,14 +56,14 @@ foreach ($_ALERTES as $alerte => $value) {
 						<td style="width:2%">&nbsp;</td>
 						<td style="width:25%">&nbsp;</td>
 						<td style="width:25%">
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
 						</td>
 						<td style="width:20%">
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
 						</td>
 						<td style="width:10%">&nbsp;</td>
 						<td style="width:15%">
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
 						</td>
 						<td style="width:3%">&nbsp;</td>
 					</tr>
@@ -75,23 +75,23 @@ foreach ($_ALERTES as $alerte => $value) {
 						<td>
 							
 							<input type="text" name="nom_contact"  id="nom_contact" value="<?php if($fournisseur != null){echo $fournisseur->getNom();}?>"/>
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif" style="cursor:pointer" 	id="recherche_ref_contact_img" alt="Choisir un contact" 		title="Choisir un contact"/>&nbsp;&nbsp;
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" style="cursor:pointer" 				id="recherche_sup_contact_img" alt="Supprimer le  contact" 	title="Supprimer le  contact"/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif" style="cursor:pointer" 	id="recherche_ref_contact_img" alt="Choisir un contact" 		title="Choisir un contact"/>&nbsp;&nbsp;
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" style="cursor:pointer" 				id="recherche_sup_contact_img" alt="Supprimer le  contact" 	title="Supprimer le  contact"/>
 							<script type="text/javascript">
 
 
 							//effet de survol sur le faux select
 								Event.observe('recherche_ref_contact_img', 'mouseover', function(){
-									$("recherche_ref_contact_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_hover.gif";
+									$("recherche_ref_contact_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_hover.gif";
 								}, false);
 								Event.observe('recherche_ref_contact_img', 'mousedown', function(){
-									$("recherche_ref_contact_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_down.gif";
+									$("recherche_ref_contact_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_down.gif";
 								}, false);
 								Event.observe('recherche_ref_contact_img', 'mouseup',  	function(){
-									$("recherche_ref_contact_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";
+									$("recherche_ref_contact_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";
 								}, false);
 								Event.observe('recherche_ref_contact_img', 'mouseout',  function(){
-									$("recherche_ref_contact_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";
+									$("recherche_ref_contact_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";
 								}, false);
 								Event.observe('recherche_ref_contact_img', 'click',  		function(evt){
 									Event.stop(evt);
@@ -118,8 +118,8 @@ foreach ($_ALERTES as $alerte => $value) {
 						<td>&nbsp;</td>
 						<td>&nbsp;</td>
 						<td style="text-align:right">
-								<input name="submit2" type="image" onclick="$('page_to_show_s').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-rechercher.gif"  style="float:left" />
-								<input type="image" name="annuler_recherche_s" id="annuler_recherche_s" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-annuler.gif"/>
+								<input name="submit2" type="image" onclick="$('page_to_show_s').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-rechercher.gif"  style="float:left" />
+								<input type="image" name="annuler_recherche_s" id="annuler_recherche_s" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-annuler.gif"/>
 						</td>
 						<td style="padding-left:35px">&nbsp;</td>
 						<td>&nbsp;</td>

@@ -84,7 +84,7 @@
 					</td>
 					<td style="width:8%; border-bottom:1px solid #FFFFFF; text-align:center">
 						<div id="link_conso_ref_plus_2_<?php echo $colorise;?>" style="cursor:pointer">
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" />
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" />
 						</div>
 						<script type="text/javascript">
 						Event.observe("link_conso_ref_plus_2_<?php echo $colorise;?>", "click",  function(evt){
@@ -128,7 +128,7 @@
 		<?php
 		}
 		?>
-		<div style="float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="350px" height="1px" /></div>
+		<div style="float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="350px" height="1px" /></div>
 		</td>
 		<td width="3%">&nbsp;&nbsp;</td>
 	</tr>

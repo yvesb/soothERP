@@ -49,14 +49,14 @@ check_page_variables ($page_variables);
 					</td>
 					<td style="text-align:center; width:15px;">
 						<a href="#" id="qte_add_one_<?php echo $indentation_contenu;?>">
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" />
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" />
 						</a>
 					</td>
 				</tr>
 				<tr>
 					<td style="text-align:center; width:15px;">
 						<a href="#" id="qte_sub_one_<?php echo $indentation_contenu;?>">
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/moins.gif" />
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/moins.gif" />
 						</a>
 					</td>
 				</tr>
@@ -66,9 +66,9 @@ check_page_variables ($page_variables);
 			<a href="#" id="aff_resume_stock_<?php echo ($contenu->article->getRef_article());?>">
 				<?php $stock = $contenu->article->getStocks();
 				if (isset($stock[$_SESSION['magasins'][$ID_MAGASIN]->getId_stock()]) && $stock[$_SESSION['magasins'][$ID_MAGASIN]->getId_stock()]->qte) { ?>
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/stock_dispo.gif" />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/stock_dispo.gif" />
 				<?php }else{ ?>
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/stock_vide.gif" />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/stock_vide.gif" />
 				<?php } ?>
 			</a>
 		</td>
@@ -88,7 +88,7 @@ check_page_variables ($page_variables);
 		</td>	
 		<td style="text-align:right; width:5%">
 			<a href="#" id="sup_<?php echo $indentation_contenu?>">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">		
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">		
 			</a>
 		</td>
 		<td style="text-align:right; width:5%">&nbsp;</td>

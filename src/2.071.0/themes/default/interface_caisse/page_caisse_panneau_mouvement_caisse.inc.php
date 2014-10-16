@@ -41,7 +41,7 @@ check_page_variables ($page_variables);
 			</tr>
 			<tr>
 				<td align="center">
-					<img id="mouvement_caisse_valider" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.png" style="cursor:pointer"/>
+					<img id="mouvement_caisse_valider" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.png" style="cursor:pointer"/>
 					<script type="text/javascript">
 						Event.observe("mouvement_caisse_valider", "click", function(evt){
 							Event.stop(evt);

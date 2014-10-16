@@ -19,7 +19,7 @@ check_page_variables ($page_variables);
 // *************************************************************************************************************
 
 ?>
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="close_edit_ope" style="cursor:pointer; float:right"/>
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="close_edit_ope" style="cursor:pointer; float:right"/>
 <script type="text/javascript">
 Event.observe('close_edit_ope', 'click',  function(evt){
 Event.stop(evt); 
@@ -129,7 +129,7 @@ $("edition_rapprochement").hide();
 						<td>  
 						</td>
 						<td>
-			<input id="rap_valide" name="rap_valide" type="image"  src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-rechercher.gif"  style="float:left" />
+			<input id="rap_valide" name="rap_valide" type="image"  src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-rechercher.gif"  style="float:left" />
 						</td>
 						<td>
 						</td>

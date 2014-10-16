@@ -1622,7 +1622,7 @@ function listFiles($path){
 }
 
 function tarFiles($path, $files){
-  $RESSOURCE_DIR = "../ressources/";
+  $RESSOURCE_DIR = "../modules/";
   require_once($RESSOURCE_DIR."Tar.php");
   $tar = new Archive_Tar($path, true);
   $tar->create($files) or die("Erreur lors de l'archivage");

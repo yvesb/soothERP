@@ -104,7 +104,7 @@ check_page_variables ($page_variables);
 											</td>
 											<td width="19%">
 											<?php if($i == $count_pack) { ?>
-												<img id="liaison_img_add_<?php echo $num_serie;?>" src="<?php echo $DIR.$_SESSION["theme"]->getDir_theme()?>images/bt-ajouter.gif"/>
+												<img id="liaison_img_add_<?php echo $num_serie;?>" src="<?php echo $DIR.$_SESSION["theme"]->getDir_gtheme()?>images/bt-ajouter.gif"/>
 												<script type="text/javascript">
 													Event.observe("liaison_img_add_<?php echo $num_serie;?>", "click", function(evt){
 														Event.stop(evt);
@@ -160,7 +160,7 @@ check_page_variables ($page_variables);
 											</script>
 										</td>
 										<td width="19%">
-											<img id="liaison_img_add_<?php echo $num_serie;?>" src="<?php echo $DIR.$_SESSION["theme"]->getDir_theme()?>images/bt-ajouter.gif"/>
+											<img id="liaison_img_add_<?php echo $num_serie;?>" src="<?php echo $DIR.$_SESSION["theme"]->getDir_gtheme()?>images/bt-ajouter.gif"/>
 											<script type="text/javascript">
 												Event.observe("liaison_img_add_<?php echo $num_serie;?>", "click", function(evt){
 													Event.stop(evt);
@@ -243,7 +243,7 @@ check_page_variables ($page_variables);
 											</script>
 										</td>
 										<td width="19%">
-											<img id="liaison_img_add_<?php echo $num_serie;?>" src="<?php echo $DIR.$_SESSION["theme"]->getDir_theme()?>images/bt-ajouter.gif"/>
+											<img id="liaison_img_add_<?php echo $num_serie;?>" src="<?php echo $DIR.$_SESSION["theme"]->getDir_gtheme()?>images/bt-ajouter.gif"/>
 											<script type="text/javascript">
 												Event.observe("liaison_img_add_<?php echo $num_serie;?>", "click", function(evt){
 													Event.stop(evt);

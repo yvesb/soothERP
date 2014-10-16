@@ -19,7 +19,7 @@
 					</script>
 			</td>
 			<td style="width:46%" class="composant_li_lib">
-				<span class="composant_li_lib_handle"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/main.gif" id="move_composant_<?php echo $_REQUEST['serie_composant'];?>"/></span>
+				<span class="composant_li_lib_handle"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/main.gif" id="move_composant_<?php echo $_REQUEST['serie_composant'];?>"/></span>
 				<span>
 				<?php 
 				if (count($composants_article)>0) {
@@ -46,8 +46,8 @@
 											if (key($composants_article)!="") {
 												if ($compo_list->indentation < current($composants_article)->indentation) {
 													?><a href="#" id="link_liste_compo_art_<?php echo $_REQUEST['serie_composant'].$i;?>">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/extend.gif" width="14px" id="extend_<?php echo $compo_list->ref_article_lot.$_REQUEST['serie_composant'].$under_compo_indet?>"/>
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/collapse.gif" width="14px" id="collapse_<?php echo $compo_list->ref_article_lot.$_REQUEST['serie_composant'].$under_compo_indet?>" style="display:none"/></a>
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/extend.gif" width="14px" id="extend_<?php echo $compo_list->ref_article_lot.$_REQUEST['serie_composant'].$under_compo_indet?>"/>
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/collapse.gif" width="14px" id="collapse_<?php echo $compo_list->ref_article_lot.$_REQUEST['serie_composant'].$under_compo_indet?>" style="display:none"/></a>
 												<script type="text/javascript">
 												Event.observe("link_liste_compo_art_<?php echo $_REQUEST['serie_composant'].$i;?>", "click",  function(evt){Event.stop(evt); Element.toggle('div_<?php echo $compo_list->ref_article_lot.$_REQUEST['serie_composant'].$under_compo_indet?>') ; Element.toggle('extend_<?php echo $compo_list->ref_article_lot.$_REQUEST['serie_composant'].$under_compo_indet?>'); Element.toggle('collapse_<?php echo $compo_list->ref_article_lot.$_REQUEST['serie_composant'].$under_compo_indet?>');}, false);
 												</script>
@@ -56,21 +56,21 @@
 												else 
 												{
 													?>
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="14px"/>
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="14px"/>
 													<?php
 												}
 											}
 											else 
 											{
 												?>
-												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="14px"/>
+												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="14px"/>
 												<?php
 											}
 										}
 										else
 										{
 											?>
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="14px"/></td><td>
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="14px"/></td><td>
 											<?php 
 										}
 									}
@@ -103,7 +103,7 @@
 				?>
 				</span>
 			</td>
-			<td style="width:20%" class="" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="composant_img_del_<?php echo $_REQUEST['serie_composant']?>" class="cursor_pointer"/></td>
+			<td style="width:20%" class="" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="composant_img_del_<?php echo $_REQUEST['serie_composant']?>" class="cursor_pointer"/></td>
 			<td style="width:5%">&nbsp;</td>
 		</tr>			
 	</table>

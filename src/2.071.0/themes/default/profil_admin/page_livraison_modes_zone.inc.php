@@ -34,7 +34,7 @@ foreach ($livraison_zones as $zone) {
 					<input name="id_livraison_mode" type="hidden" value="<?php echo $livraison_mode->getId_livraison_mode(); ?>" />
 					<input name="id_livraison_zone" type="hidden" value="<?php echo $zone->id_livraison_zone; ?>" />
 				</form>
-				<a href="#" id="link_livraison_modes_zone_sup_<?php echo $zone->id_livraison_zone;?>_<?php echo $livraison_mode->getId_livraison_mode(); ?>" style="float:right" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+				<a href="#" id="link_livraison_modes_zone_sup_<?php echo $zone->id_livraison_zone;?>_<?php echo $livraison_mode->getId_livraison_mode(); ?>" style="float:right" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 				<script type="text/javascript">
 				Event.observe("link_livraison_modes_zone_sup_<?php echo $zone->id_livraison_zone;?>_<?php echo $livraison_mode->getId_livraison_mode(); ?>", "click",  function(evt){Event.stop(evt); alerte.confirm_supprimer('livraison_modes_zone_sup', 'livraison_modes_zone_sup_<?php echo $zone->id_livraison_zone;?>_<?php echo $livraison_mode->getId_livraison_mode(); ?>');}, false);
 				</script>
@@ -46,9 +46,9 @@ foreach ($livraison_zones as $zone) {
 	<input name="id_livraison_mode"  type="hidden" value="<?php echo $livraison_mode->getId_livraison_mode();?>" />
 	<table style="width:100%">
 		<tr class="smallheight">
-			<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 		</tr>
 		<tr >
 			<td >
@@ -84,7 +84,7 @@ foreach ($livraison_zones as $zone) {
 			</select>
 			</td>
 			<td >
-				<input name="modifier_<?php echo $zone->id_livraison_zone;?>_<?php echo $livraison_mode->getId_livraison_mode();?>" id="modifier_<?php echo $zone->id_livraison_zone;?>_<?php echo $livraison_mode->getId_livraison_mode();?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+				<input name="modifier_<?php echo $zone->id_livraison_zone;?>_<?php echo $livraison_mode->getId_livraison_mode();?>" id="modifier_<?php echo $zone->id_livraison_zone;?>_<?php echo $livraison_mode->getId_livraison_mode();?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
 			</td>
 		</tr>
 	</table>
@@ -102,9 +102,9 @@ foreach ($livraison_zones as $zone) {
 <input name="id_livraison_mode"  type="hidden" value="<?php echo $livraison_mode->getId_livraison_mode();?>" />
 <table style="width:100%">
 	<tr class="smallheight">
-		<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr >
 		<td >
@@ -140,14 +140,14 @@ foreach ($livraison_zones as $zone) {
 		</select>
 		</td>
 		<td >
-			<input name="ajouter_<?php echo $livraison_mode->getId_livraison_mode();?>" id="ajouter_<?php echo $livraison_mode->getId_livraison_mode();?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" />
+			<input name="ajouter_<?php echo $livraison_mode->getId_livraison_mode();?>" id="ajouter_<?php echo $livraison_mode->getId_livraison_mode();?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" />
 		</td>
 	</tr>
 </table>
 </form>
 </div>
 
-<div id="add_loc_liv_mode_liv_<?php echo $livraison_mode->getId_livraison_mode();?>" style="cursor:pointer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" /> <span style="font-weight:bolder">Ajouter une zone</span></div>
+<div id="add_loc_liv_mode_liv_<?php echo $livraison_mode->getId_livraison_mode();?>" style="cursor:pointer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" /> <span style="font-weight:bolder">Ajouter une zone</span></div>
 					
 <script type="text/javascript">
 Event.observe('add_loc_liv_mode_liv_<?php echo $livraison_mode->getId_livraison_mode();?>', 'click',  function(){

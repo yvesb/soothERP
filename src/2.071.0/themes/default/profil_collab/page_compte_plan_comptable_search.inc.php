@@ -24,17 +24,17 @@ check_page_variables ($page_variables);
 <div>
 	<table style="width:97%">
 		<tr class="smallheight">
-			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 		</tr>
 		<tr>
 			<td>	</td>
 			<td>
 			<strong>Recherche par mot clef:</strong>			</td>
 			<td>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_recherche.gif" id="search_compte_kw" style="cursor:pointer; float:right"/>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_recherche.gif" id="search_compte_kw" style="cursor:pointer; float:right"/>
 			<input type="text" name="cpe_search_lib" id="cpe_search_lib" value=""   class="classinput_lsize"/>
 			<script type="text/javascript">
 			Event.observe("search_compte_kw", "click",  function(evt){
@@ -56,7 +56,7 @@ check_page_variables ($page_variables);
 			<td>
 			<strong>Recherche par num&eacute;ro de compte:</strong>			</td>
 			<td>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_recherche.gif" id="search_compte_num" style="cursor:pointer; float:right"/>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_recherche.gif" id="search_compte_num" style="cursor:pointer; float:right"/>
 			<input type="text" name="cpe_search_num" id="cpe_search_num" value="<?php if(isset($_REQUEST["num_compte"])) {echo $_REQUEST["num_compte"];}?>"   class="classinput_lsize"/>
 			<script type="text/javascript">
 			Event.observe("search_compte_num", "click",  function(evt){
@@ -76,7 +76,7 @@ check_page_variables ($page_variables);
 		<tr>
 			<td></td>
 			<td colspan="2">
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_recherche.gif" id="search_compte_fav" style="cursor:pointer; float:right"/>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_recherche.gif" id="search_compte_fav" style="cursor:pointer; float:right"/>
 			<strong>Recherche à partir de la liste de Favoris</strong>
 			<script type="text/javascript">
 			Event.observe("search_compte_fav", "click",  function(evt){
@@ -132,7 +132,7 @@ check_page_variables ($page_variables);
 		<tr>
 			<td>&nbsp;</td>
 			<td>
-				<img alt="Valider" name="valider" id="valider" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" align="left" style="cursor:pointer;" />
+				<img alt="Valider" name="valider" id="valider" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" align="left" style="cursor:pointer;" />
 				<script type="text/javascript">
 				Event.observe("valider", "click",  function(evt){
 					Event.stop(evt);
@@ -151,7 +151,7 @@ check_page_variables ($page_variables);
 				</script>
 			</td>
 			<td>
-				<img alt="Ajouter" name="ajouter" id="ajouter" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" align="right" style="cursor:pointer;" />
+				<img alt="Ajouter" name="ajouter" id="ajouter" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" align="right" style="cursor:pointer;" />
 				<script type="text/javascript">
 				Event.observe("ajouter", "click",  function(evt){
 					Event.stop(evt);

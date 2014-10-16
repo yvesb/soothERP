@@ -1,7 +1,7 @@
 
 <iframe frameborder="0" scrolling="no" src="about:_blank" id="pop_up_assistant_comm_commission_iframe" class="assistant_comm_commission_iframe"></iframe>
 <div id="pop_up_assistant_comm_commission" class="assistant_comm_commission_table">
-<a href="#" id="link_close_pop_up_assistant_comm_commission" style="float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+<a href="#" id="link_close_pop_up_assistant_comm_commission" style="float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 <script type="text/javascript">
 Event.observe("link_close_pop_up_assistant_comm_commission", "click",  function(evt){Event.stop(evt); reset_assistant_comm_commission('pop_up_assistant_comm_commission', 'pop_up_assistant_comm_commission_iframe', 'form_assistant_comm_commission', 'assistant_comm_form_step2');}, false);
 </script>
@@ -71,7 +71,7 @@ Event.observe("link_close_pop_up_assistant_comm_commission", "click",  function(
 	
 	<br>
 	<p style="text-align:right">
-		<input name="valider_assistant" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />	
+		<input name="valider_assistant" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" />	
 	</p>
 	
 <SCRIPT type="text/javascript">

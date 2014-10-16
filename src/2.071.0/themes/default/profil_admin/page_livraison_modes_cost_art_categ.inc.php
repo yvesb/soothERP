@@ -91,7 +91,7 @@ page.verify('livraison_modes','livraison_modes.php' ,"true" ,"sub_content");
 				<td style="text-align:center; border-bottom:1px solid #FFFFFF;">
 					<div id="mode_liv_cost_<?php echo $fiche->ref_art_categ;?>">
 						<?php if (!count($fiche->livraisons_tarifs)) { ?>
-							<div id="more_mode_liv_<?php echo $fiche->ref_art_categ;?>" style="cursor:pointer; display:inherit"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" /> Définir </div>
+							<div id="more_mode_liv_<?php echo $fiche->ref_art_categ;?>" style="cursor:pointer; display:inherit"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" /> Définir </div>
 							
 							<script type="text/javascript">
 							Event.observe('more_mode_liv_<?php echo $fiche->ref_art_categ;?>', 'click',  function(){

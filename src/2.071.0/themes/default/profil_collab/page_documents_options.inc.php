@@ -57,12 +57,12 @@ check_page_variables ($page_variables);
 			
 			if (!$stop_annule) {
 				?>
-				<a href="#" id="annuler_document" class="doc_link_standard"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_annuler_doc.gif" alt="Annuler le document" title="Annuler le document" /></a>
+				<a href="#" id="annuler_document" class="doc_link_standard"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_annuler_doc.gif" alt="Annuler le document" title="Annuler le document" /></a>
 			<?php 
 			}
 		} else {
 			?>
-			<a href="#" id="reactiver_document" class="doc_link_standard"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_reactiver_doc.gif" alt="Réactiver le document" title="Réactiver le document" /></a>
+			<a href="#" id="reactiver_document" class="doc_link_standard"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_reactiver_doc.gif" alt="Réactiver le document" title="Réactiver le document" /></a>
 		<?php 
 		}
 		?>
@@ -71,7 +71,7 @@ check_page_variables ($page_variables);
 		<?php 
 		if ($document->getId_etat_doc () == 27) {
 			?>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_cdc_traitee.gif" id="commande_traite" style="cursor:pointer"/>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_cdc_traitee.gif" id="commande_traite" style="cursor:pointer"/>
 			<div style="height:3px; line-height:3px;"></div>
 			<?php 
 		}
@@ -79,7 +79,7 @@ check_page_variables ($page_variables);
 		<?php 
 		if ($document->getId_etat_doc () == 28) {
 			?>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_cdf_reception.gif" id="creer_reception" style="cursor:pointer"/>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_cdf_reception.gif" id="creer_reception" style="cursor:pointer"/>
 			<div style="height:3px; line-height:3px;"></div>
 			<?php 
 		}
@@ -87,7 +87,7 @@ check_page_variables ($page_variables);
 		<?php 
 		if ($document->getId_etat_doc () == 9) {
 			?>
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_cdc_traitee.gif" id="commande_traite" style="cursor:pointer"/>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_cdc_traitee.gif" id="commande_traite" style="cursor:pointer"/>
 		<div style="height:3px; line-height:3px;"></div>
 		<?php 
 		}
@@ -95,7 +95,7 @@ check_page_variables ($page_variables);
 		<?php 
 		if ($document->getId_etat_doc () == 18) {
 			?>
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_fac_acquitee.gif" id="facture_acquitee" style="cursor:pointer"/>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_fac_acquitee.gif" id="facture_acquitee" style="cursor:pointer"/>
 		<div style="height:3px; line-height:3px;"></div>
 		<?php 
 		}
@@ -103,7 +103,7 @@ check_page_variables ($page_variables);
 		<?php 
 		if ($document->getId_etat_doc () == 34) {
 			?>
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_fac_acquitee.gif" id="facture_acquitee" style="cursor:pointer"/>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_fac_acquitee.gif" id="facture_acquitee" style="cursor:pointer"/>
 		<div style="height:3px; line-height:3px;"></div>
 		<?php 
 		}

@@ -47,7 +47,7 @@ check_page_variables ($page_variables);
 						<td class="lightbg_liste">
 							<div class="title_content" style="text-align:right">
 								INSCRIPTION&nbsp;
-								<img  src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/icone_contact.gif" style="vertical-align:text-bottom"/>
+								<img  src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/icone_contact.gif" style="vertical-align:text-bottom"/>
 							</div>
 							
 							<br />

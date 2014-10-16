@@ -28,7 +28,7 @@ $profils_allowed = $_SESSION['user']->getProfils_allowed();
 
 
 if (count($profils_allowed) == 1) {
-  header("Location: ".$_ENV['CHEMIN_ABSOLU'].$_SESSION['interfaces'][$_SESSION['profils'][key($profils_allowed)]->getDefaut_id_interface()]->getDossier());
+  header("Location: ".$_ENV['CHEMIN_ABSOLU'].$CORE_REP.$_SESSION['interfaces'][$_SESSION['profils'][key($profils_allowed)]->getDefaut_id_interface()]->getDossier());
   exit();
 }
 

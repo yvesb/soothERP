@@ -26,7 +26,7 @@ function nb_mois($date1, $date2) {
 
 <div id="pop_up_compta_verify" class="compte_compta_verify" style="display:none">
 	<a href="#" id="close_compta_verify" style="float:right">
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
 	</a>
 	<span style="font-weight:bolder">Vérification automatique des journaux de trésorerie.</span><br />
 <br />
@@ -81,7 +81,7 @@ function nb_mois($date1, $date2) {
 
 <div class="articletview_corps" id="grand_livre_conteneur" >
 	<div style="padding:8px">
-<!--	<input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-imprimer.gif"  onclick="javascript:window.print()"/>-->
+<!--	<input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-imprimer.gif"  onclick="javascript:window.print()"/>-->
 	
 	<table width="100%" border="0" cellspacing="0" cellpadding="0">
 		<tr>
@@ -199,7 +199,7 @@ function nb_mois($date1, $date2) {
 			<td>&nbsp; </td>
 			<td>&nbsp; </td>
 			<td style="text-align:right; width:70%">
-		 <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-imprimer.gif" alt="Imprimer" title="Imprimer" style="cursor:pointer" id="print_grand_livre"/>
+		 <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-imprimer.gif" alt="Imprimer" title="Imprimer" style="cursor:pointer" id="print_grand_livre"/>
 		 
 		 </td>
 		</tr>
@@ -212,7 +212,7 @@ function nb_mois($date1, $date2) {
 			<td>&nbsp;</td>
 			<td>au&nbsp; </td>
 			<td><input type="text" id="date_fin" name="date_fin" value="" class="classinput_nsize" /></td>
-			<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_recherche.gif" id="reload_grand_livre" style="cursor:pointer;"/></td>
+			<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_recherche.gif" id="reload_grand_livre" style="cursor:pointer;"/></td>
 			<td>&nbsp; </td>
 			<td>&nbsp; </td>
 		</tr>

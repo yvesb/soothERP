@@ -30,7 +30,7 @@
 		<tr>
 		<td style="width:65%;">
 			<div style="text-align:left;width:10%;float:left;">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/droite_on.gif" border="0">
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/droite_on.gif" border="0">
 			</div>
 			<div style="text-align:left;text-indent:10px;">
 				<?php echo htmlentities($code_barre->code_barre, ENT_QUOTES, "UTF-8")?>
@@ -38,7 +38,7 @@
 		</td>
 		<td style="width:10%; text-align:right;">
 			<a href="#" id="code_barre_del_<?php echo $serialisation_codes_barres?>">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
 			</a>
 		</td>
 		</tr>

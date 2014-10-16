@@ -29,7 +29,7 @@ class Inscription_compte_user extends InscriptionModification {
 				}
 			}else{
 				//L'interface ne possede pas son porpre fichier de config -> c'est celui du profil client qui est lu
-				$chemin_file = $DIR."profil_client/_interface.config.php";
+				$chemin_file = $CORE_DIR."profil_client/_interface.config.php";
 				if(file_exists($chemin_file)){
 					$handle = @fopen($chemin_file, "r");
 					if($handle){

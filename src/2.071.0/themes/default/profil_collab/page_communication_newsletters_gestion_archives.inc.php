@@ -27,9 +27,9 @@ check_page_variables ($page_variables);
 		<tr>
 			<td rowspan="2" style="width:120px; height:50px">
 				<div style="position:relative; top:-35px; left:-35px; width:105px; border:1px solid #999999; background-color:#FFFFFF; text-align:center">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_newsletters.jpg" />				</div>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_newsletters.jpg" />				</div>
 				<span style="width:35px">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="120px" height="20px" id="imgsizeform"/>				</span>			</td>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="120px" height="20px" id="imgsizeform"/>				</span>			</td>
 			<td colspan="2" style="width:90%">
 			<div id="corps_choix_newsletter" style="width:96%; height:50px; padding:15px">
 			<span class="green_underlined" style="font-weight:bolder; text-decoration:none; font-size:14px;">&gt;&gt; <?php echo $newsletter->getNom_newsletter() ?></span><br />
@@ -67,7 +67,7 @@ check_page_variables ($page_variables);
 				<td>
 				</td>
 				<td style="text-align:right">
-					<a href="communication_newsletters_gestion_archives_preview.php?id_envoi=<?php echo ($envoi->id_envoi);?>"  target="_blank"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_apercu.gif" /></a>
+					<a href="communication_newsletters_gestion_archives_preview.php?id_envoi=<?php echo ($envoi->id_envoi);?>"  target="_blank"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_apercu.gif" /></a>
 				</td>
 				</tr>
 				<?php 

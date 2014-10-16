@@ -43,7 +43,7 @@ global $DIR;
 	if ($debut >= $cfg_nbres_ppage)
 	{
 		$cible = 1;
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/gauche_on.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/gauche_on.gif');
 		$lien = str_replace('{lien}', $image.$image, $lien_on);
 		$lien = str_replace('{cible}', $cible-1, $lien);
 		$lien = str_replace('{cibleb}', $cible, $lien);
@@ -52,7 +52,7 @@ global $DIR;
 	}
 	else
 	{
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/gauche_off.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/gauche_off.gif');
 		$lien = str_replace('{lien}', $image.$image, $lien_off);
 	}
 	$barre .= $lien."&nbsp;<strong>&middot;</strong>";
@@ -63,7 +63,7 @@ global $DIR;
 	if ($debut >= $cfg_nbres_ppage)
 	{
 		$cible = ($nbenr-1);
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/gauche_on.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/gauche_on.gif');
 		$lien = str_replace('{lien}', $image, $lien_on);
 		$lien = str_replace('{cible}', $cible, $lien);
 		$lien = str_replace('{cibleb}', $cible, $lien);
@@ -72,7 +72,7 @@ global $DIR;
 	}
 	else
 	{
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/gauche_off.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/gauche_off.gif');
 		$lien = str_replace('{lien}', $image, $lien_off);
 	}
 	$barre .= $lien."&nbsp;<B>&middot;</B>";
@@ -117,7 +117,7 @@ global $DIR;
 	if ($debut + $cfg_nbres_ppage < $nbtotal)
 	{
 		$cible = ($nbenr+1);
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/droite_on.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/droite_on.gif');
 		$lien = str_replace('{lien}', $image, $lien_on);
 		$lien = str_replace('{cible}', $cible, $lien);
 		$lien = str_replace('{cibleb}', $cible, $lien);
@@ -126,7 +126,7 @@ global $DIR;
 	}
 	else
 	{
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/droite_off.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/droite_off.gif');
 		$lien = str_replace('{lien}', $image, $lien_off);
 	}
 	$barre .= "&nbsp;<B>&middot;</B>".$lien;
@@ -139,7 +139,7 @@ global $DIR;
 	if ($fin != $debut)
 	{
 		$cible = (int)($nbtotal/$cfg_nbres_ppage)+1;
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/droite_on.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/droite_on.gif');
 		$lien = str_replace('{lien}', $image.$image, $lien_on);
 		$lien = str_replace('{cible}', $cible+1, $lien);
 		$lien = str_replace('{cibleb}', $cible, $lien);
@@ -148,7 +148,7 @@ global $DIR;
 	}
 	else
 	{
-		$image = image_html(  $DIR.$_SESSION['theme']->getDir_theme().'images/droite_off.gif');
+		$image = image_html(  $DIR.$_SESSION['theme']->getDir_gtheme().'images/droite_off.gif');
 		$lien = str_replace('{lien}', $image.$image, $lien_off);
 	}
 	$barre .= "<B>&middot;</B>&nbsp;".$lien;
@@ -270,8 +270,8 @@ $class_colorise= ($colorise % 2)? 'colorise3' : 'colorise1';
 	</td>
 	<td style="text-align:right">
 	
-	<a href="compta_tp_telecollecte_imprimer.php?id_compte_tp=<?php echo $_REQUEST["id_compte_tp"]; ?>&tp_type=<?php echo $_REQUEST["tp_type"];?>&id_compte_tp_telecollecte=<?php echo $fiche->id_compte_tp_telecollecte; ?>" target="_blank" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif"/></a> 
-	<a href="compta_tp_telecollecte_imprimer.php?id_compte_tp=<?php echo $_REQUEST["id_compte_tp"]; ?>&tp_type=<?php echo $_REQUEST["tp_type"];?>&id_compte_tp_telecollecte=<?php echo $fiche->id_compte_tp_telecollecte; ?>&print=1" target="_blank" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/icone_imprime.gif" alt="Imprimer" title="Imprimer"/></a>
+	<a href="compta_tp_telecollecte_imprimer.php?id_compte_tp=<?php echo $_REQUEST["id_compte_tp"]; ?>&tp_type=<?php echo $_REQUEST["tp_type"];?>&id_compte_tp_telecollecte=<?php echo $fiche->id_compte_tp_telecollecte; ?>" target="_blank" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-pdf.gif"/></a> 
+	<a href="compta_tp_telecollecte_imprimer.php?id_compte_tp=<?php echo $_REQUEST["id_compte_tp"]; ?>&tp_type=<?php echo $_REQUEST["tp_type"];?>&id_compte_tp_telecollecte=<?php echo $fiche->id_compte_tp_telecollecte; ?>&print=1" target="_blank" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/icone_imprime.gif" alt="Imprimer" title="Imprimer"/></a>
 	
 	</td>
 	</tr>

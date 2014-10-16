@@ -54,7 +54,7 @@ Event.observe("link_retour_contact", "click",  function(evt){Event.stop(evt); pa
 			<option value="">Tous</option>
 		</select>
 		</td>
-		<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_recherche.gif" id="reload_search" style="cursor:pointer" /></td>
+		<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_recherche.gif" id="reload_search" style="cursor:pointer" /></td>
 		<td>&nbsp; </td>
 		<td></td>
 		<td style="text-align:right"><span id="exercice_imprimer" style="cursor:pointer">Imprimer</span></td>

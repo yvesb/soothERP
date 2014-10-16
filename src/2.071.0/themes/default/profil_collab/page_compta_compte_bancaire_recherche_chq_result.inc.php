@@ -134,7 +134,7 @@ if (count($fiches)) {
 				<?php	 echo $fiche->num_remise; ?>
 			</td>
 			<td style="text-align:right;">
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" style="cursor:pointer" id="print_depot_<?php echo $colorise;?>" title="Voir la remise"/>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-pdf.gif" style="cursor:pointer" id="print_depot_<?php echo $colorise;?>" title="Voir la remise"/>
 			<script type="text/javascript">
 			Event.observe("print_depot_<?php echo $colorise;?>", "click", function(evt) {
 				page.verify("compta_depot_caisse_imprimer", "compta_depot_caisse_imprimer.php?id_caisse=<?php echo $fiche->id_compte_caisse_source;?>&id_compte_caisse_depot=<?php echo $fiche->id_compte_caisse_depot; ?>", "true", "_blank");

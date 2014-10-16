@@ -77,7 +77,7 @@
 				</td>
 				<td style="width:10px; text-align:center;">
 				
-				<a href="#" id="id_comm_event_contact_sup_<?php echo $evenement->id_comm_event; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+				<a href="#" id="id_comm_event_contact_sup_<?php echo $evenement->id_comm_event; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 				<script type="text/javascript">
 				Event.observe("id_comm_event_contact_sup_<?php echo $evenement->id_comm_event; ?>", "click",  function(evt){
 					Event.stop(evt); 
@@ -122,7 +122,7 @@
 		?>
 		</div>
 
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_new_event.gif" style="cursor:pointer; float:right" id="new_event" />
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_new_event.gif" style="cursor:pointer; float:right" id="new_event" />
 		</td>
 	</tr>
 </table>

@@ -1,6 +1,6 @@
 <div>
     <a href="#" id="link_close_pop_up_commerciaux_det" style="float:right">
-        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
     </a>
     <script type="text/javascript">
         Event.observe("link_close_pop_up_commerciaux_det", "click",  function(evt){Event.stop(evt); $("pop_up_bonus").hide();}, false);
@@ -54,7 +54,7 @@
         </tr>
         <tr>
             <td>
-                <input name="submit_a" id="submit_a" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" />
+                <input name="submit_a" id="submit_a" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" />
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>

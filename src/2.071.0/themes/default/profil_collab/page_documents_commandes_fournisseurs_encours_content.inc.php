@@ -51,7 +51,7 @@ foreach ($commandes as $commande) {
 			</td>
 			<td style="width:85px; text-align:right"><?php echo htmlentities(date_Us_to_Fr($commande->date_doc), ENT_QUOTES, "UTF-8");?></td>
 			<td style="width:145px;  text-align:right">
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bts_blf_reception.gif" id="commande_genere_reception_<?php echo htmlentities($stock_vu."_".$commande->ref_doc, ENT_QUOTES, "UTF-8");?>" alt="Reception de la commande" style="cursor:pointer; display:" />
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bts_blf_reception.gif" id="commande_genere_reception_<?php echo htmlentities($stock_vu."_".$commande->ref_doc, ENT_QUOTES, "UTF-8");?>" alt="Reception de la commande" style="cursor:pointer; display:" />
 			<script type="text/javascript">
 				//generer_document_doc ("generer_bl_client", ref_doc)
 				Event.observe("commande_genere_reception_<?php echo htmlentities($stock_vu."_".$commande->ref_doc, ENT_QUOTES, "UTF-8");?>", "click", function(evt){
@@ -62,7 +62,7 @@ foreach ($commandes as $commande) {
 			</script>
 			</td>
 			<td class="document_border_right" style="width:45px; text-align:right">
-				<a href="documents_editing.php?ref_doc=<?php echo $commande->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" alt="Imprimer" title="Imprimer"/></a>
+				<a href="documents_editing.php?ref_doc=<?php echo $commande->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-pdf.gif" alt="Imprimer" title="Imprimer"/></a>
 			</td>
 		</tr>
 	</table>

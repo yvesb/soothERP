@@ -22,7 +22,7 @@ $echeances = $document->getEcheancier();
 window.parent.$("table_echeanciers").innerHTML = '<tr>'+
                                                     '<td colspan="6" style="text-align:left; background-color:#809eb6 " class="doc_bold2">'+
                                                     '<span style="font-size:12px; padding-left:10px">Ech&eacute;ancier</span>'+
-                                                    '<input name="bt_ajouter" id="bt_ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" style="position:relative;left: 50%;width: 55px;padding-top:2px" />'+
+                                                    '<input name="bt_ajouter" id="bt_ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" style="position:relative;left: 50%;width: 55px;padding-top:2px" />'+
                                                     '</td>'+
                                                     '</tr>'+
                                                     '<tr>'+
@@ -48,7 +48,7 @@ window.parent.$("table_echeanciers").innerHTML = '<tr>'+
 
                                                         '<td style="padding-left:5px;font-size:11px; border-bottom:1px solid #d2d2d2;  width:20%;">'+
                                                         '<!-- ici les codes couleurs -->'+
-                                                        '<span ><img width="8px" height="8px" src="<?php echo $DIR.$_SESSION["theme"]->getDir_theme()?>images/puce_<?php echo $echeance->etat; ?>.png"/></span>&nbsp;'+
+                                                        '<span ><img width="8px" height="8px" src="<?php echo $DIR.$_SESSION["theme"]->getDir_gtheme()?>images/puce_<?php echo $echeance->etat; ?>.png"/></span>&nbsp;'+
                                                         ' <?php
                                                         if ($echeance->date!= 0000-00-00) {
                                                                 echo htmlentities ( date_Us_to_Fr ($echeance->date));
@@ -91,10 +91,10 @@ window.parent.$("table_echeanciers").innerHTML = '<tr>'+
 
                                                         <?php if($i<0){ ?>
                                                         '<td style=" text-align:center; font-size:11px; width:15%;  border-bottom:1px solid #d2d2d2;vertical-align: middle">'+
-                                                        '<input name="bt_modifier" id="bt_modifier" type="image" src="<?php echo $DIR.$_SESSION["theme"]->getDir_theme()?>images/bt-modifier.gif" style="width: 55px;padding-top: 2px" />'+
+                                                        '<input name="bt_modifier" id="bt_modifier" type="image" src="<?php echo $DIR.$_SESSION["theme"]->getDir_gtheme()?>images/bt-modifier.gif" style="width: 55px;padding-top: 2px" />'+
                                                         '</td>'+
                                                         '<td style=" text-align:center; font-size:11px; width:15%;  border-bottom:1px solid #d2d2d2;vertical-align: middle">'+
-                                                        '<input name="bt_supprimer" id="bt_supprimer" type="image" src="<?php echo $DIR.$_SESSION["theme"]->getDir_theme()?>images/bt-supprimer.gif" style="width: 55px;padding-top: 2px" />'+
+                                                        '<input name="bt_supprimer" id="bt_supprimer" type="image" src="<?php echo $DIR.$_SESSION["theme"]->getDir_gtheme()?>images/bt-supprimer.gif" style="width: 55px;padding-top: 2px" />'+
                                                         '</td>'+
                                                         <?php } $i++;?>
                                                             
@@ -118,7 +118,7 @@ window.parent.$("table_echeanciers").innerHTML = '<tr>'+
                                                                 '</td>'+
                                                         '<td style=" text-align:right; font-size:11px; color:#FF0000;">'+
                                                                 
-                                                                '<input name="bt_modifier" id="bt_modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" style="padding-top:2px" />'+
+                                                                '<input name="bt_modifier" id="bt_modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" style="padding-top:2px" />'+
 
                                                         '</td>'+
                                                         '<td style="width:15%">'+

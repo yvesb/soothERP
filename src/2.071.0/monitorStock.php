@@ -1,7 +1,7 @@
 <?php
 require ("_dir.inc.php");
 require ($DIR."_session.inc.php");
-require_once $DIR.'config/config_mail.inc.php';
+require_once $CONFIG_DIR.'config_mail.inc.php';
 
 $etatDoc = 'vente';
 if(!$articlesStock = article::getAllInsufStockByStock($etatDoc)){

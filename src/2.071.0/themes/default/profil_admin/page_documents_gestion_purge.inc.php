@@ -50,15 +50,15 @@ update_menu_arbo();
 
 					<table>
 						<tr class="smallheight">
-							<td style="width:75%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-							<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:75%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 						</tr>
 						<tr>
 							<td>Les <?php echo htmlentities($document_type->lib_type_doc, ENT_QUOTES, "UTF-8"); ?> annulé(e)s dont la date est antérieure au <?php echo date("d-m-Y" , mktime(0, 0, 0, date("m"), date("d")-(${"DUREE_AVANT_PURGE_ANNULE_".$document_type->code_doc}), date("Y")));?> vont être définitivement supprimé(e)s.
 							</td>
 							<td style="text-align:center">
 							
-								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" id="purge_type_<?php echo $document_type->id_type_doc; ?>" style="cursor:pointer" />
+								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" id="purge_type_<?php echo $document_type->id_type_doc; ?>" style="cursor:pointer" />
 								<script type="text/javascript">
 								Event.observe("purge_type_<?php echo $document_type->id_type_doc; ?>", "click",  function(evt){Event.stop(evt);page.verify('gestion_document_purge','documents_gestion_purge.php?id_type_doc=<?php echo $document_type->id_type_doc; ?>&purge=1','true','sub_content');}, false);
 								</script>
@@ -71,7 +71,7 @@ update_menu_arbo();
 	
 	}
 	?>
-								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" id="purge_type" style="cursor:pointer" /> le délestage de tout les types de documents.
+								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" id="purge_type" style="cursor:pointer" /> le délestage de tout les types de documents.
 								<script type="text/javascript">
 								Event.observe("purge_type", "click",  function(evt){Event.stop(evt);page.verify('gestion_document_purge','documents_gestion_purge.php?purge=1','true','sub_content');}, false);
 								</script>

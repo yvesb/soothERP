@@ -55,8 +55,8 @@
 <input type="hidden" name="id_profil" value="<?php echo $id_profil?>">
 	<table class="minimizetable">
 		<tr class="smallheight">
-			<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 		</tr>	
 		<tr>
 			<td class="size_strict"><span class="labelled_ralonger">Cat&eacute;gorie de client:</span>
@@ -100,10 +100,10 @@
 						<input name="nom_commercial" id="nom_commercial" type="text" value="<?php echo $ce_client['nom_commercial'];?>" class="classinput_xsize" readonly="" />
 					</td>
 					<td style="width: 20px">
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif" style="float: right; cursor: pointer" id="ref_commercial_select_img">
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif" style="float: right; cursor: pointer" id="ref_commercial_select_img">
 					</td>
 					<td style="width: 20px">
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" style="cursor: pointer" id="ref_commercial_empty_s">
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" style="cursor: pointer" id="ref_commercial_empty_s">
 						<script type="text/javascript">
 								Event.observe('ref_commercial_empty_s', 'click',  function(evt){Event.stop(evt); 
 								$("ref_commercial").value = "";
@@ -116,10 +116,10 @@
 	
 			<script type="text/javascript">
 					//effet de survol sur le faux select
-						Event.observe('ref_commercial_select_img', 'mouseover',  function(){$("ref_commercial_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_hover.gif";}, false);
-						Event.observe('ref_commercial_select_img', 'mousedown',  function(){$("ref_commercial_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_down.gif";}, false);
-						Event.observe('ref_commercial_select_img', 'mouseup',  function(){$("ref_commercial_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";}, false);
-						Event.observe('ref_commercial_select_img', 'mouseout',  function(){$("ref_commercial_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";}, false);
+						Event.observe('ref_commercial_select_img', 'mouseover',  function(){$("ref_commercial_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_hover.gif";}, false);
+						Event.observe('ref_commercial_select_img', 'mousedown',  function(){$("ref_commercial_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_down.gif";}, false);
+						Event.observe('ref_commercial_select_img', 'mouseup',  function(){$("ref_commercial_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";}, false);
+						Event.observe('ref_commercial_select_img', 'mouseout',  function(){$("ref_commercial_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";}, false);
 						Event.observe('ref_commercial_select_img', 'click',  function(evt){Event.stop(evt); show_mini_moteur_contacts ("recherche_client_set_contact", "\'ref_commercial\', \'nom_commercial\' "); preselect ('<?php echo $COMMERCIAL_ID_PROFIL; ?>', 'id_profil_m'); page.annuaire_recherche_mini();}, false);
 					</script></td>
 		</tr>
@@ -131,7 +131,7 @@
 			<iframe id="iframe_liste_choix_adresse_livraison" frameborder="0" scrolling="no" src="about:_blank"  class="choix_liste_choix_coordonnee" style="display:none"></iframe>
 			<div id="choix_liste_choix_adresse_livraison"  class="choix_liste_choix_coordonnee" style="display:none"></div></div>
 			<div id="adresse_livraison_choisie" class="simule_champs" style="width:99%;cursor: default;">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif"/ style="float:right" id="bt_adresse_livraison_choisie">
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select.gif"/ style="float:right" id="bt_adresse_livraison_choisie">
 				<span id="lib_adresse_livraison_choisie"><?php echo getLib_adresse($profils[$id_profil]->getRef_adr_livraison ())?></span>
 			</div>
 			<input name="ref_adr_livraison" id="ref_adr_livraison" type="hidden" class="classinput_xsize" value="<?php echo htmlentities($profils[$id_profil]->getRef_adr_livraison (), ENT_QUOTES, "UTF-8"); ?>" />
@@ -146,7 +146,7 @@
 			<iframe id="iframe_liste_choix_adresse_facturation" frameborder="0" scrolling="no" src="about:_blank"  class="choix_liste_choix_coordonnee" style="display:none"></iframe>
 			<div id="choix_liste_choix_adresse_facturation"  class="choix_liste_choix_coordonnee" style="display:none"></div></div>
 			<div id="adresse_facturation_choisie" class="simule_champs" style="width:99%;cursor: default;">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif"/ style="float:right" id="bt_adresse_facturation_choisie">
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select.gif"/ style="float:right" id="bt_adresse_facturation_choisie">
 				<span id="lib_adresse_facturation_choisie"><?php echo getLib_adresse($profils[$id_profil]->getRef_adr_facturation ())?></span>
 			</div>
 			<input name="ref_adr_facturation" id="ref_adr_facturation" type="hidden" class="classinput_xsize" value="<?php echo htmlentities($profils[$id_profil]->getRef_adr_facturation (), ENT_QUOTES, "UTF-8"); ?>" />
@@ -373,11 +373,11 @@
 					<td class="size_strict">
 						<img align="center"
 							id="img_facturation_periodique_cadenas-ferme"
-							src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/cadenas-ferme.png"
+							src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/cadenas-ferme.png"
 							/ width="12px" height="12px" style="float: center; cursor: pointer">
 						</img>
 						<img align="center" id="img_facturation_periodique_cadenas-ouvert"
-							src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/cadenas-ouvert.png"
+							src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/cadenas-ouvert.png"
 							/ width="12px" height="12px"
 							style="float: center; cursor: pointer; display: none;">
 						</img>
@@ -426,11 +426,11 @@
 					</td>
 					<td>
 						<img id="img_id_edition_mode_favori_cadenas-ferme"
-							src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/cadenas-ferme.png"
+							src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/cadenas-ferme.png"
 							/ width="12px" height="12px" style="float: center; cursor: pointer">
 						</img>
 						<img id="img_id_edition_mode_favori_cadenas-ouvert"
-							src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/cadenas-ouvert.png"
+							src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/cadenas-ouvert.png"
 							/ width="12px" height="12px"
 							style="float: center; cursor: pointer; display: none;">
 						</img>
@@ -493,10 +493,10 @@
 					de r&egrave;glement:</span></td>
 					<td>
 						<img id="img_delai_reglement_cadenas-ferme"
-							src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/cadenas-ferme.png"
+							src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/cadenas-ferme.png"
 							 width="12px" height="12px" style="float: center; cursor: pointer"></img>
 						<img id="img_delai_reglement_cadenas-ouvert"
-							src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/cadenas-ouvert.png"
+							src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/cadenas-ouvert.png"
 							 width="12px" height="12px"
 							style="float: center; cursor: pointer; display: none;"></img>
 						<input
@@ -598,10 +598,10 @@
 					favori par:</span></td>
 					<td>
 						<img id="img_id_reglement_mode_favori_cadenas-ferme"
-							src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/cadenas-ferme.png"
+							src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/cadenas-ferme.png"
 							/ width="12px" height="12px" style="float: center; cursor: pointer"></img>
 						<img id="img_id_reglement_mode_favori_cadenas-ouvert"
-							src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/cadenas-ouvert.png"
+							src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/cadenas-ouvert.png"
 							/ width="12px" height="12px"
 							style="float: center; cursor: pointer; display: none;"></img>
 						<input
@@ -654,10 +654,10 @@
 					<td class="size_strict"><span class="labelled_ralonger">Cycle de relance:</span></td>
 					<td>
 						<img id="img_id_cycle_relance_cadenas-ferme"
-							src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/cadenas-ferme.png"
+							src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/cadenas-ferme.png"
 							/ width="12px" height="12px" style="float: center; cursor: pointer"></img>
 						<img id="img_id_cycle_relance_cadenas-ouvert"
-							src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/cadenas-ouvert.png"
+							src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/cadenas-ouvert.png"
 							/ width="12px" height="12px"
 							style="float: center; cursor: pointer; display: none;"></img>
 						<input
@@ -709,10 +709,10 @@
 					<td class="size_strict"><span class="labelled_ralonger">Encours:</span>
 					</td>
 					<td><img id="img_encours_cadenas-ferme"
-						src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/cadenas-ferme.png"
+						src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/cadenas-ferme.png"
 						/ width="12px" height="12px" style="float: center; cursor: pointer"></img>
 					<img id="img_encours_cadenas-ouvert"
-						src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/cadenas-ouvert.png"
+						src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/cadenas-ouvert.png"
 						/ width="12px" height="12px"
 						style="float: center; cursor: pointer; display: none;"></img> <input
 						type="checkbox" id="flg_encours"
@@ -753,8 +753,8 @@
 					<td class="size_strict"><span class="labelled_ralonger">Pré-paiement:</span>
 					</td>
 					<td>
-						<img id="img_prepaiement_type_cadenas-ferme" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/cadenas-ferme.png" width="12px" height="12px" style="float: center; cursor: pointer">
-						<img id="img_prepaiement_type_cadenas-ouvert" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/cadenas-ouvert.png" width="12px" height="12px" style="float: center; cursor: pointer; display: none;">
+						<img id="img_prepaiement_type_cadenas-ferme" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/cadenas-ferme.png" width="12px" height="12px" style="float: center; cursor: pointer">
+						<img id="img_prepaiement_type_cadenas-ouvert" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/cadenas-ouvert.png" width="12px" height="12px" style="float: center; cursor: pointer; display: none;">
 						<input type="checkbox" id="flg_prepaiement_type" style="display: none" />
                                         </td>
                                         <td>
@@ -816,10 +816,10 @@
 					tarifaire:</span></td>
 					<td>
 						<img id="img_id_tarif_cadenas-ferme"
-							src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/cadenas-ferme.png"
+							src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/cadenas-ferme.png"
 							/ width="12px" height="12px" style="float: center; cursor: pointer"></img>
 						<img id="img_id_tarif_cadenas-ouvert"
-							src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/cadenas-ouvert.png"
+							src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/cadenas-ouvert.png"
 							/ width="12px" height="12px"
 							style="float: center; cursor: pointer; display: none;"></img>
 						<input
@@ -875,10 +875,10 @@
 				<tr>
 					<td class="size_strict"><span class="labelled_ralonger">Afficher Tarifs:</span></td>
 					<td>
-						<img id="img_app_tarifs_cadenas-ferme" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/cadenas-ferme.png"
+						<img id="img_app_tarifs_cadenas-ferme" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/cadenas-ferme.png"
 							/ width="12px" height="12px" style="float: center; cursor: pointer"></img>
 						<img id="img_app_tarifs_cadenas-ouvert"
-							src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/cadenas-ouvert.png"
+							src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/cadenas-ouvert.png"
 							/ width="12px" height="12px"
 							style="float: center; cursor: pointer; display: none;"></img>
 						<input
@@ -923,7 +923,7 @@
 
 		</div>
 			<p style="text-align:center">
-			<input type="image" name="profsubmit<?php echo $id_profil?>" id="profsubmit<?php echo $id_profil?>"  src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif"/>
+			<input type="image" name="profsubmit<?php echo $id_profil?>" id="profsubmit<?php echo $id_profil?>"  src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif"/>
 			</p>
 			
 		<script type="text/javascript" language="javascript">
@@ -955,8 +955,8 @@
 	<!-- bac zone affichage -->
 	<table class="minimizetable"  id="start_visible_profil<?php echo $id_profil?>" border="0">
 		<tr class="smallheight">
-			<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 		</tr>	
 		<tr>
 			<td class="size_strict"><span class="labelled_ralonger">Cat&eacute;gorie de client:</span>
@@ -1143,7 +1143,7 @@
 		
 		<tr>
 			<td colspan="2" style="text-align:center">
-			 <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" style="cursor:pointer" id="modifier_profil<?php echo $id_profil?>" />
+			 <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" style="cursor:pointer" id="modifier_profil<?php echo $id_profil?>" />
 			</td>
 		</tr>
 	</table>
@@ -1191,16 +1191,16 @@
 	//fonction de choix de adresses
 	
 	//effet de survol sur le faux select adresse_livraison
-		Event.observe('adresse_livraison_choisie', 'mouseover',  function(){$("bt_adresse_livraison_choisie").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select_hover.gif";}, false);
-		Event.observe('adresse_livraison_choisie', 'mousedown',  function(){$("bt_adresse_livraison_choisie").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select_down.gif";}, false);
-		Event.observe('adresse_livraison_choisie', 'mouseup',  function(){$("bt_adresse_livraison_choisie").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif";}, false);
-		Event.observe('adresse_livraison_choisie', 'mouseout',  function(){$("bt_adresse_livraison_choisie").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif";}, false);
+		Event.observe('adresse_livraison_choisie', 'mouseover',  function(){$("bt_adresse_livraison_choisie").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select_hover.gif";}, false);
+		Event.observe('adresse_livraison_choisie', 'mousedown',  function(){$("bt_adresse_livraison_choisie").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select_down.gif";}, false);
+		Event.observe('adresse_livraison_choisie', 'mouseup',  function(){$("bt_adresse_livraison_choisie").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select.gif";}, false);
+		Event.observe('adresse_livraison_choisie', 'mouseout',  function(){$("bt_adresse_livraison_choisie").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select.gif";}, false);
 						
 	//effet de survol sur le faux select adresse_facturation
-		Event.observe('adresse_facturation_choisie', 'mouseover',  function(){$("bt_adresse_facturation_choisie").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select_hover.gif";}, false);
-		Event.observe('adresse_facturation_choisie', 'mousedown',  function(){$("bt_adresse_facturation_choisie").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select_down.gif";}, false);
-		Event.observe('adresse_facturation_choisie', 'mouseup',  function(){$("bt_adresse_facturation_choisie").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif";}, false);
-		Event.observe('adresse_facturation_choisie', 'mouseout',  function(){$("bt_adresse_facturation_choisie").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif";}, false);
+		Event.observe('adresse_facturation_choisie', 'mouseover',  function(){$("bt_adresse_facturation_choisie").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select_hover.gif";}, false);
+		Event.observe('adresse_facturation_choisie', 'mousedown',  function(){$("bt_adresse_facturation_choisie").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select_down.gif";}, false);
+		Event.observe('adresse_facturation_choisie', 'mouseup',  function(){$("bt_adresse_facturation_choisie").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select.gif";}, false);
+		Event.observe('adresse_facturation_choisie', 'mouseout',  function(){$("bt_adresse_facturation_choisie").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select.gif";}, false);
 						
 	//affichage des choix
 		Event.observe('adresse_livraison_choisie', 'click',  function(evt){Event.stop(evt); start_adresse ("<?php echo $contact->getRef_contact()?>", "lib_adresse_livraison_choisie", "ref_adr_livraison", "choix_liste_choix_adresse_livraison", "iframe_liste_choix_adresse_livraison", "annuaire_liste_choix_adresse.php");}, false);
@@ -1240,18 +1240,18 @@ if (count($client_last_DEV_en_cours )) {
 Devis en cours:
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style=" border-left:1px solid #93bad7; border-top:1px solid #93bad7; border-right:1px solid #93bad7;">
 	<tr class="smallheight" style="background-color:#93bad7;">
-		<td style="width:85px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style=" border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:120px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:100px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:85px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style=" border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:120px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:100px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr style="background-color:#93bad7;">
 		<td style=" border-right:1px solid #FFFFFF; text-align:left; padding-left:5px">Date</td>
 		<td style=" border-right:1px solid #FFFFFF; text-align:left; padding-left:5px">Document</td>
 		<td style=" border-right:1px solid #FFFFFF; text-align:left; padding-left:5px">Etat</td>
 		<td style=" border-right:1px solid #FFFFFF;text-align:center; padding-left:5px">Prix</td>
-		<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="25px" height="1"/></td>
+		<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="25px" height="1"/></td>
 	</tr>
 	</table>
 	<?php
@@ -1259,11 +1259,11 @@ Devis en cours:
 		?>
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" style=" border-left:1px solid #93bad7; border-right:1px solid #93bad7;">
 		<tr class="smallheight" style="background-color:#FFFFFF;">
-			<td style="width:85px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style=" border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:120px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:100px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:85px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style=" border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:120px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:100px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 		</tr>
 		<tr style="cursor:pointer; background-color:#FFFFFF; color:#002673">
 			<td style=" border-right:1px solid #93bad7; border-bottom:1px solid #93bad7; text-align:left; padding-left:5px" id="open_doc_en_cours_<?php echo ($contact_last_doc->ref_doc);?>">
@@ -1279,7 +1279,7 @@ Devis en cours:
 			<?php echo htmlentities(price_format($contact_last_doc->montant_ttc), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1];?>
 			</td>
 			<td style=" border-bottom:1px solid #93bad7; text-align:center; ">
-			<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
+			<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
 			</td>
 		</tr>
 		</table>
@@ -1311,18 +1311,18 @@ if (count($client_last_CDC_en_cours )) {
 Commandes en cours:
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style=" border-left:1px solid #93bad7; border-top:1px solid #93bad7; border-right:1px solid #93bad7;">
 	<tr class="smallheight" style="background-color:#93bad7;">
-		<td style="width:85px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style=" border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:120px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:100px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:85px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style=" border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:120px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:100px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr style="background-color:#93bad7;">
 		<td style=" border-right:1px solid #FFFFFF; text-align:left; padding-left:5px">Date</td>
 		<td style=" border-right:1px solid #FFFFFF; text-align:left; padding-left:5px">Document</td>
 		<td style=" border-right:1px solid #FFFFFF; text-align:left; padding-left:5px">Etat</td>
 		<td style=" border-right:1px solid #FFFFFF;text-align:center; padding-left:5px">Prix</td>
-		<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="25px" height="1"/></td>
+		<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="25px" height="1"/></td>
 	</tr>
 	</table>
 	<?php
@@ -1330,11 +1330,11 @@ Commandes en cours:
 		?>
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" style=" border-left:1px solid #93bad7; border-right:1px solid #93bad7;">
 		<tr class="smallheight" style="background-color:#FFFFFF;">
-			<td style="width:85px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style=" border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:120px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:100px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:85px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style=" border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:120px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:100px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 		</tr>
 		<tr style="cursor:pointer; background-color:#FFFFFF; color:#002673">
 			<td style=" border-right:1px solid #93bad7; border-bottom:1px solid #93bad7; text-align:left; padding-left:5px" id="open_doc_en_cours_<?php echo ($contact_last_doc->ref_doc);?>">
@@ -1350,7 +1350,7 @@ Commandes en cours:
 			<?php echo htmlentities(price_format($contact_last_doc->montant_ttc), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1];?>
 			</td>
 			<td style=" border-bottom:1px solid #93bad7; text-align:center; ">
-			<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
+			<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
 			</td>
 		</tr>
 		</table>
@@ -1381,18 +1381,18 @@ if (count($client_last_BLC_en_cours )) {
 Bons de Livraisons en cours:
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style=" border-left:1px solid #93bad7; border-top:1px solid #93bad7; border-right:1px solid #93bad7;">
 	<tr class="smallheight" style="background-color:#93bad7;">
-		<td style="width:85px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style=" border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:120px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:100px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:85px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style=" border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:120px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:100px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr style="background-color:#93bad7;">
 		<td style=" border-right:1px solid #FFFFFF; text-align:left; padding-left:5px">Date</td>
 		<td style=" border-right:1px solid #FFFFFF; text-align:left; padding-left:5px">Document</td>
 		<td style=" border-right:1px solid #FFFFFF; text-align:left; padding-left:5px">Etat</td>
 		<td style=" border-right:1px solid #FFFFFF;text-align:center; padding-left:5px">Prix</td>
-		<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="25px" height="1"/></td>
+		<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="25px" height="1"/></td>
 	</tr>
 	</table>
 	<?php
@@ -1400,11 +1400,11 @@ Bons de Livraisons en cours:
 		?>
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" style=" border-left:1px solid #93bad7; border-right:1px solid #93bad7;">
 		<tr class="smallheight" style="background-color:#FFFFFF;">
-			<td style="width:85px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style=" border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:120px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:100px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:85px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style=" border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:120px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:100px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 		</tr>
 		<tr style="cursor:pointer; background-color:#FFFFFF; color:#002673">
 			<td style=" border-right:1px solid #93bad7; border-bottom:1px solid #93bad7; text-align:left; padding-left:5px" id="open_doc_en_cours_<?php echo ($contact_last_doc->ref_doc);?>">
@@ -1420,7 +1420,7 @@ Bons de Livraisons en cours:
 			<?php echo htmlentities(price_format($contact_last_doc->montant_ttc), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1];?>
 			</td>
 			<td style=" border-bottom:1px solid #93bad7; text-align:center; ">
-			<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
+			<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
 			</td>
 		</tr>
 		</table>
@@ -1453,18 +1453,18 @@ if (count($client_last_FAC_en_cours )) {
 Factures en cours:
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style=" border-left:1px solid #93bad7; border-top:1px solid #93bad7; border-right:1px solid #93bad7;">
 	<tr class="smallheight" style="background-color:#93bad7;">
-		<td style="width:85px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style=" border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:120px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:100px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:85px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style=" border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:120px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:100px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr style="background-color:#93bad7;">
 		<td style=" border-right:1px solid #FFFFFF; text-align:left; padding-left:5px">Date</td>
 		<td style=" border-right:1px solid #FFFFFF; text-align:left; padding-left:5px">Document</td>
 		<td style=" border-right:1px solid #FFFFFF; text-align:left; padding-left:5px">Etat</td>
 		<td style=" border-right:1px solid #FFFFFF;text-align:center; padding-left:5px">Prix</td>
-		<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="25px" height="1"/></td>
+		<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="25px" height="1"/></td>
 	</tr>
 	</table>
 	<?php
@@ -1472,11 +1472,11 @@ Factures en cours:
 		?>
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" style=" border-left:1px solid #93bad7; border-right:1px solid #93bad7;">
 		<tr class="smallheight" style="background-color:#FFFFFF;">
-			<td style="width:85px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style=" border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:120px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:100px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:85px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style=" border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:120px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:100px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 		</tr>
 		<tr style="cursor:pointer; background-color:#FFFFFF; color:#002673">
 			<td style=" border-right:1px solid #93bad7; border-bottom:1px solid #93bad7; text-align:left; padding-left:5px" id="open_doc_en_cours_<?php echo ($contact_last_doc->ref_doc);?>">
@@ -1492,7 +1492,7 @@ Factures en cours:
 			<?php echo htmlentities(price_format($contact_last_doc->montant_ttc), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1];?>
 			</td>
 			<td style=" border-bottom:1px solid #93bad7; text-align:center; ">
-			<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
+			<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
 			</td>
 		</tr>
 		</table>
@@ -1525,18 +1525,18 @@ if (count($client_last_DEV_archive )) {
 Devis en archive:
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style=" border-left:1px solid #93bad7; border-top:1px solid #93bad7; border-right:1px solid #93bad7;">
 	<tr class="smallheight" style="background-color:#93bad7;">
-		<td style="width:85px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style=" border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:120px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:100px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:85px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style=" border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:120px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:100px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr style="background-color:#93bad7;">
 		<td style=" border-right:1px solid #FFFFFF; text-align:left; padding-left:5px">Date</td>
 		<td style=" border-right:1px solid #FFFFFF; text-align:left; padding-left:5px">Document</td>
 		<td style=" border-right:1px solid #FFFFFF; text-align:left; padding-left:5px">Etat</td>
 		<td style=" border-right:1px solid #FFFFFF;text-align:center; padding-left:5px">Prix</td>
-		<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="25px" height="1"/></td>
+		<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="25px" height="1"/></td>
 	</tr>
 	</table>
 	<?php
@@ -1544,11 +1544,11 @@ Devis en archive:
 		?>
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" style=" border-left:1px solid #93bad7; border-right:1px solid #93bad7;">
 		<tr class="smallheight" style="background-color:#FFFFFF;">
-			<td style="width:85px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style=" border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:120px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:100px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:85px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style=" border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:120px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:100px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 		</tr>
 		<tr style="cursor:pointer; background-color:#FFFFFF; color:#002673">
 			<td style=" border-right:1px solid #93bad7; border-bottom:1px solid #93bad7; text-align:left; padding-left:5px" id="open_doc_archive_<?php echo ($contact_last_doc->ref_doc);?>">
@@ -1564,7 +1564,7 @@ Devis en archive:
 			<?php echo htmlentities(price_format($contact_last_doc->montant_ttc), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1];?>
 			</td>
 			<td style=" border-bottom:1px solid #93bad7; text-align:center; ">
-			<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
+			<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
 			</td>
 		</tr>
 		</table>
@@ -1596,18 +1596,18 @@ if (count($client_last_CDC_archive )) {
 Commandes en archive:
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style=" border-left:1px solid #93bad7; border-top:1px solid #93bad7; border-right:1px solid #93bad7;">
 	<tr class="smallheight" style="background-color:#93bad7;">
-		<td style="width:85px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style=" border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:120px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:100px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:85px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style=" border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:120px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:100px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr style="background-color:#93bad7;">
 		<td style=" border-right:1px solid #FFFFFF; text-align:left; padding-left:5px">Date</td>
 		<td style=" border-right:1px solid #FFFFFF; text-align:left; padding-left:5px">Document</td>
 		<td style=" border-right:1px solid #FFFFFF; text-align:left; padding-left:5px">Etat</td>
 		<td style=" border-right:1px solid #FFFFFF;text-align:center; padding-left:5px">Prix</td>
-		<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="25px" height="1"/></td>
+		<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="25px" height="1"/></td>
 	</tr>
 	</table>
 	<?php
@@ -1615,11 +1615,11 @@ Commandes en archive:
 		?>
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" style=" border-left:1px solid #93bad7; border-right:1px solid #93bad7;">
 		<tr class="smallheight" style="background-color:#FFFFFF;">
-			<td style="width:85px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style=" border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:120px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:100px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:85px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style=" border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:120px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:100px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 		</tr>
 		<tr style="cursor:pointer; background-color:#FFFFFF; color:#002673">
 			<td style=" border-right:1px solid #93bad7; border-bottom:1px solid #93bad7; text-align:left; padding-left:5px" id="open_doc_archive_<?php echo ($contact_last_doc->ref_doc);?>">
@@ -1635,7 +1635,7 @@ Commandes en archive:
 			<?php echo htmlentities(price_format($contact_last_doc->montant_ttc), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1];?>
 			</td>
 			<td style=" border-bottom:1px solid #93bad7; text-align:center; ">
-			<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
+			<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
 			</td>
 		</tr>
 		</table>
@@ -1667,18 +1667,18 @@ if (count($client_last_BLC_archive )) {
 Bons de commandes en archive:
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style=" border-left:1px solid #93bad7; border-top:1px solid #93bad7; border-right:1px solid #93bad7;">
 	<tr class="smallheight" style="background-color:#93bad7;">
-		<td style="width:85px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style=" border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:120px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:100px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:85px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style=" border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:120px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:100px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr style="background-color:#93bad7;">
 		<td style=" border-right:1px solid #FFFFFF; text-align:left; padding-left:5px">Date</td>
 		<td style=" border-right:1px solid #FFFFFF; text-align:left; padding-left:5px">Document</td>
 		<td style=" border-right:1px solid #FFFFFF; text-align:left; padding-left:5px">Etat</td>
 		<td style=" border-right:1px solid #FFFFFF;text-align:center; padding-left:5px">Prix</td>
-		<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="25px" height="1"/></td>
+		<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="25px" height="1"/></td>
 	</tr>
 	</table>
 	<?php
@@ -1686,11 +1686,11 @@ Bons de commandes en archive:
 		?>
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" style=" border-left:1px solid #93bad7; border-right:1px solid #93bad7;">
 		<tr class="smallheight" style="background-color:#FFFFFF;">
-			<td style="width:85px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style=" border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:120px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:100px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:85px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style=" border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:120px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:100px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 		</tr>
 		<tr style="cursor:pointer; background-color:#FFFFFF; color:#002673">
 			<td style=" border-right:1px solid #93bad7; border-bottom:1px solid #93bad7; text-align:left; padding-left:5px" id="open_doc_archive_<?php echo ($contact_last_doc->ref_doc);?>">
@@ -1706,7 +1706,7 @@ Bons de commandes en archive:
 			<?php echo htmlentities(price_format($contact_last_doc->montant_ttc), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1];?>
 			</td>
 			<td style=" border-bottom:1px solid #93bad7; text-align:center; ">
-			<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
+			<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
 			</td>
 		</tr>
 		</table>
@@ -1738,18 +1738,18 @@ if (count($client_last_FAC_archive )) {
 Factures en archive:
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style=" border-left:1px solid #93bad7; border-top:1px solid #93bad7; border-right:1px solid #93bad7;">
 	<tr class="smallheight" style="background-color:#93bad7;">
-		<td style="width:85px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style=" border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:120px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:100px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:85px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style=" border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:120px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:100px; border-right:1px solid #FFFFFF;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr style="background-color:#93bad7;">
 		<td style=" border-right:1px solid #FFFFFF; text-align:left; padding-left:5px">Date</td>
 		<td style=" border-right:1px solid #FFFFFF; text-align:left; padding-left:5px">Document</td>
 		<td style=" border-right:1px solid #FFFFFF; text-align:left; padding-left:5px">Etat</td>
 		<td style=" border-right:1px solid #FFFFFF;text-align:center; padding-left:5px">Prix</td>
-		<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="25px" height="1"/></td>
+		<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="25px" height="1"/></td>
 	</tr>
 	</table>
 	<?php
@@ -1757,11 +1757,11 @@ Factures en archive:
 		?>
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" style=" border-left:1px solid #93bad7; border-right:1px solid #93bad7;">
 		<tr class="smallheight" style="background-color:#FFFFFF;">
-			<td style="width:85px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style=" border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:120px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:100px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:85px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style=" border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:120px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:100px; border-right:1px solid #93bad7;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 		</tr>
 		<tr style="cursor:pointer; background-color:#FFFFFF; color:#002673">
 			<td style=" border-right:1px solid #93bad7; border-bottom:1px solid #93bad7; text-align:left; padding-left:5px" id="open_doc_archive_<?php echo ($contact_last_doc->ref_doc);?>">
@@ -1777,7 +1777,7 @@ Factures en archive:
 			<?php echo htmlentities(price_format($contact_last_doc->montant_ttc), ENT_QUOTES, "UTF-8")." ".$MONNAIE[1];?>
 			</td>
 			<td style=" border-bottom:1px solid #93bad7; text-align:center; ">
-			<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
+			<a href="documents_editing.php?ref_doc=<?php echo $contact_last_doc->ref_doc?>" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-pdf.gif" alt="PDF" title="PDF"/></a>
 			</td>
 		</tr>
 		</table>

@@ -88,7 +88,7 @@
 					<input id="modif_ordre_composant_<?php echo $serialisation_composant;?>" name="modif_ordre_composant_<?php echo $serialisation_composant;?>" value="0" type="hidden"/>
 				</td>
 				<td style="width:55%" class="composant_li_lib">
-					<span class="composant_li_lib_handle"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/main.gif" id="move_composant_<?php echo $serialisation_composant;?>"/></span>
+					<span class="composant_li_lib_handle"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/main.gif" id="move_composant_<?php echo $serialisation_composant;?>"/></span>
 					<span>
 					<?php
 					$composants_article = composant_order_by_lot ($composants_article, get_article_composants ($article_composant->ref_article_composant), "ref_article_lot", "lot", "ref_article_composant");
@@ -114,8 +114,8 @@ Event.observe("link_sous__composant_<?php echo $serialisation_composant;?>", "cl
 										if (key($composants_article)!="") {
 											if ($compo_list->indentation < current($composants_article)->indentation) {
 												?><a href="#" id="link_art_categ_show_unshow<?php echo $serialisation_composant."_".$i;?>">
-												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/extend.gif" width="14px" id="extend_<?php echo $compo_list->ref_article_lot.$serialisation_composant.$under_compo_indet?>"/>
-												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/collapse.gif" width="14px" id="collapse_<?php echo $compo_list->ref_article_lot.$serialisation_composant.$under_compo_indet?>" style="display:none"/></a>
+												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/extend.gif" width="14px" id="extend_<?php echo $compo_list->ref_article_lot.$serialisation_composant.$under_compo_indet?>"/>
+												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/collapse.gif" width="14px" id="collapse_<?php echo $compo_list->ref_article_lot.$serialisation_composant.$under_compo_indet?>" style="display:none"/></a>
 												<script type="text/javascript">
 												Event.observe("link_art_categ_show_unshow<?php echo $serialisation_composant."_".$i;?>", "click",  function(evt){Event.stop(evt); Element.toggle('div_<?php echo $compo_list->ref_article_lot.$serialisation_composant.$under_compo_indet?>') ; Element.toggle('extend_<?php echo $compo_list->ref_article_lot.$serialisation_composant.$under_compo_indet?>'); Element.toggle('collapse_<?php echo $compo_list->ref_article_lot.$serialisation_composant.$under_compo_indet?>');}, false);
 												</script>
@@ -124,21 +124,21 @@ Event.observe("link_sous__composant_<?php echo $serialisation_composant;?>", "cl
 											else 
 											{
 												?>
-												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="14px"/>
+												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="14px"/>
 												<?php
 											}
 										}
 										else 
 										{
 											?>
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="14px"/>
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="14px"/>
 											<?php
 										}
 									}
 									else
 									{
 									?>
-									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="14px"/></td><td>
+									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="14px"/></td><td>
 									<?php 
 									}
 								}
@@ -171,7 +171,7 @@ Event.observe("link_sous__composant_<?php echo $serialisation_composant;?>", "cl
 				?>
 				</span>
 				</td>
-				<td style="width:20%" class="" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="composant_img_del_<?php echo $serialisation_composant;?>" class="cursor_pointer"/></td>
+				<td style="width:20%" class="" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="composant_img_del_<?php echo $serialisation_composant;?>" class="cursor_pointer"/></td>
 				<td style="width:5%">&nbsp;</td>
 			</tr>			
 		</table>
@@ -197,16 +197,16 @@ Event.observe("link_sous__composant_<?php echo $serialisation_composant;?>", "cl
 	<br />
 	<table style="width:100%">
 		<tr class="smallheight">
-			<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 		</tr>
 		<tr>
 			<td colspan="5" style="text-align:right">
-				<a href="#" id="bt_etape_4"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" /></a>
+				<a href="#" id="bt_etape_4"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" /></a>
 			</td>
 			<td></td>
 		</tr>

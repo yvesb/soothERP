@@ -35,7 +35,7 @@ update_menu_arbo();
 <td class="contactview_corps">
 <div id="cat_client" style="padding-left:10px; padding-right:10px">
 <div style="" id="show_new_compte">
-<div id="add_mode" style="float:right; cursor:pointer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" /> <span style="font-weight:bolder">Nouveau mode de livraison</span> </div><br />
+<div id="add_mode" style="float:right; cursor:pointer"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" /> <span style="font-weight:bolder">Nouveau mode de livraison</span> </div><br />
 
 
 
@@ -53,13 +53,13 @@ update_menu_arbo();
 			<form action="livraison_modes_add.php" method="post" id="livraison_modes_add" name="livraison_modes_add" target="formFrame" >
 			<table>
 				<tr class="smallheight">
-					<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 				</tr>	
 				<tr>
 					<td style="text-align:right">Libell&eacute;: 
@@ -82,23 +82,23 @@ update_menu_arbo();
 							<input name="nom_transporteur" id="nom_transporteur" type="text" value=""  class="classinput_xsize" readonly=""/>
 							</td>
 							<td style="width:20px">
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif"/ style="float:right; cursor:pointer" id="ref_transporteur_select_img">
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif"/ style="float:right; cursor:pointer" id="ref_transporteur_select_img">
 							</td>
 						</tr>
 					</table>
 					
 					<script type="text/javascript">
 					//effet de survol sur le faux select
-						Event.observe('ref_transporteur_select_img', 'mouseover',  function(){$("ref_transporteur_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_hover.gif";}, false);
-						Event.observe('ref_transporteur_select_img', 'mousedown',  function(){$("ref_transporteur_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_down.gif";}, false);
-						Event.observe('ref_transporteur_select_img', 'mouseup',  function(){$("ref_transporteur_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";}, false);
+						Event.observe('ref_transporteur_select_img', 'mouseover',  function(){$("ref_transporteur_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_hover.gif";}, false);
+						Event.observe('ref_transporteur_select_img', 'mousedown',  function(){$("ref_transporteur_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_down.gif";}, false);
+						Event.observe('ref_transporteur_select_img', 'mouseup',  function(){$("ref_transporteur_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";}, false);
 						
-						Event.observe('ref_transporteur_select_img', 'mouseout',  function(){$("ref_transporteur_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";}, false);
+						Event.observe('ref_transporteur_select_img', 'mouseout',  function(){$("ref_transporteur_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";}, false);
 						Event.observe('ref_transporteur_select_img', 'click',  function(evt){Event.stop(evt); show_mini_moteur_contacts ("recherche_livraison_set_contact", "\'ref_transporteur\', \'nom_transporteur\' "); preselect ('<?php echo $CONSTRUCTEUR_ID_PROFIL; ?>', 'id_profil_m'); page.annuaire_recherche_mini();}, false);
 					</script>
 					</td>
 					<td style="text-align:center">
-						<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" />
+						<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" />
 					</td>
 				</tr>
 			</table>
@@ -116,11 +116,11 @@ if ($livraison_modes) {
 			<td>
 				<table>
 					<tr class="smallheight">
-						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 					<tr>
 						<td style="text-align:left">Libell&eacute;: 
@@ -151,11 +151,11 @@ if ($livraison_modes) {
 					<form action="livraison_modes_mod.php" method="post" id="livraison_modes_mod_<?php echo $livraison_mode->id_livraison_mode;?>" name="livraison_modes_mod_<?php echo $livraison_mode->id_livraison_mode;?>" target="formFrame" >
 					<table>
 						<tr class="smallheight">
-							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 						</tr>
 						<tr>
 							<td>
@@ -174,23 +174,23 @@ if ($livraison_modes) {
 									<input name="nom_transporteur_<?php echo $livraison_mode->id_livraison_mode;?>" id="nom_transporteur_<?php echo $livraison_mode->id_livraison_mode;?>" type="text" value="<?php echo ($livraison_mode->article->getNom_constructeur ());?>"  class="classinput_xsize" readonly=""/>
 									</td>
 									<td style="width:20px">
-									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif"/ style="float:right" id="ref_transporteur_select_img_<?php echo $livraison_mode->id_livraison_mode;?>">
+									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif"/ style="float:right" id="ref_transporteur_select_img_<?php echo $livraison_mode->id_livraison_mode;?>">
 									</td>
 								</tr>
 							</table>
 							
 							<script type="text/javascript">
 							//effet de survol sur le faux select
-							Event.observe('ref_transporteur_select_img_<?php echo $livraison_mode->id_livraison_mode;?>', 'mouseover',  function(){$("ref_transporteur_select_img_<?php echo $livraison_mode->id_livraison_mode;?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_hover.gif";}, false);
-							Event.observe('ref_transporteur_select_img_<?php echo $livraison_mode->id_livraison_mode;?>', 'mousedown',  function(){$("ref_transporteur_select_img_<?php echo $livraison_mode->id_livraison_mode;?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_down.gif";}, false);
-							Event.observe('ref_transporteur_select_img_<?php echo $livraison_mode->id_livraison_mode;?>', 'mouseup',  function(){$("ref_transporteur_select_img_<?php echo $livraison_mode->id_livraison_mode;?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif";}, false);
+							Event.observe('ref_transporteur_select_img_<?php echo $livraison_mode->id_livraison_mode;?>', 'mouseover',  function(){$("ref_transporteur_select_img_<?php echo $livraison_mode->id_livraison_mode;?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_hover.gif";}, false);
+							Event.observe('ref_transporteur_select_img_<?php echo $livraison_mode->id_livraison_mode;?>', 'mousedown',  function(){$("ref_transporteur_select_img_<?php echo $livraison_mode->id_livraison_mode;?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_down.gif";}, false);
+							Event.observe('ref_transporteur_select_img_<?php echo $livraison_mode->id_livraison_mode;?>', 'mouseup',  function(){$("ref_transporteur_select_img_<?php echo $livraison_mode->id_livraison_mode;?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select.gif";}, false);
 							
-							Event.observe('ref_transporteur_select_img_<?php echo $livraison_mode->id_livraison_mode;?>', 'mouseout',  function(){$("ref_transporteur_select_img_<?php echo $livraison_mode->id_livraison_mode;?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";}, false);
+							Event.observe('ref_transporteur_select_img_<?php echo $livraison_mode->id_livraison_mode;?>', 'mouseout',  function(){$("ref_transporteur_select_img_<?php echo $livraison_mode->id_livraison_mode;?>").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";}, false);
 							Event.observe('ref_transporteur_select_img_<?php echo $livraison_mode->id_livraison_mode;?>', 'click',  function(evt){Event.stop(evt); show_mini_moteur_contacts ("recherche_livraison_set_contact", "\'ref_transporteur_<?php echo $livraison_mode->id_livraison_mode;?>\', \'nom_transporteur_<?php echo $livraison_mode->id_livraison_mode;?>\' "); preselect ('<?php echo $CONSTRUCTEUR_ID_PROFIL; ?>', 'id_profil_m'); }, false);
 							</script>
 							</td>
 							<td style="text-align:center">
-							<div id="more_mode_liv_<?php echo $livraison_mode->id_livraison_mode;?>" style="cursor:pointer; display:inherit"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" /> de détails </div>
+							<div id="more_mode_liv_<?php echo $livraison_mode->id_livraison_mode;?>" style="cursor:pointer; display:inherit"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" /> de détails </div>
 							
 	<script type="text/javascript">
 	Event.observe('more_mode_liv_<?php echo $livraison_mode->id_livraison_mode;?>', 'click',  function(){
@@ -202,7 +202,7 @@ if ($livraison_modes) {
 	</script>
 							</td>
 							<td style="text-align:center">
-							<input name="modifier_<?php echo $livraison_mode->id_livraison_mode;?>" id="modifier_<?php echo $livraison_mode->id_livraison_mode;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+							<input name="modifier_<?php echo $livraison_mode->id_livraison_mode;?>" id="modifier_<?php echo $livraison_mode->id_livraison_mode;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
 							</td>
 						</tr>
 					</table>
@@ -212,7 +212,7 @@ if ($livraison_modes) {
 				<form method="post" action="livraison_modes_sup.php" id="livraison_modes_sup_<?php echo $livraison_mode->id_livraison_mode; ?>" name="livraison_modes_sup_<?php echo $livraison_mode->id_livraison_mode; ?>" target="formFrame">
 					<input name="id_livraison_mode" id="id_livraison_mode" type="hidden" value="<?php echo $livraison_mode->id_livraison_mode; ?>" />
 				</form>
-				<a href="#" id="link_livraison_modes_sup_<?php echo $livraison_mode->id_livraison_mode; ?>" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+				<a href="#" id="link_livraison_modes_sup_<?php echo $livraison_mode->id_livraison_mode; ?>" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 				<script type="text/javascript">
 				Event.observe("link_livraison_modes_sup_<?php echo $livraison_mode->id_livraison_mode; ?>", "click",  function(evt){Event.stop(evt); alerte.confirm_supprimer('livraison_modes_sup', 'livraison_modes_sup_<?php echo $livraison_mode->id_livraison_mode; ?>');}, false);
 				</script>

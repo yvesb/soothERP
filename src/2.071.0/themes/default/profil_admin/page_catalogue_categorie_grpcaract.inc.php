@@ -3,7 +3,7 @@
 	
 	<table>
 		<tr class="smallheight">
-			<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
+			<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
 			</td>
 		</tr>	
 		<tr>
@@ -15,7 +15,7 @@
 	<div class="caract_table">
 	<table>
 		<tr class="smallheight">
-			<td style="width:90%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
+			<td style="width:90%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
 			</td>
 			<td></td>
 			<td></td>
@@ -25,7 +25,7 @@
 				<form action="catalogue_categorie_grpcaract_add.php" method="post" id="catalogue_categorie_add_grpcaract" name="catalogue_categorie_add_grpcaract" target="formFrame" >
 				<table>
 					<tr class="smallheight">
-						<td style="width:90%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
+						<td style="width:90%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
 						</td>
 						<td style="width:10%"></td>
 					</tr>	
@@ -35,7 +35,7 @@
 							<input name="ref_art_categ" id="ref_art_categ" type="hidden" value="<?php echo $art_categ->getRef_art_categ(); ?>" />
 						</td>
 						<td>
-							<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" />
+							<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" />
 						</td>
 					</tr>
 				</table>
@@ -57,7 +57,7 @@
 	
 	<table>
 		<tr class="smallheight">
-			<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
+			<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
 			</td>
 		</tr>	
 		<tr>
@@ -75,7 +75,7 @@
 
 	<table>
 		<tr class="smallheight">
-			<td style="width:90%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:90%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			<td></td>
 			<td></td>
 		</tr>	
@@ -84,7 +84,7 @@
 				<form action="catalogue_categorie_grpcaract_mod.php" method="post" id="catalogue_categorie_mod_grpcaract_<?php echo $exist_carac_groupe->ref_carac_groupe; ?>" name="catalogue_categorie_mod_grpcaract_<?php echo $exist_carac_groupe->ref_carac_groupe; ?>" target="formFrame"  >
 				<table>
 					<tr class="smallheight">
-						<td style="width:90%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
+						<td style="width:90%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/>
 						</td>
 						<td style="width:10%"></td>
 					</tr>	
@@ -95,7 +95,7 @@
 							<input name="ref_art_categ" id="ref_art_categ" type="hidden" value="<?php echo $art_categ->getRef_art_categ(); ?>" />
 						</td>
 						<td>
-							<input name="modifier_<?php echo $exist_carac_groupe->ref_carac_groupe; ?>" id="modifier_<?php echo $exist_carac_groupe->ref_carac_groupe; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif">
+							<input name="modifier_<?php echo $exist_carac_groupe->ref_carac_groupe; ?>" id="modifier_<?php echo $exist_carac_groupe->ref_carac_groupe; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif">
 						</td>
 					</tr>
 				</table>
@@ -106,7 +106,7 @@
 				<input name="ref_carac_groupe" id="ref_carac_groupe" type="hidden" value="<?php echo $exist_carac_groupe->ref_carac_groupe; ?>" />
 				<input name="ref_art_categ" id="ref_art_categ" type="hidden" value="<?php echo $art_categ->getRef_art_categ(); ?>" />
 				</form>
-				<a href="#" id="link_catalogue_categorie_sup_grpcaract_<?php echo $exist_carac_groupe->ref_carac_groupe; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+				<a href="#" id="link_catalogue_categorie_sup_grpcaract_<?php echo $exist_carac_groupe->ref_carac_groupe; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 				<script type="text/javascript">
 				Event.observe("link_catalogue_categorie_sup_grpcaract_<?php echo $exist_carac_groupe->ref_carac_groupe; ?>", "click",  function(evt){Event.stop(evt); alerte.confirm_supprimer('catalogue_categorie_sup_grpcaract', 'catalogue_categorie_sup_grpcaract_<?php echo $exist_carac_groupe->ref_carac_groupe; ?>');}, false);
 				</script>
@@ -125,12 +125,12 @@
 								<input name="ordre_other" id="ordre_other" type="hidden" value="<?php echo ($exist_carac_groupe->ordre)?>" />
 								<input name="ref_art_categ" id="ref_art_categ" type="hidden" value="<?php echo $art_categ->getRef_art_categ(); ?>" />
 								
-								<input name="modifier_ordre_<?php echo $exist_carac_groupe->ref_carac_groupe; ?>" id="modifier_ordre_<?php echo $exist_carac_groupe->ref_carac_groupe; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/up.gif">
+								<input name="modifier_ordre_<?php echo $exist_carac_groupe->ref_carac_groupe; ?>" id="modifier_ordre_<?php echo $exist_carac_groupe->ref_carac_groupe; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/up.gif">
 							</form>
 							<?php
 							} else {
 							?>
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="1" height="1"/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="1" height="1"/>
 							<?php
 							}
 							?>
@@ -149,12 +149,12 @@
 								<input name="ordre_other" id="ordre_other" type="hidden" value="<?php echo ($exist_carac_groupe->ordre)?>" />
 								<input name="ref_art_categ" id="ref_art_categ" type="hidden" value="<?php echo $art_categ->getRef_art_categ(); ?>" />
 								
-								<input name="modifier_ordre_<?php echo $exist_carac_groupe->ref_carac_groupe; ?>" id="modifier_ordre_<?php echo $exist_carac_groupe->ref_carac_groupe; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/down.gif">
+								<input name="modifier_ordre_<?php echo $exist_carac_groupe->ref_carac_groupe; ?>" id="modifier_ordre_<?php echo $exist_carac_groupe->ref_carac_groupe; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/down.gif">
 							</form>
 							<?php
 							} else {
 							?>
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="1" height="1"/>							
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="1" height="1"/>							
 							<?php
 							}
 							?>

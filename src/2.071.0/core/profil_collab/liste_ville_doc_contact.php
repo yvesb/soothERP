@@ -33,7 +33,7 @@ function get_communes($cp) {
 	while ($row = $req->fetchObject()) { $citys[] = $row; }
 		$i=0;
 		if (count($citys)>0){
-			echo '<a href="#" id="supprime_'.$_REQUEST["choix_ville"].'" style="float: right;"><img src="'.$DIR.$_SESSION['theme']->getDir_theme().'images/supprime.gif" border="0"></a>';
+			echo '<a href="#" id="supprime_'.$_REQUEST["choix_ville"].'" style="float: right;"><img src="'.$DIR.$_SESSION['theme']->getDir_gtheme().'images/supprime.gif" border="0"></a>';
 			echo '<ul class="complete_ville" style="width:250px">'; 
 			foreach ($citys as $city) {
 				if ($i < $NB_VILLES_AFFICHEES) {

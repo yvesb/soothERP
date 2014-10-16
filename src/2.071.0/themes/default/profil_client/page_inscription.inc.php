@@ -54,7 +54,7 @@ check_page_variables ($page_variables);
 										<input type="hidden" id="profils_inscription" name="profils_inscription"  value="<?php echo $_INTERFACE['ID_PROFIL'];?>"/>
 						
 										<div class="title_content" style="text-align:right">
-											INFORMATIONS PERSONNELLES <img  src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/icone_contact.gif" style="vertical-align:text-bottom"/>
+											INFORMATIONS PERSONNELLES <img  src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/icone_contact.gif" style="vertical-align:text-bottom"/>
 										</div>
 										
 										<br />
@@ -435,7 +435,7 @@ check_page_variables ($page_variables);
 											</tr>
 										</table>
 										<div style="text-align:right">
-											<input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_valider.gif" />
+											<input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_valider.gif" />
 										</div>
 									</td>
 									<td class="lightbg_liste">&nbsp;</td>

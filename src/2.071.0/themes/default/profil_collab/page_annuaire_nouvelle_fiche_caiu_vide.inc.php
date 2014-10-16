@@ -4,13 +4,13 @@
 		<td colspan="2">
 		<table>
 			<tr>
-				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			</tr><tr>
 				<td class="size_strict">
 					<span class="labelled">Titre:</span>
 				</td><td>
-		<div style="text-align:right; float:right"> <a href="#" id="link_sup_coordcontent_li_%//%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a></div>
+		<div style="text-align:right; float:right"> <a href="#" id="link_sup_coordcontent_li_%//%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a></div>
 					<input id="coordonnee_lib%//%" name="coordonnee_lib%//%" type="text" class="classinput_lsize" value="" />
 				</td>
 			</tr><?php if (!empty($GEST_TYPE_COORD)){
@@ -86,14 +86,14 @@
 		<td colspan="2">
 		<table>
 			<tr class="smallheight">
-				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			</tr>
 			<tr>
 				<td class="size_strict">
 				<span class="labelled">Titre:</span>
 				</td><td>
-		<div style="text-align:right; float:right"> <a href="#" id="link_sup_adressecontent_li_%//%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a></div>
+		<div style="text-align:right; float:right"> <a href="#" id="link_sup_adressecontent_li_%//%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a></div>
 				<input id="adresse_lib%//%" name="adresse_lib%//%" type="text" class="classinput_lsize" value="" />
 				</td>
 			</tr> <?php if(!empty($GEST_TYPE_COORD)) {
@@ -179,14 +179,14 @@
 		<td colspan="2">
 		<table>
 			<tr>
-				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			</tr>
 			<tr>
 				<td class="size_strict">
 				<span class="labelled">Titre:</span></td>
 				<td>
-		<div style="text-align:right; float:right"> <a href="#" id="link_sup_sitecontent_li_%//%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a></div>
+		<div style="text-align:right; float:right"> <a href="#" id="link_sup_sitecontent_li_%//%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a></div>
 				<input id="site_lib%//%" name="site_lib%//%" type="text" class="classinput_lsize" value="" />
 				</td>
 			</tr><?php if(!empty($GEST_TYPE_COORD)){
@@ -247,16 +247,16 @@
 <table class="minimizetable">
   <tr>
 		<td>
-		<div><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" border="0"></div>
+		<div><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" border="0"></div>
 		</td><td>
-		<div style="text-align:right;"> <a href="#" id="link_sup_usercontent_li_%//%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a></div>
+		<div style="text-align:right;"> <a href="#" id="link_sup_usercontent_li_%//%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a></div>
 		</td>
 	</tr><tr>
 		<td colspan="2">
 		<table>
 			<tr>
-				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			</tr><tr>
 				<td class="size_strict">
 					<span class="labelled">Pseudo:</span>
@@ -283,7 +283,7 @@
 				<iframe id="iframe_liste_choix_coordonnee%//%" frameborder="0" scrolling="no" src="about:_blank"  class="choix_liste_choix_coordonnee" style="display:none;"></iframe>
 				<div id="choix_liste_choix_coordonnee%//%"  class="choix_liste_choix_coordonnee" style="display:none;"></div></div>
 				<div id="coordonnee_choisie%//%" class="simule_champs" style="width:99%;cursor: default;">
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arrow_select.gif"/ style="float:right" id="bt_coordonnee_choisie%//%">
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arrow_select.gif"/ style="float:right" id="bt_coordonnee_choisie%//%">
 					<span id="lib_coordonnee_choisie%//%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 				</div>
 				<input id="user_coord%//%" name="user_coord%//%" class="classinput_xsize" value="" type="hidden"/>

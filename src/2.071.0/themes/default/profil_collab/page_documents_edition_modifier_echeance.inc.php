@@ -36,8 +36,8 @@ $echeances = $facture->getEcheancier();
 // *************************************************************************************************************
 //echo $_REQUEST['desc_courte'];
 ?>
-<input name="sortir" id="sortir" type="image" style="position:absolute;right:10px" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" />
-<input name="valider" id="valider" type="image" style="position:absolute;bottom:30px;left:45%;" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />
+<input name="sortir" id="sortir" type="image" style="position:absolute;right:10px" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" />
+<input name="valider" id="valider" type="image" style="position:absolute;bottom:30px;left:45%;" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" />
 <div style="text-align:center; background-color:#809eb6; width : 97% " class="doc_bold2">Edition de l'échéancier</div>
 <div style="height:5px">&nbsp;</div>
 <div style="position:absolute;right:30px;top:40px;">
@@ -53,9 +53,9 @@ $echeances = $facture->getEcheancier();
 </div>
 <table style="width:100%;">
         <tr class="smallheight">
-                <td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-                <td style="width:60%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-                <td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                <td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                <td style="width:60%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                <td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
         </tr>
         <tr>
         <td style="text-align:right">Montant total du document :
@@ -70,7 +70,7 @@ $echeances = $facture->getEcheancier();
         </td>
         <td>
             <input name="nb_reglements" id="nb_reglements" type="text" value="" onfocus="$('valider_nb_reg').style.display = '';" class="classinput_xsize" style="width:20px" MAXLENGTH="2"/>
-                &nbsp;&nbsp;&nbsp; <img id="valider_nb_reg" name="valider_nb_reg" style="cursor:pointer" onclick="this.style.display='none';" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-continuer.gif" />
+                &nbsp;&nbsp;&nbsp; <img id="valider_nb_reg" name="valider_nb_reg" style="cursor:pointer" onclick="this.style.display='none';" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-continuer.gif" />
                 <script type="text/javascript">
                 Event.observe('nb_reglements', 'keypress',  function(evt){
                         if (evt.keyCode == 13){
@@ -171,7 +171,7 @@ $echeances = $facture->getEcheancier();
                                                         '<td style="text-align:center"><select name="slct_mode_'+i+'" id="slct_mode_'+i+'" style="width:160px">'+str_mode_regl_select+'</select></td>'+
                                                         '<td style="text-align:center" name="inp_delai" ><input name="inp_delai_'+i+'" id="inp_delai_'+i+'" type="text" value="" onchange="maj_date(this.value,\'<?php echo $date_creation ?>\',\'inp_date_'+i+'\');" class="classinput_xsize" style="width:30px;text-align:right;" MAXLENGTH="3"/> jours</td>'+
                                                         '<td style="text-align:center;display:none" name="inp_date"><input id="inp_date_'+i+'" type="text" value="" onchange="datemaskslash2(this);maj_jour(this.value,\'<?php echo $date_creation ?>\',\'inp_delai_'+i+'\');" class="classinput_xsize" style="width:70px" MAXLENGTH="10"/>'+
-                                                        '   <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/calendrier.gif" onclick="create_div(event,\'inp_date_'+i+'\',0);divToRefrsh=\'inp_date_'+i+'\';"/>'+
+                                                        '   <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/calendrier.gif" onclick="create_div(event,\'inp_date_'+i+'\',0);divToRefrsh=\'inp_date_'+i+'\';"/>'+
                                                         '</td>'+
                                                         '<td style="text-align:center" name="inp_montant" ><input name="inp_montant_'+i+'" id="inp_montant_'+i+'" type="text" value="" class="classinput_xsize" style="width:50px;text-align:right;" MAXLENGTH="3" readonly="readonly" /> %</td>'+
                                                         '<td style="text-align:center;display:none" name="inp_euro"><input name="inp_euro_'+i+'" id="inp_euro_'+i+'" type="text" value="" onKeyUp="" class="classinput_xsize" style="width:50px;text-align:right;" MAXLENGTH="5"/> <?php echo $MONNAIE[1];?></td>'+
@@ -185,7 +185,7 @@ $echeances = $facture->getEcheancier();
                                                                 '<td style="text-align:center"><select name="slct_mode_'+i+'" id="slct_mode_'+i+'" style="width:160px">'+str_mode_regl_select+'</select></td>'+
                                                                 '<td style="text-align:center" name="inp_delai" ><input name="inp_delai_'+i+'" id="inp_delai_'+i+'" type="text" value="" onchange="maj_date(this.value,\'<?php echo $date_creation ?>\',\'inp_date_'+i+'\');" class="classinput_xsize" style="width:30px;text-align:right;" MAXLENGTH="3"/> jours</td>'+
                                                                 '<td style="text-align:center;display:none" name="inp_date"><input id="inp_date_'+i+'" type="text" value="" onchange="datemaskslash2(this);maj_jour(this.value,\'<?php echo $date_creation ?>\',\'inp_delai_'+i+'\');" class="classinput_xsize" style="width:70px" MAXLENGTH="10"/>'+
-                                                                '   <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/calendrier.gif" onclick="create_div(event,\'inp_date_'+i+'\',0);divToRefrsh=\'inp_date_'+i+'\';"/>'+
+                                                                '   <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/calendrier.gif" onclick="create_div(event,\'inp_date_'+i+'\',0);divToRefrsh=\'inp_date_'+i+'\';"/>'+
                                                                 '</td>'+
                                                                 '<td style="text-align:center" name="inp_montant" ><input name="inp_montant_'+i+'" id="inp_montant_'+i+'" type="text" value="" onKeyUp="maj_mnt_solde(\'div_lignes_reglement\','+nbregl+');" onchange="majMontant(<?php echo $facture->getMontant_ttc() ?>,this.value,\'inp_euro_'+i+'\',\'div_lignes_reglement\','+nbregl+')" class="classinput_xsize" style="width:50px;text-align:right;" MAXLENGTH="3"/> %</td>'+
                                                                 '<td style="text-align:center;display:none" name="inp_euro"><input name="inp_euro_'+i+'" id="inp_euro_'+i+'" type="text" value="" onKeyUp="maj_euro_solde(\'div_lignes_reglement\','+nbregl+', <?php echo $facture->getMontant_ttc() ?>)"  class="classinput_xsize" style="width:50px;text-align:right;" MAXLENGTH="5"/> <?php echo $MONNAIE[1];?></td>'+
@@ -197,7 +197,7 @@ $echeances = $facture->getEcheancier();
                                                                 '<td style="text-align:center"><select name="slct_mode_'+i+'" id="slct_mode_'+i+'" style="width:160px">'+str_mode_regl_select+'</select></td>'+
                                                                 '<td style="text-align:center" name="inp_delai" ><input name="inp_delai_'+i+'" id="inp_delai_'+i+'" type="text" value="" onchange="maj_date(this.value,\'<?php echo $date_creation ?>\',\'inp_date_'+i+'\');" class="classinput_xsize" style="width:30px;text-align:right;" MAXLENGTH="3"/> jours</td>'+
                                                                 '<td style="text-align:center;display:none" name="inp_date"><input id="inp_date_'+i+'" type="text" value="" onchange="datemaskslash2(this);maj_jour(this.value,\'<?php echo $date_creation ?>\',\'inp_delai_'+i+'\');" class="classinput_xsize" style="width:70px" MAXLENGTH="10"/>'+
-                                                                '   <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/calendrier.gif" onclick="create_div(event,\'inp_date_'+i+'\',0);divToRefrsh=\'inp_date_'+i+'\';"/>'+
+                                                                '   <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/calendrier.gif" onclick="create_div(event,\'inp_date_'+i+'\',0);divToRefrsh=\'inp_date_'+i+'\';"/>'+
                                                                 '</td>'+
                                                                 '<td style="text-align:center" name="inp_montant" ><input name="inp_montant_'+i+'" id="inp_montant_'+i+'" type="text" value="" onKeyUp="maj_mnt_solde(\'div_lignes_reglement\','+nbregl+');" onchange="majMontant(<?php echo $facture->getMontant_ttc() ?>,this.value,\'inp_euro_'+i+'\',\'div_lignes_reglement\','+nbregl+')" class="classinput_xsize" style="width:50px;text-align:right;" MAXLENGTH="3"/> %</td>'+
                                                                 '<td style="text-align:center;display:none" name="inp_euro"><input name="inp_euro_'+i+'" id="inp_euro_'+i+'" type="text" value="" onKeyUp="maj_euro_solde(\'div_lignes_reglement\','+nbregl+', <?php echo $facture->getMontant_ttc() ?>)"  class="classinput_xsize" style="width:50px;text-align:right;" MAXLENGTH="5"/> <?php echo $MONNAIE[1];?></td>'+
@@ -213,7 +213,7 @@ $echeances = $facture->getEcheancier();
                                         '<td style="text-align:center"><select name="slct_mode_'+i+'" id="slct_mode_'+i+'" style="width:160px">'+str_mode_regl_select+'</select></td>'+
                                         '<td style="text-align:center" name="inp_delai" ><input name="inp_delai_'+i+'" id="inp_delai_'+i+'" type="text" value="" onchange="maj_date(this.value,\'<?php echo $date_creation ?>\',\'inp_date_'+i+'\');" class="classinput_xsize" style="width:30px;text-align:right;" MAXLENGTH="3"/> jours</td>'+
                                         '<td style="text-align:center;display:none" name="inp_date"><input id="inp_date_'+i+'" type="text" value="" onchange="datemaskslash2(this);maj_jour(this.value,\'<?php echo $date_creation ?>\',\'inp_delai_'+i+'\');" class="classinput_xsize" style="width:70px" MAXLENGTH="10"/>'+
-                                        '   <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/calendrier.gif" onclick="create_div(event,\'inp_date_'+i+'\',0);divToRefrsh=\'inp_date_'+i+'\';"/>'+
+                                        '   <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/calendrier.gif" onclick="create_div(event,\'inp_date_'+i+'\',0);divToRefrsh=\'inp_date_'+i+'\';"/>'+
                                         '<td style="text-align:center" name="inp_montant" ><input name="inp_montant_'+i+'" id="inp_montant_'+i+'" type="text" value="100" class="classinput_xsize" style="width:50px;text-align:right;" MAXLENGTH="3" readonly="readonly" /> %</td>'+
                                         '<td style="text-align:center;display:none" name="inp_euro"><input name="inp_euro_'+i+'" id="inp_euro_'+i+'" type="text" value="<?php echo $facture->getMontant_ttc() ?>" class="classinput_xsize" style="width:50px;text-align:right;" MAXLENGTH="5"/> <?php echo $MONNAIE[1];?></td>'+
                                         '</tr>';
@@ -255,9 +255,9 @@ $echeances = $facture->getEcheancier();
 				<td style="width:95%">
 					<table>
 					<tr class="smallheight">
-					<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:60%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:60%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>
 				<tr>
 				</tr>
@@ -316,7 +316,7 @@ $echeances = $facture->getEcheancier();
                                                         }?></select></td>
                                                         <td style="text-align:center" name="inp_delai"><input name="inp_delai_<?php echo $i;?>" id="inp_delai_<?php echo $i;?>" type="text" value="<?php echo $echeance->jour;?>" onchange="maj_date(this.value,'<?php echo $date_creation ?>','inp_date_<?php echo $i;?>');" class="classinput_xsize" style="width:30px;text-align:right;" MAXLENGTH="3"/> jours</td>
 							<td style="text-align:center;display:none" name="inp_date"><input id="inp_date_<?php echo $i;?>" type="text" value="<?php echo str_replace('-','/',date_US_to_Fr($echeance->date));?>" onblur="datemaskslash2(this);maj_jour(this.value,'<?php echo $date_creation ?>','inp_delai_<?php echo $i;?>');" class="classinput_xsize" style="width:70px" MAXLENGTH="10"/>
-                                                            <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/calendrier.gif" onclick="create_div(event,'inp_date_<?php echo $i;?>',0);divToRefrsh='inp_date_<?php echo $i;?>';"/>
+                                                            <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/calendrier.gif" onclick="create_div(event,'inp_date_<?php echo $i;?>',0);divToRefrsh='inp_date_<?php echo $i;?>';"/>
                                                         </td>
                                                         <?php if($i!=$echTot){?>
 								<td style="text-align:center" name="inp_montant"><input name="inp_montant_<?php echo $i;?>" id="inp_montant_<?php echo $i;?>" type="text" value="<?php echo $echeance->pourcentage;?>" onKeyUp="maj_mnt_solde('div_lignes_reglement',<?php echo $echTot;?>)" onchange="majMontant(<?php echo $facture->getMontant_ttc() ?>,this.value,'inp_euro_<?php echo $i;?>','div_lignes_reglement',<?php echo $echTot;?>)" class="classinput_xsize" style="width:50px;text-align:right;" MAXLENGTH="3"/> %</td>
@@ -364,9 +364,9 @@ $echeances = $facture->getEcheancier();
 				<td style="width:95%">
 					<table>
 					<tr class="smallheight">
-					<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:60%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:60%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>
 				<tr>
 				</tr>
@@ -434,7 +434,7 @@ $echeances = $facture->getEcheancier();
 
 			</tr>
 			</table>
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="1" height="1"/>
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="1" height="1"/>
         </div>
         </form>
 	<?php } ?>

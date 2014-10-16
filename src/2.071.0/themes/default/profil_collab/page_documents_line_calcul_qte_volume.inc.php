@@ -78,7 +78,7 @@ check_page_variables ($page_variables);
 			</tr>
 			<tr>
 				<td></td>
-				<td style="text-align:center;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/cube.png" height="100px" /></td>
+				<td style="text-align:center;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/cube.png" height="100px" /></td>
 				<td></td>
 				<td>
 					<table width="100%" border="0">
@@ -104,7 +104,7 @@ check_page_variables ($page_variables);
 			</tr>
 			<tr>
 				<td></td>
-				<td style="text-align:center;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/pave_droit.png" height="100px" /></td>
+				<td style="text-align:center;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/pave_droit.png" height="100px" /></td>
 				<td></td>
 				<td>
 					<table width="100%" border="0">
@@ -138,7 +138,7 @@ check_page_variables ($page_variables);
 			</tr>
 			<tr>
 				<td></td>
-				<td style="text-align:center;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/cylindre.png" height="100px" /></td>
+				<td style="text-align:center;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/cylindre.png" height="100px" /></td>
 				<td></td>
 				<td>
 					<table width="100%" border="0">
@@ -206,7 +206,7 @@ check_page_variables ($page_variables);
 				<td></td>
 				<td></td>
 				<td style="text-align:right;">
-					<img id="calcul_geo_valider" style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />
+					<img id="calcul_geo_valider" style="cursor:pointer" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" />
 
 				</td>
 				<td></td>

@@ -14,7 +14,7 @@ check_page_variables ($page_variables);
 // *************************************************************************************************************
 
 ?>
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="close_edit_ope" style="cursor:pointer; float:right"/>
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="close_edit_ope" style="cursor:pointer; float:right"/>
 <script type="text/javascript">
 Event.observe('close_edit_ope', 'click',  function(evt){
 Event.stop(evt); 
@@ -49,7 +49,7 @@ $("edition_operation").hide();
 						<?php if (isset($_REQUEST["from_tb"])) { ?>
 						<input type="hidden" name="from_tb" id="from_tb" value="1"/>
 						<?php }?>
-						<input name="import_operations_import_valid" id="import_operations_import_valid" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-importer.gif" />
+						<input name="import_operations_import_valid" id="import_operations_import_valid" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-importer.gif" />
 						</td>
 					</tr>
 				</table>

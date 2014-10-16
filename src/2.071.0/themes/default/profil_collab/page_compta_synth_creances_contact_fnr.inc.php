@@ -86,13 +86,13 @@ infos_niveau_relance[<?php echo $niveau_relance->id_niveau_relance;?>] = "<?php 
 			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="">
 				<tr>
 					<td rowspan="2" style="width:33px">
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/arrow_ltr.png" />
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/arrow_ltr.png" />
 					</td>
 					<td style="height:4px; line-height:4px">
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="4px" width="100%"/>
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="4px" width="100%"/>
 					</td>
 					<td style="height:4px; line-height:4px">
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="4px" width="100%"/>
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="4px" width="100%"/>
 					</td>
 				</tr>
 				<tr>
@@ -208,9 +208,9 @@ Event.observe("coche_action_<?php echo $groupe_by_relance?>", "change", function
 				
 				<?php echo  htmlentities($facture->abrev_magasin, ENT_QUOTES, "UTF-8");?>				</td>
 				<td class="document_border_right" style="width:95px; text-align:right">
-					 <a href="#" id="mail_doc_<?php echo $facture->ref_doc?>" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-email-doc.gif"/></a> 
-					 <a href="documents_editing.php?ref_doc=<?php echo $facture->ref_doc?>" target="_blank" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif"/></a> 
-					<a href="documents_editing.php?ref_doc=<?php echo $facture->ref_doc?>&print=1" target="_blank" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/icone_imprime.gif" alt="Imprimer" title="Imprimer"/></a>
+					 <a href="#" id="mail_doc_<?php echo $facture->ref_doc?>" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-email-doc.gif"/></a> 
+					 <a href="documents_editing.php?ref_doc=<?php echo $facture->ref_doc?>" target="_blank" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-pdf.gif"/></a> 
+					<a href="documents_editing.php?ref_doc=<?php echo $facture->ref_doc?>&print=1" target="_blank" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/icone_imprime.gif" alt="Imprimer" title="Imprimer"/></a>
 				
 					<script type="text/javascript">
 					Event.observe("mail_doc_<?php echo $facture->ref_doc?>", "click", function(evt){
@@ -232,13 +232,13 @@ Event.observe("coche_action_<?php echo $groupe_by_relance?>", "change", function
 			<table width="100%" border="0" cellspacing="0" cellpadding="0" class="">
 				<tr>
 					<td rowspan="2" style="width:33px">
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/arrow_ltr.png" />
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/arrow_ltr.png" />
 					</td>
 					<td style="height:4px; line-height:4px">
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="4px" width="100%"/>
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="4px" width="100%"/>
 					</td>
 					<td style="height:4px; line-height:4px">
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="4px" width="100%"/>
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="4px" width="100%"/>
 					</td>
 				</tr>
 				<tr>

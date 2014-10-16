@@ -34,8 +34,8 @@ check_page_variables ($page_variables);
 		<?php if($GESTION_REF_INTERNE ||$GESTION_CONSTRUCTEUR ){?>
 			<table style="width:95%" border="0" id="view_info_step2" class="art_new_info">
 				<tr class="smallheight">
-					<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-					<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+					<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+					<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 				</tr>
 					<?php if($GESTION_REF_INTERNE){?>
 				<tr>
@@ -84,8 +84,8 @@ check_page_variables ($page_variables);
 			
 			<table style="width:95%; display:none;" border="0" id="edit_info_step2" class="art_new_info">
 				<tr class="smallheight">
-					<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-					<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+					<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+					<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 				</tr>
 					<?php if($GESTION_REF_INTERNE){?>
 				<tr>
@@ -125,8 +125,8 @@ check_page_variables ($page_variables);
 
 			<table style="width:95%" border="0" cellspacing="0" cellpadding="0">
 				<tr class="smallheight">
-					<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-					<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+					<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+					<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 				</tr>
 				<tr>
 					<td class="labelled_bold" >Description courte:</td>
@@ -144,18 +144,18 @@ check_page_variables ($page_variables);
 
 			<div id="show_desc_longue" style="cursor:pointer; font-size:11px; float:left; width:70%; color:#002673">Editer ou consulter la description longue</div>
 				<div style="text-align:right; padding-right:20px">
-				<a href="#" id="bt_etape_2" style="display:none"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" /></a>
-				<a href="#" id="edit_etape_2" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" /></a>
+				<a href="#" id="bt_etape_2" style="display:none"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" /></a>
+				<a href="#" id="edit_etape_2" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" /></a>
 				</div>
-				<img id="print_article" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" style="cursor:pointer"/><br />
+				<img id="print_article" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-pdf.gif" style="cursor:pointer"/><br />
 					<script type="text/javascript">
 					Event.observe("edit_etape_2", "focus",  function(evt){Event.stop(evt); showform('edit_info_step2', 'view_info_step2'); $("edit_etape_2").hide(); $("bt_etape_2").show();}, false);
 					</script>
           
       <table style="width:95%" border="0" cellspacing="0" cellpadding="0">
         <tr class="smallheight">
-          <td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-          <td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+          <td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+          <td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
         </tr>
         <tr>
           <td class="labelled_bold" >Mots clés : </td>
@@ -184,8 +184,8 @@ check_page_variables ($page_variables);
 				?>
 			<table style="width:95%" border="0" cellpadding="0" cellspacing="0" class="art_new_info">
 				<tr class="smallheight" >
-					<td style="width:50%; "><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-					<td style="width:50%; "><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+					<td style="width:50%; "><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+					<td style="width:50%; "><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 				</tr>
 				
 				<tr>
@@ -262,7 +262,7 @@ check_page_variables ($page_variables);
 					<td></td>
 					<td >
 						<div style="text-align:right; padding-right:0px">			
-						<a href="#" id="edit_etape_4" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" /></a>
+						<a href="#" id="edit_etape_4" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" /></a>
 						</div>
 					</td>
 				</tr>
@@ -613,7 +613,7 @@ if ($article->getVariante() == 1 && is_object($article_master)) {
 				<?php
 			} else {
 				?>
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/no_pict.gif" width="211" height="154" />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/no_pict.gif" width="211" height="154" />
 				<?php
 			}
 			?>
@@ -639,11 +639,11 @@ if ($article->getVariante() == 1 && is_object($article_master)) {
 			
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr class="smallheight" >
-					<td style="width:85px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-					<td style="width:35px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-					<td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-					<td style="width:150px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-					<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+					<td style="width:85px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+					<td style="width:35px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+					<td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+					<td style="width:150px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+					<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 				</tr>
 				<tr style="">
 					<td style=" text-align:left; padding-left:5px; font-weight:bolder">Date</td>
@@ -661,11 +661,11 @@ if ($article->getVariante() == 1 && is_object($article_master)) {
 					?>
 					<table width="100%" border="0" cellspacing="0" cellpadding="0">
 					<tr class="smallheight" >
-						<td style="width:85px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-						<td style="width:35px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-						<td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-						<td style="width:150px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-						<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+						<td style="width:85px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+						<td style="width:35px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+						<td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+						<td style="width:150px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+						<td style="width:18px;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 					</tr>
 					<tr id="open_doc_<?php echo ($art_doc->ref_doc);?>" style="cursor:pointer; color:#002673">
 						<td style=" border-bottom:1px solid #FFFFFF; text-align:left; padding-left:5px">
@@ -681,7 +681,7 @@ if ($article->getVariante() == 1 && is_object($article_master)) {
 							<?php echo ($art_doc->lib_etat_doc);?>
 						</td>
 						<td style=" border-bottom:1px solid #FFFFFF; text-align:center; ">
-						<a href="documents_editing.php?ref_doc=<?php echo $art_doc->ref_doc?>&print=1" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" alt="pdf" title="pdf"/></a>
+						<a href="documents_editing.php?ref_doc=<?php echo $art_doc->ref_doc?>&print=1" target="edition" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-pdf.gif" alt="pdf" title="pdf"/></a>
 						</td>
 					</tr>
 					</table>

@@ -10,7 +10,7 @@ check_page_variables ($page_variables);
 <div id="pop_up_options" class="lines_info_modeles_doc">
 
 	<!-- Bouton pour fermer la page sans sauvegarder -->
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-fermer.gif" id="close_courrier_options" class="bt_fermer_popup" alt="Fermer" title="Fermer" />
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-fermer.gif" id="close_courrier_options" class="bt_fermer_popup" alt="Fermer" title="Fermer" />
 	<SCRIPT type="text/javascript">
 		Event.observe("close_courrier_options", "click", function(evt){
 			Event.stop(evt);

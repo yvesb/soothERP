@@ -1,5 +1,5 @@
 <div style="padding-left:10px; padding-right:10px; height:100%">
-	<p><a href="catalogue_categorie_preview_caract.php?ref_art_categs=<?php echo $art_categ->getRef_art_categ(); ?>" target="preview_caracts" style="float:right; margin-right:30px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/preview.gif" width="65" height="18" /></a><br />
+	<p><a href="catalogue_categorie_preview_caract.php?ref_art_categs=<?php echo $art_categ->getRef_art_categ(); ?>" target="preview_caracts" style="float:right; margin-right:30px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/preview.gif" width="65" height="18" /></a><br />
 <span  class="bolder">Ajouter une caract&eacute;ristique</span> <br />
 
 	<div class="caract_table">
@@ -9,10 +9,10 @@
 	<form action="catalogue_categorie_caract_add.php" method="post" id="catalogue_categorie_add_caract" name="catalogue_categorie_add_caract" target="formFrame" >
 	<table>
 		<tr class="smallheight">
-			<td style="width:25%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:25%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:25%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:25%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:25%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:25%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:25%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:25%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			</tr>	
 		<tr>
 			<td><span class="labelled_nowidth">Libell&eacute;: 
@@ -57,7 +57,7 @@
 	?>
 			</select></td>
 			<td>
-				<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" style="float:right"/>
+				<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" style="float:right"/>
 				<input type="checkbox" name="variante" id="variante_0" value="1" />			</td>
 			</tr>
 </table>
@@ -104,10 +104,10 @@ Event.observe($("variante_0"), "click", function(evt){
 	<form action="catalogue_categorie_caract_mod.php" method="post" id="catalogue_categorie_mod_caract_<?php echo $exist_carac->ref_carac; ?>" name="catalogue_categorie_mod_caract_<?php echo $exist_carac->ref_carac; ?>" target="formFrame" >
 		<table>
 			<tr class="smallheight">
-				<td style="width:25%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td style="width:25%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td style="width:25%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td style="width:25%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td style="width:25%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td style="width:25%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td style="width:25%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td style="width:25%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			</tr>
 			<tr>
 				<td><span class="labelled_nowidth">Libell&eacute;:</span>
@@ -153,7 +153,7 @@ Event.observe($("variante_0"), "click", function(evt){
 	}
 	?>
 				</select></td>
-				<td><input name="modifier_<?php echo $exist_carac->ref_carac; ?>" id="modifier_<?php echo $exist_carac->ref_carac; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" style="float:right;"/>
+				<td><input name="modifier_<?php echo $exist_carac->ref_carac; ?>" id="modifier_<?php echo $exist_carac->ref_carac; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" style="float:right;"/>
 						<input type="checkbox" name="variante_<?php echo $exist_carac->ref_carac; ?>" id="variante_<?php echo $exist_carac->ref_carac; ?>" value="1" <?php if ($exist_carac->variante==1) {echo 'checked="checked"';}?> />		
 						<input type="hidden" name="old_variante_<?php echo $exist_carac->ref_carac; ?>" id="old_variante_<?php echo $exist_carac->ref_carac; ?>" value="<?php echo $exist_carac->variante;?>" />				</td>
 			</tr>
@@ -188,7 +188,7 @@ Event.observe($("variante_<?php echo $exist_carac->ref_carac; ?>"), "click", fun
 			<input name="ref_carac" id="ref_carac" type="hidden" value="<?php echo $exist_carac->ref_carac; ?>" />
 			<input name="ref_art_categ" id="ref_art_categ" type="hidden" value="<?php echo $art_categ->getRef_art_categ(); ?>" />
 		</form>
-		<a href="#" id="link_catalogue_categorie_sup_caract_<?php echo $exist_carac->ref_carac; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+		<a href="#" id="link_catalogue_categorie_sup_caract_<?php echo $exist_carac->ref_carac; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 		<script type="text/javascript">
 		Event.observe("link_catalogue_categorie_sup_caract_<?php echo $exist_carac->ref_carac; ?>", "click",  function(evt){
 			Event.stop(evt);
@@ -217,12 +217,12 @@ Event.observe($("variante_<?php echo $exist_carac->ref_carac; ?>"), "click", fun
 								<input name="ordre_other" id="ordre_other" type="hidden" value="<?php echo ($exist_carac->ordre)?>" />
 								<input name="ref_art_categ" id="ref_art_categ" type="hidden" value="<?php echo $art_categ->getRef_art_categ(); ?>" />
 								
-								<input name="modifier_ordre_<?php echo $exist_carac->ordre; ?>" id="modifier_ordre_<?php echo $exist_carac->ordre; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/up.gif">
+								<input name="modifier_ordre_<?php echo $exist_carac->ordre; ?>" id="modifier_ordre_<?php echo $exist_carac->ordre; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/up.gif">
 							</form>
 							<?php
 							} else {
 							?>
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="1" height="1"/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="1" height="1"/>
 							<?php
 							}
 							?>
@@ -240,12 +240,12 @@ Event.observe($("variante_<?php echo $exist_carac->ref_carac; ?>"), "click", fun
 								<input name="ordre_other" id="ordre_other" type="hidden" value="<?php echo ($exist_carac->ordre)?>" />
 								<input name="ref_art_categ" id="ref_art_categ" type="hidden" value="<?php echo $art_categ->getRef_art_categ(); ?>" />
 								
-								<input name="modifier_ordre_<?php echo $exist_carac->ordre; ?>" id="modifier_ordre_<?php echo $exist_carac->ordre; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/down.gif">
+								<input name="modifier_ordre_<?php echo $exist_carac->ordre; ?>" id="modifier_ordre_<?php echo $exist_carac->ordre; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/down.gif">
 							</form>
 							<?php
 							} else {
 							?>
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="1" height="1"/>							
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="1" height="1"/>							
 							<?php
 							}
 							?>

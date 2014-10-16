@@ -8,7 +8,7 @@
 		<form method="post" action="catalogue_taxes_sup.php" id="catalogue_taxes_sup_<?php echo $taxe['id_taxe']; ?>" name="catalogue_taxes_sup_<?php echo $taxe['id_taxe']; ?>" target="formFrame">
 			<input name="id_taxe" id="id_taxe" type="hidden" value="<?php echo $taxe['id_taxe']; ?>" />
 		</form>
-		<a href="#" id="link_catalogue_taxes_sup_<?php echo $taxe['id_taxe']; ?>" style="float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+		<a href="#" id="link_catalogue_taxes_sup_<?php echo $taxe['id_taxe']; ?>" style="float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 		<script type="text/javascript">
 		Event.observe("link_catalogue_taxes_sup_<?php echo $taxe['id_taxe']; ?>", "click",  function(evt){Event.stop(evt); alerte.confirm_supprimer('catalogue_taxes_sup', 'catalogue_taxes_sup_<?php echo $taxe['id_taxe']; ?>');}, false);
 		</script>

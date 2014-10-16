@@ -56,7 +56,7 @@ check_page_variables ($page_variables);
 			</td>
 			<td style="text-align:right">
 							<div style="text-align:right">
-							<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" />
+							<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" />
 							</div>
 			</td>
 		</tr>

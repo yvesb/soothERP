@@ -45,7 +45,7 @@ check_page_variables ($page_variables);
 				<tr>
 					<td class="lightbg_liste">&nbsp;</td>
 					<td class="lightbg_liste">
-					<div class="title_content" style="text-align:right">MODIFICATION DE VOS DONNEES PERSONNELLES <img  src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/icone_contact.gif" style="vertical-align:text-bottom"/> </div>
+					<div class="title_content" style="text-align:right">MODIFICATION DE VOS DONNEES PERSONNELLES <img  src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/icone_contact.gif" style="vertical-align:text-bottom"/> </div>
 					<br />
 					<br />
 					

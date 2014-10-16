@@ -1,6 +1,6 @@
 <div class="headbar">
     <span id="link_close_pop_up_prelev" style="float:right" class="clic">
-        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
     </span>
     <script type="text/javascript">
         Event.observe("link_close_pop_up_prelev", "click",  function(evt){Event.stop(evt); $("pop_up_prelev").hide();}, false);
@@ -142,7 +142,7 @@
         </tr>
         <tr>
             <td>
-                <input name="submit_a" id="submit_a" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+                <input name="submit_a" id="submit_a" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
             </td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>

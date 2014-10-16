@@ -19,7 +19,7 @@ check_page_variables ($page_variables);
 
 ?>
 	<a href="#" id="close_mini_<?php echo $_REQUEST["lmb_col"]; if (isset($_REQUEST["id_tarif"])) { echo "_".$_REQUEST["id_tarif"];}?>" style="float:right">
-	<img src="../<?php echo $_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0" alt="X"
+	<img src="../<?php echo $_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0" alt="X"
 	>
 	</a>
 	

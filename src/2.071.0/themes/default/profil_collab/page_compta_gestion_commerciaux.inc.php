@@ -10,14 +10,14 @@
             <td >
             <div style="padding-left:10px; padding-right:10px">
                     <span id="compta_situation_commerciaux" class="grey_caisse" style="float:right" >
-                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Voir la situation des commerciaux
+                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Voir la situation des commerciaux
                     </span>
             </div>
             </td>
             <td>
                 <div style="padding-left:10px; padding-right:10px">
                 <span id="compta_bonus_commerciaux" class="grey_caisse" >
-                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Gérer les bonus et malus
+                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Gérer les bonus et malus
                     </span>
                     </div>
             </td>

@@ -35,10 +35,10 @@ array_menu_r_article[0] 	=	new Array('recherche_cmde', 'menu_1');
 		<tr class="smallheight">
 			<td style="width:2%">&nbsp;</td>
 			<td style="width:15%">&nbsp;</td>
-			<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			<td style="width:20%">&nbsp;</td>
-			<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			<td style="width:3%">&nbsp;</td>
 		</tr>
 		<tr>
@@ -53,10 +53,10 @@ array_menu_r_article[0] 	=	new Array('recherche_cmde', 'menu_1');
 		<tr class="smallheight">
 			<td style="width:2%">&nbsp;</td>
 			<td style="width:15%">&nbsp;</td>
-			<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			<td style="width:20%">&nbsp;</td>
-			<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			<td style="width:3%">&nbsp;</td>
 		</tr>
 		<tr>
@@ -182,23 +182,23 @@ array_menu_r_article[0] 	=	new Array('recherche_cmde', 'menu_1');
 						<span id="ref_constructeur_nom_c" style=" float:left; height:18px; margin-left:3px; line-height:18px;"><?php if (isset($_REQUEST["lib_constructeur_docsearch"])) { echo (urldecode($_REQUEST["lib_constructeur_docsearch"]));} else { ?>Tous<?php } ?></span>						</span>						</td>
 						<td style="width:28px; text-align:right">
 						<a href="#" id="ref_constructeur_select_c" style="display:block; width:100%;">
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif"/ style="float:right" id="ref_constructeur_select_img_c">						</a>						</td>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif"/ style="float:right" id="ref_constructeur_select_img_c">						</a>						</td>
 					</tr>
 				</table>
 				<script type="text/javascript">
 				
 		//effet de survol sur le faux select
-			Event.observe('ref_constructeur_select_c', 'mouseover',  function(){$("ref_constructeur_select_img_c").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_hover.gif";}, false);
-			Event.observe('ref_constructeur_select_c', 'mousedown',  function(){$("ref_constructeur_select_img_c").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_down.gif";}, false);
-			Event.observe('ref_constructeur_select_c', 'mouseup',  function(){$("ref_constructeur_select_img_c").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";}, false);
+			Event.observe('ref_constructeur_select_c', 'mouseover',  function(){$("ref_constructeur_select_img_c").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_hover.gif";}, false);
+			Event.observe('ref_constructeur_select_c', 'mousedown',  function(){$("ref_constructeur_select_img_c").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_down.gif";}, false);
+			Event.observe('ref_constructeur_select_c', 'mouseup',  function(){$("ref_constructeur_select_img_c").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";}, false);
 			
-			Event.observe('ref_constructeur_select_c', 'mouseout',  function(){$("ref_constructeur_select_img_c").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";}, false);
+			Event.observe('ref_constructeur_select_c', 'mouseout',  function(){$("ref_constructeur_select_img_c").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";}, false);
 			Event.observe('ref_constructeur_select_c', 'click',  function(evt){Event.stop(evt); show_mini_moteur_contacts ("recherche_docu_set_contact", "\'ref_constructeur_c\', \'ref_constructeur_nom_c\' "); preselect ('<?php echo $CONSTRUCTEUR_ID_PROFIL; ?>', 'id_profil_m'); page.annuaire_recherche_mini();}, false);
 			Event.observe('liste_de_constructeur_c', 'click',  function(evt){Event.stop(evt); show_mini_moteur_contacts ("recherche_docu_set_contact", "\'ref_constructeur_c\', \'ref_constructeur_nom_c\' "); preselect ('<?php echo $CONSTRUCTEUR_ID_PROFIL; ?>', 'id_profil_m'); page.annuaire_recherche_mini();}, false);
 			</script>
 			</td>
 			<td>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif"/ style=" cursor:pointer" id="ref_constructeur_empty_c">
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif"/ style=" cursor:pointer" id="ref_constructeur_empty_c">
 			
 			<script type="text/javascript">
 			Event.observe('ref_constructeur_empty_c', 'click',  function(evt){Event.stop(evt); 
@@ -241,23 +241,23 @@ array_menu_r_article[0] 	=	new Array('recherche_cmde', 'menu_1');
 						<span id="ref_client_nom_c" style=" float:left; height:18px; margin-left:3px; line-height:18px;"><?php if (isset($_REQUEST["lib_client_docsearch"])) { echo (urldecode($_REQUEST["lib_client_docsearch"]));} else { ?>Tous<?php } ?></span>						</span>						</td>
 						<td style="width:28px; text-align:right">
 						<a href="#" id="ref_client_select_c" style="display:block; width:100%;">
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif"/ style="float:right" id="ref_client_select_img_c">						</a>						</td>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif"/ style="float:right" id="ref_client_select_img_c">						</a>						</td>
 					</tr>
 				</table>
 				<script type="text/javascript">
 				
 		//effet de survol sur le faux select
-			Event.observe('ref_client_select_c', 'mouseover',  function(){$("ref_client_select_img_c").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_hover.gif";}, false);
-			Event.observe('ref_client_select_c', 'mousedown',  function(){$("ref_client_select_img_c").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_down.gif";}, false);
-			Event.observe('ref_client_select_c', 'mouseup',  function(){$("ref_client_select_img_c").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";}, false);
+			Event.observe('ref_client_select_c', 'mouseover',  function(){$("ref_client_select_img_c").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_hover.gif";}, false);
+			Event.observe('ref_client_select_c', 'mousedown',  function(){$("ref_client_select_img_c").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_down.gif";}, false);
+			Event.observe('ref_client_select_c', 'mouseup',  function(){$("ref_client_select_img_c").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";}, false);
 			
-			Event.observe('ref_client_select_c', 'mouseout',  function(){$("ref_client_select_img_c").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";}, false);
+			Event.observe('ref_client_select_c', 'mouseout',  function(){$("ref_client_select_img_c").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";}, false);
 			Event.observe('ref_client_select_c', 'click',  function(evt){Event.stop(evt); show_mini_moteur_contacts ("recherche_docu_set_contact", "\'ref_client_c\', \'ref_client_nom_c\' "); preselect ('<?php echo $CLIENT_ID_PROFIL; ?>', 'id_profil_m'); page.annuaire_recherche_mini();}, false);
 			Event.observe('liste_de_client_c', 'click',  function(evt){Event.stop(evt); show_mini_moteur_contacts ("recherche_docu_set_contact", "\'ref_client_c\', \'ref_client_nom_c\' "); preselect ('<?php echo $CLIENT_ID_PROFIL; ?>', 'id_profil_m'); page.annuaire_recherche_mini();}, false);
 				</script>
 			</td>
 			<td>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif"/ style=" cursor:pointer" id="ref_client_empty_c">
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif"/ style=" cursor:pointer" id="ref_client_empty_c">
 			
 			<script type="text/javascript">
 			Event.observe('ref_client_empty_c', 'click',  function(evt){Event.stop(evt); 
@@ -285,23 +285,23 @@ array_menu_r_article[0] 	=	new Array('recherche_cmde', 'menu_1');
 						<span id="ref_fournisseur_nom_c" style=" float:left; height:18px; margin-left:3px; line-height:18px;"><?php if (isset($_REQUEST["lib_fournisseur_docsearch"])) { echo (urldecode($_REQUEST["lib_fournisseur_docsearch"]));} else { ?>Tous<?php } ?></span>						</span>						</td>
 						<td style="width:28px; text-align:right">
 						<a href="#" id="ref_fournisseur_select_c" style="display:block; width:100%;">
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif"/ style="float:right" id="ref_fournisseur_select_img_c">						</a>						</td>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif"/ style="float:right" id="ref_fournisseur_select_img_c">						</a>						</td>
 					</tr>
 				</table>
 				<script type="text/javascript">
 				
 		//effet de survol sur le faux select
-			Event.observe('ref_fournisseur_select_c', 'mouseover',  function(){$("ref_fournisseur_select_img_c").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_hover.gif";}, false);
-			Event.observe('ref_fournisseur_select_c', 'mousedown',  function(){$("ref_fournisseur_select_img_c").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_down.gif";}, false);
-			Event.observe('ref_fournisseur_select_c', 'mouseup',  function(){$("ref_fournisseur_select_img_c").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";}, false);
+			Event.observe('ref_fournisseur_select_c', 'mouseover',  function(){$("ref_fournisseur_select_img_c").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_hover.gif";}, false);
+			Event.observe('ref_fournisseur_select_c', 'mousedown',  function(){$("ref_fournisseur_select_img_c").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_down.gif";}, false);
+			Event.observe('ref_fournisseur_select_c', 'mouseup',  function(){$("ref_fournisseur_select_img_c").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";}, false);
 			
-			Event.observe('ref_fournisseur_select_c', 'mouseout',  function(){$("ref_fournisseur_select_img_c").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";}, false);
+			Event.observe('ref_fournisseur_select_c', 'mouseout',  function(){$("ref_fournisseur_select_img_c").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";}, false);
 			Event.observe('ref_fournisseur_select_c', 'click',  function(evt){Event.stop(evt); show_mini_moteur_contacts ("recherche_docu_set_contact", "\'ref_fournisseur_c\', \'ref_fournisseur_nom_c\' "); preselect ('<?php echo $FOURNISSEUR_ID_PROFIL; ?>', 'id_profil_m'); page.annuaire_recherche_mini();}, false);
 			Event.observe('liste_de_fournisseur_c', 'click',  function(evt){Event.stop(evt); show_mini_moteur_contacts ("recherche_docu_set_contact", "\'ref_fournisseur_c\', \'ref_fournisseur_nom_c\' "); preselect ('<?php echo $FOURNISSEUR_ID_PROFIL; ?>', 'id_profil_m'); page.annuaire_recherche_mini();}, false);
 				</script>
 			</td>
 			<td>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif"/ style=" cursor:pointer" id="ref_fournisseur_empty_c">
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif"/ style=" cursor:pointer" id="ref_fournisseur_empty_c">
 			
 			<script type="text/javascript">
 			Event.observe('ref_fournisseur_empty_c', 'click',  function(evt){Event.stop(evt); 
@@ -332,8 +332,8 @@ array_menu_r_article[0] 	=	new Array('recherche_cmde', 'menu_1');
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
 		<td style="text-align:right">
-			<input name="submit" type="image" onclick="$('page_to_show_c').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-rechercher.gif"  style="float:left" />
-			<input type="image" name="annuler_recherche_c" id="annuler_recherche_c" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-annuler.gif"/>
+			<input name="submit" type="image" onclick="$('page_to_show_c').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-rechercher.gif"  style="float:left" />
+			<input type="image" name="annuler_recherche_c" id="annuler_recherche_c" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-annuler.gif"/>
 		</td>
 		<td>&nbsp;</td>
 		<td><span id="imprimer_commande_client" style="cursor:pointer; text-decoration:underline">Imprimer les Commandes clients</span>

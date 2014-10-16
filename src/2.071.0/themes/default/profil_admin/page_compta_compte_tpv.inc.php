@@ -27,7 +27,7 @@ update_menu_arbo();
 </script>
 
 <div id="pop_up_commission" style="display:none" class="cal_com">
-<a href="#" id="link_close_pop_up_commission" style="float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+<a href="#" id="link_close_pop_up_commission" style="float:right"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 <script type="text/javascript">
 Event.observe("link_close_pop_up_commission", "click",  function(evt){Event.stop(evt); 
 	$("pop_up_commission").hide();
@@ -45,7 +45,7 @@ Event.observe("link_close_pop_up_commission", "click",  function(evt){Event.stop
 <input name="retour_cal" id="retour_cal" type="hidden" value="" />
 
 <span style="width:350px; float:left">&nbsp;</span>
-<input name="valider_cal" id="valider_cal" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-valider.gif" />
+<input name="valider_cal" id="valider_cal" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" />
 
 <script type="text/javascript">
 new Event.observe("com_ope_cal", "blur", function(evt){nummask(evt,"0", "X.XX");}, false);
@@ -91,11 +91,11 @@ if (isset($liste_modules_tpv) && count($liste_modules_tpv)) {
 					<td style="width:95%">
 						<table>
 							<tr class="smallheight">
-								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:16%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:16%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 							</tr>	
 							<tr>
 								<td style="text-align:center">
@@ -127,11 +127,11 @@ if (isset($liste_modules_tpv) && count($liste_modules_tpv)) {
 				<form action="compta_compte_tpv_add.php" method="post" id="compta_compte_tpv_add" name="compta_compte_tpv_add" target="formFrame" >
 				<table style="width:100%">
 					<tr class="smallheight">
-								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:16%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:16%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 					<tr>
 						<td>
@@ -162,7 +162,7 @@ if (isset($liste_modules_tpv) && count($liste_modules_tpv)) {
 						<td style="text-align:center">
 						<input name="com_ope" id="com_ope" type="hidden" value="0" />
 						<input name="com_var" id="com_var" type="hidden" value="0" />
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_calcul.gif" id="cal_com" style="cursor:pointer" title="Règles de commissionnement de votre banque."/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_calcul.gif" id="cal_com" style="cursor:pointer" title="Règles de commissionnement de votre banque."/>
 						<script type="text/javascript">
 							Event.observe("cal_com", "click",  function(evt){
 								Event.stop(evt); 
@@ -174,7 +174,7 @@ if (isset($liste_modules_tpv) && count($liste_modules_tpv)) {
 						</script>
 						</td>
 						<td style="text-align:center">
-						<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" />
+						<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" />
 						</td>
 					</tr>
 				</table>
@@ -196,13 +196,13 @@ if (isset($liste_modules_tpv) && count($liste_modules_tpv)) {
 					<td style="width:95%">
 						<table>
 							<tr class="smallheight">
-								<td style="width:17%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:17%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:17%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:17%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:9%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:14%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:17%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:17%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:17%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:17%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:9%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:14%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 							</tr>	
 							<tr>
 								<td style="text-align:center">
@@ -241,12 +241,12 @@ if (isset($liste_modules_tpv) && count($liste_modules_tpv)) {
 						<form action="compta_compte_tpv_mod.php" method="post" id="compta_compte_tpv_mod_<?php echo $compte_tpv->id_compte_tpv;?>" name="compta_compte_tpv_mod_<?php echo $compte_tpv->id_compte_tpv;?>" target="formFrame" >
 						<table style="width:100%">
 							<tr class="smallheight">
-								<td style="width:18%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:18%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:18%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:16%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:18%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:18%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:18%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:16%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 							</tr>	
 							<tr>
 								<td style="text-align:center">
@@ -277,7 +277,7 @@ if (isset($liste_modules_tpv) && count($liste_modules_tpv)) {
 								<td style="text-align:center">
 								<input name="com_ope_<?php echo $compte_tpv->id_compte_tpv;?>" id="com_ope_<?php echo $compte_tpv->id_compte_tpv;?>" type="hidden" value="<?php echo $compte_tpv->com_ope;?>" />
 								<input name="com_var_<?php echo $compte_tpv->id_compte_tpv;?>" id="com_var_<?php echo $compte_tpv->id_compte_tpv;?>" type="hidden" value="<?php echo $compte_tpv->com_var;?>" />
-								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_calcul.gif" id="cal_com_<?php echo $compte_tpv->id_compte_tpv;?>" style="cursor:pointer" title="Règles de commissionnement de votre banque."/>
+								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_calcul.gif" id="cal_com_<?php echo $compte_tpv->id_compte_tpv;?>" style="cursor:pointer" title="Règles de commissionnement de votre banque."/>
 								<script type="text/javascript">
 									Event.observe("cal_com_<?php echo $compte_tpv->id_compte_tpv;?>", "click",  function(evt){
 										Event.stop(evt); 
@@ -293,7 +293,7 @@ if (isset($liste_modules_tpv) && count($liste_modules_tpv)) {
 								<input id="id_compte_tpv" name="id_compte_tpv" value="<?php echo $compte_tpv->id_compte_tpv?>" type="hidden"/>
 								</td>
 								<td style="text-align:center">
-						<input name="modifier_<?php echo $compte_tpv->id_compte_tpv;?>" id="modifier_<?php echo $compte_tpv->id_compte_tpv;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+						<input name="modifier_<?php echo $compte_tpv->id_compte_tpv;?>" id="modifier_<?php echo $compte_tpv->id_compte_tpv;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
 								</td>
 							</tr>
 						</table>
@@ -303,7 +303,7 @@ if (isset($liste_modules_tpv) && count($liste_modules_tpv)) {
 					<form method="post" action="compta_compte_tpv_sup.php" id="compta_compte_tpv_sup_<?php echo $compte_tpv->id_compte_tpv; ?>" name="compta_compte_tpv_sup_<?php echo $compte_tpv->id_compte_tpv; ?>" target="formFrame">
 						<input name="id_compte_tpv" id="id_compte_tpv" type="hidden" value="<?php echo $compte_tpv->id_compte_tpv; ?>" />
 					</form>
-					<a href="#" id="link_compta_compte_tpv_sup_<?php echo $compte_tpv->id_compte_tpv; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+					<a href="#" id="link_compta_compte_tpv_sup_<?php echo $compte_tpv->id_compte_tpv; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 					<script type="text/javascript">
 					Event.observe("link_compta_compte_tpv_sup_<?php echo $compte_tpv->id_compte_tpv; ?>", "click",  function(evt){Event.stop(evt); alerte.confirm_supprimer('compta_compte_tpv_sup', 'compta_compte_tpv_sup_<?php echo $compte_tpv->id_compte_tpv; ?>');}, false);
 					</script>
@@ -318,12 +318,12 @@ if (isset($liste_modules_tpv) && count($liste_modules_tpv)) {
 									<input name="new_ordre" id="new_ordre" type="hidden" value="<?php echo ($compte_tpv->ordre)-1?>" />
 									<input name="id_compte_tpv" id="id_compte_tpv" type="hidden" value="<?php echo $compte_tpv->id_compte_tpv; ?>" />
 																		
-									<input name="modifier_ordre_<?php echo $compte_tpv->id_compte_tpv; ?>" id="modifier_ordre_<?php echo $compte_tpv->id_compte_tpv; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/up.gif">
+									<input name="modifier_ordre_<?php echo $compte_tpv->id_compte_tpv; ?>" id="modifier_ordre_<?php echo $compte_tpv->id_compte_tpv; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/up.gif">
 								</form>
 								<?php
 								} else {
 								?>
-								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="1" height="1"/>
+								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="1" height="1"/>
 								<?php
 								}
 								?>
@@ -340,12 +340,12 @@ if (isset($liste_modules_tpv) && count($liste_modules_tpv)) {
 									<input name="new_ordre" id="new_ordre" type="hidden" value="<?php echo ($compte_tpv->ordre)+1?>" />
 									<input name="id_compte_tpv" id="id_compte_tpv" type="hidden" value="<?php echo $compte_tpv->id_compte_tpv; ?>" />
 									
-									<input name="modifier_ordre_<?php echo $compte_tpv->id_compte_tpv; ?>" id="modifier_ordre_<?php echo $compte_tpv->id_compte_tpv; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/down.gif">
+									<input name="modifier_ordre_<?php echo $compte_tpv->id_compte_tpv; ?>" id="modifier_ordre_<?php echo $compte_tpv->id_compte_tpv; ?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/down.gif">
 								</form>
 								<?php
 								} else {
 								?>
-								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="1" height="1"/>							
+								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="1" height="1"/>							
 								<?php
 								}
 								?>

@@ -24,7 +24,7 @@ check_page_variables ($page_variables);
 	<br />
 	<br />
 	<br />
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/404.png" align="absbottom" />
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/404.png" align="absbottom" />
 </div>
 <SCRIPT type="text/javascript">
 //on masque le chargement

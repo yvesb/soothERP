@@ -36,10 +36,10 @@ update_menu_arbo();
 				<form action="communication_mail_template_add.php" method="post" id="communication_mail_template_add" name="communication_mail_template_add" target="formFrame" enctype="multipart/form-data" >
 				<table style="width:100%">
 					<tr class="smallheight">
-						<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 					<tr>
 						<td class="titre_config" colspan="4">Ajouter un mod&egrave;le d&apos;email	</td>
@@ -94,7 +94,7 @@ update_menu_arbo();
 						</td>
 						<td style="text-align:right">
 							<br /><br /><br />
-							<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" />
+							<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" />
 						</td>
 						<td>
 						</td>
@@ -112,10 +112,10 @@ update_menu_arbo();
 		<div>
 		<table style="width:100%">
 			<tr class="smallheight">
-				<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			</tr>	
 			<tr>
 				<td class="titre_config" colspan="4">Modèles d'email	</td>
@@ -134,10 +134,10 @@ update_menu_arbo();
            
 				<table style="width:100%">
 					<tr class="smallheight">
-						<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 					<tr>
 						<td class="titre_config" colspan="4"><?php echo $mail_template->lib_mail_template;?></td>
@@ -207,7 +207,7 @@ update_menu_arbo();
 						</td>
 						<td style="text-align:right">
 						
-							<img name="preview_<?php echo $mail_template->id_mail_template;?>" id="preview_<?php echo $mail_template->id_mail_template;?>" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/preview.gif" />
+							<img name="preview_<?php echo $mail_template->id_mail_template;?>" id="preview_<?php echo $mail_template->id_mail_template;?>" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/preview.gif" />
 							
 							<script type="text/javascript">
 							Event.observe("preview_<?php echo $mail_template->id_mail_template; ?>", "click",  function(evt){
@@ -218,12 +218,12 @@ update_menu_arbo();
 							<br />
 <br />
 
-							<input name="modifier_<?php echo $mail_template->id_mail_template;?>" id="modifier_<?php echo $mail_template->id_mail_template;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+							<input name="modifier_<?php echo $mail_template->id_mail_template;?>" id="modifier_<?php echo $mail_template->id_mail_template;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
 						</td>
 						<td style="text-align:right"><br />
 <br />
 
-						<input name="link_communication_mail_template_sup_<?php echo $mail_template->id_mail_template;?>" id="link_communication_mail_template_sup_<?php echo $mail_template->id_mail_template;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-supprimer.gif" />
+						<input name="link_communication_mail_template_sup_<?php echo $mail_template->id_mail_template;?>" id="link_communication_mail_template_sup_<?php echo $mail_template->id_mail_template;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-supprimer.gif" />
 						</td>
 					</tr>
 				</table>

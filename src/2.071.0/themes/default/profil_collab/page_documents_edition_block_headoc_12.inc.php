@@ -167,7 +167,7 @@ check_page_variables ($page_variables);
 											<?php 
 											if ($document->getId_etat_doc () == 47) {
 												?>
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_fab_afabriquer.gif" id="fab_afabriquer" style="cursor:pointer"/>
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_fab_afabriquer.gif" id="fab_afabriquer" style="cursor:pointer"/>
 											<div style="height:3px;line-height:3px;" ></div>
 											<?php 
 											}
@@ -175,7 +175,7 @@ check_page_variables ($page_variables);
 											<?php 
 											if ($document->getId_etat_doc () == 49) {
 												?>
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_fab_encours.gif" id="fab_encours" style="cursor:pointer"/>
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_fab_encours.gif" id="fab_encours" style="cursor:pointer"/>
 											<div style="height:3px;line-height:3px;" ></div>
 											<?php 
 											}
@@ -183,7 +183,7 @@ check_page_variables ($page_variables);
 											<?php 
 											if ($document->getId_etat_doc () == 50) {
 												?>
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_fab_terminee.gif" id="fab_terminee" style="cursor:pointer"/>
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_fab_terminee.gif" id="fab_terminee" style="cursor:pointer"/>
 											<div style="height:3px;line-height:3px;" ></div>
 											<?php 
 											}
@@ -350,9 +350,9 @@ check_page_variables ($page_variables);
 		</td>
 	</tr>
 	<tr>
-		<td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1px"/></td>
-		<td style="width:4%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1px"/></td>
-		<td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1px"/></td>
+		<td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1px"/></td>
+		<td style="width:4%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1px"/></td>
+		<td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1px"/></td>
 	</tr>
 	<tr>
 		<td>
@@ -428,7 +428,7 @@ check_page_variables ($page_variables);
 								Modifier la quantité à fabriquer
 								</div>
 								<span id="set_qte_art_to_fab" style="cursor:pointer; display:none" >
-								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" border="0">		
+								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" border="0">		
 								</span>
 								<SCRIPT type="text/javascript">
 								Event.observe('modifier_qte_art_to_fab', "click", function(evt){  
@@ -470,7 +470,7 @@ check_page_variables ($page_variables);
 							<div id="num_fab_sn_<?php echo $i;?>">
 							<span id="more_sn_<?php echo $i;?>" class="more_sn_class" >sn:</span> <input value="<?php if (isset($liste_fab_sn[$i])) {echo $liste_fab_sn[$i];}?>" type="text" id="art_sn_<?php echo $i;?>" name="art_sn_<?php echo $i;?>" /> 
 							<input value="<?php if (isset($liste_fab_sn[$i])) {echo $liste_fab_sn[$i];}?>" type="hidden" id="old_art_sn_<?php echo $i;?>" name="old_art_sn_<?php echo $i;?>"/>
-							<a href="#" id="sup_sn_<?php echo $i;?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">		
+							<a href="#" id="sup_sn_<?php echo $i;?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">		
 							</a>
 							<script type="text/javascript">
 							pre_start_observer_fab_sn ( "<?php echo $i;?>", "<?php echo $document->getRef_doc();?>", "art_sn_<?php echo $i;?>" ,"old_art_sn_<?php echo $i;?>", "sup_sn_<?php echo $i;?>");
@@ -504,7 +504,7 @@ check_page_variables ($page_variables);
 							<span id="more_nl_<?php echo $i;?>" class="more_sn_class" >Lot:</span> <input value="<?php if (isset($nl_key)) {echo $nl_key;}?>" type="text" id="art_nl_<?php echo $i;?>" name="art_nl_<?php echo $i;?>" size="10" /> 
 							<input value="<?php if (isset($nl_key)) {echo $nl_key;}?>" type="hidden" id="old_art_nl_<?php echo $i;?>" name="old_art_nl_<?php echo $i;?>"/> <input value="<?php if (isset($nl_val)) {echo $nl_val;}?>" type="text" id="qte_nl_<?php echo $i;?>" name="qte_nl_<?php echo $i;?>" size="3" /> 
 							<input value="<?php if (isset($nl_val)) {echo $nl_val;}?>" type="hidden" id="old_qte_nl_<?php echo $i;?>" name="old_qte_nl_<?php echo $i;?>"/>
-							<a href="#" id="sup_nl_<?php echo $i;?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">		
+							<a href="#" id="sup_nl_<?php echo $i;?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">		
 							</a>
 							<div class="sn_block_choix" id="block_choix_nl_<?php echo $i;?>">
 							<iframe id="iframe_liste_choix_nl_<?php echo $i;?>" frameborder="0" scrolling="no" src="about:_blank"  class="choix_liste_choix_nl" style="display:none"></iframe>
@@ -520,7 +520,7 @@ check_page_variables ($page_variables);
 						?>
 						<input type="hidden" id="art_gest_nl_finliste" name="art_gest_nl_finliste" value="<?php echo $i;?>" />
 						</div>
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" width="15px" style="cursor:pointer" id="add_line_nl_content" />
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" width="15px" style="cursor:pointer" id="add_line_nl_content" />
 							<script type="text/javascript">
 							
 								Event.observe("add_line_nl_content", "click", function(evt){

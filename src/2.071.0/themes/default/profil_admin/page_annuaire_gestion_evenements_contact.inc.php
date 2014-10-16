@@ -35,9 +35,9 @@ update_menu_arbo();
 	
 <table width="100%">
 	<tr class="smallheight">
-		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr>
 		<td class="titre_config" colspan="3">Ajouter un type d'événement </td>
@@ -51,9 +51,9 @@ update_menu_arbo();
 					<form action="annuaire_gestion_evenements_contact_add.php" method="post" id="annuaire_gestion_evenements_contact_add" name="annuaire_gestion_evenements_contact_add" target="formFrame" >
 					<table>
 						<tr class="smallheight">
-							<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-							<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-							<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+							<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 						</tr>	
 						<tr>
 							<td style="vertical-align:middle"><span class="labelled">Libell&eacute;:</span>
@@ -62,7 +62,7 @@ update_menu_arbo();
 							<input name="lib_comm_event_type" id="lib_comm_event_type" type="text" value=""  class="classinput_lsize"/>
 							</td>
 							<td style="vertical-align:middle; text-align:center">
-								<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" />
+								<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" />
 							</td>
 						</tr>
 					</table>
@@ -97,9 +97,9 @@ update_menu_arbo();
 						<form action="annuaire_gestion_evenements_contact_mod.php" method="post" id="annuaire_gestion_evenements_contact_mod_<?php echo $type_event->id_comm_event_type; ?>" name="annuaire_gestion_evenements_contact_mod_<?php echo $type_event->id_comm_event_type; ?>" target="formFrame" >
 						<table>
 							<tr class="smallheight">
-								<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 							</tr>	
 							<tr>
 								<td style="text-align:center; vertical-align:middle">
@@ -109,7 +109,7 @@ update_menu_arbo();
 									<input id="lib_comm_event_type_<?php echo $type_event->id_comm_event_type; ?>" name="lib_comm_event_type_<?php echo $type_event->id_comm_event_type; ?>" type="text" value="<?php echo htmlentities($type_event->lib_comm_event_type, ENT_QUOTES, "UTF-8"); ?>"  class="classinput_lsize"/>
 								</td>
 								<td style="vertical-align:middle; text-align:center;">
-									<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+									<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
 								</td>
 							</tr>
 						</table>
@@ -119,7 +119,7 @@ update_menu_arbo();
 					<form method="post" action="annuaire_gestion_evenements_contact_sup.php" id="annuaire_gestion_evenements_contact_sup_<?php echo $type_event->id_comm_event_type; ?>" name="annuaire_gestion_evenements_contact_sup_<?php echo $type_event->id_comm_event_type; ?>" target="formFrame">
 					<input name="id_comm_event_type"  type="hidden" value="<?php echo $type_event->id_comm_event_type; ?>" />
 					</form>
-					<a href="#" id="link_annuaire_gestion_evenements_contact_sup_<?php echo $type_event->id_comm_event_type; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+					<a href="#" id="link_annuaire_gestion_evenements_contact_sup_<?php echo $type_event->id_comm_event_type; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 					<script type="text/javascript">
 					Event.observe("link_annuaire_gestion_evenements_contact_sup_<?php echo $type_event->id_comm_event_type; ?>", "click",  function(evt){
 						Event.stop(evt); 
@@ -141,9 +141,9 @@ update_menu_arbo();
 					<td style="width:100%">
 						<table>
 							<tr class="smallheight">
-								<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 							</tr>	
 							<tr>
 								<td style="text-align:center; vertical-align:middle">

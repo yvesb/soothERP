@@ -34,7 +34,7 @@ if(!isset($profils_mini)){
 <div id="pop_up_mini_moteur" class="mini_moteur">
     <div class="headbar">
         <span class="clic" id="close_mini_recherche_annu" style="float:right">
-            <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+            <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
         </span>
     </div>
     <div class="popup_content">
@@ -44,11 +44,11 @@ if(!isset($profils_mini)){
                 <form action="#" id="form_recherche_mini" name="form_recherche_mini" method="GET">
                     <table style="width:97%">
                         <tr class="smallheight">
-                            <td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-                            <td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-                            <td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-                            <td ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-                            <td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                            <td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                            <td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                            <td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                            <td ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+                            <td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
                         </tr>
                         <tr>
                             <td></td>
@@ -104,11 +104,11 @@ if(!isset($profils_mini)){
                             <td></td>
                             <td>&nbsp;</td>
                             <td>
-                                <input name="submit_m" type="image" onclick="$('page_to_show_m').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-rechercher.gif" style="float:left" />
+                                <input name="submit_m" type="image" onclick="$('page_to_show_m').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-rechercher.gif" style="float:left" />
                             </td>
                             <td>
-                            <!--<input type="image" name="res_s" id="res_s" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-annuler.gif"/>-->
-                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_new_contact.gif" id="create_new_contact" style="cursor:pointer; float:right" />
+                            <!--<input type="image" name="res_s" id="res_s" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-annuler.gif"/>-->
+                                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_new_contact.gif" id="create_new_contact" style="cursor:pointer; float:right" />
                             </td>
                             <td>&nbsp;</td>
                         </tr>

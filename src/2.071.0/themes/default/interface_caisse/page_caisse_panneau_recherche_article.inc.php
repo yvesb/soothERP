@@ -48,23 +48,23 @@ check_page_variables ($page_variables);
 						<tr height="40px" id="<?php echo $art_categs_racine[$i][0]->getRef_art_categ(); ?>" >
 							<?php if($art_categs_racine_selected == $art_categs_racine[$i][0]->getRef_art_categ()){ ?>
 							<td>
-								<img id="<?php echo $art_categs_racine[$i][0]->getRef_art_categ(); ?>_bt_vide_a" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_vide_selected_a.gif">
+								<img id="<?php echo $art_categs_racine[$i][0]->getRef_art_categ(); ?>_bt_vide_a" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_vide_selected_a.gif">
 							</td>
-							<td id="<?php echo $art_categs_racine[$i][0]->getRef_art_categ(); ?>_bt_vide_b" class="recherche_categorie_lib" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_vide_selected_b.gif');background-repeat: repeat-x;">
+							<td id="<?php echo $art_categs_racine[$i][0]->getRef_art_categ(); ?>_bt_vide_b" class="recherche_categorie_lib" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_vide_selected_b.gif');background-repeat: repeat-x;">
 								<?php echo $art_categs_racine[$i][0]->getLib_art_categ(); ?>
 							</td>
 							<td>
-								<img id="<?php echo $art_categs_racine[$i][0]->getRef_art_categ(); ?>_bt_vide_c" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_vide_selected_c.gif">
+								<img id="<?php echo $art_categs_racine[$i][0]->getRef_art_categ(); ?>_bt_vide_c" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_vide_selected_c.gif">
 							</td>
 						<?php }else{ ?>
 							<td>
-								<img id="<?php echo $art_categs_racine[$i][0]->getRef_art_categ(); ?>_bt_vide_a" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_vide_unselected_a.gif">
+								<img id="<?php echo $art_categs_racine[$i][0]->getRef_art_categ(); ?>_bt_vide_a" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_vide_unselected_a.gif">
 							</td>
-							<td id="<?php echo $art_categs_racine[$i][0]->getRef_art_categ(); ?>_bt_vide_b" class="recherche_categorie_lib" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_vide_unselected_b.gif');background-repeat: repeat-x;">
+							<td id="<?php echo $art_categs_racine[$i][0]->getRef_art_categ(); ?>_bt_vide_b" class="recherche_categorie_lib" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_vide_unselected_b.gif');background-repeat: repeat-x;">
 								<?php echo $art_categs_racine[$i][0]->getLib_art_categ(); ?>
 							</td>
 							<td>
-								<img id="<?php echo $art_categs_racine[$i][0]->getRef_art_categ(); ?>_bt_vide_c" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_vide_unselected_c.gif">
+								<img id="<?php echo $art_categs_racine[$i][0]->getRef_art_categ(); ?>_bt_vide_c" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_vide_unselected_c.gif">
 							</td>
 						<?php } ?>
 								<script type="text/javascript">
@@ -74,14 +74,14 @@ check_page_variables ($page_variables);
 										//debugger;
 										
 										if(art_categs_racine_selected != undefined && art_categs_racine_selected != ""){
-											$(art_categs_racine_selected+"_bt_vide_a").src = "<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_vide_unselected_a.gif";
-											$(art_categs_racine_selected+"_bt_vide_b").style.backgroundImage = "url(<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_vide_unselected_b.gif)";
-											$(art_categs_racine_selected+"_bt_vide_c").src = "<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_vide_unselected_c.gif";
+											$(art_categs_racine_selected+"_bt_vide_a").src = "<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_vide_unselected_a.gif";
+											$(art_categs_racine_selected+"_bt_vide_b").style.backgroundImage = "url(<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_vide_unselected_b.gif)";
+											$(art_categs_racine_selected+"_bt_vide_c").src = "<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_vide_unselected_c.gif";
 										}
 										
-										$("<?php echo $art_categs_racine[$i][0]->getRef_art_categ(); ?>_bt_vide_a").src = "<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_vide_selected_a.gif";
-										$("<?php echo $art_categs_racine[$i][0]->getRef_art_categ(); ?>_bt_vide_b").style.backgroundImage = "url(<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_vide_selected_b.gif)";
-										$("<?php echo $art_categs_racine[$i][0]->getRef_art_categ(); ?>_bt_vide_c").src = "<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_vide_selected_c.gif";
+										$("<?php echo $art_categs_racine[$i][0]->getRef_art_categ(); ?>_bt_vide_a").src = "<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_vide_selected_a.gif";
+										$("<?php echo $art_categs_racine[$i][0]->getRef_art_categ(); ?>_bt_vide_b").style.backgroundImage = "url(<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_vide_selected_b.gif)";
+										$("<?php echo $art_categs_racine[$i][0]->getRef_art_categ(); ?>_bt_vide_c").src = "<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_vide_selected_c.gif";
 										
 										art_categs_racine_selected = "<?php echo $art_categs_racine[$i][0]->getRef_art_categ(); ?>";
 										
@@ -136,7 +136,7 @@ check_page_variables ($page_variables);
 			<td id="article_<?php echo $article->getRef_article();?>" width="20%">
 				<table width="100%" border="0" cellpadding="0" cellspacing="0" >
 					<tr height="45px">
-						<td width="6px" style="background-image: url('<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_vide_unselected_a.gif');background-repeat: no-repeat;"></td>
+						<td width="6px" style="background-image: url('<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_vide_unselected_a.gif');background-repeat: no-repeat;"></td>
 						<?php if(strlen($article->getLib_article()) > 20){ ?>
 						<td height="45px" style="min-width: 150px" class="recherche_article_lib_long">
 							<div style="width:150px; height:50px;">
@@ -148,7 +148,7 @@ check_page_variables ($page_variables);
 							<?php echo $article->getLib_article(); ?>
 						</td>
 						<?php } ?>
-						<td width="4px" style="background-image: url('<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_vide_unselected_c.gif'); background-repeat: no-repeat;"></td>
+						<td width="4px" style="background-image: url('<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_vide_unselected_c.gif'); background-repeat: no-repeat;"></td>
 					</tr>
 				</table>
 				<script type="text/javascript">

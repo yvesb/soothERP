@@ -200,7 +200,7 @@ check_page_variables ($page_variables);
 											<?php 
 											if ($document->getId_etat_doc () == 36) {
 												?>
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_trm_pret.gif" id="trm_pret" style="cursor:pointer"/>
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_trm_pret.gif" id="trm_pret" style="cursor:pointer"/>
 											<div style="height:3px; line-height:3px;"></div>
 											<?php 
 											}
@@ -208,7 +208,7 @@ check_page_variables ($page_variables);
 											<?php 
 											if ($document->getId_etat_doc () == 38) {
 												?>
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_trm_en_cours.gif" id="trm_en_cours" style="cursor:pointer"/>
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_trm_en_cours.gif" id="trm_en_cours" style="cursor:pointer"/>
 											<div style="height:3px; line-height:3px;"></div>
 											<?php 
 											}
@@ -216,7 +216,7 @@ check_page_variables ($page_variables);
 											<?php 
 											if ($document->getId_etat_doc () == 39 ) {
 												?>
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_trm_effectue.gif" id="trm_effectue" style="cursor:pointer"/>
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_trm_effectue.gif" id="trm_effectue" style="cursor:pointer"/>
 											<div style="height:3px; line-height:3px;"></div>
 											<?php 
 											}
@@ -380,9 +380,9 @@ check_page_variables ($page_variables);
 		</td>
 	</tr>
 	<tr>
-		<td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1px"/></td>
-		<td style="width:4%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1px"/></td>
-		<td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1px"/></td>
+		<td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1px"/></td>
+		<td style="width:4%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1px"/></td>
+		<td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1px"/></td>
 	</tr>
 
 </table>
