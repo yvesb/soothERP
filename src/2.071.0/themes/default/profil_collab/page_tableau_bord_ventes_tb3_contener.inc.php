@@ -54,7 +54,7 @@ Base de données Clientèle
 		foreach ($liste_type_clients as $type_c) {
 			?>
 			<span style="height:5px; width:5px; font-size:8px; background-color:<?php echo $couleurs[$i];?>">
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="5px" height="5px"/>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="5px" height="5px"/>
 			</span>&nbsp;&nbsp; <?php echo $type_c["lib"];?><br />
 			<?php
 			$i ++;
@@ -76,7 +76,7 @@ Base de données Clientèle
 
 
 <br />
-			<span style="cursor:pointer; font-weight:bolder; display:" id="tb4_2_more_1"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_case_plus.gif" style="vertical-align: text-bottom"  />	Détail par catégories de clients</span>
+			<span style="cursor:pointer; font-weight:bolder; display:" id="tb4_2_more_1"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_case_plus.gif" style="vertical-align: text-bottom"  />	Détail par catégories de clients</span>
 			
 <SCRIPT type="text/javascript">
 

@@ -28,9 +28,9 @@ check_page_variables ($page_variables);
 
 <table width="100%">
 	<tr class="smallheight">
-		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr>
 		<td style="font-weight:bolder; " colspan="3">Consultation de l'historique du v&eacute;hicule <?php echo $vehicule->lib_vehicule;?> ( <?php echo $vehicule->marque;?> )</td>
@@ -77,7 +77,7 @@ check_page_variables ($page_variables);
 			<tr>
 			<td></td>
 			<td style="text-align:right">
-			<input name="submit" type="image"  src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-rechercher.gif"  style="float:left" />
+			<input name="submit" type="image"  src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-rechercher.gif"  style="float:left" />
 			</td>
 			</tr>
 			</table>
@@ -89,14 +89,14 @@ check_page_variables ($page_variables);
 		<tr>
 		<td>&nbsp;</td>
 		</tr>
-		<tr><td><span class="titre_smenu_page" id="osmenu_gestion_vehicules_ajout_evenement" > <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/extend.GIF" align="absmiddle" />&nbsp;Ajouter un &eacute;v&eacute;nement</span><br /><br /></td></tr>
+		<tr><td><span class="titre_smenu_page" id="osmenu_gestion_vehicules_ajout_evenement" > <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/extend.GIF" align="absmiddle" />&nbsp;Ajouter un &eacute;v&eacute;nement</span><br /><br /></td></tr>
 		</table>
 		</td>
 	</tr>
 	<tr class="smallheight">
-		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr>
 		<td colspan="3">&nbsp; </td>
@@ -159,12 +159,12 @@ check_page_variables ($page_variables);
 					<input type="hidden" name="id_evenement" id="id_evenement" value="<?php echo $evenement->id_evenement; ?>" />
 				</td>
 				<td width="160px" align="right">
-								<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+								<input name="modifier" id="modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
 
 							&nbsp;
 						</td>
 						<td width="40px" align="right">
-								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="supp_img_<?php echo $evenement->id_evenement; ?>" style="cursor:pointer"/>
+								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="supp_img_<?php echo $evenement->id_evenement; ?>" style="cursor:pointer"/>
 								<input type="hidden" name="id_vehicule" id="id_vehicule" value="<?php echo $vehicule->id_vehicule; ?>" />
 							&nbsp;
 						</td>

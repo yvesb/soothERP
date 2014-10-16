@@ -351,7 +351,7 @@ Event.observe(window, "load", initEventHandlers, false);
 </script>
 </head>
 
-<body style="background-image: url(<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/main_content_bg.gif); background-repeat:repeat-x; background-attachment:fixed">
+<body style="background-image: url(<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/profil_admin/main_content_bg.gif); background-repeat:repeat-x; background-attachment:fixed">
 <div id="grand_contener">
 <div id="bgmain_menu"></div>
 
@@ -596,7 +596,7 @@ if ($AFFICHE_DEBUG) {
 ?>
 
 <div id="refresh_content">
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/actualiser.gif" align="top" />
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/actualiser_adm.gif" align="top" />
 </div>
 <div id="load_show" style="visibility:hidden; line-height:22px; height:22px;">
 	<div id="boxcontent">

@@ -29,9 +29,9 @@ $tailleDemieHeure = 20;
 		<table width="100%" border="0" cellpadding="0" cellspacing="0" height="100%">
 			<tr>
 				<td>
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/home.gif" style="position:relative; left:5px; top: 5px" alt="Accueil" title="Accueil" />
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/print.gif" style="position:relative; left:5px; top: 5px" alt="Imprimer" title="Imprimer" />
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/search.gif" style="position:relative; left:5px; top: 5px" alt="Rechercher" title="Rechercher" />
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/btn_maison.gif" style="position:relative; left:5px; top: 5px" alt="Accueil" title="Accueil" />
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/btn_imp.gif" style="position:relative; left:5px; top: 5px" alt="Imprimer" title="Imprimer" />
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/btn_loupe.gif" style="position:relative; left:5px; top: 5px" alt="Rechercher" title="Rechercher" />
 				</td>
 			</tr>
 			<tr height="30px">
@@ -39,21 +39,21 @@ $tailleDemieHeure = 20;
 					<table height="100%" width="100%" cellpadding="0" cellspacing="2" border="0">
 						<tr>
 						<td></td>
-						<td width="45px" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/bt_next_left_bleu_fonce.gif');
+						<td width="45px" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/bt_next_left_bleu_fonce.gif');
 						background-repeat:no-repeat; cursor:pointer; text-align:center; vertical-align:middle;">&nbsp;</td>
-						<td width="75px" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/fond_bleu_fonce.gif');
+						<td width="75px" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/fond_bleu_fonce.gif');
 						background-repeat:repeat-x; cursor:pointer; text-align:center; vertical-align:middle;">
 							<span style="color:white;">Jour</span>
 						</td>
-						<td width="75px" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/fond_bleu_fonce.gif');
+						<td width="75px" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/fond_bleu_fonce.gif');
 						background-repeat:repeat-x; cursor:pointer; text-align:center; vertical-align:middle;">
 							<span style="color:white;">Semaine</span>
 						</td>
-						<td width="75px" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/fond_bleu_fonce.gif');
+						<td width="75px" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/fond_bleu_fonce.gif');
 						background-repeat:repeat-x; cursor:pointer; text-align:center; vertical-align:middle;">
 							<span style="color:white;">Mois</span>
 						</td>
-						<td width="45px" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/bt_next_right_bleu_fonce.gif');
+						<td width="45px" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/bt_next_right_bleu_fonce.gif');
 						background-repeat:no-repeat; cursor:pointer; text-align:center; vertical-align:middle;">&nbsp;</td>
 						<td></td>
 						</tr>

@@ -61,7 +61,7 @@ Event.observe("link_close_pop_up_histo_doc", "click",  function(evt){Event.stop(
       </tr>
       <?php } ?>
       <tr>
-        <td colspan="2" style="text-align:center;"><input name="valider" id="valider" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/bt-valider.gif" /></td>
+        <td colspan="2" style="text-align:center;"><input name="valider" id="valider" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/bt-valider.gif" /></td>
       </tr>
     </tbody>
   </table>

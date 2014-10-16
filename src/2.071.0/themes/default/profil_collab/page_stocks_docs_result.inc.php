@@ -257,8 +257,8 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 		</div>
 		</td>
 		<td style="text-align:right; ">
-	<a href="documents_editing.php?ref_doc=<?php echo $stock_doc->ref_doc?>" target="_blank" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif"/></a> 
-	<a href="documents_editing.php?ref_doc=<?php echo $stock_doc->ref_doc?>&print=1" target="_blank" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/icone_imprime.gif" alt="Imprimer" title="Imprimer"/></a>
+	<a href="documents_editing.php?ref_doc=<?php echo $stock_doc->ref_doc?>" target="_blank" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-pdf.gif"/></a> 
+	<a href="documents_editing.php?ref_doc=<?php echo $stock_doc->ref_doc?>&print=1" target="_blank" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/icone_imprime.gif" alt="Imprimer" title="Imprimer"/></a>
 	
 		</td>
 		

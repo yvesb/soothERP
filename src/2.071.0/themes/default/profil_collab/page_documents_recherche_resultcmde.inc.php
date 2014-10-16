@@ -291,9 +291,9 @@ $montant_total_page_ttc = 0;
 					&nbsp;&nbsp;
 					<?php if (!isset($article->qte_stock) || $article->qte_stock == "") { $article->qte_stock = 0;};
 						if ( ((($article->qte) - ($article->qte_stock)) > 0) AND (($article->modele) == "materiel") ) { ?>
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/point_rouge.gif"/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/point_rouge.gif"/>
 						<?php } else { ?>
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/point_vert.gif"/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/point_vert.gif"/>
 						<?php } ?>
 				</td>
 				

@@ -251,8 +251,8 @@ foreach ($_ALERTES as $alerte => $value) {
 	<input id="check_s_<?php echo $i;?>" name="check_s_<?php echo $i;?>" type="checkbox" value="<?php echo ($i);?>"/>
 			</td>
 			<td style="text-align:left" >
-			 <?php if (isset($array_retour[$i]["averti"])) {?><img src="modules/<?php echo $import_catalogue_csv['folder_name'];?>themes/<?php echo $_SESSION['theme']->getCode_theme();?>/images/ding.gif" title="Cette ligne pourrait ne pas être totalement importée"/><?php } ?>
-			 <?php if (isset($array_retour[$i]["alerte"])) {?><img src="modules/<?php echo $import_catalogue_csv['folder_name'];?>themes/<?php echo $_SESSION['theme']->getCode_theme();?>/images/alerte.gif" title="Cette ligne ne sera pas importée"/><?php } ?>
+			 <?php if (isset($array_retour[$i]["averti"])) {?><img src="modules/<?php echo $import_catalogue_csv['folder_name'];?>themes/<?php echo $_SESSION['theme']->getCode_gtheme();?>/images/ding.gif" title="Cette ligne pourrait ne pas être totalement importée"/><?php } ?>
+			 <?php if (isset($array_retour[$i]["alerte"])) {?><img src="modules/<?php echo $import_catalogue_csv['folder_name'];?>themes/<?php echo $_SESSION['theme']->getCode_gtheme();?>/images/alerte.gif" title="Cette ligne ne sera pas importée"/><?php } ?>
 			</td>
 			<td style="text-align:left" >
 			<img src="../<?php echo $_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" style="cursor:pointer" id="del_ligne_<?php echo $i;?>"/>

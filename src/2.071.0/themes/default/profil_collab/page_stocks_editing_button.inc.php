@@ -42,7 +42,7 @@ foreach ($editions_modes as $edition_mode) {
 	<?php 	if (isset($_REQUEST["ref_art_categ"])) {echo "&ref_art_categ=".$_REQUEST["ref_art_categ"];}?>
 	<?php 	if (isset($_REQUEST['aff_info_tracab'])){echo "&aff_info_tracab=".$_REQUEST['aff_info_tracab'];}?>
 	<?php 	if (isset($_REQUEST["in_stock"])) {echo "&in_stock=".$_REQUEST["in_stock"];}?>" target="mainediting" >
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-imprimer.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" />	</a>
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-imprimer.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" />	</a>
 	</td>
 	<?php
 	break;

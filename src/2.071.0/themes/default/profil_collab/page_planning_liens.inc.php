@@ -34,11 +34,11 @@ check_page_variables ($page_variables);
 					<td style="width:95%">
 						<table width="100%">
 							<tr class="smallheight">
-								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:16%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:16%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 							</tr>	
 							<tr>
 								<td style="text-align:center">
@@ -68,11 +68,11 @@ check_page_variables ($page_variables);
 				<form action="planning_liens_add.php" method="post" id="planning_liens_add" name="planning_liens_add" target="formFrame" >
 				<table style="width:100%">
 					<tr class="smallheight">
-								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:16%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:16%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 					<tr>
 						<td>
@@ -87,7 +87,7 @@ check_page_variables ($page_variables);
 						<td style="text-align:right">&nbsp;
 						</td>
 						<td style="text-align:center">
-						<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" />
+						<input name="ajouter" id="ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" />
 						</td>
 					</tr>
 				</table>
@@ -110,11 +110,11 @@ check_page_variables ($page_variables);
 					<td style="width:95%">
 						<table width="100%">
 							<tr class="smallheight">
-								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:16%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:16%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 							</tr>	
 							<tr>
 								<td style="text-align:center">
@@ -148,11 +148,11 @@ check_page_variables ($page_variables);
 				<form action="planning_liens_mod.php" method="post" id="planning_liens_mod_<?php echo $indentation_contenu;?>" name="planning_liens_mob_<?php echo $indentation_contenu;?>" target="formFrame" >
 				<table style="width:100%">
 					<tr class="smallheight">
-								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-								<td style="width:16%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:23%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+								<td style="width:16%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 					<tr>
 						<td>
@@ -168,11 +168,11 @@ check_page_variables ($page_variables);
 						</td>
 						<td style="text-align:right">
 						<div style="width:25px;text-align:right"  class="documents_li_handle" >
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/main.gif" id="move_lien_line_<?php echo $indentation_contenu?>"/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/main.gif" id="move_lien_line_<?php echo $indentation_contenu?>"/>
 						</div>
 						</td>
 						<td style="text-align:center">
-						<input name="modifier_<?php echo $indentation_contenu;?>" id="modifier_<?php echo $indentation_contenu;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+						<input name="modifier_<?php echo $indentation_contenu;?>" id="modifier_<?php echo $indentation_contenu;?>" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
 						</td>
 					</tr>
 				</table>
@@ -183,7 +183,7 @@ check_page_variables ($page_variables);
 					<form method="post" action="planning_liens_sup.php" id="planning_liens_sup_<?php echo $indentation_contenu; ?>" name="planning_liens_sup_<?php echo $indentation_contenu; ?>" target="formFrame">
 						<input name="id_web_link" id="id_web_link" type="hidden" value="<?php echo $link->id_web_link;?>"  />
 					</form>
-					<a href="#" id="link_planning_liens_sup_<?php echo $indentation_contenu; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+					<a href="#" id="link_planning_liens_sup_<?php echo $indentation_contenu; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 					<script type="text/javascript">
 					Event.observe("link_planning_liens_sup_<?php echo $indentation_contenu; ?>", "click",  function(evt){Event.stop(evt); alerte.confirm_supprimer('planning_liens_sup', 'planning_liens_sup_<?php echo $indentation_contenu; ?>');}, false);
 					</script>

@@ -225,18 +225,18 @@ foreach ($_ALERTES as $alerte => $value) {
 			</td>
 			<td style="text-align:center;">
 				<?php if (isset($fiche["averti"])) {?>
-					<img src="../<?php echo $_SESSION['theme']->getDir_theme()?>/images/ding.gif" 
+					<img src="<?php echo $_SESSION['theme']->getDir_gtheme()?>/images/ding.gif" 
 							title="Cette ligne pourrait ne pas être totalement importée"/>
 				<?php }elseif (isset($fiche["alerte"])) {?>
-					<img src="../<?php echo $_SESSION['theme']->getDir_theme()?>/images/alerte.gif" title="Cette ligne ne sera pas importée."/>
+					<img src="<?php echo $_SESSION['theme']->getDir_gtheme()?>/images/alerte.gif" title="Cette ligne ne sera pas importée."/>
 				<?php } elseif (isset($fiche["ref_article_existant"]) && $fiche["ref_article_existant"] != "") { ?>
-					<img src="../<?php echo $_SESSION['theme']->getDir_theme()?>/images/point_vert.gif" title="La correspondance a été trouvée ! Cette ligne sera importée."/>
+					<img src="<?php echo $_SESSION['theme']->getDir_gtheme()?>/images/point_vert.gif" title="La correspondance a été trouvée ! Cette ligne sera importée."/>
 				<?php } else {?>
-					<img src="../<?php echo $_SESSION['theme']->getDir_theme()?>/images/point_rouge.gif" title="Aucune correspondance trouvée. Cet article sera créé."/>
+					<img src="<?php echo $_SESSION['theme']->getDir_gtheme()?>/images/point_rouge.gif" title="Aucune correspondance trouvée. Cet article sera créé."/>
 				<?php } ?>
 			</td>
 			<td style="text-align:center;" >
-				<img src="../<?php echo $_SESSION['theme']->getDir_theme()?>images/supprime.gif" 
+				<img src="<?php echo $_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" 
 					style="cursor:pointer" id="del_ligne_<?php echo $nb_lignes;?>"/>
 				<script type="text/javascript">
 					Event.observe("del_ligne_<?php echo $nb_lignes;?>", "click", function(evt){
@@ -297,13 +297,13 @@ Event.observe("coche_action_s", "change", function(evt){
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="">
 	<tr>
 		<td rowspan="2" style="width:33px">
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/arrow_ltr.png" />
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/arrow_ltr.png" />
 		</td>
 		<td style="height:4px; line-height:4px">
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="4px" width="100%"/>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="4px" width="100%"/>
 		</td>
 		<td style="height:4px; line-height:4px">
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="4px" width="100%"/>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="4px" width="100%"/>
 		</td>
 	</tr>
 	<tr>

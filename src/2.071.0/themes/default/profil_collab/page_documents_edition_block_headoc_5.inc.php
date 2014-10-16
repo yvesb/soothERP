@@ -188,7 +188,7 @@ check_page_variables ($page_variables);
 											<?php
 											if ($document->getId_etat_doc () == 20) {
 												?>
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_def_pret.gif" id="devis_pret" style="cursor:pointer"/>
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_dev_pret.gif" id="devis_pret" style="cursor:pointer"/>
 											<div style="height:3px; line-height:3px;"></div>
 											<?php
 											}
@@ -196,10 +196,10 @@ check_page_variables ($page_variables);
 											<?php
 											if ($document->getId_etat_doc () == 22) {
 												?>
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_def_accepte.gif" id="devis_accepte" style="cursor:pointer"/>
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_dev_accepte.gif" id="devis_accepte" style="cursor:pointer"/>
 											<div style="height:3px; line-height:3px;"></div>
 
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_def_refuse.gif" id="devis_refuse" style="cursor:pointer"/>
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_dev_refuse.gif" id="devis_refuse" style="cursor:pointer"/>
 											<div style="height:3px; line-height:3px;"></div>
 											<?php
 											}

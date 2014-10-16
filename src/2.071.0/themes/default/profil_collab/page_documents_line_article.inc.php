@@ -143,9 +143,9 @@ require_once ($DIR."_document_duree_abo.class.php");
 							if ($i >= $DOC_AFF_QTE_SN){ break;}
 							?>
 							<div id="num_sn_<?php echo $indentation_contenu?>_<?php echo $i;?>">
-							<span id="more_sn_<?php echo $indentation_contenu?>_<?php echo $i;?>" class="more_sn_class"><?php echo 'N° de série:'?></span> <input value="<?php if (isset($contenu->sn[$i]->numero_serie)) {echo $contenu->sn[$i]->numero_serie;}?>" type="text" id="art_sn_<?php echo $indentation_contenu;?>_<?php echo $i;?>" name="art_sn_<?php echo $indentation_contenu?>_<?php echo $i;?>" <?php if (isset($contenu->sn[$i]->sn_exist) && !($contenu->sn[$i]->sn_exist)) { echo "style=\"color: #FF0000;\"";}?>/>
+							<span id="more_sn_<?php echo $indentation_contenu?>_<?php echo $i;?>" class="more_sn_class"><?php echo 'Nï¿½ de sï¿½rie:'?></span> <input value="<?php if (isset($contenu->sn[$i]->numero_serie)) {echo $contenu->sn[$i]->numero_serie;}?>" type="text" id="art_sn_<?php echo $indentation_contenu;?>_<?php echo $i;?>" name="art_sn_<?php echo $indentation_contenu?>_<?php echo $i;?>" <?php if (isset($contenu->sn[$i]->sn_exist) && !($contenu->sn[$i]->sn_exist)) { echo "style=\"color: #FF0000;\"";}?>/>
 							<input value="<?php if (isset($contenu->sn[$i]->numero_serie)) {echo $contenu->sn[$i]->numero_serie;}?>" type="hidden" id="old_art_sn_<?php echo $indentation_contenu;?>_<?php echo $i;?>" name="old_art_sn_<?php echo $indentation_contenu?>_<?php echo $i;?>"/>
-							<a href="#" id="sup_sn_<?php echo $indentation_contenu?>_<?php echo $i;?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+							<a href="#" id="sup_sn_<?php echo $indentation_contenu?>_<?php echo $i;?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
 							</a>
 							<div class="sn_block_choix" id="block_choix_sn_<?php echo $indentation_contenu?>_<?php echo $i;?>">
 							<iframe id="iframe_liste_choix_sn_<?php echo $indentation_contenu;?>_<?php echo $i;?>" frameborder="0" scrolling="no" src="about:_blank"  class="choix_liste_choix_sn" style="display:none"></iframe>
@@ -162,7 +162,7 @@ require_once ($DIR."_document_duree_abo.class.php");
 						</div>
 						<?php
 							?>
-							<span id="aff_all_sn_<?php echo $indentation_contenu?>" style="cursor:pointer;<?php if ($nb_sn_aff <= $DOC_AFF_QTE_SN){?> display:none;<?php }?>">Afficher tout les numéros de série.</span>
+							<span id="aff_all_sn_<?php echo $indentation_contenu?>" style="cursor:pointer;<?php if ($nb_sn_aff <= $DOC_AFF_QTE_SN){?> display:none;<?php }?>">Afficher tout les numï¿½ros de sï¿½rie.</span>
 							<script type="text/javascript">
 							Event.observe("aff_all_sn_<?php echo $indentation_contenu?>", "click",  function(evt){
 								Event.stop(evt);
@@ -190,13 +190,13 @@ require_once ($DIR."_document_duree_abo.class.php");
 							if (isset($nl_val)) { $total_sn_qte += $nl_val; } 
 							?>
 							<div id="num_nl_<?php echo $indentation_contenu?>_<?php echo $i;?>">
-							<span id="more_nl_<?php echo $indentation_contenu?>_<?php echo $i;?>" class="more_sn_class"><?php echo 'N° de Lot:'?></span>
+							<span id="more_nl_<?php echo $indentation_contenu?>_<?php echo $i;?>" class="more_sn_class"><?php echo 'Nï¿½ de Lot:'?></span>
 							<input value="<?php if (isset($nl_key)) {echo $nl_key;}?>" type="text" id="art_nl_<?php echo $indentation_contenu;?>_<?php echo $i;?>" name="art_nl_<?php echo $indentation_contenu?>_<?php echo $i;?>"  size="21"/>
 							<input value="<?php if (isset($nl_key)) {echo $nl_key;}?>" type="hidden" id="old_art_nl_<?php echo $indentation_contenu;?>_<?php echo $i;?>" name="old_art_nl_<?php echo $indentation_contenu?>_<?php echo $i;?>"/>
 							<input value="<?php if (isset($nl_val)) {echo $nl_val;}?>" type="text" id="qte_nl_<?php echo $indentation_contenu;?>_<?php echo $i;?>" name="qte_nl_<?php echo $indentation_contenu?>_<?php echo $i;?>"  size="2"/>
 							<input value="<?php if (isset($nl_val)) {echo $nl_val;}?>" type="hidden" id="old_qte_nl_<?php echo $indentation_contenu;?>_<?php echo $i;?>" name="old_qte_nl_<?php echo $indentation_contenu?>_<?php echo $i;?>" />
 
-							<a href="#" id="sup_nl_<?php echo $indentation_contenu?>_<?php echo $i;?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+							<a href="#" id="sup_nl_<?php echo $indentation_contenu?>_<?php echo $i;?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
 							</a>
 							<div class="sn_block_choix" id="block_choix_nl_<?php echo $indentation_contenu?>_<?php echo $i;?>">
 							<iframe id="iframe_liste_choix_nl_<?php echo $indentation_contenu;?>_<?php echo $i;?>" frameborder="0" scrolling="no" src="about:_blank"  class="choix_liste_choix_sn" style="display:none"></iframe>
@@ -221,7 +221,7 @@ require_once ($DIR."_document_duree_abo.class.php");
 						}
 						?>
 						</span></div>
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" width="15px" style="cursor:pointer" id="add_line_nl_content_<?php echo $indentation_contenu?>" />
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" width="15px" style="cursor:pointer" id="add_line_nl_content_<?php echo $indentation_contenu?>" />
 							<script type="text/javascript">
 
 								Event.observe("add_line_nl_content_<?php echo $indentation_contenu?>", "click", function(evt){
@@ -275,8 +275,8 @@ require_once ($DIR."_document_duree_abo.class.php");
 
 		<td style="width:27px" class="document_border_right">
 			<div style="width:27px;">
-			<a href="#" id="show_desc_<?php echo $indentation_contenu?>" style="display:<?php if ($contenu->desc_article == "") {echo "block";} else { echo"none";}?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" /></a>
-			<a href="#" id="unshow_desc_<?php echo $indentation_contenu?>" style="display:<?php if ($contenu->desc_article == "") { echo"none";} else {echo "block";}?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/moins.gif" /></a>
+			<a href="#" id="show_desc_<?php echo $indentation_contenu?>" style="display:<?php if ($contenu->desc_article == "") {echo "block";} else { echo"none";}?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" /></a>
+			<a href="#" id="unshow_desc_<?php echo $indentation_contenu?>" style="display:<?php if ($contenu->desc_article == "") { echo"none";} else {echo "block";}?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/moins.gif" /></a>
 			</div>
 		</td>
 
@@ -402,24 +402,24 @@ if ($contenu->modele == "materiel" && $contenu->lot != 2 && $GESTION_STOCK) {
 			<tr>
 				<td>
 					<div style="width:25px; text-align:right;">
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/visible.gif" id="visible_<?php echo $indentation_contenu?>" style=" cursor:pointer; float:right; display: <?php if ( $contenu->visible) {echo "block";} else { echo "none";}?>" alt="Visible"/>
-					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/unvisible.gif" id="unvisible_<?php echo $indentation_contenu?>" style="cursor:pointer; float:right; display: <?php if (!$contenu->visible) {echo "block";} else { echo "none";}?>" alt="Invisible"/>
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/visible.gif" id="visible_<?php echo $indentation_contenu?>" style=" cursor:pointer; float:right; display: <?php if ( $contenu->visible) {echo "block";} else { echo "none";}?>" alt="Visible"/>
+					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/unvisible.gif" id="unvisible_<?php echo $indentation_contenu?>" style="cursor:pointer; float:right; display: <?php if (!$contenu->visible) {echo "block";} else { echo "none";}?>" alt="Invisible"/>
 					</div>
 				</td>
 				<td style="text-align:right;">
 					<div style="width:25px;text-align:right" class="documents_li_handle" >
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/main.gif" id="move_doc_line_<?php echo $indentation_contenu?>"/>
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/main.gif" id="move_doc_line_<?php echo $indentation_contenu?>"/>
 					</div>
 				</td>
 				<td style="text-align:right;">
 					<div style="width:25px;">
-					<a href="#" id="link_<?php echo $indentation_contenu?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-link.gif" border="0">
+					<a href="#" id="link_<?php echo $indentation_contenu?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-link.gif" border="0">
 					</a>
 					</div>
 				</td>
 				<td style="text-align:right;">
 					<div style="width:25px;">
-					<a href="#" id="sup_<?php echo $indentation_contenu?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+					<a href="#" id="sup_<?php echo $indentation_contenu?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
 					</a>
 					</div>
 				</td>

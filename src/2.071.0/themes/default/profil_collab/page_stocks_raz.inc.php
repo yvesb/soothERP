@@ -46,9 +46,9 @@ Event.observe("retour_tdb", "click",  function(evt){Event.stop(evt); page.verify
 		<tr>
 			<td rowspan="2" style="width:50px; height:50px; background-color:#FFFFFF">
 				<div style="position:relative; top:-35px; left:-35px; width:105px; border:1px solid #999999; background-color:#FFFFFF; text-align:center">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_caisse.jpg" />				</div>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_caisse.jpg" />				</div>
 				<span style="width:35px">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="50px" height="20px" id="imgsizeform"/>				</span>			</td>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="50px" height="20px" id="imgsizeform"/>				</span>			</td>
 			<td colspan="2" style=" background-color:#FFFFFF" >
 			<br />
 			<br />
@@ -78,7 +78,7 @@ Event.observe("retour_tdb", "click",  function(evt){Event.stop(evt); page.verify
 					
 					<div style="text-align:center">
 					<br /><br />
-						<input type="image" name="annuler" id="annuler" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-annuler.gif"/>
+						<input type="image" name="annuler" id="annuler" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-annuler.gif"/>
 					</div>
 					<script type="text/javascript">
 					Event.observe("annuler", "click",  function(evt){Event.stop(evt); page.verify('stocks_gestion2','stocks_gestion2.php?id_stock=<?php echo $stock->getId_stock()?>','true','sub_content');}, false);

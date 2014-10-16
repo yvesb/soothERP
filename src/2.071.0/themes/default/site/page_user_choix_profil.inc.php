@@ -28,7 +28,7 @@ check_page_variables ($page_variables);
 
 <body>
 
-<div class="header" style="background-image:url(<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/head_bg.gif); background-repeat:repeat-x; height:61px">
+<div class="header" style="background-image:url(<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/head_bg.gif); background-repeat:repeat-x; height:61px">
 <span style="height:60px; float:right; vertical-align: middle; line-height:60px; padding-right:25px;"><div id="waiting" style="display:none; text-align:center">
 <div id="boxcontent">
 <strong>Chargement en cours</strong>
@@ -44,7 +44,7 @@ check_page_variables ($page_variables);
 	<script type="text/javascript">
 		// <![CDATA[
 
-swfobject.embedSWF("<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/waiting.swf", "boxcontent", "142", "15", "9.0.0", "expressInstall.swf", false,{wmode: "transparent", quality: "high", allowScriptAccess: "always"}, {id: "swf_waiting"});
+swfobject.embedSWF("<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/waiting.swf", "boxcontent", "142", "15", "9.0.0", "expressInstall.swf", false,{wmode: "transparent", quality: "high", allowScriptAccess: "always"}, {id: "swf_waiting"});
 
 		// ]]>
 	</script>
@@ -58,7 +58,7 @@ swfobject.embedSWF("<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/w
 		echo $dsl;
 				?>
 				
-				<div style="width:143px; height:143px; float:left; background-image: url(<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/profil_<?php echo $i?>.gif); background-repeat:no-repeat; margin:10px; cursor:pointer;" onclick="document.choix_profil.id_profil.value='<?php echo $id_profil?>'; document.choix_profil.submit();document.getElementById('waiting').style.display='block';" > 
+				<div style="width:143px; height:143px; float:left; background-image: url(<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/profil_<?php echo $i?>.gif); background-repeat:no-repeat; margin:10px; cursor:pointer;" onclick="document.choix_profil.id_profil.value='<?php echo $id_profil?>'; document.choix_profil.submit();document.getElementById('waiting').style.display='block';" > 
 					<div style=" width:100%; height:143px; text-align:center; line-height:143px; margin-left: auto; margin-right: auto; font-family:Arial, Helvetica, sans-serif; font-weight:bolder; font-size:1em; color:#636363;">
 					<?php echo $_SESSION['profils'][$id_profil]->getLib_profil(); ?>
 					</div>

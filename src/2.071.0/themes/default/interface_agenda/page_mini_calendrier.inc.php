@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
   <thead>
 	  <tr valign="middle" align="center">
 	  	<td>
-	  		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/gray_left.gif" style="cursor:pointer" alt="mois précédent" title="mois précédent" id="mini_calendrier_mois_precedent" />
+	  		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/gray_left.gif" style="cursor:pointer" alt="mois précédent" title="mois précédent" id="mini_calendrier_mois_precedent" />
 	  		<script type="text/javascript">
 	  			Event.observe("mini_calendrier_mois_precedent", "click", function(ev) {
 						Event.stop(ev);
@@ -32,7 +32,7 @@ check_page_variables ($page_variables);
 	  	</td>
   		<td colspan="5" class="mini_calendrier_mois"><?php echo ucfirst(lmb_strftime("%B %Y", $INFO_LOCALE, $Udate_mini_calendrier)); ?></td>
   		<td>
-  			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/gray_right.gif" style="cursor:pointer" alt="mois suivant" title="mois suivant" id="mini_calendrier_mois_suivant" />
+  			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/gray_right.gif" style="cursor:pointer" alt="mois suivant" title="mois suivant" id="mini_calendrier_mois_suivant" />
   			<script type="text/javascript">
 	  			Event.observe("mini_calendrier_mois_suivant", "click", function(ev) {
 						Event.stop(ev);

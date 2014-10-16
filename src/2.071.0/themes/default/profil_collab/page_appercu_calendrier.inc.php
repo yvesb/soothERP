@@ -41,7 +41,7 @@ type_ref="<?php echo $_REQUEST['type_ref'];?>";
   <thead>
 	  <tr valign="middle" align="center">
 	  	<td>
-	  		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/gauche_on.gif" style="cursor:pointer" alt="mois précédent" title="mois précédent" id="mini_calendrier_mois_precedent" />
+	  		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/gauche_on.gif" style="cursor:pointer" alt="mois précédent" title="mois précédent" id="mini_calendrier_mois_precedent" />
 	  		<script type="text/javascript">
 /**********************Mois Precedent*********************/
 	  			Event.observe("mini_calendrier_mois_precedent", "click", function(ev) {
@@ -61,7 +61,7 @@ type_ref="<?php echo $_REQUEST['type_ref'];?>";
 	  	</td>
   		<td colspan="5" class="mini_calendrier_mois"><?php echo ucfirst(lmb_strftime("%B %Y", $INFO_LOCALE, $Udate_mini_calendrier)); ?></td>
   		<td>
-  			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/droite_on.gif" style="cursor:pointer" alt="mois suivant" title="mois suivant" id="mini_calendrier_mois_suivant" />
+  			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/droite_on.gif" style="cursor:pointer" alt="mois suivant" title="mois suivant" id="mini_calendrier_mois_suivant" />
   			<script type="text/javascript">
 /**********************Mois Suivant*********************/
 	  			Event.observe("mini_calendrier_mois_suivant", "click", function(ev) {

@@ -159,18 +159,18 @@ $Udate_now = time();
 						<table border="0" cellpadding="0px" cellspacing="4px" style="margin-top:8px; margin-right:8px; vertical-align:middle;" align="right">
 							<tr height="24px">
 								<td></td>
-								<td width="182px" style="background-image : url('<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/input_rech.gif');
+								<td width="182px" style="background-image : url('<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/input_rech.gif');
 									background-repeat:no-repeat;vertical-align:middle;" align="center">
 									<input id="rechercher_agenda" type="text" style="border:0; width:176px; text-align:right;" />	
 								</td>
 								<td>
-									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/search.gif" alt="Rechercher" title="Rechercher" id="bt_rechercher" />
+									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/btn_loupe.gif" alt="Rechercher" title="Rechercher" id="bt_rechercher" />
 								</td>
 								<td>
-									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/bt_actualiser.gif" 	alt="Actualiser" title="Actualiser" id="refresh_content" />
+									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/bt_actualiser.gif" 	alt="Actualiser" title="Actualiser" id="refresh_content" />
 								</td>
 								<td>
-									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/bt-fermer_grand.gif" 	alt="Fermer" title="Fermer" id="bt_fermer" />
+									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/bt-fermer_grand.gif" 	alt="Fermer" title="Fermer" id="bt_fermer" />
 								</td>
 							</tr>
 						</table>
@@ -251,7 +251,7 @@ $Udate_now = time();
 		</td>
 	</tr>
 	<tr height="4px">
-		<td colspan="3" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/trait_entete.gif'); background-repeat:repeat-x;"></td>
+		<td colspan="3" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/trait_entete.gif'); background-repeat:repeat-x;"></td>
 	</tr>
 	<tr>
 		<td width="186px" style="background-color:#d0cfdd;" id="conteneur_panneau_gauche">
@@ -263,7 +263,7 @@ $Udate_now = time();
 					<tr>
 						<td width="7px"></td>
 						<td id="panneau_agendas_entete_agenda" class="panneau_agendas_titre">
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/gray_down.gif" style="" alt="Agendas" title="Agendas" id="develop_agendas" />
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/gray_down.gif" style="" alt="Agendas" title="Agendas" id="develop_agendas" />
 							&nbsp;Agendas
 						</td>
 						<?php if(Lib_interface_agenda::afficher_bt_SelectionDesAgendasAffiches()){?>
@@ -288,11 +288,11 @@ $Udate_now = time();
 					Event.observe("panneau_agendas_entete_agenda", "click", function(ev) {
 						Event.stop(ev);
 						if(etatPanneauAgendas){
-							$("develop_agendas").src = "<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/gray_right.gif";
+							$("develop_agendas").src = "<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/gray_right.gif";
 							$("panneau_agendas_agendas").hide();
 							etatPanneauAgendas = false;
 						}else{
-							$("develop_agendas").src = "<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/gray_down.gif";
+							$("develop_agendas").src = "<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/gray_down.gif";
 							$("panneau_agendas_agendas").show();
 							etatPanneauAgendas = true;
 						}
@@ -359,7 +359,7 @@ $Udate_now = time();
 						<tr>
 							<td width="7px"></td>
 							<td id="panneau_agendas_entete_events" class="panneau_agendas_titre">
-								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/gray_down.gif" style="" alt="Evénements" title="Evénements" id="develop_evenements" />
+								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/gray_down.gif" style="" alt="Evénements" title="Evénements" id="develop_evenements" />
 								&nbsp;Evénements
 							</td>
 							<td width="20px" align="left" id="show_pop_up_selection_types_events">
@@ -379,11 +379,11 @@ $Udate_now = time();
 						Event.observe("panneau_agendas_entete_events", "click", function(ev) {
 							Event.stop(ev);
 							if(etatPanneauAgendasEvenements){
-								$("develop_evenements").src = "<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/gray_right.gif";
+								$("develop_evenements").src = "<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/gray_right.gif";
 								$("panneau_agendas_types_events").hide();
 								etatPanneauAgendasEvenements = false;
 							}else{
-								$("develop_evenements").src = "<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/gray_down.gif";
+								$("develop_evenements").src = "<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/gray_down.gif";
 								$("panneau_agendas_types_events").show();
 								etatPanneauAgendasEvenements = true;
 							}
@@ -717,10 +717,10 @@ $Udate_now = time();
   	</td>
 	</tr>
 	<tr height="4px">
-		<td colspan="3" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/trait_entete.gif'); background-repeat:repeat-x;"></td>
+		<td colspan="3" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/trait_entete.gif'); background-repeat:repeat-x;"></td>
 	</tr>
 	<tr height="75px" id="pied_de_page">
-		<td colspan="3" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/pied_de_page_agenda.gif'); background-repeat:repeat-x;"></td>
+		<td colspan="3" style="background-image:url('<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/pied_de_page_agenda.gif'); background-repeat:repeat-x;"></td>
 	</tr>
 </table>
 

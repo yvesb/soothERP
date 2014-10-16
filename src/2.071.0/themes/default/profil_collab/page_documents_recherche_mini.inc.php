@@ -22,7 +22,7 @@ check_page_variables ($page_variables);
 <div id="recherche_documents" class="corps_mini_moteur">
 <div id="recherche_documents_simple" class="menu_link_affichage">
 	<a href="#" id="link_close_pop_up_mini_moteur_doc" style="float:right">
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0">
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0">
 	</a>
 <script type="text/javascript">
 Event.observe("link_close_pop_up_mini_moteur_doc", "click",  function(evt){Event.stop(evt); close_mini_moteur_documents();}, false);
@@ -33,7 +33,7 @@ Event.observe("link_close_pop_up_mini_moteur_doc", "click",  function(evt){Event
 		<tr class="smallheight">
 			<td style="width:2%">&nbsp;</td>
 			<td style="width:35%">&nbsp;</td>
-			<td style="width:60%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:60%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			<td style="width:3%">&nbsp;</td>
 		</tr>
 		<tr>
@@ -57,7 +57,7 @@ Event.observe("link_close_pop_up_mini_moteur_doc", "click",  function(evt){Event
 						</td>
 						<td style="width:20px">
 						<a href="#" id="ref_contact_select_doc_m" style="display:block; width:100%;">
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif"/ style="float:right" id="ref_contact_select_img_doc_m">
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif"/ style="float:right" id="ref_contact_select_img_doc_m">
 						</a>
 						</td>
 					</tr>
@@ -65,16 +65,16 @@ Event.observe("link_close_pop_up_mini_moteur_doc", "click",  function(evt){Event
 				<script type="text/javascript">
 				
 		//effet de survol sur le faux select
-			Event.observe('ref_contact_select_doc_m', 'mouseover',  function(){$("ref_contact_select_img_doc_m").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_hover.gif";}, false);
-			Event.observe('ref_contact_select_doc_m', 'mousedown',  function(){$("ref_contact_select_img_doc_m").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_down.gif";}, false);
-			Event.observe('ref_contact_select_doc_m', 'mouseup',  function(){$("ref_contact_select_img_doc_m").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";}, false);
+			Event.observe('ref_contact_select_doc_m', 'mouseover',  function(){$("ref_contact_select_img_doc_m").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_hover.gif";}, false);
+			Event.observe('ref_contact_select_doc_m', 'mousedown',  function(){$("ref_contact_select_img_doc_m").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_down.gif";}, false);
+			Event.observe('ref_contact_select_doc_m', 'mouseup',  function(){$("ref_contact_select_img_doc_m").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";}, false);
 			
-			Event.observe('ref_contact_select_doc_m', 'mouseout',  function(){$("ref_contact_select_img_doc_m").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";}, false);
+			Event.observe('ref_contact_select_doc_m', 'mouseout',  function(){$("ref_contact_select_img_doc_m").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";}, false);
 			Event.observe('ref_contact_select_doc_m', 'click',  function(evt){Event.stop(evt); show_mini_moteur_contacts ("recherche_docu_set_contact", "\'ref_contact_doc_m\', \'ref_contact_nom_doc_m\' ")}, false);
 				</script>
 			</td>
 			<td style="width:20px">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0" title="Vider le contact" id="empty_contact">
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0" title="Vider le contact" id="empty_contact">
 				<script type="text/javascript">
 						Event.observe('empty_contact', 'click',  function(evt){
 						Event.stop(evt); 
@@ -115,8 +115,8 @@ Event.observe("link_close_pop_up_mini_moteur_doc", "click",  function(evt){Event
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
 		<td style="text-align:right">
-			<input name="submit" type="image" onclick="$('page_to_show_m').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-rechercher.gif"  style="float:left" />
-			<input type="image" name="annuler_recherche_doc_m" id="annuler_recherche_doc_m" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-annuler.gif"/>
+			<input name="submit" type="image" onclick="$('page_to_show_m').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-rechercher.gif"  style="float:left" />
+			<input type="image" name="annuler_recherche_doc_m" id="annuler_recherche_doc_m" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-annuler.gif"/>
 		</td>
 		<td>&nbsp;</td>
 	</tr>

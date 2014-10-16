@@ -97,7 +97,7 @@ switch($type_data) {
 										for ($i=0; $i<=$art_categ->indentation; $i++) {
 											
 											?>
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="18px"/></td><td>
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="18px"/></td><td>
 											<?php 
 											
 										}

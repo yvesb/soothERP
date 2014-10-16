@@ -720,7 +720,7 @@ function is_sn_filled () {
 							$("bon_recept_pret").src = dirtheme+"images/bt_blf_reception_r.gif";
 						}
 						if ($("trm_pret")) {
-							$("trm_pret").src = dirtheme+"images/bt_trm_pret_r.gif";
+							$("trm_pret").src = dirtheme+"images/bt_blc_pret_r.gif";
 						}
 					} else {
 						if ($("livraison_pret")) {
@@ -733,7 +733,7 @@ function is_sn_filled () {
 							$("bon_recept_pret").src = dirtheme+"images/bt_blf_reception.gif";
 						}
 						if ($("trm_pret")) {
-							$("trm_pret").src = dirtheme+"images/bt_trm_pret.gif";
+							$("trm_pret").src = dirtheme+"images/bt_blc_pret.gif";
 						}
 					}
 

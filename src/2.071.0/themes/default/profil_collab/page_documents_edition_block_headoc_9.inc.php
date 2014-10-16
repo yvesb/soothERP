@@ -200,7 +200,7 @@ check_page_variables ($page_variables);
 											<?php 
 											if ($document->getId_etat_doc () == 36) {
 												?>
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_trm_pret.gif" id="trm_pret" style="cursor:pointer"/>
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_blc_pret.gif" id="trm_pret" style="cursor:pointer"/>
 											<div style="height:3px; line-height:3px;"></div>
 											<?php 
 											}

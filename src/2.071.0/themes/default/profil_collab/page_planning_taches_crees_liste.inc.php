@@ -188,10 +188,10 @@ function image_html($img)
 <table width="100%" border="0"  cellspacing="0">
 	<tr class="document_box_head">
 		<td style="width:25px">
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/tache_urgente.gif" width="25px" height="20px" id="order_by_urgence_ord" style="cursor:pointer" alt="Urgent"/>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/tache_urgente.gif" width="25px" height="20px" id="order_by_urgence_ord" style="cursor:pointer" alt="Urgent"/>
 		</td>
 		<td style="width:25px">
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/tache_important.gif" width="25px" height="20px" id="order_by_importance_ord" style="cursor:pointer" alt="Important"/>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/tache_important.gif" width="25px" height="20px" id="order_by_importance_ord" style="cursor:pointer" alt="Important"/>
 		</td>
 		<td style="font-weight:bolder;width:25%">
 		 T&acirc;che
@@ -209,14 +209,14 @@ function image_html($img)
 		</td>
 	</tr>
 	<tr>
-		<td style="width:25px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:25px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-		<td style="width:25px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:25px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:25px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:10%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+		<td style="width:25px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 	</tr>
 <?php
 foreach ($liste_taches_crees as $tache_cree) {
@@ -224,16 +224,16 @@ foreach ($liste_taches_crees as $tache_cree) {
 	<tr id="tache_cree_<?php echo $tache_cree->getId_tache();?>">
 		<td style="border-bottom:1px solid #999999;">
 		<?php if ($tache_cree->getUrgence ()) {?>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/tache_urgente.gif" width="25px" height="20px" alt="Urgent"/>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/tache_urgente.gif" width="25px" height="20px" alt="Urgent"/>
 		<?php } else { ?>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="25px" height="20px" />
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="25px" height="20px" />
 		<?php } ?>
 		</td>
 		<td style="border-bottom:1px solid #999999;">
 		<?php if ($tache_cree->getImportance ()) {?>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/tache_important.gif" width="25px" height="20px" alt="Important"/>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/tache_important.gif" width="25px" height="20px" alt="Important"/>
 		<?php } else { ?>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="25px" height="20px" />
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="25px" height="20px" />
 		<?php } ?>
 		</td>
 		<td style="border-bottom:1px solid #999999;">
@@ -257,7 +257,7 @@ foreach ($liste_taches_crees as $tache_cree) {
 			<span style="font-weight:bolder;"><?php echo date_Us_to_Fr($tache_cree->getDate_creation ());?></span>
 
 			<div id="edition_tache_<?php echo $tache_cree->getId_tache();?>">
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" style="cursor:pointer" />
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" style="cursor:pointer" />
 			</div>
 		</td>
 		<td style="border-bottom:1px solid #999999;">
@@ -333,7 +333,7 @@ foreach ($liste_taches_crees as $tache_cree) {
 				<form method="post" action="planning_taches_sup.php" id="planning_taches_sup_<?php echo $tache_cree->getId_tache();?>" name="planning_taches_sup_<?php echo $tache_cree->getId_tache();?>" target="formFrame">
 					<input name="id_tache" id="id_tache" type="hidden" value="<?php echo $tache_cree->getId_tache();?>" />
 				</form>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="supp_tache_<?php echo $tache_cree->getId_tache();?>" style="cursor:pointer" /><br />
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="supp_tache_<?php echo $tache_cree->getId_tache();?>" style="cursor:pointer" /><br />
 
 			<script type="text/javascript">
 			

@@ -35,9 +35,9 @@ check_page_variables ($page_variables);
 		<tr>
 			<td rowspan="2" style="width:50px; height:50px; background-color:#FFFFFF">
 				<div style="position:relative; top:-35px; left:-35px; width:105px; border:1px solid #999999; background-color:#FFFFFF; text-align:center">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ico_stock.jpg" />				</div>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_stock.jpg" />				</div>
 				<span style="width:35px">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="50px" height="20px" id="imgsizeform"/>				</span>			</td>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="50px" height="20px" id="imgsizeform"/>				</span>			</td>
 			<td colspan="2" style="width:60%; background-color:#FFFFFF" >
 			<br />
 			<br />
@@ -92,7 +92,7 @@ check_page_variables ($page_variables);
 										for ($i=0; $i<=$art_categ->indentation; $i++) {
 											
 											?>
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="18px"/></td><td>
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="18px"/></td><td>
 											<?php 
 											
 										}
@@ -155,7 +155,7 @@ check_page_variables ($page_variables);
 								<div style="float:left; color:#999999">Dernier inventaire: <?php echo date_Us_to_Fr($stock->last_inventaire_stock ())." ".getTime_from_date ($stock->last_inventaire_stock ());?></div>
 								
 								<span style="color:#97bf0d; float:right">
-								<span id="inventorier_<?php echo $stock->getId_stock(); ?>"  class="green_underlined"  ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_inventorier.gif" />
+								<span id="inventorier_<?php echo $stock->getId_stock(); ?>"  class="green_underlined"  ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_inventorier.gif" />
 								</span>
 								</span>
 								</td>
@@ -238,23 +238,23 @@ check_page_variables ($page_variables);
 					<div class="line_caisse_top"></div>
 					<br />
 					<br />
-					<span id="etat_stock" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Etat de stock</span><br /><br />
+					<span id="etat_stock" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Etat de stock</span><br /><br />
 
-					<span id="renouveler_stock" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Stock à renouveler</span><br /><br />
+					<span id="renouveler_stock" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Stock à renouveler</span><br /><br />
 
 					<?php 
 					if (count($_SESSION['stocks']) >1) {?>
-					<span id="stocks_transferer" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Stock à Transférer</span><br /><br />
+					<span id="stocks_transferer" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Stock à Transférer</span><br /><br />
 					<?php } ?>
 						
-					<span id="moves_stock" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Historique par mouvement</span><br /><br />
+					<span id="moves_stock" class="grey_caisse"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Historique par mouvement</span><br /><br />
 
 						<br />
-					<span id="docs_stock" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Historique par document</span><br /><br />
+					<span id="docs_stock" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" /> Historique par document</span><br /><br />
 
 <br />
 
-					<span id="raz_stock" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />Réinitialiser le stock</span><br /><br />
+					<span id="raz_stock" class="grey_caisse" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_bleue.gif"  style="padding-right:10px; float:left" vspace="3" />Réinitialiser le stock</span><br /><br />
 					</div>
 						<script type="text/javascript">
 						

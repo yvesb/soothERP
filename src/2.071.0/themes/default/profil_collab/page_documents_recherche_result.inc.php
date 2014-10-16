@@ -314,9 +314,9 @@ $class_colorise= ($colorise % 2)? 'colorise1' : 'colorise2';
 	</td>
 	<td style="vertical-align:middle; text-align:center">
 	
-	<a href="#" id="mail_doc_<?php echo $fiche->ref_doc?>" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-email-doc.gif"/></a> 
-	<a href="documents_editing.php?ref_doc=<?php echo $fiche->ref_doc?>" target="_blank" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif"/></a> 
-	<a href="documents_editing.php?ref_doc=<?php echo $fiche->ref_doc?>&print=1" target="_blank" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/icone_imprime.gif" alt="Imprimer" title="Imprimer"/></a>
+	<a href="#" id="mail_doc_<?php echo $fiche->ref_doc?>" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-email-doc.gif"/></a> 
+	<a href="documents_editing.php?ref_doc=<?php echo $fiche->ref_doc?>" target="_blank" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-pdf.gif"/></a> 
+	<a href="documents_editing.php?ref_doc=<?php echo $fiche->ref_doc?>&print=1" target="_blank" ><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/icone_imprime.gif" alt="Imprimer" title="Imprimer"/></a>
 	
 	<script type="text/javascript">
 	Event.observe("mail_doc_<?php echo $fiche->ref_doc?>", "click", function(evt){
@@ -348,13 +348,13 @@ $indentation++;
 <table width="100%" border="0" cellspacing="0" cellpadding="0" class="">
 	<tr>
 		<td rowspan="2" style="width:33px">
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/arrow_ltr.png" />
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/arrow_ltr.png" />
 		</td>
 		<td style="height:4px; line-height:4px">
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="4px" width="100%"/>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="4px" width="100%"/>
 		</td>
 		<td style="height:4px; line-height:4px">
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="4px" width="100%"/>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="4px" width="100%"/>
 		</td>
 	</tr>
 	<tr>

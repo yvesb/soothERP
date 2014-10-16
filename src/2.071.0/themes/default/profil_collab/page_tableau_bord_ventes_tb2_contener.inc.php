@@ -23,8 +23,8 @@ check_page_variables ($page_variables);
 <span class="green_link_stat_actif" id="tb2_det_J">Jour</span> | <span class="green_link_stat" id="tb2_det_S">Semaine</span> | <span class="green_link_stat" id="tb2_det_M">Mois</span> | <span class="green_link_stat" id="tb2_det_A">Année</span>
 </div> 
 <div ><span class="titre_ter_stat" >Période analysée </span> 
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_date_prev.gif" style="vertical-align:middle; cursor:pointer" id="goto_prev" />
-	 <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_date_next.gif" style="vertical-align:middle; cursor:pointer" id="goto_next"  />	<span id="periode_select" style="font-weight:bolder"></span>
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_date_prev.gif" style="vertical-align:middle; cursor:pointer" id="goto_prev" />
+	 <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_date_next.gif" style="vertical-align:middle; cursor:pointer" id="goto_next"  />	<span id="periode_select" style="font-weight:bolder"></span>
 </div>
 <script type="text/javascript">
 Event.observe("goto_prev", "click",  function(evt){

@@ -53,7 +53,7 @@ function extract_time($time) {
              
               if(date("Y-m", $Udate_ldm) != date("Y-m", $date_max)): ?>
                 <div id="mini_calendrier_mois_suivant" class="clic">
-                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/droite_on.gif" alt="mois suivant" title="mois suivant" />
+                <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/droite_on.gif" alt="mois suivant" title="mois suivant" />
                 </div>
                 <script type="text/javascript">
                     /**********************Mois Suivant*********************/

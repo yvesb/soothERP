@@ -75,7 +75,7 @@ if (count($comptes_bancaires) && count($comptes_bancaires_societe)) {
 		</tr>
 		<tr>
 			<td></td>
-			<td><input id="ajouter_reglement" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif"  /> </td>
+			<td><input id="ajouter_reglement" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif"  /> </td>
 		</tr>
 	</table>
 	

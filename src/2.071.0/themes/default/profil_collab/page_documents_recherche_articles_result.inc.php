@@ -324,9 +324,9 @@ foreach ($fiches as $fiche) {
 					<input type="hidden" id="ref_doc_line_indentation_<?php echo ($fiche->ref_article);?>" name="ref_doc_line_indentation_<?php echo ($fiche->ref_article);?>" value=""/>
 					<input type="hidden" id="numero_serie_<?php echo ($fiche->ref_article);?>" name="numero_serie_<?php echo ($fiche->ref_article);?>" value="<?php	if (isset($fiche->numero_serie)) { echo htmlentities($fiche->numero_serie, ENT_QUOTES, "UTF-8");}?>"/>
 					</td>
-					<td style="text-align:center; width:15px;"><a href="#" id="qte_add_one_<?php echo $fiche->ref_article;?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/ajouter.gif" /></a></td>
+					<td style="text-align:center; width:15px;"><a href="#" id="qte_add_one_<?php echo $fiche->ref_article;?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ajouter.gif" /></a></td>
 				</tr><tr>
-					<td style="text-align:center; width:15px;"><a href="#" id="qte_sub_one_<?php echo $fiche->ref_article;?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/moins.gif" /></a></td>
+					<td style="text-align:center; width:15px;"><a href="#" id="qte_sub_one_<?php echo $fiche->ref_article;?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/moins.gif" /></a></td>
 				</tr>
 			</table>
 			

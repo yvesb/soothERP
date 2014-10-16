@@ -23,7 +23,7 @@ check_page_variables ($page_variables);
 <script type="text/javascript">
 </script>
 
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="close_reglement_edit" style="cursor:pointer; float:right" alt="Fermer" title="Fermer" /><br />
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="close_reglement_edit" style="cursor:pointer; float:right" alt="Fermer" title="Fermer" /><br />
 <br />
 
 <table width="100%" border="0">
@@ -51,7 +51,7 @@ check_page_variables ($page_variables);
 					<form method="post" action="compta_reglements_sup.php" id="compta_reglements_sup_<?php echo $reglement->getRef_reglement(); ?>" name="compta_reglements_sup_<?php echo $reglement->getRef_reglement(); ?>" target="formFrame">
 					<input name="ref_reglement" id="ref_reglement" type="hidden" value="<?php echo $reglement->getRef_reglement(); ?>" />
 					</form>
-					<a href="#" id="link_compta_reglements_sup_<?php echo $reglement->getRef_reglement(); ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+					<a href="#" id="link_compta_reglements_sup_<?php echo $reglement->getRef_reglement(); ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 					<script type="text/javascript">
 					Event.observe("link_compta_reglements_sup_<?php echo $reglement->getRef_reglement(); ?>", "click",  function(evt){Event.stop(evt); alerte.confirm_supprimer('documents_reglements_sup', 'compta_reglements_sup_<?php echo $reglement->getRef_reglement(); ?>');}, false);
 					</script>
@@ -60,7 +60,7 @@ check_page_variables ($page_variables);
 		</table>
 		<form action="reglement_maj.php" method="post" id="reglement_maj" name="reglement_maj" target="formFrame" >
 		<input type="hidden" value="<?php echo $reglement->getRef_reglement();?>" id="getRef_reglement()" name="getRef_reglement()" />
-		<input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+		<input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
 		</form>
 		</td>
 		<td  style=" background-color:#FFFFFF; border:1px solid #d6d6d6;">
@@ -68,10 +68,10 @@ check_page_variables ($page_variables);
 		
 		<table width="100%" border="0"  cellspacing="0">
 			<tr>
-				<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td style="width:45%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-				<td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td style="width:45%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td style=""><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			</tr>
 			<?php
 			$indentation_lettrage = 0;

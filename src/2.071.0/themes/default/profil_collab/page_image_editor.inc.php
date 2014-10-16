@@ -13,7 +13,7 @@ check_page_variables ($page_variables);
 // *************************************************************************************************************
 
 ?>
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="close_edit_img" style="cursor:pointer; float:right" onclick="parent.document.getElementById('image_choix_editor').style.display='none';"/>
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="close_edit_img" style="cursor:pointer; float:right" onclick="parent.document.getElementById('image_choix_editor').style.display='none';"/>
 <div style="font:11px Arial, Helvetica, sans-serif; background-color:#FFFFFF">
 <br />
 

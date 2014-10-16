@@ -1,8 +1,8 @@
 
 
 <div style="padding-left: 10px; padding-bottom: 4px; padding-right:10px">
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-arenouveller.gif" id="bt_r_def_1" style="cursor:pointer"/>
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-acommander.gif" id="bt_r_def_2" style="cursor:pointer"/>
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-arenouveller.gif" id="bt_r_def_1" style="cursor:pointer"/>
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-acommander.gif" id="bt_r_def_2" style="cursor:pointer"/>
 </div>
 <div style="padding-left: 10px; padding-bottom: 4px; padding-right:10px">
 </div>

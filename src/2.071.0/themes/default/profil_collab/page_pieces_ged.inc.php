@@ -22,9 +22,9 @@ check_page_variables ($page_variables);
 
 <table style="width:100%">
 	<tr class="smallheight">
-		<td style="width:60%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:2%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-		<td style="width:38%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:60%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:2%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
+		<td style="width:38%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr>
 		<td>
@@ -56,7 +56,7 @@ check_page_variables ($page_variables);
 			</div>
 			</td>
 			<td style="text-align:right">
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="supp_img_<?php echo $piece->id_piece;?>" style="cursor:pointer"/>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="supp_img_<?php echo $piece->id_piece;?>" style="cursor:pointer"/>
 			</td>
 			<td>
 				
@@ -96,7 +96,7 @@ check_page_variables ($page_variables);
 			
 		</td>
 		<td>
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_add_piece.gif" id="add_pie_form_bt" style="cursor:pointer"/>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_add_piece.gif" id="add_pie_form_bt" style="cursor:pointer"/>
 		<div id="add_pie_form" style="display:none">
 			<div class="roundedtable">
 			<form name="upload" enctype="multipart/form-data" method="POST" action="pieces_ged_upload.php" target="formFrame">

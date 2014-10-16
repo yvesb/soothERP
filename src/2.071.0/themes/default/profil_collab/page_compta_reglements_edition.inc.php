@@ -121,7 +121,7 @@ if (!$reglement->getRef_reglement()) {
                                                     <?php	if ($lettrage->montant) { echo number_format($lettrage->montant, $TARIFS_NB_DECIMALES, ".", ""	)." ".$MONNAIE[1]; }?>
 						</td>
 						<td style="padding-left:11px">
-                                                    <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/unlink.gif" border="0" style="cursor:pointer" id="unlink_doc1_<?php echo $indentation_lettrage;?>_<?php echo $lettrage->ref_doc;?>">
+                                                    <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/unlink.gif" border="0" style="cursor:pointer" id="unlink_doc1_<?php echo $indentation_lettrage;?>_<?php echo $lettrage->ref_doc;?>">
 						</td>
 					</tr>
 

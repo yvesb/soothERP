@@ -106,7 +106,7 @@ foreach ($_ALERTES as $alerte => $value) {
 <script language='javascript'>
 if (!$("sub_content") && !window.parent.$("sub_content")) {
 
-document.write ('<div class="header" style="background-image:url(<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/head_bg.gif); background-repeat:repeat-x; height:61px">');
+document.write ('<div class="header" style="background-image:url(<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/head_bg.gif); background-repeat:repeat-x; height:61px">');
 document.write ('</span>');
 document.write ('<span style="height:60px; width:450px; float:right; vertical-align: middle; line-height:60px; padding-right:25px;"><div id="waiting" style="display:none; text-align:right">');
 document.write ('	<div id="backupwait" style="display:inline">');
@@ -136,7 +136,7 @@ document.write ('<div style="text-align:left; color:#0000FF">');
 document.write ('<a href="<?php echo $DIR."/site";?>" style="color:#0000FF">Retour à la page d\'accueil du site web.</a>');
 document.write ('</div>');
 document.write ('<br />');
-document.write ('<div style="text-align:center"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/verrou.gif"/></div>');
+document.write ('<div style="text-align:center"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/verrou.gif"/></div>');
 document.write ('			</td>');
 document.write ('			<td class="content"><div style="display:block; width:455px">');
 			
@@ -267,7 +267,7 @@ document.write ('</table></div></div>');
 
 		// <![CDATA[
 
-swfobject.embedSWF("<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/waiting.swf", "boxcontent", "142", "15", "9.0.0", "expressInstall.swf", false,{wmode: "transparent", quality: "high", allowScriptAccess: "always"}, {id: "swf_waiting"});
+swfobject.embedSWF("<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/waiting.swf", "boxcontent", "142", "15", "9.0.0", "expressInstall.swf", false,{wmode: "transparent", quality: "high", allowScriptAccess: "always"}, {id: "swf_waiting"});
 
 		// ]]>
 }

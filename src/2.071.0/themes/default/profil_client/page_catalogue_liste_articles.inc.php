@@ -212,7 +212,7 @@ function image_html($img)
 					?>
 					</select>
 				</td>
-				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/recherche_av_bt.gif" id="start_recherche_av" style="cursor:pointer; padding-right:25px;" /></td>
+				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/recherche_av_bt.gif" id="start_recherche_av" style="cursor:pointer; padding-right:25px;" /></td>
 			</tr>
 		</table>
 		</form>

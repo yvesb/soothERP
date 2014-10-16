@@ -23,7 +23,7 @@ check_page_variables ($page_variables);
 <script type="text/javascript">
 </script>
 
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="close_tache_edit" style="cursor:pointer; float:right" alt="Fermer" title="Fermer" />
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="close_tache_edit" style="cursor:pointer; float:right" alt="Fermer" title="Fermer" />
 <table width="100%" border="0">
 <tr>
 <td>
@@ -31,18 +31,18 @@ check_page_variables ($page_variables);
 						<input type="hidden" value="<?php echo $tache_cree->getId_tache();?>" id="id_tache" name="id_tache" />	
 	<table width="100%" border="0">
 		<tr class="smallheight">
-			<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:5%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:20%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 		</tr>
 		<tr>
 			<td colspan="2">
 			<table width="100%" border="0">
 				<tr class="smallheight">
-					<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 					</tr>	
 				<tr>
 					<td>Libell&eacute;: </td>
@@ -60,13 +60,13 @@ check_page_variables ($page_variables);
 						<input type="text" value="<?php echo date_Us_to_Fr($tache_cree->getDate_echeance ());?>" id="date_echeance" name="date_echeance" class="classinput_xsize" />		</td>
 					</tr>
 				<tr>
-					<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/tache_important.gif" width="25px" height="20px" /> Important: </td>
+					<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/tache_important.gif" width="25px" height="20px" /> Important: </td>
 					<td>
 						<input type="radio" value="1" id="important_oui" name="importance" <?php if($tache_cree->getImportance ()) { ?>checked="checked"<?php } ?>/>Oui&nbsp;&nbsp;&nbsp;<input type="radio" value="0" id="important_non" name="importance" <?php if(!$tache_cree->getImportance ()) { ?>checked="checked"<?php } ?>/>Non
 						</td>
 					</tr>
 				<tr>
-					<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/tache_urgente.gif" width="25px" height="20px" /> Urgent: </td>
+					<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/tache_urgente.gif" width="25px" height="20px" /> Urgent: </td>
 					<td>
 						<input type="radio" value="1" id="urgence_oui" name="urgence"  <?php if($tache_cree->getUrgence ()) { ?>checked="checked"<?php } ?>/>Oui&nbsp;&nbsp;&nbsp;<input type="radio" value="0" id="urgence_non" name="urgence"  <?php if(!$tache_cree->getUrgence ()) { ?>checked="checked"<?php } ?> />Non
 						</td>
@@ -77,18 +77,18 @@ check_page_variables ($page_variables);
 			<td colspan="2">
 			<table width="100%" border="0">
 				<tr>
-					<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-					<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+					<td style="width:50%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 				</tr>	
 				<tr>
-					<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif"/ style="float:right; cursor:pointer" id="ref_contact_select_img">
+					<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif"/ style="float:right; cursor:pointer" id="ref_contact_select_img">
 						<script type="text/javascript">
 						//effet de survol sur le faux select
-							Event.observe('ref_contact_select_img', 'mouseover',  function(){$("ref_contact_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_hover.gif";}, false);
-							Event.observe('ref_contact_select_img', 'mousedown',  function(){$("ref_contact_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_down.gif";}, false);
-							Event.observe('ref_contact_select_img', 'mouseup',  function(){$("ref_contact_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";}, false);
+							Event.observe('ref_contact_select_img', 'mouseover',  function(){$("ref_contact_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_hover.gif";}, false);
+							Event.observe('ref_contact_select_img', 'mousedown',  function(){$("ref_contact_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_down.gif";}, false);
+							Event.observe('ref_contact_select_img', 'mouseup',  function(){$("ref_contact_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";}, false);
 							
-							Event.observe('ref_contact_select_img', 'mouseout',  function(){$("ref_contact_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";}, false);
+							Event.observe('ref_contact_select_img', 'mouseout',  function(){$("ref_contact_select_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";}, false);
 							Event.observe('ref_contact_select_img', 'click',  function(evt){Event.stop(evt); show_mini_moteur_contacts ("add_collab_tache",  "\'<?php echo $tache_cree->getId_tache();?>\', \'increment_edition_tache\', \'liste_contact_edition\' "); preselect ('<?php echo $COLLAB_ID_PROFIL; ?>', 'id_profil_m');}, false);
 						</script>Collaborateurs concern&eacute;s: 
 					</td>
@@ -101,7 +101,7 @@ check_page_variables ($page_variables);
 						foreach ($liste_collabs as $collab) {
 							?>
 							<div class="height_div" id="contact_collab_<?php echo $increment_collab;?>" >
-								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" id="sup_collab_<?php echo $increment_collab;?>" class="img_float_r"/>
+								<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" id="sup_collab_<?php echo $increment_collab;?>" class="img_float_r"/>
 								<span id="nom_collab_<?php echo $increment_collab;?>">
 								<?php echo nl2br(htmlentities(addslashes(substr (str_replace (CHR(13), "" ,str_replace (CHR(10), "" ,preg_replace ("#((\r\n)+)#", "", $collab->nom))),0, 26)), ENT_QUOTES, "UTF-8"))?>...
 								</span>
@@ -122,7 +122,7 @@ check_page_variables ($page_variables);
 				<tr>
 					<td colspan="2" style=" height:25px; line-height:25px" valign="middle"><br />
 
-						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform" style="border-bottom:1px solid #000000"/><br />
+						<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform" style="border-bottom:1px solid #000000"/><br />
 
 					</td>
 				</tr>	
@@ -152,8 +152,8 @@ check_page_variables ($page_variables);
 												if ($liste_fonction->indentation < current($liste_fonctions_collab)->indentation) {
 													
 												?><a href="#" id="link_div_art_categ_<?php echo $liste_fonction->id_fonction?>">
-												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/collapse.gif" width="14px" id="extend_<?php echo $liste_fonction->id_fonction?>"/>
-												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/extend.gif" width="14px" id="collapse_<?php echo $liste_fonction->id_fonction?>" style="display:none"/></a>
+												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/collapse.gif" width="14px" id="extend_<?php echo $liste_fonction->id_fonction?>"/>
+												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/extend.gif" width="14px" id="collapse_<?php echo $liste_fonction->id_fonction?>" style="display:none"/></a>
 												<script type="text/javascript">
 												Event.observe("link_div_art_categ_<?php echo $liste_fonction->id_fonction?>", "click",  function(evt){Event.stop(evt); Element.toggle('div_<?php echo $liste_fonction->id_fonction?>') ; Element.toggle('extend_<?php echo $liste_fonction->id_fonction?>'); Element.toggle('collapse_<?php echo $liste_fonction->id_fonction?>');}, false);
 												</script>
@@ -162,21 +162,21 @@ check_page_variables ($page_variables);
 												else 
 												{
 												?>
-												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="14px"/>
+												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="14px"/>
 												<?php
 												}
 											}
 											else 
 											{
 											?>
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="14px"/>
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="14px"/>
 											<?php
 											}
 										}
 										else
 										{
 									?>
-									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/inarbo.gif" width="14px"/></td><td>
+									<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/inarbo.gif" width="14px"/></td><td>
 									<?php 
 										}
 									}
@@ -259,7 +259,7 @@ check_page_variables ($page_variables);
 					</td>
 				</tr>
 				</table>
-			<input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" />
+			<input type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" />
 			</td>
 		</tr>
 	</table>

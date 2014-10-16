@@ -79,7 +79,7 @@ check_page_variables ($page_variables);
 		<?php 
 		if ($document->getId_etat_doc () == 28) {
 			?>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_cdf_reception.gif" id="creer_reception" style="cursor:pointer"/>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_cdc_reception.gif" id="creer_reception" style="cursor:pointer"/>
 			<div style="height:3px; line-height:3px;"></div>
 			<?php 
 		}

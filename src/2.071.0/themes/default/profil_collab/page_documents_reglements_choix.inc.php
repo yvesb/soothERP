@@ -23,7 +23,7 @@ if (!isset($reglements_modes)) {$reglements_modes = array();}
 		foreach ($reglements_modes as $reglement_mode) {
                     if($reglement_mode->id_reglement_mode != 6 || $COMPTA_GEST_PRELEVEMENTS){
 			?>
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_mod_paiement_<?php echo htmlentities($reglement_mode->id_reglement_mode, ENT_QUOTES, "UTF-8"); ?>.gif" id="bt_mod_paiement_<?php echo htmlentities($reglement_mode->id_reglement_mode, ENT_QUOTES, "UTF-8"); ?>" style="cursor:pointer; padding:5px;"/>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_mod_paiement_<?php echo htmlentities($reglement_mode->id_reglement_mode, ENT_QUOTES, "UTF-8"); ?>.gif" id="bt_mod_paiement_<?php echo htmlentities($reglement_mode->id_reglement_mode, ENT_QUOTES, "UTF-8"); ?>" style="cursor:pointer; padding:5px;"/>
 			<?php
                     }
 		}

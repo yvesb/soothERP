@@ -3,7 +3,7 @@
 	<tr>
 		<td style="vertical-align: middle" align="center">
 		<?php if (file_exists($DIR.$_SESSION['theme']->getDir_theme()."images/".$NOM_LOGO)) {?>
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/<?php echo $NOM_LOGO;?>" />
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/<?php echo $NOM_LOGO;?>" />
 		<?php } ?>
 		</td>
 		<td style="vertical-align: bottom">
@@ -11,11 +11,11 @@
 		<form name="rechercher_simple" id="rechercher_simple" action="catalogue_liste_articles.php">
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
-				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/recherche_simple_1.gif"/></td>
+				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/recherche_simple_1.gif"/></td>
 				<td>
 					<input type="text" id="lib_article" name="lib_article" value="" class="input_rechercher_top"/>
 				</td>
-				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/recherche_simple_bt.gif" id="start_recherche_simple" style="cursor:pointer" /></td>
+				<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/recherche_simple_bt.gif" id="start_recherche_simple" style="cursor:pointer" /></td>
 			</tr>
 		</table>
 		</form>
@@ -31,7 +31,7 @@
 		<td style="vertical-align: bottom">
 		<div id="logo_lmb">
 		<a href="http://www.lundimatin.fr" target="_blank">
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/entete_logolmb.gif" />
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/entete_logolmb.gif" />
 		</a>
 		</div>
 		</td>

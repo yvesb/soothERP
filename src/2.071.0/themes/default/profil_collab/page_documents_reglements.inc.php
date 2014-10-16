@@ -80,8 +80,8 @@ check_page_variables ($page_variables);
 								<input name="ref_reglement" id="ref_reglement" type="hidden" value="<?php echo $liste_reglement->ref_reglement; ?>" />
 								<input name="ref_doc_<?php echo $liste_reglement->ref_reglement; ?>" id="ref_doc_<?php echo $liste_reglement->ref_reglement; ?>" type="hidden" value="<?php echo $document->getRef_doc () ?>" />
 								</form>
-								<a href="#" id="link_documents_reglements_delier_<?php echo $liste_reglement->ref_reglement; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/unlink.gif" border="0"></a>
-								<a href="#" id="link_documents_reglements_sup_<?php echo $liste_reglement->ref_reglement; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" border="0"></a>
+								<a href="#" id="link_documents_reglements_delier_<?php echo $liste_reglement->ref_reglement; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/_small_wysiwyg/unlink.gif" border="0"></a>
+								<a href="#" id="link_documents_reglements_sup_<?php echo $liste_reglement->ref_reglement; ?>"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0"></a>
 								<script type="text/javascript">
 								Event.observe("link_documents_reglements_sup_<?php echo $liste_reglement->ref_reglement; ?>", "click",  function(evt){
 									Event.stop(evt); alerte.confirm_supprimer('documents_reglements_sup', 'documents_reglements_sup_<?php echo $liste_reglement->ref_reglement; ?>');
@@ -150,7 +150,7 @@ check_page_variables ($page_variables);
 								<?php
                                                                 if ($document->getRef_contact() != ""){
                                                                 ?>
-                                                                <input name="bt_ajouter" id="bt_ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ajouter.gif" style="position:relative;left: 60%;width: 55px;padding-top:2px" />
+                                                                <input name="bt_ajouter" id="bt_ajouter" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ajouter.gif" style="position:relative;left: 60%;width: 55px;padding-top:2px" />
 								<script type="text/javascript">
 								Event.observe('bt_ajouter', "click", function(evt){
 										Event.stop(evt);
@@ -182,7 +182,7 @@ check_page_variables ($page_variables);
 						<tr id="ligne_reglement_">
 							<td style="padding-left:5px;font-size:11px; border-bottom:1px solid #d2d2d2;  width:20%;">
 							<!-- ici les codes couleurs --> 
-							<span ><img width="8px" height="8px" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/puce_<?php echo $echeance->etat; ?>.png"/></span>&nbsp;
+							<span ><img width="8px" height="8px" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/puce_<?php echo $echeance->etat; ?>.png"/></span>&nbsp;
 							<?php 
 							if ($echeance->date!= 0000-00-00) {
 								echo htmlentities ( date_Us_to_Fr ($echeance->date), ENT_QUOTES, "UTF-8");
@@ -283,10 +283,10 @@ check_page_variables ($page_variables);
 							
 							<?php if($nb_echeances_aff<0){ ?>
 							<td style=" text-align:center; font-size:11px; width:15%;  border-bottom:1px solid #d2d2d2;vertical-align: middle">
-							<input name="bt_modifier" id="bt_modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" style="width: 55px;padding-top: 2px" />	
+							<input name="bt_modifier" id="bt_modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" style="width: 55px;padding-top: 2px" />	
 							</td>
 							<td style=" text-align:center; font-size:11px; width:15%;  border-bottom:1px solid #d2d2d2;vertical-align: middle">
-							<input name="bt_supprimer" id="bt_supprimer" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-supprimer.gif" style="width: 55px;padding-top: 2px" />	
+							<input name="bt_supprimer" id="bt_supprimer" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-supprimer.gif" style="width: 55px;padding-top: 2px" />	
 							</td>
 							<?php } $nb_echeances_aff++;?>
 
@@ -313,7 +313,7 @@ check_page_variables ($page_variables);
 									<span  class="doc_bold3" style="color:#FF0000;"> <?php echo htmlentities(number_format(($montant_terme-$montant_acquite)>=0 ? ($montant_terme-$montant_acquite):0, $TARIFS_NB_DECIMALES, ".", ""	), ENT_QUOTES, "UTF-8"); ?>  <?php echo $MONNAIE[1]; ?></span>
                                                                 </td>
 								<td style=" text-align:right; font-size:11px; color:#FF0000;">
-									<input name="bt_modifier" id="bt_modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-modifier.gif" style="padding-top:2px" />
+									<input name="bt_modifier" id="bt_modifier" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-modifier.gif" style="padding-top:2px" />
 								</td>
 								<td style="width:15%">
                                                                 
@@ -375,7 +375,7 @@ check_page_variables ($page_variables);
 		</form>
 		<?php if ($document->getId_type_doc() == $FACTURE_CLIENT_ID_TYPE_DOC || $document->getId_type_doc() == $FACTURE_FOURNISSEUR_ID_TYPE_DOC) { ?>
 		<a href="#" id="cree_avoir" style="display:none; cursor:pointer; text-decoration:none">
-			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_generer_bdachat.gif" border="0" style="padding:5px"/>
+			<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_generer_bdachat.gif" border="0" style="padding:5px"/>
 		</a>
 		<script type="text/javascript">
 		Event.observe('cree_avoir', "click", function(evt){

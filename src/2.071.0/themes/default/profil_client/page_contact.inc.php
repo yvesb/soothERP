@@ -56,7 +56,7 @@ function sendMail($mFrom,$mTo,$sujet,$body) {
 										<td>	
 											<div class="infos_entreprise">
 												<a href="http://www.lundimatin.fr" target="_blank">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/contact_logolmb.gif" />
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/contact_logolmb.gif" />
 												</a>
 												<br />
 												<br />

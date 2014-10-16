@@ -141,19 +141,19 @@ check_page_variables ($page_variables);
                             <table cellpadding="0" cellspacing="0" border="0">
                                 <tr>
                                     <td style="text-align:center">
-                                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-espece.gif" id="bt_paiement_espece" style="cursor:pointer"/>
+                                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-espece.gif" id="bt_paiement_espece" style="cursor:pointer"/>
                                         <div style="height:5px; line-height:5px"></div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td style="text-align:center">
-                                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-cheque.gif" id="bt_paiement_cheque" style="cursor:pointer"/>
+                                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-cheque.gif" id="bt_paiement_cheque" style="cursor:pointer"/>
                                         <div style="height:5px; line-height:5px"></div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td style="text-align:center">
-                                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-carte_bancaire.gif" id="bt_paiement_carte_bancaire" style="cursor:pointer"/>
+                                        <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-carte_bancaire.gif" id="bt_paiement_carte_bancaire" style="cursor:pointer"/>
                                         <div style="height:5px; line-height:5px"></div>
                                     </td>
                                 </tr>

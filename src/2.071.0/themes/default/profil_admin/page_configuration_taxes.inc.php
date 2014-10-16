@@ -62,7 +62,7 @@ foreach ($taxes_liste as $taxe_liste) {
 					<img id="eye_<?php echo $taxe_liste['id_taxe'];?>" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme().'images/'.((intval($taxe_liste['visible']) == 1)? "":"un");?>visible.gif" style="cursor: pointer;" />
 				</td>
 				<td>
-					<input name="valider" id="valider" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/bt-valider.gif" />
+					<input name="valider" id="valider" type="image" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/bt-valider.gif" />
 					<input name="visible_<?php echo $taxe_liste['id_taxe'];?>" id="visible_<?php echo $taxe_liste['id_taxe'];?>" type="hidden" value="<?php echo ((intval($taxe_liste['visible']) == 1)? "1":"0");?>" />
 				</td>
 			</tr>

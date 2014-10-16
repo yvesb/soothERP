@@ -123,7 +123,7 @@ check_page_variables ($page_variables);
 											<?php
 											if ($document->getId_etat_doc () == 32) {
 												?>
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_faf_aregler.gif" id="facture_a_regler" style="cursor:pointer"/>
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_fac_aregler.gif" id="facture_a_regler" style="cursor:pointer"/>
 											<div style="height:3px; line-height:3px;"></div>
 											<?php
 											}

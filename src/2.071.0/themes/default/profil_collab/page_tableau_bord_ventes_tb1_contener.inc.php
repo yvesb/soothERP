@@ -25,7 +25,7 @@ check_page_variables ($page_variables);
 <div >
 <table style="width:100%;  border:1px solid #999999; " cellpadding="0" cellspacing="0">
 	<tr>
-		<td style="text-align:center; padding-bottom:10px; padding-top:10px; background-image: url(<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/stats_bg_1.gif); background-repeat:repeat-y; background-position:left;">
+		<td style="text-align:center; padding-bottom:10px; padding-top:10px; background-image: url(<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/stats_bg_1.gif); background-repeat:repeat-y; background-position:left;">
 		<script type="text/javascript">
 		swfobject.embedSWF("open-flash-chart.swf", "tb1_data1", "100", "150", "9.0.0", "expressInstall.swf", {"data-file":"<?php echo urlencode("tableau_bord_ventes_tb1_data.php?data=by_day&val_1=".$CA_day_1."&val_2=".$CA_day_0); ?>", loading : "Chargement.." },{wmode: "transparent", quality: "high"}, {});
 		
@@ -65,17 +65,17 @@ check_page_variables ($page_variables);
 		<div style="text-align:center; font-weight:bolder">Cette année<br />
 			<span style="color:#999999"><?php echo $CA_year_0." ".$MONNAIE[1];?></span></div>
 		</td>
-		<td style="width:70px; background-image: url(<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/stats_bg_2.gif); background-repeat:repeat-y; background-position:right; padding-bottom:10px; padding-top:10px;">
+		<td style="width:70px; background-image: url(<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/stats_bg_2.gif); background-repeat:repeat-y; background-position:right; padding-bottom:10px; padding-top:10px;">
 		<div style="border:1px solid #999999; background-color:#FFFFFF; font-size:10px; text-align:left; padding:5px; width:70px">
 		<span style="height:5px; width:5px; background-color:#f29400">
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="5px" height="5px"/>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="5px" height="5px"/>
 		</span>&nbsp;&nbsp; Année N-1<br /><br />
 
 		<span style="height:5px; width:5px; background-color: #8a5b9d">
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="5px" height="5px"/>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="5px" height="5px"/>
 		</span>&nbsp;&nbsp; Année N<br />
-        <img id="print_stats" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-pdf.gif" alt="PDF" title="PDF" style="cursor:pointer;"/>
-		<img id="export_stats" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-ods.gif" alt="ODS" title="ODS" style="cursor:pointer;"/>
+        <img id="print_stats" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-pdf.gif" alt="PDF" title="PDF" style="cursor:pointer;"/>
+		<img id="export_stats" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-ods.gif" alt="ODS" title="ODS" style="cursor:pointer;"/>
 		</div>
 		</td>
 	</tr>

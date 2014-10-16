@@ -60,7 +60,7 @@ check_page_variables ($page_variables);
 											</div>
 											<br />
 											<div style="text-align:center">
-												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>images/verrou.gif"/>
+												<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>images/verrou.gif"/>
 											</div>
 										</td>
 										<td class="content">

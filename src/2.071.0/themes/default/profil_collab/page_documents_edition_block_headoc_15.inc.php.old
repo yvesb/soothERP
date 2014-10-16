@@ -4,7 +4,7 @@
 // CONTROLE DU THEME
 // *************************************************************************************************************
 
-// Variables nécessaires à l'affichage
+// Variables nï¿½cessaires ï¿½ l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
@@ -116,7 +116,7 @@ print_r($document);
 												}
 												?>
 												<?php 
-												//ajout pour les stocks inactifs qui auraient été utilisés par le document
+												//ajout pour les stocks inactifs qui auraient ï¿½tï¿½ utilisï¿½s par le document
 												$stocks_supp	= fetch_all_stocks();
 												foreach ($stocks_supp as $stock_supp) {
 													if (!$stock_supp->actif && $stock_supp->id_stock == $document->getId_stock ()) {
@@ -147,7 +147,7 @@ print_r($document);
 												}
 												?>
 												<?php 
-												//ajout pour les stocks inactifs qui auraient été utilisés par le document
+												//ajout pour les stocks inactifs qui auraient ï¿½tï¿½ utilisï¿½s par le document
 												$stocks_supp	= fetch_all_stocks();
 												foreach ($stocks_supp as $stock_supp) {
 													if (!$stock_supp->actif && $stock_supp->id_stock == $document->getId_stock ()) {
@@ -179,7 +179,7 @@ print_r($document);
 									}
 									?>
 									<?php 
-									//ajout du magasin inactif qui aurait été utilisé par le document
+									//ajout du magasin inactif qui aurait ï¿½tï¿½ utilisï¿½ par le document
 									$magasins_supp	= charger_all_magasins();
 									foreach ($magasins_supp as $magasin_supp) {
 										if (!$magasin_supp->actif && $magasin_supp->id_magasin == $document->getId_magasin ()) {
@@ -207,7 +207,7 @@ print_r($document);
 									}
 									?>
 									<?php 
-									//ajout du magasin inactif qui aurait été utilisé par le document
+									//ajout du magasin inactif qui aurait ï¿½tï¿½ utilisï¿½ par le document
 									$magasins_supp	= charger_all_magasins();
 									foreach ($magasins_supp as $magasin_supp) {
 										if (!$magasin_supp->actif && $magasin_supp->id_magasin == $document->getId_magasin ()) {
@@ -247,7 +247,7 @@ print_r($document);
 											<?php 
 											if ($document->getId_etat_doc () == 11) {
 												?>
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_blc_pret.gif" id="livraison_pret" style="cursor:pointer"/>
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_blc_pret.gif" id="livraison_pret" style="cursor:pointer"/>
 											<div style="height:3px;line-height:3px;" ></div>
 											<?php 
 											}
@@ -260,7 +260,7 @@ print_r($document);
 												<table cellpadding="0" cellspacing="0" border="0" style="">
 													<tr style=" line-height:24px; height:24px;">
 														<td style="width:150px;">
-															Facturation immédiate
+															Facturation immï¿½diate
 														</td>
 														<td style="">
 															<input type="checkbox" id="fact_immediate" name="fact_immediate" value="1" <?php if (($document->getRef_contact () && $document->getClient_facturation () == "immediate" ) || (!$document->getRef_contact () && $FACTURE_IMMEDIATE )) {?>checked="checked"<?php } ?> />
@@ -271,13 +271,13 @@ print_r($document);
 												<?php 
 												if (!$document->must_pay_before_livraison ()) {
 													?>
-													<span id="livraison_livree"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_blc_livrer.gif" id="livraison_livree_img" style="cursor:pointer"/></span>
+													<span id="livraison_livree"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_blc_livrer.gif" id="livraison_livree_img" style="cursor:pointer"/></span>
 													<div style="height:3px; line-height:3px;"></div>
 													<?php 
 												} else {
 													?>
 													<a href="#" id="livraison_livree"  style="text-decoration:none; color:#FF0000; font-weight:bolder">
-													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_blc_livrer_r.gif" style="cursor:pointer" id="livraison_livree_img"/></a>
+													<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_blc_livrer_r.gif" style="cursor:pointer" id="livraison_livree_img"/></a>
 													<div style="height:3px; line-height:3px;"></div>
 													 <span style="color:#FF0000; font-weight:bolder">Le r&eacute;glement doit &ecirc;tre effectu&eacute; avant la livraison.</span>
 													<?php
@@ -288,7 +288,7 @@ print_r($document);
 											<?php 
 											if ($document->getId_etat_doc () == 14) {
 												?>
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_blc_livraison_done.gif" id="livraison_en_cours" style="cursor:pointer"/>
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_blc_livraison_done.gif" id="livraison_en_cours" style="cursor:pointer"/>
 											<div style="height:3px; line-height:3px;"></div>
 											<?php 
 											}
@@ -296,7 +296,7 @@ print_r($document);
 											<?php 
 											if ($document->getA_facturer ()) {
 												?>
-											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_blc_facturer.gif" id="a_facturer" style="cursor:pointer"/>
+											<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_blc_facturer.gif" id="a_facturer" style="cursor:pointer"/>
 											<div style="height:3px; line-height:3px;"></div>
 											<?php 
 											}
@@ -320,7 +320,7 @@ print_r($document);
 			</tr>
 		</table>
 		<script type="text/javascript">
-		// observateur de changement de texte dans l'entete du doc pour mise à jour des infos
+		// observateur de changement de texte dans l'entete du doc pour mise ï¿½ jour des infos
 		Event.observe("ref_doc_externe", "blur", function(evt){
 			if ($("ref_doc_externe").value != $("ref_doc_externe_old").value) {
 				$("ref_doc_externe_old").value = $("ref_doc_externe").value;
@@ -451,9 +451,9 @@ print_r($document);
 	</tr>
 	
 	<tr>
-		<td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1px"/></td>
-		<td style="width:4%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1px"/></td>
-		<td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1px"/></td>
+		<td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1px"/></td>
+		<td style="width:4%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1px"/></td>
+		<td style="width:48%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1px"/></td>
 	</tr>
 	<tr>
 		<td>
@@ -466,14 +466,14 @@ print_r($document);
 					<input type="hidden" name="ref_contact"  id="ref_contact" value="<?php echo $document->getRef_contact();?>"/>
 				</td>
 				<td colspan="2" style="text-align:right">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/doc_view_contact.gif" style="cursor:pointer;<?php if (!$document->getRef_contact()) { echo 'display:none;';}?>" id="doc_view_contact_img" alt="Voir la fiche du contact" title="Voir la fiche du contact" />&nbsp;
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/doc_set_contact.gif" style="cursor:pointer" id="doc_ref_contact_img" alt="Choisir un contact" title="Choisir un contact"/>&nbsp;&nbsp;
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/supprime.gif" style="cursor:pointer" id="doc_sup_contact_img" alt="Supprimer le  contact" title="Supprimer le  contact"/>
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/doc_view_contact.gif" style="cursor:pointer;<?php if (!$document->getRef_contact()) { echo 'display:none;';}?>" id="doc_view_contact_img" alt="Voir la fiche du contact" title="Voir la fiche du contact" />&nbsp;
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/doc_set_contact.gif" style="cursor:pointer" id="doc_ref_contact_img" alt="Choisir un contact" title="Choisir un contact"/>&nbsp;&nbsp;
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" style="cursor:pointer" id="doc_sup_contact_img" alt="Supprimer le  contact" title="Supprimer le  contact"/>
 				<script type="text/javascript">
-				//Event.observe('doc_ref_contact_img', 'mouseover',  function(){$("doc_ref_contact_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_hover.gif";}, false);
-				//Event.observe('doc_ref_contact_img', 'mousedown',  function(){$("doc_ref_contact_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find_down.gif";}, false);
-				//Event.observe('doc_ref_contact_img', 'mouseup',  function(){$("doc_ref_contact_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";}, false);
-				//Event.observe('doc_ref_contact_img', 'mouseout',  function(){$("doc_ref_contact_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_contact_find.gif";}, false);
+				//Event.observe('doc_ref_contact_img', 'mouseover',  function(){$("doc_ref_contact_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_hover.gif";}, false);
+				//Event.observe('doc_ref_contact_img', 'mousedown',  function(){$("doc_ref_contact_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find_down.gif";}, false);
+				//Event.observe('doc_ref_contact_img', 'mouseup',  function(){$("doc_ref_contact_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";}, false);
+				//Event.observe('doc_ref_contact_img', 'mouseout',  function(){$("doc_ref_contact_img").src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_contact_find.gif";}, false);
 				
 				Event.observe('doc_view_contact_img', 'click',  function(){ if ($("ref_contact").value!="" && $("ref_contact").value!="NULL") { page.verify('affaires_affiche_fiche','annuaire_view_fiche.php?ref_contact=<?php echo $document->getRef_contact();?>','true','sub_content');} }, false);
 				Event.observe('doc_ref_contact_img', 'click',  function(){ show_mini_moteur_contacts ('docu_maj_contact', '\'<?php echo $document->getRef_doc();?>\''); preselect ('<?php echo $CLIENT_ID_PROFIL;?>', 'id_profil_m');}, false);
@@ -492,8 +492,8 @@ print_r($document);
 					D&eacute;nomination: 
 				</td>
 				<td style="width:250px;">
-					<textarea type="text" name="nom_contact"  id="nom_contact" class="classinput_xsize" rows="<?php if (stristr($_SERVER["HTTP_USER_AGENT"], "firefox")) { echo "1"; } else { echo "2"; } ?>"><?php echo str_replace("€", "&euro;", $document->getNom_contact());?></textarea>
-					<div id="nom_contact_old" style="display:none"><?php echo str_replace("€", "&euro;", $document->getNom_contact());?></div>
+					<textarea type="text" name="nom_contact"  id="nom_contact" class="classinput_xsize" rows="<?php if (stristr($_SERVER["HTTP_USER_AGENT"], "firefox")) { echo "1"; } else { echo "2"; } ?>"><?php echo str_replace("ï¿½", "&euro;", $document->getNom_contact());?></textarea>
+					<div id="nom_contact_old" style="display:none"><?php echo str_replace("ï¿½", "&euro;", $document->getNom_contact());?></div>
 				</td>
 				<td>
 				<div style="width:17px; height:19px">
@@ -563,7 +563,7 @@ print_r($document);
 							</td>
 							<td style="width:18px; vertical-align:bottom">
 							<div id="adresse_contact_choisie"  style="width:20px; cursor: default; text-align:right">
-							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt_doc_choix_adresses.gif" style="float:right" id="bt_adresse_contact_choisie"/>
+							<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt_doc_choix_adresses.gif" style="float:right" id="bt_adresse_contact_choisie"/>
 							</div>
 							</td>
 							</tr>
@@ -624,7 +624,7 @@ print_r($document);
 			$("view_doc_adresse_resume").hide();
 		}, false);
 		
-		// observateurde changement de texte dans les infos contact pour mise à jour des infos
+		// observateurde changement de texte dans les infos contact pour mise ï¿½ jour des infos
 		
 		Event.observe("nom_contact", "blur", function(evt){
 			if ($("nom_contact").value != $("nom_contact_old").innerHTML) {
@@ -664,8 +664,8 @@ print_r($document);
 		
 		
 		<?php 
-		//si on change de contact alors les infos sont retournées par $_infos
-		// on met juste à jour l'app_tarifs par rapport au contact mis à jour
+		//si on change de contact alors les infos sont retournï¿½es par $_infos
+		// on met juste ï¿½ jour l'app_tarifs par rapport au contact mis ï¿½ jour
 		if ($document->getApp_tarifs()) {
 			?>
 			$("app_tarifs").value				= "<?php echo ($document->getApp_tarifs());?>";

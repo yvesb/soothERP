@@ -41,7 +41,7 @@ foreach ($editions_modes as $edition_mode) {
 	<?php 	if (isset($_REQUEST["annee_date_fin"])) {echo "&annee_date_fin=".$_REQUEST["annee_date_fin"];}else{echo "&annee_date_fin=".date('Y');}?>
 	<?php 	if (isset($_REQUEST["mois_date_fin"])) {echo "&mois_date_fin=".$_REQUEST["mois_date_fin"];}else{echo "&mois_date_fin=12";}?>
 	" target="mainediting" >
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-imprimer.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" />	</a>
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-imprimer.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" />	</a>
 	</td>
 	<?php
 	break;
@@ -56,7 +56,7 @@ foreach ($editions_modes as $edition_mode) {
 	<?php 	if (isset($_REQUEST["annee_date_fin"])) {echo "&annee_date_fin=".$_REQUEST["annee_date_fin"];}else{echo "&annee_date_fin=".date('Y');}?>
 	<?php 	if (isset($_REQUEST["mois_date_fin"])) {echo "&mois_date_fin=".$_REQUEST["mois_date_fin"];}else{echo "&mois_date_fin=12";}?>
 	",580,450,"menubar=no,statusbar=no,scrollbars=yes,resizable=yes")'  >
-	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-email.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" />	</a>
+	<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-email.gif" alt="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" title="<?php echo  htmlentities($edition_mode->lib_edition_mode, ENT_QUOTES, "UTF-8");?>" />	</a>
 	</td>
 	<?php
 	break;

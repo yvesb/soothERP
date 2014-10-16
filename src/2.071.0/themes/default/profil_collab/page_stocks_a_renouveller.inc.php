@@ -49,9 +49,9 @@ check_page_variables ($page_variables);
 		<tr class="smallheight">
 			<td style="width:2%">&nbsp;</td>
 			<td style="width:18%">&nbsp;</td>
-			<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:17%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-			<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:17%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+			<td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 			<td style="width:3%; text-align: right"></td>
 		</tr>
 		<tr>
@@ -103,12 +103,12 @@ check_page_variables ($page_variables);
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
 		<td style="text-align:right"><span style="text-align:right">
-			<input name="form_recherche_s" id="form_recherche_s" type="image" onclick="$('page_to_show_s').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-rechercher.gif"  style="float:left" />
+			<input name="form_recherche_s" id="form_recherche_s" type="image" onclick="$('page_to_show_s').value=1;" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-rechercher.gif"  style="float:left" />
 		</span></td>
 		<td style="padding-left:35px">
 		<div style="height:5px"></div>
 		<span id="print_stock_a_renouveller_span" style="display:block;  text-decoration:underline;cursor:pointer">
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>images/bt-imprimer.gif" alt="Imprimer" title="Imprimer" style="cursor:pointer" id="print_stock_a_renouveller"/>
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-imprimer.gif" alt="Imprimer" title="Imprimer" style="cursor:pointer" id="print_stock_a_renouveller"/>
 		</span></td>
 		<td style="text-align:right"></td>
 		<td>&nbsp;</td>
