@@ -393,7 +393,7 @@ Event.observe(window, "load", initEventHandlers, false);
 
 //nouvelle maj dispo
 if (isset($_SESSION['NEW_MAJ_DISPO']) && $_SESSION['NEW_MAJ_DISPO'] != "0") {					
-	?><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>/images/maj_dispo.gif" alt="Nouvelle version de LundiMatin Business disponible !" title="Nouvelle version de LundiMatin Business disponible !" />
+	?><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>/images/maj_dispo.gif" alt="Nouvelle version de SoothERP disponible !" title="Nouvelle version de SoothERP disponible !" />
 	<?php
 }
 
@@ -401,7 +401,7 @@ if (isset($_SESSION['NEW_MAJ_DISPO']) && $_SESSION['NEW_MAJ_DISPO'] != "0") {
 $i = 0;
 foreach ($menu1 as $smenu) {
 	?>
-	<div style="position:absolute; top:0px; left:0px; display:none;" id="<?php echo $smenu[0]?>">
+	<div style="position:absolute; top:0px; left:0px;" id="<?php echo $smenu[0]?>">
 	<table border="0" cellpadding="0" cellspacing="0" id="table_<?php echo $smenu[0]?>"><tr><td>
 	<a id="link_<?php echo $smenu[0]?>"  class="item" href="#"><?php echo $smenu[4]?></a>
 	</td></tr></table>	
@@ -415,7 +415,7 @@ $i = 0;
 foreach ($menu1 as $smenu) {
 	if (isset($smenu[5])) {
 		?>
-		<div style="position:absolute; top:22px; left:0px; display:none; z-index:300; filter:Alpha(opacity=90);" id="smenu<?php echo $i?>">
+		<div style="position:absolute; top:22px; left:0px; z-index:300; filter:Alpha(opacity=90);" id="smenu<?php echo $i?>">
 		<table border="0" cellpadding="0" cellspacing="0"  class="subitem" id="table_smenu<?php echo $i?>">
 		<tr>
 		<td>
@@ -485,10 +485,8 @@ $i++;
 	<td style="width:50%">&nbsp;</td>
 </tr>
 </table>
-
-<div style="visibility:block; float:right; position:absolute; bottom:0px; right:0px; z-index:500"><br /><a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $DIR;?>fichiers/images/powered_by_lundimatin.png" width="120"/></a
 </div>
-<div  style="visibility:block; float:right; position:absolute; top:0px; right:25px; z-index:500">
+<div  style="display:block; float:right; position:absolute; top:0px; right:25px; z-index:500">
 	<table border="0" cellpadding="0" cellspacing="0" id="option_info"><tr><td>
 	<a id="link_option_info"  class="item" href="#"> Options </a>
 	</td></tr></table>
@@ -614,10 +612,8 @@ $i++;
 
 </script>
 </div>
-<?php 
-if ($AFFICHE_DEBUG) {
-	?>
-	<div  style="visibility:block; float:right; position:absolute; top:0px; right:115px; z-index:500; width:10px">
+<?php if ($AFFICHE_DEBUG) {	?>
+	<div  style="display:block; float:right; position:absolute; top:0px; right:115px; z-index:500; width:10px">
 		<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
 			<tr><td>
 			<a id="toggle_debug_iframe"  href="#">D</a>
@@ -627,9 +623,7 @@ if ($AFFICHE_DEBUG) {
 		Event.observe('toggle_debug_iframe', 'click',  function(evt){Event.stop(evt); $('formFrame').toggle();}, false);
 		</script>
 	</div>
-	<?php 
-}
-?>
+<?php } ?>
 
 <div id="refresh_content">
 <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/actualiser.gif" align="top" alt="Actualiser" title="Actualiser" />

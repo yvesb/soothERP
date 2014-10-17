@@ -3,7 +3,6 @@
 // ACCUEIL DE L'UTILISATEUR ADMINISTRATEUR
 // *************************************************************************************************************
 
-
 require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ("_session.inc.php");

@@ -296,7 +296,7 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $COR
 		<div id="menu" style="z-index:300; display:none;">
 			<?php //nouvelle maj dispo
 			if (isset($_SESSION['NEW_MAJ_DISPO']) && $_SESSION['NEW_MAJ_DISPO'] != "0") {	?>
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>/images/maj_dispo.gif" alt="Nouvelle version de LundiMatin Business disponible !" title="Nouvelle version de LundiMatin Business disponible !" />
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>/images/maj_dispo.gif" alt="Nouvelle version de SoothERP disponible !" title="Nouvelle version de SoothERP disponible !" />
 			<?php }?>
 		</div>
 		<div id="right_content" style="display:none">
@@ -316,7 +316,7 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $COR
 		</table>
 
 		<?php if ($AFFICHE_DEBUG) { ?>
-		<div  style="visibility:block; float:right; position:absolute; top:0px; left:30px; z-index:500; width:10px">
+		<div  style="display:block; float:right; position:absolute; top:0px; left:30px; z-index:500; width:10px">
 			<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
 				<tr>
 					<td>

@@ -54,7 +54,7 @@ page.verify('compta_compte_bancaire_rapprochement_gestion','compta_compte_bancai
 		<br />
 
 		<div style="text-align:center">
-		<span class="bolder">LundiMatin Business</span> va rapprocher les opérations bancaires du compte <?php echo $compte_bancaire->getLib_compte ();?> <?php echo $compte_bancaire->getNumero_compte ();?>  avec le journal de banque <?php echo $journal->getContrepartie();?><br />
+		<span class="bolder">SoothERP</span> va rapprocher les opérations bancaires du compte <?php echo $compte_bancaire->getLib_compte ();?> <?php echo $compte_bancaire->getNumero_compte ();?>  avec le journal de banque <?php echo $journal->getContrepartie();?><br />
 		<br />
 		<br /><br />
 

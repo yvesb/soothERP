@@ -244,7 +244,7 @@ foreach ($_ALERTES as $alerte => $value) {
 		</td>
 		<td>
 		<?php if (isset($fiche->master) && $fiche->master) {?>
-		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>/images/ico_star.gif" alt="Utilisateur principal" title="Utilisateur principal"  />
+		<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>/images/ico_star.gif" alt="Utilisateur principal" title="Utilisateur principal"  />
 		<?php } ?>
 		</td>
 		<td style="text-align:center; vertical-align:middle"><a  href="#" id="edit_<?php echo htmlentities($fiche->ref_user, ENT_QUOTES, "UTF-8")?>" style="display:block; width:100%; text-decoration:underline">Editer </a>

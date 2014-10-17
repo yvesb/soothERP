@@ -87,12 +87,12 @@ text-align:right;
 height:109px;
 line-height:109px;
 text-align:center;
-background: url(../images/_bg_icopanier.gif)  repeat-x 0 0 ;
+background: url(../../images/_bg_icopanier.gif)  repeat-x 0 0 ;
 background-color:#FFFFFF;
 }
 
 .texte_pied_page {
-background: url(../images/arriere_plan_pied.jpg)  repeat-x 0 0 ;
+background: url(../../images/arriere_plan_pied.jpg)  repeat-x 0 0 ;
 background-color:#a8a8a8;
 text-align:center;
 font:12px Arial, Helvetica, sans-serif;
@@ -137,7 +137,7 @@ padding-left:25px; padding-right: 25px;
 	height: 28px ;
 	line-height:28px;
 	width:100%;
-	background: url(../images/arriere_plan_menu.jpg)  repeat-x 0 0 ;
+	background: url(../../images/arriere_plan_menu.jpg)  repeat-x 0 0 ;
 	border-bottom:1px solid #FFFFFF;
 }
 
@@ -151,7 +151,7 @@ ul#menu
 	width:730px;
 	background-color:#e6e3e4;
 	list-style-type: none ;
-	background: url(../images/arriere_plan_menu.jpg)  repeat-x 0 0 ;
+	background: url(../../images/arriere_plan_menu.jpg)  repeat-x 0 0 ;
 	border-bottom:1px solid #FFFFFF;
 }
 
@@ -173,7 +173,7 @@ ul#menu li a
 	color: #000 ;
 	display: block ;
 	text-decoration: none ;
-	background: url(../images/arriere_plan_btmenu.gif)  ;
+	background: url(../../images/arriere_plan_btmenu.gif)  ;
 	background-position: 0px 4px;
 	background-repeat:no-repeat;
 }
@@ -234,7 +234,7 @@ color:#707070;
 
 #conteneur_principal {
 	background-color:#e9e9e9;
-	background: url(../images/arriere_plan_principal.gif) repeat  ;
+	background: url(../../images/arriere_plan_principal.gif) repeat  ;
 }
 
 #liste_categories_articles {
@@ -263,28 +263,28 @@ background-color:#FFFFFF;
 	background-color:#FFFFFF;
 	width:20px;
 	height:20px;
-	background: url(../images/angle_img_list1.gif) no-repeat  ;
+	background: url(../../images/angle_img_list1.gif) no-repeat  ;
 }
 
 .lightbg_liste2 {
 	background-color:#FFFFFF;
 	width:20px;
 	height:20px;
-	background: url(../images/angle_img_list2.gif)  no-repeat  ;
+	background: url(../../images/angle_img_list2.gif)  no-repeat  ;
 	background-position:right top;
 }
 .lightbg_liste3 {
 	background-color:#FFFFFF;
 	width:20px;
 	height:20px;
-	background: url(../images/angle_img_list3.gif)  no-repeat  ;
+	background: url(../../images/angle_img_list3.gif)  no-repeat  ;
 	background-position: right bottom;
 }
 .lightbg_liste4 {
 	background-color:#FFFFFF;
 	width:20px;
 	height:20px;
-	background: url(../images/angle_img_list4.gif)  no-repeat  ;
+	background: url(../../images/angle_img_list4.gif)  no-repeat  ;
 	background-position:left bottom;
 }
 
@@ -293,12 +293,12 @@ background:none;
 }
 
 .main_categ{
-background: url(../images/liste_categ_head_1.gif)  no-repeat  ;
+background: url(../../images/liste_categ_head_1.gif)  no-repeat  ;
 background-color:#FFFFFF;
 }
 
 .main_categ2{
-background: url(../images/liste_categ_head_2.gif)  no-repeat  ;
+background: url(../../images/liste_categ_head_2.gif)  no-repeat  ;
 background-position:right top;
 float:right;
 width:5px;
@@ -325,13 +325,13 @@ color:#FFFFFF;
 }
 
 .sub_categ3{
-background: url(../images/liste_categ_foot_4.gif)  no-repeat  ;
+background: url(../../images/liste_categ_foot_4.gif)  no-repeat  ;
 background-position:right bottom;
 background-color:#636363;
 }
 
 .sub_categ3 div{
-background: url(../images/liste_categ_foot_3.gif)  no-repeat  ;
+background: url(../../images/liste_categ_foot_3.gif)  no-repeat  ;
 background-position:left bottom;
 float:left;
 height:20px;
@@ -352,24 +352,24 @@ color:#000000;
 .art_img_cadre1 {
 	width:6px;
 	height:6px;
-	background: url(../images/angle_img_art1.gif) no-repeat  ;
+	background: url(../../images/angle_img_art1.gif) no-repeat  ;
 }
 .art_img_cadre2 {
 	width:6px;
 	height:6px;
-	background: url(../images/angle_img_art2.gif) no-repeat  ;
+	background: url(../../images/angle_img_art2.gif) no-repeat  ;
 	background-position:right;
 }
 .art_img_cadre3 {
 	width:6px;
 	height:6px;
-	background: url(../images/angle_img_art3.gif) no-repeat  ;
+	background: url(../../images/angle_img_art3.gif) no-repeat  ;
 	background-position: left bottom;
 }
 .art_img_cadre4 {
 	width:6px;
 	height:6px;
-	background: url(../images/angle_img_art4.gif) no-repeat  ;
+	background: url(../../images/angle_img_art4.gif) no-repeat  ;
 	background-position: right bottom;
 }
 .art_img_cadrea {
@@ -434,7 +434,6 @@ body td,
 body th,
 body p {
   font-size: x-small;
-  voice-family: "\"}\"";
   voice-family: inherit;
   font-size: small;
 }
@@ -552,27 +551,27 @@ color:#000000;
 	background-color:#ffffff;
 	width:5px;
 	height:5px; line-height:5px;
-	background: url(../images/liste_categ_head_1.gif) no-repeat  ;
+	background: url(../../images/liste_categ_head_1.gif) no-repeat  ;
 }
 .doc_titre_img_cadre2 {
 	background-color:#ffffff;
 	width:5px;
 	height:5px; line-height:5px;
-	background: url(../images/liste_categ_head_2.gif) no-repeat  ;
+	background: url(../../images/liste_categ_head_2.gif) no-repeat  ;
 	background-position:right;
 }
 .doc_titre_img_cadre3 {
 	background-color:#ffffff;
 	width:5px;
 	height:5px; line-height:5px;
-	background: url(../images/liste_categ_head_3.gif) no-repeat  ;
+	background: url(../../images/liste_categ_head_3.gif) no-repeat  ;
 	background-position: left bottom;
 }
 .doc_titre_img_cadre4 {
 background-color:#FFFFFF;
 	width:5px;
 	height:5px; line-height:5px;
-	background: url(../images/liste_categ_head_4.gif) no-repeat  ;
+	background: url(../../images/liste_categ_head_4.gif) no-repeat  ;
 	background-position: right bottom;
 }
 
@@ -581,27 +580,27 @@ background-color:#FFFFFF;
 	background-color:#636363;
 	width:5px;
 	height:5px;
-	background: url(../images/liste_categ_foot_1.gif) no-repeat  ;
+	background: url(../../images/liste_categ_foot_1.gif) no-repeat  ;
 }
 .doc_img_cadre2 {
 	background-color:#636363;
 	width:5px;
 	height:5px;
-	background: url(../images/liste_categ_foot_2.gif) no-repeat  ;
+	background: url(../../images/liste_categ_foot_2.gif) no-repeat  ;
 	background-position:right;
 }
 .doc_img_cadre3 {
 	background-color:#636363;
 	width:5px;
 	height:5px;
-	background: url(../images/liste_categ_foot_3.gif) no-repeat  ;
+	background: url(../../images/liste_categ_foot_3.gif) no-repeat  ;
 	background-position: left bottom;
 }
 .doc_img_cadre4 {
 	background-color:#636363;
 	width:5px;
 	height:5px;
-	background: url(../images/liste_categ_foot_4.gif) no-repeat  ;
+	background: url(../../images/liste_categ_foot_4.gif) no-repeat  ;
 	background-position: right bottom;
 }
 
@@ -627,6 +626,6 @@ background-color:#FFFFFF;
 font:10px Arial, Helvetica, sans-serif;
 color:#000000;
 text-align:center;
-background: url(../images/panier_line_progress.gif) repeat-x  ;
+background: url(../../images/panier_line_progress.gif) repeat-x  ;
 }
 

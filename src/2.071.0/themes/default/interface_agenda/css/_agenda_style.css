@@ -40,8 +40,8 @@
 .grille_conteneur_EventsEtendus table {
 	width: 100%;
 	border: 1px;
-	cellpadding: 3;
-	cellspacing: 0;
+	padding: 3px;
+	border-spacing: 0;
 }
 
 .grille_conteneur_EventsEtendus tr {
@@ -159,7 +159,6 @@
 	border-left: solid;
 	border-left-width: 2px;
 	border-left-color: #9695a5;
-	border-color: 
 }
 
 .grille_colonne_jour_deb_heure_TODAY {

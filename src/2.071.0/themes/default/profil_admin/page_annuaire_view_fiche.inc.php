@@ -108,7 +108,7 @@ Event.observe("contactview_menu_a", "click",  function(evt){Event.stop(evt); vie
 				<td class="size_strict" style="width:85px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
 				<td style="width:215px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 				<td class="size_strict"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" height="1" id="imgsizeform"/></td>
-				<td style="85px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+				<td style="width:85px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 		</tr>	
 		<tr>
 			<td><span class="labelled" style="width:85px">Nom:</span></td>

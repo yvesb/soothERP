@@ -106,7 +106,7 @@ if (count($comptes_bancaires) && count($comptes_bancaires_societe)) {
 	}
 	?>
 	Veuillez enregistrer les coordonnées bancaires ou contacter 
-	l'administrateur de LundiMatin Business.<br />
+	l'administrateur de SoothERP.<br />
 	<?php
 }
 ?>

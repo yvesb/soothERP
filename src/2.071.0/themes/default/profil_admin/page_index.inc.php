@@ -173,7 +173,7 @@ function ask_login(requete) {
 		$("alert_fin_session").style.display = "block";
 var AppelAjax = new Ajax.Updater(
 								"alert_fin_session_content",
-								"<?php echo $DIR;?>session_user_login.php", 
+								"<?php echo $DIR; ?>session_user_login.php", 
 								{
 								evalScripts:true, 
 								onLoading:S_loading, onException: function (){S_failure();}, 
@@ -193,7 +193,7 @@ function restart_session() {
 function session_change_magasin (id_magasin) {	
 
 	var AppelAjax = new Ajax.Request(
-								"<?php echo $CORE_DIR;?>site/__session_change_magasin.php?id_magasin="+id_magasin,
+								"<?php echo $CORE_DIR; ?>site/__session_change_magasin.php?id_magasin="+id_magasin,
 								{
 								evalScripts:true, 
 								onSuccess: function (requester){
@@ -201,17 +201,17 @@ function session_change_magasin (id_magasin) {
 								}
 								);
 	
-	<?php 
-	foreach ($_SESSION['magasins'] as $magasin) {
-		?>
-		if (id_magasin == <?php echo $magasin->getId_magasin ();?>) {
-			$("img_option_info_magasin_<?php echo $magasin->getId_magasin ();?>").src = "<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/actuel.gif";
-		} else {
-			$("img_option_info_magasin_<?php echo $magasin->getId_magasin ();?>").src = "<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif";
-		}
-		<?php 
-	}
-	?>
+    <?php
+    foreach ($_SESSION['magasins'] as $magasin) {
+        ?>
+    		if (id_magasin == <?php echo $magasin->getId_magasin(); ?>) {
+    			$("img_option_info_magasin_<?php echo $magasin->getId_magasin(); ?>").src = "<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/actuel.gif";
+    		} else {
+    			$("img_option_info_magasin_<?php echo $magasin->getId_magasin(); ?>").src = "<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/blank.gif";
+    		}
+        <?php
+    }
+    ?>
 }
 //------------------------------------
 // initialisation
@@ -362,7 +362,7 @@ Event.observe(window, "load", initEventHandlers, false);
 //nouvelle maj dispo
 // if (isset($_SESSION['NEW_MAJ_DISPO']) && $_SESSION['NEW_MAJ_DISPO'] != "0") { ?>
 <!--
-<img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>/images/maj_dispo.gif" alt="Nouvelle version de LundiMatin Business disponible !" title="Nouvelle version de LundiMatin Business disponible !" id="id_new_maj_dispo" style="cursor:pointer" />
+<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>/images/maj_dispo.gif" alt="Nouvelle version de SoothERP disponible !" title="Nouvelle version de SoothERP disponible !" id="id_new_maj_dispo" style="cursor:pointer" />
 	<script type="text/javascript">
 		Event.observe("id_new_maj_dispo", "click", function() {	page.verify('import_maj_serveur','import_maj_serveur.php','true','sub_content');}, false);
 
@@ -461,12 +461,14 @@ $i++;
 </tr>
 </table>
 
-<div style="visibility:block; float:right; position:absolute; bottom:0px; right:0px; z-index:500"><br /><a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $DIR;?>fichiers/images/powered_by_lundimatin.png" width="120"/></a>
+<div style="display:block; float:right; position:absolute; bottom:0px; right:0px; z-index:500"><br /><a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $DIR;?>fichiers/images/powered_by_lundimatin.png" width="120"/></a>
 </div>
-<div  style="visibility:block; float:right; position:absolute; top:0px; right:25px; z-index:500">
-	<table border="0" cellpadding="0" cellspacing="0" id="option_info"><tr><td>
-	<a id="link_option_info"  class="item" href="#"> Options </a>
-	</td></tr></table>
+<div  style="display:block; float:right; position:absolute; top:0px; right:25px; z-index:500">
+	<table border="0" cellpadding="0" cellspacing="0" id="option_info">
+            <tr><td>
+                <a id="link_option_info"  class="item" href="#"> Options </a>
+            </td></tr>
+        </table>
 	<div style="position:absolute; width:220px; top:22px; right:-30px; display:none; z-index:300; filter:Alpha(opacity=90);" id="option_info_smenu">
 	<table border="0" cellpadding="0" cellspacing="0"  class="subitem" id="option_info_stable" >
 		<tr>
@@ -492,7 +494,7 @@ $i++;
 					<script type="text/javascript">
 					Event.observe('option_info_interface_<?php echo $id_interface;?>', 'click',  function(evt){
 						Event.stop(evt);
-						window.open ("<?php echo $_ENV['CHEMIN_ABSOLU'].$_SESSION['interfaces'][$id_interface]->getDossier()?>", "<?php echo $destination;?>");
+						window.open ("<?php echo $_ENV['CHEMIN_ABSOLU'].$CORE_REP.$_SESSION['interfaces'][$id_interface]->getDossier()?>", "<?php echo $destination;?>");
 						}, false);
 					</script>
 					<img src="<?php 
@@ -581,7 +583,7 @@ $i++;
 <?php 
 if ($AFFICHE_DEBUG) {
 	?>
-	<div  style="visibility:block; float:right; position:absolute; top:0px; right:115px; z-index:500; width:10px">
+	<div  style="display:block; float:right; position:absolute; top:0px; right:115px; z-index:500; width:10px">
 		<table border="0" cellpadding="0" cellspacing="0" style="width:100%">
 			<tr><td>
 			<a id="toggle_debug_iframe"  href="#">D</a>

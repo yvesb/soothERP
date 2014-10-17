@@ -54,7 +54,7 @@ update_menu_arbo();
 						<td  style="width:190px">
 						<input name="url_serveur_import" id="url_serveur_import" type="text" value=""  class="classinput_xsize" />
 						</td>
-						<td style="width:width:190px"> 
+						<td style="width:190px"> 
 						<span id="verifier_serveur" style="cursor:pointer">Verifier les types d'imports disponibles sur ce serveur</span>
 						<SCRIPT type="text/javascript">
 				Event.observe("verifier_serveur", "click",  function(evt){

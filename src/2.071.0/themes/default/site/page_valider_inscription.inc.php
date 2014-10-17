@@ -184,7 +184,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td colspan="2" style="padding-right=25px;"></td>
+					<td colspan="2" style="padding-right:25px;"></td>
 				</tr>
 				</table>
 				</td></tr></table>

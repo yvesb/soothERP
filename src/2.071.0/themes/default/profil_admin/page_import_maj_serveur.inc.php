@@ -59,14 +59,14 @@ update_menu_arbo();
 				<tr>
 					<td style="text-align:center">
 					<div style="text-align:center">
-						<input type="submit" id="manu" name="manu" class="bt" style="display: ;" value="MAJ manuelle" /><br />
+						<input type="submit" id="manu" name="manu" class="bt" value="MAJ manuelle" /><br />
 
 					</div>
 					</td>
 					<td>&nbsp;</td>
 					<td style="text-align:center">
 					<div style="text-align:center">
-						<input type="submit" id="auto" name="auto"  <?php if ($erreur) {?>disabled="disabled"<?php } ?> class="bt" style="display: ;" value="MAJ automatique" /><br />
+						<input type="submit" id="auto" name="auto"  <?php if ($erreur) {?>disabled="disabled"<?php } ?> class="bt" value="MAJ automatique" /><br />
 
 					</div>
 					</td>

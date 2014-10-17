@@ -1,7 +1,7 @@
 var tab_alerte	=	new Array;
 
 // alertes navigateur autre que firefox
-tab_alerte["alert_nav"]	=	new Array ('<div style="text-align:right"><img src="themes/collab_fr/images/supprime.gif" id="bouton0" style="cursor:pointer" title="fermer la fenêtre" /></div>', '<a href="http://www.mozilla-europe.org/fr/firefox/" target="_blank"><img src="../../themes/images/telecharger-firefox.jpg"/></a>', '');
+tab_alerte["alert_nav"]	=	new Array ('<div style="text-align:right"><img src="themes/default/images/supprime.gif" id="bouton0" style="cursor:pointer" title="fermer la fenêtre" /></div>', '<a href="http://www.mozilla-europe.org/fr/firefox/" target="_blank"><img src="../../themes/default/images/telecharger-firefox.jpg"/></a>', '');
 
 tab_alerte["contact_profil2_supprime"]	=	new Array ('Suppression des informations Administrateur', 'Confirmez la suppression de ce profil', '<input type="submit" name="bouton1" id="bouton1" value="Supprimer" /><input type="submit" id="bouton0" name="bouton0" value="Annuler" />');
 

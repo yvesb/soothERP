@@ -20,7 +20,7 @@ border:0px;
 </head>
 
 <body>
-<div style="visibility:block; float:right; position:absolute; top:0px; right:0px; z-index:500"><br><a rel="noreferrer" target="_blank" href="http://www.lundimatin.fr"><img width="120" src="../fichiers/images/powered_by_lundimatin.png"></a>
+<div style="display:block; float:right; position:absolute; top:0px; right:0px; z-index:500"><br><a rel="noreferrer" target="_blank" href="http://www.lundimatin.fr"><img width="120" src="../fichiers/images/powered_by_lundimatin.png"></a>
 </div>
 <p><strong>Envoi du document par email</strong></p>
 <p style="text-align:center">L'envoi du document a bien &eacute;t&eacute; effectu&eacute;. <br />

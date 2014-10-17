@@ -2,7 +2,6 @@
 .list_art_categs {
 text-decoration:none;
 color:#000000;
-background-color:;
 }
 .list_art_categs_hover {
 text-decoration:none;
@@ -84,7 +83,7 @@ filter:alpha(opacity=0);
 
 .assist_titre {
 text-align: center;
-font:1em;
+font-size:1em;
 color:#000000;
 font-weight:bolder;
 }

@@ -168,10 +168,10 @@ Vous trouverez la liste des tâches d'administration sur la page d'accueil.<br /
 					<?php 
 					//nouvelle maj dispo
 					if (0==1 /* Ne jamais proposer de mise à jour, incompatible avec SoothERP. isset($_SESSION['NEW_MAJ_DISPO']) && $_SESSION['NEW_MAJ_DISPO'] != "0" */) {					
-						?><span style="float:left; padding-right:20px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>/images/ico_unvalide.png" alt="Nouvelle version de LundiMatin Business disponible !" title="Nouvelle version de LundiMatin Business disponible !"/></span>
+						?><span style="float:left; padding-right:20px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>/images/ico_unvalide.png" alt="Nouvelle version de SoothERP disponible !" title="Nouvelle version de SoothERP disponible !"/></span>
 						Version actuelle : <?php echo affiche_version ($_SERVER['VERSION']);?> / Dernière version : <?php echo affiche_version ($_SESSION['NEW_MAJ_DISPO']);?>
 						<br /><br />
-						<span style="float:left; padding-right:20px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>/images/blank.gif" width="22px" /></span>Vous devez mettre à jour LundiMatin Business : <span id="id_new_maj_dispo2" style="cursor:pointer; text-decoration:underline"  >Cliquez ici
+						<span style="float:left; padding-right:20px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme();?>/images/blank.gif" width="22px" /></span>Vous devez mettre à jour SoothERP : <span id="id_new_maj_dispo2" style="cursor:pointer; text-decoration:underline"  >Cliquez ici
 						</span>
 						<script type="text/javascript">
 							Event.observe("id_new_maj_dispo2", "click", function() {	page.verify('import_maj_serveur','import_maj_serveur.php','true','sub_content');}, false);

@@ -647,7 +647,6 @@ body td,
 body th,
 body p {
   font-size: x-small;
-  voice-family: "\"}\"";
   voice-family: inherit;
   font-size: small;
 }

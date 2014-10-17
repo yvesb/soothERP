@@ -29,8 +29,8 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $COR
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
-<head>
+
+
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_common_style.css" rel="stylesheet" type="text/css" />
 		<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_agenda_style.css" rel="stylesheet" type="text/css" />
@@ -239,13 +239,13 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $COR
 		Event.observe(window, "load", initEventHandlers, false);
 		//--><!]]>
 	</script>
-</head>
 
-<body >
-	<div id="grand_contener" style="background-image: url(<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/entete_agenda.gif); background-repeat:repeat-x; background-attachment:fixed">
+
+
+	
 		<iframe id="framealert" frameborder="0" scrolling="no" src="about:blank"></iframe>
 		<?php if ($AFFICHE_DEBUG) {?>
-		<div  style="visibility:block; float:right; position:absolute; top:0px; left:30px; z-index:500; width:10px">
+		<div  style="display:block; float:right; position:absolute; top:0px; left:30px; z-index:500; width:10px">
 			<a id="toggle_debug_iframe"  href="#">D</a>
 			<script type="text/javascript">
 				Event.observe('toggle_debug_iframe', 'click',  function(evt){
@@ -299,7 +299,7 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $COR
 			<div  id="alert_fin_session_content">
 				<table cellpadding=0 cellspacing=0 border=0 style="width:100%; text-align:center">
 					<tr>
-						<td>
+						
 							<form action ="<?php echo $_ENV['CHEMIN_ABSOLU']; ?>session_user_valid.php" method="post" name="form_login_inc" target="formFrame">
 								<input type=hidden name="page_from" value="" />
 								<input type=hidden name="id_profil" value="<?php echo $_SESSION['user']->getId_profil ();?>" />
@@ -340,20 +340,20 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $COR
 											<input type="submit" name="submit" value="Valider" />
 										</td>
 									</tr>
-									<tr>
-										<td colspan=2 align="right">	
-											<a href="#" onclick="window.open ('../<?php echo $CORE_DIR.;?>site/__session_stop.php', '_top');" style="text-decoration:none">Quitter</a>
+									
+											
+                                                                            <a href="#" onclick="window.open('../<?php echo $CORE_DIR;?>site/__session_stop.php', '_top');" style="text-decoration:none">Quitter</a>
 											<script type="text/javascript">
 												Event.observe("close_ask_login", "click",  function(evt){
 													Event.stop(evt);
 													close_ask_login();
 												}, false);
 											</script>
-										</td>
-									</tr>
+										
+									
 								</table>
 							</form>
-						</td>
+						
 					</tr>
 				</table>
 			</div>
@@ -405,9 +405,9 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $COR
 		<iframe src="about:blank" style="display: none; right: 0px; position: absolute; top: 0px; height:0px;z-index:231;width:0;" id="historiqueFrame" name="historiqueFrame"></iframe>
 		<iframe src="about:blank" style="display: none; right: 0px; position: absolute; top:50px; height:450px;z-index:231;width:50%;" scrolling="auto" id="formFrame" name="formFrame"></iframe>
 
-	</div>
+	
 	<script type="text/javascript">
 	
 	</script>
-</body>
-</html>
+
+

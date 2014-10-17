@@ -7,8 +7,8 @@
 class PDO_etendu extends PDO {
 	private $transac_encours 	= 0;
 	private $nb_requetes 		= 0;
-	private $requetes 			= array();
-	private $debug				= 0;
+	private $requetes 		= array();
+	private $debug			= 0;
 
 
 function __construct($dsn, $username = "", $password = "", $driver_options = NULL) {

@@ -135,7 +135,7 @@ update_menu_arbo();
 				<form action="annuaire_gestion_categories_fournisseur_mod.php" method="post" id="annuaire_gestion_categories_fournisseur_mod_<?php echo $liste_categorie->id_fournisseur_categ; ?>" name="annuaire_gestion_categories_fournisseur_mod_<?php echo $liste_categorie->id_fournisseur_categ; ?>" target="formFrame" >
 				<table>
 					<tr class="smallheight">
-						<td style="0"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 						<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 						<td style="width:40%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 						<td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>

@@ -4,17 +4,17 @@
 	//require_once $DIR.'profil_client/_contact_client.class.php';
 	$ce_client = array();
 	$ce_client['id_client_categ']			= $profils[$id_profil]->getId_client_categ ();
-	$ce_client['id_tarif']					= $profils[$id_profil]->getId_tarif ();
-	$ce_client['facturation_periodique']	= $profils[$id_profil]->getFactures_par_mois ();
+	$ce_client['id_tarif']				= $profils[$id_profil]->getId_tarif ();
+	$ce_client['facturation_periodique']            = $profils[$id_profil]->getFactures_par_mois ();
 	$ce_client['delai_reglement']			= $profils[$id_profil]->getDelai_reglement_client ();
 	$ce_client['defaut_encours']			= $profils[$id_profil]->getEncours ();
 	$ce_client['prepaiement_ratio']			= $profils[$id_profil]->getPrepaiement_ratio ();
 	$ce_client['prepaiement_type']			= $profils[$id_profil]->getPrepaiement_type ();
-	$ce_client['id_reglement_mode_favori']	= $profils[$id_profil]->getId_reglement_mode_favori ();
+	$ce_client['id_reglement_mode_favori']          = $profils[$id_profil]->getId_reglement_mode_favori ();
 	$ce_client['id_cycle_relance']			= $profils[$id_profil]->getId_cycle_relance ();
-	$ce_client['id_edition_mode_favori']	= $profils[$id_profil]->getId_edition_mode_favori_client ();
+	$ce_client['id_edition_mode_favori']            = $profils[$id_profil]->getId_edition_mode_favori_client ();
 	if ($ce_client['id_edition_mode_favori']=="") $ce_client['id_edition_mode_favori']=0;	// si null on force à 0
-	$ce_client['app_tarifs']				= $profils[$id_profil]->getApp_tarifs ();
+	$ce_client['app_tarifs']			= $profils[$id_profil]->getApp_tarifs ();
 	$ce_client['ref_commercial']			= $profils[$id_profil]->getRef_commercial ();
 	$ce_client['nom_commercial']			= $profils[$id_profil]->getNom_commercial ();
 	
@@ -25,16 +25,16 @@
 			$categorie_client = $liste_categorie_client;
 		}
 	}
-	if ($ce_client['id_tarif']=="") 				$ce_client['id_tarif']=$categorie_client->id_tarif;
-        if ($ce_client['nom_commercial']=="") 				$ce_client['nom_commercial']=$categorie_client->nom_commercial;
-	if ($ce_client['facturation_periodique']=="") 	$ce_client['facturation_periodique']=$categorie_client->facturation_periodique;
+	if ($ce_client['id_tarif']=="") 			$ce_client['id_tarif']=$categorie_client->id_tarif;
+        if ($ce_client['nom_commercial']=="") 			$ce_client['nom_commercial']=$categorie_client->nom_commercial;
+	if ($ce_client['facturation_periodique']=="")           $ce_client['facturation_periodique']=$categorie_client->facturation_periodique;
 	if ($ce_client['delai_reglement']=="") 			$ce_client['delai_reglement']=$categorie_client->delai_reglement;
 	if ($ce_client['defaut_encours']=="") 			$ce_client['defaut_encours']=$categorie_client->defaut_encours;
 	if ($ce_client['prepaiement_ratio']=="") 		$ce_client['prepaiement_ratio']=$categorie_client->prepaiement_ratio;
 	if ($ce_client['prepaiement_type']=="") 		$ce_client['prepaiement_type']=$categorie_client->prepaiement_type;
-	if ($ce_client['id_reglement_mode_favori']=="") $ce_client['id_reglement_mode_favori']=$categorie_client->id_reglement_mode_favori;
+	if ($ce_client['id_reglement_mode_favori']=="")         $ce_client['id_reglement_mode_favori']=$categorie_client->id_reglement_mode_favori;
 	if ($ce_client['id_cycle_relance']=="") 		$ce_client['id_cycle_relance']=$categorie_client->id_relance_modele;
-	if ($ce_client['id_edition_mode_favori']=="") 	$ce_client['id_edition_mode_favori']=$categorie_client->id_edition_mode_favori;
+	if ($ce_client['id_edition_mode_favori']=="")           $ce_client['id_edition_mode_favori']=$categorie_client->id_edition_mode_favori;
 ?>
 
 <table style="width:100%">
