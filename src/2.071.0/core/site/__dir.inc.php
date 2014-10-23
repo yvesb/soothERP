@@ -1,4 +1,5 @@
 <?php
+global $CORE_REP;
 $DIR = "../../";
-$THIS_DIR = $DIR."site/";
+$THIS_DIR = "../".$CORE_REP."site/";
 ?>
