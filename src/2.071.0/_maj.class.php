@@ -31,6 +31,7 @@ function __construct ($version_after_maj) {
 	global $_SERVER; 
 	global $CONFIG_DIR;
 	global $DIR;
+    global $CORE_DIR;
 	global $MAJ_SERVEUR;
 
 	// Informations sur la mise à jour
@@ -41,7 +42,7 @@ function __construct ($version_after_maj) {
 	$GLOBALS['_INFOS']['maj_actions'][] = $texte;
 
 	// Initialisation des variables
-	$this->tmp_files_dir = $DIR."echange_lmb/maj_lmb_".$this->version_after_maj."/";
+	$this->tmp_files_dir = $CORE_DIR."echange/maj_lmb_".$this->version_after_maj."/";
 	$this->ftp_files_dir = $MAJ_SERVEUR['ftp_racine']."maj-v".$this->version_after_maj."/";
 	$this->xml_liste_fichiers = "lmb_liste_fichiers.xml";
 	$this->install_files = array();
@@ -53,7 +54,7 @@ function __construct ($version_after_maj) {
 
 	// Recherche d'un éventuel Break Point (Afin de ne pas répéter une étape de la mise à jour)
 	$this->last_break_point = 0;
-	$this->break_point_file = $DIR."echange_lmb/v".$this->version_after_maj."_break_points.tmp";
+	$this->break_point_file = $CORE_DIR."echange/v".$this->version_after_maj."_break_points.tmp";
 
 	if (is_file($this->break_point_file)) {
 		$break_points = file ($this->break_point_file);

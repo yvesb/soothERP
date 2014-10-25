@@ -17,11 +17,11 @@ class Helper {
         $html = Helper::createSelectPopup($id, $defaultText)."\n";
         $html .= '<script type="text/javascript">
 			//effet de survol sur le faux select
-			Event.observe(\''.$id.'_select_c\', \'mouseover\',  function(){$("'.$id.'_select_c").src="'.$DIR.$_SESSION['theme']->getDir_theme().'images/bt_contact_find_hover.gif";}, false);
-			Event.observe(\''.$id.'_select_c\', \'mousedown\',  function(){$("'.$id.'_select_c").src="'.$DIR.$_SESSION['theme']->getDir_theme().'images/bt_contact_find_down.gif";}, false);
-			Event.observe(\''.$id.'_select_c\', \'mouseup\',  function(){$("'.$id.'_select_c").src="'.$DIR.$_SESSION['theme']->getDir_theme().'images/bt_contact_find.gif";}, false);
+			Event.observe(\''.$id.'_select_c\', \'mouseover\',  function(){$("'.$id.'_select_c").src="'.$DIR.$_SESSION['theme']->getDir_gtheme().'images/bt_contact_find_hover.gif";}, false);
+			Event.observe(\''.$id.'_select_c\', \'mousedown\',  function(){$("'.$id.'_select_c").src="'.$DIR.$_SESSION['theme']->getDir_gtheme().'images/bt_contact_find_down.gif";}, false);
+			Event.observe(\''.$id.'_select_c\', \'mouseup\',  function(){$("'.$id.'_select_c").src="'.$DIR.$_SESSION['theme']->getDir_gtheme().'images/bt_contact_find.gif";}, false);
 
-			Event.observe(\''.$id.'_select_c\', \'mouseout\',  function(){$("'.$id.'_select_c").src="'.$DIR.$_SESSION['theme']->getDir_theme().'images/bt_contact_find.gif";}, false);
+			Event.observe(\''.$id.'_select_c\', \'mouseout\',  function(){$("'.$id.'_select_c").src="'.$DIR.$_SESSION['theme']->getDir_gtheme().'images/bt_contact_find.gif";}, false);
 			
 			/*utilisation de la fonctio daffichage du mini moteur de recherche dun contact show_mini_moteur_contacts*/
 			/*syntaxe des filtres : "lib=val1,val2,val3;actif=val1;id=val1,val2"*/
@@ -55,10 +55,10 @@ class Helper {
                             </span>
                         </td>
                         <td style="text-align:right;padding-left:3px;">
-                            <img src="'.$DIR.$_SESSION['theme']->getDir_theme().'images/bt_contact_find.gif" class="clic" id="'.$id.'_select_c">
+                            <img src="'.$DIR.$_SESSION['theme']->getDir_gtheme().'images/bt_contact_find.gif" class="clic" id="'.$id.'_select_c">
                         </td>
                         <td>
-                            <img src="'.$DIR.$_SESSION['theme']->getDir_theme().'images/supprime.gif" class="clic" id="'.$id.'_empty_c">
+                            <img src="'.$DIR.$_SESSION['theme']->getDir_gtheme().'images/supprime.gif" class="clic" id="'.$id.'_empty_c">
                         </td>
                     </tr>
 		</table>';
@@ -92,7 +92,7 @@ class Helper {
         $html='<div id="'.$id.'" class="popup" '.$style_popup.'>
             <div id="'.$id.'_bar" class="headbar">
                 <span id="link_close_'.$id.'" style="float:right" class="clic">
-                    <img src="'.$DIR.$_SESSION['theme']->getDir_theme().'images/supprime.gif" border="0">
+                    <img src="'.$DIR.$_SESSION['theme']->getDir_gtheme().'images/supprime.gif" border="0">
                 </span>
                 <script type="text/javascript">
                     Event.observe("link_close_'.$id.'", "click",  function(evt){Event.stop(evt); $("'.$id.'").hide();}, false);';

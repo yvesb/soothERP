@@ -58,7 +58,7 @@ abstract class document {
 	protected $ACCEPT_REGMT = 0;
 	protected $reglements;					// Règlements rapprochés à ce document
 	protected $reglements_loaded;
-	protected $montant_reglements;	// Montant total des règlements (Inversé lorsqu'il s'agit d'emettre les règlements.)
+	protected $montant_reglements;		// Montant total des règlements (Inversé lorsqu'il s'agit d'emettre les règlements.)
 	protected $montant_to_pay;			// Montant restant à payer.
 
 	protected $echeancier;
@@ -106,25 +106,25 @@ public function open_doc ($select = "", $left_join = "") {
 
 	$this->ref_contact 			= $doc->ref_contact;
 	$this->nom_contact 			= $doc->nom_contact;
-	$this->ref_adr_contact 	= $doc->ref_adr_contact;
-	$this->adresse_contact 	= $doc->adresse_contact;
+	$this->ref_adr_contact 		= $doc->ref_adr_contact;
+	$this->adresse_contact 		= $doc->adresse_contact;
 	$this->code_postal_contact 	= $doc->code_postal_contact;
 	$this->ville_contact 		= $doc->ville_contact;
-	$this->id_pays_contact 	= $doc->id_pays_contact;
+	$this->id_pays_contact 		= $doc->id_pays_contact;
 	$this->pays_contact 		= $doc->pays_contact;
 	$this->app_tarifs 			= $doc->app_tarifs;
 	$this->description 			= $doc->description;
 	$this->id_etat_doc 			= $doc->id_etat_doc;
 	$this->lib_etat_doc 		= $doc->lib_etat_doc;
-	$this->is_open			 		= $doc->is_open;
+	$this->is_open			 	= $doc->is_open;
 	$this->code_affaire			= $doc->code_affaire;
 	$this->lib_type_doc			= $doc->lib_type_doc;
-	$this->lib_type_printed	= $doc->lib_type_printed;
-	$this->code_pdf_modele	= $doc->code_pdf_modele;
+	$this->lib_type_printed		= $doc->lib_type_printed;
+	$this->code_pdf_modele		= $doc->code_pdf_modele;
 	$this->date_creation		= $doc->date_creation;
 	$this->code_file  			= $doc->code_file;
  	$this->echeancier 			= new document_echeancier($this->getRef_doc(),$this);
-	$this->quantite_locked = false;
+	$this->quantite_locked 		= false;
 
 	if(!$this->echeancier->exist()){
 		$this->echeancier->create_from_ref_contact();

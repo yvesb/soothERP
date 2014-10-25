@@ -22,10 +22,10 @@ $CODE_SECU = "toto";		//code de sécurité transmis aux serveurs d'importation d
 // *************************************************************************************************************
 // SYSTEME
 // *************************************************************************************************************
-$ETAT_APPLICATION = "PROD";		// DEV ou PROD
-$AFFICHE_DEBUG = 0;
+$ETAT_APPLICATION = "DEV";		// DEV ou PROD
+$AFFICHE_DEBUG = 1;
 $EMAIL_DEV = null; // Configurez ici l'adresse email de l'administrateur, sert aussi pour test d'envoi de mail
-$FORCE_EMAIL_DEBUG = true; // Rapport résumé par mail si "true". Si "false" affichage rapport (si DEV uniquement)
+$FORCE_EMAIL_DEBUG = false; // Rapport résumé par mail si "true". Si "false" affichage rapport (si DEV uniquement)
 // *************************************************************************************************************
 // BACKUP
 // *************************************************************************************************************

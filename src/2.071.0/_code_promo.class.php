@@ -217,7 +217,7 @@ function check_art_categ_code_promo_exist () {
 		
 		$CODE_PROMO_ART_CATEG = $art_categ->getRef_art_categ();
 		//mise à jour de la vairable systeme
-		maj_configuration_file ("config_systeme.inc.php", "maj_line", "\$CODE_PROMO_ART_CATEG =", "\$CODE_PROMO_ART_CATEG = \"".$art_categ->getRef_art_categ()."\";", $DIR."config/");
+		maj_configuration_file ("config_systeme.inc.php", "maj_line", "\$CODE_PROMO_ART_CATEG =", "\$CODE_PROMO_ART_CATEG = \"".$art_categ->getRef_art_categ()."\";", $CONFIG_DIR);
 	}
 		
 	return $CODE_PROMO_ART_CATEG;

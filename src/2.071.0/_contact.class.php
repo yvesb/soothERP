@@ -62,19 +62,19 @@ function __construct($ref_contact = "") {
 	if (!$contact = $resultat->fetchObject()) { return false; }
 
 	// Attribution des informations à l'objet
-	$this->ref_contact 				= $ref_contact;
-	$this->id_civilite 				= $contact->id_civilite;
-	$this->lib_civ_court			= $contact->lib_civ_court;
-	$this->lib_civ_long				= $contact->lib_civ_long;
-	$this->nom 								= $contact->nom;
-	$this->siret							= $contact->siret;
-	$this->tva_intra					= $contact->tva_intra;
-	$this->id_categorie				= $contact->id_categorie;
-	$this->lib_categorie			= $contact->lib_categorie;
-	$this->note 							= $contact->note;
-	$this->date_creation 			= $contact->date_creation;
+	$this->ref_contact 		= $ref_contact;
+	$this->id_civilite 		= $contact->id_civilite;
+	$this->lib_civ_court		= $contact->lib_civ_court;
+	$this->lib_civ_long		= $contact->lib_civ_long;
+	$this->nom 			= $contact->nom;
+	$this->siret			= $contact->siret;
+	$this->tva_intra		= $contact->tva_intra;
+	$this->id_categorie		= $contact->id_categorie;
+	$this->lib_categorie		= $contact->lib_categorie;
+	$this->note 			= $contact->note;
+	$this->date_creation 		= $contact->date_creation;
 	$this->date_modification 	= $contact->date_modification;
-	$this->date_archivage 	= $contact->date_archivage;
+	$this->date_archivage           = $contact->date_archivage;
 	unset ($contact);
 	
 	return true;
@@ -97,37 +97,29 @@ final public function create ($infos_generales, $infos_profils) {
 
 	// *************************************************
 	// Controle des données transmises
-	$this->id_civilite = $infos_generales['id_civilite'];
-	if (!$this->id_civilite) {
-		$GLOBALS['_ALERTES']['id_civilite_vide'] = 1;
-	}
-	$this->nom = $infos_generales['nom'];
-	$this->id_categorie = $infos_generales['id_categorie'];
-	if (!$this->id_categorie) {
-		$GLOBALS['_ALERTES']['bad_categorie'] = 1;
-	}
-	$this->note 			= $infos_generales['note'];
-	$this->siret 			= $infos_generales['siret'];
-	$this->tva_intra 	= $infos_generales['tva_intra'];
+	$this->id_civilite          = $infos_generales['id_civilite'];
+	if (!$this->id_civilite) {$GLOBALS['_ALERTES']['id_civilite_vide'] = 1;}
+        
+	$this->nom                  = $infos_generales['nom'];
+	$this->id_categorie         = $infos_generales['id_categorie'];
+	if (!$this->id_categorie) {$GLOBALS['_ALERTES']['bad_categorie'] = 1;}
+        
+	$this->note                 = $infos_generales['note'];
+	$this->siret                = $infos_generales['siret'];
+	$this->tva_intra            = $infos_generales['tva_intra'];
 	
 	// Dates de création & modification (en cas d'import)
-	$this->date_creation = date ("Y-m-d H:i:s", time());
-	$this->date_modification = date ("Y-m-d H:i:s", time());
+	$this->date_creation        = date ("Y-m-d H:i:s", time());
+	$this->date_modification    = date ("Y-m-d H:i:s", time());
 	if (isset($GLOBALS['options']['date_creation'])) {
 		$this->date_creation = $GLOBALS['options']['date_creation'];
 		$this->date_creation = $GLOBALS['options']['date_modification'];
 	}
 	
 	// Adresses, sites, et coordonnées
-	if (!isset($infos_generales['adresses']) || !is_array($infos_generales['adresses'])) {
-		$infos_generales['adresses'] = array();
-	}
-	if (!isset($infos_generales['coordonnees']) || !is_array($infos_generales['coordonnees'])) {
-		$infos_generales['coordonnees'] = array();
-	}
-	if (!isset($infos_generales['sites']) || !is_array($infos_generales['sites'])) {
-		$infos_generales['sites'] = array();
-	}
+	if (!isset($infos_generales['adresses']) || !is_array($infos_generales['adresses'])) {$infos_generales['adresses'] = array();}
+	if (!isset($infos_generales['coordonnees']) || !is_array($infos_generales['coordonnees'])) {$infos_generales['coordonnees'] = array();}
+	if (!isset($infos_generales['sites']) || !is_array($infos_generales['sites'])) {$infos_generales['sites'] = array();}
 
 	// *************************************************
 	// Réception des données de profil
@@ -142,9 +134,7 @@ final public function create ($infos_generales, $infos_profils) {
 	
 	// *************************************************
 	// Si les valeurs reçues sont incorrectes
-	if (count($GLOBALS['_ALERTES'])) {
-		return false;
-	}
+	if (count($GLOBALS['_ALERTES'])) {return false;}
 	
 	// *************************************************
 	// Création de la référence
@@ -165,19 +155,13 @@ final public function create ($infos_generales, $infos_profils) {
 	$bdd->exec($query);
 
 	// Adresses
-	for ($i=0; $i<count($infos_generales['adresses']); $i++) {
-		$this->ajouter_adresse ($infos_generales['adresses'][$i]);
-	}
+	for ($i=0; $i<count($infos_generales['adresses']); $i++) {$this->ajouter_adresse ($infos_generales['adresses'][$i]);}
 
 	// Coordonnes
-	for ($i=0; $i<count($infos_generales['coordonnees']); $i++) {
-		$this->ajouter_coordonnee ($infos_generales['coordonnees'][$i]);
-	}
+	for ($i=0; $i<count($infos_generales['coordonnees']); $i++) {$this->ajouter_coordonnee ($infos_generales['coordonnees'][$i]);}
 
 	// Sites
-	for ($i=0; $i<count($infos_generales['sites']); $i++) {
-		$this->ajouter_site ($infos_generales['sites'][$i]);
-	}
+	for ($i=0; $i<count($infos_generales['sites']); $i++) {$this->ajouter_site ($infos_generales['sites'][$i]);}
 
 	// SI il y a eu des erreurs, on invalide la création
 	if (count($GLOBALS['_ALERTES'])) { return false; }
@@ -203,17 +187,13 @@ final public function create ($infos_generales, $infos_profils) {
 	}
 	
 	// Si il y a eu des erreurs, on invalide la création
-	if (count($GLOBALS['_ALERTES'])) {
-		$this->suppression();
-		return false; 
-	}
+	if (count($GLOBALS['_ALERTES'])) {$this->suppression();return false;}
 
 
 	// *************************************************
 	// Résultat positif de la création
-	$GLOBALS['_INFOS']['Création_contact'] = $this->ref_contact;
-
-	return true;
+	$GLOBALS['_INFOS']['Création_contact'] = $this->ref_contact;return true;
+        
 }
 
 
@@ -643,12 +623,11 @@ public function is_profiled ($id_profil) {
 
 // Charge le fichier de gestion de la classe de profil
 static public function load_profil_class ($id_profil) {
-	global $DIR;
-
 	global $CONFIG_DIR;
+        global $CORE_DIR;
 	include_once ($CONFIG_DIR."profil_".$_SESSION['profils'][$id_profil]->getCode_profil().".config.php");
 	
-	$file_dir  = $DIR.$_SESSION['profils'][$id_profil]->getDir_profil();
+	$file_dir  = $CORE_DIR.$_SESSION['profils'][$id_profil]->getDir_profil();
 	$file_name = "_contact_".$_SESSION['profils'][$id_profil]->getCode_profil().".class.php";
 	include_once ($file_dir.$file_name);
 	
@@ -666,10 +645,7 @@ final private function charger_utilisateurs() {
 
 	$this->utilisateurs = array();
 
-	$query = "SELECT ref_user 
-						FROM users 
-						WHERE ref_contact = '".$this->ref_contact."' && actif >= 0
-						ORDER BY ordre";
+	$query = "SELECT ref_user FROM users WHERE ref_contact = '".$this->ref_contact."' && actif >= 0	ORDER BY ordre";
 	$resultat = $bdd->query($query);
 	while ($var = $resultat->fetchObject()) { 
 		$this->utilisateurs[] = new utilisateur ($var->ref_user); 

@@ -60,8 +60,8 @@ public function create_fonction ($lib_fonction, $desc_fonction, $id_fonction_par
 	$this->id_fonction 				= $bdd->lastInsertId();
 	$this->lib_fonction 			= $lib_fonction;
 	$this->desc_fonction 			= $desc_fonction;
-	$this->id_fonction_parent = $id_fonction_parent;
-	$this->id_profil 					= $id_profil;
+	$this->id_fonction_parent 		= $id_fonction_parent;
+	$this->id_profil 				= $id_profil;
 
 	
 	
@@ -92,8 +92,8 @@ public function maj_fonction ($lib_fonction, $desc_fonction, $id_fonction_parent
 	
 	$this->lib_fonction 			= $lib_fonction;
 	$this->desc_fonction 			= $desc_fonction;
-	$this->id_fonction_parent = $id_fonction_parent;
-	$this->id_profil 					= $id_profil;
+	$this->id_fonction_parent 		= $id_fonction_parent;
+	$this->id_profil 				= $id_profil;
 
 	return true;
 }

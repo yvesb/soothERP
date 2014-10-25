@@ -32,9 +32,9 @@ function __construct($id_tache_admin = 0) {
 	$this->id_tache_admin 	= $id_tache_admin;
 	$this->lib_tache_admin	= $tache->lib_tache_admin;
 	$this->description			= $tache->description;
-	$this->url_action				= $tache->url_action;
+	$this->url_action			= $tache->url_action;
 	$this->date_creation		= $tache->date_creation;
-	$this->date_execution 	= $tache->date_execution;
+	$this->date_execution 		= $tache->date_execution;
 
 	return true;
 }

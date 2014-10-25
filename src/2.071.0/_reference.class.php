@@ -41,12 +41,12 @@ function __construct($id_reference) {
 		alerte_dev ($erreur);
   }
   
-  $this->id_reference 	= $reference->id_reference;
-  $this->lib_reference 	= $reference->lib_reference;
-  $this->lib_table		 	= $reference->lib_table;
+  $this->id_reference 			= $reference->id_reference;
+  $this->lib_reference 			= $reference->lib_reference;
+  $this->lib_table		 		= $reference->lib_table;
   $this->champs 				= $reference->champs;
   $this->prefixe 				= $reference->prefixe;
-  $this->ref_rules 			= $reference->ref_rules;
+  $this->ref_rules 				= $reference->ref_rules;
   $this->last_id 				= $reference->last_id;
 } 
 

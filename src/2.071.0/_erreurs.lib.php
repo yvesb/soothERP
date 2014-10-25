@@ -96,8 +96,8 @@ function alerte_dev ($erreur, $libelle_supp = "", $errno = "", $errstr = "", $er
 	$rapport .= "<br /><br />
 
 	============================================================================<br />";
-	$rapport = str_replace ($bdd_user, $sensibleDataSubstitute, $rapport);
-	$rapport = str_replace ($bdd_pass, $sensibleDataSubstitute, $rapport);
+	//$rapport = str_replace ($bdd_user, $sensibleDataSubstitute, $rapport);
+	//$rapport = str_replace ($bdd_pass, $sensibleDataSubstitute, $rapport);
 
 	if ($ETAT_APPLICATION == "DEV" && empty($FORCE_EMAIL_DEBUG)) {
 		echo nl2br($rapport);
@@ -113,7 +113,7 @@ function alerte_dev ($erreur, $libelle_supp = "", $errno = "", $errstr = "", $er
 
 			// Envoyer un email au développeur
 			if($EMAIL_DEV!=null) {
-				@mail ($EMAIL_DEV, "ERREUR LMB - ".affiche_version ($_SERVER['VERSION'])." - ".$_SERVER['SERVER_NAME'].(empty($libelle_supp) ? "" : "/".$libelle_supp), $rapport, $headers);
+				@mail ($EMAIL_DEV, "ERREUR SoothERP - ".affiche_version ($_SERVER['VERSION'])." - ".$_SERVER['SERVER_NAME'].(empty($libelle_supp) ? "" : "/".$libelle_supp), $rapport, $headers);
 				$mailStatus = "Une alerte a été envoyée à votre administrateur.<br />";
 			}
 			else {
@@ -160,7 +160,7 @@ function elegant_dump(&$var, $var_name='', $indent='', $reference='') {
 	static $elegant_dump_indent = '.&nbsp;&nbsp;&nbsp;&nbsp; ';
 	
 	// Chaine de remplacement pour les données sensibles
-	$sensibleDataSubstitute = "** texte masqué par sécurité **";
+	//$sensibleDataSubstitute = "** texte masqué par sécurité **";
    
    $reference=$reference.$var_name;
 
@@ -199,14 +199,9 @@ function elegant_dump(&$var, $var_name='', $indent='', $reference='') {
            foreach($avar as $name=>$value) elegant_dump($value, "-&gt;$name", $indent.$elegant_dump_indent, $reference);
            echo "<br /> $indent}\n";
        } else
-       // string?
-       if (is_string($avar)){
-       	  $avar = str_replace ($bdd_user, $sensibleDataSubstitute, $avar);
-  				$avar = str_replace ($bdd_pass, $sensibleDataSubstitute, $avar);
-       	echo "<br />  $indent<b>$var_name</b> (<i>$type</i>) = \"".htmlentities($avar, ENT_QUOTES, "UTF-8")."\"\n";
-       }
+
        // any other?
-       else echo "<br /> $indent<b>$var_name</b> (<i>$type</i>) = $avar\n";
+       echo "<br /> $indent<b>$var_name</b> (<i>$type</i>) = $avar\n";
 
        $var=$var[$keyvar];
    }

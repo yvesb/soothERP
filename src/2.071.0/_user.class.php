@@ -77,13 +77,13 @@ final public function login ($login, $code, $page_from = "", $login_id_interface
 	}
 
 	$this->ref_user 			= $user->ref_user;
-	$this->ref_coord_user = $user->ref_coord_user;
-	$this->ref_contact 		= $user->ref_contact;
+	$this->ref_coord_user 		= $user->ref_coord_user;
+	$this->ref_contact 			= $user->ref_contact;
 	$this->master 				= $user->master;
 	$this->pseudo 				= $user->pseudo;
-	$this->code 					= $user->code;
-	$this->actif 					= $user->actif;
-	$this->email				 	= $user->email;
+	$this->code 				= $user->code;
+	$this->actif 				= $user->actif;
+	$this->email				= $user->email;
 	$this->last_id_interface	= $user->last_id_interface;
 
 	// ************************************************
@@ -97,8 +97,8 @@ final public function login ($login, $code, $page_from = "", $login_id_interface
 	// ************************************************
 	// Log de la connexion
 	$this->log_connexion ();
-  $this->login	 		= true;
-  $this->login_time = time();
+	$this->login = true;
+	$this->login_time = time();
 
  
 	// ************************************************
@@ -144,13 +144,14 @@ final public function login ($login, $code, $page_from = "", $login_id_interface
 
   // ************************************************
   // Page de redirection suite au login
+  	global $CORE_REP;
 	if ($this->id_interface <= 1) {
 		// Si l'interface à utiliser n'est pas définie, redirection vers la page de sélection du profil
-		$redirection = $_ENV['CHEMIN_ABSOLU']."site/__user_choix_profil.php";
+		$redirection = $_ENV['CHEMIN_ABSOLU'].$CORE_REP."site/__user_choix_profil.php";
 	}
 	else {
 		// Page d'accueil du profil
-		$redirection = $_ENV['CHEMIN_ABSOLU'].$_SESSION['interfaces'][$this->id_interface]->getDossier();
+		$redirection = $_ENV['CHEMIN_ABSOLU'].$CORE_REP.$_SESSION['interfaces'][$this->id_interface]->getDossier();
 	}
 	
 	$GLOBALS['_INFOS']['redirection'] = $redirection;

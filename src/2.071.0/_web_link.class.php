@@ -31,8 +31,8 @@ function __construct($id_web_link = 0) {
 	$this->lib_web_link		= $web_link->lib_web_link;
 	$this->url_web_link		= $web_link->url_web_link;
 	$this->desc_web_link	= $web_link->desc_web_link;
-	$this->ref_user				= $web_link->ref_user;
-	$this->ordre					= $web_link->ordre;
+	$this->ref_user			= $web_link->ref_user;
+	$this->ordre			= $web_link->ordre;
 
 	return true;
 }

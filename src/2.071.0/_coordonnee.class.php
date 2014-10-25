@@ -39,17 +39,17 @@ function __construct($ref_coord = "") {
 	if (!$coordonnee = $resultat->fetchObject()) { return false; }
 
 	// Attribution des informations à l'objet
-	$this->ref_coord 		= $ref_coord;
-	$this->ref_contact 	= $coordonnee->ref_contact;
-	$this->lib_coord		= $coordonnee->lib_coord;
-	$this->tel1		= $coordonnee->tel1;
-	$this->tel2		= $coordonnee->tel2;
-	$this->fax		= $coordonnee->fax;
-	$this->email	= $coordonnee->email;
-	$this->note		= $coordonnee->note;
-	$this->ordre	= $coordonnee->ordre;
-	$this->ref_coord_parent	= $coordonnee->ref_coord_parent;
-	$this->type		= $coordonnee->id_type_coordonnee;
+	$this->ref_coord 			= $ref_coord;
+	$this->ref_contact 			= $coordonnee->ref_contact;
+	$this->lib_coord			= $coordonnee->lib_coord;
+	$this->tel1					= $coordonnee->tel1;
+	$this->tel2					= $coordonnee->tel2;
+	$this->fax					= $coordonnee->fax;
+	$this->email				= $coordonnee->email;
+	$this->note					= $coordonnee->note;
+	$this->ordre				= $coordonnee->ordre;
+	$this->ref_coord_parent		= $coordonnee->ref_coord_parent;
+	$this->type					= $coordonnee->id_type_coordonnee;
 
 	return true;
 }
@@ -68,14 +68,14 @@ final public function create ($ref_contact, $lib_coord, $tel1, $tel2, $fax, $ema
 
 	// *************************************************
 	// Controle des données transmises
-	$this->ref_contact 	= $ref_contact;
-	$this->lib_coord 	= $lib_coord;
-	$this->tel1 		= $tel1;
-	$this->tel2 		= $tel2;
-	$this->fax	 		= $fax;
-	$this->note		 	= $note;
-	$this->ref_coord_parent	= $ref_coord_parent;
-	$this->type			= $type;
+	$this->ref_contact 			= $ref_contact;
+	$this->lib_coord 			= $lib_coord;
+	$this->tel1 				= $tel1;
+	$this->tel2 				= $tel2;
+	$this->fax	 				= $fax;
+	$this->note		 			= $note;
+	$this->ref_coord_parent		= $ref_coord_parent;
+	$this->type					= $type;
 	
 	// Vérifie si l'adresse email est unique
 	$this->email 		= trim($email);
@@ -159,11 +159,11 @@ public function modification ($lib_coord, $tel1, $tel2, $fax, $email, $note, $ty
 	
 	// *************************************************
 	// Controle des données transmises
-	$this->lib_coord = $lib_coord;
-	$this->tel1 	= $tel1;
-	$this->tel2 	= $tel2;
-	$this->fax	 	= $fax;
-	$this->type		= $type;
+	$this->lib_coord 	= $lib_coord;
+	$this->tel1 		= $tel1;
+	$this->tel2 		= $tel2;
+	$this->fax	 		= $fax;
+	$this->type			= $type;
 	// Vérifie si l'adresse email est unique
 	$email = trim($email);
 	if ($email && $this->email != $email) {
@@ -334,7 +334,7 @@ function envoi_mail_invitation(){
 	// Envoi d'un email de proposition d'inscription au client
 	// Url d'inscription
 	$url_site = url_site();
-	$url_inscription = $url_site."site/_valider_inscription.php?coord=" . $this->ref_coord . "&code=" . $code;
+	$url_inscription = $url_site.$CORE_DIR."site/_valider_inscription.php?coord=" . $this->ref_coord . "&code=" . $code;
 	$lien_inscription = "<a href=\"" . $url_inscription . "\">" . $url_inscription . "</a>";
 	$mail = new email();
 	$mail->prepare_envoi(1, 0);

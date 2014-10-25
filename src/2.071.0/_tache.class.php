@@ -44,17 +44,17 @@ function __construct($id_tache = 0) {
 	if (!$tache = $resultat->fetchObject()) { return false; }
 
 	// Attribution des informations à l'objet
-	$this->id_tache 	= $id_tache;
-	$this->lib_tache	= $tache->lib_tache;
-	$this->text_tache	= $tache->text_tache;
-	$this->importance	= $tache->importance;
-	$this->urgence		= $tache->urgence;
-	$this->date_creation	= $tache->date_creation;
-	$this->date_echeance 	= $tache->date_echeance;
+	$this->id_tache 			= $id_tache;
+	$this->lib_tache			= $tache->lib_tache;
+	$this->text_tache			= $tache->text_tache;
+	$this->importance			= $tache->importance;
+	$this->urgence				= $tache->urgence;
+	$this->date_creation		= $tache->date_creation;
+	$this->date_echeance 		= $tache->date_echeance;
 	$this->ref_user_createur 	= $tache->ref_user_createur;
 	$this->pseudo_createur	 	= $tache->pseudo;
 	$this->etat_tache	 		= $tache->etat_tache;
-	$this->note	 		= $tache->note;
+	$this->note	 				= $tache->note;
 
 	return true;
 }

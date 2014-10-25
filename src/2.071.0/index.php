@@ -19,6 +19,6 @@ if (isset($_REQUEST['id_interface'])) {
 // *************************************************************************************************************
 // REDIRECTION
 // *************************************************************************************************************
-header ("Location: ".$_ENV['CHEMIN_ABSOLU'].$DEFAUT_INTERFACE."");
+header ("Location: ".$_ENV['CHEMIN_ABSOLU'].$CORE_REP.$DEFAUT_INTERFACE."");
 exit();
 ?>
