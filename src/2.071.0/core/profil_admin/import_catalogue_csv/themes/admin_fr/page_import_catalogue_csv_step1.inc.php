@@ -1,23 +1,23 @@
 <?php
 
-// *************************************************************************************************************
+//  ******************************************************
 // CONTROLE DU THEME
-// *************************************************************************************************************
+//  ******************************************************
 
 // Variables nécessaires à l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
 
-//******************************************************************
+// ***********
 // Variables communes d'affichage
-//******************************************************************
+// ***********
 
 
 
-// *************************************************************************************************************
+//  ******************************************************
 // AFFICHAGE
-// *************************************************************************************************************
+//  ******************************************************
 
 	$dao_csv_import_catalogue_cols2 = new import_catalogue_csv_colonne();
 	$arrayColonne = array();
@@ -40,11 +40,7 @@ update_menu_arbo();
 Sélectionnez les correspondances entre les informations de LMB et les différentes colonnes de votre fichier csv.
 <br />&nbsp;
 <form action="modules/import_catalogue_csv/import_catalogue_csv_step1_done.php" enctype="multipart/form-data" method="POST" id="import_catalogue_csv_done" name="import_catalogue_csv_done" target="formFrame" class="classinput_nsize" />
- 
-			
-			
-			
-			
+		
 <div style="font-weight:bolder">Catégories d'articles</div>
 <table class="contactview_corps" style=" width:100%">
 		<tr>

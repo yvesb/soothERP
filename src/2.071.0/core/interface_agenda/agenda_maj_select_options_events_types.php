@@ -1,8 +1,4 @@
 <?php
-// *************************************************************************************************************
-// ACCUEIL DE L'UTILISATEUR ADMINISTRATEUR
-// *************************************************************************************************************
-
 
 require ("_dir.inc.php");
 require ("_profil.inc.php");
@@ -35,7 +31,7 @@ $eventsTypesAvecDroitOfAg = $_SESSION["agenda"]["GestionnaireEvenements"]->getEv
 reset($eventsTypesAvecDroitOfAg);
 for ($i = 0; $i< count($eventsTypesAvecDroitOfAg); $i++){
 	$index = key($eventsTypesAvecDroitOfAg); 
-	?><option <?php echo 'value="'.$index.'" ';if($i==$_REQUEST["cook_agenda_selected"]){ echo 'selected="selected"'; } ?> ><?php 
+	?><option <?php echo 'value="'.$index.'" ';if($i==$_COOKIE["cook_agenda_selected"]){ echo 'selected="selected"'; } ?> ><?php 
 	echo $eventsTypesAvecDroitOfAg[$index]["libEvent"];
 	?></option>
 <?php next($eventsTypesAvecDroitOfAg);} ?>

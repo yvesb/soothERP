@@ -1,7 +1,7 @@
 <?php
-// *************************************************************************************************************
+//  ******************************************************
 // ARTICLE GESTION DES REF EXTERNES FOURNISSEURS
-// *************************************************************************************************************
+//  ******************************************************
 
 
 require ("_dir.inc.php");
@@ -24,9 +24,9 @@ if (!$article->getRef_article()) {
 
 $article->mod_ref_article_externe ($_REQUEST["ref_fournisseur"], $_REQUEST["old_ref_fournisseur"], $_REQUEST["ref_article_externe"], $_REQUEST["old_ref_article_externe"], $_REQUEST["lib_article_externe"], $_REQUEST["pa_unitaire"], Date_Fr_to_Us($_REQUEST["date_pa"]));
 
-// *************************************************************************************************************
+//  ******************************************************
 // AFFICHAGE
-// *************************************************************************************************************
+//  ******************************************************
 
 include ($DIR.$_SESSION['theme']->getDir_theme()."page_catalogue_articles_view_ref_externes_mod_valid.inc.php");
 

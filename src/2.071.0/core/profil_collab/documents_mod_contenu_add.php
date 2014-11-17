@@ -1,7 +1,7 @@
 <?php
-  // **********************************************************
+  //  ***
   //   Création d'un modèle de contenu à partir d'un document
-  // **********************************************************
+  //  ***
 
   require ("_dir.inc.php");
   require ("_profil.inc.php");
@@ -24,9 +24,9 @@
     
   }*/
   
-  // **********************************************************
+  //  ***
   //                           Affichage
-  // **********************************************************
+  //  ***
   
   include ($DIR.$_SESSION['theme']->getDir_theme()."page_documents_mod_contenu_add.inc.php");
   

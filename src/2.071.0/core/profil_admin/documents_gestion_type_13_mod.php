@@ -1,7 +1,7 @@
 <?php
-// *************************************************************************************************************
+//  ******************************************************
 // ACCUEIL DE LA GESTION DES DOCUMENTS (DES)
-// *************************************************************************************************************
+//  ******************************************************
 
 
 require ("_dir.inc.php");
@@ -30,9 +30,9 @@ if (isset($_REQUEST["duree_avant_purge_annule_".$_REQUEST["id_type_doc"]])) {
 	maj_configuration_file ("_doc_".strtolower($code_doc).".config.php", "maj_line", "\$DUREE_AVANT_PURGE_ANNULE_".strtoupper($code_doc)." =", "\$DUREE_AVANT_PURGE_ANNULE_".strtoupper($code_doc)." = ".$_REQUEST["duree_avant_purge_annule_".$_REQUEST["id_type_doc"]].";	// Délai avant la suppression des docs annulés", $DIR."documents/");
 }
 
-// *************************************************************************************************************
+//  ******************************************************
 // AFFICHAGE
-// -*************************************************************************************************************
+// - ******************************************************
 
 include ($DIR.$_SESSION['theme']->getDir_theme()."page_documents_gestion_type_mod.inc.php");
 

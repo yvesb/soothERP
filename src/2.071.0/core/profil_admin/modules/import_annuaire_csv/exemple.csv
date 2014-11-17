@@ -1,6 +1,0 @@
-id_client_categ;id_civilite;id_categorie;nom;prénom;siret;tva_intra;note;lib_adresse;adresse;adresse1;adresse2;cp;ville;id_pays;adresse_note;lib_coord;tel1;tel2;fax;email;coordonnee_note;site_lib;site_url;site_login;site_pass;site_note
-client standard;S.A.S.;Société;Lundi Matin;;;;;;BP 61;;;30120;LE VIGAN;France;;;;;;contact@lundimatin.fr;;;www.lundimatin.fr;;;
-;M;part;Durand;Pierre;;;;;rue du clot;pont du charme;;30170;Durfort;;;;;;;personne@email.com;;;;;;
-;M;part;tartempion;raoul;;;;;ter rue du clot;pont du charme;;30170;Durfort;;;;;;;contact2@infolys.com;;;;;;
-client standard;S.A.S.;Société;Lundi;Matin;;;;;BP 61;;;30120;LE VIGAN;France;;;;;;contact@lundimatin.fr;;;www.lundimatin.fr;;;
-;M;part;;;;;;;bis rue du clot;pont du charme;;30170;Durfort;;;;;;;;;;;;;

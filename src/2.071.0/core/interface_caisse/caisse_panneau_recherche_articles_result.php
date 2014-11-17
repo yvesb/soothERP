@@ -1,7 +1,7 @@
 <?php
-// *************************************************************************************************************
+//  ******************************************************
 // [COLLABORATEUR] RECHERCHE D'UN ARTICLE POUR INSERTION DANS UN DOCUMENT
-// *************************************************************************************************************
+//  ******************************************************
 
 
 
@@ -65,9 +65,9 @@ if(isset($NoHeader_caisse_panneau_recherche_articles_result) && $NoHeader_caisse
 	$form['articles_par_page'] = $search['articles_par_page'] = 999999;
 }
 
-// *************************************************************************************************************
+//  ******************************************************
 // TRAITEMENTS
-// *************************************************************************************************************
+//  ******************************************************
 
 
 $nb_articles = 0;
@@ -144,7 +144,7 @@ unset ($res, $resultat, $query);
 
 
 
-// ***************************************************************************************
+//  ********************************
 if(count($t_articles) == 1 && isset($_REQUEST["ajout_si_article_unique"]) && $_REQUEST["ajout_si_article_unique"]){// UN SEUL ARTICLE -> on ajout cet article au ticket
 
 	$article =  $t_articles[0];
@@ -203,7 +203,7 @@ if(count($t_articles) == 1 && isset($_REQUEST["ajout_si_article_unique"]) && $_R
 	include ($DIR.$_SESSION['theme']->getDir_theme()."page_caisse_ajouter_article.inc.php");
 
 	
-}else{// ***************************************************************************************
+}else{//  ********************************
 
 	// Comptage des résultats
 	$query = "SELECT a.ref_article
@@ -220,9 +220,9 @@ if(count($t_articles) == 1 && isset($_REQUEST["ajout_si_article_unique"]) && $_R
 
 	//echo "nb_fiches :".$nb_articles;
 	
-	// *************************************************************************************************************
+	//  ******************************************************
 	// AFFICHAGE
-	// *************************************************************************************************************
+	//  ******************************************************
 	
 	//$page_variables = array ("_ALERTES", "t_articles", "form['art_lib_s']", "form['art_page_to_show_s']", "form['articles_par_page']", "nb_articles", "form['categ_ref_selected_s']");
 

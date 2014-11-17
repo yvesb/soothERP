@@ -1,15 +1,15 @@
 <?php
-// *************************************************************************************************************
+//  ******************************************************
 // PANNEAU AFFICHE EN BAS DE L'INTERFACE DE CAISSE
-// *************************************************************************************************************
+//  ******************************************************
 
 require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
-// ************************************************************************************
+//  *****************************
 // RECUPERATION DES DONNEES MINIMALES POUR LA VERIFICATION DES DROITS
-// ************************************************************************************
+//  *****************************
 if(!isset($_REQUEST["ref_agenda"])){
 	echo "la référence de l'agenda n'est pas spécifiée";
 	exit;
@@ -21,22 +21,22 @@ if(!isset($_REQUEST["id_type_event"])){
 	exit;
 }
 $id_type_event = intval($_REQUEST["id_type_event"]);
-// ************************************************************************************
+//  *****************************
 
 
-// ************************************************************************************
+//  *****************************
 // VERIFICATIONS DES DROITS
-// ************************************************************************************
+//  *****************************
 if(!$_SESSION["agenda"]["GestionnaireAgendas"]->addEvent($ref_agenda, $id_type_event)){
 	echo "Vous n'avez pas les droits d'ajouter ou de modifier cet événement";
 	exit;
 }
-// ************************************************************************************
+//  *****************************
 
 
-// ************************************************************************************
+//  *****************************
 // RECUPERATION ET VERIFICATION DES DONNNES DU FORMULAIRE 
-// ************************************************************************************
+//  *****************************
 
 
 if(!isset($_REQUEST["scale_used"])){
@@ -109,19 +109,19 @@ if(!isset($_REQUEST["qte"])){
 	exit;
 }
 $qte = $_REQUEST["qte"];
-// ************************************************************************************
+//  *****************************
 
 
-// ************************************************************************************
+//  *****************************
 // CREATION DE L'obj Event
-// ************************************************************************************
+//  *****************************
 if(!isset($_REQUEST["ref_event"])){
 	echo "la référence de l'événement n'est pas spécifiée";
 	exit;
 }
 $ref_event = $_REQUEST["ref_event"];
 $event = new Event($ref_event);
-// ************************************************************************************
+//  *****************************
 global $bdd;
 $query = "SELECT `lib_article` FROM `articles` WHERE `ref_article` = (SELECT `ref_article` FROM `agendas_types_location` WHERE `ref_agenda` = '".$ref_agenda."')";
 $results = $bdd->query($query);
@@ -146,9 +146,9 @@ if ($result = $results->fetchObject()){
 if(!$event->setLib_event($event_lib, $_SESSION["agenda"]["GestionnaireEvenements"]))
 {echo "Vous n'avez pas le droit de modifier le libélé de l'événement";}
 
-// ************************************************************************************
+//  *****************************
 // MISES A JOUR DE l'événement
-// ************************************************************************************
+//  *****************************
 //if(!$event->setLib_event($event_lib, $_SESSION["agenda"]["GestionnaireEvenements"]))
 //{echo "Vous n'avez pas le droit de modifier le libélé de l'événement";}
 
@@ -189,9 +189,9 @@ if(!$bdd->exec(($query))){
 
 $canBeShown = $_SESSION["agenda"]["GestionnaireEvenements"]->canBeShown($event);
 
-// *************************************************************************************************************
+//  ******************************************************
 // AFFICHAGE
-// *************************************************************************************************************
+//  ******************************************************
 
 switch ($scale_used){
 	case "jour" 		: { unset($scale_used); include ($DIR.$_SESSION['theme']->getDir_theme()."page_agenda_operation_maj_event_jour.inc.php"); break;}

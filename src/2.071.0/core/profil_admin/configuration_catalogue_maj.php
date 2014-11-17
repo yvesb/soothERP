@@ -1,7 +1,7 @@
 <?php
-// *************************************************************************************************************
+//  ******************************************************
 // CONFIGURATION DES DONNÉES catalogue
-// *************************************************************************************************************
+//  ******************************************************
 
 
 require ("_dir.inc.php");
@@ -88,9 +88,9 @@ if (isset($_REQUEST["article_image_miniature_ratio"]) && is_numeric($_REQUEST["a
 if (isset($_REQUEST["article_variante_nom"]) && is_numeric($_REQUEST["article_variante_nom"])) {
 	maj_configuration_file ("config_generale.inc.php", "maj_line", "\$ARTICLE_VARIANTE_NOM	=",  "\$ARTICLE_VARIANTE_NOM	= ".$_REQUEST["article_variante_nom"].";								// Nom des Variantes d'un article (1:val val dans lib; 2 : carac et val dans lib; 3: carac et val dans desc).", $CONFIG_DIR);
 }
-// *************************************************************************************************************
+//  ******************************************************
 // AFFICHAGE
-// *************************************************************************************************************
+//  ******************************************************
 
 include ($DIR.$_SESSION['theme']->getDir_theme()."page_configuration_catalogue_maj.inc.php");
 ?>

@@ -1,7 +1,7 @@
 <?php
-  // **********************************************************
+  //  ***
   //   Création d'un modèle de contenu à partir d'un document
-  // **********************************************************
+  //  ***
 
   require ("_dir.inc.php");
   require ("_profil.inc.php");
@@ -16,9 +16,9 @@
     $document->majDescModele($_REQUEST['desc_mod']);
   }
   
-  // **********************************************************
+  //  ***
   //                           Affichage
-  // **********************************************************
+  //  ***
   
   include ($DIR.$_SESSION['theme']->getDir_theme()."page_documents_mod_contenu_maj.inc.php");
   

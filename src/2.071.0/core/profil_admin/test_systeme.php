@@ -1,9 +1,9 @@
 <?php
-/* **************************************************************************************************
+/*  *******************************************
 ************    TEST DE LA COMPATIBILITE DU SYSTEME AVEC SoothERP   *********************************
-****************************************************************************************************/
+ *********************************************/
 ini_set ("session.cookie_lifetime", 86400) ;
-if(!session_id()) {session_start(); }
+//if(!session_id()) {session_start(); }
 
 header('Content-type: text/html; charset=utf-8');
 require ("_dir.inc.php");
@@ -68,15 +68,8 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 			$retour_texte .=   "Les options Magic_quotes_gpc et Magic_quotes_runtime sont désactivées.<br>";
 		}
 		
-		
-		
-		
-		
-		
-		
-	
 	// ETAPE 2: VERIFICATION DES DROITS SUR LES FICHIERS ET DOSSIERS LOCAUX
-	$retour_texte .= "<br><br><hr>
+	$retour_texte .= "<br><hr>
 	TEST DE VOS DROITS SUR LES FICHIERS ET DOSSIERS LOCAUX<br><br>";
 	
 		// Droits en lecture / écriture sur les fichiers et dossiers locaux
@@ -84,20 +77,12 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 		if ($erreur) {
 			$retour_texte .= "".$erreur."<br>";
 			$GLOBALS['_INFOS']['test_systeme'][] = "".$erreur."<br>";
-			break;
-		}
+			//break;
+		} else {
 		$retour_texte .= "Les droits en lecture / écriture sont suffisants.<br>";
+		}
 		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		
+
 	// ETAPE 3: VERIFICATION DE LA CONFIGURATION DE MYSQL
 	$retour_texte .= "<br><br><hr>
 	TEST DE VOTRE CONFIGURATION MYSQL<br><br>";
@@ -109,15 +94,16 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 			break;
 		}
 		include ($CONFIG_DIR."config_bdd.inc.php");
-		mysql_connect($bdd_hote, $bdd_user, $bdd_pass);
-		if (version_compare(mysql_get_server_info(), '5.0') < 0) {
+
+		$mysqli = new mysqli($bdd_hote, $bdd_user, $bdd_pass);
+		if (version_compare($mysqli->server_info, '5.0') < 0) {
 			$retour_texte .= "	Votre version de MySQL est insuffisante. <br>
-					Actuellement: ".mysql_get_server_info()." / Recquis: 5.0<br>";
+					Actuellement: ".$mysqli->server_info." / Recquis: 5.0<br>";
 			$GLOBALS['_INFOS']['test_systeme'][] = "Votre version de MySQL est insuffisante. <br>
-					Actuellement: ".mysql_get_server_info()." / Recquis: 5.0<br>";
+					Actuellement: ".$mysqli->server_info." / Recquis: 5.0<br>";
 			break;
 		}
-		$retour_texte .= "MySQL est présent sur le serveur: Actuellement: ".mysql_get_server_info()." / Recquis: 5.0<br>";
+		$retour_texte .= "MySQL est présent sur le serveur: Actuellement: ".$mysqli->server_info." / Recquis: 5.0<br>";
 	
 	
 		// Test la présence de la librairie PDO
@@ -160,9 +146,7 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 		}
 		$retour_texte .= "Vous avez les droits nécessaires sur la base de données.<br>";
 	
-	
-	
-		
+
 	// ETAPE 4: Vérification du fonctionnement des emails
 	$retour_texte .= "<br><br><hr>
 	TEST DU FONCTIONNEMENT DES MAILS<br><br>";
@@ -174,7 +158,7 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 
 		// Test de la variable si nulle (i.e. non définie dans le fichier de config)
 		if (is_null($EMAIL_DEV)) {
-			$retour_texte .= "Le mail de test n'est pas paramètré, veuillez contacter un administrateur pour configurer la variable \$EMAIL_DEV";
+			$retour_texte .= "Le mail de test n'est pas paramètré, veuillez contacter un administrateur pour configurer la variable \$EMAIL_DEV.</br>";
 			$retour_texte .= "La fonction Mail() n'a pu être testée.";
 			$GLOBALS['_INFOS']['test_systeme_non_bloquant'][] = "La fonction Mail() n'a pu être testée. (Non bloquant)";			}
 		// Si non nulle, test de l'envoi de mail à l'adresse définie
@@ -300,7 +284,6 @@ function mysql_table_count_line($bdd, $table, $count_line){
 	
 // Vérification des droits en écriture local
 function test_file_auth() {
-	
 	// Création d'un fichier test
 	$test_file = @fopen("lmb_test.txt","w");
 	@fclose($test_file);
@@ -369,16 +352,14 @@ if (!count($GLOBALS['_INFOS']['test_systeme'])) {
 		<span style="float:left; padding-right:20px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="22px" /></span><em style="color:#FF0000"><?php echo ($erreur_test_non_bloquant)?></em><br />
 		<?php
 	}
-	?>
-	<span style="float:left; padding-right:20px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="22px" /></span><span id="aff_rapport" style="cursor:pointer; text-decoration:underline;" >Voir le rapport de test</span><br />
-	<div style="display:none; padding-left:42px; font-weight:bolder" id="rapport_text"><?php echo $retour_texte;?></div>
-	<script type="text/javascript">
-		Event.observe("aff_rapport", "click", function() {$("rapport_text").show();}, false);
-
-	</script>
-	<?php
 }
 ?>
+	<span style="float:left; padding-right:20px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="22px" /></span><span id="aff_rapport" style="cursor:pointer; text-decoration:underline;" >Voir le rapport de test</span><br />
+	<div style="display:none;padding-left:42px; font-weight:bolder" id="rapport_text"><?php echo $retour_texte;?></br></div>
+	<script type="text/javascript">
+		Event.observe("aff_rapport", "click", function() {$("rapport_text").toggle();}, false);
+	</script>
+
 <script type="text/javascript">
 //on masque le chargement
 H_loading();
