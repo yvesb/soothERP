@@ -931,7 +931,6 @@ final public function getLib_interface () {
 	return $this->lib_interface;
 }
 
-
 // Retourne le dossier
 final public function getDossier () {
 	return $this->dossier;
