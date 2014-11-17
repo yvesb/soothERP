@@ -1,8 +1,5 @@
 <?php
 
-  // ******************************* //
- // 						LMB
-// ******************************* //
 abstract /*static*/ class Lib_interface_agendaStd {
 //	//public static __callStatic (string,  array $arguments  )
 //	 public static function __callStatic($nameMethode, $arguments){
@@ -169,7 +166,7 @@ abstract /*static*/ class Lib_interface_agendaStd {
 		$last_id = -1;
 		$count = 0;
 		reset($agendasAvecDroits);
-		$agenda_selected = $_REQUEST["cook_agenda_selected"];
+		$agenda_selected = $_COOKIE["cook_agenda_selected"];
 		for ($i = 0; $i< count($agendasAvecDroits); $i++){
 			$index = key($agendasAvecDroits);
 			$eventsTypesAvecDroitFirstAg = $_SESSION["agenda"]["GestionnaireEvenements"]->getEventsTypesAvecDroits($agendasAvecDroits[$index]["id_type_agenda"]/*, $droitsCibles*/);
@@ -220,7 +217,7 @@ abstract /*static*/ class Lib_interface_agendaStd {
 	public static function buildSelectOptionsEventType(&$eventsTypesAvecDroitOfAg){
 		$res = "";
 		reset($eventsTypesAvecDroitOfAg);
-		$agenda_selected = $_REQUEST["cook_agenda_selected"];
+		$agenda_selected = $_COOKIE["cook_agenda_selected"];
 		for ($i = 0; $i< count($eventsTypesAvecDroitOfAg); $i++){
 			$index = key($eventsTypesAvecDroitOfAg); 
 			if($i==$agenda_selected)
