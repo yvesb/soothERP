@@ -1,0 +1,21 @@
+.choix_users_liste{ 
+                display: none; 
+                position:absolute;  
+                z-index:250;
+                width:99%;
+                height:200px;
+                border:1px solid #aaaaaa;
+                background-color:#FFFFFF;
+                margin:0px; 
+                padding:0px; 
+                top: 19px;
+                left: 0px;
+                text-align:left;
+                overflow:auto;
+            } 
+            .choix_users_liste li  {
+                color:#666666;
+            }
+            .choix_users_liste li:hover  {
+                background-color: #CCCCCC;
+                cursor:pointer;}

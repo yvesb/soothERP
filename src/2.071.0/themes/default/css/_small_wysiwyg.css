@@ -1,0 +1,4 @@
+/* CSS Document */
+.bt_wysiwyg{display:block;height:21px;width:25px;}
+.bt_wysiwyg:hover{background-color:#FDC879;border:1px solid #06C;height:19px;width:23px;}
+.barre_editeur{background-color:#FFF;background-image:url(../images/_small_wysiwyg/editor-bg.gif);border:1px solid #809eb6;margin:0;width:100%;}

@@ -1,0 +1,45 @@
+/* minimoteur de recherche en pop up*/
+.popup,.mini_moteur,.mini_moteur_compte_compta,.mini_moteur_add_compte_compta,.mini_moteur_doc_type_lsize,.mini_moteur_add_iframe,.mini_moteur_comm,.mini_moteur_doc_type,.mini_moteur_export,.mini_moteur_article_ref_externe,.mini_moteur_iframe,.compte_compta_verify,.mini_moteur_doc,.mini_moteur_doc_iframe,.newmini_moteur_doc,.mini_pop_up_fav,.mini_pop_up_article_sn,.lines_info_modeles_doc,.lines_livraison_modes_doc,.lines_liste_tva_doc{background-color:#FFFFFF;border:1px ridge #9dabb3;border-radius:10px;display:none;left:0px;max-height:450px;-moz-border-radius:10px;padding:10px;position:absolute;top:0px;}
+.popup, .mini_moteur{padding:2px 10px;}
+.headbar{background-color:#F0F0F0;height:20px;width:100%;}
+.popup_content{height:300px;overflow:auto;}
+.mini_moteur{height:352px;width:560px;z-index:850;}
+.admin .mini_moteur,.admin .mini_moteur_article_ref_externe,.admin .mini_moteur_compte_compta,.admin .mini_moteur_doc_type,.admin .mini_moteur_doc,.admin .newmini_moteur_doc,.admin .mini_pop_up_fav,.admin .mini_pop_up_article_sn,.admin .lines_info_modeles_doc,.admin .mini_moteur_doc_type_lsize, .admin .lines_livraison_modes_doc,.admin .lines_liste_tva_doc{border:1px ridge #707070!important;}
+.mini_moteur_compte_compta{height:432px;width:560px;}
+.mini_moteur_add_compte_compta{height:140px;width:450px;z-index:900;}
+.mini_moteur_add_iframe{background-color:#000000;filter:alpha(opacity=40);height:100%;opacity:0.4;width:100%;z-index:899;}
+
+/*détails des commissionnements commerciaux*/
+.mini_moteur_comm{height:432px;width:760px;z-index:550;}
+
+/*popup pour l'export*/
+.mini_moteur_export{height:150px;width:400px;z-index:550;}
+.mini_moteur_article_ref_externe{height:182px;width:760px;z-index:850;}
+.mini_moteur_iframe{filter:alpha(opacity=0);height:450px;width:620px;z-index:849;}
+.mini_moteur_doc_type, .compte_compta_verify{height:432px;width:560px;z-index:1100;}
+.corps_mini_moteur{background-color:#dbe8f0;border:1px solid #a3dbf4;margin:auto;margin-top:3px;width:98%;}
+.caract_recherche{display:block;width:100%;}
+.caract_simple{padding-left:10px;padding-right:10px;}
+.caract_simple li{display:inline;margin:3px;padding:3px;width:250px;}
+.carac_plus_moins{color:#002673;font-size:0.9em;font-weight:bolder;text-decoration:none;}
+.search_lib_carac{color:#002673;width:110px;}
+
+/*minimoteur recherche document*/
+.mini_moteur_doc{height:352px;width:660px;z-index:850;}
+.mini_moteur_doc_iframe{filter:alpha(opacity=0);height:450px;width:720px;z-index:849;}
+.newmini_moteur_doc{height:172px;width:660px;z-index:452;}
+.newmini_moteur_doc_iframe{display:none;filter:alpha(opacity=0);height:190px;left:0px;position:absolute;top:0px;width:720px;z-index:451;}
+
+/* minimoteur de recherche en pop up*/
+.mini_pop_up_fav{height:252px;width:250px;z-index:850;}
+.mini_pop_up_article_sn{height:252px;width:860px;z-index:850;}
+.mini_pop_up_article_sn_iframe{display:none;filter:alpha(opacity=0);height:30px;left:0px;position:absolute;top:0px;width:20px;z-index:849;}
+.corps_mini_pop_up_article_sn{background-color:#dbe8f0;border:1px solid #a3dbf4;margin:0;width:100%;}
+
+/*insertion ligne informations dans documents*/
+.lines_info_modeles_doc{height:372px;width:660px;z-index:452;}
+
+/*insertion ligne frais de port dans documents*/
+.lines_livraison_modes_doc{height:302px;width:360px;z-index:452;}
+.lines_liste_tva_doc{height:122px;width:360px;z-index:452;}
+.mini_moteur_doc_type_lsize{height:400px;width:800px;z-index:850;}

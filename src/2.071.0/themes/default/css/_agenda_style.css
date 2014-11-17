@@ -1,0 +1,85 @@
+.fond_acceuil{background-color:#d0cfdd;}
+.grille_grand_conteneur{background-color:#9695a5;}
+.grille_titre_colonne{color:white;font-weight:bolder;}
+.grille_conteneur_EventsEtendus{background-color:white;}
+.grille_conteneur_EventsEtendus table{border:1px;border-spacing:0;padding:3px;width:100%;}
+.grille_conteneur_EventsEtendus tr{}
+.grille_conteneur_EventsEtendus td{}
+.grille_conteneur_grille{background-color:white;}
+.grille_colonne_heure{margin-top:1px;}
+.grille_colonne_heure tr{height:20px;}
+.grille_colonne_heure td{color:white;font-weight:bold;}
+.cell_jour_mois_entete{background-color:#e1dff4;font-weight:bold;text-align:right;}
+.grille_colonne_num_semaine{background-color:#9695a5;color:#dbdaec;font-size:26pt;font-weight:bolder;max-width:60px;min-width:60px;text-align:center;vertical-align:middle;}
+#ZEROjour, #ZEROsemaine{left:0px;position:relative;top:0px;width:100%;}
+#grilleDemieHeure{background-color:white;}
+#grilleDemieHeure tr{height:20px;}
+
+/* grille_colonne_jour_deb_heure */
+.grille_colonne_jour_deb_heure{border:solid;border-left:solid;border-left-color:#9695a5;border-left-width:2px;border-top:solid;border-top-color:#cbcbe3;border-top-width:1px;border-width:1px 0px 0px 2px;}
+.grille_colonne_jour_deb_heure_TODAY{background-color:#f3f3fb;border:solid;border-left:solid;border-left-color:#9695a5;border-left-width:2px;border-top:solid;border-top-color:#cbcbe3;border-top-width:1px;border-width:1px 0px 0px 2px;}
+.grille_colonne_jour_fin_heure{border:solid;border-left:solid;border-left-color:#9695a5;border-left-width:2px;border-top:solid;border-top-color:#eeedf5;border-top-width:1px;border-width:1px 0px 0px 2px;}
+.grille_colonne_jour_fin_heure_TODAY{background-color:#f3f3fb;border:solid;border-left:solid;border-left-color:#9695a5;border-left-width:2px;border-top:solid;border-top-color:#eeedf5;border-top-width:1px;border-width:1px 0px 0px 2px;}
+
+/* event */
+.event_div_principale{border:solid;border-width:0px;cursor:pointer;position:absolute;}
+.event_div_titre_G{color:white;cursor:move;float:left;font-family:arial;font-size:9pt;font-weight:bolder;width:80%;}
+.event_div_titre_D{color:white;cursor:move;float:left;font-family:arial;font-size:9pt;text-align:center;width:20%;}
+.event_div_description{clear: both;width: 96%;border-style: solid;border-color: -moz-use-text-color;-moz-border-top-colors: none;-moz-border-right-colors: none;-moz-border-bottom-colors: none;-moz-border-left-colors: none;border-image: none;border-right: 0px solid;border-width: 1px 0px 0px;font-size: 9pt;font-family: arial;text-align: justify;color: #FFF;padding: 2%;cursor: pointer;}
+.event_div_edition_zone{cursor:n-resize;height:7px;left:0px;position:relative;top:-7px;}
+.Evenement_etendu_DIV{height:100%;-moz-border-radius:3px;width:100%;}
+.horloge{color:black;cursor:pointer;font-weight:bold;vertical-align:middle;}
+
+/* panneau_agendas */
+.panneau_agendas_titre{color:#778899;cursor:pointer;font-weight:bold;}
+.panneau_agendas_cell_mini{border:1px solid;border-color:white;cursor:pointer;height:100%;-moz-border-radius:3px;}
+.panneau_agendas_cell{background-color:white;border:1px solid;border-color:#9794a5;cursor:pointer;height:100%;-moz-border-radius:3px;}
+.panneau_agendas_enable_text{color:#778899;font-size:9pt;font-weight:bold;margin-left:3px;margin-right:3px;}
+.panneau_agendas_disable_text{color:#c0c0c0;font-size:9pt;font-weight:bold;margin-left:3px;margin-right:3px;}
+
+/* mini_calendrier */
+.mini_calendrier_Jsemaine{color:#3d3c48;font-size:7pt;font-weight:bolder;text-align:center;}
+.mini_calendrier_weekend{color:#708090;font-size:7pt;font-weight:bold;text-align:center;}
+.mini_calendrier_now_chiffre{background-color:#cfcfdc;background-image:url('../images/carre_vert.gif');background-repeat:repeat-x;border:1px solid;border-color:#e6e6fa;color:white;cursor:pointer;font-size:9pt;font-weight:bold;text-align:center;vertical-align:middle;}
+.mini_calendrier_Jsemaine_chiffre{background-color:#cfcfdc;border:1px solid;border-color:#e6e6fa;color:#3d3c48;cursor:pointer;font-size:9pt;font-weight:bold;text-align:center;vertical-align:middle;}
+.mini_calendrier_Jsemaine_chiffre_hors_mois{background-color:#cfcfdc;border:1px solid;border-color:#e6e6fa;color:#778899;cursor:pointer;font-size:9pt;font-weight:bold;text-align:center;vertical-align:middle;}
+.mini_calendrier_weekend_chiffre{background-color:#dddde7;border:1px solid;border-color:#e6e6fa;color:#3d3c48;cursor:pointer;font-size:9pt;font-weight:bold;text-align:center;vertical-align:middle;}
+.mini_calendrier_weekend_chiffre_hors_mois{background-color:#dddde7;border:1px solid;border-color:#e6e6fa;color:#778899;cursor:pointer;font-size:9pt;font-weight:bold;text-align:center;vertical-align:middle;}
+.mini_calendrier_mois{color:#2f4f4f;font-size:10pt;font-weight:bold;}
+
+/* panneau_edition_event */
+.panneau_edition_event_titre{color:#9595a5;font-weight:bold;height:25px;text-align:left;vertical-align:top;}
+.panneau_edition_event_titre2{color:#000000;font-weight:bold;height:25px;text-align:left;vertical-align:top;}
+.panneau_edition_event_separateur{border-top-color:#6a697d;border-top-style:solid;border-top-width:1px;}
+.panneau_edition_event_ligne{height:25px;vertical-align:top;}
+.panneau_edition_event_ligne_date{text-align:left;vertical-align:middle;}
+
+/* barre_navigation */
+.barre_navigation_bt_precedent{background-image:url('../images/bt_next_left_bleu_fonce.gif');background-position:top right;background-repeat:no-repeat;color:white;cursor:pointer;text-align:center;vertical-align:middle;width:50px;}
+.barre_navigation_bt_suivant{background-image:url('../images/bt_next_right_bleu_fonce.gif');background-position:top left;background-repeat:no-repeat;color:white;cursor:pointer;height:27px;text-align:center;vertical-align:middle;width:50px;}
+.barre_navigation_bt_short{background-image:url('../images/bt_short.gif');background-position:top center;background-repeat:no-repeat;color:white;cursor:pointer;height:27px;text-align:center;vertical-align:middle;width:77px;}
+.barre_navigation_bt_short_selected{background-image:url('../images/bt_short_selected.gif');background-position:top center;background-repeat:no-repeat;color:white;cursor:pointer;height:27px;text-align:center;vertical-align:middle;width:77px;}
+.barre_navigation_bt_long{background-image:url('../images/bt_long.gif');background-position:top center;background-repeat:no-repeat;color:white;cursor:pointer;height:27px;text-align:center;vertical-align:middle;width:104px;}
+.barre_navigation_bt_long_selected{background-image:url('../images/bt_long_selected.gif');background-position:top center;background-repeat:no-repeat;color:white;cursor:pointer;height:27px;text-align:center;vertical-align:middle;width:104px;}
+
+/* Sélection des Agendas */
+.pop_up_selection_agendas{background-color:#ffffff;border:1px ridge #9dabb3;border-radius:10px;height:480px;-moz-border-radius:10px;overflow:auto;padding:5px;position:absolute;width:700px;z-index:852;}
+
+/* Sélection des Evénements */
+.pop_up_selection_types_events{background-color:#ffffff;border:1px ridge #9dabb3;border-radius:10px;height:480px;-moz-border-radius:10px;overflow:auto;padding:5px;position:absolute;width:700px;z-index:852;}
+
+/* view_month_a_few_events_of_day */
+.view_month_a_few_events_of_day_grand_conteneur{background-color:white;border:1px solid #cccccc;height:100%;position:relative;width:100%;}
+.view_month_a_few_events_of_day_titre{background-color:#e1dff4;border-bottom:1px solid #cccccc;color:#3e3d4b;font-weight:bolder;padding-left:8px;padding-right:8px;text-align:right;white-space:nowrap;}
+.view_month_a_few_events_of_day_titre_out_of_month{background-color:#e1dff4;border-bottom:1px solid #cccccc;color:#7b7a8a;font-weight:bolder;padding-left:8px;padding-right:8px;text-align:right;white-space:nowrap;}
+.view_month_a_few_events_of_day_contenu{padding-left:8px;padding-right:8px;}
+.view_month_a_few_events_of_day_contenu tr{}
+.view_month_a_few_events_of_day_contenu td{}
+
+/* view_month_all_events_of_day */
+.view_month_all_events_of_day_grand_conteneur{background-color:white;border:1px solid #cccccc;-moz-border-radius:10px;position:absolute;z-index:1000;}
+.view_month_all_events_of_day_titre{background-color:#e1dff4;border-bottom:1px solid #cccccc;color:#3e3d4b;font-weight:bolder;-moz-border-radius:10px 10px 0px 0px;padding-left:16px;padding-right:16px;text-align:center;white-space:nowrap;}
+.view_month_all_events_of_day_titre_out_of_month{background-color:#e1dff4;border-bottom:1px solid #cccccc;color:#7b7a8a;font-weight:bolder;-moz-border-radius:10px 10px 0px 0px;padding-left:16px;padding-right:16px;text-align:center;white-space:nowrap;}
+.view_month_all_events_of_day_contenu{padding-left:8px;padding-right:8px;}
+.view_month_all_events_of_day_contenu tr{}
+.view_month_all_events_of_day_contenu td{}

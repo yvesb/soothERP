@@ -1,0 +1,47 @@
+html{overflow:auto;}
+body{background-color:#c5c29f;color:#707070;font:10px Verdana, Arial, Helvetica, sans-serif;font-size:10px;height:100%;margin:0px;overflow:auto;padding:0px;}
+table{margin:0;padding:0;}
+td{vertical-align:top;}
+dl, dt, dd, ul, li{list-style-type:none;margin:0px;padding:0px;}
+div#header{height:135px;margin:0px;padding:0px;width:900px;}
+div#menu{height:34px;margin:0px;padding:0px;width:900px;}
+span#middlewrap{background-color:#FFFFFF;padding:0px;width:900px;}
+span#middle{height:100px;margin:0px;padding:0px;}
+span#footer{height:90px;margin:0px;width:900px;}
+span#footer p{color:#000000;font:11px Verdana, Arial, Helvetica, sans-serif;text-align:center;}
+span#footer a{color:#000000;font:11px Verdana, Arial, Helvetica, sans-serif;text-decoration:none;}
+img{border:0px;vertical-align:middle;}
+
+.emarge{height:100%;left:50%;position:absolute;top:0px;width:900px;
+margin-top: 0px; /* moitié de la hauteur */
+margin-left: -450px; /* moitié de la largeur */
+}
+
+/* menu horizontaux principaux*/
+.menu{background-color:#98c010;height:34px;list-style-type:none;margin:0px;padding:0px;text-align:left;}
+.menu li{display:inline;float:left;width:179px;}
+.menu_unselect{background-color:#98c010;color:#000000;display:block;font:14px Verdana, Arial, Helvetica, sans-serif;font-weight:bolder;line-height:34px;padding:0;text-align:center;text-decoration:none;width:179px;}
+.menu_select{background-color:#FFFFFF;color:#000000;display:block;font:14px Verdana, Arial, Helvetica, sans-serif;font-weight:bolder;line-height:34px;padding:0px;text-align:center;text-decoration:none;width:179px;}
+.menu_roll{background-color:#d6f276;color:#000000;display:block;font:14px Verdana, Arial, Helvetica, sans-serif;font-weight:bolder;line-height:34px;padding:0px;text-align:center;text-decoration:none;width:179px;}
+.tab_span{padding-left:10px;padding-right:10px;}
+.titre1{color:#00336e;font:12px Verdana, Arial, Helvetica, sans-serif;font-weight:bolder;}
+.titre2{color:#00336e;font:14px Verdana, Arial, Helvetica, sans-serif;font-weight:bolder;}
+.para{color:#707070;font:11px Verdana, Arial, Helvetica, sans-serif;font-weight:bolder;padding:15px 15px;}
+.dark_text{color:#000000;font:10px Verdana, Arial, Helvetica, sans-serif;font-weight:bolder;text-align:center;}
+img{border:0px;vertical-align:middle;}
+.conteneur{margin:0px auto;position:relative;width:960px;}
+#logoSociete{height:83px;padding-left:10px;padding-top:20px;}
+#arrondiHaut{background:url(../images/arrondi_haut.png) top no-repeat;height:26px;}
+#arrondiBas{background:url(../images/arrondi_bas.png) bottom no-repeat;height:12px;}
+#contenu{background-color:#ffffff;margin:0px 0px 0px 0px;padding:0px 32px 0px 32px;width:896px;}
+.radius_main{background-color:#FFFFFF;border:1px solid #aaaaaa;border-radius:15px;display:block;-moz-border-radius:15px;padding:15px;}
+#framealert{background-color:#777;display:none;filter:alpha(opacity=0);height:0px;left:0px;position:absolute;top:0px;width:0px;z-index:999;}
+
+/* alerte */
+#alert_pop_up{background-color:#FFFFFF;border:1px ridge #9dabb3;border-radius:10px;display:none;filter:alpha(opacity=50);height:100%;height:auto;left:0;line-height:100%;min-height:100%;-moz-border-radius:10px;-moz-opacity:.50;opacity:.50;padding:0;position:fixed;top:0;width:100%;width:auto;z-index:1000;}
+.alert_pop_up_tab{background-color:#FFFFFF;border:1px ridge #9dabb3;border-radius:10px;display:none;left:50%;margin-left:-225px;margin-top:-100px;-moz-border-radius:10px;padding:10px;position:fixed;top:50%;width:250px;z-index:1001;}
+#bouton0{}
+#bouton1{}
+#titre_alert{border-bottom:1px solid #000000;font:0.9em Verdana, Arial, Helvetica, sans-serif;font-weight:bolder;height:20px;line-height:20px;padding:0 10px;}
+#texte_alert{font:0.9em Verdana, Arial, Helvetica, sans-serif;padding:10px 10px;text-align:center;vertical-align:middle;}
+#bouton_alert{height:20px;padding:10px 10px;text-align:center;}
