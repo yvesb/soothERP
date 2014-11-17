@@ -1,7 +1,7 @@
 <?php
-// *************************************************************************************************************
+//  ******************************************************
 // FONCTIONS PERMETTANT LA GENERATION D'UN COURRIER PDF - MODELE LMB
-// *************************************************************************************************************
+//  ******************************************************
 // Ce script est appelé depuis _pdf.class.php->add_courrier_lmb()
 // $this 			réfère donc à un objet de la classe PDF
 // $courrier	réfère au courrier que l'on intègre au PDF

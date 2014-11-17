@@ -1,7 +1,7 @@
 <?php
-// *************************************************************************************************************
+//  ******************************************************
 // FONCTIONS DE GESTION DES DOCUMENTS 
-// *************************************************************************************************************
+//  ******************************************************
 
 // Fonction permettant d'ouvrir un document existant
 function open_doc ($ref_doc) {
@@ -68,9 +68,9 @@ function define_type_of_line ($ref_article) {
 	}
 }
 
-// **********************************************************
+//  ***
 // gestion des différents modèles de ligne d'information
-// **********************************************************
+//  ***
 function charge_docs_infos_lines ($id_type_doc = "") {
 	global $bdd;
 	
@@ -540,7 +540,7 @@ function get_factures_to_pay ($id_client_categ = "" , $id_niveau_relance = "" ) 
 }
 
 
-//*********************************************************
+// **
 //facture fournisseur non réglées
 
 // Fonction retournant le nombre des Factures fournisseur non réglées 
@@ -644,7 +644,7 @@ function get_factures_fournisseur_to_pay ($id_fournisseur_categ = ""  ) {
 	return $factures;
 }
 
-//*********************************************************
+// **
 // Fonction retournant la liste des factures non réglées pour un contact défini
 function get_client_factures_to_pay ($ref_contact = "" ) {
 	global $bdd;

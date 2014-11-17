@@ -1,24 +1,20 @@
 <?php
-// *************************************************************************************************************
+//  ******************************************************
 // CLASSE REGISSANT LES INFORMATIONS SUR UN COMPTE UTILISATEUR DE CONTACT 
-// *************************************************************************************************************
+//  ******************************************************
 // La classe USER gère l'utilisateur en cours pour une session.
 // La classe UTILISATEUR gère l'utilisateur d'un contact en dehors de toute session.
 
 final class utilisateur {
-	private $ref_user;						// Référence de l'utilisateur
-	
+	private $ref_user;				// Référence de l'utilisateur
 	private $ref_coord_user;			// Coordonnées de l'utilisateur
-	private $ref_contact;					// Référence du contact propriétaire de l'utilisateur
-	private $master;							// 1 si il s'agit du compte maitre de ce contact
-
-	private $pseudo;							// Pseudo affiché
-	private $code;								// Code
-	
-	private $actif;								// 1 si le compte utilisateur est actif
-	private $ordre;								// Ordre d'affichage de ce compte utilisateur dans la liste du contact
-	
-	private $permissions;					// Tableau des permissions de l'utilisateur
+	private $ref_contact;				// Référence du contact propriétaire de l'utilisateur
+	private $master;				// 1 si il s'agit du compte maitre de ce contact
+	private $pseudo;				// Pseudo affiché
+	private $code;					// Code
+	private $actif;					// 1 si le compte utilisateur est actif
+	private $ordre;					// Ordre d'affichage de ce compte utilisateur dans la liste du contact
+	private $permissions;				// Tableau des permissions de l'utilisateur
 	private $allowed_profils;			// Tableau des profils utilisés
 
 
@@ -38,8 +34,9 @@ function __construct($ref_user = "") {
 	if (!$utilisateur = $resultat->fetchObject()) { return false; }
 
 	// Attribution des informations à l'objet
+
 	$this->ref_user 		= $ref_user;
-	$this->ref_coord_user	= $utilisateur->ref_coord_user;
+	$this->ref_coord_user           = $utilisateur->ref_coord_user;
 	$this->ref_contact 		= $utilisateur->ref_contact;
 	$this->master			= $utilisateur->master;
 	$this->pseudo			= $utilisateur->pseudo;
@@ -52,9 +49,9 @@ function __construct($ref_user = "") {
 
 
 
-// *************************************************************************************************************
+//  ******************************************************
 // FONCTIONS LIEES A LA CREATION D'UN UTILISATEUR 
-// *************************************************************************************************************
+//  ******************************************************
 
 final public function create ($ref_contact, $ref_coord_user, $pseudo, $actif, $code, $id_langage) {
 	global $bdd;
@@ -198,9 +195,9 @@ final public function create ($ref_contact, $ref_coord_user, $pseudo, $actif, $c
 
 
 
-// *************************************************************************************************************
+//  ******************************************************
 // FONCTIONS LIEES A LA MODIFICATION D'UN UTILISATEUR
-// *************************************************************************************************************
+//  ******************************************************
 
 final public function modification ($ref_coord_user, $pseudo, $actif, $id_langage) {
 	global $bdd;
@@ -393,9 +390,9 @@ final public function modifier_ordre ($new_ordre) {
 
 
 
-// *************************************************************************************************************
+//  ******************************************************
 // FONCTIONS LIEES A LA SUPPRESSION D'UN UTILISATEUR
-// *************************************************************************************************************
+//  ******************************************************
 // Un compte utilisateur n'est pas supprimé, il est juste archivé 
 final public function suppression () {
 	global $bdd;
@@ -434,9 +431,9 @@ final public function suppression () {
 
 
 
-// *************************************************************************************************************
+//  ******************************************************
 // FONCTIONS DIVERSES
-// *************************************************************************************************************
+//  ******************************************************
 // Vérifie si le niveau de sécurité du mot de passe est suffisant
 function check_code_security ($code) {
 
@@ -448,13 +445,13 @@ function check_code_security ($code) {
 	return true;
 }
 
-// *************************************************************************************************************
+//  ******************************************************
 // FONCTIONS DIVERSES
-// *************************************************************************************************************
+//  ******************************************************
 
-//************************************************************************************************************
+// *****************************************************
 //FONCTION D'INSERTION DES PREMISSIONS UTILISATEURS D'UN CONTACT AFIN D'AUTORISER L'UTILISATION DE L'INTERFACES DU PROFIL AJOUTÉ SI IL EXISTE DANS LES PROFIL_ALLOWED
-//************************************************************************************************************
+// *****************************************************
 static function set_users_permission ($ref_contact = "", $id_profil = "") {
 	global $bdd;
 
@@ -499,9 +496,9 @@ static function set_users_permission ($ref_contact = "", $id_profil = "") {
 	// Résultat positif de la modification
 	return true;
 }
-//************************************************************************************************************
+// *****************************************************
 //FONCTION DE SUPPRESSION DES PERMISSIONS UTILISATEURS D'UN CONTACT 
-//************************************************************************************************************
+// *****************************************************
 //AFIN DE NE PLUS AUTORISER L'UTILISATION DE L'INTERFACES DU PROFIL SUPPRIMÉ 
 static function unset_users_permission ($ref_contact = "", $id_profil = "") {
 	global $bdd;
@@ -547,9 +544,9 @@ static function unset_users_permission ($ref_contact = "", $id_profil = "") {
 	return true;
 }
 
-// *************************************************************************************************************
+//  ******************************************************
 // FONCTIONS DIVERSES
-// *************************************************************************************************************
+//  ******************************************************
 
 // renvoi de la ref user en fonction de l'ordre
 public function get_user_fonctions(){
@@ -615,9 +612,9 @@ public function liste_ref_user_actif () {
 	return $users;
 }
 
-// *************************************************************************************************************
+//  ******************************************************
 // FONCTIONS DE LECTURE DES DONNEES 
-// *************************************************************************************************************
+//  ******************************************************
 function getRef_user () {
 	return $this->ref_user;
 }

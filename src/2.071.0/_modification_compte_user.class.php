@@ -1,7 +1,7 @@
 <?php
-// *************************************************************************************************************
+//  ******************************************************
 // CLASSE REGISSANT LES MODIFICATION
-// *************************************************************************************************************
+//  ******************************************************
 
 class Modification_compte_user extends InscriptionModification {
 	private $modification_allowed;
@@ -30,7 +30,7 @@ class Modification_compte_user extends InscriptionModification {
 				}
 			}else{
 				//L'interface ne possede pas son porpre fichier de config -> c'est celui du profil client qui est lu
-				$chemin_file = $CORE_DIR."profil_client/_interface.config.php";
+				$chemin_file = $DIR."profil_client/_interface.config.php";
 				if(file_exists($chemin_file)){
 					$handle = @fopen($chemin_file, "r");
 					if($handle){
@@ -55,9 +55,9 @@ class Modification_compte_user extends InscriptionModification {
 		else{ return -1;}
 	}
 	
-	// *************************************************************************************************************
+	//  ******************************************************
 	// Fonctions d'accès aux données
-	// *************************************************************************************************************
+	//  ******************************************************
 	
 	// Retourne inscription_allowed
 	public function getModification_allowed(){
@@ -66,11 +66,11 @@ class Modification_compte_user extends InscriptionModification {
 		else{	return $this->modification_allowed;}
 	}
 	
-	// *************************************************************************************************************
-	// *************************************************************************************************************
+	//  ******************************************************
+	//  ******************************************************
 	// MODIFICATION DU COMPTE D'UN CONTACT
-	// *************************************************************************************************************
-	// *************************************************************************************************************
+	//  ******************************************************
+	//  ******************************************************
 	
 	//	Utilisation de la table Table: annuaire_tmp 
 	//
@@ -706,9 +706,9 @@ class Modification_compte_user extends InscriptionModification {
 	}
 	
 	
-	// *************************************************************************************************************
+	//  ******************************************************
 	// VALIDATION DE LA MODIFICATION
-	// *************************************************************************************************************
+	//  ******************************************************
 	
 	
 	public function refus_modification_contact_par_collaborateur($id_contact_tmp){

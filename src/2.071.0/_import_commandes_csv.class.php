@@ -1,7 +1,7 @@
 <?php
-// *************************************************************************************************************
+//  ******************************************************
 // CLASSE REGISSANT les import de commandes depuis un fichier CSV 
-// *************************************************************************************************************
+//  ******************************************************
 
 class import_commandes_csv {
 	
@@ -203,7 +203,7 @@ class import_commandes_csv {
 			while($cdc = $stt->fetchObject()){
 				
 			
-				//*************************************************************
+				// ******
 				// Création du contact
 				$contact = null;
 				if(!empty($cdc->ref_client)){					
@@ -230,7 +230,7 @@ class import_commandes_csv {
 				}
 				
 
-				//*************************************************************
+				// ******
 				// Création de la commande
 				$GLOBALS['_OPTIONS']['CREATE_DOC']['ref_contact'] 		= $contact->getRef_contact();
 				$GLOBALS['_OPTIONS']['CREATE_DOC']['id_etat_doc'] 		= '8';
@@ -251,7 +251,7 @@ class import_commandes_csv {
 				$doc->maj_text_id_pays_livraison ($cdc->adr_liv_id_pays);
 				
 				
-				//**************************************************************
+				// *******
 				// Création des lignes de la commande
 				$query2 = "SELECT * FROM csv_import_cdc_infos_lines
 							WHERE id_import_cdc_infos_doc = '".$cdc->id_import_cdc_infos_doc."' ";
@@ -307,9 +307,9 @@ class import_commandes_csv {
 		$bdd->exec($query);
 	}
 	
-	//***********************************************************************************************
+	// ****************************************
 	//	 SETTERS
-	//***********************************************************************************************
+	// ****************************************
 	
 	/*public function setType_ref_article($type_ref_article){
 		global $bdd;
@@ -348,9 +348,9 @@ class import_commandes_csv {
 		$bdd->exec($query);
 	}
 	
-	//***********************************************************************************************
+	// ****************************************
 	//	 GETTERS
-	//***********************************************************************************************
+	// ****************************************
 	
 	public function getId_import(){
 		return $this->id_import;
@@ -377,9 +377,9 @@ class import_commandes_csv {
 		return $this->ligne_number;
 	}
 	
-	//***********************************************************************************************
+	// ****************************************
 	//	FONCTIONS STATIQUES
-	//***********************************************************************************************
+	// ****************************************
 	
 
 	public static function getAncien_import($id){

@@ -62,7 +62,7 @@ class CachePDO extends CacheCore implements ICacheCore
 	var $store_read = null;
 
 
-	/*%******************************************************************************************%*/
+	/*% ***********************************%*/
 	// CONSTRUCTOR
 
 	/**
@@ -291,7 +291,7 @@ class CachePDO extends CacheCore implements ICacheCore
 }
 
 
-/*%******************************************************************************************%*/
+/*% ***********************************%*/
 // EXCEPTIONS
 
 class CachePDO_Exception extends CacheCore_Exception {}

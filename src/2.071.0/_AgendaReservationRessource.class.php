@@ -1,16 +1,16 @@
 <?php
-// *************************************************************************************************************
+//  ******************************************************
 // CLASSES REGISSANT LES INFORMATIONS SUR UN AGENDA
-// *************************************************************************************************************
+//  ******************************************************
 //  4 CLASSES
 //	Agenda <: AgendaReservationRessource
 //	Agenda <: AgendaContact
 //	Agenda <: AgendaLoacationMateriel
 
 
-// *************************************************************************************************************
+//  ******************************************************
 // CLASSE AgendaReservationRessource
-// *************************************************************************************************************
+//  ******************************************************
 class AgendaReservationRessource extends Agenda{
 
 	// POUR l'instant 1 AGENDA gère 1 RESSOURCE
@@ -21,9 +21,9 @@ class AgendaReservationRessource extends Agenda{
 	//	$ressource[N]["ref_ressource"]
 	//	$ressource[N]["lib_ressource"]
 	
-	// *************************************************************************************************************
+	//  ******************************************************
 	// CONSTRUCTEUR
-	// *************************************************************************************************************
+	//  ******************************************************
 		
 	public function __construct($ref_agenda){
 		if(AgendaReservationRessource::$lib_type == "")
@@ -122,9 +122,9 @@ class AgendaReservationRessource extends Agenda{
 		return true;
 	}
 	
-	// *************************************************************************************************************
+	//  ******************************************************
 	// Getters & Setters
-	// *************************************************************************************************************
+	//  ******************************************************
 	//Cerataines fonctions sont redondante avec les fonctions "static" -> normales, c'est plus simple à utiliser
 	
 	public function getRessources()
@@ -175,14 +175,14 @@ class AgendaReservationRessource extends Agenda{
 	public function getLib_type()
 	{		return AgendaReservationRessource::_getLib_type();}
 
-	// *************************************************************************************************************
+	//  ******************************************************
 	// ATTRIBUTS ET FONCTIONS "STATIC"
-	// *************************************************************************************************************
+	//  ******************************************************
 
 	public static function _AGENDA_ID_REFERENCE_TAG()
 	{		return 32;}
 	
-	// RENSEIGNEMENT SUR LE TYPE D'AGENDA **************************************************************************
+	// RENSEIGNEMENT SUR LE TYPE D'AGENDA  *******************
 	
 	//voir dans la BD la table : AGENDAS_TYPES
 	public static function _getId_type_agenda()		//smallint(5) 	unsigned NOT NULL

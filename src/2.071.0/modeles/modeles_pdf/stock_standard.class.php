@@ -1,7 +1,7 @@
 <?php
-// *************************************************************************************************************
+//  ******************************************************
 // CLASSE DE GENERATION DE L'ETAT DES STOCKS PDF - 
-// *************************************************************************************************************
+//  ******************************************************
 
 
 class pdf_stock_standard extends PDF_etendu {
@@ -33,9 +33,9 @@ class pdf_stock_standard extends PDF_etendu {
 		global $PDF_MODELES_DIR;
 		global $ETAT_STOCK;
 		
-		//**********************************************************
+		// ***
 		//	TEST SI LE NOMBRE DE STOCKS EST SUPPORTE PAR LE MODEL  *
-		//**********************************************************
+		// ***
 		$this->nb_stocks = count($id_stocks);
 		if($this->nb_stocks>$this->nb_stock_supporter){ 
 			echo 'Le nombre de stocks à afficher est supérieur au nombre de stocks affichable par le model.';
@@ -107,7 +107,7 @@ class pdf_stock_standard extends PDF_etendu {
 	}
 	
 	
-	//**********************************************************************
+	// ***************
 	//CALCUL DE LA LARGEUR DES DIFFERENTES COLONNE ET LA LARGEUR TOTAL
 	protected function calcul_largeur_colonne(){
 	
@@ -126,7 +126,7 @@ class pdf_stock_standard extends PDF_etendu {
 		
 	}
 	
-	//**********************************************************************
+	// ***************
 	//CALCUL DU NOMBRE DE PAGES NECESSAIRES
 	protected function calcul_nb_page(){
 	

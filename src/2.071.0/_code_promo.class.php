@@ -1,7 +1,7 @@
 <?php
-// *************************************************************************************************************
+//  ******************************************************
 // CLASSE REGISSANT LES INFORMATIONS SUR UN MODE DE LIVRAISON
-// *************************************************************************************************************
+//  ******************************************************
 
 
 final class code_promo {
@@ -180,9 +180,9 @@ function supprimer() {
 	
 }
 
-// *************************************************************************************************************
+//  ******************************************************
 // FONCTIONS DIVERSES
-// *************************************************************************************************************
+//  ******************************************************
 
 function check_art_categ_code_promo_exist () {
 	global $bdd;
@@ -217,7 +217,7 @@ function check_art_categ_code_promo_exist () {
 		
 		$CODE_PROMO_ART_CATEG = $art_categ->getRef_art_categ();
 		//mise à jour de la vairable systeme
-		maj_configuration_file ("config_systeme.inc.php", "maj_line", "\$CODE_PROMO_ART_CATEG =", "\$CODE_PROMO_ART_CATEG = \"".$art_categ->getRef_art_categ()."\";", $CONFIG_DIR);
+		maj_configuration_file ("config_systeme.inc.php", "maj_line", "\$CODE_PROMO_ART_CATEG =", "\$CODE_PROMO_ART_CATEG = \"".$art_categ->getRef_art_categ()."\";", $DIR."config/");
 	}
 		
 	return $CODE_PROMO_ART_CATEG;
@@ -247,9 +247,9 @@ public function calcul_code_promo($document){
 }
 
 
-// *************************************************************************************************************
+//  ******************************************************
 // FONCTIONS DE LECTURE DES DONNEES 
-// *************************************************************************************************************
+//  ******************************************************
 public function getId_code_promo () {
 	return $this->id_code_promo;
 }

@@ -1,7 +1,7 @@
 <?php
-// *************************************************************************************************************
+//  ******************************************************
 // CLASSE REGISSANT LES INSCRIPTIONS
-// *************************************************************************************************************
+//  ******************************************************
 
 class Inscription_compte_user extends InscriptionModification {
 	private $inscription_allowed;
@@ -29,7 +29,7 @@ class Inscription_compte_user extends InscriptionModification {
 				}
 			}else{
 				//L'interface ne possede pas son porpre fichier de config -> c'est celui du profil client qui est lu
-				$chemin_file = $CORE_DIR."profil_client/_interface.config.php";
+				$chemin_file = $DIR."profil_client/_interface.config.php";
 				if(file_exists($chemin_file)){
 					$handle = @fopen($chemin_file, "r");
 					if($handle){
@@ -54,11 +54,11 @@ class Inscription_compte_user extends InscriptionModification {
 		else{ return -1;}
 	}
 	
-	// *************************************************************************************************************
-	// *************************************************************************************************************
+	//  ******************************************************
+	//  ******************************************************
 	// INSCRIPTION D'UN CONTACT
-	// *************************************************************************************************************
-	// *************************************************************************************************************
+	//  ******************************************************
+	//  ******************************************************
 	
 	//	Utilisation de la table Table: annuaire_tmp 
 	//
@@ -710,9 +710,9 @@ class Inscription_compte_user extends InscriptionModification {
 	}
 	
 	
-	// *************************************************************************************************************
+	//  ******************************************************
 	// VALIDATION DE L'INSCRIPTION
-	// *************************************************************************************************************
+	//  ******************************************************
 	
 	
 	public function refus_inscription_contact_par_collaborateur($id_contact_tmp){
@@ -986,9 +986,9 @@ class Inscription_compte_user extends InscriptionModification {
   	return $inscriptions_attendant_validation;
 	}
 	
-	// *************************************************************************************************************
+	//  ******************************************************
 	// Fonctions d'accès aux données
-	// *************************************************************************************************************
+	//  ******************************************************
 	
 	// Retourne inscription_allowed
 	public function getInscription_allowed(){
@@ -997,7 +997,7 @@ class Inscription_compte_user extends InscriptionModification {
 		else{	return $this->inscription_allowed;}
 	}
 		
-	// *************************************************************************************************************
+	//  ******************************************************
 	
 	
 	//$inscriptions[]["id_contact_tmp"]

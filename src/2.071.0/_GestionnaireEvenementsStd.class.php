@@ -1,8 +1,8 @@
 <?php
 
-// *************************************************************************************************************
+//  ******************************************************
 // CLASSE GestionnaireEvenements 
-// *************************************************************************************************************
+//  ******************************************************
 abstract class GestionnaireEvenementsStd{
 
 	//voir dans la BD la table : AGENDA_EVENTS
@@ -24,9 +24,9 @@ abstract class GestionnaireEvenementsStd{
 		return true;
 	}
 	
-	  // *************************************************************************************************************
+	  //  ******************************************************
 	 // Getters & Setters
-	// *************************************************************************************************************
+	//  ******************************************************
 	
 	//public &array getEventsTypesPermissions()	
 	public function &getEventsTypesPermissions(){
@@ -58,9 +58,9 @@ abstract class GestionnaireEvenementsStd{
 		$this->gestionnaireAgendas =& $gestionnaireAgendas;
 	}
 	
-	  // *************************************************************************************************************
+	  //  ******************************************************
 	 // 
-	// *************************************************************************************************************
+	//  ******************************************************
 	
 	//public void chargerEventsTypesAvecDroits()
 	public function chargerEventsTypesAvecDroits(){
@@ -81,9 +81,9 @@ abstract class GestionnaireEvenementsStd{
 						ORDER BY	et.id_type_event ASC";
 	}
 
-		// *************************************************************************************************************
+		//  ******************************************************
 	 // 
-	// *************************************************************************************************************
+	//  ******************************************************
 	
 	//$eventsTypessAvecDroit[ID_TYPE_EVENT] = array();
 	//$eventsTypessAvecDroit[ID_TYPE_EVENT]["libEvent"] = string;
@@ -132,7 +132,7 @@ abstract class GestionnaireEvenementsStd{
 						ORDER BY	p.id_type_event";
 	}
 	
-	// *************************************************************************************
+	//  ******************************
 		
 	//$eventsTypes[ID_TYPE_EVENT] = array();
 	//$eventsTypes[ID_TYPE_EVENT]["libEvent"] = string;
@@ -167,7 +167,7 @@ abstract class GestionnaireEvenementsStd{
 						ORDER BY	p.id_type_event";
 	}
 	
-	// *************************************************************************************
+	//  ******************************
 	
 	//$eventsTypes[ID_TYPE_EVENT] = array();
 	//$eventsTypes[ID_TYPE_EVENT]["libEvent"] = string;
@@ -199,16 +199,16 @@ abstract class GestionnaireEvenementsStd{
 		return $eventsTypes;
 	}
 		
-	// *************************************************************************************
+	//  ******************************
 	
 	//public bool gride_is_locked()
 	public function gride_is_locked(){
 		return false;
 	}
 	
-	  // *************************************************************************************************************
+	  //  ******************************************************
 	 // 
-	// *************************************************************************************************************
+	//  ******************************************************
 	
 	//retourne la liste des événements compris entre $Udate_deb et $Udate_fin et qui se déroulent
 	//à partir d'une HEURE et pour une DUREE données.
@@ -285,9 +285,9 @@ abstract class GestionnaireEvenementsStd{
 		return (min($res->afficheAG, $res->afficheTEV) > 0); //On retourne un VRAI bool
 	}
 
-	  // *************************************************************************************************************
+	  //  ******************************************************
 	 // Gestion des droits
-	// *************************************************************************************************************
+	//  ******************************************************
 	
 	//public array getDroitsTypesEvents()
 	public function getDroitsTypesEvents(){

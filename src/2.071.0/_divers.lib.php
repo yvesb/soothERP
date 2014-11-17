@@ -1,8 +1,8 @@
 <?php
 
-// ******************************************************************
+//  ***********
 // FONCTIONS LIEES AUX DATES 
-// ******************************************************************
+//  ***********
 
 // IMPORTANT !!
 //
@@ -145,9 +145,9 @@ function getTime_from_date ($requete) {
 	}
 }
 
-// *************************************************************************************************************
+//  ******************************************************
 // FONCTIONS DIVERSES
-// *************************************************************************************************************
+//  ******************************************************
 
 // Retourne la liste des pays pour un affichage en SELECT
 function getPays_select_list () {
@@ -750,9 +750,9 @@ function del_types_ged($id_type){
 	return true;
 }
 
-// ******************************************************************
+//  ***********
 // FONCTIONS LIEES A LA GESTION DES VEHICULES
-// ******************************************************************
+//  ***********
 
 
 //Fonction de chargement de la liste des véhicules
@@ -868,7 +868,7 @@ function maj_evenement($id_evenement, $date_evenement, $lib_evenement, $cout){
 	return true;
 }
 
-// ******************************************************************
+//  ***********
 
 
 
@@ -1160,7 +1160,7 @@ function getListePdfStats(){
 	while ($r = $res->fetchObject()) { $liste[] = $r;}
 	return $liste;
 }
-//****************************************************************
+// *********
 // Quelque fnctions pour les modèles de résultats des commerciaux
 
 function charge_modele_pdf_res_com (){
@@ -1248,7 +1248,7 @@ function getListePdfResultatsCommerciaux(){
 	while ($r = $res->fetchObject()) { $liste[] = $r;}
 	return $liste;
 }
-//**************************************************************************************
+// *******************************
 // Fonction pour modele commande client
 
 function charge_modele_pdf_commande_client (){
@@ -1577,7 +1577,7 @@ function getListeExportStat(){
 }
 // Fin Fonctions pour les modèles d'exports
 
-//*********************************************************
+// **
 function dumpDB($path, $host, $db, $user, $pw){      
   ignore_user_abort(TRUE);
   $file = $path."_DBBackup.sql.gz";
@@ -1622,7 +1622,7 @@ function listFiles($path){
 }
 
 function tarFiles($path, $files){
-  $RESSOURCE_DIR = "../modules/";
+  $RESSOURCE_DIR = "../ressources/";
   require_once($RESSOURCE_DIR."Tar.php");
   $tar = new Archive_Tar($path, true);
   $tar->create($files) or die("Erreur lors de l'archivage");

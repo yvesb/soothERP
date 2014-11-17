@@ -27,9 +27,9 @@ $import_tarifs_fournisseur_csv['liste_entete']	=
 				)
 			);
 
-// ********************************************************************************
+//  *************************
 // **  CLASSE REGISSANT les imports de tarifs fournisseur depuis un fichier CSV  **
-// ********************************************************************************
+//  *************************
 final class import_tarifs_fournisseur_csv {
 	protected $id_import_tarifs_fournisseur;	// Id auto-increment
 	protected $ref_fournisseur;					// La référence du fournisseur

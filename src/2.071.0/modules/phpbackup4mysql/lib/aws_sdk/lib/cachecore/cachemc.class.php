@@ -27,7 +27,7 @@ class CacheMC extends CacheCore implements ICacheCore
 	var $is_memcached = false;
 
 
-	/*%******************************************************************************************%*/
+	/*% ***********************************%*/
 	// CONSTRUCTOR
 
 	/**
@@ -177,7 +177,7 @@ class CacheMC extends CacheCore implements ICacheCore
 }
 
 
-/*%******************************************************************************************%*/
+/*% ***********************************%*/
 // EXCEPTIONS
 
 class CacheMC_Exception extends CacheCore_Exception {}

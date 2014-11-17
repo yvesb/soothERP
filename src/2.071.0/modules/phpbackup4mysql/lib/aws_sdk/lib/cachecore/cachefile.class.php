@@ -15,7 +15,7 @@
 class CacheFile extends CacheCore implements ICacheCore
 {
 
-	/*%******************************************************************************************%*/
+	/*% ***********************************%*/
 	// CONSTRUCTOR
 
 	/**
@@ -183,7 +183,7 @@ class CacheFile extends CacheCore implements ICacheCore
 }
 
 
-/*%******************************************************************************************%*/
+/*% ***********************************%*/
 // EXCEPTIONS
 
 class CacheFile_Exception extends CacheCore_Exception {}
