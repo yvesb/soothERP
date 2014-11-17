@@ -1,7 +1,7 @@
 <?php
 
 // Load library
-require_once('../ressources/ods/ods.php');
+require_once('../modules/ods/ods.php');
 
 class ods_stat_cmd {
 	var $code_ods_modele = "stat_cmd";

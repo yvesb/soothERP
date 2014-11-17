@@ -236,7 +236,7 @@ foreach ($_SESSION['magasins'] as $magasin) {
 		//passage par un règlement rapide (pour retourner à l'onglet principale du document aprés un règlement rapide
 		var reglement_rapide = false;
 		//directories
-		var dirtheme = "<?php echo $DIR . $_SESSION['theme']->getDir_theme() ?>";
+		var dirtheme = "<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>";
 		//historique
 		var historique = new Array();
 		var historique_request = new Array();

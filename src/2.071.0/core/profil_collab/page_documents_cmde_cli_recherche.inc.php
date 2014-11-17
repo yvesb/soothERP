@@ -330,7 +330,7 @@ foreach ($_ALERTES as $alerte => $value) {
 } else { ?>Tous<?php } ?></span>						</span>						</td>
 									<td style="width:28px; text-align:right">
 										<a href="#" id="ref_fournisseur_select_c" style="display:block; width:100%;">
-											<img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/bt_contact_find.gif"/ style="float:right" id="ref_fournisseur_select_img_c">						</a>						</td>
+											<img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/bt_contact_find.gif" style="float:right;" id="ref_fournisseur_select_img_c"/>						</a>						</td>
 								</tr>
 							</table>
 							<script type="text/javascript">
@@ -364,7 +364,7 @@ foreach ($_ALERTES as $alerte => $value) {
 							</script>
 						</td>
 						<td>
-							<img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/supprime.gif"/ style=" cursor:pointer" id="ref_fournisseur_empty_c">
+							<img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/supprime.gif" style=" cursor:pointer" id="ref_fournisseur_empty_c"/>
 
 							<script type="text/javascript">
 								Event.observe('ref_fournisseur_empty_c', 'click', function (evt) {

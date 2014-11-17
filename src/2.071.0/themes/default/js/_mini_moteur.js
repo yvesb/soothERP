@@ -398,9 +398,6 @@ function show_resume_stock(ref_article, evt) {
                         }
 
                         $('resume_stock').style.display = 'block';
-
-
-                        H_loading();
                         H_loading();
                     }
                 }

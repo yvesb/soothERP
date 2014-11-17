@@ -17,6 +17,8 @@ abstract class InscriptionModification{
 	function __construct($id_interface) {
 		global $bdd;
 		global $DIR;
+		global $CORE_DIR;
+		global $CORE_REP;
 		
 		if (is_null($id_interface) || !is_numeric($id_interface))
 		{		return false;}

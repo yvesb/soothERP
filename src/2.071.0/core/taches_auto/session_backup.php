@@ -3,8 +3,8 @@
 require_once (__DIR__.'/../config/config_bdd.inc.php');
 
 
-require_once (__DIR__.'/../ressources/phpbackup4mysql/phpBackup4MySQL.class.php');
-require_once (__DIR__.'/../ressources/phpbackup4mysql/config/config.inc.php');
+require_once (__DIR__.'/../modules/phpbackup4mysql/phpBackup4MySQL.class.php');
+require_once (__DIR__.'/../modules/phpbackup4mysql/config/config.inc.php');
 
 $num_backup_files_kept = $num_backup_files_kept_session;
 

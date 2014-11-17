@@ -2,6 +2,8 @@
 //  ******************************************************
 // FICHIERS DE CONFIGURATION
 //  ******************************************************
+global $CORE_REP;
+global $CORE_DIR;
 $CONFIG_DIR = $DIR . "config/";
 
 require_once ($CONFIG_DIR . "config_systeme.inc.php");
@@ -39,9 +41,8 @@ if (!function_exists("__autoload")) {
 
 }
 
-//  ******************************************************
+
 // Date - Timezone
-//   *
 setlocale(LC_TIME, "fr_FRA", "fr_FR", "fra", "France", "French");
 date_default_timezone_set($TIMEZONE);
 header('Content-type: text/html; charset=utf-8');
@@ -389,7 +390,7 @@ if (is_banned($_SERVER['REMOTE_ADDR'])) {
 if (isset($THIS_DIR) && is_file($THIS_DIR . "_interface.config.php")) {
 	require_once ($THIS_DIR . "_interface.config.php");
 } else {
-	require_once ($CORE_REP . "site/_interface.config.php");
+	require_once ($CORE_DIR . "site/_interface.config.php");
 }
 
 // La page que consulte l'utilisateur est elle accessible à tous ?

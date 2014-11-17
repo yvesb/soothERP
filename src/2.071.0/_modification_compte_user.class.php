@@ -12,12 +12,11 @@ class Modification_compte_user extends InscriptionModification {
 		if($modificationAllowed == -1){
 			// Les valeur pour $this->inscription_allowed ou $this->modificationAllowed n'ont pas étés définies
 			// il faut ouvrir les fichier config pour pouvoir charger ces valeurs.
-			
 			// Lecture du fichier config de l'interface $id_interface
 						
-			if(file_exists($DIR.$this->getDossier()."_interface.config.php")){
+			if(file_exists($CORE_DIR.$this->getDossier()."_interface.config.php")){
 				//L'interface possede son porpre fichier de config -> il est lu
-				$chemin_file = $DIR.$this->getDossier()."_interface.config.php";
+				$chemin_file = $CORE_DIR.$this->getDossier()."_interface.config.php";
 				if(file_exists($chemin_file)){
 					$handle = @fopen($chemin_file, "r");
 					if($handle){
@@ -30,7 +29,7 @@ class Modification_compte_user extends InscriptionModification {
 				}
 			}else{
 				//L'interface ne possede pas son porpre fichier de config -> c'est celui du profil client qui est lu
-				$chemin_file = $DIR."profil_client/_interface.config.php";
+				$chemin_file = $CORE_DIR."profil_client/_interface.config.php";
 				if(file_exists($chemin_file)){
 					$handle = @fopen($chemin_file, "r");
 					if($handle){

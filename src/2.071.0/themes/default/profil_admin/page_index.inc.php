@@ -104,7 +104,7 @@ if (isset($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $CORE
         <script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>_art_categ.js" type=text/javascript></script>
         <script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>_formulaire.js"></script>
         <script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>swfobject.js"></script>
-        <script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>_general.js"></script>
+        <script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>_general-admin.js"></script>
         <script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>_newsletter.js"></script>
         <script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>_systeme.js"></script>
         <script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>_compta_export.js"></script>
@@ -228,7 +228,7 @@ foreach ($_SESSION['magasins'] as $magasin) {
         var limite_line_b = 3;
         var limite_line_c = 5;
         //directories
-        var dirtheme = "<?php echo $DIR . $_SESSION['theme']->getDir_theme() ?>";
+        var dirtheme = "<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>";
         //historique
         var historique = new Array();
         var historique_request = new Array();
