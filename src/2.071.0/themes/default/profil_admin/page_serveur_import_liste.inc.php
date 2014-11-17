@@ -37,9 +37,9 @@ update_menu_arbo();
 				<form action="serveur_import_add.php" method="post" id="import_serveur_add" name="import_serveur_add" target="formFrame" >
 				<table>
 					<tr class="smallheight">
-						<td style="width:4%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-						<td style="width:190px">Référence du serveur: </td>
-						<td style="width:190px">Libellé du serveur: </td>
+						<td style="width:4%;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+						<td style="width:190px;">Référence du serveur: </td>
+						<td style="width:190px;">Libellé du serveur: </td>
 						<td colspan="2">URL du serveur: (http://www.site.com/)</td>
 					</tr>	
 					<tr>

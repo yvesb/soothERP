@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<LINK rel="stylesheet" type="text/css" href="themes/collab_fr/css/_resultats_commerciaux.css">
+<LINK rel="stylesheet" type="text/css" href="themes/default/css/_resultats_commerciaux.css">
 <title>Document sans titre</title>
 <SCRIPT LANGUAGE="JavaScript">
 

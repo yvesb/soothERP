@@ -2,22 +2,22 @@
 $path_parts = pathinfo(__FILE__);
 include ($path_parts["dirname"]."/_redirection_extension.inc.php");
 
-// *************************************************************************************************************
+//  ******************************************************
 // CONTROLE DU THEME
-// *************************************************************************************************************
+//  ******************************************************
 
 // Variables nécessaires à l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
 
-//******************************************************************
+// ***********
 // Variables communes d'affichage
-//******************************************************************
+// ***********
 
-// *************************************************************************************************************
+//  ******************************************************
 // AFFICHAGE
-// *************************************************************************************************************
+//  ******************************************************
 
 ?>
 
@@ -496,7 +496,7 @@ check_page_variables ($page_variables);
 										<?php 
 											switch ($all_agendas[$index]->getId_type_agenda()) {
 											case AgendaReservationRessource::_getId_type_agenda() :{ ?>
-											<!-- ************************************************************************ -->
+											<!--  ***************** -->
 												Ressource
 											</td>
 											<td>
@@ -522,11 +522,11 @@ check_page_variables ($page_variables);
 													}, false);														
 												</script>
 											</td>
-												<!-- ************************************************************************ -->
+												<!--  ***************** -->
 												<?php break;}
 											case AgendaContact::_getId_type_agenda() :{
 											$contact = $all_agendas[$index]->getContact(); ?>
-											<!-- ************************************************************************ -->
+											<!--  ***************** -->
 											<script type="text/javascript">
 												AgendaContact_origanContact["<?php echo $index; ?>"] = new Array();
 												AgendaContact_origanContact["<?php echo $index; ?>"]["ref_contact"] = "<?php echo $contact->getRef_contact(); ?>";
@@ -584,10 +584,10 @@ check_page_variables ($page_variables);
 													}, false);
 												</script>
 											</td>
-												<!-- ************************************************************************ -->
+												<!--  ***************** -->
 												<?php break;}
 											case AgendaLoacationMateriel::_getId_type_agenda() :{?>
-											<!-- ************************************************************************ -->
+											<!--  ***************** -->
 												<script type="text/javascript">
 													AgendaLoacationMateriel_origanArticle["<?php echo $index; ?>"] = new Array();
 													AgendaLoacationMateriel_origanArticle["<?php echo $index; ?>"]["ref_article"] = "<?php echo $all_agendas[$index]->getRef_article();?>";
@@ -632,7 +632,7 @@ check_page_variables ($page_variables);
 													}, false);
 												</script>
 											</td>
-												<!-- ************************************************************************ -->
+												<!--  ***************** -->
 												<?php break;}
 											default:{ ?>
 												&nbsp;</td><td>&nbsp;</td>

@@ -30,7 +30,7 @@ Event.observe("link_retour_tp", "click",  function(evt){Event.stop(evt); page.ve
 <input id="choix_id_tp" name="choix_id_tp"  value="<?php echo $compte_tp->getId_compte_tp(); ?>"  type="hidden">
 <input id="tp_type" name="tp_type"  value="<?php echo $compte_tp->getTp_type(); ?>"  type="hidden">
 <div class="emarge">
-<table width="950px" height="350px" border="0" align="right" cellpadding="0" cellspacing="0" style="background-color:#FFFFFF">
+<table cellpadding="0" cellspacing="0" class="adm_tbl">
 		<tr>
 			<td rowspan="2" style="width:120px; height:50px">
 				<div style="position:relative; top:-35px; left:-35px; width:105px; border:1px solid #999999; background-color:#FFFFFF; text-align:center">

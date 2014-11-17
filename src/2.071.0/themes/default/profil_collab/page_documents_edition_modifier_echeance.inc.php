@@ -5,7 +5,7 @@
 // FUSION DE DOCUMENT
 // *************************************************************************************************************
 
-// Variables nécessaires Ã  l'affichage
+// Variables nécessaires à  l'affichage
 $page_variables = array ("_ALERTES");
 check_page_variables ($page_variables);
 
@@ -262,7 +262,7 @@ $echeances = $facture->getEcheancier();
 				<tr>
 				</tr>
 				<tr id="tr_lignes_reglement" >
-				<!--------Lignes en affichage dynamique en fonction du nombre de rÃ¨glements -------->
+				<!--------Lignes en affichage dynamique en fonction du nombre de règlements -------->
 				<td colspan="4">
 				<div id="div_lignes_reglement">
 				<table id="tb_liste_regl" >

@@ -12,10 +12,10 @@
 <script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>javascript/prototype.js"/></script>
 <script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>javascript/swfobject.js"></script>
 <script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme();?>javascript/_general.js"></script>
-<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_log.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_common_style.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_content.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_site.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $DIR.$_SESSION['theme']->getDir_css()?>_log.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $DIR.$_SESSION['theme']->getDir_css()?>_common_style.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $DIR.$_SESSION['theme']->getDir_css()?>_content.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $DIR.$_SESSION['theme']->getDir_css()?>_site.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 

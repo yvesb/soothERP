@@ -1,30 +1,19 @@
 <?php
-
-// *************************************************************************************************************
+// **************************************************************
 // ACCUEIL DU PROFIL COLLAB
-// *************************************************************************************************************
-
+// **************************************************************
 // Variables nécessaires à l'affichage
 $page_variables = array();
 check_page_variables($page_variables);
 
-
-//******************************************************************
-// Variables communes d'affichage
-//******************************************************************
-
-
-// *************************************************************************************************************
 // AFFICHAGE
-// *************************************************************************************************************
-
 ?>
 <script type="text/javascript" language="javascript">
-	array_menu_accueil	=	new Array();
-	array_menu_accueil[0] 	=	new Array('fast_search', 'menu_accueil_1');
-	array_menu_accueil[1] 	=	new Array('opened_docs_list', 'menu_accueil_2');
-	array_menu_accueil[2] 	=	new Array('taches_liste', 'menu_accueil_3');
-	array_menu_accueil[3] 	=	new Array('favor_liste', 'menu_accueil_4');
+	array_menu_accueil = new Array();
+	array_menu_accueil[0] = new Array('fast_search', 'menu_accueil_1');
+	array_menu_accueil[1] = new Array('opened_docs_list', 'menu_accueil_2');
+	array_menu_accueil[2] = new Array('taches_liste', 'menu_accueil_3');
+	array_menu_accueil[3] = new Array('favor_liste', 'menu_accueil_4');
 </script>
 <div class="mini_pop_up_fav" style="display:none" id="add_fav_pop" >
 	<a href="#" id="close_fav_pop" style="float:right">
@@ -117,37 +106,39 @@ check_page_variables($page_variables);
 										<td style="width:20%"><img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 										<td style="width:20%"><img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 									</tr>
-<?php
-foreach ($liste_open_docs as $open_doc) {
+									<?php
+									foreach ($liste_open_docs as $open_doc) {
 //				Test permission acces aux inventaires
 //				if($open_doc->id_type_doc == 11 && !$_SESSION['user']->check_permission ("21")){continue;}
-	?>
+										?>
 										<tr id="open_doc_<?php echo $open_doc->ref_doc; ?>" style="cursor:pointer">
 											<td style="font-size:10px;">
-										<?php echo $open_doc->ref_doc; ?>					</td>
+												<?php echo $open_doc->ref_doc; ?>					</td>
 											<td style="padding-left:10px">
-										<?php echo htmlentities($open_doc->lib_type_doc, ENT_QUOTES, "UTF-8"); ?><br />
+												<?php echo htmlentities($open_doc->lib_type_doc, ENT_QUOTES, "UTF-8"); ?><br />
 												<span style="font-style:italic"><?php echo htmlentities($open_doc->lib_etat_doc, ENT_QUOTES, "UTF-8"); ?></span>					</td>
 											<td style="text-align:right; padding-right:10px">
-												<?php if ($open_doc->montant_ttc) {
+												<?php
+												if ($open_doc->montant_ttc) {
 													echo number_format($open_doc->montant_ttc, $TARIFS_NB_DECIMALES, ".", "") . " " . $MONNAIE[1];
-												} ?>					</td>
+												}
+												?>					</td>
 											<td>
-												<?php echo date_Us_to_Fr($open_doc->date_doc); ?>					</td>
+	<?php echo date_Us_to_Fr($open_doc->date_doc); ?>					</td>
 										</tr>
 										<tr>
 											<td colspan="4"><div style="height:3px; line-height:3px;"></div>
 												<script type="text/javascript">
-													Event.observe('open_doc_<?php echo $open_doc->ref_doc; ?>', "click", function(evt){
-														page.verify('index','index.php#'+escape('documents_edition.php?ref_doc=<?php echo $open_doc->ref_doc; ?>'),'true','_blank');
+													Event.observe('open_doc_<?php echo $open_doc->ref_doc; ?>', "click", function (evt) {
+														page.verify('index', 'index.php#' + escape('documents_edition.php?ref_doc=<?php echo $open_doc->ref_doc; ?>'), 'true', '_blank');
 														Event.stop(evt);
 													});
 
 												</script>					</td>
 										</tr>
-	<?php
-}
-?>
+										<?php
+									}
+									?>
 								</table>
 							</div>
 						</div>
@@ -163,25 +154,25 @@ foreach ($liste_open_docs as $open_doc) {
 										<td style=""><img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 										<td style="width:20%"><img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 									</tr>
-<?php
-foreach ($liste_taches as $tache) {
-	?>
+									<?php
+									foreach ($liste_taches as $tache) {
+										?>
 										<tr id="tache_<?php echo $tache->getId_tache(); ?>_l">
 											<td>
 												<div style="font-weight:bolder; cursor:pointer" id="go_tache_<?php echo $tache->getId_tache(); ?>_0">
-	<?php if ($tache->getUrgence()) { ?>
+													<?php if ($tache->getUrgence()) { ?>
 														<img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/tache_urgente.gif" width="25px" height="20px" alt="Urgent"/>
 													<?php } else { ?>
 														<img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/blank.gif" width="25px" height="20px" />
-													<?php } ?>
+	<?php } ?>
 												</div>					</td>
 											<td>
 												<div style="font-weight:bolder; cursor:pointer" id="go_tache_<?php echo $tache->getId_tache(); ?>_1">
-	<?php if ($tache->getImportance()) { ?>
+													<?php if ($tache->getImportance()) { ?>
 														<img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/tache_important.gif" width="25px" height="20px" alt="Important"/>
 													<?php } else { ?>
 														<img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/blank.gif" width="25px" height="20px" />
-													<?php } ?>
+	<?php } ?>
 												</div>					</td>
 											<td>
 												<div style="font-weight:bolder; cursor:pointer" id="go_tache_<?php echo $tache->getId_tache(); ?>_2"><?php echo date_Us_to_Fr($tache->getDate_creation()); ?></div>					</td>
@@ -189,9 +180,9 @@ foreach ($liste_taches as $tache) {
 												<div style="font-weight:bolder; cursor:pointer" id="go_tache_<?php echo $tache->getId_tache(); ?>_3"><?php echo htmlentities($tache->getLib_tache(), ENT_QUOTES, "UTF-8"); ?></div>					</td>
 											<td style="text-align:right;">
 												<div id="etat_tache_<?php echo $tache->getId_tache(); ?>_l" style="cursor:pointer">
-	<?php
-	if ($tache->getEtat_tache() == 0) {
-		?>
+													<?php
+													if ($tache->getEtat_tache() == 0) {
+														?>
 														A effectuer
 														<?php
 													}
@@ -214,72 +205,82 @@ foreach ($liste_taches as $tache) {
 														<a class="choix_etat" id="choix_etat_2_tache_<?php echo $tache->getId_tache(); ?>_l">Effectu&eacute;e</a>						</div>
 												</div>
 												<script type="text/javascript">
-													Event.observe("etat_tache_<?php echo $tache->getId_tache(); ?>_l", "click", function(evt){
+													Event.observe("etat_tache_<?php echo $tache->getId_tache(); ?>_l", "click", function (evt) {
 														$("choix_etat_tache_<?php echo $tache->getId_tache(); ?>_l").toggle();
 													}, false);
-													Event.observe("choix_etat_0_tache_<?php echo $tache->getId_tache(); ?>_l", "click", function(evt){
+													Event.observe("choix_etat_0_tache_<?php echo $tache->getId_tache(); ?>_l", "click", function (evt) {
 														Event.stop(evt);
-														maj_etat_tache ("0", "<?php echo $tache->getId_tache(); ?>");
+														maj_etat_tache("0", "<?php echo $tache->getId_tache(); ?>");
 														$("etat_tache_<?php echo $tache->getId_tache(); ?>_l").innerHTML = "A effectuer";
 														$("choix_etat_tache_<?php echo $tache->getId_tache(); ?>_l").toggle();
 													}, false);
-													Event.observe("choix_etat_1_tache_<?php echo $tache->getId_tache(); ?>_l", "click", function(evt){
+													Event.observe("choix_etat_1_tache_<?php echo $tache->getId_tache(); ?>_l", "click", function (evt) {
 														Event.stop(evt);
-														maj_etat_tache ("1", "<?php echo $tache->getId_tache(); ?>");
+														maj_etat_tache("1", "<?php echo $tache->getId_tache(); ?>");
 														$("etat_tache_<?php echo $tache->getId_tache(); ?>_l").innerHTML = "En cours";
 														$("choix_etat_tache_<?php echo $tache->getId_tache(); ?>_l").toggle();
 													}, false);
-													Event.observe("choix_etat_2_tache_<?php echo $tache->getId_tache(); ?>_l", "click", function(evt){
+													Event.observe("choix_etat_2_tache_<?php echo $tache->getId_tache(); ?>_l", "click", function (evt) {
 														Event.stop(evt);
-														maj_etat_tache ("2", "<?php echo $tache->getId_tache(); ?>");
+														maj_etat_tache("2", "<?php echo $tache->getId_tache(); ?>");
 														$("etat_tache_<?php echo $tache->getId_tache(); ?>_l").innerHTML = "Effectu&eacute;e";
 														$("choix_etat_tache_<?php echo $tache->getId_tache(); ?>_l").toggle();
 													}, false);
 
 													//observateurs pour afficher les taches de l'utilisateur
-													Event.observe('go_tache_<?php echo $tache->getId_tache(); ?>_0', "click", function(evt){page.verify('mes_taches','planning_taches_user.php','true','sub_content');
-														Event.stop(evt);});
-													Event.observe('go_tache_<?php echo $tache->getId_tache(); ?>_1', "click", function(evt){page.verify('mes_taches','planning_taches_user.php','true','sub_content');
-														Event.stop(evt);});
-													Event.observe('go_tache_<?php echo $tache->getId_tache(); ?>_2', "click", function(evt){page.verify('mes_taches','planning_taches_user.php','true','sub_content');
-														Event.stop(evt);});
-													Event.observe('go_tache_<?php echo $tache->getId_tache(); ?>_3', "click", function(evt){page.verify('mes_taches','planning_taches_user.php','true','sub_content');
-														Event.stop(evt);});
+													Event.observe('go_tache_<?php echo $tache->getId_tache(); ?>_0', "click", function (evt) {
+														page.verify('mes_taches', 'planning_taches_user.php', 'true', 'sub_content');
+														Event.stop(evt);
+													});
+													Event.observe('go_tache_<?php echo $tache->getId_tache(); ?>_1', "click", function (evt) {
+														page.verify('mes_taches', 'planning_taches_user.php', 'true', 'sub_content');
+														Event.stop(evt);
+													});
+													Event.observe('go_tache_<?php echo $tache->getId_tache(); ?>_2', "click", function (evt) {
+														page.verify('mes_taches', 'planning_taches_user.php', 'true', 'sub_content');
+														Event.stop(evt);
+													});
+													Event.observe('go_tache_<?php echo $tache->getId_tache(); ?>_3', "click", function (evt) {
+														page.verify('mes_taches', 'planning_taches_user.php', 'true', 'sub_content');
+														Event.stop(evt);
+													});
 												</script>					</td>
 										</tr>
 										<tr>
 											<td colspan="5"><div style="height:3px; line-height:3px;"></div></td>
 										</tr>
-	<?php
-}
-?>
+										<?php
+									}
+									?>
 								</table>
 							</div>
 						</div>
 						<div class="accueil_block_round3corner" style="display:none" id="favor_liste">
 							<?php
-								foreach ($liste_links as $link) {
-									?>
-														<a href="<?php if (!preg_match("#^((http|https|ftp)://)#", $link->url_web_link)) {
-										echo "http://";
-									} ?><?php echo $link->url_web_link; ?>" target="_blank" class="link_fav">
-							<table width="100%" >
-								<tr>
-									<td class="fav_content_col">
-										<span class="fav_lib"><?php echo $link->lib_web_link; ?></span><br />
-										<span class="fav_desc"><?php echo $link->desc_web_link; ?></span>&nbsp;
-									</td>
-									<td>
-										<div class="fav_url"><?php echo $link->url_web_link; ?></div>
-									</td>
-								</tr>
-							</table>
-						</a>
-						<div style="height:12px"></div>
+							foreach ($liste_links as $link) {
+								?>
+								<a href="<?php
+							if (!preg_match("#^((http|https|ftp)://)#", $link->url_web_link)) {
+								echo "http://";
+							}
+							?><?php echo $link->url_web_link; ?>" target="_blank" class="link_fav">
+									<table width="100%" >
+										<tr>
+											<td class="fav_content_col">
+												<span class="fav_lib"><?php echo $link->lib_web_link; ?></span><br />
+												<span class="fav_desc"><?php echo $link->desc_web_link; ?></span>&nbsp;
+											</td>
+											<td>
+												<div class="fav_url"><?php echo $link->url_web_link; ?></div>
+											</td>
+										</tr>
+									</table>
+								</a>
+								<div style="height:12px"></div>
 
-						<?php
-					}
-					?>
+	<?php
+}
+?>
 						</div>
 					</div>
 				</div>
@@ -313,60 +314,84 @@ foreach ($liste_taches as $tache) {
 </div>
 <SCRIPT type="text/javascript">
 	//observateurs pour la recherche d'un contact
-	new Event.observe($("acc_find_contact_submit"), "click", function(evt){ page.verify('annuaire_recherche','annuaire_recherche.php?acc_ref_contact='+escape($("acc_find_contact").value),'true','sub_content');
-		Event.stop(evt);});
-	Event.observe('acc_find_contact', "keypress", function(evt){submit_search_contact_if_Key_RETURN(evt)});
+	new Event.observe($("acc_find_contact_submit"), "click", function (evt) {
+		page.verify('annuaire_recherche', 'annuaire_recherche.php?acc_ref_contact=' + escape($("acc_find_contact").value), 'true', 'sub_content');
+		Event.stop(evt);
+	});
+	Event.observe('acc_find_contact', "keypress", function (evt) {
+		submit_search_contact_if_Key_RETURN(evt)
+	});
 
 	//observer le retour chariot lors de la saisie de recherche contact pour lancer la recherche
-	function submit_search_contact_if_Key_RETURN (event) {
+	function submit_search_contact_if_Key_RETURN(event) {
 
 		var key = event.which || event.keyCode;
 		switch (key) {
 			case Event.KEY_RETURN:
-				page.verify('annuaire_recherche','annuaire_recherche.php?acc_ref_contact='+escape($("acc_find_contact").value),'true','sub_content');
+				page.verify('annuaire_recherche', 'annuaire_recherche.php?acc_ref_contact=' + escape($("acc_find_contact").value), 'true', 'sub_content');
 				Event.stop(event);
 				break;
 		}
 	}
 
 	//observateurs pour la recherche d'un article
-	Event.observe('acc_find_article_submit', "click", function(evt){ page.verify('catalogue_recherche','catalogue_recherche.php?acc_ref_article='+escape($("acc_find_article").value),'true','sub_content');
-		Event.stop(evt);});
-	Event.observe('acc_find_article', "keypress", function(evt){ submit_search_article_if_Key_RETURN(evt)});
+	Event.observe('acc_find_article_submit', "click", function (evt) {
+		page.verify('catalogue_recherche', 'catalogue_recherche.php?acc_ref_article=' + escape($("acc_find_article").value), 'true', 'sub_content');
+		Event.stop(evt);
+	});
+	Event.observe('acc_find_article', "keypress", function (evt) {
+		submit_search_article_if_Key_RETURN(evt)
+	});
 
 	//observer le retour chariot lors de la saisie de recherche article pour lancer la recherche
-	function submit_search_article_if_Key_RETURN (event) {
+	function submit_search_article_if_Key_RETURN(event) {
 
 		var key = event.which || event.keyCode;
 		switch (key) {
 			case Event.KEY_RETURN:
-				page.verify('catalogue_recherche','catalogue_recherche.php?acc_ref_article='+escape($("acc_find_article").value),'true','sub_content');
+				page.verify('catalogue_recherche', 'catalogue_recherche.php?acc_ref_article=' + escape($("acc_find_article").value), 'true', 'sub_content');
 				Event.stop(event);
 				break;
 		}
 	}
 
 	//observateurs pour la recherche d'un document
-	Event.observe('acc_find_document_submit', "click", function(evt){page.verify('document_recherche','documents_recherche.php?acc_ref_document='+escape($("acc_find_document").value),'true','sub_content');
-		Event.stop(evt);});
-	Event.observe('acc_find_document', "keypress", function(evt){submit_search_document_if_Key_RETURN(evt)});
+	Event.observe('acc_find_document_submit', "click", function (evt) {
+		page.verify('document_recherche', 'documents_recherche.php?acc_ref_document=' + escape($("acc_find_document").value), 'true', 'sub_content');
+		Event.stop(evt);
+	});
+	Event.observe('acc_find_document', "keypress", function (evt) {
+		submit_search_document_if_Key_RETURN(evt)
+	});
 
 	//observer le retour chariot lors de la saisie de recherche document pour lancer la recherche
-	function submit_search_document_if_Key_RETURN (event) {
+	function submit_search_document_if_Key_RETURN(event) {
 
 		var key = event.which || event.keyCode;
 		switch (key) {
 			case Event.KEY_RETURN:
-				page.verify('document_recherche','documents_recherche.php?acc_ref_document='+escape($("acc_find_document").value),'true','sub_content');
+				page.verify('document_recherche', 'documents_recherche.php?acc_ref_document=' + escape($("acc_find_document").value), 'true', 'sub_content');
 				Event.stop(event);
 				break;
 		}
 	}
 
-	Event.observe("menu_accueil_1", "click",  function(evt){Event.stop(evt); view_menu_accueil('fast_search', 'menu_accueil_1', array_menu_accueil ,"accueil_onglet_hide" ,"accueil_onglet");}, false);
-	Event.observe("menu_accueil_2", "click",  function(evt){Event.stop(evt); view_menu_accueil('opened_docs_list', 'menu_accueil_2', array_menu_accueil ,"accueil_onglet_hide" ,"accueil_onglet");}, false);
-	Event.observe("menu_accueil_3", "click",  function(evt){Event.stop(evt); view_menu_accueil('taches_liste', 'menu_accueil_3', array_menu_accueil ,"accueil_onglet_hide" ,"accueil_onglet");}, false);
-	Event.observe("menu_accueil_4", "click",  function(evt){Event.stop(evt); view_menu_accueil('favor_liste', 'menu_accueil_4', array_menu_accueil ,"accueil_onglet_hide" ,"accueil_onglet");}, false);
+	Event.observe("menu_accueil_1", "click", function (evt) {
+		Event.stop(evt);
+		view_menu_accueil('fast_search', 'menu_accueil_1', array_menu_accueil, "accueil_onglet_hide", "accueil_onglet");
+	}, false);
+	Event.observe("menu_accueil_2", "click", function (evt) {
+		Event.stop(evt);
+		view_menu_accueil('opened_docs_list', 'menu_accueil_2', array_menu_accueil, "accueil_onglet_hide", "accueil_onglet");
+	}, false);
+	Event.observe("menu_accueil_3", "click", function (evt) {
+		Event.stop(evt);
+		view_menu_accueil('taches_liste', 'menu_accueil_3', array_menu_accueil, "accueil_onglet_hide", "accueil_onglet");
+	}, false);
+	Event.observe("menu_accueil_4", "click", function (evt) {
+		Event.stop(evt);
+		view_menu_accueil('favor_liste', 'menu_accueil_4', array_menu_accueil, "accueil_onglet_hide", "accueil_onglet");
+	}, false);
 
 	//observateurs pour afficher les taches de l'utilisateur
 	//Event.observe('go_to_taches', "click", function(evt){page.verify('mes_taches','planning_taches_user.php','true','sub_content');   Event.stop(evt);});
@@ -378,19 +403,19 @@ foreach ($liste_taches as $tache) {
 	//	Event.stop(evt);}
 	//);
 
-	function setheight_accueil(){
-		set_tomax_height('accueil_content' , -32);
+	function setheight_accueil() {
+		set_tomax_height('accueil_content', -32);
 	}
 	Event.observe(window, "resize", setheight_accueil, false);
 	setheight_accueil();
 
 
 	var AppelAjax = new Ajax.Updater("new_content",
-					"news_lmb.php",
-					{
-					evalScripts:true,
-					}
-					);
+			"news_lmb.php",
+			{
+				evalScripts: true,
+			}
+	);
 	//on masque le chargement
 	H_loading();
 </SCRIPT>

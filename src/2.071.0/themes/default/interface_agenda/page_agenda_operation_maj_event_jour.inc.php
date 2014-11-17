@@ -1,15 +1,15 @@
 <?php
-// *************************************************************************************************************
+//  ******************************************************
 // CONTROLE DU THEME
-// *************************************************************************************************************
+//  ******************************************************
 
 // Variables nécessaires à l'affichage
 $page_variables = array ("event", "canBeShown", "jour_semaine", "sheure_deb", "sheure_fin", "sdate_deb", "sdate_fin");
 check_page_variables ($page_variables);
 
-// *************************************************************************************************************
+//  ******************************************************
 // AFFICHAGE
-// *************************************************************************************************************
+//  ******************************************************
 echo "\n********\n";
 var_dump($canBeShown);
 echo true;
@@ -28,7 +28,7 @@ var_dump(false);
 	var id_graphic_event = "<?php echo $id_graphic_event; ?>";
 	var UdateEvent = <?php echo $event->getUdate_event(); ?>000;
 
-	// *************************************************************************************************************
+	//  ******************************************************
 	if(<?php if($canBeShown){echo "true";}else{echo "false";}; ?> && Udate_deb_jour < UdateEvent && UdateEvent < (Udate_deb_jour+86400000)){
 	//l'événement est dans la semaine affiché, il faut donc l'afficher
 
@@ -77,7 +77,7 @@ var_dump(false);
 			if(oldCellJour != event.cellJour)
 			{		ecarterEvenements(event.cellJour);}
 		}
-	}else{// *************************************************************************************************************
+	}else{//  ******************************************************
 		if(evenements[id_graphic_event] != undefined){
 		//l'événement N'est PAS connu de l'interface graphique
 			evenements[id_graphic_event].deleteThis();

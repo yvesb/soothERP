@@ -1,7 +1,7 @@
 <?php
-// *************************************************************************************************************
+//  ******************************************************
 // CONTROLE DU THEME
-// *************************************************************************************************************
+//  ******************************************************
    
 
 // Variables nécessaires à l'affichage
@@ -11,9 +11,9 @@ check_page_variables ($page_variables);
 $agendasAvecDroits = $_SESSION["agenda"]["GestionnaireAgendas"]->getAgendasAvecDroits();
 $droitsUserAgendas=getDroitVoirAgenda($_SESSION["user"]->getRef_user(),42);
 $selectOptionsAgenda =  Lib_interface_agenda::buildSelectOptionsAgenda($agendasAvecDroits,$droitsUserAgendas);
-// *************************************************************************************************************
+//  ******************************************************
 // AFFICHAGE
-// *************************************************************************************************************
+//  ******************************************************
 
 ?>
 
@@ -63,7 +63,7 @@ if($lib_event === false){ ?>
 } ?>
 
 
-// *******************************************************************
+//  ************
 
 <?php
 //$ref_agenda 			= $event->getRef_agenda	($_SESSION["agenda"]["GestionnaireEvenements"]);
@@ -137,7 +137,7 @@ if($ref_agenda === false || $id_type_agenda === false || $id_type_event === fals
 } ?>
 
 
-// ****************************************************************************
+//  *********************
 		
 <?php 
 $id_type_event = $event->getId_type_event($_SESSION["agenda"]["GestionnaireEvenements"]);
@@ -161,7 +161,7 @@ if($id_type_event === false){ ?>
 	$("panneau_event_edit_part_type_event").show();<?php 
 } ?>
 
-// *******************************************************************
+//  ************
 
 <?php 
 $Udate_event_deb 	= $event->getUdate_event($_SESSION["agenda"]["GestionnaireEvenements"]);
@@ -191,7 +191,7 @@ if($Udate_event_deb === false){?>
 	$("panneau_event_edit_part_dates").show();
 <?php } ?>
 
-// *******************************************************************
+//  ************
 
 <?php 
 $note_event = $event->getNote_event($_SESSION["agenda"]["GestionnaireEvenements"]);
@@ -206,7 +206,7 @@ if($note_event === false){?>
 	}
 	$("panneau_event_edit_part_notes").show();
 <?php } ?>
-// *******************************************************************
+//  ************
 
 <?php switch ($echelle) {
 	case "JOUR":{ ?> //JOUR

@@ -17,14 +17,14 @@ check_page_variables ($page_variables);
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_common_style.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_annuaire_style.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_formulaire.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/mini_moteur.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_articles.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_documents.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/annuaire_modif_fiche.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_small_wysiwyg.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $DIR.$_SESSION['theme']->getDir_css()?>_common_style.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $DIR.$_SESSION['theme']->getDir_css()?>_annuaire_style.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $DIR.$_SESSION['theme']->getDir_css()?>_formulaire.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $DIR.$_SESSION['theme']->getDir_css()?>mini_moteur.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $DIR.$_SESSION['theme']->getDir_css()?>_articles.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $DIR.$_SESSION['theme']->getDir_css()?>_documents.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $DIR.$_SESSION['theme']->getDir_css()?>annuaire_modif_fiche.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $DIR.$_SESSION['theme']->getDir_css()?>_small_wysiwyg.css" rel="stylesheet" type="text/css" />
 </head>
 <body style="OVERFLOW-Y: auto; OVERFLOW-X: auto;">
 <script type="text/javascript">

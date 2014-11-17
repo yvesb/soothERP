@@ -4,8 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Envoi de la fiche article par email</title>
 
-<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_common_style.css" rel="stylesheet" type="text/css" />
-<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/prototype.js"/></script>
+<link href="<?php echo $DIR.$_SESSION['theme']->getDir_css()?>_common_style.css" rel="stylesheet" type="text/css" />
+<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>prototype.js"/></script>
 <style type="text/css">
 <!--
 body {

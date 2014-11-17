@@ -1,80 +1,69 @@
 <?php
-
-// *************************************************************************************************************
-// PAGE INDEX DU PROFIL COLLAB
-// *************************************************************************************************************
-
+//  ******************************************************
+// PAGE INDEX DU PROFIL AGENDA
+//  ******************************************************
 // Variables nécessaires à l'affichage
-$page_variables = array ();
-check_page_variables ($page_variables);
+$page_variables = array();
+check_page_variables($page_variables);
 
-
-//******************************************************************
 // Variables communes d'affichage
-//******************************************************************
+$default_page = array('default_content', 'accueil.php', 'true', 'sub_content', 'Agenda');
 
-$default_page = array('default_content','accueil.php','true','sub_content','Agenda');
-
-if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $CORE_DIR."profil_admin/") && $_REQUEST['page_from'] != "interface_agenda/" ) {
-	$default_page= array('page_depart', str_replace("&page_from=","", str_replace("&uncache=1","", str_replace("?","",str_replace ( $_SESSION['user']->getProfil_dir() , "" , $_REQUEST['page_from']  )))),'true','sub_content');
+if (isset($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $CORE_DIR . "profil_admin/") && $_REQUEST['page_from'] != "interface_agenda/") {
+	$default_page = array('page_depart', str_replace("&page_from=", "", str_replace("&uncache=1", "", str_replace("?", "", str_replace($_SESSION['user']->getProfil_dir(), "", $_REQUEST['page_from'])))), 'true', 'sub_content');
 }
 
-//@TODO Liste des permissions : Quelles sont-elles?
-
-
-
-// *************************************************************************************************************
 // AFFICHAGE
-// *************************************************************************************************************
-
 ?>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="<?php echo $DIR . $_SESSION['theme']->getDir_css() ?>_common_style.css" rel="stylesheet" type="text/css" />
+		<link href="<?php echo $DIR . $_SESSION['theme']->getDir_css() ?>_agenda_style.css" rel="stylesheet" type="text/css" />
+		<link href="<?php echo $DIR . $_SESSION['theme']->getDir_css() ?>_small_wysiwyg.css" rel="stylesheet" type="text/css" />
+
+		<script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>prototype.js"></script>
+		<script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>scriptaculous/scriptaculous.js?load=effects,dragdrop"></script>
+		<script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>selectupdater.js"></script>
+
+		<script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>_tab_alerte.js"></script>
+		<script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>_row_menu.js"></script>
+		<script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>_main_menu.js"></script>
+
+		<script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>_compte_tpe.js"></script>
+		<script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>_compte_cb.js"></script>
+
+		<script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>_small_wysiwyg.js"></script>
+		<script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>swfobject.js"></script>
+		<script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>_general.js"></script>
+
+		<script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>_agenda.js"></script>
+		<script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>_agenda_mouse.js"></script>
+
+		<script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>_gestionnaireEvenement.js"></script>
+		<script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>_evenement.js"></script>
+		<script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>_evenement_semaine.js"></script>
+		<script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>_evenement_jour.js"></script>
+
+		<script src="<?php echo $DIR . $_SESSION['theme']->getDir_js() ?>_prototype_addon.js"></script>
 
 
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_common_style.css" rel="stylesheet" type="text/css" />
-		<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_agenda_style.css" rel="stylesheet" type="text/css" />
-		<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_agenda_style2.css" rel="stylesheet" type="text/css" />
-		<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_small_wysiwyg.css" rel="stylesheet" type="text/css" />
-
-		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/prototype.js" ></script>
-		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/scriptaculous/scriptaculous.js?load=effects,dragdrop" ></script>
-		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/selectupdater.js" ></script>
-		
-		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_tab_alerte.js" 	></script>
-		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_row_menu.js" 		></script>
-		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_main_menu.js" 		></script>
-		
-		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_compte_tpe.js" 	></script>
-		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_compte_cb.js" 		></script>
-		
-		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_small_wysiwyg.js"></script>
-		
-		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/swfobject.js" 		></script>
-		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_general.js" 			></script>
-		
-		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_agenda.js"									></script>
-		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_agenda_mouse.js"						></script>
-		
-		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_gestionnaireEvenement.js"	></script>
-		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_evenement.js"							></script>
-		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_evenement_semaine.js"			></script>
-		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_evenement_jour.js"			></script>
-
-
-		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_prototype_addon.js"></script>
-
-		
 		<!-- Modification éffectuée par Yves Bourvon -->
 		<!-- On teste l'abscence de valeur FALSE car retour glob() imprévisible si array vide (Système serveur dépendant) -->
-		<?php if(glob($DIR_PLUS.$_SESSION['theme']->getDir_theme()."javascript/*.js") != false)
-		{ 
-		foreach (glob($DIR_PLUS.$_SESSION['theme']->getDir_theme()."javascript/*.js") as $filejs){ ?>
-		<script src="<?php echo $filejs?>"></script>
-		<?php } 
-		} ?>
+		<?php
+		if (glob($DIR_PLUS . $_SESSION['theme']->getDir_theme() . "javascript/*.js") != false) {
+			foreach (glob($DIR_PLUS . $_SESSION['theme']->getDir_theme() . "javascript/*.js") as $filejs) {
+				?>
+				<script src="<?php echo $filejs ?>"></script>
+				<?php
+			}
+		}
+		?>
 		<!--fin de modif-->	
-		
+
 		<script type="text/javascript"> 
 		<!--/*--><![CDATA[//><!--
 		
@@ -120,7 +109,7 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $COR
 				$("alert_fin_session").style.display = "block";
 		var AppelAjax = new Ajax.Updater(
 										"alert_fin_session_content",
-										"<?php echo $DIR;?>session_user_login.php", 
+										"<?php echo $DIR; ?>session_user_login.php", 
 										{								
 										evalScripts:true, 
 										onLoading:S_loading, onException: function () {S_failure();}, 
@@ -140,17 +129,17 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $COR
 		// initialisation
 		//-------------------------------------
 		
-		var default_show_id = "<?php echo $default_page[0]?>";
-		var default_show_url = "<?php echo $default_page[1]?>";
-		var default_show_refresh = "<?php echo $default_page[2]?>";
-		var default_show_target = "<?php echo $default_page[3]?>";
+		var default_show_id = "<?php echo $default_page[0] ?>";
+		var default_show_url = "<?php echo $default_page[1] ?>";
+		var default_show_refresh = "<?php echo $default_page[2] ?>";
+		var default_show_target = "<?php echo $default_page[3] ?>";
 		var changed = false;
 		var global_tab = new Array();
 		var menu_id =  new Array();
 		var last_parent_doc_line = "";
-		var tarifs_nb_decimales = <?php echo $TARIFS_NB_DECIMALES;?>;
-		var calcul_tarifs_nb_decimales = <?php echo $CALCUL_TARIFS_NB_DECIMALS;?>;
-		var monnaie_html = "<?php echo $MONNAIE[1];?>";
+		var tarifs_nb_decimales = <?php echo $TARIFS_NB_DECIMALES; ?>;
+		var calcul_tarifs_nb_decimales = <?php echo $CALCUL_TARIFS_NB_DECIMALS; ?>;
+		var monnaie_html = "<?php echo $MONNAIE[1]; ?>";
 		//var pour limiter le nombre de caracteres par ligne et le nombre de lignes dans un champ textarea
 		var limite_car = 38;
 		var limite_line_a = 2;
@@ -163,7 +152,7 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $COR
 		//passage par un règlement rapide (pour retourner à l'onglet principale du document aprés un règlement rapide
 		var reglement_rapide = false;
 		//directories
-		var dirtheme = "<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>";
+		var dirtheme = "<?php echo $DIR . $_SESSION['theme']->getDir_theme() ?>";
 		//historique
 		var historique = new Array();
 		var historique_request = new Array();
@@ -183,9 +172,9 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $COR
 		//nombre de lignes chargées
 		var loaded_line_doc = 0;
 		//nombre maximale de ligne de sn affichées
-		var doc_aff_qte_sn = <?php echo $DOC_AFF_QTE_SN;?>;
+		var doc_aff_qte_sn = <?php echo $DOC_AFF_QTE_SN; ?>;
 		//gestion des stocks
-		var gestion_stock = <?php echo $GESTION_STOCK;?>;
+		var gestion_stock = <?php echo $GESTION_STOCK; ?>;
 		//page de retour aprés création d'un contact (si vide ouverture de la visualisation du contact)
 		return_to_page = "";
 		//dernière_ref_doc_line insérée dans un doc par recher rapide
@@ -203,9 +192,9 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $COR
 			var editeur= new HTML_wysiwyg();
 		
 		function initEventHandlers() {
-			<?php if (!strpos($_SERVER['HTTP_USER_AGENT'], 'Firefox') && !strpos($_SERVER['HTTP_USER_AGENT'], 'Iceweasel') && !strpos($_SERVER['HTTP_USER_AGENT'], 'Epiphany')   ) {?>
-			alerte.confirm_supprimer("alert_nav","");
-			<?php } ?>
+<?php if (!strpos($_SERVER['HTTP_USER_AGENT'], 'Firefox') && !strpos($_SERVER['HTTP_USER_AGENT'], 'Iceweasel') && !strpos($_SERVER['HTTP_USER_AGENT'], 'Epiphany')) { ?>
+							alerte.confirm_supprimer("alert_nav","");
+<?php } ?>
 			hashListener.init();
 			//observateurs du menu principal
 			//Construction et placement des éléments du menu principal
@@ -224,45 +213,46 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $COR
 			//observateur de resize pour mise à hauteur des éléments principaux
 			Event.observe(window, "resize", function() {
 				setsize_to_element();
-			 	set_tomax_height('sub_content' , -20);
+				set_tomax_height('sub_content' , -20);
 				set_size_to_sub_content();
 			}, false);
 			
 			//lancement de la page par défaut	
-			page.verify('<?php echo $default_page[0]?>','<?php echo $default_page[1]?>','<?php echo $default_page[2]?>','<?php echo $default_page[3]?>');
+			page.verify('<?php echo $default_page[0] ?>','<?php echo $default_page[1] ?>','<?php echo $default_page[2] ?>','<?php echo $default_page[3] ?>');
 		}
 		
-		var tempo_session=<?php echo $USER_SESSION_LT / $TEST_SESSION_TIMER;?>000;
+		var tempo_session=<?php echo $USER_SESSION_LT / $TEST_SESSION_TIMER; ?>000;
 		// verif de validité session
 		setTimeout ("verif_session()", tempo_session);
 		
 		Event.observe(window, "load", initEventHandlers, false);
 		//--><!]]>
-	</script>
+		</script>
+</head>
 
+<body >
+	<div id="grand_contener" style="background: #C7C7D0 url('<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/entete_agenda.gif') repeat-x fixed 0% 0%;">
 
-
-	
 		<iframe id="framealert" frameborder="0" scrolling="no" src="about:blank"></iframe>
-		<?php if ($AFFICHE_DEBUG) {?>
-		<div  style="display:block; float:right; position:absolute; top:0px; left:30px; z-index:500; width:10px">
-			<a id="toggle_debug_iframe"  href="#">D</a>
-			<script type="text/javascript">
-				Event.observe('toggle_debug_iframe', 'click',  function(evt){
-					Event.stop(evt);
-					$('formFrame').toggle();
-				}, false);
-			</script>
-		</div>
+		<?php if ($AFFICHE_DEBUG) { ?>
+			<div  style="display:block; float:right; position:absolute; top:0px; left:30px; z-index:500; width:10px">
+				<a id="toggle_debug_iframe"  href="#">D</a>
+				<script type="text/javascript">
+					Event.observe('toggle_debug_iframe', 'click',  function(evt){
+						Event.stop(evt);
+						$('formFrame').toggle();
+					}, false);
+				</script>
+			</div>
 		<?php } ?>
 
-		<table cellspacing="0" cellpadding="0" border="0" style="position:absolute; top:0px; left:0px; height:100%;">
+		<table cellspacing="0" cellpadding="0" border="0" style="width:100%; height:100%;">
 			<tr>
-				<td style="width:50%">&nbsp;</td>
+				<td >&nbsp;</td>
 				<td>
 					<div id="sub_content"></div>
 				</td>
-				<td style="width:50%">&nbsp;</td>
+				<td >&nbsp;</td>
 			</tr>
 		</table>
 
@@ -272,7 +262,7 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $COR
 			</div>
 			<script type="text/javascript">
 				// <![CDATA[
-				swfobject.embedSWF("<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/waiting.swf", "boxcontent", "142", "15", "9.0.0", "expressInstall.swf", false,{wmode: "transparent", quality: "high", allowScriptAccess: "always"}, {id: "swf_waiting"});
+				swfobject.embedSWF("<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/waiting.swf", "boxcontent", "142", "15", "9.0.0", "expressInstall.swf", false,{wmode: "transparent", quality: "high", allowScriptAccess: "always"}, {id: "swf_waiting"});
 				// ]]>
 			</script>
 		</div>
@@ -281,79 +271,79 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $COR
 
 		<div id="wait_calcul_content" style="display:none" class="alert_wait_calcul">
 			<div style="text-align:center; font:16px bolder Arial, Helvetica, sans-serif">
-				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/wait_calcul.gif" alt="" />
+				<img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/wait_calcul.gif" alt="" />
 			</div>
 		</div>
 
 		<div id="alert_pop_up">
 		</div>
-		
+
 		<div id="alert_pop_up_tab" class="alert_pop_up_tab">
 			<div  id="titre_alert"></div>
 			<div id="texte_alert"></div>		
 			<div id="bouton_alert"><input type="submit" name="bouton1" id="bouton1" value="Supprimer" /><input type="submit" id="bouton0" name="bouton0" value="Retour" />
 			</div>
 		</div>
-		
+
 		<div id="alert_fin_session" class="alert_pop_up_tab">
 			<div  id="alert_fin_session_content">
 				<table cellpadding=0 cellspacing=0 border=0 style="width:100%; text-align:center">
 					<tr>
-						
-							<form action ="<?php echo $_ENV['CHEMIN_ABSOLU']; ?>session_user_valid.php" method="post" name="form_login_inc" target="formFrame">
-								<input type=hidden name="page_from" value="" />
-								<input type=hidden name="id_profil" value="<?php echo $_SESSION['user']->getId_profil ();?>" />
-								<input type=hidden name="try" id="try" value="1" />
-								<table width="100%" cellpadding=0 cellspacing=0 border=0 align="center">
-									<tr>
-										<td colspan="2" style="text-align:center; font-weight:bolder; line-height:20px; height:20px; border-bottom:1px solid #000000;">
-											<a href="#" id="close_ask_login"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" border="0" style="float:right"></a>
-									 		Veuillez vous r&eacute;identifier
-										</td>
-									</tr>
-									<tr>
-										<td style="text-align: right">&nbsp;</td>
-										<td>&nbsp;</td>
-									</tr>
-									<tr>
-										<td style="text-align: right">
-											Utilisateur :
-										</td>
-										<td>
-											<?php echo  htmlentities($_SESSION['user']->getContactName (), ENT_QUOTES, "UTF-8"); ?>
-											<br />
-											<?php echo  htmlentities($_SESSION['user']->getPseudo (), ENT_QUOTES, "UTF-8"); ?>
-											<input type="hidden" name='login' size=25 value="<?php echo $_SESSION['user']->getRef_user ()?>"/>
-										</td>
-									</tr>
-									<tr>
-										<td style="text-align: right">
-											Mot de passe :
-										</td>
-										<td>
-											<input type=password name="code"  id="code_relogin" size=25 value="" />
-										</td>
-									</tr>
-									<tr>
-										<td colspan=2 align="center">
-											<div id="session_user_message" style="font:1em Arial, Helvetica, sans-serif; color:#FF0000; font-weight:bolder"></div><br/>
-											<input type="submit" name="submit" value="Valider" />
-										</td>
-									</tr>
-									
-											
-                                                                            <a href="#" onclick="window.open('../<?php echo $CORE_DIR;?>site/__session_stop.php', '_top');" style="text-decoration:none">Quitter</a>
-											<script type="text/javascript">
-												Event.observe("close_ask_login", "click",  function(evt){
-													Event.stop(evt);
-													close_ask_login();
-												}, false);
-											</script>
-										
-									
-								</table>
-							</form>
-						
+
+						<form action ="<?php echo $_ENV['CHEMIN_ABSOLU']; ?>session_user_valid.php" method="post" name="form_login_inc" target="formFrame">
+							<input type=hidden name="page_from" value="" />
+							<input type=hidden name="id_profil" value="<?php echo $_SESSION['user']->getId_profil(); ?>" />
+							<input type=hidden name="try" id="try" value="1" />
+							<table width="100%" cellpadding=0 cellspacing=0 border=0 align="center">
+								<tr>
+									<td colspan="2" style="text-align:center; font-weight:bolder; line-height:20px; height:20px; border-bottom:1px solid #000000;">
+										<a href="#" id="close_ask_login"><img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/supprime.gif" border="0" style="float:right"></a>
+										Veuillez vous r&eacute;identifier
+									</td>
+								</tr>
+								<tr>
+									<td style="text-align: right">&nbsp;</td>
+									<td>&nbsp;</td>
+								</tr>
+								<tr>
+									<td style="text-align: right">
+										Utilisateur :
+									</td>
+									<td>
+										<?php echo htmlentities($_SESSION['user']->getContactName(), ENT_QUOTES, "UTF-8"); ?>
+										<br />
+										<?php echo htmlentities($_SESSION['user']->getPseudo(), ENT_QUOTES, "UTF-8"); ?>
+										<input type="hidden" name='login' size=25 value="<?php echo $_SESSION['user']->getRef_user() ?>"/>
+									</td>
+								</tr>
+								<tr>
+									<td style="text-align: right">
+										Mot de passe :
+									</td>
+									<td>
+										<input type=password name="code"  id="code_relogin" size=25 value="" />
+									</td>
+								</tr>
+								<tr>
+									<td colspan=2 align="center">
+										<div id="session_user_message" style="font:1em Arial, Helvetica, sans-serif; color:#FF0000; font-weight:bolder"></div><br/>
+										<input type="submit" name="submit" value="Valider" />
+									</td>
+								</tr>
+
+
+								<a href="#" onclick="window.open('../<?php echo $CORE_DIR; ?>site/__session_stop.php', '_top');" style="text-decoration:none">Quitter</a>
+								<script type="text/javascript">
+									Event.observe("close_ask_login", "click",  function(evt){
+										Event.stop(evt);
+										close_ask_login();
+									}, false);
+								</script>
+
+
+							</table>
+						</form>
+
 					</tr>
 				</table>
 			</div>
@@ -388,7 +378,7 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $COR
 								</tr>
 								<tr>
 									<td colspan=2 align="center">
-									<input type="submit" name="refresh_content_alert_onException" id="refresh_content_alert_onException" value="Rafra&icirc;chir la page" />
+										<input type="submit" name="refresh_content_alert_onException" id="refresh_content_alert_onException" value="Rafra&icirc;chir la page" />
 										<input type="button" name="norefresh_content_alert_onException" id="norefresh_content_alert_onException" value="Continuer sans rafra&icirc;chir" />
 									</td>
 								</tr>
@@ -403,11 +393,10 @@ if (isset ($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $COR
 		</div>
 
 		<iframe src="about:blank" style="display: none; right: 0px; position: absolute; top: 0px; height:0px;z-index:231;width:0;" id="historiqueFrame" name="historiqueFrame"></iframe>
-		<iframe src="about:blank" style="display: none; right: 0px; position: absolute; top:50px; height:450px;z-index:231;width:50%;" scrolling="auto" id="formFrame" name="formFrame"></iframe>
+		<iframe src="about:blank" style="display: none; right: 15%; position: absolute; top:50px; height:450px;z-index:231;width:50%;" scrolling="auto" id="formFrame" name="formFrame"></iframe>
 
+		<script type="text/javascript">
 	
-	<script type="text/javascript">
-	
-	</script>
-
-
+		</script>
+</body>
+</html>

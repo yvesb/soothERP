@@ -3,37 +3,37 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>EDITION <?php echo $article->getLib_article();?></title>
-<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_common_style.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_annuaire_style.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_formulaire.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/mini_moteur.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_articles.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_documents.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/annuaire_modif_fiche.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_small_wysiwyg.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $DIR.$_SESSION['theme']->getDir_css()?>_common_style.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $DIR.$_SESSION['theme']->getDir_css()?>_annuaire_style.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $DIR.$_SESSION['theme']->getDir_css()?>_formulaire.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $DIR.$_SESSION['theme']->getDir_css()?>mini_moteur.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $DIR.$_SESSION['theme']->getDir_css()?>_articles.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $DIR.$_SESSION['theme']->getDir_css()?>_documents.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $DIR.$_SESSION['theme']->getDir_css()?>annuaire_modif_fiche.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $DIR.$_SESSION['theme']->getDir_css()?>_small_wysiwyg.css" rel="stylesheet" type="text/css" />
 
-<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/prototype.js"/></script>
-<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/scriptaculous/scriptaculous.js?load=effects,dragdrop"/></script>
-<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/selectupdater.js"></script>
-<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_tab_alerte.js"></script>
-<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_row_menu.js"></script>
-<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_main_menu.js"></script>
-<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_mini_moteur.js"></script>
-<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_articles.js"></script>
-<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_documents.js"></script>
-<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_compte_bancaire.js"></script>
-<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_compte_caisse.js"></script>
-<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_compte_tpe.js"></script>
-<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_compte_cb.js"></script>
-<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_taches.js"></script>
-<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_compta.js"></script>
-<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_stock.js"></script>
-<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_tarifs.js"></script>
-<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_small_wysiwyg.js"></script>
-<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_annuaire.js"></script>
-<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_formulaire.js"></script>
-<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/swfobject.js"></script>
-<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_general.js"></script>
+<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>prototype.js"/></script>
+<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>scriptaculous/scriptaculous.js?load=effects,dragdrop"/></script>
+<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>selectupdater.js"></script>
+<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>_tab_alerte.js"></script>
+<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>_row_menu.js"></script>
+<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>_main_menu.js"></script>
+<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>_mini_moteur.js"></script>
+<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>_articles.js"></script>
+<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>_documents.js"></script>
+<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>_compte_bancaire.js"></script>
+<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>_compte_caisse.js"></script>
+<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>_compte_tpe.js"></script>
+<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>_compte_cb.js"></script>
+<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>_taches.js"></script>
+<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>_compta.js"></script>
+<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>_stock.js"></script>
+<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>_tarifs.js"></script>
+<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>_small_wysiwyg.js"></script>
+<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>_annuaire.js"></script>
+<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>_formulaire.js"></script>
+<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>swfobject.js"></script>
+<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>_general.js"></script>
 <SCRIPT LANGUAGE="JavaScript">
 
 function PopupCentrer(page,largeur,hauteur,optionsi) {
