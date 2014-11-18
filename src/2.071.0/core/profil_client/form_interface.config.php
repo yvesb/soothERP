@@ -19,10 +19,8 @@ $liste_pdfs_fac = charger_modeles_pdf_valides(4);
 $string_config_file = file_get_contents($CORE_DIR."profil_client/_interface.config.php");
 require($CORE_DIR."profil_client/_interface.config.php");
 $matches = array();
-//  ******************************************************
-// AFFICHAGE
-//  ******************************************************
 
+// AFFICHAGE
 ?>
 <div id="popup_search_contact" class="mini_moteur_doc" style="display:none;" ></div>
 <br />
@@ -145,7 +143,7 @@ $matches = array();
     </tr>
     <tr>
       <td class="lib_config">
-        Dur�e d'affichage des devis clients : 
+        Durée d'affichage des devis clients : 
       </td>
       <td>
         <input id="duree_aff_doc_dev" name="duree_aff_doc_dev" type="text" class="classinput_xsize" value="<?php preg_match("/.*?DUREE_AFF_DOC_DEV = \"(.*?)\";.*?/", $string_config_file, $matches); if(count($matches)>0) {echo intval($matches[1])/3600/24;} ?>"/>
@@ -154,7 +152,7 @@ $matches = array();
     </tr>
     <tr>
       <td class="lib_config">
-        Dur�e d'affichage des commandes clients : 
+        Durée d'affichage des commandes clients : 
       </td>
       <td>
         <input id="duree_aff_doc_cdc" name="duree_aff_doc_cdc" type="text" class="classinput_xsize"  value="<?php preg_match("/.*?DUREE_AFF_DOC_CDC = \"(.*?)\";.*?/", $string_config_file, $matches); if(count($matches)>0) {echo intval($matches[1])/3600/24;} ?>"/>
@@ -163,7 +161,7 @@ $matches = array();
     </tr>
     <tr>
       <td class="lib_config">
-        Dur�e d'affichage des factures clients : 
+        Durée d'affichage des factures clients : 
       </td>
       <td>
         <input id="duree_aff_doc_fac" name="duree_aff_doc_fac" type="text" class="classinput_xsize"  value="<?php preg_match("/.*?DUREE_AFF_DOC_FAC = \"(.*?)\";.*?/", $string_config_file, $matches); if(count($matches)>0) {echo intval($matches[1])/3600/24;} ?>"/>
@@ -172,7 +170,7 @@ $matches = array();
     </tr>
     <tr>
       <td class="lib_config">
-        Choix du mod�le de pdf pour les devis : 
+        Choix du modèle de pdf pour les devis : 
       </td>
       <td>
         
@@ -185,7 +183,7 @@ $matches = array();
     </tr>
     <tr>
       <td class="lib_config">
-        Choix du mod�le de pdf pour les commandes : 
+        Choix du modèle de pdf pour les commandes : 
       </td>
       <td>
         <select id="code_pdf_modele_cdc" name="code_pdf_modele_cdc" class="classinput_xsize" >
@@ -198,7 +196,7 @@ $matches = array();
     </tr>
     <tr>
       <td class="lib_config">
-        Choix du mod�le de pdf pour les factures : 
+        Choix du modèle de pdf pour les factures : 
       </td>
       <td>
         <select id="code_pdf_modele_fac" name="code_pdf_modele_fac" class="classinput_xsize" >
@@ -211,7 +209,7 @@ $matches = array();
     </tr>
     <tr>
       <td class="lib_config">
-        Choix de la template pour les emails : 
+        Choix du template pour les emails : 
       </td>
       <td>
         <select id="select_mail_template" name="select_mail_template" class="classinput_xsize" >
@@ -314,7 +312,7 @@ $matches = array();
     </tr>
     <tr>
       <td class="lib_config">
-        Mentions l�gales : 
+        Mentions lègales : 
       </td>
       <td>
         <textarea id="mentionslegales" name="mentionslegales" class="classinput_xsize" ><?php preg_match("/.*?MENTIONSLEGALES = \"(.*?)\";/sm", $string_config_file, $matches); if(count($matches)>0) {echo stripslashes($matches[1]);} ?></textarea>
@@ -323,7 +321,7 @@ $matches = array();
     </tr>
     <tr>
       <td class="lib_config">
-        Conditions g�n�rales de ventes : 
+        Conditions générales de ventes : 
       </td>
       <td>
         <textarea id="conditionsgeneralesdeventes" name="conditionsgeneralesdeventes" class="classinput_xsize" ><?php preg_match("/.*?CONDITIONSDEVENTES = \"(.*?)\";/sm", $string_config_file, $matches); if(count($matches)>0) {echo stripslashes($matches[1]);} ?></textarea>

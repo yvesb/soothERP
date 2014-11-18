@@ -4,38 +4,38 @@
 // CONFIGURATION GENERALE DE L'APPLICATION
 //  ******************************************************
 
-$TIMEZONE         = "Europe/Paris";
-$INFO_LOCALE      = array("fr_FRA", "fr_FR", "fra", "France", "French", "fr_FR.ISO8859-1");
+$TIMEZONE = "Europe/Paris";
+$INFO_LOCALE = array("fr_FRA", "fr_FR", "fra", "France", "French", "fr_FR.ISO8859-1");
 $USE_PA_HT_FORCED = 0;
-$TAXE_IN_PU       = 1;
-$GEST_TYPE_COORD  = 0;
-$AFFICHER_AIDE    = 1;  // Affichage des infos-bulles.
-$CHOIX_THEME      = "default";   // Choix du theme des interfaces
+$TAXE_IN_PU = 1;
+$GEST_TYPE_COORD = 0;
+$AFFICHER_AIDE = 1;  // Affichage des infos-bulles.
+$CHOIX_THEME = "default";
 //  ******************************************************
 // VALEURS PAR DEFAUT
 //  ******************************************************
 
-$DEFAUT_PROFILS       = array(1);  // Visiteur = 1 (au minimum). Client = 4 sera souvent utilisé.
-$DEFAUT_INTERFACE     = "profil_collab/"; // Interface par défaut de l'utilisateur
-$DEFAUT_ID_THEME      = 1;   // Thème utilisé pour les utilisateurs non profilés 
-$DEFAUT_ID_PAYS       = 77;   // Pays utilisé par défaut 
-$DEFAUT_ID_LANG       = 1;   // Langage utilisé par défaut 
-$DEFAUT_MODE_VENTE    = "VAC";  // Mode de vente par défaut
-$DEFAUT_ID_MAGASIN    = 1;   // Magasin par défaut
+$DEFAUT_PROFILS = array(1);  // Visiteur = 1 (au minimum). Client = 4 sera souvent utilisé.
+$DEFAUT_INTERFACE = "profil_collab/"; // Interface par défaut de l'utilisateur
+$DEFAUT_ID_THEME = 1;   // Thème utilisé pour les utilisateurs non profilés 
+$DEFAUT_ID_PAYS = 77;   // Pays utilisé par défaut 
+$DEFAUT_ID_LANG = 1;   // Langage utilisé par défaut 
+$DEFAUT_MODE_VENTE = "VAC";  // Mode de vente par défaut
+$DEFAUT_ID_MAGASIN = 1;   // Magasin par défaut
 $DEFAUT_ID_STOCK_EXPE = 0;   // Stock pour les livraisons en VPC (sinon, livraison depuis le magasin réalisant la vente)
 //  ******************************************************
 // PARAMETRES DE SECURITE & IDENTIFIACTION
 //  ******************************************************
 
-$SESSION_LT              = 86400;  // Durée de vie de la session Système (24H)
-$USER_SESSION_LT         = 1800;   // Durée de vie de la session Utilisateur (00mn)
-$MODE_IDENTIFICATION     = "TEXTE";  // Défini si les utilisateurs s'identifient par un champs SELECT ou un champs TEXTE
-$COOKIE_LOGIN_LT         = 7776000;  // Durée de vie du cookie enregistrant le LOGIN de connexion (90j)
-$COOKIE_INTERFACE_LT     = 31536000;  // Durée de vie des cookies d'interfaces
-$TMP_PANIER_LT           = 7776000;  // Durée de vie des infos tmp d'un panier d'interfaces
-$MAX_FALSE_LOGIN         = 3;                    // Nombre d'échecs de connexion autorisés avant de bannir l'ip associée au login fautif
+$SESSION_LT = 86400;  // Durée de vie de la session Système (24H)
+$USER_SESSION_LT = 1800;   // Durée de vie de la session Utilisateur (00mn)
+$MODE_IDENTIFICATION = "TEXTE";  // Défini si les utilisateurs s'identifient par un champs SELECT ou un champs TEXTE
+$COOKIE_LOGIN_LT = 7776000;  // Durée de vie du cookie enregistrant le LOGIN de connexion (90j)
+$COOKIE_INTERFACE_LT = 31536000;  // Durée de vie des cookies d'interfaces
+$TMP_PANIER_LT = 7776000;  // Durée de vie des infos tmp d'un panier d'interfaces
+$MAX_FALSE_LOGIN = 3;                    // Nombre d'échecs de connexion autorisés avant de bannir l'ip associée au login fautif
 $FALSE_LOGIN_TIME_WINDOW = 86400;                // Durée pendant laquelle l'ip est bannie (en sec.)
-$COOKIE_SYSTEME_LT       = 31536000;  // Durée de vie des cookies systèmes
+$COOKIE_SYSTEME_LT = 31536000;  // Durée de vie des cookies systèmes
 //  ******************************************************
 // CONFIGURATION GENERALE DE L'ANNUAIRE
 //  ******************************************************
@@ -139,7 +139,7 @@ $_SERVER['REF_DOC'] = $_SERVER['REF_SERVEUR'];
 //  ******************************************************
 // CONFIGURATION GESTION DES CAISSES
 //  ******************************************************
-$CAISSES_MOVES_SHOWED_FICHES    = 20;
+$CAISSES_MOVES_SHOWED_FICHES = 20;
 $CAISSES_CONTROLE_SHOWED_FICHES = 25;
 
 //  ******************************************************
@@ -167,16 +167,16 @@ $E_RAPPROCHEMENT                           = 15;
 // CONFIGURATION DES IMPORT/EXPORT DE DONNÉES
 //  ******************************************************
 
-$EXPORT_CATALOGUE      = 1;  //0 ou 1 autorise ou non l'export des données du catalogue et de l'infrastructure du catalogue
-$IMPORT_ARTICLE_LIMIT  = 200;  // nombre d'article exporté par le fichier xml
+$EXPORT_CATALOGUE = 1;  //0 ou 1 autorise ou non l'export des données du catalogue et de l'infrastructure du catalogue
+$IMPORT_ARTICLE_LIMIT = 200;  // nombre d'article exporté par le fichier xml
 //  ******************************************************
-$DOCUMENTS_IMG_LOGO    = "entete_doc_pdf.jpg";
+$DOCUMENTS_IMG_LOGO = "entete_doc_pdf.jpg";
 // CONFIGURATION DES BAS DE PAGE DE DOCUMENTS PDF
 //  ******************************************************
-$PIED_DE_PAGE_GAUCHE_0 = "Votre nom - Votre adresse Votre code postal VOTRE VILLE";
+$PIED_DE_PAGE_GAUCHE_0 = "Votre nom - Votre adresse Votre code ";
 $PIED_DE_PAGE_GAUCHE_1 = "Siret: ";
-$PIED_DE_PAGE_DROIT_0  = "Site Internet: ";
-$PIED_DE_PAGE_DROIT_1  = "Email: ";
+$PIED_DE_PAGE_DROIT_0 = "Site Internet: ";
+$PIED_DE_PAGE_DROIT_1 = "Email: ";
 
 //  ******************************************************
 // CONFIGURATION DES INFORMATIONS DE L'ENTREPRISE
@@ -187,15 +187,15 @@ $ENTREPRISE_DATE_CREATION = "2009-01-01";
 // CONFIGURATION DES DELAIS DES COMMANDES EN COURS
 //  ******************************************************
 
-$DELAI_COMMANDE_CLIENT_RECENTE           = "1";
-$DELAI_COMMANDE_CLIENT_RETARD            = "17";
-$DELAI_COMMANDE_FOURNISSEUR_RECENTE      = "2";
-$DELAI_COMMANDE_FOURNISSEUR_RETARD       = "10";
-$DELAI_DEVIS_CLIENT_RECENT               = "3";
+$DELAI_COMMANDE_CLIENT_RECENTE = "1";
+$DELAI_COMMANDE_CLIENT_RETARD = "17";
+$DELAI_COMMANDE_FOURNISSEUR_RECENTE = "2";
+$DELAI_COMMANDE_FOURNISSEUR_RETARD = "10";
+$DELAI_DEVIS_CLIENT_RECENT = "3";
 $ID_MAIL_TEMPLATE_INVITATION_INSCRIPTION = 1;
-$DELAI_DEVIS_CLIENT_RETARD               = "10";
-$NB_VILLES_AFFICHEES                     = 50;
-$COMPTA_GEST_PRELEVEMENTS                = false;
+$DELAI_DEVIS_CLIENT_RETARD = "10";
+$NB_VILLES_AFFICHEES = 50;
+$COMPTA_GEST_PRELEVEMENTS = false;
 
 
 //  ******************************************************

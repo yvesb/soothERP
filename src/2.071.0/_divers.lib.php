@@ -213,14 +213,17 @@ function maj_configuration_file($filename, $action, $line_number, $line_texte = 
 					}
 					$new_file[] = $old_file[$i];
 				}
-			} else {
-				//alors on a indiqué le nom de la variabe que l'on vas chercher dans tout le fichier
+				//SINON ON VERIFIE QUE on a indiqué le nom de la variabe que l'on vas chercher dans tout le fichier
+			} elseif (isset($line_number)) {
 				for ($i = 0; $i < count($old_file); $i++) {
 					if (substr_count($old_file[$i], $line_number)) {
 						continue;
 					}
 					$new_file[] = $old_file[$i];
 				}
+				//SINON ON AFFICHE UNE ERREUR
+			} else {
+				exit("Impossible de lire la variable ($line_number)");
 			}
 			break;
 		case "maj_line":
@@ -228,15 +231,17 @@ function maj_configuration_file($filename, $action, $line_number, $line_texte = 
 			if (is_numeric($line_number)) {
 				$new_file					 = $old_file;
 				$new_file[$line_number - 1]	 = $line_texte;
-			} else {
+				//SINON ON VERIFIE QUE on a indiqué le nom de la variabe que l'on vas chercher dans tout le fichier
+			} elseif (isset($line_number)) {
 				//alors on a indiqué le nom de la variabe que l'on vas chercher dans tout le fichier
 				$new_file = $old_file;
-
 				for ($i = 0; $i < count($old_file); $i++) {
 					if (substr_count($old_file[$i], $line_number)) {
 						$new_file[$i] = $line_texte;
 					}
 				}
+			} else {
+				exit("Impossible de lire la variable ($line_number)");
 			}
 			break;
 	}
@@ -304,9 +309,9 @@ function remote_file_exists($url) {
   http://www.xul.fr/feed/
  */
 
-$Universal_Style	 = "p";   // replace that by span class="" to custom
-$Universal_Date_Font = "size='-1'";
-$Universal_FeedArray = array();
+$Universal_Style			 = "p";   // replace that by span class="" to custom
+$Universal_Date_Font		 = "size='-1'";
+$Universal_FeedArray		 = array();
 $Universal_AtomChannelTags	 = array("title", "link", "subTitle", "updated");
 $Universal_AtomItemTags		 = array("title", "link", "summary", "pubDate");
 $Universal_RssChannelTags	 = array("title", "link", "description", "lastBuildDate");

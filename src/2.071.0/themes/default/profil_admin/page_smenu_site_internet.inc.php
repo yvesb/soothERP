@@ -34,7 +34,7 @@ check_page_variables($page_variables);
 
 			<span class="titre_smenu_page" id="site_interfaces_config"><img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/puce_grey.jpg" align="absmiddle" />Configuration des interfaces</span><br /><br />
 
-			<span class="titre_smenu_page_unvalid" id="site_internet_choix_theme"><img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/puce_grey.jpg" align="absmiddle" />Choix du thème</span><br /><br />
+			<span class="titre_smenu_page" id="site_internet_choix_theme"><img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/puce_grey.jpg" align="absmiddle" />Choix du thème</span><br /><br />
 
 			<span class="titre_smenu_page_unvalid" id="site_internet_gestion_menus"><img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/puce_grey.jpg" align="absmiddle" />Gestion des menus</span><br /><br />
 
@@ -65,6 +65,10 @@ check_page_variables($page_variables);
 		Event.stop(evt);
 	}
 	);
+Event.observe('site_internet_choix_theme', "click", function(evt){
+	page.verify('site_internet_choix_theme','site_internet_choix_theme.php','true','sub_content');
+	Event.stop(evt);}
+);
 //on masque le chargement
-	H_loading();
+H_loading();
 </SCRIPT>
