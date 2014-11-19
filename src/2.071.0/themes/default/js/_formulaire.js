@@ -1275,9 +1275,8 @@ function loadFormInterface(int_path) {
             {
                 parameters: {int_path: int_path},
                 evalScripts: true,
-                onLoading: S_loading, onException: function () {
-                    S_failure();
-                },
+                onLoading: S_loading,
+				onFailure: S_failure,
                 onSuccess: function (requester) {
                     requester.responseText.evalScripts();
                     H_loading();

@@ -6,8 +6,7 @@
 $_INTERFACE['MUST_BE_LOGIN'] = 1;
 require("_dir.inc.php");
 require ("_profil.inc.php");
-require ("_session.inc.php");
-
+//require ("_session.inc.php");
 
 $liste_magasins = charger_all_magasins();
 $liste_catalogues =  catalogue_client::charger_liste_catalogues_clients();
@@ -22,15 +21,48 @@ $matches = array();
 
 // AFFICHAGE
 ?>
-<div id="popup_search_contact" class="mini_moteur_doc" style="display:none;" ></div>
+<div id="popup_search_contact" class="mini_moteur_doc" style="display:none;" ><p>Pas encore disponible</p></div>
 <br />
-<form id="configure_interface" name="configure_interface" enctype="multipart/form-data" action="<?php echo $DIR; ?>/themes/<?php echo $CHOIX_THEME; ?>/profil_client/site_interfaces_config.generate.php" method="POST" target="formFrame">
+
+<?php
+function chkvpcmv(){
+	global $BDD_MODE_VENTE;
+	 //foreach si $magasin_liste->mode_vente contient VPC return true, else false !
+	foreach ($BDD_MODE_VENTE as $vmode_vente) {
+			if($vmode_vente == 'VPC'){return true;}else{return false;}
+	}
+}
+
+function chkcatmv(){
+	 //foreach si $catalogue existe true else false !
+	global $liste_catalogues;
+	foreach ($liste_catalogues as $vcatalogue) {
+			if($vcatalogue->id_catalogue_client){return true;}else{return false;}
+	}
+}
+
+if (((chkvpcmv() == FALSE)) || (chkcatmv() == FALSE) ) {
+//js hide id="configure_interface" form
+	echo '<script type="text/javascript">$("confint").hide();</script>';
+	?>
+
+
+<div id="warning-config" style="display:none;">
+	<p style="font-size: large;text-align: center;"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/alerte.gif" alt=""/> <stong>Alerte de configuration</stong> <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/alerte.gif" alt=""/><br /><br /> Vous devez avoir:<br /><br /><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_unvalide.png" alt=""/><stong> Au moins un magasin VPC de configuré</stong><br /><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_unvalide.png" alt=""/><stong> Créer au moins un catalogue client</stong>
+</p>
+<HR width=75% noshade size=8>
+</div>
+<script type="text/javascript">$("warning-config").show();</script>
+<?php } ?>
+
+<form id="configure_interface" name="configure_interface" enctype="multipart/form-data" action="<?php echo $CORE_DIR; ?>profil_client/site_interfaces_config.generate.php" method="POST" target="formFrame">
+	<div id="confint">
   <input id="file_path" name="file_path" type="hidden" value="profil_client/_interface.config.php" /> 
   <table width="100%">
     <tr class="smallheight">
       <td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
       <td style="width:30%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
-      <td style="width:25%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
+      <td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
     </tr>          
     <tr>
       <td class="lib_config">
@@ -83,10 +115,10 @@ $matches = array();
       <td class="lib_config">
         Afficher le catalogue pour les visiteurs : 
       </td>
-      
+      <td>
 		<input id="aff_cat_visiteur" name="aff_cat_visiteur" type="radio" value="0"  <?php if (preg_match('/\$AFF_CAT_VISITEUR = 0;/', $string_config_file)) {echo 'checked';} ?> /> Non. 
 		<input id="aff_cat_visiteur" name="aff_cat_visiteur" type="radio" value="1"  <?php if (preg_match('/\$AFF_CAT_VISITEUR = 1;/', $string_config_file)) {echo 'checked';} ?> /> Oui. 
-      
+      </td>
       <td class="infos_config">&nbsp;</td>
     </tr>
     <tr>
@@ -173,11 +205,11 @@ $matches = array();
         Choix du modèle de pdf pour les devis : 
       </td>
       <td>
-        
+        <select id="code_pdf_modele_dev" name="code_pdf_modele_dev" class="classinput_xsize" >
         <?php foreach ($liste_pdfs_dev as $pdf_dev) { ?>
           <option value="<?php echo $pdf_dev->code_pdf_modele; ?>" <?php if ($CODE_PDF_MODELE_DEV == $pdf_dev->code_pdf_modele) {echo 'selected';}  ?> > <?php echo $pdf_dev->lib_modele; ?></option>
         <?php } ?>
-        
+        </select>
       </td>
       <td class="infos_config">&nbsp;</td>
     </tr>
@@ -213,8 +245,10 @@ $matches = array();
       </td>
       <td>
         <select id="select_mail_template" name="select_mail_template" class="classinput_xsize" >
+			
+			
         <?php foreach ($liste_mail_templates as $mail_template) { ?>
-		  <option value="<?php echo $mail_template->id_mail_template; ?>" <?php if ($ID_MAIL_TEMPLATE == intval($catalogue->id_catalogue_client)) {echo 'selected';}  ?>><?php echo $mail_template->lib_mail_template; ?></option>
+		  <option value="<?php echo $mail_template->id_mail_template; ?>" <?php if ($ID_MAIL_TEMPLATE == intval($mail_template->id_mail_template)) {echo 'selected';}  ?>><?php echo $mail_template->lib_mail_template; ?></option>
         <?php } ?>
         </select>
       </td>
@@ -243,7 +277,7 @@ $matches = array();
         Sujet du mail de validation finale d'inscription : 
       </td>
       <td>
-        <input id="sujet_inscription_validation_final" name="sujet_inscription_validation_final" type="text" class="classinput_xsize"  value="<?php preg_match("/.*?SUJET_INSCRIPTION_VALIDATION_FINAL = \"(.*?)\";.*?/", $string_config_file, $matches); if(count($matches)>0) {echo stripslashes($matches[1]);} ?>"/>
+        <input id="sujet_inscription_validation_final" name="sujet_inscription_validation_final" type="text" class="classinput_xsize"  value="<?php preg_match("/.*?INSCRIPTION_VALIDATION_SUJET_FINAL = \"(.*?)\";.*?/", $string_config_file, $matches); if(count($matches)>0) {echo stripslashes($matches[1]);} ?>"/>
       </td>
       <td class="infos_config">&nbsp;</td>
     </tr>
@@ -252,7 +286,7 @@ $matches = array();
         Contenu du mail de validation finale d'inscription : 
       </td>
       <td>
-        <textarea id="contenu_inscription_validation_final" name="contenu_inscription_validation_final" class="classinput_xsize" ><?php preg_match("/.*?CONTENU_INSCRIPTION_VALIDATION_FINAL = \"(.*?)\";.*?/sm", $string_config_file, $matches); if(count($matches)>0) {echo stripslashes($matches[1]);} ?></textarea>
+        <textarea id="contenu_inscription_validation_final" name="contenu_inscription_validation_final" class="classinput_xsize" ><?php preg_match("/.*?INSCRIPTION_VALIDATION_CONTENU_FINAL = \"(.*?)\";.*?/sm", $string_config_file, $matches); if(count($matches)>0) {echo stripslashes($matches[1]);} ?></textarea>
       </td>
       <td class="infos_config">&nbsp;</td>
     </tr>
@@ -345,4 +379,5 @@ $matches = array();
       <td class="infos_config">&nbsp;</td>
     </tr>
   </table>
+  </div>
 </form>

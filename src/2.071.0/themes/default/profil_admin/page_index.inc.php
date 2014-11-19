@@ -447,7 +447,7 @@ foreach ($menu1 as $smenu) {
                                 <table cellspacing="0" cellpadding="0" border="0" style="margin-top:22px;">
                                     <tr>
                                         <td style="width:3%">&nbsp;</td>
-                                        <td style="width:100%;padding-right:140px;">
+                                        <td style="width:100%;">
                                             <div id="sub_content"></div>
                                         </td>
                                         <td style="width:3%">&nbsp;</td>
@@ -694,10 +694,7 @@ foreach ($_SESSION['magasins'] as $magasin) {
                                                                                                 <td>&nbsp;</td>
                                                                                             </tr>
                                                                                             <tr>
-                                                                                                <td colspan="2" style="text-align: center; font-size:10px"><p>La connexion au serveur semble interrompue. <br />
-                                                                                                        Il se peut que  votre derni&egrave;re action n&rsquo;ait pas &eacute;t&eacute; enregistr&eacute;e. <br /><br />
-
-                                                                                                        Nous vous recommandons de rafra&icirc;chir la page sur laquelle  vous travaillez ou de revalider votre derni&egrave;re action, afin de v&eacute;rifier si  toutes les donn&eacute;es ont bien &eacute;t&eacute; transmises.</p></td>
+                                                                                                <td colspan="2" style="text-align: center; font-size:10px"><p>La connexion au serveur semble interrompue. <br />Il se peut que  votre derni&egrave;re action n&rsquo;ait pas &eacute;t&eacute; enregistr&eacute;e. <br /><br />Nous vous recommandons de rafra&icirc;chir la page sur laquelle  vous travaillez ou de revalider votre derni&egrave;re action, afin de v&eacute;rifier si  toutes les donn&eacute;es ont bien &eacute;t&eacute; transmises.</p></td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td style="text-align: right">&nbsp;</td>

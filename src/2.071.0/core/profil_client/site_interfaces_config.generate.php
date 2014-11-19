@@ -2,12 +2,12 @@
 //  ******************************************************
 // CREATION DU FICHIER DE CONFIG DES INTERFACES
 //  ******************************************************
-
-
 require("_dir.inc.php");
 require ("_profil.inc.php");
-require ("_session.inc.php");
-
+require_once ("_session.inc.php");
+$page_variables = array ("_ALERTES");
+check_page_variables ($page_variables);
+GLOBAL $CORE_REP;
 
 if (!isset($_REQUEST["duree_aff_doc_dev"]) || !is_numeric($_REQUEST["duree_aff_doc_dev"])) {
     $GLOBALS['_ALERTES']['choisir_duree_aff_doc_dev'] = 1;
@@ -39,7 +39,7 @@ if (!isset($_REQUEST['sujet_modification_validation_final']) || strlen($_REQUEST
 
 if (!count($GLOBALS['_ALERTES'])) {
 
-    $string_file = file_get_contents($DIR . $_REQUEST['file_path']);
+    $string_file = file_get_contents('../' . $_REQUEST['file_path']);
     $string_file = preg_replace('/\$_INTERFACE\[\'APP_TARIFS\'\] = "[A-Z]+";/', '\$_INTERFACE[\'APP_TARIFS\'] = "' . $_REQUEST['select_tarifs'] . '";', $string_file);
     $string_file = preg_replace('/\$ID_MAGASIN = [0-9]+;/', '\$ID_MAGASIN = ' . $_REQUEST['select_magasin'] . ';', $string_file);
     $string_file = preg_replace('/\$ID_CATALOGUE_INTERFACE = ([0-9]+);/', '\$ID_CATALOGUE_INTERFACE = ' . $_REQUEST['select_catalogue'] . ';', $string_file);
@@ -50,7 +50,7 @@ if (!count($GLOBALS['_ALERTES'])) {
         if (($extension != "jpg") && ($extension != "jpeg") && ($extension != "png") && ($extension != "gif")) {
             $GLOBALS['_ALERTES']['bad_extension'] = 1;
         }
-        if (copy($_FILES['img_logo']['tmp_name'], $DIR . "/themes/default/images/" . $_FILES['img_logo']['name'])) {
+        if (copy($_FILES['img_logo']['tmp_name'], $DIR . "fichiers/images/" . $_FILES['img_logo']['name'])) {
             //$GLOBALS['_ALERTES']['transfert_error'] = 1;
             $string_file = preg_replace('/\$NOM_LOGO = ".*?";/s', '\$NOM_LOGO = "' . $_FILES['img_logo']['name'] . '";', $string_file);
         }
@@ -69,20 +69,20 @@ if (!count($GLOBALS['_ALERTES'])) {
     $string_file = preg_replace('/\$CODE_PDF_MODELE_DEV = ".*?";/s', '\$CODE_PDF_MODELE_DEV = "' . $_REQUEST['code_pdf_modele_dev'] . '";', $string_file);
     $string_file = preg_replace('/\$CODE__PDF_MODELE_CDC = ".*?";/s', '\$CODE__PDF_MODELE_CDC = "' . $_REQUEST['code_pdf_modele_cdc'] . '";', $string_file);
     $string_file = preg_replace('/\$CODE__PDF_MODELE_FAC = ".*?";/s', '\$CODE__PDF_MODELE_FAC = "' . $_REQUEST['code_pdf_modele_fac'] . '";', $string_file);
-    $string_file = preg_replace('/\$INSCRIPTION_VALIDATION_SUJET = ".*?";/s', '\$INSCRIPTION_VALIDATION_SUJET = "' . addslashes($_REQUEST['sujet_inscription_validation']) . '";', $string_file);
-    $string_file = preg_replace('/\$INSCRIPTION_VALIDATION_CONTENU = ".*?";/sm', '\$INSCRIPTION_VALIDATION_CONTENU = "' . addslashes($_REQUEST['contenu_inscription_validation']) . '";', $string_file);
+    $string_file = preg_replace('/\$SUJET_INSCRIPTION_VALIDATION = ".*?";/s', '\$SUJET_INSCRIPTION_VALIDATION = "' . addslashes($_REQUEST['sujet_inscription_validation']) . '";', $string_file);
+    $string_file = preg_replace('/\$CONTENU_INSCRIPTION_VALIDATION = ".*?";/sm', '\$CONTENU_INSCRIPTION_VALIDATION = "' . addslashes($_REQUEST['contenu_inscription_validation']) . '";', $string_file);
     $string_file = preg_replace('/\$INSCRIPTION_VALIDATION_SUJET_FINAL = ".*?";/s', '\$INSCRIPTION_VALIDATION_SUJET_FINAL = "' . addslashes($_REQUEST['sujet_inscription_validation_final']) . '";', $string_file);
     $string_file = preg_replace('/\$INSCRIPTION_VALIDATION_CONTENU_FINAL = ".*?";/sm', '\$INSCRIPTION_VALIDATION_CONTENU_FINAL = "' . addslashes($_REQUEST['contenu_inscription_validation_final']) . '";', $string_file);
     $string_file = preg_replace('/\$SUJET_MODIFICATION_VALIDATION = ".*?";/s', '\$SUJET_MODIFICATION_VALIDATION = "' . addslashes($_REQUEST['sujet_modification_validation']) . '";', $string_file);
     $string_file = preg_replace('/\$CONTENU_MODIFICATION_VALIDATION= ".*?";/sm', '\$CONTENU_MODIFICATION_VALIDATION = "' . addslashes($_REQUEST['contenu_modification_validation']) . '";', $string_file);
     $string_file = preg_replace('/\$SUJET_MODIFICATION_VALIDATION_FINAL = ".*?";/s', '\$SUJET_MODIFICATION_VALIDATION_FINAL = "' . addslashes($_REQUEST['sujet_modification_validation_final']) . '";', $string_file);
     $string_file = preg_replace('/\$CONTENU_MODIFICATION_VALIDATION_FINAL = ".*?";/sm', '\$CONTENU_MODIFICATION_VALIDATION_FINAL = "' . addslashes($_REQUEST['contenu_modification_validation_final']) . '";', $string_file);
-    $string_file = preg_replace('/\$QUISOMMESNOUS = ".*?";/sm', '\$QUISOMMESNOUS = "' . addslashes($_REQUEST['quisommesnous']) . '";', $string_file);
-    $string_file = preg_replace('/\$MENTIONSLEGALES = ".*?";/sm', '\$MENTIONSLEGALES = "' . addslashes($_REQUEST['mentionslegales']) . '";', $string_file);
-    $string_file = preg_replace('/\$CONDITIONSDEVENTES = ".*?";/sm', '\$CONDITIONSDEVENTES = "' . addslashes($_REQUEST['conditionsgeneralesdeventes']) . '";', $string_file);
-    $string_file = preg_replace('/\$BAS_PAGE = ".*?";/sm', '\$BAS_PAGE = "'.addslashes($_REQUEST['bas_page']).'";', $string_file);
+    $string_file = preg_replace('/\$QUISOMMESNOUS = ".*?";/sm', '\$QUISOMMESNOUS = "' . htmlentities(addslashes($_REQUEST["quisommesnous"]), ENT_HTML5,'UTF-8'). '";', $string_file);
+    $string_file = preg_replace('/\$MENTIONSLEGALES = ".*?";/sm', '\$MENTIONSLEGALES = "' . htmlentities(addslashes($_REQUEST["mentionslegales"]),ENT_HTML5,'UTF-8'). '";', $string_file);
+    $string_file = preg_replace('/\$CONDITIONSDEVENTES = ".*?";/sm', '\$CONDITIONSDEVENTES = "' . htmlentities(addslashes($_REQUEST["conditionsgeneralesdeventes"]),ENT_HTML5,'UTF-8') . '";', $string_file);
+    $string_file = preg_replace('/\$BAS_PAGE = ".*?";/sm', '\$BAS_PAGE = "'.htmlentities(addslashes($_REQUEST['bas_page']),ENT_HTML5,'UTF-8') .'";', $string_file);
     //echo $string_file;
-    file_put_contents($DIR . $_REQUEST['file_path'], $string_file);
+    file_put_contents('../' . $_REQUEST['file_path'], $string_file);
 }
 
 //  ******************************************************
@@ -91,22 +91,6 @@ if (!count($GLOBALS['_ALERTES'])) {
 //include ($DIR.$_SESSION['theme']->getDir_theme()."page_site_interfaces_config.generate.inc.php");
 ?>
 
-<?php
-//  ******************************************************
-// ajout de modèle d'article pdf
-//  ******************************************************
-// Variables nécessaires à l'affichage
-$page_variables = array();
-check_page_variables($page_variables);
-
-
-// ***********
-// Variables communes d'affichage
-// ***********
-//  ******************************************************
-// AFFICHAGE
-//  ******************************************************
-?>
 <p>&nbsp;</p>
 <p>Configuration des interfaces</p>
 <p>&nbsp; </p>

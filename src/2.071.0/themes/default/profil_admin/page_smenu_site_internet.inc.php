@@ -67,7 +67,8 @@ check_page_variables($page_variables);
 	);
 Event.observe('site_internet_choix_theme', "click", function(evt){
 	page.verify('site_internet_choix_theme','site_internet_choix_theme.php','true','sub_content');
-	Event.stop(evt);}
+	Event.stop(evt);
+	}
 );
 //on masque le chargement
 H_loading();

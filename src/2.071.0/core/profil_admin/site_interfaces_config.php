@@ -2,8 +2,6 @@
 //  ******************************************************
 // CONFIG DES INTERFACES
 //  ******************************************************
-
-
 require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");

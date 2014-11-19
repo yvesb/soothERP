@@ -258,8 +258,8 @@ class Inscription_compte_user extends InscriptionModification {
 			return false;
 		}
 
-		global $INSCRIPTION_VALIDATION_CONTENU;
-		global $INSCRIPTION_VALIDATION_SUJET;
+		global $CONTENU_INSCRIPTION_VALIDATION;
+		global $SUJET_INSCRIPTION_VALIDATION;
 
 
 		$code_validation = "";

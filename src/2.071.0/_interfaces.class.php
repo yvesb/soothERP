@@ -3,8 +3,6 @@
 // CLASSE REGISSANT LES INFORMATIONS D'une interface
 //  ******************************************************
 
-
-
 class interfaces {
 	private $id_interface;
 	private $lib_interface;
@@ -257,8 +255,8 @@ function valider_inscription($liste_reponse){
 	global $REF_CONTACT_ENTREPRISE;
 	global $SUJET_INSCRIPTION_VALIDATION;
 	global $CONTENU_INSCRIPTION_VALIDATION;
-	global $SUJET_INSCRIPTION_VALIDATION_FINAL;
-	global $CONTENU_INSCRIPTION_VALIDATION_FINAL;
+	global $INSCRIPTION_VALIDATION_SUJET_FINAL;
+	global $INSCRIPTION_VALIDATION_CONTENU_FINAL;
 	global $MAIL_ENVOI_INSCRIPTIONS;
 	
 	$infos_generales['id_civilite']	= "";
@@ -347,8 +345,8 @@ function inscription_valide_panier ($liste_reponse, $email) {
 	global $REF_CONTACT_ENTREPRISE;
 	global $SUJET_INSCRIPTION_VALIDATION;
 	global $CONTENU_INSCRIPTION_VALIDATION;
-	global $SUJET_INSCRIPTION_VALIDATION_FINAL;
-	global $CONTENU_INSCRIPTION_VALIDATION_FINAL;
+	global $INSCRIPTION_VALIDATION_SUJET_FINAL;
+	global $INSCRIPTION_VALIDATION_CONTENU_FINAL;
 	global $MAIL_ENVOI_INSCRIPTIONS;
 	
 	$contact_entreprise = new contact($REF_CONTACT_ENTREPRISE);
@@ -358,7 +356,7 @@ function inscription_valide_panier ($liste_reponse, $email) {
 		$this->valider_inscription($liste_reponse);
 		
 		//confirmation de l'inscription par email et rappel des identifiants
-		$CONTENU_INSCRIPTION_VALIDATION_FINAL_2 = "<br />
+		$INSCRIPTION_VALIDATION_CONTENU_FINAL_2 = "<br />
 		Votre identifiant: ".$liste_reponse['admin_pseudo']." ou ".$liste_reponse['admin_emaila']."<br />
 		Votre mot de passe: ".$liste_reponse['admin_passworda']."
 		 <br /><br />
@@ -366,8 +364,8 @@ function inscription_valide_panier ($liste_reponse, $email) {
 		 <br />
 		-------------------------------------------------------------------------------------------------------------------------<br />
 		";
-		$message = $CONTENU_INSCRIPTION_VALIDATION_FINAL.$CONTENU_INSCRIPTION_VALIDATION_FINAL_2;
-		$this->envoi_email_templated ($email, $SUJET_INSCRIPTION_VALIDATION_FINAL , $message );
+		$message = $INSCRIPTION_VALIDATION_CONTENU_FINAL.$INSCRIPTION_VALIDATION_CONTENU_FINAL_2;
+		$this->envoi_email_templated ($email, $INSCRIPTION_VALIDATION_SUJET_FINAL , $message );
 		return true;
 	}
 	return false;
@@ -380,8 +378,8 @@ function inscription_valide ($id_contact_tmp, $code ) {
 	global $REF_CONTACT_ENTREPRISE;
 	global $SUJET_INSCRIPTION_VALIDATION;
 	global $CONTENU_INSCRIPTION_VALIDATION;
-	global $SUJET_INSCRIPTION_VALIDATION_FINAL;
-	global $CONTENU_INSCRIPTION_VALIDATION_FINAL;
+	global $INSCRIPTION_VALIDATION_SUJET_FINAL;
+	global $INSCRIPTION_VALIDATION_CONTENU_FINAL;
 	global $MAIL_ENVOI_INSCRIPTIONS;
 	
 	$query = "SELECT id_contact_tmp, infos, date_demande, code_validation, validation_email
@@ -411,7 +409,7 @@ function inscription_valide ($id_contact_tmp, $code ) {
 			$this->supprimer_inscription ($id_contact_tmp);
 			
 			//confirmation de l'inscription par email et rappel des identifiants
-			$CONTENU_INSCRIPTION_VALIDATION_FINAL_2 = "<br />
+			$INSCRIPTION_VALIDATION_CONTENU_FINAL_2 = "<br />
 			Votre identifiant: ".$annuaire_resultat['admin_pseudo']." ou ".$annuaire_resultat['admin_emaila']."<br />
 			Votre mot de passe: ".$annuaire_resultat['admin_passworda']."<br /><br />
 			http:".$_SERVER['HTTP_HOST'].str_replace($this->dossier."_inscription_valide.php", "", $_SERVER['PHP_SELF'])."
@@ -420,8 +418,8 @@ function inscription_valide ($id_contact_tmp, $code ) {
 			 <br />
 			-------------------------------------------------------------------------------------------------------------------------<br />
 			";
-			$message = $CONTENU_INSCRIPTION_VALIDATION_FINAL.$CONTENU_INSCRIPTION_VALIDATION_FINAL_2;
-			$this->envoi_email_templated ($coord[0]->getEmail() , $SUJET_INSCRIPTION_VALIDATION_FINAL , $message );
+			$message = $INSCRIPTION_VALIDATION_CONTENU_FINAL.$INSCRIPTION_VALIDATION_CONTENU_FINAL_2;
+			$this->envoi_email_templated ($coord[0]->getEmail() , $INSCRIPTION_VALIDATION_SUJET_FINAL , $message );
 			return true;
 		}
 		
@@ -446,8 +444,8 @@ function inscription_contact_valide ($id_contact_tmp) {
 	global $REF_CONTACT_ENTREPRISE;
 	global $SUJET_INSCRIPTION_VALIDATION;
 	global $CONTENU_INSCRIPTION_VALIDATION;
-	global $SUJET_INSCRIPTION_VALIDATION_FINAL;
-	global $CONTENU_INSCRIPTION_VALIDATION_FINAL;
+	global $INSCRIPTION_VALIDATION_SUJET_FINAL;
+	global $INSCRIPTION_VALIDATION_CONTENU_FINAL;
 	global $MAIL_ENVOI_INSCRIPTIONS;
 
 
@@ -542,7 +540,7 @@ function inscription_contact_valide ($id_contact_tmp) {
 			
 			
 			//confirmation de l'inscription par email et rappel des identifiants
-			$CONTENU_INSCRIPTION_VALIDATION_FINAL_2 = "
+			$INSCRIPTION_VALIDATION_CONTENU_FINAL_2 = "
 			Votre identifiant: ".$annuaire_resultat['admin_pseudo']." ou ".$annuaire_resultat['admin_emaila']."
 			Votre mot de passe: ".$annuaire_resultat['admin_passworda']."
 			
@@ -553,9 +551,9 @@ function inscription_contact_valide ($id_contact_tmp) {
 			-------------------------------------------------------------------------------------------------------------------------
 			";
 			
-			$message = $CONTENU_INSCRIPTION_VALIDATION_FINAL.$CONTENU_INSCRIPTION_VALIDATION_FINAL_2;
+			$message = $INSCRIPTION_VALIDATION_CONTENU_FINAL.$INSCRIPTION_VALIDATION_CONTENU_FINAL_2;
 			
-			$this->envoi_email_templated ($coord[0]->getEmail() , $SUJET_INSCRIPTION_VALIDATION_FINAL , $message );
+			$this->envoi_email_templated ($coord[0]->getEmail() , $INSCRIPTION_VALIDATION_SUJET_FINAL , $message );
 	 
 			return true;
 }
@@ -567,8 +565,8 @@ function valider_inscription_contact ($id_contact_tmp) {
 	global $REF_CONTACT_ENTREPRISE;
 	global $SUJET_INSCRIPTION_VALIDATION;
 	global $CONTENU_INSCRIPTION_VALIDATION;
-	global $SUJET_INSCRIPTION_VALIDATION_FINAL;
-	global $CONTENU_INSCRIPTION_VALIDATION_FINAL;
+	global $INSCRIPTION_VALIDATION_SUJET_FINAL;
+	global $INSCRIPTION_VALIDATION_CONTENU_FINAL;
 	global $MAIL_ENVOI_INSCRIPTIONS;
 
 
@@ -886,7 +884,7 @@ function modification_contact_valide ($id_contact_tmp) {
 	if ($MODIFICATION_ALLOWED == 1) {
 		//confirmation par email et rappel des identifiants	
 					
-		$CONTENU_INSCRIPTION_VALIDATION_FINAL_2 = "
+		$INSCRIPTION_VALIDATION_CONTENU_FINAL_2 = "
 		Votre identifiant: ".$annuaire_resultat['admin_pseudo']." ou ".$annuaire_resultat['admin_emaila']."
 		Votre mot de passe: ".$annuaire_resultat['admin_passworda']."
 		".$nom_entreprise."

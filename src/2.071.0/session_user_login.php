@@ -60,12 +60,10 @@ if (isset($_SESSION['USER_INFOS']['ref_user'])) {
                             <?php
                             if (isset($_SESSION['USER_INFOS'])) {
                                 echo htmlentities($_SESSION['USER_INFOS']['contact_name'], ENT_QUOTES, "UTF-8");
-                                ?>
-                                <br />
-    <?php
-    echo htmlentities($_SESSION['USER_INFOS']['pseudo'], ENT_QUOTES, "UTF-8");
-}
-?>
+								echo '<br />';
+								echo htmlentities($_SESSION['USER_INFOS']['pseudo'], ENT_QUOTES, "UTF-8");
+							}
+							?>
                             <input type="hidden" name='login' size=25 value="<?php echo $_SESSION['USER_INFOS']['pseudo'] ?>"/>
                         </td>
                     </tr>

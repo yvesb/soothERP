@@ -17,21 +17,19 @@ $_INTERFACE['MUST_BE_LOGIN'] = 0; // Valeur 0 ou 1
 //  ******************************************************
 
 $_INTERFACE['APP_TARIFS'] = "TTC";
-
-
-$ID_MAGASIN                   = 2; // TABLE dans BD : 'magasins'  =>  /!\ Il faut vérifier que ce magasin est un de type VPC !!!!
+$ID_MAGASIN = 1; // TABLE dans BD : 'magasins'  =>  /!\ Il faut vérifier que ce magasin est un de type VPC !!!!
 $ID_COMPTE_CAISSE_DESTINATION = 2; // TABLE dans BD : 'comptes_caisses'
-$ID_CATALOGUE_INTERFACE       = 1;  // TABLE dans BD : 'catalogues_clients'
+$ID_CATALOGUE_INTERFACE = 1;  // TABLE dans BD : 'catalogues_clients'
 
 $CATALOGUE_RECHERCHE_SHOWED = 20;  // Nombre d'article à afficher lors d'une recherche
 // **********************************************
 
 $NOM_LOGO = "logo.jpg";
 
-$AFF_CAT_VISITEUR      = 1;    //Affichage du catalogue pour les visiteurs non identifiés
+$AFF_CAT_VISITEUR = 1;    //Affichage du catalogue pour les visiteurs non identifiés
 $AFF_CAT_PRIX_VISITEUR = 1;    //Affichage du catalogue (par défaut) pour les visiteurs non identifiés
-$AFF_CAT_CLIENT        = 1;    //Affichage des prix pour les visiteurs  identifiés
-$AFF_CAT_PRIX_CLIENT   = 1;   //Affichage des prix (par défaut) pour les visiteurs identifiés
+$AFF_CAT_CLIENT = 1;    //Affichage des prix pour les visiteurs  identifiés
+$AFF_CAT_PRIX_CLIENT = 1;   //Affichage des prix (par défaut) pour les visiteurs identifiés
 
 $INSCRIPTION_ALLOWED = 2;    //Possibilité de s'incrire depuis le dossier
 //
@@ -54,27 +52,25 @@ $MODIFICATION_ALLOWED = 2;    //Possibilité de modifier son dossier
 // 4 : modification d'un contact automatique avec mail de confirmation
 // **********************************************
 //durée d'affichage des documents terminés
-$DUREE_AFF_DOC_DEV = "7776000"; //durée d'affichage dans l'interface des devis clients
-$DUREE_AFF_DOC_CDC = "8553600"; //durée d'affichage dans l'interface des commandes clients
-$DUREE_AFF_DOC_FAC = "259200"; //durée d'affichage dans l'interface des factures clients
+$DUREE_AFF_DOC_DEV = "25920000"; //durée d'affichage dans l'interface des devis clients
+$DUREE_AFF_DOC_CDC = "95040000"; //durée d'affichage dans l'interface des commandes clients
+$DUREE_AFF_DOC_FAC = "95040000"; //durée d'affichage dans l'interface des factures clients
 // **********************************************
 //type de pdf affiché
-$CODE_PDF_MODELE_DEV  = "doc_dev_lmb";
+$CODE_PDF_MODELE_DEV = "doc_dev_lmb";
 $CODE__PDF_MODELE_CDC = "doc_cdc_lmb";
 $CODE__PDF_MODELE_FAC = "doc_fac_lmb";
 // **********************************************
-$ID_MAIL_TEMPLATE               = 1;
-$MAIL_ENVOI_INSCRIPTIONS        = "";
+$ID_MAIL_TEMPLATE = "1";
+$MAIL_ENVOI_INSCRIPTIONS = "sootherp@domaine.ltd";
 //contenu des mail
-$INSCRIPTION_VALIDATION_SUJET   = "Inscription à notre site non";
-$INSCRIPTION_VALIDATION_CONTENU = "Bonjour et bienvenue, 
+$SUJET_INSCRIPTION_VALIDATION = "Inscription à notre site nom";
+$CONTENU_INSCRIPTION_VALIDATION = "Bonjour et bienvenue, 
 Vous venez de vous inscrire sur notre site et nous vous en remercions.
 
 Afin de confirmer votre identité, veuillez cliquer sur le lien ci-dessous :";
 
-
-
-$INSCRIPTION_VALIDATION_SUJET_FINAL   = "Validation de votre inscription à notre site";
+$INSCRIPTION_VALIDATION_SUJET_FINAL = "Validation de votre inscription à notre site";
 $INSCRIPTION_VALIDATION_CONTENU_FINAL = "Bonjour et bienvenue,
 Vous venez de vous inscrire sur notre site et nous vous en remercions.
 Veuillez trouver ci-dessous vos identifiants de connection.
@@ -82,15 +78,13 @@ Veuillez trouver ci-dessous vos identifiants de connection.
 Retenez bien ces informations:
 ";
 
-$SUJET_MODIFICATION_VALIDATION   = "Modification de vos informations personnelles sur notre site";
+$SUJET_MODIFICATION_VALIDATION = "Modification de vos informations personnelles sur notre site";
 $CONTENU_MODIFICATION_VALIDATION = "Bonjour,
 Vos informations personnelles ont été modifiées.
 
 Afin de confirmer ces modifications, veuillez cliquer sur le lien ci-dessous :";
 
-
-
-$SUJET_MODIFICATION_VALIDATION_FINAL   = "Validation de la modification de vos informations personnelles sur notre site";
+$SUJET_MODIFICATION_VALIDATION_FINAL = "Validation de la modification de vos informations personnelles sur notre site";
 $CONTENU_MODIFICATION_VALIDATION_FINAL = "Bonjour,
 La modification de vos informations personnelles a été validée.
 
@@ -108,10 +102,10 @@ $REGLEMENTES_MODES_VALIDES = "2;3;4;5";
 // Exemple  $REGLEMENTES_MODES_VALIDES = "2;3;4;5"; pour Chèque, Carte bancaire, Virement Bancaire, Lettre de Change
 // **********************************************
 //pages diverses
-$QUISOMMESNOUS      = "Contenu de la variable \$QUISOMMESNOUS";
-$MENTIONSLEGALES    = "Contenu de la variable \$MENTIONSLEGALES";
-$CONDITIONSDEVENTES = "Contenu de la variable \$CONDITIONSDEVENTES";
-$BAS_PAGE           = "Contenu de la variable \$BAS_PAGE";
+$QUISOMMESNOUS = "Contenu de la variable &dollar;QUISOMMESNOUS";
+$MENTIONSLEGALES = "Contenu de la variable &dollar;MENTIONSLEGALES";
+$CONDITIONSDEVENTES = "Contenu de la variable &dollar;CONDITIONSDEVENTES";
+$BAS_PAGE = "Contenu de la variable &dollar;BAS&lowbar;PAGE";
 
 $COMPLEMENT_CHAMPS = array();
 ?>
