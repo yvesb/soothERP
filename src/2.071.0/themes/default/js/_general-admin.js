@@ -1056,10 +1056,10 @@ function stopifcode_barre(event) {
 
 //mise à la bonne largueur poursub_content
 function set_size_to_sub_content() {
-    if (getWindowWidth() >= 1024) {
+    if (getWindowWidth() <= 1024) {
         $("sub_content").style.width = "1024px";
     } else {
-        $("sub_content").style.width = getWindowWidth() + "px";
+        $("sub_content").style.width = getWindowWidth() - 165 + "px";
     }
 
 }

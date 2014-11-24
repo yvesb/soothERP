@@ -2382,10 +2382,10 @@ function maj_droits_membre_fonction(id_fonction, ref_contact, ref_user) {
 
 //mise à la bonne largueur poursub_content
 function set_size_to_sub_content() {
-    if (getWindowWidth() >= 1024) {
-        $("sub_content").style.width = "100%";
+    if (getWindowWidth() <= 1024) {
+        $("sub_content").style.width = "1024px";
     } else {
-        $("sub_content").style.width = getWindowWidth() + "px";
+        $("sub_content").style.width = getWindowWidth() - 165 + "px";
     }
 
 }

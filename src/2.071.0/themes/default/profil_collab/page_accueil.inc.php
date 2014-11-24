@@ -23,14 +23,14 @@ check_page_variables($page_variables);
 <div class="emarge" id="accueil_content" style="background-image: url(<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/accueil.gif); background-position:bottom center; background-repeat:no-repeat; height:97%">
 	<table width="100%" border="0" cellspacing="0" cellpadding="0">
 		<tr>
-			<td style="width:47%; height:50px"><img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/blank.gif" width="100%" height="50px" id="imgsizeform"/></td>
+			<td style="height: 50px;width: 47%;"><img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/blank.gif" width="100%" height="50px" id="imgsizeform"/></td>
 			<td style="width:20px"><img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/blank.gif" width="50px" height="20px" id="imgsizeform"/></td>
-			<td style="width:47%"><img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/blank.gif" width="100%" height="20px" id="imgsizeform"/></td>
+			<td style="width:40%"><img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/blank.gif" width="100%" height="20px" id="imgsizeform"/></td>
 		</tr>
 		<tr>
 			<td style="">
 				<div style="">
-					<div style="height:22px">
+					<div style="height:25px;display: block;height: 22px;width: 450px;">
 						<ul>
 							<li class="accueil_onglet" id="menu_accueil_1">Recherche rapide</li>
 							<li class="accueil_onglet_hide" id="menu_accueil_2">Documents ouverts</li>
