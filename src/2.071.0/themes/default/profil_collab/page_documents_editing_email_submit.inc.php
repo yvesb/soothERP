@@ -21,8 +21,8 @@
 
     <body>
         <div style="display:block; float:right; position:absolute; top:0px; right:0px; z-index:500"><br>
-                <a href="http://www.sootherp.fr" target="_blank" rel="noreferrer"><img src="<?php echo $DIR; ?>fichiers/images/powered_by_sootherp.png" width="120"/></a>
-                <a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $DIR; ?>fichiers/images/powered_by_lundimatin.png" width="120"/></a>
+                <a href="http://www.sootherp.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_sootherp.png" width="120"/></a>
+                <a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_lundimatin.png" width="120"/></a>
         </div>
         <p><strong>Envoi du document par email</strong></p>
         <p style="text-align:center">L'envoi du document a bien &eacute;t&eacute; effectu&eacute;. <br />

@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 
-require_once ($RESSOURCE_DIR."/php-ofc-library/open-flash-chart.php");
+require_once ($LIB_DIR."/php-ofc-library/open-flash-chart.php");
 
 	
 $jour_liste = array("Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche");

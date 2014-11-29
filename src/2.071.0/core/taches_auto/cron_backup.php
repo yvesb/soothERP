@@ -1,13 +1,10 @@
 <?php
 
-require_once (__DIR__.'/../config/config_bdd.inc.php');
-
-require_once (__DIR__.'/../modules/phpbackup4mysql/phpBackup4MySQL.class.php');
-require_once (__DIR__.'/../modules/phpbackup4mysql/config/config.inc.php');
+require_once ($CONFIG_DIR.'config_bdd.inc.php');
+require_once ($LIB_DIR.'phpbackup4mysql/phpBackup4MySQL.class.php');
+require_once ($LIB_DIR.'phpbackup4mysql/config/config.inc.php');
 
 $num_backup_files_kept = $num_backup_files_kept_cron;
-
-
 
 $pb4ms = new phpBackup4MySQL();
 

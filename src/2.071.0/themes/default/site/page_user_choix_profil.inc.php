@@ -77,7 +77,7 @@ foreach ($profils_allowed as $id_profil => $profil) {
                         </div>
                 </form>
                 <br />
-                <a href="http://www.sootherp.fr" target="_blank" rel="noreferrer"><img src="<?php echo $DIR; ?>fichiers/images/powered_by_sootherp.png" width="120"/></a>
-                <a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $DIR; ?>fichiers/images/powered_by_lundimatin.png" width="120"/></a>
+                <a href="http://www.sootherp.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_sootherp.png" width="120"/></a>
+                <a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_lundimatin.png" width="120"/></a>
             </div></div>
     </body>

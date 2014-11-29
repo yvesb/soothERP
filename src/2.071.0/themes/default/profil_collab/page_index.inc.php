@@ -710,7 +710,7 @@ foreach ($menu1 as $smenu) {
                                                     <table cellspacing="0" cellpadding="0" border="0" style="position:absolute; top:22px; left:0px; height:97%">
                                                         <tr>
                                                             <td style="width:3%">&nbsp;</td>
-                                                            <td style="width: 100%;padding-right:140px;">
+                                                            <td style="width: 100%;">
                                                                 <div id="sub_content"></div>
                                                             </td>
                                                             <td style="width:3%">&nbsp;</td>
@@ -718,8 +718,8 @@ foreach ($menu1 as $smenu) {
                                                     </table>
 
                                                     <div style="display:block; float:right; position:absolute; bottom:0px; right:0px; z-index:500"><br />
-                                                        <a href="http://www.sootherp.fr" target="_blank" rel="noreferrer"><img src="<?php echo $DIR; ?>fichiers/images/powered_by_sootherp.png" width="120"/></a><br />
-                                                        <a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $DIR; ?>fichiers/images/powered_by_lundimatin.png" width="120"/></a>
+                                                        <a href="http://www.sootherp.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_sootherp.png" width="120"/></a><br />
+                                                        <a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_lundimatin.png" width="120"/></a>
                                                     </div>
                                                     <div  style="display:block; float:right; position:absolute; top:0px; right:25px; z-index:500">
                                                         <table border="0" cellpadding="0" cellspacing="0" id="option_info"><tr><td>
@@ -955,7 +955,7 @@ foreach ($_SESSION['magasins'] as $magasin) {
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td colspan=2 align="right">	
-                                                                                                    <a href="#" onclick="window.open ('../<?php echo $CORE_DIR; ?>site/__session_stop.php', '_top');" style="text-decoration:none">Quitter</a>
+                                                                                                    <a href="#" onclick="window.open ('<?php echo $CORE_DIR; ?>site/__session_stop.php', '_top');" style="text-decoration:none">Quitter</a>
                                                                                                     <script type="text/javascript">
                                                                                                     Event.observe("close_ask_login", "click",  function(evt){Event.stop(evt); close_ask_login();}, false);
                                                                                                     </script>

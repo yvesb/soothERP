@@ -16,7 +16,7 @@ $pieces = charger_ged ($type_objet, $ref_objet);
 $types = charger_types_ged();
 
 $fichiers_tmp = array();
-$folder = "../fichiers/ged_tmp";
+$folder = $FICHIERS_DIR ."ged_tmp";
 $dossier = opendir($folder);
 while ($Fichier = readdir($dossier)) {
   if ($Fichier != "." && $Fichier != ".." && $Fichier != "grand_format") {

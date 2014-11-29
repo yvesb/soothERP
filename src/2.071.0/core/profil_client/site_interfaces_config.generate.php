@@ -50,7 +50,7 @@ if (!count($GLOBALS['_ALERTES'])) {
         if (($extension != "jpg") && ($extension != "jpeg") && ($extension != "png") && ($extension != "gif")) {
             $GLOBALS['_ALERTES']['bad_extension'] = 1;
         }
-        if (copy($_FILES['img_logo']['tmp_name'], $DIR . "fichiers/images/" . $_FILES['img_logo']['name'])) {
+        if (copy($_FILES['img_logo']['tmp_name'], $FICHIERS_DIR . "images/" . $_FILES['img_logo']['name'])) {
             //$GLOBALS['_ALERTES']['transfert_error'] = 1;
             $string_file = preg_replace('/\$NOM_LOGO = ".*?";/s', '\$NOM_LOGO = "' . $_FILES['img_logo']['name'] . '";', $string_file);
         }

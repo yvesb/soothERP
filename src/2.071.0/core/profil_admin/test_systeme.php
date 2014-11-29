@@ -208,7 +208,7 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 			$retour_texte .= "Les fichiers systèmes sont tous présents.<br />";
 		}
 		
-		$tab_dirs = array("config", "documents", "fichiers", "modeles", "modules", "core", "log", "themes", "backup");
+		$tab_dirs = array("config", "documents", "ressources/fichiers", "modeles", "ressources/plugins", "core", "log", "themes", "backup", "ressources/echange");
 		$compteur = 0;
 		foreach ($tab_dirs as $dir) {
 			if (!is_dir($DIR.$dir)) {

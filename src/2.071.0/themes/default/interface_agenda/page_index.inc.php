@@ -54,8 +54,8 @@ if (isset($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $CORE
 		<!-- Modification éffectuée par Yves Bourvon -->
 		<!-- On teste l'abscence de valeur FALSE car retour glob() imprévisible si array vide (Système serveur dépendant) -->
 		<?php
-		if (glob($DIR_PLUS . $_SESSION['theme']->getDir_theme() . "javascript/*.js") != false) {
-			foreach (glob($DIR_PLUS . $_SESSION['theme']->getDir_theme() . "javascript/*.js") as $filejs) {
+		if (glob($PLUGINS_DIR . $_SESSION['theme']->getDir_theme() . "javascript/*.js") != false) {
+			foreach (glob($PLUGINS_DIR . $_SESSION['theme']->getDir_theme() . "javascript/*.js") as $filejs) {
 				?>
 				<script src="<?php echo $filejs ?>"></script>
 				<?php
@@ -332,7 +332,7 @@ if (isset($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $CORE
 								</tr>
 
 
-								<a href="#" onclick="window.open('../<?php echo $CORE_DIR; ?>site/__session_stop.php', '_top');" style="text-decoration:none">Quitter</a>
+								<a href="#" onclick="window.open('<?php echo $CORE_DIR; ?>site/__session_stop.php', '_top');" style="text-decoration:none">Quitter</a>
 								<script type="text/javascript">
 									Event.observe("close_ask_login", "click",  function(evt){
 										Event.stop(evt);

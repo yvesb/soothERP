@@ -1599,66 +1599,44 @@ function listFiles($path) {
 }
 
 function tarFiles($path, $files) {
-	$RESSOURCE_DIR	 = "../modules/";
-	require_once($RESSOURCE_DIR . "Tar.php");
+	global $LIB_DIR;
+	require_once($LIB_DIR . "Tar.php");
 	$tar			 = new Archive_Tar($path, true);
 	$tar->create($files) or die("Erreur lors de l'archivage");
 }
 
 function createBackup() {
+	global $num_backup_files_kept,$bdd_hote,$bdd_user,$bdd_pass,$bdd_base,$LIB_DIR;
 
-	global $num_backup_files_kept;
-
-	global $bdd_hote;
-	global $bdd_user;
-	global $bdd_pass;
-	global $bdd_base;
-
-
-	require_once (__DIR__ . '/modules/phpbackup4mysql/phpBackup4MySQL.class.php');
-	require_once (__DIR__ . '/modules/phpbackup4mysql/config/config.inc.php');
-
-
+	require_once ($LIB_DIR . 'phpbackup4mysql/phpBackup4MySQL.class.php');
+	require_once ($LIB_DIR . 'phpbackup4mysql/config/config.inc.php');
 
 	$pb4ms = new phpBackup4MySQL();
-
 	$dbh = $pb4ms->dbconnect($bdd_base, $bdd_user, $bdd_pass, $bdd_hote);
-
 	$sql_dump = $pb4ms->backupSQL($dbh);
 
-
 	if (!$pb4ms->saveFile($sql_dump, "manual", "user")) {
-
 		return "Echec de la sauvegarde";
 	} else {
-
 		return "Sauvegarde effectuée";
 	}
 }
 
 function restoreDB($file_dump) {
-	global $bdd_hote;
-	global $bdd_user;
-	global $bdd_pass;
-	global $bdd_base;
+	global $bdd_hote, $bdd_user, $bdd_pass,$bdd_base;
 	//gunzip <
 	$handle = exec('(echo "SET AUTOCOMMIT = 0;"; echo "SET FOREIGN_KEY_CHECKS=0;"; gunzip < ' . $file_dump . ' ; echo "SET FOREIGN_KEY_CHECKS=1;"; echo "COMMIT"; echo "SET AUTOCOMMIT = 1;") | mysql -h' . $bdd_hote . '-u ' . $bdd_user . ' -p' . $bdd_pass . ' ' . $bdd_base); //popen("gunzip < ".$file_dump." | mysql -u ".$bdd_user." -p[pass] [dbname]);//popen("psql -U ".$this->DB_USER." -W -d ".$this->DB_BDD." -f ".$file_dump, "w");
-	if ($handle < 0) return false;
+	if ($handle < 0) {return false;}
 	//fwrite($handle, $this->DB_PASS."\n");
 	//pclose($handle);
 	return true;
 }
 
 function restoreBackup($path, $file_backup) {
+	global $bdd_hote,$bdd_user,$bdd_pass,$bdd_base,$LIB_DIR;
 
-	global $bdd_hote;
-	global $bdd_user;
-	global $bdd_pass;
-	global $bdd_base;
-
-
-	require '../modules/phpbackup4mysql/phpBackup4MySQL.class.php';
-	require_once ("../modules/phpbackup4mysql/config/config.inc.php");
+	require ($LIB_DIR ."phpbackup4mysql/phpBackup4MySQL.class.php");
+	require_once ($LIB_DIR ."phpbackup4mysql/config/config.inc.php");
 
 //Create a new phpbackup4mysql instance
 	$pb4ms = new phpBackup4mysql();
@@ -1666,7 +1644,6 @@ function restoreBackup($path, $file_backup) {
 //Make a new db connexion and restore db
 	$dbh		 = $pb4ms->dbconnect($bdd_base, $bdd_user, $bdd_pass, $bdd_hote);
 	$sql_dump	 = $pb4ms->restoreSQL($file_backup, $dbh);
-
 	return true;
 }
 

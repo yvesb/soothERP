@@ -159,8 +159,8 @@
                         </form>
                     </td>
                     <td style="padding-left:30px">
-                        <a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $DIR; ?>fichiers/images/powered_by_lundimatin.png" height="30"/></a>
-                        <a href="http://www.sootherp.fr" target="_blank" rel="noreferrer"><img src="<?php echo $DIR; ?>fichiers/images/powered_by_lundimatin.png" width="120"/></a>
+                        <a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_lundimatin.png" height="30"/></a>
+                        <a href="http://www.sootherp.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_lundimatin.png" width="120"/></a>
                     </td>
                     <?php
                 }

@@ -112,8 +112,8 @@ if (isset($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $CORE
         <!-- Modification éffectuée par Yves Bourvon -->
         <!-- On teste l'abscence de valeur FALSE car retour glob() imprévisible si array vide (Système serveur dépendant) -->
         <?php
-        if (glob($DIR_PLUS . $_SESSION['theme']->getDir_theme() . "javascript/*.js") != false) {
-            foreach (glob($DIR_PLUS . $_SESSION['theme']->getDir_theme() . "javascript/*.js") as
+        if (glob($PLUGINS_DIR . $_SESSION['theme']->getDir_theme() . "javascript/*.js") != false) {
+            foreach (glob($PLUGINS_DIR . $_SESSION['theme']->getDir_theme() . "javascript/*.js") as
                         $filejs) {
                 ?>
                                 <script src="<?php echo $filejs ?>"></script>
@@ -456,8 +456,8 @@ foreach ($menu1 as $smenu) {
 
                                 <div style="display:block; float:right; position:absolute; bottom:0px; right:0px; z-index:500">
                                     <br />
-                                    <a href="http://www.sootherp.fr" target="_blank" rel="noreferrer"><img src="<?php echo $DIR; ?>fichiers/images/powered_by_sootherp.png" width="120"/></a><br />
-                                    <a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $DIR; ?>fichiers/images/powered_by_lundimatin.png" width="120"/></a>
+                                    <a href="http://www.sootherp.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_sootherp.png" width="120"/></a><br />
+                                    <a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_lundimatin.png" width="120"/></a>
                                 </div>
                                 <div  style="display:block; float:right; position:absolute; top:0px; right:25px; z-index:500">
                                     <table border="0" cellpadding="0" cellspacing="0" id="option_info">
@@ -666,7 +666,7 @@ foreach ($_SESSION['magasins'] as $magasin) {
                                                                         </tr>
                                                                         <tr>
                                                                             <td colspan=2 align="right">	
-                                                                                <a href="#" onclick="window.open ('../<?php echo $CORE_DIR; ?>site/__session_stop.php', '_top');" style="text-decoration:none">Quitter</a>
+                                                                                <a href="#" onclick="window.open ('<?php echo $CORE_DIR; ?>site/__session_stop.php', '_top');" style="text-decoration:none">Quitter</a>
 
                                                                                 <script type="text/javascript">
                                                                                 Event.observe("close_ask_login", "click",  function(evt){Event.stop(evt); close_ask_login();}, false);

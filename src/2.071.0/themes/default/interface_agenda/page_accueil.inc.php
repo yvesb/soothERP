@@ -38,8 +38,8 @@ $Udate_now = time();
             <table width="100%" border="0" cellpadding="0" cellspacing="0">
                 <tr height="27px">
                     <td width="350px" rowspan="2">
-                        <a href="http://www.sootherp.fr" target="_blank" rel="noreferrer"><img src="<?php echo $DIR; ?>fichiers/images/powered_by_sootherp.png" width="120"/></a>
-                        <a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $DIR; ?>fichiers/images/powered_by_lundimatin.png" width="120"/></a>
+                        <a href="http://www.sootherp.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_sootherp.png" width="120"/></a>
+                        <a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_lundimatin.png" width="120"/></a>
                     </td>
                     <td align="center">
                         <table cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;">

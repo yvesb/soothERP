@@ -3,7 +3,7 @@
 // CLASSE DE GESTION DES EMAILS 
 //  ******************************************************
 
-require_once ($RESSOURCE_DIR."PHPMailer/class.phpmailer.php");
+require_once ($LIB_DIR_EXT."PHPMailer/class.phpmailer.php");
 
 class email extends PHPMailer {
 	var $mail_from_mail;

@@ -1,7 +1,4 @@
 <?php
-$path_parts = pathinfo(__FILE__);
-include ($path_parts["dirname"]."/_redirection_extension.inc.php");
-
 //  ******************************************************
 // CONTROLE DU THEME
 //  ******************************************************

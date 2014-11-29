@@ -2,10 +2,7 @@
 //  ******************************************************
 // ACCUEIL DE L'UTILISATEUR ADMINISTRATEUR
 //  ******************************************************
-
-
 require ("_dir.inc.php");
-require ("_redirection_extension.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 

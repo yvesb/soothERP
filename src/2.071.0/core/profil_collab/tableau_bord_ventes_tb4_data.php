@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 require ($DIR.$_SESSION['theme']->getDir_theme()."_theme.config.php" );
 
-require_once ($RESSOURCE_DIR."/php-ofc-library/open-flash-chart.php");
+require_once ($LIB_DIR."/php-ofc-library/open-flash-chart.php");
 
 $tmp = array();
 

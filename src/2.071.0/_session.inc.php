@@ -14,19 +14,19 @@ require_once ($CONFIG_DIR . "config_bdd.inc.php");
 if (!function_exists("__autoload")) {
 
 	function __autoload($classname) {
-		global $DIR, $DIR_PLUS;
+		global $DIR, $PLUGINS_DIR;
 		if (class_exists($classname)) {
 			return true;
 		} // La classe est déjà chargée.
 		//On la cherche en tant que vrai classe.
-		if (file_exists($DIR_PLUS . "_" . $classname . ".class.php")) {
-			require_once($DIR_PLUS . "_" . $classname . ".class.php");
+		if (file_exists($PLUGINS_DIR . "_" . $classname . ".class.php")) {
+			require_once($PLUGINS_DIR . "_" . $classname . ".class.php");
 		} elseif (file_exists($DIR . "_" . $classname . ".class.php")) {
 			require_once($DIR . "_" . $classname . ".class.php");
 		}
 		//On la cherche en tant que librairie -- $classname est une classe static abstraite.
-		elseif (file_exists($DIR_PLUS . "_" . $classname . ".lib.php")) {
-			require_once($DIR_PLUS . "_" . $classname . ".lib.php");
+		elseif (file_exists($PLUGINS_DIR . "_" . $classname . ".lib.php")) {
+			require_once($PLUGINS_DIR . "_" . $classname . ".lib.php");
 		} elseif (file_exists($DIR . "_" . $classname . ".lib.php")) {
 			require_once($DIR . "_" . $classname . ".lib.php");
 		} else {
@@ -80,7 +80,7 @@ require_once ($DIR . "_panier.lib.php");		// Fonctions liées aux paniers client
 require_once ($DIR . "_courrier.lib.php");
 require_once ($DIR . "_stock.lib.php");
 require_once ($DIR . "_recherche_perso.lib.php");   // Fonctions liées aux recherches personnalisée
-require_once ($DIR . "modules/edi/edi_event.php");
+require_once ($LIB_DIR . "edi/edi_event.php");
 
 //  ******************************************************
 // CLASSES A CHARGER
