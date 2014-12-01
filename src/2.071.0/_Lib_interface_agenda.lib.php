@@ -1,7 +1,7 @@
 <?php
 
   // ******************************* //
- // 						LMB
+ // 			SoothERP
 // ******************************* //
 
 abstract /*static*/ class Lib_interface_agenda extends Lib_interface_agendaStd{

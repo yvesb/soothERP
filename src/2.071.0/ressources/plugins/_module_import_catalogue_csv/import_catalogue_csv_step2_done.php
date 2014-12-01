@@ -68,6 +68,7 @@ $import_catalogue->create($liste_ligne, "import_cop.csv");
 //reste t'il des lignes?
 $lignes = $dao_csv_import_catalogue_ligne->readAll();
 
-include ($DIR."profil_".$_SESSION['profils'][$ID_PROFIL]->getCode_profil()."/modules/".$import_catalogue_csv['folder_name']."themes/".$_SESSION['theme']->getCode_theme()."/page_import_catalogue_csv_step2_done.inc.php");
+
+include ("themes/page_import_catalogue_csv_step2_done.inc.php");
 
 ?>

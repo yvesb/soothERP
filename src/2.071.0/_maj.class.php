@@ -24,10 +24,7 @@ class maj_serveur {
     var $last_break_point;    // Dernier Break Point encas de restauration d'une MAJ
 
     function __construct($version_after_maj) {
-        global $_SERVER;
-        global $CONFIG_DIR;
-        global $DIR;
-        global $CORE_DIR;
+        global $_SERVER,$CONFIG_DIR,$DIR,$CORE_DIR,$ECHANGE_DIR;
 
         global $MAJ_SERVEUR;
 
@@ -35,12 +32,12 @@ class maj_serveur {
         $this->version_before_maj = $_SERVER['VERSION'];
         $this->version_after_maj  = $version_after_maj; // Conversion en nombre
 
-        $texte                              = "<b>MISE A JOUR DE LMB v" . $this->version_before_maj . " vers v" . $this->version_after_maj . "</b>";
+        $texte                              = "<b>MISE A JOUR DE SOOTHERP v" . $this->version_before_maj . " vers v" . $this->version_after_maj . "</b>";
         $GLOBALS['_INFOS']['maj_actions'][] = $texte;
 
         // Initialisation des variables
 
-        $this->tmp_files_dir            = $CORE_DIR . "echange/maj_lmb_" . $this->version_after_maj . "/";
+        $this->tmp_files_dir            = $ECHANGE_DIR."maj_lmb_" . $this->version_after_maj . "/";
         $this->ftp_files_dir            = $MAJ_SERVEUR['ftp_racine'] . "maj-v" . $this->version_after_maj . "/";
         $this->xml_liste_fichiers       = "lmb_liste_fichiers.xml";
         $this->install_files            = array();
@@ -51,7 +48,7 @@ class maj_serveur {
         $this->do_not_synchro_dirs      = array(); //($CONFIG_DIR);
         // Recherche d'un éventuel Break Point (Afin de ne pas répéter une étape de la mise à jour)
         $this->last_break_point = 0;
-        $this->break_point_file = $CORE_DIR . "echange/v" . $this->version_after_maj . "_break_points.tmp";
+        $this->break_point_file = $ECHANGE_DIR. "v" . $this->version_after_maj . "_break_points.tmp";
 
 
         if (is_file($this->break_point_file)) {
@@ -83,8 +80,7 @@ class maj_serveur {
 // Téléchargement des fichiers nécessaires à la mise à jour
 //  ******************************************************
     function get_maj_files($all) {
-        global $DIR;
-        global $MAJ_SERVEUR;
+        global $DIR, $MAJ_SERVEUR;
         $MS = &$MAJ_SERVEUR;
 
         // *************************************************
@@ -343,7 +339,7 @@ class maj_serveur {
         //@TODO
     }
 
-// Synchronise les fichiers généraux de LMB avec la mise à jour téléchargée
+// Synchronise les fichiers généraux de SOOTHERP avec la mise à jour téléchargée
     function synchronise_files() {
         global $DIR;
 

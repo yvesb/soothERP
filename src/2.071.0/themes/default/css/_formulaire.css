@@ -92,7 +92,7 @@ select.classinput_nsize{background-color:#FFFFFF;border:1px solid #809eb6;font:0
 .menu_tb_select{background-color:#e5eef5;color:#000000;display:block;font-weight:bolder;line-height:18px;padding:0 10px;text-align:center;text-decoration:none;}
 
 /* contact de l'annuaire */
-.contactview_corps{background-color:#dbe8f0;border:1px solid #FFFFFF;border-radius:5px;margin:0;-moz-border-radius:5px;}
+.contactview_corps{background-color:#dbe8f0;border:1px solid #FFFFFF;border-radius:5px;margin:0;-moz-border-radius:5px;padding:10px;}
 .infotable_bg{background-color:#afc5d2;padding:8px;width:330px;}
 .infotable{background-color:#e5eef5;border:1px solid #FFFFFF;border-radius:8px;color:#334b74;-moz-border-radius:8px;}
 .infotable_form{background-color:#e5eef5;border:1px solid #FFFFFF;border-radius:8px;color:#334b74;margin:3px;-moz-border-radius:8px;}

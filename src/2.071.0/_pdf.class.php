@@ -2,8 +2,8 @@
 //  ******************************************************
 // UTILISATION DE LA CLASSE FPDF 
 //  ******************************************************
-define('FPDF_FONTPATH', $LIB_DIR."FPDF_fonts/");
-require_once ($LIB_DIR."fpdf.php");
+define('FPDF_FONTPATH', $LIB_DIR_EXT."FPDF_fonts/");
+require_once ($LIB_DIR_EXT."fpdf.php");
 
 // La classe FPDF doit etre définie en "abstract" afin de l'adapter à PHP5
 // Doc sur http://www.fpdf.org/

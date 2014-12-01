@@ -6,8 +6,8 @@
 
 final class import_annuaire_csv {
 	protected $id_profil; // profil à créer lors de l'import
-	protected $etape;			//etape en cours de l'import
-	protected $limite;		// limite des informations importée (1: fiches valides 2: fiches avertissements, 3: toutes les fiches
+	protected $etape;	//etape en cours de l'import
+	protected $limite;	// limite des informations importée (1: fiches valides 2: fiches avertissements, 3: toutes les fiches
 		
 
 function __construct() {

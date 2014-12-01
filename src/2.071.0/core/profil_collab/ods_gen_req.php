@@ -12,7 +12,7 @@ if(isset($_POST['id_recherche'])){
 	$req =get_requete($id_recherche);
 	$result_recherche=charge_result_recherche($req);
 
-	include_once("../modeles_ods/tab_result.class.php");
+	include_once($MODELES_DIR."/modeles_ods/tab_result.class.php");
 	$ods = new tab_result($result_recherche,$info_recherche);
 	return $ods;
 	

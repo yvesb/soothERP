@@ -1,54 +1,52 @@
 <?php
+
 //  ******************************************************
 // CLASSE COMMUNE AU INSCRIPTION ET AU MODIFICATION
 //  ******************************************************
 
-abstract class InscriptionModification{
+abstract class InscriptionModification {
+
 	private $id_profil;
 	private $id_interface;
 	private $id_theme;
 	private $dossier;
-	
 	private $lib_interface;
 	private $url;
-	
 	private $nom_entreprise;
-	
+
 	function __construct($id_interface) {
-		global $bdd;
-		global $DIR;
-		global $CORE_DIR;
-		global $CORE_REP;
-		
-		if (is_null($id_interface) || !is_numeric($id_interface))
-		{		return false;}
-	
-		$query = "SELECT id_profil, id_interface, lib_interface, dossier, url, defaut_id_theme as id_theme
+		global $bdd,$DIR,$CORE_DIR,$CORE_REP;
+
+		if (is_null($id_interface) || !is_numeric($id_interface)) {
+			return false;
+		}
+
+		$query		 = "SELECT id_profil, id_interface, lib_interface, dossier, url, defaut_id_theme as id_theme
 							FROM interfaces 
-							WHERE id_interface = '".$id_interface."' ";
-		$resultat = $bdd->query ($query);
-		if (!$interfaces = $resultat->fetchObject())
-		{		return false;}
-		
-		$this->id_profil 				= $interfaces->id_profil;
-		$this->id_interface 		= $interfaces->id_interface;
-		$this->lib_interface 		= $interfaces->lib_interface;
-		$this->dossier 					= $interfaces->dossier;
-		$this->url 							= $interfaces->url;
-		$this->id_theme					= $interfaces->id_theme;
-		
+							WHERE id_interface = '" . $id_interface . "' ";
+		$resultat	 = $bdd->query($query);
+		if (!$interfaces	 = $resultat->fetchObject()) {
+			return false;
+		}
+
+		$this->id_profil	 = $interfaces->id_profil;
+		$this->id_interface	 = $interfaces->id_interface;
+		$this->lib_interface = $interfaces->lib_interface;
+		$this->dossier		 = $interfaces->dossier;
+		$this->url			 = $interfaces->url;
+		$this->id_theme		 = $interfaces->id_theme;
+
 		global $REF_CONTACT_ENTREPRISE;
-		
-		$contact_entreprise		= new contact($REF_CONTACT_ENTREPRISE);
-		$this->nom_entreprise	= str_replace(CHR(13), " " ,str_replace (CHR(10), " " , $contact_entreprise->getNom()));
+
+		$contact_entreprise		 = new contact($REF_CONTACT_ENTREPRISE);
+		$this->nom_entreprise	 = str_replace(CHR(13), " ", str_replace(CHR(10), " ", $contact_entreprise->getNom()));
 	}
-	
+
 	//  ******************************************************
 	//  ******************************************************
 	// INSCRIPTION D'UN CONTACT
 	//  ******************************************************
 	//  ******************************************************
-	
 	//	Utilisation de la table Table: annuaire_tmp 
 	//
 	//	id_contact_tmp		smallint(5) UNSIGNED 	NOTNULL	auto_increment	:	
@@ -86,44 +84,35 @@ abstract class InscriptionModification{
 	//	coordonnee_tel1
 	//	coordonnee_tel2
 	//	coordonnee_fax
-	
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-	
 	//vérifie qu'il y a les données minimum dans le tableau
 	//@param $infos_contact array : tableau associatif contenant les informations du contact
 	//@return boolean : vrai si les données nécessaire à l'inscription sont présente, faux sinon.
-	protected static function verifie_infos_contact_pour_inscription_ou_modification_contact($infos_contact){
-		if(is_null($infos_contact) || !is_array($infos_contact))
-		{		return false;}
-		
-		return isset($infos_contact["nom"])
-				&& isset($infos_contact["admin_pseudo"])
-				&& isset($infos_contact["admin_emaila"])
-				&& isset($infos_contact["admin_passworda"])
-				&& isset($infos_contact["adresse_adresse"])
-				&& isset($infos_contact["adresse_code"])
-				&& isset($infos_contact["adresse_ville"])
-				&& isset($infos_contact["id_pays_contact"]);
+	protected static function verifie_infos_contact_pour_inscription_ou_modification_contact($infos_contact) {
+		if (is_null($infos_contact) || !is_array($infos_contact)) {
+			return false;
+		}
+
+		return isset($infos_contact["nom"]) && isset($infos_contact["admin_pseudo"]) && isset($infos_contact["admin_emaila"]) && isset($infos_contact["admin_passworda"]) && isset($infos_contact["adresse_adresse"]) && isset($infos_contact["adresse_code"]) && isset($infos_contact["adresse_ville"]) && isset($infos_contact["id_pays_contact"]);
 	}
-	
+
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-	
 	//retourne l'eamil du collaborateur à qui les demandes de validation doivent être envoyé
 	//@return mixed : l'email sous forme de string s'il a été trouvé, faux sinon.
-	protected function getEmail_du_collaborateur(){
+	protected function getEmail_du_collaborateur() {
 		global $REF_CONTACT_ENTREPRISE;
-		$contact_entreprise = new contact($REF_CONTACT_ENTREPRISE);
-		$coordonnees_entreprise = $contact_entreprise->getCoordonnees();
-		
-		for($i = 0; $i < count($coordonnees_entreprise); $i++){
-			if($coordonnees_entreprise[$i]->getEmail())
-			{		return $coordonnees_entreprise[$i]->getEmail();}
+		$contact_entreprise		 = new contact($REF_CONTACT_ENTREPRISE);
+		$coordonnees_entreprise	 = $contact_entreprise->getCoordonnees();
+
+		for ($i = 0; $i < count($coordonnees_entreprise); $i++) {
+			if ($coordonnees_entreprise[$i]->getEmail()) {
+				return $coordonnees_entreprise[$i]->getEmail();
+			}
 		}
 		return false;
 	}
-	
+
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-	
 	//supprimer l'inscription
 	//@param int $id_contact_tmp : Id du contact temporaire à effacer dans la liste des contact en attente de validation 
 	//(pour une inscription ou une modification
@@ -131,134 +120,143 @@ abstract class InscriptionModification{
 	protected function supprimer_inscription($id_contact_tmp) {
 		global $bdd;
 		$query = "DELETE FROM annuaire_tmp  
-							WHERE id_contact_tmp = '".$id_contact_tmp."' ";
+							WHERE id_contact_tmp = '" . $id_contact_tmp . "' ";
 		return $bdd->exec($query) > 0;
 	}
-	
+
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-	
 	//fonction d'envoi des mail avec template
 	protected function envoi_email_templated($to, $sujet, $message) {
 		//simulation denvois de mail 
 		/*
-		$separateur_long = "<br /><br />--------------------------------------------------------------------------------<br /><br />";
-		$separateur_court = "<br />-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".
-												"&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".
-												"&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".
-												"&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-<br />";
-		$fichier = fopen ("simulation_email.html", "a");
-		fputs($fichier, $separateur_long.$to.$separateur_court.$sujet.$separateur_court.$message);
-		fclose($fichier);
-		
-		return true;
-		*/
+		  $separateur_long = "<br /><br />--------------------------------------------------------------------------------<br /><br />";
+		  $separateur_court = "<br />-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".
+		  "&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".
+		  "&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".
+		  "&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-<br />";
+		  $fichier = fopen ("simulation_email.html", "a");
+		  fputs($fichier, $separateur_long.$to.$separateur_court.$sujet.$separateur_court.$message);
+		  fclose($fichier);
+
+		  return true;
+		 */
 		//NORMAL
 		// Envoi de l'email
 		$mail = new email();
 		$mail->prepare_envoi(0, 1);
-		return $mail->envoi_email_templated ($to, $sujet, $message);
+		return $mail->envoi_email_templated($to, $sujet, $message);
 	}
-	
+
 	//  ******************************************************
 	// Fonctions d'accès aux données
 	//  ******************************************************
-	
 	// Retourne l'identifiant du profil
 	public function getId_profil() {
 		return $this->id_profil;
 	}
-	
+
 	// Retourne l'identifiant du id_interface
 	public function getId_interface() {
 		return $this->id_interface;
 	}
-	
+
 	// Retourne defaut_id_theme
 	public function getId_theme() {
 		return $this->id_theme;
 	}
-	
+
 	// Retourne le dossier
 	public function getDossier() {
 		return $this->dossier;
 	}
-	
+
 	// Retourne lib_interface
 	public function getLib_interface() {
 		return $this->lib_interface;
 	}
-	
+
 	// Retourne l'url
 	public function getUrl() {
 		return $this->url;
 	}
-	
+
 	// Retourne le nom de l'entreprise
-	public function getNom_entreprise(){
+	public function getNom_entreprise() {
 		return $this->nom_entreprise;
 	}
-	
+
 	//  ******************************************************
-	
-	public static function extractEmail($infos){
+
+	public static function extractEmail($infos) {
 		//expression régulière qui extrait l'email de la forme "toto@toto.com" du champ info
-		$pattern = '.*admin_emaila=(([a-zA-Z0-9]+(([\.\-\_]?[a-zA-Z0-9]+)+)?)\@(([a-zA-Z0-9]+[\.\-\_])+[a-zA-Z]{2,4}));.*';
-		$email_contact = preg_replace('/'.$pattern.'/', '$1', $infos);
-		if($email_contact == $infos)
-		{			return false;}	//	l'email n'a pas été trouvé
-		else{	return $email_contact;}
+		$pattern		 = '.*admin_emaila=(([a-zA-Z0-9]+(([\.\-\_]?[a-zA-Z0-9]+)+)?)\@(([a-zA-Z0-9]+[\.\-\_])+[a-zA-Z]{2,4}));.*';
+		$email_contact	 = preg_replace('/' . $pattern . '/', '$1', $infos);
+		if ($email_contact == $infos) {
+			return false;
+		} //	l'email n'a pas été trouvé
+		else {
+			return $email_contact;
+		}
 	}
-	
-	public static function extractNom($infos){
+
+	public static function extractNom($infos) {
 		//expression régulière qui extrait le du champ info
 		//le champ nom 
-		$pattern = '(.*;nom|$nom)=([^=;]*)(^|;[a-zA-Z_]+=.*)';
-		$email_contact = preg_replace('/'.$pattern.'/', '$2', $infos);
-		if($email_contact == $infos)
-		{			return false;}	//	l'email n'a pas été trouvé
-		else{	return $email_contact;}
+		$pattern		 = '(.*;nom|$nom)=([^=;]*)(^|;[a-zA-Z_]+=.*)';
+		$email_contact	 = preg_replace('/' . $pattern . '/', '$2', $infos);
+		if ($email_contact == $infos) {
+			return false;
+		} //	l'email n'a pas été trouvé
+		else {
+			return $email_contact;
+		}
 	}
-	
-	public static function extractCivilite($infos){
+
+	public static function extractCivilite($infos) {
 		//expression régulière qui extrait le du champ info
 		//le champ nom 
-		$pattern = '(.*;civilite|$civilite)=([^=;]*)(^|;[a-zA-Z_]+=.*)';
-		$email_contact = preg_replace('/'.$pattern.'/', '$2', $infos);
-		if($email_contact == $infos)
-		{			return false;}	//	l'email n'a pas été trouvé
-		else{	return $email_contact;}
+		$pattern		 = '(.*;civilite|$civilite)=([^=;]*)(^|;[a-zA-Z_]+=.*)';
+		$email_contact	 = preg_replace('/' . $pattern . '/', '$2', $infos);
+		if ($email_contact == $infos) {
+			return false;
+		} //	l'email n'a pas été trouvé
+		else {
+			return $email_contact;
+		}
 	}
-	
-	public static function extractRef_contact($infos){
+
+	public static function extractRef_contact($infos) {
 		//expression régulière qui extrait le du champ info
 		//le champ nom 
-		$pattern = '(.*;)?ref_contact=([^=;]*);?.*';
-		$email_contact = preg_replace('/'.$pattern.'/', '$2', $infos);
-		if($email_contact == $infos)
-		{			return false;}	//	l'email n'a pas été trouvé
-		else{	return $email_contact;}
+		$pattern		 = '(.*;)?ref_contact=([^=;]*);?.*';
+		$email_contact	 = preg_replace('/' . $pattern . '/', '$2', $infos);
+		if ($email_contact == $infos) {
+			return false;
+		} //	l'email n'a pas été trouvé
+		else {
+			return $email_contact;
+		}
 	}
-	
+
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-	
 	//retourne l'eamil du collaborateur à qui les demandes de validation doivent être envoyé
 	//@param $id_contact_tmp int : indentifiant du contact temporaire
 	//@return mixed : l'email sous forme de string s'il a été trouvé, faux sinon.
-	protected function modification_contact_email_du_contact($id_contact_tmp){
+	protected function modification_contact_email_du_contact($id_contact_tmp) {
 		global $bdd;
-		
-		$query = "SELECT	infos
+
+		$query		 = "SELECT	infos
 							FROM 		annuaire_tmp
-							WHERE		id_contact_tmp = ".$id_contact_tmp."";
-		$resultat = $bdd->query ($query);
-		if (!$res = $resultat->fetchObject())
-		{		return false;}
-		
+							WHERE		id_contact_tmp = " . $id_contact_tmp . "";
+		$resultat	 = $bdd->query($query);
+		if (!$res		 = $resultat->fetchObject()) {
+			return false;
+		}
+
 		return $this->extractEmail($res->infos);
 	}
-	
+
 	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-	
 	//supprimer l'modification
 	//@param int $id_contact_tmp : Id du contact temporaire à effacer dans la liste des contact en attente de validation 
 	//(pour une modification ou une modification
@@ -266,13 +264,11 @@ abstract class InscriptionModification{
 	protected function supprimer_modification($id_contact_tmp) {
 		global $bdd;
 		$query = "DELETE FROM annuaire_tmp  
-							WHERE id_contact_tmp = '".$id_contact_tmp."' ";
+							WHERE id_contact_tmp = '" . $id_contact_tmp . "' ";
 		return $bdd->exec($query) > 0;
 	}
-	
-	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-	
-}
 
+	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+}
 
 ?>

@@ -76,7 +76,7 @@ if (isset($_SESSION['USER_INFOS']['ref_user'])) {
                     </tr>
                     <tr>
                         <td colspan=2 align="right">	
-                            <a href="#" onclick="window.open('<?php echo $CORE_DIR; ?>site/__session_stop.php', '_top');" style="text-decoration:none">Quitter</a>
+                            <a href="#" onclick="window.open('../site/__session_stop.php', '_top');" style="text-decoration:none">Quitter</a>
                             <script type="text/javascript">
                                 Event.observe("close_ask_login", "click", function (evt) {
                                     Event.stop(evt);

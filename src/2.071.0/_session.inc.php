@@ -80,7 +80,7 @@ require_once ($DIR . "_panier.lib.php");		// Fonctions liées aux paniers client
 require_once ($DIR . "_courrier.lib.php");
 require_once ($DIR . "_stock.lib.php");
 require_once ($DIR . "_recherche_perso.lib.php");   // Fonctions liées aux recherches personnalisée
-require_once ($LIB_DIR . "edi/edi_event.php");
+require_once ($LIB_DIR_EXT . "edi/edi_event.php");
 
 //  ******************************************************
 // CLASSES A CHARGER

@@ -81,7 +81,7 @@ if (!isset($_REQUEST['coord']) || !isset($_REQUEST['code'])) {
 						$lib_civ = $contact_entreprise->getLib_civ_court();
 						// Envoi de l'email
 						$destinataire = $coordonnee->getEmail();
-						$sujet = "[" . $nom_entreprise . "] Votre compte utilisateur LMB";
+						$sujet = "[" . $nom_entreprise . "] Votre compte utilisateur.";
 						$message = "<br /><br />Bonjour, <br />
 										Votre inscription sur le site de " . $lib_civ . " " . $nom_entreprise . " a bien été effectuée. <br />
 										Vous pouvez maintenant vous connecter au logiciel à l'adresse suivante : <br />

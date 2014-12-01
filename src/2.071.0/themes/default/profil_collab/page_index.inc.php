@@ -163,9 +163,7 @@ if ($GESTION_STOCK) {
 }
 
 //modules
-
 if (isset($modules)) {
-
     foreach ($modules as $module) {
         if (isset(${$module}['menu_collab'])) {
             if (!isset($menu_modules)) {
@@ -297,7 +295,7 @@ if (!$_SESSION['user']->check_permission("38")) {
             foreach ($modules as $module) {
                 if (isset(${$module}['css_collab'])) {
                     foreach (${$module}['css_collab'] as $css_mod) {
-                        ?><link href="<?php echo $DIR . "profil_" . $_SESSION['profils'][$ID_PROFIL]->getCode_profil() . "/" . $css_mod; ?>" rel="stylesheet" type="text/css" />
+                        ?><link href="<?php echo $css_mod; ?>" rel="stylesheet" type="text/css" />
                         <?php
                     }
                 }
@@ -314,7 +312,7 @@ if (!$_SESSION['user']->check_permission("38")) {
             foreach ($modules as $module) {
                 if (isset(${$module}['js_collab'])) {
                     foreach (${$module}['js_collab'] as $js_mod) {
-                        ?><script src="<?php echo $DIR . "profil_" . $_SESSION['profils'][$ID_PROFIL]->getCode_profil() . "/" . $js_mod; ?>"/></script>
+                        ?><script src="<?php echo $js_mod; ?>"/></script>
                         <?php
                     }
                 }

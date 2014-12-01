@@ -1,33 +1,24 @@
 //------------------------------------------------
-//------------------------------------------------
 // FONTIONS GENERALES
-//------------------------------------------------
 //------------------------------------------------
 
 // observateur de changement d'un formulaire
-function formChanged() {
-    changed = true;
-}
+function formChanged() { changed = true; }
 
 //envois de formulaire
-function submitform(nom_form) {
-    document.forms[nom_form].submit();
-}
-
+function submitform(nom_form) { document.forms[nom_form].submit(); }
 
 //suppression d'une balise
-function remove_tag(id_balise) {
-    Element.remove($(id_balise));
-}
-function white() {
+function remove_tag(id_balise) { Element.remove($(id_balise)); }
+function white() { }
 
-}
 //affiche la pop_up d'alerte
 function show_pop_alerte() {
     $("alert_pop_up_tab").style.display = "block";
     $("framealert").style.display = "block";
     $("alert_pop_up").style.display = "block";
 }
+
 //masque la pop up d'alerte
 function hide_pop_alerte() {
     $("alert_pop_up_tab").style.display = "none";
@@ -40,6 +31,7 @@ function stop_observe(elt, evenement) {
 //$(elt).removeEventListener(evenement,white, false);
 //Event.stopObserving(elt, evenement, function(evt){}, false); 
 }
+
 //fonction de remplacement de string
 function Remplace(expr, a, b) {
     var i = 0
@@ -54,16 +46,13 @@ function Remplace(expr, a, b) {
 }
 
 //switch deux elements
-
 function switch_element(ref1, ref2) {
     var copie_ref1 = $(ref1).cloneNode(true);
     var copie_ref2 = $(ref2).cloneNode(true);
     var old_ref1 = $(ref1);
     var old_ref2 = $(ref2);
-
     old_ref2.parentNode.replaceChild(copie_ref1, old_ref2);
     old_ref1.parentNode.replaceChild(copie_ref2, old_ref1);
-
 }
 
 //switch deux contenus d'elements
@@ -74,15 +63,10 @@ function switch_inner_element(ref1, ref2) {
     $(ref1).innerHTML.evalScripts();
     $(ref2).innerHTML = copie_ref1;
     $(ref2).innerHTML.evalScripts();
-
 }
-
-
 
 // protype de message d'alerte
-function alerte_message() {
-
-}
+function alerte_message() { }
 alerte_message.prototype = {
     //initialisation du système d'affichage des alertes
     initialize: function () {
@@ -92,46 +76,34 @@ alerte_message.prototype = {
     },
     //alerte de changement sur un formulaire
     changedform: function () {
-
         $("titre_alert").innerHTML = tab_alerte["form_change"][0];
         $("texte_alert").innerHTML = tab_alerte["form_change"][1];
         $("bouton_alert").innerHTML = tab_alerte["form_change"][2];
 
         show_pop_alerte();
 
-        $("bouton0").onclick = function () {
-            hide_pop_alerte();
-        }
-        $("bouton1").onclick = function () {
-            hide_pop_alerte();
-            page.showcontent();
-        }
+        $("bouton0").onclick = function () { hide_pop_alerte(); },
+        $("bouton1").onclick = function () { hide_pop_alerte(); page.showcontent(); };
 
     },
     //confirmation de base
     confirm_supprimer: function (donnee_aff, formtosend) {
-
         $("titre_alert").innerHTML = tab_alerte[donnee_aff][0];
         $("texte_alert").innerHTML = tab_alerte[donnee_aff][1];
         $("bouton_alert").innerHTML = tab_alerte[donnee_aff][2];
 
         show_pop_alerte();
 
-        $("bouton0").onclick = function () {
-            hide_pop_alerte();
-        }
+        $("bouton0").onclick = function () { hide_pop_alerte(); };
         if ($("bouton1")) {
             $("bouton1").onclick = function () {
                 hide_pop_alerte();
                 submitform(formtosend);
             }
         }
-
-
     },
     //confirmation de modif_ carac
     confirm_mod_carc_var: function (donnee_aff, formtosend, recheck) {
-
         $("titre_alert").innerHTML = tab_alerte[donnee_aff][0];
         $("texte_alert").innerHTML = tab_alerte[donnee_aff][1];
         $("bouton_alert").innerHTML = tab_alerte[donnee_aff][2];
@@ -148,12 +120,9 @@ alerte_message.prototype = {
                 submitform(formtosend);
             }
         }
-
-
     },
     //confirm supression d'un profil dans un contact
     confirm_supprimer_profil: function (donnee_aff, formtosend, profil_check) {
-
         $("titre_alert").innerHTML = tab_alerte[donnee_aff][0];
         $("texte_alert").innerHTML = tab_alerte[donnee_aff][1];
         $("bouton_alert").innerHTML = tab_alerte[donnee_aff][2];
@@ -169,22 +138,16 @@ alerte_message.prototype = {
             hide_pop_alerte();
             submitform(formtosend);
         }
-
-
     },
     //confirm supression d'une ligne de code barre par exemple
     confirm_supprimer_tag_and_callpage: function (donnee_aff, id_tag_del, page2call) {
-
         $("titre_alert").innerHTML = tab_alerte[donnee_aff][0];
         $("texte_alert").innerHTML = tab_alerte[donnee_aff][1];
         $("bouton_alert").innerHTML = tab_alerte[donnee_aff][2];
 
         show_pop_alerte();
 
-        $("bouton0").onclick = function () {
-            hide_pop_alerte();
-        }
-
+        $("bouton0").onclick = function () { hide_pop_alerte();}
         $("bouton1").onclick = function () {
             hide_pop_alerte();
             remove_tag(id_tag_del);
@@ -193,9 +156,7 @@ alerte_message.prototype = {
                     {
                         evalScripts: true,
                         onLoading: S_loading,
-                        onException: function () {
-                            S_failure();
-                        },
+                        onException: function () { S_failure(); },
                         onSuccess: function (requester) {
                             requester.responseText.evalScripts();
                             H_loading();
@@ -203,31 +164,20 @@ alerte_message.prototype = {
                     }
             );
         }
-
     },
     //confirm supression d'une ligne de quantité d'un tarif
     confirm_supprimer_tag: function (donnee_aff, id_tag_del) {
-
         $("titre_alert").innerHTML = tab_alerte[donnee_aff][0];
         $("texte_alert").innerHTML = tab_alerte[donnee_aff][1];
         $("bouton_alert").innerHTML = tab_alerte[donnee_aff][2];
 
         show_pop_alerte();
 
-        $("bouton0").onclick = function () {
-            hide_pop_alerte();
-        }
-
-        $("bouton1").onclick = function () {
-            hide_pop_alerte();
-            remove_tag(id_tag_del);
-        }
-
-
+        $("bouton0").onclick = function () { hide_pop_alerte(); }
+        $("bouton1").onclick = function () { hide_pop_alerte(); remove_tag(id_tag_del); }
     },
     //alerte d'erreur de saisie avec texte d'erreur envoyé par la fonction (un seul bouton)
     alerte_erreur: function (alerte_titre, alerte_texte, alerte_bouton, callBack) {
-
         $("titre_alert").innerHTML = alerte_titre;
         $("texte_alert").innerHTML = alerte_texte;
         $("bouton_alert").innerHTML = alerte_bouton;
@@ -240,9 +190,6 @@ alerte_message.prototype = {
             hide_pop_alerte();
         }
     }
-
-
-
 }
 
 //
@@ -261,7 +208,6 @@ var hashListener = {
     },
     init: function () {
         var self = this;
-
         // IE
         if ("onpropertychange" in document && "attachEvent" in document) {
             document.attachEvent("onpropertychange", function () {
@@ -313,7 +259,6 @@ var hashListener = {
     }
 };
 
-
 //rafraichir le cache
 function refresh_cache() {
     if (uncache) {
@@ -323,12 +268,9 @@ function refresh_cache() {
         win.location.reload(true);
     }
 }
-//
+
 // fonction d'appel et d'affichage des contenu chargés par ajax
-//
-function appelpage(div_cible) {
-    this.div_cible_proto = div_cible;
-}
+function appelpage(div_cible) { this.div_cible_proto = div_cible; }
 
 appelpage.prototype = {
     initialize: function () {
@@ -342,8 +284,7 @@ appelpage.prototype = {
 
         if ((changed) && ((this.div_target_proto == this.div_cible_proto))) {
             alerte.changedform();
-        }
-        else {
+        } else {
             this.showcontent();
         }
     },
@@ -359,7 +300,6 @@ appelpage.prototype = {
         }
         //on réinitialise les formulaires comme étants vierges
         changed = false;
-
         //ouverture de page depuis un hash
         if (div_target == "sub_content") {
             lehash = document.location.hash.substr(1, document.location.hash.length);
@@ -389,12 +329,8 @@ appelpage.prototype = {
                             {
                                 evalScripts: true,
                                 onLoading: S_loading,
-                                onException: function () {
-                                    S_failure();
-                                },
-                                on404: function () {
-                                    page.traitecontent("_404", "__404.php", true, div_target);
-                                },
+                                onException: function () {S_failure();},
+                                on404: function () {page.traitecontent("_404", "__404.php", true, div_target);},
                                 onComplete: function (originalRequest) {
                                     if (div_target == "sub_content") {
                                         hashListener.setHash(encodeURI(targeturl));
@@ -406,7 +342,7 @@ appelpage.prototype = {
                     );
                 }
                 else {
-                    //sinon on le récupére et on eval les sripts contenus
+                    //sinon on le récupére et on eval les scripts contenus
                     if (div_target == "sub_content") {
                         hashListener.setHash(encodeURI(targeturl));
                     }
@@ -422,12 +358,8 @@ appelpage.prototype = {
                         {
                             evalScripts: true,
                             onLoading: S_loading,
-                            onException: function () {
-                                S_failure();
-                            },
-                            on404: function () {
-                                page.traitecontent("_404", "__404.php", true, div_target);
-                            },
+                            onException: function () { S_failure(); },
+                            on404: function () { page.traitecontent("_404", "__404.php", true, div_target); },
                             onComplete: function () {
                                 H_loading();
                                 if (div_target == "sub_content") {
@@ -458,9 +390,7 @@ appelpage.prototype = {
                     },
                     evalScripts: true,
                     onLoading: S_loading,
-                    onException: function () {
-                        S_failure();
-                    },
+                    onException: function () { S_failure(); },
                     onComplete: H_loading
                 }
         );
@@ -490,9 +420,7 @@ appelpage.prototype = {
                     },
                     evalScripts: true,
                     onLoading: S_loading,
-                    onException: function () {
-                        S_failure();
-                    },
+                    onException: function () { S_failure(); },
                     onComplete: H_loading
                 }
         );
@@ -519,9 +447,7 @@ appelpage.prototype = {
                     },
                     evalScripts: true,
                     onLoading: S_loading,
-                    onException: function () {
-                        S_failure();
-                    },
+                    onException: function () { S_failure(); },
                     onComplete: H_loading
                 }
         );
@@ -546,9 +472,7 @@ appelpage.prototype = {
                     },
                     evalScripts: true,
                     onLoading: S_loading,
-                    onException: function () {
-                        S_failure();
-                    },
+                    onException: function () { S_failure(); },
                     onComplete: H_loading
                 }
         );
@@ -572,9 +496,7 @@ appelpage.prototype = {
                     },
                     evalScripts: true,
                     onLoading: S_loading,
-                    onException: function () {
-                        S_failure();
-                    },
+                    onException: function () { S_failure(); },
                     onComplete: H_loading
                 }
         );
@@ -584,17 +506,9 @@ appelpage.prototype = {
         var f_stock = "0";
         var f_nouv = "0";
         var f_promo = "0";
-        if ($F("in_stock_s") == "1") {
-            f_stock = "1";
-        }
-        if ($F("is_nouveau_s") == "1") {
-            f_nouv = "1";
-        }
-        if ($F("in_promotion_s") == "1") {
-            f_promo = "1";
-        }
-
-
+        if ($F("in_stock_s") == "1") { f_stock = "1"; }
+        if ($F("is_nouveau_s") == "1") { f_nouv = "1"; }
+        if ($F("in_promotion_s") == "1") { f_promo = "1"; }
         var AppelAjax = new Ajax.Updater(
                 "resultat",
                 "catalogue_recherche_result.php", {
@@ -618,9 +532,7 @@ appelpage.prototype = {
                     },
                     evalScripts: true,
                     onLoading: S_loading,
-                    onException: function () {
-                        S_failure();
-                    },
+                    onException: function () { S_failure(); },
                     onComplete: H_loading
                 }
         );
@@ -628,9 +540,7 @@ appelpage.prototype = {
     //appel les réponses pour le moteur avancé recherche articles
     catalogue_recherche_avancee: function () {
         serie_recherche = ($('form_recherche_a').serialize(true));
-        for (key in serie_recherche) {
-            serie_recherche[key] = encodeURIComponent(serie_recherche[key]);
-        }
+        for (key in serie_recherche) { serie_recherche[key] = encodeURIComponent(serie_recherche[key]); }
         var AppelAjax = new Ajax.Updater(
                 "resultat",
                 "catalogue_recherche_avancee_result.php", {
@@ -641,9 +551,7 @@ appelpage.prototype = {
                     parameters: serie_recherche,
                     evalScripts: true,
                     onLoading: S_loading,
-                    onException: function () {
-                        S_failure();
-                    },
+                    onException: function () { S_failure(); },
                     onComplete: H_loading
                 }
         );
@@ -678,9 +586,7 @@ appelpage.prototype = {
                     },
                     evalScripts: true,
                     onLoading: S_loading,
-                    onException: function () {
-                        S_failure();
-                    },
+                    onException: function () { S_failure(); },
                     onComplete: H_loading
                 }
         );
@@ -704,9 +610,7 @@ appelpage.prototype = {
                     },
                     evalScripts: true,
                     onLoading: S_loading,
-                    onException: function () {
-                        S_failure();
-                    },
+                    onException: function () { S_failure(); },
                     onComplete: H_loading
                 }
         );
@@ -733,9 +637,7 @@ appelpage.prototype = {
                     },
                     evalScripts: true,
                     onLoading: S_loading,
-                    onException: function () {
-                        S_failure();
-                    },
+                    onException: function () { S_failure(); },
                     onComplete: H_loading
                 }
         );
@@ -757,9 +659,7 @@ appelpage.prototype = {
                     },
                     evalScripts: true,
                     onLoading: S_loading,
-                    onException: function () {
-                        S_failure();
-                    },
+                    onException: function () { S_failure(); },
                     onComplete: H_loading
                 }
         );
@@ -786,9 +686,7 @@ appelpage.prototype = {
                     },
                     evalScripts: true,
                     onLoading: S_loading,
-                    onException: function () {
-                        S_failure();
-                    },
+                    onException: function () { S_failure(); },
                     onComplete: H_loading
                 }
         );
@@ -798,17 +696,9 @@ appelpage.prototype = {
         var f_stock = "0";
         var f_nouv = "0";
         var f_promo = "0";
-        if ($F("in_stock_s") == "1") {
-            f_stock = "1";
-        }
-        if ($F("is_nouveau_s") == "1") {
-            f_nouv = "1";
-        }
-        if ($F("in_promotion_s") == "1") {
-            f_promo = "1";
-        }
-
-
+        if ($F("in_stock_s") == "1") { f_stock = "1"; }
+        if ($F("is_nouveau_s") == "1") { f_nouv = "1"; }
+        if ($F("in_promotion_s") == "1") { f_promo = "1"; }
         var AppelAjax = new Ajax.Updater(
                 "resultat_comm_art",
                 "commission_article_result.php", {
@@ -832,9 +722,7 @@ appelpage.prototype = {
                     },
                     evalScripts: true,
                     onLoading: S_loading,
-                    onException: function () {
-                        S_failure();
-                    },
+                    onException: function () { S_failure(); },
                     onComplete: H_loading
                 }
         );
@@ -844,17 +732,9 @@ appelpage.prototype = {
         var f_stock = "0";
         var f_nouv = "0";
         var f_promo = "0";
-        if ($F("in_stock_s") == "1") {
-            f_stock = "1";
-        }
-        if ($F("is_nouveau_s") == "1") {
-            f_nouv = "1";
-        }
-        if ($F("in_promotion_s") == "1") {
-            f_promo = "1";
-        }
-
-
+        if ($F("in_stock_s") == "1") { f_stock = "1"; }
+        if ($F("is_nouveau_s") == "1") { f_nouv = "1"; }
+        if ($F("in_promotion_s") == "1") { f_promo = "1"; }
         var AppelAjax = new Ajax.Updater(
                 "resultat_comm_art",
                 "livraison_modes_cost_article_result.php", {
@@ -879,16 +759,12 @@ appelpage.prototype = {
                     },
                     evalScripts: true,
                     onLoading: S_loading,
-                    onException: function () {
-                        S_failure();
-                    },
+                    onException: function () { S_failure(); },
                     onComplete: H_loading
                 }
         );
     }
-
 }
-
 
 //Enregistrement des données non rafraichies dans un tableau
 function showResponse(originalRequest) {
@@ -919,10 +795,7 @@ function S_failure() {
 }
 
 //retour de variable pour l'historique
-function history_reload() {
-    return default_show_url;
-}
-
+function history_reload() { return default_show_url; }
 
 //chargement d'appel de feuilles de styles supplémentaires
 function ajoutcss(fichierCSS) {
@@ -944,13 +817,9 @@ function ajoutcss(fichierCSS) {
 }
 
 
-function changeclassname(idcible, newclass) {
-    $(idcible).className = newclass;
-}
+function changeclassname(idcible, newclass) { $(idcible).className = newclass; }
 
-
-// ELEMENT de MISE A dimension
-//renvois de la hauteur de la fenetre
+// ELEMENT de MISE A dimension renvois de la hauteur de la fenetre
 function getWindowHeight() {
     var windowHeight = 0;
     if (typeof (window.innerHeight) == 'number') {
@@ -969,8 +838,8 @@ function getWindowHeight() {
     }
     return windowHeight;
 }
-//renvois de la largeur de la fenetre
 
+//renvois de la largeur de la fenetre
 function getWindowWidth() {
     var windowWidth = 0;
     if (typeof (window.innerWidth) == 'number') {
@@ -990,7 +859,6 @@ function getWindowWidth() {
     return windowWidth;
 }
 
-
 // met les éléments à la hauteur
 function setsize_to_element() {
     set_tomax_height("sub_content", 0);
@@ -1000,7 +868,6 @@ function setsize_to_element() {
         $("framealert").style.width = "100%";
         $("framealert").style.height = getWindowHeight();
     }
-
 }
 
 function set_tomax_height(id_element, majo) {
@@ -1025,7 +892,6 @@ function return_height_element(id_element) {
     }
 }
 
-
 function centrage_element(id_element) {
     if ($(id_element)) {
         $(id_element).style.top = (getWindowHeight() - return_height_element(id_element)) / 2 + "px";
@@ -1041,7 +907,6 @@ function centrage_h_element(id_element) {
 
 //blocage du retour chariot automatique à la saisie du code barre
 function stopifcode_barre(event) {
-
     var key = event.which || event.keyCode;
     switch (key) {
         case Event.KEY_RETURN:
@@ -1061,7 +926,6 @@ function set_size_to_sub_content() {
     } else {
         $("sub_content").style.width = getWindowWidth() - 165 + "px";
     }
-
 }
 
 //force la sélection dans un champ select
@@ -1074,10 +938,7 @@ function preselect(value_index, id_select) {
     }
 }
 
-
-
 //ouverture d'un document
-
 function open_doc(ref_doc) {
     page.verify("document_edition", "documents_edition.php?ref_doc=" + ref_doc, "true", "sub_content");
 }
@@ -1088,7 +949,6 @@ function refresh_sub_content() {
 }
 
 //fonctions liés au maj du soft
-
 var stp_prog_file = false;
 //barre de progression des fichiers
 function size_file_progress(responseText) {
@@ -1106,12 +966,13 @@ function size_file_progress(responseText) {
         }
     }
 }
+
 //test du fichier de progression de fichiers
 function view_progress(new_version) {
     if (!stp_prog_file) {
         setTimeout("view_progress('" + new_version + "')", 2000);
         var AppelAjax = new Ajax.Request(
-                "../echange_lmb/maj_lmb_" + new_version + "/lmb_download_state.tmp",
+                "../../ressources/echange/maj_lmb_" + new_version + "/lmb_download_state.tmp",
                 {
                     parameters: {
                         lmb: "1"
@@ -1127,11 +988,9 @@ function view_progress(new_version) {
                 }
         );
     }
-
 }
 
 //ajout ou suppression d'une permission pour un user
-
 function set_maj_or_del_permission(ref_user, id_permission, id_profil, add_or_del) {
     var AppelAjax = new Ajax.Request(
             "utilisateur_permissions_maj.php",
@@ -1144,9 +1003,7 @@ function set_maj_or_del_permission(ref_user, id_permission, id_profil, add_or_de
                 },
                 evalScripts: true,
                 onLoading: S_loading,
-                onException: function () {
-                    S_failure();
-                },
+                onException: function () { S_failure(); },
                 onSuccess: function (requester) {
                     requester.responseText.evalScripts();
                     H_loading();
@@ -1167,9 +1024,7 @@ function set_maj_or_del_permission_fonction(id_fonction, id_permission, id_profi
                 },
                 evalScripts: true,
                 onLoading: S_loading,
-                onException: function () {
-                    S_failure();
-                },
+                onException: function () { S_failure(); },
                 onSuccess: function (requester) {
                     requester.responseText.evalScripts();
                     H_loading();
@@ -1180,7 +1035,6 @@ function set_maj_or_del_permission_fonction(id_fonction, id_permission, id_profi
 
 function maj_permissions_multiple(ref_user, id_permission, param_permissions, id_profil) {
     var param;
-
     param = param_permissions.join(",");
     var AppelAjax = new Ajax.Request(
             "utilisateur_permissions_maj.php",
@@ -1193,9 +1047,7 @@ function maj_permissions_multiple(ref_user, id_permission, param_permissions, id
                 },
                 evalScripts: true,
                 onLoading: S_loading,
-                onException: function () {
-                    S_failure();
-                },
+                onException: function () { S_failure(); },
                 onSuccess: function (requester) {
                     requester.responseText.evalScripts();
                     H_loading();
@@ -1206,7 +1058,6 @@ function maj_permissions_multiple(ref_user, id_permission, param_permissions, id
 
 function maj_permissions_multiple_fonction(id_fonction, id_permission, param_permissions, id_profil) {
     var param;
-
     param = param_permissions.join(",");
     var AppelAjax = new Ajax.Request(
             "fonction_permissions_maj.php",
@@ -1219,9 +1070,7 @@ function maj_permissions_multiple_fonction(id_fonction, id_permission, param_per
                 },
                 evalScripts: true,
                 onLoading: S_loading,
-                onException: function () {
-                    S_failure();
-                },
+                onException: function () { S_failure(); },
                 onSuccess: function (requester) {
                     requester.responseText.evalScripts();
                     H_loading();
@@ -1231,7 +1080,6 @@ function maj_permissions_multiple_fonction(id_fonction, id_permission, param_per
 }
 
 function maj_droits_membre_fonction(id_fonction, ref_contact, ref_user) {
-
     var AppelAjax = new Ajax.Request(
             "fonction_permissions_maj_contact.php",
             {
@@ -1242,9 +1090,7 @@ function maj_droits_membre_fonction(id_fonction, ref_contact, ref_user) {
                 },
                 evalScripts: true,
                 onLoading: S_loading,
-                onException: function () {
-                    S_failure();
-                },
+                onException: function () { S_failure(); },
                 onSuccess: function (requester) {
                     requester.responseText.evalScripts();
                     H_loading();
@@ -1254,7 +1100,6 @@ function maj_droits_membre_fonction(id_fonction, ref_contact, ref_user) {
 }
 
 function maj_droits_all_membres_fonction(id_fonction) {
-
     var AppelAjax = new Ajax.Request(
             "fonction_permissions_maj_fonction_membres.php",
             {
@@ -1263,9 +1108,7 @@ function maj_droits_all_membres_fonction(id_fonction) {
                 },
                 evalScripts: true,
                 onLoading: S_loading,
-                onException: function () {
-                    S_failure();
-                },
+                onException: function () { S_failure(); },
                 onSuccess: function (requester) {
                     requester.responseText.evalScripts();
                     H_loading();
@@ -1275,16 +1118,13 @@ function maj_droits_all_membres_fonction(id_fonction) {
 }
 
 function initialize_fonctions() {
-
     var AppelAjax = new Ajax.Request(
             "initialize_fonctions.php",
             {
                 parameters: {},
                 evalScripts: true,
                 onLoading: S_loading,
-                onException: function () {
-                    S_failure();
-                },
+                onException: function () { S_failure(); },
                 onSuccess: function (requester) {
                     requester.responseText.evalScripts();
                     H_loading();
@@ -1305,9 +1145,7 @@ function maj_permissions_tableau(ref_user, id_permission, param_permissions, id_
                 },
                 evalScripts: true,
                 onLoading: S_loading,
-                onException: function () {
-                    S_failure();
-                },
+                onException: function () { S_failure(); },
                 onSuccess: function (requester) {
                     requester.responseText.evalScripts();
                     H_loading();
@@ -1315,7 +1153,6 @@ function maj_permissions_tableau(ref_user, id_permission, param_permissions, id_
             }
     );
 }
-
 
 // **********
 // DEB FONCTION AGENDA
@@ -1335,9 +1172,7 @@ function agenda_create_AgendaReservationRessource(lib_agenda, ref_ressource, cou
                 },
                 evalScripts: true,
                 onLoading: S_loading,
-                onException: function () {
-                    S_failure();
-                },
+                onException: function () { S_failure(); },
                 onSuccess: function (requester) {
                     requester.responseText.evalScripts();
                 },
@@ -1360,9 +1195,7 @@ function agenda_create_AgendaContact(lib_agenda, ref_contact, couleur_1, couleur
                 },
                 evalScripts: true,
                 onLoading: S_loading,
-                onException: function () {
-                    S_failure();
-                },
+                onException: function () { S_failure(); },
                 onSuccess: function (requester) {
                     requester.responseText.evalScripts();
                 },
@@ -1385,9 +1218,7 @@ function agenda_create_AgendaLoacationMateriel(lib_agenda, ref_article, couleur_
                 },
                 evalScripts: true,
                 onLoading: S_loading,
-                onException: function () {
-                    S_failure();
-                },
+                onException: function () { S_failure(); },
                 onSuccess: function (requester) {
                     requester.responseText.evalScripts();
                 },
@@ -1410,9 +1241,7 @@ function agenda_modif_AgendaReservationRessource(ref_agenda, lib_agenda, ref_res
                 },
                 evalScripts: true,
                 onLoading: S_loading,
-                onException: function () {
-                    S_failure();
-                },
+                onException: function () { S_failure(); },
                 onSuccess: function (requester) {
                     requester.responseText.evalScripts();
                 },
@@ -1435,9 +1264,7 @@ function agenda_modif_AgendaContact(ref_agenda, lib_agenda, ref_contact, couleur
                 },
                 evalScripts: true,
                 onLoading: S_loading,
-                onException: function () {
-                    S_failure();
-                },
+                onException: function () { S_failure(); },
                 onSuccess: function (requester) {
                     requester.responseText.evalScripts();
                 },
@@ -1460,9 +1287,7 @@ function agenda_modif_AgendaLoacationMateriel(ref_agenda, lib_agenda, ref_articl
                 },
                 evalScripts: true,
                 onLoading: S_loading,
-                onException: function () {
-                    S_failure();
-                },
+                onException: function () { S_failure(); },
                 onSuccess: function (requester) {
                     requester.responseText.evalScripts();
                 },
@@ -1490,7 +1315,6 @@ function maj_mnt_solde(divid, totlignes) {
         if (inputs[i].id == "inp_montant_" + totlignes)
             inputs[i].value = mnt_solde;
     }
-
 }
 
 function toggleDisplay(id1, id2) {
@@ -1503,7 +1327,6 @@ function toggleDisplay(id1, id2) {
         inputsVisibles[i].style.display = "";
     }
 }
-
 
 function del_art_fav(ref_article)
 {

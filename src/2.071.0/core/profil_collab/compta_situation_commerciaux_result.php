@@ -275,7 +275,7 @@ if (isset($_REQUEST["print"])) {
     $pdf->Output();
 
 } else {
-    //affichage des résultats dans lmb
+    //affichage des résultats
     include ($DIR.$_SESSION['theme']->getDir_theme()."page_compta_situation_commerciaux_result.inc.php");
 }
 ?>

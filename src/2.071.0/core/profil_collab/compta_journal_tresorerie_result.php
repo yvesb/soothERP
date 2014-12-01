@@ -372,7 +372,7 @@ if (isset($_REQUEST["print"])) {
 	$pdf->Output();
 
 } else {
-	//affichage des résultats dans lmb
+	//affichage des résultats
 	include ($DIR.$_SESSION['theme']->getDir_theme()."page_compta_journal_tresorerie_result.inc.php");
 }
 ?>

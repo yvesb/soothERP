@@ -107,19 +107,18 @@ check_page_variables($page_variables);
 
 <?php if (isset($import_catalogue_csv['folder_name'])) { ?>
 		Event.observe('import_catalogue_csv', "click", function (evt) {
-			page.verify('import_catalogue_csv', 'modules/<?php echo $import_catalogue_csv['folder_name'] ?>import_catalogue_csv.php', 'true', 'sub_content');
+			page.verify('import_catalogue_csv', '<?php echo $PLUGINS_DIR . $import_catalogue_csv['folder_name'] ?>_module_import_catalogue_csv.php', 'true', 'sub_content');
 			Event.stop(evt);
 		}
 		);
 <?php } ?>
 <?php if (isset($import_catalogue_csv_var['folder_name'])) { ?>
 		Event.observe('import_catalogue_csv_var', "click", function (evt) {
-			page.verify('import_catalogue_csv_var', 'modules/<?php echo $import_catalogue_csv_var['folder_name'] ?>import_catalogue_csv_var.php', 'true', 'sub_content');
+			page.verify('import_catalogue_csv_var', '<?php echo $PLUGINS_DIR . $import_catalogue_csv_var['folder_name'] ?>_module_import_catalogue_csv_var.php', 'true', 'sub_content');
 			Event.stop(evt);
 		}
 		);
 <?php } ?>
-
 
 //on masque le chargement
 	H_loading();

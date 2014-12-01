@@ -242,7 +242,7 @@
 				</div>
 
 				</td>
-				<td width="185px"><a href="http://www.lundimatin.fr" target="_blank"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_theme(); ?>images/lmb_connexion.jpg" border="0" /></a></td>
+				<td width="185px"><a href="http://www.sootherp.fr" target="_blank"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme(); ?>images/lmb_connexion.jpg" border="0" /></a></td>
 				</tr>
 				<tr>
 					<td colspan="2">&nbsp;</td>
@@ -250,13 +250,13 @@
 				<tr>
 				<td colspan="2" style="padding-left:80px;">
 				<div style="text-align:left; vertical-align: bottom" class="grey_text" >
-					<a href="http://www.lundimatin.fr" target="_blank" class="grey_text">
-						Lundi Matin Business est un logiciel libre de gestion d'entreprise</a>, 
+					<a href="http://www.sootherp.fr" target="_blank" class="grey_text">
+						SoothERP est un logiciel libre de gestion d'entreprise</a>, 
 						distribu&eacute; sous licence 
-						LMPL
+						SMPL
 				</div>
 				
-				La présente version modifiée de Lundi Matin Business est une distribution <a href="http://www.sootherp.fr" target="_blank" class="grey_text" rel="noreferrer">SoothERP</a>
+				La présente version modifiée de SoothERP est une distribution <a href="http://www.sootherp.fr" target="_blank" class="grey_text" rel="noreferrer">SoothERP</a>
 				
 				</td>
 				</tr>

@@ -15,7 +15,7 @@ if (file_exists("retour_import.csv"))
 if ($size > 0)
 	{
 		?> <script type="text/javascript">
-		page.verify('retour_import','modules/import_catalogue_csv/retour_import.csv','true','_blank');
+		page.verify('retour_import','<?php echo $$PROFILE_DIR.$PLUGINS_REP; ?>_module_import_annuaire_csv/retour_import.csv','true','_blank');
 		</script><?php
 	}	
 //  ******************************************************

@@ -50,7 +50,7 @@ else {
 $maj->set_break_point(1);
 
 $maj->stop_serveur();
-// Remplacement des fichiers de LMB par leur nouvelle version
+// Remplacement des fichiers de SOOTHERP par leur nouvelle version
 if ($maj->last_break_point <= 2) {
 	$maj->synchronise_files ();
 }
@@ -61,10 +61,10 @@ $maj->set_break_point(2);
 // Action spécifiques à la mise à jour
 if ($maj->last_break_point <= 101) {
 	$GLOBALS['_INFOS']['maj_actions'][] = "-----------------------------------------------------------------------";
-	if (is_file ($DIR."echange_lmb/maj_lmb_".$new_version."/maj.php")) { 
+	if (is_file ($ECHANGE_DIR."maj_lmb_".$new_version."/maj.php")) { 
 	$maj->make_download_state (95, "Mise &agrave; jour vers version ".$new_version." en cours", "Execution des requ&ecirc;tes SQL", "");
 		$GLOBALS['_INFOS']['maj_actions'][] = "<i>Actions spécifiques à effectuer</i>";
-		require_once($DIR."echange_lmb/maj_lmb_".$new_version."/maj.php"); 
+		require_once($ECHANGE_DIR."maj_lmb_".$new_version."/maj.php"); 
 	}
 	else {
 		$GLOBALS['_INFOS']['maj_actions'][] = "<i>Aucune action spécifique à effectuer</i>";
@@ -88,7 +88,7 @@ $maj->set_break_point(103);
 $maj->unset_break_point();
 $maj->start_serveur();
 $maj->flush_tmp_files();
-$GLOBALS['_INFOS']['maj_actions'][] = "<b>DEBUT DE LA MISE A JOUR VERS LMB v".$new_version."</b>";
+$GLOBALS['_INFOS']['maj_actions'][] = "<b>DEBUT DE LA MISE A JOUR VERS SoothERP v".$new_version."</b>";
 
 
 

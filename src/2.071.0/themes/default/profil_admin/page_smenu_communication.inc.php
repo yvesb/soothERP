@@ -21,7 +21,7 @@ check_page_variables($page_variables);
 				<img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/ico_communication.jpg" />				</div>
 			<span style="width:35px">
 				<img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/blank.gif" width="280px" height="20px" id="imgsizeform"/>				</span>			</td>
-		<td colspan="2"><span style="width:40%; height:50px"><br />
+		<td colspan="2" style="width:90%;"><span style="width:40%; height:50px"><br />
 				<br />
 				<img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/titre_outils_com.jpg" style="padding-left:25px" /><br />
 				<br />

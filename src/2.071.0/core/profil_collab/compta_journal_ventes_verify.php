@@ -126,7 +126,7 @@ $nb_doc_aff = 0;
 // AFFICHAGE
 //  ******************************************************
 
-	//affichage des résultats dans lmb
+	//affichage des résultats
 	include ($DIR.$_SESSION['theme']->getDir_theme()."page_compta_journal_ventes_verify.inc.php");
 
 ?>

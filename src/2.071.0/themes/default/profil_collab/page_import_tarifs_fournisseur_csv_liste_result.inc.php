@@ -236,7 +236,7 @@ foreach ($_ALERTES as $alerte => $value) {
 				<?php } ?>
 			</td>
 			<td style="text-align:center;" >
-				<img src="<?php echo $_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" 
+				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/supprime.gif" 
 					style="cursor:pointer" id="del_ligne_<?php echo $nb_lignes;?>"/>
 				<script type="text/javascript">
 					Event.observe("del_ligne_<?php echo $nb_lignes;?>", "click", function(evt){

@@ -106,7 +106,7 @@ check_page_variables($page_variables);
 
 <?php if (isset($import_annuaire_csv['folder_name'])) { ?>
 		Event.observe('import_annuaire_csv', "click", function (evt) {
-			page.verify('import_annuaire_csv', 'modules/<?php echo $import_annuaire_csv['folder_name']; ?>import_annuaire_csv.php', 'true', 'sub_content');
+			page.verify('import_annuaire_csv', '<?php echo $PLUGINS_DIR . $import_annuaire_csv['folder_name']; ?>_module_import_annuaire_csv.php', 'true', 'sub_content');
 			Event.stop(evt);
 		}
 		);

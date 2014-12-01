@@ -276,7 +276,7 @@ final class coordonnee {
 		$lib_civ			 = $contact_entreprise->getLib_civ_court();
 		// Envoi de l'email
 		$destinataire		 = $this->email;
-		$sujet				 = "[" . $nom_entreprise . "] Création d'un compte utilisateur LMB";
+		$sujet				 = "[" . $nom_entreprise . "] Création d'un compte utilisateur.";
 		$message			 = "<br /><br />Bonjour, <br />" .
 				$lib_civ . " " . $nom_entreprise .	" vous propose de créer un compte utilisateur sur son application de gestion. <br />";
 		$contact			 = new contact($this->ref_contact);

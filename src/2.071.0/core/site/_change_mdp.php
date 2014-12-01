@@ -34,7 +34,7 @@ if (!empty($_REQUEST['sid']) && !empty($_REQUEST['pass'])) {
         $lib_civ = $contact_entreprise->getLib_civ_court();
         // Envoi de l'email
         $destinataire = $coord->getEmail();
-        $sujet = "[" . $nom_entreprise . "] Votre compte utilisateur LMB";
+        $sujet = "[" . $nom_entreprise . "] Votre compte utilisateur.";
         $message = "<br /><br />Bonjour, <br />
                             Votre changement de mot de passe sur le site de " . $lib_civ . " " . $nom_entreprise . " a bien été effectuée. <br />
                             Vous pouvez maintenant vous connecter au logiciel Lundi Matin Business à l'adresse suivante : <br />

@@ -3,26 +3,29 @@
 //  ******************************************************
 // DOSSIERS NECESSAIRES
 //  ******************************************************
-$CORE_REP					 = "core/";		  // Emplacement des fichiers CORE de SoothERP
-$CORE_DIR					 = $DIR . $CORE_REP;		 // Localisation des fichiers CORE de SoothERP
-$CONFIG_DIR					 = $DIR . "config/";		 // Localisation des fichiers de configurations
-$RESSOURCES_DIR				 = $DIR . "ressources/";		// Localisation des fichiers de ressources externes
+$CORE_REP					 = "core/";	// Emplacement des fichiers CORE de SoothERP
+$CORE_DIR					 = $DIR . $CORE_REP;   // Localisation des fichiers CORE de SoothERP
+$CONFIG_DIR					 = $DIR . "config/";   // Localisation des fichiers de configurations
+$RESSOURCES_REP				 = "ressources/";  // Localisation des fichiers de ressources externes
+$RESSOURCES_DIR				 = $DIR . $RESSOURCES_REP;  // Localisation des fichiers de ressources externes
 $LIB_DIR					 = $CORE_DIR . "libcore/";
-$PLUGINS_DIR				 = $RESSOURCES_DIR . "plugins/";
-$FICHIERS_DIR				 = $RESSOURCES_DIR . "fichiers/";	   // Localisation des fichiers de l'entreprise
-$IMAGES_DIR					 = $FICHIERS_DIR . "images/";	  // Localisation des fichiers d'image de l'entreprise
+$LIB_DIR_EXT				 = $LIB_DIR . "_Ext/";
+$PLUGINS_REP				 = $RESSOURCES_REP . "plugins/";
+$PLUGINS_DIR				 = $DIR . $PLUGINS_REP;
+$FICHIERS_DIR				 = $RESSOURCES_DIR . "fichiers/";	// Localisation des fichiers de l'entreprise
+$IMAGES_DIR					 = $FICHIERS_DIR . "images/";   // Localisation des fichiers d'image de l'entreprise
 $MAIL_TEMPLATES_CSS_DIR		 = $FICHIERS_DIR . "mail_templates/css/";   // Localisation des fichiers css de modèles d'email
 $MAIL_TEMPLATES_IMAGES_DIR	 = $FICHIERS_DIR . "mail_templates/images/";   // Localisation des fichiers d'image de modèles d'email
-$GED_DIR					 = $FICHIERS_DIR . "ged/";	  // Localisation des fichiers ged
+$GED_DIR					 = $FICHIERS_DIR . "ged/";   // Localisation des fichiers ged
 $GED_TMP_DIR				 = $FICHIERS_DIR . "ged_tmp/";
-$ARTICLES_IMAGES_DIR		 = $IMAGES_DIR . "articles/";	  // Localisation des fichiers d'image des articles
-$ARTICLES_MINI_IMAGES_DIR	 = $ARTICLES_IMAGES_DIR . "miniatures/";	// Localisation des fichiers d'image miniature des articles
-$MODELES_DIR				 = $CORE_DIR . "modeles/";		// Localisation des fichiers des modèles
-$ODS_MODELES_DIR			 = $MODELES_DIR . "modeles_ods/";	 // Localisation des fichiers de modèles ODS
-$PDF_MODELES_DIR			 = $MODELES_DIR . "modeles_pdf/";	 // Localisation des fichiers de modèles PDF
-$ECHANGE_DIR				 = $RESSOURCES_DIR . "echange/export_general/"; //emplacement des fichiers permettant les import exports
-$MSG_MODELES_DIR			 = $MODELES_DIR . "modeles_msg/";	 // Localisation des fichiers de modèles MSG
-$TPL_MODELES_DIR			 = $MODELES_DIR . "modeles_tpl/";	 // Localisation des fichiers de modèles TPL
+$ARTICLES_IMAGES_DIR		 = $IMAGES_DIR . "articles/";   // Localisation des fichiers d'image des articles
+$ARTICLES_MINI_IMAGES_DIR	 = $ARTICLES_IMAGES_DIR . "miniatures/"; // Localisation des fichiers d'image miniature des articles
+$MODELES_DIR				 = $CORE_DIR . "modeles/";  // Localisation des fichiers des modèles
+$ODS_MODELES_DIR			 = $MODELES_DIR . "modeles_ods/";  // Localisation des fichiers de modèles ODS
+$PDF_MODELES_DIR			 = $MODELES_DIR . "modeles_pdf/";  // Localisation des fichiers de modèles PDF
+$ECHANGE_DIR				 = $RESSOURCES_DIR . "echange/"; //emplacement des fichiers permettant les import exports
+$MSG_MODELES_DIR			 = $MODELES_DIR . "modeles_msg/";  // Localisation des fichiers de modèles MSG
+$TPL_MODELES_DIR			 = $MODELES_DIR . "modeles_tpl/";  // Localisation des fichiers de modèles TPL
 //  ******************************************************
 // CONFIGURATION SYSTEME DE L'APPLICATION
 //  ******************************************************

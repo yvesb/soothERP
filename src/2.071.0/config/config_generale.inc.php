@@ -7,7 +7,7 @@ $TIMEZONE = "Europe/Paris";
 $INFO_LOCALE = array("fr_FRA", "fr_FR", "fra", "France", "French", "fr_FR.ISO8859-1");
 $USE_PA_HT_FORCED = 0;
 $TAXE_IN_PU = 1;
-$GEST_TYPE_COORD = 0;
+$GEST_TYPE_COORD = 1;
 $AFFICHER_AIDE = 1;  // Affichage des infos-bulles.
 $CHOIX_THEME = "default";
 

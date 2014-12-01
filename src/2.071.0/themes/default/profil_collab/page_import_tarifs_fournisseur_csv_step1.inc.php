@@ -27,7 +27,7 @@ if(is_object($colonne)) {
 
 <p class="titre">Renseigner les correspondances</p>
 <div>
-Sélectionnez les correspondances entre les informations de LMB et les différentes colonnes de votre fichier CSV.
+Sélectionnez les correspondances entre les informations de SoothERP et les différentes colonnes de votre fichier CSV.
 <p>
 <form action="import_tarifs_fournisseur_csv_step1_done.php" enctype="multipart/form-data" 
 		method="POST" id="import_tarifs_fournisseur_csv_done" name="import_tarifs_fournisseur_csv_done" 

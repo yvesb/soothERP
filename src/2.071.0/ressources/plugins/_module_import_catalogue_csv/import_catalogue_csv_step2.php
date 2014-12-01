@@ -18,7 +18,7 @@ $lignes = $dao_csv_import_catalogue_ligne->readAll();
 if (!count($lignes)) {
 	//import terminé ou aucun enregistrement à traiter
 	$import_catalogue->maj_etape(3);
-	header ("Location: ".$DIR."profil_".$_SESSION['profils'][$ID_PROFIL]->getCode_profil()."/modules/".$import_catalogue_csv['folder_name']."import_catalogue_csv_step3.php");
+	header ("Location: ".$PROFILE_DIR.$PLUGINS_REP . $import_catalogue_csv['folder_name']."import_catalogue_csv_step3.php");
 	exit();
 }
 $query = "SELECT id_colonne FROM csv_import_catalogue_cols WHERE champ_equivalent = 'lib_article'";
@@ -98,6 +98,7 @@ $total_avert = $count_nom_doublon+$count_ref_interne_doublon;
 //  ******************************************************
 // AFFICHAGE
 //  ******************************************************
-include ($DIR."profil_".$_SESSION['profils'][$ID_PROFIL]->getCode_profil()."/modules/".$import_catalogue_csv['folder_name']."themes/".$_SESSION['theme']->getCode_theme()."/page_import_catalogue_csv_step2.inc.php");
+
+include ("themes/page_import_catalogue_csv_step2.inc.php");
 
 ?>

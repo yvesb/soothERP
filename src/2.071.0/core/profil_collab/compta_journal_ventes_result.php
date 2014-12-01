@@ -215,7 +215,7 @@ ini_set("memory_limit","40M");
 	$pdf->Output();
 
 } else {
-	//affichage des résultats dans lmb
+	//affichage des résultats
 	include ($DIR.$_SESSION['theme']->getDir_theme()."page_compta_journal_ventes_result.inc.php");
 }
 ?>

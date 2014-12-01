@@ -34,8 +34,8 @@ if ($import_infos == "") {
 	}
 }
 
-//on cré un fichier qui regroupe les art_categ déjà importées pour que le serveur de données récupére ces infos
-	$new_file = fopen ($DIR."echange_lmb/tmp_art_categ_list.csv", "w");
+//on crée un fichier qui regroupe les art_categ déjà importées pour que le serveur de données récupére ces infos
+	$new_file = fopen ($ECHANGE_DIR."tmp_art_categ_list.csv", "w");
 	fwrite($new_file, $import_infos);
 	fclose($new_file);
 	

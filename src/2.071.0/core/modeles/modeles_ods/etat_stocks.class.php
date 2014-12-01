@@ -1,6 +1,6 @@
 <?php
 // Load library
-require_once($LIB_DIR .'ods/ods.php');
+require_once($LIB_DIR_EXT .'ods/ods.php');
 
 //  ******************************************************
 // GENERATION DES RESULTATS DES COMMERCIAUX

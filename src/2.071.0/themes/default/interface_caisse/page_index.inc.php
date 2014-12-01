@@ -48,10 +48,10 @@ if (isset($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $CORE
 		<?php
 		if (isset($modules)) {
 			foreach ($modules as $module) {
-				if (isset(${$module}['css_collab'])) {
-					foreach (${$module}['css_collab'] as $css_mod) {
+				if (isset(${$module}['css_caisse'])) {
+					foreach (${$module}['css_caisse'] as $css_mod) {
 						?>
-						<link href="<?php echo $DIR . "profil_" . $_SESSION['profils'][$ID_PROFIL]->getCode_profil() . "/" . $css_mod; ?>" rel="stylesheet" type="text/css" /><?php
+						<link href="<?php echo $css_mod; ?>" rel="stylesheet" type="text/css" /><?php
 					}
 				}
 			}
@@ -65,10 +65,10 @@ if (isset($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], $CORE
 		<?php
 		if (isset($modules)) {
 			foreach ($modules as $module) {
-				if (isset(${$module}['js_collab'])) {
-					foreach (${$module}['js_collab'] as $js_mod) {
+				if (isset(${$module}['css_caisse'])) {
+					foreach (${$module}['css_caisse'] as $js_mod) {
 						?>
-						<script type="text/javascript" src="<?php echo $DIR . "profil_" . $_SESSION['profils'][$ID_PROFIL]->getCode_profil() . "/" . $js_mod; ?>"></script><?php
+						<script type="text/javascript" src="<?php echo $js_mod; ?>"></script><?php
 					}
 				}
 			}

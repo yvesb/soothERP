@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 
-require_once ($LIB_DIR."/php-ofc-library/open-flash-chart.php");
+require_once ($LIB_DIR_EXT."/php-ofc-library/open-flash-chart.php");
 
 // generate some random data
 srand((double)microtime()*1000000);

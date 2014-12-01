@@ -1,7 +1,7 @@
 <?php
 
 // Load library
-require_once($LIB_DIR .'ods/ods.php');
+require_once($LIB_DIR_EXT .'ods/ods.php');
 
 class tab_result {
 		

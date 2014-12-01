@@ -17,7 +17,7 @@ if (isset($_REQUEST['page_from']) && !substr_count($_REQUEST['page_from'], "__us
 // On commence par échapper les caractères spéciaux par précaution
     $page_from = htmlspecialchars($_REQUEST['page_from'], ENT_QUOTES, "UTF-8");
 
-// On vérifie que la donnée fournie correspond bien à un nom de page du dossier ou des sous-dossiers LMB (ce que l'on considère comme une "white list")
+// On vérifie que la donnée fournie correspond bien à un nom de page du dossier ou des sous-dossiers SoothERP (ce que l'on considère comme une "white list")
     $dir_iterator = new RecursiveDirectoryIterator("../");
     $iterator     = new RecursiveIteratorIterator($dir_iterator, RecursiveIteratorIterator::SELF_FIRST);
 

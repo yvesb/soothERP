@@ -1,8 +1,8 @@
 <?php
 
 require_once ($CONFIG_DIR.'config_bdd.inc.php');
-require_once ($LIB_DIR.'phpbackup4mysql/phpBackup4MySQL.class.php');
-require_once ($LIB_DIR.'phpbackup4mysql/config/config.inc.php');
+require_once ($LIB_DIR_EXT.'phpbackup4mysql/phpBackup4MySQL.class.php');
+require_once ($LIB_DIR_EXT.'phpbackup4mysql/config/config.inc.php');
 
 $num_backup_files_kept = $num_backup_files_kept_cron;
 

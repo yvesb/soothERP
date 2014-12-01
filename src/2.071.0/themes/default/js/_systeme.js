@@ -1,9 +1,9 @@
-function createBackup(){ 
-	var AppelAjax = new Ajax.Request(
-		"serveur_backup_add.php", 
-		{
-		evalScripts:true, 
-		onLoading:S_loading, onException: function () {S_failure();},
+function createBackup(){
+	var AppelAjax2 = new Ajax.Request(
+		"serveur_backup_add.php", {
+		evalScripts: true, 
+		onLoading: S_loading,
+		onException: function () { S_failure(); },
 		onSuccess: function (requester){
 		requester.responseText.evalScripts();
 		H_loading();
@@ -14,11 +14,11 @@ function createBackup(){
 
 function restoreBackup(path){
 	var AppelAjax = new Ajax.Request(
-		"serveur_backup_restore.php", 
-		{
+		"serveur_backup_restore.php", {
 		parameters: { path: path },
-		evalScripts:true, 
-		onLoading:S_loading, onException: function () {S_failure();},
+		evalScripts: true, 
+		onLoading: S_loading,
+		onException: function () { S_failure(); },
 		onSuccess: function (requester){
 		requester.responseText.evalScripts();
 		H_loading();

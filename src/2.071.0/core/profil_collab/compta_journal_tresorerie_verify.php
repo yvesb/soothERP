@@ -548,7 +548,7 @@ if (isset($_REQUEST['recherche'])) {
 // AFFICHAGE
 //  ******************************************************
 
-//affichage des résultats dans lmb
+//affichage des résultats
 include ($DIR.$_SESSION['theme']->getDir_theme()."page_compta_journal_tresorerie_verify.inc.php");
 
 ?>

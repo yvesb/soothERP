@@ -101,7 +101,7 @@ if (erreur) {
 	}
 
 	if (exist_pdf_modele) {
-		texte_erreur += "Ce modèle PDF est déjà installé dans LMB.<br/>";
+		texte_erreur += "Ce modèle PDF est déjà installé dans SoothERP .<br/>";
 	}
 	window.parent.alerte.alerte_erreur ('Erreur de saisie', texte_erreur,'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 

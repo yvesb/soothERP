@@ -129,7 +129,8 @@ if ( ( ( ($form['page_to_show']-1)*$form['fiches_par_page']) +$form['fiches_par_
 //  ******************************************************
 // AFFICHAGE
 //  ******************************************************
-include ($DIR."profil_".$_SESSION['profils'][$ID_PROFIL]->getCode_profil()."/modules/".$import_catalogue_csv['folder_name']."themes/".$_SESSION['theme']->getCode_theme()."/page_import_catalogue_csv_liste_result.inc.php");
+
+include ("themes/page_import_catalogue_csv_liste_result.inc.php");
 
 ?>
 

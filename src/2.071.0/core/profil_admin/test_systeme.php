@@ -208,11 +208,12 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 			$retour_texte .= "Les fichiers systèmes sont tous présents.<br />";
 		}
 		
-		$tab_dirs = array("config", "documents", "ressources/fichiers", "modeles", "ressources/plugins", "core", "log", "themes", "backup", "ressources/echange");
+		$tab_dirs = array($CONFIG_DIR, $DIR."documents", $FICHIERS_DIR, $MODELES_DIR, $PLUGINS_DIR, $CORE_DIR, $DIR."log", $DIR."themes", $DIR."backup", $ECHANGE_DIR);
 		$compteur = 0;
 		foreach ($tab_dirs as $dir) {
-			if (!is_dir($DIR.$dir)) {
-				$retour_texte .= "Le dossier suivant est absent de votre système: ".$dir." <br />";
+
+			if (!is_dir($dir)) {
+				$retour_texte .= 'Le dossier <strong>"' .$dir. '"</strong> est absent de votre système.<br />';
 				$GLOBALS['_INFOS']['test_systeme'][] = "Le dossier suivant est absent de votre système: ".$dir." <br />";
 				$compteur++;
 			}

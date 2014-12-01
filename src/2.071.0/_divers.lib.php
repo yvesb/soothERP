@@ -1599,17 +1599,17 @@ function listFiles($path) {
 }
 
 function tarFiles($path, $files) {
-	global $LIB_DIR;
-	require_once($LIB_DIR . "Tar.php");
+	global $LIB_DIR_EXT;
+	require_once($LIB_DIR_EXT . "Tar.php");
 	$tar			 = new Archive_Tar($path, true);
 	$tar->create($files) or die("Erreur lors de l'archivage");
 }
 
 function createBackup() {
-	global $num_backup_files_kept,$bdd_hote,$bdd_user,$bdd_pass,$bdd_base,$LIB_DIR;
+	global $num_backup_files_kept,$bdd_hote,$bdd_user,$bdd_pass,$bdd_base,$LIB_DIR_EXT,$DIR;
 
-	require_once ($LIB_DIR . 'phpbackup4mysql/phpBackup4MySQL.class.php');
-	require_once ($LIB_DIR . 'phpbackup4mysql/config/config.inc.php');
+	require_once ($LIB_DIR_EXT . 'phpbackup4mysql/phpBackup4MySQL.class.php');
+	require_once ($LIB_DIR_EXT . 'phpbackup4mysql/config/config.inc.php');
 
 	$pb4ms = new phpBackup4MySQL();
 	$dbh = $pb4ms->dbconnect($bdd_base, $bdd_user, $bdd_pass, $bdd_hote);
@@ -1617,6 +1617,7 @@ function createBackup() {
 
 	if (!$pb4ms->saveFile($sql_dump, "manual", "user")) {
 		return "Echec de la sauvegarde";
+		
 	} else {
 		return "Sauvegarde effectuée";
 	}
@@ -1633,10 +1634,10 @@ function restoreDB($file_dump) {
 }
 
 function restoreBackup($path, $file_backup) {
-	global $bdd_hote,$bdd_user,$bdd_pass,$bdd_base,$LIB_DIR;
+	global $bdd_hote,$bdd_user,$bdd_pass,$bdd_base,$LIB_DIR_EXT;
 
-	require ($LIB_DIR ."phpbackup4mysql/phpBackup4MySQL.class.php");
-	require_once ($LIB_DIR ."phpbackup4mysql/config/config.inc.php");
+	require ($LIB_DIR_EXT ."phpbackup4mysql/phpBackup4MySQL.class.php");
+	require_once ($LIB_DIR_EXT ."phpbackup4mysql/config/config.inc.php");
 
 //Create a new phpbackup4mysql instance
 	$pb4ms = new phpBackup4mysql();

@@ -62,7 +62,7 @@ if (count($_ALERTES)) {
 }else{
 	?>
 	window.parent.changed = false;
-	window.parent.alerte.alerte_erreur ('Etape 2', "Correspondances des informations avec LMB effectuée",'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
+	window.parent.alerte.alerte_erreur ('Etape 2', "Correspondances des informations avec SoothERP effectuée",'<input type="submit" id="bouton0" name="bouton0" value="Ok" />');
 	window.parent.page.verify('import_tarifs_fournisseur_csv_step2','import_tarifs_fournisseur_csv_step2.php','true','sub_content');
 	<?php
 };

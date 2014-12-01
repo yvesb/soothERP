@@ -1,24 +1,18 @@
 <?php
 
-// *************************************************************************************************************
+// ******************************************************
 // CONTROLE DU THEME
-// *************************************************************************************************************
-
+// ******************************************************
 // Variables nécessaires à l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
 
-//******************************************************************
+//*******************************************************
 // Variables communes d'affichage
-//******************************************************************
+//*******************************************************
 
-
-
-// *************************************************************************************************************
 // AFFICHAGE
-// *************************************************************************************************************
-
 ?>
 <script type="text/javascript">
 tableau_smenu[0] = Array("smenu_maintenance", "smenu_maintenance.php" ,"true" ,"sub_content", "Maintenance");
@@ -37,7 +31,7 @@ update_menu_arbo();
 Un backup automatique peut être lancé, en appelant le fichier "/taches_auto/cron_backup.php" depuis une tâche cron (avec les mêmes paramètres que ceux du fichier config. du gestionnaire de backup, sauf le nombre de backup(s) qui peut être spécifique et est à définir dans ce même fichier).
 </p>
 <p style="margin:10px;">
-Un backup de session peut être lancé à l'ouverture d'une session Sooth ERP (configurable dans le fichier "config_serveur.inc.php"), pour récupération éventuelle de l'état précédent en cas de fausse manip.</ br>
+Un backup de session peut être lancé à l'ouverture d'une session SoothERP (configurable dans le fichier "config_serveur.inc.php"), pour récupération éventuelle de l'état précédent en cas de fausse manip.</ br>
 Cette option augmente le temps d'ouverture de la session.
 </p>
 <p style="margin:10px;">
@@ -83,7 +77,7 @@ Les backups sont classés dans le dossier "backup", dans un sous-dossier du nom 
 <div style="margin: 10px;display:none">
 Uploader un backup :
 <form action="serveur_backup_up.php" method="post" enctype="multipart/form-data" id="serveur_backup_up" name="serveur_backup_up" target="formFrame">
-  <input type="hidden" name="MAX_FILE_SIZE", value="25395200000"/> 
+  <input type="hidden" name="MAX_FILE_SIZE" value="25395200000"/> 
   <input id="up_backup" type="file" name="up_backup" class="classinput_nsize" />
   <input id="upload" name="upload" type="submit" value="Uploader" />
 </form>
@@ -110,15 +104,15 @@ H_loading();
 
 
 			<?php 
-				$dir = opendir($LIB_DIR.'phpbackup4mysql/config/');
+				$dir = opendir($LIB_DIR_EXT.'phpbackup4mysql/config/');
 				$idx = 0;
 				while($fichier = readdir($dir)){
-					if(is_dir($LIB_DIR.'phpbackup4mysql/config/'.$fichier) || $fichier == '.' || $fichier =='..'){ continue; }
+					if(is_dir($LIB_DIR_EXT.'phpbackup4mysql/config/'.$fichier) || $fichier == '.' || $fichier =='..'){ continue; }
 					// Masque le fichier index destiné à protéger le répertoire du listing
 					if ( basename($fichier) == "index.html"){ continue; }
 					++$idx;
 					
-					$config_file = file($LIB_DIR.'phpbackup4mysql/config/'.$fichier);
+					$config_file = file($LIB_DIR_EXT.'phpbackup4mysql/config/'.$fichier);
 										
 					$text_config_file = '';
 					foreach ($config_file as $config_line) {
@@ -131,12 +125,12 @@ H_loading();
 						
 						<table style="width:100%;">
 						<tr>
-							<td class="titre_config" id="titre_<?php echo $idx;?>" colspan="4"><?php echo $fichier;?></td>
+							<td class="titre_config" id="titre_<?php echo $idx;?>" colspan="4">phpbackup4mysql fichier : <?php echo $fichier;?></td>
 						</tr><tr id="line_txt_file_<?php echo $idx;?>" style="display:none">
 							<td><textarea  id="new_text_file" name="new_text_file" class="classinput_xsize" rows="20"><?php echo $text_config_file;?></textarea></td>
 						</tr><tr id="line_input_file_<?php echo $idx;?>" style="display:none">
 							<td style="text-align: right; padding-right:10px;">
-							<input name="valider_<?php echo $idx;?>" id="valider_<?php echo $idx;?>" src="<?php echo $DIR;?>/themes/default/images/bt-valider.gif" type="image">
+							<input name="valider_<?php echo $idx;?>" id="valider_<?php echo $idx;?>" src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme(); ?>images/bt-valider.gif" type="image">
 							</td>
 						<tr>
 						</table>
@@ -147,8 +141,9 @@ H_loading();
 			?>
 		
 	</div>
-</div>
 -->
+</div>
+
 <script type="text/javascript">
 
 idx_open = 1;
