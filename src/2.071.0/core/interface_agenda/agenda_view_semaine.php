@@ -3,8 +3,6 @@
 // PANNEAU AFFICHE EN BAS DE L'INTERFACE DE CAISSE
 //  ******************************************************
 require ("_dir.inc.php");
-include ("./_redirection_extension.inc.php");
-
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 

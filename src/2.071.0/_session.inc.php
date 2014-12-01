@@ -2,8 +2,7 @@
 //  ******************************************************
 // FICHIERS DE CONFIGURATION
 //  ******************************************************
-global $CORE_REP;
-global $CORE_DIR;
+global $CORE_REP, $CORE_DIR;
 $CONFIG_DIR = $DIR . "config/";
 
 require_once ($CONFIG_DIR . "config_systeme.inc.php");
@@ -14,21 +13,21 @@ require_once ($CONFIG_DIR . "config_bdd.inc.php");
 if (!function_exists("__autoload")) {
 
 	function __autoload($classname) {
-		global $DIR, $PLUGINS_DIR;
+		global $LIB_DIR, $PLUGINS_DIR;
 		if (class_exists($classname)) {
 			return true;
 		} // La classe est déjà chargée.
 		//On la cherche en tant que vrai classe.
 		if (file_exists($PLUGINS_DIR . "_" . $classname . ".class.php")) {
 			require_once($PLUGINS_DIR . "_" . $classname . ".class.php");
-		} elseif (file_exists($DIR . "_" . $classname . ".class.php")) {
-			require_once($DIR . "_" . $classname . ".class.php");
+		} elseif (file_exists($LIB_DIR . "_" . $classname . ".class.php")) {
+			require_once($LIB_DIR . "_" . $classname . ".class.php");
 		}
 		//On la cherche en tant que librairie -- $classname est une classe static abstraite.
 		elseif (file_exists($PLUGINS_DIR . "_" . $classname . ".lib.php")) {
 			require_once($PLUGINS_DIR . "_" . $classname . ".lib.php");
-		} elseif (file_exists($DIR . "_" . $classname . ".lib.php")) {
-			require_once($DIR . "_" . $classname . ".lib.php");
+		} elseif (file_exists($LIB_DIR . "_" . $classname . ".lib.php")) {
+			require_once($LIB_DIR . "_" . $classname . ".lib.php");
 		} else {
 			return false;
 		}
@@ -67,106 +66,106 @@ $GLOBALS['_INFOS']	 = array();
 //  ******************************************************
 // LIBRAIRIES DE FONCTIONS
 //  ******************************************************
-require_once ($DIR . "_erreurs.lib.php");		// Gestion des erreurs 
-require_once ($DIR . "_exceptions.lib.php");	  // Gestion des exceptions 
-require_once ($DIR . "_fonctions_generales.inc.php");  // Fonctions générales
-require_once ($DIR . "_annuaire.lib.php");	   // Fonctions liées à l'annuaire
-require_once ($DIR . "_catalogue.lib.php");	   // Fonctions liées au catalogue
-require_once ($DIR . "_document.lib.php");
-require_once ($DIR . "_tarif.lib.php");		 // Fonctions liées aux tarifs
-require_once ($DIR . "_divers.lib.php");		// Fonctions diverses
-require_once ($DIR . "_referencement.lib.php");	 // Fonctions liées au référencement
-require_once ($DIR . "_panier.lib.php");		// Fonctions liées aux paniers clients
-require_once ($DIR . "_courrier.lib.php");
-require_once ($DIR . "_stock.lib.php");
-require_once ($DIR . "_recherche_perso.lib.php");   // Fonctions liées aux recherches personnalisée
+require_once ($LIB_DIR . "_erreurs.lib.php");		// Gestion des erreurs 
+require_once ($LIB_DIR . "_exceptions.lib.php");	  // Gestion des exceptions 
+require_once ($LIB_DIR . "_fonctions_generales.inc.php");  // Fonctions générales
+require_once ($LIB_DIR . "_annuaire.lib.php");	   // Fonctions liées à l'annuaire
+require_once ($LIB_DIR . "_catalogue.lib.php");	   // Fonctions liées au catalogue
+require_once ($LIB_DIR . "_document.lib.php");
+require_once ($LIB_DIR . "_tarif.lib.php");		 // Fonctions liées aux tarifs
+require_once ($LIB_DIR . "_divers.lib.php");		// Fonctions diverses
+require_once ($LIB_DIR . "_referencement.lib.php");	 // Fonctions liées au référencement
+require_once ($LIB_DIR . "_panier.lib.php");		// Fonctions liées aux paniers clients
+require_once ($LIB_DIR . "_courrier.lib.php");
+require_once ($LIB_DIR . "_stock.lib.php");
+require_once ($LIB_DIR . "_recherche_perso.lib.php");   // Fonctions liées aux recherches personnalisée
 require_once ($LIB_DIR_EXT . "edi/edi_event.php");
 
 //  ******************************************************
 // CLASSES A CHARGER
 //  ******************************************************
-require_once ($DIR . "_pdo_etendu.class.php");
-require_once ($DIR . "_reference.class.php");
+require_once ($LIB_DIR . "_pdo_etendu.class.php");
+require_once ($LIB_DIR . "_reference.class.php");
 
-require_once ($DIR . "_profil.class.php");
-require_once ($DIR . "_interfaces.class.php");
-require_once ($DIR . "_theme.class.php");
-require_once ($DIR . "_user.class.php");
-require_once ($DIR . "_fonctions.class.php");
+require_once ($LIB_DIR . "_profil.class.php");
+require_once ($LIB_DIR . "_interfaces.class.php");
+require_once ($LIB_DIR . "_theme.class.php");
+require_once ($LIB_DIR . "_user.class.php");
+require_once ($LIB_DIR . "_fonctions.class.php");
 
-require_once ($DIR . "_contact.class.php");
-require_once ($DIR . "_contact_profil.class.php");
-require_once ($DIR . "_adresse.class.php");
-require_once ($DIR . "_coordonnee.class.php");
-require_once ($DIR . "_site_web.class.php");
-require_once ($DIR . "_utilisateur.class.php");
+require_once ($LIB_DIR . "_contact.class.php");
+require_once ($LIB_DIR . "_contact_profil.class.php");
+require_once ($LIB_DIR . "_adresse.class.php");
+require_once ($LIB_DIR . "_coordonnee.class.php");
+require_once ($LIB_DIR . "_site_web.class.php");
+require_once ($LIB_DIR . "_utilisateur.class.php");
 
-require_once ($DIR . "_article.class.php");
-require_once ($DIR . "_article_categ.class.php");
-require_once ($DIR . "_article_modele.class.php");
-require_once ($DIR . "_document_duree_abo.class.php");
+require_once ($LIB_DIR . "_article.class.php");
+require_once ($LIB_DIR . "_article_categ.class.php");
+require_once ($LIB_DIR . "_article_modele.class.php");
+require_once ($LIB_DIR . "_document_duree_abo.class.php");
 
-require_once ($DIR . "_catalogue_client.class.php");
-require_once ($DIR . "_liste.class.php");
+require_once ($LIB_DIR . "_catalogue_client.class.php");
+require_once ($LIB_DIR . "_liste.class.php");
 
-require_once ($DIR . "_document.class.php");
-require_once ($DIR . "_livraison_modes.class.php");
+require_once ($LIB_DIR . "_document.class.php");
+require_once ($LIB_DIR . "_livraison_modes.class.php");
 
-require_once ($DIR . "_formule_tarif.class.php");
-require_once ($DIR . "_taxe.class.php");
-require_once ($DIR . "_tva.class.php");
+require_once ($LIB_DIR . "_formule_tarif.class.php");
+require_once ($LIB_DIR . "_taxe.class.php");
+require_once ($LIB_DIR . "_tva.class.php");
 
-require_once ($DIR . "_tarif_liste.class.php");
-require_once ($DIR . "_stock.class.php");
-require_once ($DIR . "_magasin.class.php");
+require_once ($LIB_DIR . "_tarif_liste.class.php");
+require_once ($LIB_DIR . "_stock.class.php");
+require_once ($LIB_DIR . "_magasin.class.php");
 
-require_once ($DIR . "_reglement.class.php");
-require_once ($DIR . "_compte_bancaire.class.php");
-require_once ($DIR . "_compte_caisse.class.php");
-require_once ($DIR . "_compte_tpe.class.php");
-require_once ($DIR . "_compte_tpv.class.php");
-require_once ($DIR . "_compte_cb.class.php");
-require_once ($DIR . "_modele_echeancier.class.php");
-require_once ($DIR . "_compta_exercices.class.php");
-require_once ($DIR . "_compta_plan_general.class.php");
-require_once ($DIR . "_compta_journaux.class.php");
-require_once ($DIR . "_document_echeancier.class.php");
+require_once ($LIB_DIR . "_reglement.class.php");
+require_once ($LIB_DIR . "_compte_bancaire.class.php");
+require_once ($LIB_DIR . "_compte_caisse.class.php");
+require_once ($LIB_DIR . "_compte_tpe.class.php");
+require_once ($LIB_DIR . "_compte_tpv.class.php");
+require_once ($LIB_DIR . "_compte_cb.class.php");
+require_once ($LIB_DIR . "_modele_echeancier.class.php");
+require_once ($LIB_DIR . "_compta_exercices.class.php");
+require_once ($LIB_DIR . "_compta_plan_general.class.php");
+require_once ($LIB_DIR . "_compta_journaux.class.php");
+require_once ($LIB_DIR . "_document_echeancier.class.php");
 
-require_once ($DIR . "_facture_niveau_relance.class.php");
-require_once ($DIR . "_facture_niveau_relance.lib.php");
+require_once ($LIB_DIR . "_facture_niveau_relance.class.php");
+require_once ($LIB_DIR . "_facture_niveau_relance.lib.php");
 
-require_once ($DIR . "_tache.class.php");
-require_once ($DIR . "_tache_admin.class.php");
-require_once ($DIR . "_web_link.class.php");
+require_once ($LIB_DIR . "_tache.class.php");
+require_once ($LIB_DIR . "_tache_admin.class.php");
+require_once ($LIB_DIR . "_web_link.class.php");
 
-require_once ($DIR . "_fournisseurs_import_tarifs.class.php");
+require_once ($LIB_DIR . "_fournisseurs_import_tarifs.class.php");
 
-require_once ($DIR . "_pdf.class.php");
+require_once ($LIB_DIR . "_pdf.class.php");
 
-require_once ($DIR . "_import_serveur.class.php");
+require_once ($LIB_DIR . "_import_serveur.class.php");
 
-require_once ($DIR . "_email.class.php");
-require_once ($DIR . "_newsletter.class.php");
-require_once ($DIR . "_mail_template.class.php");
-require_once ($DIR . "_newsletters_profils.lib.php");
-require_once ($DIR . "_courrier.class.php");
+require_once ($LIB_DIR . "_email.class.php");
+require_once ($LIB_DIR . "_newsletter.class.php");
+require_once ($LIB_DIR . "_mail_template.class.php");
+require_once ($LIB_DIR . "_newsletters_profils.lib.php");
+require_once ($LIB_DIR . "_courrier.class.php");
 
-require_once ($DIR . "_formule_comm.class.php");
-require_once ($DIR . "_commission_liste.class.php");
+require_once ($LIB_DIR . "_formule_comm.class.php");
+require_once ($LIB_DIR . "_commission_liste.class.php");
 
-require_once ($DIR . "_inscription.class.php");
-require_once ($DIR . "_inscription_compte_user.class.php");
-require_once ($DIR . "_modification_compte_user.class.php");
+require_once ($LIB_DIR . "_inscription.class.php");
+require_once ($LIB_DIR . "_inscription_compte_user.class.php");
+require_once ($LIB_DIR . "_modification_compte_user.class.php");
 
-require_once ($DIR . "_import_tarifs_fournisseur_csv.class.php");
-require_once ($DIR . "_import_commandes_csv.class.php");
+require_once ($LIB_DIR . "_import_tarifs_fournisseur_csv.class.php");
+require_once ($LIB_DIR . "_import_commandes_csv.class.php");
 
-require_once ($DIR . "_edition_mode.lib.php");
-require_once ($DIR . "_document_echeancier.class.php");
-require_once ($DIR . "_template.class.php");
-require_once ($DIR . "_msg_modele.class.php");
+require_once ($LIB_DIR . "_edition_mode.lib.php");
+require_once ($LIB_DIR . "_document_echeancier.class.php");
+require_once ($LIB_DIR . "_template.class.php");
+require_once ($LIB_DIR . "_msg_modele.class.php");
 
-require_once ($DIR . "_helper.class.php");
+require_once ($LIB_DIR . "_helper.class.php");
 
 // Classes chargées dynamiquement selon l'installation et la configuration du serveur.
 require_once ($CONFIG_DIR . "load_profils.inc.php");
@@ -201,9 +200,7 @@ error_reporting(-1);
 //  ******************************************************
 ini_set("session.cookie_lifetime", $SESSION_LT);
 
-if (!session_id()) {
-	session_start();
-}
+if (!session_id()) { session_start(); }
 
 //traitement du register_globals à on
 if (ini_get('register_globals')) {
@@ -446,8 +443,6 @@ if (isset($_INTERFACE['MUST_BE_LOGIN'])) {
 		//NE RIEN FAIRE
 	}
 }
-
-
 
 // Vérifie si il y a changement d'interface
 if ($_INTERFACE['ID_INTERFACE'] != $_SESSION['user']->getId_interface()) {
