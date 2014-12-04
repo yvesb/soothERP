@@ -1,7 +1,7 @@
 <?php
-//  ******************************************************
-// FORMULAIRE DE CONFIG DU PROFIL CLIENT
-//  ******************************************************
+//  *********************************************
+// FORMULAIRE DE CONFIG - INTERFACE CLIENT
+//  *********************************************
 
 $_INTERFACE['MUST_BE_LOGIN'] = 1;
 require("_dir.inc.php");
@@ -65,9 +65,7 @@ if (((chkvpcmv() == FALSE)) || (chkcatmv() == FALSE) ) {
       <td style="width:15%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
     </tr>          
     <tr>
-      <td class="lib_config">
-        Choix du magasin : 
-      </td>
+      <td class="lib_config">Choix du magasin :</td>
       <td>
         <select id="select_magasin" name="select_magasin" class="classinput_xsize" >
         <?php foreach ($liste_magasins as $magasin) { ?>

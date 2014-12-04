@@ -33,34 +33,30 @@ $AFF_CAT_PRIX_CLIENT = 1;   //Affichage des prix (par défaut) pour les visiteur
 
 $INSCRIPTION_ALLOWED = 2;    //Possibilité de s'incrire depuis le dossier
 //
-// 0 : inscription impossible
-//			
+// 0 : inscription impossible	
 // 1 : inscription d'un contact avec une validation par un collaborateur mais sans un mail de confirmation
 // 3 : inscription d'un contact avec une validation par un collaborateur mais avec un mail de confirmation
-//
 // 2 : inscription d'un contact automatique sans mail de confirmation
 // 4 : inscription d'un contact automatique avec mail de confirmation
 
 $MODIFICATION_ALLOWED = 2;    //Possibilité de modifier son dossier
 //
-// 0 : modification impossible
-//			
+// 0 : modification impossible	
 // 1 : modification d'un contact avec une validation par un collaborateur mais sans un mail de confirmation
 // 3 : modification d'un contact avec une validation par un collaborateur mais avec un mail de confirmation
-//
 // 2 : modification d'un contact automatique sans mail de confirmation
 // 4 : modification d'un contact automatique avec mail de confirmation
-// **********************************************
+
 //durée d'affichage des documents terminés
 $DUREE_AFF_DOC_DEV = "25920000"; //durée d'affichage dans l'interface des devis clients
 $DUREE_AFF_DOC_CDC = "95040000"; //durée d'affichage dans l'interface des commandes clients
 $DUREE_AFF_DOC_FAC = "95040000"; //durée d'affichage dans l'interface des factures clients
-// **********************************************
+
 //type de pdf affiché
 $CODE_PDF_MODELE_DEV = "doc_dev_lmb";
 $CODE__PDF_MODELE_CDC = "doc_cdc_lmb";
 $CODE__PDF_MODELE_FAC = "doc_fac_lmb";
-// **********************************************
+
 $ID_MAIL_TEMPLATE = "1";
 $MAIL_ENVOI_INSCRIPTIONS = "sootherp@domaine.ltd";
 //contenu des mail
@@ -94,13 +90,12 @@ Retenez bien ces informations:
 ";
 
 
-// **********************************************
 //réglement_modes_valides
 $REGLEMENTES_MODES_VALIDES = "2;3;4;5";
 // TABLE dans BD 'reglements_modes' champs -> id_reglement_mode
 // Les ids sont séparés par des ;
 // Exemple  $REGLEMENTES_MODES_VALIDES = "2;3;4;5"; pour Chèque, Carte bancaire, Virement Bancaire, Lettre de Change
-// **********************************************
+
 //pages diverses
 $QUISOMMESNOUS = "Contenu de la variable &dollar;QUISOMMESNOUS";
 $MENTIONSLEGALES = "Contenu de la variable &dollar;MENTIONSLEGALES";

@@ -74,75 +74,60 @@ foreach ($_ALERTES as $alerte => $value) {
 //	echo $alerte." => ".$value."<br>";
 }
 ?>
+<div class="header" style="background-image:url(<?php echo $DIR . $_SESSION['theme']->getDir_gtheme(); ?>images/head_bg.gif); background-repeat:repeat-x; height:61px">
+<span style="height:60px; width:450px; float:right; vertical-align: middle; line-height:60px; padding-right:25px;">
+	<div id="waiting" style="display:none; text-align:right">
+		<div id="backupwait" style="display:inline">
+			<?php echo $SESSION_START_BACKUP ? "Sauvegarde de la base de donnée en cours... &nbsp;&nbsp;" : ""; ?>
+		</div>
+	<div id="boxcontent" style="display:inline"><strong>Chargement en cours</strong></div>
+	</div>
+</span>
+	<div class="title_install">SoothERP <span class="compl_title">logiciel de gestion d'entreprise, fork de la version community de Lundi Matin Business®</span></div>
+	</div><br />
+	<div style="text-align:center; margin:80px 0px;">
+		<div class="radius_main" style="width:750px;margin:0px auto;">
+			<table class="conteneir"><tr>
+					<td class="top_log" colspan="2">Connexion à l'interface de  <?php echo addslashes($nom_entreprise); ?></td>
+					</tr><tr>
+						<td class="bgmain_menu"><br /><br />
+							<div style="text-align:left">Veuillez utiliser un identifiant et un mot de passe valide pour accéder à l'application.</div><br />
+							
+                <div style="text-align:left; color:#0000FF">
+                <a href="<?php echo $DIR . "/site"; ?>" style="color:#0000FF">Retour à la page d'accueil du site web.</a>
+                </div>
+                <br />
+                <div style="text-align:center"><img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme(); ?>images/verrou.gif"/></div>
+                			</td>
+                			<td class="content"><div style="display:block; width:455px">
 
 
+                <br /><br />
+                <form action="" method="post" name="form_login" id="form_login" autocomplete="off">
+                <input type=hidden name="page_from" value="<?php echo urlencode($page_from); ?>">
+
+					<?php if (isset($_REQUEST["uncache"])) { ?> <input type=hidden name="uncache" value="1"> <?php } ?>
+
+                <table cellpadding="0" cellspacing="0" border=0  style="display:block; width:455px; height: 185px" class="radius_main"  id="global"><tr><td style="text-align:right">
+                <table width="355px" border="0" >
+                <tr>
+                  <td colspan="2" style="text-align:right; padding-right:25px;"><br />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="voidlogin" style="width:185px">
+                    <span class="grey_bold_text">Identifiant </span> 
+                  </td>
+               <td>
+
+						
         <script language='javascript'>
             if (!$("sub_content") && !window.parent.$("sub_content")) {
-
-                document.write('<div class="header" style="background-image:url(<?php echo $DIR . $_SESSION['theme']->getDir_gtheme(); ?>images/head_bg.gif); background-repeat:repeat-x; height:61px">');
-                document.write('</span>');
-                document.write('<span style="height:60px; width:450px; float:right; vertical-align: middle; line-height:60px; padding-right:25px;"><div id="waiting" style="display:none; text-align:right">');
-                document.write('	<div id="backupwait" style="display:inline">');
-                document.write('<?php echo $SESSION_START_BACKUP ? "Sauvegarde de la base de donnée en cours... &nbsp;&nbsp;" : ""; ?>');
-                document.write('	</div>');
-                document.write('	<div id="boxcontent" style="display:inline">');
-                document.write('					<strong>Chargement en cours</strong>');
-                document.write('	</div>');
-                document.write('</div></span>');
-                document.write('<div class="title_install">SoothERP <span class="compl_title">logiciel de gestion d\'entreprise, fork de la version community de Lundi Matin Business®</span></div>');
-                document.write('	</div><br /><div style="text-align:center; margin:80px 0px;">');
-                document.write('	<div class="radius_main" style="width:710px;	margin:0px auto;">');
-                document.write('		<table class="conteneir">');
-                document.write('		<tr>');
-                document.write('			<td class="top_log" colspan="2">');
-                document.write('Connexion à l\'interface de  <?php echo addslashes($nom_entreprise); ?>');
-                document.write('			</td>');
-                document.write('		</tr>');
-                document.write('		<tr>');
-                document.write('			<td class="bgmain_menu">');
-                document.write('<br /><br />');
-                document.write('<div style="text-align:left">');
-                document.write('Veuillez utiliser un identifiant et un mot de passe valide pour accéder à l\'application.');
-                document.write('</div>');
-                document.write('<br />');
-                document.write('<div style="text-align:left; color:#0000FF">');
-                document.write('<a href="<?php echo $DIR . "/site"; ?>" style="color:#0000FF">Retour à la page d\'accueil du site web.</a>');
-                document.write('</div>');
-                document.write('<br />');
-                document.write('<div style="text-align:center"><img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme(); ?>images/verrou.gif"/></div>');
-                document.write('			</td>');
-                document.write('			<td class="content"><div style="display:block; width:455px">');
-
-
-                document.write('<br /><br />');
-                document.write('<form action="" method="post" name="form_login" id="form_login" autocomplete="off">');
-                document.write('<input type=hidden name="page_from" value="<?php echo urlencode($page_from); ?>">');
-<?php
-if (isset($_REQUEST["uncache"])) {
-    ?>
-                    document.write('<input type=hidden name="uncache" value="1">');
-    <?php
-}
-?>
-
-                document.write('<table cellpadding="0" cellspacing="0" border=0  style="display:block; width:455px; height: 185px" class="radius_main"  id="global"><tr><td style="text-align:right">');
-                document.write('<table width="355px" border="0" >');
-                document.write('<tr>');
-                document.write('  <td colspan="2" style="text-align:right; padding-right=25px;"><br />');
-                document.write('  </td>');
-                document.write('</tr>');
-                document.write('<tr>');
-                document.write('  <td class="voidlogin" style="width:185px">');
-                document.write('    <span class="grey_bold_text">Identifiant </span> ');
-                document.write('  </td>');
-                document.write('  <td>');
-<?php
-if ($MODE_IDENTIFICATION == "TEXTE") {
-    ?>
-                    document.write('	<div style="position:relative; top:0px; left:0px; width:100%; height:0px;">');
-                    document.write('	<div id="choix_user"  class="choix_users_liste" style="display:none">');
-    <?php
-    if (isset($_COOKIE['predefined_user'])) {
+<?php if ($MODE_IDENTIFICATION == "TEXTE") { ?>
+                    document.write(' <div style="position:relative; top:0px; left:0px; width:100%; height:0px;"> ');
+                    document.write(' <div id="choix_user"  class="choix_users_liste" style="display:none"> ');
+					
+    <?php if (isset($_COOKIE['predefined_user'])) {
         $u = 1;
         if (count($predefined_user) > 1) {
             foreach ($predefined_user as $p_user) {
@@ -227,7 +212,7 @@ foreach ($_ALERTES as $alerte => $value) {
                                 document.write('		<tr>');
                                 document.write('			<td colspan="2">');
                                 document.write('<div style="text-align:center; vertical-align: bottom; padding-left:15px" class="grey_text" >');
-                                document.write('<a href="http://www.sootherp.fr" target="_blank" class="grey_text" rel="noreferrer">SoothERP</a> est un logiciel libre de gestion d\'entreprise, distribué sous licence SMPL');
+                                document.write('<a href="http://www.sootherp.fr" target="_blank" class="grey_text" rel="noreferrer">SoothERP</a> est un logiciel libre de gestion d\'entreprise, distribué sous licence LMPL et en sous-licence SMPL');
                                 document.write('</div></td></tr>');
                                 document.write('		<tr>');
                                 document.write('			<td colspan="2">');

@@ -1,6 +1,6 @@
 <?php
 //  ******************************************************
-// CREATION DU FICHIER DE CONFIG DES INTERFACES
+// CREATION DU FICHIER DE CONFIG - INTERFACE CLIENT
 //  ******************************************************
 require("_dir.inc.php");
 require ("_profil.inc.php");
