@@ -1,7 +1,7 @@
 <?php
-// *************************************************************************************************************
+//  ******************************************************
 // PAGE DE VALIDATION D'INSCRIPTION DE L'UTILISATEUR
-// *************************************************************************************************************
+//  ******************************************************
 unset($GLOBALS['_ALERTES']);
 $_INTERFACE['MUST_BE_LOGIN'] = 0;
 require ("__dir.inc.php");
@@ -81,7 +81,7 @@ if (!isset($_REQUEST['coord']) || !isset($_REQUEST['code'])) {
 						$lib_civ = $contact_entreprise->getLib_civ_court();
 						// Envoi de l'email
 						$destinataire = $coordonnee->getEmail();
-						$sujet = "[" . $nom_entreprise . "] Votre compte utilisateur LMB";
+						$sujet = "[" . $nom_entreprise . "] Votre compte utilisateur.";
 						$message = "<br /><br />Bonjour, <br />
 										Votre inscription sur le site de " . $lib_civ . " " . $nom_entreprise . " a bien été effectuée. <br />
 										Vous pouvez maintenant vous connecter au logiciel à l'adresse suivante : <br />
@@ -121,9 +121,9 @@ $contact_entreprise = new contact($REF_CONTACT_ENTREPRISE);
 $nom_entreprise = str_replace (CHR(13), " " ,str_replace (CHR(10), " " , $contact_entreprise->getNom()));
 $lib_civ = $contact_entreprise->getLib_civ_court();
 
-// *************************************************************************************************************
+//  ******************************************************
 // AFFICHAGE
-// *************************************************************************************************************
+//  ******************************************************
 include ($DIR.$_SESSION['theme']->getDir_theme()."page_valider_inscription.inc.php");
 
 ?>

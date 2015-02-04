@@ -1,7 +1,7 @@
 <?php
-// *************************************************************************************************************
+//  ******************************************************
 // ACCUEIL DE L'UTILISATEUR ADMINISTRATEUR
-// *************************************************************************************************************
+//  ******************************************************
 
 
 require ("_dir.inc.php");
@@ -26,9 +26,9 @@ contact::load_profil_class($FOURNISSEUR_ID_PROFIL);
 	if (isset($_REQUEST['defaut_fournisseur_categ_'.$_REQUEST['id_fournisseur_categ']]) && $_REQUEST['id_fournisseur_categ'] != $DEFAUT_ID_FOURNISSEUR_CATEG) {
 		maj_configuration_file ("profil_fournisseur.config.php", "maj_line", "\$DEFAUT_ID_FOURNISSEUR_CATEG =", "\$DEFAUT_ID_FOURNISSEUR_CATEG = ".$_REQUEST['id_fournisseur_categ']."; ", $CONFIG_DIR);
 	}
-// *************************************************************************************************************
+//  ******************************************************
 // AFFICHAGE
-// *************************************************************************************************************
+//  ******************************************************
 
 include ($DIR.$_SESSION['theme']->getDir_theme()."page_annuaire_gestion_categories_fournisseur_mod.inc.php");
 

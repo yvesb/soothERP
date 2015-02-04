@@ -101,7 +101,7 @@ abstract /*final*/ class Icaisse {
 		return $magasins;
 	}
 	
-	
+
 	public static function getTicket_cell_LIB($lib_article){
 		return addslashes(preg_replace('(\r\n|\n|\r)','',$lib_article));
 	}

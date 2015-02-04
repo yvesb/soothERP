@@ -1,0 +1,76 @@
+/* CSS Document */
+#annu_nvlfiche_nouvelle_fiche_form{display:block;}
+#annu_nvlfiche_ajout_mob{display:inline-table;}
+#annu_nvlfiche_ajout_mob ul{list-style-type:none;margin:0;padding:0;}
+#annu_nvlfiche_ajout_mob li{border-top:1px solid #9dabb3;}
+
+/* affichage caiu*/
+#annu_nvlfiche_ajout_mob #annu_nvlfiche_coord{background-color:#c2cfd7;border:1px solid #9dabb3;border-radius:5px;-moz-border-radius:5px;}
+#annu_nvlfiche_ajout_mob #annu_nvlfiche_adresse{background-color:#c2cfd7;border:1px solid #9dabb3;border-radius:5px;-moz-border-radius:5px;}
+#annu_nvlfiche_ajout_mob #annu_nvlfiche_internet{background-color:#c2cfd7;border:1px solid #9dabb3;border-radius:5px;-moz-border-radius:5px;}
+#annu_edtfiche_caiu #annu_nvlfiche_coord{width:97%;}
+#annu_edtfiche_caiu #annu_nvlfiche_adresse{width:97%;}
+#annu_edtfiche_caiu #annu_nvlfiche_internet{width:97%;}
+#annu_edtfiche_u #annu_nvlfiche_user{width:97%;}
+#annu_edtfiche_caiu ul{margin:0px;padding:0px;width:96%;}
+#annu_edtfiche_u ul{margin:0px;padding:0px;width:96%;}
+#divprofil{display:block;float:left;text-align:left;}
+#divprofil_sec{border-top:1px solid #000000;display:none;text-align:left;}
+#moins_profil a{color:#000000;text-decoration:none;}
+#plus_profil a{color:#000000;text-decoration:none;}
+a.ajout{color:#002673;padding-left:130px;text-align:left;text-decoration:none;}
+a.ajout:hover{text-decoration:underline;}
+#annu_edtfiche_caiu a.ajout{color:#002673;padding-left:0px;text-align:left;text-decoration:none;}
+#annu_edtfiche_u a.ajout{color:#002673;padding-left:0px;text-align:left;text-decoration:none;}
+#annu_edtfiche_caiu a.ajout:hover{text-decoration:underline;}
+#annu_edtfiche_u a.ajout:hover{text-decoration:underline;}
+br{clear:both;}
+
+/* affichage profil*/
+.reduce_in_edit_mode{}
+.profil_reduce .reduce_in_edit_mode{padding-left:10px;padding-right:10px;width:50%;}
+.bt_ajout_center_profil{text-align:center;width:50%;}
+
+/**/
+.rightalign{text-align:right;}
+
+/* autocompleteur de ville*/
+.choix_complete_ville{background-color:#FFFFFF;border:1px solid #c2cfd7;display:none;height:250px;left:0px;margin:0px;overflow:auto;padding:0px;position:absolute;top:19px;width:99%;z-index:250;}
+iframe.choix_complete_ville{display:none;filter:alpha(opacity=0);height:350px;left:-1px;-moz-opacity:.0;opacity:.0;position:absolute;top:19px;width:99%;z-index:249;}
+ul.complete_ville{list-style-type:none;margin:0px;padding:0px;text-align:left;}
+li.complete_ville{cursor:pointer;display:block;height:18px;list-style-type:none;margin:0;padding:2px;}
+li.complete_ville_hover{background-color:#c2cfd7;cursor:pointer;display:block;height:18px;list-style-type:none;margin:0;padding:2px;}
+
+/* autocompleteur de coordonnee*/
+.choix_liste_choix_coordonnee{background-color:#FFFFFF;border:1px solid #c2cfd7;display:none;height:200px;left:0px;margin:0px;overflow:auto;padding:0px;position:absolute;top:19px;width:99%;z-index:250;}
+iframe.choix_liste_choix_coordonnee{display:none;filter:alpha(opacity=0);height:200px;left:-1px;-moz-opacity:.0;opacity:.0;position:absolute;top:19px;width:99%;z-index:249;}
+ul.complete_coordonnee{font:0.8em Verdana, Arial, Helvetica, sans-serif;list-style-type:none;margin:0px;padding:0px;text-align:left;}
+li.complete_coordonnee{background-color:#FFFFFF;border-top:1px solid #c2cfd7;cursor:pointer;display:block;height:0%;list-style-type:none;margin:0;padding:2px;width:100%;}
+li.complete_coordonnee_hover{background-color:#c2cfd7;border-top:1px solid #9dabb3;cursor:pointer;display:block;height:0%;list-style-type:none;margin:0;padding:2px;width:100%;}
+
+/* style pour affichage de liste d'adresse pour le profil client à la création du contact*/
+.divstyle_adre{height:200px;padding-right:3px;}
+.spanstyle_adre{float:right;text-align:right;}
+.spanstyle_adre_bolder{font-weight:bolder;}
+
+/* texte de resultat  de recherche d'article*/
+.lib_categorie{font:0.8em Verdana, Arial, Helvetica, sans-serif;}
+.lib_constructor{font:0.8em Verdana, Arial, Helvetica, sans-serif;}
+.reference{font:0.8em Verdana, Arial, Helvetica, sans-serif;}
+.reference a{font:0.8em Verdana, Arial, Helvetica, sans-serif;}
+.r_art_lib{font-weight:bolder;}
+
+/* affichage recherche*/
+.r_cont_lib{}
+.img_float_r{cursor:pointer;float:right;}
+.height_div{height:20px;line-height:20px;}
+.no_display{display:none;}
+.abo_info{background-color:#e5eef5;border:1px solid #FFFFFF;border-radius:8px;color:#334b74;-moz-border-radius:8px;}
+.conso_info{background-color:#e5eef5;border:1px solid #FFFFFF;border-radius:8px;color:#334b74;-moz-border-radius:8px;}
+.choix_send_courrier{overflow:auto;position:absolute;width:117px;z-index:852;}
+
+/*fond : editer courrier*/
+.courrierview_corps{background-color:white;border:1px solid #FFFFFF;border-radius:5px;margin:0;-moz-border-radius:5px;width:100%;}
+
+/* bac 12/04/2010 style pour fiche contact client, listes en apparence readonly, gris clair */
+.listereadonly{color:#cccccc;}

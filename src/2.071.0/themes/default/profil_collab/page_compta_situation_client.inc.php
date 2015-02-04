@@ -32,14 +32,14 @@ check_page_variables ($page_variables);
 
     <div style="height:50px">
 
-        <table width="950px" height="350px" border="0" align="right" cellpadding="0" cellspacing="0" style="background-color:#FFFFFF">
+        <table cellpadding="0" cellspacing="0" class="adm_tbl">
             <tr>
                 <td rowspan="2" style="width:280px; height:50px">
                     <div style="position:relative; top:-35px; left:-35px; width:92px; border:1px solid #999999; background-color:#FFFFFF; text-align:center">
                         <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bouton-livre.jpg" />				</div>
                     <span style="width:35px">
                         <img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="280px" height="20px" id="imgsizeform"/>				</span>			</td>
-                <td colspan="2" style="width:80%"><span style="width:47%; height:50px"><br />
+                <td colspan="2"><span style="width:47%; height:50px"><br />
                         <br />
                         <br />
                 </td>

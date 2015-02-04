@@ -74,13 +74,13 @@ update_menu_arbo();
 				<tr>
 					<td style="text-align:center; font-style:italic; ">
 					<div id="manu_comment" >
-					Mettez &agrave; jour LMB en t&eacute;l&eacute;chargeant les fichiers de mise &agrave; jour manuellement sur votre serveur depuis un fichier zip.
+					Mettez &agrave; jour SoothERP en t&eacute;l&eacute;chargeant les fichiers de mise &agrave; jour manuellement sur votre serveur depuis un fichier zip.
 					</div>
 					</td>
 					<td>&nbsp;</td>
 					<td style="text-align:center; font-style:italic;" >
 					<div id="auto_comment">
-					Mettez &agrave; jour LMB en utilisant notre syst&egrave;me de mise &agrave; jour automatique depuis notre serveur FTP. 
+					Mettez &agrave; jour SoothERP en utilisant notre syst&egrave;me de mise &agrave; jour automatique depuis notre serveur FTP. 
 					</div>
 					</td>
 				</tr>
@@ -125,7 +125,7 @@ update_menu_arbo();
 						Télécharger le fichier à l'adresse suivante:<br />
 <a href="<?php echo $MAJ_SERVEUR['url']."check_maj_zip_version.php?ma_version=".$_SERVER['VERSION'];?>" target="_blank"><?php echo $MAJ_SERVEUR['url']."check_maj_zip_version.php?ma_version=".$_SERVER['VERSION'];?></a><br />
 						Décompresser le fichier<br />
-						Copier le dossier "maj_lmb_<?php echo $new_version;?>/" dans le dossier "echange_lmb/" sur votre serveur<br />
+						Copier le dossier "maj_lmb_<?php echo $new_version;?>/" dans le dossier "<?php echo $ECHANGE_DIR; ?>" sur votre serveur<br />
 						Une fois l'ensemble des fichiers uploadés sur votre serveur, <span id="maj_manu_suite" style="cursor:pointer; text-decoration:underline">cliquez ici</span>.<br />
 
 					</div>
@@ -215,7 +215,7 @@ update_menu_arbo();
 				setTimeout ("view_progress('<?php echo $new_version;?>')", 2000);
 				var AppelAjax = new Ajax.Updater(
 												"maj_viewer", 
-												"<?php echo $DIR;?>echange_lmb/maj_lmb_<?php echo $new_version;?>/miseajour_lmb.php", 
+												"<?php echo $ECHANGE_DIR;?>maj_lmb_<?php echo $new_version;?>/miseajour_lmb.php", 
 												{
 												method: 'post',
 												asynchronous: true,

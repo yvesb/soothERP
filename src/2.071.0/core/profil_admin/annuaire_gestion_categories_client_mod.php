@@ -1,7 +1,7 @@
 <?php
-// *************************************************************************************************************
+//  ******************************************************
 // ACCUEIL DE L'UTILISATEUR ADMINISTRATEUR
-// *************************************************************************************************************
+//  ******************************************************
 
 
 require ("_dir.inc.php");
@@ -42,9 +42,9 @@ contact::load_profil_class($CLIENT_ID_PROFIL);
 	if (isset($_REQUEST["defaut_client_categ_".$_REQUEST["id_client_categ"]]) && $_REQUEST['id_client_categ'] != $DEFAUT_ID_CLIENT_CATEG) {
 		maj_configuration_file ("profil_client.config.php", "maj_line", "\$DEFAUT_ID_CLIENT_CATEG	= ", "\$DEFAUT_ID_CLIENT_CATEG	= ".$_REQUEST['id_client_categ']."; ", $CONFIG_DIR);
 	}
-// *************************************************************************************************************
+//  ******************************************************
 // AFFICHAGE
-// *************************************************************************************************************
+//  ******************************************************
 
 include ($DIR.$_SESSION['theme']->getDir_theme()."page_annuaire_gestion_categories_client_mod.inc.php");
 

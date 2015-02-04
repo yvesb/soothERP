@@ -1,33 +1,33 @@
 <?php
 
-// *************************************************************************************************************
+//  ******************************************************
 // CONTROLE DU THEME
-// *************************************************************************************************************
+//  ******************************************************
 
 // Variables nécessaires à l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
 
 
-//******************************************************************
+// ***********
 // Variables communes d'affichage
-//******************************************************************
+// ***********
 
 
 
-// *************************************************************************************************************
+//  ******************************************************
 // AFFICHAGE
-// *************************************************************************************************************
+//  ******************************************************
 
 ?>
 <script type="text/javascript">
 tableau_smenu[0] = Array("smenu_annuaire", "smenu_annuaire.php" ,"true" ,"sub_content", "Annuaire");
-tableau_smenu[1] = Array('annuaire_gestion_categ_fournisseur','annuaire_gestion_categories_fournisseur.php',"true" ,"sub_content", "Gestion des catégories de Fournisseurs");
+tableau_smenu[1] = Array('annuaire_gestion_categ_fournisseur','annuaire_gestion_categories_fournisseur.php',"true" ,"sub_content", "Gestion des catégories des Fournisseurs");
 update_menu_arbo();
 </script>
 <div class="emarge">
 
-<p class="titre">Gestion des catégories de Fournisseurs</p>
+<p class="titre">Gestion des catégories des Fournisseurs</p>
 <div style="height:50px">
 <table class="minimizetable">
 <tr>

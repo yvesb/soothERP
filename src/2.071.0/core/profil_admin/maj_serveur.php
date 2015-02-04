@@ -1,7 +1,7 @@
 <?php
-// *************************************************************************************************************
+//  ******************************************************
 // SCRIPT DE MISE A JOUR DE LA SOLUTION LUNDI MATIN BUSINESS
-// *************************************************************************************************************
+//  ******************************************************
 
 $_PAGE['MUST_BE_LOGIN'] = 0;
 $_SERVER['MAJ_EN_COURS'] = 1;
@@ -13,7 +13,7 @@ require ($DIR."_maj.class.php");
 set_time_limit(600);	// Fixe la durée d'execution du script à 10 minutes.
 
 
-// *************************************************************************************************************
+//  ******************************************************
 // Controle de la nécessité de mettre à jour
 $version_file[0] = "0";
 if($ACTIVE_MAJ)
@@ -36,7 +36,7 @@ for ($i=2; $i<count($version_file); $i++) {
 
 
 
-// *************************************************************************************************************
+//  ******************************************************
 // Initialisation de la mise à jour
 $maj = new maj_serveur($new_version);
 
@@ -50,21 +50,21 @@ else {
 $maj->set_break_point(1);
 
 $maj->stop_serveur();
-// Remplacement des fichiers de LMB par leur nouvelle version
+// Remplacement des fichiers de SOOTHERP par leur nouvelle version
 if ($maj->last_break_point <= 2) {
 	$maj->synchronise_files ();
 }
 $maj->set_break_point(2);
 
 
-// *************************************************************************************************************
+//  ******************************************************
 // Action spécifiques à la mise à jour
 if ($maj->last_break_point <= 101) {
 	$GLOBALS['_INFOS']['maj_actions'][] = "-----------------------------------------------------------------------";
-	if (is_file ($DIR."echange_lmb/maj_lmb_".$new_version."/maj.php")) { 
+	if (is_file ($ECHANGE_DIR."maj_lmb_".$new_version."/maj.php")) { 
 	$maj->make_download_state (95, "Mise &agrave; jour vers version ".$new_version." en cours", "Execution des requ&ecirc;tes SQL", "");
 		$GLOBALS['_INFOS']['maj_actions'][] = "<i>Actions spécifiques à effectuer</i>";
-		require_once($DIR."echange_lmb/maj_lmb_".$new_version."/maj.php"); 
+		require_once($ECHANGE_DIR."maj_lmb_".$new_version."/maj.php"); 
 	}
 	else {
 		$GLOBALS['_INFOS']['maj_actions'][] = "<i>Aucune action spécifique à effectuer</i>";
@@ -76,7 +76,7 @@ if ($maj->last_break_point <= 101) {
 }
 
 
-// *************************************************************************************************************
+//  ******************************************************
 // Fin de la mise à jour
 
 if ($maj->last_break_point <= 103) {
@@ -88,13 +88,13 @@ $maj->set_break_point(103);
 $maj->unset_break_point();
 $maj->start_serveur();
 $maj->flush_tmp_files();
-$GLOBALS['_INFOS']['maj_actions'][] = "<b>DEBUT DE LA MISE A JOUR VERS LMB v".$new_version."</b>";
+$GLOBALS['_INFOS']['maj_actions'][] = "<b>DEBUT DE LA MISE A JOUR VERS SoothERP v".$new_version."</b>";
 
 
 
-// *************************************************************************************************************
+//  ******************************************************
 // AFFICHAGE
-// *************************************************************************************************************
+//  ******************************************************
 $maj->show_maj_procedure ();
 ?>
 <SCRIPT type="text/javascript">

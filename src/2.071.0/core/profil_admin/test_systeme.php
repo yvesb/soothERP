@@ -1,9 +1,9 @@
 <?php
-/* **************************************************************************************************
-************    TEST DE LA COMPATIBILITE DU SYSTEME AVEC SoothERP   *********************************
-****************************************************************************************************/
+/*  *******************************************
+TEST DE LA COMPATIBILITE DU SYSTEME AVEC SoothERP
+ *********************************************/
 ini_set ("session.cookie_lifetime", 86400) ;
-if(!session_id()) {session_start(); }
+//if(!session_id()) {session_start(); }
 
 header('Content-type: text/html; charset=utf-8');
 require ("_dir.inc.php");
@@ -27,7 +27,6 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 			break;
 		} 
 		$retour_texte .=  "Version de PHP suffisante: Actuellement: ".PHP_VERSION." / Requis: 5.2.0<br>";
-
 	
 		// Test de la présence de la librairie GD
 		if (!@extension_loaded('gd')) {
@@ -37,7 +36,6 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 		}
 		$retour_texte .=   "La bibliothèque GD est installée.<br>";
 	
-	
 		// Test de la disponibilité de la fonction fopen()
 		if (!@fopen("./test_systeme.php", "r")) {
 			$retour_texte .=   " La fonction PHP fopen() est désactivée sur ce serveur.<br>";
@@ -45,7 +43,6 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 			break;
 		}
 		$retour_texte .=   "La fonction PHP fopen() est activée.<br>";
-	
 	
 		// Test du support XML
 		if (!@function_exists('xml_parser_create')) {
@@ -68,15 +65,8 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 			$retour_texte .=   "Les options Magic_quotes_gpc et Magic_quotes_runtime sont désactivées.<br>";
 		}
 		
-		
-		
-		
-		
-		
-		
-	
 	// ETAPE 2: VERIFICATION DES DROITS SUR LES FICHIERS ET DOSSIERS LOCAUX
-	$retour_texte .= "<br><br><hr>
+	$retour_texte .= "<br><hr>
 	TEST DE VOS DROITS SUR LES FICHIERS ET DOSSIERS LOCAUX<br><br>";
 	
 		// Droits en lecture / écriture sur les fichiers et dossiers locaux
@@ -84,19 +74,10 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 		if ($erreur) {
 			$retour_texte .= "".$erreur."<br>";
 			$GLOBALS['_INFOS']['test_systeme'][] = "".$erreur."<br>";
-			break;
-		}
+			//break;
+		} else {
 		$retour_texte .= "Les droits en lecture / écriture sont suffisants.<br>";
-		
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		}
 		
 	// ETAPE 3: VERIFICATION DE LA CONFIGURATION DE MYSQL
 	$retour_texte .= "<br><br><hr>
@@ -109,16 +90,16 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 			break;
 		}
 		include ($CONFIG_DIR."config_bdd.inc.php");
-		mysql_connect($bdd_hote, $bdd_user, $bdd_pass);
-		if (version_compare(mysql_get_server_info(), '5.0') < 0) {
+
+		$mysqli = new mysqli($bdd_hote, $bdd_user, $bdd_pass);
+		if (version_compare($mysqli->server_info, '5.0') < 0) {
 			$retour_texte .= "	Votre version de MySQL est insuffisante. <br>
-					Actuellement: ".mysql_get_server_info()." / Recquis: 5.0<br>";
+					Actuellement: ".$mysqli->server_info." / Recquis: 5.0<br>";
 			$GLOBALS['_INFOS']['test_systeme'][] = "Votre version de MySQL est insuffisante. <br>
-					Actuellement: ".mysql_get_server_info()." / Recquis: 5.0<br>";
+					Actuellement: ".$mysqli->server_info." / Recquis: 5.0<br>";
 			break;
 		}
-		$retour_texte .= "MySQL est présent sur le serveur: Actuellement: ".mysql_get_server_info()." / Recquis: 5.0<br>";
-	
+		$retour_texte .= "MySQL est présent sur le serveur: Actuellement: ".$mysqli->server_info." / Recquis: 5.0<br>";
 	
 		// Test la présence de la librairie PDO
 		if (!method_exists('PDO', 'exec')) {
@@ -127,7 +108,6 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 			break;
 		}
 		$retour_texte .= "La bibliothèque PDO/MySQL est installée.<br>";	
-	
 	
 		// Test de la configuration de MySQL
 		include ($CONFIG_DIR."config_bdd.inc.php");
@@ -139,7 +119,6 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 			break;
 		}
 		$retour_texte .= "Les paramètres d'accès à la base de données sont corrects.<br>";
-	
 	
 		// Test des droits sur la base de données
 		$query = "CREATE TABLE IF NOT EXISTS `table_test` (`test` FLOAT NULL) ENGINE = innodb;";
@@ -160,21 +139,17 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 		}
 		$retour_texte .= "Vous avez les droits nécessaires sur la base de données.<br>";
 	
-	
-	
-		
 	// ETAPE 4: Vérification du fonctionnement des emails
 	$retour_texte .= "<br><br><hr>
 	TEST DU FONCTIONNEMENT DES MAILS<br><br>";
 	
 	// Initialisation de la variable $EMAIL_DEV pour test de mail
-
 	require_once ($CONFIG_DIR."config_serveur.inc.php");
 	global $EMAIL_DEV;
 
 		// Test de la variable si nulle (i.e. non définie dans le fichier de config)
 		if (is_null($EMAIL_DEV)) {
-			$retour_texte .= "Le mail de test n'est pas paramètré, veuillez contacter un administrateur pour configurer la variable \$EMAIL_DEV";
+			$retour_texte .= "Le mail de test n'est pas paramètré, veuillez contacter un administrateur pour configurer la variable \$EMAIL_DEV.</br>";
 			$retour_texte .= "La fonction Mail() n'a pu être testée.";
 			$GLOBALS['_INFOS']['test_systeme_non_bloquant'][] = "La fonction Mail() n'a pu être testée. (Non bloquant)";			}
 		// Si non nulle, test de l'envoi de mail à l'adresse définie
@@ -184,9 +159,7 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 		} else {
 			$retour_texte .= "L'envoi d'emails semble fonctionner.";
 		}
-	
-	
-		
+
 	// ETAPE 5: Présence des fichiers d'installation
 	$retour_texte .= "<br><br><hr>
 	PRESENCE DES FICHIERS D'INSTALLATION<br><br>";
@@ -202,19 +175,16 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 		}
 		if (!is_file($DIR."install/index.php") && !is_file($DIR."install/process.php")) {
 			$retour_texte .= "Les fichiers d'installation ont bien été supprimés.";
-		} 
-	
-		
-	
+		}
 		
 	// ETAPE 6: Présence des fichiers principaux de l'application
 	$retour_texte .= "<br><br><hr>
 	PRESENCE DES FICHIERS DE FONCTION ET DE CLASSE<br><br>";
 	
-		$tab_files = array("_adresse.class.php", "_annuaire.lib.php", "_article.class.php", "_article_categ.class.php", "_article_liaisons_types.class.php", "_article_modele.class.php", "_catalogue.lib.php", "_catalogue_client.class.php", "_fonctions.class.php", "_compta_exercices.class.php", "_compte_bancaire.class.php", "_compte_caisse.class.php", "_compte_cb.class.php", "_compte_tpe.class.php", "_contact.class.php", "_contact_profil.class.php", "_coordonnee.class.php", "_dir.inc.php", "_divers.lib.php", "_document.class.php", "_document.lib.php", "_edition_mode.lib.php", "_erreurs.lib.php", "_exceptions.lib.php", "_facture_niveau_relance.class.php", "_fonctions_generales.inc.php", "_formule_tarif.class.php", "_magasin.class.php", "_maj.class.php", "_pdf.class.php", "_pdo_etendu.class.php", "_profil.class.php", "_reference.class.php", "_reglement.class.php", "_securite.lib.php", "_session.inc.php", "_site_web.class.php", "_stock.class.php", "_stock.lib.php", "_tarif.lib.php", "_tarif_liste.class.php", "_taxe.class.php", "_theme.class.php", "_tva.class.php", "_user.class.php", "_utilisateur.class.php");
+		$tab_files = array("_adresse.class.php", "_annuaire.lib.php", "_article.class.php", "_article_categ.class.php", "_article_liaisons_types.class.php", "_article_modele.class.php", "_catalogue.lib.php", "_catalogue_client.class.php", "_fonctions.class.php", "_compta_exercices.class.php", "_compte_bancaire.class.php", "_compte_caisse.class.php", "_compte_cb.class.php", "_compte_tpe.class.php", "_contact.class.php", "_contact_profil.class.php", "_coordonnee.class.php", "_dir.inc.php", "_divers.lib.php", "_document.class.php", "_document.lib.php", "_edition_mode.lib.php", "_erreurs.lib.php", "_exceptions.lib.php", "_facture_niveau_relance.class.php", "_fonctions_generales.inc.php", "_formule_tarif.class.php", "_magasin.class.php", "_maj.class.php", "_pdf.class.php", "_pdo_etendu.class.php", "_profil.class.php", "_reference.class.php", "_reglement.class.php", "_securite.lib.php", "_site_web.class.php", "_stock.class.php", "_stock.lib.php", "_tarif.lib.php", "_tarif_liste.class.php", "_taxe.class.php", "_theme.class.php", "_tva.class.php", "_user.class.php", "_utilisateur.class.php");
 		$compteur = 0;
 		foreach ($tab_files as $file) {
-			if (!is_file($DIR.$file)) {
+			if (!is_file($LIB_DIR.$file)) {
 				$retour_texte .= "Le fichier suivant est absent de votre système: ".$file." <br />";
 				$GLOBALS['_INFOS']['test_systeme'][] = "Le fichier suivant est absent de votre système: ".$file." <br />";
 				$compteur++;
@@ -224,11 +194,12 @@ if (!isset($_SESSION['TEST_SYSTEME']) || !$_SESSION['TEST_SYSTEME']) {
 			$retour_texte .= "Les fichiers systèmes sont tous présents.<br />";
 		}
 		
-		$tab_dirs = array("config", "documents", "fichiers", "modeles", "modules", "core", "log", "themes", "backup");
+		$tab_dirs = array($CONFIG_DIR, $LIB_DIR."documents", $FICHIERS_DIR, $MODELES_DIR, $PLUGINS_DIR, $CORE_DIR, $DIR."log", $DIR."themes", $DIR."backup", $ECHANGE_DIR);
 		$compteur = 0;
 		foreach ($tab_dirs as $dir) {
-			if (!is_dir($DIR.$dir)) {
-				$retour_texte .= "Le dossier suivant est absent de votre système: ".$dir." <br />";
+
+			if (!is_dir($dir)) {
+				$retour_texte .= 'Le dossier <strong>"' .$dir. '"</strong> est absent de votre système.<br />';
 				$GLOBALS['_INFOS']['test_systeme'][] = "Le dossier suivant est absent de votre système: ".$dir." <br />";
 				$compteur++;
 			}
@@ -300,7 +271,6 @@ function mysql_table_count_line($bdd, $table, $count_line){
 	
 // Vérification des droits en écriture local
 function test_file_auth() {
-	
 	// Création d'un fichier test
 	$test_file = @fopen("lmb_test.txt","w");
 	@fclose($test_file);
@@ -369,16 +339,14 @@ if (!count($GLOBALS['_INFOS']['test_systeme'])) {
 		<span style="float:left; padding-right:20px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="22px" /></span><em style="color:#FF0000"><?php echo ($erreur_test_non_bloquant)?></em><br />
 		<?php
 	}
-	?>
-	<span style="float:left; padding-right:20px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="22px" /></span><span id="aff_rapport" style="cursor:pointer; text-decoration:underline;" >Voir le rapport de test</span><br />
-	<div style="display:none; padding-left:42px; font-weight:bolder" id="rapport_text"><?php echo $retour_texte;?></div>
-	<script type="text/javascript">
-		Event.observe("aff_rapport", "click", function() {$("rapport_text").show();}, false);
-
-	</script>
-	<?php
 }
 ?>
+	<span style="float:left; padding-right:20px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="22px" /></span><span id="aff_rapport" style="cursor:pointer; text-decoration:underline;" >Voir le rapport de test</span><br />
+	<div style="display:none;padding-left:42px; font-weight:bolder" id="rapport_text"><?php echo $retour_texte;?></br></div>
+	<script type="text/javascript">
+		Event.observe("aff_rapport", "click", function() {$("rapport_text").toggle();}, false);
+	</script>
+
 <script type="text/javascript">
 //on masque le chargement
 H_loading();

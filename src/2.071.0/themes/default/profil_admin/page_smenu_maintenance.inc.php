@@ -27,20 +27,15 @@ tableau_smenu[1] = Array("", "" ,"" ,"", "");
 update_menu_arbo();
 </script>
 
-<div class="emarge" style="text-align:right" >
-<br />
-<br />
-<br />
-<br />
 <div>
-	<table width="950px" height="350px" border="0" align="right" cellpadding="0" cellspacing="0" style="background-color:#FFFFFF">
+	<table cellpadding="0" cellspacing="0" class="adm_tbl">
 		<tr>
 			<td rowspan="4" style="width:280px; height:50px">
 				<div style="position:relative; top:-35px; left:-35px; width:230px; border:1px solid #999999; background-color:#FFFFFF; text-align:center">
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/ico_maintenance.jpg" />				</div>
 				<span style="width:35px">
 				<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="280px" height="20px" id="imgsizeform"/>				</span>			</td>
-			<td colspan="2" style="width:80%"><span style="width:40%; height:50px"><br />
+			<td colspan="2"><span style="width:40%; height:50px"><br />
 				<br />
 					<img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/titre_maintenance.jpg" style="padding-left:25px" /><br />
 			<br />

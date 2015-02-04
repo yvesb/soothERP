@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<?php //include ($CORE_DIR."site/referencement/referencement.php"); ?>
-		<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_common_style.css" rel="stylesheet" type="text/css" />
-		<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_content.css" rel="stylesheet" type="text/css" />
-		<link href="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>css/_formulaire.css" rel="stylesheet" type="text/css" />
+		<link href="<?php echo $DIR.$_SESSION['theme']->getDir_css('no')?>_common_style.css" rel="stylesheet" type="text/css" />
+		<link href="<?php echo $DIR.$_SESSION['theme']->getDir_css()?>_content.css" rel="stylesheet" type="text/css" />
+		<link href="<?php echo $DIR.$_SESSION['theme']->getDir_css('no')?>_formulaire.css" rel="stylesheet" type="text/css" />
 		
-		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/prototype.js"	></script>
-		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_general.js"	></script>
-		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_documents.js"></script>
-		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_theme()?>javascript/_panier.js"		></script>
+		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>prototype.js"	></script>
+		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>_general.js"	></script>
+		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>_documents.js"></script>
+		<script src="<?php echo $DIR.$_SESSION['theme']->getDir_js()?>_panier.js"		></script>
 		<script type="text/javascript">
 		
 			function PopupCentrer(page,largeur,hauteur,optionsi) {

@@ -1,7 +1,7 @@
 <?php
-// *************************************************************************************************************
+//  ******************************************************
 // Tableau de bord des ventes test
-// *************************************************************************************************************
+//  ******************************************************
 
 
 require ("_dir.inc.php");
@@ -10,7 +10,7 @@ require ($DIR."_session.inc.php");
 
 require ($DIR.$_SESSION['theme']->getDir_theme()."_theme.config.php" );
 
-require_once ($RESSOURCE_DIR."/php-ofc-library/open-flash-chart.php");
+require_once ($LIB_DIR_EXT."/php-ofc-library/open-flash-chart.php");
 
 
 $mois_liste = array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Décembre");

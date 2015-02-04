@@ -1743,16 +1743,17 @@ CREATE TABLE IF NOT EXISTS `commerciaux_categories` (
   `id_commercial_categ` smallint(5) unsigned NOT NULL auto_increment,
   `lib_commercial_categ` varchar(255) NOT NULL,
   `id_commission_regle` smallint(5) unsigned default NULL,
+  `note` mediumtext NOT NULL,
   PRIMARY KEY  (`id_commercial_categ`),
   KEY `id_commission_regle` (`id_commission_regle`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Liste des catégories des comemrciaux' AUTO_INCREMENT=2 ;
 
 --
 -- Contenu de la table `commerciaux_categories`
 --
 
-INSERT INTO `commerciaux_categories` (`id_commercial_categ`, `lib_commercial_categ`, `id_commission_regle`) VALUES
-(1, 'Commerciaux', 1);
+INSERT INTO `commerciaux_categories` (`id_commercial_categ`, `lib_commercial_categ`, `id_commission_regle`, `note`) VALUES
+(1, 'Commerciaux', 1, '');
 
 -- --------------------------------------------------------
 

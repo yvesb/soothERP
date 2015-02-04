@@ -1,18 +1,18 @@
 <?php
-// *************************************************************************************************************
+//  ******************************************************
 // UTILISATION DE LA CLASSE FPDF 
-// *************************************************************************************************************
-define('FPDF_FONTPATH', $RESSOURCE_DIR."FPDF_fonts/");
-require_once ($RESSOURCE_DIR."fpdf.php");
+//  ******************************************************
+define('FPDF_FONTPATH', $LIB_DIR_EXT."FPDF_fonts/");
+require_once ($LIB_DIR_EXT."fpdf.php");
 
 // La classe FPDF doit etre définie en "abstract" afin de l'adapter à PHP5
 // Doc sur http://www.fpdf.org/
 
 
 
-// *************************************************************************************************************
+//  ******************************************************
 // CLASSES NECESSAIRE A LA GESTION DES DOCUMENTS PDF
-// *************************************************************************************************************
+//  ******************************************************
 
 class PDF_etendu extends FPDF {
 
@@ -48,7 +48,7 @@ function __construct ($orientation= 'P', $unit = 'mm', $format = 'A4') {
 
 
 
-// *************************************************************************************************************
+//  ******************************************************
 // GESTION DES CODES BARRES CODE39
 
 function Code39($xpos, $ypos, $code, $baseline=0.5, $height=5) {
@@ -145,7 +145,7 @@ function Code39($xpos, $ypos, $code, $baseline=0.5, $height=5) {
 
 
 
-// *************************************************************************************************************
+//  ******************************************************
 // GESTION DES RECTANGLES ARRONDIS
 function RoundedRect($x, $y, $w, $h, $r, $style = '', $angle = '1234')
 {
@@ -216,7 +216,7 @@ function RoundedRect($x, $y, $w, $h, $r, $style = '', $angle = '1234')
 
 
 
-// *************************************************************************************************************
+//  ******************************************************
 // GESTION DES PREFERENCES D'AFFICHAGE
 
 /* 	DisplayPreferences(string preferences)
@@ -267,9 +267,9 @@ function _putcatalog() {
 
 
 
-// *************************************************************************************************************
+//  ******************************************************
 // GESTION DU JAVASCRIPT
-// *************************************************************************************************************
+//  ******************************************************
 var $javascript;
 var $n_js;
 
@@ -301,7 +301,7 @@ function _putresources() {
 
 
 
-// *************************************************************************************************************
+//  ******************************************************
 // Impression automatique
 function AutoPrint($dialog=false)
 {
@@ -324,7 +324,7 @@ function AutoPrintToPrinter($server, $printer, $dialog=false)
     $this->IncludeJS($script);
 }
 
-// *************************************************************************************************************
+//  ******************************************************
 // EXEMPLE PERMETTANT L'IMPRESSION AUTOMATIQUE APRES OUVERTURE
 /*
 Cet exemple montre comment démarrer l'impression à l'ouverture du document. Il est possible d'afficher la boîte de dialogue (en passant true à la méthode AutoPrint()), ou bien d'imprimer directement avec les paramètres par défaut (avec false).
@@ -370,9 +370,9 @@ $pdf->Output();
 
 
 
-// ************************************************************************************************************************
+//   **********
 // ******** Fonctions relatives à l'ajout d'un document au PDF
-// ************************************************************************************************************************
+//   **********
 function add_doc ($ref_doc, $document = "") {
 	global $PDF_MODELES_DIR;
 

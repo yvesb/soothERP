@@ -44,11 +44,11 @@
             <td colspan="4" style="padding: 5px 0px; border-style: solid; border-width: 1px; ">
                 <table>
                     <tr class="smallheight">
-                        <td style="width: 5%;"><img src="../profil_collab/themes/collab_fr/images/blank.gif" id="imgsizeform" width="100%" height="1"></td>
-                        <td style="width: 20%;"><img src="../profil_collab/themes/collab_fr/images/blank.gif" id="imgsizeform" width="100%" height="1"></td>
-                        <td style="width: 20%;"><img src="../profil_collab/themes/collab_fr/images/blank.gif" id="imgsizeform" width="100%" height="1"></td>
-                        <td style="width: 20%;"><img src="../profil_collab/themes/collab_fr/images/blank.gif" id="imgsizeform" width="100%" height="1"></td>
-                        <td><img src="../profil_collab/themes/collab_fr/images/blank.gif" id="imgsizeform" width="100%" height="1"></td>
+                        <td style="width: 5%;"><img src="../../themes/default/images/blank.gif" id="imgsizeform" width="100%" height="1"></td>
+                        <td style="width: 20%;"><img src="../../themes/default/images/blank.gif" id="imgsizeform" width="100%" height="1"></td>
+                        <td style="width: 20%;"><img src="../../themes/default/images/blank.gif" id="imgsizeform" width="100%" height="1"></td>
+                        <td style="width: 20%;"><img src="../../themes/default/images/blank.gif" id="imgsizeform" width="100%" height="1"></td>
+                        <td><img src="../../themes/default/images/blank.gif" id="imgsizeform" width="100%" height="1"></td>
                     </tr>
                     <tr>
                         <td style="text-align: right;" class="labelled">Libellé:
@@ -107,7 +107,7 @@
                             <div id="message_err_2"></div>
                         </td>
                         <td style="text-align: right;">
-                            <input name="submit_compte" id="submit_compte" src="../profil_collab/themes/collab_fr/images/bt-ajouter.gif" type="image">
+                            <input name="submit_compte" id="submit_compte" src="../../themes/default/images/bt-ajouter.gif" type="image">
                         </td>
                         <td></td>
                     </tr>

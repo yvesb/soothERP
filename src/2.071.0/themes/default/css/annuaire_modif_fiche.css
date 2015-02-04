@@ -1,0 +1,25 @@
+/* CSS Document */
+
+/* classes masquées*/
+input.classinput_lsize_m{display:none;font:0.9em Verdana, Arial, Helvetica, sans-serif;margin-top:5px;width:84%;}
+input.classinput_xsize_m{display:none;font:0.9em Verdana, Arial, Helvetica, sans-serif;margin-top:5px;width:99%;}
+textarea.classinput_xsize_m{display:none;font:0.9em Verdana, Arial, Helvetica, sans-serif;margin-top:5px;width:99%;}
+select.classinput_xsize_m{display:none;font:0.9em Verdana, Arial, Helvetica, sans-serif;margin-top:5px;width:99%;}
+
+/* simulation de text	area 4 lignes*/
+a.modif_textarea2{color:#000000;cursor:text;display:block;font:0.9em Verdana, Arial, Helvetica, sans-serif;padding:0px 3px;text-decoration:none;width:97%;}
+a.modif_textarea2:hover{background-color:#FFFF99;border:0px solid #7f9db9;padding:0px 4px;}
+
+/* simulation de text	area 2 lignes*/
+a.modif_textarea3{color:#000000;cursor:text;display:block;font:0.9em Verdana, Arial, Helvetica, sans-serif;padding:0px 3px;text-decoration:none;width:97%;}
+a.modif_textarea3:hover{background-color:#FFFF99;padding:0px 4px;width:97%;}
+
+/* simulation de select*/
+a.modif_select1{color:#000000;cursor:text;display:block;font:0.9em Verdana, Arial, Helvetica, sans-serif;padding:0px 3px;text-decoration:none;width:97%;}
+a.modif_select1:hover{background-color:#FFFF99;width:97%;}
+
+/* simulation de input*/
+a.modif_input1{color:#000000;cursor:text;display:block;font:0.9em Verdana, Arial, Helvetica, sans-serif;padding:0 4px 0 0;text-decoration:none;width:97%;}
+a.modif_input1:hover{background-color:#FFFF99;padding:0 4px 0 0;width:97%;}
+a.modif_input2{color:#000000;cursor:text;display:block;font:0.9em Verdana, Arial, Helvetica, sans-serif;padding:0 4px 0 0;text-decoration:none;width:84%;}
+a.modif_input2:hover{background-color:#FFFF99;padding:0px 4px 0 0;width:84%;}

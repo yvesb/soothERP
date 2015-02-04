@@ -31,7 +31,7 @@ check_page_variables ($page_variables);
 
 
 			<?php 
-				$dir = opendir($DIR."config");
+				$dir = opendir($config);
 				$idx = 0;
 				while($fichier = readdir($dir)){
 					if(is_dir($DIR.'config/'.$fichier) || $fichier == '.' || $fichier =='..'){ continue; }
@@ -58,7 +58,7 @@ check_page_variables ($page_variables);
 							<td><textarea  id="new_text_file" name="new_text_file" class="classinput_xsize" rows="20"><?php echo $text_config_file;?></textarea></td>
 						</tr><tr id="line_input_file_<?php echo $idx;?>" style="display:none">
 							<td style="text-align: right; padding-right:10px;">
-							<input name="valider_<?php echo $idx;?>" id="valider_<?php echo $idx;?>" src="<?php echo $CORE_DIR;?>profil_admin/themes/admin_fr/images/bt-valider.gif" type="image">
+							<input name="valider_<?php echo $idx;?>" id="valider_<?php echo $idx;?>" src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/bt-valider.gif" type="image">
 							</td>
 						<tr>
 						</table>

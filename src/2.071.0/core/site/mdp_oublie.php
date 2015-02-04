@@ -34,7 +34,7 @@ if (!empty($_REQUEST['email'])) {
 		$lib_civ = $contact_entreprise->getLib_civ_court();
 		// Envoi de l'email
 		$destinataire = $coord->email;
-		$sujet = "[" . $nom_entreprise . "] Votre compte utilisateur LMB";
+		$sujet = "[" . $nom_entreprise . "] Votre compte utilisateur.";
 		$message = "<br /><br />Bonjour, <br />
 						Votre demande de mot de passe oublié sur le site " . $lib_civ . " " . $nom_entreprise . " a été prise en compte. <br />
 						Veuillez cliquer sur le lien suivant pour en définir un nouveau : <br />

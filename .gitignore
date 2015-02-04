@@ -7,3 +7,4 @@ error.log.php
 
 # Sauf le fichier sql d'install d'origine
 !/src/sql*/*.sql
+src/2.071.0/_session_maj.php

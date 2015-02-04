@@ -1,7 +1,7 @@
 <?php
-// *************************************************************************************************************
+//  ******************************************************
 // Tableau de bord des ventes 
-// *************************************************************************************************************
+//  ******************************************************
 
 
 require ("_dir.inc.php");
@@ -9,7 +9,7 @@ require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 
 
-require_once ($RESSOURCE_DIR."/php-ofc-library/open-flash-chart.php");
+require_once ($LIB_DIR_EXT."/php-ofc-library/open-flash-chart.php");
 
 	
 	

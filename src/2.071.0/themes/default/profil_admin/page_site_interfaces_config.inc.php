@@ -1,27 +1,19 @@
 <?php
 
-// *************************************************************************************************************
+// ***************************************************
 // CONFIG DES DONNEES d'affichage
-// *************************************************************************************************************
-
+// ***************************************************
 // Variables nécessaires à l'affichage
 $page_variables = array ();
 check_page_variables ($page_variables);
-
-
-//******************************************************************
 // Variables communes d'affichage
-//******************************************************************
 
 
-// *************************************************************************************************************
 // AFFICHAGE
-// *************************************************************************************************************
-
 ?>
 <script type="text/javascript">
 tableau_smenu[0] = Array("smenu_site_internet", "smenu_site_internet.php" ,"true" ,"sub_content", "Interfaces");
-tableau_smenu[1] = Array('site_interfaces_config','site_interfaces_config.php','true','sub_content', "Configuration des interfaces.");
+tableau_smenu[1] = Array('site_interfaces_config','site_interfaces_config.php','true','sub_content', "Configuration des interfaces");
 update_menu_arbo();
 </script>
 <div class="emarge">
@@ -37,7 +29,7 @@ update_menu_arbo();
 		<td style="width:35%"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="100%" height="1" id="imgsizeform"/></td>
 	</tr>
 	<tr>
-		<td class="titre_config" colspan="3">Selectionner l'interface à configurer:		</td>
+		<td class="titre_config" colspan="3">Sélectionner l'interface à configurer:</td>
 	</tr>
 	<tr>
 		<td colspan="3"> </td>
@@ -56,9 +48,10 @@ update_menu_arbo();
 	<tr>
 		<td colspan="3"> </td>
 	</tr>
-	
+
 </table>
 </form>
+	<HR width=75% noshade size=8>
 <div id="view_config_interface">
 
 </div>
