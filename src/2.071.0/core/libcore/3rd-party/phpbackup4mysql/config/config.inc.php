@@ -1,14 +1,53 @@
 <?php
-
 /***
 *
 * PhpBackup4MySQL config file 
+* Copyright (c) 2011-2014, Yves BOURVON. <groovyprog AT gmail DOT com>
+* All rights reserved.
+*
+* Redistribution and use in source and binary forms, with or without
+* modification, are permitted provided that the following conditions are met:
+*
+*     * Redistributions of source code must retain the above copyright
+*       notice, this list of conditions and the following disclaimer.
+*     * Redistributions in binary form must reproduce the above copyright
+*       notice, this list of conditions and the following disclaimer in the
+*       documentation and/or other materials provided with the distribution.
+*     * Neither the names of Yves Bourvon, Groovyprog, phpBackup4MySQL nor the
+*       names of its contributors may be used to endorse or promote products
+*       derived from this software without specific prior written permission.
+*
+* THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+* ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+* WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+* DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+* FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+* DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+* SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+* CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+* OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+* OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*
+***/
+
+/**
+*
+* phpBackup4MySQL V0.5 config file
 *
 * ############################################################################################################
 * SoothERP specific variables $num_backup_files_kept_cron and $num_backup_files_kept_session added, see below
 * ############################################################################################################
 *
-***/
+*/
+ 
+ /**
+* TIMEZONE Setting
+* This may be used to set the TIMEZONE (required since Php 5.4), but you may leave this empty
+* if your timezone is set up system wide or otherwise, in which case this parameter will have no
+* effect
+*/
+
+define ( "TIMEZONE", "");
 
 /**
 * Database connexion parameters
@@ -23,7 +62,7 @@ define ('DBNAME', $bdd_base);
  * Defaults to ./Backup/
  */
 
-define ( "BACKUP_DIRECTORY" , __DIR__.'/backup/');
+define ( "BACKUP_DIRECTORY" , $DIR . '/backup/');
 
 /**
  * SQL Query size limit (i.e. size above which the query is spiltted into several queries)
@@ -66,7 +105,7 @@ $num_backup_files_kept_session = 2; // Two sessions strats backups seems a good 
 
 /**
  * STRICT_NUM_BACKUP_FILES
- * Defines whether the num_backup_files_kept is an exact number of maximun backup files kept (option: TRUE) or an limit
+ * Defines whether the num_backup_files_kept is an exact number of maximun backup files kept (option: TRUE) or some limit
  * under which it won't go. Say num_backup_files_kept is set 5 but you end up with 7 files in the backup directory (because manually tweaked for instance)
  * option TRUE will erased lowest indexed backup up untill the total count of 5, whereas option FALSE will keep the count to 7
  */

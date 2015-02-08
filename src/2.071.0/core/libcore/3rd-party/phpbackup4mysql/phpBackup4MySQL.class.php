@@ -1,7 +1,7 @@
 <?php
 /***
 *
-* Copyright (c) 2011, Yves BOURVON. <groovyprog AT gmail DOT com>
+* Copyright (c) 2014, Yves BOURVON. <groovyprog AT gmail DOT com>
 * All rights reserved.
 *
 * Redistribution and use in source and binary forms, with or without
@@ -34,13 +34,24 @@
 
 /**
  *
- * Class phpBackup4MySQL file V0.4
+ * Class phpBackup4MySQL file V0.5
  *
  * This file contains the phpBackup4MySQL class with all its methods
  *
  * @author Yves Bourvon
  *
  */
+ 
+
+// Set Timezone if parameter provided
+if ( TIMEZONE != "") {
+	if (!date_default_timezone_set(TIMEZONE)) {
+	echo "Time zone invalide";
+	exit;
+	}
+}
+
+require_once '/lib/AWS/aws.phar';
 
 class phpBackup4MySQL
 {
@@ -567,7 +578,6 @@ class phpBackup4MySQL
 
 		//Write file
 		if(fwrite ( $file , $sql_dump ))
-
 			{
 			//S3 credentials and bucket defined ?
 			if ( AMAZON_WEB_SERVICES_KEY != "" && AMAZON_WEB_SERVICES_SECRET_KEY != "" && AMAZON_S3_BUCKET != "" )
@@ -650,7 +660,7 @@ class phpBackup4MySQL
 								//in that case
 
 								if (STRICT_NUM_BACKUP_FILES == FALSE)
-								break $i;
+								break;
 						}
 
 
@@ -791,63 +801,28 @@ class phpBackup4MySQL
 	*
 	* @param string $filename
 	*
-	* @return boolean
+	* @return array or false
 	*
 	*/
 
 
-
 	public function uploadToS3( $filename )
 	{
-		//load the aws sdk class
-		require_once ($LIB_DIR_EXT.'phpbackup4mysql/lib/aws_sdk/sdk.class.php');
 
-		//Adapted from aws sdk config file
-		CFCredentials::set(array(
-
-			// Credentials for PM4B.
-			'pb4m' => array(
-
-				// Set Amazon Web Services Key.
-				'key' => AMAZON_WEB_SERVICES_KEY,
-
-				// Set Amazon Web Services Secret Key.
-				'secret' => AMAZON_WEB_SERVICES_SECRET_KEY,
-
-				// This option allows you to configure a preferred storage type to use for caching by
-				// default. This can be changed later using the set_cache_config() method.
-				//
-				// Valid values are: `apc`, `xcache`, or a file system path such as `./cache` or
-				// `/tmp/cache/`.
-				'default_cache_config' => '',
-
-				// Determines which Cerificate Authority file to use.
-				//
-				// A value of boolean `false` will use the Certificate Authority file available on the
-				// system. A value of boolean `true` will use the Certificate Authority provided by the
-				// SDK. Passing a file system path to a Certificate Authority file (chmodded to `0755`)
-				// will use that.
-				//
-				// Leave this set to `false` if you're not sure.
-				//
-				// Modified to true to have it working properly as opposed to aws sdk mention above
-				'certificate_authority' => true
-			),
-
-		// Specify a default credential set to use if there are more than one.
-		'@default' => 'pb4m'
+		// Instantiate the S3 client with AWS credentials
+		$s3Client = Aws\S3\S3Client::factory(array(
+			'key'    => AMAZON_WEB_SERVICES_KEY,
+			'secret' => AMAZON_WEB_SERVICES_SECRET_KEY,
 		));
-
-		//Instantiate Amazon S3
-		$s3 = new AmazonS3();
-
-		//Upload backup
-		$response = $s3->create_object(AMAZON_S3_BUCKET, basename($filename), array(
-			'fileUpload' => realpath($filename)
+		
+		// Upload SQL dump to Amazon S3
+		$result = $s3Client->putObject(array(
+			'Bucket' => AMAZON_S3_BUCKET,
+			'Key'    => basename($filename),
+			'SourceFile' => realpath($filename)
 		));
-
-		//Return Boolean
-		return $response->isOK();
+		
+		return $result;
 
 	}
 }

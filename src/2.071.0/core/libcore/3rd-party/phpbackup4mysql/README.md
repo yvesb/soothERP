@@ -66,6 +66,13 @@ replacement).
 ----
 ## Changelog
 
+### V0.5
+
+- Added support for Php5.4
+- AWS S3 API upgrade to AWS SDK 2.7.17
+
+
+
 ### V0.4
 
 - Added backup file upload to Amazon S3 bucket capability. Simply add bucket
@@ -102,7 +109,7 @@ since this was usefull for some use to have this parameter changeable.
 ----
 ## TERMS OF PhpBackup4Mysql LICENSE (BSD License):
 
-Copyright (c) 2011, Yves BOURVON. <groovyprog AT gmail DOT com>
+Copyright (c) 2011-2014, Yves BOURVON. <groovyprog AT gmail DOT com>
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -139,6 +146,6 @@ This software makes use of following third party library:
 
 **AWS SDK for PHP**, Licensed under the Apache 2.0 license.
 
-- [AWS SDK for PHP site] (http://aws.amazon.com/sdkforphp)
-- [Documentation] (http://docs.amazonwebservices.com/AWSSDKforPHP/latest/)
-- [License (Apache 2.0)] (http://aws.amazon.com/apache2.0/)
+- [AWS SDK for PHP] (https://github.com/aws/aws-sdk-php)
+- [Documentation] (http://aws.amazon.com/fr/documentation/sdk-for-php/)
+- [License (Apache 2.0)] (https://github.com/aws/aws-sdk-php/blob/master/LICENSE.md)
