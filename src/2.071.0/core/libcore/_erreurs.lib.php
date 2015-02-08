@@ -136,7 +136,8 @@ function alerte_dev($erreur, $libelle_supp = "", $errno = "", $errstr = "", $err
         $errorlog .= "###################################################################################################\n\n";
         $errorlog .= "*/\n?>\n";
 
-        $fp = fopen(__DIR__ . '/log/error.log.php', 'w');
+		global $DIR;
+        $fp = fopen($DIR . '/log/error.log.php', 'w');
         fwrite($fp, $errorlog);
         fclose($fp);
     }
