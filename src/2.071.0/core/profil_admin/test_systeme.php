@@ -341,8 +341,8 @@ if (!count($GLOBALS['_INFOS']['test_systeme'])) {
 	}
 }
 ?>
-	<span style="float:left; padding-right:20px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="22px" /></span><span id="aff_rapport" style="cursor:pointer; text-decoration:underline;" >Voir le rapport de test</span><br />
-	<div style="display:none;padding-left:42px; font-weight:bolder" id="rapport_text"><?php echo $retour_texte;?></br></div>
+	<span style="float:left; padding-right:20px"><img src="<?php echo $DIR.$_SESSION['theme']->getDir_gtheme()?>images/blank.gif" width="22px" /></span><span id="aff_rapport" style="cursor:pointer; text-decoration:underline;" ><?php echo isset($retour_texte)? "Voir le rapport de test" : ""; ?></span><br />
+	<div style="display:none;padding-left:42px; font-weight:bolder" id="rapport_text"><?php echo isset($retour_texte)? $retour_texte: "";?></br></div>
 	<script type="text/javascript">
 		Event.observe("aff_rapport", "click", function() {$("rapport_text").toggle();}, false);
 	</script>
