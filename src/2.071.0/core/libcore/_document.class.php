@@ -2363,6 +2363,26 @@ abstract class document {
             return $prix_cotation;
         }
     }
+	
+//  ******************************************************
+// FONCTIONS DE GESTION DES PRIX PASSAGE PAR REFERENCE
+// (COMPAT PHP >= 5.4)
+//  ******************************************************
+// Selectionne le prix unitaire d'un article pour le document
+    public function select_article_pu_byref(&$article, $qte) {
+
+        if (!$prix_cotation = $this->select_article_pcotation($article, $qte)) {
+            if (isset($this->PU_FROM) && $this->PU_FROM == "PA") {
+                return $this->select_article_pa($article);
+            } else {
+                return $this->select_article_pv($article, $qte);
+            }
+        } else {
+            return $prix_cotation;
+        }
+    }
+
+	
 
 // Sélection du prix d'achat pour cet article
     protected function select_article_pa($article) {
