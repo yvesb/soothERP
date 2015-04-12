@@ -7,7 +7,7 @@
 require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
-require_once ($DIR."_contact_liaisons_types.class.php");
+require_once ($LIB_DIR."_contact_liaisons_types.class.php");
 
 
 //**************************************
