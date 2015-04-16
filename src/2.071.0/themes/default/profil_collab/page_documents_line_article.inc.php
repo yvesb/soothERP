@@ -15,7 +15,7 @@ check_page_variables ($page_variables);
 
 
 
-require_once ($DIR."_document_duree_abo.class.php");
+require_once ($LIB_DIR."_document_duree_abo.class.php");
 // *************************************************************************************************************
 // AFFICHAGE
 // *************************************************************************************************************
