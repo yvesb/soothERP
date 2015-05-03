@@ -11,7 +11,7 @@ require ($DIR."_session.inc.php");
 
 $tvas = get_tvas ($DEFAUT_ID_PAYS);
 
-require_once ($DIR."_article_liaisons_types.class.php");
+require_once ($LIB_DIR."_article_liaisons_types.class.php");
 
 //on charge Toutes les liaisons existantes
 	$liaisons_liste	= get_liaisons_types_exist();
