@@ -27,14 +27,14 @@ $query = "UPDATE documents_types SET lib_type_printed = '".addslashes($_REQUEST[
 $bdd->exec ($query);
 
 if (isset($_REQUEST["duree_avant_purge_annule_".$_REQUEST["id_type_doc"]])) {
-	maj_configuration_file ("_doc_".strtolower($code_doc).".config.php", "maj_line", "\$DUREE_AVANT_PURGE_ANNULE_".strtoupper($code_doc)." =", "\$DUREE_AVANT_PURGE_ANNULE_".strtoupper($code_doc)." = ".$_REQUEST["duree_avant_purge_annule_".$_REQUEST["id_type_doc"]].";	// Délai avant la suppression des docs annulés", $DIR."documents/");
+	maj_configuration_file ("_doc_".strtolower($code_doc).".config.php", "maj_line", "\$DUREE_AVANT_PURGE_ANNULE_".strtoupper($code_doc)." =", "\$DUREE_AVANT_PURGE_ANNULE_".strtoupper($code_doc)." = ".$_REQUEST["duree_avant_purge_annule_".$_REQUEST["id_type_doc"]].";	// Délai avant la suppression des docs annulés", $LIB_DIR."documents/");
 }
 
 //mise à jour du cycle du document
 $cdc_auto = "";
 if (isset($_REQUEST["CDC_genere"]) && $_REQUEST["CDC_genere"]) {$cdc_auto = $_REQUEST["CDC_genere"];}
 
-maj_configuration_file ("_doc_".strtolower($code_doc).".config.php", "maj_line", "\$COMMANDE_CLIENT_AUTO_GENERE	=", "\$COMMANDE_CLIENT_AUTO_GENERE	= \"".$cdc_auto."\";	// code doc du type de doc créé à la validation de la commande", $DIR."documents/");
+maj_configuration_file ("_doc_".strtolower($code_doc).".config.php", "maj_line", "\$COMMANDE_CLIENT_AUTO_GENERE	=", "\$COMMANDE_CLIENT_AUTO_GENERE	= \"".$cdc_auto."\";	// code doc du type de doc créé à la validation de la commande", $LIB_DIR."documents/");
 
 
 //  ******************************************************
