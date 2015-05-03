@@ -8,7 +8,7 @@ $_SERVER['MAJ_EN_COURS'] = 1;
 
 require ("_dir.inc.php");
 require ($DIR."_session.inc.php");
-require ($DIR."_maj.class.php");
+require ($LIB_DIR."_maj.class.php");
 
 set_time_limit(600);	// Fixe la durée d'execution du script à 10 minutes.
 
