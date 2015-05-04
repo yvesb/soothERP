@@ -6,7 +6,7 @@
   require ("_dir.inc.php");
   require ("_profil.inc.php");
   require ($DIR."_session.inc.php");
-  require_once ($DIR."documents/_doc_mod.class.php");
+  require_once ($LIB_DIR."documents/_doc_mod.class.php");
 
   $ref = '';
   if (isset($_REQUEST['ref_doc']) && isset($_REQUEST['types_docs']) && isset($_REQUEST['lib_mod']) && isset($_REQUEST['desc_mod'])) {
