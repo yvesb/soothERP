@@ -7,7 +7,7 @@
 require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
-require_once ($DIR."_document_duree_abo.class.php");
+require_once ($LIB_DIR."_document_duree_abo.class.php");
 
 $ref_article  = $_REQUEST['ref_article'];
 $ref_doc_line = $_REQUEST['ref_doc_line'];
