@@ -6,7 +6,7 @@
 require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
-require_once ($DIR."/profil_client/_contact_client.class.php");
+require_once ($CORE_DIR."/profil_client/_contact_client.class.php");
 
 
 	if (!isset($_REQUEST['ref_client'])) {
