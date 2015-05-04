@@ -8,7 +8,7 @@ require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
 require ($DIR.$_SESSION['theme']->getDir_theme()."_theme.config.php" );
-require_once ($DIR."_article_liaisons_types.class.php");
+require_once ($LIB_DIR."_article_liaisons_types.class.php");
 
 if(!$_SESSION['user']->check_permission ("38")){
 		echo "<br /><span style=\"font-weight:bolder;color:#FF0000;\">Vos droits  d'accés ne vous permettent pas de visualiser ce type de document</span>";
