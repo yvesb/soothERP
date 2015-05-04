@@ -201,7 +201,7 @@
 			<tr>
 				<td>
 				<span class="labelled">Note:</span></td><td>
-				<a href="#" id="link_show_coordonnee_note<?php echo $caiu?>" class="modif_input1"><?php echo  nl2br(htmlentities($coordonnee->getNote()), ENT_QUOTES, "UTF-8")?></a>
+				<a href="#" id="link_show_coordonnee_note<?php echo $caiu?>" class="modif_input1"><?php echo  nl2br(htmlentities($coordonnee->getNote(), ENT_QUOTES, "UTF-8"))?></a>
 				<script type="text/javascript">
 				Event.observe("link_show_coordonnee_note<?php echo $caiu?>", "click",  function(evt){Event.stop(evt);show_edit_form('annu_editon_coordonnee<?php echo $caiu?>', 'start_visible_<?php echo $caiu?>', 'coordonnee_note<?php echo $caiu?>');}, false);
 				</script>
