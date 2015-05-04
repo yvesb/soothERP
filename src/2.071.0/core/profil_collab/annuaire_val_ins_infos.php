@@ -31,8 +31,8 @@ if(!$res = $resultat->fetchObject()){
 	exit;
 }
 
-if(file_exists($DIR.$res->i.dossier."inscription_".substr($res->i.dossier, 0, -1).".class.php")){
-	require_once($DIR.$res->i.dossier."inscription_".substr($res->i.dossier, 0, -1).".class.php");
+if(file_exists($LIB_DIR.$res->i.dossier."inscription_".substr($res->i.dossier, 0, -1).".class.php")){
+	require_once($LIB_DIR.$res->i.dossier."inscription_".substr($res->i.dossier, 0, -1).".class.php");
 	$classe_inscription = "inscription_".substr($res->i.dossier, 0, -1).".class.php";
 	$inscription = new $classe_inscription($res->id_interface);
 }
