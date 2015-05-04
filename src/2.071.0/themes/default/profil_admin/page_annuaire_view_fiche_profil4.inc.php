@@ -1,7 +1,7 @@
 <?php
 // bac 18/05/2010 2.054.0 on recupère les informations du contact et de la catégorie de client 
 // si infos du contact client vides alors on affiche celles de la catégorie client
-//require_once $DIR.'profil_client/_contact_client.class.php';
+//require_once $LIB_DIR.'profil_client/_contact_client.class.php';
 $ce_client                             = array();
 $ce_client['id_client_categ']          = $profils[$id_profil]->getId_client_categ();
 $ce_client['id_tarif']                 = $profils[$id_profil]->getId_tarif();
