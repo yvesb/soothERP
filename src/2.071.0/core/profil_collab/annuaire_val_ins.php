@@ -48,8 +48,8 @@ unset($resultat_bd);
 
 function &getObjInscription($dossier){
 	$sufixe = substr($dossier, 0, -1);
-	if(file_exists($DIR.$dossier."_inscription_".$sufixe.".class.php")){
-		require_once($DIR.$dossier."_inscription_".$sufixe.".class.php");
+	if(file_exists($LIB_DIR.$dossier."_inscription_".$sufixe.".class.php")){
+		require_once($LIB_DIR.$dossier."_inscription_".$sufixe.".class.php");
 		$classe_inscription = "Inscription_".$sufixe;
 		return new $classe_inscription($res->id_interface);
 	}
@@ -59,8 +59,8 @@ function &getObjInscription($dossier){
 
 function &getObjModification(){
 	$sufixe = substr($dossier, 0, -1);
-	if(file_exists($DIR.$dossier."_inscription_".$sufixe.".class.php")){
-		require_once($DIR.$dossier."_inscription_".$sufixe.".class.php");
+	if(file_exists($LIB_DIR.$dossier."_inscription_".$sufixe.".class.php")){
+		require_once($LIB_DIR.$dossier."_inscription_".$sufixe.".class.php");
 		$classe_inscription = "Modification_".$sufixe;
 		return new $classe_inscription($res->id_interface);
 	}
