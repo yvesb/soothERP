@@ -7,7 +7,7 @@
 require ("_dir.inc.php");
 require ("_profil.inc.php");
 require ($DIR."_session.inc.php");
-require_once ($DIR."_article.class.php");
+require_once ($LIB_DIR."_article.class.php");
 
 //chargement des modes d'édition
 $editions_modes	= liste_mode_edition();
