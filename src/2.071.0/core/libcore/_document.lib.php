@@ -20,7 +20,7 @@ function open_doc ($ref_doc) {
 	if (!$doc = $resultat->fetchObject()) { return false; }
 
 	// Creation de l'objet correspondant
-	require_once ("/documents/_doc_".strtolower($_SESSION['types_docs'][$doc->id_type_doc]->code_doc).".class.php");
+	require_once ( dirname(__FILE__) . DIRECTORY_SEPARATOR . "/documents/_doc_".strtolower($_SESSION['types_docs'][$doc->id_type_doc]->code_doc).".class.php");
 	$classe_doc = "doc_".$_SESSION['types_docs'][$doc->id_type_doc]->code_doc;
 	$document = new $classe_doc ($ref_doc);
  
@@ -39,7 +39,7 @@ function open_doc ($ref_doc) {
 // Fonction permettant de créer un document
 function create_doc ($id_type_doc) {
 	// Creation de l'objet correspondant
-	require_once ("/documents/_doc_".strtolower($_SESSION['types_docs'][$id_type_doc]->code_doc).".class.php");
+	require_once ( dirname(__FILE__) . DIRECTORY_SEPARATOR . "documents/_doc_".strtolower($_SESSION['types_docs'][$id_type_doc]->code_doc).".class.php");
 	$classe_doc = "doc_".$_SESSION['types_docs'][$id_type_doc]->code_doc;
 	$document = new $classe_doc ();
 	$document->create_doc ();
