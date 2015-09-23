@@ -716,8 +716,9 @@ foreach ($menu1 as $smenu) {
                                                     </table>
 
                                                     <div style="display:block; float:right; position:absolute; bottom:0px; right:0px; z-index:500"><br />
-                                                        <a href="http://www.sootherp.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_sootherp.png" width="120"/></a><br />
-                                                        <a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_lundimatin.png" width="120"/></a>
+                                                        <!--<a href="http://www.sootherp.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_sootherp.png" width="120"/></a><br />-->
+														<span style="color: #888; font-size: 11px; position:absolute; bottom:4px; right:130px;">SoothERP,&nbsplogiciel&nbspde&nbspgestion&nbspd'entreprise&nbspopen&nbspsource&nbspet&nbspgratuit&nbsp<a href="http://www.sootherp.fr" style="color: #888;text-decoration: none;" target="_blank">http://www.sootherp.fr</a></span>
+	                                                    <a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_lundimatin.png" width="120"/></a>
                                                     </div>
                                                     <div  style="display:block; float:right; position:absolute; top:0px; right:25px; z-index:500">
                                                         <table border="0" cellpadding="0" cellspacing="0" id="option_info"><tr><td>

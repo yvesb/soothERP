@@ -207,7 +207,8 @@ foreach ($_ALERTES as $alerte => $value) {
                                 document.write('</table>');
                                 document.write('<div style="text-align:right"><a href="" style="color:#000000; display:none" >J\'ai oublié mon mot de passe</a></div></td></tr></table>');
                                 document.write('</form>');
-                                document.write('</div><br /><div><a href="http://www.sootherp.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_sootherp.png" width="150"/></a>');
+                                document.write('</div><br /><div>');
+                                document.write('<!--<a href="http://www.sootherp.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_sootherp.png" width="150"/></a>-->');
                                 document.write('<a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_lundimatin.png" width="150"/></a></div></td></tr>');
                                 document.write('		<tr>');
                                 document.write('			<td colspan="2">');

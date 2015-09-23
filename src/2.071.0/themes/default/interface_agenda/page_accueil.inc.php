@@ -37,10 +37,7 @@ $Udate_now = time();
         <td colspan="3">
             <table width="100%" border="0" cellpadding="0" cellspacing="0">
                 <tr height="27px">
-                    <td width="350px" rowspan="2">
-                        <a href="http://www.sootherp.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_sootherp.png" width="120"/></a>
-                        <a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_lundimatin.png" width="120"/></a>
-                    </td>
+                    <td width="350px" rowspan="2"></td>
                     <td align="center">
                         <table cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;">
                             <tr>
@@ -744,7 +741,13 @@ $Udate_now = time();
         <td colspan="3" style="background-image:url('<?php echo $DIR . $_SESSION['theme']->getDir_gtheme(); ?>images/trait_entete.gif'); background-repeat:repeat-x;"></td>
     </tr>
     <tr height="75px" id="pied_de_page">
-        <td colspan="3" style="background-image:url('<?php echo $DIR . $_SESSION['theme']->getDir_gtheme(); ?>images/pied_de_page_agenda.gif'); background-repeat:repeat-x;"></td>
+        <td colspan="3" style="background-image:url('<?php echo $DIR . $_SESSION['theme']->getDir_gtheme(); ?>images/pied_de_page_agenda.gif'); background-repeat:repeat-x;">
+			<div style="display:block; float:right; position:absolute; bottom:0px; right:0px; z-index:500">
+				<!--<a href="http://www.sootherp.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_sootherp.png" width="120"/></a><br />-->
+				<span style="color: #888; font-size: 11px; position:absolute; bottom:4px; right:130px;">SoothERP,&nbsplogiciel&nbspde&nbspgestion&nbspd'entreprise&nbspopen&nbspsource&nbspet&nbspgratuit&nbsp<a href="http://www.sootherp.fr" style="color: #888;text-decoration: none;" target="_blank">http://www.sootherp.fr</a></span>				
+				<a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_lundimatin.png" width="120"/></a>
+			</div>
+		</td>
     </tr>
 </table>
 

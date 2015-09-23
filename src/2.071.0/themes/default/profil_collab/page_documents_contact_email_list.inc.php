@@ -88,7 +88,7 @@ Event.observe("email_perso", "mouseover",  function(){changeclassname ("email_pe
 Event.observe("email_perso", "click",  function(){
 	$("choix_send_mail").style.display="none";
 	$("iframe_choix_send_mail").style.display="none";
-	PopupCentrer("documents_editing_email.php?ref_doc=<?php echo  $document->getRef_doc(); ?>&mode_edition=2",780,550,"menubar=no,statusbar=no,scrollbars=yes,resizable=yes")
+	PopupCentrer("documents_editing_email.php?ref_doc=<?php echo  $document->getRef_doc(); ?>&mode_edition=2",780,650,"menubar=no,statusbar=no,scrollbars=yes,resizable=yes")
 	
 }, false);
 //on masque le chargement

@@ -303,9 +303,8 @@ check_page_variables($page_variables);
                 <td style="width:340px;display:block;padding: 0px 0px 0px 5px;">
                     <!-- LOGO -->
                     <div style="margin:10px 0 0 10px; height:97px; background-repeat:no-repeat;');">
-                        <!-- TAILLE du logo 314px x 87px --><br />
-                        <a href="http://www.sootherp.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_sootherp.png" width="120"/></a>
-                        <a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_lundimatin.png" width="120"/></a>
+						<span style="color: #888; font-size: 11px; position:relative; top:10px;">SoothERP,&nbsplogiciel&nbspde&nbspgestion&nbspd'entreprise<br />popen&nbspsource&nbspet&nbspgratuit&nbsp<a href="http://www.sootherp.fr" style="color: #888;text-decoration: none;" target="_blank">http://www.sootherp.fr</a></span>				
+                        <span style="position:relative; top:15px;"><a href="http://www.lundimatin.fr" target="_blank" rel="noreferrer"><img src="<?php echo $FICHIERS_DIR; ?>images/powered_by_lundimatin.png" width="120"/></a></span>
                     </div>
 
                     <div style="-moz-user-select:none; width:100%;" >

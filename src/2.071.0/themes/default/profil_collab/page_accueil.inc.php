@@ -20,7 +20,7 @@ check_page_variables($page_variables);
 		<img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/supprime.gif" border="0">
 	</a>
 </div>
-<div class="emarge" id="accueil_content" style="background-image: url(<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/accueil.gif); background-position:bottom center; background-repeat:no-repeat; height:97%">
+<div class="emarge" id="accueil_content">
 	<table width="100%" border="0" cellspacing="0" cellpadding="0">
 		<tr>
 			<td style="height: 50px;width: 47%;"><img src="<?php echo $DIR . $_SESSION['theme']->getDir_gtheme() ?>images/blank.gif" width="100%" height="50px" id="imgsizeform"/></td>
