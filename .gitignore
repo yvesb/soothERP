@@ -1,9 +1,13 @@
 # Ignore les logs d'erreurs générés par l'application
 error.log.php
 
+# Ignore le fichier config BDD
+config_bdd.inc.php
+
 # Ignore les fichiers backups sql créés par l'application
 # c-à-d ignore tous les fichiers sql
 *.sql
 
 # Sauf le fichier sql d'install d'origine
 !/src/sql*/*.sql
+src/2.071.0/_session_maj.php

@@ -1,0 +1,32 @@
+/* CSS Document */
+.list_art_categs{color:#000;text-decoration:none;}
+.list_art_categs_hover{background-color:#06C;color:#000;text-decoration:none;}
+.insertion{display:none;text-align:right;}
+.insertion_hover{cursor:pointer;text-align:right;}
+.list_art_categs a{color:#000;text-decoration:none;}
+.list_art_categs_hover a{color:#FFF;text-decoration:none;}
+
+/*caracteristiques et grop de caract*/
+.caract_table{background-color:#cccccc;border:1px solid #707070;width:99%;}
+
+/*import de taxes*/
+.import_table{background-color:#cccccc;border:1px solid #707070;width:96%;}
+
+/* tableau des tarifs*/
+.tarif_table{background-color:#cccccc;border:1px solid #FFFFFF;text-align:center;width:100%;}
+
+/* assitant des tarifs*/
+.assistant_tarif_table{background-color:#cccccc;border:1px ridge #707070;border-radius:10px;display:none;height:352px;left:50px;-moz-border-radius:10px;padding:10px;position:absolute;top:50px;width:560px;z-index:850;}
+.assistant_tarif_iframe{display:none;filter:alpha(opacity=0);height:378px;left:50px;position:absolute;top:50px;width:588px;z-index:849;}
+.assist_titre{color:#000000;font-size:1em;font-weight:bolder;text-align:center;}
+.assist_labelled_bold{color:#000000;font-weight:bolder;}
+.assistant_input{background-color:#FFFFFF;border:1px solid #cccccc;font:0.9em Verdana, Arial, Helvetica, sans-serif;margin:0;}
+.alerte_assistant_input{background-color:#FF0000;border:1px solid #cccccc;font:0.9em Verdana, Arial, Helvetica, sans-serif;margin:0;}
+select.assistant_input{font:1em Verdana, Arial, Helvetica, sans-serif;}
+
+/* assitant des calcul_commission bancaire TPE TPV*/
+.cal_com{background-color:#cccccc;border:1px ridge #707070;border-radius:10px;height:182px;left:50px;-moz-border-radius:10px;padding:10px;position:absolute;top:50px;width:490px;z-index:850;}
+
+/* assitant des commissions commerciaux*/
+.assistant_comm_commission_table{background-color:#cccccc;border:1px ridge #707070;border-radius:10px;display:none;height:252px;left:50px;-moz-border-radius:10px;padding:10px;position:absolute;top:50px;width:560px;z-index:850;}
+.assistant_comm_commission_iframe{display:none;filter:alpha(opacity=0);height:278px;left:50px;position:absolute;top:50px;width:588px;z-index:849;}

@@ -1,7 +1,7 @@
 <?php
 require ("_dir.inc.php");
 require ($DIR."_session.inc.php");
-require_once $DIR.'config/config_mail.inc.php';
+require_once $CONFIG_DIR.'config_mail.inc.php';
 
 $etatDoc = 'vente';
 if(!$articlesStock = article::getAllInsufStockByStock($etatDoc)){
@@ -13,7 +13,7 @@ switch ($etatDoc) {
 		$libMessage = "dont les <span style='color:blue'>commandes en cours</span> soustraites au stock existant ne permettent pas de fournir tous vos clients.";
 	 break;
 	case 'prepa':
-		$libMessage = "dont les <span style='color:blue'>livraison en préparation</span> soustraites au stock existant ne permettent pas de livrer tous vos clients.";
+		$libMessage = "dont les <span style='color:blue'>livraison en prÃ©paration</span> soustraites au stock existant ne permettent pas de livrer tous vos clients.";
 	 break;
 	case 'attente':
 		$libMessage = "dont les <span style='color:blue'>commandes en attente</span> soustraites au stock existant ne permettent pas de fournir tous vos clients.";

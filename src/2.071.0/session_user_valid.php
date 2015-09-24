@@ -1,8 +1,8 @@
 <?php
 
-// *************************************************************************************************************
+//  ******************************************************
 // PAGE DE RESULTAT DU RE-LOGIN DE L'UTILISATEUR ()
-// *************************************************************************************************************
+//  ******************************************************
 
 $_PAGE['MUST_BE_LOGIN'] = 0;
 
@@ -10,10 +10,10 @@ require ("_dir.inc.php");
 require ($DIR."_session.inc.php");
 
 
-// Vérification de la page de provennance
+// VÃ©rification de la page de provennance
 if (isset ($_REQUEST['page_from'])) {  $page_from = &$_REQUEST['page_from'];  }
 else {                                 $page_from = "";  }
-// Vérification de l'id_profil
+// VÃ©rification de l'id_profil
 if (isset ($_REQUEST['id_profil'])) {  $id_profil = &$_REQUEST['id_profil'];  }
 else {                                 $id_profil = "";  }
 
@@ -42,7 +42,7 @@ if (isset ($_REQUEST['login'])) {
 						
 		?>
 			<script type="text/javascript">
-				window.parent.document.getElementById("session_user_message").innerHTML = "Identification incorrecte! <br/><?php echo $_REQUEST["try"]+1;?>éme essai.";
+				window.parent.document.getElementById("session_user_message").innerHTML = "Identification incorrecte! <br/><?php echo $_REQUEST["try"]+1;?>Ã©me essai.";
 				window.parent.document.getElementById("try").value = <?php echo $_REQUEST["try"]+1;?>;
 			</script>
 		<?php 

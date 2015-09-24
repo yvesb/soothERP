@@ -1,0 +1,111 @@
+
+<div style="height:200px; padding-right:3px;">
+<ul class="complete_adresse">
+<?php
+$i=0;
+if ($mode_vente == $BDD_MODE_VENTE[1]) {
+	foreach ($_SESSION['stocks'] as $stocks) {
+		?>
+		<li class="complete_coordonnee" id="li_choix_adresse_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>">
+		<?php echo htmlentities($stocks->getLib_stock (), ENT_QUOTES, "UTF-8") ?>
+		</li>
+		<?php 
+	$i++;
+	}
+}
+
+foreach ($adresses as $adresse) {
+	?>
+	<li class="complete_coordonnee" id="li_choix_adresse_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>">
+	<?php
+	if ($adresse->getLib_adresse()!="") {
+		?>
+		<strong><?php echo  htmlentities($adresse->getLib_adresse(), ENT_QUOTES, "UTF-8")?></strong><br />
+		<?php 
+	}
+	if ($adresse->getText_adresse()!="") {
+		?>
+		<span style="float: right;text-align:right"><?php echo  htmlentities(substr($adresse->getText_adresse(),0 ,25), ENT_QUOTES, "UTF-8")?></span>
+		Adresse: <br />
+		<?php 
+	}
+	if ($adresse->getCode_postal()!="") {
+		?>
+		<span style="float: right;text-align:right"> <?php echo  htmlentities($adresse->getCode_postal(), ENT_QUOTES, "UTF-8")?></span>
+		Code Postal:<br />
+		<?php 
+	}
+	if ($adresse->getVille()!="") {
+		?>
+		<span style="float: right;text-align:right"> <?php echo  htmlentities(substr($adresse->getVille(),0 ,25), ENT_QUOTES, "UTF-8")?></span>
+		Ville:<br />
+		<?php
+	}
+	?>
+	</li>
+	<?php 
+	$i++;
+}
+
+
+if ($mode_vente == $BDD_MODE_VENTE[0]) {
+	foreach ($_SESSION['stocks'] as $stocks) {
+		?>
+		<li class="complete_coordonnee" id="li_choix_adresse_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>">
+		<?php echo htmlentities($stocks->getLib_stock (), ENT_QUOTES, "UTF-8") ?>
+		</li>
+		<?php 
+	$i++;
+	}
+}
+?>
+</ul>
+
+<script type="text/javascript">
+<?php
+$i=0;
+
+
+if ($mode_vente == $BDD_MODE_VENTE[1]) {
+	foreach ($_SESSION['stocks'] as $stocks) {
+		?>
+		Event.observe("li_choix_adresse_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>", "mouseout",  function(){changeclassname ("li_choix_adresse_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>", "complete_coordonnee");}, false);
+		
+		Event.observe("li_choix_adresse_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>", "mouseover",  function(){changeclassname ("li_choix_adresse_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>", "complete_coordonnee_hover");}, false);
+		
+		Event.observe("li_choix_adresse_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>", "click",  function(){documents_maj_adresse ("<?php echo ($stocks->getId_stock())?>", "<?php echo $_REQUEST["type_adresse"]?>", "<?php echo $_REQUEST["ref_doc"]?>", "<?php echo $_REQUEST["ref_contact"]?>"); }, false);
+		<?php 
+	$i++;
+	}
+}
+
+foreach ($adresses as $adresse) {
+	?>
+	
+	Event.observe("li_choix_adresse_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>", "mouseout",  function(){changeclassname ("li_choix_adresse_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>", "complete_coordonnee");}, false);
+	
+	Event.observe("li_choix_adresse_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>", "mouseover",  function(){changeclassname ("li_choix_adresse_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>", "complete_coordonnee_hover");}, false);
+	
+	Event.observe("li_choix_adresse_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>", "click",  function(){documents_maj_adresse ("<?php echo ($adresse->getRef_adresse ())?>", "<?php echo $_REQUEST["type_adresse"]?>", "<?php echo $_REQUEST["ref_doc"]?>", "<?php echo $_REQUEST["ref_contact"]?>"); }, false);
+	
+	<?php 
+	$i++;
+} 
+
+
+if ($mode_vente == $BDD_MODE_VENTE[0]) {
+	foreach ($_SESSION['stocks'] as $stocks) {
+		?>
+		Event.observe("li_choix_adresse_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>", "mouseout",  function(){changeclassname ("li_choix_adresse_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>", "complete_coordonnee");}, false);
+		
+		Event.observe("li_choix_adresse_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>", "mouseover",  function(){changeclassname ("li_choix_adresse_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>", "complete_coordonnee_hover");}, false);
+		
+		Event.observe("li_choix_adresse_<?php echo $_REQUEST["input"]?>_<?php echo $i;?>", "click",  function(){documents_maj_adresse ("<?php echo ($stocks->getId_stock())?>", "<?php echo $_REQUEST["type_adresse"]?>", "<?php echo $_REQUEST["ref_doc"]?>", "<?php echo $_REQUEST["ref_contact"]?>"); }, false);
+		<?php 
+	$i++;
+	}
+}
+
+?>
+</script>
+</div>

@@ -1,0 +1,76 @@
+<?PHP 
+$CONFIGURATION=1;
+
+// CODE NON PARAMETRABLE
+global $DOCUMENTS_IMG_LOGO;
+$ETAT_STOCK['IMG_LOGO']	= $DOCUMENTS_IMG_LOGO;
+$ETAT_STOCK['LIB_DOC_ENTETE_UNIQUE'] = 'Etat du stock';
+$ETAT_STOCK['LIB_DOC_ENTETE_MUTLI'] = 'Etat des stocks';
+
+
+$ETAT_STOCK['HAUTEUR_LINE_ARTICLE']				= 5;
+$ETAT_STOCK['HAUTEUR_LINE_CATEGORIE']			= 5;
+$ETAT_STOCK['HAUTEUR_LINE_TOTAUX_CATEGORIE']	= 5;
+$ETAT_STOCK['HAUTEUR_LINE_TOTAUX_GENERAUX']		= 5;
+$ETAT_STOCK['HAUTEUR_LINE_VIDE']				= 5;
+$ETAT_STOCK['HAUTEUR_LINE_SN']					= 4;
+
+$ETAT_STOCK['HAUTEUR_AFTER_LINE_ARTICLE']			= 0;
+$ETAT_STOCK['HAUTEUR_AFTER_LINE_CATEGORIE']			= 0;
+$ETAT_STOCK['HAUTEUR_AFTER_LINE_TOTAUX_CATEGORIE']	= 0;
+
+$ETAT_STOCK['COL']['ENTETE']['REF'] = "Référence";
+$ETAT_STOCK['COL']['ENTETE']['DES'] = "Désignation";
+$ETAT_STOCK['COL']['ENTETE']['QTE'] = "Qté";
+$ETAT_STOCK['COL']['ENTETE']['PT']  = "PT HT";
+$ETAT_STOCK['COL']['ENTETE']['PAU'] = "PA HT";
+
+$ETAT_STOCK['COL']['LARGEUR']['REF'] = 30;
+$ETAT_STOCK['COL']['LARGEUR']['LIB'] = 177;
+$ETAT_STOCK['COL']['LARGEUR']['QTE'] = 20;
+$ETAT_STOCK['COL']['LARGEUR']['PT'] = 20;
+$ETAT_STOCK['COL']['LARGEUR']['PAU'] = 20;
+
+// ***************************************************
+// POSITION DES BLOCS
+$ETAT_STOCK['MARGE_GAUCHE'] = 15;
+$ETAT_STOCK['MARGE_HAUT']		= 15;
+
+// CORPS DU DOCUMENT
+$ETAT_STOCK['CORPS_HAUTEUR_DEPART']	= 35;
+$ETAT_STOCK['CORPS_HAUTEUR_MAX']		= 110;
+
+// PIEDS DE PAGE
+$ETAT_STOCK['PIEDS_HAUTEUR_DEPART']	= 180;
+$ETAT_STOCK['PIEDS_HAUTEUR_MAX']		= 12;
+
+// ***************************************************
+// TEXTES ENTRE CORPS ET PIEDS DE PAGE
+$ETAT_STOCK['TEXTE_CORPS_PIEDS'][0]	= "";
+
+// ***************************************************
+// TEXTES DE PIEDS DE PAGE
+global $PIED_DE_PAGE_GAUCHE_0;
+global $PIED_DE_PAGE_GAUCHE_1;
+global $PIED_DE_PAGE_DROIT_0;
+global $PIED_DE_PAGE_DROIT_1;
+$ETAT_STOCK['PIEDS_GAUCHE'][0]	= $PIED_DE_PAGE_GAUCHE_0;
+$ETAT_STOCK['PIEDS_GAUCHE'][1]	= $PIED_DE_PAGE_GAUCHE_1;
+$ETAT_STOCK['PIEDS_DROIT'][0]	= $PIED_DE_PAGE_DROIT_0;
+$ETAT_STOCK['PIEDS_DROIT'][1]	= $PIED_DE_PAGE_DROIT_1;
+
+
+//variable//type de champ(parametre)//libéllé//commentaire
+// PARAMETRES MODIFIABLES
+$ETAT_STOCK['REF_ARTICLE']="Article";//SLCT()// Affichage de la colonne référence //  //Aucune@Article@Interne@Oem
+// FIN PARAMETRES MODIFIABLES
+// CONFIGURATION PAR DEFAUT
+// Portion de code recopiée dans la partie « paramètres modifiables » en cas de remise à 0 des paramètres.
+/*
+$DOC_STANDARD['REF_ARTICLE']="Article";//SLCT()// Affichage de la colonne référence //  //Aucune@Article@Interne@Oem
+*/
+// FIN CONFIGURATION PAR DEFAUT
+// INFORMATIONS SUR L'AUTEUR
+/* 
+*/
+?>
