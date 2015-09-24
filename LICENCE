@@ -134,18 +134,21 @@ These additional terms described in this Lundi Matin Public License ?Additional 
 II. Lundi Matin and logo.
 This License does not grant any rights to use the trademarks "Lundi Matin " and the "Lundi Matin " logos even if such marks are included in the Original Code or Modifications.
 However, in addition to the other notice obligations, all copies of the Covered Code in Executable and Source Code form distributed must, as a form of attribution of the original author, include on each user interface screen and on program start-up or login screen the "Powered by Lundi Matin" logo, visible to all users. The dimensions of the "Powered by Lundi Matin" logo must be at least 89 x 24 pixels. When users click on the "Powered by Lundi Matin" logo it must direct them to http://www.lundimatin.fr
-II.1 The official "Powered by LundiMatin" logo
-
+II.1 The official "Powered by LundiMatin" logo 
+The actual logo image file is included in the "__licence.rtf" in the application root folder
 ================================================= FIN DE LICENSE Lundi Matin Public License =======================================================
 
 
 
 
-================================================ LICENSE Sooth ERP Public License ===========================================
+================== LICENSE Sooth ERP Public License ======================
 
 The Sooth ERP Public License 
 
-The Sooth ERP Public License Version 2.0  ("SEMPL") consists of the Mozilla Public License Version 2.0, modified to be specific to Sooth ERP, with the Additional Terms in Exhibit C. The original Mozilla Public License 2.0 can be found at: https://www.mozilla.org/MPL/2.0/
+The Sooth ERP Public License Version 2.0  ("SEPL") consists of the Mozilla 
+Public License Version 2.0, modified to be specific to Sooth ERP, 
+with the Additional Terms in Exhibit C. The original Mozilla Public 
+License 2.0 can be found at: https://www.mozilla.org/MPL/2.0/
 
 
 1. Definitions
@@ -474,10 +477,10 @@ shall not be used to construe this License against a Contributor.
 
 10.1. New Versions
 
-Sooth ERP  group (“Sooth ERP”) is the license steward. Except as provided in Section
-10.3, no one other than the license steward has the right to modify or
-publish new versions of this License. Each version will be given a
-distinguishing version number.
+Sooth ERP  group (“Sooth ERP”) is the license steward. Except as provided
+in Section 10.3, no one other than the license steward has the right to 
+modify or publish new versions of this License. Each version will be given 
+a distinguishing version number.
 
 10.2. Effect of New Versions
 
@@ -506,7 +509,7 @@ Exhibit A - Source Code Form License Notice
 
   This Source Code Form is subject to the terms of the  Sooth ERP Public
   License, v. 2.0. If a copy of the MPL was not distributed with this
-  file, You can obtain one at http://www.sootherp.fr/license-SEMPLv2.0
+  file, You can obtain one at http://www.sootherp.fr/license-SEPLv2.0
 
 If it is not possible or desirable to put the notice in a particular
 file, then You may include the notice in a location (such as a LICENSE
@@ -515,22 +518,40 @@ for such a notice.
 
 You may add additional accurate notices of copyright ownership.
 
-Exhibit B - "Incompatible With Secondary Licenses" Notice
----------------------------------------------------------
+Exhibit B  
+---------
 
-  This Source Code Form is "Incompatible With Secondary Licenses", as
-  defined by the Sooth ERP Public License Version, v. 2.0.
-Exhibit C - Sooth ERP Public License "Additional Terms applicable to the Sooth ERP Public License" Notice
-------------------------------------------------------------------------------
+This exhibit is intentionally left blank.
+
+Exhibit C - Sooth ERP Public License "Additional Terms applicable to the 
+Sooth ERP Public License" Notice
+--------------------------------------------------------------------------
 
 I. Effect.
-These additional terms described in this Sooth ERP Public License – Additional Terms shall apply to the Covered Code under this License.
+These additional terms described in this Sooth ERP Public License – 
+Additional Terms shall apply to the Covered Code under this License.
 
 II. Sooth ERP and logo.
-This License does not grant any rights to use the trademarks "Sooth ERP" and the "Sooth ERP" logos even if such marks are included in the Original Code or Modifications.
-However, in addition to the other notice obligations, all copies of the Covered Code in Executable and Source Code form distributed must, as a form of attribution of the original author, include on each user interface screen and on program start-up or login screen the "Powered by Sooth ERP" logo, visible to all users. The dimensions of the "Powered by Sooth ERP" logo must be at least 89 x 24 pixels. When users click on the "Powered by Sooth ERP" logo it must direct them to http://www.sootherp.fr
+This License does not grant any rights to use the trademarks "Sooth ERP" 
+and the "Sooth ERP" logos even if such marks are included in the Original 
+Code or Modifications.
+However, in addition to the other notice obligations, all copies of the 
+Covered Code in Executable and Source Code form distributed must, as a 
+form of attribution to the original authors, keep the attribution and link
+to sootherp.fr unchanged (namely: "SoothERP, logiciel de gestion 
+d'entreprise open source et gratuit http://www.sootherp.fr", or any 
+subsequent translation officially approved by sootherp.fr).
+
+Additionally, any non official fork issued from the official Sootherp 
+repository (https://github.com/yvesb/soothERP) must include on each user 
+interface screen and on program start-up or login screen the 
+"Powered by by Sooth ERP" logo.
+The dimensions of the "Powered by Sooth ERP" logo must be at least 89 x 24
+pixels. When users click on the "Powered by Sooth ERP" logo it must direct 
+them to http://www.sootherp.fr
 
 II.1 The official "Powered by Sooth ERP" logo
+The actual logo image file is included in the "__licence.rtf" in the 
+application root folder.
 
-
-================================================= FIN DE LICENSE Sooth ERP Public License =======================================================
+==================== END of Sooth ERP Public License =====================
