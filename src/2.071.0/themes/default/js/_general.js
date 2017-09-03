@@ -2415,7 +2415,8 @@ function rise_height(id_element, max_height) {
 
 //ouverture d'un document
 function open_doc(ref_doc) {
-    page.verify("document_edition", "index.php#" + encodeURIComponent("documents_edition.php?ref_doc=" + ref_doc), "true", "_blank");
+    page.verify("document_edition", "index.php#" + encodeURI("documents_edition.php?ref_doc=" + ref_doc), "true", "_blank");
+    //page.verify("document_edition", "index.php#" + encodeURIComponent("documents_edition.php?ref_doc=" + ref_doc), "true", "_blank");
 }
 
 //rafraichir le contenu en cours (bouton dans barre de menu)
